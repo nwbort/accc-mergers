@@ -1,14 +1,14 @@
 {
-  "total_mergers": 265,
-  "total_waivers": 427,
+  "total_mergers": 281,
+  "total_waivers": 443,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 235,
-    "Under assessment": 25,
+    "Assessment completed": 245,
+    "Under assessment": 31,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 227,
+    "Approved": 237,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -18,333 +18,338 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 406,
-    "Not approved": 21
+    "Approved": 421,
+    "Not approved": 22
   },
   "clearance_rate": {
-    "cleared": 232,
+    "cleared": 242,
     "not_cleared": 3,
-    "total": 235,
-    "rate": 0.987
+    "total": 245,
+    "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.704166666666666,
+    "average_days": 29.56,
     "median_days": 26.0,
-    "average_business_days": 20.166666666666668,
+    "average_business_days": 20.1,
     "median_business_days": 18.0,
     "percentiles": {
       "day15": {
-        "count": 51,
-        "percentage": 21.2
+        "count": 55,
+        "percentage": 22.0
       },
       "day20": {
-        "count": 176,
-        "percentage": 73.3
+        "count": 182,
+        "percentage": 72.8
       },
       "day30": {
-        "count": 223,
-        "percentage": 92.9
+        "count": 233,
+        "percentage": 93.2
       }
     }
   },
   "waiver_duration": {
-    "average_days": 20.217798594847775,
+    "average_days": 20.23476297968397,
     "median_days": 20,
-    "average_business_days": 13.819672131147541,
+    "average_business_days": 13.844243792325056,
     "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 148
+      "count": 159
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 75
+      "count": 80
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 74
-    },
-    {
-      "name": "Software Publishing",
-      "count": 41
+      "count": 77
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 39
+      "count": 43
+    },
+    {
+      "name": "Software Publishing",
+      "count": 43
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 34
+      "count": 37
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
-      "count": 23
+      "count": 25
     },
     {
       "name": "Accommodation",
-      "count": 23
+      "count": 24
+    },
+    {
+      "name": "Cafes and Restaurants",
+      "count": 22
     },
     {
       "name": "Supermarket and Grocery Stores",
-      "count": 20
-    },
-    {
-      "name": "Liquor Retailing",
-      "count": 20
+      "count": 21
     }
   ],
   "recent_mergers": [
     {
-      "merger_id": "MN-85054",
-      "merger_name": "Xylem - Flow Controls",
+      "merger_id": "MN-30033",
+      "merger_name": "Brown & Hurley - Schmitz Cargobull and Freighter Group",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-09-28T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T11:16:35+10:00",
+      "effective_notification_datetime": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T14:12:26+11:00",
       "is_waiver": false,
       "is_refiled": false
     },
     {
-      "merger_id": "MN-85042",
-      "merger_name": "Vets Central \u2013 Vital Vet Animal Hospital",
+      "merger_id": "MN-60044",
+      "merger_name": "Airbus, Leonardo and Thales \u2013 Space activities joint venture",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-09-25T12:00:00Z",
-      "page_modified_datetime": "2026-09-28T16:08:33+10:00",
+      "effective_notification_datetime": "2026-10-06T12:00:00Z",
+      "page_modified_datetime": "2026-10-07T11:28:24+11:00",
       "is_waiver": false,
       "is_refiled": false
     },
     {
-      "merger_id": "MN-75056",
-      "merger_name": "Visa - BioCatch",
+      "merger_id": "MN-45030",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T13:48:33+10:00",
+      "effective_notification_datetime": "2026-10-06T12:00:00Z",
+      "page_modified_datetime": "2026-10-07T09:59:50+11:00",
+      "is_waiver": false,
+      "is_refiled": true
+    },
+    {
+      "merger_id": "MN-95043",
+      "merger_name": "Bright & Duggan \u2013 Civium",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-06T12:33:21+11:00",
       "is_waiver": false,
       "is_refiled": false
     },
     {
-      "merger_id": "MN-05049",
-      "merger_name": "Imagine Education \u2013 Eden Academy",
+      "merger_id": "MN-85049",
+      "merger_name": "APEM Group - Resource Strategies",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-09-23T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T18:37:30+10:00",
+      "effective_notification_datetime": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-05T13:27:31+11:00",
       "is_waiver": false,
       "is_refiled": false
     },
     {
-      "merger_id": "MN-20039",
-      "merger_name": "Calvary \u2013 Southern Cross Care (Tasmania)",
+      "merger_id": "MN-90037",
+      "merger_name": "Stripe - OpenRouter",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-09-22T12:00:00Z",
-      "page_modified_datetime": "2026-09-22T11:57:20+10:00",
+      "effective_notification_datetime": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T15:38:17+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
     {
-      "merger_id": "MN-55036",
-      "merger_name": "Nielsen - DoubleVerify",
+      "merger_id": "MN-10032",
+      "merger_name": "TurOSI / Cordina",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-09-21T12:00:00Z",
-      "page_modified_datetime": "2026-09-22T12:00:17+10:00",
+      "effective_notification_datetime": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T15:01:48+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
     {
-      "merger_id": "MN-55037",
-      "merger_name": "Covetrus \u2014 MWI",
+      "merger_id": "MN-25053",
+      "merger_name": "Altius \u2013 Converge International",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-09-14T12:00:00Z",
-      "page_modified_datetime": "2026-09-15T12:11:03+10:00",
+      "effective_notification_datetime": "2026-10-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T14:25:33+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
     {
-      "merger_id": "MN-75045",
-      "merger_name": "EQT Fund Management - Intertek",
+      "merger_id": "MN-65039",
+      "merger_name": "ASSA ABLOY \u2013 Gunnebo Entrance Control",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-09-14T12:00:00Z",
-      "page_modified_datetime": "2026-09-14T16:27:22+10:00",
+      "effective_notification_datetime": "2026-10-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T11:44:28+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
     {
-      "merger_id": "MN-65033",
-      "merger_name": "Challenger - Channel Capital and Fidante",
+      "merger_id": "MN-95044",
+      "merger_name": "Olin - Huntsman",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-14T16:32:24+10:00",
+      "effective_notification_datetime": "2026-10-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T11:10:10+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
     {
-      "merger_id": "MN-01121",
-      "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-14T16:07:36+10:00",
-      "is_waiver": false,
-      "is_refiled": false
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "effective_notification_datetime": "2026-10-01T12:00:00Z",
+      "page_modified_datetime": "2026-09-24T15:48:32+10:00",
+      "is_appeal": true,
+      "under_appeal": true,
+      "appeal_type": "party_denial",
+      "appeal_status": "current",
+      "effective_determination": null,
+      "tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026",
+      "appeal_date": "2026-10-01T12:00:00Z"
     },
     {
-      "merger_id": "MN-50028",
-      "merger_name": "Bupa Health Services - Partnered Health",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-14T13:56:29+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-80042",
-      "merger_name": "Eli Lilly \u2013 Merida Biosciences",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-10T12:00:00Z",
-      "page_modified_datetime": "2026-09-11T11:25:28+10:00",
-      "is_waiver": false,
+      "merger_id": "WA-85056",
+      "merger_name": "Goodstart \u2013 certain Edge Early Learning centres (in administration)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-09-30T12:00:00Z",
+      "page_modified_datetime": "2026-10-06T17:06:47+11:00",
+      "is_waiver": true,
       "is_refiled": false
     }
   ],
   "recent_determinations": [
     {
-      "merger_id": "MN-01124",
-      "merger_name": "Prysmian - Atkore",
+      "merger_id": "MN-55037",
+      "merger_name": "Covetrus \u2014 MWI",
       "determination": "Approved",
-      "determination_date": "2026-09-29T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T14:52:24+10:00",
+      "determination_date": "2026-10-08T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T14:25:19+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     },
     {
-      "merger_id": "MN-01122",
-      "merger_name": "Flick \u2013 GC Pest Control",
+      "merger_id": "MN-25049",
+      "merger_name": "Merck KGaA\u2013Bio-Techne",
       "determination": "Approved",
-      "determination_date": "2026-09-29T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T14:31:17+10:00",
+      "determination_date": "2026-10-08T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T13:17:38+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     },
     {
-      "merger_id": "WA-65037",
-      "merger_name": "Coles \u2013 shopping centre in Albion Park, NSW",
+      "merger_id": "WA-30041",
+      "merger_name": "FVS Services Group \u2013 Alexon and Jetfire Fire Protection",
       "determination": "Approved",
-      "determination_date": "2026-09-28T12:00:00Z",
-      "page_modified_datetime": "2026-09-28T17:04:35+10:00",
+      "determination_date": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-07T16:44:39+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
       "has_conditions": false
     },
     {
-      "merger_id": "WA-10035",
-      "merger_name": "Geosyntec Consultants \u2013 WRM Water & Environment",
+      "merger_id": "WA-35052",
+      "merger_name": "FVS Services Group \u2013 Fire & Wire",
       "determination": "Approved",
-      "determination_date": "2026-09-25T12:00:00Z",
-      "page_modified_datetime": "2026-09-25T17:04:56+10:00",
+      "determination_date": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-07T16:42:51+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
       "has_conditions": false
     },
     {
-      "merger_id": "WA-80041",
-      "merger_name": "REST - Perth Airport",
+      "merger_id": "WA-90036",
+      "merger_name": "KKR and ECP - DCC Energy",
       "determination": "Approved",
-      "determination_date": "2026-09-25T12:00:00Z",
-      "page_modified_datetime": "2026-09-25T17:03:48+10:00",
+      "determination_date": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-07T16:40:54+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
       "has_conditions": false
     },
     {
-      "merger_id": "WA-10037",
-      "merger_name": "Blackstone \u2013 Flow Control Holdings",
+      "merger_id": "MN-75043",
+      "merger_name": "Hyne Pallets - Advance Pallets",
       "determination": "Approved",
-      "determination_date": "2026-09-25T12:00:00Z",
-      "page_modified_datetime": "2026-09-25T16:54:08+10:00",
+      "determination_date": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-07T15:25:16+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-85056",
+      "merger_name": "Goodstart \u2013 certain Edge Early Learning centres (in administration)",
+      "determination": "Approved",
+      "determination_date": "2026-10-06T12:00:00Z",
+      "page_modified_datetime": "2026-10-06T17:06:47+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
       "has_conditions": false
     },
     {
-      "merger_id": "WA-20038",
-      "merger_name": "Sumitomo Mitsui Trust Bank \u2013 Morrison",
-      "determination": "Approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T17:59:46+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-20036",
-      "merger_name": "Sinopec \u2013 Park Fuels",
+      "merger_id": "WA-85051",
+      "merger_name": "MedHealth \u2013 Integrity Medico-Legal",
       "determination": "Not approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T17:58:08+10:00",
+      "determination_date": "2026-10-06T12:00:00Z",
+      "page_modified_datetime": "2026-10-06T17:06:43+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
       "has_conditions": false
     },
     {
-      "merger_id": "WA-10034",
-      "merger_name": "DigitalBridge \u2013 PLUS ES smart metering division",
+      "merger_id": "MN-35030",
+      "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
       "determination": "Approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T17:51:18+10:00",
+      "determination_date": "2026-10-06T12:00:00Z",
+      "page_modified_datetime": "2026-10-06T16:04:13+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-35050",
+      "merger_name": "National Dental Care - Sunshine Dental and Gisborne Dental, VIC",
+      "determination": "Approved",
+      "determination_date": "2026-10-05T12:00:00Z",
+      "page_modified_datetime": "2026-10-05T16:29:53+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
       "has_conditions": false
     },
     {
-      "merger_id": "WA-45026",
-      "merger_name": "The Disability Trust - LEAD Disability Services",
+      "merger_id": "MN-65033",
+      "merger_name": "Challenger - Channel Capital and Fidante",
       "determination": "Approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T16:49:56+10:00",
+      "determination_date": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-05T10:56:22+11:00",
       "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     },
     {
-      "merger_id": "WA-30040",
-      "merger_name": "Jaybro \u2013 Fastway Civil Supplies",
+      "merger_id": "WA-15044",
+      "merger_name": "Australian Venue Co \u2013 assets of the Stock Exchange Hotel, Brisbane CBD, QLD",
       "determination": "Approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T16:46:14+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85048",
-      "merger_name": "Partners Group \u2013 Aroma-Zone",
-      "determination": "Approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T16:44:03+10:00",
+      "determination_date": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T17:26:07+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

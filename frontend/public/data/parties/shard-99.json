@@ -84,6 +84,76 @@
       },
       "waiver_duration": null
     },
+    "goulburn-valley-equine-hospital-pty-ltd": {
+      "id": "goulburn-valley-equine-hospital-pty-ltd",
+      "canonical_name": "Goulburn Valley Equine Hospital Pty Ltd",
+      "members": [
+        {
+          "name": "GOULBURN VALLEY EQUINE HOSPITAL PTY LTD",
+          "identifier": "66 007 039 750",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80045",
+            "merger_name": "Apiam - Goulburn Valley Equine Hospital",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "huntsman-polyurethanes-australia-pty-ltd": {
+      "id": "huntsman-polyurethanes-australia-pty-ltd",
+      "canonical_name": "Huntsman Polyurethanes (Australia) Pty Ltd",
+      "members": [
+        {
+          "name": "HUNTSMAN POLYURETHANES (AUSTRALIA) PTY LTD",
+          "identifier": "40 090 446 165",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-95044",
+            "merger_name": "Olin - Huntsman",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-01T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "kanda-healthcare-pty-ltd": {
       "id": "kanda-healthcare-pty-ltd",
       "canonical_name": "Kanda Healthcare Pty Ltd",
@@ -96,6 +166,17 @@
       ],
       "mergers": {
         "acquirer": [
+          {
+            "merger_id": "WA-25054",
+            "merger_name": "Kanda Healthcare - Connecting Families",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-05T12:00:00Z",
+            "determination_date": "2026-10-01T12:00:00Z"
+          },
           {
             "merger_id": "WA-75034",
             "merger_name": "Kanda Healthcare \u2013 Live Your Way, QLD",
@@ -111,18 +192,18 @@
         "target": [],
         "other": []
       },
-      "merger_count": 1,
+      "merger_count": 2,
       "phase_1_count": 0,
       "phase_2_count": 0,
-      "waiver_count": 1,
+      "waiver_count": 2,
       "active_count": 0,
       "phase_duration": null,
       "waiver_duration": {
-        "average_days": 21.0,
-        "median_days": 21,
-        "average_business_days": 15.0,
-        "median_business_days": 15,
-        "completed_count": 1
+        "average_days": 23.5,
+        "median_days": 23.5,
+        "average_business_days": 17.0,
+        "median_business_days": 17.0,
+        "completed_count": 2
       }
     },
     "novartis-finance-corporation": {

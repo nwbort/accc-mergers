@@ -289,6 +289,41 @@
         "completed_count": 1
       }
     },
+    "mcf3a-limited-partnership": {
+      "id": "mcf3a-limited-partnership",
+      "canonical_name": "MCF3A Limited Partnership",
+      "members": [
+        {
+          "name": "MCF3A Limited Partnership",
+          "identifier": "NZBN: 9429046987020",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70039",
+            "merger_name": "Architectus \u2013 SBA",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "midea-group-shanghai-co-ltd": {
       "id": "midea-group-shanghai-co-ltd",
       "canonical_name": "Midea Group (Shanghai) Co., Ltd.",

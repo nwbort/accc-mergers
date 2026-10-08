@@ -176,29 +176,29 @@
     }
   ],
   "phase_1_estimate": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 238,
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 168,
     "as_of": "2026-09-28",
-    "estimated_at": "2026-09-29",
+    "estimated_at": "2026-09-30",
     "method_version": 2
   },
   "pre_notification": {
-    "estimated_days": 32,
-    "min_days": null,
-    "max_days": 39,
-    "id_issued_estimated": "2026-08-27",
-    "id_issued_before": null,
-    "id_issued_after": "2026-08-20",
-    "min_days_witness": null,
-    "max_days_witness": "WA-85048",
-    "basis": "upper-bound-only",
+    "estimated_days": 11,
+    "min_days": 6,
+    "max_days": 32,
+    "id_issued_estimated": "2026-09-17",
+    "id_issued_before": "2026-09-22",
+    "id_issued_after": "2026-08-27",
+    "min_days_witness": "WA-85055",
+    "max_days_witness": "WA-85051",
+    "basis": "bracketed",
     "method_version": 1
   }
 }

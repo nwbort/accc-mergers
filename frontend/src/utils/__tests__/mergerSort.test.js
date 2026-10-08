@@ -149,4 +149,39 @@ describe('SORT_FIELDS', () => {
       expect(names(sortMergers(list, `${value}-desc`))).toEqual([...asc].reverse());
     });
   });
+  describe('same-day ties on "modified"', () => {
+    // Every event is stamped midday, so these all tie on latest_event_date.
+    const day = '2026-10-01T12:00:00Z';
+    const list = [
+      merger('Morning', { latest_event_date: day, page_modified_datetime: '2026-10-01T09:25:06+10:00' }),
+      merger('Evening', { latest_event_date: day, page_modified_datetime: '2026-10-01T17:43:53+10:00' }),
+      merger('Midday', { latest_event_date: day, page_modified_datetime: '2026-10-01T13:45:06+10:00' }),
+    ];
+
+    it('orders by the register page modified time, newest first', () => {
+      expect(names(sortMergers(list, 'modified-desc'))).toEqual(['Evening', 'Midday', 'Morning']);
+    });
+
+    it('reverses the whole order, ties included, for oldest first', () => {
+      expect(names(sortMergers(list, 'modified-asc'))).toEqual(['Morning', 'Midday', 'Evening']);
+    });
+
+    it('compares instants, not strings, across a daylight-saving offset change', () => {
+      // 23:30+10:00 on 4 Oct is 13:30Z; 00:00+11:00 on 5 Oct is 13:00Z. The
+      // second string sorts higher, but the first is the later instant.
+      const dst = [
+        merger('Earlier', { latest_event_date: day, page_modified_datetime: '2026-10-05T00:00:00+11:00' }),
+        merger('Later', { latest_event_date: day, page_modified_datetime: '2026-10-04T23:30:00+10:00' }),
+      ];
+      expect(names(sortMergers(dst, 'modified-desc'))).toEqual(['Later', 'Earlier']);
+    });
+
+    it('never lets page modified time outrank a later event date', () => {
+      const old = merger('OldEventEditedLate', {
+        latest_event_date: '2026-09-01T12:00:00Z',
+        page_modified_datetime: '2026-10-02T09:00:00+10:00',
+      });
+      expect(names(sortMergers([old, ...list], 'modified-desc'))[3]).toBe('OldEventEditedLate');
+    });
+  });
 });

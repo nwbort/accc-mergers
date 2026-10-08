@@ -43,6 +43,41 @@
         "completed_count": 1
       }
     },
+    "barard-management-pty-ltd": {
+      "id": "barard-management-pty-ltd",
+      "canonical_name": "Barard Management Pty. Ltd.",
+      "members": [
+        {
+          "name": "BARARD MANAGEMENT PTY. LTD.",
+          "identifier": "26 010 622 125",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-95043",
+            "merger_name": "Bright & Duggan \u2013 Civium",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-02T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "gg11-s-p-a": {
       "id": "gg11-s-p-a",
       "canonical_name": "GG11 S.p.A.",
@@ -143,12 +178,12 @@
             "merger_id": "MN-80042",
             "merger_name": "Eli Lilly \u2013 Merida Biosciences",
             "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
+            "status": "Assessment completed",
+            "determination": "Approved",
             "has_conditions": false,
             "phase": "Phase 1",
             "notification_date": "2026-09-10T12:00:00Z",
-            "determination_date": null
+            "determination_date": "2026-10-01T12:00:00Z"
           }
         ]
       },
@@ -156,8 +191,14 @@
       "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
       "waiver_duration": null
     },
     "name-of-landholders-withheld-under-section-5-3-of-the-competition-and-consumer-n": {

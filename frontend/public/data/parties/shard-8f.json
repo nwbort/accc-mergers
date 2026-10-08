@@ -2,6 +2,47 @@
   "shard": 143,
   "shard_count": 256,
   "parties": {
+    "alexon-pty-ltd": {
+      "id": "alexon-pty-ltd",
+      "canonical_name": "Alexon Pty Ltd",
+      "members": [
+        {
+          "name": "ALEXON PTY LTD",
+          "identifier": "84 164 228 442",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-30041",
+            "merger_name": "FVS Services Group \u2013 Alexon and Jetfire Fire Protection",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-23T12:00:00Z",
+            "determination_date": "2026-10-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
     "china-national-aviation-fuel-group-limited": {
       "id": "china-national-aviation-fuel-group-limited",
       "canonical_name": "China National Aviation Fuel Group Limited",
@@ -248,6 +289,47 @@
       },
       "waiver_duration": null
     },
+    "metronome-bidco-llc": {
+      "id": "metronome-bidco-llc",
+      "canonical_name": "Metronome Bidco, LLC",
+      "members": [
+        {
+          "name": "Metronome Bidco, LLC",
+          "identifier": "10746764",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85055",
+            "merger_name": "One Equity Partners \u2013 Myriad360",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-22T12:00:00Z",
+            "determination_date": "2026-09-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 5.0,
+        "median_business_days": 5,
+        "completed_count": 1
+      }
+    },
     "oak-tree-holdings-pty-ltd": {
       "id": "oak-tree-holdings-pty-ltd",
       "canonical_name": "Oak Tree Holdings Pty Ltd",
@@ -468,6 +550,47 @@
         "median_days": 13,
         "average_business_days": 8.0,
         "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "stock-ex-brisbane-pty-ltd-as-trustee-for-stock-ex-brisbane-unit-trust": {
+      "id": "stock-ex-brisbane-pty-ltd-as-trustee-for-stock-ex-brisbane-unit-trust",
+      "canonical_name": "Stock Ex Brisbane Pty Ltd as trustee for Stock Ex Brisbane Unit Trust",
+      "members": [
+        {
+          "name": "Stock Ex Brisbane Pty Ltd as trustee for Stock Ex Brisbane Unit Trust",
+          "identifier": "38 756 027 098",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15044",
+            "merger_name": "Australian Venue Co \u2013 assets of the Stock Exchange Hotel, Brisbane CBD, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-03T12:00:00Z",
+            "determination_date": "2026-10-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
         "completed_count": 1
       }
     },

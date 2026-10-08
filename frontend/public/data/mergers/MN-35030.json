@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mufg-pension-market-services-grow-technology-services",
   "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-35030",
   "effective_notification_datetime": "2026-08-31T12:00:00Z",
   "original_notification_datetime": "2026-08-31T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-10-13T12:00:00Z",
+  "determination_publication_date": "2026-10-06T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-09-08T12:00:00Z",
   "acquirers": [
     {
@@ -63,13 +65,262 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-06T12:00:00Z",
+      "title": "MPMS Grow - Phase 1 Determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/MPMS%20Grow%20-%20Phase%201%20Determination%20-%206%20October%202026.pdf",
+      "determination_table_content": [
+        {
+          "item": "Reasons for determination",
+          "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
+        }
+      ],
+      "determination_statement_of_reasons": [
+        {
+          "type": "paragraph",
+          "number": "2.1",
+          "text": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.2",
+          "text": "For more information about the ACCC\u2019s approach to considering notified acquisitions, see the ACCC\u2019s merger assessment guidelines and interim merger process guidelines."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.3",
+          "text": "In conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, additional information provided by the parties to the Acquisition, market feedback and publicly available information."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.4",
+          "text": "For the reasons given below, the ACCC has determined that the Acquisition may be put into effect."
+        },
+        {
+          "type": "heading",
+          "text": "Overlap between the parties and relevant areas of competition"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.5",
+          "text": "MPMS and Grow overlap in the supply of SAS to superannuation funds in Australia. SAS typically comprises two main components:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "technology platforms, which support the delivery of digitised operational administration services including the automation of some of those services; and",
+            "operational administration services, which refers to a range of administrative functions required to operate a superannuation fund, including (i) registry services (such as online member and employer services, including processing member investment choices, contributions and benefits, as well as data and document management), (ii) digital services, (iii) complaints handling, (iv) insurance administration, (v) advice services (such as financial advice), and contact centre services (being end-customer interactions, including responding to member or prospective member enquiries and providing information or assistance). These services are delivered through a platform and may be supplied by one or more providers."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.6",
+          "text": "Both MPMS and Grow provide operational administration services including core registry services using their own proprietary technology platforms."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.7",
+          "text": "The ACCC does not consider it is necessary to form a concluded view on the product market, including whether the supply of technology platforms and the supply of operational administration services form separate product markets. For the purposes of its competition assessment, the ACCC has considered competition in respect of the supply of both SAS components. The ACCC considers the geographic scope is likely to be national."
+        },
+        {
+          "type": "heading",
+          "text": "Industry background"
+        },
+        {
+          "type": "heading",
+          "text": "Competitive dynamics in the supply of SAS in Australia"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.8",
+          "text": "Superannuation funds are customers of SAS providers. Superannuation funds require SAS to operate and administer their funds and typically tender for the supply of those services, having regard to the specific fund size and other requirements."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.9",
+          "text": "Contractual arrangements between superannuation funds and SAS providers are typically long-term, with contracts commonly between 5 and 7 years in length, often with extension periods."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.10",
+          "text": "SAS can be delivered by:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "the customer itself (\u2018insourcing\u2019).",
+            "one or more third-party providers, where both the administration services and platform are procured from third parties.",
+            "some combination of the above. For example, most customers rely on third-party technology platforms, but may insource certain operational administration services."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.11",
+          "text": "The ACCC has considered feedback from a range of market participants including customers of different sizes and alternative SAS providers. Based on this feedback, the ACCC understands that customers may place different weight on various factors when choosing a SAS provider, depending on their requirements."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.12",
+          "text": "Some key factors relevant to a customer\u2019s choice of SAS provider may include:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "Provider capability, track record and scalability \u2013 a proven ability to deliver services at scale, including experience servicing Australian superannuation funds, a strong implementation record, financial stability and demonstrated capability to service customers of different sizes.",
+            "Technological capability \u2013 technology that supports efficient service delivery, including automation and straight-through processing capabilities, and a commitment to continuous improvement of that technology.",
+            "Modularity of the platform \u2013 the ability to source different SAS components from multiple providers and combine those components in a way that best suits an individual customer\u2019s requirements.",
+            "Switching costs \u2013 the cost, complexity and operational risk associated with changing SAS providers, particularly where a platform migration is required."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Regulatory landscape in which SAS are supplied"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.13",
+          "text": "The key legislation in the superannuation sector is the Superannuation Industry (Supervision) Act 1993 (the SIS Act), which provides for the licensing and prudential management of registrable superannuation entities (i.e. regulated superannuation funds, an approved deposit fund or a pooled superannuation trust) and their trustees."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.14",
+          "text": "The Australian Prudential Regulation Authority (APRA) is the prudential regulator. SAS providers are not directly regulated by APRA however their customers are subject to the SIS Act and the prudential and reporting standards issued by APRA, which affects how the customer assesses and manages their reliance on third-party SAS providers."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.15",
+          "text": "Prudential Standard CPS 230 \u2013 Operational Risk Management is the most relevant prudential standard to this assessment and sets out minimum requirements for managing operational risk, business continuity, and service provider arrangements. The ACCC understands that ensuring compliance with CPS 230 is likely a significant consideration for superannuation funds when considering SAS providers."
+        },
+        {
+          "type": "heading",
+          "text": "Competition assessment"
+        },
+        {
+          "type": "heading",
+          "text": "Future without the Acquisition"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.16",
+          "text": "The ACCC has considered the effects of the Acquisition by comparing the likely future state of competition if the Acquisition proceeds against the likely future state of competition if the Acquisition does not proceed (the counterfactual). The counterfactual assessment is a tool of analysis to assist the ACCC in considering whether it is likely that the Acquisition would result in a substantial lessening of competition."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.17",
+          "text": "Based on the available information, the ACCC considers that Grow\u2019s future without the Acquisition is uncertain. Since entering the supply of SAS in 2020, the ACCC understands from publicly available information1 and market feedback that Grow has faced financial and operational challenges in delivering its services, gaining customers, and achieving a sustainable financial position. The ACCC considers that the future without the Acquisition could involve Grow continuing to operate in a financially and operationally constrained position (the status quo) or Grow exiting the market. The ACCC has also considered the possibility of an alternative buyer of Grow in the foreseeable future."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.18",
+          "text": "The ACCC has considered the evidence on the future without the Acquisition as part of the single evaluative judgment that the ACCC must make as to whether it is satisfied in all the circumstances that the Acquisition would have or would be likely to have the effect of substantially lessening competition. For the reasons set out further from paragraph 2.19 onwards, the ACCC considers the Acquisition is unlikely to result in a substantial lessening of competition when compared with the likely future scenarios without the Acquisition."
+        },
+        {
+          "type": "heading",
+          "text": "Competitive effects of the Acquisition in the supply of SAS"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.19",
+          "text": "On the evidence before it, the ACCC considers that the Acquisition would be unlikely to have the effect of substantially lessening competition in relation to the supply of SAS in Australia. In reaching this decision, the ACCC makes the following factual findings:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "MPMS is the largest provider of SAS in Australia in terms of funds under management, and MPMS and Grow have competed in customer tender processes for the supply of SAS since Grow\u2019s entry in 2020.",
+            "Grow is not an effective and vigorous competitor due to its financial, operational and viability challenges.",
+            "MPMS would continue to face competition from alternative SAS providers following the Acquisition.",
+            "the countervailing power of customers to self-supply certain SAS services would likely provide a degree of constraint on MPMS from increasing prices or reducing the quality of its services following the Acquisition."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.20",
+          "text": "The basis for these findings is set out in detail below. Grow is not an effective and vigorous competitor"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.21",
+          "text": "While Grow\u2019s presence in the market is valued by customers who consider Grow\u2019s technology, innovation and levels of customer service meet their SAS requirements, Grow\u2019s competitive significance has been weakened by its financial position, operational challenges and uncertain future viability."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.22",
+          "text": "Market participants commonly referred to Grow having operational and financial challenges which has made it difficult for Grow to attract new customers as well as investors. In particular, market inquiries indicated that larger superannuation funds generally did not consider Grow to be a competitive alternative SAS provider due to concerns regarding its financial stability and depth of experience. Market inquiries indicated that: 1 A Miller, Superannuation admin provider Grow Inc's financial trouble raises concerns for HESTA, 27 March 2026, accessed 1 October 2026."
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "platforms require significant capital and time in the market to maintain and enhance functionality to meet evolving customer needs. Several large funds indicated to the ACCC that they did not consider Grow had (or would be able to obtain) the capital or the scale to be a reliable provider.",
+            "some superannuation funds had concerns regarding Grow\u2019s long-term financial viability, which made Grow an unattractive service provider when considered in the context of a fund\u2019s regulatory obligations (such as those set out in CPS 230 in relation to business continuity)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.23",
+          "text": "In addition, the prolonged disruption to member services arising during HESTA\u2019s transition from MPMS to Grow in June 2025 appears to have weakened industry confidence in Grow. In December 2025, APRA imposed additional license conditions on HESTA, one of Australia\u2019s largest superannuation funds, for \u201cdeficiencies in HESTA\u2019s board governance and management of risks which rendered HESTA inadequately prepared to effectively oversee and manage the transition\u201d.2 Effectiveness of remaining competitors"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.24",
+          "text": "Based on the available information, the ACCC considers that MPMS would continue to face competition from alternative SAS providers with differing service models and capabilities."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.25",
+          "text": "Some market participants considered MPMS to be the dominant incumbent SAS provider and that MPMS, SS&C, Apex and Grow were the only options if a superannuation fund wants to engage the one provider to supply both the technology and administration services."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.26",
+          "text": "However, market participants identified Apex and SS&C as established alternatives to the parties, with mature platforms and global capital funding. Some market participants noted Apex and SS&C are actively continuing to improve their product to meet changing customer needs and win market share."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.27",
+          "text": "Bravura was also identified as an alternative provider that can supply its platform directly or in partnership with business process outsourcing providers to supply an integrated technology and operational administration service. Like Grow, Apex, SS&C, and Bravura all have cloud-based platforms in contrast to MPMS\u2019s aaspire platform which is not cloud based."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.28",
+          "text": "On balance, the ACCC considers that MPMS would face competition from alternative SAS providers following the Acquisition. This competition is likely to pose a meaningful competitive constraint on MPMS given how customers tender for SAS and choose their operating model, including the degree to which they insource and outsource, as discussed below. Competitive constraint via countervailing power from self-supply"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.29",
+          "text": "Based on the information available, the ACCC considers that the threat of self-supply by customers is likely to provide some degree of competitive constraint on MPMS following the Acquisition. 2 APRA, APRA imposes additional licence conditions on HESTA [media release], APRA, 11 December 2025, accessed 1 October 2026."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.30",
+          "text": "The ACCC understands that a significant proportion of customers currently self- supply some administration functions, although most customers continue to rely on third-party platform providers for the technology platform. While insourcing may not be a complete substitute for the range of services supplied by MPMS following the Acquisition, it may provide customers with countervailing power."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.31",
+          "text": "Some market participants indicated that the ability to self-supply may become more feasible due to improvements in technology and member take-up of digital portals and/or apps. Market participants who have considered or changed to insourcing stated that the ability to provide a better customer experience was a key factor guiding this consideration. In addition, customers may face further incentive to insource to assist with managing business continuity risk, including to comply with CPS 230."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.32",
+          "text": "Some market participants noted that insourcing core administration functions is a significant undertaking. In particular, some customers considered themselves either too small or too large for insourcing to be commercially viable."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.33",
+          "text": "Accordingly, while self-supply may not be viable for all customers, the ACCC considers that it provides some degree of competitive constraint via customer countervailing power."
+        }
+      ],
+      "url_gh": "/mergers/MN-35030/MPMS Grow - Phase 1 Determination - 6 October 2026.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-10-06T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "has_questionnaire": true,

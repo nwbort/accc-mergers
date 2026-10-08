@@ -243,6 +243,41 @@
       },
       "waiver_duration": null
     },
+    "civium-management-group-pty-ltd": {
+      "id": "civium-management-group-pty-ltd",
+      "canonical_name": "Civium Management Group Pty Ltd",
+      "members": [
+        {
+          "name": "CIVIUM MANAGEMENT GROUP PTY LTD",
+          "identifier": "24 609 939 200",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-95043",
+            "merger_name": "Bright & Duggan \u2013 Civium",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-02T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "count-limited": {
       "id": "count-limited",
       "canonical_name": "Count Limited",
@@ -383,12 +418,12 @@
             "merger_id": "MN-95040",
             "merger_name": "Apiam \u2013 Seymour Equine Clinic",
             "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
+            "status": "Assessment completed",
+            "determination": "Approved",
             "has_conditions": false,
             "phase": "Phase 1",
             "notification_date": "2026-09-03T12:00:00Z",
-            "determination_date": null
+            "determination_date": "2026-10-02T12:00:00Z"
           }
         ],
         "other": []
@@ -397,8 +432,14 @@
       "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
       "waiver_duration": null
     },
     "keppel-infrastructure-fund-management-pte-ltd": {

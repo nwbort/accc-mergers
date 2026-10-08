@@ -142,6 +142,41 @@
         "completed_count": 1
       }
     },
+    "sba-architects-pty-ltd": {
+      "id": "sba-architects-pty-ltd",
+      "canonical_name": "SBA Architects Pty Ltd",
+      "members": [
+        {
+          "name": "SBA Architects Pty Ltd",
+          "identifier": "51 627 623 278",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70039",
+            "merger_name": "Architectus \u2013 SBA",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "sherwood-topco-ltd": {
       "id": "sherwood-topco-ltd",
       "canonical_name": "Sherwood Topco Ltd",
@@ -157,6 +192,17 @@
         "target": [],
         "other": [
           {
+            "merger_id": "MN-95043",
+            "merger_name": "Bright & Duggan \u2013 Civium",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-02T12:00:00Z",
+            "determination_date": null
+          },
+          {
             "merger_id": "MN-75035",
             "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
             "is_waiver": false,
@@ -169,11 +215,11 @@
           }
         ]
       },
-      "merger_count": 1,
-      "phase_1_count": 1,
+      "merger_count": 2,
+      "phase_1_count": 2,
       "phase_2_count": 0,
       "waiver_count": 0,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": {
         "average_days": 29.0,
         "median_days": 29,

@@ -140,6 +140,58 @@
         "completed_count": 1
       }
     },
+    "fvs-services-group-pty-ltd": {
+      "id": "fvs-services-group-pty-ltd",
+      "canonical_name": "Fvs Services Group Pty Ltd",
+      "members": [
+        {
+          "name": "FVS SERVICES GROUP PTY LTD",
+          "identifier": "66 615 562 813",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-30041",
+            "merger_name": "FVS Services Group \u2013 Alexon and Jetfire Fire Protection",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-23T12:00:00Z",
+            "determination_date": "2026-10-07T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-35052",
+            "merger_name": "FVS Services Group \u2013 Fire & Wire",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-23T12:00:00Z",
+            "determination_date": "2026-10-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14.0,
+        "average_business_days": 9.0,
+        "median_business_days": 9.0,
+        "completed_count": 2
+      }
+    },
     "harrison-motoring-group-pty-ltd": {
       "id": "harrison-motoring-group-pty-ltd",
       "canonical_name": "Harrison Motoring Group Pty Ltd",
@@ -155,6 +207,17 @@
         "target": [],
         "other": [
           {
+            "merger_id": "MN-45030",
+            "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-06T12:00:00Z",
+            "determination_date": null
+          },
+          {
             "merger_id": "WA-15040",
             "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
             "is_waiver": true,
@@ -167,11 +230,11 @@
           }
         ]
       },
-      "merger_count": 1,
-      "phase_1_count": 0,
+      "merger_count": 2,
+      "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 1,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": null,
       "waiver_duration": {
         "average_days": 21.0,

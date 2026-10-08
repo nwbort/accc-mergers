@@ -257,3 +257,37 @@ class TestAttachAndFreeze:
         attach_phase_1_estimates(mergers, {}, store=store, estimated_at='2025-06-02')
         assert 'MN-EARLY' not in store
         assert 'phase_1_estimate' not in mergers[-1]
+
+    def _questionnaires_for_peers_and_live(self):
+        data = {f'MN-P{i}': _questionnaire(3) for i in range(MIN_SUPPORT)}
+        data['MN-LIVE'] = _questionnaire(3)
+        return data
+
+    def test_estimate_frozen_without_questionnaire_is_redone_when_it_arrives(self):
+        mergers = self._mergers_with_live()
+        peer_data = {k: v for k, v in self._questionnaires_for_peers_and_live().items()
+                     if k != 'MN-LIVE'}
+        store = {}
+        attach_phase_1_estimates(mergers, peer_data, store=store, estimated_at='2025-06-02')
+        assert store['MN-LIVE']['basis'] == 'global'
+        assert store['MN-LIVE']['question_count'] is None
+
+        # The questionnaire lands days later.
+        attach_phase_1_estimates(
+            mergers, self._questionnaires_for_peers_and_live(),
+            store=store, estimated_at='2025-06-05',
+        )
+        redone = store['MN-LIVE']
+        assert redone['basis'] == 'questionnaire'
+        assert redone['question_bucket'] == '3 or fewer'
+        assert redone['question_count'] == 3
+        assert redone['estimated_at'] == '2025-06-05'
+        assert redone['as_of'] == '2025-06-02'  # still the filing-time cutoff
+        assert mergers[-1]['phase_1_estimate'] == redone
+
+    def test_estimate_without_questionnaire_stays_frozen_while_none_exists(self):
+        mergers = self._mergers_with_live()
+        store = {}
+        attach_phase_1_estimates(mergers, {}, store=store, estimated_at='2025-06-02')
+        attach_phase_1_estimates(mergers, {}, store=store, estimated_at='2025-06-05')
+        assert store['MN-LIVE']['estimated_at'] == '2025-06-02'

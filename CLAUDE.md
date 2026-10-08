@@ -231,6 +231,8 @@ frontend/src/
 │                         #   mirrors scripts/industry_division.py) and industryNode.js (reads one
 │                         #   node back out of that file; the only module that knows the packing),
 │                         #   treemapTail.js, mergerOutcome.js, partyMembers.js, durationEcdf.js,
+│                         #   eventOrder.js (the detail page's newest-first event list; a
+│                         #   same-day notification always sorts as the oldest event),
 │                         #   mergerSort.js (the merger list's ?sort= vocabulary: the field table
 │                         #   the select is built from and the comparator it drives),
 │                         #   timelineAxis.js (the horizontal milestone track's geometry —
@@ -251,6 +253,8 @@ frontend/src/
 scripts/                  # A Python package — entry points run as `python -m scripts.…`
 ├── extract_mergers.py    # Parse HTML → merger data JSON
 ├── enrich_pdfs.py        # Run questionnaire/NOCC/Phase 2 Notice PDF parsing, auto-fix missing dates
+├── questionnaire_probe.py # Guess a missing questionnaire's URL from recent filename shapes (HEAD
+│                         #   probe); used by detect_missing_questionnaires, report-only
 ├── check_phase2_notice_ocr_needed.py # CI helper: does a pending Phase 2 Notice need OCR?
 ├── send_weekly_email.py  # Send weekly digest email via Cloudflare Worker
 ├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (review PR
@@ -317,11 +321,19 @@ data/
 │                         #   tribunal_appeals.json is a hand-maintained overlay of Australian
 │                         #   Competition Tribunal appeals, keyed by merger_id, merged in at
 │                         #   generate_static_data time (loaders.load_tribunal_appeals +
-│                         #   enrichment.link_tribunal_appeals). It sets the merger's under_appeal
-│                         #   flag + appeal record and folds the appeal documents into the event
+│                         #   enrichment.link_tribunal_appeals). Each value is a *list*, one
+│                         #   record per tribunal matter, since each applicant can lodge its
+│                         #   own (MN-65005: ACT 3 by IAG, ACT 4 by RACWA). The merger gets
+│                         #   `appeals` (one entry per matter: the detail page's cards, the
+│                         #   ATProto record) and `appeal`, a merger-level summary that keeps
+│                         #   the old single-record shape for everything else (badges, digest,
+│                         #   email, dashboard, hearing date): under appeal while any matter is
+│                         #   current, appellants and numbers joined. See
+│                         #   enrichment.summarise_appeals. It sets the merger's under_appeal
+│                         #   flag and folds every matter's documents into the event
 │                         #   timeline, without touching the ACCC-scraped status/determination.
-│                         #   The documents[] list is filled in automatically from the live
-│                         #   tribunal matter pages by scripts/scrape/scrape_tribunal.py (the daily
+│                         #   Each record's documents[] list is filled in automatically from its
+│                         #   own tribunal matter page by scripts/scrape/scrape_tribunal.py (the daily
 │                         #   scrape-tribunal.yml workflow, which drives a real Chrome via
 │                         #   nodriver to clear Cloudflare); the other fields are hand-maintained.
 │                         #   That scrape is additive: the tribunal prunes its own filings table
@@ -357,7 +369,9 @@ data/
 │                         #   a method migration recomputes history without hindsight. The
 │                         #   earliest matters have too little history and get no estimate
 │                         #   (invisible on the site — the forecast renders only while a
-│                         #   matter is open). Attached to each notification merger as
+│                         #   matter is open). A matter frozen before its questionnaire was
+│                         #   published (no question_count) is recomputed once the
+│                         #   questionnaire appears, still forward-chained to the same as_of. Attached to each notification merger as
 │                         #   phase_1_estimate (see mergers/{id}.json). Backend-only.
 │   processed/atproto_records.json # Digest of each fyi.mergers.matter record as last
 │                         #   published, so a run rewrites only what moved. Written by
@@ -612,7 +626,7 @@ exists rather than 404ing into the SPA's `index.html`.
 
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
-| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected), then runs all four detectors. The two ATmosphere steps are `continue-on-error` and skip without `ATPROTO_APP_PASSWORD` — an unreachable PDS must not cost the run its scrape |
+| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, `missing-waiver-determination`), then runs all four detectors. The two ATmosphere steps are `continue-on-error` and skip without `ATPROTO_APP_PASSWORD` — an unreachable PDS must not cost the run its scrape |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `publish-lexicons.yml` | Push to `main` touching `atproto/lexicons/**` or the workflow itself, manual (with a `dry_run` input) | Publish the `fyi.mergers.*` schemas as `com.atproto.lexicon.schema` records. Its own workflow rather than a pipeline step: a lexicon changes only when a person edits one, so a path-filtered push fires exactly then, where `pipeline.yml` would re-read both records several times a day to learn nothing moved. A missing `ATPROTO_APP_PASSWORD` skips a push run and fails a manual one |
 | `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |
@@ -650,6 +664,13 @@ re-read two records that move perhaps once a year.
   is *today*, so re-deriving would re-date every unreviewed candidate and
   discard corrections made on the branch), the other three ignore it.
 - `ntfy/` — publish a push notification to an [ntfy](https://ntfy.sh) topic.
+- `tracking-issues/` — the missing-document issue lifecycle shared by the
+  `missing-questionnaire` and `missing-waiver-determination` checks: one issue
+  per matter a detector lists, an ntfy push for new ones, auto-close once the
+  document appears, and never re-create an issue that exists in any state. The
+  detectors write its input through `_write_tracking_issues` /
+  `_tracking_issue` in `extract_mergers.py`; a third check is another call to
+  each, not another copy.
 
 ### Push notifications
 

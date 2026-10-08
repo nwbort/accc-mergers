@@ -208,6 +208,38 @@ def test_both_review_forums_are_published_side_by_side():
     assert "outcome" not in record["appeals"][0]
 
 
+def test_each_tribunal_matter_is_its_own_appeal():
+    # Both parties to MN-65005 lodged their own application. The summary
+    # ``appeal`` joins them; the record publishes each case separately.
+    matters = [
+        {
+            "tribunal_number": "ACT 3 of 2026",
+            "tribunal_url": "https://www.competitiontribunal.gov.au/act-3-of-2026",
+            "appellant": "IAG",
+            "filed_date": "2026-10-01",
+            "status": "current",
+        },
+        {
+            "tribunal_number": "ACT 4 of 2026",
+            "tribunal_url": "https://www.competitiontribunal.gov.au/act-4-of-2026",
+            "appellant": "RACWA",
+            "filed_date": "2026-10-05",
+            "status": "current",
+        },
+    ]
+    record = matter_record(
+        build(
+            appeal={"tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026"},
+            appeals=matters,
+        ),
+        indexed_at=NOW,
+    )
+    assert [(a["caseNumber"], a["applicant"]) for a in record["appeals"]] == [
+        ("ACT 3 of 2026", "IAG"),
+        ("ACT 4 of 2026", "RACWA"),
+    ]
+
+
 # -- events -----------------------------------------------------------------
 
 

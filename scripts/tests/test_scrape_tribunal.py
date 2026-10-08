@@ -12,6 +12,7 @@ fetch cannot.
 
 import asyncio
 import base64
+import json
 import types
 
 import pytest
@@ -486,6 +487,8 @@ class TestScrapeMattersUnmirroredReporting:
     """The download loop must tell a failed mirror apart from an off-domain link
     that is never meant to be mirrored."""
 
+    MATTER_URL = 'https://www.competitiontribunal.gov.au/m/1'
+
     MATTER_HTML = """
     <main>
       <table class="table-bordered">
@@ -525,14 +528,14 @@ class TestScrapeMattersUnmirroredReporting:
         monkeypatch.setattr(scrape_tribunal, 'download_document', lambda *a, **k: None)
         monkeypatch.setattr(scrape_tribunal, 'gha_warning', warnings.append)
 
-        records = {'MN-0001': {'tribunal_url': 'https://www.competitiontribunal.gov.au/m/1'}}
+        targets = [('MN-0001', {'tribunal_url': self.MATTER_URL})]
         return asyncio.run(
-            scrape_tribunal.scrape_matters(['MN-0001'], records, do_download=True)
+            scrape_tribunal.scrape_matters(targets, do_download=True)
         )
 
     def test_only_tribunal_hosted_failures_are_reported(self, monkeypatch):
         warnings = []
-        scraped_by_id, failed, unmirrored = self._run(monkeypatch, warnings)
+        scraped, failed, unmirrored = self._run(monkeypatch, warnings)
 
         assert failed == []
         # The off-domain link is not a mirror failure — it is never mirrored.
@@ -540,7 +543,7 @@ class TestScrapeMattersUnmirroredReporting:
             ('MN-0001', 'https://www.competitiontribunal.gov.au/x/Blocked.pdf')
         ]
 
-        docs = {d['description']: d for d in scraped_by_id['MN-0001']}
+        docs = {d['description']: d for d in scraped[('MN-0001', self.MATTER_URL)]}
         assert docs['Good']['url_gh'] == '/mergers/MN-0001/Good.pdf'
         assert 'url_gh' not in docs['Blocked']
         assert 'url_gh' not in docs['Elsewhere']
@@ -571,9 +574,9 @@ class TestScrapeMattersUnmirroredReporting:
         monkeypatch.setattr(scrape_tribunal, 'fetch_page', _fetch_page)
         monkeypatch.setattr(scrape_tribunal, 'gha_warning', warnings.append)
 
-        records = {'MN-0001': {'tribunal_url': 'https://www.competitiontribunal.gov.au/m/1'}}
+        targets = [('MN-0001', {'tribunal_url': self.MATTER_URL})]
         _, failed, unmirrored = asyncio.run(
-            scrape_tribunal.scrape_matters(['MN-0001'], records, do_download=False)
+            scrape_tribunal.scrape_matters(targets, do_download=False)
         )
 
         # --no-download / --dry-run skipped them deliberately; not a failure.
@@ -671,15 +674,15 @@ class TestScrapeMattersChallengeRecovery:
         monkeypatch.setattr(scrape_tribunal, 'download_document', lambda *a, **k: None)
         monkeypatch.setattr(scrape_tribunal, 'gha_warning', warnings.append)
 
-        records = {'MN-0001': {'tribunal_url': self.MATTER_URL}}
-        scraped_by_id, failed, unmirrored = asyncio.run(
-            scrape_tribunal.scrape_matters(['MN-0001'], records, do_download=True)
+        targets = [('MN-0001', {'tribunal_url': self.MATTER_URL})]
+        scraped, failed, unmirrored = asyncio.run(
+            scrape_tribunal.scrape_matters(targets, do_download=True)
         )
 
         assert failed == []
         assert unmirrored == []
         assert warnings == []
-        assert scraped_by_id['MN-0001'][0]['url_gh'] == '/mergers/MN-0001/Blocked.pdf'
+        assert scraped[('MN-0001', self.MATTER_URL)][0]['url_gh'] == '/mergers/MN-0001/Blocked.pdf'
         # The document itself was visited, then the matter page re-loaded.
         assert visited == [
             self.MATTER_URL,
@@ -880,3 +883,75 @@ class TestTryClickTurnstile:
         assert clicked is False
         # Two searches (the text, then the iframe), each capped.
         assert elapsed < 1
+
+
+class TestScrapeSeveralMattersPerMerger:
+    """A merger with two tribunal matters scrapes both pages, and each page's
+    documents land on its own record."""
+
+    ACT3 = 'https://www.competitiontribunal.gov.au/current-matters/act-3-of-2026'
+    ACT4 = 'https://www.competitiontribunal.gov.au/current-matters/act-4-of-2026'
+
+    def _run(self, tmp_path, monkeypatch, entry, scraped):
+        path = tmp_path / 'tribunal_appeals.json'
+        path.write_text(json.dumps({'_comment': 'x', 'MN-0001': entry}))
+        monkeypatch.setattr(scrape_tribunal, 'TRIBUNAL_APPEALS_JSON', path)
+        monkeypatch.setattr(scrape_tribunal, 'uc', types.SimpleNamespace(
+            loop=asyncio.new_event_loop,
+        ))
+        seen = []
+
+        async def _scrape_matters(targets, do_download):
+            seen.extend((mid, rec['tribunal_url']) for mid, rec in targets)
+            return {('MN-0001', url): docs for url, docs in scraped.items()}, [], []
+
+        monkeypatch.setattr(scrape_tribunal, 'scrape_matters', _scrape_matters)
+        assert scrape_tribunal.scrape(None, dry_run=False) == 0
+        return seen, json.loads(path.read_text())
+
+    def test_documents_go_to_their_own_matter(self, tmp_path, monkeypatch):
+        entry = [
+            {'tribunal_number': 'ACT 3 of 2026', 'tribunal_url': self.ACT3, 'documents': []},
+            {'tribunal_number': 'ACT 4 of 2026', 'tribunal_url': self.ACT4, 'documents': []},
+        ]
+        seen, written = self._run(tmp_path, monkeypatch, entry, {
+            self.ACT3: [_doc('2026-10-01', 'IAG application')],
+            self.ACT4: [_doc('2026-10-05', 'RACWA application')],
+        })
+
+        assert seen == [('MN-0001', self.ACT3), ('MN-0001', self.ACT4)]
+        act3, act4 = written['MN-0001']
+        assert [d['description'] for d in act3['documents']] == ['IAG application']
+        assert [d['description'] for d in act4['documents']] == ['RACWA application']
+        assert written['_comment'] == 'x'
+
+    def test_a_bare_record_keeps_its_shape(self, tmp_path, monkeypatch):
+        entry = {'tribunal_number': 'ACT 1 of 2026', 'tribunal_url': self.ACT3, 'documents': []}
+        _, written = self._run(tmp_path, monkeypatch, entry, {
+            self.ACT3: [_doc('2026-07-15', 'Application')],
+        })
+        assert [d['description'] for d in written['MN-0001']['documents']] == ['Application']
+
+    def test_a_matter_whose_page_failed_is_left_alone(self, tmp_path, monkeypatch):
+        held = [_doc('2026-10-05', 'RACWA application')]
+        entry = [
+            {'tribunal_number': 'ACT 3 of 2026', 'tribunal_url': self.ACT3, 'documents': []},
+            {'tribunal_number': 'ACT 4 of 2026', 'tribunal_url': self.ACT4, 'documents': held},
+        ]
+        _, written = self._run(tmp_path, monkeypatch, entry, {
+            self.ACT3: [_doc('2026-10-01', 'IAG application')],
+        })
+        assert written['MN-0001'][1]['documents'] == held
+
+
+class TestMatterNaming:
+    def test_label_names_the_matter(self):
+        assert scrape_tribunal.matter_label(
+            'MN-65005', {'tribunal_number': 'ACT 3 of 2026'}
+        ) == 'MN-65005 (ACT 3 of 2026)'
+        assert scrape_tribunal.matter_label('MN-65005', {}) == 'MN-65005'
+
+    def test_snapshot_name_is_unique_per_matter(self):
+        assert scrape_tribunal.snapshot_name(
+            'MN-65005', 'https://www.competitiontribunal.gov.au/current-matters/act-4-of-2026'
+        ) == 'MN-65005-act-4-of-2026'

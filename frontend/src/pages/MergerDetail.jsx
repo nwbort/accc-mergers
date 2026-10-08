@@ -18,6 +18,7 @@ import MergerOutcomeHeading from '../components/MergerOutcomeHeading';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDateMedium, formatDateLong } from '../utils/dates';
+import { sortEventsNewestFirst } from '../utils/eventOrder';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, CARD_TITLE, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
@@ -41,6 +42,20 @@ const RELATED_MERGER_LABELS = {
   suspended_refiled_as: 'Assessment suspended – subsequently refiled',
   suspended_refiled_from: 'Refiled after an earlier assessment was suspended',
 };
+
+// The document an appeal card links to: the application that started the
+// tribunal matter, rather than the matter page itself. Tribunal document lists
+// aren't reliably date-sorted, so match on the description instead of
+// assuming a fixed position — loosely, since applicants word it differently
+// ("Application for Review", "Application to Tribunal for Review") — and fall
+// back to the last-listed document, which is where it typically sits.
+const APPLICATION_FOR_REVIEW = /application\b.*\bfor review/i;
+function appealDocumentUrl(appeal) {
+  const documents = appeal.documents;
+  const document = documents?.find(doc => APPLICATION_FOR_REVIEW.test(doc.description ?? ''))
+    ?? documents?.[documents.length - 1];
+  return document?.url_gh ?? document?.url ?? appeal.tribunal_url;
+}
 
 function MergerDetail() {
   const { id, slug } = useParams();
@@ -168,9 +183,7 @@ function MergerDetail() {
 
   const businessDayProgress = getBusinessDayProgress(merger);
 
-  const sortedEvents = merger.events
-    ? [...merger.events].sort((a, b) => new Date(b.date) - new Date(a.date))
-    : [];
+  const sortedEvents = sortEventsNewestFirst(merger.events);
 
   // Tribunal appeal documents tend to arrive in a burst and clutter the
   // timeline. When more than two land back-to-back (most recent first,
@@ -260,16 +273,14 @@ function MergerDetail() {
   const headerLinkClass =
     `inline-flex items-center gap-1 text-sm transition-colors ${headerStyle.link} ${headerStyle.focus}`;
 
-  // The appeal card links to the Application for Review — the document that
-  // initiated the appeal — rather than the tribunal matter page itself.
-  // Tribunal document lists aren't reliably date-sorted, so match on the
-  // document's title/description instead of assuming a fixed position;
-  // fall back to the last-listed document, which is where it typically sits.
-  const appealDocuments = merger.appeal?.documents;
-  const appealDocument = appealDocuments?.find(doc =>
-    doc.description?.toLowerCase().includes('application for review')
-  ) ?? appealDocuments?.[appealDocuments.length - 1];
-  const appealDocumentUrl = appealDocument?.url_gh ?? appealDocument?.url ?? merger.appeal?.tribunal_url;
+  // One entry per tribunal matter: each applicant can lodge its own (both
+  // parties to MN-65005 did), and each has its own number, page and outcome.
+  // `merger.appeal` is the merger-level summary of them; a detail file from
+  // before `appeals` existed has only that, and it stands for its one matter.
+  const tribunalMatters = merger.appeals?.length
+    ? merger.appeals
+    : (merger.appeal ? [merger.appeal] : []);
+  const severalMatters = tribunalMatters.length > 1;
 
   // Built by the same helper the build-time prerenderer uses, so the raw HTML
   // crawlers read and the head React renders here cannot drift apart.
@@ -381,9 +392,9 @@ function MergerDetail() {
 
           {/* Determination & appeal. The stage that used to lead this row
               now rides on the status line above the title. */}
-          {(showDeterminationField || merger.appeal) && (
+          {(showDeterminationField || tribunalMatters.length > 0) && (
             <div className={`grid grid-cols-1 ${
-              showDeterminationField && merger.appeal ? 'md:grid-cols-2' : 'md:grid-cols-1'
+              showDeterminationField && tribunalMatters.length > 0 ? 'md:grid-cols-2' : 'md:grid-cols-1'
             } gap-6 mt-6 pt-6 border-t border-gray-100`}>
               {showDeterminationField && (
                 <div>
@@ -408,31 +419,40 @@ function MergerDetail() {
                   </p>
                 </div>
               )}
-              {merger.appeal && (
+              {tribunalMatters.length > 0 && (
                 <div>
                   <h2 className={`${SECTION_HEADING} mb-1.5`}>
-                    Tribunal appeal
+                    {severalMatters ? 'Tribunal appeals' : 'Tribunal appeal'}
                   </h2>
-                  <p className="text-sm font-medium text-gray-900">
-                    {merger.appeal.tribunal_url ? (
-                      <a
-                        href={merger.appeal.tribunal_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
-                        aria-label={`View this matter on the Australian Competition Tribunal website${merger.appeal.tribunal_number ? ` (${merger.appeal.tribunal_number})` : ''}`}
-                      >
-                        {merger.appeal.status === APPEAL_STATUS.CONCLUDED
-                          ? (APPEAL_OUTCOME_LABELS[merger.appeal.outcome] || 'Concluded')
-                          : 'Ongoing'}
-                        <ExternalLinkIcon />
-                      </a>
-                    ) : (
-                      merger.appeal.status === APPEAL_STATUS.CONCLUDED
-                        ? (APPEAL_OUTCOME_LABELS[merger.appeal.outcome] || 'Concluded')
-                        : 'Ongoing'
-                    )}
-                  </p>
+                  <ul className="space-y-1">
+                    {tribunalMatters.map((appeal, i) => {
+                      const state = appeal.status === APPEAL_STATUS.CONCLUDED
+                        ? (APPEAL_OUTCOME_LABELS[appeal.outcome] || 'Concluded')
+                        : 'Ongoing';
+                      // With several matters, each says which it is.
+                      const text = severalMatters && appeal.tribunal_number
+                        ? `${appeal.tribunal_number}: ${state}`
+                        : state;
+                      return (
+                        <li key={appeal.tribunal_number || i} className="text-sm font-medium text-gray-900">
+                          {appeal.tribunal_url ? (
+                            <a
+                              href={appeal.tribunal_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
+                              aria-label={`View this matter on the Australian Competition Tribunal website${appeal.tribunal_number ? ` (${appeal.tribunal_number})` : ''}: ${state}`}
+                            >
+                              {text}
+                              <ExternalLinkIcon />
+                            </a>
+                          ) : (
+                            text
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               )}
             </div>
@@ -461,42 +481,48 @@ function MergerDetail() {
           </Link>
         )}
 
-        {/* Tribunal appeal link — mirrors the related-merger link styling, but
-            points to the appeal document itself (e.g. the Application for
-            Review) rather than the tribunal matter page, which is linked from
-            the "Tribunal appeal" field in the header card instead. */}
-        {merger.appeal && appealDocumentUrl && (
-          <a
-            href={appealDocumentUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-amber-50/80 rounded-2xl border border-amber-200/60 shadow-card p-4 mb-6 hover:bg-amber-50 hover:border-amber-300/60 transition-all group"
-            aria-label={`View the appeal document${merger.appeal.appellant ? ` filed by ${merger.appeal.appellant}` : ''}`}
-          >
-            <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
-              <FaGavel className="h-4 w-4 text-amber-700" aria-hidden="true" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-900">
-                {merger.appeal.appellant ? `Decision appealed by ${merger.appeal.appellant}` : (APPEAL_TYPE_LABELS[merger.appeal.appeal_type] || DEFAULT_APPEAL_LABEL)}
-                {merger.appeal.filed_date ? ` on ${formatDateLong(merger.appeal.filed_date)}` : ''}
-                {merger.appeal.status === APPEAL_STATUS.CONCLUDED && (
-                  <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-gray-600 align-middle">
-                    Concluded
-                  </span>
-                )}
-              </p>
-              <p className="text-xs text-gray-500 mt-0.5">
-                Australian Competition Tribunal
-                {merger.appeal.tribunal_number ? ` · ${merger.appeal.tribunal_number}` : ''}
-                {merger.appeal.status === APPEAL_STATUS.CONCLUDED && merger.appeal.outcome
-                  ? ` · ${APPEAL_OUTCOME_LABELS[merger.appeal.outcome] || merger.appeal.outcome}`
-                  : ''}
-              </p>
-            </div>
-            <ExternalLinkIcon className="h-3.5 w-3.5 text-amber-700 flex-shrink-0" />
-          </a>
-        )}
+        {/* Tribunal appeal links, one per matter — mirror the related-merger
+            link styling, but point to the appeal document itself (e.g. the
+            Application for Review) rather than the tribunal matter page, which
+            is linked from the "Tribunal appeal" field in the header card
+            instead. */}
+        {tribunalMatters.map((appeal, i) => {
+          const url = appealDocumentUrl(appeal);
+          if (!url) return null;
+          return (
+            <a
+              key={appeal.tribunal_number || i}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 bg-amber-50/80 rounded-2xl border border-amber-200/60 shadow-card p-4 mb-6 hover:bg-amber-50 hover:border-amber-300/60 transition-all group"
+              aria-label={`View the appeal document${appeal.appellant ? ` filed by ${appeal.appellant}` : ''}${appeal.tribunal_number ? ` (${appeal.tribunal_number})` : ''}`}
+            >
+              <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
+                <FaGavel className="h-4 w-4 text-amber-700" aria-hidden="true" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-gray-900">
+                  {appeal.appellant ? `Decision appealed by ${appeal.appellant}` : (APPEAL_TYPE_LABELS[appeal.appeal_type] || DEFAULT_APPEAL_LABEL)}
+                  {appeal.filed_date ? ` on ${formatDateLong(appeal.filed_date)}` : ''}
+                  {appeal.status === APPEAL_STATUS.CONCLUDED && (
+                    <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-gray-600 align-middle">
+                      Concluded
+                    </span>
+                  )}
+                </p>
+                <p className="text-xs text-gray-500 mt-0.5">
+                  Australian Competition Tribunal
+                  {appeal.tribunal_number ? ` · ${appeal.tribunal_number}` : ''}
+                  {appeal.status === APPEAL_STATUS.CONCLUDED && appeal.outcome
+                    ? ` · ${APPEAL_OUTCOME_LABELS[appeal.outcome] || appeal.outcome}`
+                    : ''}
+                </p>
+              </div>
+              <ExternalLinkIcon className="h-3.5 w-3.5 text-amber-700 flex-shrink-0" />
+            </a>
+          );
+        })}
 
         {/* Judicial review link — a Federal Court review is a separate avenue
             from a Tribunal appeal, so this links straight to the court's own
@@ -694,7 +720,12 @@ function MergerDetail() {
                           </p>
                           {event.is_appeal && (event.appeal_filed_by || event.appeal_confidentiality) && (
                             <p className="text-xs text-gray-500 mt-0.5">
-                              {[event.appeal_filed_by, event.appeal_confidentiality].filter(Boolean).join(' · ')}
+                              {[
+                                event.appeal_filed_by,
+                                event.appeal_confidentiality,
+                                // Which matter, when there is more than one.
+                                severalMatters ? event.tribunal_number : null,
+                              ].filter(Boolean).join(' · ')}
                             </p>
                           )}
                           {event.url_gh && (

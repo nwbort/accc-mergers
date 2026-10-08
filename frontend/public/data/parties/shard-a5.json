@@ -43,6 +43,47 @@
         "completed_count": 1
       }
     },
+    "carter-co-motel-pty-ltd-atf-carter-co-motel-unit-trust": {
+      "id": "carter-co-motel-pty-ltd-atf-carter-co-motel-unit-trust",
+      "canonical_name": "Carter & Co Motel Pty Ltd ATF Carter & Co Motel Unit Trust",
+      "members": [
+        {
+          "name": "Carter & Co Motel Pty Ltd ATF Carter & Co Motel Unit Trust",
+          "identifier": "684 303 142",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90038",
+            "merger_name": "Waymark Hotels Group \u2013 The Queensland Hotel, Goondiwindi, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-14T12:00:00Z",
+            "determination_date": "2026-09-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
     "element-zero-pty-limited": {
       "id": "element-zero-pty-limited",
       "canonical_name": "Element Zero Pty Limited",
@@ -252,6 +293,46 @@
         "median_business_days": 15,
         "completed_count": 1
       }
+    },
+    "leonardo": {
+      "id": "leonardo",
+      "canonical_name": "Leonardo",
+      "members": [
+        {
+          "name": "Leonardo S.p.A.",
+          "identifier": "00401990585",
+          "identifier_type": null
+        },
+        {
+          "name": "Telespazio S.p.A.",
+          "identifier": "04812701003",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60044",
+            "merger_name": "Airbus, Leonardo and Thales \u2013 Space activities joint venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
     },
     "meerlen-pty-limited-as-trustee-of-vic-on-the-park-trust": {
       "id": "meerlen-pty-limited-as-trustee-of-vic-on-the-park-trust",

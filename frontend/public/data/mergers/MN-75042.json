@@ -1,0 +1,142 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/coles-supermarket-site-in-angle-vale-sa",
+  "merger_name": "Coles - supermarket site in Angle Vale, SA",
+  "status": "Under assessment",
+  "merger_id": "MN-75042",
+  "effective_notification_datetime": "2026-09-30T12:00:00Z",
+  "original_notification_datetime": "2026-09-30T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-11-12T12:00:00Z",
+  "consultation_response_due_date": "2026-10-07T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "45 004 189 708",
+      "canonical": {
+        "id": "coles",
+        "name": "Coles Group"
+      },
+      "party_page": {
+        "id": "coles",
+        "name": "Coles Group"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Merenda Group Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "48 690 661 968",
+      "party_page": {
+        "id": "merenda-group-pty-ltd",
+        "name": "Merenda Group Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "4110",
+      "name": "Supermarket and Grocery Stores"
+    },
+    {
+      "code": "4122",
+      "name": "Fruit and Vegetable Retailing"
+    },
+    {
+      "code": "4279",
+      "name": "Other Store-Based Retailing n.e.c."
+    },
+    {
+      "code": "6712",
+      "name": "Non-Residential Property Operators"
+    }
+  ],
+  "merger_description": "Coles Group Limited (**Coles**) is an Australian public company (**ASX: COL**) that primarily operates:\n\n* supermarkets nationwide through its subsidiary, Coles Supermarkets Australia Pty Ltd; and\n* retail liquor stores nationwide, trading under the Liquorland, Liquorland Warehouse and Liquorland Cellars brands.\n\nMerenda Group Pty Ltd (**Lessor**) is an Australian private company. The Lessor has engaged Catcorp Pty Ltd as development manager. Catcorp is an Adelaide-based development and construction company established in 1999, with experience delivering commercial and mixed-use projects.\n\nColes has signed a letter of offer with the Lessor for a proposed lease of a Coles supermarket within a new neighbourhood centre at 643 Angle Vale Road, Angle Vale SA 5117 (the\u00a0**Acquisition**).\n\nThe proposed Coles supermarket is anticipated to open around November 2029.",
+  "events": [
+    {
+      "date": "2026-09-30T12:00:00Z",
+      "title": "Questionnaire",
+      "display_title": "Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Coles%20-%20supermarket%20site%20in%20Angle%20Vale%2C%20SA%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-75042/Coles - supermarket site in Angle Vale, SA - Questionnaire.pdf",
+      "phase": null
+    },
+    {
+      "date": "2026-09-30T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-01068",
+      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+      "acquirers": [
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
+      ],
+      "targets": [
+        "M Holdings 4 Pty Ltd"
+      ],
+      "accc_determination": "Not approved"
+    },
+    {
+      "merger_id": "MN-01090",
+      "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
+      "acquirers": [
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
+      ],
+      "targets": [
+        "Tipalea Private No.31 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-05030",
+      "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
+      "acquirers": [
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
+      ],
+      "targets": [
+        "The Trustee for Saracen Property Holdings Unit Trust"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 170,
+    "as_of": "2026-09-30",
+    "estimated_at": "2026-09-30",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 54,
+    "min_days": 47,
+    "max_days": 63,
+    "id_issued_estimated": "2026-08-07",
+    "id_issued_before": "2026-08-14",
+    "id_issued_after": "2026-07-29",
+    "min_days_witness": "WA-75047",
+    "max_days_witness": "WA-75040",
+    "basis": "bracketed",
+    "method_version": 1
+  }
+}

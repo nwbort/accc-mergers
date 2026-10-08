@@ -1,0 +1,132 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/altius-%E2%80%93-converge-international",
+  "merger_name": "Altius \u2013 Converge International",
+  "status": "Under assessment",
+  "merger_id": "MN-25053",
+  "effective_notification_datetime": "2026-10-01T12:00:00Z",
+  "original_notification_datetime": "2026-10-01T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-11-13T12:00:00Z",
+  "consultation_response_due_date": "2026-10-12T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "ALTIUS BIDCO PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "28 646 640 744",
+      "party_page": {
+        "id": "altius-bidco-pty-ltd",
+        "name": "Altius Bidco Pty Ltd"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "CONVERGE INTERNATIONAL PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "12 113 688 627",
+      "party_page": {
+        "id": "converge-international-pty-ltd",
+        "name": "Converge International Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "8539",
+      "name": "Other Allied Health Services"
+    },
+    {
+      "code": "8599",
+      "name": "Other Health Care Services n.e.c."
+    }
+  ],
+  "merger_description": "The Altius Group (**Altius**), via its wholly owned subsidiary, Altius Bidco Pty Ltd, proposes to acquire 100% of the issued share capital of Converge International Pty Ltd (**Converge**) (the **Acquisition**).\n\nAltius is a workplace health and wellbeing service provider owned by a fund managed by Riverside Company, a private equity firm. Its services include:\n\n* Occupational rehabilitation and injury management services to support physically or psychologically injured workers return to work.\n* Workplace health, wellbeing and employee support services. This includes both general services (such as workplace\u00a0 and safety services and executive health assessments) and psychological services. Psychological services include both \u2018preventative\u2019 services (such as organisational psychology and employee counselling), and \u2018treatment\u2019 services to support employees in distress (such as employee assistance program (**EAP**) offerings and critical incident response (**CIR**) services).\n* Ancillary services such as psychometric assessments, training and consulting.\n\nConverge is an Australian EAP and workplace wellbeing service provider. Its core business is focused on providing EAP/CIR services, while also offering various other workplace health, wellbeing and employee support services. Similar to Altius, Converge also offers ancillary services such as psychometric assessments, training and consulting.",
+  "events": [
+    {
+      "date": "2026-10-02T12:00:00Z",
+      "title": "Phase 1 Questionnaire",
+      "display_title": "Phase 1 Questionnaire",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Altius-Converge%20International%20%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-25053/Altius-Converge International - Questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-01T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-15038",
+      "merger_name": "Cinven \u2013 Salsify",
+      "acquirers": [
+        "Salsa Bidco, Inc."
+      ],
+      "targets": [
+        "Salsify, Inc."
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-30036",
+      "merger_name": "Veritas Capital Fund Management \u2013 BGIS Group",
+      "acquirers": [
+        "Naples Bidco Limited"
+      ],
+      "targets": [
+        "BIFM Jersey Topco Limited"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-85048",
+      "merger_name": "Partners Group \u2013 Aroma-Zone",
+      "acquirers": [
+        "Elixis BidCo"
+      ],
+      "targets": [
+        "Legendre Holding 91 SAS",
+        "Aroma Zone Topco SAS"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 170,
+    "as_of": "2026-10-01",
+    "estimated_at": "2026-10-02",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 27,
+    "min_days": 26,
+    "max_days": 35,
+    "id_issued_estimated": "2026-09-04",
+    "id_issued_before": "2026-09-05",
+    "id_issued_after": "2026-08-27",
+    "min_days_witness": "WA-25054",
+    "max_days_witness": "WA-25052",
+    "basis": "bracketed",
+    "method_version": 1
+  }
+}

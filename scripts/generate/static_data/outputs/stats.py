@@ -22,19 +22,25 @@ def _as_event_datetime(value: str | None) -> str | None:
     return value
 
 
-def _appeal_filed_date(appeal: dict) -> str | None:
+def _appeal_filed_date(merger: dict) -> str | None:
     """When the appeal was lodged with the tribunal.
 
     Both what the card labels "Appeal filed" and how it ranks among the recent
     cards, so it must be the application's own filing date rather than its
     latest activity — a document filed weeks later must neither move the stated
-    filing date nor refloat a stale appeal to the top of the dashboard. Falls
-    back to the earliest document date when the overlay records no
-    ``filed_date``.
+    filing date nor refloat a stale appeal to the top of the dashboard. With
+    several tribunal matters that is the first lodgement (the summary's
+    ``filed_date``). Falls back to the earliest document date across every
+    matter when the overlay records no ``filed_date``.
     """
-    filed = appeal.get('filed_date')
+    filed = (merger.get('appeal') or {}).get('filed_date')
     if not filed:
-        doc_dates = [d.get('date') for d in appeal.get('documents', []) if d.get('date')]
+        doc_dates = [
+            d.get('date')
+            for record in merger.get('appeals') or []
+            for d in record.get('documents', [])
+            if d.get('date')
+        ]
         filed = min(doc_dates) if doc_dates else None
     return _as_event_datetime(filed)
 
@@ -49,7 +55,7 @@ def _appeal_card(merger: dict) -> dict | None:
     appeal = merger.get('appeal')
     if not appeal:
         return None
-    filed_date = _appeal_filed_date(appeal)
+    filed_date = _appeal_filed_date(merger)
     if not filed_date:
         return None
     return {

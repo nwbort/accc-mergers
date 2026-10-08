@@ -1,0 +1,154 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/stripe-openrouter",
+  "merger_name": "Stripe - OpenRouter",
+  "status": "Under assessment",
+  "merger_id": "MN-90037",
+  "effective_notification_datetime": "2026-10-02T12:00:00Z",
+  "original_notification_datetime": "2026-10-02T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-11-16T12:00:00Z",
+  "consultation_response_due_date": "2026-10-12T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Stripe, LLC",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  4675506",
+      "party_page": {
+        "id": "stripe-llc",
+        "name": "Stripe, LLC"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "OpenRouter, Inc.",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  7412265",
+      "party_page": {
+        "id": "openrouter-inc",
+        "name": "OpenRouter, Inc."
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "5420",
+      "name": "Software Publishing"
+    },
+    {
+      "code": "5910",
+      "name": "Internet Service Providers and Web Search Portals"
+    },
+    {
+      "code": "5921",
+      "name": "Data Processing and Web Hosting Services"
+    },
+    {
+      "code": "6230",
+      "name": "Non-Depository Financing"
+    },
+    {
+      "code": "6240",
+      "name": "Financial Asset Investing"
+    },
+    {
+      "code": "6419",
+      "name": "Other Auxiliary Finance and Investment Services"
+    },
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
+  "merger_description": "Stripe, LLC (**Stripe**) proposes to acquire 100% of the outstanding capital stock of OpenRouter Inc. (**OpenRouter**).\n\nStripe is a financial technology group\u00a0active in the provision of payment processing and financial infrastructure software for businesses. Stripe\u2019s services grant companies the ability to accept credit card payments, digital wallets, and global currency transactions. Stripe provides an AI gateway feature as part of a token billing service for Stripe customers.\n\nOpenRouter is a technology company active within the wider artificial intelligence sector, in the provision of infrastructure services that facilitate access to Large Language Models and other generative AI models. OpenRouter\u2019s business focuses on enabling access, comparison and use AI models from different providers through a single interface. The AI gateway is OpenRouter\u2019s only product.",
+  "events": [
+    {
+      "date": "2026-10-02T12:00:00Z",
+      "title": "Stripe - OpenRouter - Phase 1 Questionnaire",
+      "display_title": "Stripe - OpenRouter - Phase 1 Questionnaire",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Stripe%20-%20OpenRouter%20-%20third-party%20questionnaire.docx",
+      "url_gh": "/mergers/MN-90037/Stripe - OpenRouter - third-party questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-02T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-20009",
+      "merger_name": "Rocket Software \u2013 Vertica",
+      "acquirers": [
+        "Rocket Software AMC UK Ltd",
+        "Rocket Software, Inc."
+      ],
+      "targets": [
+        "Micro Focus IP Development Limited",
+        "Open Text Corporation"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-50022",
+      "merger_name": "Service Stream \u2013 RiE",
+      "acquirers": [
+        "SERVICE STREAM MAINTENANCE PTY LTD"
+      ],
+      "targets": [
+        "RIE GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-70019",
+      "merger_name": "Cognizant \u2013 Astreya",
+      "acquirers": [
+        "Cognizant Domestic Holdings Corporation",
+        "Asteroid Merger Sub, Inc."
+      ],
+      "targets": [
+        "Astreya Partners, Inc."
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 173,
+    "as_of": "2026-10-02",
+    "estimated_at": "2026-10-02",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 21,
+    "min_days": 18,
+    "max_days": 31,
+    "id_issued_estimated": "2026-09-11",
+    "id_issued_before": "2026-09-14",
+    "id_issued_after": "2026-09-01",
+    "min_days_witness": "WA-90038",
+    "max_days_witness": "WA-90036",
+    "basis": "bracketed",
+    "method_version": 1
+  }
+}

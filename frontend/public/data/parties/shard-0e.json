@@ -253,6 +253,47 @@
       },
       "waiver_duration": null
     },
+    "myriad360-llc": {
+      "id": "myriad360-llc",
+      "canonical_name": "Myriad360, LLC",
+      "members": [
+        {
+          "name": "Myriad360, LLC",
+          "identifier": "US Tax ID: 810586437",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85055",
+            "merger_name": "One Equity Partners \u2013 Myriad360",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-22T12:00:00Z",
+            "determination_date": "2026-09-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 5.0,
+        "median_business_days": 5,
+        "completed_count": 1
+      }
+    },
     "qbe-insurance-holdings-pty-limited": {
       "id": "qbe-insurance-holdings-pty-limited",
       "canonical_name": "QBE Insurance Holdings Pty Limited",

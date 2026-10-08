@@ -1,6 +1,127 @@
 {
   "items": [
     {
+      "merger_id": "MN-15034",
+      "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-08-06T12:00:00Z",
+      "determination_publication_date": "2026-08-31T12:00:00Z",
+      "determination_url": "/mergers/MN-15034/AVC Black Nugget - Phase 1 Determination.pdf",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "AVC OPERATIONS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299",
+          "canonical": {
+            "id": "australian-venue-co",
+            "name": "Australian Venue Co"
+          },
+          "party_page": {
+            "id": "australian-venue-co",
+            "name": "Australian Venue Co"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Central Hospitality Services Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "644 976 045",
+          "party_page": {
+            "id": "central-hospitality-services-pty-ltd",
+            "name": "Central Hospitality Services Pty Ltd"
+          }
+        },
+        {
+          "name": "ATHENA HOSPITALITY GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "35 636 190 960",
+          "party_page": {
+            "id": "athena-hospitality-group-pty-ltd",
+            "name": "Athena Hospitality Group Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "The two detached bottle shops covered by Bartlett's Tavern's licence were previously the subject of a [declined waiver application](/mergers/WA-75015) by Star Hotels Group.",
+          "tags": [],
+          "date": "2026-10-06"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75015",
+      "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-17T12:00:00Z",
+      "determination_publication_date": "2026-04-02T12:00:00Z",
+      "determination_url": "/mergers/WA-75015/Star Hotels Group \u2013 Liquor Legends Berserker and Liquor Legends Highway A1, QLD (WA-75015) - Notification waiver determination - 2 April 2026.pdf",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "MIGALOO QLD PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 600 219 172",
+          "party_page": {
+            "id": "migaloo-qld-pty-ltd",
+            "name": "Migaloo Qld Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for The Garden Holdings Trust",
+          "identifier_type": "ABN",
+          "identifier": "45 745 542 544",
+          "party_page": {
+            "id": "the-trustee-for-the-garden-holdings-trust",
+            "name": "The Trustee for The Garden Holdings Trust"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "The ACCC declined to provide a waiver for Star Hotels Group's proposed acquisition of the Liquor Legends Berserker and Liquor Legends Highway A1 stores in Rockhampton. The same two stores later formed part of Australian Venue Co's [acquisition of Bartlett's Tavern](/mergers/MN-15034), whose licence covers both detached bottle shops. That transaction was notified to the ACCC and approved.",
+          "tags": [],
+          "date": "2026-10-06"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "status": "Assessment completed",
@@ -61,7 +182,13 @@
           "tags": [],
           "date": "2026-09-23"
         }
-      ]
+      ],
+      "under_appeal": true,
+      "appeal": {
+        "status": "current",
+        "outcome": null,
+        "effective_determination": null
+      }
     },
     {
       "merger_id": "MN-01068",
@@ -1099,5 +1226,5 @@
       ]
     }
   ],
-  "count": 18
+  "count": 20
 }

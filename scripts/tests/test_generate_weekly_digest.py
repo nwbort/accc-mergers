@@ -490,6 +490,19 @@ class TestWeeklyDigestBuckets:
         digest = self._run([merger], monkeypatch)
         assert digest['deals_appealed_to_tribunal'] == []
 
+    def test_a_second_matter_filed_in_window_is_included(self, monkeypatch):
+        # The first application predates the window; a second applicant's
+        # own application inside it is still news.
+        merger = self._appealed_merger(
+            'MN-40005', '2025-03-28',
+            appeals=[
+                {'tribunal_number': 'ACT 1 of 2025', 'filed_date': '2025-03-28'},
+                {'tribunal_number': 'ACT 2 of 2025', 'filed_date': '2025-04-16'},
+            ],
+        )
+        digest = self._run([merger], monkeypatch)
+        assert [m['merger_id'] for m in digest['deals_appealed_to_tribunal']] == ['MN-40005']
+
     def test_appeal_already_in_previous_digest_is_not_repeated(self, monkeypatch):
         merger = self._appealed_merger('MN-40003', '2025-04-11')  # prior Fri, in window
         previous_digest = {'deals_appealed_to_tribunal': [{'merger_id': 'MN-40003'}]}

@@ -1,0 +1,146 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/apiam-goulburn-valley-equine-hospital",
+  "merger_name": "Apiam - Goulburn Valley Equine Hospital",
+  "status": "Under assessment",
+  "merger_id": "MN-80045",
+  "effective_notification_datetime": "2026-09-30T12:00:00Z",
+  "original_notification_datetime": "2026-09-30T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-11-12T12:00:00Z",
+  "consultation_response_due_date": "2026-10-08T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "AAH VETERINARY SERVICES PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "31 607 993 233",
+      "party_page": {
+        "id": "aah-veterinary-services-pty-ltd",
+        "name": "Aah Veterinary Services Pty Ltd"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "GOULBURN VALLEY EQUINE HOSPITAL PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "66 007 039 750",
+      "party_page": {
+        "id": "goulburn-valley-equine-hospital-pty-ltd",
+        "name": "Goulburn Valley Equine Hospital Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "APIAM ANIMAL HEALTH LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "50 604 961 024",
+      "party_page": {
+        "id": "apiam-animal-health-limited",
+        "name": "Apiam Animal Health Limited"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "0191",
+      "name": "Horse Farming"
+    },
+    {
+      "code": "0529",
+      "name": "Other Agriculture and Fishing Support Services"
+    },
+    {
+      "code": "6970",
+      "name": "Veterinary Services"
+    }
+  ],
+  "merger_description": "AAH Veterinary Services Pty Ltd (**AAH**), a wholly-owned subsidiary of Apiam Animal Health Limited (**Apiam**), proposes to acquire 100% of the business and business assets of Goulburn Valley Equine Hospital (the **Acquisition**).\n\nApiam is a rural veterinary businesses, comprising more than 80 veterinary clinics and ancillary business sites across Australia, and supplies a range of veterinary services across Australia. This includes companion animal, equine, dairy, beef cattle, sheep and goat, pig, poultry and mixed animal veterinary services, together with veterinary diagnostics, emergency and after-hours services, reproductive and herd health services, and pathology, laboratory and advisory services. Apiam is ultimately owned and controlled by funds managed and advised by Adamantem Capital Management.\n\nGoulburn Valley Equine Hospital is located in the Goulburn Valley region in Shepparton, Victoria. It primarily supplies complete equine veterinary services, including ambulatory services and specialist equine referral services in the fields of lameness, medicine, surgery, dental and reproduction.",
+  "events": [
+    {
+      "date": "2026-09-30T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Apiam%20-%20Goulburn%20Valley%20Equine%20Hospital%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-80045/Apiam - Goulburn Valley Equine Hospital - Questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-30T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-95040",
+      "merger_name": "Apiam \u2013 Seymour Equine Clinic",
+      "acquirers": [
+        "AAH VETERINARY SERVICES PTY LTD"
+      ],
+      "targets": [
+        "HORSE AROUND PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-95003",
+      "merger_name": "CVS Group - Pittwater Animal Hospital",
+      "acquirers": [
+        "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
+      ],
+      "targets": [
+        "PITTWATER ANIMAL HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-75050",
+      "merger_name": "Perun (TPG) - Zembl",
+      "acquirers": [
+        "Perun BidCo Pty Ltd",
+        "Perun TopCo Pty Ltd"
+      ],
+      "targets": [
+        "ZEMBL PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 19,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 28,
+    "as_of": "2026-09-30",
+    "estimated_at": "2026-09-30",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 25,
+    "min_days": null,
+    "max_days": 37,
+    "id_issued_estimated": "2026-09-05",
+    "id_issued_before": null,
+    "id_issued_after": "2026-08-24",
+    "min_days_witness": null,
+    "max_days_witness": "WA-80041",
+    "basis": "upper-bound-only",
+    "method_version": 1
+  }
+}

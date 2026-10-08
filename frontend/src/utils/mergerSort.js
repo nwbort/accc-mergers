@@ -38,53 +38,73 @@ export const splitSort = (sortBy) => ({
 // and constructing a collator per comparison is far slower than localeCompare.
 const nameCollator = new Intl.Collator(undefined, { sensitivity: 'base', numeric: true });
 
+// The ACCC stamps every event at a nominal midday, so a day's worth of updates
+// all tie on date. The register page's own modified time (to the second, with a
+// +10:00/+11:00 offset, hence parsed rather than string-compared) is the real
+// sequence within that day. Missing values sort as oldest.
+const modifiedMs = (m) => {
+  const t = Date.parse(m.page_modified_datetime);
+  return Number.isNaN(t) ? 0 : t;
+};
+
 export const sortMergers = (list, sortBy = DEFAULT_SORT) => {
-  return [...list].sort((a, b) => {
-    switch (sortBy) {
-      case 'notification-asc': {
-        const dateA = a.effective_notification_datetime || '';
-        const dateB = b.effective_notification_datetime || '';
-        return dateA.localeCompare(dateB);
-      }
-      case 'name-asc':
-        return nameCollator.compare(a.merger_name || '', b.merger_name || '');
-      case 'name-desc':
-        return nameCollator.compare(b.merger_name || '', a.merger_name || '');
-      case 'determination-desc': {
-        const dateA = a.determination_publication_date;
-        const dateB = b.determination_publication_date;
-        if (!dateA && !dateB) return 0;
-        if (!dateA) return 1;
-        if (!dateB) return -1;
-        return dateB.localeCompare(dateA);
-      }
-      case 'determination-asc': {
-        const dateA = a.determination_publication_date;
-        const dateB = b.determination_publication_date;
-        if (!dateA && !dateB) return 0;
-        if (!dateA) return 1;
-        if (!dateB) return -1;
-        return dateA.localeCompare(dateB);
-      }
-      case 'notification-desc':
-        return (b.effective_notification_datetime || '').localeCompare(a.effective_notification_datetime || '');
-      case 'modified-asc': {
-        const dateA = a.latest_event_date;
-        const dateB = b.latest_event_date;
-        if (!dateA && !dateB) return 0;
-        if (!dateA) return 1;
-        if (!dateB) return -1;
-        return dateA.localeCompare(dateB);
-      }
-      case 'modified-desc':
-      default: {
-        const dateA = a.latest_event_date;
-        const dateB = b.latest_event_date;
-        if (!dateA && !dateB) return 0;
-        if (!dateA) return 1;
-        if (!dateB) return -1;
-        return dateB.localeCompare(dateA);
-      }
+  const byDate = (a, b) => compareByDate(a, b, sortBy);
+  return [...list].sort((a, b) => byDate(a, b) || tieBreak(a, b, sortBy));
+};
+
+// Direction follows the sort so "Oldest first" reverses the whole order,
+// ties included. Only the "Last updated" sort has a real sequence to use.
+const tieBreak = (a, b, sortBy) => {
+  if (sortBy === 'modified-asc') return modifiedMs(a) - modifiedMs(b);
+  if (sortBy === 'modified-desc') return modifiedMs(b) - modifiedMs(a);
+  return 0;
+};
+
+const compareByDate = (a, b, sortBy) => {
+  switch (sortBy) {
+    case 'notification-asc': {
+      const dateA = a.effective_notification_datetime || '';
+      const dateB = b.effective_notification_datetime || '';
+      return dateA.localeCompare(dateB);
     }
-  });
+    case 'name-asc':
+      return nameCollator.compare(a.merger_name || '', b.merger_name || '');
+    case 'name-desc':
+      return nameCollator.compare(b.merger_name || '', a.merger_name || '');
+    case 'determination-desc': {
+      const dateA = a.determination_publication_date;
+      const dateB = b.determination_publication_date;
+      if (!dateA && !dateB) return 0;
+      if (!dateA) return 1;
+      if (!dateB) return -1;
+      return dateB.localeCompare(dateA);
+    }
+    case 'determination-asc': {
+      const dateA = a.determination_publication_date;
+      const dateB = b.determination_publication_date;
+      if (!dateA && !dateB) return 0;
+      if (!dateA) return 1;
+      if (!dateB) return -1;
+      return dateA.localeCompare(dateB);
+    }
+    case 'notification-desc':
+      return (b.effective_notification_datetime || '').localeCompare(a.effective_notification_datetime || '');
+    case 'modified-asc': {
+      const dateA = a.latest_event_date;
+      const dateB = b.latest_event_date;
+      if (!dateA && !dateB) return 0;
+      if (!dateA) return 1;
+      if (!dateB) return -1;
+      return dateA.localeCompare(dateB);
+    }
+    case 'modified-desc':
+    default: {
+      const dateA = a.latest_event_date;
+      const dateB = b.latest_event_date;
+      if (!dateA && !dateB) return 0;
+      if (!dateA) return 1;
+      if (!dateB) return -1;
+      return dateB.localeCompare(dateA);
+    }
+  }
 };

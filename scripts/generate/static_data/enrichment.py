@@ -685,22 +685,126 @@ def _appeal_event(doc: dict, appeal: dict) -> dict:
     }
 
 
+def _appeal_record(appeal: dict) -> dict:
+    """One tribunal matter as published on a merger's ``appeals`` list."""
+    return {
+        'tribunal_number': appeal.get('tribunal_number'),
+        'tribunal_url': appeal.get('tribunal_url'),
+        'appeal_type': appeal.get('appeal_type'),
+        'appellant': appeal.get('appellant'),
+        'status': appeal.get('status', tribunal.DEFAULT_APPEAL_STATUS),
+        'outcome': appeal.get('outcome'),
+        # The ACCC-style determination that stands once the appeal is
+        # decided — the same as the ACCC's when affirmed, the opposite when
+        # set aside. Stored explicitly (never derived) and used to render an
+        # appeal-aware status badge, e.g. "Approved · on appeal".
+        'effective_determination': appeal.get('effective_determination'),
+        'filed_date': appeal.get('filed_date'),
+        # Scheduled tribunal hearing start date (bare 'YYYY-MM-DD', optional).
+        # Surfaced as a future "Tribunal hearing" event while the appeal is
+        # current — see static_data.outputs.upcoming_events and the frontend
+        # TrackingContext.
+        'hearing_date': appeal.get('hearing_date'),
+        'concluded_date': appeal.get('concluded_date'),
+        'documents': appeal.get('documents', []),
+    }
+
+
+def _join_names(names: list) -> str | None:
+    """``['A', 'B', 'C']`` → ``'A, B and C'``, dropping blanks and repeats."""
+    unique = list(dict.fromkeys(n for n in names if n))
+    if not unique:
+        return None
+    if len(unique) == 1:
+        return unique[0]
+    return f"{', '.join(unique[:-1])} and {unique[-1]}"
+
+
+def _deciding_appeal(concluded: list[dict]) -> dict:
+    """The concluded matter whose outcome speaks for the merger.
+
+    Applications against the same decision are normally heard together, so
+    their outcomes agree. Where they don't, a withdrawal says nothing about
+    the decision itself: the latest matter the Tribunal actually decided
+    wins, and only when every one was withdrawn does a withdrawal stand.
+    """
+    by_date = sorted(concluded, key=lambda a: a.get('concluded_date') or '')
+    decided = [a for a in by_date if a.get('outcome') != tribunal.OUTCOME_WITHDRAWN]
+    return (decided or by_date)[-1]
+
+
+def summarise_appeals(records: list[dict]) -> dict:
+    """The merger-level ``appeal`` summary of its tribunal matters.
+
+    Everything that treats the appeal as a fact about the merger — the status
+    badge, "under appeal", the digest and email rows, the dashboard card, the
+    upcoming hearing — reads this, so it keeps the single-record shape those
+    readers were written against. With one matter it *is* that matter's
+    record, minus the documents (which live on ``appeals``). With several:
+
+      * the merger is under appeal while any matter is current, and only once
+        all have concluded does it take an outcome (see :func:`_deciding_appeal`)
+        and the last ``concluded_date``;
+      * ``filed_date`` is the first lodgement, ``hearing_date`` the earliest
+        hearing among the matters still current (or among all, once none is);
+      * ``appellant`` and ``tribunal_number`` list every matter's, joined
+        ("IAG and RACWA"); ``tribunal_url`` and ``appeal_type`` are the first
+        matter's, since each names a single thing.
+    """
+    first = records[0]
+    current = [a for a in records if a['status'] != tribunal.APPEAL_STATUS_CONCLUDED]
+    concluded = [a for a in records if a['status'] == tribunal.APPEAL_STATUS_CONCLUDED]
+    deciding = None if current else _deciding_appeal(concluded)
+
+    filed_dates = [a['filed_date'] for a in records if a.get('filed_date')]
+    hearings = [a['hearing_date'] for a in (current or records) if a.get('hearing_date')]
+    concluded_dates = [a['concluded_date'] for a in concluded if a.get('concluded_date')]
+
+    return {
+        'tribunal_number': _join_names([a.get('tribunal_number') for a in records]),
+        'tribunal_url': first.get('tribunal_url'),
+        'appeal_type': first.get('appeal_type'),
+        'appellant': _join_names([a.get('appellant') for a in records]),
+        'status': (
+            tribunal.APPEAL_STATUS_CURRENT if current else tribunal.APPEAL_STATUS_CONCLUDED
+        ),
+        'outcome': deciding.get('outcome') if deciding else None,
+        'effective_determination': (
+            deciding.get('effective_determination') if deciding else None
+        ),
+        'filed_date': min(filed_dates) if filed_dates else None,
+        'hearing_date': min(hearings) if hearings else None,
+        'concluded_date': (
+            max(concluded_dates) if deciding and concluded_dates else None
+        ),
+    }
+
+
 def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
     """Attach Australian Competition Tribunal appeal data to mergers in-place.
 
-    For every merger with an entry in ``appeals`` (keyed by merger_id):
+    ``appeals`` is keyed by merger_id, each entry the list of tribunal matters
+    filed against that merger's decision (see
+    :func:`constants.tribunal.appeal_records`; a single record still counts as
+    one). There is usually one, but each applicant can lodge its own — the
+    acquirer and the target each did for MN-65005. For every merger with an
+    entry:
 
-      * ``appeal`` holds the full appeal record (tribunal number, tribunal URL,
-        appeal type, appellant, lifecycle status, outcome, filed date and
-        documents), so the tribunal link and filings stay visible on the detail
-        page even after an appeal has finished;
-      * ``under_appeal`` is set to ``True`` only while the appeal is *current*
+      * ``appeals`` holds one full record per tribunal matter (tribunal number,
+        tribunal URL, appeal type, appellant, lifecycle status, outcome, filed
+        and hearing dates, documents), oldest filing first, so each matter's
+        link and filings stay visible on the detail page even after it has
+        finished;
+      * ``appeal`` is the merger-level summary of those matters
+        (:func:`summarise_appeals`) — what the badges, digest, dashboard and
+        upcoming events read;
+      * ``under_appeal`` is set to ``True`` only while some matter is *current*
         (see :func:`constants.tribunal.is_current_appeal`) — a concluded or
         withdrawn appeal leaves an appeal record but is not "under appeal", so
         the badge does not linger. This flag is propagated to the
         list/phase2/timeline outputs; and
-      * each appeal document is folded into the merger's event timeline so the
-        filings surface alongside ACCC events.
+      * each matter's documents are folded into the merger's event timeline so
+        the filings surface alongside ACCC events.
 
     The ACCC-scraped ``status`` / ``accc_determination`` fields are left
     untouched — the appeal is layered on top rather than replacing the
@@ -712,35 +816,26 @@ def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
     linked = 0
     for merger in enriched_mergers:
         mid = merger.get('merger_id', '')
-        appeal = appeals.get(mid)
-        if not appeal:
+        raw_records = tribunal.appeal_records(appeals.get(mid))
+        if not raw_records:
             continue
 
-        status = appeal.get('status', tribunal.DEFAULT_APPEAL_STATUS)
-        merger['under_appeal'] = tribunal.is_current_appeal(appeal)
-        merger['appeal'] = {
-            'tribunal_number': appeal.get('tribunal_number'),
-            'tribunal_url': appeal.get('tribunal_url'),
-            'appeal_type': appeal.get('appeal_type'),
-            'appellant': appeal.get('appellant'),
-            'status': status,
-            'outcome': appeal.get('outcome'),
-            # The ACCC-style determination that stands once the appeal is
-            # decided — the same as the ACCC's when affirmed, the opposite when
-            # set aside. Stored explicitly (never derived) and used to render an
-            # appeal-aware status badge, e.g. "Approved · on appeal".
-            'effective_determination': appeal.get('effective_determination'),
-            'filed_date': appeal.get('filed_date'),
-            # Scheduled tribunal hearing start date (bare 'YYYY-MM-DD', optional).
-            # Surfaced as a future "Tribunal hearing" event while the appeal is
-            # current — see static_data.outputs.upcoming_events and the frontend
-            # TrackingContext.
-            'hearing_date': appeal.get('hearing_date'),
-            'concluded_date': appeal.get('concluded_date'),
-            'documents': appeal.get('documents', []),
-        }
+        # Oldest filing first; a record without a filed_date keeps its place
+        # in the file after the dated ones (sorted() is stable).
+        raw_records = sorted(
+            raw_records, key=lambda a: (a.get('filed_date') is None, a.get('filed_date') or '')
+        )
+        records = [_appeal_record(a) for a in raw_records]
 
-        appeal_events = [_appeal_event(doc, appeal) for doc in appeal.get('documents', [])]
+        merger['under_appeal'] = any(tribunal.is_current_appeal(a) for a in records)
+        merger['appeals'] = records
+        merger['appeal'] = summarise_appeals(records)
+
+        appeal_events = [
+            _appeal_event(doc, record)
+            for record in records
+            for doc in record['documents']
+        ]
         if appeal_events:
             merger['events'] = list(merger.get('events') or []) + appeal_events
 

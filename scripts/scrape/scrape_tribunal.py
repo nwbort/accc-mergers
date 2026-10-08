@@ -5,15 +5,18 @@ Background
 ----------
 When an ACCC merger decision is taken to the Australian Competition Tribunal,
 the tribunal publishes a matter page listing the documents filed in the
-review. ``data/processed/tribunal_appeals.json`` holds one hand-maintained
-record per merger (keyed by ACCC merger_id) with the tribunal number, URL,
-appeal type, appellant, status and a ``documents[]`` list that is folded into
-the merger's event timeline (see ``static_data.enrichment.link_tribunal_appeals``).
+review. ``data/processed/tribunal_appeals.json`` holds, per merger (keyed by
+ACCC merger_id), a list of hand-maintained records — one per tribunal matter,
+since each applicant can lodge its own (both parties to MN-65005 did) — with
+the tribunal number, URL, appeal type, appellant, status and a ``documents[]``
+list that is folded into the merger's event timeline (see
+``static_data.enrichment.link_tribunal_appeals``).
 
 Until now the ``documents[]`` list was maintained by hand. This script fills
 it in from the live tribunal pages. The "list of pages to scrape" is simply the
-set of entries in tribunal_appeals.json that carry a ``tribunal_url`` — that
-file is the manual list, maintained by hand when a new matter is added.
+set of records in tribunal_appeals.json that carry a ``tribunal_url`` — that
+file is the manual list, maintained by hand when a new matter is added. Each
+matter page's documents go to its own record, never to a sibling matter's.
 
 Getting past Cloudflare — a real browser, in CI
 -----------------------------------------------
@@ -77,8 +80,8 @@ Normally this runs from CI on a schedule (the "Scrape Tribunal" workflow), but
 it works anywhere a Chrome/Chromium binary is available::
 
   pip install -r scripts/requirements-tribunal.txt   # nodriver, requests, bs4, lxml
-  python -m scripts.scrape.scrape_tribunal                 # scrape + download every entry with a tribunal_url
-  python -m scripts.scrape.scrape_tribunal MN-01068 ...    # scrape only these merger_ids
+  python -m scripts.scrape.scrape_tribunal                 # scrape + download every matter with a tribunal_url
+  python -m scripts.scrape.scrape_tribunal MN-01068 ...    # scrape only these merger_ids' matters
   python -m scripts.scrape.scrape_tribunal --no-download   # record metadata only, skip file downloads
   python -m scripts.scrape.scrape_tribunal --dry-run       # parse and report, don't write or download
   git add data/processed/tribunal_appeals.json data/raw/matters
@@ -132,6 +135,7 @@ from urllib.parse import unquote, urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
+from scripts.constants.tribunal import appeal_records
 from scripts.paths import REPO_ROOT
 
 # nodriver is only needed to actually fetch pages (it drives Chrome). Import it
@@ -782,8 +786,8 @@ def unparsed_document_links(
     return missed
 
 
-def save_page_snapshot(merger_id: str, html: str) -> None:
-    """Write the fetched page to ``$TRIBUNAL_PAGE_SNAPSHOT_DIR``, if set.
+def save_page_snapshot(name: str, html: str) -> None:
+    """Write the fetched page to ``$TRIBUNAL_PAGE_SNAPSHOT_DIR/{name}.html``, if set.
 
     The page sits behind Cloudflare, so when a run and the live site disagree
     this snapshot (uploaded as a workflow artifact) is the only record of what
@@ -794,7 +798,7 @@ def save_page_snapshot(merger_id: str, html: str) -> None:
         return
     path = Path(snapshot_dir)
     path.mkdir(parents=True, exist_ok=True)
-    (path / f"{merger_id}.html").write_text(html, encoding="utf-8")
+    (path / f"{name}.html").write_text(html, encoding="utf-8")
 
 
 def fresh_page_url(url: str) -> str:
@@ -1183,17 +1187,48 @@ def dropped_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
     ]
 
 
+def matter_label(merger_id: str, record: dict) -> str:
+    """How a run's output names one tribunal matter, e.g. ``MN-65005 (ACT 3 of 2026)``.
+
+    A merger can have more than one matter, so the merger_id alone doesn't say
+    which page a line is about.
+    """
+    number = record.get("tribunal_number")
+    return f"{merger_id} ({number})" if number else merger_id
+
+
+def snapshot_name(merger_id: str, url: str) -> str:
+    """File stem for a page snapshot: the merger_id plus the matter's URL slug.
+
+    ``MN-65005-act-3-of-2026`` — unique per matter, where the merger_id alone
+    would let a merger's second matter overwrite its first.
+    """
+    slug = urlparse(url).path.rstrip("/").rsplit("/", 1)[-1]
+    slug = re.sub(r"[^A-Za-z0-9._-]+", "-", slug).strip("-")
+    return f"{merger_id}-{slug}" if slug else merger_id
+
+
+def matter_key(merger_id: str, record: dict) -> tuple[str, str]:
+    """Identify one tribunal matter across a run: ``(merger_id, tribunal_url)``."""
+    return (merger_id, record.get("tribunal_url") or "")
+
+
 async def scrape_matters(
-    targets: list[str], records: dict, do_download: bool
-) -> tuple[dict[str, list[dict]], list[str], list[tuple[str, str]]]:
+    targets: list[tuple[str, dict]], do_download: bool
+) -> tuple[dict[tuple[str, str], list[dict]], list[str], list[tuple[str, str]]]:
     """Drive one Chrome across every target matter page.
 
-    Returns ``(scraped_by_id, failed, unmirrored)`` where ``scraped_by_id`` maps
-    merger_id → parsed document list (already carrying ``url_gh`` for anything
-    downloaded), ``failed`` lists the merger_ids whose page couldn't be fetched,
+    ``targets`` holds ``(merger_id, record)`` for each tribunal matter to
+    scrape; a merger appears once per matter. Returns ``(scraped, failed,
+    unmirrored)`` where ``scraped`` maps :func:`matter_key` → parsed document
+    list (already carrying ``url_gh`` for anything downloaded), ``failed``
+    labels the matters whose page couldn't be fetched (:func:`matter_label`),
     and ``unmirrored`` holds ``(merger_id, url)`` for each tribunal-hosted
     document that was recorded but couldn't be downloaded. Matters whose page
     parsed to zero documents are omitted from all three (left untouched).
+
+    Documents are mirrored into the *merger's* directory whichever matter they
+    came from, since that is where the detail page serves them from.
     """
     if uc is None:
         raise RuntimeError(
@@ -1213,7 +1248,7 @@ async def scrape_matters(
         except Exception:
             pass
         # Nothing could be fetched — every target is a failure.
-        return {}, list(targets), []
+        return {}, [matter_label(mid, rec) for mid, rec in targets], []
 
     try:
         browser = await _with_timeout(
@@ -1227,36 +1262,37 @@ async def scrape_matters(
         except Exception:
             pass
         # Nothing could be fetched — every target is a failure.
-        return {}, list(targets), []
+        return {}, [matter_label(mid, rec) for mid, rec in targets], []
 
-    scraped_by_id: dict[str, list[dict]] = {}
+    scraped_by_key: dict[tuple[str, str], list[dict]] = {}
     failed: list[str] = []
     unmirrored: list[tuple[str, str]] = []
     session_headers: dict | None = None
 
     try:
-        for mid in targets:
-            url = records[mid].get("tribunal_url")
+        for mid, record in targets:
+            label = matter_label(mid, record)
+            url = record.get("tribunal_url")
             if not url:
-                print(f"Skipping {mid}: no tribunal_url")
+                print(f"Skipping {label}: no tribunal_url")
                 continue
 
-            print(f"Scraping {mid}: {url}", flush=True)
+            print(f"Scraping {label}: {url}", flush=True)
             tab, html = await fetch_page(browser, fresh_page_url(url))
             if html is None:
                 print(
-                    f"  FAILED: challenge did not clear for {mid} ({url})",
+                    f"  FAILED: challenge did not clear for {label} ({url})",
                     file=sys.stderr,
                 )
                 gha_warning(
                     f"scrape_tribunal: Cloudflare challenge did not clear for "
-                    f"{mid} ({url})"
+                    f"{label} ({url})"
                 )
-                failed.append(mid)
+                failed.append(label)
                 continue
 
             await log_cache_headers(tab, url)
-            save_page_snapshot(mid, html)
+            save_page_snapshot(snapshot_name(mid, url), html)
             scraped = parse_matter_page(html, url)
             missed = unparsed_document_links(html, url, scraped)
             if missed:
@@ -1269,13 +1305,13 @@ async def scrape_matters(
                 for link_url, text in missed:
                     print(f"    {text or '(no link text)'}: {link_url}", file=sys.stderr)
                 gha_warning(
-                    f"scrape_tribunal: {len(missed)} document link(s) for {mid} "
+                    f"scrape_tribunal: {len(missed)} document link(s) for {label} "
                     f"were not parsed (outside a recognised document table): "
                     f"{summarise_urls([u for u, _ in missed])}"
                 )
             if not scraped:
                 print(
-                    f"  Warning: no documents parsed for {mid}; leaving existing "
+                    f"  Warning: no documents parsed for {label}; leaving existing "
                     f"entry untouched (the page layout may have changed).",
                     file=sys.stderr,
                 )
@@ -1328,12 +1364,12 @@ async def scrape_matters(
                 if missing:
                     unmirrored.extend((mid, url) for url in missing)
                     gha_warning(
-                        f"scrape_tribunal: {len(missing)} document(s) for {mid} "
+                        f"scrape_tribunal: {len(missing)} document(s) for {label} "
                         f"were recorded without a local mirror: "
                         f"{summarise_urls(missing)}"
                     )
 
-            scraped_by_id[mid] = scraped
+            scraped_by_key[matter_key(mid, record)] = scraped
             sections = sorted({d["section"] for d in scraped if d.get("section")})
             summary = f"  Parsed {len(scraped)} document(s)"
             if sections:
@@ -1349,7 +1385,7 @@ async def scrape_matters(
         except Exception:
             pass
 
-    return scraped_by_id, failed, unmirrored
+    return scraped_by_key, failed, unmirrored
 
 
 def scrape(
@@ -1361,29 +1397,39 @@ def scrape(
         unknown = [mid for mid in merger_ids if mid not in records]
         for mid in unknown:
             print(f"Warning: {mid} is not in tribunal_appeals.json", file=sys.stderr)
-        targets = [mid for mid in merger_ids if mid in records]
+        selected = [mid for mid in merger_ids if mid in records]
     else:
-        targets = [
-            mid for mid, rec in records.items() if rec.get("tribunal_url")
-        ]
+        selected = list(records)
+
+    # One target per tribunal matter. The records are the raw dict's own
+    # objects (appeal_records doesn't copy), so updating one updates ``raw``.
+    targets = [
+        (mid, record)
+        for mid in selected
+        for record in appeal_records(records[mid])
+        if record.get("tribunal_url")
+    ]
 
     if not targets:
         print("No tribunal matters with a tribunal_url to scrape.")
         return 0
 
-    scraped_by_id, failed, unmirrored = uc.loop().run_until_complete(
-        scrape_matters(targets, records, do_download=download and not dry_run)
+    scraped_by_key, failed, unmirrored = uc.loop().run_until_complete(
+        scrape_matters(targets, do_download=download and not dry_run)
     )
 
     changed = 0
     delisted: list[tuple[str, dict]] = []
-    for mid, scraped in scraped_by_id.items():
-        record = records[mid]
+    for mid, record in targets:
+        scraped = scraped_by_key.get(matter_key(mid, record))
+        if scraped is None:
+            continue
+        label = matter_label(mid, record)
         dropped = dropped_documents(record.get("documents"), scraped)
-        delisted.extend((mid, doc) for doc in dropped)
+        delisted.extend((label, doc) for doc in dropped)
         if dropped:
             gha_warning(
-                f"scrape_tribunal: {len(dropped)} document(s) for {mid} are no "
+                f"scrape_tribunal: {len(dropped)} document(s) for {label} are no "
                 f"longer listed on the tribunal page and have been kept: "
                 f"{summarise_urls([d['url'] for d in dropped if d.get('url')])}"
             )
@@ -1412,9 +1458,9 @@ def scrape(
             f"tribunal page and were kept on file:",
             file=sys.stderr,
         )
-        for mid, doc in delisted:
+        for matter, doc in delisted:
             label = doc.get("description") or doc.get("url") or "(untitled)"
-            print(f"  {mid}: {doc.get('date') or '?'} — {label}", file=sys.stderr)
+            print(f"  {matter}: {doc.get('date') or '?'} — {label}", file=sys.stderr)
 
     if unmirrored:
         # Not fatal: the document is still recorded with its tribunal ``url``,
@@ -1449,7 +1495,7 @@ def main() -> int:
     parser.add_argument(
         "merger_ids",
         nargs="*",
-        help="Optional merger_ids to scrape (default: all entries with a tribunal_url).",
+        help="Optional merger_ids whose matters to scrape (default: every matter with a tribunal_url).",
     )
     parser.add_argument(
         "--dry-run",

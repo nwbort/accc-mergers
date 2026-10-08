@@ -29,17 +29,25 @@ const ALLOWED_ORIGIN = "https://mergers.fyi";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Feature-usage events the frontend is allowed to ping. Each entry is an
-// aggregate daily counter only — no identifiers of any kind are ever
+// aggregate daily counter only — no user identifiers of any kind are ever
 // attached. To start tracking a new feature, add its event name here and
 // have the frontend call pingFeatureEvent() (frontend/src/utils/trackEvent.js)
 // at the point of use; no schema change or new endpoint is needed.
 const ALLOWED_EVENT_TYPES = new Set([
-  "track_merger", // a merger was added to the user's tracked list
   "feedback_popup_dismissed", // the feedback popup's close button was clicked
   "feedback_popup_clicked", // the feedback popup's "Share feedback" link was clicked
   "promo_card_dismissed", // the dashboard promo card's close button was clicked
   "promo_card_clicked", // the dashboard promo card was clicked through
 ]);
+
+// A merger was added to the user's tracked list: `track_merger_{id}`, one
+// counter per merger (e.g. track_merger_MN-01016). Matched by pattern, not
+// listed, since the set of merger ids grows with the register.
+const TRACK_MERGER_EVENT_RE = /^track_merger_(MN|WA)-\d{5}$/;
+
+function isAllowedEventType(type) {
+  return ALLOWED_EVENT_TYPES.has(type) || TRACK_MERGER_EVENT_RE.test(type);
+}
 
 // ---------------------------------------------------------------------------
 // CORS helpers
@@ -146,6 +154,27 @@ async function turnstileGate(token, request, env, origin) {
 }
 
 // ---------------------------------------------------------------------------
+// Request body helpers
+// ---------------------------------------------------------------------------
+
+// Parse the JSON body as a plain object, or return null. A body of `null`, an
+// array or a bare scalar is valid JSON but not a request we understand.
+async function readJsonObject(request) {
+  try {
+    const body = await request.json();
+    return body && typeof body === "object" && !Array.isArray(body) ? body : null;
+  } catch {
+    return null;
+  }
+}
+
+// A trimmed string field, or "" when it is missing or not a string, so a
+// mistyped field fails validation as a 400 rather than throwing.
+function stringField(body, key) {
+  return typeof body[key] === "string" ? body[key].trim() : "";
+}
+
+// ---------------------------------------------------------------------------
 // Handler: POST / — digest email signup
 // ---------------------------------------------------------------------------
 
@@ -161,15 +190,13 @@ async function handleSubscribe(request, env, origin) {
     );
   }
 
-  let body;
-  try {
-    body = await request.json();
-  } catch {
+  const body = await readJsonObject(request);
+  if (!body) {
     return jsonResponse({ error: "Invalid request body" }, 400, origin, env);
   }
 
-  const email = (body.email || "").trim().toLowerCase();
-  const turnstileToken = body["cf-turnstile-response"] || "";
+  const email = stringField(body, "email").toLowerCase();
+  const turnstileToken = stringField(body, "cf-turnstile-response");
 
   if (!email) {
     return jsonResponse({ error: "Email address is required" }, 400, origin, env);
@@ -242,16 +269,14 @@ async function handleFeedback(request, env, origin) {
     );
   }
 
-  let body;
-  try {
-    body = await request.json();
-  } catch {
+  const body = await readJsonObject(request);
+  if (!body) {
     return jsonResponse({ error: "Invalid request body" }, 400, origin, env);
   }
 
-  const message = (body.message || "").trim();
-  const email = (body.email || "").trim().toLowerCase();
-  const turnstileToken = body["cf-turnstile-response"] || "";
+  const message = stringField(body, "message");
+  const email = stringField(body, "email").toLowerCase();
+  const turnstileToken = stringField(body, "cf-turnstile-response");
 
   if (!message) {
     return jsonResponse({ error: "Message is required" }, 400, origin, env);
@@ -304,15 +329,13 @@ async function handleEvent(request, env, origin) {
     return jsonResponse({ error: "Too many requests" }, 429, origin, env);
   }
 
-  let body;
-  try {
-    body = await request.json();
-  } catch {
+  const body = await readJsonObject(request);
+  if (!body) {
     return jsonResponse({ error: "Invalid request body" }, 400, origin, env);
   }
 
-  const type = (body.type || "").trim();
-  if (!ALLOWED_EVENT_TYPES.has(type)) {
+  const type = stringField(body, "type");
+  if (!isAllowedEventType(type)) {
     return jsonResponse({ error: "Unknown event type" }, 400, origin, env);
   }
 

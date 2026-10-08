@@ -584,14 +584,14 @@
         "other": [
           {
             "merger_id": "MN-25049",
-            "merger_name": "Merck KGaA / Bio-Techne",
+            "merger_name": "Merck KGaA\u2013Bio-Techne",
             "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
+            "status": "Assessment completed",
+            "determination": "Approved",
             "has_conditions": false,
             "phase": "Phase 1",
             "notification_date": "2026-09-09T12:00:00Z",
-            "determination_date": null
+            "determination_date": "2026-10-08T12:00:00Z"
           }
         ]
       },
@@ -599,8 +599,14 @@
       "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
       "waiver_duration": null
     },
     "the-crown-in-the-right-of-the-state-of-tasmania": {

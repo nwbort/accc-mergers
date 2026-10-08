@@ -50,6 +50,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from scripts.atproto import config
+from scripts.atproto.card_image import render_card
 from scripts.atproto.client import XrpcError
 from scripts.atproto.connect import open_client
 from scripts.atproto.records import load_matters
@@ -359,6 +360,28 @@ def upload_card_image(client, path: Path | None = None) -> dict | None:
         return None
 
 
+def upload_milestone_card(client, milestone: Milestone, fallback: dict | None) -> dict | None:
+    """Upload this milestone's own card image, or return ``fallback`` if it can't be.
+
+    The image is drawn in memory and never touches disk. It is uploaded per
+    post because it says something about that post; the PDS keeps the blob
+    for as long as the post's record references it.
+    """
+    png = render_card(
+        key=milestone.key,
+        headline=milestone.headline,
+        title=milestone.title,
+        detail=milestone.detail,
+    )
+    if png is None:
+        return fallback
+    try:
+        return client.upload_blob(png, "image/png")
+    except XrpcError as exc:
+        print(f"  card upload failed for {milestone.key} ({exc}); using the shared image", file=sys.stderr)
+        return fallback
+
+
 def already_posted(milestone: Milestone, recent: list[dict]) -> str | None:
     """The at:// URI of a recent post that already announced ``milestone``.
 
@@ -486,12 +509,15 @@ def main(argv: list[str] | None = None) -> int:
         print("Nothing to post.")
         return 0
 
-    thumb = upload_card_image(client)
+    # The shared image is the fallback for a card that can't be drawn or
+    # uploaded, so it is uploaded once up front and reused by any such post.
+    shared_thumb = upload_card_image(client)
 
     failures = 0
     try:
         for milestone in due[: args.max_posts]:
             created_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+            thumb = upload_milestone_card(client, milestone, shared_thumb)
             try:
                 result = client.create_record(
                     config.POST_COLLECTION,

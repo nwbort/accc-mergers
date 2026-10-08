@@ -111,40 +111,40 @@
     },
     {
       "merger_id": "MN-25049",
-      "merger_name": "Merck KGaA / Bio-Techne",
+      "merger_name": "Merck KGaA\u2013Bio-Techne",
       "acquirers": [
         "EMD Holdings NewCo Inc."
       ],
       "targets": [
         "Bio-Techne Corporation"
       ],
-      "status": "Under assessment"
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 238,
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 168,
     "as_of": "2026-09-24",
-    "estimated_at": "2026-09-25",
+    "estimated_at": "2026-09-30",
     "method_version": 2
   },
   "pre_notification": {
-    "estimated_days": 28,
-    "min_days": null,
+    "estimated_days": 14,
+    "min_days": 0,
     "max_days": 35,
-    "id_issued_estimated": "2026-08-27",
-    "id_issued_before": null,
+    "id_issued_estimated": "2026-09-10",
+    "id_issued_before": "2026-09-24",
     "id_issued_after": "2026-08-20",
-    "min_days_witness": null,
+    "min_days_witness": "MN-75058",
     "max_days_witness": "WA-75055",
-    "basis": "upper-bound-only",
+    "basis": "bracketed",
     "method_version": 1
   }
 }

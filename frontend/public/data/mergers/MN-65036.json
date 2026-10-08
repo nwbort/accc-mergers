@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/eneos-%E2%80%93-chevron-australia-downstream",
   "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-65036",
   "effective_notification_datetime": "2026-09-10T12:00:00Z",
   "original_notification_datetime": "2026-09-10T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-10-23T12:00:00Z",
+  "determination_publication_date": "2026-10-01T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-09-18T12:00:00Z",
   "acquirers": [
     {
@@ -62,7 +64,7 @@
       "name": "Financial Asset Investing"
     }
   ],
-  "merger_description": "ENEOS Holdings, Inc. via a wholly owned subsidiary (**ENEOS**), proposes to acquire 100% of the share capital of Chevron Australia Downstream Holdings Pty Ltd (**Chevron Australia Downstream**) (the **Acquisition**).\n\nENEOS Holdings is a Japanese petroleum and energy group. It operates five key business segments including petroleum products, oil and natural gas exploration and production, high performance materials, and electricity and renewable energy. In Australia, ENEOS\u2019 relevant operations are focused on the downstream wholesale distribution of fuels and lubricants, with a nominal retail fuel footprint in rural New South Wales.\n\nChevron Corporation is a US based multinational integrated energy company. It operates two key business segments including the upstream exploration, development, and production of crude oil and natural gas and the downstream refining, marketing, transportation, and distribution of petroleum products, petrochemicals, lubricants, and additives.\n\nChevron Australia Downstream encompasses Chevron\u2019s integrated downstream platform that distributes fuels and lubricants across Australia and includes three Queensland based proprietary terminals and a national network of retail service stations operated by either the company or third-party retailers.",
+  "merger_description": "ENEOS Holdings, Inc. via a wholly owned subsidiary (**ENEOS**), proposes to acquire 100% of the share capital of Chevron Australia Downstream Holdings Pty Ltd (**Chevron Australia Downstream**) (the **Acquisition**).\n\n  \n\nENEOS Holdings is a Japanese petroleum and energy group. It operates five key business segments including petroleum products, oil and natural gas exploration and production, high performance materials, and electricity and renewable energy. In Australia, ENEOS\u2019 relevant operations are focused on the downstream wholesale distribution of fuels and lubricants, with a nominal retail fuel footprint in rural New South Wales.\n\n  \n\nChevron Corporation is a US based multinational integrated energy company. It operates two key business segments including the upstream exploration, development, and production of crude oil and natural gas and the downstream refining, marketing, transportation, and distribution of petroleum products, petrochemicals, lubricants, and additives.\u00a0  \n\n\nChevron Australia Downstream encompasses Chevron\u2019s integrated downstream platform that distributes fuels and lubricants across Australia and includes three Queensland based proprietary terminals and a national network of retail service stations operated by either the company or third-party retailers.",
   "events": [
     {
       "date": "2026-09-11T12:00:00Z",
@@ -78,13 +80,27 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-01T12:00:00Z",
+      "title": "ENEOS \u2013 Chevron Australia Downstream - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/ENEOS%20-%20Chevron%20Australia%20Downstream%20-%20Straightforward%20Phase%201%20determination%20without%20conditions.pdf",
+      "determination_table_content": [
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, submissions from third parties and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The Acquisition would lead to a very small increase in ENEOS\u2019\nshare in the supply of secondary wholesale fuel and lubricants.\n\u2022 The merged entity would likely continue to face competition\nfrom multiple alternative suppliers of secondary wholesale fuel\nand lubricants."
+        }
+      ],
+      "url_gh": "/mergers/MN-65036/ENEOS - Chevron Australia Downstream - Straightforward Phase 1 determination without conditions.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-10-01T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "has_questionnaire": true,

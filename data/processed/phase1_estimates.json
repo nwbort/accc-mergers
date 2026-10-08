@@ -658,6 +658,20 @@
     "estimated_at": "2026-09-08",
     "method_version": 2
   },
+  "MN-10032": {
+    "expected_business_days": 26,
+    "range_business_days": [
+      22,
+      32
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "10 or more",
+    "question_count": 11,
+    "sample_size": 20,
+    "as_of": "2026-10-02",
+    "estimated_at": "2026-10-02",
+    "method_version": 2
+  },
   "MN-15002": {
     "expected_business_days": 16,
     "range_business_days": [
@@ -1134,6 +1148,20 @@
     "estimated_at": "2026-09-10",
     "method_version": 2
   },
+  "MN-25048": {
+    "expected_business_days": 19,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 28,
+    "as_of": "2026-09-28",
+    "estimated_at": "2026-09-30",
+    "method_version": 2
+  },
   "MN-25049": {
     "expected_business_days": 17,
     "range_business_days": [
@@ -1146,6 +1174,20 @@
     "sample_size": 151,
     "as_of": "2026-09-09",
     "estimated_at": "2026-09-10",
+    "method_version": 2
+  },
+  "MN-25053": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 170,
+    "as_of": "2026-10-01",
+    "estimated_at": "2026-10-02",
     "method_version": 2
   },
   "MN-30002": {
@@ -1314,6 +1356,20 @@
     "sample_size": 117,
     "as_of": "2026-08-05",
     "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-30033": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 175,
+    "as_of": "2026-10-07",
+    "estimated_at": "2026-10-08",
     "method_version": 2
   },
   "MN-35013": {
@@ -1734,6 +1790,34 @@
     "sample_size": 122,
     "as_of": "2026-08-15",
     "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-45029": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 170,
+    "as_of": "2026-09-30",
+    "estimated_at": "2026-09-30",
+    "method_version": 2
+  },
+  "MN-45030": {
+    "expected_business_days": 20,
+    "range_business_days": [
+      16,
+      26
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 6,
+    "sample_size": 20,
+    "as_of": "2026-10-06",
+    "estimated_at": "2026-10-06",
     "method_version": 2
   },
   "MN-50007": {
@@ -2282,6 +2366,20 @@
     "estimated_at": "2026-09-08",
     "method_version": 2
   },
+  "MN-60044": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      21
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": null,
+    "sample_size": 246,
+    "as_of": "2026-10-06",
+    "estimated_at": "2026-10-07",
+    "method_version": 2
+  },
   "MN-65005": {
     "expected_business_days": 17,
     "range_business_days": [
@@ -2478,6 +2576,20 @@
     "estimated_at": "2026-09-11",
     "method_version": 2
   },
+  "MN-65039": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 170,
+    "as_of": "2026-10-01",
+    "estimated_at": "2026-10-02",
+    "method_version": 2
+  },
   "MN-70005": {
     "expected_business_days": 16,
     "range_business_days": [
@@ -2616,6 +2728,20 @@
     "sample_size": 16,
     "as_of": "2026-08-10",
     "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-70039": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 170,
+    "as_of": "2026-09-30",
+    "estimated_at": "2026-10-01",
     "method_version": 2
   },
   "MN-75002": {
@@ -2814,6 +2940,20 @@
     "estimated_at": "2026-09-08",
     "method_version": 2
   },
+  "MN-75042": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 170,
+    "as_of": "2026-09-30",
+    "estimated_at": "2026-09-30",
+    "method_version": 2
+  },
   "MN-75043": {
     "expected_business_days": 20,
     "range_business_days": [
@@ -2885,17 +3025,31 @@
     "method_version": 2
   },
   "MN-75056": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 168,
+    "as_of": "2026-09-24",
+    "estimated_at": "2026-09-30",
+    "method_version": 2
+  },
+  "MN-75058": {
+    "expected_business_days": 19,
     "range_business_days": [
       16,
-      21
+      27
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 238,
-    "as_of": "2026-09-24",
-    "estimated_at": "2026-09-25",
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 5,
+    "sample_size": 28,
+    "as_of": "2026-09-29",
+    "estimated_at": "2026-09-30",
     "method_version": 2
   },
   "MN-80002": {
@@ -3052,6 +3206,20 @@
     "estimated_at": "2026-09-11",
     "method_version": 2
   },
+  "MN-80045": {
+    "expected_business_days": 19,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 28,
+    "as_of": "2026-09-30",
+    "estimated_at": "2026-09-30",
+    "method_version": 2
+  },
   "MN-85002": {
     "expected_business_days": 16,
     "range_business_days": [
@@ -3206,18 +3374,32 @@
     "estimated_at": "2026-09-08",
     "method_version": 2
   },
-  "MN-85054": {
-    "expected_business_days": 18,
+  "MN-85049": {
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 238,
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 173,
+    "as_of": "2026-10-02",
+    "estimated_at": "2026-10-05",
+    "method_version": 2
+  },
+  "MN-85054": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 168,
     "as_of": "2026-09-28",
-    "estimated_at": "2026-09-29",
+    "estimated_at": "2026-09-30",
     "method_version": 2
   },
   "MN-90006": {
@@ -3388,6 +3570,20 @@
     "estimated_at": "2026-09-08",
     "method_version": 2
   },
+  "MN-90037": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 173,
+    "as_of": "2026-10-02",
+    "estimated_at": "2026-10-02",
+    "method_version": 2
+  },
   "MN-95001": {
     "expected_business_days": 16,
     "range_business_days": [
@@ -3554,6 +3750,34 @@
     "sample_size": 24,
     "as_of": "2026-09-03",
     "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-95043": {
+    "expected_business_days": 19,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 5,
+    "sample_size": 28,
+    "as_of": "2026-10-02",
+    "estimated_at": "2026-10-06",
+    "method_version": 2
+  },
+  "MN-95044": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 170,
+    "as_of": "2026-10-01",
+    "estimated_at": "2026-10-02",
     "method_version": 2
   }
 }

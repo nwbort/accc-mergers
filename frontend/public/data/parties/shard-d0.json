@@ -2,6 +2,41 @@
   "shard": 208,
   "shard_count": 256,
   "parties": {
+    "architectus-services-bidco-pty-ltd": {
+      "id": "architectus-services-bidco-pty-ltd",
+      "canonical_name": "Architectus Services BidCo Pty Ltd",
+      "members": [
+        {
+          "name": "Architectus Services BidCo Pty Ltd",
+          "identifier": "89 654 282 158",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-70039",
+            "merger_name": "Architectus \u2013 SBA",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "asphalt-operators-australia-pty-ltd": {
       "id": "asphalt-operators-australia-pty-ltd",
       "canonical_name": "Asphalt Operators Australia Pty Ltd",

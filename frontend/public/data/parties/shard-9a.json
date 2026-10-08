@@ -305,14 +305,14 @@
         "target": [
           {
             "merger_id": "MN-25049",
-            "merger_name": "Merck KGaA / Bio-Techne",
+            "merger_name": "Merck KGaA\u2013Bio-Techne",
             "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
+            "status": "Assessment completed",
+            "determination": "Approved",
             "has_conditions": false,
             "phase": "Phase 1",
             "notification_date": "2026-09-09T12:00:00Z",
-            "determination_date": null
+            "determination_date": "2026-10-08T12:00:00Z"
           }
         ],
         "other": []
@@ -321,8 +321,14 @@
       "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
       "waiver_duration": null
     },
     "cv-services-group-pty-ltd": {
@@ -424,12 +430,12 @@
             "merger_id": "MN-10028",
             "merger_name": "BBFIT - Hanes Australasia",
             "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
+            "status": "Assessment completed",
+            "determination": "Approved",
             "has_conditions": false,
             "phase": "Phase 1",
             "notification_date": "2026-09-02T12:00:00Z",
-            "determination_date": null
+            "determination_date": "2026-10-01T12:00:00Z"
           }
         ],
         "other": []
@@ -438,8 +444,14 @@
       "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
       "waiver_duration": null
     },
     "mash-barangaroo-pty-limited-as-trustee-for-the-mash-barangaroo-trust": {
@@ -604,6 +616,41 @@
         "median_business_days": 36,
         "completed_count": 1
       },
+      "waiver_duration": null
+    },
+    "the-brown-hurley-group-pty-ltd": {
+      "id": "the-brown-hurley-group-pty-ltd",
+      "canonical_name": "The Brown & Hurley Group Pty Ltd",
+      "members": [
+        {
+          "name": "THE BROWN & HURLEY GROUP PTY LTD",
+          "identifier": "66 010 732 966",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-30033",
+            "merger_name": "Brown & Hurley - Schmitz Cargobull and Freighter Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
       "waiver_duration": null
     },
     "the-trustee-for-franck-page-3-trust": {
