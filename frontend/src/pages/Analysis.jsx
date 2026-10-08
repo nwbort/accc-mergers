@@ -15,6 +15,7 @@ import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { computeEcdf } from '../utils/durationEcdf';
 import DurationEcdfChart from '../components/DurationEcdfChart';
+import DecisionMakerChart from '../components/DecisionMakerChart';
 import { PHASE_1_DEADLINE_BD, WAIVER_DEADLINE_BD } from '../constants/statutoryDeadlines';
 
 // Title and description live in the shared table so this page and the
@@ -513,6 +514,20 @@ function Analysis() {
             </div>
           </section>
         )}
+
+        <DecisionMakerChart
+          id="chart-decision-makers"
+          title="Who decides mergers"
+          rows={data.by_commission_division}
+          medianLabel="Median phase 1"
+        />
+
+        <DecisionMakerChart
+          id="chart-waiver-decision-makers"
+          title="Who decides waivers"
+          rows={data.waiver_by_commission_division}
+          medianLabel="Median"
+        />
 
         {/* Phase 1 Duration ECDF */}
         {ecdfPoints.length > 0 && (

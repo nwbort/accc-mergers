@@ -50,7 +50,8 @@ from scripts.constants.regime import is_voluntary_period_notification
 
 from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
-from ..durations import collect_phase_1_durations, phase_1_end_date
+from ..enrichment import reached_phase_2
+from ..durations import collect_phase_1_durations, collect_waiver_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers, is_waiver
 
 _MAX_DIVISION_LABEL_LENGTH = 200
@@ -67,6 +68,10 @@ _SYDNEY_TZ = ZoneInfo('Australia/Sydney')
 # ..." so the delegate's name can be canonicalised to "<title> <surname>",
 # collapsing variants that do/don't spell out a first name (e.g.
 # "Commissioner Philip Williams" vs "Commissioner Williams").
+# Typos the ACCC has published in a determination's attribution line, folded
+# into the correct spelling so one commissioner isn't split across two rows.
+_KNOWN_MISSPELLINGS = {'commissioner wiliams': 'Commissioner Williams'}
+
 _DELEGATE_PATTERN = re.compile(
     r'^(?:Determination|Decision) made by (?P<person>.+?) pursuant to a delegation\b',
     re.IGNORECASE,
@@ -78,7 +83,7 @@ _DELEGATE_PATTERN = re.compile(
 # trailing Act-reference wording (see module docstring).
 _DIVISION_PATTERN = re.compile(
     r'^(?:Determination|Decision) made by a division of the Commission '
-    r'constituted by a direction issued pursuant to section (?P<section>\d+)\b',
+    r'constituted by a direction issued pursuant to (?:a )?section (?P<section>\d+)\b',
     re.IGNORECASE,
 )
 
@@ -158,8 +163,10 @@ def _normalise_division(raw: str | None) -> str | None:
     if match:
         words = match.group('person').split()
         if len(words) >= 2:
-            return f'{words[0]} {words[-1]}'
-        return match.group('person')
+            label = f'{words[0]} {words[-1]}'
+        else:
+            label = match.group('person')
+        return _KNOWN_MISSPELLINGS.get(label.casefold(), label)
 
     match = _DIVISION_PATTERN.match(label)
     if match:
@@ -199,8 +206,41 @@ def _commission_division_for(merger: dict) -> str | None:
 _PENDING_STATUSES = {merger_status.UNDER_ASSESSMENT, merger_status.ASSESSMENT_SUSPENDED}
 
 
-def by_commission_division(mergers: list) -> list[dict]:
+def _phase_1_decision_maker(merger: dict) -> str | None:
+    """Who made the matter's Phase 1 decision.
+
+    For a matter that went to Phase 2 that decision is the referral, which the
+    Phase 2 Notice attributes; its final determination belongs to Phase 2 and
+    is deliberately not read. Anything else is attributed by its determination
+    (see :func:`_commission_division_for`).
+    """
+    if not reached_phase_2(merger):
+        return _commission_division_for(merger)
+    for event in merger.get('events') or []:
+        raw = event.get('phase2_notice_commission_division')
+        if raw is not None:
+            return _normalise_division(raw)
+    return None
+
+
+def _phase_1_outcome(merger: dict) -> str:
+    """The outcome of the Phase 1 decision: a referral for any Phase 2 matter."""
+    if reached_phase_2(merger):
+        return merger_status.REFERRED_TO_PHASE_2
+    return merger.get('accc_determination') or 'Unknown'
+
+
+def by_commission_division(mergers: list, waivers: bool = False) -> list[dict]:
     """Determination counts, outcome mix, and Phase 1 duration per commission division.
+
+    Covers Phase 1 decisions only. A matter that went to Phase 2 is counted by
+    its Phase 1 decision, the referral, attributed by its Phase 2 Notice and
+    reported as "Referred to phase 2" whatever happened next. Assessments
+    ceased in Phase 1 are left out (no decision to attribute). Pass
+    the notifications for the default reading, or the waivers with
+    ``waivers=True``; the two are charted separately, and ``waivers``
+    only changes which duration the median is taken over (a waiver has no
+    Phase 1 clock, so it is measured notification to determination).
 
     See the module docstring for the label normalisation rules. Divisions are
     sorted by determination count, descending. Mergers with no recoverable
@@ -211,13 +251,18 @@ def by_commission_division(mergers: list) -> list[dict]:
     couldn't be identified (a data gap worth investigating, not an absence
     of data).
     """
+    # A matter ceased in Phase 1 has no decision to attribute.
+    mergers = [
+        m for m in mergers
+        if not (m.get('status') == merger_status.ASSESSMENT_CEASED and not reached_phase_2(m))
+    ]
     groups: dict[str, dict] = {}
     pending = []
     unknown = []
     for m in mergers:
-        label = _commission_division_for(m)
+        label = _phase_1_decision_maker(m)
         if label is None:
-            if m.get('status') in _PENDING_STATUSES:
+            if m.get('status') in _PENDING_STATUSES and not reached_phase_2(m):
                 pending.append(m)
             else:
                 unknown.append(m)
@@ -236,13 +281,14 @@ def by_commission_division(mergers: list) -> list[dict]:
         group = bucket["mergers"]
         outcome_mix = defaultdict(int)
         for m in group:
-            outcome_mix[m.get('accc_determination') or 'Unknown'] += 1
-        _, business_days = collect_phase_1_durations(group)
+            outcome_mix[_phase_1_outcome(m)] += 1
+        collect = collect_waiver_durations if waivers else collect_phase_1_durations
+        _, business_days = collect(group)
         results.append({
             "division": bucket["label"],
             "count": len(group),
             "outcome_mix": dict(outcome_mix),
-            "median_phase_1_business_days": stat_median(business_days) if business_days else None,
+            "median_business_days": stat_median(business_days) if business_days else None,
         })
 
     results.sort(key=lambda x: -x['count'])
@@ -1026,7 +1072,8 @@ def generate(mergers: list) -> dict:
         "open_caseload": open_caseload(mergers),
         "current_status": current_status(mergers),
         "industry_phase1_duration": industry_phase1_duration(mergers),
-        "by_commission_division": by_commission_division(mergers),
+        "by_commission_division": by_commission_division(notification_mergers),
+        "waiver_by_commission_division": by_commission_division(waiver_mergers, waivers=True),
         "deadline_utilisation": deadline_utilisation(mergers),
         "notification_restarts": restarts,
         "restart_rate": restart_rate,

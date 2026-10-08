@@ -931,21 +931,20 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 547,
+      "count": 172,
       "outcome_mix": {
-        "Approved": 547
+        "Approved": 172
       },
-      "median_phase_1_business_days": 17
+      "median_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 113,
+      "count": 74,
       "outcome_mix": {
-        "Approved": 84,
-        "Not approved": 24,
-        "Unknown": 5
+        "Approved": 67,
+        "Referred to phase 2": 7
       },
-      "median_phase_1_business_days": 20.0
+      "median_business_days": 20.0
     },
     {
       "division": "Not yet determined",
@@ -953,25 +952,52 @@
       "outcome_mix": {
         "Unknown": 29
       },
-      "median_phase_1_business_days": null
-    },
-    {
-      "division": "Commissioner Woodward",
-      "count": 27,
-      "outcome_mix": {
-        "Approved": 26,
-        "Not approved": 1
-      },
-      "median_phase_1_business_days": 18
+      "median_business_days": null
     },
     {
       "division": "Unknown",
-      "count": 4,
+      "count": 3,
       "outcome_mix": {
-        "Approved": 2,
-        "Unknown": 2
+        "Referred to phase 2": 2,
+        "Approved": 1
       },
-      "median_phase_1_business_days": 40.0
+      "median_business_days": 30
+    },
+    {
+      "division": "Commissioner Woodward",
+      "count": 1,
+      "outcome_mix": {
+        "Approved": 1
+      },
+      "median_business_days": 18
+    }
+  ],
+  "waiver_by_commission_division": [
+    {
+      "division": "Commissioner Williams",
+      "count": 376,
+      "outcome_mix": {
+        "Approved": 376
+      },
+      "median_business_days": 14.0
+    },
+    {
+      "division": "A division of the Commission (s19 direction)",
+      "count": 39,
+      "outcome_mix": {
+        "Approved": 18,
+        "Not approved": 21
+      },
+      "median_business_days": 14
+    },
+    {
+      "division": "Commissioner Woodward",
+      "count": 26,
+      "outcome_mix": {
+        "Approved": 25,
+        "Not approved": 1
+      },
+      "median_business_days": 18.5
     },
     {
       "division": "Chair Cass-Gottlieb",
@@ -979,23 +1005,7 @@
       "outcome_mix": {
         "Approved": 2
       },
-      "median_phase_1_business_days": null
-    },
-    {
-      "division": "Determination made by a division of the Commission constituted by a direction issued pursuant to a section 19 of the Act",
-      "count": 1,
-      "outcome_mix": {
-        "Approved": 1
-      },
-      "median_phase_1_business_days": 38
-    },
-    {
-      "division": "Commissioner Wiliams",
-      "count": 1,
-      "outcome_mix": {
-        "Approved": 1
-      },
-      "median_phase_1_business_days": 15
+      "median_business_days": 2.0
     }
   ],
   "deadline_utilisation": {

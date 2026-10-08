@@ -925,7 +925,7 @@ class TestAnalysisGenerate:
         json.dumps(payload)
         assert set(payload.keys()) == {
             'phase1_duration', 'waiver_duration', 'monthly_volume', 'industry_phase1_duration',
-            'by_commission_division',
+            'by_commission_division', 'waiver_by_commission_division',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
             'outcomes_by_division', 'referrals_by_quarter', 'open_caseload',
             'current_status',
@@ -1986,13 +1986,21 @@ class TestByCommissionDivision:
     def test_collapses_delegate_name_variants(self):
         divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
         williams = next(d for d in divisions if 'Williams' in d['division'])
-        # MN-1001 ("Philip Williams"), MN-1002 ("Williams", different
-        # case/whitespace) and WA-1005 ("Williams") all collapse to one
-        # delegate.
-        assert williams['count'] == 3
+        # MN-1001 ("Philip Williams") and MN-1002 ("Williams", different
+        # case/whitespace) collapse to one delegate. WA-1005 is a waiver, so
+        # it is charted separately (see test_waivers_are_reported_separately).
+        assert williams['count'] == 2
         # Display label is canonicalised to "<title> <surname>", not the raw sentence.
         assert williams['division'] == 'Commissioner Williams'
-        assert williams['outcome_mix'] == {'Approved': 2, 'Not opposed': 1}
+        assert williams['outcome_mix'] == {'Approved': 1, 'Not opposed': 1}
+
+    def test_waivers_are_reported_separately(self):
+        payload = analysis.generate(_commission_division_fixture())
+        waivers = payload['waiver_by_commission_division']
+        assert [(d['division'], d['count']) for d in waivers] == [('Commissioner Williams', 1)]
+        # Measured notification to determination: 1 Apr -> 15 Apr 2025.
+        assert waivers[0]['median_business_days'] == 10
+        assert all('WA-' not in d['division'] for d in payload['by_commission_division'])
 
     def test_corrupted_and_missing_values_fold_into_unknown(self):
         divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
@@ -2026,18 +2034,14 @@ class TestByCommissionDivision:
         unknown = next(d for d in divisions if d['division'] == 'Unknown')
         assert unknown['count'] == 2
 
-    def test_median_phase_1_business_days_uses_the_subset(self):
+    def test_median_business_days_uses_the_subset(self):
         divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
         williams = next(d for d in divisions if 'Williams' in d['division'])
-        # WA-1005 is a waiver and contributes no Phase 1 duration, but
-        # MN-1001/MN-1002 do, so the bucket's median isn't null just because
-        # one contributing merger has no Phase 1 review.
-        assert williams['median_phase_1_business_days'] is not None
+        assert williams['median_business_days'] is not None
 
-    def test_waiver_only_division_has_null_median(self):
-        # A delegate whose only determinations in this fixture are waivers
-        # has no Phase 1 duration to report — expected, not a bug, since
-        # collect_phase_1_durations only measures notifications.
+    def test_waiver_division_median_is_end_to_end(self):
+        # Waivers have no Phase 1 clock, so their median is measured
+        # notification -> determination (1 May -> 15 May 2025).
         raw = [{
             'merger_id': 'WA-2001',
             'merger_name': 'Sigma waiver',
@@ -2060,109 +2064,61 @@ class TestByCommissionDivision:
                 ),
             }],
         }]
-        divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
+        divisions = analysis.generate([enrich_merger(m) for m in raw])['waiver_by_commission_division']
         assert divisions[0]['division'] == 'Chair Cass-Gottlieb'
-        assert divisions[0]['median_phase_1_business_days'] is None
+        assert divisions[0]['median_business_days'] == 10
 
-    def test_collapses_division_of_commission_wording_variants(self):
-        # A determination says "Determination made by ... of the Act"; a
-        # Phase 2 Notice says "Decision made by ... of the Competition and
-        # Consumer Act 2010 (Cth)" for the same kind of body. Both should
-        # collapse to one canonical bucket.
-        raw = [
-            {
-                'merger_id': 'MN-3001',
-                'merger_name': 'Tau acquires Upsilon',
-                'status': 'Determined',
-                'accc_determination': 'Approved',
-                'stage': 'Phase 1 - preliminary assessment',
-                'effective_notification_datetime': '2025-06-01T09:00:00Z',
-                'determination_publication_date': '2025-06-30T12:00:00Z',
-                'page_modified_datetime': '2025-06-30T12:30:00Z',
-                'anzsic_codes': [],
-                'acquirers': [], 'targets': [], 'other_parties': [],
-                'url': 'https://example.com/MN-3001',
-                'events': [{
-                    'title': 'Phase 1 - Determination',
-                    'date': '2025-06-30T12:00:00Z',
-                    'url': 'e7',
-                    'determination_commission_division': (
-                        'Determination made by a division of the Commission '
-                        'constituted by a direction issued pursuant to section 19 of the Act'
-                    ),
-                }],
-            },
-            {
-                'merger_id': 'MN-3002',
-                'merger_name': 'Phi acquires Chi',
-                'status': 'Assessment ceased',
-                'accc_determination': None,
-                'stage': 'Phase 2 - detailed assessment',
+    def test_phase_2_matters_are_counted_by_their_referral(self):
+        # The chart covers Phase 1 decisions only. A matter that went to Phase 2
+        # is counted by its referral, attributed by the Phase 2 Notice and
+        # reported as "Referred to phase 2" whatever happened next. The final
+        # Phase 2 determination (here a different decision-maker) is ignored.
+        def matter(mid, stage, status, determination, event):
+            return {
+                'merger_id': mid,
+                'merger_name': f'{mid} deal',
+                'status': status,
+                'accc_determination': determination,
+                'stage': stage,
                 'effective_notification_datetime': '2025-06-05T09:00:00Z',
-                'determination_publication_date': None,
-                'page_modified_datetime': '2025-07-01T09:30:00Z',
+                'determination_publication_date': '2025-07-30T12:00:00Z' if determination else None,
+                'page_modified_datetime': '2025-07-30T12:30:00Z',
                 'anzsic_codes': [],
                 'acquirers': [], 'targets': [], 'other_parties': [],
-                'url': 'https://example.com/MN-3002',
-                'events': [{
-                    'title': 'Phi - Chi - Phase 2 Notice',
-                    'date': '2025-07-01T09:00:00Z',
-                    'url': 'e8',
-                    'phase2_notice_matters_to_investigate': [],
-                    'phase2_notice_commission_division': (
-                        'Decision made by a division of the Commission constituted by a '
-                        'direction issued pursuant to section 19 of the Competition and '
-                        'Consumer Act 2010 (Cth)'
-                    ),
-                }],
-            },
+                'url': f'https://example.com/{mid}',
+                'events': [event],
+            }
+
+        s19 = (
+            'Determination made by a division of the Commission constituted by a '
+            'direction issued pursuant to a section 19 of the Act'
+        )
+        raw = [
+            matter('MN-3001', 'Phase 1 - preliminary assessment', 'Determined', 'Approved', {
+                'title': 'Phase 1 - Determination', 'date': '2025-07-30T12:00:00Z', 'url': 'e7',
+                'determination_commission_division': s19,
+            }),
+            matter('MN-3002', 'Phase 2 - detailed assessment', 'Assessment ceased', None, {
+                'title': 'Phi - Chi - Phase 2 Notice', 'date': '2025-07-01T09:00:00Z', 'url': 'e8',
+                'phase2_notice_matters_to_investigate': [],
+                'phase2_notice_commission_division': s19,
+            }),
+            matter('MN-3003', 'Phase 2 - detailed assessment', 'Determined', 'Approved', {
+                'title': 'Phase 2 - Determination', 'date': '2025-09-01T12:00:00Z', 'url': 'e10',
+                'determination_commission_division': (
+                    'Determination made by Commissioner Woodward pursuant to a '
+                    'delegation under section 25(1) of the Act'
+                ),
+                'phase2_notice_commission_division': s19,
+            }),
+            matter('MN-3004', 'Phase 1 - preliminary assessment', 'Assessment ceased', None, {
+                'title': 'Consideration of Notification ceased', 'date': '2025-06-20T09:00:00Z', 'url': 'e11',
+            }),
         ]
         divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
-        assert len(divisions) == 1
-        assert divisions[0]['division'] == 'A division of the Commission (s19 direction)'
-        assert divisions[0]['count'] == 2
-
-    def test_final_determination_takes_precedence_over_phase2_notice(self):
-        # A matter referred to Phase 2 and later determined by a named
-        # delegate shouldn't have its bucket overridden by the earlier Phase
-        # 2 Notice's division event.
-        raw = [{
-            'merger_id': 'MN-3003',
-            'merger_name': 'Psi acquires Omega',
-            'status': 'Determined',
-            'accc_determination': 'Approved',
-            'stage': 'Phase 2 - detailed assessment',
-            'effective_notification_datetime': '2025-06-05T09:00:00Z',
-            'determination_publication_date': '2025-09-01T12:00:00Z',
-            'page_modified_datetime': '2025-09-01T12:30:00Z',
-            'anzsic_codes': [],
-            'acquirers': [], 'targets': [], 'other_parties': [],
-            'url': 'https://example.com/MN-3003',
-            'events': [
-                {
-                    'title': 'Psi - Omega - Phase 2 Notice',
-                    'date': '2025-07-01T09:00:00Z',
-                    'url': 'e9',
-                    'phase2_notice_matters_to_investigate': [],
-                    'phase2_notice_commission_division': (
-                        'Decision made by a division of the Commission constituted by a '
-                        'direction issued pursuant to section 19 of the Competition and '
-                        'Consumer Act 2010 (Cth)'
-                    ),
-                },
-                {
-                    'title': 'Phase 2 - Determination',
-                    'date': '2025-09-01T12:00:00Z',
-                    'url': 'e10',
-                    'determination_commission_division': (
-                        'Determination made by Commissioner Woodward pursuant to a '
-                        'delegation under section 25(1) of the Act'
-                    ),
-                },
-            ],
-        }]
-        divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
-        assert divisions[0]['division'] == 'Commissioner Woodward'
+        assert [(d['division'], d['count'], d['outcome_mix']) for d in divisions] == [
+            ('A division of the Commission (s19 direction)', 3, {'Approved': 1, 'Referred to phase 2': 2}),
+        ]
 
 
 # ---------------------------------------------------------------------------
@@ -3287,3 +3243,35 @@ class TestExtensionsGenerate:
         assert s['phase_2_preceded_by_extension_pct'] == 100.0
         escalated = next(m for m in payload['matters'] if m['merger_id'] == 'MN-0005')
         assert escalated['escalated_to_phase_2'] is True
+
+
+def test_normalise_division_folds_variants():
+    from scripts.generate.static_data.outputs.analysis import _normalise_division
+
+    # "a section 19" (stray article) is still the s19 division, not a raw sentence.
+    assert _normalise_division(
+        'Determination made by a division of the Commission constituted by a '
+        'direction issued pursuant to a section 19 of the Act'
+    ) == 'A division of the Commission (s19 direction)'
+    # A published typo folds into the correct commissioner.
+    assert _normalise_division(
+        'Determination made by Commissioner Wiliams pursuant to a delegation under section 25(1) of the Act'
+    ) == 'Commissioner Williams'
+
+
+def test_ceased_phase_1_assessments_are_excluded_from_division_stats():
+    raw = [{
+        'merger_id': 'MN-5001',
+        'merger_name': 'Ceased deal',
+        'status': 'Assessment ceased',
+        'accc_determination': None,
+        'stage': 'Phase 1 - preliminary assessment',
+        'effective_notification_datetime': '2025-06-05T09:00:00Z',
+        'determination_publication_date': None,
+        'page_modified_datetime': '2025-06-20T09:30:00Z',
+        'anzsic_codes': [],
+        'acquirers': [], 'targets': [], 'other_parties': [],
+        'url': 'https://example.com/MN-5001',
+        'events': [{'title': 'Consideration of Notification ceased', 'date': '2025-06-20T09:00:00Z', 'url': 'e1'}],
+    }]
+    assert analysis.generate([enrich_merger(m) for m in raw])['by_commission_division'] == []

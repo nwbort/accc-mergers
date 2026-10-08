@@ -254,3 +254,40 @@ describe('Analysis open caseload', () => {
     expect(screen.queryByText(/Open caseload/)).not.toBeInTheDocument();
   });
 });
+
+describe('Analysis decision-maker chart', () => {
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  it('lists each decision-maker in separate notification and waiver tables', async () => {
+    const fixture = {
+      ...analysisFixture,
+      by_commission_division: [
+        { division: 'Commissioner Williams', count: 3, outcome_mix: { Approved: 3 }, median_business_days: 17 },
+        { division: 'A division of the Commission (s19 direction)', count: 2, outcome_mix: { Approved: 1, 'Not approved': 1 }, median_business_days: 30 },
+        { division: 'Not yet determined', count: 4, outcome_mix: { Unknown: 4 }, median_business_days: null },
+      ],
+      waiver_by_commission_division: [
+        { division: 'Commissioner Woodward', count: 5, outcome_mix: { Approved: 5 }, median_business_days: 9 },
+      ],
+    };
+    vi.spyOn(globalThis, 'fetch').mockImplementation(() => Promise.resolve(ok(fixture)));
+    renderAnalysis();
+    const notifications = (await screen.findByText(/Who decides mergers: determinations/)).closest('table');
+    expect(within(notifications).getByText('Commissioner Williams')).toBeTruthy();
+    expect(within(notifications).getByText('A division of the Commission (s19 direction)')).toBeTruthy();
+    expect(within(notifications).queryByText('Not yet determined')).toBeNull();
+    expect(within(notifications).queryByText('Commissioner Woodward')).toBeNull();
+
+    const waivers = screen.getByText(/Who decides waivers: determinations/).closest('table');
+    expect(within(waivers).getByText('Commissioner Woodward')).toBeTruthy();
+    expect(within(waivers).queryByText('Commissioner Williams')).toBeNull();
+  });
+});
