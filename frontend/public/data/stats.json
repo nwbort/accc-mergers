@@ -1,10 +1,10 @@
 {
-  "total_mergers": 282,
+  "total_mergers": 283,
   "total_waivers": 444,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 246,
-    "Under assessment": 31,
+    "Under assessment": 32,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 161
+      "count": 162
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -97,6 +97,16 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-75059",
+      "merger_name": "Macquarie Global Infrastructure Fund - SERV",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T18:04:48+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-05054",
       "merger_name": "Stanmore \u2013 Exxaro Australia Holdings",
       "status": "Under assessment",
@@ -122,7 +132,7 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-06T12:00:00Z",
-      "page_modified_datetime": "2026-10-07T11:28:24+11:00",
+      "page_modified_datetime": "2026-10-08T17:31:44+11:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -205,21 +215,6 @@
       "page_modified_datetime": "2026-10-02T11:10:10+10:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65005",
-      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
-      "effective_notification_datetime": "2026-10-01T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T15:48:32+10:00",
-      "is_appeal": true,
-      "under_appeal": true,
-      "appeal_type": "party_denial",
-      "appeal_status": "current",
-      "effective_determination": null,
-      "tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026",
-      "appeal_date": "2026-10-01T12:00:00Z"
     }
   ],
   "recent_determinations": [

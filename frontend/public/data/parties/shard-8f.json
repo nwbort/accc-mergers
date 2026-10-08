@@ -553,6 +553,41 @@
         "completed_count": 1
       }
     },
+    "serv-holdings-trust": {
+      "id": "serv-holdings-trust",
+      "canonical_name": "Serv Holdings Trust",
+      "members": [
+        {
+          "name": "SERV HOLDINGS TRUST",
+          "identifier": "91 458 812 703",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75059",
+            "merger_name": "Macquarie Global Infrastructure Fund - SERV",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "stock-ex-brisbane-pty-ltd-as-trustee-for-stock-ex-brisbane-unit-trust": {
       "id": "stock-ex-brisbane-pty-ltd-as-trustee-for-stock-ex-brisbane-unit-trust",
       "canonical_name": "Stock Ex Brisbane Pty Ltd as trustee for Stock Ex Brisbane Unit Trust",

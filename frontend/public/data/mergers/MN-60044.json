@@ -108,6 +108,15 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-07T12:00:00Z",
+      "title": "Phase 1 Questionnaire",
+      "display_title": "Phase 1 Questionnaire",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Space%20activities%20JV%20%20-%20Phase%201%20questionnaire.docx",
+      "url_gh": "/mergers/MN-60044/Space activities JV - Phase 1 questionnaire.pdf",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
@@ -117,6 +126,7 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
+  "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-45007",
@@ -156,17 +166,17 @@
     }
   ],
   "phase_1_estimate": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 246,
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 175,
     "as_of": "2026-10-06",
-    "estimated_at": "2026-10-07",
+    "estimated_at": "2026-10-08",
     "method_version": 2
   },
   "pre_notification": {

@@ -2381,17 +2381,17 @@
     "method_version": 2
   },
   "MN-60044": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 246,
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 175,
     "as_of": "2026-10-06",
-    "estimated_at": "2026-10-07",
+    "estimated_at": "2026-10-08",
     "method_version": 2
   },
   "MN-65005": {
@@ -3064,6 +3064,20 @@
     "sample_size": 28,
     "as_of": "2026-09-29",
     "estimated_at": "2026-09-30",
+    "method_version": 2
+  },
+  "MN-75059": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      21
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": null,
+    "sample_size": 247,
+    "as_of": "2026-10-07",
+    "estimated_at": "2026-10-08",
     "method_version": 2
   },
   "MN-80002": {

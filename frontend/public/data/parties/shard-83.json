@@ -659,6 +659,41 @@
         "completed_count": 1
       }
     },
+    "serv-holdings-pty-ltd": {
+      "id": "serv-holdings-pty-ltd",
+      "canonical_name": "Serv Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "SERV HOLDINGS PTY LTD",
+          "identifier": "71 627 986 270",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75059",
+            "merger_name": "Macquarie Global Infrastructure Fund - SERV",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "time-design-international-pte-ltd": {
       "id": "time-design-international-pte-ltd",
       "canonical_name": "Kakaku.com",

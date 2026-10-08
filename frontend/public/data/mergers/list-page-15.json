@@ -1312,8 +1312,8 @@
       "effective_notification_datetime": "2026-10-06T12:00:00Z",
       "determination_publication_date": null,
       "end_of_determination_period": "2026-11-17T12:00:00Z",
-      "latest_event_date": "2026-10-06T12:00:00Z",
-      "page_modified_datetime": "2026-10-07T11:28:24+11:00",
+      "latest_event_date": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T17:31:44+11:00",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
@@ -1456,6 +1456,61 @@
         {
           "code": "3921",
           "name": "Motor Vehicle Parts Retailing"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-75059",
+      "merger_name": "Macquarie Global Infrastructure Fund - SERV",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-10-07T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-11-18T12:00:00Z",
+      "latest_event_date": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T18:04:48+11:00",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Macquarie Global Infrastructure Fund SCSp acting by its general partner MGIF Luxembourg GP S.\u00e0.r.l"
+        }
+      ],
+      "targets": [
+        {
+          "name": "FSS Liberty Pty Ltd as trustee for FSS Liberty Trust"
+        },
+        {
+          "name": "SERV HOLDINGS PTY LTD"
+        },
+        {
+          "name": "SERV HOLDINGS TRUST"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        },
+        {
+          "code": "6931",
+          "name": "Legal Services"
+        },
+        {
+          "code": "7520",
+          "name": "State Government Administration"
+        },
+        {
+          "code": "7720",
+          "name": "Regulatory Services"
         }
       ]
     }
