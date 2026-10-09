@@ -18,7 +18,7 @@
     {
       "code": "6712",
       "name": "Non-Residential Property Operators",
-      "merger_count": 43
+      "merger_count": 44
     },
     {
       "code": "5420",
@@ -41,14 +41,14 @@
       "merger_count": 24
     },
     {
-      "code": "4511",
-      "name": "Cafes and Restaurants",
+      "code": "4110",
+      "name": "Supermarket and Grocery Stores",
       "merger_count": 22
     },
     {
-      "code": "4110",
-      "name": "Supermarket and Grocery Stores",
-      "merger_count": 21
+      "code": "4511",
+      "name": "Cafes and Restaurants",
+      "merger_count": 22
     },
     {
       "code": "4123",
@@ -136,6 +136,11 @@
       "merger_count": 14
     },
     {
+      "code": "3211",
+      "name": "Land Development and Subdivision",
+      "merger_count": 12
+    },
+    {
       "code": "3494",
       "name": "Other Electrical and Electronic Goods Wholesaling",
       "merger_count": 12
@@ -161,11 +166,6 @@
       "merger_count": 11
     },
     {
-      "code": "3211",
-      "name": "Land Development and Subdivision",
-      "merger_count": 11
-    },
-    {
       "code": "6925",
       "name": "Scientific Testing and Analysis Services",
       "merger_count": 11
@@ -176,9 +176,19 @@
       "merger_count": 11
     },
     {
+      "code": "6711",
+      "name": "Residential Property Operators",
+      "merger_count": 11
+    },
+    {
       "code": "9539",
       "name": "Other Personal Services n.e.c.",
       "merger_count": 11
+    },
+    {
+      "code": "6720",
+      "name": "Real Estate Services",
+      "merger_count": 10
     },
     {
       "code": "3232",
@@ -186,8 +196,8 @@
       "merger_count": 10
     },
     {
-      "code": "6711",
-      "name": "Residential Property Operators",
+      "code": "4122",
+      "name": "Fruit and Vegetable Retailing",
       "merger_count": 10
     },
     {
@@ -216,18 +226,13 @@
       "merger_count": 10
     },
     {
-      "code": "6720",
-      "name": "Real Estate Services",
-      "merger_count": 9
-    },
-    {
       "code": "4610",
       "name": "Road Freight Transport",
       "merger_count": 9
     },
     {
-      "code": "4122",
-      "name": "Fruit and Vegetable Retailing",
+      "code": "4279",
+      "name": "Other Store-Based Retailing n.e.c.",
       "merger_count": 9
     },
     {
@@ -268,11 +273,6 @@
     {
       "code": "0529",
       "name": "Other Agriculture and Fishing Support Services",
-      "merger_count": 8
-    },
-    {
-      "code": "4279",
-      "name": "Other Store-Based Retailing n.e.c.",
       "merger_count": 8
     },
     {
@@ -1661,6 +1661,6 @@
       "merger_count": 1
     }
   ],
-  "total_mergers": 728,
+  "total_mergers": 729,
   "total_industries": 332
 }
