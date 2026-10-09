@@ -1,10 +1,10 @@
 {
-  "total_mergers": 283,
+  "total_mergers": 284,
   "total_waivers": 444,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
-    "Under assessment": 29,
+    "Under assessment": 30,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 162
+      "count": 163
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75031",
+      "merger_name": "VetPartners \u2013 VetLove",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-09T12:00:00Z",
+      "page_modified_datetime": "2026-10-09T15:48:12+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-30033",
       "merger_name": "Brown & Hurley - Schmitz Cargobull and Freighter Group",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-01T12:00:00Z",
       "page_modified_datetime": "2026-10-02T11:44:28+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-95044",
-      "merger_name": "Olin - Huntsman",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-01T12:00:00Z",
-      "page_modified_datetime": "2026-10-02T11:10:10+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

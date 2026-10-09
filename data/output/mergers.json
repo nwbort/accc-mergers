@@ -50643,6 +50643,164 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vetpartners-%E2%80%93-vetlove",
+      "merger_name": "VetPartners \u2013 VetLove",
+      "status": "Under assessment",
+      "merger_id": "MN-75031",
+      "effective_notification_datetime": "2026-10-09T12:00:00Z",
+      "original_notification_datetime": "2026-10-09T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-11-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-09T15:48:12+11:00",
+      "consultation_response_due_date": "2026-10-16T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "VETPARTNERS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "44 114 962 453",
+          "party_page": {
+            "id": "vetpartners-australia-pty-ltd",
+            "name": "Vetpartners Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "Unity HoldCo Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "32 698 307 881",
+          "party_page": {
+            "id": "unity-holdco-pty-ltd",
+            "name": "Unity HoldCo Pty Ltd"
+          }
+        },
+        {
+          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "Registration number  B167972",
+          "canonical": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management"
+          },
+          "party_page": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "VetLove Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "62 609 398 781",
+          "party_page": {
+            "id": "vetlove-holdings-pty-ltd",
+            "name": "VetLove Holdings Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        }
+      ],
+      "merger_description": "VetPartners Australia Pty Ltd (**VetPartners**), through a newly incorporated holding company, Unity HoldCo Pty Ltd, proposes to acquire 100% of the issued share capital in VetLove Holdings Pty Ltd, the parent entity of the VetLove group which holds majority shareholdings in the group\u2019s 15 veterinary clinics (together, **VetLove**) (the **Acquisition**).\n\nVetPartners supplies general veterinary services to companion animals via a network of 202 clinics across Australia, including 51 clinics in Queensland and 50 in New South Wales. VetPartners also operates a range of businesses in the broader animal health sector including the Brisbane Veterinary Specialist Centre and other specialist and emergency hospitals, United Vets Group which is a veterinary buying group, Pet Chemist which is an online veterinary pharmacy and Pet Angel which is a pet crematorium. EQT Fund Management S.\u00e0 r.l., which indirectly holds and solely controls VetPartners, also holds an interest in Dechra Pharmaceuticals, a global veterinary pharmaceuticals supplier.\n\nVetLove operates 15 general veterinary services clinics across South East Queensland and Northern New South Wales.",
+      "events": [
+        {
+          "date": "2026-10-09T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/VetPartners%20-%20VetLove%20-%20third-party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-75031/VetPartners - VetLove - third-party questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-09T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-90009",
+          "merger_name": "Trescal \u2013 TR Calibration",
+          "acquirers": [
+            "TRESCAL (AUSTRALIA) PTY LTD"
+          ],
+          "targets": [
+            "TR PTY LTD"
+          ],
+          "status": "Assessment ceased"
+        },
+        {
+          "merger_id": "WA-60028",
+          "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
+          "acquirers": [
+            "ULEXITE GROUP PTY LIMITED"
+          ],
+          "targets": [
+            "IGNITION TOPCO PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-70033",
+          "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
+          "acquirers": [
+            "Ruby BidCo GmbH",
+            "Seal US Holdings Inc."
+          ],
+          "targets": [
+            "Corza Medical sp z.o.o.",
+            "Corza Medical S.A.S"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 20,
+        "range_business_days": [
+          16,
+          26
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "6-9",
+        "question_count": 6,
+        "sample_size": 21,
+        "as_of": "2026-10-09",
+        "estimated_at": "2026-10-09",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 105,
+        "min_days": 102,
+        "max_days": 114,
+        "id_issued_estimated": "2026-06-26",
+        "id_issued_before": "2026-06-29",
+        "id_issued_after": "2026-06-17",
+        "min_days_witness": "WA-75032",
+        "max_days_witness": "WA-75030",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/johns-lyng-group-%E2%80%93-cm-build-group",
       "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
       "status": "Assessment completed",

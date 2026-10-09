@@ -497,6 +497,41 @@
       "active_count": 1,
       "phase_duration": null,
       "waiver_duration": null
+    },
+    "unity-holdco-pty-ltd": {
+      "id": "unity-holdco-pty-ltd",
+      "canonical_name": "Unity HoldCo Pty Ltd",
+      "members": [
+        {
+          "name": "Unity HoldCo Pty Ltd",
+          "identifier": "32 698 307 881",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75031",
+            "merger_name": "VetPartners \u2013 VetLove",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-09T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
     }
   }
 }
