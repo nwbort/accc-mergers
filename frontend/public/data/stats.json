@@ -3,12 +3,12 @@
   "total_waivers": 444,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 248,
-    "Under assessment": 30,
+    "Assessment completed": 249,
+    "Under assessment": 29,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 240,
+    "Approved": 241,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,16 +22,16 @@
     "Not approved": 22
   },
   "clearance_rate": {
-    "cleared": 245,
+    "cleared": 246,
     "not_cleared": 3,
-    "total": 248,
+    "total": 249,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.600790513833992,
-    "median_days": 26,
-    "average_business_days": 20.130434782608695,
-    "median_business_days": 18,
+    "average_days": 29.60236220472441,
+    "median_days": 26.0,
+    "average_business_days": 20.133858267716537,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 55,
@@ -39,10 +39,10 @@
       },
       "day20": {
         "count": 183,
-        "percentage": 72.3
+        "percentage": 72.0
       },
       "day30": {
-        "count": 236,
+        "count": 237,
         "percentage": 93.3
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75052",
+      "merger_name": "Danfoss - Alfagomma",
+      "determination": "Approved",
+      "determination_date": "2026-10-09T12:00:00Z",
+      "page_modified_datetime": "2026-10-09T13:51:48+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-50028",
       "merger_name": "Bupa Health Services - Partnered Health",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-06T12:00:00Z",
       "page_modified_datetime": "2026-10-06T17:06:47+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85051",
-      "merger_name": "MedHealth \u2013 Integrity Medico-Legal",
-      "determination": "Not approved",
-      "determination_date": "2026-10-06T12:00:00Z",
-      "page_modified_datetime": "2026-10-06T17:06:43+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
