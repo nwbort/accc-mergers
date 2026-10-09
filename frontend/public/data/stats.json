@@ -3,12 +3,12 @@
   "total_waivers": 444,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 246,
-    "Under assessment": 32,
+    "Assessment completed": 248,
+    "Under assessment": 30,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 238,
+    "Approved": 240,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 22
   },
   "clearance_rate": {
-    "cleared": 243,
+    "cleared": 245,
     "not_cleared": 3,
-    "total": 246,
+    "total": 248,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.58167330677291,
+    "average_days": 29.600790513833992,
     "median_days": 26,
-    "average_business_days": 20.115537848605577,
+    "average_business_days": 20.130434782608695,
     "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 55,
-        "percentage": 21.9
+        "percentage": 21.7
       },
       "day20": {
-        "count": 182,
-        "percentage": 72.5
+        "count": 183,
+        "percentage": 72.3
       },
       "day30": {
-        "count": 234,
-        "percentage": 93.2
+        "count": 236,
+        "percentage": 93.3
       }
     }
   },
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-50028",
+      "merger_name": "Bupa Health Services - Partnered Health",
+      "determination": "Approved",
+      "determination_date": "2026-10-09T12:00:00Z",
+      "page_modified_datetime": "2026-10-09T12:20:34+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "MN-25035",
+      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+      "determination": "Approved",
+      "determination_date": "2026-10-09T12:00:00Z",
+      "page_modified_datetime": "2026-10-09T09:44:23+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-40034",
       "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
       "determination": "Approved",
@@ -323,28 +345,6 @@
       "determination": "Not approved",
       "determination_date": "2026-10-06T12:00:00Z",
       "page_modified_datetime": "2026-10-06T17:06:43+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-35030",
-      "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
-      "determination": "Approved",
-      "determination_date": "2026-10-06T12:00:00Z",
-      "page_modified_datetime": "2026-10-06T16:04:13+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-35050",
-      "merger_name": "National Dental Care - Sunshine Dental and Gisborne Dental, VIC",
-      "determination": "Approved",
-      "determination_date": "2026-10-05T12:00:00Z",
-      "page_modified_datetime": "2026-10-05T16:29:53+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
