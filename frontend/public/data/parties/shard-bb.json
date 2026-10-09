@@ -417,6 +417,47 @@
         "completed_count": 1
       }
     },
+    "navi-merchants-a-s": {
+      "id": "navi-merchants-a-s",
+      "canonical_name": "Navi Merchants A/S",
+      "members": [
+        {
+          "name": "Navi Merchants A/S",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75060",
+            "merger_name": "Mitsui \u2013 further interest in Norse Maritime",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-15T12:00:00Z",
+            "determination_date": "2026-10-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
     "tax-and-wealth-pty-ltd": {
       "id": "tax-and-wealth-pty-ltd",
       "canonical_name": "Tax And Wealth Pty Ltd",

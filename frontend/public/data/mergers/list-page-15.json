@@ -1,6 +1,73 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-10038",
+      "merger_name": "Coles \u2013 supermarket site in Plainland, Qld",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-18T12:00:00Z",
+      "determination_publication_date": "2026-10-09T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-09T12:00:00Z",
+      "page_modified_datetime": "2026-10-09T16:46:58+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CONSPROP PROJECTS PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Coles Group Limited",
+          "canonical": {
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3211",
+          "name": "Land Development and Subdivision"
+        },
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        },
+        {
+          "code": "4122",
+          "name": "Fruit and Vegetable Retailing"
+        },
+        {
+          "code": "4279",
+          "name": "Other Store-Based Retailing n.e.c."
+        },
+        {
+          "code": "6711",
+          "name": "Residential Property Operators"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "6720",
+          "name": "Real Estate Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-55036",
       "merger_name": "Nielsen - DoubleVerify",
       "status": "Under assessment",
