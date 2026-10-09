@@ -1,6 +1,6 @@
 {
   "total_mergers": 284,
-  "total_waivers": 447,
+  "total_waivers": 448,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 425,
+    "Approved": 426,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.237136465324383,
-    "median_days": 20,
-    "average_business_days": 13.845637583892618,
-    "median_business_days": 14
+    "average_days": 20.243303571428573,
+    "median_days": 20.0,
+    "average_business_days": 13.850446428571429,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05053",
+      "merger_name": "Vets Central \u2013 Castlemaine Veterinary Clinic, Vic",
+      "determination": "Approved",
+      "determination_date": "2026-10-09T12:00:00Z",
+      "page_modified_datetime": "2026-10-09T16:57:14+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-75060",
       "merger_name": "Mitsui \u2013 further interest in Norse Maritime",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-07T12:00:00Z",
       "page_modified_datetime": "2026-10-07T16:44:39+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-35052",
-      "merger_name": "FVS Services Group \u2013 Fire & Wire",
-      "determination": "Approved",
-      "determination_date": "2026-10-07T12:00:00Z",
-      "page_modified_datetime": "2026-10-07T16:42:51+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

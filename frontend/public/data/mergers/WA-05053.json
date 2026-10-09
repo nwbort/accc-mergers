@@ -1,0 +1,113 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vets-central-%E2%80%93-castlemaine-veterinary-clinic-vic",
+  "merger_name": "Vets Central \u2013 Castlemaine Veterinary Clinic, Vic",
+  "status": "Assessment completed",
+  "merger_id": "WA-05053",
+  "effective_notification_datetime": "2026-09-16T12:00:00Z",
+  "original_notification_datetime": "2026-09-16T12:00:00Z",
+  "stage": "Waiver application",
+  "determination_publication_date": "2026-10-09T12:00:00Z",
+  "accc_determination": "Approved",
+  "acquirers": [
+    {
+      "name": "VC OPERATIONS (WA) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "28 646 499 005",
+      "canonical": {
+        "id": "vets-central-holdings-pty-ltd",
+        "name": "Vets Central Holdings Pty Ltd"
+      },
+      "party_page": {
+        "id": "vets-central-holdings-pty-ltd",
+        "name": "Vets Central Holdings Pty Ltd"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "The Trustee for Berkwill Family Trust",
+      "identifier_type": "ABN",
+      "identifier": "44 970 033 872",
+      "party_page": {
+        "id": "the-trustee-for-berkwill-family-trust",
+        "name": "The Trustee for Berkwill Family Trust"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "6970",
+      "name": "Veterinary Services"
+    },
+    {
+      "code": "9539",
+      "name": "Other Personal Services n.e.c."
+    }
+  ],
+  "merger_description": "VC Operations (WA) Pty Ltd, together with its associated entities (collectively, **Vets Central**), proposes to acquire 100% of the business assets of Castlemaine Veterinary Clinic from Berkwill Pty Ltd as trustee for Berkwill Family Trust (the **Acquisition**).\u00a0  \n\n  \n\nVets Central is a veterinary group that owns and operates 88 first opinion veterinary practices across Australia and New Zealand. In Australia, Vets Central\u2019s practices provide core and ancillary veterinary services, for household pets as well as livestock, and other exotic species. The services primarily include routine, planned, and emergency veterinary services (excluding after-hours services).\u00a0  \n\n  \n\nCastlemaine Veterinary Clinic is full-service veterinary practice in the Castlemaine area of Victoria. The business provides a range of first opinion core and ancillary veterinary services for household pets in the local area.",
+  "events": [
+    {
+      "date": "2026-10-09T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Vets%20Central%20%E2%80%93%20Castlemaine%20Veterinary%20Clinic%2C%20Vic%20%28WA-05053%29%20-%20Notification%20waiver%20determination%20-%209%20October%202026.pdf",
+      "determination_table_content": [
+        {
+          "item": "Explanation for\ndetermination",
+          "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is no horizontal overlap between Vets Central and\nCastlemaine Veterinary Clinic in the supply of veterinary\nservices in the Castlemaine area\nb. there are alternative suppliers of veterinary services in the\nCastlemaine area and more broadly at the regional, state\nand national level.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+        }
+      ],
+      "url_gh": "/mergers/WA-05053/Vets Central \u2013 Castlemaine Veterinary Clinic, Vic (WA-05053) - Notification waiver determination - 9 October 2026.pdf",
+      "is_determination_event": true,
+      "phase": "Waiver"
+    },
+    {
+      "date": "2026-09-16T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": true,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-40017",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+      "acquirers": [
+        "VC OPERATIONS (WA) PTY LTD"
+      ],
+      "targets": [
+        "CARRUTHERS, JONATHAN JULIAN"
+      ],
+      "status": "Assessment ceased"
+    },
+    {
+      "merger_id": "MN-85042",
+      "merger_name": "Vets Central \u2013 Vital Vet Animal Hospital",
+      "acquirers": [
+        "VC OPERATIONS (WA) PTY LTD"
+      ],
+      "targets": [
+        "The Trustee for ELLENVALE VETERINARY TRUST"
+      ],
+      "status": "Under assessment"
+    },
+    {
+      "merger_id": "WA-15022",
+      "merger_name": "Vets Central - Morley Veterinary Hospital",
+      "acquirers": [
+        "VC OPERATIONS (WA) PTY LTD"
+      ],
+      "targets": [
+        "The Trustee for THE MVH UNIT TRUST"
+      ],
+      "accc_determination": "Approved"
+    }
+  ]
+}

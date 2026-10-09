@@ -2753,60 +2753,42 @@
       ]
     },
     {
-      "merger_id": "WA-60047",
-      "merger_name": "Sekisui Chemical \u2013 Ausbuild",
+      "merger_id": "WA-05053",
+      "merger_name": "Vets Central \u2013 Castlemaine Veterinary Clinic, Vic",
       "status": "Assessment completed",
       "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": true,
       "under_appeal": false,
       "is_refiled": false,
-      "effective_notification_datetime": "2026-09-17T12:00:00Z",
-      "determination_publication_date": "2026-10-02T12:00:00Z",
+      "effective_notification_datetime": "2026-09-16T12:00:00Z",
+      "determination_publication_date": "2026-10-09T12:00:00Z",
       "end_of_determination_period": null,
-      "latest_event_date": "2026-10-02T12:00:00Z",
-      "page_modified_datetime": "2026-10-02T17:23:45+10:00",
+      "latest_event_date": "2026-10-09T12:00:00Z",
+      "page_modified_datetime": "2026-10-09T16:57:14+11:00",
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "SEKISUI HEIM AUSTRALIA AC PTY LTD"
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "canonical": {
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
-          "name": "Matthew Bell Ausbuild Pty Ltd"
-        },
-        {
-          "name": "Matthew Loney Ausbuild Pty Ltd"
-        },
-        {
-          "name": "Michael Loney Ausbuild Pty Ltd"
+          "name": "The Trustee for Berkwill Family Trust"
         }
       ],
-      "other_parties": [
-        {
-          "name": "Sekisui Chemical Co., Ltd."
-        },
-        {
-          "name": "Ausbuild Group Pty Ltd"
-        }
-      ],
+      "other_parties": [],
       "anzsic_codes": [
         {
-          "code": "1912",
-          "name": "Rigid and Semi-Rigid Polymer Product Manufacturing"
+          "code": "6970",
+          "name": "Veterinary Services"
         },
         {
-          "code": "1913",
-          "name": "Polymer Foam Product Manufacturing"
-        },
-        {
-          "code": "3011",
-          "name": "House Construction"
-        },
-        {
-          "code": "3211",
-          "name": "Land Development and Subdivision"
+          "code": "9539",
+          "name": "Other Personal Services n.e.c."
         }
       ]
     }
