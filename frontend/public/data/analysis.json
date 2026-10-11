@@ -392,10 +392,10 @@
       31,
       30
     ],
-    "as_at": "2026-10-11"
+    "as_at": "2026-10-12"
   },
   "current_status": {
-    "as_at": "2026-10-11",
+    "as_at": "2026-10-12",
     "windows": [
       {
         "days": 30,
@@ -455,14 +455,14 @@
         "days": 90,
         "notifications_filed": 109,
         "notifications": {
-          "median": 19.0,
-          "average": 20.9,
-          "p90": 28,
+          "median": 19,
+          "average": 21.0,
+          "p90": 29,
           "min": 15,
           "max": 56,
-          "count": 120,
+          "count": 119,
           "duration_histogram": {
-            "15": 21,
+            "15": 20,
             "16": 15,
             "17": 11,
             "18": 12,
