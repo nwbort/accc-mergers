@@ -235,8 +235,10 @@ def _group_chars_into_lines(page) -> List[Dict]:
     return out
 
 
-PAGE_HEADER_RE = re.compile(r'^Determination \| .+? \(MN-\d+\)\s*$')
-PAGE_HEADER_STRIP_RE = re.compile(r'^Determination \| [^\n]*?\(MN-\d+\)\s*\n', re.MULTILINE)
+# The matter number is usually "MN-30032" but has been typeset "MN - 30032"
+# (MN-30022's own determination), so the hyphen may carry spaces.
+PAGE_HEADER_RE = re.compile(r'^Determination \| .+? \(MN\s*-\s*\d+\)\s*$')
+PAGE_HEADER_STRIP_RE = re.compile(r'^Determination \| [^\n]*?\(MN[ \t]*-[ \t]*\d+\)[ \t]*\n', re.MULTILINE)
 PAGE_FOOTER_NUM_RE = re.compile(r'^\d+\s*$')
 # Second-level bullet. Word's default sub-bullet glyph is Courier "o", which
 # pdfplumber extracts as a literal letter; require the following space so a
@@ -256,7 +258,7 @@ def _is_heading_line(line: Dict) -> bool:
     # Looks like body content — not a heading regardless of styling.
     if re.match(r'^\d+\.\d+\.?\s', text):
         return False
-    if re.match(r'^[•▪]\s', text):
+    if re.match(r'^[•▪]\s', text) or SUB_BULLET_RE.match(text):
         return False
     if re.match(r'^\([a-z]\)\s', text):
         return False
