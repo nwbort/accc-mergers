@@ -862,6 +862,35 @@ class TestParseSectionBlocks:
             'The actual usage and downtime.',
         ]
 
+    def test_sub_bullets_nest_under_their_bullet(self):
+        # MN-35014: Word's "o" sub-bullets used to be glued onto the parent.
+        text = (
+            "• News Corp is unlikely to foreclose rivals, because:\n"
+            "o The profitability of such a strategy would require\n"
+            "rivals to exit\n"
+            "o Rivals have alternatives\n"
+            "• Second point.\n"
+        )
+        blocks = _parse_section_blocks(text, {})
+        assert len(blocks) == 1
+        assert blocks[0]['items'] == [
+            'News Corp is unlikely to foreclose rivals, because:',
+            'Second point.',
+        ]
+        assert blocks[0]['sub_items'] == [
+            ['The profitability of such a strategy would require rivals to exit',
+             'Rivals have alternatives'],
+            [],
+        ]
+
+    def test_no_sub_items_key_without_sub_bullets(self):
+        blocks = _parse_section_blocks("• One\n• Two\n", {})
+        assert 'sub_items' not in blocks[0]
+
+    def test_orphan_sub_bullet_becomes_bullet(self):
+        blocks = _parse_section_blocks("2.1. Intro:\no First\no Second\n", {})
+        assert blocks[1] == {'type': 'bullet_list', 'items': ['First', 'Second']}
+
     def test_lettered_list_parens(self):
         text = (
             "2.4. Examples of mining equipment include:\n"

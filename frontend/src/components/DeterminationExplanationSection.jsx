@@ -9,10 +9,18 @@ const ExplanationIcon = () => (
 // Clean up PDF-extracted text by distinguishing layout line-breaks from real ones.
 // Heuristics (in order of priority):
 //   1. Hyphen before \n → word-wrap split, join directly (e.g. "post-\nacquisition")
-//   2. \n followed by • or ▪ → real paragraph break (bullet list item)
+//   2. \n followed by • or ▪, or a sub-bullet marker ("o " / "◦ ") → real
+//      paragraph break (bullet list item)
 //   3. \n followed by [a-z]. → real paragraph break (lettered list item)
 //   4. \n preceded by . or ) and followed by uppercase → real paragraph break
 //   5. Everything else → layout break, join with a space
+// Word's second-level bullet is a Courier "o", which survives PDF extraction
+// as a literal letter (MN-40034). The trailing space keeps a wrapped line that
+// begins with a word like "of" from being taken for one.
+const SUB_BULLET_RE = /^[o◦]\s+/;
+const isBullet = (p) => p.startsWith('•') || p.startsWith('▪');
+const isSubBullet = (p) => SUB_BULLET_RE.test(p);
+
 function cleanExplanation(text) {
   return text.replace(/\n/g, (_, offset, str) => {
     const before = str.slice(0, offset);
@@ -20,24 +28,35 @@ function cleanExplanation(text) {
     const lastChar = before.slice(-1);
 
     if (lastChar === '-') return '';
-    if (after.startsWith('•') || after.startsWith('▪')) return '\n\n';
+    if (isBullet(after) || isSubBullet(after)) return '\n\n';
     if (/^[a-z]\./.test(after)) return '\n\n';
     if ((lastChar === '.' || lastChar === ')') && /^[A-Z]/.test(after)) return '\n\n';
     return ' ';
   });
 }
 
-// Group paragraphs into runs of plain text, bullet items (• or ▪), and lettered items (a. b. c.).
+// Group paragraphs into runs of plain text, bullet items (• or ▪, each with
+// any "o" sub-bullets nested under it), and lettered items (a. b. c.).
 function groupSegments(paragraphs) {
   const segments = [];
-  const isBullet = (p) => p.startsWith('•') || p.startsWith('▪');
   let i = 0;
   while (i < paragraphs.length) {
     const p = paragraphs[i];
-    if (isBullet(p)) {
+    if (isBullet(p) || isSubBullet(p)) {
       const items = [];
-      while (i < paragraphs.length && isBullet(paragraphs[i])) {
-        items.push(paragraphs[i].replace(/^[•▪]\s*/, ''));
+      while (i < paragraphs.length && (isBullet(paragraphs[i]) || isSubBullet(paragraphs[i]))) {
+        const para = paragraphs[i];
+        const last = items[items.length - 1];
+        if (isSubBullet(para) && last && !last.orphan) {
+          last.children.push(para.replace(SUB_BULLET_RE, ''));
+        } else {
+          // A sub-bullet with no bullet above it stands as a bullet itself.
+          items.push({
+            text: para.replace(/^[•▪]\s*/, '').replace(SUB_BULLET_RE, ''),
+            children: [],
+            orphan: isSubBullet(para) && (!last || last.orphan),
+          });
+        }
         i++;
       }
       segments.push({ type: 'bullets', items });
@@ -71,16 +90,27 @@ function isBoilerplate(p) {
   return BOILERPLATE_PREFIXES.some(prefix => p.startsWith(prefix));
 }
 
+function BulletList({ items }) {
+  return (
+    <ul className="list-disc list-outside pl-5 space-y-1.5">
+      {items.map((item, j) => (
+        <li key={j} className="text-sm text-gray-600 leading-relaxed">
+          {item.text}
+          {item.children.length > 0 && (
+            <ul className="list-[circle] list-outside pl-5 mt-1.5 space-y-1">
+              {item.children.map((child, k) => <li key={k}>{child}</li>)}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function renderSegments(segments) {
   return segments.map((seg, idx) => {
     if (seg.type === 'bullets') {
-      return (
-        <ul key={idx} className="list-disc list-outside pl-5 space-y-1.5">
-          {seg.items.map((item, j) => (
-            <li key={j} className="text-sm text-gray-600 leading-relaxed">{item}</li>
-          ))}
-        </ul>
-      );
+      return <BulletList key={idx} items={seg.items} />;
     }
     if (seg.type === 'letters') {
       return (
@@ -124,13 +154,8 @@ function renderStatementOfReasons(blocks) {
       );
     }
     if (b.type === 'bullet_list') {
-      return (
-        <ul key={idx} className="list-disc list-outside pl-5 space-y-1.5">
-          {b.items.map((item, j) => (
-            <li key={j} className="text-sm text-gray-600 leading-relaxed">{item}</li>
-          ))}
-        </ul>
-      );
+      const items = b.items.map((text, j) => ({ text, children: b.sub_items?.[j] || [] }));
+      return <BulletList key={idx} items={items} />;
     }
     if (b.type === 'lettered_list') {
       return (
@@ -204,7 +229,7 @@ function DeterminationExplanationSection({ merger }) {
       .map(p => p.trim())
       .filter(p => p && !isBoilerplate(p));
 
-    if (rawParagraphs.length > 0 && (rawParagraphs[0].startsWith('•') || rawParagraphs[0].startsWith('▪'))) {
+    if (rawParagraphs.length > 0 && isBullet(rawParagraphs[0])) {
       rawParagraphs[0] = rawParagraphs[0].replace(/^[•▪]\s*/, '');
     }
 
