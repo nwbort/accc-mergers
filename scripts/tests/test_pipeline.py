@@ -14,6 +14,8 @@ sys.modules['requests'] = unittest.mock.MagicMock()
 from scripts.parse.parse_determination import (
     extract_commission_division,
     parse_text_as_table,
+    PAGE_HEADER_RE,
+    PAGE_HEADER_STRIP_RE,
     _parse_section_blocks,
 )
 from scripts.parse.parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints, _extract_bullets, _has_questionnaire_header
@@ -861,6 +863,48 @@ class TestParseSectionBlocks:
             'Equipment hire rates',
             'The actual usage and downtime.',
         ]
+
+    def test_spaced_matter_number_page_header_is_chrome(self):
+        # MN-30022's determination typesets its running header "(MN - 30032)".
+        for header in (
+            "Determination | VSA - Sprayline (MN - 30032)",
+            "Determination | Macquarie Asset Management led consortium – Qube (MN-10007)",
+        ):
+            assert PAGE_HEADER_RE.match(header)
+            assert PAGE_HEADER_STRIP_RE.sub('', header + "\nbody\n") == "body\n"
+        blocks = _parse_section_blocks(
+            "• factors:\nDetermination | VSA - Sprayline (MN - 30032)\no first\n", {},
+        )
+        assert blocks[0] == {'type': 'bullet_list', 'items': ['factors:'], 'sub_items': [['first']]}
+
+    def test_sub_bullets_nest_under_their_bullet(self):
+        # MN-35014: Word's "o" sub-bullets used to be glued onto the parent.
+        text = (
+            "• News Corp is unlikely to foreclose rivals, because:\n"
+            "o The profitability of such a strategy would require\n"
+            "rivals to exit\n"
+            "o Rivals have alternatives\n"
+            "• Second point.\n"
+        )
+        blocks = _parse_section_blocks(text, {})
+        assert len(blocks) == 1
+        assert blocks[0]['items'] == [
+            'News Corp is unlikely to foreclose rivals, because:',
+            'Second point.',
+        ]
+        assert blocks[0]['sub_items'] == [
+            ['The profitability of such a strategy would require rivals to exit',
+             'Rivals have alternatives'],
+            [],
+        ]
+
+    def test_no_sub_items_key_without_sub_bullets(self):
+        blocks = _parse_section_blocks("• One\n• Two\n", {})
+        assert 'sub_items' not in blocks[0]
+
+    def test_orphan_sub_bullet_becomes_bullet(self):
+        blocks = _parse_section_blocks("2.1. Intro:\no First\no Second\n", {})
+        assert blocks[1] == {'type': 'bullet_list', 'items': ['First', 'Second']}
 
     def test_lettered_list_parens(self):
         text = (

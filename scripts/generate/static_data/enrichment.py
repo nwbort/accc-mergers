@@ -53,6 +53,8 @@ def _collect_determination_text(merger: dict) -> str:
                     parts.append(str(item.get('text') or ''))
                 else:
                     parts.append(str(item))
+            for subs in block.get('sub_items') or []:
+                parts.extend(str(sub) for sub in subs or [])
 
     return '\n'.join(parts)
 

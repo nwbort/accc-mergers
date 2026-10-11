@@ -235,9 +235,15 @@ def _group_chars_into_lines(page) -> List[Dict]:
     return out
 
 
-PAGE_HEADER_RE = re.compile(r'^Determination \| .+? \(MN-\d+\)\s*$')
-PAGE_HEADER_STRIP_RE = re.compile(r'^Determination \| [^\n]*?\(MN-\d+\)\s*\n', re.MULTILINE)
+# The matter number is usually "MN-30032" but has been typeset "MN - 30032"
+# (MN-30022's own determination), so the hyphen may carry spaces.
+PAGE_HEADER_RE = re.compile(r'^Determination \| .+? \(MN\s*-\s*\d+\)\s*$')
+PAGE_HEADER_STRIP_RE = re.compile(r'^Determination \| [^\n]*?\(MN[ \t]*-[ \t]*\d+\)[ \t]*\n', re.MULTILINE)
 PAGE_FOOTER_NUM_RE = re.compile(r'^\d+\s*$')
+# Second-level bullet. Word's default sub-bullet glyph is Courier "o", which
+# pdfplumber extracts as a literal letter; require the following space so a
+# wrapped line that merely begins with "o" (as in "of") isn't taken for one.
+SUB_BULLET_RE = re.compile(r'^[o◦]\s+(\S.*)$')
 
 
 def _is_heading_line(line: Dict) -> bool:
@@ -252,7 +258,7 @@ def _is_heading_line(line: Dict) -> bool:
     # Looks like body content — not a heading regardless of styling.
     if re.match(r'^\d+\.\d+\.?\s', text):
         return False
-    if re.match(r'^[•▪]\s', text):
+    if re.match(r'^[•▪]\s', text) or SUB_BULLET_RE.match(text):
         return False
     if re.match(r'^\([a-z]\)\s', text):
         return False
@@ -315,7 +321,9 @@ def _parse_section_blocks(text: str, heading_info: Dict[str, Dict]) -> List[Dict
     Each block has a 'type':
       - 'heading' with 'text'
       - 'paragraph' with 'text' and optional 'number' (e.g. "2.4")
-      - 'bullet_list' with 'items' (list of strings)
+      - 'bullet_list' with 'items' (list of strings) and, only when any item
+        has nested points, 'sub_items': a list aligned with 'items' holding
+        each item's sub-bullets (an empty list where it has none)
       - 'lettered_list' with 'items' (list of {'letter', 'text'})
     """
     blocks: List[Dict] = []
@@ -383,6 +391,31 @@ def _parse_section_blocks(text: str, heading_info: Dict[str, Dict]) -> List[Dict
                 flush()
                 current = {'type': 'bullet_list', 'items': []}
             current['items'].append(bullet_match.group(1).strip())
+            current.pop('_flat', None)
+            if 'sub_items' in current:
+                current['sub_items'].append([])
+            continue
+
+        # Sub-bullet: Word's second-level marker comes out of the PDF as a
+        # bare "o" (or "◦"). Nest it under the bullet it follows; with no
+        # bullet to hang it on, treat it as a bullet in its own right.
+        sub_match = SUB_BULLET_RE.match(line)
+        if sub_match:
+            if (
+                current is not None
+                and current.get('type') == 'bullet_list'
+                and current['items']
+                and not current.get('_flat')
+            ):
+                sub_items = current.setdefault('sub_items', [[] for _ in current['items']])
+                sub_items[-1].append(sub_match.group(1).strip())
+            else:
+                if current is None or current.get('type') != 'bullet_list':
+                    flush()
+                    current = {'type': 'bullet_list', 'items': [], '_flat': True}
+                current['items'].append(sub_match.group(1).strip())
+                if 'sub_items' in current:
+                    current['sub_items'].append([])
             continue
 
         # Lettered list with parenthesised marker: "(a) text".
@@ -426,7 +459,10 @@ def _parse_section_blocks(text: str, heading_info: Dict[str, Dict]) -> List[Dict
         elif current['type'] == 'paragraph':
             current['text'] = (current['text'] + ' ' + line).strip()
         elif current['type'] == 'bullet_list':
-            if current['items']:
+            if current.get('sub_items') and current['sub_items'][-1]:
+                last = current['sub_items'][-1]
+                last[-1] = (last[-1] + ' ' + line).strip()
+            elif current['items']:
                 current['items'][-1] = (current['items'][-1] + ' ' + line).strip()
             else:
                 current['items'].append(line)
@@ -435,8 +471,9 @@ def _parse_section_blocks(text: str, heading_info: Dict[str, Dict]) -> List[Dict
                 current['items'][-1]['text'] = (current['items'][-1]['text'] + ' ' + line).strip()
 
     flush()
-    # Strip private font-tracking fields from heading blocks before returning.
+    # Strip private tracking fields before returning.
     for block in blocks:
+        block.pop('_flat', None)
         if block['type'] == 'heading':
             block.pop('_size', None)
             block.pop('_bold', None)
