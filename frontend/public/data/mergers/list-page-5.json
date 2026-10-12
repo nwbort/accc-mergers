@@ -1020,7 +1020,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "ALLIANZ AUSTRALIA SERVICES PTY LIMITED"
+          "name": "ALLIANZ AUSTRALIA SERVICES PTY LIMITED",
+          "canonical": {
+            "name": "Allianz"
+          }
         }
       ],
       "targets": [
@@ -1036,7 +1039,10 @@
       ],
       "other_parties": [
         {
-          "name": "ALLIANZ AUSTRALIA INSURANCE LIMITED"
+          "name": "ALLIANZ AUSTRALIA INSURANCE LIMITED",
+          "canonical": {
+            "name": "Allianz"
+          }
         },
         {
           "name": "LENDLEASE CORPORATION LIMITED",

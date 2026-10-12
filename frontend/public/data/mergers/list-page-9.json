@@ -2333,7 +2333,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "ANZLAFF Sub 2"
+          "name": "ANZLAFF Sub 2",
+          "canonical": {
+            "name": "New Forests"
+          }
         }
       ],
       "targets": [
@@ -2346,10 +2349,16 @@
       ],
       "other_parties": [
         {
-          "name": "The Trust Company Limited atf ANZLAFF Sub 2"
+          "name": "The Trust Company Limited atf ANZLAFF Sub 2",
+          "canonical": {
+            "name": "The Trust Company Limited"
+          }
         },
         {
-          "name": "New Forests Pty Limited"
+          "name": "New Forests Pty Limited",
+          "canonical": {
+            "name": "New Forests"
+          }
         }
       ],
       "anzsic_codes": [

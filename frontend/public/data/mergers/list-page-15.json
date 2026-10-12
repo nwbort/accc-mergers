@@ -1954,35 +1954,56 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "The Trustee for ANZLAFF Sub 4"
+          "name": "The Trustee for ANZLAFF Sub 4",
+          "canonical": {
+            "name": "New Forests"
+          }
         },
         {
-          "name": "The Trustee for ANZLAFF Sub 1"
+          "name": "The Trustee for ANZLAFF Sub 1",
+          "canonical": {
+            "name": "New Forests"
+          }
         }
       ],
       "targets": [
         {
-          "name": "HEYWOOD PLANTATIONS PTY LTD"
+          "name": "HEYWOOD PLANTATIONS PTY LTD",
+          "canonical": {
+            "name": "AKD"
+          }
         },
         {
-          "name": "ASSOCIATED KILN DRIERS PTY. LIMITED"
+          "name": "ASSOCIATED KILN DRIERS PTY. LIMITED",
+          "canonical": {
+            "name": "AKD"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "APKV-Argos 84 Verm\u00f6gensverwaltungsgesellschaft mbH"
+          "name": "APKV-Argos 84 Verm\u00f6gensverwaltungsgesellschaft mbH",
+          "canonical": {
+            "name": "Allianz"
+          }
         },
         {
-          "name": "AZL-Argos 53 Verm\u00f6gensverwaltungsgesellschaft mbH"
+          "name": "AZL-Argos 53 Verm\u00f6gensverwaltungsgesellschaft mbH",
+          "canonical": {
+            "name": "Allianz"
+          }
         },
         {
           "name": "THE TRUST COMPANY LIMITED",
           "canonical": {
-            "name": "The Trust Company (Australia) Limited"
+            "name": "The Trust Company Limited"
           }
         },
         {
-          "name": "THE TRUST COMPANY (PTAL) LIMITED"
+          "name": "THE TRUST COMPANY (PTAL) LIMITED",
+          "canonical": {
+            "name": "The Trust Company Limited"
+          }
         }
       ],
       "anzsic_codes": [

@@ -600,7 +600,10 @@
           "name": "United Initiators OpCo LLC"
         },
         {
-          "name": "Allianz Leben Private Equity Fonds 2001 GmbH"
+          "name": "Allianz Leben Private Equity Fonds 2001 GmbH",
+          "canonical": {
+            "name": "Allianz"
+          }
         },
         {
           "name": "Equistone Partners Europe Fund V \"A\" L.P."
@@ -917,7 +920,10 @@
           "name": "INGENICO INTERNATIONAL (PACIFIC) PTY LTD"
         },
         {
-          "name": "Allianz S.E."
+          "name": "Allianz S.E.",
+          "canonical": {
+            "name": "Allianz"
+          }
         }
       ],
       "anzsic_codes": [

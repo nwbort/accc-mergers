@@ -2,41 +2,6 @@
   "shard": 188,
   "shard_count": 256,
   "parties": {
-    "azl-argos-53-verm-gensverwaltungsgesellschaft-mbh": {
-      "id": "azl-argos-53-verm-gensverwaltungsgesellschaft-mbh",
-      "canonical_name": "AZL-Argos 53 Verm\u00f6gensverwaltungsgesellschaft mbH",
-      "members": [
-        {
-          "name": "AZL-Argos 53 Verm\u00f6gensverwaltungsgesellschaft mbH",
-          "identifier": "HRB289086",
-          "identifier_type": null
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "MN-85053",
-            "merger_name": "Funds managed by New Forests \u2013 Forestry plantations of AKD",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-12T12:00:00Z",
-            "determination_date": null
-          }
-        ]
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
-    },
     "bupa-health-services-pty-ltd": {
       "id": "bupa-health-services-pty-ltd",
       "canonical_name": "Bupa Health Services Pty Ltd",

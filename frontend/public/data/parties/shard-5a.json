@@ -2,6 +2,106 @@
   "shard": 90,
   "shard_count": 256,
   "parties": {
+    "allianz": {
+      "id": "allianz",
+      "canonical_name": "Allianz",
+      "members": [
+        {
+          "name": "ALLIANZ AUSTRALIA INSURANCE LIMITED",
+          "identifier": "15 000 122 850",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ALLIANZ AUSTRALIA SERVICES PTY LIMITED",
+          "identifier": "66 002 947 257",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "APKV-Argos 84 Verm\u00f6gensverwaltungsgesellschaft mbH",
+          "identifier": "HRB232435",
+          "identifier_type": null
+        },
+        {
+          "name": "AZL-Argos 53 Verm\u00f6gensverwaltungsgesellschaft mbH",
+          "identifier": "HRB289086",
+          "identifier_type": null
+        },
+        {
+          "name": "Allianz Leben Private Equity Fonds 2001 GmbH",
+          "identifier": "HRB \u2013 125656",
+          "identifier_type": null
+        },
+        {
+          "name": "Allianz S.E.",
+          "identifier": "HRB  164232",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-55015",
+            "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-23T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85053",
+            "merger_name": "Funds managed by New Forests \u2013 Forestry plantations of AKD",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-12T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "WA-85045",
+            "merger_name": "Pacific Investment Management Company \u2013 Ingenico",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-17T12:00:00Z",
+            "determination_date": "2026-09-11T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-70035",
+            "merger_name": "Triton \u2013 United Initiators",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-09-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 4,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 3,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.333333333333332,
+        "median_days": 24,
+        "average_business_days": 12.666666666666666,
+        "median_business_days": 16,
+        "completed_count": 3
+      }
+    },
     "bmm-partners-pty-ltd": {
       "id": "bmm-partners-pty-ltd",
       "canonical_name": "Bmm Partners Pty Ltd",

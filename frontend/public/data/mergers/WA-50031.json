@@ -13,9 +13,13 @@
       "name": "ANZLAFF Sub 2",
       "identifier_type": "ABN",
       "identifier": "25 191 128 617",
+      "canonical": {
+        "id": "new-forests",
+        "name": "New Forests"
+      },
       "party_page": {
-        "id": "anzlaff-sub-2",
-        "name": "ANZLAFF Sub 2"
+        "id": "new-forests",
+        "name": "New Forests"
       }
     }
   ],
@@ -44,18 +48,26 @@
       "name": "The Trust Company Limited atf ANZLAFF Sub 2",
       "identifier_type": "ABN",
       "identifier": "59 004 027 749",
+      "canonical": {
+        "id": "the-trust-company-limited",
+        "name": "The Trust Company Limited"
+      },
       "party_page": {
-        "id": "the-trust-company-limited-atf-anzlaff-sub-2",
-        "name": "The Trust Company Limited atf ANZLAFF Sub 2"
+        "id": "the-trust-company-limited",
+        "name": "The Trust Company Limited"
       }
     },
     {
       "name": "New Forests Pty Limited",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "new-forests",
+        "name": "New Forests"
+      },
       "party_page": {
-        "id": "new-forests-pty-limited",
-        "name": "New Forests Pty Limited"
+        "id": "new-forests",
+        "name": "New Forests"
       }
     }
   ],
