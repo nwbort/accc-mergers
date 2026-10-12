@@ -27,7 +27,10 @@ rate limit as the other routes.
 
 Only event names listed in `ALLOWED_EVENT_TYPES` (`src/index.js`) are
 accepted, plus the per-merger follow counters `track_merger_{id}` (e.g.
-`track_merger_MN-01016`), which are matched by `TRACK_MERGER_EVENT_RE`. To start tracking a new feature's usage:
+`track_merger_MN-01016`), matched by `TRACK_MERGER_EVENT_RE`, and the
+per-industry follow counters `track_industry_{code}` (e.g.
+`track_industry_4520`, `track_industry_F`), matched by
+`TRACK_INDUSTRY_EVENT_RE`. To start tracking a new feature's usage:
 
 1. Add its event name to `ALLOWED_EVENT_TYPES`.
 2. In the frontend, call `pingFeatureEvent('your_event_name')` from

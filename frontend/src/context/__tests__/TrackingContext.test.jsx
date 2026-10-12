@@ -515,3 +515,42 @@ describe('TrackingContext tribunal appeal document comments', () => {
     await waitFor(() => expect(unseenAppeals(result)).toBe(0));
   });
 });
+
+describe('TrackingContext industry-follow usage ping', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+    mockFetchFromMergers({});
+  });
+
+  afterEach(() => {
+    globalThis.fetch = originalFetch;
+    vi.restoreAllMocks();
+  });
+
+  const eventPings = () =>
+    globalThis.fetch.mock.calls
+      .filter(([url]) => String(url).endsWith('/event'))
+      .map(([, init]) => JSON.parse(init.body).type);
+
+  it('pings track_industry_{code} when an industry is followed, not when unfollowed', async () => {
+    const { result } = renderHook(() => useTracking(), { wrapper });
+
+    act(() => {
+      result.current.toggleIndustryTracking('4520', 'Retail');
+    });
+    expect(eventPings()).toEqual(['track_industry_4520']);
+
+    act(() => {
+      result.current.toggleIndustryTracking('4520', 'Retail');
+    });
+    act(() => {
+      result.current.trackIndustry('F', 'Wholesale Trade');
+    });
+    // Re-following an already-followed industry is a no-op.
+    act(() => {
+      result.current.trackIndustry('F', 'Wholesale Trade');
+    });
+    expect(eventPings()).toEqual(['track_industry_4520', 'track_industry_F']);
+  });
+});

@@ -5,7 +5,8 @@ import { EVENT_ENDPOINT } from '../config';
 // server-side, keyed only on the event type — no cookies or per-user
 // identifiers are ever sent or stored, so usage can never be tied back to
 // an individual visitor. (The track_merger event carries the merger's id,
-// via trackMergerEvent(), so follows are counted per merger.)
+// via trackMergerEvent(), and track_industry the ANZSIC code, via
+// trackIndustryEvent(), so follows are counted per merger and per industry.)
 //
 // To track a new feature: add its name here and call pingFeatureEvent(...)
 // at the point of use. It also has to be added to ALLOWED_EVENT_TYPES in
@@ -21,6 +22,12 @@ export const FEATURE_EVENTS = {
 // The Worker accepts this family by pattern rather than by name.
 export function trackMergerEvent(mergerId) {
   return `track_merger_${mergerId}`;
+}
+
+// Per-industry follow counter: `track_industry_{code}`, e.g.
+// track_industry_4520 or track_industry_F. Also accepted by pattern.
+export function trackIndustryEvent(code) {
+  return `track_industry_${code}`;
 }
 
 // Fire-and-forget: must never throw or block the caller, since this is

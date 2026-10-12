@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { API_ENDPOINTS } from '../config';
 import { MERGER_STATUS } from '../constants/mergerStatus';
-import { pingFeatureEvent, trackMergerEvent } from '../utils/trackEvent';
+import { pingFeatureEvent, trackIndustryEvent, trackMergerEvent } from '../utils/trackEvent';
 import { fetchIndustryNode } from '../utils/industryNode';
 
 const TrackingContext = createContext(null);
@@ -731,6 +731,7 @@ export function TrackingProvider({ children }) {
     setTrackedIndustries((prev) => {
       if (prev.some((i) => i.code === code)) return prev;
       setNewlyTrackedIndustryCodes((codes) => [...codes, code]);
+      pingFeatureEvent(trackIndustryEvent(code));
       return [...prev, { code, name: name || code }];
     });
   }, []);
@@ -745,6 +746,7 @@ export function TrackingProvider({ children }) {
         return prev.filter((i) => i.code !== code);
       }
       setNewlyTrackedIndustryCodes((codes) => [...codes, code]);
+      pingFeatureEvent(trackIndustryEvent(code));
       return [...prev, { code, name: name || code }];
     });
   }, []);
