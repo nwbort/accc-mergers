@@ -371,6 +371,41 @@
         "completed_count": 1
       }
     },
+    "ingenia-communities-holdings-limited": {
+      "id": "ingenia-communities-holdings-limited",
+      "canonical_name": "Ingenia Communities Holdings Limited",
+      "members": [
+        {
+          "name": "Ingenia Communities Holdings Limited",
+          "identifier": "92 154 444 925",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60048",
+            "merger_name": "Ingenia - Peet - Flagstone JV",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-09T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "links-recruitment-limited": {
       "id": "links-recruitment-limited",
       "canonical_name": "Links Recruitment Limited",
