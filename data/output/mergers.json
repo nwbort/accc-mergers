@@ -42742,6 +42742,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-12T12:00:00Z",
+          "title": "Ingenia - Peet - Flagstone JV - third-party questionnaire",
+          "display_title": "Ingenia - Peet - Flagstone JV - third-party questionnaire",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/MN-60048%20-%20Ingenia%20-%20Peet%20-%20Flagstone%20JV%20-%20third-party%20questionnaire%20template%20-%20Oct%202026.docx",
+          "url_gh": "/mergers/MN-60048/MN-60048 - Ingenia - Peet - Flagstone JV - third-party questionnaire template - Oct 2026.pdf",
+          "phase": null
         }
       ],
       "is_waiver": false,
@@ -42753,6 +42762,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "MN-70039",
@@ -42789,15 +42799,15 @@
         }
       ],
       "phase_1_estimate": {
-        "expected_business_days": 18,
+        "expected_business_days": 17,
         "range_business_days": [
-          16,
-          21
+          15,
+          19
         ],
-        "basis": "global",
-        "question_bucket": null,
-        "question_count": null,
-        "sample_size": 251,
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 178,
         "as_of": "2026-10-09",
         "estimated_at": "2026-10-12",
         "method_version": 2
