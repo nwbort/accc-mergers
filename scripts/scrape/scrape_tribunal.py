@@ -74,6 +74,13 @@ Each linked document is also downloaded into ``data/raw/matters/{merger_id}/``
 and served exactly like ACCC attachments. Files already present are not
 re-downloaded; off-domain links are kept but not mirrored.
 
+The tribunal's own decisions (directions, determinations) are the exception:
+they link to a ``/decisions/tribunal-decisions?sq_content_src=...`` page that
+wraps a Federal Court judgment, not to a file. Those are followed to the
+judgment's "Original Word Document" on the Federal Court's site and the DOCX is
+mirrored instead (``download_judgment``); the pipeline's DOCX→PDF step then
+converts it like any ACCC attachment.
+
 Usage
 -----
 Normally this runs from CI on a schedule (the "Scrape Tribunal" workflow), but
@@ -130,7 +137,7 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 from shutil import which
-from urllib.parse import unquote, urljoin, urlparse
+from urllib.parse import parse_qs, unquote, urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -464,6 +471,29 @@ async def _browser_fetch(tab, url: str) -> tuple[bytes | None, str]:
     return data, ""
 
 
+async def _browser_fetch_with_retries(tab, url: str) -> bytes | None:
+    """:func:`_browser_fetch`, repeated while the failure looks transient.
+
+    See :func:`download_document_via_browser` for why a refusal is retried.
+    """
+    for attempt in range(1, BROWSER_FETCH_ATTEMPTS + 1):
+        data, detail = await _browser_fetch(tab, url)
+        if data is not None:
+            return data
+
+        retryable = _retryable_fetch_failure(detail)
+        last = attempt == BROWSER_FETCH_ATTEMPTS
+        print(
+            f"    Warning: browser fetch of {url} failed"
+            f" (attempt {attempt}/{BROWSER_FETCH_ATTEMPTS}): {detail}",
+            file=sys.stderr,
+        )
+        if last or not retryable:
+            return None
+        await asyncio.sleep(BROWSER_FETCH_RETRY_SECONDS)
+    return None
+
+
 async def download_document_via_browser(tab, merger_id: str, url: str) -> str | None:
     """Download a tribunal document by fetching it from inside the live browser.
 
@@ -493,21 +523,9 @@ async def download_document_via_browser(tab, merger_id: str, url: str) -> str | 
     if local_path.exists():
         return url_gh
 
-    for attempt in range(1, BROWSER_FETCH_ATTEMPTS + 1):
-        data, detail = await _browser_fetch(tab, url)
-        if data is not None:
-            break
-
-        retryable = _retryable_fetch_failure(detail)
-        last = attempt == BROWSER_FETCH_ATTEMPTS
-        print(
-            f"    Warning: browser fetch of {url} failed"
-            f" (attempt {attempt}/{BROWSER_FETCH_ATTEMPTS}): {detail}",
-            file=sys.stderr,
-        )
-        if last or not retryable:
-            return None
-        await asyncio.sleep(BROWSER_FETCH_RETRY_SECONDS)
+    data = await _browser_fetch_with_retries(tab, url)
+    if data is None:
+        return None
 
     try:
         local_path.parent.mkdir(parents=True, exist_ok=True)
@@ -978,13 +996,20 @@ async def try_click_turnstile(tab) -> bool:
     return False
 
 
-async def fetch_page(browser, url: str):
+async def fetch_page(browser, url: str, tab=None):
     """Navigate the browser to ``url`` and wait for the Cloudflare challenge to
     clear. Returns ``(tab, html)`` — both None if the page couldn't even be
     navigated to; ``html`` alone is None if the challenge never cleared within
-    ``MAX_WAIT_SECONDS``."""
+    ``MAX_WAIT_SECONDS``.
+
+    ``tab`` navigates that tab rather than the browser's main one, so a side
+    trip (see :func:`download_judgment`) leaves the matter page where it was.
+    """
     try:
-        tab = await _with_timeout(browser.get(url), "browser.get")
+        if tab is None:
+            tab = await _with_timeout(browser.get(url), "browser.get")
+        else:
+            await _with_timeout(tab.get(url), "tab.get")
     except Exception as e:
         print(f"    browser.get failed: {e}", flush=True)
         return None, None
@@ -1064,6 +1089,302 @@ async def clear_challenge_by_visiting(browser, doc_url: str, matter_url: str):
         )
         return None
     return tab
+
+
+# --- Tribunal decisions (Federal Court judgments) ----------------------------
+# The tribunal's own decisions — directions, determinations, reasons — are not
+# uploaded to its site like the parties' filings. They are published as
+# judgments on the Federal Court's site, and the matter page links to a
+# ``/decisions/tribunal-decisions?sq_content_src=...`` page that re-renders the
+# judgment inside the tribunal's template. ``sq_content_src`` is Squiz Matrix's
+# remote-content parameter: a ``+`` followed by base64 of ``url=<judgment page
+# URL, percent-encoded>&all=1``.
+#
+# That wrapper is an HTML page, not a file, and it cannot relay the file either:
+# its "Original Word Document" link is another wrapper URL, which answers
+# "Content cannot be accessed". The file has to come from the Federal Court:
+#
+#   www.judgments.fedcourt.gov.au/judgments/Judgments/tribunals/acompt/2026/2026acompt0002
+#     -> "Original Word Document" -> .../2026acompt0002/2026acompt0002
+#     -> 302 to www.fedcourt.gov.au/file-store/Judgments/Tribunals/
+#              Australian Competition Tribunal/2026/2026ACOMPT0002/2026ACOMPT0002.docx
+#
+# Both Federal Court hosts sit behind Cloudflare's managed challenge too, each
+# cleared separately, and the redirect crosses between them — so a fetch() from
+# the judgment page is refused (CORS), and the destination is read from the
+# browser's network events instead. See download_judgment.
+
+# The only domain a judgment page or its file is fetched from (SSRF guard, as
+# is_safe_document_url is for the tribunal's own documents). The page is on
+# www.judgments.fedcourt.gov.au and the file on www.fedcourt.gov.au.
+JUDGMENT_DOMAIN = "fedcourt.gov.au"
+
+# What a judgment's file link says. The Word document is the Federal Court's
+# original; anything else it offers is a rendering of it.
+_JUDGMENT_FILE_LINK_RE = re.compile(r"\b(?:word document|pdf|rtf)\b", re.IGNORECASE)
+
+# How long to wait for the judgment page to finish rendering its file link, and
+# for the browser to report where that link redirects. Both are a few seconds
+# in practice; the page is a few KB until its body arrives.
+JUDGMENT_LINK_WAIT_SECONDS = 15
+JUDGMENT_REDIRECT_WAIT_SECONDS = 20
+
+# Filename a downloaded judgment is given when the final URL carries no usable
+# extension, keyed by the file's leading bytes.
+_SNIFFED_EXTENSIONS = (
+    (b"PK\x03\x04", ".docx"),
+    (b"%PDF", ".pdf"),
+    (b"{\\rtf", ".rtf"),
+    (b"\xd0\xcf\x11\xe0", ".doc"),
+)
+_JUDGMENT_EXTENSIONS = {".docx", ".doc", ".pdf", ".rtf"}
+
+
+def is_judgment_host_url(url: str) -> bool:
+    """True if ``url`` is https on :data:`JUDGMENT_DOMAIN` or a subdomain."""
+    parsed = urlparse(url)
+    host = parsed.hostname
+    return (
+        parsed.scheme == "https"
+        and host is not None
+        and (host == JUDGMENT_DOMAIN or host.endswith("." + JUDGMENT_DOMAIN))
+    )
+
+
+def judgment_page_url(url: str) -> str | None:
+    """The Federal Court judgment page behind a tribunal-decisions wrapper URL.
+
+    Returns None for anything that isn't a tribunal-hosted ``sq_content_src``
+    wrapper of a Federal Court URL, so it doubles as the "is this a decision
+    wrapper?" test.
+    """
+    if not is_safe_document_url(url):
+        return None
+    values = parse_qs(urlparse(url).query).get("sq_content_src")
+    if not values:
+        return None
+    encoded = values[0].strip().lstrip("+")
+    try:
+        decoded = base64.b64decode(
+            encoded + "=" * (-len(encoded) % 4), validate=True
+        ).decode("utf-8")
+    except (ValueError, binascii.Error, UnicodeDecodeError):
+        return None
+    target = parse_qs(decoded).get("url")
+    if not target:
+        return None
+    target = target[0].strip()
+    return target if is_judgment_host_url(target) else None
+
+
+def judgment_file_link(html: str, page_url: str) -> str | None:
+    """The judgment's file link on its Federal Court page, preferring Word.
+
+    The file sits beneath the judgment's own path
+    (``.../2026acompt0002/2026acompt0002``), which is what tells it apart from
+    the site's other links.
+    """
+    soup = BeautifulSoup(html, "lxml")
+    base_path = urlparse(page_url).path.rstrip("/") + "/"
+    candidates = []
+    for a in soup.find_all("a", href=True):
+        href = urljoin(page_url, a["href"])
+        if not is_judgment_host_url(href):
+            continue
+        if not urlparse(href).path.startswith(base_path):
+            continue
+        text = a.get_text(" ", strip=True)
+        if _JUDGMENT_FILE_LINK_RE.search(text):
+            candidates.append((0 if "word" in text.lower() else 1, href))
+    return min(candidates)[1] if candidates else None
+
+
+def sniff_extension(data: bytes) -> str | None:
+    """A document extension for ``data`` by its leading bytes, or None if it
+    isn't one (an HTML page, say)."""
+    return next((e for magic, e in _SNIFFED_EXTENSIONS if data.startswith(magic)), None)
+
+
+def judgment_filename(final_url: str, data: bytes) -> str | None:
+    """Local filename for a downloaded judgment: the file-store basename
+    (``2026ACOMPT0002.docx``), with an extension sniffed from the bytes when
+    the URL doesn't carry a usable one."""
+    name = os.path.basename(unquote(urlparse(final_url).path)).strip()
+    stem, ext = os.path.splitext(name)
+    if ext.lower() not in _JUDGMENT_EXTENSIONS:
+        ext = sniff_extension(data)
+        if not ext:
+            return None
+        stem = name
+    filename = stem + ext
+    return filename if is_safe_filename(filename) else sanitize_filename(filename)
+
+
+def existing_mirror(merger_id: str, url_gh: str | None) -> str | None:
+    """``url_gh`` if its file is on disk (as served, or as the DOCX it was
+    converted from), else None — so a decision mirrored on an earlier run isn't
+    re-resolved through three Cloudflare-fronted hosts every hour."""
+    if not url_gh:
+        return None
+    name = os.path.basename(url_gh)
+    if not name or not is_safe_filename(name):
+        return None
+    stem = os.path.splitext(name)[0]
+    matter_dir = MATTERS_DIR / merger_id
+    for candidate in (name, stem + ".docx", stem + ".doc"):
+        if (matter_dir / candidate).exists():
+            return url_gh
+    return None
+
+
+async def _wait_for_judgment_link(tab, page_url: str, html: str) -> str | None:
+    """The page's file link, re-reading the page until it has rendered."""
+    deadline = time.time() + JUDGMENT_LINK_WAIT_SECONDS
+    while True:
+        link = judgment_file_link(html, page_url)
+        if link or time.time() >= deadline:
+            return link
+        await _with_timeout(tab.sleep(1), "tab.sleep")
+        try:
+            html = await _with_timeout(tab.get_content(), "tab.get_content")
+        except Exception:
+            pass
+
+
+def follow_redirects(url: str, hops: dict[str, str]) -> str:
+    """Where ``url`` ends up, given the redirect ``hops`` (from -> to) seen."""
+    seen = {url}
+    while url in hops and hops[url] not in seen:
+        url = hops[url]
+        seen.add(url)
+    return url
+
+
+async def _resolve_redirect(tab, link: str) -> str | None:
+    """Where ``link`` redirects to, read from the browser's network events.
+
+    A fetch() of it from the page is refused once the redirect leaves the
+    host (CORS), but not before Chrome has issued the redirected request, and
+    DevTools reports that request along with the response that redirected it.
+    Navigating to the link instead only shows the destination while that host
+    is still challenged: once cleared, the file is a download, and the tab
+    never leaves the judgment page.
+    """
+    hops: dict[str, str] = {}
+
+    def on_request(event):
+        if event.redirect_response is not None:
+            hops[event.redirect_response.url] = event.request.url
+
+    tab.add_handler(uc.cdp.network.RequestWillBeSent, on_request)
+    await _with_timeout(tab.send(uc.cdp.network.enable()), "network.enable")
+    await _browser_fetch(tab, link)
+    deadline = time.time() + JUDGMENT_REDIRECT_WAIT_SECONDS
+    while link not in hops and time.time() < deadline:
+        await _with_timeout(tab.sleep(0.5), "tab.sleep")
+    final_url = follow_redirects(link, hops)
+    return final_url if final_url != link else None
+
+
+async def download_judgment(browser, merger_id: str, url: str) -> str | None:
+    """Mirror the file behind a tribunal-decisions wrapper ``url``.
+
+    Works in a tab of its own, so the matter page the other documents are
+    fetched from is left as it was:
+
+    1. load the Federal Court judgment page (clearing that host's challenge)
+       and find its file link;
+    2. fetch that link from the page, which works if the file is served from
+       the same host;
+    3. otherwise learn where it redirects (:func:`_resolve_redirect`), clear
+       the challenge on *that* host by loading its home page, and fetch the
+       file from there.
+
+    Saved under ``data/raw/matters/{merger_id}/`` like any other document; a
+    DOCX is converted to PDF by the pipeline, so ``url_gh`` names the PDF.
+    Returns ``url_gh``, or None if the file couldn't be fetched.
+    """
+    page_url = judgment_page_url(url)
+    if page_url is None:
+        return None
+
+    print(f"    Following decision {url} to {page_url}", flush=True)
+    side_tab = None
+    try:
+        side_tab = await _with_timeout(
+            browser.get("about:blank", new_tab=True), "browser.get"
+        )
+        tab, html = await fetch_page(browser, page_url, tab=side_tab)
+        if html is None:
+            print(
+                f"    Warning: challenge did not clear on {page_url}",
+                file=sys.stderr,
+            )
+            return None
+
+        link = await _wait_for_judgment_link(tab, page_url, html)
+        if link is None:
+            print(f"    Warning: no file link on {page_url}", file=sys.stderr)
+            return None
+
+        # Same host, no redirect: the page can fetch it directly. Anything but
+        # a document (an HTML page) means the file lives elsewhere.
+        final_url = link
+        data, _ = await _browser_fetch(tab, link)
+        if data is None or sniff_extension(data) is None:
+            final_url = await _resolve_redirect(tab, link)
+            if final_url is None:
+                print(
+                    f"    Warning: {link} is neither a file nor a redirect "
+                    f"to one",
+                    file=sys.stderr,
+                )
+                return None
+            if not is_judgment_host_url(final_url):
+                print(
+                    f"    Warning: {link} redirects to {final_url}, which is "
+                    f"not a Federal Court host",
+                    file=sys.stderr,
+                )
+                return None
+            origin = f"https://{urlparse(final_url).hostname}/"
+            tab, home_html = await fetch_page(browser, origin, tab=tab)
+            if home_html is None:
+                print(
+                    f"    Warning: challenge did not clear on {origin}",
+                    file=sys.stderr,
+                )
+                return None
+            data = await _browser_fetch_with_retries(tab, final_url)
+            if data is None:
+                return None
+            if sniff_extension(data) is None:
+                print(
+                    f"    Warning: {final_url} is not a document", file=sys.stderr
+                )
+                return None
+
+        filename = judgment_filename(final_url, data)
+        if filename is None:
+            print(
+                f"    Warning: no safe filename for {final_url}", file=sys.stderr
+            )
+            return None
+        local_path = MATTERS_DIR / merger_id / filename
+        if not local_path.exists():
+            local_path.parent.mkdir(parents=True, exist_ok=True)
+            local_path.write_bytes(data)
+            print(f"    Downloaded {filename}")
+        return f"/mergers/{merger_id}/{get_serve_filename(filename)}"
+    except Exception as e:
+        print(f"    Warning: following {url} failed: {e}", file=sys.stderr)
+        return None
+    finally:
+        if side_tab is not None:
+            try:
+                await _with_timeout(side_tab.close(), "tab.close")
+            except Exception:
+                pass
 
 
 async def browser_session_headers(browser, tab) -> dict:
@@ -1268,6 +1589,10 @@ async def scrape_matters(
     failed: list[str] = []
     unmirrored: list[tuple[str, str]] = []
     session_headers: dict | None = None
+    # (merger_id, decision URL) -> url_gh, so a decision filed in two matters
+    # of one merger (MN-65005's ACT 3 and ACT 4 share their directions) is
+    # followed once.
+    judgments: dict[tuple[str, str], str] = {}
 
     try:
         for mid, record in targets:
@@ -1329,8 +1654,30 @@ async def scrape_matters(
                 # worth doing at most once per matter: if it doesn't help the
                 # first document it won't help the next.
                 visited_to_clear = False
+                # The tribunal's own decisions link to a Federal Court judgment
+                # rather than a file (see download_judgment). Following one
+                # costs several page loads, so a decision mirrored on an
+                # earlier run is taken from the record instead.
+                on_file = {
+                    d["url"]: d.get("url_gh")
+                    for d in record.get("documents") or []
+                    if d.get("url")
+                }
                 for doc in scraped:
                     if not doc.get("url"):
+                        continue
+                    if judgment_page_url(doc["url"]):
+                        url_gh = existing_mirror(
+                            mid, on_file.get(doc["url"])
+                        ) or judgments.get((mid, doc["url"]))
+                        if url_gh is None:
+                            url_gh = await download_judgment(browser, mid, doc["url"])
+                            if url_gh:
+                                judgments[(mid, doc["url"])] = url_gh
+                        if url_gh:
+                            doc["url_gh"] = url_gh
+                        else:
+                            missing.append(doc["url"])
                         continue
                     url_gh = await download_document_via_browser(tab, mid, doc["url"])
                     if (

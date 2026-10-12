@@ -7,7 +7,9 @@ files: parse_matter_page (including the multiple-table / section handling) and
 download_document's url_gh derivation, and the in-page fetch that
 download_document_via_browser decodes into a mirrored file — including how a
 fetch Cloudflare refuses is retried, and the visit that clears a challenge a
-fetch cannot.
+fetch cannot. Tribunal decisions, which link to a wrapped Federal Court
+judgment rather than a file, are covered from the URL decoding through to how
+the download loop routes them to download_judgment.
 """
 
 import asyncio
@@ -955,3 +957,232 @@ class TestMatterNaming:
         assert scrape_tribunal.snapshot_name(
             'MN-65005', 'https://www.competitiontribunal.gov.au/current-matters/act-4-of-2026'
         ) == 'MN-65005-act-4-of-2026'
+
+
+# The Directions in ACT 1 of 2026 as the matter page links them: a wrapper
+# around [2026] ACompT 2 on the Federal Court's judgments site.
+DECISION_URL = (
+    'https://www.competitiontribunal.gov.au/decisions/tribunal-decisions'
+    '?sq_content_src=%2BdXJsPWh0dHBzJTNBJTJGJTJGd3d3Lmp1ZGdtZW50cy5mZWRjb3Vy'
+    'dC5nb3YuYXUlMkZqdWRnbWVudHMlMkZKdWRnbWVudHMlMkZ0cmlidW5hbHMlMkZhY29tcHQl'
+    'MkYyMDI2JTJGMjAyNmFjb21wdDAwMDImYWxsPTE%3D'
+)
+JUDGMENT_URL = (
+    'https://www.judgments.fedcourt.gov.au/judgments/Judgments/tribunals/'
+    'acompt/2026/2026acompt0002'
+)
+
+
+def _wrapper(target: str) -> str:
+    """A tribunal-decisions wrapper URL around ``target``."""
+    from urllib.parse import quote
+    payload = base64.b64encode(f'url={quote(target, safe="")}&all=1'.encode()).decode()
+    return (
+        'https://www.competitiontribunal.gov.au/decisions/tribunal-decisions'
+        '?sq_content_src=' + quote('+' + payload, safe='')
+    )
+
+
+class TestJudgmentPageUrl:
+    def test_decodes_the_wrapped_judgment(self):
+        assert scrape_tribunal.judgment_page_url(DECISION_URL) == JUDGMENT_URL
+
+    def test_round_trips_any_federal_court_url(self):
+        target = 'https://www.judgments.fedcourt.gov.au/judgments/Judgments/x/y'
+        assert scrape_tribunal.judgment_page_url(_wrapper(target)) == target
+
+    def test_ordinary_documents_are_not_decisions(self):
+        assert scrape_tribunal.judgment_page_url(
+            'https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/1/A.pdf'
+        ) is None
+
+    def test_a_wrapper_of_anywhere_else_is_refused(self):
+        # SSRF guard: only the Federal Court is followed.
+        assert scrape_tribunal.judgment_page_url(_wrapper('https://example.com/x')) is None
+        assert scrape_tribunal.judgment_page_url(
+            _wrapper('https://fedcourt.gov.au.example.com/x')
+        ) is None
+        assert scrape_tribunal.judgment_page_url(
+            _wrapper('http://www.fedcourt.gov.au/x')
+        ) is None
+
+    def test_a_wrapper_hosted_off_the_tribunal_is_refused(self):
+        assert scrape_tribunal.judgment_page_url(
+            DECISION_URL.replace('www.competitiontribunal.gov.au', 'example.com')
+        ) is None
+
+    def test_garbage_payload(self):
+        assert scrape_tribunal.judgment_page_url(
+            'https://www.competitiontribunal.gov.au/decisions/tribunal-decisions'
+            '?sq_content_src=%2B!!!'
+        ) is None
+
+
+class TestJudgmentFileLink:
+    PAGE = f"""
+    <html><body>
+      <a href="https://www.fedcourt.gov.au/">Home</a>
+      <a href="{JUDGMENT_URL}/2026acompt0002.pdf">PDF version</a>
+      <a href="{JUDGMENT_URL}/2026acompt0002">Original Word Document (78.8 KB)</a>
+      <a href="https://www.judgments.fedcourt.gov.au/judgments/Judgments/other/x">Original Word Document</a>
+    </body></html>
+    """
+
+    def test_prefers_the_word_document_under_the_judgment(self):
+        assert scrape_tribunal.judgment_file_link(self.PAGE, JUDGMENT_URL) == (
+            f'{JUDGMENT_URL}/2026acompt0002'
+        )
+
+    def test_falls_back_to_another_rendering(self):
+        page = f'<a href="{JUDGMENT_URL}/2026acompt0002.pdf">PDF version</a>'
+        assert scrape_tribunal.judgment_file_link(page, JUDGMENT_URL) == (
+            f'{JUDGMENT_URL}/2026acompt0002.pdf'
+        )
+
+    def test_none_while_the_page_is_still_rendering(self):
+        assert scrape_tribunal.judgment_file_link('<html><head></head></html>', JUDGMENT_URL) is None
+
+
+class TestJudgmentFilename:
+    FILE_STORE = (
+        'https://www.fedcourt.gov.au/file-store/Judgments/Tribunals/'
+        'Australian%20Competition%20Tribunal/2026/2026ACOMPT0002/2026ACOMPT0002.docx'
+    )
+
+    def test_uses_the_file_store_name(self):
+        assert scrape_tribunal.judgment_filename(self.FILE_STORE, b'PK\x03\x04') == (
+            '2026ACOMPT0002.docx'
+        )
+
+    def test_sniffs_an_extension_the_url_lacks(self):
+        assert scrape_tribunal.judgment_filename(
+            f'{JUDGMENT_URL}/2026acompt0002', b'PK\x03\x04rest'
+        ) == '2026acompt0002.docx'
+        assert scrape_tribunal.judgment_filename(
+            f'{JUDGMENT_URL}/2026acompt0002', b'%PDF-1.7'
+        ) == '2026acompt0002.pdf'
+
+    def test_an_html_page_is_not_a_judgment(self):
+        assert scrape_tribunal.judgment_filename(
+            f'{JUDGMENT_URL}/2026acompt0002', b'<!DOCTYPE html>'
+        ) is None
+
+
+class TestExistingMirror:
+    def test_found_as_served_or_as_its_docx_source(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        url_gh = '/mergers/MN-0001/2026ACOMPT0002.pdf'
+        assert scrape_tribunal.existing_mirror('MN-0001', url_gh) is None
+
+        (tmp_path / 'MN-0001').mkdir()
+        (tmp_path / 'MN-0001' / '2026ACOMPT0002.docx').write_bytes(b'PK')
+        assert scrape_tribunal.existing_mirror('MN-0001', url_gh) == url_gh
+
+    def test_nothing_on_file(self):
+        assert scrape_tribunal.existing_mirror('MN-0001', None) is None
+
+
+class TestScrapeMattersFollowsDecisions:
+    """A decision wrapper is followed to its judgment, not fetched as a file."""
+
+    MATTER_URL = 'https://www.competitiontribunal.gov.au/m/1'
+
+    MATTER_HTML = f"""
+    <main>
+      <table class="table-bordered">
+        <tr><th>Date</th><th>Document</th></tr>
+        <tr><td>1 July 2026</td>
+            <td><a href="https://www.competitiontribunal.gov.au/x/Good.pdf">Good</a></td></tr>
+        <tr><td>2 July 2026</td>
+            <td><a href="{DECISION_URL.replace('&', '&amp;')}">Directions</a></td></tr>
+      </table>
+    </main>
+    """
+
+    def _run(self, monkeypatch, record, judgment_result, matters=1):
+        monkeypatch.setattr(scrape_tribunal, 'uc', types.SimpleNamespace(
+            start=lambda **kwargs: _async_value(FakeBrowser()),
+        ))
+        monkeypatch.setattr(scrape_tribunal, 'find_chrome', lambda: '/usr/bin/chrome')
+        monkeypatch.setattr(scrape_tribunal, 'free_port', lambda: 9999)
+        monkeypatch.setattr(scrape_tribunal, 'launch_chrome', lambda *a, **k: FakeProc())
+        monkeypatch.setattr(scrape_tribunal, 'wait_for_devtools', lambda port: True)
+        monkeypatch.setattr(scrape_tribunal, 'gha_warning', lambda message: None)
+
+        async def _fetch_page(browser, url):
+            return FakeTab(), self.MATTER_HTML
+
+        monkeypatch.setattr(scrape_tribunal, 'fetch_page', _fetch_page)
+
+        fetched = []
+
+        async def _via_browser(tab, mid, url):
+            fetched.append(url)
+            return f'/mergers/{mid}/Good.pdf'
+
+        monkeypatch.setattr(scrape_tribunal, 'download_document_via_browser', _via_browser)
+        monkeypatch.setattr(scrape_tribunal, 'download_document', lambda *a, **k: None)
+
+        followed = []
+
+        async def _judgment(browser, mid, url):
+            followed.append(url)
+            return judgment_result
+
+        monkeypatch.setattr(scrape_tribunal, 'download_judgment', _judgment)
+
+        targets = [
+            ('MN-0001', dict(record, tribunal_url=f'{self.MATTER_URL}/{i}'))
+            for i in range(matters)
+        ]
+        scraped, _, unmirrored = asyncio.run(
+            scrape_tribunal.scrape_matters(targets, do_download=True)
+        )
+        docs = {
+            d['description']: d
+            for d in scraped[('MN-0001', f'{self.MATTER_URL}/0')]
+        }
+        return docs, unmirrored, fetched, followed
+
+    def test_the_decision_is_followed_and_mirrored(self, monkeypatch):
+        docs, unmirrored, fetched, followed = self._run(
+            monkeypatch, {}, '/mergers/MN-0001/2026ACOMPT0002.pdf'
+        )
+        assert followed == [DECISION_URL]
+        assert DECISION_URL not in fetched
+        assert docs['Directions']['url_gh'] == '/mergers/MN-0001/2026ACOMPT0002.pdf'
+        assert unmirrored == []
+
+    def test_a_decision_shared_by_two_matters_is_followed_once(self, monkeypatch):
+        _, _, _, followed = self._run(
+            monkeypatch, {}, '/mergers/MN-0001/2026ACOMPT0002.pdf', matters=2
+        )
+        assert followed == [DECISION_URL]
+
+    def test_a_decision_mirrored_earlier_is_not_followed_again(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        (tmp_path / 'MN-0001').mkdir()
+        (tmp_path / 'MN-0001' / '2026ACOMPT0002.docx').write_bytes(b'PK')
+        record = {'documents': [
+            {'url': DECISION_URL, 'url_gh': '/mergers/MN-0001/2026ACOMPT0002.pdf'},
+        ]}
+        docs, _, _, followed = self._run(monkeypatch, record, None)
+        assert followed == []
+        assert docs['Directions']['url_gh'] == '/mergers/MN-0001/2026ACOMPT0002.pdf'
+
+    def test_a_decision_that_cannot_be_followed_is_reported(self, monkeypatch):
+        docs, unmirrored, _, _ = self._run(monkeypatch, {}, None)
+        assert 'url_gh' not in docs['Directions']
+        assert unmirrored == [('MN-0001', DECISION_URL)]
+
+
+class TestFollowRedirects:
+    def test_follows_the_chain(self):
+        hops = {'a': 'b', 'b': 'c'}
+        assert scrape_tribunal.follow_redirects('a', hops) == 'c'
+
+    def test_no_redirect(self):
+        assert scrape_tribunal.follow_redirects('a', {}) == 'a'
+
+    def test_a_loop_terminates(self):
+        assert scrape_tribunal.follow_redirects('a', {'a': 'b', 'b': 'a'}) == 'b'
