@@ -1751,10 +1751,16 @@
       ],
       "targets": [
         {
-          "name": "SONY AUSTRALIA LIMITED"
+          "name": "SONY AUSTRALIA LIMITED",
+          "canonical": {
+            "name": "Sony Corporation"
+          }
         },
         {
-          "name": "Sony Corporation"
+          "name": "Sony Corporation",
+          "canonical": {
+            "name": "Sony Corporation"
+          }
         }
       ],
       "other_parties": [],

@@ -404,41 +404,6 @@
         "median_business_days": 19,
         "completed_count": 1
       }
-    },
-    "sony-australia-limited": {
-      "id": "sony-australia-limited",
-      "canonical_name": "Sony Australia Limited",
-      "members": [
-        {
-          "name": "SONY AUSTRALIA LIMITED",
-          "identifier": "59 001 215 354",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [
-          {
-            "merger_id": "MN-65038",
-            "merger_name": "TCL Electronics \u2013 Sony\u2019s home entertainment business",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-09T12:00:00Z",
-            "determination_date": null
-          }
-        ],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
     }
   }
 }

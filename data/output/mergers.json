@@ -45738,15 +45738,23 @@
           "name": "SONY AUSTRALIA LIMITED",
           "identifier_type": "ABN",
           "identifier": "59 001 215 354",
+          "canonical": {
+            "id": "sony-corporation",
+            "name": "Sony Corporation"
+          },
           "party_page": {
-            "id": "sony-australia-limited",
-            "name": "Sony Australia Limited"
+            "id": "sony-corporation",
+            "name": "Sony Corporation"
           }
         },
         {
           "name": "Sony Corporation",
           "identifier_type": null,
           "identifier": "7010401045660",
+          "canonical": {
+            "id": "sony-corporation",
+            "name": "Sony Corporation"
+          },
           "party_page": {
             "id": "sony-corporation",
             "name": "Sony Corporation"
