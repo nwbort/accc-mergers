@@ -954,55 +954,23 @@ jobs:
       # are conservatively left for manual review in their entirety, since a
       # PR merge can't be split pair-by-pair.
       - name: Auto-merge exact-match waiver-refile PR
-        id: automerge
         if: steps.relm.outputs.found == 'true' && steps.relm.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ steps.relm.outputs.pr-number }}
-        run: |
-          if [ -z "$PR_NUMBER" ] || [ "$(jq -r '.all_certain' pr_meta.json)" != "true" ]; then
-            echo "Not an all-exact-match batch (or PR number missing) — leaving PR #$PR_NUMBER for manual review."
-            exit 0
-          fi
-
-          gh pr merge "$PR_NUMBER" --squash
-
-          gh label create "needs-verification" \
-            --description "Auto-merged by automation; needs a human to double-check" \
-            --color "fbca04" \
-            --force
-
-          TITLE="Verify auto-merged waiver refile(s) ($(date -u +%Y-%m-%d))"
-          jq -n \
-            --arg title "$TITLE" \
-            --rawfile body pr_issue_body.md \
-            '{"title": $title, "body": $body, "labels": ["needs-verification"]}' | \
-          gh api "repos/$GITHUB_REPOSITORY/issues" --method POST --input -
-          echo "Merged PR #$PR_NUMBER automatically and opened a verification issue"
-          echo "merged=true" >> "$GITHUB_OUTPUT"
-
-      # This one merged itself into main without review, so it is the detection
-      # outcome most worth interrupting for — hence priority 4 rather than the
-      # default the review PRs get.
-      - name: Notify about the auto-merged waiver refile
-        if: steps.automerge.outputs.merged == 'true'
-        uses: ./.github/actions/ntfy
+        uses: ./.github/actions/auto-merge-detection
         with:
-          topic: ${{ secrets.NTFY_TOPIC }}
-          token: ${{ secrets.NTFY_TOKEN }}
-          server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
-          title: Waiver refile auto-merged
-          message: >-
-            PR #${{ steps.relm.outputs.pr-number }} was an exact name match and
-            has been merged into main. A verification issue is open for a
-            sanity check.
-          tags: robot,white_check_mark
-          priority: '4'
-          click: ${{ github.server_url }}/${{ github.repository }}/issues?q=is%3Aopen+label%3Aneeds-verification
+          pr-number: ${{ steps.relm.outputs.pr-number }}
+          meta-file: pr_meta.json
+          issue-body-file: pr_issue_body.md
+          issue-title: "Verify auto-merged waiver refile(s) ({date})"
+          notify-title: Waiver refile auto-merged
+          github-token: ${{ github.token }}
+          ntfy-topic: ${{ secrets.NTFY_TOPIC }}
+          ntfy-token: ${{ secrets.NTFY_TOKEN }}
+          ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
 
       # -- Related parties → fix/related-parties --
 
       - name: Related parties review PR
+        id: relp
         uses: ./.github/actions/detection-pr
         with:
           base-sha: ${{ steps.detect_base.outputs.sha }}
@@ -1013,12 +981,38 @@ jobs:
             --summary
             --apply-suggestions
             --pr-markdown pr_body.md
+            --issue-markdown parties_issue_body.md
+            --meta-json parties_meta.json
           data-file: data/processed/related_parties.json
           commit-message: "suggest: candidate related parties detected on {date}"
           pr-title: "suggest: link related parties ({date})"
           close-comment: >-
             All detected related-party groups have been recorded as of {date}.
             Closing automatically.
+          github-token: ${{ github.token }}
+          ntfy-topic: ${{ secrets.NTFY_TOPIC }}
+          ntfy-token: ${{ secrets.NTFY_TOKEN }}
+          ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
+
+      # A batch made up only of high-confidence groups (names identical apart
+      # from punctuation, or one name extending another under the same ABN —
+      # see detect_related_parties.is_high_confidence) is merged straight away,
+      # with a verification issue in place of the review. The issue offers
+      # `/revert`, which moves the groups into related_parties.json's
+      # `rejected` list (revert-auto-merge.yml) so they aren't merged back on
+      # the next run. A mixed batch waits for review in its entirety. Its own
+      # file names, not pr_meta.json / pr_issue_body.md: the related-mergers
+      # step's copies are still in the working tree.
+      - name: Auto-merge high-confidence related-parties PR
+        if: steps.relp.outputs.found == 'true' && steps.relp.outputs.changed == 'true'
+        uses: ./.github/actions/auto-merge-detection
+        with:
+          pr-number: ${{ steps.relp.outputs.pr-number }}
+          meta-file: parties_meta.json
+          issue-body-file: parties_issue_body.md
+          issue-title: "Verify auto-merged related parties ({date})"
+          notify-title: Related parties auto-merged
+          revertable: 'true'
           github-token: ${{ github.token }}
           ntfy-topic: ${{ secrets.NTFY_TOPIC }}
           ntfy-token: ${{ secrets.NTFY_TOKEN }}

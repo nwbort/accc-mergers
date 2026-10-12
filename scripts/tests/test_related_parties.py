@@ -601,3 +601,150 @@ def test_generated_ids_are_unique():
     candidates = drp.find_candidates(mergers, [])
     ids = [c["id"] for c in candidates]
     assert len(ids) == len(set(ids))
+
+
+# ---------------------------------------------------------------------------
+# High-confidence candidates (auto-merged by the pipeline)
+# ---------------------------------------------------------------------------
+
+def _candidate(*members):
+    return {"members": [{"name": n, "identifier": i} for n, i in members]}
+
+
+def test_high_confidence_punctuation_only_variant():
+    assert drp.is_high_confidence(_candidate(
+        ("Eurazeo S.E.", "SIREN – 692 030 992"),
+        ("Eurazeo SE", "SIREN 692 030 992"),
+    ))
+
+
+def test_high_confidence_punctuation_variant_with_one_missing_identifier():
+    assert drp.is_high_confidence(_candidate(
+        ("Idemitsu Kosan Co. Ltd", ""),
+        ("Idemitsu Kosan Co., Ltd.", "TYO 5019"),
+    ))
+
+
+def test_punctuation_variant_with_conflicting_identifiers_is_not_high_confidence():
+    assert not drp.is_high_confidence(_candidate(
+        ("Acme Pty Ltd", "11 111 111 111"),
+        ("ACME PTY. LTD.", "22 222 222 222"),
+    ))
+
+
+def test_high_confidence_name_extended_under_same_identifier():
+    assert drp.is_high_confidence(_candidate(
+        ("AUSTRALIANSUPER PTY LTD", "94 006 457 987"),
+        ("AUSTRALIANSUPER PTY LTD atf AustralianSuper", "94 006 457 987"),
+    ))
+
+
+def test_name_extended_without_shared_identifier_is_not_high_confidence():
+    assert not drp.is_high_confidence(_candidate(
+        ("AUSTRALIANSUPER PTY LTD", "94 006 457 987"),
+        ("AUSTRALIANSUPER PTY LTD atf AustralianSuper", ""),
+    ))
+
+
+def test_shared_identifier_on_divergent_names_is_not_high_confidence():
+    # A copied ABN on two vehicles in one deal, not one renamed entity.
+    assert not drp.is_high_confidence(_candidate(
+        ("Hermes Bidco Limited", "CR number  429985"),
+        ("Hermes TopCo Limited", "CR Number  429985"),
+    ))
+
+
+def test_suffix_stripped_name_match_is_not_high_confidence():
+    # normalise_name drops "Australia" and "Corporation", so these are a
+    # `name` signal candidate — but a subsidiary and its parent.
+    mergers = [
+        _merger("MN-1", acquirers=[{"name": "SONY AUSTRALIA LIMITED", "identifier": "59 001 215 354"}]),
+        _merger("MN-2", acquirers=[{"name": "Sony Corporation", "identifier": "7010401045660"}]),
+    ]
+    [c] = drp.find_candidates(mergers, [])
+    assert c["signal"] == "name"
+    assert not drp.is_high_confidence(c)
+
+
+def test_cli_writes_meta_and_issue_only_for_all_high_confidence(tmp_path, monkeypatch):
+    mergers = tmp_path / "mergers.json"
+    parties = tmp_path / "related_parties.json"
+    meta = tmp_path / "meta.json"
+    issue = tmp_path / "issue.md"
+    parties.write_text(json.dumps({"groups": []}))
+
+    def run(mergers_doc):
+        mergers.write_text(json.dumps(mergers_doc))
+        issue.unlink(missing_ok=True)
+        monkeypatch.setattr(sys, "argv", [
+            "detect_related_parties", "--mergers", str(mergers), "--parties", str(parties),
+            "--meta-json", str(meta), "--issue-markdown", str(issue),
+        ])
+        assert drp.main() == 1
+        return json.loads(meta.read_text())
+
+    eurazeo = [
+        _merger("MN-1", acquirers=[{"name": "Eurazeo S.E.", "identifier": "692 030 992"}]),
+        _merger("MN-2", acquirers=[{"name": "Eurazeo SE", "identifier": "692 030 992"}]),
+    ]
+    sony = [
+        _merger("MN-3", acquirers=[{"name": "SONY AUSTRALIA LIMITED", "identifier": "59 001 215 354"}]),
+        _merger("MN-4", acquirers=[{"name": "Sony Corporation", "identifier": "7010401045660"}]),
+    ]
+
+    assert run(eurazeo) == {"count": 1, "certain_count": 1, "all_certain": True}
+    assert "Eurazeo" in issue.read_text()
+
+    # A mixed batch is left for manual review in its entirety.
+    assert run(eurazeo + sony) == {"count": 2, "certain_count": 1, "all_certain": False}
+    assert not issue.exists()
+
+
+# ---------------------------------------------------------------------------
+# Rejected groups (the /revert undo for an auto-merged batch)
+# ---------------------------------------------------------------------------
+
+def test_reject_groups_moves_groups_to_rejected(tmp_path):
+    parties = tmp_path / "related_parties.json"
+    parties.write_text(json.dumps({"_README": "x", "groups": [
+        {"id": "keep", "canonical_name": "Keep", "members": [{"name": "Keep Ltd", "identifier": ""}]},
+        {"id": "eurazeo-se", "canonical_name": "Eurazeo SE", "members": [
+            {"name": "Eurazeo S.E.", "identifier": "692 030 992"},
+            {"name": "Eurazeo SE", "identifier": "692 030 992"},
+        ]},
+    ]}))
+    moved = drp.reject_groups(parties, ["eurazeo-se", "already-gone"], note="Reverted #1")
+    assert moved == ["eurazeo-se"]
+    doc = json.loads(parties.read_text())
+    assert doc["_README"] == "x"
+    assert [g["id"] for g in doc["groups"]] == ["keep"]
+    assert doc["rejected"] == [{
+        "canonical_name": "Eurazeo SE",
+        "members": [
+            {"name": "Eurazeo S.E.", "identifier": "692 030 992"},
+            {"name": "Eurazeo SE", "identifier": "692 030 992"},
+        ],
+        "note": "Reverted #1",
+    }]
+
+
+def test_reject_groups_unknown_ids_leave_file_untouched(tmp_path):
+    parties = tmp_path / "related_parties.json"
+    parties.write_text('{"groups": []}')
+    assert drp.reject_groups(parties, ["nope"]) == []
+    assert parties.read_text() == '{"groups": []}'
+
+
+def test_rejected_cluster_is_not_suggested_again_until_it_grows():
+    mergers = [
+        _merger("MN-1", acquirers=[{"name": "Eurazeo S.E.", "identifier": "692 030 992"}]),
+        _merger("MN-2", acquirers=[{"name": "Eurazeo SE", "identifier": "692 030 992"}]),
+    ]
+    rejected = [{"members": [
+        {"name": "Eurazeo S.E.", "identifier": "692 030 992"},
+        {"name": "EURAZEO SE", "identifier": "692030992"},
+    ]}]
+    assert drp.find_candidates(mergers, [], rejected=rejected) == []
+
+    mergers.append(_merger("MN-3", targets=[{"name": "Eurazeo Holdings", "identifier": "692 030 992"}]))
+    assert len(drp.find_candidates(mergers, [], rejected=rejected)) == 1

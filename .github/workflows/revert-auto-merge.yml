@@ -1,0 +1,141 @@
+name: Revert auto-merged detection PR
+
+# The undo for .github/actions/auto-merge-detection. That action merges a
+# detection PR whose suggestions are all high confidence and opens a
+# needs-verification issue carrying a hidden <!-- auto-merged-pr: N -->
+# marker. Commenting `/revert` on that issue lands here: undo what PR N
+# added on main, say so on the issue and close it.
+#
+# "Undo" is not `git revert`. The detector would re-find the same suggestions
+# on its next run and, since they are high confidence, merge them straight
+# back. So for related parties the added groups are moved into the file's
+# `rejected` list (detect_related_parties --reject-groups), which the detector
+# skips. Only related parties offers /revert today; another detector needs its
+# own rejection list before it can (see the `revertable` input of
+# auto-merge-detection).
+#
+# Pushes straight to main rather than opening a PR: the person asking has
+# already reviewed the change and decided it is wrong, and a second PR to merge
+# is exactly the friction this is meant to remove.
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: read
+  actions: write   # to dispatch pipeline.yml so the site picks up the revert
+
+# Deliberately not the pipeline's `pipeline-main` group: GitHub keeps only one
+# *pending* run per group, so queueing here could cancel a queued pipeline run.
+# The push below rebases and retries instead.
+concurrency:
+  group: revert-auto-merge-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  revert:
+    if: >-
+      !github.event.issue.pull_request &&
+      github.event.issue.state == 'open' &&
+      contains(github.event.issue.labels.*.name, 'needs-verification') &&
+      startsWith(github.event.comment.body, '/revert') &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Reject the auto-merged suggestions
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          REQUESTED_BY: ${{ github.event.comment.user.login }}
+        run: |
+          fail() {
+            gh issue comment "$ISSUE_NUMBER" --body "Couldn't revert automatically: $1
+
+          See the [workflow run](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})."
+            echo "::error::$1"
+            exit 1
+          }
+
+          PR_NUMBER=$(printf '%s' "$ISSUE_BODY" \
+            | sed -n 's/.*<!-- auto-merged-pr: \([0-9]\+\) -->.*/\1/p' | head -n 1)
+          [ -n "$PR_NUMBER" ] || fail "this issue has no auto-merged PR marker."
+
+          read -r STATE MERGE_SHA < <(gh pr view "$PR_NUMBER" \
+            --json state,mergeCommit --jq '"\(.state) \(.mergeCommit.oid // "")"')
+          [ "$STATE" = "MERGED" ] && [ -n "$MERGE_SHA" ] \
+            || fail "PR #$PR_NUMBER is not merged (state: $STATE)."
+
+          # The checkout is shallow; the diff needs the commit and its parent.
+          git fetch --depth=2 origin "$MERGE_SHA"
+          FILES=$(git diff --name-only "${MERGE_SHA}^" "$MERGE_SHA")
+
+          # A plain `git revert` is not enough: the next pipeline run would
+          # re-detect the same high-confidence suggestions and merge them
+          # straight back. So each detector's undo also records the rejection
+          # where that detector will see it.
+          case "$FILES" in
+            data/processed/related_parties.json)
+              IDS=$(comm -13 \
+                <(git show "${MERGE_SHA}^:$FILES" | jq -r '.groups[].id' | sort) \
+                <(git show "${MERGE_SHA}:$FILES" | jq -r '.groups[].id' | sort))
+              [ -n "$IDS" ] || fail "PR #$PR_NUMBER added no related-party groups."
+              # shellcheck disable=SC2086  # one id per word, by construction
+              python -m scripts.detect.detect_related_parties \
+                --reject-groups $IDS \
+                --reject-note "Auto-merged in #$PR_NUMBER, reverted by @$REQUESTED_BY on #$ISSUE_NUMBER"
+              ;;
+            *)
+              fail "\`/revert\` only knows how to undo a related-parties batch; PR #$PR_NUMBER changed: $FILES. Use the **Revert** button on the PR."
+              ;;
+          esac
+
+          if git diff --quiet -- "$FILES"; then
+            fail "nothing left to revert — the groups from #$PR_NUMBER are already gone from \`main\`."
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$FILES"
+          git commit -m "Reject related parties auto-merged in #$PR_NUMBER" \
+            -m "Requested by @$REQUESTED_BY on #$ISSUE_NUMBER."
+
+          # Main moves under us whenever the pipeline commits; rebase and retry.
+          for attempt in 1 2 3 4; do
+            git push origin HEAD:main && break
+            [ "$attempt" = 4 ] && fail "couldn't push the revert to main."
+            sleep $((attempt * 5))
+            git pull --rebase origin main || fail "the revert conflicts with main after a rebase."
+          done
+          echo "REVERT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "PR_NUMBER=$PR_NUMBER" >> "$GITHUB_ENV"
+
+      # A GITHUB_TOKEN push doesn't trigger push workflows, so regenerate the
+      # site data explicitly rather than waiting for the next scheduled run.
+      - name: Regenerate site data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pipeline.yml --ref main
+
+      - name: Close the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" \
+            --body "Reverted #${PR_NUMBER} on \`main\` in ${REVERT_SHA}: its groups are now under \`rejected\` in \`related_parties.json\`, so they won't be suggested again. The pipeline has been dispatched to regenerate the site data."
+          gh issue close "$ISSUE_NUMBER" --reason "not planned"

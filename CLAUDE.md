@@ -289,7 +289,8 @@ scripts/                  # A Python package — entry points run as `python -m 
 ├── detect/
 │   ├── detect_duplicates.py  # Identify duplicate merger entries (review PR from pipeline.yml)
 │   ├── detect_related_mergers.py # Suggest waiver→notification pairs (review PR from pipeline.yml)
-│   ├── detect_related_parties.py # Suggest same-entity party groups (review PR from pipeline.yml)
+│   ├── detect_related_parties.py # Suggest same-entity party groups (review PR from pipeline.yml;
+│   │                     #   an all-high-confidence batch is auto-merged with a verification issue)
 │   ├── related_parties_batch.py # Batch LLM-assisted related-party suggestions
 │   └── party_matching.py # Shared party normalisation + group matching
 ├── generate/
@@ -635,6 +636,7 @@ exists rather than 404ing into the SPA's `index.html`.
 | `test.yml` | Pull requests touching `scripts/**`, `atproto/**` or `fixtures/*.json`, manual | Run the Python test suite |
 | `frontend-test.yml` | Pull requests touching `frontend/**`, `functions/**` or `fixtures/*.json`, manual | Run the frontend test suite |
 | `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `frontend/public/**` or the check itself, manual | Guards both Cloudflare Pages limits that fail silently: opens a tracking issue for any asset over the 25 MiB per-file limit, and for the deployment approaching the 20,000-**file** cap (reports at 80%, fails the run once over). See `scripts/check_deploy_assets.py` |
+| `revert-auto-merge.yml` | `/revert` comment on an open `needs-verification` issue (owner/member/collaborator only) | Undo an auto-merged related-parties batch: move its groups into `related_parties.json`'s `rejected` list (so the detector never re-suggests them), push to `main`, dispatch `pipeline.yml`, close the issue. See `.github/actions/auto-merge-detection` |
 | `workers-test.yml` | Pull requests touching `workers/**`, manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |
 
 There is no standalone workflow for any detector, or for the sitemap. All four
@@ -663,6 +665,13 @@ re-read two records that move perhaps once a year.
   `main` every run: `fix_missing_notification_dates.py` needs it (its default
   is *today*, so re-deriving would re-date every unreviewed candidate and
   discard corrections made on the branch), the other three ignore it.
+- `auto-merge-detection/` — merge a detection PR whose suggestions are all
+  high confidence (the detector's `--meta-json` says `all_certain`), open a
+  `needs-verification` issue from its `--issue-markdown`, and push a priority-4
+  notification. Used after the related-mergers and related-parties detectors;
+  with `revertable` the issue also offers `/revert` (`revert-auto-merge.yml`),
+  which only makes sense for a detector that keeps a rejection list
+  (`related_parties.json`'s `rejected`), or the next run merges it straight back.
 - `ntfy/` — publish a push notification to an [ntfy](https://ntfy.sh) topic.
 - `tracking-issues/` — the missing-document issue lifecycle shared by the
   `missing-questionnaire` and `missing-waiver-determination` checks: one issue

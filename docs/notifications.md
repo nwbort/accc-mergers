@@ -45,11 +45,12 @@ be reached.
 | Related mergers review PR opened, or updated with new candidates | default (3) | `pipeline.yml` |
 | Related parties review PR opened, or updated with new candidates | default (3) | `pipeline.yml` |
 | Exact-match waiver refile auto-merged into `main` | 4 (bypasses batching) | `pipeline.yml` — this one merged itself without review |
+| High-confidence related parties auto-merged into `main` | 4 (bypasses batching) | `pipeline.yml` — likewise |
 | Missing notification dates PR opened, or updated with new candidates | default (3) | `pipeline.yml` |
 | A watchlisted merger changed | default (3) | `pipeline.yml` — see [Watchlist](#watchlist) below |
 
-Tapping a notification opens the PR (or, for the auto-merge, the
-`needs-verification` issue list).
+Tapping a notification opens the PR (or, for an auto-merge, its
+`needs-verification` issue).
 
 ### Why "or updated with new candidates" and not "or updated"
 
