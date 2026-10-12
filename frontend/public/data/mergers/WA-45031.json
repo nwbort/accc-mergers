@@ -62,6 +62,10 @@
       "name": "Peabody Energy Corporation",
       "identifier_type": null,
       "identifier": "I.R.S. Employer Identification No. 134004153",
+      "canonical": {
+        "id": "peabody-energy-corporation",
+        "name": "Peabody Energy Corporation"
+      },
       "party_page": {
         "id": "peabody-energy-corporation",
         "name": "Peabody Energy Corporation"
@@ -71,9 +75,13 @@
       "name": "PEABODY ENERGY AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "93 096 909 410",
+      "canonical": {
+        "id": "peabody-energy-corporation",
+        "name": "Peabody Energy Corporation"
+      },
       "party_page": {
-        "id": "peabody-energy-australia-pty-ltd",
-        "name": "Peabody Energy Australia Pty Ltd"
+        "id": "peabody-energy-corporation",
+        "name": "Peabody Energy Corporation"
       }
     }
   ],

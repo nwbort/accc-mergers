@@ -2423,10 +2423,16 @@
       ],
       "other_parties": [
         {
-          "name": "Peabody Energy Corporation"
+          "name": "Peabody Energy Corporation",
+          "canonical": {
+            "name": "Peabody Energy Corporation"
+          }
         },
         {
-          "name": "PEABODY ENERGY AUSTRALIA PTY LTD"
+          "name": "PEABODY ENERGY AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "Peabody Energy Corporation"
+          }
         }
       ],
       "anzsic_codes": [

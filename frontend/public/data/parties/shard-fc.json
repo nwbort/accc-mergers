@@ -248,47 +248,6 @@
       },
       "waiver_duration": null
     },
-    "peabody-energy-australia-pty-ltd": {
-      "id": "peabody-energy-australia-pty-ltd",
-      "canonical_name": "Peabody Energy Australia Pty Ltd",
-      "members": [
-        {
-          "name": "PEABODY ENERGY AUSTRALIA PTY LTD",
-          "identifier": "93 096 909 410",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "WA-45031",
-            "merger_name": "Centurion \u2013 Boundary variation in respect of Red Hill Mining Lease",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "phase": "Waiver",
-            "notification_date": "2026-09-11T12:00:00Z",
-            "determination_date": "2026-10-12T12:00:00Z"
-          }
-        ]
-      },
-      "merger_count": 1,
-      "phase_1_count": 0,
-      "phase_2_count": 0,
-      "waiver_count": 1,
-      "active_count": 0,
-      "phase_duration": null,
-      "waiver_duration": {
-        "average_days": 31.0,
-        "median_days": 31,
-        "average_business_days": 20.0,
-        "median_business_days": 20,
-        "completed_count": 1
-      }
-    },
     "symal-group-limited": {
       "id": "symal-group-limited",
       "canonical_name": "Symal Group Limited",
