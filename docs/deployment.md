@@ -148,8 +148,21 @@ never collide with each other or with the pipeline's own commit.
 | `detect_related_parties.py` — parties that are the same real-world entity under different names/ABNs | `fix/related-parties` | `data/processed/related_parties.json` |
 | `fix_missing_notification_dates.py` — mergers whose ACCC page never published a notification date | `fix/missing-notification-dates` | `data/known_notification_dates.json` |
 
-An exact-match waiver refile from `detect_related_mergers.py` is auto-merged
-rather than left for review, and opens a `needs-verification` issue instead.
+Two detectors auto-merge a batch whose every suggestion is beyond reasonable
+doubt, and open a `needs-verification` issue instead of waiting on review
+(`.github/actions/auto-merge-detection`): an exact-match waiver refile from
+`detect_related_mergers.py`, and a high-confidence group from
+`detect_related_parties.py` (names identical apart from punctuation, or one
+name extending another under the same ABN — `is_high_confidence`). A mixed
+batch waits for review in its entirety.
+
+The related-parties issue can be undone from the issue itself: commenting
+`/revert` (as a repo owner, member or collaborator) runs
+`revert-auto-merge.yml`, which moves the batch's groups from `groups` into
+`related_parties.json`'s `rejected` list, pushes that to `main`, dispatches the
+pipeline and closes the issue. A plain `git revert` would not stick — the next
+run would re-detect the same groups and merge them straight back — which is
+why `/revert` is offered only for a detector that keeps a rejection list.
 
 These four previously had standalone workflows of their own
 (`detect-duplicates.yml`, `detect-related-mergers.yml`,

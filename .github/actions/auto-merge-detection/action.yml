@@ -1,0 +1,148 @@
+name: Auto-merge a detection PR
+description: >-
+  Merge a detection review PR whose suggestions are all high confidence, open
+  a needs-verification issue for a sanity check (with a one-comment way to
+  revert), and push a notification.
+
+# Used after detection-pr by the detectors that can tell when every suggestion
+# is beyond reasonable doubt (related mergers: an exact-name waiver refile;
+# related parties: see detect_related_parties.is_high_confidence). The
+# detector says so in its --meta-json output and writes the issue body to
+# --issue-markdown; this action does the rest.
+#
+# A mixed batch (some certain, some not) is left for manual review in its
+# entirety, since a PR merge can't be split suggestion-by-suggestion.
+#
+# With `revertable`, the issue carries a hidden <!-- auto-merged-pr: N -->
+# marker, and commenting `/revert` on it runs revert-auto-merge.yml, which
+# undoes the batch on main and closes the issue — the whole undo, from a
+# phone. That needs the detector to keep a rejection list (otherwise its next
+# run merges the same suggestions straight back), so it is opt-in: only
+# related parties has one today.
+
+inputs:
+  pr-number:
+    description: The detection PR to merge. Empty skips everything.
+    required: true
+  meta-file:
+    description: The detector's --meta-json output ({count, certain_count, all_certain}).
+    required: true
+  issue-body-file:
+    description: The detector's --issue-markdown output.
+    required: true
+  issue-title:
+    description: Verification issue title. "{date}" is replaced with today's UTC date.
+    required: true
+  notify-title:
+    description: ntfy notification title.
+    required: true
+  revertable:
+    description: >-
+      "true" to offer `/revert` in the issue (see revert-auto-merge.yml). Only
+      for a detector that records rejections, or the undo would not stick.
+    required: false
+    default: 'false'
+  github-token:
+    description: Token for the gh calls.
+    required: true
+  ntfy-topic:
+    description: ntfy topic. Empty disables the push.
+    required: false
+    default: ''
+  ntfy-token:
+    description: Access token for a protected ntfy topic. Usually empty.
+    required: false
+    default: ''
+  ntfy-server:
+    description: ntfy server base URL.
+    required: false
+    default: 'https://ntfy.sh'
+
+outputs:
+  merged:
+    description: '"true" if the PR was merged and a verification issue opened.'
+    value: ${{ steps.merge.outputs.merged }}
+  issue-url:
+    description: URL of the verification issue, empty if none.
+    value: ${{ steps.merge.outputs.issue-url }}
+
+runs:
+  using: composite
+  steps:
+    - name: Merge and open a verification issue
+      id: merge
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        PR_NUMBER: ${{ inputs.pr-number }}
+        META_FILE: ${{ inputs.meta-file }}
+        ISSUE_BODY_FILE: ${{ inputs.issue-body-file }}
+        ISSUE_TITLE: ${{ inputs.issue-title }}
+        REVERTABLE: ${{ inputs.revertable }}
+      run: |
+        if [ -z "$PR_NUMBER" ] || [ ! -f "$META_FILE" ] \
+           || [ "$(jq -r '.all_certain' "$META_FILE")" != "true" ] \
+           || [ ! -s "$ISSUE_BODY_FILE" ]; then
+          echo "Not an all-high-confidence batch (or PR number missing) — leaving PR #$PR_NUMBER for manual review."
+          exit 0
+        fi
+
+        gh pr merge "$PR_NUMBER" --squash
+        MERGE_SHA=$(gh pr view "$PR_NUMBER" --json mergeCommit --jq '.mergeCommit.oid')
+        PR_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/pull/${PR_NUMBER}"
+
+        # The undo goes in the issue itself, so checking it and reverting it
+        # are one place. The marker is what revert-auto-merge.yml reads.
+        cat >> "$ISSUE_BODY_FILE" <<EOF
+
+        Merged in [#${PR_NUMBER}](${PR_URL}) (\`${MERGE_SHA:0:7}\`). All correct? Just close this issue.
+        EOF
+        if [ "$REVERTABLE" = "true" ]; then
+          cat >> "$ISSUE_BODY_FILE" <<EOF
+
+        ## Not right?
+
+        - **Undo the whole batch:** comment \`/revert\` on this issue. Automation
+          removes what #${PR_NUMBER} added on \`main\`, records it as rejected so
+          it is never suggested again, and closes this issue.
+        - **Fix just one entry:** edit the data file on \`main\` by hand, then close this issue.
+
+        <!-- auto-merged-pr: ${PR_NUMBER} -->
+        EOF
+        fi
+
+        gh label create "needs-verification" \
+          --description "Auto-merged by automation; needs a human to double-check" \
+          --color "fbca04" \
+          --force
+
+        TITLE="${ISSUE_TITLE//\{date\}/$(date -u +%Y-%m-%d)}"
+        ISSUE_URL=$(jq -n \
+          --arg title "$TITLE" \
+          --rawfile body "$ISSUE_BODY_FILE" \
+          '{"title": $title, "body": $body, "labels": ["needs-verification"]}' | \
+          gh api "repos/$GITHUB_REPOSITORY/issues" --method POST --input - --jq '.html_url')
+        echo "Merged PR #$PR_NUMBER automatically and opened $ISSUE_URL"
+        echo "merged=true" >> "$GITHUB_OUTPUT"
+        echo "issue-url=$ISSUE_URL" >> "$GITHUB_OUTPUT"
+
+    # This merged itself into main without review, so it is the detection
+    # outcome most worth interrupting for — hence priority 4 rather than the
+    # default the review PRs get.
+    - name: Notify (ntfy)
+      if: steps.merge.outputs.merged == 'true'
+      uses: ./.github/actions/ntfy
+      with:
+        topic: ${{ inputs.ntfy-topic }}
+        token: ${{ inputs.ntfy-token }}
+        server: ${{ inputs.ntfy-server }}
+        title: ${{ inputs.notify-title }}
+        message: >-
+          PR #${{ inputs.pr-number }} was high confidence and has been merged
+          into main. A verification issue is open for a sanity check${{
+          inputs.revertable == 'true' && ' (comment /revert on it to undo)' || '' }}.
+        tags: robot,white_check_mark
+        priority: '4'
+        click: ${{ steps.merge.outputs.issue-url }}
+        actions: >-
+          [{"action":"view","label":"Check it","url":"${{ steps.merge.outputs.issue-url }}","clear":true}]

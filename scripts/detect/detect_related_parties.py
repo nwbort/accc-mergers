@@ -37,6 +37,16 @@ A cluster is only reported when it contains at least two *distinct* identities
 and none of its members already belong to a recorded group. Each candidate gets
 a confidence score from its strongest signal.
 
+High-confidence candidates
+--------------------------
+A narrower test than the signal, ``is_high_confidence``, picks out candidates
+safe to record without a human reviewing the PR first. The pipeline merges a
+batch made up entirely of these and opens a verification issue instead (see
+``--meta-json`` / ``--issue-markdown``). The signal alone is not enough: a
+``name`` match strips suffixes like "Australia" and "Corporation", so it links
+``SONY AUSTRALIA LIMITED`` to ``Sony Corporation``, and a shared identifier is
+regularly a copy-pasted ABN on two unrelated vehicles in one deal.
+
 Usage
 -----
   python -m scripts.detect.detect_related_parties [--summary]
@@ -394,6 +404,48 @@ def build_candidate(
     }
 
 
+def _has_digit(identifier: str) -> bool:
+    return any(ch.isdigit() for ch in identifier)
+
+
+def is_high_confidence(candidate: dict) -> bool:
+    """True if a candidate is one entity beyond reasonable doubt.
+
+    Either:
+
+    * every member's name is identical apart from punctuation, spacing and
+      case, and the members carry no two *different* identifiers
+      (``Eurazeo S.E.`` / ``Eurazeo SE``); or
+    * every member carries the same identifier, and every other member's name
+      merely extends the shortest one (``AUSTRALIANSUPER PTY LTD`` /
+      ``AUSTRALIANSUPER PTY LTD atf AustralianSuper``, ``... (Administrators
+      Appointed)``, ``... trading as ...``).
+
+    Deliberately excluded: a shared identifier on names that diverge
+    (``Hermes Bidco`` / ``Hermes TopCo``), which is as often a copied ABN as a
+    renamed entity, and a ``name`` match that only holds once suffixes like
+    "Australia" are stripped.
+    """
+    members = candidate.get("members") or []
+    if len(members) < 2:
+        return False
+    squashed = [_squash_name(m.get("name", "")) for m in members]
+    if not all(squashed):
+        return False
+    ids = [normalise_identifier(m.get("identifier", "")) for m in members]
+    distinct_ids = {i for i in ids if i}
+
+    if len(set(squashed)) == 1:
+        return len(distinct_ids) <= 1
+
+    if not all(ids) or len(distinct_ids) != 1:
+        return False
+    if not _has_digit(next(iter(distinct_ids))):
+        return False  # "NASDAQTECH"-style junk in the identifier field
+    shortest = min(squashed, key=len)
+    return all(s.startswith(shortest) for s in squashed)
+
+
 def find_group_merge_candidates(
     groups: list[dict],
     fuzzy_threshold: float = DEFAULT_FUZZY_THRESHOLD,
@@ -444,13 +496,30 @@ def find_group_merge_candidates(
     return candidates
 
 
+def _member_key(member: dict) -> tuple[str, str]:
+    """The ``PartyRecord.key`` a stored ``{name, identifier}`` member stands for."""
+    return (
+        normalise_name(member.get("name") or ""),
+        normalise_identifier(member.get("identifier") or ""),
+    )
+
+
 def find_candidates(
     mergers: list[dict],
     groups: list[dict],
     fuzzy_threshold: float = DEFAULT_FUZZY_THRESHOLD,
     enable_fuzzy: bool = False,
+    rejected: list[dict] | None = None,
 ) -> list[dict]:
-    """Return candidate group dicts not already captured in ``related_parties.json``."""
+    """Return candidate group dicts not already captured in ``related_parties.json``.
+
+    ``rejected`` is the file's ``rejected`` list: groups a person has said are
+    *not* one entity. A cluster made up only of one rejected entry's members is
+    not suggested again; one that has picked up a new member is.
+    """
+    rejected_keys = [
+        {_member_key(m) for m in r.get("members", [])} for r in rejected or []
+    ]
     by_identifier, by_name = build_group_lookups(groups)
     records_map = collect_party_records(mergers)
     records = list(records_map.values())
@@ -469,6 +538,9 @@ def find_candidates(
         ):
             continue
         if not _is_distinct_cluster(recs):
+            continue
+        keys = {r.key for r in recs}
+        if any(keys <= rk for rk in rejected_keys):
             continue
         signal = _component_signal(members, link_signals)
         candidates.append(build_candidate(recs, signal, existing_ids))
@@ -505,6 +577,40 @@ def apply_suggestions(parties_path: Path, candidates: list[dict]) -> int:
     doc["groups"].extend(_group_from_candidate(c) for c in candidates)
     save_parties_doc(doc, parties_path)
     return len(candidates)
+
+
+def reject_groups(parties_path: Path, group_ids: list[str], note: str = "") -> list[str]:
+    """Move groups out of ``groups`` and into ``rejected``. Returns the ids moved.
+
+    The undo for an auto-merged batch that turned out wrong (see
+    revert-auto-merge.yml). Deleting the groups alone is not enough: the next
+    run would re-detect the same high-confidence cluster and merge it straight
+    back, so the members are remembered in ``rejected`` and ``find_candidates``
+    skips them. Unknown ids are ignored — the group may already have been
+    edited away by hand.
+    """
+    doc = load_parties_doc(parties_path)
+    wanted = set(group_ids)
+    kept, moved = [], []
+    for g in doc["groups"]:
+        (moved if g.get("id") in wanted else kept).append(g)
+    if not moved:
+        return []
+    doc["groups"] = kept
+    rejected = doc.setdefault("rejected", [])
+    for g in moved:
+        entry = {
+            "canonical_name": g.get("canonical_name", ""),
+            "members": [
+                {"name": m.get("name", ""), "identifier": m.get("identifier", "")}
+                for m in g.get("members", [])
+            ],
+        }
+        if note:
+            entry["note"] = note
+        rejected.append(entry)
+    save_parties_doc(doc, parties_path)
+    return [g.get("id") for g in moved]
 
 
 # ---------------------------------------------------------------------------
@@ -546,8 +652,12 @@ def print_group_merge_summary(candidates: list[dict]) -> None:
     print()
 
 
-def build_pr_body(candidates: list[dict], date: str) -> str:
-    """Build a markdown PR body recommending the candidate groups."""
+def build_pr_body(candidates: list[dict], date: str, auto_merge: bool = False) -> str:
+    """Build a markdown PR body recommending the candidate groups.
+
+    ``auto_merge`` says every candidate is high confidence (see
+    ``is_high_confidence``), so the pipeline will merge the PR itself.
+    """
     lines = [
         f"The daily detector found **{len(candidates)}** candidate related-party "
         f"group(s) on **{date}** that aren't yet recorded in "
@@ -558,8 +668,21 @@ def build_pr_body(candidates: list[dict], date: str) -> str:
         "`related_parties.json`; once merged, each matching party on a merger "
         "detail page links to the register filtered by the group's canonical name.",
         "",
-        "Review each group, **edit or remove any that are wrong**, then merge.",
-        "",
+    ]
+    if auto_merge:
+        lines += [
+            "Every group here is **high confidence** (identical names apart "
+            "from punctuation, or one name extending another under the same "
+            "ABN), so this PR is merged automatically. A follow-up issue "
+            "tracks manual verification.",
+            "",
+        ]
+    else:
+        lines += [
+            "Review each group, **edit or remove any that are wrong**, then merge.",
+            "",
+        ]
+    lines += [
         "---",
         "",
     ]
@@ -580,6 +703,39 @@ def build_pr_body(candidates: list[dict], date: str) -> str:
                 f"[{mid}]({mergers_fyi_url(mid)})" for mid in m["merger_ids"]
             )
             lines.append(f"| {name} | {ident} | {merger_links} |")
+        lines.append("")
+    lines.extend([
+        "---",
+        "",
+        f"*Generated automatically by the related-parties step of the "
+        f"[merger pipeline](https://github.com/{_REPO}/actions/workflows/pipeline.yml).*",
+    ])
+    return "\n".join(lines)
+
+
+def build_issue_body(candidates: list[dict], date: str) -> str:
+    """Build a markdown issue body asking for a sanity check of groups that
+    were merged automatically because they are high confidence."""
+    parties_blob = f"https://github.com/{_REPO}/blob/main/{_PARTIES_PATH}"
+    lines = [
+        f"The daily detector found **{len(candidates)}** high-confidence "
+        f"related-party group(s) on **{date}** and merged them into "
+        f"[`{_PARTIES_PATH}`]({parties_blob}) automatically.",
+        "",
+        "Please double-check each group below is one real-world entity.",
+        "",
+        "---",
+        "",
+    ]
+    for c in candidates:
+        lines.append(f"### {c['canonical_name']}  ·  `id: {c['id']}`")
+        lines.append("")
+        for m in c["members"]:
+            ident = m["identifier"] or "no ABN"
+            merger_links = ", ".join(
+                f"[{mid}]({mergers_fyi_url(mid)})" for mid in m["merger_ids"]
+            )
+            lines.append(f"- **{m['name']}** · {ident} · {merger_links}")
         lines.append("")
     lines.extend([
         "---",
@@ -625,11 +781,35 @@ def main() -> int:
         help="Write a PR body (markdown) recommending the candidates to this path",
     )
     parser.add_argument(
+        "--issue-markdown", type=Path, default=None, dest="issue_markdown",
+        help="Write a verification-issue body (markdown) to this path, if every "
+        "candidate found is high confidence (see is_high_confidence)",
+    )
+    parser.add_argument(
+        "--meta-json", type=Path, default=None, dest="meta_json",
+        help="Write JSON metadata ({count, certain_count, all_certain}) so CI "
+        "can decide whether to auto-merge the suggestion PR",
+    )
+    parser.add_argument(
+        "--reject-groups", nargs="+", default=None, dest="reject_groups", metavar="ID",
+        help="Move these group ids from `groups` to `rejected` in --parties, so "
+        "they are never suggested again, and exit",
+    )
+    parser.add_argument(
+        "--reject-note", default="", dest="reject_note",
+        help="Note stored on each entry moved by --reject-groups",
+    )
+    parser.add_argument(
         "--group-merge-candidates", action="store_true", dest="group_merge_candidates",
         help="Instead of detecting new groups, find existing groups in --parties "
         "that look like the same entity and should be merged (see related_parties.py)",
     )
     args = parser.parse_args()
+
+    if args.reject_groups:
+        moved = reject_groups(args.parties, args.reject_groups, args.reject_note)
+        print(f"Rejected {len(moved)} group(s): {', '.join(moved) or 'none'}")
+        return 0
 
     if not args.mergers.exists():
         print(f"ERROR: mergers file not found: {args.mergers}", file=sys.stderr)
@@ -637,10 +817,12 @@ def main() -> int:
 
     mergers = load_mergers(args.mergers)
 
-    groups = []
+    groups, rejected = [], []
     if args.parties.exists():
         with args.parties.open() as fh:
-            groups = json.load(fh).get("groups", [])
+            doc = json.load(fh)
+        groups = doc.get("groups", [])
+        rejected = doc.get("rejected", [])
 
     if args.group_merge_candidates:
         merge_candidates = find_group_merge_candidates(groups, args.fuzzy_threshold)
@@ -654,7 +836,9 @@ def main() -> int:
                 )
         return 1 if merge_candidates else 0
 
-    candidates = find_candidates(mergers, groups, args.fuzzy_threshold, args.fuzzy)
+    candidates = find_candidates(
+        mergers, groups, args.fuzzy_threshold, args.fuzzy, rejected=rejected
+    )
 
     if args.summary or not (args.json or args.apply_suggestions or args.pr_markdown):
         print_summary(candidates)
@@ -664,12 +848,34 @@ def main() -> int:
         with args.json.open("w") as fh:
             json.dump({"count": len(candidates), "candidates": candidates}, fh, indent=2)
 
+    certain = [c for c in candidates if is_high_confidence(c)]
+    all_certain = bool(candidates) and len(certain) == len(candidates)
+
+    from datetime import datetime, timezone
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
     if args.pr_markdown and candidates:
-        from datetime import datetime, timezone
-        today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         args.pr_markdown.parent.mkdir(parents=True, exist_ok=True)
         with args.pr_markdown.open("w") as fh:
-            fh.write(build_pr_body(candidates, today))
+            fh.write(build_pr_body(candidates, today, auto_merge=all_certain))
+
+    if args.issue_markdown and all_certain:
+        args.issue_markdown.parent.mkdir(parents=True, exist_ok=True)
+        with args.issue_markdown.open("w") as fh:
+            fh.write(build_issue_body(certain, today))
+
+    if args.meta_json:
+        args.meta_json.parent.mkdir(parents=True, exist_ok=True)
+        with args.meta_json.open("w") as fh:
+            json.dump(
+                {
+                    "count": len(candidates),
+                    "certain_count": len(certain),
+                    "all_certain": all_certain,
+                },
+                fh,
+                indent=2,
+            )
 
     if args.apply_suggestions and candidates:
         added = apply_suggestions(args.parties, candidates)
