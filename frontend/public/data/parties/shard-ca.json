@@ -2,6 +2,47 @@
   "shard": 202,
   "shard_count": 256,
   "parties": {
+    "centurion-coal-mining-pty-ltd": {
+      "id": "centurion-coal-mining-pty-ltd",
+      "canonical_name": "Centurion Coal Mining Pty Ltd",
+      "members": [
+        {
+          "name": "CENTURION COAL MINING PTY LTD",
+          "identifier": "50 010 879 526",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45031",
+            "merger_name": "Centurion \u2013 Boundary variation in respect of Red Hill Mining Lease",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-11T12:00:00Z",
+            "determination_date": "2026-10-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "damday-pty-ltd": {
       "id": "damday-pty-ltd",
       "canonical_name": "Damday Pty Ltd",

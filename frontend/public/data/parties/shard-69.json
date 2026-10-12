@@ -259,6 +259,47 @@
         "completed_count": 2
       }
     },
+    "monarch-alternative-capital-lp": {
+      "id": "monarch-alternative-capital-lp",
+      "canonical_name": "Monarch Alternative Capital LP",
+      "members": [
+        {
+          "name": "Monarch Alternative Capital LP",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15047",
+            "merger_name": "Monarch Alternative Capital & General Atlantic - Loparex",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-17T12:00:00Z",
+            "determination_date": "2026-10-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
     "mwi-veterinary-supply-inc": {
       "id": "mwi-veterinary-supply-inc",
       "canonical_name": "MWI Veterinary Supply, Inc.",

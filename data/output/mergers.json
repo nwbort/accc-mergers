@@ -33850,13 +33850,13 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 20,
-        "min_days": 0,
+        "estimated_days": 28,
+        "min_days": 19,
         "max_days": 47,
-        "id_issued_estimated": "2026-09-10",
-        "id_issued_before": "2026-09-30",
+        "id_issued_estimated": "2026-09-02",
+        "id_issued_before": "2026-09-11",
         "id_issued_after": "2026-08-14",
-        "min_days_witness": "MN-45030",
+        "min_days_witness": "WA-45031",
         "max_days_witness": "WA-45026",
         "basis": "bracketed",
         "method_version": 1
@@ -33994,15 +33994,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 26,
-        "min_days": null,
+        "estimated_days": 30,
+        "min_days": 25,
         "max_days": 53,
-        "id_issued_estimated": "2026-09-10",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-09-06",
+        "id_issued_before": "2026-09-11",
         "id_issued_after": "2026-08-14",
-        "min_days_witness": null,
+        "min_days_witness": "WA-45031",
         "max_days_witness": "WA-45026",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -80134,6 +80134,153 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/monarch-alternative-capital-general-atlantic-loparex",
+      "merger_name": "Monarch Alternative Capital & General Atlantic - Loparex",
+      "status": "Assessment completed",
+      "merger_id": "WA-15047",
+      "effective_notification_datetime": "2026-09-17T12:00:00Z",
+      "original_notification_datetime": "2026-09-17T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-12T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-12T17:02:49+11:00",
+      "acquirers": [
+        {
+          "name": "Monarch Alternative Capital LP",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "monarch-alternative-capital-lp",
+            "name": "Monarch Alternative Capital LP"
+          }
+        },
+        {
+          "name": "General Atlantic",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "general-atlantic",
+            "name": "General Atlantic"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "US NewCo LLC (an entity to be established to hold entities comprising the Loparex operating group)",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "us-newco-llc-an-entity-to-be-established-to-hold-entities-comprising-the-loparex",
+            "name": "US NewCo LLC (an entity to be established to hold entities comprising the Loparex operating group)"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1529",
+          "name": "Other Converted Paper Product Manufacturing"
+        },
+        {
+          "code": "1911",
+          "name": "Polymer Film and Sheet Packaging Material Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "The transaction involves the acquisition of joint control over US NewCo LLC, an entity to be established (the **Target**), that will at closing own, directly or indirectly, all of the issued and outstanding equity interests in the entities comprising the Loparex operating group (**Loparex**) by entities and funds affiliated with Monarch Alternative Capital LP (**Monarch**) and by funds managed and advised by affiliates of GASC APF, L.P. (together with its affiliated investment funds **GA** and, together with Monarch, the **Acquirers**) (the **Acquisition**).\n\nThe Acquisition forms part of a broader financial restructuring of Loparex's capital structure, involving a refinancing and recapitalisation of substantially all of Loparex's outstanding funded indebtedness and equity.\n\nOn completion, funds affiliated with Monarch and GA will indirectly hold equity interests in the Target.\n\nMonarch is a global credit and real estate investment firm with approximately $17 billion in assets under management, with offices in New York, Florida and London.\n\nGA is a global growth investor with more than four decades of experience providing capital and strategic support for over 520 growth companies. GA manages approximately USD $129.9 billion in assets under management as of 30 June 2026 with more than 900 professionals in 20 countries across 5 regions.\n\nLoparex is a manufacturer and provider of release liner and technical film, headquartered in the USA.",
+      "events": [
+        {
+          "date": "2026-10-12T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Monarch%20Alternative%20Capital%20and%20General%20Atlantic%20-%20Loparex%20%28WA-15047%29%20-%20Notification%20waiver%20determination%20-%2012%20October%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Monarch Alternative Capital LP (Monarch) and General Atlantic (GA)\napplied for a notification waiver in respect of their proposed\nacquisition of joint control over an entity to be established that will at\nclosing own directly or indirectly all of the issued and outstanding\nequity interests in the entities comprising the Loparex operating\ngroup (Loparex) as described in the transaction documents provided\nas part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "12 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "Monarch is a global credit and real estate investment firm with\napproximately $US17 billion in assets under management, with\noffices in New York, Florida and London.\nGA is a leading global growth investor which manages approximately\n$US129.9 billion in assets under management.\nLoparex is a manufacturer and provider of release liner and technical\nfilm headquartered in the USA."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given there is no horizontal overlap or\nvertical relationship between Monarch or GA and Loparex in\nAustralia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-15047/Monarch Alternative Capital and General Atlantic - Loparex (WA-15047) - Notification waiver determination - 12 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-17T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-55005",
+          "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
+          "acquirers": [
+            "General Atlantic",
+            "Canada Pension Plan Investment Board"
+          ],
+          "targets": [
+            "Boats Group Holdings, Inc",
+            "Bimini Holdings, LP"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-05033",
+          "merger_name": "CVC Capital Partners \u2013 Chess.com",
+          "acquirers": [
+            "Squares Blocker, inc."
+          ],
+          "targets": [
+            "Chess Holdings, LLC"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-60033",
+          "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
+          "acquirers": [
+            "Newco (an entity to be established by Verlinvest SA)",
+            "Verlinvest SA"
+          ],
+          "targets": [
+            "Tukazza Invest ! SAS",
+            "Tukazza ! SAS"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/carlyle-%E2%80%93-peloton-computer-enterprises",
       "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
       "status": "Assessment completed",
@@ -103312,6 +103459,188 @@
           ],
           "targets": [
             "ANGLICAN COMMUNITY SERVICES"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/centurion-%E2%80%93-boundary-variation-in-respect-of-red-hill-mining-lease",
+      "merger_name": "Centurion \u2013 Boundary variation in respect of Red Hill Mining Lease",
+      "status": "Assessment completed",
+      "merger_id": "WA-45031",
+      "effective_notification_datetime": "2026-09-11T12:00:00Z",
+      "original_notification_datetime": "2026-09-11T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-12T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-12T17:02:03+11:00",
+      "acquirers": [
+        {
+          "name": "CENTURION COAL MINING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 010 879 526",
+          "party_page": {
+            "id": "centurion-coal-mining-pty-ltd",
+            "name": "Centurion Coal Mining Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "BHP GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 004 028 077",
+          "party_page": {
+            "id": "bhp-group-limited",
+            "name": "Bhp Group Limited"
+          }
+        },
+        {
+          "name": "MITSUBISHI DEVELOPMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 009 779 873",
+          "party_page": {
+            "id": "mitsubishi-development-pty-ltd",
+            "name": "Mitsubishi Development Pty Ltd"
+          }
+        },
+        {
+          "name": "BHP METCOAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "77 125 531 017",
+          "party_page": {
+            "id": "bhp-metcoal-holdings-pty-ltd",
+            "name": "Bhp Metcoal Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "BM ALLIANCE COAL OPERATIONS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "67 096 412 752",
+          "party_page": {
+            "id": "bm-alliance-coal-operations-pty-limited",
+            "name": "Bm Alliance Coal Operations Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Peabody Energy Corporation",
+          "identifier_type": null,
+          "identifier": "I.R.S. Employer Identification No. 134004153",
+          "party_page": {
+            "id": "peabody-energy-corporation",
+            "name": "Peabody Energy Corporation"
+          }
+        },
+        {
+          "name": "PEABODY ENERGY AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "93 096 909 410",
+          "party_page": {
+            "id": "peabody-energy-australia-pty-ltd",
+            "name": "Peabody Energy Australia Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0600",
+          "name": "Coal Mining"
+        },
+        {
+          "code": "1090",
+          "name": "Other Mining Support Services"
+        },
+        {
+          "code": "2221",
+          "name": "Structural Steel Fabricating"
+        }
+      ],
+      "merger_description": "Centurion Coal Mining Pty Ltd (**Centurion**) proposes to acquire a portion (the **Target Area**) of a mining lease held by the Central Queensland Coal Associates Joint Venture (**CQCA JV**) participants. This will occur by way of a mining lease boundary variation under section 295 of the Mineral Resources Act 1989 (Qld) and pursuant to a Boundary Variation Agreement with BM Alliance Coal Operations Pty Ltd, as agent and manager for and on behalf of the CQCA JV (the **Acquisition**). As a result of the Acquisition, the Target Area will be excised from the mining lease held by the CQCA JV and will become part of an adjoining mining lease which is held by Centurion.\n\nThe Target Area is an undeveloped underground coal prospect located on the western boundary of the Red Hill tenement and adjacent to the Centurion Mine in Queensland's Bowen Basin. The freehold land underlying the Target Area is already owned by Centurion. There are no active mining operations on the Target Area and the area remains largely undrilled.\n\nCenturion was established by Peabody Energy Corporation (**Peabody**) for the purpose of owning and operating the Centurion Mine, an underground longwall metallurgical coal operation in the Bowen Basin, Queensland.\n\nPeabody is a global producer and supplier of metallurgical and thermal coal with operations and ownership interests in Australia and the United States. In Australia, Peabody owns seven coal mining operations across New South Wales and Queensland. Peabody's activities also include marketing and brokering coal produced by third parties, acting as both principal and agent, and trading coal and freight-related contracts through offices in the United States, Australia and China.\n\nCQCA JV is a joint venture between wholly owned subsidiaries of BHP Group Limited and Mitsubishi Development Pty Ltd and forms part of the BHP Mitsubishi Alliance (**BMA**). BMA is a producer and supplier of metallurgical coal and owns five Bowen Basin mines (Goonyella Riverside, Broadmeadow, Peak Downs, Saraji and Caval Ridge) and owns and operates the Hay Point Coal Terminal near Mackay, Queensland.",
+      "events": [
+        {
+          "date": "2026-10-12T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Centurion%20%E2%80%93%20Boundary%20variation%20in%20respect%20of%20Red%20Hill%20Mining%20Lease%20%28WA-45031%29%20-%20Notification%20waiver%20determination%20-%2012%20October%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Centurion Coal Mining Pty Ltd (Centurion) applied for a notification\nwaiver in respect of its proposed acquisition of a portion (the Target\nArea) of a mining lease held by the Central Queensland Coal\nAssociates Joint Venture (CQCA JV) participants pursuant to a\nBoundary Variation Agreement with BM Alliance Coal Operations Pty\nLtd as agent and manager for and on behalf of the CQCA JV, as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition).\nAs a result of the Acquisition, the Target Area will be excised from\nthe mining lease held by the CQCA JV and will become part of an\nadjoining mining lease which is held by Centurion."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "12 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Centurion, was established by Peabody Energy\nCorporation (Peabody) for the purpose of owning and operating the\nCenturion Mine, an underground longwall metallurgical coal\noperation in the Bowen Basin, Queensland.\nPeabody is a global producer and supplier of metallurgical and\nthermal coal with operations and ownership interests in Australia\nand the United States. In Australia, Peabody owns seven coal mining\noperations across New South Wales and Queensland. Peabody's\nactivities also include marketing and brokering coal produced by\nthird parties, acting as both principal and agent, and trading coal and\nfreight-related contracts through offices in the United States,\nAustralia and China.\nThe Target Area is an undeveloped underground coal prospect\nlocated on the western boundary of the Red Hill tenement and\nadjacent to the Centurion Mine in Queensland's Bowen Basin. The\nfreehold land underlying the Target Area is already owned by\nCenturion. There are no active mining operations on the Target Area\nand the area remains largely undrilled.\nCQCA JV is a joint venture between wholly owned subsidiaries of\nBHP Group Limited and Mitsubishi Development Pty Ltd and forms\npart of the BHP Mitsubishi Alliance (BMA). BMA is a producer and\nsupplier of metallurgical coal and owns five Bowen Basin mines\n(Goonyella Riverside, Broadmeadow, Peak Downs, Saraji and Caval\nRidge) and owns and operates the Hay Point Coal Terminal near\nMackay, Queensland."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the Acquisition does not result in the removal of a\ncompetitor or change to Centurion\u2019s (and Peabody\u2019s)\ncompetitive position as the Target Area is not currently\nproducing metallurgical coal\nb. the increase in Centurion\u2019s (and Peabody\u2019s) share of the\nfuture supply of metallurgical coal, in Australia and globally,\narising from the Acquisition would be small\nc. there are alternative producers and suppliers of\nmetallurgical coal to customers in Australia and globally\nd. the Acquisition does not appear likely to otherwise limit or\nprevent competition from rivals.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-45031/Centurion \u2013 Boundary variation in respect of Red Hill Mining Lease (WA-45031) - Notification waiver determination - 12 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-11T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-65013",
+          "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
+          "acquirers": [
+            "BHP OLYMPIC DAM CORPORATION PTY LTD",
+            "BHP GROUP LIMITED"
+          ],
+          "targets": [
+            "State of South Australia"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-55033",
+          "merger_name": "Jellinbah Group - Further interest in Lake Vermont JV",
+          "acquirers": [
+            "QCMM (LAKE VERMONT HOLDINGS) PTY LTD"
+          ],
+          "targets": [
+            "CHR VERMONT PTY LTD",
+            "BOWEN BASIN COAL PTY. LTD."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-95033",
+          "merger_name": "bp - bp Gateway",
+          "acquirers": [
+            "BP AUSTRALIA PTY LTD"
+          ],
+          "targets": [
+            "M. & H.J. WEBB PTY. LIMITED"
           ],
           "accc_determination": "Approved"
         }

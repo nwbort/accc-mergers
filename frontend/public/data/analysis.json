@@ -236,7 +236,7 @@
         "22": 12,
         "23": 6,
         "24": 4,
-        "25": 2,
+        "25": 3,
         "26": 4
       },
       "17": {
@@ -266,7 +266,7 @@
         "26": 1,
         "28": 12,
         "29": 2,
-        "31": 1,
+        "31": 2,
         "33": 1
       },
       "21": {
@@ -297,14 +297,14 @@
       "median": 14.0,
       "min": 2,
       "max": 24,
-      "count": 448
+      "count": 450
     },
     "calendar_stats": {
-      "average": 20.2,
-      "median": 20.0,
+      "average": 20.3,
+      "median": 20.5,
       "min": 2,
       "max": 39,
-      "count": 448
+      "count": 450
     }
   },
   "monthly_volume": {
@@ -353,7 +353,7 @@
       61,
       72,
       69,
-      26,
+      28,
       0
     ]
   },
@@ -426,7 +426,7 @@
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 50,
+          "count": 52,
           "duration_histogram": {
             "3": 1,
             "5": 1,
@@ -438,11 +438,11 @@
             "13": 2,
             "14": 2,
             "15": 4,
-            "16": 6,
+            "16": 7,
             "17": 3,
             "18": 7,
             "19": 8,
-            "20": 3,
+            "20": 4,
             "21": 2,
             "22": 2,
             "23": 1,
@@ -494,7 +494,7 @@
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 181,
+          "count": 183,
           "duration_histogram": {
             "3": 1,
             "5": 1,
@@ -508,11 +508,11 @@
             "13": 10,
             "14": 15,
             "15": 18,
-            "16": 14,
+            "16": 15,
             "17": 12,
             "18": 25,
             "19": 18,
-            "20": 14,
+            "20": 15,
             "21": 12,
             "22": 5,
             "23": 4,
@@ -537,24 +537,24 @@
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 448
+        "count": 450
       }
     },
     "pre_notification": {
       "windows": [
         {
-          "median": 17,
-          "average": 21.9,
+          "median": 19,
+          "average": 22.2,
           "p90": 40,
           "min": 7,
           "max": 74,
           "count": 29,
           "days": 30,
-          "median_delta": 3
+          "median_delta": 5
         },
         {
           "median": 16,
-          "average": 19.2,
+          "average": 19.3,
           "p90": 31,
           "min": 0,
           "max": 112,
@@ -740,8 +740,8 @@
         },
         {
           "median": 16.0,
-          "average": 14.9,
-          "count": 18
+          "average": 15.2,
+          "count": 20
         }
       ],
       "open_caseload": [
@@ -973,11 +973,11 @@
   "waiver_by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 381,
+      "count": 382,
       "outcome_mix": {
-        "Approved": 381
+        "Approved": 382
       },
-      "median_business_days": 14
+      "median_business_days": 14.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -990,12 +990,12 @@
     },
     {
       "division": "Commissioner Woodward",
-      "count": 26,
+      "count": 27,
       "outcome_mix": {
-        "Approved": 25,
+        "Approved": 26,
         "Not approved": 1
       },
-      "median_business_days": 18.5
+      "median_business_days": 19
     },
     {
       "division": "Chair Cass-Gottlieb",

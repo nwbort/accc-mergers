@@ -1,6 +1,6 @@
 {
   "total_mergers": 286,
-  "total_waivers": 448,
+  "total_waivers": 450,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 426,
+    "Approved": 428,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.243303571428573,
-    "median_days": 20.0,
-    "average_business_days": 13.850446428571429,
+    "average_days": 20.27777777777778,
+    "median_days": 20.5,
+    "average_business_days": 13.86888888888889,
     "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 164
+      "count": 165
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15047",
+      "merger_name": "Monarch Alternative Capital & General Atlantic - Loparex",
+      "determination": "Approved",
+      "determination_date": "2026-10-12T12:00:00Z",
+      "page_modified_datetime": "2026-10-12T17:02:49+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-45031",
+      "merger_name": "Centurion \u2013 Boundary variation in respect of Red Hill Mining Lease",
+      "determination": "Approved",
+      "determination_date": "2026-10-12T12:00:00Z",
+      "page_modified_datetime": "2026-10-12T17:02:03+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-05053",
       "merger_name": "Vets Central \u2013 Castlemaine Veterinary Clinic, Vic",
       "determination": "Approved",
@@ -326,28 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-25049",
-      "merger_name": "Merck KGaA\u2013Bio-Techne",
-      "determination": "Approved",
-      "determination_date": "2026-10-08T12:00:00Z",
-      "page_modified_datetime": "2026-10-08T13:17:38+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-30041",
-      "merger_name": "FVS Services Group \u2013 Alexon and Jetfire Fire Protection",
-      "determination": "Approved",
-      "determination_date": "2026-10-07T12:00:00Z",
-      "page_modified_datetime": "2026-10-07T16:44:39+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

@@ -1,6 +1,90 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-05053",
+      "merger_name": "Vets Central \u2013 Castlemaine Veterinary Clinic, Vic",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-16T12:00:00Z",
+      "determination_publication_date": "2026-10-09T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-09T12:00:00Z",
+      "page_modified_datetime": "2026-10-09T16:57:14+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "canonical": {
+            "name": "Vets Central Holdings Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for Berkwill Family Trust"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        },
+        {
+          "code": "9539",
+          "name": "Other Personal Services n.e.c."
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15047",
+      "merger_name": "Monarch Alternative Capital & General Atlantic - Loparex",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-17T12:00:00Z",
+      "determination_publication_date": "2026-10-12T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-12T12:00:00Z",
+      "page_modified_datetime": "2026-10-12T17:02:49+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Monarch Alternative Capital LP"
+        },
+        {
+          "name": "General Atlantic"
+        }
+      ],
+      "targets": [
+        {
+          "name": "US NewCo LLC (an entity to be established to hold entities comprising the Loparex operating group)"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1529",
+          "name": "Other Converted Paper Product Manufacturing"
+        },
+        {
+          "code": "1911",
+          "name": "Polymer Film and Sheet Packaging Material Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-60047",
       "merger_name": "Sekisui Chemical \u2013 Ausbuild",
       "status": "Assessment completed",
