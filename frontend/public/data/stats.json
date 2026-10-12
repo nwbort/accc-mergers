@@ -1,10 +1,10 @@
 {
-  "total_mergers": 284,
+  "total_mergers": 285,
   "total_waivers": 448,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
-    "Under assessment": 30,
+    "Under assessment": 31,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -72,7 +72,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 43
+      "count": 44
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-65038",
+      "merger_name": "TCL Electronics \u2013 Sony\u2019s home entertainment business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-09T12:00:00Z",
+      "page_modified_datetime": "2026-10-12T11:43:44+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-75031",
       "merger_name": "VetPartners \u2013 VetLove",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-01T12:00:00Z",
       "page_modified_datetime": "2026-10-02T14:25:33+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65039",
-      "merger_name": "ASSA ABLOY \u2013 Gunnebo Entrance Control",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-01T12:00:00Z",
-      "page_modified_datetime": "2026-10-02T11:44:28+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

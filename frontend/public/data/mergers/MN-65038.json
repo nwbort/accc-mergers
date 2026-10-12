@@ -1,0 +1,174 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/tcl-electronics-%E2%80%93-sony%E2%80%99s-home-entertainment-business",
+  "merger_name": "TCL Electronics \u2013 Sony\u2019s home entertainment business",
+  "status": "Under assessment",
+  "merger_id": "MN-65038",
+  "effective_notification_datetime": "2026-10-09T12:00:00Z",
+  "original_notification_datetime": "2026-10-09T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-11-20T12:00:00Z",
+  "consultation_response_due_date": "2026-10-19T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "TTE Corporation",
+      "identifier_type": null,
+      "identifier": "593939",
+      "party_page": {
+        "id": "tte-corporation",
+        "name": "TTE Corporation"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "SONY AUSTRALIA LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "59 001 215 354",
+      "party_page": {
+        "id": "sony-australia-limited",
+        "name": "Sony Australia Limited"
+      }
+    },
+    {
+      "name": "Sony Corporation",
+      "identifier_type": null,
+      "identifier": "7010401045660",
+      "party_page": {
+        "id": "sony-corporation",
+        "name": "Sony Corporation"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "3492",
+      "name": "Computer and Computer Peripheral Wholesaling"
+    },
+    {
+      "code": "3494",
+      "name": "Other Electrical and Electronic Goods Wholesaling"
+    },
+    {
+      "code": "4221",
+      "name": "Electrical, Electronic and Gas Appliance Retailing"
+    },
+    {
+      "code": "4310",
+      "name": "Non-Store Retailing"
+    },
+    {
+      "code": "5420",
+      "name": "Software Publishing"
+    },
+    {
+      "code": "5511",
+      "name": "Motion Picture and Video Production"
+    },
+    {
+      "code": "5512",
+      "name": "Motion Picture and Video Distribution"
+    },
+    {
+      "code": "5521",
+      "name": "Music Publishing"
+    },
+    {
+      "code": "5522",
+      "name": "Music and Other Sound Recording Activities"
+    },
+    {
+      "code": "9421",
+      "name": "Domestic Appliance Repair and Maintenance"
+    }
+  ],
+  "merger_description": "TCL Electronics (TCL Electronics), via a wholly owned subsidiary, TTE Corporation, proposes to acquire 51% of the share capital of a newly incorporated entity of Sony Corporation (Sony), into which Sony will transfer the sales, marketing, distribution, service, design/R&D, product planning, procurement, planning and control, quality assurance and other headquarters functions of its home entertainment business (the Target Business).\n\nTCL Electronics is a global consumer electronics company. Aside from the consumer electronics activities of TCL Electronics, the other activities of TCL Industries Group comprise TCL Air Conditioners, TCL Smart Home (e.g. refrigerators and washing machines), environmental technology solutions, industrial park operation, intelligent manufacturing, and specialised industrial financial services.\n\nThe Target Business comprises Sony\u2019s global activities of research and development, manufacturing, assembly, testing, sales, marketing, distribution, after-sales and customer services in relation to home entertainment products.\n\nIn Australia:\n\n\u2022 TCL's activities are limited to the sales of LCD televisions, home audio systems, refrigerators, washing machines, air conditioners, office displays, mobile phones, tablets and smart wearable products to major retailers.\n\n\u2022 the Target Business is currently operated through Sony Australia Ltd, which supplies LCD televisions, OLED televisions, commercial LCD displays, commercial OLED displays, home projectors, commercial projectors, home audio systems, turntables, and neckband speakers.\n\nThe only products and services supplied by both Parties in Australia are LCD televisions and home audio systems.",
+  "events": [
+    {
+      "date": "2026-10-12T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/TCL%20Electronics%20-%20Sony%27s%20home%20entertainment%20business%20-%20third-party%20questionnaire%20-%2012%20October%202026_0.docx",
+      "url_gh": "/mergers/MN-65038/TCL Electronics - Sony's home entertainment business - third-party questionnaire - 12 October 2026_0.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-09T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-35028",
+      "merger_name": "efex - OnPlatinum",
+      "acquirers": [
+        "THINKEX HOLDINGS PTY LTD"
+      ],
+      "targets": [
+        "COMMS GROUP LTD",
+        "ON GROUP HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-30003",
+      "merger_name": "MicroStar Logistics - Konvoy",
+      "acquirers": [
+        "KEGSTAR PTY LIMITED"
+      ],
+      "targets": [
+        "KONVOY HOLDINGS PTY LIMITED"
+      ],
+      "accc_determination": "Not approved"
+    },
+    {
+      "merger_id": "WA-35002",
+      "merger_name": "IFS \u2013 Softeon",
+      "acquirers": [
+        "Fjord Merger Sub, Inc.",
+        "IFS North America, Inc."
+      ],
+      "targets": [
+        "Softeon Inc."
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 178,
+    "as_of": "2026-10-09",
+    "estimated_at": "2026-10-12",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 20,
+    "min_days": 8,
+    "max_days": 39,
+    "id_issued_estimated": "2026-09-19",
+    "id_issued_before": "2026-10-01",
+    "id_issued_after": "2026-08-31",
+    "min_days_witness": "MN-65039",
+    "max_days_witness": "WA-65037",
+    "basis": "bracketed",
+    "method_version": 1
+  }
+}
