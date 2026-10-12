@@ -18,7 +18,11 @@ sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
 from scripts.constants import tribunal
 from scripts.generate.static_data import loaders
-from scripts.generate.static_data.enrichment import enrich_merger, link_tribunal_appeals
+from scripts.generate.static_data.enrichment import (
+    _join_tribunal_numbers,
+    enrich_merger,
+    link_tribunal_appeals,
+)
 from scripts.generate.static_data.outputs import list as list_out, phase2, stats
 
 
@@ -433,6 +437,38 @@ class TestMultipleTribunalMatters:
             'ACT 3 of 2026', 'ACT 4 of 2026'
         ]
 
+    def test_a_document_filed_in_both_matters_is_one_event(self):
+        # One set of directions made in both matters ([2026] ACompT 3) is
+        # listed on each matter's page: one timeline row, tagged with both.
+        directions = {
+            'date': '2026-10-09',
+            'filed_by': '-',
+            'description': 'Directions',
+            'confidentiality': 'Non-confidential',
+            'url': 'https://www.competitiontribunal.gov.au/x/2026ACOMPT0003',
+            'url_gh': '/mergers/MN-0001/2026ACOMPT0003.pdf',
+        }
+        first = _matter('ACT 3 of 2026', 'IAG', '2026-10-01')
+        second = _matter('ACT 4 of 2026', 'RACWA', '2026-10-05')
+        first['documents'].append(dict(directions))
+        second['documents'].append(dict(directions))
+        m = self._link(first, second)
+        appeal_events = [e for e in m['events'] if e.get('is_appeal')]
+        assert [e['tribunal_number'] for e in appeal_events] == [
+            'ACT 3 of 2026', 'ACT 3 & 4 of 2026', 'ACT 4 of 2026'
+        ]
+        # Each matter's own record still lists the document.
+        assert all(len(a['documents']) == 2 for a in m['appeals'])
+
+    def test_the_same_filing_made_separately_stays_two_events(self):
+        # Same description and date, different documents: not merged.
+        m = self._link(
+            _matter('ACT 3 of 2026', 'IAG', '2026-10-05'),
+            _matter('ACT 4 of 2026', 'RACWA', '2026-10-05'),
+        )
+        appeal_events = [e for e in m['events'] if e.get('is_appeal')]
+        assert len(appeal_events) == 2
+
     def test_under_appeal_while_any_matter_is_current(self):
         m = self._link(
             _concluded(
@@ -495,6 +531,23 @@ class TestMultipleTribunalMatters:
         m = self._link(first, second)
         card = stats._appeal_card(m)
         assert card['appeal_date'] == '2026-10-01T12:00:00Z'
+
+
+class TestJoinTribunalNumbers:
+    def test_shared_prefix_and_year_collapse(self):
+        assert _join_tribunal_numbers(['ACT 3 of 2026', 'ACT 4 of 2026']) == 'ACT 3 & 4 of 2026'
+        assert _join_tribunal_numbers(
+            ['ACT 3 of 2026', 'ACT 4 of 2026', 'ACT 5 of 2026']
+        ) == 'ACT 3, 4 & 5 of 2026'
+
+    def test_different_years_are_joined_whole(self):
+        assert _join_tribunal_numbers(['ACT 9 of 2026', 'ACT 1 of 2027']) == (
+            'ACT 9 of 2026 & ACT 1 of 2027'
+        )
+
+    def test_one_or_none(self):
+        assert _join_tribunal_numbers(['ACT 3 of 2026', 'ACT 3 of 2026']) == 'ACT 3 of 2026'
+        assert _join_tribunal_numbers([None]) is None
 
 
 class TestLoader:

@@ -783,6 +783,58 @@ def summarise_appeals(records: list[dict]) -> dict:
     }
 
 
+_TRIBUNAL_NUMBER_RE = re.compile(r'^(?P<prefix>.*?)\s*(?P<n>\d+) of (?P<year>\d{4})$')
+
+
+def _join_tribunal_numbers(numbers: list) -> str | None:
+    """``['ACT 3 of 2026', 'ACT 4 of 2026']`` → ``'ACT 3 & 4 of 2026'``.
+
+    Numbers that don't share a prefix and year are joined whole with ``&``.
+    """
+    unique = list(dict.fromkeys(n for n in numbers if n))
+    if len(unique) <= 1:
+        return unique[0] if unique else None
+    parts = [_TRIBUNAL_NUMBER_RE.match(n) for n in unique]
+    if all(parts) and len({(m['prefix'], m['year']) for m in parts}) == 1:
+        nums = [m['n'] for m in parts]
+        joined = f"{', '.join(nums[:-1])} & {nums[-1]}"
+        return f"{parts[0]['prefix']} {joined} of {parts[0]['year']}"
+    return ' & '.join(unique)
+
+
+def _merge_shared_appeal_events(events: list[dict]) -> list[dict]:
+    """Collapse one document filed in several tribunal matters into one event.
+
+    When applications against the same decision are case-managed together the
+    Tribunal makes a single order in all of them and lists the same document
+    on each matter's page ([2026] ACompT 3 in ACT 3 and ACT 4 of 2026). That is
+    one event, so it is shown once, tagged with every matter it was filed in.
+    Only the identical document (same url, same date) is merged: the same kind
+    of filing made separately in each matter (the ACCC's notice of address for
+    service, say) has its own url and stays a separate event. The first
+    matter's event is kept, so its RSS id and notification key don't move.
+    """
+    merged: list[dict] = []
+    by_key: dict[tuple, dict] = {}
+    for event in events:
+        key = (event.get('date'), event.get('url') or event.get('url_gh'))
+        if key[1] is None:
+            merged.append(event)
+            continue
+        kept = by_key.get(key)
+        if kept is None:
+            by_key[key] = event
+            event['_tribunal_numbers'] = [event.get('tribunal_number')]
+            merged.append(event)
+        else:
+            kept['_tribunal_numbers'].append(event.get('tribunal_number'))
+    for event in merged:
+        numbers = event.pop('_tribunal_numbers', None)
+        if numbers is not None:
+            event['tribunal_number'] = _join_tribunal_numbers(numbers)
+    return merged
+
+
 def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
     """Attach Australian Competition Tribunal appeal data to mergers in-place.
 
@@ -834,11 +886,11 @@ def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
         merger['appeals'] = records
         merger['appeal'] = summarise_appeals(records)
 
-        appeal_events = [
+        appeal_events = _merge_shared_appeal_events([
             _appeal_event(doc, record)
             for record in records
             for doc in record['documents']
-        ]
+        ])
         if appeal_events:
             merger['events'] = list(merger.get('events') or []) + appeal_events
 
