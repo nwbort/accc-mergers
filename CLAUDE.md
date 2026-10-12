@@ -341,6 +341,10 @@ data/
 │                         #   (superseded documentary indexes, say), and a document it removes is
 │                         #   kept in documents[] — still mirrored, still a timeline event — and
 │                         #   reported on the run. Delete one by hand to drop it for good.
+│                         #   The tribunal's own decisions link to a page wrapping a Federal
+│                         #   Court judgment, not a file; the scrape follows those to the
+│                         #   judgment's Word document on fedcourt.gov.au and mirrors the DOCX
+│                         #   (converted to PDF by pipeline.yml like any other).
 │                         #   judicial_reviews.json is a hand-maintained overlay of Federal Court
 │                         #   judicial reviews, keyed by merger_id, merged in at
 │                         #   generate_static_data time (loaders.load_judicial_reviews +
