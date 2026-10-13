@@ -1622,7 +1622,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "KKR, & Co. Inc."
+          "name": "KKR, & Co. Inc.",
+          "canonical": {
+            "name": "KKR & Co. Inc."
+          }
         },
         {
           "name": "Dragon Bidco Limited"
@@ -2031,7 +2034,10 @@
       ],
       "other_parties": [
         {
-          "name": "KKR, & Co. Inc."
+          "name": "KKR, & Co. Inc.",
+          "canonical": {
+            "name": "KKR & Co. Inc."
+          }
         },
         {
           "name": "Armstrong Parent, Inc."

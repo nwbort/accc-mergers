@@ -3,12 +3,12 @@
   "total_waivers": 451,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 249,
-    "Under assessment": 33,
+    "Assessment completed": 250,
+    "Under assessment": 32,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 241,
+    "Approved": 242,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 22
   },
   "clearance_rate": {
-    "cleared": 246,
+    "cleared": 247,
     "not_cleared": 3,
-    "total": 249,
+    "total": 250,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.60236220472441,
-    "median_days": 26.0,
-    "average_business_days": 20.133858267716537,
-    "median_business_days": 18.0,
+    "average_days": 29.572549019607845,
+    "median_days": 26,
+    "average_business_days": 20.113725490196078,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
-        "count": 55,
-        "percentage": 21.7
+        "count": 56,
+        "percentage": 22.0
       },
       "day20": {
-        "count": 183,
-        "percentage": 72.0
+        "count": 184,
+        "percentage": 72.2
       },
       "day30": {
-        "count": 237,
+        "count": 238,
         "percentage": 93.3
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-55036",
+      "merger_name": "Nielsen - DoubleVerify",
+      "determination": "Approved",
+      "determination_date": "2026-10-13T12:00:00Z",
+      "page_modified_datetime": "2026-10-13T17:02:44+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-30037",
       "merger_name": "KKR - Integer",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15045",
-      "merger_name": "CVC Capital Partners \u2013 Ambrose Construct Group",
-      "determination": "Approved",
-      "determination_date": "2026-10-08T12:00:00Z",
-      "page_modified_datetime": "2026-10-08T16:38:39+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

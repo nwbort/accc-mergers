@@ -89,14 +89,14 @@
       "canonical_name": "DoubleVerify Pty Ltd",
       "members": [
         {
+          "name": "DOUBLEVERIFY PTY LTD",
+          "identifier": "84 629 042 093",
+          "identifier_type": "ABN"
+        },
+        {
           "name": "DoubleVerify Holdings, Inc.",
           "identifier": "Company number (Delaware)  6512733",
           "identifier_type": null
-        },
-        {
-          "name": "DoubleVerify Pty Ltd",
-          "identifier": "84 629 042 093",
-          "identifier_type": "ABN"
         }
       ],
       "mergers": {
@@ -106,12 +106,12 @@
             "merger_id": "MN-55036",
             "merger_name": "Nielsen - DoubleVerify",
             "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
+            "status": "Assessment completed",
+            "determination": "Approved",
             "has_conditions": false,
             "phase": "Phase 1",
             "notification_date": "2026-09-21T12:00:00Z",
-            "determination_date": null
+            "determination_date": "2026-10-13T12:00:00Z"
           }
         ],
         "other": []
@@ -120,8 +120,14 @@
       "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
       "waiver_duration": null
     },
     "engage-marine-finco-pty-ltd": {

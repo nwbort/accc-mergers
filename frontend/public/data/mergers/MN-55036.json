@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/nielsen-doubleverify",
   "merger_name": "Nielsen - DoubleVerify",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-55036",
   "effective_notification_datetime": "2026-09-21T12:00:00Z",
   "original_notification_datetime": "2026-09-21T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-11-03T12:00:00Z",
+  "determination_publication_date": "2026-10-13T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-09-29T12:00:00Z",
   "acquirers": [
     {
@@ -21,7 +23,7 @@
   ],
   "targets": [
     {
-      "name": "DoubleVerify Pty Ltd",
+      "name": "DOUBLEVERIFY PTY LTD",
       "identifier_type": "ABN",
       "identifier": "84 629 042 093",
       "canonical": {
@@ -72,7 +74,7 @@
       "name": "Market Research and Statistical Services"
     }
   ],
-  "merger_description": "Neptune BidCo US Inc., through its subsidiary Nielsen group (**Nielsen**), proposes to acquire 100% of the issued share capital of DoubleVerify Holdings, Inc. (**DoubleVerify**) (the **Acquisition**).\n\nNielsen is a provider of audience measurement, media planning, and content metadata solutions. It measures audiences across television, audio, streaming and digital media, primarily serving media vendors by enabling them to assess audience reach and consumption. Nielsen also provides media planning and marketing optimisation tools, including cross-media planning, measurement and outcomes capabilities through Nielsen ONE.\n\nDoubleVerify is a digital media verification, measurement and optimisation platform primarily serving advertisers and advertising agencies. Its products assess the quality of digital advertising impressions, including whether advertisements are fraud-free, viewable, brand-suitable and delivered in the intended geography.",
+  "merger_description": "Neptune BidCo US Inc., through its subsidiary Nielsen group (**Nielsen**), proposes to acquire 100% of the issued share capital of DoubleVerify Holdings, Inc. (**DoubleVerify**) (the **Acquisition**).\n\nNielsen is a global provider of audience measurement, media planning, and content metadata solutions. It measures audiences across television, audio, streaming and digital media, primarily serving media vendors by enabling them to assess audience reach and consumption. Nielsen also provides media planning and marketing optimisation tools, including cross-media planning, measurement and outcomes capabilities through Nielsen ONE.\n\nDoubleVerify is a digital media verification, measurement and optimisation platform primarily serving advertisers and advertising agencies. Its products assess the quality of digital advertising impressions, including whether advertisements are fraud-free, viewable, brand-suitable and delivered in the intended geography.",
   "events": [
     {
       "date": "2026-09-22T12:00:00Z",
@@ -88,13 +90,27 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-13T12:00:00Z",
+      "title": "Phase 1 Determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Nielsen%20-%20DoubleVerify%20-%20Phase%201%20Determination%20-%2013%20October%202026_0.pdf",
+      "determination_table_content": [
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u25aa Nielsen and DoubleVerify are not close competitors.\no Nielsen supplies media audience measurement services\nfor television, audio and streaming, which are primarily\nused by media owners.\no DoubleVerify supplies digital advertising verification and\nmeasurement services for digital advertising\nimpressions, which are primarily used by advertisers.\n\u25aa The merged firm would be unlikely to have the ability and\nincentive to engage in anti-competitive bundling or tying\npost-Acquisition. given the two different customer groups\nthat would be served."
+        }
+      ],
+      "url_gh": "/mergers/MN-55036/Nielsen - DoubleVerify - Phase 1 Determination - 13 October 2026_0.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-10-13T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "has_questionnaire": true,
