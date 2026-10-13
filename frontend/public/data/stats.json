@@ -1,6 +1,6 @@
 {
   "total_mergers": 287,
-  "total_waivers": 450,
+  "total_waivers": 451,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 428,
+    "Approved": 429,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.27777777777778,
-    "median_days": 20.5,
-    "average_business_days": 13.86888888888889,
-    "median_business_days": 14.0
+    "average_days": 20.305986696230597,
+    "median_days": 21,
+    "average_business_days": 13.886917960088692,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 166
+      "count": 167
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30037",
+      "merger_name": "KKR - Integer",
+      "determination": "Approved",
+      "determination_date": "2026-10-13T12:00:00Z",
+      "page_modified_datetime": "2026-10-13T16:47:55+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-15047",
       "merger_name": "Monarch Alternative Capital & General Atlantic - Loparex",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-55037",
-      "merger_name": "Covetrus \u2014 MWI",
-      "determination": "Approved",
-      "determination_date": "2026-10-08T12:00:00Z",
-      "page_modified_datetime": "2026-10-08T14:25:19+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

@@ -2005,6 +2005,50 @@
       ]
     },
     {
+      "merger_id": "WA-30037",
+      "merger_name": "KKR - Integer",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-10T12:00:00Z",
+      "determination_publication_date": "2026-10-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-13T12:00:00Z",
+      "page_modified_datetime": "2026-10-13T16:47:55+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Armstrong Bidco, Inc."
+        }
+      ],
+      "targets": [
+        {
+          "name": "Integer Holdings Corporation"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "KKR, & Co. Inc."
+        },
+        {
+          "name": "Armstrong Parent, Inc."
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2412",
+          "name": "Medical and Surgical Equipment Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-35048",
       "merger_name": "Kiwa - CSA Group",
       "status": "Assessment completed",
@@ -2766,52 +2810,6 @@
         {
           "code": "6712",
           "name": "Non-Residential Property Operators"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-75060",
-      "merger_name": "Mitsui \u2013 further interest in Norse Maritime",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-15T12:00:00Z",
-      "determination_publication_date": "2026-10-09T12:00:00Z",
-      "end_of_determination_period": null,
-      "latest_event_date": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-10-09T16:52:31+11:00",
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Mitsui & Co., Ltd.",
-          "canonical": {
-            "name": "Mitsui & Co"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Norse Maritime A/S"
-        },
-        {
-          "name": "Clipper Bulk Shipping Ltd"
-        },
-        {
-          "name": "Navi Merchants A/S"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4810",
-          "name": "Water Freight Transport"
-        },
-        {
-          "code": "6419",
-          "name": "Other Auxiliary Finance and Investment Services"
         }
       ]
     }
