@@ -166,6 +166,41 @@
         "completed_count": 1
       }
     },
+    "horizon-cts-corp": {
+      "id": "horizon-cts-corp",
+      "canonical_name": "Horizon CTS Corp.",
+      "members": [
+        {
+          "name": "Horizon CTS Corp.",
+          "identifier": "2683968",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50040",
+            "merger_name": "FlightSafety International / Commercial Training Solutions",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-13T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "riverside-midco-limited": {
       "id": "riverside-midco-limited",
       "canonical_name": "Riverside Midco Limited",

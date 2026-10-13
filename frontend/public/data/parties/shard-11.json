@@ -248,6 +248,41 @@
       },
       "waiver_duration": null
     },
+    "flightsafety-international-inc": {
+      "id": "flightsafety-international-inc",
+      "canonical_name": "FlightSafety International Inc.",
+      "members": [
+        {
+          "name": "FlightSafety International Inc.",
+          "identifier": "2074272",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-50040",
+            "merger_name": "FlightSafety International / Commercial Training Solutions",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-13T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "groupe-bruxelles-lambert-sa": {
       "id": "groupe-bruxelles-lambert-sa",
       "canonical_name": "Groupe Bruxelles Lambert SA",
