@@ -866,6 +866,34 @@ class TestParseTextAsTable:
         result = parse_text_as_table(text)
         assert len(result) == 2
 
+    def test_numbered_determination_heading_starts_the_item(self):
+        # A tableless Phase 2 determination (MN-65005's re-upload, MN-01068,
+        # MN-30003): the body sits under "1. Determination", and the closing
+        # attribution and footnotes are not part of it.
+        text = (
+            "IAG – RAC Insurance\nMN – 65005\nPhase 2 Determination\n"
+            "1. Determination\n"
+            "1.1. On 3 March 2026, IAG lodged a notification.\n"
+            "Public benefit application\n"
+            "1.6. The notifying party may also apply.\n"
+            "Determination made by a division of the Commission constituted by a direction issued\n"
+            "pursuant to section 19 of the Act\n"
+            "1 Section 51ABZE(2)(c) of the Act."
+        )
+        result = parse_text_as_table(text)
+        assert result == [{
+            'item': 'Determination',
+            'details': "1.1. On 3 March 2026, IAG lodged a notification. "
+                       "Public benefit application "
+                       "1.6. The notifying party may also apply.",
+        }]
+
+    def test_other_numbered_headings_do_not_start_items(self):
+        # "6. Market definition" in a statement of reasons is a section, not
+        # the table's "Market definition" row.
+        text = "1. Summary\nThe ACCC found...\n6. Market definition\nThe market is..."
+        assert parse_text_as_table(text) == []
+
 
 # ---------------------------------------------------------------------------
 # parse_determination: _parse_section_blocks (Statement of reasons structure)
