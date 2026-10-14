@@ -1202,8 +1202,17 @@ def _same_relocated_document(scraped_event, existing_event):
 
 
 def _matches_existing_event(scraped_event, existing_event):
-    """True when a scraped event is a re-publication of an existing event."""
+    """True when a scraped event is a re-publication of an existing event.
+
+    The title may also have lost its "<parties> - " prefix: MN-65005's
+    "IAG-RACI - Phase 2 determination" was re-uploaded under a new URL as a
+    plain "Phase 2 determination".
+    """
     return (_same_event_identity(scraped_event, existing_event)
+            or (_titles_match_ignoring_party_prefix(
+                    scraped_event.get('title'), existing_event.get('title'))
+                and _dates_within_one_day(
+                    scraped_event.get('date', ''), existing_event.get('date', '')))
             or _same_consultation_document(scraped_event, existing_event)
             or _same_relocated_document(scraped_event, existing_event))
 
