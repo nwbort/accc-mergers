@@ -154,6 +154,48 @@ class TestMergeEventsAttachmentDroppedAndRenamed:
         ]
 
 
+class TestMergeEventsReuploadedAndRenamed:
+    """MN-65005, a scrape later: the ACCC re-attached the Phase 2
+    determination's documents under new URLs, keeping the rows' new
+    prefix-less titles. They must re-bind to the existing events, not leave
+    the old ones 'removed' beside live duplicates."""
+
+    DATE = "2026-09-22T12:00:00Z"
+    _existing = TestMergeEventsAttachmentDroppedAndRenamed._existing
+
+    SCRAPED = [
+        {"date": DATE, "title": "Phase 2 determination",
+         "url": "https://accc.gov.au/determination_1.pdf"},
+        {"date": DATE, "title": "Phase 2 determination - Summary of reasons",
+         "url": "https://accc.gov.au/summary_10.pdf"},
+    ]
+
+    def _assert_rebound(self, merged):
+        assert [(e["url"], e["status"]) for e in merged] == [
+            ("https://accc.gov.au/determination_1.pdf", "live"),
+            ("https://accc.gov.au/summary_10.pdf", "live"),
+        ]
+        assert merged[0]["is_determination_event"] is True
+        assert merged[0]["display_title"] == (
+            "Phase 2 - detailed assessment determination: Not approved")
+
+    def test_reuploaded_renamed_rows_rebind(self):
+        scraped = [dict(e, status="live") for e in self.SCRAPED]
+        self._assert_rebound(
+            _merge_events(scraped, self._existing(), "MN-65005", set()))
+
+    def test_stored_duplicates_heal_on_the_next_scrape(self):
+        # What the earlier scrape stored: the old events 'removed' and the
+        # re-uploads appended as separate live events.
+        existing = self._existing()
+        for e in existing["events"]:
+            e["status"] = "removed"
+        existing["events"] += [dict(e, status="live") for e in self.SCRAPED]
+        scraped = [dict(e, status="live") for e in self.SCRAPED]
+        self._assert_rebound(
+            _merge_events(scraped, existing, "MN-65005", set()))
+
+
 # ---------------------------------------------------------------------------
 # _merge_events: URL-less timeline rows are matched by title regardless of
 # which dash character the ACCC happens to render
