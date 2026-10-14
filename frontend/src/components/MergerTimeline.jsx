@@ -322,7 +322,7 @@ function MergerTimeline({ merger }) {
     : `Phase 2 determination: ${merger.phase_2_determination}`;
   const phase2Hint = phase2Pct === null ? null : {
     title: phase2Label,
-    body: `Made on ${formatDateMedium(merger.phase_2_determination_date)}; the parties then applied for a public benefit determination.`,
+    body: `Published on ${formatDateMedium(merger.phase_2_determination_date)}; the parties then applied for a public benefit determination.`,
   };
   const phase2Dot = phase2Pct === null ? null
     : getOutcomeDot({ determination: merger.phase_2_determination }).dot;
