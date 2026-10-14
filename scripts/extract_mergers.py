@@ -1370,7 +1370,8 @@ def _add_synthetic_events(merger_data, records=None):
         flagged_phases.add(merger_status.stage_phase(phase))
 
     for recorded_phase, record in (records or {}).items():
-        if recorded_phase in flagged_phases or not record.get('stage') or not record.get('date'):
+        if recorded_phase in flagged_phases or not all(
+                record.get(k) for k in ('determination', 'date', 'stage')):
             continue
         _flag_determination_event(
             merger_data, record['stage'], record['determination'], record['date'],

@@ -246,6 +246,246 @@ class TestExtraction:
         assert payload == {'open': [], 'confirmed': ['MN-65005']}
 
 
+class TestRecordedDeterminationEvents:
+    """_add_synthetic_events flags each phase's recorded determination, not
+    only the register's headline, so the Phase 2 determination stays the
+    determination event however the headline reads (MN-65005)."""
+
+    DET_URL = 'https://www.accc.gov.au/determination.pdf'
+    PB_URL = 'https://www.accc.gov.au/public-benefit-determination.pdf'
+    PB_DATE = '2026-12-14T12:00:00Z'
+    PHASE_2_TITLE = 'Phase 2 - detailed assessment determination: Not approved'
+
+    @staticmethod
+    def _flagged(merger):
+        return sorted(
+            (e['date'][:10], e.get('url'), e['display_title'])
+            for e in merger['events'] if e.get('is_determination_event')
+        )
+
+    def _run(self, current, previous=None):
+        records = stage_determinations.resolve(current, previous or _phase_2_decided())
+        extract_mergers._add_synthetic_events(current, records)
+        return records
+
+    def _strip_flags(self, merger):
+        for e in merger['events']:
+            if e.pop('is_determination_event', None):
+                e['display_title'] = e['title']
+
+    @pytest.mark.parametrize('keep_headline', [True, False])
+    def test_phase_2_determination_is_flagged_either_way(self, keep_headline):
+        current = _public_benefit_applied(keep_headline)
+        self._strip_flags(current)
+        self._run(current)
+        assert self._flagged(current) == [
+            ('2026-09-22', self.DET_URL, self.PHASE_2_TITLE)]
+
+    def test_reasons_documents_on_the_same_day_are_not_flagged(self):
+        current = _public_benefit_applied(keep_headline=False)
+        self._strip_flags(current)
+        # Listed ahead of the instrument, so a first-match pick would take them.
+        current['events'][:0] = [
+            {'date': PHASE_2_DATE, 'title': 'IAG-RACI - Phase 2 determination - Summary of reasons',
+             'url': 'https://www.accc.gov.au/summary.pdf'},
+            {'date': PHASE_2_DATE, 'title': 'IAG-RACI - Phase 2 determination - Statement of reasons',
+             'url': 'https://www.accc.gov.au/statement.pdf'},
+        ]
+        self._run(current)
+        assert self._flagged(current) == [
+            ('2026-09-22', self.DET_URL, self.PHASE_2_TITLE)]
+
+    def test_a_stale_flag_on_a_reasons_document_moves_to_the_instrument(self):
+        current = _public_benefit_applied(keep_headline=False)
+        self._strip_flags(current)
+        current['events'].append({
+            'date': PHASE_2_DATE, 'title': 'IAG-RACI - Phase 2 determination - Summary of reasons',
+            'display_title': self.PHASE_2_TITLE,
+            'url': 'https://www.accc.gov.au/summary.pdf', 'is_determination_event': True,
+        })
+        self._run(current)
+        assert self._flagged(current) == [
+            ('2026-09-22', self.DET_URL, self.PHASE_2_TITLE)]
+        summary = next(e for e in current['events'] if e.get('url', '').endswith('summary.pdf'))
+        assert summary['display_title'] == summary['title']
+
+    def test_a_document_dated_days_before_the_record_is_found(self):
+        # The register's publication date can trail the PDF's row by a few
+        # days (MN-30008), and the record keeps the register's date.
+        previous = _phase_2_decided()
+        previous['determination_publication_date'] = '2026-09-25T12:00:00Z'
+        current = _public_benefit_applied(keep_headline=False)
+        self._strip_flags(current)
+        self._run(current, previous)
+        assert self._flagged(current) == [
+            ('2026-09-22', self.DET_URL, self.PHASE_2_TITLE)]
+
+    def test_without_a_document_a_synthetic_event_stands_in_once(self):
+        current = _public_benefit_applied(keep_headline=False)
+        current['events'] = [e for e in current['events'] if e.get('url') != self.DET_URL]
+        records = self._run(current)
+        extract_mergers._add_synthetic_events(current, records)
+        assert self._flagged(current) == [
+            ('2026-09-22', None, self.PHASE_2_TITLE)]
+
+    def test_a_late_document_replaces_the_synthetic_event(self):
+        # Determined before the instrument was uploaded: the stand-in event is
+        # stored, then the PDF appears once the application is under way.
+        current = _public_benefit_applied(keep_headline=False)
+        det = next(e for e in current['events'] if e.get('url') == self.DET_URL)
+        current['events'].remove(det)
+        records = self._run(current)
+        del det['is_determination_event']
+        det['display_title'] = det['title']
+        current['events'].append(det)
+
+        extract_mergers._add_synthetic_events(current, records)
+
+        assert self._flagged(current) == [
+            ('2026-09-22', self.DET_URL, self.PHASE_2_TITLE)]
+        assert not any(e['title'] == self.PHASE_2_TITLE for e in current['events'])
+
+    @pytest.mark.parametrize('keep_headline', [True, False])
+    def test_the_public_benefit_determination_joins_the_phase_2_one(self, keep_headline):
+        previous = _stored(_public_benefit_applied(keep_headline), _phase_2_decided())
+        current = _public_benefit_applied(keep_headline)
+        self._strip_flags(current)
+        current['accc_determination'] = merger_status.APPROVED
+        current['determination_publication_date'] = self.PB_DATE
+        current['events'].append({
+            'date': self.PB_DATE, 'title': 'IAG-RACI - Public benefit determination',
+            'url': self.PB_URL,
+        })
+        self._run(current, previous)
+        assert self._flagged(current) == [
+            ('2026-09-22', self.DET_URL, self.PHASE_2_TITLE),
+            ('2026-12-14', self.PB_URL, 'Public benefit phase determination: Approved'),
+        ]
+
+    def test_phase_1_conditional_clearance_then_public_benefit(self):
+        url = 'https://www.accc.gov.au/phase1-determination.pdf'
+        decided = {
+            'merger_id': 'MN-99999',
+            'stage': 'Phase 1 - initial assessment',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'accc_determination': merger_status.APPROVED_WITH_CONDITIONS,
+            'determination_publication_date': '2026-08-03T12:00:00Z',
+            'events': [{'date': '2026-08-03T12:00:00Z', 'title': 'Phase 1 determination',
+                        'url': url}],
+        }
+        current = copy.deepcopy(decided)
+        current['stage'] = merger_status.PUBLIC_BENEFIT_STAGE
+        current['status'] = merger_status.UNDER_ASSESSMENT
+        del current['accc_determination'], current['determination_publication_date']
+
+        records = stage_determinations.resolve(current, decided)
+        extract_mergers._add_synthetic_events(current, records)
+
+        assert set(records) == {merger_status.PHASE_1}
+        assert self._flagged(current) == [(
+            '2026-08-03', url,
+            'Phase 1 - initial assessment determination: Approved with conditions')]
+        assert current['events'][0]['phase'] == merger_status.PHASE_1
+
+    @pytest.mark.parametrize('record', [
+        {'determination': 'Not approved', 'date': PHASE_2_DATE},  # no stage
+        {'determination': 'Not approved', 'stage': merger_status.PHASE_2_STAGE},  # no date
+        {'date': PHASE_2_DATE, 'stage': merger_status.PHASE_2_STAGE},  # no outcome
+    ])
+    def test_an_incomplete_record_is_skipped(self, record):
+        current = _public_benefit_applied(keep_headline=False)
+        self._strip_flags(current)
+        before = copy.deepcopy(current['events'])
+        extract_mergers._add_synthetic_events(current, {merger_status.PHASE_2: record})
+        assert current['events'] == before
+
+    def test_no_records_and_no_headline_flags_nothing(self):
+        current = _public_benefit_applied(keep_headline=False)
+        self._strip_flags(current)
+        before = copy.deepcopy(current['events'])
+        extract_mergers._add_synthetic_events(current, {})
+        extract_mergers._add_synthetic_events(current)
+        assert current['events'] == before
+
+
+class TestParseMergerFileEndToEnd:
+    """The run that broke MN-65005 (14 Oct 2026), through parse_merger_file:
+    the page in the public benefit phase with its headline cleared, the
+    Phase 2 determination's documents at the URLs already stored. Whether or
+    not the stored event still carries the flag, the run must leave it on the
+    instrument, with the Phase 2 title."""
+
+    DET_URL = 'https://www.accc.gov.au/system/files/IAG_RACI%20-%20Phase%202%20determination_1.pdf'
+    SUMMARY_URL = 'https://www.accc.gov.au/system/files/Summary%20of%20Reasons_10.pdf'
+    PHASE_2_TITLE = 'Phase 2 - detailed assessment determination: Not approved'
+
+    PAGE = f"""<html><body>
+    <h1 class="page-title">Insurance Australia Group – RAC Insurance</h1>
+    <div class="field--name-dynamic-token-fieldnode-acccgov-merger-id">
+      <div class="field__item">MN-65005</div></div>
+    <div class="field--name-field-acccgov-merger-status">
+      <div class="field__item">Under assessment</div></div>
+    <div class="field--name-field-acquisition-stage">Stage Public benefit phase</div>
+    <div class="field--name-field-acccgov-pub-reg-date">
+      <time datetime="2026-03-03T12:00:00Z">3 March 2026</time></div>
+    <div class="field--name-field-acccgov-pub-benefit-date">
+      <time datetime="2026-10-13T12:00:00Z">13 October 2026</time></div>
+    <div class="table-responsive"><table>
+      <tr><td class="acccgov-timeline__date"><time datetime="{PHASE_2_DATE}">22 Sep 2026</time></td>
+          <td>Phase 2 determination</td>
+          <td class="acccgov-timeline__file-link"><a href="{DET_URL}">PDF</a></td></tr>
+      <tr><td class="acccgov-timeline__date"><time datetime="{PHASE_2_DATE}">22 Sep 2026</time></td>
+          <td>Phase 2 determination - Summary of reasons</td>
+          <td class="acccgov-timeline__file-link"><a href="{SUMMARY_URL}">PDF</a></td></tr>
+    </table></div>
+    </body></html>"""
+
+    def _stored(self, flagged):
+        det = {'date': PHASE_2_DATE, 'title': 'Phase 2 determination',
+               'display_title': self.PHASE_2_TITLE if flagged else 'Phase 2 determination',
+               'url': self.DET_URL, 'status': 'live'}
+        if flagged:
+            det['is_determination_event'] = True
+        return {
+            'merger_id': 'MN-65005',
+            'stage': merger_status.PUBLIC_BENEFIT_STAGE,
+            'status': merger_status.UNDER_ASSESSMENT,
+            'stage_determinations': {merger_status.PHASE_2: {
+                'determination': merger_status.NOT_APPROVED,
+                'date': '2026-09-23T12:00:00Z',
+                'stage': merger_status.PHASE_2_STAGE,
+            }},
+            'events': [
+                det,
+                {'date': PHASE_2_DATE, 'title': 'Phase 2 determination - Summary of reasons',
+                 'display_title': 'Phase 2 determination - Summary of reasons',
+                 'url': self.SUMMARY_URL, 'status': 'live'},
+            ],
+        }
+
+    def _parse(self, tmp_path, monkeypatch, existing):
+        monkeypatch.setattr(extract_mergers, 'download_attachment', lambda *a, **k: None)
+        page = tmp_path / 'MN-65005.html'
+        page.write_text(self.PAGE, encoding='utf-8')
+        return extract_mergers.parse_merger_file(str(page), existing, set(), {})
+
+    @pytest.mark.parametrize('flagged', [True, False])
+    def test_the_phase_2_determination_stays_flagged(self, tmp_path, monkeypatch, flagged):
+        result = self._parse(tmp_path, monkeypatch, self._stored(flagged))
+
+        assert result['stage'] == merger_status.PUBLIC_BENEFIT_STAGE
+        assert not result.get('determination_publication_date')
+        assert result['stage_determinations'] == self._stored(flagged)['stage_determinations']
+        assert [(e['url'], e['display_title'], e['phase'])
+                for e in result['events'] if e.get('is_determination_event')] == [
+            (self.DET_URL, self.PHASE_2_TITLE, merger_status.PHASE_2)]
+
+    def test_a_second_run_changes_nothing(self, tmp_path, monkeypatch):
+        once = self._parse(tmp_path, monkeypatch, self._stored(False))
+        twice = self._parse(tmp_path, monkeypatch, copy.deepcopy(once))
+        assert twice == once
+
+
 # --- enrichment ---------------------------------------------------------------
 
 class TestEnrichment:
