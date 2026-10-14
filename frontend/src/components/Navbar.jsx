@@ -1,9 +1,11 @@
 import { Link, useLocation } from 'react-router';
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { FaSearch, FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
+import { FaBluesky } from 'react-icons/fa6';
 import { useTracking } from '../context/TrackingContext';
 import NotificationPanel from './NotificationPanel';
 import BellIcon from './BellIcon';
+import { BLUESKY_PROFILE_URL } from '../config';
 import { NAV_PAGES } from '../constants/navPages';
 
 const SCROLL_HIDE_THRESHOLD_PX = 50;
@@ -49,10 +51,13 @@ function Navbar({ onOpenSearch }) {
   const [notificationPanelOpen, setNotificationPanelOpen] = useState(false);
   const [showShortcutHints, setShowShortcutHints] = useState(false);
   const [navMode, setNavMode] = useState('full'); // 'full' | 'condensed' | 'mobile' | 'tiny'
+  // Whether the hamburger layout has room for the Bluesky icon as well.
+  const [mobileBlueskyFits, setMobileBlueskyFits] = useState(true);
   const containerRef = useRef(null);
   const probeFullRef = useRef(null);
   const probeCondensedRef = useRef(null);
   const probeMobileRef = useRef(null);
+  const probeMobileBlueskyRef = useRef(null);
   const moreMenuRef = useRef(null);
   const moreButtonRef = useRef(null);
   const { unseenCount } = useTracking();
@@ -62,9 +67,11 @@ function Navbar({ onOpenSearch }) {
     const probeFull = probeFullRef.current;
     const probeCondensed = probeCondensedRef.current;
     const probeMobile = probeMobileRef.current;
-    if (!container || !probeFull || !probeCondensed || !probeMobile) return;
+    const probeMobileBluesky = probeMobileBlueskyRef.current;
+    if (!container || !probeFull || !probeCondensed || !probeMobile || !probeMobileBluesky) return;
     const check = () => {
       const available = container.clientWidth;
+      setMobileBlueskyFits(probeMobileBluesky.offsetWidth <= available);
       if (probeFull.offsetWidth <= available) {
         setNavMode('full');
       } else if (probeCondensed.offsetWidth <= available) {
@@ -115,6 +122,11 @@ function Navbar({ onOpenSearch }) {
   }
 
   const isActive = (path) => location.pathname === path;
+  const isHamburger = navMode === 'mobile' || navMode === 'tiny';
+  const showBluesky = navMode === 'full' || (isHamburger && mobileBlueskyFits);
+  // Four icons only fit beside the brand on a phone if they sit closer together.
+  const compactIcons = isHamburger && showBluesky;
+  const iconPad = compactIcons ? 'p-1.5' : 'p-2';
   const isMoreActive = moreNavLinks.some(({ path }) => isActive(path));
 
   // Show shortcut hint badges while "g" is held/pending
@@ -177,7 +189,7 @@ function Navbar({ onOpenSearch }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={containerRef} className="flex justify-between h-16 relative">
 
-          {/* Full probe: all links + search + bell */}
+          {/* Full probe: all links + Bluesky + search + bell */}
           <div
             ref={probeFullRef}
             aria-hidden="true"
@@ -190,6 +202,7 @@ function Navbar({ onOpenSearch }) {
               ))}
             </div>
             <div className="ml-1 flex items-center gap-1">
+              <div className="w-9 h-9" />
               <div className="w-9 h-9" />
               <div className="w-9 h-9" />
             </div>
@@ -224,6 +237,22 @@ function Navbar({ onOpenSearch }) {
               <div className="w-9 h-9" />
               <div className="w-9 h-9" />
               <div className="w-9 h-9" />
+            </div>
+          </div>
+
+          {/* Mobile + Bluesky probe: brand + Bluesky + search + bell +
+              hamburger, with the tighter icon spacing used when all four show */}
+          <div
+            ref={probeMobileBlueskyRef}
+            aria-hidden="true"
+            className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
+          >
+            <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
+            <div className="ml-3 flex items-center">
+              <div className="w-8 h-8" />
+              <div className="w-8 h-8" />
+              <div className="w-8 h-8" />
+              <div className="w-8 h-8" />
             </div>
           </div>
 
@@ -306,11 +335,25 @@ function Navbar({ onOpenSearch }) {
             )}
           </div>
 
-          {/* Right: search, bell, mobile hamburger */}
-          <div className="flex items-center gap-1">
+          {/* Right: Bluesky, search, bell, mobile hamburger. Bluesky is
+              left out of the condensed layout, where the row is tightest,
+              and out of the hamburger layout when it doesn't fit. */}
+          <div className={`flex items-center ${compactIcons ? '' : 'gap-1'}`}>
+            {showBluesky && (
+              <a
+                href={BLUESKY_PROFILE_URL}
+                target="_blank"
+                rel="noopener noreferrer me"
+                className={`inline-flex items-center justify-center ${iconPad} rounded-lg text-gray-500 hover:text-[#0085ff] hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
+                aria-label="mergers.fyi on Bluesky (opens in a new tab)"
+                title="Follow on Bluesky"
+              >
+                <FaBluesky className="h-5 w-5" aria-hidden="true" />
+              </a>
+            )}
             <button
               onClick={onOpenSearch}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className={`inline-flex items-center justify-center ${iconPad} rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
               aria-label="Search"
             >
               <FaSearch className="h-5 w-5" aria-hidden="true" />
@@ -319,7 +362,7 @@ function Navbar({ onOpenSearch }) {
               <button
                 onMouseDown={(e) => e.stopPropagation()}
                 onClick={() => setNotificationPanelOpen(!notificationPanelOpen)}
-                className="relative inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className={`relative inline-flex items-center justify-center ${iconPad} rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
                 aria-expanded={notificationPanelOpen}
                 aria-label={`Notifications${unseenCount > 0 ? `, ${unseenCount} new` : ''}`}
               >
@@ -341,7 +384,7 @@ function Navbar({ onOpenSearch }) {
             {(navMode === 'mobile' || navMode === 'tiny') && (
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className={`inline-flex items-center justify-center ${iconPad} rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
