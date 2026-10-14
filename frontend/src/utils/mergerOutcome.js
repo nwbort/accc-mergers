@@ -129,19 +129,21 @@ export function getOutcomeText(merger) {
 }
 
 /**
- * The status line in one string, for text that leaves the page (share posts,
- * email subjects): "Approved · Phase 1", "Under assessment · Phase 2 · Under
- * appeal", "Approved · Waiver". Same words, same order as MergerOutcomeHeading.
+ * Phase and status as one phrase, for text that leaves the page (share posts,
+ * email subjects): "Phase 1 approved", "Phase 2 under assessment", "Waiver
+ * not approved". A live appeal follows as a second status, as it does on the
+ * header line: "Phase 2 not approved · Under appeal".
+ *
+ * The phase is left off where the status already names it ("Referred to
+ * phase 2") or the outcome carries the public benefit qualifier, as on the
+ * header line (getStageLabel).
  */
-export function getStatusSummary(merger) {
+export function getPhaseStatus(merger) {
   const outcome = getOutcomeText(merger);
   if (!outcome) return null;
-  return [
-    outcome,
-    getStageLabel(merger),
-    merger.under_appeal ? 'Under appeal' : null,
-    merger.is_waiver ? 'Waiver' : null,
-  ].filter(Boolean).join(' · ');
+  const phase = merger.is_waiver ? 'Waiver' : getStageLabel(merger);
+  const status = phase ? `${phase} ${outcome.charAt(0).toLowerCase()}${outcome.slice(1)}` : outcome;
+  return merger.under_appeal ? `${status} · Under appeal` : status;
 }
 
 /**

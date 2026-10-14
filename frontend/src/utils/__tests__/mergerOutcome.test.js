@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getDecidedOutcome, getHeaderStatus, getDeterminationDocUrl, getStatusSummary } from '../mergerOutcome';
+import { getDecidedOutcome, getHeaderStatus, getDeterminationDocUrl, getPhaseStatus } from '../mergerOutcome';
 
 const approved = {
   status: 'Assessment completed',
@@ -150,31 +150,31 @@ describe('getDeterminationDocUrl', () => {
   });
 });
 
-describe('getStatusSummary', () => {
-  it('states the outcome and the phase it was decided in', () => {
-    expect(getStatusSummary(approved)).toBe('Approved · Phase 1');
+describe('getPhaseStatus', () => {
+  it('puts the phase before the outcome', () => {
+    expect(getPhaseStatus(approved)).toBe('Phase 1 approved');
   });
 
   it('carries conditions, as the status line does', () => {
-    expect(getStatusSummary({ ...approved, has_conditions: true })).toBe('Approved with conditions · Phase 1');
+    expect(getPhaseStatus({ ...approved, has_conditions: true })).toBe('Phase 1 approved with conditions');
   });
 
   it('states a live status and phase', () => {
-    expect(getStatusSummary({
+    expect(getPhaseStatus({
       status: 'Under assessment',
       stage: 'Phase 2 - detailed assessment',
-    })).toBe('Under assessment · Phase 2');
+    })).toBe('Phase 2 under assessment');
   });
 
   it('adds a live appeal as a second status', () => {
-    expect(getStatusSummary({ ...approved, under_appeal: true })).toBe('Approved · Phase 1 · Under appeal');
+    expect(getPhaseStatus({ ...approved, under_appeal: true })).toBe('Phase 1 approved · Under appeal');
   });
 
-  it('names a waiver, which has no phase', () => {
-    expect(getStatusSummary({ ...approved, is_waiver: true, stage: 'Waiver' })).toBe('Approved · Waiver');
+  it('calls a waiver a waiver, which has no phase', () => {
+    expect(getPhaseStatus({ ...approved, is_waiver: true, stage: 'Waiver' })).toBe('Waiver approved');
   });
 
   it('is null when there is nothing to say', () => {
-    expect(getStatusSummary({})).toBeNull();
+    expect(getPhaseStatus({})).toBeNull();
   });
 });
