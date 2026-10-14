@@ -107,6 +107,46 @@ export function getStageLabel(merger) {
 }
 
 /**
+ * The status line's outcome as text: the header label plus whatever qualifies
+ * it, e.g. "Approved with conditions" or "Not approved · confirmed on appeal".
+ *
+ * Qualifiers are part of what the outcome *is*, so they are set in its own run
+ * of text rather than boxed off beside it. "Approved with conditions" is the
+ * outcome's own name (see MERGER_STATUS.APPROVED_WITH_CONDITIONS); a concluded
+ * appeal's result takes a dot, since "Not approved confirmed on appeal" would
+ * read as one phrase. An outcome reached in the public benefit phase says so,
+ * the same way. The conditions flag mirrors StatusBadge: a stale flag on any
+ * other outcome stays hidden rather than reading as a conditional clearance.
+ */
+export function getOutcomeText(merger) {
+  const headerStatus = getHeaderStatus(merger);
+  if (!headerStatus) return null;
+  const { label, appealSuffix } = headerStatus;
+  const showConditions =
+    Boolean(merger.has_conditions) && merger.accc_determination === MERGER_STATUS.APPROVED;
+  const publicBenefit = getPublicBenefitQualifier(merger);
+  return `${label}${showConditions ? ' with conditions' : ''}${publicBenefit ? ` · ${publicBenefit}` : ''}${appealSuffix ? ` · ${appealSuffix}` : ''}`;
+}
+
+/**
+ * Phase and status as one phrase, for text that leaves the page (share posts,
+ * email subjects): "Phase 1 approved", "Phase 2 under assessment", "Waiver
+ * not approved". A live appeal follows as a second status, as it does on the
+ * header line: "Phase 2 not approved · Under appeal".
+ *
+ * The phase is left off where the status already names it ("Referred to
+ * phase 2") or the outcome carries the public benefit qualifier, as on the
+ * header line (getStageLabel).
+ */
+export function getPhaseStatus(merger) {
+  const outcome = getOutcomeText(merger);
+  if (!outcome) return null;
+  const phase = merger.is_waiver ? 'Waiver' : getStageLabel(merger);
+  const status = phase ? `${phase} ${outcome.charAt(0).toLowerCase()}${outcome.slice(1)}` : outcome;
+  return merger.under_appeal ? `${status} · Under appeal` : status;
+}
+
+/**
  * The determination a determination event records. A matter that went on to
  * the public benefit phase has two — the Phase 2 determination and the public
  * benefit one — so the event is matched to its phase by date, falling back to

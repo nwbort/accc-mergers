@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import TrackButton from '../components/TrackButton';
+import ShareButton from '../components/ShareButton';
 import BusinessDayProgress from '../components/BusinessDayProgress';
 import PreNotificationEstimate from '../components/PreNotificationEstimate';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
@@ -23,7 +24,7 @@ import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, CARD_TITLE, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { mergerMeta } from '../utils/pageMeta';
-import { getDecidedOutcome, getHeaderStatus, getDeterminationDocUrl, determinationForEvent } from '../utils/mergerOutcome';
+import { getDecidedOutcome, getHeaderStatus, getPhaseStatus, getDeterminationDocUrl, determinationForEvent } from '../utils/mergerOutcome';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS, APPEAL_OUTCOME_LABELS } from '../constants/appeal';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
@@ -286,6 +287,13 @@ function MergerDetail() {
   // crawlers read and the head React renders here cannot drift apart.
   const meta = mergerMeta(merger);
 
+  // What a shared link says about the matter:
+  // "{name} · ACCC assessment · Phase 1 approved".
+  const phaseStatus = getPhaseStatus(merger);
+  const shareTitle = [merger.merger_name, 'ACCC assessment', phaseStatus]
+    .filter(Boolean)
+    .join(' · ');
+
   return (
     <>
       <SEO
@@ -363,16 +371,24 @@ function MergerDetail() {
               {/* The status badge that used to sit here, and the appeal badge
                   beside it, both stand down: the heading above states the
                   status and carries the appeal as a chip, so the corner is the
-                  Track button alone. */}
-              <TrackButton
-                active={tracked}
-                onClick={() => toggleTracking(normalizedId)}
-                activeLabel="Tracking"
-                inactiveLabel="Track"
-                activeAriaLabel="Stop tracking this merger"
-                inactiveAriaLabel="Track this merger for updates"
-                onDark={headerStyle.onDark}
-              />
+                  Track and Share buttons alone, stacked on a phone so they don't
+                  squeeze the title. */}
+              <div className="flex flex-shrink-0 flex-col items-stretch gap-2 sm:flex-row sm:items-center">
+                <TrackButton
+                  active={tracked}
+                  onClick={() => toggleTracking(normalizedId)}
+                  activeLabel="Tracking"
+                  inactiveLabel="Track"
+                  activeAriaLabel="Stop tracking this merger"
+                  inactiveAriaLabel="Track this merger for updates"
+                  onDark={headerStyle.onDark}
+                />
+                <ShareButton
+                  path={meta.path}
+                  title={shareTitle}
+                  onDark={headerStyle.onDark}
+                />
+              </div>
             </div>
           </div>
 

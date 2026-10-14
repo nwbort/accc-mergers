@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getDecidedOutcome, getHeaderStatus, getDeterminationDocUrl } from '../mergerOutcome';
+import { getDecidedOutcome, getHeaderStatus, getDeterminationDocUrl, getPhaseStatus } from '../mergerOutcome';
 
 const approved = {
   status: 'Assessment completed',
@@ -147,5 +147,34 @@ describe('getDeterminationDocUrl', () => {
   it('returns null when no document is attached', () => {
     expect(getDeterminationDocUrl({ events: [] })).toBeNull();
     expect(getDeterminationDocUrl({})).toBeNull();
+  });
+});
+
+describe('getPhaseStatus', () => {
+  it('puts the phase before the outcome', () => {
+    expect(getPhaseStatus(approved)).toBe('Phase 1 approved');
+  });
+
+  it('carries conditions, as the status line does', () => {
+    expect(getPhaseStatus({ ...approved, has_conditions: true })).toBe('Phase 1 approved with conditions');
+  });
+
+  it('states a live status and phase', () => {
+    expect(getPhaseStatus({
+      status: 'Under assessment',
+      stage: 'Phase 2 - detailed assessment',
+    })).toBe('Phase 2 under assessment');
+  });
+
+  it('adds a live appeal as a second status', () => {
+    expect(getPhaseStatus({ ...approved, under_appeal: true })).toBe('Phase 1 approved · Under appeal');
+  });
+
+  it('calls a waiver a waiver, which has no phase', () => {
+    expect(getPhaseStatus({ ...approved, is_waiver: true, stage: 'Waiver' })).toBe('Waiver approved');
+  });
+
+  it('is null when there is nothing to say', () => {
+    expect(getPhaseStatus({})).toBeNull();
   });
 });

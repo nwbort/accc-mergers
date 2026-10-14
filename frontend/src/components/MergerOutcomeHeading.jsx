@@ -1,8 +1,7 @@
 import { FaGavel } from 'react-icons/fa';
-import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getOutcomeHeaderStyle } from '../constants/outcomeHeader';
 import { OUTCOME_ICONS } from '../constants/outcomeIcons';
-import { getHeaderStatus, getPublicBenefitQualifier, getStageLabel } from '../utils/mergerOutcome';
+import { getHeaderStatus, getOutcomeText, getStageLabel } from '../utils/mergerOutcome';
 import Phase2OddsReveal from './Phase2OddsReveal';
 import WaiverBadge from './WaiverBadge';
 
@@ -28,27 +27,14 @@ function MergerOutcomeHeading({ merger }) {
   const headerStatus = getHeaderStatus(merger);
   if (!headerStatus) return null;
 
-  const { label, appealSuffix, decided } = headerStatus;
+  const { label, decided } = headerStatus;
   const style = getOutcomeHeaderStyle(label);
   // Only decided outcomes have a glyph — a live matter has no result to
   // symbolise, and a made-up one would read as having got a result
   // (constants/outcomeIcons.js).
   const Icon = OUTCOME_ICONS[label] ?? null;
 
-  // Mirrors StatusBadge: a stale conditions flag on any other outcome stays
-  // hidden rather than reading as a conditional clearance.
-  const showConditions =
-    Boolean(merger.has_conditions) && merger.accc_determination === MERGER_STATUS.APPROVED;
-
-  // Qualifiers are part of what the outcome *is*, so they are set in its type
-  // and sit in its own run of text rather than being boxed off beside it.
-  // "Approved with conditions" is the outcome's own name (see
-  // MERGER_STATUS.APPROVED_WITH_CONDITIONS); a concluded appeal's result takes
-  // a dot, since "Not approved confirmed on appeal" would read as one phrase.
-  // An outcome reached in the public benefit phase says so, the same way.
-  const publicBenefit = getPublicBenefitQualifier(merger);
-  const outcome =
-    `${label}${showConditions ? ' with conditions' : ''}${publicBenefit ? ` · ${publicBenefit}` : ''}${appealSuffix ? ` · ${appealSuffix}` : ''}`;
+  const outcome = getOutcomeText(merger);
 
   // The phase rides on the same line, after a dot, rather than in a field of
   // its own further down the card.
