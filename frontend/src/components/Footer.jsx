@@ -42,6 +42,13 @@ function Footer() {
           >
             Privacy Policy
           </Link>
+          .{' '}
+          <Link
+            to="/copyright"
+            className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
+          >
+            Copyright
+          </Link>
           .
         </div>
       </div>

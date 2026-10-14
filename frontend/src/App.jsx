@@ -31,6 +31,7 @@ const Phase2 = lazy(() => import('./pages/Phase2'));
 const RefiledNotifications = lazy(() => import('./pages/RefiledNotifications'));
 const CurrentStatus = lazy(() => import('./pages/CurrentStatus'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const Copyright = lazy(() => import('./pages/Copyright'));
 const Feedback = lazy(() => import('./pages/Feedback'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -70,6 +71,7 @@ function AppContent() {
             <Route path="/current-status" element={<CurrentStatus />} />
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/copyright" element={<Copyright />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

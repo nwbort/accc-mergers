@@ -63,6 +63,7 @@ STATIC_PAGES = [
     {"path": "/digest",      "changefreq": "weekly",  "priority": "0.7"},
     {"path": "/nick-twort",  "changefreq": "monthly", "priority": "0.8"},
     {"path": "/privacy",     "changefreq": "monthly", "priority": "0.8"},
+    {"path": "/copyright",   "changefreq": "monthly", "priority": "0.5"},
 ]
 
 STATIC_COMMENTS = {
@@ -78,6 +79,7 @@ STATIC_COMMENTS = {
     "/digest":      "Digest Page",
     "/nick-twort":  "About / Author Page",
     "/privacy":     "Privacy Policy",
+    "/copyright":   "Copyright and Licensing",
 }
 
 
