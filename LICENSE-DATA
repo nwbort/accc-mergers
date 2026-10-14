@@ -1,0 +1,46 @@
+Data licence
+
+Copyright (c) 2026 Nick Twort
+
+The data published by this project is licensed under the Creative Commons
+Attribution 4.0 International licence (CC BY 4.0):
+
+    https://creativecommons.org/licenses/by/4.0/
+    Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+You may share and adapt it for any purpose, including commercially, provided
+you give appropriate credit, link to the licence and indicate if changes were
+made. A suitable credit is:
+
+    Source: mergers.fyi (https://mergers.fyi), licensed under CC BY 4.0.
+
+What this covers
+----------------
+
+- The structured data the pipeline produces: data/processed/,
+  data/output/, data/digest-archive/, data/known_notification_dates.json,
+  data/frozen_events_mergers.json, and the generated files under
+  frontend/public/data/ (served at https://mergers.fyi/data/).
+- The hand-curated material within it, such as commentary, related-party
+  groupings, related-merger links and the Tribunal and Federal Court review
+  overlays.
+- The fyi.mergers.* records this project publishes to the AT Protocol
+  network.
+
+What this does not cover
+------------------------
+
+- Source code. That is licensed separately under the MIT licence; see
+  LICENSE.
+- Third-party documents. data/raw/ holds copies of pages and documents from
+  the ACCC acquisitions register, the Australian Competition Tribunal and the
+  Federal Court of Australia, including material written by merger parties
+  and other third parties. These remain the property of their respective
+  owners and are reproduced for reference under those owners' terms, not
+  under this licence. See data/raw/NOTICE.md.
+- Text drawn from those sources. Where the published data quotes or
+  reproduces third-party text (for example, a matter's description or
+  questionnaire questions taken from the ACCC register), that text remains
+  subject to its owner's terms. Material from the ACCC website is generally
+  published by the ACCC under CC BY 4.0; credit the Australian Competition
+  and Consumer Commission as its source.

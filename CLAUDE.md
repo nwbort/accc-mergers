@@ -77,6 +77,10 @@ Top level:
 ├── functions/                # Cloudflare Pages Functions (must stay at root)
 ├── atproto/                  # ATProto identity + the fyi.mergers.* lexicons
 ├── wrangler.toml             # Cloudflare *Pages* project config (must stay at root)
+├── LICENSE                   # MIT: the code
+├── LICENSE-DATA              # CC BY 4.0: this project's own data (generated + curated, and
+│                             #   the ATProto records). data/raw/ is third-party material
+│                             #   outside both licences — see data/raw/NOTICE.md
 ├── docs/                     # Deployment, walkthrough, ADRs, accessibility, atproto
 └── fixtures/                 # Cross-language test fixtures
     ├── slug-cases.json       # Golden fixture pinning slugify() across all 3 impls

@@ -2,6 +2,7 @@
   "name": "accc-register-watcher",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "description": "Cloudflare Email Worker — triggers the merger pipeline when the ACCC register update mailing list sends an email",
   "scripts": {
