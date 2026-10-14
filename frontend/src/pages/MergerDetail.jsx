@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import TrackButton from '../components/TrackButton';
+import ShareButton from '../components/ShareButton';
 import BusinessDayProgress from '../components/BusinessDayProgress';
 import PreNotificationEstimate from '../components/PreNotificationEstimate';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
@@ -363,16 +364,24 @@ function MergerDetail() {
               {/* The status badge that used to sit here, and the appeal badge
                   beside it, both stand down: the heading above states the
                   status and carries the appeal as a chip, so the corner is the
-                  Track button alone. */}
-              <TrackButton
-                active={tracked}
-                onClick={() => toggleTracking(normalizedId)}
-                activeLabel="Tracking"
-                inactiveLabel="Track"
-                activeAriaLabel="Stop tracking this merger"
-                inactiveAriaLabel="Track this merger for updates"
-                onDark={headerStyle.onDark}
-              />
+                  Track and Share buttons alone, stacked on a phone so they don't
+                  squeeze the title. */}
+              <div className="flex flex-shrink-0 flex-col items-stretch gap-2 sm:flex-row sm:items-center">
+                <TrackButton
+                  active={tracked}
+                  onClick={() => toggleTracking(normalizedId)}
+                  activeLabel="Tracking"
+                  inactiveLabel="Track"
+                  activeAriaLabel="Stop tracking this merger"
+                  inactiveAriaLabel="Track this merger for updates"
+                  onDark={headerStyle.onDark}
+                />
+                <ShareButton
+                  path={meta.path}
+                  title={merger.merger_name}
+                  onDark={headerStyle.onDark}
+                />
+              </div>
             </div>
           </div>
 
