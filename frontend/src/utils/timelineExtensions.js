@@ -14,6 +14,11 @@
  *
  * Extensions granted in the public benefit phase aren't placed: that clock
  * starts on an application date this rule has no hold of.
+ *
+ * The three title rules below (isExtensionTitle, extensionBusinessDays,
+ * extensionReason) are hand-copied from that Python module.
+ * `fixtures/extension-title-cases.json` pins the pair together; both test
+ * suites read it, so change the rules in both places and update the cases.
  */
 import { addBusinessDays, parseDateOnly, toDateString } from './dates';
 import { PHASE_1_DEADLINE_BD, PHASE_2_DEADLINE_BD } from '../constants/statutoryDeadlines';
@@ -28,11 +33,17 @@ export const isExtensionTitle = (title) => {
   return lower.includes('extended by') || lower.includes('extend the phase 1');
 };
 
+/** The extension's length in business days, or null if the title gives none. */
+export const extensionBusinessDays = (title) => {
+  const match = EXTENSION_DAYS_RE.exec(title || '');
+  return match ? Number(match[1]) : null;
+};
+
 /** The "following …" clause of an extension notice, trimmed for display. */
 export const extensionReason = (title) => {
-  const match = /following\s+(.*)$/is.exec(title || '');
+  const match = /following\s+(.*)$/i.exec(title || '');
   if (!match) return '';
-  return match[1].replace(/\s+/g, ' ').trim().replace(/\.$/, '');
+  return match[1].replace(/\s+/g, ' ').trim().replace(/\.+$/, '');
 };
 
 const dayOf = (iso) => (iso ? iso.slice(0, 10) : null);
@@ -75,10 +86,9 @@ export function getTimelineExtensions(merger) {
   for (const event of extensions) {
     const phase = phaseOf(dayOf(event.date));
     if (phase === null) continue;
-    const match = EXTENSION_DAYS_RE.exec(event.title);
     byPhase[phase].push({
       date: event.date,
-      businessDays: match ? Number(match[1]) : null,
+      businessDays: extensionBusinessDays(event.title),
       reason: extensionReason(event.title),
       phase,
     });

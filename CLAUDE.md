@@ -85,8 +85,10 @@ Top level:
 └── fixtures/                 # Cross-language test fixtures
     ├── slug-cases.json       # Golden fixture pinning slugify() across all 3 impls
     ├── shard-cases.json      # Golden fixture pinning the party shard hash across both impls
-    └── industry-division-cases.json  # Golden fixture pinning which industries/ file
-                              #   an ANZSIC code is packed into, across both impls
+    ├── industry-division-cases.json  # Golden fixture pinning which industries/ file
+    │                         #   an ANZSIC code is packed into, across both impls
+    └── extension-title-cases.json  # Golden fixture pinning how an event title reads as a
+                              #   timeline extension (days, reason), across both impls
 ```
 
 Frontend:

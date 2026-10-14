@@ -1,24 +1,42 @@
+/* global process */
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
+  extensionBusinessDays,
   extensionReason,
   getTimelineExtensions,
   isExtensionTitle,
 } from '../timelineExtensions';
 
-describe('isExtensionTitle', () => {
-  it('matches both the standard and the earliest long-form notice', () => {
-    expect(isExtensionTitle('Timeline extended by 6 business days – following request by parties')).toBe(true);
-    expect(isExtensionTitle('ACCC decided to extend the Phase 1 determination period following receipt of extension request')).toBe(true);
-    expect(isExtensionTitle('Merger notified to ACCC')).toBe(false);
-    expect(isExtensionTitle(undefined)).toBe(false);
-  });
-});
+// Golden fixture shared with scripts/tests/test_extension_titles.py — the
+// single source of truth pinning these title rules to the pipeline's copy in
+// scripts/generate/static_data/outputs/extensions.py. Read via node fs (Vitest
+// runs with the frontend project dir as cwd, so the repo root is one level up),
+// matching industryDivision.test.js.
+const repoRoot = resolve(process.cwd(), '..');
+const { cases } = JSON.parse(
+  readFileSync(resolve(repoRoot, 'fixtures', 'extension-title-cases.json'), 'utf8'),
+);
+const extensionCases = cases.filter((c) => c.is_extension);
 
-describe('extensionReason', () => {
-  it('returns the "following" clause, tidied', () => {
-    expect(extensionReason('Timeline extended by 6 business days – following  request for further information.'))
-      .toBe('request for further information');
-    expect(extensionReason('Timeline extended by 6 business days')).toBe('');
+describe('extension title rules', () => {
+  it('has golden cases on both sides of the rule', () => {
+    expect(extensionCases.length).toBeGreaterThan(0);
+    expect(extensionCases.length).toBeLessThan(cases.length);
+  });
+
+  it.each(cases)('reads "$title" as an extension: $is_extension', ({ title, is_extension }) => {
+    expect(isExtensionTitle(title)).toBe(is_extension);
+  });
+
+  it.each(extensionCases)('parses "$title"', ({ title, business_days, reason }) => {
+    expect(extensionBusinessDays(title)).toBe(business_days);
+    expect(extensionReason(title)).toBe(reason);
+  });
+
+  it('treats a missing title as no extension', () => {
+    expect(isExtensionTitle(undefined)).toBe(false);
   });
 });
 
