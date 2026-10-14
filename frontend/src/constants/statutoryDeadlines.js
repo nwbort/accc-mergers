@@ -12,3 +12,9 @@ export const PHASE_1_DEADLINE_BD = 30;
 
 /** Business days the ACCC has to decide a notification waiver application. */
 export const WAIVER_DEADLINE_BD = 25;
+
+/**
+ * Business days the ACCC has to complete a phase 2 review, counted from the
+ * day phase 1 was due (not from the referral, which can land early).
+ */
+export const PHASE_2_DEADLINE_BD = 90;

@@ -9,6 +9,12 @@ foreshadows a Phase 2 escalation.
 
 Extension day counts and reasons are only available in the event *title* string
 (there is no structured field on the register), so they are parsed here.
+
+The title rules (``is_extension_event``, ``parse_business_days``,
+``reason_detail``) are hand-copied into ``frontend/src/utils/timelineExtensions.js``,
+which shades each extension on the merger detail timeline.
+``fixtures/extension-title-cases.json`` pins the pair together; both test
+suites read it, so change the rules in both places and update the cases.
 """
 
 import re
@@ -35,7 +41,8 @@ def is_extension_event(title: str) -> bool:
     return 'extended by' in lower or 'extend the phase 1' in lower
 
 
-def _parse_business_days(title: str):
+def parse_business_days(title: str) -> int | None:
+    """The extension's length in business days, or None if the title gives none."""
     match = _EXTENSION_RE.search(title or '')
     return int(match.group(1)) if match else None
 
@@ -63,7 +70,7 @@ def _classify_reason(title: str) -> str:
     return 'Other'
 
 
-def _reason_detail(title: str) -> str:
+def reason_detail(title: str) -> str:
     """The 'following ...' clause of an extension notice, trimmed for display."""
     match = re.search(r'following\s+(.*)$', title or '', re.IGNORECASE)
     if not match:
@@ -124,9 +131,9 @@ def generate(mergers: list) -> dict:
                 continue
             extensions.append({
                 'date': event.get('date'),
-                'business_days': _parse_business_days(title),
+                'business_days': parse_business_days(title),
                 'reason_category': _classify_reason(title),
-                'reason_detail': _reason_detail(title),
+                'reason_detail': reason_detail(title),
                 'title': title,
             })
         if extensions:

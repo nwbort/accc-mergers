@@ -14,6 +14,7 @@ import {
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getOutcomeDot } from '../constants/outcomeDotColors';
 import { SECTION_HEADING } from '../utils/classNames';
+import { getTimelineExtensions } from '../utils/timelineExtensions';
 
 // Statutory window the ACCC works to for merger waiver applications. Waivers
 // aren't published with an explicit end-of-determination date, so we derive the
@@ -59,6 +60,15 @@ const MIN_BAND_PX = 4;
 // dates that no longer mean anything.
 const SOON_PIP_PX = 24;
 const SOON_PIP_GAP_PX = 10;
+
+// Extensions are hatched rather than filled: they're time added to the clock,
+// not an event, so they read apart from both the dots and the solid forecast
+// band. Translucent, so the progress fill still shows through where it has
+// run into an extended stretch.
+const EXTENSION_HATCH = {
+  backgroundImage:
+    'repeating-linear-gradient(-45deg, rgba(71, 85, 105, 0.6) 0 2px, rgba(71, 85, 105, 0.15) 2px 5px)',
+};
 
 // Centre of a fixed-width label box, in px along the track, clamped to keep the
 // box inside the track exactly as the CSS clamp() on midStyle does.
@@ -413,6 +423,32 @@ function MergerTimeline({ merger }) {
     body: `Phase 1 ended on ${formatDateMedium(merger.phase_1_determination_date)}.`,
   };
 
+  // Timeline extensions: the stretch of statutory clock each one added, shaded
+  // on the axis between the deadline before it and the deadline after it.
+  const extensions = getTimelineExtensions(merger)
+    .map((ext, i) => {
+      const fromPct = axisPct(parseDateOnly(ext.from), start, end);
+      const toPct = axisPct(parseDateOnly(ext.to), start, end);
+      const days = `${ext.businessDays} business day${ext.businessDays === 1 ? '' : 's'}`;
+      const granted = formatDateMedium(ext.date);
+      const phase = `Phase ${ext.phase}`;
+      const reason = ext.reason ? `, following ${ext.reason}` : '';
+      return {
+        id: `extension-${i}`,
+        fromPct,
+        widthPct: toPct - fromPct,
+        title: `${phase} timeline extended by ${days} \u00b7 ${granted}${ext.reason ? ` \u00b7 following ${ext.reason}` : ''}`,
+        label: `${phase} timeline extended by ${days} on ${granted}${reason}`,
+        hint: {
+          title: `${phase} timeline extended by ${days}`,
+          body: `Granted ${granted}${reason}. Moved the ${phase} deadline from ${formatDateMedium(ext.from)} to ${formatDateMedium(ext.to)}.`,
+        },
+      };
+    })
+    // An extension falling wholly off this axis (say, a Phase 2 one on a matter
+    // whose axis has moved on to the public benefit phase) has nothing to shade.
+    .filter((ext) => ext.widthPct > 0);
+
   let fillPct;
   if (decisionPct !== null) fillPct = decisionPct;
   else if (isComplete || overdue) fillPct = 100;
@@ -511,7 +547,7 @@ function MergerTimeline({ merger }) {
   const openHint = openHintId === 'expected' ? expectedHint
     : openHintId === 'phase-1' ? phase1Hint
       : openHintId === 'phase-2' ? phase2Hint
-        : null;
+        : extensions.find((ext) => ext.id === openHintId)?.hint ?? null;
 
   return (
     // Wraps the row so an opened explanation can use the full width rather than
@@ -568,6 +604,25 @@ function MergerTimeline({ merger }) {
               className="absolute left-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-primary transition-[width] duration-500"
               style={{ width: `${fillPct}%` }}
             />
+            {/* Timeline extensions, drawn under every marker so the dots stay on
+                top where one falls inside an extended stretch. */}
+            {extensions.map((ext) => (
+              <HintMarker
+                key={ext.id}
+                hintId={ext.id}
+                openHintId={openHintId}
+                onToggle={toggleHint}
+                className="absolute top-1/2 -translate-y-1/2 h-3 rounded-sm ring-1 ring-white cursor-help"
+                style={{
+                  ...EXTENSION_HATCH,
+                  left: `${ext.fromPct}%`,
+                  width: `${ext.widthPct}%`,
+                  minWidth: `${MIN_BAND_PX}px`,
+                }}
+                title={ext.title}
+                label={ext.label}
+              />
+            ))}
             {/* Phase 1 determination marker (referred to Phase 2). Smaller and
                 unlabelled — details shown on hover via the title tooltip. */}
             {phase1Pct !== null && (

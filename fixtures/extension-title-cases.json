@@ -1,0 +1,101 @@
+{
+  "_comment": "Golden fixture pinning how a register event title is read as a timeline extension, across both hand-synced implementations: scripts/generate/static_data/outputs/extensions.py (is_extension_event, parse_business_days, reason_detail; writes extensions.json) and frontend/src/utils/timelineExtensions.js (isExtensionTitle, extensionBusinessDays, extensionReason; shades extensions on the merger detail timeline). Exercised by scripts/tests/test_extension_titles.py and frontend/src/utils/__tests__/timelineExtensions.test.js. business_days and reason are only asserted for titles that are extensions. If you change a rule, update both implementations and these cases. Covers each wording the register has used so far, plus the edge cases the rules have to agree on (singular day, case, stray whitespace and full stops, no count, no reason, non-extension titles).",
+  "cases": [
+    {
+      "title": "Timeline extended by 10 business days – following request by parties",
+      "is_extension": true,
+      "business_days": 10,
+      "reason": "request by parties"
+    },
+    {
+      "title": "Timeline extended by 15 business days - following remedy offered by parties",
+      "is_extension": true,
+      "business_days": 15,
+      "reason": "remedy offered by parties"
+    },
+    {
+      "title": "Timeline extended by 20 business days – following request by notifying party",
+      "is_extension": true,
+      "business_days": 20,
+      "reason": "request by notifying party"
+    },
+    {
+      "title": "Timeline extended by 6 business days – following request for further information",
+      "is_extension": true,
+      "business_days": 6,
+      "reason": "request for further information"
+    },
+    {
+      "title": "Timeline extended by 5 business days – following request to parties for further information",
+      "is_extension": true,
+      "business_days": 5,
+      "reason": "request to parties for further information"
+    },
+    {
+      "title": "Timeline extended by 15 business days – following request by Notifying Party to extend the period to respond to the ACCC's Notice of Competition Concerns",
+      "is_extension": true,
+      "business_days": 15,
+      "reason": "request by Notifying Party to extend the period to respond to the ACCC's Notice of Competition Concerns"
+    },
+    {
+      "title": "ACCC decided to extend the Phase 1 determination period following receipt of extension request from Ampol, to allow Ampol to provide additional information.",
+      "is_extension": true,
+      "business_days": null,
+      "reason": "receipt of extension request from Ampol, to allow Ampol to provide additional information"
+    },
+    {
+      "title": "Timeline extended by 1 business day – following request by parties",
+      "is_extension": true,
+      "business_days": 1,
+      "reason": "request by parties"
+    },
+    {
+      "title": "TIMELINE EXTENDED BY 7 BUSINESS DAYS – FOLLOWING REQUEST BY PARTIES",
+      "is_extension": true,
+      "business_days": 7,
+      "reason": "REQUEST BY PARTIES"
+    },
+    {
+      "title": "Timeline extended by 12  business days –  following   request by parties..",
+      "is_extension": true,
+      "business_days": 12,
+      "reason": "request by parties"
+    },
+    {
+      "title": "Timeline extended by 3 business days",
+      "is_extension": true,
+      "business_days": 3,
+      "reason": ""
+    },
+    {
+      "title": "Timeline extended – following request by parties",
+      "is_extension": false,
+      "business_days": null,
+      "reason": ""
+    },
+    {
+      "title": "Merger notified to ACCC",
+      "is_extension": false,
+      "business_days": null,
+      "reason": ""
+    },
+    {
+      "title": "Zoetis - Neogen Genomics Business - Phase 2 Notice",
+      "is_extension": false,
+      "business_days": null,
+      "reason": ""
+    },
+    {
+      "title": "Determination: following review, approved",
+      "is_extension": false,
+      "business_days": null,
+      "reason": ""
+    },
+    {
+      "title": "",
+      "is_extension": false,
+      "business_days": null,
+      "reason": ""
+    }
+  ]
+}

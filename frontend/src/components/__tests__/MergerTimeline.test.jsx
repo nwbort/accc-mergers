@@ -563,4 +563,44 @@ describe('MergerTimeline', () => {
       });
     });
   });
+  describe('timeline extensions', () => {
+    const extended = {
+      effective_notification_datetime: '2026-05-21T12:00:00Z',
+      end_of_determination_period: '2026-07-20T12:00:00Z',
+      status: 'Under assessment',
+      events: [
+        { date: '2026-06-19T12:00:00Z', title: 'Timeline extended by 10 business days - following request by parties' },
+      ],
+    };
+
+    it('shades the extended stretch at the end of the clock, with the detail on hover', () => {
+      render(<MergerTimeline merger={extended} />);
+
+      const band = screen.getByLabelText(
+        'Phase 1 timeline extended by 10 business days on 19 Jun 2026, following request by parties'
+      );
+      expect(band).toHaveAttribute('title', expect.stringContaining('following request by parties'));
+      // 10 of the axis's 40 business days, ending on the deadline.
+      expect(parseFloat(band.style.left)).toBeGreaterThan(70);
+      expect(parseFloat(band.style.left) + parseFloat(band.style.width)).toBeCloseTo(100, 5);
+    });
+
+    it('opens the explanation when tapped', () => {
+      render(<MergerTimeline merger={extended} />);
+
+      fireEvent.click(screen.getByLabelText(/timeline extended by 10 business days/));
+
+      expect(
+        screen.getByText(
+          'Granted 19 Jun 2026, following request by parties. Moved the Phase 1 deadline from 06 Jul 2026 to 20 Jul 2026.'
+        )
+      ).toBeInTheDocument();
+    });
+
+    it('draws nothing for a matter without extensions', () => {
+      render(<MergerTimeline merger={{ ...extended, events: [] }} />);
+
+      expect(screen.queryByLabelText(/timeline extended/)).not.toBeInTheDocument();
+    });
+  });
 });
