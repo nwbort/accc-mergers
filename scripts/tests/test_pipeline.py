@@ -196,6 +196,28 @@ class TestMergeEventsReuploadedAndRenamed:
             _merge_events(scraped, existing, "MN-65005", set()))
 
 
+class TestMergeEventsSameUrlKeepsDeterminationFlag:
+    """MN-65005 in the public benefit phase: the headline determination is
+    cleared, so nothing re-flags the Phase 2 determination after extraction.
+    A plain re-scrape of the same document must keep the flag it carried."""
+
+    def test_flag_survives_a_same_url_rescrape(self):
+        url = "https://accc.gov.au/determination_1.pdf"
+        existing = {"events": [
+            {"date": "2026-09-22T12:00:00Z", "title": "Phase 2 determination",
+             "display_title": "Phase 2 - detailed assessment determination: Not approved",
+             "url": url, "status": "live", "is_determination_event": True},
+        ]}
+        scraped = [{"date": "2026-09-22T12:00:00Z", "title": "Phase 2 determination",
+                    "url": url, "status": "live"}]
+        merged = _merge_events(scraped, existing, "MN-65005", set())
+
+        assert len(merged) == 1
+        assert merged[0]["is_determination_event"] is True
+        assert merged[0]["display_title"] == (
+            "Phase 2 - detailed assessment determination: Not approved")
+
+
 # ---------------------------------------------------------------------------
 # _merge_events: URL-less timeline rows are matched by title regardless of
 # which dash character the ACCC happens to render

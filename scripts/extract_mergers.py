@@ -926,6 +926,12 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                 updated_event = scraped_by_url[url].copy()
                 if 'display_title' in existing_event:
                     updated_event['display_title'] = existing_event['display_title']
+                # Carried forward like the display title: once a matter moves
+                # into the public benefit phase the headline determination is
+                # cleared, so _add_synthetic_events no longer re-flags the
+                # Phase 2 determination (MN-65005).
+                if existing_event.get('is_determination_event'):
+                    updated_event['is_determination_event'] = existing_event['is_determination_event']
                 merged_events.append(updated_event)
                 existing_urls_processed.add(url)
             else:
