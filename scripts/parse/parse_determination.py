@@ -116,15 +116,24 @@ def extract_table_content(pdf_path: str) -> List[Dict[str, str]]:
                         'details': details
                     })
 
-        # If no tables were extracted, try to extract text and parse it manually
+        # If no tables were extracted, try to extract text and parse it manually.
+        # Drop the running page header first: it starts "Determination | ...",
+        # which would otherwise read as the start of a "Determination" item.
         if not table_data:
-            full_text = ""
-            for page in pdf.pages:
-                full_text += page.extract_text() + "\n"
-
-            table_data = parse_text_as_table(full_text)
+            text = _full_text_without_page_chrome(pdf)
+            table_data = parse_text_as_table(text)
+            # A summary or statement of reasons has none of the table's items;
+            # keep its text as one untitled item, as when it is a table.
+            if not table_data and text.strip():
+                table_data = [{'item': '', 'details': text.strip()}]
 
     return table_data
+
+
+# The numbered heading a tableless Phase 2 determination opens its body with.
+NUMBERED_DETERMINATION_HEADING_RE = re.compile(r'^\d+\.\s+Determination\s*$')
+# The closing attribution sentence (see extract_commission_division).
+ATTRIBUTION_LINE_RE = re.compile(r'^(?:Determination|Decision) made by\b')
 
 
 def parse_text_as_table(text: str) -> List[Dict[str, str]]:
@@ -132,7 +141,13 @@ def parse_text_as_table(text: str) -> List[Dict[str, str]]:
     Fallback method to parse text as a table when table extraction fails.
 
     Looks for common patterns in determination documents where items
-    are followed by their details.
+    are followed by their details. A Phase 2 determination without a table
+    sets out its body under a numbered "1. Determination" heading on a line of
+    its own, so that heading starts the "Determination" item too.
+
+    The closing "Determination made by ..." attribution ends the last item
+    rather than starting a new one: it is extracted separately by
+    extract_commission_division(), and anything after it is footnotes.
 
     Args:
         text: Full text of the determination PDF
@@ -165,6 +180,15 @@ def parse_text_as_table(text: str) -> List[Dict[str, str]]:
         line = line.strip()
         if not line:
             continue
+
+        if ATTRIBUTION_LINE_RE.match(line):
+            break
+
+        # Only as the whole line, so a numbered paragraph ("1.1. On ...") or a
+        # later section of a statement of reasons ("6. Market definition")
+        # never starts an item.
+        if NUMBERED_DETERMINATION_HEADING_RE.match(line):
+            line = 'Determination'
 
         # Check if this line is a known item
         is_item = False
