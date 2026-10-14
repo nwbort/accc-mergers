@@ -15,6 +15,9 @@ export const FEEDBACK_ENDPOINT = "https://signup.mergers.fyi/feedback";
 // Privacy-preserving feature-usage ping — see frontend/src/utils/trackEvent.js
 export const EVENT_ENDPOINT = "https://signup.mergers.fyi/event";
 
+// The site's Bluesky account (handle mergers.fyi, see atproto/identity.json).
+export const BLUESKY_PROFILE_URL = "https://bsky.app/profile/mergers.fyi";
+
 // Cloudflare Turnstile site key (public — safe to commit).
 // 1. Go to Cloudflare Dashboard > Turnstile > Add site
 // 2. Paste the Site Key here.

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { FaMagnifyingGlass, FaStopwatch, FaChartLine } from 'react-icons/fa6';
+import { FaMagnifyingGlass, FaStopwatch, FaChartLine, FaBluesky } from 'react-icons/fa6';
 import { Doughnut } from 'react-chartjs-2';
 import '../utils/chartSetup';
 import StatCard from '../components/StatCard';
@@ -12,7 +12,7 @@ import RecentMergersCards from '../components/RecentMergersCards';
 import PromoCard from '../components/PromoCard';
 import { DASHBOARD_PROMO } from '../constants/promo';
 import SEO from '../components/SEO';
-import { API_ENDPOINTS } from '../config';
+import { API_ENDPOINTS, BLUESKY_PROFILE_URL } from '../config';
 import { getCalendarDaysUntil, isDatePast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
@@ -152,6 +152,17 @@ function Dashboard() {
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
       <h1 className="sr-only">Australian merger tracker dashboard</h1>
+      <div className="flex justify-end -mt-3 mb-3">
+        <a
+          href={BLUESKY_PROFILE_URL}
+          target="_blank"
+          rel="noopener noreferrer me"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline transition-colors"
+        >
+          <FaBluesky className="h-4 w-4 text-[#0085ff]" aria-hidden="true" />
+          Follow on Bluesky
+        </a>
+      </div>
       {/* Stats Grid */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
         <StatCard
