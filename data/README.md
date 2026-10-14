@@ -2,6 +2,11 @@
 
 All data files for the ACCC Mergers Tracker, organised by processing stage.
 
+This project's own data is licensed under CC BY 4.0 (see
+[`LICENSE-DATA`](../LICENSE-DATA)). The third-party documents mirrored in
+`raw/` are not: they remain subject to their owners' terms (see
+[`raw/NOTICE.md`](raw/NOTICE.md)).
+
 ## Structure
 
 ### `raw/`
@@ -18,6 +23,8 @@ Raw data scraped from the ACCC website by `scripts/scrape.sh`:
 - `matters/MN-*/`, `matters/WA-*/` — subdirectories containing supporting
   documents (determinations, questionnaires, submissions) as PDFs and DOCX
   files
+- `NOTICE.md` — states that everything here is third-party material, outside
+  this repository's licences
 
 ### `processed/`
 
