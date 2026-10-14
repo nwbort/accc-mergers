@@ -21,7 +21,14 @@ function Footer() {
           >
             ACCC website
           </a>
-          . For enquiries or feedback, please contact{' '}
+          . For enquiries or feedback, please use the{' '}
+          <Link
+            to="/feedback"
+            className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
+          >
+            feedback form
+          </Link>{' '}
+          or contact{' '}
           <a
             href="mailto:nick@mergers.fyi"
             className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
