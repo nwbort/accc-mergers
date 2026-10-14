@@ -392,55 +392,53 @@
       32,
       34
     ],
-    "as_at": "2026-10-14"
+    "as_at": "2026-10-15"
   },
   "current_status": {
-    "as_at": "2026-10-14",
+    "as_at": "2026-10-15",
     "windows": [
       {
         "days": 30,
         "notifications_filed": 29,
         "notifications": {
-          "median": 18,
-          "average": 18.5,
+          "median": 18.0,
+          "average": 18.7,
           "p90": 24,
           "min": 15,
           "max": 25,
-          "count": 25,
+          "count": 22,
           "duration_histogram": {
-            "15": 9,
+            "15": 8,
             "16": 1,
             "17": 2,
-            "18": 2,
             "19": 1,
             "20": 1,
             "21": 5,
             "24": 2,
             "25": 2
           },
-          "median_delta": 0
+          "median_delta": 0.0
         },
         "waivers": {
           "median": 18,
-          "average": 16.5,
+          "average": 16.7,
           "p90": 22,
           "min": 3,
           "max": 24,
-          "count": 51,
+          "count": 47,
           "duration_histogram": {
             "3": 1,
             "5": 1,
-            "6": 1,
             "7": 1,
             "9": 2,
             "11": 1,
             "12": 1,
             "13": 2,
             "14": 2,
-            "15": 4,
+            "15": 3,
             "16": 6,
-            "17": 3,
-            "18": 6,
+            "17": 2,
+            "18": 5,
             "19": 8,
             "20": 4,
             "21": 2,
@@ -453,14 +451,14 @@
       },
       {
         "days": 90,
-        "notifications_filed": 108,
+        "notifications_filed": 107,
         "notifications": {
-          "median": 19.0,
-          "average": 21.0,
-          "p90": 29,
+          "median": 19,
+          "average": 20.8,
+          "p90": 28,
           "min": 15,
           "max": 56,
-          "count": 116,
+          "count": 115,
           "duration_histogram": {
             "15": 20,
             "16": 14,
@@ -481,20 +479,19 @@
             "38": 2,
             "41": 1,
             "44": 1,
-            "46": 1,
             "49": 1,
             "52": 1,
             "56": 1
           },
-          "median_delta": 1.0
+          "median_delta": 1
         },
         "waivers": {
           "median": 17.0,
-          "average": 16.2,
+          "average": 16.3,
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 178,
+          "count": 172,
           "duration_histogram": {
             "3": 1,
             "5": 1,
@@ -505,12 +502,12 @@
             "10": 7,
             "11": 6,
             "12": 6,
-            "13": 8,
-            "14": 14,
-            "15": 17,
-            "16": 15,
+            "13": 6,
+            "14": 13,
+            "15": 16,
+            "16": 14,
             "17": 12,
-            "18": 24,
+            "18": 23,
             "19": 18,
             "20": 15,
             "21": 12,
@@ -553,14 +550,14 @@
           "median_delta": 5
         },
         {
-          "median": 15.5,
+          "median": 15,
           "average": 19.3,
           "p90": 33,
           "min": 0,
           "max": 112,
-          "count": 108,
+          "count": 107,
           "days": 90,
-          "median_delta": 1.5
+          "median_delta": 1
         }
       ],
       "all_time": {
