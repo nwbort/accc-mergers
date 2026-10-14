@@ -277,7 +277,6 @@ export const STATIC_PAGE_META = {
   },
   '/copyright': {
     title: 'Copyright and licensing',
-    description:
-      'How the data and documents on mergers.fyi are licensed: our data under CC BY 4.0, and ACCC, Tribunal, Federal Court and third-party material on its owners\' terms.',
+    description: 'How the data and documents on mergers.fyi are licensed, and how to credit them.',
   },
 };
