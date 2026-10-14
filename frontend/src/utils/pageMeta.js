@@ -275,4 +275,8 @@ export const STATIC_PAGE_META = {
     title: 'Privacy policy',
     description: 'How mergers.fyi collects, uses, and protects your personal information.',
   },
+  '/copyright': {
+    title: 'Copyright and licensing',
+    description: 'How the data and documents on mergers.fyi are licensed, and how to credit them.',
+  },
 };

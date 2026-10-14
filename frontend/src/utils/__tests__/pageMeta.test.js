@@ -166,6 +166,7 @@ describe('STATIC_PAGE_META', () => {
       '/digest': 'Digest.jsx',
       '/nick-twort': 'NickTwort.jsx',
       '/privacy': 'PrivacyPolicy.jsx',
+      '/copyright': 'Copyright.jsx',
     };
     expect(Object.keys(routeToFile).sort()).toEqual(Object.keys(STATIC_PAGE_META).sort());
 
