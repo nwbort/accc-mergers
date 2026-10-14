@@ -31,4 +31,5 @@ tests run without network or PDF tooling installed.
 | `test_atproto_client.py` | `atproto/client.py` — the XRPC client's session, retries and rate-limit handling, against a fake transport. |
 | `test_atproto_publish.py` | Incremental publishing in `atproto/publish_matters.py`, and the credential gate in `atproto/connect.py`. |
 | `test_atproto_posts.py` | `atproto/post_bluesky.py` — which milestones are posted, the 300-character budget, and the seeding rule that stops a backfill. |
+| `test_linkedin_posts.py` | `linkedin/post_linkedin.py` and its client — little-text escaping, the article card, seeding, read-back (and posting on when a token can't read back), token refresh. |
 | `test_commit_message_hook.py` | `.claude/hooks/check_commit_message.py` — which commit messages the Claude Code hook blocks. |
