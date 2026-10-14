@@ -12,15 +12,13 @@ describe('shareTargets', () => {
   const title = 'A & B';
   const byId = Object.fromEntries(shareTargets({ url, title }).map((t) => [t.id, t.href]));
 
-  it('offers LinkedIn, Bluesky, X and email, in that order', () => {
-    expect(shareTargets({ url, title }).map((t) => t.id)).toEqual(['linkedin', 'bluesky', 'x', 'email']);
+  it('offers LinkedIn, Bluesky and email, in that order', () => {
+    expect(shareTargets({ url, title }).map((t) => t.id)).toEqual(['linkedin', 'bluesky', 'email']);
   });
 
   it('encodes the URL and title so an ampersand cannot split the query', () => {
     expect(byId.linkedin).toBe(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`);
-    const x = new URL(byId.x);
-    expect(x.searchParams.get('text')).toBe(title);
-    expect(x.searchParams.get('url')).toBe(url);
+    expect(new URL(byId.bluesky).searchParams.get('text')).toContain('A & B');
   });
 
   it('puts the link inside the post text where there is only one field', () => {

@@ -107,6 +107,44 @@ export function getStageLabel(merger) {
 }
 
 /**
+ * The status line's outcome as text: the header label plus whatever qualifies
+ * it, e.g. "Approved with conditions" or "Not approved · confirmed on appeal".
+ *
+ * Qualifiers are part of what the outcome *is*, so they are set in its own run
+ * of text rather than boxed off beside it. "Approved with conditions" is the
+ * outcome's own name (see MERGER_STATUS.APPROVED_WITH_CONDITIONS); a concluded
+ * appeal's result takes a dot, since "Not approved confirmed on appeal" would
+ * read as one phrase. An outcome reached in the public benefit phase says so,
+ * the same way. The conditions flag mirrors StatusBadge: a stale flag on any
+ * other outcome stays hidden rather than reading as a conditional clearance.
+ */
+export function getOutcomeText(merger) {
+  const headerStatus = getHeaderStatus(merger);
+  if (!headerStatus) return null;
+  const { label, appealSuffix } = headerStatus;
+  const showConditions =
+    Boolean(merger.has_conditions) && merger.accc_determination === MERGER_STATUS.APPROVED;
+  const publicBenefit = getPublicBenefitQualifier(merger);
+  return `${label}${showConditions ? ' with conditions' : ''}${publicBenefit ? ` · ${publicBenefit}` : ''}${appealSuffix ? ` · ${appealSuffix}` : ''}`;
+}
+
+/**
+ * The status line in one string, for text that leaves the page (share posts,
+ * email subjects): "Approved · Phase 1", "Under assessment · Phase 2 · Under
+ * appeal", "Approved · Waiver". Same words, same order as MergerOutcomeHeading.
+ */
+export function getStatusSummary(merger) {
+  const outcome = getOutcomeText(merger);
+  if (!outcome) return null;
+  return [
+    outcome,
+    getStageLabel(merger),
+    merger.under_appeal ? 'Under appeal' : null,
+    merger.is_waiver ? 'Waiver' : null,
+  ].filter(Boolean).join(' · ');
+}
+
+/**
  * The determination a determination event records. A matter that went on to
  * the public benefit phase has two — the Phase 2 determination and the public
  * benefit one — so the event is matched to its phase by date, falling back to

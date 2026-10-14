@@ -25,9 +25,10 @@ describe('ShareButton', () => {
     expect(button).toHaveAttribute('aria-expanded', 'true');
     const dialog = screen.getByRole('dialog', { name: 'Share this page' });
     expect(screen.getByLabelText('Link to this page')).toHaveValue(URL_);
-    for (const name of [/LinkedIn/, /Bluesky/, /^X/, /Email/]) {
+    for (const name of [/LinkedIn/, /Bluesky/, /Email/]) {
       expect(screen.getByRole('link', { name })).toBeInTheDocument();
     }
+    expect(screen.queryByRole('link', { name: /^X/ })).toBeNull();
     // Focus moves into the menu so the portal doesn't strand keyboard users.
     expect(dialog).toContainElement(document.activeElement);
   });

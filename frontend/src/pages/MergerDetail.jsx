@@ -24,7 +24,7 @@ import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, CARD_TITLE, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { mergerMeta } from '../utils/pageMeta';
-import { getDecidedOutcome, getHeaderStatus, getDeterminationDocUrl, determinationForEvent } from '../utils/mergerOutcome';
+import { getDecidedOutcome, getHeaderStatus, getStatusSummary, getDeterminationDocUrl, determinationForEvent } from '../utils/mergerOutcome';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS, APPEAL_OUTCOME_LABELS } from '../constants/appeal';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
@@ -287,6 +287,14 @@ function MergerDetail() {
   // crawlers read and the head React renders here cannot drift apart.
   const meta = mergerMeta(merger);
 
+  // What a shared link says about the matter: the status line above the title
+  // in the same words, then the name, in the page's own order. Leading with
+  // the status also keeps it clear of names that end in brackets ("(Vic)").
+  const statusSummary = getStatusSummary(merger);
+  const shareTitle = statusSummary
+    ? `${statusSummary}: ${merger.merger_name}`
+    : merger.merger_name;
+
   return (
     <>
       <SEO
@@ -378,7 +386,7 @@ function MergerDetail() {
                 />
                 <ShareButton
                   path={meta.path}
-                  title={merger.merger_name}
+                  title={shareTitle}
                   onDark={headerStyle.onDark}
                 />
               </div>

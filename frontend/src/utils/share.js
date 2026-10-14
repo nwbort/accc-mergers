@@ -14,8 +14,8 @@ export function shareUrl(path) {
 /**
  * The "share to" destinations offered in the menu, in display order.
  *
- * Bluesky and X take one free-text field, so the link goes inside the post
- * text; LinkedIn reads everything it shows from the page's Open Graph tags and
+ * Bluesky takes one free-text field, so the link goes inside the post text;
+ * LinkedIn reads everything it shows from the page's Open Graph tags and
  * takes only the URL.
  */
 export function shareTargets({ url, title }) {
@@ -24,11 +24,6 @@ export function shareTargets({ url, title }) {
   return [
     { id: 'linkedin', label: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}` },
     { id: 'bluesky', label: 'Bluesky', href: `https://bsky.app/intent/compose?text=${withLink}` },
-    {
-      id: 'x',
-      label: 'X',
-      href: `https://x.com/intent/post?text=${encodeURIComponent(title)}&url=${u}`,
-    },
     {
       id: 'email',
       label: 'Email',

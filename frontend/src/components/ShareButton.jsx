@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { FaShareNodes, FaLink, FaCheck, FaLinkedin, FaBluesky, FaXTwitter, FaEnvelope } from 'react-icons/fa6';
+import { FaShareNodes, FaLink, FaCheck, FaLinkedin, FaBluesky, FaEnvelope } from 'react-icons/fa6';
 import { HEADER_BUTTON_BASE, HEADER_BUTTON_VARIANTS } from '../constants/headerButton';
 import { prefersNativeShare, shareTargets, shareUrl } from '../utils/share';
 
 const TARGET_ICONS = {
   linkedin: FaLinkedin,
   bluesky: FaBluesky,
-  x: FaXTwitter,
   email: FaEnvelope,
 };
 
@@ -20,7 +19,7 @@ const ITEM_CLASS =
  * "Share" pill that sits beside TrackButton in a page header.
  *
  * On a phone it opens the device's share sheet. Everywhere else it opens a
- * small menu: copy the link, or share it to LinkedIn, Bluesky, X or email.
+ * small menu: copy the link, or share it to LinkedIn, Bluesky or email.
  *
  * The menu is portalled to <body> because the headers it sits in clip their
  * overflow (the merger detail card's `.card-accent` does), which would cut a
