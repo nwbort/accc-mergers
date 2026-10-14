@@ -46,15 +46,12 @@ export default function Copyright() {
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">1. Summary</h2>
           <p className="text-gray-700 leading-relaxed mb-3">
-            mergers.fyi brings together material from three kinds of owner, and each is licensed differently:
+            mergers.fyi brings together its own data and material from others, and each is licensed differently:
           </p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
             <li>
               <span className="font-medium">our own data</span> - the structured merger data, analysis and
-              commentary we produce - is licensed under CC BY 4.0;
-            </li>
-            <li>
-              <span className="font-medium">our source code</span> is licensed under the MIT licence; and
+              commentary we produce - is licensed under CC BY 4.0; and
             </li>
             <li>
               <span className="font-medium">material from others</span> - the ACCC, the Australian Competition
@@ -94,27 +91,13 @@ export default function Copyright() {
           <Credit>Source: mergers.fyi (https://mergers.fyi), licensed under CC BY 4.0.</Credit>
           <p className="text-gray-700 leading-relaxed">
             Much of our data is built from the ACCC&apos;s acquisitions register. If you reuse it, please also
-            credit the ACCC (see section 4).
+            credit the ACCC (see section 3).
           </p>
         </section>
 
-        {/* 3. Source code */}
+        {/* 3. Material from the ACCC */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">3. Source code</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            The code that runs this site and its data pipeline is available on{' '}
-            <ExternalLink href="https://github.com/nwbort/accc-mergers">GitHub</ExternalLink> under the{' '}
-            <ExternalLink href="https://github.com/nwbort/accc-mergers/blob/main/LICENSE">MIT licence</ExternalLink>.
-            The MIT licence covers the code only, not the data or documents described on this page.
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            The site also uses open-source software, each under its own licence.
-          </p>
-        </section>
-
-        {/* 4. Material from the ACCC */}
-        <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">4. Material from the ACCC</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">3. Material from the ACCC</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Matter descriptions, questionnaire questions, determinations, notices and other material written by
             the Australian Competition and Consumer Commission are &copy; Commonwealth of Australia. The ACCC
@@ -142,9 +125,9 @@ export default function Copyright() {
           </p>
         </section>
 
-        {/* 5. Tribunal and Federal Court material */}
+        {/* 4. Tribunal and Federal Court material */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">5. Tribunal and Federal Court material</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">4. Tribunal and Federal Court material</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             For matters under review, this site keeps copies of filings and decisions of the Australian
             Competition Tribunal and judgments of the Federal Court of Australia. Judgments may be reproduced
@@ -157,13 +140,13 @@ export default function Copyright() {
           </p>
           <p className="text-gray-700 leading-relaxed">
             Each document we hold links back to its source. Documents filed by parties to a Tribunal or Federal
-            Court proceeding belong to those parties (see section 6).
+            Court proceeding belong to those parties (see section 5).
           </p>
         </section>
 
-        {/* 6. Third-party documents */}
+        {/* 5. Third-party documents */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">6. Documents written by others</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">5. Documents written by others</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Many documents on the ACCC register, and some filed with the Tribunal, were written by merger
             parties, their advisers, or others who made submissions. Copyright in those documents stays with
@@ -172,13 +155,13 @@ export default function Copyright() {
           </p>
           <p className="text-gray-700 leading-relaxed">
             We keep copies of these documents so that each matter&apos;s record is complete and its links stay
-            stable. If you own material on this site and would like it removed, please contact us (see section 7).
+            stable. If you own material on this site and would like it removed, please contact us (see section 6).
           </p>
         </section>
 
-        {/* 7. Contact */}
+        {/* 6. Contact */}
         <section className={`${CARD} p-8`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">7. Contact</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">6. Contact</h2>
           <p className="text-gray-700 leading-relaxed">
             For questions about copyright, or to ask for material to be removed, contact us at{' '}
             <a href="mailto:help@mergers.fyi" className={LINK}>
