@@ -261,12 +261,15 @@ def is_public_benefit_assessment_event(event_title: str) -> bool:
 
 
 def public_benefit_application_date(m: dict, after: str | None) -> str | None:
-    """Date the public benefit application appeared on the register, if it has.
+    """Date the public benefit application was made, if it has been.
 
-    The earliest public benefit event dated after ``after`` (the determination
-    the application follows). The register publishes details of the
-    application on business day 1 of the phase, so this is also that day.
+    The register's own "Public benefit application date" field when it has
+    one. Otherwise the earliest public benefit event dated after ``after`` (the
+    determination the application follows): the register publishes details of
+    the application the day after it is made, business day 1 of the phase.
     """
+    if m.get('public_benefit_application_date'):
+        return m['public_benefit_application_date']
     after_day = (after or '')[:10]
     dates = sorted(
         e['date'] for e in m.get('events', [])
@@ -277,7 +280,9 @@ def public_benefit_application_date(m: dict, after: str | None) -> str | None:
     return dates[0] if dates else None
 
 
-def _set_public_benefit_timetable(m: dict, phase_2_det_date: str | None) -> None:
+def _set_public_benefit_timetable(
+    m: dict, phase_2_det_date: str | None, application_scraped: bool = False
+) -> None:
     """Fill in the statutory dates of a public benefit phase still running.
 
     The register's end-of-determination date can still hold the Phase 2
@@ -287,9 +292,10 @@ def _set_public_benefit_timetable(m: dict, phase_2_det_date: str | None) -> None
     calendar days of the determination it follows and the phase then runs 50
     business days, so a genuine deadline is well over 45 business days after
     that determination; one short of that can only be the leftover. It is
-    replaced with business day 50 counted from the day the application was
-    published on the register — business day 1 of the phase — or dropped if no
-    application event has appeared yet, since a past deadline on a live matter
+    replaced with business day 50 counted from business day 1 of the phase —
+    the day after the register's application date (``application_scraped``),
+    else the day the first application event was published — or dropped if no
+    application has appeared yet, since a past deadline on a live matter
     would read as overdue. The register's own date supersedes the derived one
     as soon as it is published, and folds in any extension.
 
@@ -310,6 +316,10 @@ def _set_public_benefit_timetable(m: dict, phase_2_det_date: str | None) -> None
         if start is None:
             m['end_of_determination_period'] = None
             return
+        if application_scraped:
+            # The register's field is the day the application was made, day 0;
+            # the phase's business day 1 is the day after.
+            start += timedelta(days=1)
         end = add_business_days(start.replace(tzinfo=None), merger_status.PUBLIC_BENEFIT_BUSINESS_DAYS)
         m['end_of_determination_period'] = end.strftime('%Y-%m-%dT12:00:00Z')
         m['end_of_determination_period_derived'] = True
@@ -479,6 +489,7 @@ def enrich_merger(
         except (ValueError, AttributeError):
             pass
 
+    application_scraped = bool(m.get('public_benefit_application_date'))
     if merger_status.is_public_benefit_stage(m.get('stage')):
         # What the application follows: the Phase 2 determination, or a
         # conditional Phase 1 clearance.
@@ -486,7 +497,9 @@ def enrich_merger(
             m, phase_2_det_date or phase_1_det_date
         )
     if in_public_benefit_phase:
-        _set_public_benefit_timetable(m, phase_2_det_date or phase_1_det_date)
+        _set_public_benefit_timetable(
+            m, phase_2_det_date or phase_1_det_date, application_scraped
+        )
 
     # Infer Phase 2 when the ACCC register lags behind a Phase 2 notice.
     # The register sometimes issues a Phase 2 notice (or a "subject to / proceed

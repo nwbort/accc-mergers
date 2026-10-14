@@ -438,6 +438,15 @@ def _extract_dates_and_status(soup, merger_id, existing_merger_data):
         # Preserve from existing data (often removed from HTML after assessment completes)
         data['end_of_determination_period'] = existing_merger_data['end_of_determination_period']
 
+    # The date the public benefit application was made, shown once a matter
+    # reaches the public benefit phase (MN-65005 was the first). Kept from
+    # existing data if the field later disappears, like the deadline above.
+    pb_application_tag = soup.find('div', class_='field--name-field-acccgov-pub-benefit-date')
+    if pb_application_tag and pb_application_tag.find('time'):
+        data['public_benefit_application_date'] = pb_application_tag.find('time')['datetime']
+    elif existing_merger_data and existing_merger_data.get('public_benefit_application_date'):
+        data['public_benefit_application_date'] = existing_merger_data['public_benefit_application_date']
+
     determination_date_tag = soup.find('div', class_='field--name-field-acccgov-pub-reg-end-date')
     if determination_date_tag and determination_date_tag.find('time'):
         data['determination_publication_date'] = determination_date_tag.find('time')['datetime']
@@ -955,7 +964,7 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                 # captured.
                 replacement_row = next(
                     (e for e in scraped_without_url
-                     if _normalize_event_title(e.get('title')) == _normalize_event_title(existing_event.get('title'))
+                     if _titles_match_ignoring_party_prefix(e.get('title'), existing_event.get('title'))
                      and _dates_within_one_day(
                          e.get('date', ''), existing_event.get('date', ''))),
                     None,
@@ -1058,6 +1067,22 @@ def _normalize_event_title(title):
     swaps the dash character used, e.g. an en dash '–' becoming a hyphen
     '-')."""
     return ' '.join(normalize_dashes(title or '').split()).casefold()
+
+
+def _titles_match_ignoring_party_prefix(title_a, title_b):
+    """True if two event titles are the same, or differ only by a leading
+    "<parties> - " prefix.
+
+    When the ACCC strips an event's attachment it sometimes renames the row
+    too, dropping the parties' short name: MN-65005's "IAG-RACI - Phase 2
+    determination" came back as a plain "Phase 2 determination" row. Matching
+    on a whole " - "-separated suffix keeps "Phase 2 determination" from
+    matching "... Phase 2 determination - Summary of reasons".
+    """
+    a, b = _normalize_event_title(title_a), _normalize_event_title(title_b)
+    if not a or not b:
+        return False
+    return a == b or a.endswith(' - ' + b) or b.endswith(' - ' + a)
 
 
 def _mentions_reasons(event):
