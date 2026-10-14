@@ -110,6 +110,50 @@ class TestMergeEventsAttachmentDropped:
         assert titles == sorted([self.TITLE, "Merger notified to ACCC"])
 
 
+class TestMergeEventsAttachmentDroppedAndRenamed:
+    """MN-65005: the ACCC stripped the Phase 2 determination's attachments and
+    renamed the rows in the same edit, dropping the "IAG-RACI - " prefix. The
+    renamed URL-less rows must still re-bind to the events holding the
+    documents rather than sitting beside them as duplicates."""
+
+    DATE = "2026-09-22T12:00:00Z"
+
+    def _existing(self):
+        return {"events": [
+            {"date": self.DATE, "title": "IAG-RACI - Phase 2 determination",
+             "display_title": "Phase 2 - detailed assessment determination: Not approved",
+             "url": "https://accc.gov.au/determination.pdf", "status": "live",
+             "is_determination_event": True},
+            {"date": self.DATE, "title": "IAG-RACI - Phase 2 determination - Summary of reasons",
+             "url": "https://accc.gov.au/summary.pdf", "status": "live"},
+        ]}
+
+    def test_renamed_rows_rebind_to_their_documents(self):
+        scraped = [
+            {"date": self.DATE, "title": "Phase 2 determination"},
+            {"date": self.DATE, "title": "Phase 2 determination - Summary of reasons"},
+        ]
+        merged = _merge_events(scraped, self._existing(), "MN-65005", set())
+
+        assert [(e["url"], e["status"]) for e in merged] == [
+            ("https://accc.gov.au/determination.pdf", "live"),
+            ("https://accc.gov.au/summary.pdf", "live"),
+        ]
+        assert merged[0]["is_determination_event"] is True
+
+    def test_a_shorter_title_is_not_matched_mid_title(self):
+        # "Phase 2 determination" is a prefix of the summary's title, not a
+        # " - "-separated suffix, so it cannot claim the summary's document.
+        existing = {"events": self._existing()["events"][1:]}
+        scraped = [{"date": self.DATE, "title": "Phase 2 determination"}]
+        merged = _merge_events(scraped, existing, "MN-65005", set())
+
+        assert sorted((e["title"], e.get("status")) for e in merged) == [
+            ("IAG-RACI - Phase 2 determination - Summary of reasons", "removed"),
+            ("Phase 2 determination", None),
+        ]
+
+
 # ---------------------------------------------------------------------------
 # _merge_events: URL-less timeline rows are matched by title regardless of
 # which dash character the ACCC happens to render

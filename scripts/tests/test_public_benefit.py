@@ -15,6 +15,7 @@ import unittest.mock
 from datetime import datetime
 
 import pytest
+from bs4 import BeautifulSoup
 
 # Mock heavy transitive imports of extract_mergers, as test_pipeline does.
 for _module in ('pdfplumber', 'markdownify', 'requests'):
@@ -186,6 +187,21 @@ class TestExtraction:
             '2026-12-14': 'Public benefit phase determination: Approved',
         }
 
+    def test_application_date_is_scraped_and_kept(self):
+        html = """
+        <div class="field field--name-field-acccgov-pub-benefit-date">
+          <h3 class="field__label">Public benefit application date</h3>
+          <div class="field__item"><time datetime="2026-10-13T12:00:00Z">13 Oct 2026</time></div>
+        </div>"""
+        soup = BeautifulSoup(html, 'lxml')
+        data = extract_mergers._extract_dates_and_status(soup, 'MN-65005', None)
+        assert data['public_benefit_application_date'] == '2026-10-13T12:00:00Z'
+
+        later = extract_mergers._extract_dates_and_status(
+            BeautifulSoup('<div></div>', 'lxml'), 'MN-65005', data
+        )
+        assert later['public_benefit_application_date'] == '2026-10-13T12:00:00Z'
+
     def test_public_benefit_stage_closes_the_inferred_phase_2_issue(self, tmp_path, monkeypatch):
         out = tmp_path / 'inferred.json'
         monkeypatch.setattr(extract_mergers, 'INFERRED_PHASE_2_PATH', str(out))
@@ -223,6 +239,20 @@ class TestEnrichment:
         assert m['end_of_determination_period_derived'] is True
         assert m['public_benefit_assessment_date'] == '2026-11-02T12:00:00Z'  # BD 20
         assert m['public_benefit_response_date'] == '2026-11-23T12:00:00Z'  # BD 35
+
+    def test_register_application_date_wins_over_the_first_event(self):
+        merger = _public_benefit_applied()
+        # The register's field gives the day the application was made, the
+        # day before its documents were published (MN-65005: 13 and 14 Oct).
+        merger['public_benefit_application_date'] = '2026-10-05T12:00:00Z'
+        m = enrich_merger(_stored(merger, _phase_2_decided()))
+
+        assert m['public_benefit_application_date'] == '2026-10-05T12:00:00Z'
+        # BD 1 is still the day after the application, so the derived
+        # timetable is the one the first event gives.
+        assert m['end_of_determination_period'] == '2026-12-14T12:00:00Z'
+        assert m['public_benefit_assessment_date'] == '2026-11-02T12:00:00Z'
+        assert m['public_benefit_response_date'] == '2026-11-23T12:00:00Z'
 
     def test_register_deadline_wins_once_published(self):
         merger = _public_benefit_applied()
