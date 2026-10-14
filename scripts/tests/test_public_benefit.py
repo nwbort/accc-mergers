@@ -187,6 +187,40 @@ class TestExtraction:
             '2026-12-14': 'Public benefit phase determination: Approved',
         }
 
+    def test_cleared_headline_still_flags_the_phase_2_determination(self):
+        # While the application runs the register clears its headline, so only
+        # the recorded Phase 2 determination can say which event holds it —
+        # even when the stored event had lost its flag and title (MN-65005).
+        current = _public_benefit_applied(keep_headline=False)
+        det = next(e for e in current['events'] if e.get('is_determination_event'))
+        del det['is_determination_event']
+        det['display_title'] = det['title']
+        current['events'].append({
+            'date': PHASE_2_DATE, 'title': 'IAG-RACI - Phase 2 determination - Summary of reasons',
+            'url': 'https://www.accc.gov.au/summary.pdf',
+        })
+        records = stage_determinations.resolve(current, _phase_2_decided())
+
+        extract_mergers._add_synthetic_events(current, records)
+
+        flagged = [(e['url'], e['display_title'], e['phase'])
+                   for e in current['events'] if e.get('is_determination_event')]
+        assert flagged == [(
+            'https://www.accc.gov.au/determination.pdf',
+            'Phase 2 - detailed assessment determination: Not approved',
+            merger_status.PHASE_2,
+        )]
+
+    def test_recorded_determination_is_flagged_once_across_runs(self):
+        current = _public_benefit_applied(keep_headline=False)
+        records = stage_determinations.resolve(current, _phase_2_decided())
+        extract_mergers._add_synthetic_events(current, records)
+        once = copy.deepcopy(current['events'])
+
+        extract_mergers._add_synthetic_events(current, records)
+
+        assert current['events'] == once
+
     def test_application_date_is_scraped_and_kept(self):
         html = """
         <div class="field field--name-field-acccgov-pub-benefit-date">

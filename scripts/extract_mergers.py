@@ -926,10 +926,9 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                 updated_event = scraped_by_url[url].copy()
                 if 'display_title' in existing_event:
                     updated_event['display_title'] = existing_event['display_title']
-                # Carried forward like the display title: once a matter moves
-                # into the public benefit phase the headline determination is
-                # cleared, so _add_synthetic_events no longer re-flags the
-                # Phase 2 determination (MN-65005).
+                # Carried forward like the display title, as the re-bind paths
+                # below do. _add_synthetic_events re-flags every determination
+                # it knows of, but a re-scrape shouldn't drop the flag first.
                 if existing_event.get('is_determination_event'):
                     updated_event['is_determination_event'] = existing_event['is_determination_event']
                 merged_events.append(updated_event)
@@ -1335,6 +1334,9 @@ def _add_synthetic_events(merger_data, records=None):
     determination is titled with: once a matter has moved on to the public
     benefit phase, a headline still showing the Phase 2 outcome keeps its Phase
     2 title rather than being relabelled as a public benefit determination.
+    Every other phase's recorded determination is flagged too, so the Phase 2
+    determination stays the determination event (MN-65005) after the register
+    clears its headline while the public benefit application runs.
     """
     events = merger_data['events']
 
@@ -1348,18 +1350,41 @@ def _add_synthetic_events(merger_data, records=None):
                 'display_title': notification_title,
             })
 
-    # Determination event
-    if not merger_data.get('determination_publication_date'):
-        return
+    # Determination events: the headline, then every other phase's recorded
+    # determination. Once a matter moves on to the public benefit phase the
+    # headline is cleared (or still shows the Phase 2 outcome), so the Phase 2
+    # determination would otherwise only keep its flag and title for as long
+    # as each re-scrape happened to carry them forward.
+    flagged_phases = set()
+    if merger_data.get('determination_publication_date'):
+        phase = merger_data.get('stage', 'Phase 1')
+        if records:
+            owner = stage_determinations.headline_phase(merger_data, records)
+            if owner and owner != merger_status.stage_phase(phase) and records.get(owner, {}).get('stage'):
+                phase = records[owner]['stage']
+        _flag_determination_event(
+            merger_data, phase,
+            merger_data.get('accc_determination', 'Decision made'),
+            merger_data['determination_publication_date'],
+        )
+        flagged_phases.add(merger_status.stage_phase(phase))
 
-    determination = merger_data.get('accc_determination', 'Decision made')
-    phase = merger_data.get('stage', 'Phase 1')
-    if records:
-        owner = stage_determinations.headline_phase(merger_data, records)
-        if owner and owner != merger_status.stage_phase(phase) and records.get(owner, {}).get('stage'):
-            phase = records[owner]['stage']
+    for recorded_phase, record in (records or {}).items():
+        if recorded_phase in flagged_phases or not record.get('stage') or not record.get('date'):
+            continue
+        _flag_determination_event(
+            merger_data, record['stage'], record['determination'], record['date'],
+        )
+
+
+def _flag_determination_event(merger_data, phase, determination, det_date):
+    """Mark the event holding ``phase``'s determination, or add one.
+
+    ``phase`` is the register's stage label the determination was made in;
+    it titles the event "<phase> determination: <determination>".
+    """
+    events = merger_data['events']
     determination_title = f"{phase} determination: {determination}"
-    det_date = merger_data['determination_publication_date']
 
     # Remove old format determination events to avoid duplicates
     merger_data['events'] = [
