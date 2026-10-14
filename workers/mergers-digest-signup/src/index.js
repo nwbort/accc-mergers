@@ -45,8 +45,18 @@ const ALLOWED_EVENT_TYPES = new Set([
 // listed, since the set of merger ids grows with the register.
 const TRACK_MERGER_EVENT_RE = /^track_merger_(MN|WA)-\d{5}$/;
 
+// An industry was followed: `track_industry_{code}`, one counter per ANZSIC
+// node — a division letter (A-S) or a 2-4 digit subdivision/group/class code
+// (e.g. track_industry_F, track_industry_4520). Matched by pattern for the
+// same reason as the merger counter.
+const TRACK_INDUSTRY_EVENT_RE = /^track_industry_([A-S]|\d{2,4})$/;
+
 function isAllowedEventType(type) {
-  return ALLOWED_EVENT_TYPES.has(type) || TRACK_MERGER_EVENT_RE.test(type);
+  return (
+    ALLOWED_EVENT_TYPES.has(type) ||
+    TRACK_MERGER_EVENT_RE.test(type) ||
+    TRACK_INDUSTRY_EVENT_RE.test(type)
+  );
 }
 
 // ---------------------------------------------------------------------------

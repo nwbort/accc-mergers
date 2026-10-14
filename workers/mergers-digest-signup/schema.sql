@@ -8,9 +8,9 @@ CREATE TABLE IF NOT EXISTS feedback (
 );
 
 -- Privacy-preserving feature-usage counters. Each row is a per-day count for
--- one event type — never a per-user record (track_merger_{id} counts are per
--- merger, not per user), and nothing here
--- is ever joined against an IP address or identifier. Adding a new event
+-- one event type — never a per-user record (track_merger_{id} and
+-- track_industry_{code} counts are per merger or industry, not per user),
+-- and nothing here is ever joined against an IP address or identifier. Adding a new event
 -- type to track needs no schema change: it just starts appearing as new
 -- rows once the frontend pings it (see ALLOWED_EVENT_TYPES in src/index.js).
 CREATE TABLE IF NOT EXISTS feature_events (
