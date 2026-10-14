@@ -108,8 +108,7 @@ export default function Copyright() {
             The MIT licence covers the code only, not the data or documents described on this page.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            The site also uses open-source software and the Inter typeface (SIL Open Font License 1.1), each
-            under its own licence.
+            The site also uses open-source software, each under its own licence.
           </p>
         </section>
 
