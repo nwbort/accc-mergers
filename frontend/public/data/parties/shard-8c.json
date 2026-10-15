@@ -889,6 +889,41 @@
       },
       "waiver_duration": null
     },
+    "tabcorp-holdings-limited": {
+      "id": "tabcorp-holdings-limited",
+      "canonical_name": "Tabcorp Holdings Limited",
+      "members": [
+        {
+          "name": "TABCORP HOLDINGS LIMITED",
+          "identifier": "66 063 780 709",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20040",
+            "merger_name": "Tabcorp - BetMakers",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-15T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "zelora-assetco-pty-ltd": {
       "id": "zelora-assetco-pty-ltd",
       "canonical_name": "Zelora AssetCo Pty Ltd",

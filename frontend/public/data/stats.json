@@ -1,10 +1,10 @@
 {
-  "total_mergers": 290,
+  "total_mergers": 291,
   "total_waivers": 452,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
-    "Under assessment": 36,
+    "Under assessment": 37,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -64,7 +64,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 77
+      "count": 78
     },
     {
       "name": "Software Publishing",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-20040",
+      "merger_name": "Tabcorp - BetMakers",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-15T12:00:00Z",
+      "page_modified_datetime": "2026-10-15T19:10:57+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-01127",
       "merger_name": "CVS Group \u2013 Karrinyup Vet",
@@ -205,16 +215,6 @@
       "page_modified_datetime": "2026-10-08T17:31:44+11:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-45030",
-      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-06T12:00:00Z",
-      "page_modified_datetime": "2026-10-07T09:59:50+11:00",
-      "is_waiver": false,
-      "is_refiled": true
     }
   ],
   "recent_determinations": [

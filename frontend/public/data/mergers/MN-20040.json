@@ -1,0 +1,134 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/tabcorp-betmakers",
+  "merger_name": "Tabcorp - BetMakers",
+  "status": "Under assessment",
+  "merger_id": "MN-20040",
+  "effective_notification_datetime": "2026-10-15T12:00:00Z",
+  "original_notification_datetime": "2026-10-15T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-11-26T12:00:00Z",
+  "consultation_response_due_date": "2026-10-22T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "TABCORP HOLDINGS LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "66 063 780 709",
+      "party_page": {
+        "id": "tabcorp-holdings-limited",
+        "name": "Tabcorp Holdings Limited"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "BETMAKERS TECHNOLOGY GROUP LTD",
+      "identifier_type": "ABN",
+      "identifier": "21 164 521 395",
+      "party_page": {
+        "id": "betmakers-technology-group-ltd",
+        "name": "Betmakers Technology Group Ltd"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    },
+    {
+      "code": "9209",
+      "name": "Other Gambling Activities"
+    }
+  ],
+  "merger_description": "Tabcorp Holdings Limited (together with its subsidiaries, **Tabcorp**) proposes to acquire 100% of the issued shared in BetMakers Technology Group Limited (**BetMakers**) by way of scheme of arrangement (the **Acquisition**).\n\n  \n\nOn 10 August 2026, the parties announced the binding Scheme Implementation Deed to the market.\n\n  \n\nTabcorp is an Australian public company (ASX:TAH) providing wagering, media and integrity services in Australia and internationally. Tabcorp\u2019s wagering business consists of off-course totalisator and fix-odds betting on racing and other sports across digital and telephone channels in all States and Territories, and in retail venues throughout all States and Territories, other than Western Australia. Tabcorp also provides on-course totalisators in all states and territories, other than Western Australia.\n\n  \n\nTabcorp\u2019s media business, Sky Racing, broadcasts live racing through subscription channels and digital feeds, including in the TAB App, as well as feeds to other wagering service providers (**WSPs**), and exports and imports racing content to and from other jurisdictions. Its Integrity Services division offers services in the electronic gaming machine industry.\n\n  \n\nBetMakers is an ASX listed (ASX:BET) global B2B provider of wagering technology, data, and analytics (Wagering Technology Services or **WTS**) for the racing and betting industry.\n\n  \n\nBetMakers supplies wagering technology services via its two business segments:\n\n* tote technology services via its Global Tote business; and\n* fixed odds and digital wagering technology services via its Global Betting Services (**GBS**) business.\n\nBetMakers, through its GBS division, provides fixed odds wagering technology services, including to WSPs who compete with Tabcorp in the Australian wagering services market.\n\n  \n\nThe core services supplied by BetMakers to support fixed odds wagering operations in Australia are:\n\n* Apollo, a white-label betting engine that provides the WSP customer with a ready-to-use solution in respect of a WSP\u2019s core platform architecture;\n* RaceOdds, a racing odds generation and \u2018pre bet\u2019 software tool that provides data for use by WSPs to derive their individual racing odds;\n* Managed Trading Services (**MTS**), a risk management technology service that WSPs use to facilitate the execution of fixed odds pricing, bet acceptance, customer and risk management. In Australia, BetMakers only supplies MTS as an integrated part of its Apollo software; and\n* RaceLab, a form and analytics data service, which provides form and analytical insights about racing events based on automated algorithms.",
+  "events": [
+    {
+      "date": "2026-10-15T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Tabcorp%20-%20BetMakers%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-20040/Tabcorp - BetMakers - Questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-15T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-75027",
+      "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
+      "acquirers": [
+        "Geoquest Systems BV",
+        "Schlumberger Canada Limited"
+      ],
+      "targets": [
+        "IHS Markit Canada ULC",
+        "IHS Global Inc."
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-55034",
+      "merger_name": "SLR Consulting Australia - Spectrum Ecology & Spatial and Millcrest Environmental Technology",
+      "acquirers": [
+        "SLR CONSULTING AUSTRALIA PTY LTD"
+      ],
+      "targets": [
+        "Christopher Parker",
+        "SPECTRUM ECOLOGY PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-20011",
+      "merger_name": "Origin \u2013 Equity stake in Kraken",
+      "acquirers": [
+        "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED"
+      ],
+      "targets": [
+        "CPP Investment Board Private Holdings (4) Inc."
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 20,
+    "range_business_days": [
+      16,
+      25
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 8,
+    "sample_size": 23,
+    "as_of": "2026-10-15",
+    "estimated_at": "2026-10-15",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 34,
+    "min_days": null,
+    "max_days": 52,
+    "id_issued_estimated": "2026-09-11",
+    "id_issued_before": null,
+    "id_issued_after": "2026-08-24",
+    "min_days_witness": null,
+    "max_days_witness": "WA-20038",
+    "basis": "upper-bound-only",
+    "method_version": 1
+  }
+}
