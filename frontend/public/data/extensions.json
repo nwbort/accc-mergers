@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 291,
-    "matters_extended": 20,
-    "share_extended_pct": 6.9,
-    "extension_events_total": 30,
-    "total_extension_bd": 323,
-    "median_matter_extension_bd": 15,
+    "matters_extended": 21,
+    "share_extended_pct": 7.2,
+    "extension_events_total": 31,
+    "total_extension_bd": 333,
+    "median_matter_extension_bd": 14.5,
     "longest_single_bd": 30,
     "phase_2_total": 9,
     "extended_escalated_to_phase_2": 8,
-    "escalation_rate_given_extension_pct": 40.0,
+    "escalation_rate_given_extension_pct": 38.1,
     "phase_2_preceded_by_extension_pct": 88.9,
     "base_phase_2_rate_pct": 3.1,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 20,
-      "business_days": 221
+      "events": 21,
+      "business_days": 231
     },
     {
       "category": "ACCC information request",
@@ -66,7 +66,7 @@
     },
     {
       "month": "2026-10",
-      "count": 2
+      "count": 3
     }
   ],
   "matters": [
@@ -389,6 +389,27 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 12 business days \u2013 following request by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-25047",
+      "merger_name": "Alcoa \u2013 South32 aluminium assets",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 10,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-10-15T12:00:00Z",
+          "business_days": 10,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 10 business days \u2013 following request by parties"
         }
       ]
     },
