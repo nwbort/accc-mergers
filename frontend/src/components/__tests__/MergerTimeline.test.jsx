@@ -597,6 +597,25 @@ describe('MergerTimeline', () => {
       ).toBeInTheDocument();
     });
 
+    it('drops the at-filing forecast once the timeline has been extended', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...extended,
+            phase_1_estimate: {
+              expected_business_days: 5,
+              range_business_days: [4, 5],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      expect(screen.queryByLabelText('Determination expected soon')).not.toBeInTheDocument();
+      expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+    });
+
     it('draws nothing for a matter without extensions', () => {
       render(<MergerTimeline merger={{ ...extended, events: [] }} />);
 

@@ -360,6 +360,10 @@ function MergerTimeline({ merger }) {
   //    pip just right of today, reading "expected determination soon" — the
   //    matter is overdue against the forecast but still inside its statutory
   //    clock.
+  //
+  // Neither is drawn once the timeline has been extended: the estimate was made
+  // at filing, before anyone asked for more time, so "soon" would overstate it.
+  const timelineExtensions = getTimelineExtensions(merger);
   const estimate = merger.phase_1_estimate;
   let expectedLeftPct = null;
   let expectedWidthPct = null;
@@ -372,6 +376,7 @@ function MergerTimeline({ merger }) {
     && !isComplete
     && !merger.phase_1_determination_date
     && todayPct !== null
+    && timelineExtensions.length === 0
   ) {
     const today = australianToday();
     const expected = addBusinessDays(start, estimate.expected_business_days);
@@ -425,7 +430,7 @@ function MergerTimeline({ merger }) {
 
   // Timeline extensions: the stretch of statutory clock each one added, shaded
   // on the axis between the deadline before it and the deadline after it.
-  const extensions = getTimelineExtensions(merger)
+  const extensions = timelineExtensions
     .map((ext, i) => {
       const fromPct = axisPct(parseDateOnly(ext.from), start, end);
       const toPct = axisPct(parseDateOnly(ext.to), start, end);
