@@ -372,6 +372,11 @@
       "canonical_name": "Kirin Health Science International Pty Ltd",
       "members": [
         {
+          "name": "KIRIN HEALTH SCIENCE INTERNATIONAL PTY LIMITED",
+          "identifier": "14 667 868 448",
+          "identifier_type": "ABN"
+        },
+        {
           "name": "Kirin Health Science International Pty Ltd",
           "identifier": "14 667 868 448",
           "identifier_type": "ABN"
@@ -381,6 +386,17 @@
         "acquirer": [],
         "target": [],
         "other": [
+          {
+            "merger_id": "MN-55040",
+            "merger_name": "Kirin \u2013 Jamieson Wellness",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-15T12:00:00Z",
+            "determination_date": null
+          },
           {
             "merger_id": "WA-60042",
             "merger_name": "Kirin \u2013 Jamieson Wellness",
@@ -394,11 +410,11 @@
           }
         ]
       },
-      "merger_count": 1,
-      "phase_1_count": 0,
+      "merger_count": 2,
+      "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 1,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": null,
       "waiver_duration": {
         "average_days": 26.0,
