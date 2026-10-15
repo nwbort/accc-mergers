@@ -1,6 +1,6 @@
 {
   "total_mergers": 290,
-  "total_waivers": 451,
+  "total_waivers": 452,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 429,
+    "Approved": 430,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.305986696230597,
-    "median_days": 21,
-    "average_business_days": 13.886917960088692,
-    "median_business_days": 14
+    "average_days": 20.32079646017699,
+    "median_days": 21.0,
+    "average_business_days": 13.896017699115044,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
@@ -67,11 +67,11 @@
       "count": 77
     },
     {
-      "name": "Non-Residential Property Operators",
-      "count": 44
+      "name": "Software Publishing",
+      "count": 45
     },
     {
-      "name": "Software Publishing",
+      "name": "Non-Residential Property Operators",
       "count": 44
     },
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40044",
+      "merger_name": "Loftware - Seagull Software",
+      "determination": "Approved",
+      "determination_date": "2026-10-15T12:00:00Z",
+      "page_modified_datetime": "2026-10-15T17:16:36+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-30037",
       "merger_name": "KKR - Integer",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-09T12:00:00Z",
       "page_modified_datetime": "2026-10-09T09:44:23+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-40034",
-      "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-10-08T12:00:00Z",
-      "page_modified_datetime": "2026-10-08T17:05:42+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

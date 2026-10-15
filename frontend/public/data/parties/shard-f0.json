@@ -43,6 +43,47 @@
         "completed_count": 1
       }
     },
+    "akkr-lw-holdings-lp": {
+      "id": "akkr-lw-holdings-lp",
+      "canonical_name": "AKKR LW Holdings, LP",
+      "members": [
+        {
+          "name": "AKKR LW Holdings, LP",
+          "identifier": "922878860",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40044",
+            "merger_name": "Loftware - Seagull Software",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-18T12:00:00Z",
+            "determination_date": "2026-10-15T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "banijay-entertainment": {
       "id": "banijay-entertainment",
       "canonical_name": "Banijay Entertainment",
@@ -355,6 +396,47 @@
         "median_days": 21,
         "average_business_days": 14.0,
         "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "sigma-guarantor-llc": {
+      "id": "sigma-guarantor-llc",
+      "canonical_name": "Sigma Guarantor LLC",
+      "members": [
+        {
+          "name": "Sigma Guarantor LLC",
+          "identifier": "921195400",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40044",
+            "merger_name": "Loftware - Seagull Software",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-18T12:00:00Z",
+            "determination_date": "2026-10-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
         "completed_count": 1
       }
     },
