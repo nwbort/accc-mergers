@@ -40293,8 +40293,12 @@
           "name": "Jamieson Wellness Inc.",
           "identifier_type": null,
           "identifier": "Ontario Business Registry 1976277",
+          "canonical": {
+            "id": "jamieson-wellness-inc",
+            "name": "Jamieson Wellness Inc."
+          },
           "party_page": {
-            "id": "jamieson-wellness-inc-2",
+            "id": "jamieson-wellness-inc",
             "name": "Jamieson Wellness Inc."
           }
         }
@@ -114240,6 +114244,10 @@
           "name": "Jamieson Wellness Inc.",
           "identifier_type": null,
           "identifier": "1976277",
+          "canonical": {
+            "id": "jamieson-wellness-inc",
+            "name": "Jamieson Wellness Inc."
+          },
           "party_page": {
             "id": "jamieson-wellness-inc",
             "name": "Jamieson Wellness Inc."
