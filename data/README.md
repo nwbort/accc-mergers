@@ -53,6 +53,9 @@ Intermediate JSON written by the extraction pipeline (mainly
   `{merger_id}:{kind}:{date}`, so a re-run cannot repost them. The first
   enabled run writes every existing milestone here without posting, which is
   what stops switching posting on from replaying the whole register.
+- `linkedin_posts.json` — the same, for LinkedIn (see
+  [`docs/linkedin.md`](../docs/linkedin.md)). Seeded separately, on the first
+  run with LinkedIn posting enabled.
 
 ### `output/`
 

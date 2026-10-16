@@ -532,6 +532,36 @@ jobs:
           ATPROTO_POST_ENABLED: ${{ vars.ATPROTO_POST_ENABLED }}
         run: python -m scripts.atproto.post_bluesky
 
+      # The same milestones, posted to LinkedIn (see docs/linkedin.md). Skips
+      # without its secrets, needs its own switch, and like the steps above
+      # must never fail the run.
+      - name: Post new milestones to LinkedIn
+        if: steps.enrich-gate.outputs.run == 'true'
+        continue-on-error: true
+        env:
+          LINKEDIN_AUTHOR_URN: ${{ vars.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_REFRESH_TOKEN: ${{ secrets.LINKEDIN_REFRESH_TOKEN }}
+          LINKEDIN_CLIENT_ID: ${{ vars.LINKEDIN_CLIENT_ID }}
+          LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
+          LINKEDIN_API_VERSION: ${{ vars.LINKEDIN_API_VERSION }}
+          LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
+        run: python -m scripts.linkedin.post_linkedin
+
+      # Until the API route is approved: the same milestones as ready-to-post
+      # LinkedIn links, pushed to a phone through ntfy. Stands down by itself
+      # once LINKEDIN_POST_ENABLED is set (see docs/linkedin.md).
+      - name: Send LinkedIn share links
+        if: steps.enrich-gate.outputs.run == 'true'
+        continue-on-error: true
+        env:
+          LINKEDIN_SHARE_LINKS: ${{ vars.LINKEDIN_SHARE_LINKS }}
+          LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}
+          NTFY_SERVER: ${{ vars.NTFY_SERVER }}
+        run: python -m scripts.linkedin.share_links
+
       - name: Stage extracted data
         if: steps.enrich-gate.outputs.run == 'true'
         run: |
@@ -541,10 +571,11 @@ jobs:
             data/raw/matters/ frontend/public/data/ \
             frontend/public/feed.xml frontend/public/sitemap.xml data/output/ \
             data/frozen_events_mergers.json
-          # The ATmosphere state files exist only once publishing is
+          # The ATmosphere and LinkedIn state files exist only once publishing is
           # configured, and `git add` on a missing path is an error.
           for state in data/processed/atproto_records.json \
-                       data/processed/atproto_posts.json; do
+                       data/processed/atproto_posts.json \
+                       data/processed/linkedin_posts.json; do
             if [ -f "$state" ]; then git add "$state"; fi
           done
 

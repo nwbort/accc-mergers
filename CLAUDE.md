@@ -60,6 +60,18 @@ secret means skip, not fail). See [`docs/atproto.md`](docs/atproto.md).
   `ATPROTO_POST_ENABLED` on top of the credentials, and the first *enabled* run
   seeds rather than posts, so switching it on can't replay the back catalogue.
 
+### LinkedIn posting (`scripts/linkedin/`)
+
+The same milestones as the Bluesky poster, chosen by the same
+`post_bluesky.milestones()`, posted to LinkedIn as article posts. It has its
+own `LINKEDIN_POST_ENABLED` switch and its own seeded state file
+(`data/processed/linkedin_posts.json`), and is inert without credentials. A
+company page needs the Community Management API, which provides refresh
+tokens and read-back. A personal profile works with a 60-day access token and
+no read-back. Until the API is approved, `share_links.py` (`LINKEDIN_SHARE_LINKS`)
+pushes each milestone to a phone over ntfy as a LinkedIn composer link to post
+by hand, sharing the same state file. See [`docs/linkedin.md`](docs/linkedin.md).
+
 ### Cloudflare Pages Functions (`functions/`)
 
 Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently just the PDF viewer wrapper for `/mergers/{matter}/*.pdf`.
@@ -314,6 +326,11 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   publish_lexicons.py / publish_matters.py / post_bluesky.py are
 │                         #   the entry points, each a no-op without ATPROTO_APP_PASSWORD.
 │                         #   State lives in data/processed/atproto_{records,posts}.json
+├── linkedin/             # LinkedIn posting (see docs/linkedin.md): post_linkedin.py reuses
+│                         #   atproto/post_bluesky.py's milestones/state helpers; client.py is a
+│                         #   hand-rolled REST client over requests; share_links.py is the manual
+│                         #   stopgap (ntfy push of a prefilled composer link). State in
+│                         #   data/processed/linkedin_posts.json
 ├── constants/            # Shared Python literals (merger_status.py, site.py, tribunal.py,
 │                         #   regime.py — mirrors frontend/src/constants/regime.js; keep in step)
 ├── tools/                # Interactive admin web UIs (resolver, commentary, advisors, related_parties)
@@ -418,6 +435,7 @@ python -m scripts.generate.generate_static_data
 python -m scripts.atproto.publish_lexicons --dry-run
 python -m scripts.atproto.publish_matters --dry-run
 python -m scripts.atproto.post_bluesky --dry-run
+python -m scripts.linkedin.post_linkedin --dry-run   # LinkedIn twin; see docs/linkedin.md
 
 # Tests
 python -m pytest scripts/tests/
@@ -637,7 +655,7 @@ exists rather than 404ing into the SPA's `index.html`.
 
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
-| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, `missing-waiver-determination`), then runs all four detectors. The two ATmosphere steps are `continue-on-error` and skip without `ATPROTO_APP_PASSWORD` — an unreachable PDS must not cost the run its scrape |
+| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere and post to LinkedIn → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, `missing-waiver-determination`), then runs all four detectors. The two ATmosphere steps and the LinkedIn step are `continue-on-error` and skip without their credentials — an unreachable PDS or API must not cost the run its scrape |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `publish-lexicons.yml` | Push to `main` touching `atproto/lexicons/**` or the workflow itself, manual (with a `dry_run` input) | Publish the `fyi.mergers.*` schemas as `com.atproto.lexicon.schema` records. Its own workflow rather than a pipeline step: a lexicon changes only when a person edits one, so a path-filtered push fires exactly then, where `pipeline.yml` would re-read both records several times a day to learn nothing moved. A missing `ATPROTO_APP_PASSWORD` skips a push run and fails a manual one |
 | `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |
