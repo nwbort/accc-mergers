@@ -1,6 +1,6 @@
 {
   "total_mergers": 292,
-  "total_waivers": 453,
+  "total_waivers": 454,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 431,
+    "Approved": 432,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.353200883002206,
-    "median_days": 21,
-    "average_business_days": 13.918322295805739,
-    "median_business_days": 14
+    "average_days": 20.370044052863435,
+    "median_days": 21.0,
+    "average_business_days": 13.929515418502202,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01125",
+      "merger_name": "Guardian Childcare & Education \u2013 Mini Masterminds Macquarie Park, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-10-16T17:36:56+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80044",
       "merger_name": "Crestlink \u2013 Aztec Resources",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-09T12:00:00Z",
       "page_modified_datetime": "2026-10-09T13:51:48+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-50028",
-      "merger_name": "Bupa Health Services - Partnered Health",
-      "determination": "Approved",
-      "determination_date": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-10-09T12:20:34+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

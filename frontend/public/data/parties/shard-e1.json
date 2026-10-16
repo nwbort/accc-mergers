@@ -319,6 +319,47 @@
         "completed_count": 1
       }
     },
+    "guardian-corporate-early-learning-centres-pty-ltd": {
+      "id": "guardian-corporate-early-learning-centres-pty-ltd",
+      "canonical_name": "Guardian Corporate Early Learning Centres Pty Ltd",
+      "members": [
+        {
+          "name": "GUARDIAN CORPORATE EARLY LEARNING CENTRES PTY LTD",
+          "identifier": "49 109 310 652",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01125",
+            "merger_name": "Guardian Childcare & Education \u2013 Mini Masterminds Macquarie Park, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-18T12:00:00Z",
+            "determination_date": "2026-10-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "iron-mine-contracting-pty-ltd": {
       "id": "iron-mine-contracting-pty-ltd",
       "canonical_name": "Iron Mine Contracting Pty Ltd",
