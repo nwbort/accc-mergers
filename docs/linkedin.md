@@ -15,7 +15,12 @@ exits 0.
 ## What a post looks like
 
 LinkedIn allows 3,000 characters, not 300, so a post also includes the
-matter's description, cut to 500 characters:
+opening of the matter's description: its first sentence, which on the register
+almost always states the deal (plus the second when the first is under ~100
+characters, as "The Principal Party is …" lines are), cut with "…" only if it
+runs past 500 characters. The article card's description is the same opening,
+capped at 300. Both come from `first_sentence()` in
+`scripts/atproto/post_bluesky.py`, shared with the Bluesky cards:
 
 ```
 Cleared by the ACCC: Asahi – Warehouse site on Tilburn Rd, Deer Park (Vic)

@@ -17,6 +17,7 @@ from scripts.atproto.post_bluesky import (
     main,
     milestones,
     already_posted,
+    first_sentence,
     pending,
     plain_text,
     post_record,
@@ -369,6 +370,83 @@ def test_a_long_summary_is_trimmed_to_fit_the_card():
         milestones(matter(merger_description="x" * 900))[0], created_at="2026-09-22T00:00:00Z"
     )
     assert len(record["embed"]["external"]["description"]) == 300
+
+
+DEAL = (
+    "CAMP Australia Pty Ltd proposes to acquire 20 outside school hours care "
+    "businesses from Jabiru Community Services Limited by way of asset sale."
+)
+
+
+def test_the_card_carries_the_first_sentence_not_a_character_cut():
+    record = post_record(
+        milestones(matter(merger_description=f"{DEAL} Camp Australia operates OSHC services."))[0],
+        created_at="2026-09-22T00:00:00Z",
+    )
+    assert record["embed"]["external"]["description"] == DEAL
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "The Carlyle Group Inc.",
+        "L'Oréal S.A.",
+        "Acme Pty. Limited",
+        "Foo Co. Limited",
+        "Bar Corp. Australia",
+        "Baz Holdings LLC. Australia",
+        "Fund II, L.P. Australia",
+        "Heineken N.V. Australia",
+        "Qux B.V. Australia",
+        "Quux plc. Australia",
+        "Corge Pte. Ltd",
+        "Siemens AG. Australia",
+        "Pirelli & C. S.p.A.",
+        "Trust (e.g. Smith Family Trust)",
+        "Trust (i.e. The Smith Trust)",
+        "Fund No. 4",
+        "J. Smith",
+        "Luxembourg MidCo 4 S.à.r.l. (MidCo)",
+    ],
+)
+def test_a_name_ending_in_an_abbreviation_does_not_end_the_sentence(name):
+    text = (
+        f"{name} proposes to acquire all of the shares in a widget maker based "
+        "in Melbourne, which supplies widgets to retailers across Australia. "
+        "The target operates three factories."
+    )
+    assert first_sentence(text, 500) == text.rsplit(" The target", 1)[0]
+
+
+def test_a_sentence_can_end_before_a_bracket_or_quote():
+    long = "A" * 120 + " acquires Bravo."
+    assert first_sentence(f"{long} (B) makes widgets.", 500) == long
+    assert first_sentence(f'{long} "B" makes widgets.', 500) == long
+    assert first_sentence(f"{long} it continues.", 500) == f"{long} it continues."
+
+
+def test_a_short_first_sentence_brings_the_second_with_it():
+    text = (
+        "The Principal Party is Ampol Petroleum Pty Limited (Ampol Australia). "
+        "Ampol Australia proposes to acquire a service station in Victoria. "
+        "Ampol Australia operates service stations."
+    )
+    assert first_sentence(text, 500) == (
+        "The Principal Party is Ampol Petroleum Pty Limited (Ampol Australia). "
+        "Ampol Australia proposes to acquire a service station in Victoria."
+    )
+    # Only ever two: a short second sentence does not pull in a third.
+    assert first_sentence("Short. Also short. Third.", 500) == "Short. Also short."
+    assert first_sentence("Only one short sentence.", 500) == "Only one short sentence."
+
+
+def test_a_first_sentence_over_the_cap_is_cut_with_an_ellipsis():
+    text = "word " * 100 + "ends here. Second sentence."
+    cut = first_sentence(text, 300)
+    assert len(cut) <= 300
+    assert cut.endswith("…")
+    assert first_sentence(DEAL, len(DEAL)) == DEAL
+    assert first_sentence("", 300) == ""
 
 
 # -- ordering and state -----------------------------------------------------

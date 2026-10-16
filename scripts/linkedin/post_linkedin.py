@@ -42,11 +42,13 @@ from pathlib import Path
 from scripts.atproto import config as atproto_config
 from scripts.atproto.card_image import render_card
 from scripts.atproto.post_bluesky import (
+    CARD_DESCRIPTION_CHARS,
     DEFAULT_MAX_POSTS,
     POST_HASHTAGS,
     Milestone,
     load_state,
     milestones,
+    first_sentence,
     pending,
     plain_text,
     save_state,
@@ -58,8 +60,9 @@ from scripts.linkedin.client import LinkedInClient, LinkedInError, mint_access_t
 #: LinkedIn's commentary limit, in characters.
 MAX_POST_CHARS = 3000
 
-#: How much of the matter's description goes into the post. LinkedIn folds a
-#: post after a few lines anyway; this is enough to say what the deal is.
+#: The most of the matter's description that goes into the post. It carries
+#: the description's first sentence, which says what the deal is; this cap is
+#: for the rare one that runs on.
 SUMMARY_CHARS = 500
 
 #: Posts read back to catch a milestone that went out on a lost run.
@@ -91,10 +94,7 @@ def hashtag_templates(tags: tuple[str, ...] | None = None) -> str:
 
 
 def summary_text(milestone: Milestone) -> str:
-    summary = plain_text(milestone.summary)
-    if len(summary) > SUMMARY_CHARS:
-        summary = summary[: SUMMARY_CHARS - 1].rstrip() + "…"
-    return summary
+    return first_sentence(plain_text(milestone.summary), SUMMARY_CHARS)
 
 
 def post_text(milestone: Milestone) -> str:
@@ -118,11 +118,9 @@ def post_body(milestone: Milestone, *, author: str, thumbnail: str | None = None
         "source": milestone.url,
         "title": milestone.title[:400],
     }
-    description = plain_text(milestone.summary)
+    description = first_sentence(plain_text(milestone.summary), CARD_DESCRIPTION_CHARS)
     if description:
-        article["description"] = (
-            description[:299] + "…" if len(description) > 300 else description
-        )
+        article["description"] = description
     if thumbnail:
         article["thumbnail"] = thumbnail
     return {
