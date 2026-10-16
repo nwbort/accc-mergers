@@ -1,6 +1,6 @@
 {
   "total_mergers": 292,
-  "total_waivers": 452,
+  "total_waivers": 453,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 430,
+    "Approved": 431,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.32079646017699,
-    "median_days": 21.0,
-    "average_business_days": 13.896017699115044,
-    "median_business_days": 14.0
+    "average_days": 20.353200883002206,
+    "median_days": 21,
+    "average_business_days": 13.918322295805739,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 167
+      "count": 168
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 83
+      "count": 84
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80044",
+      "merger_name": "Crestlink \u2013 Aztec Resources",
+      "determination": "Approved",
+      "determination_date": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-10-16T17:11:27+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-40044",
       "merger_name": "Loftware - Seagull Software",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-09T12:00:00Z",
       "page_modified_datetime": "2026-10-09T12:20:34+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-25035",
-      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
-      "determination": "Approved",
-      "determination_date": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-10-09T09:44:23+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

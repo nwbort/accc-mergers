@@ -132,6 +132,47 @@
         "completed_count": 2
       }
     },
+    "crestlink-cockatoo-pty-ltd": {
+      "id": "crestlink-cockatoo-pty-ltd",
+      "canonical_name": "Crestlink Cockatoo Pty Ltd",
+      "members": [
+        {
+          "name": "CRESTLINK COCKATOO PTY LTD",
+          "identifier": "91 615 631 386",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80044",
+            "merger_name": "Crestlink \u2013 Aztec Resources",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-11T12:00:00Z",
+            "determination_date": "2026-10-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 35.0,
+        "median_days": 35,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      }
+    },
     "cse-crosscom-pty-ltd": {
       "id": "cse-crosscom-pty-ltd",
       "canonical_name": "Cse Crosscom Pty Ltd",
