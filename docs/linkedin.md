@@ -113,6 +113,35 @@ This route has two drawbacks:
 2. Set the repo variable **`LINKEDIN_POST_ENABLED=true`**. The next pipeline
    run seeds the state file, and the run after that is the first to post.
 
+## Before the API is approved: share links
+
+`scripts/linkedin/share_links.py` gets the posts out by hand while the API
+route is still waiting on LinkedIn. For each milestone the API poster would
+post, it sends an [ntfy](notifications.md) notification. Tapping it opens a
+`linkedin.com/feed/?shareActive=true&text=…` link, which is LinkedIn's own
+composer with the post already written. Nothing goes out until you press
+**Post**.
+
+- The text is the API post as plain text. The matter's link sits just above
+  the hashtags, so LinkedIn turns it into the matter page's preview card.
+- The text is also in the notification body. If the LinkedIn app opens
+  without it, long-press to copy it.
+- The composer posts as whoever is signed in. To post as the page, switch the
+  author to the page in the composer, or paste the text into the page's own
+  "Create a post" box.
+
+It needs the repo variable **`LINKEDIN_SHARE_LINKS=true`** and the existing
+`NTFY_TOPIC` secret (`NTFY_TOKEN` and `NTFY_SERVER` are used if set). It
+shares `linkedin_posts.json` with the API poster. Its first run seeds that file
+and sends nothing, and a milestone is recorded only once its notification is
+delivered. When you later set `LINKEDIN_POST_ENABLED`, the share links stop by
+themselves and the API carries on from the same point, so nothing is
+announced twice. At most 10 links go out per run, like the posts.
+
+```bash
+python -m scripts.linkedin.share_links --dry-run    # see the links that are due
+```
+
 ## API version
 
 Every call carries a `LinkedIn-Version: YYYYMM` header (`DEFAULT_API_VERSION`

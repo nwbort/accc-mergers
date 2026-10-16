@@ -548,6 +548,20 @@ jobs:
           LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
         run: python -m scripts.linkedin.post_linkedin
 
+      # Until the API route is approved: the same milestones as ready-to-post
+      # LinkedIn links, pushed to a phone through ntfy. Stands down by itself
+      # once LINKEDIN_POST_ENABLED is set (see docs/linkedin.md).
+      - name: Send LinkedIn share links
+        if: steps.enrich-gate.outputs.run == 'true'
+        continue-on-error: true
+        env:
+          LINKEDIN_SHARE_LINKS: ${{ vars.LINKEDIN_SHARE_LINKS }}
+          LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}
+          NTFY_SERVER: ${{ vars.NTFY_SERVER }}
+        run: python -m scripts.linkedin.share_links
+
       - name: Stage extracted data
         if: steps.enrich-gate.outputs.run == 'true'
         run: |
