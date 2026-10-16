@@ -1,10 +1,10 @@
 {
-  "total_mergers": 291,
+  "total_mergers": 292,
   "total_waivers": 452,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
-    "Under assessment": 37,
+    "Under assessment": 38,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 82
+      "count": 83
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-15048",
+      "merger_name": "Camp Australia \u2013 Jabiru",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-15T12:00:00Z",
+      "page_modified_datetime": "2026-10-16T15:31:05+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-20040",
       "merger_name": "Tabcorp - BetMakers",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-07T12:00:00Z",
       "page_modified_datetime": "2026-10-08T16:47:07+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-60044",
-      "merger_name": "Airbus, Leonardo and Thales \u2013 Space activities joint venture",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-06T12:00:00Z",
-      "page_modified_datetime": "2026-10-08T17:31:44+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
