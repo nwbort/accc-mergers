@@ -1,6 +1,6 @@
 {
   "total_mergers": 292,
-  "total_waivers": 455,
+  "total_waivers": 456,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 433,
+    "Approved": 434,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.395604395604394,
-    "median_days": 21,
-    "average_business_days": 13.94945054945055,
-    "median_business_days": 14
+    "average_days": 20.405701754385966,
+    "median_days": 21.0,
+    "average_business_days": 13.958333333333334,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 169
+      "count": 170
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-90035",
+      "merger_name": "ORIX Aviation \u2013 AerFin",
+      "determination": "Approved",
+      "determination_date": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-10-16T17:58:01+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-65040",
       "merger_name": "Crescent Capital Partners \u2013 Hall Contracting",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-09T12:00:00Z",
       "page_modified_datetime": "2026-10-09T16:51:14+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-10038",
-      "merger_name": "Coles \u2013 supermarket site in Plainland, Qld",
-      "determination": "Approved",
-      "determination_date": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-10-09T16:46:58+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

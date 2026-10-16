@@ -692,6 +692,47 @@
         "completed_count": 1
       }
     },
+    "orix-corporation": {
+      "id": "orix-corporation",
+      "canonical_name": "ORIX Corporation",
+      "members": [
+        {
+          "name": "ORIX Corporation",
+          "identifier": "Tokyo Stock Exchange Securities Number  8591",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90035",
+            "merger_name": "ORIX Aviation \u2013 AerFin",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-21T12:00:00Z",
+            "determination_date": "2026-10-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "schlumberger-canada-limited": {
       "id": "schlumberger-canada-limited",
       "canonical_name": "Schlumberger Canada Limited",
