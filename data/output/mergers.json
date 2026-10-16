@@ -46830,13 +46830,13 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 20,
-        "min_days": 8,
+        "estimated_days": 30,
+        "min_days": 25,
         "max_days": 39,
-        "id_issued_estimated": "2026-09-19",
-        "id_issued_before": "2026-10-01",
+        "id_issued_estimated": "2026-09-09",
+        "id_issued_before": "2026-09-14",
         "id_issued_after": "2026-08-31",
-        "min_days_witness": "MN-65039",
+        "min_days_witness": "WA-65040",
         "max_days_witness": "WA-65037",
         "basis": "bracketed",
         "method_version": 1
@@ -46972,15 +46972,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 12,
-        "min_days": null,
+        "estimated_days": 20,
+        "min_days": 17,
         "max_days": 31,
-        "id_issued_estimated": "2026-09-19",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-09-11",
+        "id_issued_before": "2026-09-14",
         "id_issued_after": "2026-08-31",
-        "min_days_witness": null,
+        "min_days_witness": "WA-65040",
         "max_days_witness": "WA-65037",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -117946,6 +117946,240 @@
           ],
           "targets": [
             "JD 156 JONSON STREET PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/crescent-capital-partners-%E2%80%93-hall-contracting",
+      "merger_name": "Crescent Capital Partners \u2013 Hall Contracting",
+      "status": "Assessment completed",
+      "merger_id": "WA-65040",
+      "effective_notification_datetime": "2026-09-14T12:00:00Z",
+      "original_notification_datetime": "2026-09-14T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-16T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-16T17:54:02+11:00",
+      "acquirers": [
+        {
+          "name": "Hamilton Bidco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "702 141 722",
+          "party_page": {
+            "id": "hamilton-bidco-pty-ltd",
+            "name": "Hamilton Bidco Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "HALL HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "83 623 029 005",
+          "party_page": {
+            "id": "hall-holdco-pty-ltd",
+            "name": "Hall Holdco Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HALL CONTRACTING PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "55 009 786 065",
+          "party_page": {
+            "id": "hall-contracting-pty-ltd",
+            "name": "Hall Contracting Pty. Ltd."
+          }
+        },
+        {
+          "name": "HALL CHARTERCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "36 629 827 685",
+          "party_page": {
+            "id": "hall-charterco-pty-ltd",
+            "name": "Hall Charterco Pty Ltd"
+          }
+        },
+        {
+          "name": "CRESCENT CAPITAL PARTNERS MANAGEMENT PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "18 108 571 820",
+          "party_page": {
+            "id": "crescent-capital-partners-management-pty-limited",
+            "name": "Crescent Capital Partners Management Pty Limited"
+          }
+        },
+        {
+          "name": "CCP Trusco 2 Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "48 143 361 497",
+          "party_page": {
+            "id": "ccp-trusco-2-pty-limited",
+            "name": "CCP Trusco 2 Pty Limited"
+          }
+        },
+        {
+          "name": "CRESCENT CAPITAL PARTNERS HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 124 231 483",
+          "party_page": {
+            "id": "crescent-capital-partners-holdings-pty-ltd",
+            "name": "Crescent Capital Partners Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "HALL CIVIL CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 162 052 959",
+          "party_page": {
+            "id": "hall-civil-contracting-pty-ltd",
+            "name": "Hall Civil Contracting Pty Ltd"
+          }
+        },
+        {
+          "name": "HALL CIVIL ENGINEERING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "94 602 726 410",
+          "party_page": {
+            "id": "hall-civil-engineering-pty-ltd",
+            "name": "Hall Civil Engineering Pty Ltd"
+          }
+        },
+        {
+          "name": "CCP Trusco 3 Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "65 143 361 504",
+          "party_page": {
+            "id": "ccp-trusco-3-pty-limited",
+            "name": "CCP Trusco 3 Pty Limited"
+          }
+        },
+        {
+          "name": "HALL BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "46 623 029 292",
+          "party_page": {
+            "id": "hall-bidco-pty-ltd",
+            "name": "Hall Bidco Pty Ltd"
+          }
+        },
+        {
+          "name": "Hamilton Holdco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "702 140 449",
+          "party_page": {
+            "id": "hamilton-holdco-pty-ltd",
+            "name": "Hamilton Holdco Pty Ltd"
+          }
+        },
+        {
+          "name": "CCP Trusco 1 Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "46 143 361 488",
+          "party_page": {
+            "id": "ccp-trusco-1-pty-limited",
+            "name": "CCP Trusco 1 Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Hamilton Bidco Pty Ltd, an entity majority-owned by funds managed by Crescent Capital Partners Management Pty Limited (**Crescent**), proposes to acquire 100% of the shares in Hall Holdco Pty Ltd (together with its subsidiaries, **Hall Contracting**).\n\nHall Contracting supplies marine infrastructure construction services, dredging services and water/tailings management services.\n\nCrescent is an alternative asset manager covering Australian and New Zealand private equity, private credit and active listed equities.",
+      "events": [
+        {
+          "date": "2026-10-16T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Crescent%20Capital%20Partners%20%E2%80%93%20Hall%20Contracting%20%28WA-65040%29%20-%20Notification%20waiver%20determination%20-%2016%20October%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Hamilton Bidco Pty Ltd, an entity majority-owned by funds managed\nby Crescent Capital Partners Management Pty Limited (Crescent)\napplied for a notification waiver in respect of its proposed\nacquisition of 100% of the share capital in Hall Holdco Pty Ltd\n(together with its subsidiaries, Hall Contracting), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "16 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Crescent, is an alternative asset manager covering\nAustralian and New Zealand private equity, private credit and active\nlisted equities.\nThe target, Hall Contracting, supplies marine infrastructure\nconstruction services, dredging services and water/tailings\nmanagement services.\nHall Contracting is currently majority owned and controlled by\nanother Crescent-managed fund."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular, there is no horizontal\nconsolidation, removal of a competitor, or change to Hall\nContracting\u2019s competitive position as a result of the Acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC also considered the potential application of section\n51ABD of the Act. The applicant submits that it is arguable section\n51ABD applies, however, there is uncertainty as to its application\ngiven the nature of the relationship between the parties. Having\nregard to the particular circumstances, including the consequences\nof non-notification in reliance on section 51ABD if it was found not\nto apply, the ACCC considers it appropriate to make a determination\non the basis that the acquisition provisions in the Act apply to the\nAcquisition.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-65040/Crescent Capital Partners \u2013 Hall Contracting (WA-65040) - Notification waiver determination - 16 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-14T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-50030",
+          "merger_name": "Symal Group - Shamrock Engineering and Equipment",
+          "acquirers": [
+            "SYMAL GROUP LIMITED"
+          ],
+          "targets": [
+            "PHOENIX INVESTMENTS QUEENSLAND PTY LTD",
+            "SHAMROCK CIVIL ENGINEERING PTY. LTD."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-25014",
+          "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+          "acquirers": [
+            "Essential Bidco B.V.",
+            "Specialty (U.S.) Bidco, Inc."
+          ],
+          "targets": [
+            "SpecialtyCo US LLC",
+            "Biomin Phytogenics GmbH (Germany)"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-35037",
+          "merger_name": "CVC Capital Partners \u2013 IRCA Group",
+          "acquirers": [
+            "Ibert Investments S.\u00e0.r.l."
+          ],
+          "targets": [
+            "IRCA Group Luxembourg Midco 3 S.\u00e0.r.l.",
+            "IRCA Group Luxembourg Midco 4 S.\u00e0.r.l."
           ],
           "accc_determination": "Approved"
         }
