@@ -1,6 +1,6 @@
 {
   "total_mergers": 292,
-  "total_waivers": 456,
+  "total_waivers": 457,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 434,
+    "Approved": 435,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.405701754385966,
-    "median_days": 21.0,
-    "average_business_days": 13.958333333333334,
-    "median_business_days": 14.0
+    "average_days": 20.409190371991247,
+    "median_days": 21,
+    "average_business_days": 13.960612691466084,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35053",
+      "merger_name": "Schneider Electric \u2013 Shelly Group SE",
+      "determination": "Approved",
+      "determination_date": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-10-16T20:59:41+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-90035",
       "merger_name": "ORIX Aviation \u2013 AerFin",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-09T12:00:00Z",
       "page_modified_datetime": "2026-10-09T16:52:31+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60050",
-      "merger_name": "Tasman Capital \u2013 Amberlee Holiday Homes & Accommodation and Woodlands Estate",
-      "determination": "Approved",
-      "determination_date": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-10-09T16:51:14+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

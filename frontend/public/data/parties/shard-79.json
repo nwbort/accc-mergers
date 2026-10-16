@@ -456,6 +456,47 @@
       },
       "waiver_duration": null
     },
+    "shelly-group-se": {
+      "id": "shelly-group-se",
+      "canonical_name": "Shelly Group SE",
+      "members": [
+        {
+          "name": "Shelly Group SE",
+          "identifier": "201047670",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35053",
+            "merger_name": "Schneider Electric \u2013 Shelly Group SE",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-24T12:00:00Z",
+            "determination_date": "2026-10-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
     "state-swim-norwood-pty-ltd": {
       "id": "state-swim-norwood-pty-ltd",
       "canonical_name": "State Swim Norwood Pty Ltd",
