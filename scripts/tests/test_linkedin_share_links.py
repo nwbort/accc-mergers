@@ -123,7 +123,7 @@ def test_it_needs_its_switch_and_a_topic(state_file, configured, sent, monkeypat
     assert not state_file.exists()
 
 
-def test_notify_sends_the_link_as_the_tap_target(monkeypatch):
+def test_notify_offers_the_link_to_copy(monkeypatch):
     captured = {}
 
     class Response:
@@ -138,6 +138,9 @@ def test_notify_sends_the_link_as_the_tap_target(monkeypatch):
     assert share_links.notify(milestone, topic="t", server="https://ntfy.sh/", token="tok")
     assert captured["url"] == "https://ntfy.sh"
     assert captured["json"]["topic"] == "t"
-    assert captured["json"]["click"] == share_url(milestone)
+    assert captured["json"]["click"] == milestone.url  # the app drops a share link's text
+    copy, view = captured["json"]["actions"]
+    assert copy == {"action": "copy", "label": "Copy LinkedIn link", "value": share_url(milestone)}
+    assert view["url"] == milestone.url
     assert captured["json"]["message"] == share_text(milestone)
     assert captured["headers"] == {"Authorization": "Bearer tok"}

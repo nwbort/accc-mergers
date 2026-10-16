@@ -117,17 +117,22 @@ This route has two drawbacks:
 
 `scripts/linkedin/share_links.py` gets the posts out by hand while the API
 route is still waiting on LinkedIn. For each milestone the API poster would
-post, it sends an [ntfy](notifications.md) notification. Tapping it opens a
-`linkedin.com/feed/?shareActive=true&text=…` link, which is LinkedIn's own
-composer with the post already written. Nothing goes out until you press
+post, it sends an [ntfy](notifications.md) notification carrying a
+`linkedin.com/feed/?shareActive=true&text=…` link. That link opens LinkedIn's
+own post box with the post already written. Nothing goes out until you press
 **Post**.
 
+- The link only works **in a browser**. A phone hands linkedin.com links to the
+  LinkedIn app, which opens with an empty post box. So the notification's
+  **Copy LinkedIn link** button puts the link on the clipboard, to paste into a
+  browser where you're signed in. Tapping the notification itself opens the
+  matter page. The copy button works in the ntfy Android app and the ntfy web
+  app. The ntfy docs don't say whether the iOS app supports it.
 - The text is the API post as plain text. The matter's link sits just above
-  the hashtags, so LinkedIn turns it into the matter page's preview card.
-- The text is also in the notification body. If the LinkedIn app opens
-  without it, long-press to copy it.
-- The composer posts as whoever is signed in. To post as the page, switch the
-  author to the page in the composer, or paste the text into the page's own
+  the hashtags, so LinkedIn turns it into the matter page's preview card. The
+  text is also in the notification body.
+- The post box posts as whoever is signed in. To post as the page, switch the
+  author to the page in the post box, or paste the text into the page's own
   "Create a post" box.
 
 It needs the repo variable **`LINKEDIN_SHARE_LINKS=true`** and the existing
