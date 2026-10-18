@@ -38,6 +38,8 @@ from scripts.date_utils import parse_iso_datetime
 # ---------------------------------------------------------------------------
 
 SITE_BASE = "https://mergers.fyi"
+BLUESKY_URL = "https://bsky.app/profile/mergers.fyi"
+LINKEDIN_URL = "https://www.linkedin.com/company/mergers-fyi"
 RESEND_API_BASE = "https://api.resend.com"
 SEND_FROM = os.environ.get("SEND_FROM", "Australian Merger Tracker <digest@mergers.fyi>")
 
@@ -376,7 +378,11 @@ def build_text_email(digest: dict) -> str:
     ]
     if _is_feedback_week(digest.get("period_start", "")):
         footer.insert(0, "Got thoughts, feedback or any market gossip? Just reply to this email - we'd love to hear from you.")
-        footer.insert(1, "")
+    else:
+        footer.insert(0, "Follow mergers.fyi for new deals and decisions as they happen:")
+        footer.insert(1, f"LinkedIn: {LINKEDIN_URL}")
+        footer.insert(2, f"Bluesky:  {BLUESKY_URL}")
+    footer.insert(footer.index("--"), "")
     lines += footer
 
     return "\n".join(lines)
@@ -969,10 +975,12 @@ def build_html_email(digest: dict) -> str:
             "we&rsquo;d love to hear from you."
         )
     else:
+        link_style = f"color:{GREEN};text-decoration:underline;font-weight:600;"
         header_cta = (
-            "Were you forwarded this email? Sign up "
-            f'<a href="{SITE_BASE}/digest" '
-            f'style="color:{GREEN};text-decoration:underline;">here</a>.'
+            "mergers.fyi is now on social media &ndash; follow us on "
+            f'<a href="{LINKEDIN_URL}" style="{link_style}">LinkedIn</a> and '
+            f'<a href="{BLUESKY_URL}" style="{link_style}">Bluesky</a> '
+            "for new deals and decisions as they happen."
         )
 
     preheader_bits = [f"{c['new']} new deals notified", f"{c['cleared']} cleared"]
