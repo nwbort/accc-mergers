@@ -131,6 +131,19 @@ def test_post_body_is_an_article_card_linking_the_matter():
     assert article["description"] == "Asahi (Asahi) will enter into a lease #1."
 
 
+def test_the_post_and_card_carry_the_first_sentence():
+    deal = (
+        "Asahi Holdings (Australia) Pty Ltd proposes to enter into an agreement "
+        "for lease with GPT for a warehouse site on Tilburn Road, Deer Park."
+    )
+    (milestone,) = milestones(
+        matter(merger_description=f"{deal} Asahi makes beer. GPT owns property.")
+    )
+    assert post_linkedin.summary_text(milestone) == deal
+    assert post_body(milestone, author=AUTHOR)["content"]["article"]["description"] == deal
+    assert "makes beer" not in preview(post_text(milestone))
+
+
 # -- read-back -----------------------------------------------------------------
 
 

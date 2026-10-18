@@ -68,6 +68,34 @@ DEFAULT_MAX_POSTS = 10
 #: would otherwise have, so keep the list short.
 POST_HASHTAGS = ("accc",)
 
+#: Longest description a link card carries, in characters.
+CARD_DESCRIPTION_CHARS = 300
+
+#: A first sentence shorter than this is usually only "The Principal Party is
+#: …", so the second sentence - the one stating the deal - comes with it.
+SHORT_SENTENCE_CHARS = 100
+
+#: Abbreviations a party's name or a citation ends in. A full stop after one
+#: is part of the name, not the end of the sentence: splitting there cut a
+#: quarter of the register's descriptions off mid-name ("The Carlyle Group
+#: Inc."). Compared lower-case, with the trailing full stop.
+_ABBREVIATIONS = frozenset(
+    {
+        "inc.", "ltd.", "pty.", "co.", "corp.", "llc.", "plc.", "pte.", "ag.",
+        "no.", "l.p.", "s.a.", "n.v.", "b.v.", "s.p.a.", "e.g.", "i.e.",
+        # Seen on the register: "Vivax Metrotech Sdn. Bhd.", "Warner Bros.
+        # Discovery", "Neon Merger Sub. Inc.".
+        "sdn.", "bhd.", "bros.", "sub.", "st.", "mt.", "dr.",
+    }
+)
+
+#: Sentence-ending punctuation (and any closing quote or bracket after it),
+#: then whitespace, then what a sentence opens with.
+_SENTENCE_END = re.compile(r"[.!?][\"'”’)\]]*\s+(?=[A-Z(\[\"'“‘])")
+
+#: Initials and dotted abbreviations: "J.", "U.S.", "S.p.A.", "S.à.r.l.".
+_DOTTED = re.compile(r"(?:[^\W\d_]\.)+")
+
 #: How far back the account's own posts are checked for a milestone that went
 #: out on a run whose state never reached ``main``. One page of the API; a lost
 #: run posts at most ``DEFAULT_MAX_POSTS``, so this covers several of them.
@@ -308,15 +336,10 @@ def post_record(milestone: Milestone, *, created_at: str, thumb: dict | None = N
 
     # Bluesky does not unfurl a link on its own: a post only gets a card if
     # the record carries one, which is what the app's composer does for you.
-    embed_description = plain_text(milestone.summary)
     external = {
         "uri": milestone.url,
         "title": milestone.title[:300],
-        "description": (
-            embed_description[:299] + "…"
-            if len(embed_description) > 300
-            else embed_description
-        ),
+        "description": first_sentence(plain_text(milestone.summary), CARD_DESCRIPTION_CHARS),
     }
     if thumb:
         external["thumb"] = thumb
@@ -338,6 +361,50 @@ def plain_text(markdown: str) -> str:
     # An unpaired ``**`` is a typo on the register ("3 September**2026").
     text = text.replace("**", " ")
     return " ".join(text.split())
+
+
+def _ends_in_abbreviation(text: str) -> bool:
+    """Whether the full stop ending ``text`` belongs to an abbreviation."""
+    words = text.split()
+    if not words:
+        return False
+    word = words[-1].lstrip("(\"'“‘[")
+    return word.lower() in _ABBREVIATIONS or bool(_DOTTED.fullmatch(word))
+
+
+def sentences(text: str) -> list[str]:
+    """``text`` split into sentences, never after a name's "Pty." or "Inc."."""
+    found, start = [], 0
+    for match in _SENTENCE_END.finditer(text):
+        end = match.start() + 1
+        if text[match.start()] == "." and _ends_in_abbreviation(text[start:end]):
+            continue
+        found.append(text[start : match.end()].strip())
+        start = match.end()
+    rest = text[start:].strip()
+    if rest:
+        found.append(rest)
+    return found
+
+
+def first_sentence(text: str, max_chars: int) -> str:
+    """The opening of a description, for a post or a card: its first sentence.
+
+    The register's descriptions open by stating the deal, so the first
+    sentence is the summary - better than a cut at a character count, which
+    stops mid-clause. When that sentence is only a line naming the principal
+    party, the next one comes too. Whatever is left over ``max_chars`` is cut
+    with an ellipsis.
+    """
+    parts = sentences(text)
+    if not parts:
+        return ""
+    summary = parts[0]
+    if len(summary) < SHORT_SENTENCE_CHARS and len(parts) > 1:
+        summary = f"{summary} {parts[1]}"
+    if len(summary) > max_chars:
+        summary = summary[: max_chars - 1].rstrip() + "…"
+    return summary
 
 
 def upload_card_image(client, path: Path | None = None) -> dict | None:

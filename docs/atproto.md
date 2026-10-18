@@ -252,8 +252,11 @@ have.
 The link to the matter page is not in the text: it is the post's link card
 (`app.bsky.embed.external`), which is what people tap anyway, and a URL in the
 text only repeated it, truncated, in characters the matter name could have had.
-The card has the matter's name as the title, its description (with the
-register's Markdown flattened to plain text) as the blurb, and a thumbnail
+The card has the matter's name as the title, the opening of its description
+as the blurb (the register's Markdown flattened to plain text, then
+`first_sentence()`: the first sentence, plus the second when the first is under
+~100 characters, cut with "…" past 300 characters; a full stop after a name's
+"Pty.", "Inc.", "S.A." or an initial does not end a sentence), and a thumbnail
 drawn for that post by `scripts/atproto/card_image.py`: the milestone's
 headline, the matter's name and id, on the colour the site gives that outcome
 (green cleared, red refused, amber Phase 2, indigo Tribunal/Federal Court,
