@@ -5,6 +5,7 @@ import { FaBell, FaCheckCircle } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import { Spinner } from './LoadingSpinner';
 import { formatDate, getCalendarDaysUntil, isDatePast } from '../utils/dates';
+import { eventAnchorId, ASSESSMENT_TIMELINE_ANCHOR } from '../utils/eventAnchor';
 
 // Event types synthesised from a followed matter's upcoming deadlines (see
 // TrackingContext), as opposed to things that have already happened.
@@ -27,6 +28,16 @@ function PanelEmptyState({ iconBg, iconColor, Icon, title, subtitle }) {
       {subtitle && <p className="text-xs text-gray-500">{subtitle}</p>}
     </div>
   );
+}
+
+// Where on the merger's page an event lives: a dated event is a row in its
+// "Timeline & Events" list; an upcoming deadline is a milestone on the
+// assessment timeline at the top.
+function eventHref(group, event) {
+  const anchor = UPCOMING_EVENT_TYPES.has(event.type)
+    ? ASSESSMENT_TIMELINE_ANCHOR
+    : eventAnchorId(event);
+  return `${mergerPath(group.merger_id, group.merger_name)}#${anchor}`;
 }
 
 function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
@@ -75,12 +86,15 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                 isNew ? 'bg-emerald-50 ring-1 ring-emerald-200 px-2 py-1.5 -mx-1' : ''
               }`}
             >
-              <div className="flex items-start gap-2">
-                <span className={`mt-0.5 flex-shrink-0 w-2 h-2 rounded-full ${
+              <Link
+                to={eventHref(group, event)}
+                onClick={onClose}
+                className="flex items-start gap-2 group/event"
+              >                <span className={`mt-0.5 flex-shrink-0 w-2 h-2 rounded-full ${
                   isNew ? 'bg-emerald-500' : isUpcoming ? 'bg-amber-400' : 'bg-gray-300'
                 }`} />
                 <div className="flex-1 min-w-0">
-                  <p className={`truncate ${isNew ? 'text-gray-900 font-medium' : 'text-gray-700'}`}>
+                  <p className={`truncate group-hover/event:text-primary transition-colors ${isNew ? 'text-gray-900 font-medium' : 'text-gray-700'}`}>
                     {event.display_title || event.event_type_display || event.title}
                     {isNew && (
                       <span className="ml-1.5 inline-block align-middle text-[10px] font-semibold uppercase tracking-wide text-emerald-700">
@@ -97,7 +111,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                     )}
                   </p>
                 </div>
-              </div>
+              </Link>
             </li>
           );
         })}
@@ -108,10 +122,14 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
             key={`${event.merger_id}-${event.date}-past-new-${idx}`}
             className="text-xs rounded-md bg-emerald-50 ring-1 ring-emerald-200 px-2 py-1.5 -mx-1"
           >
-            <div className="flex items-start gap-2">
+            <Link
+              to={eventHref(group, event)}
+              onClick={onClose}
+              className="flex items-start gap-2 group/event"
+            >
               <span className="mt-0.5 flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500" />
               <div className="flex-1 min-w-0">
-                <p className="text-gray-900 font-medium truncate">
+                <p className="text-gray-900 font-medium truncate group-hover/event:text-primary transition-colors">
                   {event.display_title || event.event_type_display || event.title}
                   <span className="ml-1.5 inline-block align-middle text-[10px] font-semibold uppercase tracking-wide text-emerald-700">
                     New
@@ -121,7 +139,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                   {formatDate(event.date)}
                 </p>
               </div>
-            </div>
+            </Link>
           </li>
         ))}
 
@@ -142,17 +160,21 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                 key={`${event.merger_id}-${event.date}-past-${idx}`}
                 className="text-xs"
               >
-                <div className="flex items-start gap-2">
+                <Link
+                  to={eventHref(group, event)}
+                  onClick={onClose}
+                  className="flex items-start gap-2 group/event"
+                >
                   <span className="mt-0.5 flex-shrink-0 w-2 h-2 rounded-full bg-gray-300" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-gray-500 truncate">
+                    <p className="text-gray-500 truncate group-hover/event:text-primary transition-colors">
                       {event.display_title || event.event_type_display || event.title}
                     </p>
                     <p className="text-gray-500">
                       {formatDate(event.date)}
                     </p>
                   </div>
-                </div>
+                </Link>
               </li>
             ))}
           </>

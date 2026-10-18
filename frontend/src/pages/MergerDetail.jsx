@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router';
+import { useState, useEffect, useRef } from 'react';
+import { flushSync } from 'react-dom';
+import { useParams, useNavigate, useLocation, Link } from 'react-router';
 import { FaChevronLeft, FaLink, FaComment, FaGavel, FaBalanceScale } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -20,6 +21,7 @@ import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDateMedium, formatDateLong } from '../utils/dates';
 import { sortEventsNewestFirst } from '../utils/eventOrder';
+import { eventAnchorId, ASSESSMENT_TIMELINE_ANCHOR } from '../utils/eventAnchor';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, CARD_TITLE, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
@@ -58,9 +60,35 @@ function appealDocumentUrl(appeal) {
   return document?.url_gh ?? document?.url ?? appeal.tribunal_url;
 }
 
+// Tribunal appeal documents tend to arrive in a burst and clutter the
+// timeline. When more than two land back-to-back (most recent first, since
+// sortedEvents is date-descending), keep only the newest one visible and
+// collapse the rest behind a toggle. appealRunLength maps the run's start
+// index to its size; appealRunStart maps every other member of that run back
+// to the start index so it can be hidden until expanded.
+function findAppealRuns(sortedEvents) {
+  const appealRunLength = new Map();
+  const appealRunStart = new Map();
+  for (let i = 0; i < sortedEvents.length; i++) {
+    if (!sortedEvents[i].is_appeal) continue;
+    let j = i;
+    while (j < sortedEvents.length && sortedEvents[j].is_appeal) j++;
+    if (j - i > 2) {
+      appealRunLength.set(i, j - i);
+      for (let k = i + 1; k < j; k++) appealRunStart.set(k, i);
+    }
+    i = j - 1;
+  }
+  return { appealRunLength, appealRunStart };
+}
+
+// How long a row reached from a notification link stays highlighted.
+const ANCHOR_HIGHLIGHT_MS = 2500;
+
 function MergerDetail() {
   const { id, slug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   // Merger IDs (e.g. MN-01016) are always uppercase in the static data files,
   // so a lowercase/mixed-case URL would otherwise 404. Fetch by the
   // normalised ID and let the effect below fix up the visible URL.
@@ -80,9 +108,11 @@ function MergerDetail() {
     if (!merger) return;
     const canonicalSlug = slugify(merger.merger_name);
     if (id !== merger.merger_id || (slug || '') !== canonicalSlug) {
-      navigate(mergerPath(merger.merger_id, merger.merger_name), { replace: true });
+      // Keep the hash: a notification link to one of this matter's events
+      // may arrive on a bare-id or stale-slug URL.
+      navigate(mergerPath(merger.merger_id, merger.merger_name) + location.hash, { replace: true });
     }
-  }, [merger, id, slug, navigate]);
+  }, [merger, id, slug, navigate, location.hash]);
   const [expandedParties, setExpandedParties] = useState({});
   const [expandedAppealRuns, setExpandedAppealRuns] = useState(() => new Set());
   const toggleAppealRun = (startIdx) => {
@@ -93,6 +123,44 @@ function MergerDetail() {
       return next;
     });
   };
+
+  // Scroll to the event a notification link points at (`#event-...`, or the
+  // assessment timeline for an upcoming deadline). The target may sit in a
+  // collapsed run of appeal documents, so that run is expanded (synchronously,
+  // so the row exists) before scrolling. Handled once per navigation
+  // (location.key), so a background refresh of the data doesn't yank the page
+  // back.
+  const [highlightedAnchor, setHighlightedAnchor] = useState(null);
+  const handledNavigationRef = useRef(null);
+  useEffect(() => {
+    if (!merger || !location.hash) return;
+    if (handledNavigationRef.current === location.key) return;
+    const anchor = decodeURIComponent(location.hash.slice(1));
+    const events = sortEventsNewestFirst(merger.events);
+    const idx = events.findIndex((event) => eventAnchorId(event) === anchor);
+    const runStart = idx === -1 ? undefined : findAppealRuns(events).appealRunStart.get(idx);
+    const frame = requestAnimationFrame(() => {
+      handledNavigationRef.current = location.key;
+      if (runStart !== undefined) {
+        flushSync(() => {
+          setExpandedAppealRuns((prev) => (prev.has(runStart) ? prev : new Set(prev).add(runStart)));
+        });
+      }
+      const el = document.getElementById(anchor);
+      if (!el) return;
+      const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      el.scrollIntoView?.({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      setHighlightedAnchor(anchor);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [merger, location.hash, location.key]);
+
+  useEffect(() => {
+    if (!highlightedAnchor) return;
+    const timer = setTimeout(() => setHighlightedAnchor(null), ANCHOR_HIGHLIGHT_MS);
+    return () => clearTimeout(timer);
+  }, [highlightedAnchor]);
+
   const { isTracked, toggleTracking } = useTracking();
   const tracked = isTracked(normalizedId);
   const savedParams = sessionStorage.getItem('mergers_filter_params');
@@ -186,24 +254,18 @@ function MergerDetail() {
 
   const sortedEvents = sortEventsNewestFirst(merger.events);
 
-  // Tribunal appeal documents tend to arrive in a burst and clutter the
-  // timeline. When more than two land back-to-back (most recent first,
-  // since sortedEvents is date-descending), keep only the newest one visible
-  // and collapse the rest behind a toggle. appealRunLength maps the run's
-  // start index to its size; appealRunStart maps every other member of that
-  // run back to the start index so it can be hidden until expanded.
-  const appealRunLength = new Map();
-  const appealRunStart = new Map();
-  for (let i = 0; i < sortedEvents.length; i++) {
-    if (!sortedEvents[i].is_appeal) continue;
-    let j = i;
-    while (j < sortedEvents.length && sortedEvents[j].is_appeal) j++;
-    if (j - i > 2) {
-      appealRunLength.set(i, j - i);
-      for (let k = i + 1; k < j; k++) appealRunStart.set(k, i);
-    }
-    i = j - 1;
-  }
+  const { appealRunLength, appealRunStart } = findAppealRuns(sortedEvents);
+
+  // In-page anchor for each event a notification can link to. Only the first
+  // event with a given anchor gets it, so ids stay unique.
+  const anchorByIdx = new Map();
+  const seenAnchors = new Set();
+  sortedEvents.forEach((event, i) => {
+    const anchor = eventAnchorId(event);
+    if (seenAnchors.has(anchor)) return;
+    seenAnchors.add(anchor);
+    anchorByIdx.set(i, anchor);
+  });
 
   // Flatten sortedEvents into the rows the timeline actually renders: hidden
   // run members are dropped, and a toggle row is inserted right after the
@@ -402,7 +464,12 @@ function MergerDetail() {
           {/* Assessment timeline */}
           {/* A deep fill's bottom edge is its own separator; a pale one is too
               close to the card to divide anything, so it keeps the rule. */}
-          <div className={headerStyle.onDark ? 'mt-6' : 'mt-6 pt-6 border-t border-gray-100'}>
+          <div
+            id={ASSESSMENT_TIMELINE_ANCHOR}
+            className={`scroll-mt-24 rounded-lg transition-shadow duration-500 ${
+              headerStyle.onDark ? 'mt-6' : 'mt-6 pt-6 border-t border-gray-100'
+            } ${highlightedAnchor === ASSESSMENT_TIMELINE_ANCHOR ? 'ring-2 ring-accent ring-offset-4' : ''}`}
+          >
             <MergerTimeline merger={merger} />
           </div>
 
@@ -717,8 +784,13 @@ function MergerDetail() {
 
                   const { event, idx } = row;
                   const dot = dotStyleForEvent(event);
+                  const anchor = anchorByIdx.get(idx);
                   return (
-                  <li key={`event-${event.date}-${event.display_title || event.title}-${idx}`}>
+                  <li
+                    key={`event-${event.date}-${event.display_title || event.title}-${idx}`}
+                    id={anchor}
+                    className="scroll-mt-24"
+                  >
                     <div className="relative pb-8">
                       {connector}
                       <div className="relative flex space-x-3">
@@ -727,7 +799,9 @@ function MergerDetail() {
                             <div className={`h-2.5 w-2.5 rounded-full ${dot.dot}`} />
                           </span>
                         </div>
-                        <div className="min-w-0 flex-1 pt-1">
+                        <div className={`min-w-0 flex-1 pt-1 rounded-md transition-colors duration-500 ${
+                          anchor && highlightedAnchor === anchor ? 'bg-accent/10 ring-2 ring-accent/40 ring-offset-2' : ''
+                        }`}>
                           <p className="text-sm font-medium text-gray-900">
                             {event.display_title || event.title}
                           </p>
