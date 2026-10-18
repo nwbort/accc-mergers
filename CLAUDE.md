@@ -251,6 +251,9 @@ frontend/src/
 │                         #   treemapTail.js, mergerOutcome.js, partyMembers.js, durationEcdf.js,
 │                         #   eventOrder.js (the detail page's newest-first event list; a
 │                         #   same-day notification always sorts as the oldest event),
+│                         #   eventAnchor.js (the `#event-…` id each detail-page event row carries,
+│                         #   which NotificationPanel links to; upcoming deadlines link to
+│                         #   #assessment-timeline instead),
 │                         #   mergerSort.js (the merger list's ?sort= vocabulary: the field table
 │                         #   the select is built from and the comparator it drives),
 │                         #   timelineAxis.js (the horizontal milestone track's geometry —
