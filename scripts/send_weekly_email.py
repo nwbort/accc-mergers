@@ -16,6 +16,11 @@ Optional environment variables:
                                when AUDIENCE=test)
     DRY_RUN                  — If set to 'true', prints the HTML and exits without sending
     SEND_FROM                — Sender address (default: mergers.fyi weekly digest <digest@mergers.fyi>)
+    BANNER                   — Which message the strip under the masthead carries:
+                               'social' (default) invites readers to follow the
+                               LinkedIn and Bluesky accounts, 'signup' asks a
+                               forwarded reader to subscribe. Feedback weeks
+                               override either with the feedback ask.
 """
 
 import json
@@ -40,6 +45,14 @@ from scripts.date_utils import parse_iso_datetime
 SITE_BASE = "https://mergers.fyi"
 BLUESKY_URL = "https://bsky.app/profile/mergers.fyi"
 LINKEDIN_URL = "https://www.linkedin.com/company/mergers-fyi"
+
+BANNERS = ("social", "signup")
+DEFAULT_BANNER = "social"
+
+
+def banner_choice() -> str:
+    """The BANNER env var, or the default when unset. Validated in main()."""
+    return os.environ.get("BANNER", "").strip().lower() or DEFAULT_BANNER
 RESEND_API_BASE = "https://api.resend.com"
 SEND_FROM = os.environ.get("SEND_FROM", "Australian Merger Tracker <digest@mergers.fyi>")
 
@@ -209,8 +222,9 @@ def _text_section(title: str, headers: list[str], rows: list[list[str]], empty_m
     return "\n".join(lines)
 
 
-def build_text_email(digest: dict) -> str:
+def build_text_email(digest: dict, banner: str | None = None) -> str:
     """Build a plain-text version of the weekly digest email."""
+    banner = banner or banner_choice()
     date_range = format_date_range(digest["period_start"], digest["period_end"])
 
     cleared_conditions = conditions_note(
@@ -378,11 +392,12 @@ def build_text_email(digest: dict) -> str:
     ]
     if _is_feedback_week(digest.get("period_start", "")):
         footer.insert(0, "Got thoughts, feedback or any market gossip? Just reply to this email - we'd love to hear from you.")
-    else:
+    elif banner == "social":
         footer.insert(0, "Follow mergers.fyi for new deals and decisions as they happen:")
         footer.insert(1, f"LinkedIn: {LINKEDIN_URL}")
         footer.insert(2, f"Bluesky:  {BLUESKY_URL}")
-    footer.insert(footer.index("--"), "")
+    if footer[0] != "--":
+        footer.insert(footer.index("--"), "")
     lines += footer
 
     return "\n".join(lines)
@@ -954,7 +969,8 @@ def build_ongoing_appeals(mergers: list) -> str:
 # Full email builder
 # ---------------------------------------------------------------------------
 
-def build_html_email(digest: dict) -> str:
+def build_html_email(digest: dict, banner: str | None = None) -> str:
+    banner = banner or banner_choice()
     date_range = format_date_range(digest["period_start"], digest["period_end"])
     show_feedback = _is_feedback_week(digest.get("period_start", ""))
     c = _counts(digest)
@@ -974,13 +990,19 @@ def build_html_email(digest: dict) -> str:
             "Got thoughts, feedback or any market gossip? Just reply to this email – "
             "we&rsquo;d love to hear from you."
         )
-    else:
+    elif banner == "social":
         link_style = f"color:{GREEN};text-decoration:underline;font-weight:600;"
         header_cta = (
             "mergers.fyi is now on social media &ndash; follow us on "
             f'<a href="{LINKEDIN_URL}" style="{link_style}">LinkedIn</a> and '
             f'<a href="{BLUESKY_URL}" style="{link_style}">Bluesky</a> '
             "for new deals and decisions as they happen."
+        )
+    else:
+        header_cta = (
+            "Were you forwarded this email? Sign up "
+            f'<a href="{SITE_BASE}/digest" '
+            f'style="color:{GREEN};text-decoration:underline;">here</a>.'
         )
 
     preheader_bits = [f"{c['new']} new deals notified", f"{c['cleared']} cleared"]
@@ -1201,6 +1223,11 @@ def main() -> None:
         sys.exit(1)
     is_test = audience_mode == "test"
 
+    banner = banner_choice()
+    if banner not in BANNERS:
+        print(f"ERROR: BANNER must be one of {', '.join(BANNERS)}, got '{banner}'.", file=sys.stderr)
+        sys.exit(1)
+
     # Select the audience explicitly — never fall back from test to production,
     # a misconfigured test send must fail rather than email real subscribers.
     if is_test:
@@ -1230,6 +1257,7 @@ def main() -> None:
         broadcast_name += " (test)"
 
     print(f"Audience: {audience_mode}")
+    print(f"Banner: {banner}")
     print(f"Period: {date_range}")
     print(f"  New deals notified    : {len(digest['new_deals_notified'])}")
     print(f"  Deals cleared         : {len(digest['deals_cleared'])}")
@@ -1241,9 +1269,9 @@ def main() -> None:
     print(f"  Ongoing phase 2       : {len(digest['ongoing_phase_2'])}")
 
     print("\nBuilding HTML email…")
-    html = build_html_email(digest)
+    html = build_html_email(digest, banner)
     print("Building text email…")
-    text = build_text_email(digest)
+    text = build_text_email(digest, banner)
 
     if dry_run:
         out_path = Path("/tmp/digest_email_preview.html")

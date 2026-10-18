@@ -215,3 +215,17 @@ class TestHeaderBanner:
         html = swe.build_html_email(digest)
         assert 'market gossip' in html
         assert swe.LINKEDIN_URL not in html
+
+    def test_signup_banner_restores_the_forwarded_prompt(self):
+        html = swe.build_html_email(_digest(), banner='signup')
+        assert 'Were you forwarded this email?' in html
+        assert swe.LINKEDIN_URL not in html
+        text = swe.build_text_email(_digest(), banner='signup')
+        assert swe.LINKEDIN_URL not in text
+        assert 'Follow mergers.fyi' not in text
+
+    def test_banner_env_var_selects_the_banner(self, monkeypatch):
+        monkeypatch.setenv('BANNER', 'signup')
+        assert 'Were you forwarded' in swe.build_html_email(_digest())
+        monkeypatch.delenv('BANNER')
+        assert swe.LINKEDIN_URL in swe.build_html_email(_digest())
