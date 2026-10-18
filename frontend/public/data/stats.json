@@ -1,10 +1,10 @@
 {
-  "total_mergers": 292,
+  "total_mergers": 293,
   "total_waivers": 457,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
-    "Under assessment": 38,
+    "Under assessment": 39,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,11 +56,11 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 170
+      "count": 171
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 84
+      "count": 85
     },
     {
       "name": "Computer System Design and Related Services",
@@ -68,7 +68,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 45
+      "count": 46
     },
     {
       "name": "Non-Residential Property Operators",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-80047",
+      "merger_name": "Thoma Bravo - Tanda",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-10-19T10:25:53+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-15048",
       "merger_name": "Camp Australia \u2013 Jabiru",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-07T12:00:00Z",
       "page_modified_datetime": "2026-10-08T18:04:48+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-05054",
-      "merger_name": "Stanmore \u2013 Exxaro Australia Holdings",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-07T12:00:00Z",
-      "page_modified_datetime": "2026-10-08T16:47:07+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

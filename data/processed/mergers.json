@@ -31531,6 +31531,90 @@
     "is_waiver": false
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/thoma-bravo-tanda",
+    "merger_name": "Thoma Bravo - Tanda",
+    "status": "Under assessment",
+    "merger_id": "MN-80047",
+    "effective_notification_datetime": "2026-10-16T12:00:00Z",
+    "original_notification_datetime": "2026-10-16T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-11-27T12:00:00Z",
+    "page_modified_datetime": "2026-10-19T10:25:53+11:00",
+    "consultation_response_due_date": "2026-10-26T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Commodore MidCo Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "700 215 336"
+      },
+      {
+        "name": "Commodore BidCo Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "700 216 342"
+      }
+    ],
+    "targets": [
+      {
+        "name": "EPI CAPITAL PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "61 158 472 943"
+      },
+      {
+        "name": "TANDA HR SERVICES PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "89 680 252 751"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Dayforce, Inc",
+        "identifier_type": null,
+        "identifier": "SEC  00138467"
+      },
+      {
+        "name": "Thoma Bravo, LP",
+        "identifier_type": null,
+        "identifier": "SEC  80173780"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "5420",
+        "name": "Software Publishing"
+      },
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      },
+      {
+        "code": "6419",
+        "name": "Other Auxiliary Finance and Investment Services"
+      },
+      {
+        "code": "6962",
+        "name": "Management Advice and Related Consulting Services"
+      }
+    ],
+    "merger_description": "Thoma Bravo, LP (**Thoma Bravo**), proposes to acquire, through entities it controls, EPI Capital Pty Ltd, Tanda HR Services Pty Ltd and other entities comprising the Tanda business (together, **Tanda**) (the **Acquisition**).\n\nThoma Bravo is a US-based investment firm with a focus on software and technology-enabled services businesses. Thoma Bravo supplies human capital management software in Australia through Dayforce Inc., a US-based global company it acquired early in 2026.\n\nTanda is an Australia-based supplier of human capital management software, with a focus on workforce management for shift and hourly workers. Tanda also supplies some products in the UK, US and Canada.",
+    "events": [
+      {
+        "date": "2026-10-19T12:00:00Z",
+        "title": "Phase 1 consultation",
+        "display_title": "Phase 1 consultation",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Thoma%20Bravo%20-%20Tanda%20-%20Questionnaire%20-%2019%20October%202026.docx",
+        "url_gh": "/mergers/MN-80047/Thoma Bravo - Tanda - Questionnaire - 19 October 2026.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-10-16T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/servicenow-veza",
     "merger_name": "ServiceNow - Veza",
     "status": "Assessment completed",

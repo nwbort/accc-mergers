@@ -56965,10 +56965,193 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 19,
-        "min_days": null,
+        "estimated_days": 10,
+        "min_days": 0,
         "max_days": 26,
-        "id_issued_estimated": "2026-09-11",
+        "id_issued_estimated": "2026-09-20",
+        "id_issued_before": "2026-09-30",
+        "id_issued_after": "2026-09-04",
+        "min_days_witness": "MN-80047",
+        "max_days_witness": "WA-80044",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/thoma-bravo-tanda",
+      "merger_name": "Thoma Bravo - Tanda",
+      "status": "Under assessment",
+      "merger_id": "MN-80047",
+      "effective_notification_datetime": "2026-10-16T12:00:00Z",
+      "original_notification_datetime": "2026-10-16T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-11-27T12:00:00Z",
+      "page_modified_datetime": "2026-10-19T10:25:53+11:00",
+      "consultation_response_due_date": "2026-10-26T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Commodore MidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "700 215 336",
+          "party_page": {
+            "id": "commodore-midco-pty-ltd",
+            "name": "Commodore MidCo Pty Ltd"
+          }
+        },
+        {
+          "name": "Commodore BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "700 216 342",
+          "party_page": {
+            "id": "commodore-bidco-pty-ltd",
+            "name": "Commodore BidCo Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "EPI CAPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "61 158 472 943",
+          "party_page": {
+            "id": "epi-capital-pty-ltd",
+            "name": "Epi Capital Pty Ltd"
+          }
+        },
+        {
+          "name": "TANDA HR SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 680 252 751",
+          "party_page": {
+            "id": "tanda-hr-services-pty-ltd",
+            "name": "Tanda Hr Services Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Dayforce, Inc",
+          "identifier_type": null,
+          "identifier": "SEC  00138467",
+          "party_page": {
+            "id": "dayforce-inc",
+            "name": "Dayforce, Inc"
+          }
+        },
+        {
+          "name": "Thoma Bravo, LP",
+          "identifier_type": null,
+          "identifier": "SEC  80173780",
+          "party_page": {
+            "id": "thoma-bravo-lp",
+            "name": "Thoma Bravo, LP"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        }
+      ],
+      "merger_description": "Thoma Bravo, LP (**Thoma Bravo**), proposes to acquire, through entities it controls, EPI Capital Pty Ltd, Tanda HR Services Pty Ltd and other entities comprising the Tanda business (together, **Tanda**) (the **Acquisition**).\n\nThoma Bravo is a US-based investment firm with a focus on software and technology-enabled services businesses. Thoma Bravo supplies human capital management software in Australia through Dayforce Inc., a US-based global company it acquired early in 2026.\n\nTanda is an Australia-based supplier of human capital management software, with a focus on workforce management for shift and hourly workers. Tanda also supplies some products in the UK, US and Canada.",
+      "events": [
+        {
+          "date": "2026-10-19T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Thoma%20Bravo%20-%20Tanda%20-%20Questionnaire%20-%2019%20October%202026.docx",
+          "url_gh": "/mergers/MN-80047/Thoma Bravo - Tanda - Questionnaire - 19 October 2026.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-16T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-10029",
+          "merger_name": "Wollemi Nominees 2 Pty Ltd & Ors \u2013 Establishment of WEG Australian Investment Trust and related acquisitions",
+          "acquirers": [
+            "Wollemi Nominees 2 Pty Ltd atf WEG Australian Investment Trust",
+            "REST NOMINEES NO.1 PTY LIMITED"
+          ],
+          "targets": [
+            "WOLLEMI ENERGY GROUP HOLDINGS PTY LTD",
+            "Wollemi Nominees Pty Ltd atf Wollemi Investment Trust No 1"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-01108",
+          "merger_name": "Oakley Capital \u2013 XTEL",
+          "acquirers": [
+            "Oakley Eloa Luxco S.\u00e0 r.l."
+          ],
+          "targets": [
+            "Bond Lux Co-Invest S.\u00e0 r.l."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-50029",
+          "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+          "acquirers": [
+            "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
+            "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD"
+          ],
+          "targets": [
+            "Latitude Landowner Pty Ltd",
+            "The Trustee for Latitude Landowning Trust"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 180,
+        "as_of": "2026-10-16",
+        "estimated_at": "2026-10-18",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 26,
+        "min_days": null,
+        "max_days": 42,
+        "id_issued_estimated": "2026-09-20",
         "id_issued_before": null,
         "id_issued_after": "2026-09-04",
         "min_days_witness": null,

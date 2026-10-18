@@ -376,6 +376,41 @@
       },
       "waiver_duration": null
     },
+    "thoma-bravo-lp": {
+      "id": "thoma-bravo-lp",
+      "canonical_name": "Thoma Bravo, LP",
+      "members": [
+        {
+          "name": "Thoma Bravo, LP",
+          "identifier": "SEC  80173780",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-80047",
+            "merger_name": "Thoma Bravo - Tanda",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "wearable-technologies-limited": {
       "id": "wearable-technologies-limited",
       "canonical_name": "Wearable Technologies Limited",

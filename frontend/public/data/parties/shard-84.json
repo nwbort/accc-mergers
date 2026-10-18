@@ -165,6 +165,41 @@
       },
       "waiver_duration": null
     },
+    "tanda-hr-services-pty-ltd": {
+      "id": "tanda-hr-services-pty-ltd",
+      "canonical_name": "Tanda Hr Services Pty Ltd",
+      "members": [
+        {
+          "name": "TANDA HR SERVICES PTY LTD",
+          "identifier": "89 680 252 751",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80047",
+            "merger_name": "Thoma Bravo - Tanda",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "the-trustee-for-the-liosis-belegris-trust": {
       "id": "the-trustee-for-the-liosis-belegris-trust",
       "canonical_name": "The Trustee For The Liosis-Belegris Trust",
