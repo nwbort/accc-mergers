@@ -197,3 +197,35 @@ class TestTextEmail:
 
         assert 'Cleared              : 1\n' in text
         assert 'with conditions' not in text
+
+
+class TestHeaderBanner:
+    # 2026-03-02 is not a feedback week; 2026-02-23 is (weeks since 2024-01-01 % 8 == 0).
+    def test_ordinary_week_links_to_linkedin_and_bluesky(self):
+        html = swe.build_html_email(_digest())
+        assert f'href="{swe.LINKEDIN_URL}"' in html
+        assert f'href="{swe.BLUESKY_URL}"' in html
+        text = swe.build_text_email(_digest())
+        assert swe.LINKEDIN_URL in text and swe.BLUESKY_URL in text
+
+    def test_feedback_week_keeps_the_feedback_ask_instead(self):
+        digest = _digest()
+        digest['period_start'] = '2026-02-23T00:00:00+11:00'
+        assert swe._is_feedback_week(digest['period_start'])
+        html = swe.build_html_email(digest)
+        assert 'market gossip' in html
+        assert swe.LINKEDIN_URL not in html
+
+    def test_signup_banner_restores_the_forwarded_prompt(self):
+        html = swe.build_html_email(_digest(), banner='signup')
+        assert 'Were you forwarded this email?' in html
+        assert swe.LINKEDIN_URL not in html
+        text = swe.build_text_email(_digest(), banner='signup')
+        assert swe.LINKEDIN_URL not in text
+        assert 'Follow mergers.fyi' not in text
+
+    def test_banner_env_var_selects_the_banner(self, monkeypatch):
+        monkeypatch.setenv('BANNER', 'signup')
+        assert 'Were you forwarded' in swe.build_html_email(_digest())
+        monkeypatch.delenv('BANNER')
+        assert swe.LINKEDIN_URL in swe.build_html_email(_digest())

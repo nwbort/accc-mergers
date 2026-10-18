@@ -20,6 +20,14 @@ on:
         options:
           - production
           - test
+      banner:
+        description: 'Banner under the header (feedback weeks override it)'
+        required: false
+        default: 'social'
+        type: choice
+        options:
+          - social
+          - signup
 
 jobs:
   send-email:
@@ -52,6 +60,8 @@ jobs:
           # Scheduled runs have no inputs and default to production
           AUDIENCE: ${{ inputs.audience || 'production' }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          # social: follow us on LinkedIn/Bluesky; signup: "were you forwarded this?"
+          BANNER: ${{ inputs.banner || 'social' }}
         run: python -m scripts.send_weekly_email
 
       - name: Upload rendered HTML preview
