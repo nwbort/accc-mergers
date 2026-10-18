@@ -129,11 +129,16 @@ function MergerDetail() {
   // collapsed run of appeal documents, so that run is expanded (synchronously,
   // so the row exists) before scrolling. Handled once per navigation
   // (location.key), so a background refresh of the data doesn't yank the page
-  // back.
+  // back. The hash is then dropped from the address bar: it has done its job,
+  // and a reload or shared link shouldn't keep jumping to the event.
   const [highlightedAnchor, setHighlightedAnchor] = useState(null);
   const handledNavigationRef = useRef(null);
   useEffect(() => {
     if (!merger || !location.hash) return;
+    // Wait for the canonical-URL redirect above, which carries the hash over.
+    // Dropping the hash before it lands would leave ScrollToTop seeing a
+    // pathname change with no hash, and it would scroll back to the top.
+    if (location.pathname !== mergerPath(merger.merger_id, merger.merger_name)) return;
     if (handledNavigationRef.current === location.key) return;
     const anchor = decodeURIComponent(location.hash.slice(1));
     const events = sortEventsNewestFirst(merger.events);
@@ -147,13 +152,15 @@ function MergerDetail() {
         });
       }
       const el = document.getElementById(anchor);
-      if (!el) return;
-      const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-      el.scrollIntoView?.({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
-      setHighlightedAnchor(anchor);
+      if (el) {
+        const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+        el.scrollIntoView?.({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+        setHighlightedAnchor(anchor);
+      }
+      navigate(location.pathname + location.search, { replace: true, state: location.state });
     });
     return () => cancelAnimationFrame(frame);
-  }, [merger, location.hash, location.key]);
+  }, [merger, location, navigate]);
 
   useEffect(() => {
     if (!highlightedAnchor) return;
