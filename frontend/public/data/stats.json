@@ -1,10 +1,10 @@
 {
-  "total_mergers": 295,
+  "total_mergers": 296,
   "total_waivers": 457,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -76,7 +76,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 37
+      "count": 38
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -87,11 +87,11 @@
       "count": 25
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 22
+      "name": "Cafes and Restaurants",
+      "count": 23
     },
     {
-      "name": "Cafes and Restaurants",
+      "name": "Supermarket and Grocery Stores",
       "count": 22
     }
   ],
@@ -113,6 +113,16 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-17T12:00:00Z",
       "page_modified_datetime": "2026-10-19T13:54:38+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-70047",
+      "merger_name": "Australian Venue Co \u2013 assets of Molly\u2019s Irish Pub, Highgate and Molly\u2019s Irish Pub, Victoria Park, Perth",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-10-19T15:22:48+11:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-09T12:00:00Z",
       "page_modified_datetime": "2026-10-12T11:43:44+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75031",
-      "merger_name": "VetPartners \u2013 VetLove",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-10-09T15:48:12+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

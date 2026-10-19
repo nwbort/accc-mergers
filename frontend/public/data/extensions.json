@@ -1,24 +1,24 @@
 {
   "summary": {
-    "notifications_total": 295,
-    "matters_extended": 21,
-    "share_extended_pct": 7.1,
-    "extension_events_total": 32,
-    "total_extension_bd": 348,
-    "median_matter_extension_bd": 14.5,
+    "notifications_total": 296,
+    "matters_extended": 22,
+    "share_extended_pct": 7.4,
+    "extension_events_total": 33,
+    "total_extension_bd": 363,
+    "median_matter_extension_bd": 15,
     "longest_single_bd": 30,
     "phase_2_total": 9,
     "extended_escalated_to_phase_2": 8,
-    "escalation_rate_given_extension_pct": 38.1,
+    "escalation_rate_given_extension_pct": 36.4,
     "phase_2_preceded_by_extension_pct": 88.9,
-    "base_phase_2_rate_pct": 3.1,
+    "base_phase_2_rate_pct": 3.0,
     "statutory_phase_1_bd": 30
   },
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 22,
-      "business_days": 246
+      "events": 23,
+      "business_days": 261
     },
     {
       "category": "ACCC information request",
@@ -66,7 +66,7 @@
     },
     {
       "month": "2026-10",
-      "count": 4
+      "count": 5
     }
   ],
   "matters": [
@@ -298,6 +298,27 @@
           "reason_category": "ACCC information request",
           "reason_detail": "request for further information",
           "title": "Timeline extended by 20 business days - following request for further information"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55024",
+      "merger_name": "PSP Investments - AAA Egg Company",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 15,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-10-19T12:00:00Z",
+          "business_days": 15,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 15 business days \u2013 following request by parties"
         }
       ]
     },
