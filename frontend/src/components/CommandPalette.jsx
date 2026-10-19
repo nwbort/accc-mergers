@@ -5,18 +5,37 @@ import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 import { buildSearchIndex, searchMergers } from '../utils/searchIndex';
 import { fetchAllMergers } from '../utils/fetchAllMergers';
-import { mergerPath, partyPath } from '../utils/slug';
+import { industryPath, mergerPath, partyPath } from '../utils/slug';
 import { NAV_PAGES } from '../constants/navPages';
 
 const PAGES = NAV_PAGES.filter((p) => p.inPalette)
   .sort((a, b) => a.paletteOrder - b.paletteOrder)
   .map(({ path, label }) => ({ path, label }));
 
-// Mergers and parties share one combined budget of rows. By default it's
-// split evenly, but each group can borrow the other's unused capacity — so
-// two party matches leaves room for six mergers, and vice versa.
+// Mergers, parties and industries share one combined budget of rows. Each
+// group is guaranteed an even share, and the rest is handed round-robin to
+// whichever groups still have matches — so two party matches and no industry
+// matches leaves room for four mergers, and vice versa.
 const MAX_ENTITY_RESULTS = 6;
-const HALF_ENTITY_RESULTS = MAX_ENTITY_RESULTS / 2;
+const GROUP_COUNT = 3;
+const GUARANTEED_PER_GROUP = MAX_ENTITY_RESULTS / GROUP_COUNT;
+
+function shareBudget(matchCounts) {
+  const limits = matchCounts.map((n) => Math.min(n, GUARANTEED_PER_GROUP));
+  let spare = MAX_ENTITY_RESULTS - limits.reduce((a, b) => a + b, 0);
+  let grew = true;
+  while (spare > 0 && grew) {
+    grew = false;
+    for (let i = 0; i < limits.length && spare > 0; i++) {
+      if (limits[i] < matchCounts[i]) {
+        limits[i] += 1;
+        spare -= 1;
+        grew = true;
+      }
+    }
+  }
+  return limits;
+}
 
 // The parties list is cached as the whole `parties.json` payload
 // ({ parties, total_parties }) under this key by the Parties page.
@@ -24,6 +43,13 @@ const PARTIES_CACHE_KEY = 'parties-list';
 
 function cachedParties() {
   return dataCache.get(PARTIES_CACHE_KEY)?.parties || [];
+}
+
+// Likewise the whole `industries.json` payload, cached by the Industries page.
+const INDUSTRIES_CACHE_KEY = 'industries-list';
+
+function cachedIndustries() {
+  return dataCache.get(INDUSTRIES_CACHE_KEY)?.industries || [];
 }
 
 export default function CommandPalette({ isOpen, onClose }) {
@@ -43,6 +69,8 @@ export default function CommandPalette({ isOpen, onClose }) {
   const [mergersLoading, setMergersLoading] = useState(false);
   const [parties, setParties] = useState(() => cachedParties());
   const [partiesLoading, setPartiesLoading] = useState(false);
+  const [industries, setIndustries] = useState(() => cachedIndustries());
+  const [industriesLoading, setIndustriesLoading] = useState(false);
 
   // Reset state on open (adjusting state during render rather than in an
   // effect, per https://react.dev/learn/you-might-not-need-an-effect).
@@ -64,6 +92,12 @@ export default function CommandPalette({ isOpen, onClose }) {
         setParties(cachedPartyList);
       } else {
         setPartiesLoading(true);
+      }
+      const cachedIndustryList = cachedIndustries();
+      if (cachedIndustryList.length) {
+        setIndustries(cachedIndustryList);
+      } else {
+        setIndustriesLoading(true);
       }
     }
   }
@@ -99,6 +133,22 @@ export default function CommandPalette({ isOpen, onClose }) {
       .finally(() => setPartiesLoading(false));
   }, [isOpen]);
 
+  // Lazily fetch the industries list, sharing the Industries page's cache entry.
+  useEffect(() => {
+    if (!isOpen || dataCache.has(INDUSTRIES_CACHE_KEY)) return;
+    fetch(API_ENDPOINTS.industries)
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch industries');
+        return res.json();
+      })
+      .then((json) => {
+        dataCache.set(INDUSTRIES_CACHE_KEY, json);
+        setIndustries(json?.industries || []);
+      })
+      .catch((err) => console.error('Command palette failed to load industries:', err))
+      .finally(() => setIndustriesLoading(false));
+  }, [isOpen]);
+
   const trimmedQuery = query.trim();
 
   const pageResults = useMemo(() => {
@@ -124,29 +174,40 @@ export default function CommandPalette({ isOpen, onClose }) {
       .slice(0, MAX_ENTITY_RESULTS);
   }, [trimmedQuery, parties]);
 
-  // Divide the shared budget: each group is guaranteed its even half, and may
-  // grow into whatever the other group leaves unused.
-  const [mergerResults, partyResults] = useMemo(() => {
-    const mergerLimit = Math.min(
+  const industryMatches = useMemo(() => {
+    if (!trimmedQuery) return [];
+    const q = trimmedQuery.toLowerCase();
+    return industries
+      .filter((i) => i.name.toLowerCase().includes(q) || String(i.code).startsWith(q))
+      .sort((a, b) => b.merger_count - a.merger_count || a.name.localeCompare(b.name))
+      .slice(0, MAX_ENTITY_RESULTS);
+  }, [trimmedQuery, industries]);
+
+  const [mergerResults, partyResults, industryResults] = useMemo(() => {
+    const [mergerLimit, partyLimit, industryLimit] = shareBudget([
       mergerMatches.length,
-      Math.max(HALF_ENTITY_RESULTS, MAX_ENTITY_RESULTS - partyMatches.length)
-    );
-    const partyLimit = Math.min(
       partyMatches.length,
-      Math.max(HALF_ENTITY_RESULTS, MAX_ENTITY_RESULTS - mergerMatches.length)
-    );
-    return [mergerMatches.slice(0, mergerLimit), partyMatches.slice(0, partyLimit)];
-  }, [mergerMatches, partyMatches]);
+      industryMatches.length,
+    ]);
+    return [
+      mergerMatches.slice(0, mergerLimit),
+      partyMatches.slice(0, partyLimit),
+      industryMatches.slice(0, industryLimit),
+    ];
+  }, [mergerMatches, partyMatches, industryMatches]);
 
   const showMergersGroup = trimmedQuery && (mergersLoading || mergerResults.length > 0);
   const showPartiesGroup = trimmedQuery && (partiesLoading || partyResults.length > 0);
+  const showIndustriesGroup = trimmedQuery && (industriesLoading || industryResults.length > 0);
   const noResults =
     trimmedQuery &&
     !mergersLoading &&
     !partiesLoading &&
+    !industriesLoading &&
     pageResults.length === 0 &&
     mergerResults.length === 0 &&
-    partyResults.length === 0;
+    partyResults.length === 0 &&
+    industryResults.length === 0;
 
   // Flattened list of selectable rows, in display order, so arrow keys can
   // move through both groups without caring which one an index belongs to.
@@ -166,8 +227,15 @@ export default function CommandPalette({ isOpen, onClose }) {
         key: `party:${p.id}`,
       });
     });
+    industryResults.forEach((i) => {
+      list.push({
+        type: 'industry',
+        path: industryPath(i.code, i.name),
+        key: `industry:${i.code}`,
+      });
+    });
     return list;
-  }, [pageResults, mergerResults, partyResults]);
+  }, [pageResults, mergerResults, partyResults, industryResults]);
 
   // Clamp selection when the result set shrinks (e.g. typing narrows results).
   const [prevItemsLength, setPrevItemsLength] = useState(items.length);
@@ -272,7 +340,7 @@ export default function CommandPalette({ isOpen, onClose }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Search pages, mergers and parties…"
+            placeholder="Search pages, mergers, parties and industries…"
             className="flex-1 bg-transparent text-sm text-gray-900 placeholder-gray-500 focus:outline-none"
             role="combobox"
             aria-expanded="true"
@@ -397,6 +465,43 @@ export default function CommandPalette({ isOpen, onClose }) {
                     }`}
                   >
                     {p.name}
+                  </li>
+                );
+              })}
+            </>
+          )}
+
+          {showIndustriesGroup && (
+            <>
+              <li
+                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide"
+                role="presentation"
+              >
+                Industries
+              </li>
+              {industriesLoading && industryResults.length === 0 && (
+                <li className="px-4 py-2 text-sm text-gray-500" role="presentation">
+                  Loading industries…
+                </li>
+              )}
+              {industryResults.map((i) => {
+                const key = `industry:${i.code}`;
+                const selected = key === selectedKey;
+                const path = industryPath(i.code, i.name);
+                return (
+                  <li
+                    key={key}
+                    id={key}
+                    role="option"
+                    aria-selected={selected}
+                    data-selected={selected}
+                    onMouseEnter={() => setSelectedIndex(items.findIndex((it) => it.key === key))}
+                    onClick={() => goTo(path)}
+                    className={`px-4 py-2 text-sm cursor-pointer truncate ${
+                      selected ? 'bg-primary/10 text-primary' : 'text-gray-700'
+                    }`}
+                  >
+                    {i.name}
                   </li>
                 );
               })}
