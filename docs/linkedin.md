@@ -135,7 +135,7 @@ own post box with the post already written. Nothing goes out until you press
   app. The ntfy docs don't say whether the iOS app supports it.
 - The text is the API post as plain text. The matter's link sits just above
   the hashtags, so LinkedIn turns it into the matter page's preview card. The
-  text and the full link are also in the notification body.
+  notification body is the full link alone.
 - The post box posts as whoever is signed in. To post as the page, switch the
   author to the page in the post box, or paste the text into the page's own
   "Create a post" box.

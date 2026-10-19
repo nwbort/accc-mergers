@@ -7,8 +7,8 @@ own composer with the post already written, and sends it as an ntfy
 notification (``NTFY_TOPIC``) whose "Copy LinkedIn link" button puts the link
 on the clipboard, to paste into a browser. It has to be a browser: a phone
 hands linkedin.com links to the LinkedIn app, which opens without the text, so
-tapping the notification itself opens the matter page instead. The text and the
-full link are in the notification body too. Nothing is posted until a person presses Post.
+tapping the notification itself opens the matter page instead. The notification
+body is the link alone. Nothing is posted until a person presses Post.
 
 The post is the same one the API would make, as plain text rather than in
 LinkedIn's "little" format (the composer escapes what a person types). The
@@ -69,18 +69,6 @@ def share_url(milestone: Milestone) -> str:
     return f"{SHARE_URL}?{urlencode({'shareActive': 'true', 'text': share_text(milestone)})}"
 
 
-NTFY_MESSAGE_LIMIT = 4000
-
-
-def notification_body(milestone: Milestone) -> str:
-    """The post text followed by the full composer link, so the link can be
-    copied from the body as well as from the button. If both won't fit under
-    ntfy's cap the text goes: the link carries it anyway."""
-    link = share_url(milestone)
-    body = f"{share_text(milestone)}\n\n{link}"
-    return body if len(body) <= NTFY_MESSAGE_LIMIT else link
-
-
 def notify(milestone: Milestone, *, topic: str, server: str, token: str = "") -> bool:
     """Send one milestone's link to ntfy. ``True`` if the server took it."""
     headers = {"Authorization": f"Bearer {token}"} if token else {}
@@ -90,7 +78,7 @@ def notify(milestone: Milestone, *, topic: str, server: str, token: str = "") ->
             json={
                 "topic": topic,
                 "title": f"Post to LinkedIn: {milestone.headline}"[:200],
-                "message": notification_body(milestone),
+                "message": share_url(milestone),
                 # Not the share link: a phone hands linkedin.com links to the
                 # LinkedIn app, which opens without the text. The link is
                 # copied instead, to paste into a browser.
