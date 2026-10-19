@@ -2,6 +2,57 @@
   "shard": 98,
   "shard_count": 256,
   "parties": {
+    "allegro-funds": {
+      "id": "allegro-funds",
+      "canonical_name": "Allegro Funds",
+      "members": [
+        {
+          "name": "ALLEGRO SIDE CAR SERVICES III E PTY LTD",
+          "identifier": "24 657 393 050",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Allegro Fund III GP Co Pty Limited",
+          "identifier": "620 410 764",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Allegro Services III D Pty Ltd",
+          "identifier": "621 451 705",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Allegro Side Car Services III A Pty Limited",
+          "identifier": "621 402 702",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-15048",
+            "merger_name": "Camp Australia \u2013 Jabiru",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-15T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "msc-group-co-pty-ltd": {
       "id": "msc-group-co-pty-ltd",
       "canonical_name": "Msc Group Co Pty Ltd",

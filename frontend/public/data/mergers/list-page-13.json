@@ -1718,7 +1718,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Kirin Holdings Company, Limited"
+          "name": "Kirin Holdings Company, Limited",
+          "canonical": {
+            "name": "Kirin"
+          }
         }
       ],
       "targets": [
@@ -1731,13 +1734,22 @@
       ],
       "other_parties": [
         {
-          "name": "Kirin Health Science International Pty Ltd"
+          "name": "Kirin Health Science International Pty Ltd",
+          "canonical": {
+            "name": "Kirin"
+          }
         },
         {
-          "name": "Jamieson Health Products Australia Pty Ltd"
+          "name": "Jamieson Health Products Australia Pty Ltd",
+          "canonical": {
+            "name": "Jamieson Wellness Inc."
+          }
         },
         {
-          "name": "Blackmores Limited"
+          "name": "Blackmores Limited",
+          "canonical": {
+            "name": "Kirin"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2124,10 +2136,16 @@
       ],
       "targets": [
         {
-          "name": "WINTIME NOMINEES PTY LTD"
+          "name": "WINTIME NOMINEES PTY LTD",
+          "canonical": {
+            "name": "Night Owl Group"
+          }
         },
         {
-          "name": "SUNLINER HOLDINGS PTY LTD"
+          "name": "SUNLINER HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "Night Owl Group"
+          }
         }
       ],
       "other_parties": [],

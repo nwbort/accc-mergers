@@ -17,7 +17,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Kirin Holdings Company, Limited"
+          "name": "Kirin Holdings Company, Limited",
+          "canonical": {
+            "name": "Kirin"
+          }
         }
       ],
       "targets": [
@@ -30,13 +33,22 @@
       ],
       "other_parties": [
         {
-          "name": "KIRIN HEALTH SCIENCE INTERNATIONAL PTY LIMITED"
+          "name": "KIRIN HEALTH SCIENCE INTERNATIONAL PTY LIMITED",
+          "canonical": {
+            "name": "Kirin"
+          }
         },
         {
-          "name": "BLACKMORES LIMITED"
+          "name": "BLACKMORES LIMITED",
+          "canonical": {
+            "name": "Kirin"
+          }
         },
         {
-          "name": "JAMIESON HEALTH PRODUCTS AUSTRALIA PTY LTD"
+          "name": "JAMIESON HEALTH PRODUCTS AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "Jamieson Wellness Inc."
+          }
         }
       ],
       "anzsic_codes": [
@@ -75,10 +87,16 @@
       ],
       "targets": [
         {
-          "name": "The Trustee for NT & LB Unit Trust VP"
+          "name": "The Trustee for NT & LB Unit Trust VP",
+          "canonical": {
+            "name": "Toucan Hospitality (Molly\u2019s Irish Pub)"
+          }
         },
         {
-          "name": "The Trustee for NT & LB Unit Trust"
+          "name": "The Trustee for NT & LB Unit Trust",
+          "canonical": {
+            "name": "Toucan Hospitality (Molly\u2019s Irish Pub)"
+          }
         }
       ],
       "other_parties": [],
@@ -110,26 +128,44 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Commodore MidCo Pty Ltd"
+          "name": "Commodore MidCo Pty Ltd",
+          "canonical": {
+            "name": "Thoma Bravo"
+          }
         },
         {
-          "name": "Commodore BidCo Pty Ltd"
+          "name": "Commodore BidCo Pty Ltd",
+          "canonical": {
+            "name": "Thoma Bravo"
+          }
         }
       ],
       "targets": [
         {
-          "name": "EPI CAPITAL PTY LTD"
+          "name": "EPI CAPITAL PTY LTD",
+          "canonical": {
+            "name": "Tanda"
+          }
         },
         {
-          "name": "TANDA HR SERVICES PTY LTD"
+          "name": "TANDA HR SERVICES PTY LTD",
+          "canonical": {
+            "name": "Tanda"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "Dayforce, Inc"
+          "name": "Dayforce, Inc",
+          "canonical": {
+            "name": "Thoma Bravo"
+          }
         },
         {
-          "name": "Thoma Bravo, LP"
+          "name": "Thoma Bravo, LP",
+          "canonical": {
+            "name": "Thoma Bravo"
+          }
         }
       ],
       "anzsic_codes": [
@@ -168,10 +204,16 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "ABB Ltd"
+          "name": "ABB Ltd",
+          "canonical": {
+            "name": "ABB"
+          }
         },
         {
-          "name": "ABB Automation Holding UK Ltd"
+          "name": "ABB Automation Holding UK Ltd",
+          "canonical": {
+            "name": "ABB"
+          }
         }
       ],
       "targets": [
@@ -220,26 +262,44 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "The Trustee for RC Healey Trust"
+          "name": "The Trustee for RC Healey Trust",
+          "canonical": {
+            "name": "IPLiving"
+          }
         },
         {
-          "name": "The Trustee for RC Woniora Trust"
+          "name": "The Trustee for RC Woniora Trust",
+          "canonical": {
+            "name": "IPLiving"
+          }
         }
       ],
       "targets": [
         {
-          "name": "WONIORA MANAGEMENT PTY. LTD."
+          "name": "WONIORA MANAGEMENT PTY. LTD.",
+          "canonical": {
+            "name": "Springwood Living Group"
+          }
         },
         {
-          "name": "HEALEY MANAGEMENT PTY LTD"
+          "name": "HEALEY MANAGEMENT PTY LTD",
+          "canonical": {
+            "name": "Springwood Living Group"
+          }
         },
         {
-          "name": "SPRINGWOOD LIVING GROUP PTY LTD"
+          "name": "SPRINGWOOD LIVING GROUP PTY LTD",
+          "canonical": {
+            "name": "Springwood Living Group"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "The Trustee for RC Platform Trust"
+          "name": "The Trustee for RC Platform Trust",
+          "canonical": {
+            "name": "IPLiving"
+          }
         }
       ],
       "anzsic_codes": [
@@ -274,10 +334,16 @@
       ],
       "targets": [
         {
-          "name": "WINTIME NOMINEES PTY LTD"
+          "name": "WINTIME NOMINEES PTY LTD",
+          "canonical": {
+            "name": "Night Owl Group"
+          }
         },
         {
-          "name": "SUNLINER HOLDINGS PTY LTD"
+          "name": "SUNLINER HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "Night Owl Group"
+          }
         }
       ],
       "other_parties": [

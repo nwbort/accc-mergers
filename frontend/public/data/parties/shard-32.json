@@ -306,6 +306,16 @@
       "canonical_name": "Johns Lyng Group",
       "members": [
         {
+          "name": "BRIGHT & DUGGAN GROUP PTY LTD",
+          "identifier": "63 633 379 629",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "CIVIUM STRATA HOLDINGS PTY LTD",
+          "identifier": "22 700 760 845",
+          "identifier_type": "ABN"
+        },
+        {
           "name": "JOHNS LYNG GROUP LIMITED",
           "identifier": "86 620 466 248",
           "identifier_type": "ABN"
@@ -318,6 +328,18 @@
       ],
       "mergers": {
         "acquirer": [
+          {
+            "merger_id": "MN-95043",
+            "merger_name": "Bright & Duggan \u2013 Civium",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-02T12:00:00Z",
+            "determination_date": null
+          },
           {
             "merger_id": "MN-75035",
             "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
@@ -333,18 +355,6 @@
         ],
         "target": [],
         "other": [
-          {
-            "merger_id": "MN-95043",
-            "merger_name": "Bright & Duggan \u2013 Civium",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-02T12:00:00Z",
-            "determination_date": null
-          },
           {
             "merger_id": "WA-35044",
             "merger_name": "Steamatic Australia \u2013 Steamatic Epsom franchisee",
@@ -376,65 +386,6 @@
         "median_days": 33,
         "average_business_days": 23.0,
         "median_business_days": 23,
-        "completed_count": 1
-      }
-    },
-    "kirin-health-science-international-pty-ltd": {
-      "id": "kirin-health-science-international-pty-ltd",
-      "canonical_name": "Kirin Health Science International Pty Ltd",
-      "members": [
-        {
-          "name": "KIRIN HEALTH SCIENCE INTERNATIONAL PTY LIMITED",
-          "identifier": "14 667 868 448",
-          "identifier_type": "ABN"
-        },
-        {
-          "name": "Kirin Health Science International Pty Ltd",
-          "identifier": "14 667 868 448",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "MN-55040",
-            "merger_name": "Kirin \u2013 Jamieson Wellness",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-15T12:00:00Z",
-            "determination_date": null
-          },
-          {
-            "merger_id": "WA-60042",
-            "merger_name": "Kirin \u2013 Jamieson Wellness",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Not approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-08-20T12:00:00Z",
-            "determination_date": "2026-09-15T12:00:00Z"
-          }
-        ]
-      },
-      "merger_count": 2,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 1,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": {
-        "average_days": 26.0,
-        "median_days": 26,
-        "average_business_days": 18.0,
-        "median_business_days": 18,
         "completed_count": 1
       }
     },

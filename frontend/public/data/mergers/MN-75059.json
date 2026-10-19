@@ -24,27 +24,39 @@
       "name": "FSS Liberty Pty Ltd as trustee for FSS Liberty Trust",
       "identifier_type": "ABN",
       "identifier": "57 628 000 242",
+      "canonical": {
+        "id": "aware-super-pty-limited",
+        "name": "Aware Super Pty Limited"
+      },
       "party_page": {
-        "id": "fss-liberty-pty-ltd-as-trustee-for-fss-liberty-trust",
-        "name": "FSS Liberty Pty Ltd as trustee for FSS Liberty Trust"
+        "id": "aware-super-pty-limited",
+        "name": "Aware Super Pty Limited"
       }
     },
     {
       "name": "SERV HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "71 627 986 270",
+      "canonical": {
+        "id": "serv",
+        "name": "SERV"
+      },
       "party_page": {
-        "id": "serv-holdings-pty-ltd",
-        "name": "Serv Holdings Pty Ltd"
+        "id": "serv",
+        "name": "SERV"
       }
     },
     {
       "name": "SERV HOLDINGS TRUST",
       "identifier_type": "ABN",
       "identifier": "91 458 812 703",
+      "canonical": {
+        "id": "serv",
+        "name": "SERV"
+      },
       "party_page": {
-        "id": "serv-holdings-trust",
-        "name": "Serv Holdings Trust"
+        "id": "serv",
+        "name": "SERV"
       }
     }
   ],

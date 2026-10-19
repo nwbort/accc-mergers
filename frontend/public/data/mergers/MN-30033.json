@@ -13,9 +13,13 @@
       "name": "B&H TRAILERS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "85 698 067 533",
+      "canonical": {
+        "id": "brown-hurley",
+        "name": "Brown & Hurley"
+      },
       "party_page": {
-        "id": "b-h-trailers-pty-ltd",
-        "name": "B&H Trailers Pty Ltd"
+        "id": "brown-hurley",
+        "name": "Brown & Hurley"
       }
     }
   ],
@@ -24,9 +28,13 @@
       "name": "SCHMITZ CARGOBULL VICTORIA HOLDING PTY LTD",
       "identifier_type": "ACN",
       "identifier": "666 275 878",
+      "canonical": {
+        "id": "schmitz-cargobull",
+        "name": "Schmitz Cargobull"
+      },
       "party_page": {
-        "id": "schmitz-cargobull-victoria-holding-pty-ltd",
-        "name": "Schmitz Cargobull Victoria Holding Pty Ltd"
+        "id": "schmitz-cargobull",
+        "name": "Schmitz Cargobull"
       }
     }
   ],
@@ -35,18 +43,26 @@
       "name": "THE BROWN & HURLEY GROUP PTY LTD",
       "identifier_type": "ABN",
       "identifier": "66 010 732 966",
+      "canonical": {
+        "id": "brown-hurley",
+        "name": "Brown & Hurley"
+      },
       "party_page": {
-        "id": "the-brown-hurley-group-pty-ltd",
-        "name": "The Brown & Hurley Group Pty Ltd"
+        "id": "brown-hurley",
+        "name": "Brown & Hurley"
       }
     },
     {
       "name": "Schmitz Cargobull Australia Holding Pty Ltd",
       "identifier_type": "ACN",
       "identifier": "666 202 517",
+      "canonical": {
+        "id": "schmitz-cargobull",
+        "name": "Schmitz Cargobull"
+      },
       "party_page": {
-        "id": "schmitz-cargobull-australia-holding-pty-ltd",
-        "name": "Schmitz Cargobull Australia Holding Pty Ltd"
+        "id": "schmitz-cargobull",
+        "name": "Schmitz Cargobull"
       }
     },
     {

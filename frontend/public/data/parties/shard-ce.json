@@ -395,32 +395,32 @@
       },
       "waiver_duration": null
     },
-    "the-trustee-for-nt-lb-unit-trust-vp": {
-      "id": "the-trustee-for-nt-lb-unit-trust-vp",
-      "canonical_name": "The Trustee for NT & LB Unit Trust VP",
+    "tcl-electronics": {
+      "id": "tcl-electronics",
+      "canonical_name": "TCL Electronics",
       "members": [
         {
-          "name": "The Trustee for NT & LB Unit Trust VP",
-          "identifier": "81 689 024 696",
-          "identifier_type": "ABN"
+          "name": "TTE Corporation",
+          "identifier": "593939",
+          "identifier_type": null
         }
       ],
       "mergers": {
-        "acquirer": [],
-        "target": [
+        "acquirer": [
           {
-            "merger_id": "MN-70047",
-            "merger_name": "Australian Venue Co \u2013 assets of Molly\u2019s Irish Pub, Highgate and Molly\u2019s Irish Pub, Victoria Park, Perth",
+            "merger_id": "MN-65038",
+            "merger_name": "TCL Electronics \u2013 Sony\u2019s home entertainment business",
             "is_waiver": false,
             "status": "Under assessment",
             "determination": null,
             "has_conditions": false,
             "under_appeal": false,
             "phase": "Phase 1",
-            "notification_date": "2026-10-16T12:00:00Z",
+            "notification_date": "2026-10-09T12:00:00Z",
             "determination_date": null
           }
         ],
+        "target": [],
         "other": []
       },
       "merger_count": 1,

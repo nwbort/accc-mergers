@@ -13,18 +13,26 @@
       "name": "The Trustee for RC Healey Trust",
       "identifier_type": "ABN",
       "identifier": "38 385 511 812",
+      "canonical": {
+        "id": "ipliving",
+        "name": "IPLiving"
+      },
       "party_page": {
-        "id": "the-trustee-for-rc-healey-trust",
-        "name": "The Trustee for RC Healey Trust"
+        "id": "ipliving",
+        "name": "IPLiving"
       }
     },
     {
       "name": "The Trustee for RC Woniora Trust",
       "identifier_type": "ABN",
       "identifier": "65 769 659 590",
+      "canonical": {
+        "id": "ipliving",
+        "name": "IPLiving"
+      },
       "party_page": {
-        "id": "the-trustee-for-rc-woniora-trust",
-        "name": "The Trustee for RC Woniora Trust"
+        "id": "ipliving",
+        "name": "IPLiving"
       }
     }
   ],
@@ -33,27 +41,39 @@
       "name": "WONIORA MANAGEMENT PTY. LTD.",
       "identifier_type": "ABN",
       "identifier": "80 169 197 871",
+      "canonical": {
+        "id": "springwood-living-group",
+        "name": "Springwood Living Group"
+      },
       "party_page": {
-        "id": "woniora-management-pty-ltd",
-        "name": "Woniora Management Pty. Ltd."
+        "id": "springwood-living-group",
+        "name": "Springwood Living Group"
       }
     },
     {
       "name": "HEALEY MANAGEMENT PTY LTD",
       "identifier_type": "ABN",
       "identifier": "66 168 152 449",
+      "canonical": {
+        "id": "springwood-living-group",
+        "name": "Springwood Living Group"
+      },
       "party_page": {
-        "id": "healey-management-pty-ltd",
-        "name": "Healey Management Pty Ltd"
+        "id": "springwood-living-group",
+        "name": "Springwood Living Group"
       }
     },
     {
       "name": "SPRINGWOOD LIVING GROUP PTY LTD",
       "identifier_type": "ABN",
       "identifier": "38 601 594 610",
+      "canonical": {
+        "id": "springwood-living-group",
+        "name": "Springwood Living Group"
+      },
       "party_page": {
-        "id": "springwood-living-group-pty-ltd",
-        "name": "Springwood Living Group Pty Ltd"
+        "id": "springwood-living-group",
+        "name": "Springwood Living Group"
       }
     }
   ],
@@ -62,9 +82,13 @@
       "name": "The Trustee for RC Platform Trust",
       "identifier_type": "ABN",
       "identifier": "19 745 824 237",
+      "canonical": {
+        "id": "ipliving",
+        "name": "IPLiving"
+      },
       "party_page": {
-        "id": "the-trustee-for-rc-platform-trust",
-        "name": "The Trustee for RC Platform Trust"
+        "id": "ipliving",
+        "name": "IPLiving"
       }
     }
   ],

@@ -338,6 +338,47 @@
       },
       "waiver_duration": null
     },
+    "tanda": {
+      "id": "tanda",
+      "canonical_name": "Tanda",
+      "members": [
+        {
+          "name": "EPI CAPITAL PTY LTD",
+          "identifier": "61 158 472 943",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "TANDA HR SERVICES PTY LTD",
+          "identifier": "89 680 252 751",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80047",
+            "merger_name": "Thoma Bravo - Tanda",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "virgo-bidco-pty-ltd": {
       "id": "virgo-bidco-pty-ltd",
       "canonical_name": "Virgo Bidco Pty Ltd",

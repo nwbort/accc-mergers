@@ -170,6 +170,47 @@
       },
       "waiver_duration": null
     },
+    "tassielink": {
+      "id": "tassielink",
+      "canonical_name": "Tassielink",
+      "members": [
+        {
+          "name": "TASMANIAN TOURS & TRAVEL PTY. LTD.",
+          "identifier": "43 080 290 393",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Tassielink Group Pty Ltd",
+          "identifier": "643 785 611",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75058",
+            "merger_name": "Kinetic - Tassielink",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-29T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "transport-accident-commission": {
       "id": "transport-accident-commission",
       "canonical_name": "Transport Accident Commission",

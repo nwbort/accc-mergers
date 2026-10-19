@@ -883,7 +883,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "AAH VETERINARY SERVICES PTY LTD"
+          "name": "AAH VETERINARY SERVICES PTY LTD",
+          "canonical": {
+            "name": "Apiam"
+          }
         }
       ],
       "targets": [
@@ -893,7 +896,10 @@
       ],
       "other_parties": [
         {
-          "name": "APIAM ANIMAL HEALTH LIMITED"
+          "name": "APIAM ANIMAL HEALTH LIMITED",
+          "canonical": {
+            "name": "Apiam"
+          }
         }
       ],
       "anzsic_codes": [

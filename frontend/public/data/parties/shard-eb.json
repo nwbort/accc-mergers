@@ -38,6 +38,47 @@
       "phase_duration": null,
       "waiver_duration": null
     },
+    "camp-australia": {
+      "id": "camp-australia",
+      "canonical_name": "Camp Australia",
+      "members": [
+        {
+          "name": "CA GROUP HOLDCO PTY LTD",
+          "identifier": "95 663 533 195",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "CAMP AUSTRALIA PROPRIETARY LIMITED",
+          "identifier": "96 060 703 120",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-15048",
+            "merger_name": "Camp Australia \u2013 Jabiru",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-15T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "ecp-dragon-holdings-lp": {
       "id": "ecp-dragon-holdings-lp",
       "canonical_name": "ECP Dragon Holdings, LP",
@@ -373,84 +414,6 @@
         "completed_count": 1
       },
       "waiver_duration": null
-    },
-    "northern-beaches-veterinary-hospital-pty-ltd": {
-      "id": "northern-beaches-veterinary-hospital-pty-ltd",
-      "canonical_name": "Northern Beaches Veterinary Hospital Pty Ltd",
-      "members": [
-        {
-          "name": "NORTHERN BEACHES VETERINARY HOSPITAL PTY LTD",
-          "identifier": "90 650 961 541",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "MN-85042",
-            "merger_name": "Vets Central \u2013 Vital Vet Animal Hospital",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-09-25T12:00:00Z",
-            "determination_date": null
-          },
-          {
-            "merger_id": "WA-55023",
-            "merger_name": "Vets Central - Claremont Veterinary Surgery",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-05-22T12:00:00Z",
-            "determination_date": "2026-06-04T12:00:00Z"
-          },
-          {
-            "merger_id": "WA-85016",
-            "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Not approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-03-16T12:00:00Z",
-            "determination_date": "2026-04-14T12:00:00Z"
-          },
-          {
-            "merger_id": "WA-75017",
-            "merger_name": "Vets Central - Drovers Vet Hospital",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-03-31T12:00:00Z",
-            "determination_date": "2026-04-07T12:00:00Z"
-          }
-        ]
-      },
-      "merger_count": 4,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 3,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": {
-        "average_days": 16.333333333333332,
-        "median_days": 13,
-        "average_business_days": 10.0,
-        "median_business_days": 8,
-        "completed_count": 3
-      }
     },
     "quinbrook-iii-scsp": {
       "id": "quinbrook-iii-scsp",

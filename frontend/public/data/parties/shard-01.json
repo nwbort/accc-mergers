@@ -2,6 +2,47 @@
   "shard": 1,
   "shard_count": 256,
   "parties": {
+    "brown-hurley": {
+      "id": "brown-hurley",
+      "canonical_name": "Brown & Hurley",
+      "members": [
+        {
+          "name": "B&H TRAILERS PTY LTD",
+          "identifier": "85 698 067 533",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "THE BROWN & HURLEY GROUP PTY LTD",
+          "identifier": "66 010 732 966",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-30033",
+            "merger_name": "Brown & Hurley - Schmitz Cargobull and Freighter Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "centuria-investment-management-cspof-pty-ltd-as-trustee-of-the-cspof-mid-trust": {
       "id": "centuria-investment-management-cspof-pty-ltd-as-trustee-of-the-cspof-mid-trust",
       "canonical_name": "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",

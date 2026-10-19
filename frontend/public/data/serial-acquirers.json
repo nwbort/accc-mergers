@@ -299,8 +299,53 @@
       "count": 2
     },
     {
-      "acquirer_name": "AAH VETERINARY SERVICES PTY LTD",
-      "canonical_id": null,
+      "acquirer_name": "Johns Lyng Group",
+      "canonical_id": "johns-lyng-group",
+      "anzsic_code": "301",
+      "anzsic_name": "Residential Building Construction",
+      "merger_ids": [
+        "MN-75035",
+        "MN-95043"
+      ],
+      "dates": [
+        "2026-08-05T12:00:00Z",
+        "2026-10-02T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Johns Lyng Group",
+      "canonical_id": "johns-lyng-group",
+      "anzsic_code": "302",
+      "anzsic_name": "Non-Residential Building Construction",
+      "merger_ids": [
+        "MN-75035",
+        "MN-95043"
+      ],
+      "dates": [
+        "2026-08-05T12:00:00Z",
+        "2026-10-02T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Johns Lyng Group",
+      "canonical_id": "johns-lyng-group",
+      "anzsic_code": "624",
+      "anzsic_name": "Financial Asset Investing",
+      "merger_ids": [
+        "MN-75035",
+        "MN-95043"
+      ],
+      "dates": [
+        "2026-08-05T12:00:00Z",
+        "2026-10-02T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Apiam",
+      "canonical_id": "apiam",
       "anzsic_code": "019",
       "anzsic_name": "Other Livestock Farming",
       "merger_ids": [
@@ -314,8 +359,8 @@
       "count": 2
     },
     {
-      "acquirer_name": "AAH VETERINARY SERVICES PTY LTD",
-      "canonical_id": null,
+      "acquirer_name": "Apiam",
+      "canonical_id": "apiam",
       "anzsic_code": "052",
       "anzsic_name": "Agriculture and Fishing Support Services",
       "merger_ids": [
@@ -329,8 +374,8 @@
       "count": 2
     },
     {
-      "acquirer_name": "AAH VETERINARY SERVICES PTY LTD",
-      "canonical_id": null,
+      "acquirer_name": "Apiam",
+      "canonical_id": "apiam",
       "anzsic_code": "697",
       "anzsic_name": "Veterinary Services",
       "merger_ids": [
@@ -809,5 +854,5 @@
       "count": 2
     }
   ],
-  "count": 50
+  "count": 53
 }

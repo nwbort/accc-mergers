@@ -2,42 +2,6 @@
   "shard": 151,
   "shard_count": 256,
   "parties": {
-    "civium-facilities-management-pty-ltd": {
-      "id": "civium-facilities-management-pty-ltd",
-      "canonical_name": "Civium Facilities Management Pty Ltd",
-      "members": [
-        {
-          "name": "CIVIUM FACILITIES MANAGEMENT PTY LTD",
-          "identifier": "61 660 478 991",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [
-          {
-            "merger_id": "MN-95043",
-            "merger_name": "Bright & Duggan \u2013 Civium",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-02T12:00:00Z",
-            "determination_date": null
-          }
-        ],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
-    },
     "crowe-advisory-llc": {
       "id": "crowe-advisory-llc",
       "canonical_name": "Crowe Advisory LLC",
@@ -373,42 +337,6 @@
         "median_business_days": 16,
         "completed_count": 1
       }
-    },
-    "smith-road-scgg-operations-pty-ltd-as-trustee-for-the-smith-road-scgg-operations": {
-      "id": "smith-road-scgg-operations-pty-ltd-as-trustee-for-the-smith-road-scgg-operations",
-      "canonical_name": "Smith Road SCGG Operations Pty Ltd as trustee for the Smith Road SCGG Operations Unit Trust",
-      "members": [
-        {
-          "name": "Smith Road SCGG Operations Pty Ltd as trustee for the Smith Road SCGG Operations Unit Trust",
-          "identifier": "88 393 909 420",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [
-          {
-            "merger_id": "MN-05049",
-            "merger_name": "Imagine Education \u2013 Eden Academy",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-09-23T12:00:00Z",
-            "determination_date": null
-          }
-        ],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
     },
     "synack-inc": {
       "id": "synack-inc",

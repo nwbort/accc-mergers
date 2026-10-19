@@ -13,9 +13,13 @@
       "name": "Schneider Electric Industries SAS",
       "identifier_type": null,
       "identifier": "French Commercial Registry Number 954 503 439",
+      "canonical": {
+        "id": "schneider-electric",
+        "name": "Schneider Electric"
+      },
       "party_page": {
-        "id": "schneider-electric-industries-sas",
-        "name": "Schneider Electric Industries SAS"
+        "id": "schneider-electric",
+        "name": "Schneider Electric"
       }
     }
   ],
@@ -35,18 +39,26 @@
       "name": "SE 2026 A",
       "identifier_type": null,
       "identifier": "RCS Registration No. 109 183 798",
+      "canonical": {
+        "id": "schneider-electric",
+        "name": "Schneider Electric"
+      },
       "party_page": {
-        "id": "se-2026-a",
-        "name": "Se 2026 A"
+        "id": "schneider-electric",
+        "name": "Schneider Electric"
       }
     },
     {
       "name": "SCHNEIDER ELECTRIC (AUSTRALIA) PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "42 004 969 304",
+      "canonical": {
+        "id": "schneider-electric",
+        "name": "Schneider Electric"
+      },
       "party_page": {
-        "id": "schneider-electric-australia-pty-limited",
-        "name": "Schneider Electric (Australia) Pty Limited"
+        "id": "schneider-electric",
+        "name": "Schneider Electric"
       }
     }
   ],

@@ -13,9 +13,13 @@
       "name": "Kirin Holdings Company, Limited",
       "identifier_type": null,
       "identifier": "010001034768",
+      "canonical": {
+        "id": "kirin",
+        "name": "Kirin"
+      },
       "party_page": {
-        "id": "kirin-holdings-company-limited",
-        "name": "Kirin Holdings Company, Limited"
+        "id": "kirin",
+        "name": "Kirin"
       }
     }
   ],
@@ -39,27 +43,39 @@
       "name": "Kirin Health Science International Pty Ltd",
       "identifier_type": "ABN",
       "identifier": "14 667 868 448",
+      "canonical": {
+        "id": "kirin",
+        "name": "Kirin"
+      },
       "party_page": {
-        "id": "kirin-health-science-international-pty-ltd",
-        "name": "Kirin Health Science International Pty Ltd"
+        "id": "kirin",
+        "name": "Kirin"
       }
     },
     {
       "name": "Jamieson Health Products Australia Pty Ltd",
       "identifier_type": "ABN",
       "identifier": "58 627 415 070",
+      "canonical": {
+        "id": "jamieson-wellness-inc",
+        "name": "Jamieson Wellness Inc."
+      },
       "party_page": {
-        "id": "jamieson-health-products-australia-pty-ltd",
-        "name": "Jamieson Health Products Australia Pty Ltd"
+        "id": "jamieson-wellness-inc",
+        "name": "Jamieson Wellness Inc."
       }
     },
     {
       "name": "Blackmores Limited",
       "identifier_type": "ABN",
       "identifier": "35 009 713 437",
+      "canonical": {
+        "id": "kirin",
+        "name": "Kirin"
+      },
       "party_page": {
-        "id": "blackmores-limited",
-        "name": "Blackmores Limited"
+        "id": "kirin",
+        "name": "Kirin"
       }
     }
   ],

@@ -296,6 +296,47 @@
       },
       "waiver_duration": null
     },
+    "mcf3-mercury-capital": {
+      "id": "mcf3-mercury-capital",
+      "canonical_name": "MCF3 (Mercury Capital)",
+      "members": [
+        {
+          "name": "MCF3 Architectus Limited",
+          "identifier": "NZBN: 9429049950809",
+          "identifier_type": null
+        },
+        {
+          "name": "MCF3A Limited Partnership",
+          "identifier": "NZBN: 9429046987020",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70039",
+            "merger_name": "Architectus \u2013 SBA",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "novonesis-a-s": {
       "id": "novonesis-a-s",
       "canonical_name": "Novonesis A/S",
@@ -379,6 +420,52 @@
         "median_business_days": 18,
         "completed_count": 1
       }
+    },
+    "springwood-living-group": {
+      "id": "springwood-living-group",
+      "canonical_name": "Springwood Living Group",
+      "members": [
+        {
+          "name": "HEALEY MANAGEMENT PTY LTD",
+          "identifier": "66 168 152 449",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "SPRINGWOOD LIVING GROUP PTY LTD",
+          "identifier": "38 601 594 610",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "WONIORA MANAGEMENT PTY. LTD.",
+          "identifier": "80 169 197 871",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01126",
+            "merger_name": "IPLiving - Springwood Living Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-19T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
     },
     "straight-talking-pty-ltd": {
       "id": "straight-talking-pty-ltd",

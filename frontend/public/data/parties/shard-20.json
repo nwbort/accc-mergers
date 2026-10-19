@@ -463,6 +463,47 @@
       },
       "waiver_duration": null
     },
+    "stanmore-resources": {
+      "id": "stanmore-resources",
+      "canonical_name": "Stanmore Resources",
+      "members": [
+        {
+          "name": "DAWN COAL PTY LTD",
+          "identifier": "86 701 725 448",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "STANMORE RESOURCES LIMITED",
+          "identifier": "27 131 920 968",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-05054",
+            "merger_name": "Stanmore \u2013 Exxaro Australia Holdings",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "the-trustee-for-lual-services-trust": {
       "id": "the-trustee-for-lual-services-trust",
       "canonical_name": "The trustee for Lual Services Trust",

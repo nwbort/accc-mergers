@@ -2,42 +2,6 @@
   "shard": 193,
   "shard_count": 256,
   "parties": {
-    "allegro-fund-iii-gp-co-pty-limited": {
-      "id": "allegro-fund-iii-gp-co-pty-limited",
-      "canonical_name": "Allegro Fund III GP Co Pty Limited",
-      "members": [
-        {
-          "name": "Allegro Fund III GP Co Pty Limited",
-          "identifier": "620 410 764",
-          "identifier_type": "ACN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "MN-15048",
-            "merger_name": "Camp Australia \u2013 Jabiru",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-15T12:00:00Z",
-            "determination_date": null
-          }
-        ]
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
-    },
     "assemble-us-bidco-inc": {
       "id": "assemble-us-bidco-inc",
       "canonical_name": "Assemble US Bidco Inc",
@@ -252,6 +216,52 @@
         "median_business_days": 23,
         "completed_count": 1
       }
+    },
+    "ipliving": {
+      "id": "ipliving",
+      "canonical_name": "IPLiving",
+      "members": [
+        {
+          "name": "The Trustee for RC Healey Trust",
+          "identifier": "38 385 511 812",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "The Trustee for RC Platform Trust",
+          "identifier": "19 745 824 237",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "The Trustee for RC Woniora Trust",
+          "identifier": "65 769 659 590",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01126",
+            "merger_name": "IPLiving - Springwood Living Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-19T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
     },
     "kobalt-music-services-australia-pty-limited": {
       "id": "kobalt-music-services-australia-pty-limited",

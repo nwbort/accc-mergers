@@ -13,18 +13,26 @@
       "name": "Commodore MidCo Pty Ltd",
       "identifier_type": "ACN",
       "identifier": "700 215 336",
+      "canonical": {
+        "id": "thoma-bravo",
+        "name": "Thoma Bravo"
+      },
       "party_page": {
-        "id": "commodore-midco-pty-ltd",
-        "name": "Commodore MidCo Pty Ltd"
+        "id": "thoma-bravo",
+        "name": "Thoma Bravo"
       }
     },
     {
       "name": "Commodore BidCo Pty Ltd",
       "identifier_type": "ACN",
       "identifier": "700 216 342",
+      "canonical": {
+        "id": "thoma-bravo",
+        "name": "Thoma Bravo"
+      },
       "party_page": {
-        "id": "commodore-bidco-pty-ltd",
-        "name": "Commodore BidCo Pty Ltd"
+        "id": "thoma-bravo",
+        "name": "Thoma Bravo"
       }
     }
   ],
@@ -33,18 +41,26 @@
       "name": "EPI CAPITAL PTY LTD",
       "identifier_type": "ABN",
       "identifier": "61 158 472 943",
+      "canonical": {
+        "id": "tanda",
+        "name": "Tanda"
+      },
       "party_page": {
-        "id": "epi-capital-pty-ltd",
-        "name": "Epi Capital Pty Ltd"
+        "id": "tanda",
+        "name": "Tanda"
       }
     },
     {
       "name": "TANDA HR SERVICES PTY LTD",
       "identifier_type": "ABN",
       "identifier": "89 680 252 751",
+      "canonical": {
+        "id": "tanda",
+        "name": "Tanda"
+      },
       "party_page": {
-        "id": "tanda-hr-services-pty-ltd",
-        "name": "Tanda Hr Services Pty Ltd"
+        "id": "tanda",
+        "name": "Tanda"
       }
     }
   ],
@@ -53,18 +69,26 @@
       "name": "Dayforce, Inc",
       "identifier_type": null,
       "identifier": "SEC  00138467",
+      "canonical": {
+        "id": "thoma-bravo",
+        "name": "Thoma Bravo"
+      },
       "party_page": {
-        "id": "dayforce-inc",
-        "name": "Dayforce, Inc"
+        "id": "thoma-bravo",
+        "name": "Thoma Bravo"
       }
     },
     {
       "name": "Thoma Bravo, LP",
       "identifier_type": null,
       "identifier": "SEC  80173780",
+      "canonical": {
+        "id": "thoma-bravo",
+        "name": "Thoma Bravo"
+      },
       "party_page": {
-        "id": "thoma-bravo-lp",
-        "name": "Thoma Bravo, LP"
+        "id": "thoma-bravo",
+        "name": "Thoma Bravo"
       }
     }
   ],

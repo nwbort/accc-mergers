@@ -710,31 +710,58 @@
       ],
       "targets": [
         {
-          "name": "Eden Academy Operations Pty Ltd as trustee for Eden Academy Operations Unit Trust"
+          "name": "Eden Academy Operations Pty Ltd as trustee for Eden Academy Operations Unit Trust",
+          "canonical": {
+            "name": "Eden Academy"
+          }
         },
         {
-          "name": "SCGG Operations Pty Ltd as trustee for the SCGG Operations Unit Trust"
+          "name": "SCGG Operations Pty Ltd as trustee for the SCGG Operations Unit Trust",
+          "canonical": {
+            "name": "Eden Academy"
+          }
         },
         {
-          "name": "ELC Operations Australia Pty Ltd as trustee for ELC Operations Australia Unit Trust"
+          "name": "ELC Operations Australia Pty Ltd as trustee for ELC Operations Australia Unit Trust",
+          "canonical": {
+            "name": "Eden Academy"
+          }
         },
         {
-          "name": "Eden Academy Childcare Pty Ltd"
+          "name": "Eden Academy Childcare Pty Ltd",
+          "canonical": {
+            "name": "Eden Academy"
+          }
         },
         {
-          "name": "Bardon Operations Pty Ltd as trustee for Bardon Operations Unit Trust"
+          "name": "Bardon Operations Pty Ltd as trustee for Bardon Operations Unit Trust",
+          "canonical": {
+            "name": "Eden Academy"
+          }
         },
         {
-          "name": "Palm Beach Operations Pty Ltd as trustee for the Palm Beach Operations Unit Trust"
+          "name": "Palm Beach Operations Pty Ltd as trustee for the Palm Beach Operations Unit Trust",
+          "canonical": {
+            "name": "Eden Academy"
+          }
         },
         {
-          "name": "Smith Road SCGG Operations Pty Ltd as trustee for the Smith Road SCGG Operations Unit Trust"
+          "name": "Smith Road SCGG Operations Pty Ltd as trustee for the Smith Road SCGG Operations Unit Trust",
+          "canonical": {
+            "name": "Eden Academy"
+          }
         },
         {
-          "name": "Eden Academy Investment Holdings Pty Ltd"
+          "name": "Eden Academy Investment Holdings Pty Ltd",
+          "canonical": {
+            "name": "Eden Academy"
+          }
         },
         {
-          "name": "ELC No.2 Operations Pty Ltd as trustee for the ELC No.2 Operations Unit Trust"
+          "name": "ELC No.2 Operations Pty Ltd as trustee for the ELC No.2 Operations Unit Trust",
+          "canonical": {
+            "name": "Eden Academy"
+          }
         }
       ],
       "other_parties": [],
@@ -762,29 +789,47 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "VULCAN BIDCO PTY LTD"
+          "name": "VULCAN BIDCO PTY LTD",
+          "canonical": {
+            "name": "FVS Services Group"
+          }
         }
       ],
       "targets": [
         {
-          "name": "JETFIRE FIRE PROTECTION PTY. LTD."
+          "name": "JETFIRE FIRE PROTECTION PTY. LTD.",
+          "canonical": {
+            "name": "Alexon and Jetfire"
+          }
         },
         {
-          "name": "ALEXON PTY LTD"
+          "name": "ALEXON PTY LTD",
+          "canonical": {
+            "name": "Alexon and Jetfire"
+          }
         },
         {
-          "name": "JPK CELLIER HOLDINGS PTY LTD"
+          "name": "JPK CELLIER HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "Alexon and Jetfire"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "FVS SERVICES GROUP PTY LTD"
+          "name": "FVS SERVICES GROUP PTY LTD",
+          "canonical": {
+            "name": "FVS Services Group"
+          }
         },
         {
           "name": "FORTITUDE INVESTMENT PARTNERS"
         },
         {
-          "name": "VULCAN HOLDCO PTY LTD"
+          "name": "VULCAN HOLDCO PTY LTD",
+          "canonical": {
+            "name": "FVS Services Group"
+          }
         }
       ],
       "anzsic_codes": [
@@ -823,7 +868,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "VULCAN BIDCO PTY LTD"
+          "name": "VULCAN BIDCO PTY LTD",
+          "canonical": {
+            "name": "FVS Services Group"
+          }
         }
       ],
       "targets": [
@@ -833,13 +881,19 @@
       ],
       "other_parties": [
         {
-          "name": "VULCAN HOLDCO PTY LTD"
+          "name": "VULCAN HOLDCO PTY LTD",
+          "canonical": {
+            "name": "FVS Services Group"
+          }
         },
         {
           "name": "FORTITUDE INVESTMENT PARTNERS"
         },
         {
-          "name": "FVS SERVICES GROUP PTY LTD"
+          "name": "FVS SERVICES GROUP PTY LTD",
+          "canonical": {
+            "name": "FVS Services Group"
+          }
         }
       ],
       "anzsic_codes": [
@@ -925,7 +979,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Schneider Electric Industries SAS"
+          "name": "Schneider Electric Industries SAS",
+          "canonical": {
+            "name": "Schneider Electric"
+          }
         }
       ],
       "targets": [
@@ -935,10 +992,16 @@
       ],
       "other_parties": [
         {
-          "name": "SE 2026 A"
+          "name": "SE 2026 A",
+          "canonical": {
+            "name": "Schneider Electric"
+          }
         },
         {
-          "name": "SCHNEIDER ELECTRIC (AUSTRALIA) PTY LIMITED"
+          "name": "SCHNEIDER ELECTRIC (AUSTRALIA) PTY LIMITED",
+          "canonical": {
+            "name": "Schneider Electric"
+          }
         }
       ],
       "anzsic_codes": [
@@ -986,7 +1049,10 @@
       ],
       "other_parties": [
         {
-          "name": "KINGS ROAD VETERINARY SURGERY PTY LTD"
+          "name": "KINGS ROAD VETERINARY SURGERY PTY LTD",
+          "canonical": {
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         },
         {
           "name": "VC NSW MIDCO PTY LTD",
@@ -995,7 +1061,10 @@
           }
         },
         {
-          "name": "Ingwe Consulting Pty Ltd"
+          "name": "Ingwe Consulting Pty Ltd",
+          "canonical": {
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         },
         {
           "name": "VC OPERATIONS BIDCO PTY LTD",
@@ -1034,7 +1103,10 @@
           }
         },
         {
-          "name": "NORTHERN BEACHES VETERINARY HOSPITAL PTY LTD"
+          "name": "NORTHERN BEACHES VETERINARY HOSPITAL PTY LTD",
+          "canonical": {
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         },
         {
           "name": "VETS CENTRAL PTY LTD",
@@ -1043,7 +1115,10 @@
           }
         },
         {
-          "name": "MISTYCAT PTY LTD"
+          "name": "MISTYCAT PTY LTD",
+          "canonical": {
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         },
         {
           "name": "VC OPERATIONS MIDCO PTY LTD",
@@ -1088,7 +1163,10 @@
           }
         },
         {
-          "name": "DROVERS VET HOSPITAL PTY LTD"
+          "name": "DROVERS VET HOSPITAL PTY LTD",
+          "canonical": {
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1203,32 +1281,56 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Xylem Water Solutions U.S.A., Inc."
+          "name": "Xylem Water Solutions U.S.A., Inc.",
+          "canonical": {
+            "name": "Xylem"
+          }
         }
       ],
       "targets": [
         {
-          "name": "Dynamatic, LLC"
+          "name": "Dynamatic, LLC",
+          "canonical": {
+            "name": "Flow Controls"
+          }
         },
         {
-          "name": "Cornell Pump Company LLC"
+          "name": "Cornell Pump Company LLC",
+          "canonical": {
+            "name": "Flow Controls"
+          }
         },
         {
-          "name": "Flow Controls Parent, LLC"
+          "name": "Flow Controls Parent, LLC",
+          "canonical": {
+            "name": "Flow Controls"
+          }
         },
         {
-          "name": "Roper Pump Company LLC"
+          "name": "Roper Pump Company LLC",
+          "canonical": {
+            "name": "Flow Controls"
+          }
         },
         {
-          "name": "Flow Controls Holding, LLC"
+          "name": "Flow Controls Holding, LLC",
+          "canonical": {
+            "name": "Flow Controls"
+          }
         },
         {
-          "name": "High Tide Technologies, LLC"
+          "name": "High Tide Technologies, LLC",
+          "canonical": {
+            "name": "Flow Controls"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "Xylem Inc."
+          "name": "Xylem Inc.",
+          "canonical": {
+            "name": "Xylem"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1283,10 +1385,16 @@
       ],
       "targets": [
         {
-          "name": "Tassielink Group Pty Ltd"
+          "name": "Tassielink Group Pty Ltd",
+          "canonical": {
+            "name": "Tassielink"
+          }
         },
         {
-          "name": "TASMANIAN TOURS & TRAVEL PTY. LTD."
+          "name": "TASMANIAN TOURS & TRAVEL PTY. LTD.",
+          "canonical": {
+            "name": "Tassielink"
+          }
         }
       ],
       "other_parties": [
@@ -1329,10 +1437,16 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "The Trustee for Tasman Tourism Trust"
+          "name": "The Trustee for Tasman Tourism Trust",
+          "canonical": {
+            "name": "Tasman Tourism"
+          }
         },
         {
-          "name": "TASMAN TOURISM PTY LTD"
+          "name": "TASMAN TOURISM PTY LTD",
+          "canonical": {
+            "name": "Tasman Tourism"
+          }
         }
       ],
       "targets": [
@@ -1370,10 +1484,16 @@
       ],
       "targets": [
         {
-          "name": "REAL DAIRY AUSTRALIA PTY LTD"
+          "name": "REAL DAIRY AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "Real Dairy Australia"
+          }
         },
         {
-          "name": "GET REAL FOODS PTY LTD"
+          "name": "GET REAL FOODS PTY LTD",
+          "canonical": {
+            "name": "Real Dairy Australia"
+          }
         }
       ],
       "other_parties": [],
@@ -1405,7 +1525,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Architectus Services BidCo Pty Ltd"
+          "name": "Architectus Services BidCo Pty Ltd",
+          "canonical": {
+            "name": "Architectus"
+          }
         }
       ],
       "targets": [
@@ -1415,19 +1538,28 @@
       ],
       "other_parties": [
         {
-          "name": "Architectus Services HoldCo Pty Ltd"
+          "name": "Architectus Services HoldCo Pty Ltd",
+          "canonical": {
+            "name": "Architectus"
+          }
         },
         {
           "name": "Baird Future Investments Pty Ltd"
         },
         {
-          "name": "MCF3 Architectus Limited"
+          "name": "MCF3 Architectus Limited",
+          "canonical": {
+            "name": "MCF3 (Mercury Capital)"
+          }
         },
         {
           "name": "Apex Custodian Nominees (NZ) Limited"
         },
         {
-          "name": "MCF3A Limited Partnership"
+          "name": "MCF3A Limited Partnership",
+          "canonical": {
+            "name": "MCF3 (Mercury Capital)"
+          }
         },
         {
           "name": "SBA Architects PPT Nominees Pty Ltd"
@@ -1512,7 +1644,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "AAH VETERINARY SERVICES PTY LTD"
+          "name": "AAH VETERINARY SERVICES PTY LTD",
+          "canonical": {
+            "name": "Apiam"
+          }
         }
       ],
       "targets": [
@@ -1522,7 +1657,10 @@
       ],
       "other_parties": [
         {
-          "name": "APIAM ANIMAL HEALTH LIMITED"
+          "name": "APIAM ANIMAL HEALTH LIMITED",
+          "canonical": {
+            "name": "Apiam"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1638,7 +1776,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "ALTIUS BIDCO PTY LTD"
+          "name": "ALTIUS BIDCO PTY LTD",
+          "canonical": {
+            "name": "Altius Group"
+          }
         }
       ],
       "targets": [
@@ -1721,12 +1862,18 @@
       ],
       "targets": [
         {
-          "name": "Huntsman Corporation"
+          "name": "Huntsman Corporation",
+          "canonical": {
+            "name": "Huntsman"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "HUNTSMAN POLYURETHANES (AUSTRALIA) PTY LTD"
+          "name": "HUNTSMAN POLYURETHANES (AUSTRALIA) PTY LTD",
+          "canonical": {
+            "name": "Huntsman"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1809,7 +1956,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "APEM GROUP PTY LTD"
+          "name": "APEM GROUP PTY LTD",
+          "canonical": {
+            "name": "Applus+"
+          }
         }
       ],
       "targets": [
@@ -1819,7 +1969,10 @@
       ],
       "other_parties": [
         {
-          "name": "Applus Services, S.A."
+          "name": "Applus Services, S.A.",
+          "canonical": {
+            "name": "Applus+"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1907,42 +2060,78 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "CIVIUM STRATA HOLDINGS PTY LTD"
+          "name": "CIVIUM STRATA HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "Johns Lyng Group"
+          }
         }
       ],
       "targets": [
         {
-          "name": "CIVIUM (NATIONAL) PTY LTD"
+          "name": "CIVIUM (NATIONAL) PTY LTD",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         },
         {
-          "name": "CIVIUM PROPERTY PTY LIMITED"
+          "name": "CIVIUM PROPERTY PTY LIMITED",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         },
         {
-          "name": "CIVIUM (NSW) PTY LTD"
+          "name": "CIVIUM (NSW) PTY LTD",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         },
         {
-          "name": "STRATHFIELD STRATA MANAGEMENT PTY LTD"
+          "name": "STRATHFIELD STRATA MANAGEMENT PTY LTD",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         },
         {
-          "name": "BARARD MANAGEMENT PTY. LTD."
+          "name": "BARARD MANAGEMENT PTY. LTD.",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         },
         {
-          "name": "INDEPENDENT STRATA MANAGEMENT PTY LTD"
+          "name": "INDEPENDENT STRATA MANAGEMENT PTY LTD",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         },
         {
-          "name": "CIVIUM FACILITIES MANAGEMENT PTY LTD"
+          "name": "CIVIUM FACILITIES MANAGEMENT PTY LTD",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         },
         {
-          "name": "CIVIUM HOLDINGS (VIC) PTY LTD"
+          "name": "CIVIUM HOLDINGS (VIC) PTY LTD",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         },
         {
-          "name": "CIVIUM MANAGEMENT GROUP PTY LTD"
+          "name": "CIVIUM MANAGEMENT GROUP PTY LTD",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         },
         {
-          "name": "CIVIUM HOLDINGS PTY. LIMITED"
+          "name": "CIVIUM HOLDINGS PTY. LIMITED",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         },
         {
-          "name": "CIVIUM HOLDINGS (QLD) PTY LTD"
+          "name": "CIVIUM HOLDINGS (QLD) PTY LTD",
+          "canonical": {
+            "name": "Civium Property Group"
+          }
         }
       ],
       "other_parties": [
@@ -1950,7 +2139,10 @@
           "name": "SHERWOOD TOPCO LTD"
         },
         {
-          "name": "BRIGHT & DUGGAN GROUP PTY LTD"
+          "name": "BRIGHT & DUGGAN GROUP PTY LTD",
+          "canonical": {
+            "name": "Johns Lyng Group"
+          }
         },
         {
           "name": "JOHNS LYNG GROUP LIMITED",
@@ -2107,7 +2299,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "DAWN COAL PTY LTD"
+          "name": "DAWN COAL PTY LTD",
+          "canonical": {
+            "name": "Stanmore Resources"
+          }
         }
       ],
       "targets": [
@@ -2117,7 +2312,10 @@
       ],
       "other_parties": [
         {
-          "name": "STANMORE RESOURCES LIMITED"
+          "name": "STANMORE RESOURCES LIMITED",
+          "canonical": {
+            "name": "Stanmore Resources"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2148,20 +2346,32 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "B&H TRAILERS PTY LTD"
+          "name": "B&H TRAILERS PTY LTD",
+          "canonical": {
+            "name": "Brown & Hurley"
+          }
         }
       ],
       "targets": [
         {
-          "name": "SCHMITZ CARGOBULL VICTORIA HOLDING PTY LTD"
+          "name": "SCHMITZ CARGOBULL VICTORIA HOLDING PTY LTD",
+          "canonical": {
+            "name": "Schmitz Cargobull"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "THE BROWN & HURLEY GROUP PTY LTD"
+          "name": "THE BROWN & HURLEY GROUP PTY LTD",
+          "canonical": {
+            "name": "Brown & Hurley"
+          }
         },
         {
-          "name": "Schmitz Cargobull Australia Holding Pty Ltd"
+          "name": "Schmitz Cargobull Australia Holding Pty Ltd",
+          "canonical": {
+            "name": "Schmitz Cargobull"
+          }
         },
         {
           "name": "FREIGHTER GROUP PTY LTD"
@@ -2204,13 +2414,22 @@
       ],
       "targets": [
         {
-          "name": "FSS Liberty Pty Ltd as trustee for FSS Liberty Trust"
+          "name": "FSS Liberty Pty Ltd as trustee for FSS Liberty Trust",
+          "canonical": {
+            "name": "Aware Super Pty Limited"
+          }
         },
         {
-          "name": "SERV HOLDINGS PTY LTD"
+          "name": "SERV HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "SERV"
+          }
         },
         {
-          "name": "SERV HOLDINGS TRUST"
+          "name": "SERV HOLDINGS TRUST",
+          "canonical": {
+            "name": "SERV"
+          }
         }
       ],
       "other_parties": [],
@@ -2313,10 +2532,16 @@
       ],
       "other_parties": [
         {
-          "name": "BN (AUST) INVESTMENTS PTY LTD"
+          "name": "BN (AUST) INVESTMENTS PTY LTD",
+          "canonical": {
+            "name": "Brown-Neaves Investment"
+          }
         },
         {
-          "name": "BECHEL PTY LTD"
+          "name": "BECHEL PTY LTD",
+          "canonical": {
+            "name": "Brown-Neaves Investment"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2355,7 +2580,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "TTE Corporation"
+          "name": "TTE Corporation",
+          "canonical": {
+            "name": "TCL Electronics"
+          }
         }
       ],
       "targets": [
@@ -2433,10 +2661,16 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "VETPARTNERS AUSTRALIA PTY LTD"
+          "name": "VETPARTNERS AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "VetPartners"
+          }
         },
         {
-          "name": "Unity HoldCo Pty Ltd"
+          "name": "Unity HoldCo Pty Ltd",
+          "canonical": {
+            "name": "VetPartners"
+          }
         },
         {
           "name": "EQT Fund Management S.\u00e0 r.l.",
@@ -2616,7 +2850,10 @@
       ],
       "targets": [
         {
-          "name": "The Trustee for SI-PHUONG TRUST"
+          "name": "The Trustee for SI-PHUONG TRUST",
+          "canonical": {
+            "name": "Si-Phuong Trust"
+          }
         }
       ],
       "other_parties": [
@@ -2627,7 +2864,10 @@
           }
         },
         {
-          "name": "Alati Pty Ltd as trustee for Si-Phuong Trust"
+          "name": "Alati Pty Ltd as trustee for Si-Phuong Trust",
+          "canonical": {
+            "name": "Si-Phuong Trust"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2654,7 +2894,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "CAMP AUSTRALIA PROPRIETARY LIMITED"
+          "name": "CAMP AUSTRALIA PROPRIETARY LIMITED",
+          "canonical": {
+            "name": "Camp Australia"
+          }
         }
       ],
       "targets": [
@@ -2664,19 +2907,34 @@
       ],
       "other_parties": [
         {
-          "name": "Allegro Services III D Pty Ltd"
+          "name": "Allegro Services III D Pty Ltd",
+          "canonical": {
+            "name": "Allegro Funds"
+          }
         },
         {
-          "name": "CA GROUP HOLDCO PTY LTD"
+          "name": "CA GROUP HOLDCO PTY LTD",
+          "canonical": {
+            "name": "Camp Australia"
+          }
         },
         {
-          "name": "Allegro Side Car Services III A Pty Limited"
+          "name": "Allegro Side Car Services III A Pty Limited",
+          "canonical": {
+            "name": "Allegro Funds"
+          }
         },
         {
-          "name": "Allegro Fund III GP Co Pty Limited"
+          "name": "Allegro Fund III GP Co Pty Limited",
+          "canonical": {
+            "name": "Allegro Funds"
+          }
         },
         {
-          "name": "ALLEGRO SIDE CAR SERVICES III E PTY LTD"
+          "name": "ALLEGRO SIDE CAR SERVICES III E PTY LTD",
+          "canonical": {
+            "name": "Allegro Funds"
+          }
         }
       ],
       "anzsic_codes": [

@@ -86,6 +86,65 @@
         "completed_count": 1
       }
     },
+    "apiam": {
+      "id": "apiam",
+      "canonical_name": "Apiam",
+      "members": [
+        {
+          "name": "AAH VETERINARY SERVICES PTY LTD",
+          "identifier": "31 607 993 233",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "APIAM ANIMAL HEALTH LIMITED",
+          "identifier": "50 604 961 024",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80045",
+            "merger_name": "Apiam - Goulburn Valley Equine Hospital",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "MN-95040",
+            "merger_name": "Apiam \u2013 Seymour Equine Clinic",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-03T12:00:00Z",
+            "determination_date": "2026-10-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
     "atmos-renewables-pty-ltd": {
       "id": "atmos-renewables-pty-ltd",
       "canonical_name": "Atmos Renewables Pty Ltd",
@@ -367,6 +426,53 @@
         "completed_count": 1
       },
       "waiver_duration": null
+    },
+    "tasman-tourism": {
+      "id": "tasman-tourism",
+      "canonical_name": "Tasman Tourism",
+      "members": [
+        {
+          "name": "TASMAN TOURISM PTY LTD",
+          "identifier": "24 637 343 983",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "The Trustee for Tasman Tourism Trust",
+          "identifier": "85 948 476 036",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60050",
+            "merger_name": "Tasman Capital \u2013 Amberlee Holiday Homes & Accommodation and Woodlands Estate",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-29T12:00:00Z",
+            "determination_date": "2026-10-09T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
     },
     "trescal-australia-pty-ltd": {
       "id": "trescal-australia-pty-ltd",

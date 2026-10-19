@@ -13,18 +13,26 @@
       "name": "ABB Ltd",
       "identifier_type": null,
       "identifier": "CHE101.049.653",
+      "canonical": {
+        "id": "abb",
+        "name": "ABB"
+      },
       "party_page": {
-        "id": "abb-ltd",
-        "name": "ABB Ltd"
+        "id": "abb",
+        "name": "ABB"
       }
     },
     {
       "name": "ABB Automation Holding UK Ltd",
       "identifier_type": null,
       "identifier": "UK Companies House  17332914",
+      "canonical": {
+        "id": "abb",
+        "name": "ABB"
+      },
       "party_page": {
-        "id": "abb-automation-holding-uk-ltd",
-        "name": "ABB Automation Holding UK Ltd"
+        "id": "abb",
+        "name": "ABB"
       }
     }
   ],
