@@ -24,6 +24,36 @@ const PAGE_META = STATIC_PAGE_META['/analysis'];
 
 const PENDING_WAIVERS_LABEL = 'Waivers under assessment (estimated)';
 
+// Diagonal teal stripes for the estimated segment, so it reads as a
+// projection on top of the counted waivers rather than as more of them.
+// Built once; falls back to a flat tint where there is no 2D canvas (jsdom).
+let stripePattern;
+function pendingWaiversFill() {
+  if (stripePattern !== undefined) return stripePattern;
+  const size = 8;
+  const tile = document.createElement('canvas');
+  tile.width = size;
+  tile.height = size;
+  const ctx = tile.getContext?.('2d');
+  if (!ctx) return COLORS.tealLight;
+  ctx.fillStyle = COLORS.tealLight;
+  ctx.fillRect(0, 0, size, size);
+  ctx.strokeStyle = COLORS.teal;
+  ctx.lineWidth = 2;
+  // The main diagonal plus the two corner offcuts, so the stripes meet
+  // seamlessly across tile edges.
+  ctx.beginPath();
+  ctx.moveTo(0, size);
+  ctx.lineTo(size, 0);
+  ctx.moveTo(-size / 2, size / 2);
+  ctx.lineTo(size / 2, -size / 2);
+  ctx.moveTo(size / 2, size * 1.5);
+  ctx.lineTo(size * 1.5, size / 2);
+  ctx.stroke();
+  stripePattern = ctx.createPattern(tile, 'repeat') ?? COLORS.tealLight;
+  return stripePattern;
+}
+
 
 function Analysis() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.analysis, {
@@ -75,14 +105,13 @@ function Analysis() {
       },
       // Waivers only reach the register once decided, so the recent months
       // are topped up with the generator's estimate of those still being
-      // assessed — drawn as an outlined segment so it never reads as a count.
+      // assessed — drawn striped so it never reads as a count.
       ...(hasPendingWaivers ? [{
         label: PENDING_WAIVERS_LABEL,
         data: pendingWaivers,
-        backgroundColor: COLORS.tealLight,
+        backgroundColor: pendingWaiversFill(),
         borderColor: COLORS.teal,
         borderWidth: 1.5,
-        borderDash: [4, 3],
         borderRadius: 4,
         maxBarThickness: 40,
       }] : []),
@@ -442,7 +471,7 @@ function Analysis() {
               </div>
               <p className="text-xs text-gray-500 mt-3">
                 Waivers are recorded on the ACCC's register when they are decided. This means the number of waiver applications in a month can rise for up to 25 business days after the month ends.
-                {hasPendingWaivers && ' The outlined segment estimates the applications already filed but not yet decided, from how many waivers are being filed and how long recent ones have taken to decide. It is an estimate: it does not include waivers that have not been filed yet.'}
+                {hasPendingWaivers && ' The striped segment estimates the applications already filed but not yet decided, from how many waivers are being filed and how long recent ones have taken to decide. It is an estimate: it does not include waivers that have not been filed yet.'}
               </p>
             </div>
           </div>
