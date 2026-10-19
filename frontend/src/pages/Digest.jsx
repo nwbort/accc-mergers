@@ -389,6 +389,7 @@ function Digest() {
   const newMergers = digest.new_deals_notified || [];
   const clearedMergers = digest.deals_cleared || [];
   const referredMergers = digest.deals_referred_to_phase_2 || [];
+  const toPublicBenefitMergers = digest.deals_to_public_benefit || [];
   const declinedMergers = digest.deals_declined || [];
   const ceasedMergers = digest.deals_assessment_ceased || [];
   const appealedMergers = digest.deals_appealed_to_tribunal || [];
@@ -403,6 +404,7 @@ function Digest() {
     { id: 'new-mergers', colorKey: DIGEST_COLOR_KEYS.NEW_MERGER, count: newMergers.length, label: 'New deals notified' },
     { id: 'mergers-approved', colorKey: DIGEST_COLOR_KEYS.CLEARED, count: clearedMergers.length, label: 'Deals cleared' },
     { id: 'mergers-referred', colorKey: DIGEST_COLOR_KEYS.PHASE_2_REFERRAL, count: referredMergers.length, label: 'Referred to phase 2' },
+    { id: 'mergers-to-public-benefit', colorKey: DIGEST_COLOR_KEYS.PHASE_2, count: toPublicBenefitMergers.length, label: 'To public benefit phase' },
     { id: 'mergers-declined', colorKey: DIGEST_COLOR_KEYS.DECLINED, count: declinedMergers.length, label: 'Deals declined' },
     { id: 'mergers-ceased', colorKey: DIGEST_COLOR_KEYS.CEASED, count: ceasedMergers.length, label: 'Assessment ceased' },
     { id: 'mergers-appealed', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: appealedMergers.length, label: 'Appealed to tribunal' },
@@ -552,6 +554,31 @@ function Digest() {
                       : 'N/A'}
                   </td>
                   <DeterminationCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_2_REFERRAL} defaultDetermination={MERGER_STATUS.REFERRED_TO_PHASE_2} getDeterminationPdf={getDeterminationPdf} />
+                </tr>
+              )}
+            />
+          )}
+
+          {toPublicBenefitMergers.length > 0 && (
+            <DigestSection
+              id="mergers-to-public-benefit"
+              title="Mergers moved to the public benefit phase"
+              colorKey={DIGEST_COLOR_KEYS.PHASE_2}
+              mergers={toPublicBenefitMergers}
+              columns={['Merger', 'Application date', 'Determination']}
+              renderRow={(merger) => (
+                <tr key={merger.merger_id} className="relative hover:bg-phase-2-pale/40 transition-colors">
+                  <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_2} />
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    {merger.public_benefit_application_date
+                      ? formatDate(merger.public_benefit_application_date)
+                      : 'N/A'}
+                  </td>
+                  {/* The determination the application seeks to overturn: the
+                      Phase 2 outcome, or a conditional Phase 1 clearance. */}
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    {merger.phase_2_determination || merger.phase_1_determination || 'N/A'}
+                  </td>
                 </tr>
               )}
             />

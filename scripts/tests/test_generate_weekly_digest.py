@@ -383,6 +383,34 @@ class TestWeeklyDigestBuckets:
     # Assessment ceased bucket
     # -----------------------------------------------------------------
 
+    def _public_benefit_merger(self, merger_id, applied):
+        return {
+            'merger_id': merger_id,
+            'merger_name': 'Public benefit application',
+            'status': merger_status.UNDER_ASSESSMENT,
+            'stage': 'Public benefit phase',
+            'effective_notification_datetime': '2025-01-10T00:00:00Z',
+            'public_benefit_application_date': applied,
+            'events': [],
+        }
+
+    def test_public_benefit_application_in_window_is_included(self, monkeypatch):
+        merger = self._public_benefit_merger('MN-40001', '2025-04-15T12:00:00Z')
+        digest = self._run([merger], monkeypatch)
+        assert [m['merger_id'] for m in digest['deals_to_public_benefit']] == ['MN-40001']
+        assert digest['deals_to_public_benefit'][0]['public_benefit_application_date'] == '2025-04-15T12:00:00Z'
+
+    def test_public_benefit_application_outside_window_is_excluded(self, monkeypatch):
+        merger = self._public_benefit_merger('MN-40002', '2025-03-20T12:00:00Z')
+        digest = self._run([merger], monkeypatch)
+        assert digest['deals_to_public_benefit'] == []
+
+    def test_public_benefit_application_in_previous_digest_is_not_repeated(self, monkeypatch):
+        merger = self._public_benefit_merger('MN-40003', '2025-04-10T12:00:00Z')
+        previous = {'deals_to_public_benefit': [{'merger_id': 'MN-40003'}]}
+        digest = self._run([merger], monkeypatch, previous_digest=previous)
+        assert digest['deals_to_public_benefit'] == []
+
     def test_ceased_in_window_is_included(self, monkeypatch):
         merger = {
             'merger_id': 'MN-30002',
