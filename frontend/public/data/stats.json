@@ -1,6 +1,6 @@
 {
   "total_mergers": 297,
-  "total_waivers": 458,
+  "total_waivers": 459,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 436,
+    "Approved": 437,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.390829694323145,
-    "median_days": 21.0,
-    "average_business_days": 13.947598253275109,
-    "median_business_days": 14.0
+    "average_days": 20.387799564270153,
+    "median_days": 21,
+    "average_business_days": 13.943355119825709,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 171
+      "count": 172
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05056",
+      "merger_name": "Brookfield Corporation \u2013 Reliance Worldwide Corporation",
+      "determination": "Approved",
+      "determination_date": "2026-10-19T12:00:00Z",
+      "page_modified_datetime": "2026-10-19T16:45:00+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-40048",
       "merger_name": "Dicker Data \u2013 Sektor",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-12T12:00:00Z",
       "page_modified_datetime": "2026-10-12T17:02:03+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-05053",
-      "merger_name": "Vets Central \u2013 Castlemaine Veterinary Clinic, Vic",
-      "determination": "Approved",
-      "determination_date": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-10-09T16:57:14+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

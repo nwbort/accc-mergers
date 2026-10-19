@@ -364,6 +364,48 @@
         "completed_count": 1
       }
     },
+    "reliance-worldwide-corporation-limited": {
+      "id": "reliance-worldwide-corporation-limited",
+      "canonical_name": "Reliance Worldwide Corporation Limited",
+      "members": [
+        {
+          "name": "RELIANCE WORLDWIDE CORPORATION LIMITED",
+          "identifier": "46 610 855 877",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05056",
+            "merger_name": "Brookfield Corporation \u2013 Reliance Worldwide Corporation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": "2026-10-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
     "rie-group-pty-ltd": {
       "id": "rie-group-pty-ltd",
       "canonical_name": "Rie Group Pty Ltd",
