@@ -3104,6 +3104,18 @@ class TestPartiesDetailFiles:
         assert data['merger_count'] == 1
         assert [m['merger_id'] for m in data['mergers']['target']] == ['MN-1003']
 
+    def test_summary_flags_merger_under_appeal(self, tmp_path):
+        # The party page's merger cards show an "Under appeal" badge beside
+        # the ACCC outcome, so the summary has to carry the flag.
+        mergers = _party_mergers_fixture()
+        mergers[0]['under_appeal'] = True
+        groups = parties.build_party_pages(mergers, [_COLES_GROUP])
+        parties.generate_detail_files(groups, tmp_path)
+        data = self._load_party(tmp_path, 'coles')
+        by_id = {m['merger_id']: m for m in data['mergers']['acquirer']}
+        assert by_id['MN-1001']['under_appeal'] is True
+        assert by_id['MN-1002']['under_appeal'] is False
+
     def test_includes_waiver_duration(self, tmp_path):
         # A party whose only merger is a completed waiver gets a waiver
         # duration but no Phase 1 duration.

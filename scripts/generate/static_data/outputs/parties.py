@@ -193,6 +193,9 @@ def _merger_summary(m: dict) -> dict:
         # review is open or closed. Absent while still open.
         'determination': m.get('accc_determination'),
         'has_conditions': m.get('has_conditions', False),
+        # A Tribunal appeal sits on top of the ACCC outcome rather than
+        # replacing it, so the list shows it as its own badge beside it.
+        'under_appeal': bool(m.get('under_appeal')),
         'phase': classify_phase(m),
         'notification_date': m.get('effective_notification_datetime') or m.get('original_notification_datetime'),
         'determination_date': m.get('determination_publication_date'),
