@@ -33,6 +33,13 @@ const analysisFixture = {
   industry_phase1_duration: [],
 };
 
+function mockAnalysis(payload) {
+  vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
+    if (url.includes('analysis.json')) return Promise.resolve(ok(payload));
+    return Promise.reject(new Error(`Unexpected fetch: ${url}`));
+  });
+}
+
 function renderAnalysis() {
   return render(
     <HelmetProvider>
@@ -182,13 +189,6 @@ describe('Analysis open caseload', () => {
     dataCache.clear();
   });
 
-  function mockAnalysis(payload) {
-    vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
-      if (url.includes('analysis.json')) return Promise.resolve(ok(payload));
-      return Promise.reject(new Error(`Unexpected fetch: ${url}`));
-    });
-  }
-
   it('shows the latest open caseload and its movement', async () => {
     mockAnalysis(caseloadFixture);
     renderAnalysis();
@@ -252,6 +252,49 @@ describe('Analysis open caseload', () => {
     });
 
     expect(screen.queryByText(/Open caseload/)).not.toBeInTheDocument();
+  });
+});
+
+describe('Analysis monthly volume', () => {
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  function volumeTable() {
+    return screen.getByRole('table', { name: 'Merger notifications and waiver applications per month' });
+  }
+
+  it('adds the estimated waivers still under assessment as their own column', async () => {
+    mockAnalysis({
+      ...analysisFixture,
+      monthly_volume: {
+        labels: ['2026-09', '2026-10'],
+        notifications: [31, 22],
+        waivers: [35, 0],
+        waivers_pending_estimate: [12, 25],
+      },
+    });
+    renderAnalysis();
+
+    const table = await waitFor(volumeTable);
+    expect(within(table).getByRole('columnheader', { name: 'Waivers under assessment (estimated)' })).toBeInTheDocument();
+    expect(within(table).getByText('~25')).toBeInTheDocument();
+    expect(screen.getByText(/estimates the applications already filed but not yet decided/)).toBeInTheDocument();
+  });
+
+  it('shows no estimate when the payload predates it', async () => {
+    mockAnalysis(analysisFixture);
+    renderAnalysis();
+
+    const table = await waitFor(volumeTable);
+    expect(within(table).queryByRole('columnheader', { name: /under assessment/ })).not.toBeInTheDocument();
+    expect(screen.queryByText(/estimates the applications already filed/)).not.toBeInTheDocument();
   });
 });
 

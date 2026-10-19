@@ -22,6 +22,8 @@ import { PHASE_1_DEADLINE_BD, WAIVER_DEADLINE_BD } from '../constants/statutoryD
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/analysis'];
 
+const PENDING_WAIVERS_LABEL = 'Waivers under assessment (estimated)';
+
 
 function Analysis() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.analysis, {
@@ -51,6 +53,9 @@ function Analysis() {
   const waiverDeadline = calendarDays ? null : WAIVER_DEADLINE_BD;
 
   // --- Monthly Volume ---
+  // Guarded on presence, like the caseload: a deployed payload can predate it.
+  const pendingWaivers = monthly_volume.waivers_pending_estimate;
+  const hasPendingWaivers = Boolean(pendingWaivers?.some((n) => n > 0));
   const monthlyVolumeData = {
     labels: monthly_volume.labels.map(formatMonthLabel),
     datasets: [
@@ -68,6 +73,19 @@ function Analysis() {
         borderRadius: 4,
         maxBarThickness: 40,
       },
+      // Waivers only reach the register once decided, so the recent months
+      // are topped up with the generator's estimate of those still being
+      // assessed — drawn as an outlined segment so it never reads as a count.
+      ...(hasPendingWaivers ? [{
+        label: PENDING_WAIVERS_LABEL,
+        data: pendingWaivers,
+        backgroundColor: COLORS.tealLight,
+        borderColor: COLORS.teal,
+        borderWidth: 1.5,
+        borderDash: [4, 3],
+        borderRadius: 4,
+        maxBarThickness: 40,
+      }] : []),
     ],
   };
 
@@ -83,6 +101,13 @@ function Analysis() {
           pointStyle: 'rectRounded',
           padding: 16,
           font: { size: 12, family: 'Inter, sans-serif' },
+        },
+      },
+      tooltip: {
+        callbacks: {
+          label: (ctx) => (ctx.dataset.label === PENDING_WAIVERS_LABEL
+            ? `${ctx.dataset.label}: ~${ctx.parsed.y}`
+            : `${ctx.dataset.label}: ${ctx.parsed.y}`),
         },
       },
     },
@@ -397,13 +422,19 @@ function Analysis() {
               <div className="sr-only">
                 <table id="chart-monthly-volume-summary">
                   <caption>Merger notifications and waiver applications per month</caption>
-                  <thead><tr><th>Month</th><th>Notifications</th><th>Waivers</th></tr></thead>
+                  <thead>
+                    <tr>
+                      <th>Month</th><th>Notifications</th><th>Waivers</th>
+                      {hasPendingWaivers && <th>{PENDING_WAIVERS_LABEL}</th>}
+                    </tr>
+                  </thead>
                   <tbody>
                     {monthly_volume.labels.map((month, i) => (
                       <tr key={month}>
                         <td>{formatMonthLabel(month)}</td>
                         <td>{monthly_volume.notifications[i]}</td>
                         <td>{monthly_volume.waivers[i]}</td>
+                        {hasPendingWaivers && <td>{pendingWaivers[i] ? `~${pendingWaivers[i]}` : 0}</td>}
                       </tr>
                     ))}
                   </tbody>
@@ -411,6 +442,7 @@ function Analysis() {
               </div>
               <p className="text-xs text-gray-500 mt-3">
                 Waivers are recorded on the ACCC's register when they are decided. This means the number of waiver applications in a month can rise for up to 25 business days after the month ends.
+                {hasPendingWaivers && ' The outlined segment estimates the applications already filed but not yet decided, from how many waivers are being filed and how long recent ones have taken to decide. It is an estimate: it does not include waivers that have not been filed yet.'}
               </p>
             </div>
           </div>
