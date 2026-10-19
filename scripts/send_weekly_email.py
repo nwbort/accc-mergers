@@ -71,21 +71,32 @@ COLORS = {
 }
 
 GREEN = "#335145"          # site primary
-GREEN_TINT = "#A9C6B6"     # muted wordmark tint on the green header
-GREEN_PALE = "#EAF1EC"     # CTA strip background
-INK = "#1F2937"            # near-black headings
+GREEN_PALE = "#EAF1EC"     # banner background
+GREEN_ON_PALE = "#2C4A3E"  # banner text
+FOOTER_TEXT = "#CBDDD2"    # links on the green footer
+FOOTER_MUTED = "#A9C6B6"   # small print on the green footer
+WORDMARK_DOT = "#10b981"   # the accent "." in the mergers.fyi wordmark
+INK = "#111827"            # headings, matter names, figures
 BODY_TEXT = "#4B5563"
 MUTED = "#6B7280"
-FAINT = "#9CA3AF"
-HAIRLINE = "#E3E8E5"       # outer borders
-ROW_LINE = "#F0F2F1"       # row dividers
-PAGE_BG = "#EEF1EF"
-DUE_SOON = "#B45309"       # amber for imminent determination deadlines
+LINE = "#E5E7EB"           # row dividers
+TILE_BG = "#F9FAFB"        # scoreboard tiles
+PAGE_BG = "#F3F4F1"
+DUE_SOON = "#92400E"       # text on the amber pill for imminent deadlines
+DUE_SOON_BG = "#FEF3C7"
 
 # Outlook falls back to Times New Roman unless font-family is set; the
 # embedded <style> block covers modern clients and the MSO conditional
 # covers Outlook, so FONT is only stamped on structural elements.
 FONT = "'Segoe UI',Arial,Helvetica,sans-serif"
+# Matter IDs. Consolas ships with every Windows install, so Outlook gets it.
+MONO = "Consolas,'SF Mono',Menlo,monospace"
+
+# Layout primitives. Outlook's Word renderer ignores padding on <span>/<div>
+# backgrounds, border-radius and max-width, so every fill is a bgcolor'd <td>
+# and the 640px column is pinned by a ghost table inside an MSO conditional.
+TABLE = 'cellpadding="0" cellspacing="0" border="0" role="presentation"'
+FULL_TABLE = f'width="100%" {TABLE}'
 
 # ---------------------------------------------------------------------------
 # Data loading
@@ -423,16 +434,46 @@ def merger_name(merger: dict) -> str:
 
 
 def chip(label: str, pale: str, dark: str) -> str:
-    # Outlook honours background-color on spans but not padding, so the
-    # nbsp padding keeps the chip readable everywhere.
+    """An inline label, for use mid-line after a matter name.
+
+    Outlook honours background-color on spans but not padding, so the nbsp
+    padding keeps the chip readable everywhere. Where a label leads its own
+    line, ``pill`` gives a properly padded cell instead.
+    """
     return (
         f'<span style="background-color:{pale};color:{dark};font-size:10px;'
-        f'font-weight:700;">&nbsp;{label}&nbsp;</span>'
+        f'font-weight:700;letter-spacing:0.6px;">&nbsp;{label}&nbsp;</span>'
     )
 
 
 def waiver_chip() -> str:
     return " " + chip("WAIVER", "#EEF0EF", MUTED)
+
+
+def pill(label: str, pale: str, dark: str, size: int = 10) -> str:
+    """A padded label cell. A <td> is the only element Outlook pads."""
+    return (
+        f'<td bgcolor="{pale}" style="background-color:{pale};padding:3px 8px;'
+        f'font-size:{size}px;font-weight:700;letter-spacing:0.6px;color:{dark};'
+        f'white-space:nowrap;">{label}</td>'
+    )
+
+
+def pill_line(pills: list[str], meta: str) -> str:
+    """Pills followed by a meta line, kept on one row in every client."""
+    gap = '<td width="6" style="font-size:1px;line-height:1px;">&nbsp;</td>'
+    cells = "".join(p + gap for p in pills)
+    return (
+        f"<table {TABLE}><tr>{cells}"
+        f'<td style="font-size:12px;line-height:18px;color:{MUTED};">{meta}</td></tr></table>'
+    )
+
+
+def matter_id(merger: dict, color: str = MUTED) -> str:
+    return (
+        f'<span style="font-family:{MONO};font-size:12px;color:{color};">'
+        f'{esc(merger.get("merger_id", ""))}</span>'
+    )
 
 
 def _counts(digest: dict) -> dict:
@@ -534,63 +575,107 @@ def build_lede(c: dict) -> str:
     return " ".join(sentences)
 
 
+def _tiles(cells: list[tuple]) -> str:
+    """One row of scoreboard tiles, each topped with its outcome colour."""
+    tds = []
+    # Tiles and the gaps between them split the row by percentage, so the
+    # tiles stay equal whatever their labels and the gaps survive narrowing.
+    gap = 2
+    share = f"{(100 - gap * (len(cells) - 1)) // len(cells)}%"
+    for i, (n, label, color, anchor) in enumerate(cells):
+        if i:
+            tds.append(f'<td width="{gap}%" style="font-size:1px;line-height:1px;">&nbsp;</td>')
+        tds.append(
+            f'<td class="tile" width="{share}" valign="top" bgcolor="{TILE_BG}" style="background-color:{TILE_BG};'
+            f'border-top:3px solid {color["border"]};padding:12px 14px;">'
+            f'<a href="{SITE_BASE}/digest#{anchor}" style="text-decoration:none;">'
+            f'<span class="tile-n" style="font-size:28px;line-height:32px;font-weight:700;color:{INK};">{n}</span><br>'
+            f'<span style="font-size:12px;line-height:16px;color:{MUTED};">{label}</span>'
+            "</a></td>"
+        )
+    return f'<table {FULL_TABLE}><tr>{"".join(tds)}</tr></table>'
+
+
+def _eyebrow(text: str) -> str:
+    return (
+        f'<div style="font-size:11px;font-weight:700;letter-spacing:1.4px;'
+        f'color:{MUTED};padding-bottom:8px;">{text.upper()}</div>'
+    )
+
+
 def build_scoreboard(c: dict) -> str:
-    """A slim row of linked figures under the lede."""
-    cells = [
-        (c["new"], "NEW", COLORS["new_merger"], "new-mergers"),
-        (c["cleared"], "CLEARED", COLORS["cleared"], "mergers-approved"),
+    """Linked figures under the lede: this week's outcomes, then what is on foot."""
+    week = [
+        (c["new"], "New deals", COLORS["new_merger"], "new-mergers"),
+        (c["cleared"], "Cleared", COLORS["cleared"], "mergers-approved"),
     ]
     if c["ceased"]:
-        cells.append((c["ceased"], "CEASED", COLORS["ceased"], "mergers-ceased"))
+        week.append((c["ceased"], "Ceased", COLORS["ceased"], "mergers-ceased"))
     if c["appealed"]:
-        cells.append((c["appealed"], "APPEALED", COLORS["tribunal_appeal"], "mergers-appealed"))
-    cells += [
-        (c["referred"], "TO PHASE 2", COLORS["phase_2_referral"], "mergers-referred"),
-        (c["declined"], "DECLINED", COLORS["declined"], "mergers-declined"),
-        (c["p1"], "PHASE 1", COLORS["phase_1"], "ongoing-phase-1"),
-        (c["p2"], "PHASE 2", COLORS["phase_2"], "ongoing-phase-2"),
+        week.append((c["appealed"], "Appealed", COLORS["tribunal_appeal"], "mergers-appealed"))
+    week += [
+        (c["referred"], "To phase 2", COLORS["phase_2_referral"], "mergers-referred"),
+        (c["declined"], "Declined", COLORS["declined"], "mergers-declined"),
+    ]
+    on_foot = [
+        (c["p1"], "In phase 1", COLORS["phase_1"], "ongoing-phase-1"),
+        (c["p2"], "In phase 2", COLORS["phase_2"], "ongoing-phase-2"),
     ]
     if c["on_appeal"]:
-        cells.append((c["on_appeal"], "ON APPEAL", COLORS["tribunal_appeal"], "ongoing-tribunal-appeals"))
-    width = str(100 // len(cells)) + "%"
-    tds = "".join(
-        f'<td width="{width}" align="center" style="padding:10px 2px;">'
-        f'<a href="{SITE_BASE}/digest#{anchor}" style="text-decoration:none;">'
-        f'<span style="font-size:21px;font-weight:800;color:{color["border"]};">{n}</span><br>'
-        f'<span style="font-size:9px;font-weight:700;color:{FAINT};letter-spacing:1px;">{label}</span>'
-        "</a></td>"
-        for n, label, color, anchor in cells
-    )
+        on_foot.append((c["on_appeal"], "On appeal", COLORS["tribunal_appeal"], "ongoing-tribunal-appeals"))
     return (
-        '<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">'
-        f"<tr>{tds}</tr></table>"
+        _eyebrow("This week") + _tiles(week)
+        + '<div style="font-size:1px;line-height:16px;">&nbsp;</div>'
+        + _eyebrow("On foot") + _tiles(on_foot)
     )
 
 
 def section_head(title: str, accent: str, right_text: str = "") -> str:
-    right = (
-        f'<td align="right" style="padding:28px 0 8px;border-bottom:2px solid {accent};'
-        f'font-size:12px;font-weight:700;color:{FAINT};" valign="bottom">{esc(right_text)}</td>'
-        if right_text
-        else f'<td style="padding:28px 0 8px;border-bottom:2px solid {accent};">&nbsp;</td>'
-    )
+    """A section title over a heavy rule. ``accent`` colours the rows, not the
+    head, so every section reads with the same weight."""
+    rule = f"border-bottom:2px solid {INK};"
     return (
-        f'<tr><td style="padding:28px 0 8px;border-bottom:2px solid {accent};'
-        f'font-size:17px;font-weight:800;color:{INK};" valign="bottom">{esc(title)}</td>{right}</tr>'
+        f'<tr><td style="padding:40px 0 12px;{rule}font-size:22px;line-height:28px;'
+        f'font-weight:700;color:{INK};" valign="bottom">{esc(title)}</td>'
+        f'<td align="right" style="padding:40px 0 14px;{rule}font-size:13px;'
+        f'color:{MUTED};white-space:nowrap;" valign="bottom">{esc(right_text) or "&nbsp;"}</td></tr>'
     )
 
 
 def empty_section_row(message: str) -> str:
     return (
-        f'<tr><td colspan="2" style="padding:14px 0;font-size:13px;'
-        f'color:{FAINT};font-style:italic;">{esc(message)}</td></tr>'
+        f'<tr><td colspan="2" style="padding:16px 0;font-size:14px;'
+        f'color:{MUTED};font-style:italic;">{esc(message)}</td></tr>'
     )
 
 
 def section_table(rows: str) -> str:
+    return f"<table {FULL_TABLE}>{rows}</table>"
+
+
+def bar_row(color: str, inner: str, last: bool) -> str:
+    """A list row with a slim outcome-coloured rule down its left edge."""
+    divider = "" if last else f"border-bottom:1px solid {LINE};"
     return (
-        '<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">'
-        f"{rows}</table>"
+        f'<tr><td colspan="2" style="padding:18px 0;{divider}">'
+        f"<table {FULL_TABLE}><tr>"
+        f'<td width="3" bgcolor="{color}" style="background-color:{color};font-size:1px;line-height:1px;">&nbsp;</td>'
+        f'<td width="16" style="font-size:1px;line-height:1px;">&nbsp;</td>'
+        f'<td valign="top">{inner}</td></tr></table></td></tr>'
+    )
+
+
+def row_title(merger: dict, size: int = 15) -> str:
+    return (
+        f'<a href="{merger_url(merger)}" style="color:{INK};font-size:{size}px;'
+        f'line-height:{size + 6}px;font-weight:700;text-decoration:none;">{merger_name(merger)}</a>'
+    )
+
+
+def row_detail(text: str) -> str:
+    return (
+        f'<div style="font-size:13px;line-height:19px;color:{BODY_TEXT};padding-top:6px;">{text}</div>'
+        if text else ""
     )
 
 # ---------------------------------------------------------------------------
@@ -605,9 +690,8 @@ def build_new_deals(mergers: list) -> str:
         rows += empty_section_row("No new deals were notified this week.")
     else:
         for i, m in enumerate(mergers):
-            divider = "" if i == len(mergers) - 1 else f"border-bottom:1px solid {ROW_LINE};"
             meta_bits = [
-                esc(m.get("merger_id", "")),
+                matter_id(m, c["border"]),
                 f"Notified {esc(format_date(m.get('effective_notification_datetime')))}",
             ]
             if m.get("end_of_determination_period"):
@@ -616,18 +700,17 @@ def build_new_deals(mergers: list) -> str:
                 )
             desc = truncate(m.get("merger_description", ""))
             desc_html = (
-                f'<div style="font-size:13px;color:{BODY_TEXT};line-height:19px;'
-                f'margin-top:5px;">{esc(desc)}</div>'
+                f'<div style="font-size:14px;line-height:21px;color:{BODY_TEXT};'
+                f'padding-top:8px;">{esc(desc)}</div>'
                 if desc else ""
             )
             waiver = waiver_chip() if m.get("is_waiver") else ""
-            rows += (
-                f'<tr><td colspan="2" style="padding:14px 0 13px;{divider}">'
-                f'<a href="{merger_url(m)}" style="color:{c["dark"]};font-size:14px;'
-                f'font-weight:700;text-decoration:none;line-height:1.4;">{merger_name(m)}</a>{waiver}'
-                f'<div style="font-size:11px;color:{FAINT};margin-top:3px;">{" &middot; ".join(meta_bits)}</div>'
-                f"{desc_html}</td></tr>"
-            )
+            rows += bar_row(c["border"], (
+                f"{row_title(m, 16)}{waiver}"
+                f'<div style="font-size:12px;line-height:18px;color:{MUTED};padding-top:4px;">'
+                f'{" &nbsp;&middot;&nbsp; ".join(meta_bits)}</div>'
+                f"{desc_html}"
+            ), last=i == len(mergers) - 1)
     return section_table(rows)
 
 
@@ -801,7 +884,6 @@ def build_decisions(digest: dict) -> str:
     else:
         for i, e in enumerate(entries):
             m = e["merger"]
-            divider = "" if i == len(entries) - 1 else f"border-bottom:1px solid {ROW_LINE};"
             meta_bits = [x for x in (
                 e["context"],
                 esc(format_date(e["date"])),
@@ -811,22 +893,14 @@ def build_decisions(digest: dict) -> str:
             # The register records a conditional clearance as a plain
             # "Approved", so the row says so rather than letting it read as an
             # unconditional clearance.
-            chips = chip(e["chip_label"], e["color"]["pale"], e["color"]["dark"])
+            pills = [pill(e["chip_label"], e["color"]["pale"], e["color"]["dark"])]
             if e.get("with_conditions"):
-                chips += " " + chip("WITH CONDITIONS", e["color"]["pale"], e["color"]["dark"])
-            detail_html = (
-                f'<div style="font-size:12px;color:{BODY_TEXT};line-height:18px;'
-                f'margin-top:4px;">{esc(e["detail"])}</div>'
-                if e["detail"] else ""
-            )
-            rows += (
-                f'<tr><td colspan="2" style="padding:13px 0 12px;{divider}">'
-                f'<a href="{merger_url(m)}" style="color:{e["color"]["dark"]};font-size:14px;'
-                f'font-weight:700;text-decoration:none;line-height:1.4;">{merger_name(m)}</a>{waiver}'
-                f'<div style="margin-top:4px;">{chips}'
-                f' <span style="font-size:11px;color:{FAINT};">{" &middot; ".join(meta_bits)}</span></div>'
-                f"{detail_html}</td></tr>"
-            )
+                pills.append(pill("WITH CONDITIONS", e["color"]["pale"], e["color"]["dark"]))
+            rows += bar_row(e["color"]["border"], (
+                f"{row_title(m)}{waiver}"
+                f'<div style="padding-top:7px;">{pill_line(pills, " &middot; ".join(meta_bits))}</div>'
+                f'{row_detail(esc(e["detail"]))}'
+            ), last=i == len(entries) - 1)
     return section_table(rows)
 
 
@@ -840,9 +914,8 @@ def _appeal_rows(mergers: list, chip_label: str, show_hearing: bool) -> str:
     so the two can't drift apart.
     """
     rows = ""
+    c = COLORS["tribunal_appeal"]
     for i, m in enumerate(mergers):
-        divider = "" if i == len(mergers) - 1 else f"border-bottom:1px solid {ROW_LINE};"
-        c = COLORS["tribunal_appeal"]
         appeal = m.get("appeal") or {}
         hearing = (
             f"Hearing {esc(format_date(appeal['hearing_date']))}"
@@ -859,19 +932,11 @@ def _appeal_rows(mergers: list, chip_label: str, show_hearing: bool) -> str:
             detail_bits.append(f"Lodged by {esc(appeal['appellant'])}")
         if appeal.get("tribunal_number"):
             detail_bits.append(esc(appeal["tribunal_number"]))
-        detail_html = (
-            f'<div style="font-size:12px;color:{BODY_TEXT};line-height:18px;'
-            f'margin-top:4px;">{" &middot; ".join(detail_bits)}</div>'
-            if detail_bits else ""
-        )
-        rows += (
-            f'<tr><td colspan="2" style="padding:13px 0 12px;{divider}">'
-            f'<a href="{merger_url(m)}" style="color:{c["dark"]};font-size:14px;'
-            f'font-weight:700;text-decoration:none;line-height:1.4;">{merger_name(m)}</a>'
-            f'<div style="margin-top:4px;">{chip(chip_label, c["pale"], c["dark"])}'
-            f' <span style="font-size:11px;color:{FAINT};">{" &middot; ".join(meta_bits)}</span></div>'
-            f"{detail_html}</td></tr>"
-        )
+        rows += bar_row(c["border"], (
+            f"{row_title(m)}"
+            f'<div style="padding-top:7px;">{pill_line([pill(chip_label, c["pale"], c["dark"])], " &middot; ".join(meta_bits))}</div>'
+            f'{row_detail(" &middot; ".join(detail_bits))}'
+        ), last=i == len(mergers) - 1)
     return rows
 
 
@@ -891,18 +956,17 @@ def build_tribunal_appeals(mergers: list) -> str:
 
 def _phase_group_row(label: str, color: dict, count: int) -> str:
     return (
-        f'<tr><td style="padding:16px 0 5px;border-bottom:1px solid {ROW_LINE};'
-        f'font-size:10px;font-weight:700;color:{color["dark"]};letter-spacing:1px;" '
-        f'valign="bottom">{esc(label.upper())}</td>'
-        f'<td align="right" style="padding:16px 0 5px;border-bottom:1px solid {ROW_LINE};'
-        f'font-size:10px;font-weight:700;color:{FAINT};" valign="bottom">{count}</td></tr>'
+        f'<tr><td colspan="2" style="padding:18px 0 8px;"><table {TABLE}><tr>'
+        f'{pill(esc(label.upper()), color["pale"], color["dark"])}'
+        f'<td style="padding-left:8px;font-size:12px;color:{MUTED};">{count}</td>'
+        "</tr></table></td></tr>"
     )
 
 
 def build_pipeline(digest: dict) -> str:
     """All ongoing assessments as a compact list, grouped by phase (public
     benefit, then phase 2, first) and sorted by decision due date within each group. Dates due
-    within a fortnight are shown in amber."""
+    within a fortnight are picked out on an amber pill."""
     far_future = datetime(9999, 1, 1, tzinfo=timezone.utc)
 
     def due_dt(m: dict):
@@ -928,27 +992,28 @@ def build_pipeline(digest: dict) -> str:
     if not total:
         rows += empty_section_row("No assessments are currently on foot.")
         return section_table(rows)
-    for gi, (label, phase_key, mergers) in enumerate(groups):
+    col_head = f"padding:14px 0 0;font-size:11px;font-weight:700;letter-spacing:1px;color:{MUTED};"
+    rows += (
+        f'<tr><td style="{col_head}">MATTER</td>'
+        f'<td align="right" style="{col_head}">DECISION DUE</td></tr>'
+    )
+    for label, phase_key, mergers in groups:
         rows += _phase_group_row(label, COLORS[phase_key], len(mergers))
-        last_group = gi == len(groups) - 1
-        for i, m in enumerate(mergers):
-            last = last_group and i == len(mergers) - 1
-            divider = "" if last else f"border-bottom:1px solid {ROW_LINE};"
+        for m in mergers:
+            divider = f"border-bottom:1px solid {LINE};"
             dt = due_dt(m)
             soon = cutoff is not None and dt is not None and dt <= cutoff
-            due_style = (
-                f"font-size:12px;font-weight:700;color:{DUE_SOON};"
+            due = esc(format_date(m.get("end_of_determination_period")))
+            due_html = (
+                f'<table {TABLE} align="right"><tr>{pill(due, DUE_SOON_BG, DUE_SOON, 12)}</tr></table>'
                 if soon
-                else f"font-size:12px;color:{BODY_TEXT};"
+                else f'<span style="font-size:13px;color:{BODY_TEXT};">{due}</span>'
             )
             waiver = waiver_chip() if m.get("is_waiver") else ""
             rows += (
-                f'<tr><td style="padding:9px 0 8px;{divider}" valign="top">'
-                f'<a href="{merger_url(m)}" style="color:{INK};font-size:13px;font-weight:600;'
-                f'text-decoration:none;line-height:1.45;">{merger_name(m)}</a>{waiver}</td>'
-                f'<td width="80" align="right" style="padding:9px 0 8px 12px;{divider}" valign="top">'
-                f'<span style="{due_style}">{esc(format_date(m.get("end_of_determination_period")))}</span>'
-                "</td></tr>"
+                f'<tr><td style="padding:10px 16px 10px 0;{divider}font-size:14px;line-height:20px;" valign="top">'
+                f'<a href="{merger_url(m)}" style="color:{INK};text-decoration:none;">{merger_name(m)}</a>{waiver}</td>'
+                f'<td width="110" align="right" style="padding:10px 0;{divider}" valign="top">{due_html}</td></tr>'
             )
     return section_table(rows)
 
@@ -969,6 +1034,13 @@ def build_ongoing_appeals(mergers: list) -> str:
 # Full email builder
 # ---------------------------------------------------------------------------
 
+def _wordmark(dot: str, size: int, color: str) -> str:
+    return (
+        f'<span style="font-size:{size}px;font-weight:800;color:{color};">'
+        f'mergers<span style="color:{dot};">.</span>fyi</span>'
+    )
+
+
 def build_html_email(digest: dict, banner: str | None = None) -> str:
     banner = banner or banner_choice()
     date_range = format_date_range(digest["period_start"], digest["period_end"])
@@ -985,13 +1057,13 @@ def build_html_email(digest: dict, banner: str | None = None) -> str:
         + (build_ongoing_appeals(ongoing_appeals) if ongoing_appeals else "")
     )
 
+    link_style = f"color:{GREEN};text-decoration:underline;font-weight:700;"
     if show_feedback:
         header_cta = (
             "Got thoughts, feedback or any market gossip? Just reply to this email – "
             "we&rsquo;d love to hear from you."
         )
     elif banner == "social":
-        link_style = f"color:{GREEN};text-decoration:underline;font-weight:600;"
         header_cta = (
             "mergers.fyi is now on social media &ndash; follow us on "
             f'<a href="{LINKEDIN_URL}" style="{link_style}">LinkedIn</a> and '
@@ -1001,8 +1073,7 @@ def build_html_email(digest: dict, banner: str | None = None) -> str:
     else:
         header_cta = (
             "Were you forwarded this email? Sign up "
-            f'<a href="{SITE_BASE}/digest" '
-            f'style="color:{GREEN};text-decoration:underline;">here</a>.'
+            f'<a href="{SITE_BASE}/digest" style="{link_style}">here</a>.'
         )
 
     preheader_bits = [f"{c['new']} new deals notified", f"{c['cleared']} cleared"]
@@ -1022,7 +1093,8 @@ def build_html_email(digest: dict, banner: str | None = None) -> str:
     # Resend replaces {{{RESEND_UNSUBSCRIBE_URL}}} with the real link
     unsub_var = "{{{RESEND_UNSUBSCRIBE_URL}}}"
 
-    side_borders = f"border-left:1px solid {HAIRLINE};border-right:1px solid {HAIRLINE};"
+    white = 'bgcolor="#ffffff" style="background-color:#ffffff;'
+    gutter = "padding-left:40px;padding-right:40px;"
 
     return f"""<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -1030,6 +1102,7 @@ def build_html_email(digest: dict, banner: str | None = None) -> str:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
   <!--[if mso]>
   <noscript>
     <xml>
@@ -1042,6 +1115,12 @@ def build_html_email(digest: dict, banner: str | None = None) -> str:
   <![endif]-->
   <style>
     body, table, td, div, p, a, span {{font-family:'Segoe UI',Arial,Helvetica,sans-serif;}}
+    @media only screen and (max-width:620px) {{
+      .gutter {{padding-left:20px !important;padding-right:20px !important;}}
+      .headline {{font-size:28px !important;line-height:34px !important;}}
+      .tile {{padding:10px 8px !important;}}
+      .tile-n {{font-size:22px !important;line-height:26px !important;}}
+    }}
   </style>
   <title>Weekly merger digest, {esc(date_range)} | Australian Merger Tracker</title>
 </head>
@@ -1051,80 +1130,96 @@ def build_html_email(digest: dict, banner: str | None = None) -> str:
   {esc(preheader)}
 </div>
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
-       bgcolor="{PAGE_BG}" style="background-color:{PAGE_BG};">
+<table {FULL_TABLE} bgcolor="{PAGE_BG}" style="background-color:{PAGE_BG};">
   <tr>
-    <td align="center" style="padding:26px 12px 44px;">
+    <td align="center" style="padding:28px 12px 48px;">
 
-      <!-- ===== OUTER WRAPPER (620px, fixed in Outlook, fluid elsewhere) ===== -->
-      <table width="620" cellpadding="0" cellspacing="0" border="0" role="presentation"
-             style="width:620px;max-width:100%;">
+      <!-- ===== OUTER WRAPPER =====
+           Fluid up to 640px. Chrome-based clients won't shrink a table below a
+           fixed width, so the cap is max-width; Outlook ignores max-width, so
+           the ghost table pins it to 640px there. -->
+      <!--[if mso]><table width="640" align="center" {TABLE}><tr><td><![endif]-->
+      <table {FULL_TABLE} style="width:100%;max-width:640px;">
+
+        <!-- TOP RULE -->
+        <tr>
+          <td bgcolor="{GREEN}" height="6" style="background-color:{GREEN};font-size:1px;line-height:6px;">&nbsp;</td>
+        </tr>
 
         <!-- MASTHEAD -->
         <tr>
-          <td bgcolor="{GREEN}" style="background-color:{GREEN};padding:26px 30px 22px;font-family:{FONT};">
-            <div style="font-size:12px;font-weight:700;letter-spacing:2px;color:{GREEN_TINT};">MERGERS.FYI</div>
-            <div style="font-size:24px;font-weight:700;color:#ffffff;line-height:30px;margin-top:6px;">Weekly merger digest</div>
-            <div style="font-size:13px;color:#CBDDD2;margin-top:8px;">
-              Week of {esc(date_range)}
-              &nbsp;&middot;&nbsp;
-              <a href="{SITE_BASE}/digest" style="color:#ffffff;text-decoration:underline;">View online</a>
-            </div>
+          <td class="gutter" {white}{gutter}padding-top:28px;font-family:{FONT};">
+            <table {FULL_TABLE}>
+              <tr>
+                <td valign="middle">{_wordmark(WORDMARK_DOT, 17, GREEN)}</td>
+                <td align="right" valign="middle" style="font-size:13px;color:{MUTED};">
+                  {esc(date_range)}&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{SITE_BASE}/digest" style="color:{GREEN};font-weight:600;text-decoration:none;">View online</a>
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
 
-        <!-- CTA STRIP -->
+        <!-- HEADLINE + LEDE -->
         <tr>
-          <td bgcolor="{GREEN_PALE}" style="background-color:{GREEN_PALE};padding:10px 30px;{side_borders}
-                     font-family:{FONT};font-size:12px;color:#3E5F51;font-style:italic;">
-            {header_cta}
-          </td>
-        </tr>
-
-        <!-- LEDE -->
-        <tr>
-          <td bgcolor="#ffffff" style="background-color:#ffffff;padding:24px 30px 6px;{side_borders}
-                     font-family:{FONT};font-size:15px;line-height:23px;color:{BODY_TEXT};">
-            {build_lede(c)}
+          <td class="gutter" {white}{gutter}padding-top:36px;font-family:{FONT};">
+            <div class="headline" style="font-size:34px;line-height:40px;font-weight:700;color:{INK};letter-spacing:-0.5px;">Your week in<br>Australian mergers</div>
+            <div style="font-size:16px;line-height:26px;color:{BODY_TEXT};padding-top:16px;">{build_lede(c)}</div>
           </td>
         </tr>
 
         <!-- SCOREBOARD -->
         <tr>
-          <td bgcolor="#ffffff" style="background-color:#ffffff;padding:12px 22px 6px;{side_borders}">
-            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
-              <tr><td style="border-bottom:1px solid {ROW_LINE};font-size:1px;line-height:1px;">&nbsp;</td></tr>
-            </table>
+          <td class="gutter" {white}{gutter}padding-top:28px;">
             {build_scoreboard(c)}
+          </td>
+        </tr>
+
+        <!-- BANNER -->
+        <tr>
+          <td class="gutter" {white}{gutter}padding-top:28px;">
+            <table {FULL_TABLE}>
+              <tr>
+                <td bgcolor="{GREEN_PALE}" style="background-color:{GREEN_PALE};border-left:3px solid {GREEN};
+                           padding:14px 18px;font-family:{FONT};font-size:13px;line-height:20px;color:{GREEN_ON_PALE};">
+                  {header_cta}
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
 
         <!-- SECTIONS -->
         <tr>
-          <td bgcolor="#ffffff" style="background-color:#ffffff;padding:0 30px 30px;{side_borders}">
+          <td class="gutter" {white}{gutter}padding-bottom:44px;">
             {sections}
           </td>
         </tr>
 
         <!-- FOOTER -->
         <tr>
-          <td bgcolor="#F4F6F5" align="center"
-              style="background-color:#F4F6F5;padding:18px 28px;
-                     border:1px solid {HAIRLINE};border-top:1px solid {ROW_LINE};
-                     font-family:{FONT};">
-            <p style="margin:0 0 6px;font-size:12px;color:{MUTED};line-height:19px;">
-              You&rsquo;re receiving this because you subscribed to the mergers.fyi weekly digest
-              at <a href="{SITE_BASE}" style="color:{GREEN};text-decoration:none;font-weight:600;">mergers.fyi</a>.
-            </p>
-            <p style="margin:0;font-size:12px;color:{FAINT};">
-              <a href="{unsub_var}" style="color:{FAINT};text-decoration:underline;">Unsubscribe</a>
-              &nbsp;&middot;&nbsp;
-              <a href="{SITE_BASE}/digest" style="color:{FAINT};text-decoration:underline;">View in browser</a>
-            </p>
+          <td class="gutter" bgcolor="{GREEN}" style="background-color:{GREEN};{gutter}padding-top:28px;padding-bottom:28px;font-family:{FONT};">
+            <table {FULL_TABLE}>
+              <tr>
+                <td valign="middle"><a href="{SITE_BASE}" style="text-decoration:none;">{_wordmark("#6EE7B7", 15, "#ffffff")}</a></td>
+                <td align="right" valign="middle" style="font-size:12px;">
+                  <a href="{SITE_BASE}/digest" style="color:{FOOTER_TEXT};text-decoration:underline;">View in browser</a>
+                  &nbsp;&nbsp;
+                  <a href="{unsub_var}" style="color:{FOOTER_TEXT};text-decoration:underline;">Unsubscribe</a>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" style="padding-top:10px;font-size:12px;line-height:18px;color:{FOOTER_MUTED};">
+                  You&rsquo;re receiving this because you subscribed to the mergers.fyi weekly digest
+                  at <a href="{SITE_BASE}" style="color:#ffffff;text-decoration:none;font-weight:600;">mergers.fyi</a>.
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
 
       </table>
+      <!--[if mso]></td></tr></table><![endif]-->
     </td>
   </tr>
 </table>
