@@ -242,6 +242,7 @@ def build_text_email(digest: dict, banner: str | None = None) -> str:
         sum(1 for m in digest["deals_cleared"] if with_conditions(m))
     )
     referred = digest.get("deals_referred_to_phase_2") or []
+    to_public_benefit = digest.get("deals_to_public_benefit") or []
     ceased = digest.get("deals_assessment_ceased") or []
     appealed = digest.get("deals_appealed_to_tribunal") or []
     tribunal_decided = digest.get("deals_decided_by_tribunal") or []
@@ -259,10 +260,10 @@ def build_text_email(digest: dict, banner: str | None = None) -> str:
     ]
     if ceased:
         lines.append(f"Assessment ceased    : {len(ceased)}")
-    lines += [
-        f"Referred to phase 2  : {len(referred)}",
-        f"Declined             : {len(digest['deals_declined'])}",
-    ]
+    lines.append(f"Referred to phase 2  : {len(referred)}")
+    if to_public_benefit:
+        lines.append(f"To public benefit    : {len(to_public_benefit)}")
+    lines.append(f"Declined             : {len(digest['deals_declined'])}")
     if appealed:
         lines.append(f"Appealed to tribunal : {len(appealed)}")
     if tribunal_decided:
@@ -484,6 +485,7 @@ def _counts(digest: dict) -> dict:
             1 for m in digest["deals_cleared"] if with_conditions(m)
         ),
         "referred": len(digest.get("deals_referred_to_phase_2") or []),
+        "to_pb": len(digest.get("deals_to_public_benefit") or []),
         "declined": len(digest["deals_declined"]),
         "ceased": len(digest.get("deals_assessment_ceased") or []),
         "appealed": len(digest.get("deals_appealed_to_tribunal") or []),
@@ -539,6 +541,11 @@ def build_lede(c: dict) -> str:
         mid.append(
             f"{bw(c['referred'])} {pluralise(c['referred'], 'deal was', 'deals were')} "
             "referred to a phase 2 review"
+        )
+    if c["to_pb"]:
+        mid.append(
+            f"{bw(c['to_pb'])} {pluralise(c['to_pb'], 'deal')} "
+            "moved to the public benefit phase"
         )
     if c["declined"]:
         mid.append(f"{bw(c['declined'])} {pluralise(c['declined'], 'was', 'were')} declined")
@@ -621,10 +628,12 @@ def build_scoreboard(c: dict) -> str:
         week.append((c["ceased"], "Ceased", COLORS["ceased"], "mergers-ceased"))
     if c["appealed"]:
         week.append((c["appealed"], "Appealed", COLORS["tribunal_appeal"], "mergers-appealed"))
-    week += [
-        (c["referred"], "To phase 2", COLORS["phase_2_referral"], "mergers-referred"),
-        (c["declined"], "Declined", COLORS["declined"], "mergers-declined"),
-    ]
+    week.append((c["referred"], "To phase 2", COLORS["phase_2_referral"], "mergers-referred"))
+    if c["to_pb"]:
+        # The digest page has no section of its own for these, so the tile
+        # links to the public benefit matters on foot, where they now sit.
+        week.append((c["to_pb"], "To public benefit", COLORS["phase_2"], "ongoing-public-benefit"))
+    week.append((c["declined"], "Declined", COLORS["declined"], "mergers-declined"))
     on_foot = [
         (c["p1"], "In phase 1", COLORS["phase_1"], "ongoing-phase-1"),
         (c["p2"], "In phase 2", COLORS["phase_2"], "ongoing-phase-2"),
@@ -1091,6 +1100,8 @@ def build_html_email(digest: dict, banner: str | None = None) -> str:
         preheader_bits.append(f"{c['ceased']} ceased")
     if c["referred"]:
         preheader_bits.append(f"{c['referred']} referred to phase 2")
+    if c["to_pb"]:
+        preheader_bits.append(f"{c['to_pb']} to the public benefit phase")
     if c["declined"]:
         preheader_bits.append(f"{c['declined']} declined")
     if c["appealed"]:
@@ -1367,6 +1378,7 @@ def main() -> None:
     print(f"  New deals notified    : {len(digest['new_deals_notified'])}")
     print(f"  Deals cleared         : {len(digest['deals_cleared'])}")
     print(f"  Referred to phase 2   : {len(digest.get('deals_referred_to_phase_2') or [])}")
+    print(f"  To public benefit     : {len(digest.get('deals_to_public_benefit') or [])}")
     print(f"  Deals declined        : {len(digest['deals_declined'])}")
     print(f"  Assessment ceased     : {len(digest.get('deals_assessment_ceased') or [])}")
     print(f"  Appealed to tribunal  : {len(digest.get('deals_appealed_to_tribunal') or [])}")

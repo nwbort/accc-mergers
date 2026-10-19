@@ -125,6 +125,30 @@ class TestLedeOnFoot:
         assert 'all in phase 1' in _text(swe.build_lede(swe._counts(digest)))
 
 
+class TestLedeToPublicBenefit:
+    def test_a_move_to_the_public_benefit_phase_is_reported(self):
+        digest = _digest()
+        digest['deals_to_public_benefit'] = [{'merger_id': 'MN-1', 'merger_name': 'One'}]
+        lede = _text(swe.build_lede(swe._counts(digest)))
+        assert 'One deal moved to the public benefit phase.' in lede
+
+    def test_it_joins_the_other_outcomes_in_one_sentence(self):
+        digest = _digest()
+        digest['deals_referred_to_phase_2'] = [{'merger_id': 'MN-1'}]
+        digest['deals_to_public_benefit'] = [{'merger_id': 'MN-2'}, {'merger_id': 'MN-3'}]
+        lede = _text(swe.build_lede(swe._counts(digest)))
+        assert ('One deal was referred to a phase 2 review and two deals moved '
+                'to the public benefit phase.') in lede
+
+    def test_nothing_is_said_in_a_week_without_one(self):
+        assert 'public benefit' not in _text(swe.build_lede(swe._counts(_digest())))
+
+    def test_the_text_email_counts_it(self):
+        digest = _digest()
+        digest['deals_to_public_benefit'] = [{'merger_id': 'MN-1', 'merger_name': 'One'}]
+        assert 'To public benefit    : 1' in swe.build_text_email(digest)
+
+
 class TestDecisionRows:
     def test_a_conditional_clearance_is_chipped_in_the_html(self):
         digest = _digest(cleared=[_cleared('MN-1', 'One', has_conditions=True)])

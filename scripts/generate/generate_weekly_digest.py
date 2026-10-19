@@ -262,6 +262,7 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
         'public_benefit_in_progress': merger.get('public_benefit_in_progress', False),
         'public_benefits_determination': merger.get('public_benefits_determination'),
         'public_benefits_determination_date': merger.get('public_benefits_determination_date'),
+        'public_benefit_application_date': merger.get('public_benefit_application_date'),
         'ceased_date': merger.get('ceased_date'),
         'merger_description': truncated_description,
         'events': determination_pdf_events(merger),
@@ -302,6 +303,7 @@ def generate_weekly_digest(
     already_notified = bucket_ids(previous_digest, 'new_deals_notified')
     already_cleared = bucket_ids(previous_digest, 'deals_cleared')
     already_referred = bucket_ids(previous_digest, 'deals_referred_to_phase_2')
+    already_to_public_benefit = bucket_ids(previous_digest, 'deals_to_public_benefit')
     already_declined = bucket_ids(previous_digest, 'deals_declined')
     already_ceased = bucket_ids(previous_digest, 'deals_assessment_ceased')
     already_appealed = bucket_ids(previous_digest, 'deals_appealed_to_tribunal')
@@ -317,6 +319,7 @@ def generate_weekly_digest(
         'new_deals_notified': [],
         'deals_cleared': [],
         'deals_referred_to_phase_2': [],
+        'deals_to_public_benefit': [],
         'deals_declined': [],
         'deals_assessment_ceased': [],
         'deals_appealed_to_tribunal': [],
@@ -369,6 +372,14 @@ def generate_weekly_digest(
             is_in_week_range(phase_1_determination_date, lookback_start, period_end) and
             merger_id not in already_referred):
             digest['deals_referred_to_phase_2'].append(create_merger_summary(merger))
+
+        # Deals whose parties applied for a public benefit determination within
+        # the lookback window, keyed on the application date enrichment
+        # settles (the register's own field, else the first public benefit
+        # event), minus anything already surfaced in last week's digest.
+        if (is_in_week_range(merger.get('public_benefit_application_date'), lookback_start, period_end) and
+            merger_id not in already_to_public_benefit):
+            digest['deals_to_public_benefit'].append(create_merger_summary(merger))
 
         # A waiver application is granted or refused; there is no ACCC
         # process for "ceasing" one the way a notification review can be
@@ -439,6 +450,9 @@ def generate_weekly_digest(
     digest['deals_referred_to_phase_2'].sort(
         key=lambda x: x.get('phase_1_determination_date') or ''
     )
+    digest['deals_to_public_benefit'].sort(
+        key=lambda x: x.get('public_benefit_application_date') or ''
+    )
     digest['deals_declined'].sort(key=decided_on)
 
     # Sort ceased by cessation date (ascending)
@@ -503,6 +517,7 @@ def main():
     print(f"  New deals notified (last week): {len(digest['new_deals_notified'])}")
     print(f"  Deals cleared (last week): {len(digest['deals_cleared'])}")
     print(f"  Deals referred to phase 2 (last week): {len(digest['deals_referred_to_phase_2'])}")
+    print(f"  Deals to public benefit phase (last week): {len(digest['deals_to_public_benefit'])}")
     print(f"  Deals declined (last week): {len(digest['deals_declined'])}")
     print(f"  Assessment ceased (last week): {len(digest['deals_assessment_ceased'])}")
     print(f"  Appealed to tribunal (last week): {len(digest['deals_appealed_to_tribunal'])}")
