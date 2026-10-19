@@ -7,8 +7,8 @@ own composer with the post already written, and sends it as an ntfy
 notification (``NTFY_TOPIC``) whose "Copy LinkedIn link" button puts the link
 on the clipboard, to paste into a browser. It has to be a browser: a phone
 hands linkedin.com links to the LinkedIn app, which opens without the text, so
-tapping the notification itself opens the matter page instead. The text is in
-the notification body too. Nothing is posted until a person presses Post.
+tapping the notification itself opens the matter page instead. The notification
+body is the link alone. Nothing is posted until a person presses Post.
 
 The post is the same one the API would make, as plain text rather than in
 LinkedIn's "little" format (the composer escapes what a person types). The
@@ -78,7 +78,7 @@ def notify(milestone: Milestone, *, topic: str, server: str, token: str = "") ->
             json={
                 "topic": topic,
                 "title": f"Post to LinkedIn: {milestone.headline}"[:200],
-                "message": share_text(milestone)[:4000],
+                "message": share_url(milestone),
                 # Not the share link: a phone hands linkedin.com links to the
                 # LinkedIn app, which opens without the text. The link is
                 # copied instead, to paste into a browser.

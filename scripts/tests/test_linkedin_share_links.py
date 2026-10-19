@@ -142,5 +142,6 @@ def test_notify_offers_the_link_to_copy(monkeypatch):
     copy, view = captured["json"]["actions"]
     assert copy == {"action": "copy", "label": "Copy LinkedIn link", "value": share_url(milestone)}
     assert view["url"] == milestone.url
-    assert captured["json"]["message"] == share_text(milestone)
+    assert captured["json"]["message"] == share_url(milestone)
     assert captured["headers"] == {"Authorization": "Bearer tok"}
+
