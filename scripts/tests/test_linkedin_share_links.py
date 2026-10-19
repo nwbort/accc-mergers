@@ -142,5 +142,12 @@ def test_notify_offers_the_link_to_copy(monkeypatch):
     copy, view = captured["json"]["actions"]
     assert copy == {"action": "copy", "label": "Copy LinkedIn link", "value": share_url(milestone)}
     assert view["url"] == milestone.url
-    assert captured["json"]["message"] == share_text(milestone)
+    assert captured["json"]["message"] == f"{share_text(milestone)}\n\n{share_url(milestone)}"
     assert captured["headers"] == {"Authorization": "Bearer tok"}
+
+
+def test_notification_body_drops_the_text_when_the_link_alone_fits(monkeypatch):
+    (milestone,) = milestones(matter())
+    assert share_links.notification_body(milestone).endswith(share_url(milestone))
+    monkeypatch.setattr(share_links, "NTFY_MESSAGE_LIMIT", len(share_url(milestone)) + 1)
+    assert share_links.notification_body(milestone) == share_url(milestone)
