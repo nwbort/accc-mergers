@@ -49,7 +49,7 @@ from scripts.constants import merger_status
 from scripts.constants.regime import is_voluntary_period_notification
 
 from .. import anzsic
-from ..business_days import calculate_business_days, calculate_calendar_days
+from ..business_days import calculate_business_days, calculate_calendar_days, is_business_day
 from ..enrichment import reached_phase_2
 from ..durations import collect_phase_1_durations, collect_waiver_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers, is_waiver
@@ -842,6 +842,92 @@ def current_status(mergers: list, as_at: date | None = None) -> dict:
     }
 
 
+# Windows for pending_waivers_estimate, each the best of a backtest grid
+# (see that function). The filing window is in business days, the duration
+# sample in calendar days of decisions.
+PENDING_WAIVER_FILING_WINDOW_BD = 40
+PENDING_WAIVER_DURATION_WINDOW_DAYS = 45
+
+
+def pending_waivers_estimate(mergers: list, as_at: date | None = None) -> dict[str, int]:
+    """Estimated waiver applications filed but not yet decided, per filing month.
+
+    The monthly-volume chart buckets waivers by when they were filed, but a
+    waiver reaches the register only once it has been decided — so the latest
+    month or two always read low, and the current month usually reads zero
+    (the median waiver takes ~14 business days). This estimates the missing
+    part, the applications already in front of the ACCC, so the chart can
+    stack it on top of what is visible. It does not project filings that
+    haven't happened yet: the current month's notification bar is a part-month
+    count too, and the two should stay comparable.
+
+    It is a standard reporting-delay nowcast with two inputs:
+
+    - ``F(k)``, the share of waivers decided within ``k`` business days, from
+      the waivers *decided* in the last 45 days. Durations have lengthened as
+      the regime has bedded in (a 11 BD median for January filings, 18 for
+      August's), so the most recent decisions describe the present better
+      than older cohorts that are complete but stale.
+    - ``λ``, the waivers filed per business day, as the Poisson maximum
+      likelihood over the last 40 business days: the waivers visible from that
+      window divided by ``Σ F(age)`` over its days. A day filed 30 business
+      days ago counts in full, a day filed yesterday barely at all, so the
+      recent days contribute exactly as much as they can be trusted to.
+
+    Each business day ``d`` of the window then contributes
+    ``λ · (1 − F(age of d))`` to its month. Rate and durations are both held
+    constant across the window, which the backtest (daily as-at dates from
+    April to September 2026, against what was later published) shows as a
+    slight underestimate while volumes and durations are still rising: about
+    −9% on the total pending, ±20% on a typical day, ~6 waivers per month.
+    The windows were the best of a small grid; a reading taken from the
+    register's own history ("last month at this point") was not, since the
+    current month nearly always shows zero decided waivers to scale from.
+
+    Returns ``{month: estimate}`` for months with a non-zero rounded estimate;
+    empty when there is no recent decision to learn durations from.
+    """
+    as_at = as_at or datetime.now(_SYDNEY_TZ).date()
+    as_at_iso = as_at.isoformat()
+    waivers = filter_waivers(mergers)
+
+    duration_floor = (as_at - timedelta(days=PENDING_WAIVER_DURATION_WINDOW_DAYS)).isoformat()
+    durations = sorted(
+        bus_days for decided, bus_days in _decided_durations(waivers)
+        if duration_floor < decided <= as_at_iso
+    )
+    if not durations:
+        return {}
+
+    def share_decided_within(bus_days: int) -> float:
+        return sum(1 for d in durations if d <= bus_days) / len(durations)
+
+    filing_days = []
+    day = as_at
+    while len(filing_days) < PENDING_WAIVER_FILING_WINDOW_BD:
+        if is_business_day(datetime(day.year, day.month, day.day)):
+            filing_days.append(day.isoformat())
+        day -= timedelta(days=1)
+
+    shares = {d: share_decided_within(calculate_business_days(d, as_at_iso)) for d in filing_days}
+    exposure = sum(shares.values())
+    if not exposure:
+        return {}
+
+    window_start = filing_days[-1]
+    visible = sum(
+        1 for m in waivers
+        if (m.get('effective_notification_datetime') or '')[:10] >= window_start
+        and (m.get('determination_publication_date') or '9999')[:10] <= as_at_iso
+    )
+    rate = visible / exposure
+
+    by_month: dict[str, float] = defaultdict(float)
+    for filed, share in shares.items():
+        by_month[filed[:7]] += rate * (1 - share)
+    return {month: round(n) for month, n in sorted(by_month.items()) if round(n)}
+
+
 def referrals_by_quarter(notification_mergers: list) -> list[dict]:
     """Notification volume and subsequent Phase 2 referrals, per calendar quarter.
 
@@ -1046,11 +1132,18 @@ def generate(mergers: list) -> dict:
         else:
             monthly_counts[month_key]["notifications"] += 1
 
-    sorted_months = sorted(monthly_counts.keys())
+    # Waivers still being assessed are invisible on the register, so the
+    # recent months are topped up with an estimate (see
+    # pending_waivers_estimate), published separately so it is never mistaken
+    # for a count.
+    pending_waivers = pending_waivers_estimate(mergers)
+
+    sorted_months = sorted(monthly_counts.keys() | pending_waivers.keys())
     monthly_volume = {
         "labels": sorted_months,
         "notifications": [monthly_counts[m]["notifications"] for m in sorted_months],
         "waivers": [monthly_counts[m]["waivers"] for m in sorted_months],
+        "waivers_pending_estimate": [pending_waivers.get(m, 0) for m in sorted_months],
     }
 
     restarts = notification_restarts(mergers)

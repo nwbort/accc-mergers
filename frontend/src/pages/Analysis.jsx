@@ -22,6 +22,38 @@ import { PHASE_1_DEADLINE_BD, WAIVER_DEADLINE_BD } from '../constants/statutoryD
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/analysis'];
 
+const PENDING_WAIVERS_LABEL = 'Waivers under assessment (estimated)';
+
+// Diagonal teal stripes for the estimated segment, so it reads as a
+// projection on top of the counted waivers rather than as more of them.
+// Built once; falls back to a flat tint where there is no 2D canvas (jsdom).
+let stripePattern;
+function pendingWaiversFill() {
+  if (stripePattern !== undefined) return stripePattern;
+  const size = 8;
+  const tile = document.createElement('canvas');
+  tile.width = size;
+  tile.height = size;
+  const ctx = tile.getContext?.('2d');
+  if (!ctx) return COLORS.tealLight;
+  ctx.fillStyle = COLORS.tealLight;
+  ctx.fillRect(0, 0, size, size);
+  ctx.strokeStyle = COLORS.teal;
+  ctx.lineWidth = 2;
+  // The main diagonal plus the two corner offcuts, so the stripes meet
+  // seamlessly across tile edges.
+  ctx.beginPath();
+  ctx.moveTo(0, size);
+  ctx.lineTo(size, 0);
+  ctx.moveTo(-size / 2, size / 2);
+  ctx.lineTo(size / 2, -size / 2);
+  ctx.moveTo(size / 2, size * 1.5);
+  ctx.lineTo(size * 1.5, size / 2);
+  ctx.stroke();
+  stripePattern = ctx.createPattern(tile, 'repeat') ?? COLORS.tealLight;
+  return stripePattern;
+}
+
 
 function Analysis() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.analysis, {
@@ -51,6 +83,9 @@ function Analysis() {
   const waiverDeadline = calendarDays ? null : WAIVER_DEADLINE_BD;
 
   // --- Monthly Volume ---
+  // Guarded on presence, like the caseload: a deployed payload can predate it.
+  const pendingWaivers = monthly_volume.waivers_pending_estimate;
+  const hasPendingWaivers = Boolean(pendingWaivers?.some((n) => n > 0));
   const monthlyVolumeData = {
     labels: monthly_volume.labels.map(formatMonthLabel),
     datasets: [
@@ -68,6 +103,18 @@ function Analysis() {
         borderRadius: 4,
         maxBarThickness: 40,
       },
+      // Waivers only reach the register once decided, so the recent months
+      // are topped up with the generator's estimate of those still being
+      // assessed — drawn striped so it never reads as a count.
+      ...(hasPendingWaivers ? [{
+        label: PENDING_WAIVERS_LABEL,
+        data: pendingWaivers,
+        backgroundColor: pendingWaiversFill(),
+        borderColor: COLORS.teal,
+        borderWidth: 1.5,
+        borderRadius: 4,
+        maxBarThickness: 40,
+      }] : []),
     ],
   };
 
@@ -83,6 +130,13 @@ function Analysis() {
           pointStyle: 'rectRounded',
           padding: 16,
           font: { size: 12, family: 'Inter, sans-serif' },
+        },
+      },
+      tooltip: {
+        callbacks: {
+          label: (ctx) => (ctx.dataset.label === PENDING_WAIVERS_LABEL
+            ? `${ctx.dataset.label}: ~${ctx.parsed.y}`
+            : `${ctx.dataset.label}: ${ctx.parsed.y}`),
         },
       },
     },
@@ -397,13 +451,19 @@ function Analysis() {
               <div className="sr-only">
                 <table id="chart-monthly-volume-summary">
                   <caption>Merger notifications and waiver applications per month</caption>
-                  <thead><tr><th>Month</th><th>Notifications</th><th>Waivers</th></tr></thead>
+                  <thead>
+                    <tr>
+                      <th>Month</th><th>Notifications</th><th>Waivers</th>
+                      {hasPendingWaivers && <th>{PENDING_WAIVERS_LABEL}</th>}
+                    </tr>
+                  </thead>
                   <tbody>
                     {monthly_volume.labels.map((month, i) => (
                       <tr key={month}>
                         <td>{formatMonthLabel(month)}</td>
                         <td>{monthly_volume.notifications[i]}</td>
                         <td>{monthly_volume.waivers[i]}</td>
+                        {hasPendingWaivers && <td>{pendingWaivers[i] ? `~${pendingWaivers[i]}` : 0}</td>}
                       </tr>
                     ))}
                   </tbody>

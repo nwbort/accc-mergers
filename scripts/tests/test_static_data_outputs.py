@@ -1076,6 +1076,67 @@ class TestOpenCaseload:
         assert payload == {'labels': [], 'notifications': [], 'as_at': '2026-02-28'}
 
 
+class TestPendingWaiversEstimate:
+    """Waivers filed but not yet on the register, estimated per filing month."""
+
+    @staticmethod
+    def _business_days(start, end):
+        from datetime import datetime, timedelta
+        from scripts.generate.static_data.business_days import is_business_day
+        days, day = [], start
+        while day <= end:
+            if is_business_day(datetime(day.year, day.month, day.day)):
+                days.append(day.isoformat())
+            day += timedelta(days=1)
+        return days
+
+    def _steady_stream(self, as_at, review_bd=10):
+        # One waiver filed every business day, each decided exactly review_bd
+        # business days later; only those decided by as_at are on the register.
+        days = self._business_days(date(2026, 3, 2), date(2026, 8, 31))
+        return [
+            {
+                'merger_id': f'WA-{i}',
+                'is_waiver': True,
+                'effective_notification_datetime': f'{filed}T12:00:00Z',
+                'determination_publication_date': f'{days[i + review_bd]}T12:00:00Z',
+            }
+            for i, filed in enumerate(days[:-review_bd])
+            if days[i + review_bd] <= as_at.isoformat()
+        ]
+
+    def test_recovers_the_applications_still_under_review(self):
+        # With every review taking 10 business days, exactly the last 10
+        # business days' filings are still pending, and they straddle the
+        # May/June boundary, so the split by filing month is checked too.
+        as_at = date(2026, 6, 12)
+        mergers = self._steady_stream(as_at)
+        pending_days = self._business_days(date(2026, 5, 1), as_at)[-10:]
+
+        estimate = analysis.pending_waivers_estimate(mergers, as_at=as_at)
+
+        expected = {}
+        for day in pending_days:
+            expected[day[:7]] = expected.get(day[:7], 0) + 1
+        assert estimate == expected
+        assert sum(estimate.values()) == 10
+
+    def test_no_recent_decisions_means_no_estimate(self):
+        mergers = self._steady_stream(date(2026, 4, 30))
+        assert analysis.pending_waivers_estimate(mergers, as_at=date(2026, 8, 31)) == {}
+
+    def test_ignores_notifications(self):
+        as_at = date(2026, 6, 12)
+        waivers = self._steady_stream(as_at)
+        notifications = [{**m, 'merger_id': f'MN-{i}', 'is_waiver': False} for i, m in enumerate(waivers)]
+        assert analysis.pending_waivers_estimate(notifications, as_at=as_at) == {}
+
+    def test_monthly_volume_carries_the_estimate_aligned_with_its_labels(self):
+        payload = analysis.generate(_enriched_fixture())
+        volume = payload['monthly_volume']
+        assert len(volume['waivers_pending_estimate']) == len(volume['labels'])
+
+
 class TestCurrentStatus:
     """Recent decision times vs the all-time baseline, and against caseload."""
 
