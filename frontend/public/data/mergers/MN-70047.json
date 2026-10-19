@@ -61,6 +61,15 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-19T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Australian%20Venue%20Co%20-%20assets%20of%20Molly%27s%20Irish%20Pub%20Highgate%20and%20Molly%27s%20Irish%20Pub%20Victoria%20Park%2C%20Perth%2C%20WA%20-%20third-party%20questionnaire_1.docx",
+      "url_gh": "/mergers/MN-70047/Australian Venue Co - assets of Molly's Irish Pub Highgate and Molly's Irish Pub Victoria Park, Perth, WA - third-party questionnaire_1.pdf",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
@@ -70,6 +79,7 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
+  "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-10006",
@@ -108,15 +118,15 @@
     }
   ],
   "phase_1_estimate": {
-    "expected_business_days": 18,
+    "expected_business_days": 19,
     "range_business_days": [
       16,
-      21
+      24
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 255,
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 29,
     "as_of": "2026-10-16",
     "estimated_at": "2026-10-19",
     "method_version": 2

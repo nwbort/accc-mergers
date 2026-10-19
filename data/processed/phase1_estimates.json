@@ -2871,15 +2871,15 @@
     "method_version": 2
   },
   "MN-70047": {
-    "expected_business_days": 18,
+    "expected_business_days": 19,
     "range_business_days": [
       16,
-      21
+      24
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 255,
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 29,
     "as_of": "2026-10-16",
     "estimated_at": "2026-10-19",
     "method_version": 2
