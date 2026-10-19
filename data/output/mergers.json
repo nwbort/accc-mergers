@@ -54338,6 +54338,153 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/abb-rotork",
+      "merger_name": "ABB - Rotork",
+      "status": "Under assessment",
+      "merger_id": "MN-75061",
+      "effective_notification_datetime": "2026-10-17T12:00:00Z",
+      "original_notification_datetime": "2026-10-17T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-11-27T12:00:00Z",
+      "page_modified_datetime": "2026-10-19T13:54:38+11:00",
+      "consultation_response_due_date": "2026-10-26T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "ABB Ltd",
+          "identifier_type": null,
+          "identifier": "CHE101.049.653",
+          "party_page": {
+            "id": "abb-ltd",
+            "name": "ABB Ltd"
+          }
+        },
+        {
+          "name": "ABB Automation Holding UK Ltd",
+          "identifier_type": null,
+          "identifier": "UK Companies House  17332914",
+          "party_page": {
+            "id": "abb-automation-holding-uk-ltd",
+            "name": "ABB Automation Holding UK Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Rotork plc",
+          "identifier_type": null,
+          "identifier": "UK Companies House  00578327",
+          "party_page": {
+            "id": "rotork-plc",
+            "name": "Rotork plc"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0700",
+          "name": "Oil and Gas Extraction"
+        },
+        {
+          "code": "2439",
+          "name": "Other Electrical Equipment Manufacturing"
+        },
+        {
+          "code": "2611",
+          "name": "Fossil Fuel Electricity Generation"
+        },
+        {
+          "code": "2811",
+          "name": "Water Supply"
+        },
+        {
+          "code": "3499",
+          "name": "Other Machinery and Equipment Wholesaling n.e.c."
+        }
+      ],
+      "merger_description": "ABB Ltd (**ABB**), acting through its wholly owned acquisition vehicle, ABB Automation Holding UK Limited, proposes to acquire all issued and to be issued ordinary shares in Rotork plc (**Rotork**). The acquisition would be made by way of a public takeover offer implemented through a scheme of arrangement under the UK Companies Act 2006 (the **Acquisition**).\n\nABB is the ultimate parent company of ABB Group, which has around 110,000 employees worldwide and is publicly traded on the SIX Swiss Exchange in Zurich and the Nasdaq Stockholm Stock Exchange.\n\nRotork is a global provider of intelligent flow control solutions and instrumentation for oil and gas, wastewater, power generation, chemical process, and industrial applications. It also provides aftermarket services in relation to its flow control products through its global service network. Rotork is publicly traded on the London Stock Exchange and is a constituent of the FTSE 250 Index.\n\nABB and Rotork are both active in the flow control industry, which comprises the equipment and technologies used to regulate, direct, and control the flow of liquids, gases, and other media in industrial processes. Within this industry, the parties overlap globally and in Australia in the supply of the following products, all of which are equipment used in the operation of valves:\n\n* actuators,\n* positioners, and\n* field instruments, specifically I/P converters.\n\nThere is also a vertical relationship between the parties outside Australia. In 2025, ABB supplied a small number of motors and contactors (both of which are input components of actuators) to Rotork\u2019s factories outside Australia, and ABB purchased a limited number of I/P converters and actuator accessories from Rotork.",
+      "events": [
+        {
+          "date": "2026-10-17T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-90027",
+          "merger_name": "AbbVie - Apogee",
+          "acquirers": [
+            "AbbVie Inc.",
+            "Andor LLC"
+          ],
+          "targets": [
+            "Apogee Therapeutics, Inc.",
+            "Apogee Therapeutics Securities Corporation"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-05038",
+          "merger_name": "AUB \u2013 further interest in Sura Technology",
+          "acquirers": [
+            "AUSTAGENCIES PTY LTD"
+          ],
+          "targets": [
+            "SURA TECHNOLOGY RISKS (AUST) PTY LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-40023",
+          "merger_name": "AUB \u2013 further interest in KJ Risk",
+          "acquirers": [
+            "AUSTBROKERS CORPORATE PTY LTD"
+          ],
+          "targets": [
+            "KJ RISK GROUP PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          21
+        ],
+        "basis": "global",
+        "question_bucket": null,
+        "question_count": null,
+        "sample_size": 255,
+        "as_of": "2026-10-17",
+        "estimated_at": "2026-10-19",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 32,
+        "min_days": null,
+        "max_days": 39,
+        "id_issued_estimated": "2026-09-15",
+        "id_issued_before": null,
+        "id_issued_after": "2026-09-08",
+        "min_days_witness": null,
+        "max_days_witness": "WA-75060",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bain-capital-%E2%80%93-mcj",
       "merger_name": "Bain Capital \u2013 MCJ",
       "status": "Assessment completed",
