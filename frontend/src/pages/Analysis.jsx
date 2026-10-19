@@ -471,7 +471,6 @@ function Analysis() {
               </div>
               <p className="text-xs text-gray-500 mt-3">
                 Waivers are recorded on the ACCC's register when they are decided. This means the number of waiver applications in a month can rise for up to 25 business days after the month ends.
-                {hasPendingWaivers && ' The striped segment estimates the applications already filed but not yet decided, from how many waivers are being filed and how long recent ones have taken to decide. It is an estimate: it does not include waivers that have not been filed yet.'}
               </p>
             </div>
           </div>

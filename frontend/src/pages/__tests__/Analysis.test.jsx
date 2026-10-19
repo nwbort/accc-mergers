@@ -285,7 +285,6 @@ describe('Analysis monthly volume', () => {
     const table = await waitFor(volumeTable);
     expect(within(table).getByRole('columnheader', { name: 'Waivers under assessment (estimated)' })).toBeInTheDocument();
     expect(within(table).getByText('~25')).toBeInTheDocument();
-    expect(screen.getByText(/estimates the applications already filed but not yet decided/)).toBeInTheDocument();
   });
 
   it('shows no estimate when the payload predates it', async () => {
@@ -294,7 +293,6 @@ describe('Analysis monthly volume', () => {
 
     const table = await waitFor(volumeTable);
     expect(within(table).queryByRole('columnheader', { name: /under assessment/ })).not.toBeInTheDocument();
-    expect(screen.queryByText(/estimates the applications already filed/)).not.toBeInTheDocument();
   });
 });
 
