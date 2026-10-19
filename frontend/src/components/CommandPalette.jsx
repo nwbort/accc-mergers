@@ -340,7 +340,7 @@ export default function CommandPalette({ isOpen, onClose }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Search pages, mergers, parties and industries…"
+            placeholder="Search…"
             className="flex-1 bg-transparent text-sm text-gray-900 placeholder-gray-500 focus:outline-none"
             role="combobox"
             aria-expanded="true"
