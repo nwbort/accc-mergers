@@ -28,6 +28,48 @@
       "count": 8
     },
     {
+      "acquirer_name": "Australian Venue Co",
+      "canonical_id": "australian-venue-co",
+      "anzsic_code": "451",
+      "anzsic_name": "Cafes, Restaurants and Takeaway Food Services",
+      "merger_ids": [
+        "MN-10006",
+        "MN-65007",
+        "MN-15034",
+        "MN-70047",
+        "MN-85060"
+      ],
+      "dates": [
+        "2026-02-06T12:00:00Z",
+        "2026-02-23T12:00:00Z",
+        "2026-08-06T12:00:00Z",
+        "2026-10-16T12:00:00Z",
+        "2026-10-19T12:00:00Z"
+      ],
+      "count": 5
+    },
+    {
+      "acquirer_name": "Australian Venue Co",
+      "canonical_id": "australian-venue-co",
+      "anzsic_code": "452",
+      "anzsic_name": "Pubs, Taverns and Bars",
+      "merger_ids": [
+        "MN-10006",
+        "MN-65007",
+        "MN-15034",
+        "MN-70047",
+        "MN-85060"
+      ],
+      "dates": [
+        "2026-02-06T12:00:00Z",
+        "2026-02-23T12:00:00Z",
+        "2026-08-06T12:00:00Z",
+        "2026-10-16T12:00:00Z",
+        "2026-10-19T12:00:00Z"
+      ],
+      "count": 5
+    },
+    {
       "acquirer_name": "Eli Lilly",
       "canonical_id": "eli-lilly-and-company",
       "anzsic_code": "184",
@@ -68,44 +110,6 @@
         "2026-09-10T12:00:00Z"
       ],
       "count": 5
-    },
-    {
-      "acquirer_name": "Australian Venue Co",
-      "canonical_id": "australian-venue-co",
-      "anzsic_code": "451",
-      "anzsic_name": "Cafes, Restaurants and Takeaway Food Services",
-      "merger_ids": [
-        "MN-10006",
-        "MN-65007",
-        "MN-15034",
-        "MN-70047"
-      ],
-      "dates": [
-        "2026-02-06T12:00:00Z",
-        "2026-02-23T12:00:00Z",
-        "2026-08-06T12:00:00Z",
-        "2026-10-16T12:00:00Z"
-      ],
-      "count": 4
-    },
-    {
-      "acquirer_name": "Australian Venue Co",
-      "canonical_id": "australian-venue-co",
-      "anzsic_code": "452",
-      "anzsic_name": "Pubs, Taverns and Bars",
-      "merger_ids": [
-        "MN-10006",
-        "MN-65007",
-        "MN-15034",
-        "MN-70047"
-      ],
-      "dates": [
-        "2026-02-06T12:00:00Z",
-        "2026-02-23T12:00:00Z",
-        "2026-08-06T12:00:00Z",
-        "2026-10-16T12:00:00Z"
-      ],
-      "count": 4
     },
     {
       "acquirer_name": "Coles Group",
@@ -263,6 +267,21 @@
         "2026-07-28T12:00:00Z"
       ],
       "count": 3
+    },
+    {
+      "acquirer_name": "Australian Venue Co",
+      "canonical_id": "australian-venue-co",
+      "anzsic_code": "412",
+      "anzsic_name": "Specialised Food Retailing",
+      "merger_ids": [
+        "MN-15034",
+        "MN-85060"
+      ],
+      "dates": [
+        "2026-08-06T12:00:00Z",
+        "2026-10-19T12:00:00Z"
+      ],
+      "count": 2
     },
     {
       "acquirer_name": "EQT Fund Management",
@@ -790,5 +809,5 @@
       "count": 2
     }
   ],
-  "count": 49
+  "count": 50
 }

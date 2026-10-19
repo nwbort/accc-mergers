@@ -1,10 +1,10 @@
 {
-  "total_mergers": 296,
+  "total_mergers": 297,
   "total_waivers": 457,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -76,7 +76,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 38
+      "count": 39
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -88,7 +88,7 @@
     },
     {
       "name": "Cafes and Restaurants",
-      "count": 23
+      "count": 24
     },
     {
       "name": "Supermarket and Grocery Stores",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-85060",
+      "merger_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-19T12:00:00Z",
+      "page_modified_datetime": "2026-10-19T15:24:50+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-01126",
       "merger_name": "IPLiving - Springwood Living Group",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-09T12:00:00Z",
       "page_modified_datetime": "2026-10-12T17:07:34+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65038",
-      "merger_name": "TCL Electronics \u2013 Sony\u2019s home entertainment business",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-10-12T11:43:44+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
