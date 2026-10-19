@@ -630,9 +630,7 @@ def build_scoreboard(c: dict) -> str:
         week.append((c["appealed"], "Appealed", COLORS["tribunal_appeal"], "mergers-appealed"))
     week.append((c["referred"], "To phase 2", COLORS["phase_2_referral"], "mergers-referred"))
     if c["to_pb"]:
-        # The digest page has no section of its own for these, so the tile
-        # links to the public benefit matters on foot, where they now sit.
-        week.append((c["to_pb"], "To public benefit", COLORS["phase_2"], "ongoing-public-benefit"))
+        week.append((c["to_pb"], "To public benefit", COLORS["phase_2"], "mergers-to-public-benefit"))
     week.append((c["declined"], "Declined", COLORS["declined"], "mergers-declined"))
     on_foot = [
         (c["p1"], "In phase 1", COLORS["phase_1"], "ongoing-phase-1"),
