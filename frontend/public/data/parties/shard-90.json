@@ -296,6 +296,42 @@
         "completed_count": 1
       }
     },
+    "jorf-fertilizers-company-i": {
+      "id": "jorf-fertilizers-company-i",
+      "canonical_name": "Jorf Fertilizers Company I",
+      "members": [
+        {
+          "name": "Jorf Fertilizers Company I",
+          "identifier": "Moroccan company registration number 316187",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-10039",
+            "merger_name": "Koch \u2013 50% interest in certain assets of OCP Nutricrops",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "omers-apollo-investment-holdings-llc": {
       "id": "omers-apollo-investment-holdings-llc",
       "canonical_name": "OMERS Apollo Investment Holdings LLC",

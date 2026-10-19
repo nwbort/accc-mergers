@@ -354,6 +354,11 @@
         },
         {
           "name": "Koch, Inc.",
+          "identifier": "US Employer Identification Number: 480484227 992449504",
+          "identifier_type": null
+        },
+        {
+          "name": "Koch, Inc.",
           "identifier": "US Employer Identification Number: 992449504",
           "identifier_type": null
         }
@@ -376,6 +381,18 @@
         "target": [],
         "other": [
           {
+            "merger_id": "MN-10039",
+            "merger_name": "Koch \u2013 50% interest in certain assets of OCP Nutricrops",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": null
+          },
+          {
             "merger_id": "MN-01061",
             "merger_name": "Molex \u2013 Smiths Interconnect",
             "is_waiver": false,
@@ -389,11 +406,11 @@
           }
         ]
       },
-      "merger_count": 2,
-      "phase_1_count": 1,
+      "merger_count": 3,
+      "phase_1_count": 2,
       "phase_2_count": 0,
       "waiver_count": 1,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": {
         "average_days": 22.0,
         "median_days": 22,

@@ -370,6 +370,42 @@
         "completed_count": 1
       }
     },
+    "kaes-phosphate-holdings-llc": {
+      "id": "kaes-phosphate-holdings-llc",
+      "canonical_name": "KAES Phosphate Holdings, LLC",
+      "members": [
+        {
+          "name": "KAES Phosphate Holdings, LLC",
+          "identifier": "not applicable",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-10039",
+            "merger_name": "Koch \u2013 50% interest in certain assets of OCP Nutricrops",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "kee-safety-australia-pty-ltd": {
       "id": "kee-safety-australia-pty-ltd",
       "canonical_name": "Kee Safety (Australia) Pty Ltd",

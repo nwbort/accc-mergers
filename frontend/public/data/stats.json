@@ -1,10 +1,10 @@
 {
-  "total_mergers": 297,
+  "total_mergers": 298,
   "total_waivers": 459,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
-    "Under assessment": 43,
+    "Under assessment": 44,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -127,6 +127,16 @@
       "is_refiled": false
     },
     {
+      "merger_id": "MN-10039",
+      "merger_name": "Koch \u2013 50% interest in certain assets of OCP Nutricrops",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-10-19T18:05:04+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-70047",
       "merger_name": "Australian Venue Co \u2013 assets of Molly\u2019s Irish Pub, Highgate and Molly\u2019s Irish Pub, Victoria Park, Perth",
       "status": "Under assessment",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-12T12:00:00Z",
       "page_modified_datetime": "2026-10-12T16:45:49+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-60048",
-      "merger_name": "Ingenia - Peet - Flagstone JV",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-10-12T17:07:34+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
