@@ -489,6 +489,7 @@ def _counts(digest: dict) -> dict:
         "appealed": len(digest.get("deals_appealed_to_tribunal") or []),
         "p1": len(digest["ongoing_phase_1"]),
         "p2": len(digest["ongoing_phase_2"]),
+        "pb": len(digest.get("ongoing_public_benefit") or []),
         "on_appeal": len(digest.get("ongoing_tribunal_appeals") or []),
     }
 
@@ -553,14 +554,21 @@ def build_lede(c: dict) -> str:
         # Capitalise the first letter, skipping the <strong …> markup
         sentences.append(re.sub(r">([a-z])", lambda m: ">" + m.group(1).upper(), sentence, count=1) + ".")
 
-    ongoing = c["p1"] + c["p2"]
+    # A public benefit application keeps the matter live, so it counts as on
+    # foot alongside the two review phases (as it does in the pipeline).
+    stages = [
+        (n, where) for n, where in (
+            (c["p1"], "in phase 1"),
+            (c["p2"], "in phase 2"),
+            (c.get("pb", 0), "in the public benefit phase"),
+        ) if n
+    ]
+    ongoing = sum(n for n, _ in stages)
     if ongoing:
-        if c["p1"] and c["p2"]:
-            split = f" – {b(c['p1'])} in phase 1 and {b(c['p2'])} in phase 2"
-        elif c["p1"]:
-            split = ", all in phase 1"
+        if len(stages) == 1:
+            split = f", all {stages[0][1]}"
         else:
-            split = ", all in phase 2"
+            split = " – " + join_and([f"{b(n)} {where}" for n, where in stages])
         sentences.append(
             f"{b(ongoing)} {pluralise(ongoing, 'assessment remains', 'assessments remain')} "
             f"on foot{split}."
@@ -621,6 +629,8 @@ def build_scoreboard(c: dict) -> str:
         (c["p1"], "In phase 1", COLORS["phase_1"], "ongoing-phase-1"),
         (c["p2"], "In phase 2", COLORS["phase_2"], "ongoing-phase-2"),
     ]
+    if c["pb"]:
+        on_foot.append((c["pb"], "Public benefit", COLORS["phase_2"], "ongoing-public-benefit"))
     if c["on_appeal"]:
         on_foot.append((c["on_appeal"], "On appeal", COLORS["tribunal_appeal"], "ongoing-tribunal-appeals"))
     return (
@@ -1085,7 +1095,7 @@ def build_html_email(digest: dict, banner: str | None = None) -> str:
         preheader_bits.append(f"{c['declined']} declined")
     if c["appealed"]:
         preheader_bits.append(f"{c['appealed']} appealed to tribunal")
-    preheader_bits.append(f"{c['p1'] + c['p2']} ongoing")
+    preheader_bits.append(f"{c['p1'] + c['p2'] + c['pb']} ongoing")
     if c["on_appeal"]:
         preheader_bits.append(f"{c['on_appeal']} under appeal")
     preheader = ", ".join(preheader_bits) + "."
