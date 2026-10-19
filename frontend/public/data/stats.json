@@ -1,10 +1,10 @@
 {
-  "total_mergers": 293,
+  "total_mergers": 294,
   "total_waivers": 457,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 249,
-    "Under assessment": 39,
+    "Under assessment": 40,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-01126",
+      "merger_name": "IPLiving - Springwood Living Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-19T12:00:00Z",
+      "page_modified_datetime": "2026-10-19T13:44:24+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-80047",
       "merger_name": "Thoma Bravo - Tanda",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-07T12:00:00Z",
       "page_modified_datetime": "2026-10-08T18:30:42+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75059",
-      "merger_name": "Macquarie Global Infrastructure Fund - SERV",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-07T12:00:00Z",
-      "page_modified_datetime": "2026-10-08T18:04:48+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
