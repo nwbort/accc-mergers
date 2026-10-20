@@ -30,7 +30,8 @@ source (soft check — missing dates don't disqualify a pair).
 
 Each candidate gets a confidence score; only pairs above `--threshold`
 (default 0.70) are reported. Existing pairs listed in `related_mergers.json`
-are filtered out.
+are filtered out, as are pairs in its `rejected` list — pairs a person has
+said are *not* a refile, so the detector never suggests them again.
 
 Usage
 -----
@@ -202,6 +203,24 @@ def load_related_pairs(path: Path) -> set[tuple[str, str]]:
     return pairs
 
 
+def load_rejected_pairs(path: Path) -> set[tuple[str, str]]:
+    """Return the (source, target) pairs in the file's ``rejected`` list.
+
+    These are candidates a person reviewed and found are *not* a refile (a
+    serial acquirer's unrelated deals, say). Same ``{"from", "to"}`` shape as
+    ``pairs``; anything else on an entry (a ``note``) is ignored.
+    """
+    if not path.exists():
+        return set()
+    with path.open() as fh:
+        data = json.load(fh)
+    return {
+        (p["from"], p["to"])
+        for p in data.get("rejected", [])
+        if p.get("from") and p.get("to")
+    }
+
+
 def _build_candidate(
     source: dict, target: dict, pair_type: str, score: float, diag: dict
 ) -> dict:
@@ -310,10 +329,17 @@ def find_candidates(
     mergers: list[dict],
     known_pairs: set[tuple[str, str]],
     threshold: float,
+    rejected_pairs: set[tuple[str, str]] | None = None,
 ) -> list[dict]:
     """Return candidate pair dicts from every detection pass, best-scored first."""
     candidates = find_waiver_candidates(mergers, known_pairs, threshold)
     candidates += find_suspended_candidates(mergers, known_pairs, threshold)
+    # Drop rejected pairs before deduping, so a rejected match can't crowd out
+    # a genuine partner for either matter.
+    rejected_pairs = rejected_pairs or set()
+    candidates = [
+        c for c in candidates if (c["source"], c["target"]) not in rejected_pairs
+    ]
 
     # If one merger matches several partners, keep only the best per side.
     # Secondary keys keep the output stable across runs.
@@ -409,6 +435,13 @@ def write_related_mergers(path: Path, data: dict) -> None:
             f'    {{ "from": "{p["from"]}", "to": "{p["to"]}", '
             f'"type": "{p.get("type", WAIVER_REFILED)}" }}{trailing}'
         )
+    if "rejected" in data:
+        lines.append("  ],")
+        lines.append('  "rejected": [')
+        rejected = data["rejected"]
+        for i, p in enumerate(rejected):
+            trailing = "," if i < len(rejected) - 1 else ""
+            lines.append(f"    {json.dumps(p)}{trailing}")
     lines.append("  ]")
     lines.append("}")
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -616,7 +649,8 @@ def main() -> int:
     mergers = load_mergers(args.mergers)
 
     known = load_related_pairs(args.related)
-    candidates = find_candidates(mergers, known, args.threshold)
+    rejected = load_rejected_pairs(args.related)
+    candidates = find_candidates(mergers, known, args.threshold, rejected)
     certain = [c for c in candidates if is_certain_match(c)]
     all_certain = bool(candidates) and len(certain) == len(candidates)
 

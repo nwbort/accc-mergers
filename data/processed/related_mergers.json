@@ -1,5 +1,5 @@
 {
-  "_README": "Mergers that were effectively re-filed as a separate matter. Each entry is { \"from\": \"...\", \"to\": \"...\", \"type\": \"...\" } where `from` is the earlier matter, `to` is what it was re-filed as, and `type` is one of: \"waiver_refiled\" (a WA waiver declined then re-filed as an MN notification) or \"suspended_refiled\" (a matter whose assessment was suspended and re-filed later). Both directions are resolved automatically.",
+  "_README": "Mergers that were effectively re-filed as a separate matter. Each entry is { \"from\": \"...\", \"to\": \"...\", \"type\": \"...\" } where `from` is the earlier matter, `to` is what it was re-filed as, and `type` is one of: \"waiver_refiled\" (a WA waiver declined then re-filed as an MN notification) or \"suspended_refiled\" (a matter whose assessment was suspended and re-filed later). Both directions are resolved automatically. `rejected` lists pairs reviewed and found NOT to be a refile, in the same { \"from\", \"to\" } shape plus an optional \"note\"; the detector never suggests them again and the site ignores them.",
   "pairs": [
     { "from": "WA-35003", "to": "MN-85007", "type": "waiver_refiled" },
     { "from": "WA-01087", "to": "MN-20013", "type": "waiver_refiled" },
@@ -18,5 +18,8 @@
     { "from": "WA-15040", "to": "MN-45030", "type": "waiver_refiled" },
     { "from": "WA-60042", "to": "MN-55040", "type": "waiver_refiled" },
     { "from": "WA-70036", "to": "MN-85060", "type": "waiver_refiled" }
+  ],
+  "rejected": [
+    {"from": "WA-80043", "to": "MN-75042", "note": "Different Coles supermarket sites (Narangba East vs Angle Vale); only the acquirer is shared."}
   ]
 }
