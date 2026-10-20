@@ -73,7 +73,9 @@ pushes each milestone to a phone over ntfy as a LinkedIn composer link to post
 by hand, sharing the same state file. Those links unfurl with a generic card
 for the matter's latest milestone — 14 committed PNGs in `frontend/public/og/`,
 drawn by `scripts/generate/og_cards.py`, which also writes each detail file's
-`og_card` for the Pages Function, prerenderer and SPA to read. See [`docs/linkedin.md`](docs/linkedin.md).
+`og_card` for the Pages Function, prerenderer and SPA to read. The links are
+sent after the pipeline's push, once the live site serves that run's data,
+because LinkedIn caches whatever it scrapes first. See [`docs/linkedin.md`](docs/linkedin.md).
 
 ### Cloudflare Pages Functions (`functions/`)
 
