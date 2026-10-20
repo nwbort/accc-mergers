@@ -3,12 +3,12 @@
   "total_waivers": 464,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 250,
-    "Under assessment": 43,
+    "Assessment completed": 251,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 243,
+    "Approved": 244,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 24
   },
   "clearance_rate": {
-    "cleared": 248,
+    "cleared": 249,
     "not_cleared": 2,
-    "total": 250,
+    "total": 251,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.55859375,
-    "median_days": 26.0,
-    "average_business_days": 20.1015625,
-    "median_business_days": 18.0,
+    "average_days": 29.53307392996109,
+    "median_days": 26,
+    "average_business_days": 20.085603112840467,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 56,
-        "percentage": 21.9
+        "percentage": 21.8
       },
       "day20": {
-        "count": 185,
-        "percentage": 72.3
+        "count": 186,
+        "percentage": 72.4
       },
       "day30": {
-        "count": 239,
+        "count": 240,
         "percentage": 93.4
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-85054",
+      "merger_name": "Xylem - Flow Controls",
+      "determination": "Approved",
+      "determination_date": "2026-10-21T12:00:00Z",
+      "page_modified_datetime": "2026-10-21T09:14:08+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80043",
       "merger_name": "Coles \u2013 supermarket site in Narangba East, Qld",
       "determination": "Not approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-16T12:00:00Z",
       "page_modified_datetime": "2026-10-16T17:54:02+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-01125",
-      "merger_name": "Guardian Childcare & Education \u2013 Mini Masterminds Macquarie Park, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-10-16T12:00:00Z",
-      "page_modified_datetime": "2026-10-16T17:36:56+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
