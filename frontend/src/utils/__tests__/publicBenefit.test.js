@@ -63,6 +63,18 @@ describe('determinationForEvent', () => {
   it('falls back to the headline determination', () => {
     expect(determinationForEvent({ accc_determination: 'Approved' }, { date: '2026-01-01' })).toBe('Approved');
   });
+
+  it('matches by phase when the document and register dates differ', () => {
+    // MN-65005: the Phase 2 determination document is dated a day before the
+    // register's determination date.
+    const registerDated = { ...applied, phase_2_determination_date: '2026-09-23T12:00:00Z' };
+    const event = { date: '2026-09-22T12:00:00Z', phase: 'Phase 2', is_determination_event: true };
+    expect(determinationForEvent(registerDated, event)).toBe('Not approved');
+    expect(determinationForEvent(
+      { ...decided, public_benefits_determination_date: '2026-12-15T12:00:00Z' },
+      { date: '2026-12-14T12:00:00Z', phase: 'Public benefit', is_determination_event: true },
+    )).toBe('Approved');
+  });
 });
 
 describe('getDeterminationDocUrl after a public benefit determination', () => {
