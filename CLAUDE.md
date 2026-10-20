@@ -74,8 +74,8 @@ by hand, sharing the same state file. Those links unfurl with a generic card
 for the matter's latest milestone — 14 committed PNGs in `frontend/public/og/`,
 drawn by `scripts/generate/og_cards.py`, which also writes each detail file's
 `og_card` for the Pages Function, prerenderer and SPA to read. The links are
-sent after the pipeline's push, once the live site serves that run's data,
-because LinkedIn caches whatever it scrapes first. See [`docs/linkedin.md`](docs/linkedin.md).
+sent by `linkedin-share-links.yml` after the pipeline finishes, once the live
+site serves that run's data, because LinkedIn caches whatever it scrapes first. See [`docs/linkedin.md`](docs/linkedin.md).
 
 ### Cloudflare Pages Functions (`functions/`)
 
@@ -666,7 +666,8 @@ exists rather than 404ing into the SPA's `index.html`.
 
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
-| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere and post to LinkedIn → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, `missing-waiver-determination`), then runs all four detectors. The two ATmosphere steps and the LinkedIn step are `continue-on-error` and skip without their credentials — an unreachable PDS or API must not cost the run its scrape |
+| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere and post to LinkedIn (API) → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, `missing-waiver-determination`), then runs all four detectors. The two ATmosphere steps and the LinkedIn step are `continue-on-error` and skip without their credentials — an unreachable PDS or API must not cost the run its scrape |
+| `linkedin-share-links.yml` | `workflow_run` after `pipeline.yml` completes on `main`, manual | Send each new milestone's LinkedIn share link over ntfy, once Cloudflare Pages serves the matter's data as pushed (`share_links.py --wait-for-deploy`; LinkedIn caches the first scrape for a week), then commit `linkedin_posts.json` with `[skip ci]`. A workflow of its own so the wait doesn't hold the pipeline's concurrency group. Inert without `LINKEDIN_SHARE_LINKS` and `NTFY_TOPIC` |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `publish-lexicons.yml` | Push to `main` touching `atproto/lexicons/**` or the workflow itself, manual (with a `dry_run` input) | Publish the `fyi.mergers.*` schemas as `com.atproto.lexicon.schema` records. Its own workflow rather than a pipeline step: a lexicon changes only when a person edits one, so a path-filtered push fires exactly then, where `pipeline.yml` would re-read both records several times a day to learn nothing moved. A missing `ATPROTO_APP_PASSWORD` skips a push run and fails a manual one |
 | `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |

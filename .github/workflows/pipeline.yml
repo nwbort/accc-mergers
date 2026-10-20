@@ -649,48 +649,10 @@ jobs:
             fi
           fi
 
-      # Until the API route is approved: the same milestones as ready-to-post
-      # LinkedIn links, pushed to a phone through ntfy. Stands down by itself
-      # once LINKEDIN_POST_ENABLED is set (see docs/linkedin.md).
-      #
-      # Unlike the posters above this runs *after* the push, and waits for
-      # Cloudflare Pages to serve this run's data before sending: LinkedIn
-      # scrapes the link the moment it is pasted and caches what it finds for a
-      # week, so a link sent ahead of the deploy unfurls with the matter's old
-      # card, or the home page for a matter that isn't deployed yet. A matter
-      # still not live at the deadline is left for the next run. Its state
-      # file therefore gets a commit of its own, below.
-      - name: Send LinkedIn share links
-        if: steps.enrich-gate.outputs.run == 'true' && github.ref == 'refs/heads/main'
-        continue-on-error: true
-        timeout-minutes: 20
-        env:
-          LINKEDIN_SHARE_LINKS: ${{ vars.LINKEDIN_SHARE_LINKS }}
-          LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
-          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-          NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}
-          NTFY_SERVER: ${{ vars.NTFY_SERVER }}
-        run: python -m scripts.linkedin.share_links --wait-for-deploy 900
-
-      # "[skip ci]" keeps Pages from rebuilding for a file it doesn't deploy
-      # (pushes made with GITHUB_TOKEN don't start workflows anyway). If this
-      # push is lost, the links it recorded are sent again next run: a
-      # duplicate notification, not a lost one.
-      - name: Commit LinkedIn share-link state
-        if: steps.enrich-gate.outputs.run == 'true' && github.ref == 'refs/heads/main'
-        continue-on-error: true
-        run: |
-          state=data/processed/linkedin_posts.json
-          if [ -f "$state" ]; then git add "$state"; fi
-          if git diff --staged --quiet; then
-            echo "No share-link state to commit"
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "Record LinkedIn share links sent [skip ci]"
-          git pull --rebase --autostash origin main
-          git push
+      # The LinkedIn share links (the stopgap until the API is approved) are
+      # not sent from here: linkedin-share-links.yml runs once this workflow
+      # finishes and waits for Cloudflare Pages to serve the data it pushed,
+      # so the wait doesn't hold this workflow's concurrency group.
 
       # --- Publish cli.sqlite to the cli-dist orphan branch ---
       # Inlined here (rather than a separate workflow triggered by push to

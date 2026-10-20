@@ -152,14 +152,15 @@ own post box with the post already written. Nothing goes out until you press
   milestone uses a URL LinkedIn hasn't seen, and it scrapes the new card rather
   than reusing last week's. If a preview still looks stale, LinkedIn's
   [Post Inspector](https://www.linkedin.com/post-inspector/) forces a rescrape.
-- That cache is also why the links wait for the deploy. The step runs after
-  the pipeline's push, and sends a matter's link only once mergers.fyi serves
-  the exact detail file this run generated for it (`--wait-for-deploy 900`).
-  Sent any earlier, LinkedIn would scrape the old card, or the home page for a
-  matter not yet deployed, and keep it for a week. A matter still not live
-  after 15 minutes is left unsent for the next run. The state file gets its own
-  `[skip ci]` commit after the links go out, and the step only runs on `main`,
-  since a branch run's data never reaches the live site.
+- That cache is also why the links wait for the deploy. They're sent by their
+  own workflow, `linkedin-share-links.yml`, which runs when `pipeline.yml`
+  finishes on `main`. It sends a matter's link only once mergers.fyi serves the
+  exact detail file on `main` (`--wait-for-deploy 900`). Sent any earlier,
+  LinkedIn would scrape the old card, or the home page for a matter not yet
+  deployed, and keep it for a week. A matter still not live after 15 minutes
+  is left for the next run. The state file is committed by that workflow with
+  `[skip ci]`. Waiting inside the pipeline would hold its concurrency group, so
+  an email-triggered run would queue behind it.
 - The post box posts as whoever is signed in. To post as the page, switch the
   author to the page in the post box, or paste the text into the page's own
   "Create a post" box.

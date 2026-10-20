@@ -1,0 +1,85 @@
+name: LinkedIn share links
+
+# Until the LinkedIn API route is approved: push each new milestone to a phone
+# over ntfy as a ready-to-post LinkedIn link (see docs/linkedin.md). Stands
+# down by itself once LINKEDIN_POST_ENABLED is set, and skips without
+# LINKEDIN_SHARE_LINKS or NTFY_TOPIC.
+#
+# A workflow of its own, run after pipeline.yml rather than as a step of it,
+# because it has to wait for the deploy. LinkedIn scrapes a link the moment it
+# is pasted and caches what it finds for about a week, so a link sent before
+# Cloudflare Pages serves the pipeline's push unfurls with the matter's old
+# card, or the home page for a matter not yet deployed. --wait-for-deploy
+# sends a matter's link only once mergers.fyi serves the exact detail file
+# checked out here, and leaves one still not live after 15 minutes for the
+# next run. Waiting inside pipeline.yml would hold its concurrency group (and
+# its 15-minute job timeout) for that long, queueing an email-triggered run
+# behind a wait for Cloudflare.
+#
+# workflow_run fires even though the pipeline pushes with GITHUB_TOKEN, which
+# a push trigger would not. It runs whatever the pipeline's conclusion: the
+# comparison against the live site is what decides, not how the run ended.
+
+on:
+  workflow_run:
+    workflows: [Merger Pipeline]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: linkedin-share-links
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  share-links:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion != 'cancelled'
+    timeout-minutes: 25
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Send LinkedIn share links
+        env:
+          LINKEDIN_SHARE_LINKS: ${{ vars.LINKEDIN_SHARE_LINKS }}
+          LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}
+          NTFY_SERVER: ${{ vars.NTFY_SERVER }}
+        run: python -m scripts.linkedin.share_links --wait-for-deploy 900
+
+      # "[skip ci]" keeps Pages from rebuilding for a file it doesn't deploy.
+      # Runs even if some links failed to send, so the ones that went out are
+      # recorded. If this push is lost, they are sent again next time: a
+      # duplicate notification, not a missing one.
+      - name: Commit share-link state
+        if: always()
+        run: |
+          state=data/processed/linkedin_posts.json
+          if [ -f "$state" ]; then git add "$state"; fi
+          if git diff --staged --quiet; then
+            echo "No share-link state to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Record LinkedIn share links sent [skip ci]"
+          git pull --rebase --autostash origin main
+          git push

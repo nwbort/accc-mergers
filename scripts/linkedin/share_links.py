@@ -22,9 +22,10 @@ from last time.
 
 That makes timing matter: a link LinkedIn scrapes before the deploy lands
 gets the old card (or, for a new matter, the home page, since the matter's
-data file doesn't exist yet), and keeps it for a week. So in the pipeline this
-runs after the push, with ``--wait-for-deploy``: a link is only sent once
-mergers.fyi serves the very detail file this run generated for its matter.
+data file doesn't exist yet), and keeps it for a week. So it runs from its own
+workflow after the pipeline (``linkedin-share-links.yml``), with
+``--wait-for-deploy``: a link is only sent once
+mergers.fyi serves the very detail file checked out for its matter.
 One that hasn't appeared by the deadline is left unsent and unrecorded, and
 the next run tries again.
 
