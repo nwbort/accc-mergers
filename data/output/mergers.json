@@ -18255,10 +18255,168 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 28,
-        "min_days": null,
+        "estimated_days": 14,
+        "min_days": 0,
         "max_days": 35,
-        "id_issued_estimated": "2026-09-17",
+        "id_issued_estimated": "2026-10-01",
+        "id_issued_before": "2026-10-15",
+        "id_issued_after": "2026-09-10",
+        "min_days_witness": "MN-15053",
+        "max_days_witness": "WA-15047",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/fruitico-%E2%80%93-lease-and-option-to-purchase-terra-farm-and-sunsweet-farm",
+      "merger_name": "Fruitico \u2013 Lease and option to purchase Terra Farm and Sunsweet Farm",
+      "status": "Under assessment",
+      "merger_id": "MN-15053",
+      "effective_notification_datetime": "2026-10-20T12:00:00Z",
+      "original_notification_datetime": "2026-10-20T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-12-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-21T10:14:59+11:00",
+      "consultation_response_due_date": "2026-10-28T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "FRUITICO FARMS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "51 608 318 921",
+          "party_page": {
+            "id": "fruitico-farms-pty-ltd",
+            "name": "Fruitico Farms Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "The trusts partnership trading as Bumbak & Sons",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "the-trusts-partnership-trading-as-bumbak-sons",
+            "name": "The trusts partnership trading as Bumbak & Sons"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Sunsweet Investments Pty Ltd acting as trustee of the Sunsweet Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "44 605 866 215",
+          "party_page": {
+            "id": "sunsweet-investments-pty-ltd-acting-as-trustee-of-the-sunsweet-unit-trust",
+            "name": "Sunsweet Investments Pty Ltd acting as trustee of the Sunsweet Unit Trust"
+          }
+        },
+        {
+          "name": "Davmark Pty Ltd acting as trustee of the Davmark Discretionary Trust",
+          "identifier_type": "ACN",
+          "identifier": "126 225 956",
+          "party_page": {
+            "id": "davmark-pty-ltd-acting-as-trustee-of-the-davmark-discretionary-trust",
+            "name": "Davmark Pty Ltd acting as trustee of the Davmark Discretionary Trust"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0131",
+          "name": "Grape Growing"
+        },
+        {
+          "code": "3605",
+          "name": "Fruit and Vegetable Wholesaling"
+        }
+      ],
+      "merger_description": "Fruitico Pty Ltd (**Fruitico**), through a wholly owned subsidiary, proposes to enter into a 2-year lease and option to purchase Terra Farm and Sunsweet Farm. Terra Farm and Sunsweet Farm are adjacent farms located in Carnarvon, Western Australia, they comprise all the business assets of the Bumbak Group\u2019s (as defined below) table grape growing operations.\n\nFruitico is a subsidiary of Fresh Produce Group Holdings Pty Limited (**Fresh Produce Group**). Fresh Produce Group is a national produce supplier, primarily active across table grapes, berries and citrus. Fresh Produce Group\u2019s business comprises growing, importing, exporting, wholesale, pre-packing, ripening, logistics and marketing of produce. Fresh Produce Group is a wholly owned subsidiary of Beauty Bay Produce Pty Ltd (**Beauty Bay Produce**), which is 51.42% owned by Cherry Agriculture Holding Pty Limited as trustee for the Cherry Holding Trust. Funds advised and/or managed by Macquarie Asset Management have an interest in Cherry Holding Trust.\n\nTerra Farm is a 32ha farm involved in the growing, packing and distribution of table grapes and mangoes. Terra Farm's assets include C Class Gascoyne Water shares tied to the land title, associated equipment and one residential dwelling.\n\nSunweet Farm is a 35ha farm involved in the growing, packing and distribution of table grapes and mangoes. Sunsweet Farm's assets include C Class Gascoyne Water shares tied to the land title.\n\nTerra Farm and Sunsweet Farm are owned and operated by Davmark Pty Ltd as trustee for the Davmark Discretionary Trust, Sunsweet Investments Pty Ltd as trustee for the Sunsweet Unit Trust, David Bumbak as trustee for the David Bumbak Family Trust, Mark Bumbak as trustee for the Mark Bumbak Family Trust and Helen Bumbak as trustee for the Helen Bumbak Trust (**Bumbak Group**).",
+      "events": [
+        {
+          "date": "2026-10-21T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Fruitico%20-%20Terra%20Farm%20%26%20Sunsweet%20Farm%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-15053/Fruitico - Terra Farm and Sunsweet Farm - Questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-20T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-75033",
+          "merger_name": "Sonnel Hospitality Group \u2013 Peakhurst Inn Hotel",
+          "acquirers": [
+            "Nelmeer Ashfield Pty Ltd as trustee of the Nelmeer Ashfield Trading Trust",
+            "Meerlen Pty Limited as trustee of Vic on the Park Trust"
+          ],
+          "targets": [
+            "JDA Peakhurst Hotel Trading Pty Ltd as trustee for JDA Peakhurst Hotel Trading Unit Trust",
+            "JDA Peakhurst Hotel Investments Pty Ltd as trustee for JDA Peakhurst Hotel Investments Unit Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-95031",
+          "merger_name": "IFM Fiduciary \u2013 PM Fresh",
+          "acquirers": [
+            "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust"
+          ],
+          "targets": [
+            "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust",
+            "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-50029",
+          "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+          "acquirers": [
+            "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
+            "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD"
+          ],
+          "targets": [
+            "Latitude Landowner Pty Ltd",
+            "The Trustee for Latitude Landowning Trust"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 19,
+        "range_business_days": [
+          16,
+          24
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "4-5",
+        "question_count": 5,
+        "sample_size": 29,
+        "as_of": "2026-10-20",
+        "estimated_at": "2026-10-20",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 19,
+        "min_days": null,
+        "max_days": 40,
+        "id_issued_estimated": "2026-10-01",
         "id_issued_before": null,
         "id_issued_after": "2026-09-10",
         "min_days_witness": null,

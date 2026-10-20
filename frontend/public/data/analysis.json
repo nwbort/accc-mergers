@@ -341,7 +341,7 @@
       44,
       38,
       31,
-      27
+      28
     ],
     "waivers": [
       0,
@@ -409,7 +409,7 @@
       46,
       37,
       32,
-      42
+      43
     ],
     "as_at": "2026-10-21"
   },
@@ -418,7 +418,7 @@
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 38,
+        "notifications_filed": 39,
         "notifications": {
           "median": 17,
           "average": 18.7,
@@ -471,7 +471,7 @@
       },
       {
         "days": 90,
-        "notifications_filed": 111,
+        "notifications_filed": 112,
         "notifications": {
           "median": 19,
           "average": 20.8,
@@ -560,33 +560,33 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 19.0,
-          "average": 21.0,
+          "median": 19,
+          "average": 20.5,
           "p90": 38,
           "min": 7,
           "max": 74,
-          "count": 38,
+          "count": 39,
           "days": 30,
           "median_delta": 5.0
         },
         {
-          "median": 16,
-          "average": 19.1,
+          "median": 16.0,
+          "average": 18.9,
           "p90": 31,
           "min": 0,
           "max": 112,
-          "count": 111,
+          "count": 112,
           "days": 90,
-          "median_delta": 2
+          "median_delta": 2.0
         }
       ],
       "all_time": {
-        "median": 14,
+        "median": 14.0,
         "average": 17.4,
         "p90": 34,
         "min": 0,
         "max": 112,
-        "count": 285
+        "count": 286
       }
     },
     "monthly": {
@@ -776,7 +776,7 @@
         46,
         37,
         32,
-        42
+        43
       ]
     }
   },
@@ -964,9 +964,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 39,
+      "count": 40,
       "outcome_mix": {
-        "Unknown": 39
+        "Unknown": 40
       },
       "median_business_days": null
     },
@@ -1079,7 +1079,7 @@
       "delta_calendar_days": 4
     }
   ],
-  "restart_rate": 0.0101,
+  "restart_rate": 0.01,
   "outcomes_by_division": [
     {
       "code": "S",
@@ -1096,7 +1096,7 @@
       "approved": 7,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 4,
+      "in_progress": 5,
       "phase2_referral_rate": 0.125
     },
     {
@@ -1123,7 +1123,7 @@
       "approved": 39,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 8,
+      "in_progress": 9,
       "phase2_referral_rate": 0.049
     },
     {
@@ -1281,7 +1281,7 @@
     },
     {
       "quarter": "2026-Q4",
-      "notifications": 27,
+      "notifications": 28,
       "referred": 0
     }
   ]

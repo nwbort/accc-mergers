@@ -1,10 +1,10 @@
 {
-  "total_mergers": 298,
+  "total_mergers": 299,
   "total_waivers": 464,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 251,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-15053",
+      "merger_name": "Fruitico \u2013 Lease and option to purchase Terra Farm and Sunsweet Farm",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-21T10:14:59+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-85060",
       "merger_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-13T12:00:00Z",
       "page_modified_datetime": "2026-10-14T10:26:45+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-85053",
-      "merger_name": "Funds managed by New Forests \u2013 Forestry plantations of AKD",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-12T12:00:00Z",
-      "page_modified_datetime": "2026-10-12T16:45:49+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
