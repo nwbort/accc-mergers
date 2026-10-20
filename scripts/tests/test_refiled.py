@@ -253,6 +253,29 @@ class TestPhaseDuration:
         assert payload['phase_duration']['completed_count'] == 1
         assert payload['straight_phase_duration']['completed_count'] == 1
 
+    def test_durations_are_rounded_to_one_decimal(self):
+        # Three straight notifications of 10, 10 and 11 business days: the raw
+        # mean (10.333…) would churn the file as the baseline grows.
+        mergers = []
+        for i, end in enumerate(['2025-01-15', '2025-01-15', '2025-01-16']):
+            mergers.append({
+                'merger_id': f'MN-900{i}',
+                'merger_name': 'Straight notification',
+                'status': 'Assessment completed',
+                'accc_determination': 'Approved',
+                'effective_notification_datetime': '2025-01-01T09:00:00Z',
+                'phase_1_determination_date': f'{end}T09:00:00Z',
+                'determination_publication_date': f'{end}T09:00:00Z',
+            })
+        stats = refiled.generate(mergers)['straight_phase_duration']
+        for key in ('average_days', 'median_days', 'average_business_days', 'median_business_days'):
+            value = stats[key]
+            assert round(value, 1) == value
+            # Whole numbers are ints, so 26 never flips to 26.0.
+            assert not (isinstance(value, float) and value.is_integer())
+        assert stats['average_days'] == 14.3
+        assert stats['median_days'] == 14
+
     def test_no_completed_reviews_returns_none(self):
         payload = refiled.generate([_waiver(), _current_notification()])
         assert payload['phase_duration'] is None
