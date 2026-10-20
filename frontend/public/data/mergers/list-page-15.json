@@ -158,20 +158,32 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "BSA SAS"
+          "name": "BSA SAS",
+          "canonical": {
+            "name": "Lactalis"
+          }
         }
       ],
       "targets": [
         {
-          "name": "Saputo Foods Limited"
+          "name": "Saputo Foods Limited",
+          "canonical": {
+            "name": "Saputo"
+          }
         },
         {
-          "name": "Saputo Dairy UK Ltd"
+          "name": "Saputo Dairy UK Ltd",
+          "canonical": {
+            "name": "Saputo"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "Saputo Inc."
+          "name": "Saputo Inc.",
+          "canonical": {
+            "name": "Saputo"
+          }
         }
       ],
       "anzsic_codes": [

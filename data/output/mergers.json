@@ -117431,9 +117431,13 @@
           "name": "BSA SAS",
           "identifier_type": null,
           "identifier": "Registered under SIREN (R.C.S. Paris)  557 350 253",
+          "canonical": {
+            "id": "lactalis",
+            "name": "Lactalis"
+          },
           "party_page": {
-            "id": "bsa-sas",
-            "name": "Bsa Sas"
+            "id": "lactalis",
+            "name": "Lactalis"
           }
         }
       ],
@@ -117442,18 +117446,26 @@
           "name": "Saputo Foods Limited",
           "identifier_type": null,
           "identifier": "Canadian Corporation No.  4511166",
+          "canonical": {
+            "id": "saputo",
+            "name": "Saputo"
+          },
           "party_page": {
-            "id": "saputo-foods-limited",
-            "name": "Saputo Foods Limited"
+            "id": "saputo",
+            "name": "Saputo"
           }
         },
         {
           "name": "Saputo Dairy UK Ltd",
           "identifier_type": null,
           "identifier": "Company number  11834952",
+          "canonical": {
+            "id": "saputo",
+            "name": "Saputo"
+          },
           "party_page": {
-            "id": "saputo-dairy-uk-ltd",
-            "name": "Saputo Dairy UK Ltd"
+            "id": "saputo",
+            "name": "Saputo"
           }
         }
       ],
@@ -117462,9 +117474,13 @@
           "name": "Saputo Inc.",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "saputo",
+            "name": "Saputo"
+          },
           "party_page": {
-            "id": "saputo-inc",
-            "name": "Saputo Inc."
+            "id": "saputo",
+            "name": "Saputo"
           }
         }
       ],
