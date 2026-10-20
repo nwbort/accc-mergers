@@ -22,6 +22,13 @@ const partiesFixture = {
   total_parties: 2,
 };
 
+const industriesFixture = {
+  industries: [
+    { code: '5420', name: 'Software Publishing', merger_count: 46 },
+    { code: '6240', name: 'Financial Asset Investing', merger_count: 172 },
+  ],
+};
+
 function renderPalette(props) {
   return render(
     <MemoryRouter>
@@ -98,6 +105,22 @@ describe('CommandPalette', () => {
     expect(await screen.findByRole('option', { name: 'Coles Group' })).toBeInTheDocument();
     expect(screen.getByText('Parties')).toBeInTheDocument();
     expect(screen.queryByRole('option', { name: 'Ampol Limited' })).not.toBeInTheDocument();
+  });
+
+  it('searches cached industries by name or code and lists them in an Industries group', async () => {
+    dataCache.set('industries-list', industriesFixture);
+    const user = userEvent.setup();
+    renderPalette();
+
+    const input = screen.getByRole('combobox');
+    await user.type(input, 'software');
+    expect(await screen.findByRole('option', { name: 'Software Publishing' })).toBeInTheDocument();
+    expect(screen.getByText('Industries')).toBeInTheDocument();
+    expect(screen.queryByRole('option', { name: 'Financial Asset Investing' })).not.toBeInTheDocument();
+
+    await user.clear(input);
+    await user.type(input, '6240');
+    expect(await screen.findByRole('option', { name: 'Financial Asset Investing' })).toBeInTheDocument();
   });
 
   it('lazily fetches the parties list on a cold cache', async () => {
