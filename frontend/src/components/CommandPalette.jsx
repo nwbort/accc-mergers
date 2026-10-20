@@ -17,11 +17,10 @@ const PAGES = NAV_PAGES.filter((p) => p.inPalette)
 // whichever groups still have matches — so two party matches and no industry
 // matches leaves room for four mergers, and vice versa.
 const MAX_ENTITY_RESULTS = 6;
-const GROUP_COUNT = 3;
-const GUARANTEED_PER_GROUP = MAX_ENTITY_RESULTS / GROUP_COUNT;
 
 function shareBudget(matchCounts) {
-  const limits = matchCounts.map((n) => Math.min(n, GUARANTEED_PER_GROUP));
+  const guaranteed = Math.floor(MAX_ENTITY_RESULTS / matchCounts.length);
+  const limits = matchCounts.map((n) => Math.min(n, guaranteed));
   let spare = MAX_ENTITY_RESULTS - limits.reduce((a, b) => a + b, 0);
   let grew = true;
   while (spare > 0 && grew) {
@@ -37,19 +36,105 @@ function shareBudget(matchCounts) {
   return limits;
 }
 
-// The parties list is cached as the whole `parties.json` payload
-// ({ parties, total_parties }) under this key by the Parties page.
-const PARTIES_CACHE_KEY = 'parties-list';
+// The parties and industries lists are cached as their whole payloads
+// (`parties.json`'s { parties, total_parties }, `industries.json`'s
+// { industries }) under the same keys their pages use, so the two share one
+// fetch.
+const PARTIES_SOURCE = {
+  cacheKey: 'parties-list',
+  url: API_ENDPOINTS.parties,
+  field: 'parties',
+};
+const INDUSTRIES_SOURCE = {
+  cacheKey: 'industries-list',
+  url: API_ENDPOINTS.industries,
+  field: 'industries',
+};
 
-function cachedParties() {
-  return dataCache.get(PARTIES_CACHE_KEY)?.parties || [];
+function cachedList({ cacheKey, field }) {
+  return dataCache.get(cacheKey)?.[field] || [];
 }
 
-// Likewise the whole `industries.json` payload, cached by the Industries page.
-const INDUSTRIES_CACHE_KEY = 'industries-list';
+// One cached list, loaded lazily the first time the palette opens on a cold
+// cache, and re-read from the cache on every later open.
+function useCachedList(isOpen, source) {
+  const [list, setList] = useState(() => cachedList(source));
+  const [loading, setLoading] = useState(false);
 
-function cachedIndustries() {
-  return dataCache.get(INDUSTRIES_CACHE_KEY)?.industries || [];
+  const [prevIsOpen, setPrevIsOpen] = useState(false);
+  if (isOpen !== prevIsOpen) {
+    setPrevIsOpen(isOpen);
+    if (isOpen) {
+      if (dataCache.has(source.cacheKey)) {
+        setList(cachedList(source));
+      } else {
+        setLoading(true);
+      }
+    }
+  }
+
+  const { cacheKey, url, field } = source;
+  useEffect(() => {
+    if (!isOpen || dataCache.has(cacheKey)) return;
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) throw new Error(`Failed to fetch ${field}`);
+        return res.json();
+      })
+      .then((json) => {
+        dataCache.set(cacheKey, json);
+        setList(json?.[field] || []);
+      })
+      .catch((err) => console.error(`Command palette failed to load ${field}:`, err))
+      .finally(() => setLoading(false));
+  }, [isOpen, cacheKey, url, field]);
+
+  return { list, loading };
+}
+
+// Name-substring matches (plus, optionally, a code prefix), busiest first.
+function matchByName(list, q, codeOf) {
+  return list
+    .filter((x) => x.name.toLowerCase().includes(q) || (codeOf && String(codeOf(x)).startsWith(q)))
+    .sort((a, b) => b.merger_count - a.merger_count || a.name.localeCompare(b.name))
+    .slice(0, MAX_ENTITY_RESULTS);
+}
+
+function ResultGroup({ group, first, selectedKey, onHover, onSelect }) {
+  return (
+    <>
+      <li
+        className={`px-4 ${first ? 'pt-1' : 'pt-3'} pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide`}
+        role="presentation"
+      >
+        {group.heading}
+      </li>
+      {group.loading && group.rows.length === 0 && (
+        <li className="px-4 py-2 text-sm text-gray-500" role="presentation">
+          Loading {group.heading.toLowerCase()}…
+        </li>
+      )}
+      {group.rows.map((row) => {
+        const selected = row.key === selectedKey;
+        return (
+          <li
+            key={row.key}
+            id={row.key}
+            role="option"
+            aria-selected={selected}
+            data-selected={selected}
+            onMouseEnter={() => onHover(row.key)}
+            onClick={() => onSelect(row.path)}
+            className={`px-4 py-2 text-sm cursor-pointer ${group.truncate ? 'truncate ' : ''}${
+              selected ? 'bg-primary/10 text-primary' : 'text-gray-700'
+            }`}
+          >
+            {row.label}
+          </li>
+        );
+      })}
+    </>
+  );
 }
 
 export default function CommandPalette({ isOpen, onClose }) {
@@ -67,10 +152,11 @@ export default function CommandPalette({ isOpen, onClose }) {
     return cached?.length ? buildSearchIndex(cached) : null;
   });
   const [mergersLoading, setMergersLoading] = useState(false);
-  const [parties, setParties] = useState(() => cachedParties());
-  const [partiesLoading, setPartiesLoading] = useState(false);
-  const [industries, setIndustries] = useState(() => cachedIndustries());
-  const [industriesLoading, setIndustriesLoading] = useState(false);
+  const { list: parties, loading: partiesLoading } = useCachedList(isOpen, PARTIES_SOURCE);
+  const { list: industries, loading: industriesLoading } = useCachedList(
+    isOpen,
+    INDUSTRIES_SOURCE
+  );
 
   // Reset state on open (adjusting state during render rather than in an
   // effect, per https://react.dev/learn/you-might-not-need-an-effect).
@@ -87,18 +173,6 @@ export default function CommandPalette({ isOpen, onClose }) {
       } else {
         setMergersLoading(true);
       }
-      const cachedPartyList = cachedParties();
-      if (cachedPartyList.length) {
-        setParties(cachedPartyList);
-      } else {
-        setPartiesLoading(true);
-      }
-      const cachedIndustryList = cachedIndustries();
-      if (cachedIndustryList.length) {
-        setIndustries(cachedIndustryList);
-      } else {
-        setIndustriesLoading(true);
-      }
     }
   }
 
@@ -113,40 +187,6 @@ export default function CommandPalette({ isOpen, onClose }) {
       })
       .catch((err) => console.error('Command palette failed to load mergers:', err))
       .finally(() => setMergersLoading(false));
-  }, [isOpen]);
-
-  // Lazily fetch the parties list if it isn't cached yet, mirroring the merger
-  // load above. The whole payload is cached under the same key the Parties
-  // page uses so the two share one fetch.
-  useEffect(() => {
-    if (!isOpen || dataCache.has(PARTIES_CACHE_KEY)) return;
-    fetch(API_ENDPOINTS.parties)
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch parties');
-        return res.json();
-      })
-      .then((json) => {
-        dataCache.set(PARTIES_CACHE_KEY, json);
-        setParties(json?.parties || []);
-      })
-      .catch((err) => console.error('Command palette failed to load parties:', err))
-      .finally(() => setPartiesLoading(false));
-  }, [isOpen]);
-
-  // Lazily fetch the industries list, sharing the Industries page's cache entry.
-  useEffect(() => {
-    if (!isOpen || dataCache.has(INDUSTRIES_CACHE_KEY)) return;
-    fetch(API_ENDPOINTS.industries)
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch industries');
-        return res.json();
-      })
-      .then((json) => {
-        dataCache.set(INDUSTRIES_CACHE_KEY, json);
-        setIndustries(json?.industries || []);
-      })
-      .catch((err) => console.error('Command palette failed to load industries:', err))
-      .finally(() => setIndustriesLoading(false));
   }, [isOpen]);
 
   const trimmedQuery = query.trim();
@@ -165,77 +205,79 @@ export default function CommandPalette({ isOpen, onClose }) {
     return searchMergers(mergers, trimmedQuery, searchIndex).slice(0, MAX_ENTITY_RESULTS);
   }, [trimmedQuery, mergers, searchIndex]);
 
-  const partyMatches = useMemo(() => {
-    if (!trimmedQuery) return [];
-    const q = trimmedQuery.toLowerCase();
-    return parties
-      .filter((p) => p.name.toLowerCase().includes(q))
-      .sort((a, b) => b.merger_count - a.merger_count || a.name.localeCompare(b.name))
-      .slice(0, MAX_ENTITY_RESULTS);
-  }, [trimmedQuery, parties]);
+  const partyMatches = useMemo(
+    () => (trimmedQuery ? matchByName(parties, trimmedQuery.toLowerCase()) : []),
+    [trimmedQuery, parties]
+  );
 
-  const industryMatches = useMemo(() => {
-    if (!trimmedQuery) return [];
-    const q = trimmedQuery.toLowerCase();
-    return industries
-      .filter((i) => i.name.toLowerCase().includes(q) || String(i.code).startsWith(q))
-      .sort((a, b) => b.merger_count - a.merger_count || a.name.localeCompare(b.name))
-      .slice(0, MAX_ENTITY_RESULTS);
-  }, [trimmedQuery, industries]);
+  const industryMatches = useMemo(
+    () =>
+      trimmedQuery ? matchByName(industries, trimmedQuery.toLowerCase(), (i) => i.code) : [],
+    [trimmedQuery, industries]
+  );
 
-  const [mergerResults, partyResults, industryResults] = useMemo(() => {
-    const [mergerLimit, partyLimit, industryLimit] = shareBudget([
-      mergerMatches.length,
-      partyMatches.length,
-      industryMatches.length,
-    ]);
-    return [
-      mergerMatches.slice(0, mergerLimit),
-      partyMatches.slice(0, partyLimit),
-      industryMatches.slice(0, industryLimit),
+  // Every group in display order, each row already resolved to the key, path
+  // and label it renders with. Pages sit outside the shared entity budget.
+  const groups = useMemo(() => {
+    const entityGroups = [
+      {
+        heading: 'Mergers',
+        loading: mergersLoading,
+        matches: mergerMatches,
+        toRow: (m) => ({
+          key: `merger:${m.merger_id}`,
+          path: mergerPath(m.merger_id, m.merger_name),
+          label: m.merger_name,
+        }),
+      },
+      {
+        heading: 'Parties',
+        loading: partiesLoading,
+        matches: partyMatches,
+        toRow: (p) => ({ key: `party:${p.id}`, path: partyPath(p.id, p.name), label: p.name }),
+      },
+      {
+        heading: 'Industries',
+        loading: industriesLoading,
+        matches: industryMatches,
+        toRow: (i) => ({
+          key: `industry:${i.code}`,
+          path: industryPath(i.code, i.name),
+          label: i.name,
+        }),
+      },
     ];
-  }, [mergerMatches, partyMatches, industryMatches]);
+    const limits = shareBudget(entityGroups.map((g) => g.matches.length));
+    return [
+      {
+        heading: 'Pages',
+        loading: false,
+        rows: pageResults.map((p) => ({ key: `page:${p.path}`, path: p.path, label: p.label })),
+      },
+      ...entityGroups.map(({ heading, loading, matches, toRow }, i) => ({
+        heading,
+        loading: Boolean(trimmedQuery) && loading,
+        truncate: true,
+        rows: matches.slice(0, limits[i]).map(toRow),
+      })),
+    ];
+  }, [
+    trimmedQuery,
+    pageResults,
+    mergersLoading,
+    mergerMatches,
+    partiesLoading,
+    partyMatches,
+    industriesLoading,
+    industryMatches,
+  ]);
 
-  const showMergersGroup = trimmedQuery && (mergersLoading || mergerResults.length > 0);
-  const showPartiesGroup = trimmedQuery && (partiesLoading || partyResults.length > 0);
-  const showIndustriesGroup = trimmedQuery && (industriesLoading || industryResults.length > 0);
-  const noResults =
-    trimmedQuery &&
-    !mergersLoading &&
-    !partiesLoading &&
-    !industriesLoading &&
-    pageResults.length === 0 &&
-    mergerResults.length === 0 &&
-    partyResults.length === 0 &&
-    industryResults.length === 0;
+  const visibleGroups = groups.filter((g) => g.loading || g.rows.length > 0);
+  const noResults = trimmedQuery && visibleGroups.length === 0;
 
   // Flattened list of selectable rows, in display order, so arrow keys can
-  // move through both groups without caring which one an index belongs to.
-  const items = useMemo(() => {
-    const list = pageResults.map((p) => ({ type: 'page', path: p.path, key: `page:${p.path}` }));
-    mergerResults.forEach((m) => {
-      list.push({
-        type: 'merger',
-        path: mergerPath(m.merger_id, m.merger_name),
-        key: `merger:${m.merger_id}`,
-      });
-    });
-    partyResults.forEach((p) => {
-      list.push({
-        type: 'party',
-        path: partyPath(p.id, p.name),
-        key: `party:${p.id}`,
-      });
-    });
-    industryResults.forEach((i) => {
-      list.push({
-        type: 'industry',
-        path: industryPath(i.code, i.name),
-        key: `industry:${i.code}`,
-      });
-    });
-    return list;
-  }, [pageResults, mergerResults, partyResults, industryResults]);
+  // move through every group without caring which one an index belongs to.
+  const items = useMemo(() => groups.flatMap((g) => g.rows), [groups]);
 
   // Clamp selection when the result set shrinks (e.g. typing narrows results).
   const [prevItemsLength, setPrevItemsLength] = useState(items.length);
@@ -366,147 +408,16 @@ export default function CommandPalette({ isOpen, onClose }) {
             </li>
           )}
 
-          {pageResults.length > 0 && (
-            <>
-              <li
-                className="px-4 pt-1 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide"
-                role="presentation"
-              >
-                Pages
-              </li>
-              {pageResults.map((p) => {
-                const key = `page:${p.path}`;
-                const selected = key === selectedKey;
-                return (
-                  <li
-                    key={key}
-                    id={key}
-                    role="option"
-                    aria-selected={selected}
-                    data-selected={selected}
-                    onMouseEnter={() => setSelectedIndex(items.findIndex((i) => i.key === key))}
-                    onClick={() => goTo(p.path)}
-                    className={`px-4 py-2 text-sm cursor-pointer ${
-                      selected ? 'bg-primary/10 text-primary' : 'text-gray-700'
-                    }`}
-                  >
-                    {p.label}
-                  </li>
-                );
-              })}
-            </>
-          )}
-
-          {showMergersGroup && (
-            <>
-              <li
-                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide"
-                role="presentation"
-              >
-                Mergers
-              </li>
-              {mergersLoading && mergerResults.length === 0 && (
-                <li className="px-4 py-2 text-sm text-gray-500" role="presentation">
-                  Loading mergers…
-                </li>
-              )}
-              {mergerResults.map((m) => {
-                const key = `merger:${m.merger_id}`;
-                const selected = key === selectedKey;
-                const path = mergerPath(m.merger_id, m.merger_name);
-                return (
-                  <li
-                    key={key}
-                    id={key}
-                    role="option"
-                    aria-selected={selected}
-                    data-selected={selected}
-                    onMouseEnter={() => setSelectedIndex(items.findIndex((i) => i.key === key))}
-                    onClick={() => goTo(path)}
-                    className={`px-4 py-2 text-sm cursor-pointer truncate ${
-                      selected ? 'bg-primary/10 text-primary' : 'text-gray-700'
-                    }`}
-                  >
-                    {m.merger_name}
-                  </li>
-                );
-              })}
-            </>
-          )}
-
-          {showPartiesGroup && (
-            <>
-              <li
-                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide"
-                role="presentation"
-              >
-                Parties
-              </li>
-              {partiesLoading && partyResults.length === 0 && (
-                <li className="px-4 py-2 text-sm text-gray-500" role="presentation">
-                  Loading parties…
-                </li>
-              )}
-              {partyResults.map((p) => {
-                const key = `party:${p.id}`;
-                const selected = key === selectedKey;
-                const path = partyPath(p.id, p.name);
-                return (
-                  <li
-                    key={key}
-                    id={key}
-                    role="option"
-                    aria-selected={selected}
-                    data-selected={selected}
-                    onMouseEnter={() => setSelectedIndex(items.findIndex((i) => i.key === key))}
-                    onClick={() => goTo(path)}
-                    className={`px-4 py-2 text-sm cursor-pointer truncate ${
-                      selected ? 'bg-primary/10 text-primary' : 'text-gray-700'
-                    }`}
-                  >
-                    {p.name}
-                  </li>
-                );
-              })}
-            </>
-          )}
-
-          {showIndustriesGroup && (
-            <>
-              <li
-                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide"
-                role="presentation"
-              >
-                Industries
-              </li>
-              {industriesLoading && industryResults.length === 0 && (
-                <li className="px-4 py-2 text-sm text-gray-500" role="presentation">
-                  Loading industries…
-                </li>
-              )}
-              {industryResults.map((i) => {
-                const key = `industry:${i.code}`;
-                const selected = key === selectedKey;
-                const path = industryPath(i.code, i.name);
-                return (
-                  <li
-                    key={key}
-                    id={key}
-                    role="option"
-                    aria-selected={selected}
-                    data-selected={selected}
-                    onMouseEnter={() => setSelectedIndex(items.findIndex((it) => it.key === key))}
-                    onClick={() => goTo(path)}
-                    className={`px-4 py-2 text-sm cursor-pointer truncate ${
-                      selected ? 'bg-primary/10 text-primary' : 'text-gray-700'
-                    }`}
-                  >
-                    {i.name}
-                  </li>
-                );
-              })}
-            </>
-          )}
+          {visibleGroups.map((group, i) => (
+            <ResultGroup
+              key={group.heading}
+              group={group}
+              first={i === 0}
+              selectedKey={selectedKey}
+              onHover={(key) => setSelectedIndex(items.findIndex((it) => it.key === key))}
+              onSelect={goTo}
+            />
+          ))}
         </ul>
       </div>
     </div>

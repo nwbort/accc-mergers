@@ -123,6 +123,19 @@ describe('CommandPalette', () => {
     expect(await screen.findByRole('option', { name: 'Financial Asset Investing' })).toBeInTheDocument();
   });
 
+  it('does not show a loading row for a cached list that is simply empty', async () => {
+    dataCache.set('mergers-list', mergerFixture);
+    dataCache.set('parties-list', { parties: [], total_parties: 0 });
+    dataCache.set('industries-list', { industries: [] });
+    const user = userEvent.setup();
+    renderPalette();
+
+    await user.type(screen.getByRole('combobox'), 'ampol');
+    expect(await screen.findByRole('option', { name: 'Ampol / Z Energy' })).toBeInTheDocument();
+    expect(screen.queryByText('Loading parties…')).not.toBeInTheDocument();
+    expect(screen.queryByText('Loading industries…')).not.toBeInTheDocument();
+  });
+
   it('lazily fetches the parties list on a cold cache', async () => {
     const fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
       if (url.includes('parties.json')) {
