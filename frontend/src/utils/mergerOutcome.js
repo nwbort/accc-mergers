@@ -149,10 +149,19 @@ export function getPhaseStatus(merger) {
 /**
  * The determination a determination event records. A matter that went on to
  * the public benefit phase has two — the Phase 2 determination and the public
- * benefit one — so the event is matched to its phase by date, falling back to
- * the headline determination.
+ * benefit one — so the event is matched to its phase: by the phase the event is
+ * filed under, then by date, falling back to the headline determination. The
+ * phase comes first because the dates needn't agree: MN-65005's Phase 2
+ * determination document is dated 22 September, but the register (and so
+ * phase_2_determination_date) has the determination as 23 September.
  */
 export function determinationForEvent(merger, event) {
+  if (event?.phase === 'Public benefit' && merger?.public_benefits_determination) {
+    return merger.public_benefits_determination;
+  }
+  if (event?.phase === 'Phase 2' && merger?.phase_2_determination) {
+    return merger.phase_2_determination;
+  }
   const day = event?.date?.slice(0, 10);
   if (day) {
     if (merger?.public_benefits_determination
