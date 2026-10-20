@@ -87,7 +87,30 @@ def render_card(*, key: str, headline: str, title: str, detail: str) -> bytes | 
         return None
 
 
-def _draw(bold: str, regular: str, fill: str, headline: str, title: str, detail: str) -> bytes:
+def render_status_card(*, kind: str, headline: str) -> bytes | None:
+    """A matter-agnostic card for one kind of milestone, or ``None``.
+
+    The site's pages share these as their Open Graph image (see
+    ``scripts/generate/og_cards.py``), so it carries no matter name: the
+    unfurl prints the page title under it. Same layout and colours as the
+    per-post card, with the headline in the title's place.
+    """
+    bold = _find(_BOLD_FONTS)
+    regular = _find(_REGULAR_FONTS)
+    if bold is None or regular is None:
+        return None
+    try:
+        tone = tone_for(f"_:{kind}:_", headline)
+        return _draw(bold, regular, TONES[tone], "ACCC merger register", headline,
+                     "Every ACCC merger review, tracked", centre=True)
+    except (OSError, ValueError):
+        return None
+
+
+def _draw(
+    bold: str, regular: str, fill: str, headline: str, title: str, detail: str,
+    *, centre: bool = False,
+) -> bytes:
     image = Image.new("RGB", (WIDTH, HEIGHT), fill)
     draw = ImageDraw.Draw(image)
     text_width = WIDTH - 2 * _MARGIN
@@ -115,6 +138,11 @@ def _draw(bold: str, regular: str, fill: str, headline: str, title: str, detail:
     else:
         lines = _wrap(draw, title, font, text_width)
         lines = _ellipsise(draw, lines, font, text_width)
+    if centre:
+        # A one-line headline on a generic card would otherwise sit high over
+        # an empty band; centring it in its space keeps the card balanced.
+        block = min(len(lines), _MAX_TITLE_LINES) * line_height
+        title_top += max(0, (title_bottom - title_top - block) // 2)
     for line in lines[:_MAX_TITLE_LINES]:
         draw.text((_MARGIN, title_top), line, font=font, fill=white)
         title_top += line_height

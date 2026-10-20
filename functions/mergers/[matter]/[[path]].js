@@ -30,6 +30,21 @@ export function mergerPath(id, name) {
   return slug ? `/mergers/${id}/${slug}` : `/mergers/${id}`;
 }
 
+// The merger's link-preview card. MUST stay in sync with mergerOgImage in
+// frontend/src/utils/pageMeta.js (pageMeta.test.js checks the two agree): this is
+// the copy LinkedIn and the other preview bots actually see, since they never
+// reach the prerendered page. `og_card` is chosen by
+// scripts/generate/og_cards.py; anything not shaped like one of its file names
+// falls back to the shared image.
+const DEFAULT_OG_IMAGE = 'https://mergers.fyi/og-image.png';
+const OG_CARD_RE = /^[a-z0-9-]+\.png$/;
+export function mergerOgImage(merger) {
+  const card = merger?.og_card;
+  return typeof card === 'string' && OG_CARD_RE.test(card)
+    ? `https://mergers.fyi/og/${card}`
+    : DEFAULT_OG_IMAGE;
+}
+
 function escapeHtml(str) {
   return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
@@ -42,6 +57,7 @@ function buildOgHtml(merger, canonicalUrl) {
   const stage = merger.stage ? ` - ${escapeHtml(merger.stage)}` : '';
   const description = `Status: ${statusLabel}${stage}.&#10;Find merger analysis, commentary, decisions and more. Track ACCC merger reviews on mergers.fyi`;
   const publishDate = merger.effective_notification_datetime ?? merger.original_notification_datetime ?? '';
+  const image = escapeHtml(mergerOgImage(merger));
 
   return `<!doctype html>
 <html lang="en">
@@ -56,7 +72,7 @@ function buildOgHtml(merger, canonicalUrl) {
 <meta property="og:description" content="${description}" />
 <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
 <meta property="og:site_name" content="Australian Merger Tracker" />
-<meta property="og:image" content="https://mergers.fyi/og-image.png" />
+<meta property="og:image" content="${image}" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 ${publishDate ? `<meta property="article:published_time" content="${escapeHtml(publishDate)}" />` : ''}
@@ -64,7 +80,7 @@ ${publishDate ? `<meta property="article:published_time" content="${escapeHtml(p
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${title}" />
 <meta name="twitter:description" content="${description}" />
-<meta name="twitter:image" content="https://mergers.fyi/og-image.png" />
+<meta name="twitter:image" content="${image}" />
 <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
 </head>
 <body>

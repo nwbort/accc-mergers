@@ -13,7 +13,12 @@ body is the link alone. Nothing is posted until a person presses Post.
 The post is the same one the API would make, as plain text rather than in
 LinkedIn's "little" format (the composer escapes what a person types). The
 link to the matter page goes in the text, ahead of the hashtags, so LinkedIn
-unfurls it into the page's own preview card.
+unfurls it into the page's own preview card: the generic card for the matter's
+latest milestone (``scripts/generate/og_cards.py``). LinkedIn caches a
+preview by URL for about a week, so the link carries the milestone's kind
+(``?m=determined``): a matter shared again at its next milestone is a URL
+LinkedIn has not seen, and is scraped afresh rather than shown with the card
+from last time.
 
 It shares ``data/processed/linkedin_posts.json`` with ``post_linkedin``: the
 first run seeds it, a milestone is recorded once its notification is
@@ -57,11 +62,16 @@ def share_text(milestone: Milestone) -> str:
     if summary:
         parts.append(summary)
     parts.append(milestone.detail)
-    parts.append(milestone.url)
+    parts.append(page_link(milestone))
     tags = preview(hashtag_templates())
     if tags:
         parts.append(tags)
     return "\n\n".join(parts)
+
+
+def page_link(milestone: Milestone) -> str:
+    """The matter link to unfurl, distinct per milestone so LinkedIn rescrapes it."""
+    return f"{milestone.url}?{urlencode({'m': milestone.key.split(':')[1]})}"
 
 
 def share_url(milestone: Milestone) -> str:

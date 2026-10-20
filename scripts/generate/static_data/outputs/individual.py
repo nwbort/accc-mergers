@@ -3,6 +3,8 @@
 import json
 from pathlib import Path
 
+from scripts.generate.og_cards import current_card
+
 from ..enrichment import slim_for_site, strip_event_status
 from ..prune import prune_stale_files
 
@@ -16,7 +18,9 @@ def generate(mergers: list, output_dir: Path) -> int:
 
     Each file is the merger detail page's payload, slimmed to what that page
     renders (:func:`slim_for_site`) — the complete record lives on in
-    ``data/output/mergers.json``.
+    ``data/output/mergers.json``. Each also names its link-preview card
+    (``og_card``, see :mod:`scripts.generate.og_cards`), worked out from the
+    same record the page and the posters read.
 
     Detail files for mergers that are no longer in the data set (deduped away,
     or dropped from the register) are pruned.
@@ -29,8 +33,10 @@ def generate(mergers: list, output_dir: Path) -> int:
         merger_id = merger.get('merger_id', '')
         if merger_id:
             out_path = mergers_dir / f"{merger_id}.json"
+            record = slim_for_site(strip_event_status(merger))
+            record['og_card'] = current_card(record)
             with open(out_path, 'w', encoding='utf-8') as f:
-                json.dump(slim_for_site(strip_event_status(merger)), f, indent=2)
+                json.dump(record, f, indent=2)
             written.add(out_path.name)
 
     prune_stale_files(mergers_dir, written, exclude=LIST_FILES, label="mergers")

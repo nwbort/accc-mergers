@@ -77,7 +77,9 @@ def test_the_text_is_plain_and_carries_the_matter_link_before_the_tags():
     lines = share_text(milestone).split("\n\n")
     assert lines[0] == "Notified to the ACCC: Asahi - Warehouse site (Vic)"
     assert "\\" not in share_text(milestone)  # no little-format escapes
-    assert lines[-2] == "https://mergers.fyi/mergers/MN-01016"
+    # The kind keeps a re-share at the next milestone from hitting LinkedIn's
+    # cached preview of the last one.
+    assert lines[-2] == "https://mergers.fyi/mergers/MN-01016?m=notified"
     assert lines[-1] == "#accc"
 
 

@@ -70,11 +70,14 @@ company page needs the Community Management API, which provides refresh
 tokens and read-back. A personal profile works with a 60-day access token and
 no read-back. Until the API is approved, `share_links.py` (`LINKEDIN_SHARE_LINKS`)
 pushes each milestone to a phone over ntfy as a LinkedIn composer link to post
-by hand, sharing the same state file. See [`docs/linkedin.md`](docs/linkedin.md).
+by hand, sharing the same state file. Those links unfurl with a generic card
+for the matter's latest milestone — 14 committed PNGs in `frontend/public/og/`,
+drawn by `scripts/generate/og_cards.py`, which also writes each detail file's
+`og_card` for the Pages Function, prerenderer and SPA to read. See [`docs/linkedin.md`](docs/linkedin.md).
 
 ### Cloudflare Pages Functions (`functions/`)
 
-Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently just the PDF viewer wrapper for `/mergers/{matter}/*.pdf`.
+Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently the PDF viewer wrapper for `/mergers/{matter}/*.pdf`, and the Open Graph page served to link-preview bots on merger detail URLs.
 
 ## Project Structure
 
@@ -320,6 +323,9 @@ scripts/                  # A Python package — entry points run as `python -m 
 │   ├── generate_weekly_digest.py  # Generate digest.json for weekly summary
 │   ├── generate_sitemap.py   # Generate sitemap.xml (runs in pipeline.yml beside the RSS feed)
 │   ├── generate_rss_feed.py  # Generate RSS feed
+│   ├── og_cards.py       # The generic link-preview cards (frontend/public/og/) and which one
+│                         #   each merger page shows (detail files' og_card). Run by hand
+│                         #   to redraw; a test fails if a card is missing
 │   ├── generate-cli-data.sh  # Build/version-bump the accc-mergers-cli bundle (gitignored) + tracked manifest
 │   ├── build_cli_sqlite.py   # Build cli.sqlite from the CLI bundle
 │   └── static_data/      # Generator package used by generate_static_data.py (outputs/, loaders, enrichment)

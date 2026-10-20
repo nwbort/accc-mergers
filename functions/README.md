@@ -14,6 +14,7 @@ imports `mergers/[matter]/[[path]].js` by a root-relative path.
 
 | Path | File | Behaviour |
 | --- | --- | --- |
+| `/mergers/{MN,WA}-NNNNN[/<slug>]` (link-preview bots only) | `mergers/[matter]/[[path]].js` | A minimal page of Open Graph tags for the matter, with `og:image` pointing at its generic milestone card in `/og/` (the detail file's `og_card`, else the shared `og-image.png`). Everyone else falls through to the SPA. |
 | `/mergers/{MN,WA}-NNNNN/<file>.pdf` | `mergers/[matter]/[[path]].js` | Wraps the underlying PDF in a custom viewer (`_lib/pdf-viewer.js`) on desktop browsers. Mobile UAs and `?raw=1` requests get the raw PDF straight from `env.ASSETS`. |
 
 ## Files
