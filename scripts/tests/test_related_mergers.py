@@ -165,6 +165,34 @@ def test_known_pairs_are_excluded():
     assert all(c["type"] != drm.SUSPENDED_REFILED for c in cands)
 
 
+def test_rejected_pairs_are_excluded():
+    cands = drm.find_candidates(
+        _mergers(), known_pairs=set(), threshold=0.70,
+        rejected_pairs={("WA-100", "MN-200")},
+    )
+    assert all((c["source"], c["target"]) != ("WA-100", "MN-200") for c in cands)
+    # Only that pair is dropped; the suspended pair is still suggested.
+    assert any(c["type"] == drm.SUSPENDED_REFILED for c in cands)
+
+
+def test_load_rejected_pairs_reads_rejected_list(tmp_path):
+    path = tmp_path / "related_mergers.json"
+    path.write_text(json.dumps({
+        "pairs": [{"from": "WA-1", "to": "MN-2", "type": "waiver_refiled"}],
+        "rejected": [{"from": "WA-3", "to": "MN-4", "note": "different site"}],
+    }))
+    assert drm.load_rejected_pairs(path) == {("WA-3", "MN-4")}
+    assert drm.load_related_pairs(path) == {("WA-1", "MN-2")}
+
+
+def test_apply_suggestions_preserves_rejected_list(tmp_path):
+    path = tmp_path / "related_mergers.json"
+    rejected = [{"from": "WA-3", "to": "MN-4", "note": "different site"}]
+    path.write_text(json.dumps({"pairs": [], "rejected": rejected}))
+    drm.apply_suggestions(path, drm.find_candidates(_mergers(), set(), 0.70))
+    assert json.loads(path.read_text())["rejected"] == rejected
+
+
 def test_soft_date_ordering_rejects_earlier_refile():
     mergers = _mergers()
     # Move the refile to *before* the suspension — should no longer be paired.

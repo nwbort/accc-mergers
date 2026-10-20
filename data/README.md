@@ -40,7 +40,9 @@ Intermediate JSON written by the extraction pipeline (mainly
 - `commentary.json` — hand-authored commentary keyed by `merger_id`
   (edited via `scripts/tools/commentary.py`)
 - `related_mergers.json` — manual `WA-*` → `MN-*` pairs for waivers that
-  were re-filed as formal notifications
+  were re-filed as formal notifications, plus a `rejected` list of
+  suggested pairs reviewed and found not to be refiles (the detector never
+  suggests those again)
 - `similar_mergers.json` — generated suggestions of related mergers per
   merger (from `generate_similar_mergers.py`)
 - `atproto_records.json` — content digest of each `fyi.mergers.matter` record
