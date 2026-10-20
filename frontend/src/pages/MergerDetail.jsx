@@ -369,6 +369,7 @@ function MergerDetail() {
         title={meta.title}
         description={meta.description}
         url={meta.path}
+        image={meta.image}
         type={meta.type}
         publishedTime={meta.publishedTime}
         modifiedTime={meta.modifiedTime}

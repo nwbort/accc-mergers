@@ -375,6 +375,8 @@ export function renderPage(template, meta, body) {
     .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${escapeHtml(canonicalUrl)}" />`)
     .replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${title}" />`)
     .replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${description}" />`)
+    .replace(/<meta property="og:image" [^>]*>/, (tag) => (meta.image ? `<meta property="og:image" content="${escapeHtml(meta.image)}" />` : tag))
+    .replace(/<meta name="twitter:image"[^>]*>/, (tag) => (meta.image ? `<meta name="twitter:image" content="${escapeHtml(meta.image)}" />` : tag))
     .replace(/<\/head>/, `    ${headExtras}\n  </head>`)
     .replace(/<div id="root"><\/div>/, `<div id="root">${body}</div>`);
 }

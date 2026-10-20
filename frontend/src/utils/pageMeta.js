@@ -45,6 +45,28 @@ export function serialiseJsonLd(data) {
   return JSON.stringify(data).replace(/</g, '\\u003c');
 }
 
+// The site's one shared Open Graph image, used wherever a page has no card of
+// its own.
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
+
+// A generated card name is a bare slug plus `.png`; anything else in the field
+// is ignored rather than written into a URL.
+const OG_CARD_RE = /^[a-z0-9-]+\.png$/;
+
+/**
+ * The Open Graph image for a merger page: the generic card for its latest
+ * milestone (`og_card`, chosen by scripts/generate/og_cards.py and drawn into
+ * public/og/), or the shared image. The Pages Function in
+ * functions/mergers/[matter]/[[path]].js keeps an inline copy for the
+ * link-preview bots, pinned to this one by pageMeta.test.js.
+ */
+export function mergerOgImage(merger) {
+  const card = merger?.og_card;
+  return typeof card === 'string' && OG_CARD_RE.test(card)
+    ? `${SITE_URL}/og/${card}`
+    : DEFAULT_OG_IMAGE;
+}
+
 function absolute(path) {
   return `${SITE_URL}${path}`;
 }
@@ -86,7 +108,7 @@ export function breadcrumbSchema(trail, currentName, currentPath) {
  *
  * @returns {{title: string, description: string, path: string, type: string,
  *   publishedTime: string, modifiedTime: string, section: string|undefined,
- *   structuredData: Object[]}}
+ *   image: string, structuredData: Object[]}}
  */
 export function mergerMeta(merger) {
   const acquirers = names(merger.acquirers);
@@ -115,7 +137,7 @@ export function mergerMeta(merger) {
       '@type': 'Organization',
       name: SITE_TITLE,
       url: SITE_URL,
-      logo: { '@type': 'ImageObject', url: `${SITE_URL}/og-image.png` },
+      logo: { '@type': 'ImageObject', url: DEFAULT_OG_IMAGE },
     },
     about: [
       ...acquirers.map((name) => ({ '@type': 'Organization', name })),
@@ -131,6 +153,7 @@ export function mergerMeta(merger) {
     publishedTime: merger.effective_notification_datetime,
     modifiedTime,
     section: merger.anzsic_codes?.[0]?.name,
+    image: mergerOgImage(merger),
     structuredData: [
       articleSchema,
       breadcrumbSchema([{ name: 'Mergers', path: '/mergers' }], merger.merger_name, path),

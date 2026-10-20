@@ -7,10 +7,13 @@ import {
   SITE_URL,
   STATIC_PAGE_META,
   fullTitle,
+  DEFAULT_OG_IMAGE,
   industryMeta,
   mergerMeta,
+  mergerOgImage,
   partyMeta,
 } from '../pageMeta.js';
+import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
   industryBody,
   mergerBody,
@@ -186,6 +189,34 @@ describe('STATIC_PAGE_META', () => {
 // regexes are silently no longer matching — which means every prerendered page
 // ships the generic site-wide head instead of its own. That is the exact bug
 // the prerenderer exists to prevent, and it fails open, so it needs a test.
+describe('mergerOgImage', () => {
+  const cases = [
+    { og_card: 'cleared-by-the-accc.png' },
+    { og_card: null },
+    {},
+    { og_card: '../og-image.png' },
+    { og_card: 'x.png" onload="' },
+    { og_card: 42 },
+  ];
+
+  it('points at the generated card, falling back to the shared image', () => {
+    expect(mergerOgImage({ og_card: 'cleared-by-the-accc.png' })).toBe(
+      `${SITE_URL}/og/cleared-by-the-accc.png`,
+    );
+    expect(mergerOgImage({})).toBe(DEFAULT_OG_IMAGE);
+    expect(mergerOgImage({ og_card: '../og-image.png' })).toBe(DEFAULT_OG_IMAGE);
+    expect(mergerMeta({ ...MERGER, og_card: 'assessment-ceased.png' }).image).toBe(
+      `${SITE_URL}/og/assessment-ceased.png`,
+    );
+  });
+
+  it('agrees with the Pages Function copy the preview bots see', () => {
+    for (const merger of cases) {
+      expect(fnMergerOgImage(merger)).toBe(mergerOgImage(merger));
+    }
+  });
+});
+
 describe('renderPage stamping against the real index.html', () => {
   const template = readFixture('index.html');
   const meta = { ...STATIC_PAGE_META['/industries'], path: '/industries' };
@@ -208,6 +239,16 @@ describe('renderPage stamping against the real index.html', () => {
     );
     // No generic copy left behind for a crawler to read instead.
     expect(html).not.toContain('<meta property="og:url" content="https://mergers.fyi" />');
+  });
+
+  it('keeps the shared image unless the page names its own', () => {
+    expect(html).toContain(`<meta property="og:image" content="${DEFAULT_OG_IMAGE}" />`);
+    const card = renderPage(template, { ...meta, image: `${SITE_URL}/og/assessment-ceased.png` }, '');
+    expect(card).toContain(`<meta property="og:image" content="${SITE_URL}/og/assessment-ceased.png" />`);
+    expect(card).toContain(`<meta name="twitter:image" content="${SITE_URL}/og/assessment-ceased.png" />`);
+    expect(card).not.toContain(DEFAULT_OG_IMAGE);
+    // The width/height tags are siblings, not replaced.
+    expect(card).toContain('<meta property="og:image:width" content="1200" />');
   });
 
   it('keeps the SPA bootable and fills #root with real content', () => {

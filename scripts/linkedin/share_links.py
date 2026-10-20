@@ -13,7 +13,21 @@ body is the link alone. Nothing is posted until a person presses Post.
 The post is the same one the API would make, as plain text rather than in
 LinkedIn's "little" format (the composer escapes what a person types). The
 link to the matter page goes in the text, ahead of the hashtags, so LinkedIn
-unfurls it into the page's own preview card.
+unfurls it into the page's own preview card: the generic card for the matter's
+latest milestone (``scripts/generate/og_cards.py``). LinkedIn caches a
+preview by URL for about a week, so the link carries the milestone's kind
+(``?m=determined``): a matter shared again at its next milestone is a URL
+LinkedIn has not seen, and is scraped afresh rather than shown with the card
+from last time.
+
+That makes timing matter: a link LinkedIn scrapes before the deploy lands
+gets the old card (or, for a new matter, the home page, since the matter's
+data file doesn't exist yet), and keeps it for a week. So it runs from its own
+workflow after the pipeline (``linkedin-share-links.yml``), with
+``--wait-for-deploy``: a link is only sent once
+mergers.fyi serves the very detail file checked out for its matter.
+One that hasn't appeared by the deadline is left unsent and unrecorded, and
+the next run tries again.
 
 It shares ``data/processed/linkedin_posts.json`` with ``post_linkedin``: the
 first run seeds it, a milestone is recorded once its notification is
@@ -23,6 +37,7 @@ left off rather than re-announcing them. It stands down once
 
 Usage:
     python -m scripts.linkedin.share_links [--dry-run] [--max-links N]
+        [--wait-for-deploy SECONDS]
 """
 
 from __future__ import annotations
@@ -30,6 +45,7 @@ from __future__ import annotations
 import argparse
 import os
 import sys
+import time
 from datetime import datetime, timezone
 from urllib.parse import urlencode
 
@@ -43,11 +59,15 @@ from scripts.atproto.post_bluesky import (
     pending,
     save_state,
 )
+from scripts.atproto import config as atproto_config
 from scripts.atproto.records import load_matters
 from scripts.linkedin import config
 from scripts.linkedin.post_linkedin import hashtag_templates, preview, summary_text
 
 SHARE_URL = "https://www.linkedin.com/feed/"
+
+#: How often to look at the live site while waiting for a deploy.
+DEPLOY_POLL_SECONDS = 20
 
 
 def share_text(milestone: Milestone) -> str:
@@ -57,11 +77,16 @@ def share_text(milestone: Milestone) -> str:
     if summary:
         parts.append(summary)
     parts.append(milestone.detail)
-    parts.append(milestone.url)
+    parts.append(page_link(milestone))
     tags = preview(hashtag_templates())
     if tags:
         parts.append(tags)
     return "\n\n".join(parts)
+
+
+def page_link(milestone: Milestone) -> str:
+    """The matter link to unfurl, distinct per milestone so LinkedIn rescrapes it."""
+    return f"{milestone.url}?{urlencode({'m': milestone.key.split(':')[1]})}"
 
 
 def share_url(milestone: Milestone) -> str:
@@ -102,6 +127,54 @@ def notify(milestone: Milestone, *, topic: str, server: str, token: str = "") ->
     return True
 
 
+def is_live(matter: dict, *, fetch=requests.get) -> bool:
+    """Whether mergers.fyi already serves exactly this detail file.
+
+    Comparing the whole record, not just its ``og_card``, is what makes this
+    "this run's deploy has landed" rather than "the card happens to match".
+    Until a new matter's file is deployed Pages answers with the SPA's
+    ``index.html``, which doesn't parse, so that reads as not live too.
+    """
+    url = f"{atproto_config.SITE_URL}/data/mergers/{matter['merger_id']}.json"
+    try:
+        response = fetch(
+            url,
+            params={"t": int(time.time())},
+            headers={"Cache-Control": "no-cache"},
+            timeout=20,
+        )
+        return response.status_code == 200 and response.json() == matter
+    except (requests.RequestException, ValueError):
+        return False
+
+
+def wait_for_deploy(
+    milestones_due: list[Milestone],
+    matters: dict[str, dict],
+    *,
+    timeout: float,
+    poll: float = DEPLOY_POLL_SECONDS,
+    fetch=requests.get,
+    sleep=time.sleep,
+    clock=time.monotonic,
+) -> list[Milestone]:
+    """The milestones whose matter page is live, waiting up to ``timeout`` seconds."""
+    waiting = {_matter_id(m) for m in milestones_due}
+    deadline = clock() + timeout
+    while True:
+        waiting = {mid for mid in waiting if not is_live(matters[mid], fetch=fetch)}
+        if not waiting or clock() >= deadline:
+            break
+        sleep(poll)
+    for mid in sorted(waiting):
+        print(f"  {mid} not deployed after {timeout:.0f}s; leaving its link for the next run")
+    return [m for m in milestones_due if _matter_id(m) not in waiting]
+
+
+def _matter_id(milestone: Milestone) -> str:
+    return milestone.key.split(":")[0]
+
+
 def share_links_enabled() -> bool:
     return os.environ.get("LINKEDIN_SHARE_LINKS", "").strip().lower() in {"1", "true", "yes"}
 
@@ -114,6 +187,14 @@ def main(argv: list[str] | None = None) -> int:
         help="Print the links that are due. Sends nothing and writes no state.",
     )
     parser.add_argument("--max-links", type=int, default=DEFAULT_MAX_POSTS)
+    parser.add_argument(
+        "--wait-for-deploy",
+        type=float,
+        default=0,
+        metavar="SECONDS",
+        help="Send a link only once mergers.fyi serves this run's data for its "
+        "matter, waiting up to this long. 0 (the default) sends straight away.",
+    )
     args = parser.parse_args(argv)
 
     matters = load_matters()
@@ -152,9 +233,13 @@ def main(argv: list[str] | None = None) -> int:
 
     server = os.environ.get("NTFY_SERVER", "").strip() or "https://ntfy.sh"
     token = os.environ.get("NTFY_TOKEN", "").strip()
+    batch = due[: args.max_links]
+    if args.wait_for_deploy > 0:
+        by_id = {matter["merger_id"]: matter for matter in matters}
+        batch = wait_for_deploy(batch, by_id, timeout=args.wait_for_deploy)
     failures = 0
     try:
-        for milestone in due[: args.max_links]:
+        for milestone in batch:
             if not notify(milestone, topic=topic, server=server, token=token):
                 failures += 1
                 continue

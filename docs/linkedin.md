@@ -136,6 +136,31 @@ own post box with the post already written. Nothing goes out until you press
 - The text is the API post as plain text. The matter's link sits just above
   the hashtags, so LinkedIn turns it into the matter page's preview card. The
   notification body is the full link alone.
+- The preview's image is a **generic card for the matter's latest milestone**
+  ("Cleared by the ACCC" in green, "Referred to Phase 2" in amber, and so on),
+  not the per-matter picture the API attaches; the preview prints the matter's
+  name under it anyway. There are 14 of them, one per headline the posters
+  use, committed in `frontend/public/og/` and chosen per matter by
+  `scripts/generate/og_cards.py`, which writes the choice into each
+  `mergers/{id}.json` as `og_card`. The Pages Function that answers link
+  preview bots (`functions/mergers/[matter]/[[path]].js`) reads that field, as
+  do the prerendered page and the SPA. Redraw them with
+  `python -m scripts.generate.og_cards` after changing a headline or the
+  design; a test fails if one is missing.
+- LinkedIn caches a link's preview for about a week, so the link carries the
+  milestone's kind (`?m=determined`). Sharing a matter again at its next
+  milestone uses a URL LinkedIn hasn't seen, and it scrapes the new card rather
+  than reusing last week's. If a preview still looks stale, LinkedIn's
+  [Post Inspector](https://www.linkedin.com/post-inspector/) forces a rescrape.
+- That cache is also why the links wait for the deploy. They're sent by their
+  own workflow, `linkedin-share-links.yml`, which runs when `pipeline.yml`
+  finishes on `main`. It sends a matter's link only once mergers.fyi serves the
+  exact detail file on `main` (`--wait-for-deploy 900`). Sent any earlier,
+  LinkedIn would scrape the old card, or the home page for a matter not yet
+  deployed, and keep it for a week. A matter still not live after 15 minutes
+  is left for the next run. The state file is committed by that workflow with
+  `[skip ci]`. Waiting inside the pipeline would hold its concurrency group, so
+  an email-triggered run would queue behind it.
 - The post box posts as whoever is signed in. To post as the page, switch the
   author to the page in the post box, or paste the text into the page's own
   "Create a post" box.
