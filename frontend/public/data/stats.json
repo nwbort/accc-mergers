@@ -1,6 +1,6 @@
 {
   "total_mergers": 298,
-  "total_waivers": 459,
+  "total_waivers": 464,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 250,
@@ -18,8 +18,8 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 437,
-    "Not approved": 22
+    "Approved": 440,
+    "Not approved": 24
   },
   "clearance_rate": {
     "cleared": 248,
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.387799564270153,
-    "median_days": 21,
-    "average_business_days": 13.943355119825709,
-    "median_business_days": 14
+    "average_days": 20.510775862068964,
+    "median_days": 21.0,
+    "average_business_days": 14.025862068965518,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 172
+      "count": 174
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 85
+      "count": 86
     },
     {
       "name": "Computer System Design and Related Services",
@@ -68,11 +68,11 @@
     },
     {
       "name": "Software Publishing",
-      "count": 46
+      "count": 47
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 44
+      "count": 45
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -80,7 +80,7 @@
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
-      "count": 25
+      "count": 26
     },
     {
       "name": "Accommodation",
@@ -92,7 +92,7 @@
     },
     {
       "name": "Supermarket and Grocery Stores",
-      "count": 22
+      "count": 23
     }
   ],
   "recent_mergers": [
@@ -219,6 +219,61 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80043",
+      "merger_name": "Coles \u2013 supermarket site in Narangba East, Qld",
+      "determination": "Not approved",
+      "determination_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T19:46:21+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-55039",
+      "merger_name": "Vermont Information Processing \u2013 Vintrace",
+      "determination": "Approved",
+      "determination_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T17:40:00+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-60046",
+      "merger_name": "Lactalis \u2013 Saputo Dairy UK",
+      "determination": "Not approved",
+      "determination_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T17:34:47+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-40045",
+      "merger_name": "Macmahon \u2013 Aspect Engineering Solutions",
+      "determination": "Approved",
+      "determination_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T17:32:03+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-55038",
+      "merger_name": "Woodside \u2013 PetroChina\u2019s interest in Browse unincorporated joint venture",
+      "determination": "Approved",
+      "determination_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T17:17:39+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-75056",
       "merger_name": "Visa - BioCatch",
       "determination": "Approved",
@@ -290,61 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-16T12:00:00Z",
       "page_modified_datetime": "2026-10-16T17:36:56+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-80044",
-      "merger_name": "Crestlink \u2013 Aztec Resources",
-      "determination": "Approved",
-      "determination_date": "2026-10-16T12:00:00Z",
-      "page_modified_datetime": "2026-10-16T17:11:27+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-40044",
-      "merger_name": "Loftware - Seagull Software",
-      "determination": "Approved",
-      "determination_date": "2026-10-15T12:00:00Z",
-      "page_modified_datetime": "2026-10-15T17:16:36+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-30037",
-      "merger_name": "KKR - Integer",
-      "determination": "Approved",
-      "determination_date": "2026-10-13T12:00:00Z",
-      "page_modified_datetime": "2026-10-14T11:04:41+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-55036",
-      "merger_name": "Nielsen - DoubleVerify",
-      "determination": "Approved",
-      "determination_date": "2026-10-13T12:00:00Z",
-      "page_modified_datetime": "2026-10-13T17:02:44+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15047",
-      "merger_name": "Monarch Alternative Capital & General Atlantic - Loparex",
-      "determination": "Approved",
-      "determination_date": "2026-10-12T12:00:00Z",
-      "page_modified_datetime": "2026-10-12T17:02:49+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

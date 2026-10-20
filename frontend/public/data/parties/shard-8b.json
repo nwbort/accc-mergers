@@ -44,6 +44,48 @@
       },
       "waiver_duration": null
     },
+    "aspect-vietnam-limited-liability-company-c-ng-ty-tnhh-aspect-vi-t-nam": {
+      "id": "aspect-vietnam-limited-liability-company-c-ng-ty-tnhh-aspect-vi-t-nam",
+      "canonical_name": "Aspect Vietnam Limited Liability Company (C\u00d4NG TY TNHH ASPECT VI\u1ec6T NAM)",
+      "members": [
+        {
+          "name": "Aspect Vietnam Limited Liability Company (C\u00d4NG TY TNHH ASPECT VI\u1ec6T NAM)",
+          "identifier": "Enterprise Registration Certificate No.  3502388769",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40045",
+            "merger_name": "Macmahon \u2013 Aspect Engineering Solutions",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-22T12:00:00Z",
+            "determination_date": "2026-10-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "az-nga-holdings-pty-ltd": {
       "id": "az-nga-holdings-pty-ltd",
       "canonical_name": "Az Nga Holdings Pty Ltd",

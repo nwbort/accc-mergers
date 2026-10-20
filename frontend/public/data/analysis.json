@@ -258,14 +258,14 @@
         "25": 3,
         "26": 1,
         "27": 18,
-        "28": 3,
+        "28": 4,
         "29": 6,
         "31": 3
       },
       "20": {
         "26": 1,
         "28": 12,
-        "29": 2,
+        "29": 3,
         "31": 2,
         "33": 1
       },
@@ -273,6 +273,7 @@
         "29": 9,
         "30": 2,
         "31": 6,
+        "32": 1,
         "33": 1
       },
       "22": {
@@ -289,24 +290,24 @@
       },
       "24": {
         "34": 2,
-        "35": 1,
+        "35": 3,
         "36": 1,
         "39": 1
       }
     },
     "stats": {
-      "average": 13.9,
-      "median": 14,
+      "average": 14.0,
+      "median": 14.0,
       "min": 2,
       "max": 24,
-      "count": 459
+      "count": 464
     },
     "calendar_stats": {
-      "average": 20.4,
-      "median": 21,
+      "average": 20.5,
+      "median": 21.0,
       "min": 2,
       "max": 39,
-      "count": 459
+      "count": 464
     }
   },
   "monthly_volume": {
@@ -355,7 +356,7 @@
       61,
       72,
       69,
-      36,
+      41,
       1
     ],
     "waivers_pending_estimate": [
@@ -371,8 +372,8 @@
       0,
       0,
       0,
-      9,
-      27
+      11,
+      30
     ]
   },
   "open_caseload": {
@@ -437,12 +438,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 18,
-          "average": 16.6,
+          "median": 18.0,
+          "average": 17.1,
           "p90": 23,
           "min": 3,
           "max": 24,
-          "count": 49,
+          "count": 54,
           "duration_histogram": {
             "3": 1,
             "5": 1,
@@ -457,14 +458,14 @@
             "16": 5,
             "17": 2,
             "18": 4,
-            "19": 7,
-            "20": 4,
-            "21": 2,
+            "19": 8,
+            "20": 5,
+            "21": 3,
             "22": 3,
             "23": 2,
-            "24": 3
+            "24": 5
           },
-          "median_delta": 4
+          "median_delta": 4.0
         }
       },
       {
@@ -504,12 +505,12 @@
           "median_delta": 1.0
         },
         "waivers": {
-          "median": 17.0,
-          "average": 16.4,
+          "median": 17,
+          "average": 16.5,
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 174,
+          "count": 179,
           "duration_histogram": {
             "3": 1,
             "5": 1,
@@ -526,12 +527,12 @@
             "16": 14,
             "17": 12,
             "18": 24,
-            "19": 19,
-            "20": 14,
-            "21": 12,
+            "19": 20,
+            "20": 15,
+            "21": 13,
             "22": 6,
             "23": 5,
-            "24": 3
+            "24": 5
           },
           "median_delta": 3.0
         }
@@ -547,19 +548,19 @@
         "count": 256
       },
       "waivers": {
-        "median": 14,
-        "average": 13.9,
+        "median": 14.0,
+        "average": 14.0,
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 459
+        "count": 464
       }
     },
     "pre_notification": {
       "windows": [
         {
           "median": 19,
-          "average": 21.2,
+          "average": 20.9,
           "p90": 38,
           "min": 7,
           "max": 74,
@@ -569,7 +570,7 @@
         },
         {
           "median": 16,
-          "average": 19.2,
+          "average": 19.1,
           "p90": 31,
           "min": 0,
           "max": 112,
@@ -580,7 +581,7 @@
       ],
       "all_time": {
         "median": 14,
-        "average": 17.5,
+        "average": 17.4,
         "p90": 34,
         "min": 0,
         "max": 112,
@@ -754,9 +755,9 @@
           "count": 60
         },
         {
-          "median": 16,
-          "average": 16.0,
-          "count": 29
+          "median": 18.0,
+          "average": 16.8,
+          "count": 34
         }
       ],
       "open_caseload": [
@@ -988,20 +989,21 @@
   "waiver_by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 389,
+      "count": 393,
       "outcome_mix": {
-        "Approved": 389
+        "Approved": 392,
+        "Not approved": 1
       },
       "median_business_days": 14
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 39,
+      "count": 40,
       "outcome_mix": {
         "Approved": 18,
-        "Not approved": 21
+        "Not approved": 22
       },
-      "median_business_days": 14
+      "median_business_days": 14.5
     },
     {
       "division": "Commissioner Woodward",

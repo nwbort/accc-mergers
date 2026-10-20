@@ -142,6 +142,62 @@
       ]
     },
     {
+      "merger_id": "WA-60046",
+      "merger_name": "Lactalis \u2013 Saputo Dairy UK",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-15T12:00:00Z",
+      "determination_publication_date": "2026-10-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T17:34:47+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BSA SAS"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Saputo Foods Limited"
+        },
+        {
+          "name": "Saputo Dairy UK Ltd"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Saputo Inc."
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1113",
+          "name": "Cured Meat and Smallgoods Manufacturing"
+        },
+        {
+          "code": "1131",
+          "name": "Milk and Cream Processing"
+        },
+        {
+          "code": "1133",
+          "name": "Cheese and Other Dairy Product Manufacturing"
+        },
+        {
+          "code": "3603",
+          "name": "Dairy Produce Wholesaling"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-75060",
       "merger_name": "Mitsui \u2013 further interest in Norse Maritime",
       "status": "Assessment completed",
@@ -184,6 +240,76 @@
         {
           "code": "6419",
           "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-80043",
+      "merger_name": "Coles \u2013 supermarket site in Narangba East, Qld",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-15T12:00:00Z",
+      "determination_publication_date": "2026-10-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T19:46:21+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Optionco Pty Ltd"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Coles Group Limited",
+          "canonical": {
+            "name": "Coles Group"
+          }
+        },
+        {
+          "name": "Consolidated Properties Group Pty Ltd"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3211",
+          "name": "Land Development and Subdivision"
+        },
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        },
+        {
+          "code": "4122",
+          "name": "Fruit and Vegetable Retailing"
+        },
+        {
+          "code": "4279",
+          "name": "Other Store-Based Retailing n.e.c."
+        },
+        {
+          "code": "6711",
+          "name": "Residential Property Operators"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "6720",
+          "name": "Real Estate Services"
         }
       ]
     },
@@ -490,6 +616,56 @@
       ]
     },
     {
+      "merger_id": "WA-55038",
+      "merger_name": "Woodside \u2013 PetroChina\u2019s interest in Browse unincorporated joint venture",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-18T12:00:00Z",
+      "determination_publication_date": "2026-10-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T17:17:39+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "WOODSIDE BROWSE PTY. LTD."
+        }
+      ],
+      "targets": [
+        {
+          "name": "PETROCHINA INTERNATIONAL INVESTMENT (AUSTRALIA) PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "WOODSIDE ENERGY GROUP LTD",
+          "canonical": {
+            "name": "Woodside Energy"
+          }
+        },
+        {
+          "name": "PetroChina Company Limited"
+        },
+        {
+          "name": "China National Petroleum Corporation"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0700",
+          "name": "Oil and Gas Extraction"
+        },
+        {
+          "code": "1011",
+          "name": "Petroleum Exploration"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-55036",
       "merger_name": "Nielsen - DoubleVerify",
       "status": "Assessment completed",
@@ -540,6 +716,65 @@
         {
           "code": "6950",
           "name": "Market Research and Statistical Services"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55039",
+      "merger_name": "Vermont Information Processing \u2013 Vintrace",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-21T12:00:00Z",
+      "determination_publication_date": "2026-10-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T17:40:00+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Vermont Information Processing Inc"
+        },
+        {
+          "name": "Encompass + Orchestra Inc"
+        },
+        {
+          "name": "Warburg Pincus LLC",
+          "canonical": {
+            "name": "Warburg Pincus LLC"
+          }
+        },
+        {
+          "name": "Vamos Topco Aggregator L.P."
+        }
+      ],
+      "targets": [
+        {
+          "name": "Brew Seller LLC"
+        },
+        {
+          "name": "EO Bidco Pty Ltd"
+        },
+        {
+          "name": "Vintrace Holdings"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
         }
       ]
     },
@@ -644,6 +879,64 @@
         {
           "code": "8790",
           "name": "Other Social Assistance Services"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-40045",
+      "merger_name": "Macmahon \u2013 Aspect Engineering Solutions",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-22T12:00:00Z",
+      "determination_publication_date": "2026-10-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T17:32:03+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "MACMAHON HOLDINGS LIMITED"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WARRAMALI ENGINEERING PTY LTD"
+        },
+        {
+          "name": "ASPECT ENGINEERING SOLUTIONS PTY LTD"
+        },
+        {
+          "name": "VIEW RESOURCES PTY LTD"
+        },
+        {
+          "name": "Aspect Vietnam Limited Liability Company (C\u00d4NG TY TNHH ASPECT VI\u1ec6T NAM)"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "DECMIL GROUP PTY LTD"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3101",
+          "name": "Road and Bridge Construction"
+        },
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        },
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        },
+        {
+          "code": "6961",
+          "name": "Corporate Head Office Management Services"
         }
       ]
     },
@@ -2693,295 +2986,6 @@
         {
           "code": "6970",
           "name": "Veterinary Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-85053",
-      "merger_name": "Funds managed by New Forests \u2013 Forestry plantations of AKD",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-10-12T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-23T12:00:00Z",
-      "latest_event_date": "2026-10-12T12:00:00Z",
-      "page_modified_datetime": "2026-10-12T16:45:49+11:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "The Trustee for ANZLAFF Sub 4",
-          "canonical": {
-            "name": "New Forests"
-          }
-        },
-        {
-          "name": "The Trustee for ANZLAFF Sub 1",
-          "canonical": {
-            "name": "New Forests"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "HEYWOOD PLANTATIONS PTY LTD",
-          "canonical": {
-            "name": "AKD"
-          }
-        },
-        {
-          "name": "ASSOCIATED KILN DRIERS PTY. LIMITED",
-          "canonical": {
-            "name": "AKD"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "APKV-Argos 84 Verm\u00f6gensverwaltungsgesellschaft mbH",
-          "canonical": {
-            "name": "Allianz"
-          }
-        },
-        {
-          "name": "AZL-Argos 53 Verm\u00f6gensverwaltungsgesellschaft mbH",
-          "canonical": {
-            "name": "Allianz"
-          }
-        },
-        {
-          "name": "THE TRUST COMPANY LIMITED",
-          "canonical": {
-            "name": "The Trust Company Limited"
-          }
-        },
-        {
-          "name": "THE TRUST COMPANY (PTAL) LIMITED",
-          "canonical": {
-            "name": "The Trust Company Limited"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "0301",
-          "name": "Forestry"
-        },
-        {
-          "code": "0302",
-          "name": "Logging"
-        },
-        {
-          "code": "1411",
-          "name": "Log Sawmilling"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-50040",
-      "merger_name": "FlightSafety International / Commercial Training Solutions",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-10-13T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-24T12:00:00Z",
-      "latest_event_date": "2026-10-14T12:00:00Z",
-      "page_modified_datetime": "2026-10-14T10:26:45+11:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "FlightSafety International Inc."
-        }
-      ],
-      "targets": [
-        {
-          "name": "Horizon CTS Corp."
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "2469",
-          "name": "Other Specialised Machinery and Equipment Manufacturing"
-        },
-        {
-          "code": "4900",
-          "name": "Air and Space Transport"
-        },
-        {
-          "code": "8101",
-          "name": "Technical and Vocational Education and Training"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-01127",
-      "merger_name": "CVS Group \u2013 Karrinyup Vet",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-10-15T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-26T12:00:00Z",
-      "latest_event_date": "2026-10-15T12:00:00Z",
-      "page_modified_datetime": "2026-10-15T17:08:14+11:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
-          "canonical": {
-            "name": "CVS Group"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "The Trustee for SI-PHUONG TRUST",
-          "canonical": {
-            "name": "Si-Phuong Trust"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "CVS (AUSTRALIA) HOLDINGS PROPRIETARY LIMITED",
-          "canonical": {
-            "name": "CVS Group"
-          }
-        },
-        {
-          "name": "Alati Pty Ltd as trustee for Si-Phuong Trust",
-          "canonical": {
-            "name": "Si-Phuong Trust"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6970",
-          "name": "Veterinary Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-15048",
-      "merger_name": "Camp Australia \u2013 Jabiru",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-10-15T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-26T12:00:00Z",
-      "latest_event_date": "2026-10-16T12:00:00Z",
-      "page_modified_datetime": "2026-10-16T15:31:05+11:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "CAMP AUSTRALIA PROPRIETARY LIMITED",
-          "canonical": {
-            "name": "Camp Australia"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Jabiru Community Services Limited"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Allegro Services III D Pty Ltd",
-          "canonical": {
-            "name": "Allegro Funds"
-          }
-        },
-        {
-          "name": "CA GROUP HOLDCO PTY LTD",
-          "canonical": {
-            "name": "Camp Australia"
-          }
-        },
-        {
-          "name": "Allegro Side Car Services III A Pty Limited",
-          "canonical": {
-            "name": "Allegro Funds"
-          }
-        },
-        {
-          "name": "Allegro Fund III GP Co Pty Limited",
-          "canonical": {
-            "name": "Allegro Funds"
-          }
-        },
-        {
-          "name": "ALLEGRO SIDE CAR SERVICES III E PTY LTD",
-          "canonical": {
-            "name": "Allegro Funds"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6419",
-          "name": "Other Auxiliary Finance and Investment Services"
-        },
-        {
-          "code": "8710",
-          "name": "Child Care Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-20040",
-      "merger_name": "Tabcorp - BetMakers",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-10-15T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-26T12:00:00Z",
-      "latest_event_date": "2026-10-15T12:00:00Z",
-      "page_modified_datetime": "2026-10-15T19:10:57+11:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "TABCORP HOLDINGS LIMITED"
-        }
-      ],
-      "targets": [
-        {
-          "name": "BETMAKERS TECHNOLOGY GROUP LTD"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        },
-        {
-          "code": "9209",
-          "name": "Other Gambling Activities"
         }
       ]
     }
