@@ -91,6 +91,27 @@ def _phase_1_clearance_rate(notifications: list) -> dict:
     }
 
 
+def _rounded(stats: dict | None) -> dict | None:
+    """``stats`` with each duration figure rounded to one decimal place.
+
+    The straight baseline averages over hundreds of matters, so each new one
+    nudges it in the fourth decimal place and the file would change on almost
+    every pipeline run for no visible reason (the page rounds to whole days).
+    Whole numbers are written as ints so a median doesn't flip between ``26``
+    and ``26.0`` depending on whether the sample happened to be even.
+    """
+    if stats is None:
+        return None
+    rounded = {}
+    for key, value in stats.items():
+        if isinstance(value, float):
+            value = round(value, 1)
+            if value.is_integer():
+                value = int(value)
+        rounded[key] = value
+    return rounded
+
+
 def generate(mergers: list) -> dict:
     """Return the refiled-notifications.json payload.
 
@@ -144,6 +165,6 @@ def generate(mergers: list) -> dict:
         'count': {'current': len(current), 'completed': len(completed)},
         'phase_1_clearance_rate': _phase_1_clearance_rate(refiled_notifications),
         'straight_phase_1_clearance_rate': _phase_1_clearance_rate(straight_notifications),
-        'phase_duration': phase_1_duration_stats(refiled_notifications),
-        'straight_phase_duration': phase_1_duration_stats(straight_notifications),
+        'phase_duration': _rounded(phase_1_duration_stats(refiled_notifications)),
+        'straight_phase_duration': _rounded(phase_1_duration_stats(straight_notifications)),
     }
