@@ -3,12 +3,12 @@
   "total_waivers": 459,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 249,
-    "Under assessment": 44,
+    "Assessment completed": 250,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 242,
+    "Approved": 243,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 22
   },
   "clearance_rate": {
-    "cleared": 247,
+    "cleared": 248,
     "not_cleared": 2,
-    "total": 249,
+    "total": 250,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.572549019607845,
-    "median_days": 26,
-    "average_business_days": 20.113725490196078,
-    "median_business_days": 18,
+    "average_days": 29.55859375,
+    "median_days": 26.0,
+    "average_business_days": 20.1015625,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 56,
-        "percentage": 22.0
+        "percentage": 21.9
       },
       "day20": {
-        "count": 184,
-        "percentage": 72.2
+        "count": 185,
+        "percentage": 72.3
       },
       "day30": {
-        "count": 238,
-        "percentage": 93.3
+        "count": 239,
+        "percentage": 93.4
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75056",
+      "merger_name": "Visa - BioCatch",
+      "determination": "Approved",
+      "determination_date": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-20T13:33:38+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-05056",
       "merger_name": "Brookfield Corporation \u2013 Reliance Worldwide Corporation",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-12T12:00:00Z",
       "page_modified_datetime": "2026-10-12T17:02:49+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-45031",
-      "merger_name": "Centurion \u2013 Boundary variation in respect of Red Hill Mining Lease",
-      "determination": "Approved",
-      "determination_date": "2026-10-12T12:00:00Z",
-      "page_modified_datetime": "2026-10-12T17:02:03+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
