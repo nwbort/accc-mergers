@@ -11,6 +11,10 @@
 # bs4/lxml/requests from the main requirements file.
 set -euo pipefail
 
+# Use the repo's git hooks (.githooks/pre-commit bumps the sitemap lastmod of
+# hand-edited pages). Repo-local config, so it is safe on any machine.
+git -C "$CLAUDE_PROJECT_DIR" config core.hooksPath .githooks || true
+
 # Local machines manage their own environments; only set up the remote one.
 if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
   exit 0

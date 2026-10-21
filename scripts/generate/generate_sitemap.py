@@ -31,6 +31,12 @@ pages and served normally — they are simply not advertised for crawling.
 They are deliberately NOT ``noindex``: each is a factually distinct record
 and can still answer a long-tail "was <company> acquired" query.
 
+Sitemap policy — static pages: the data-driven routes are dated today, since
+the pipeline regenerates what they show on every run. Hand-edited pages
+(commentary, author, privacy, copyright) instead carry a pinned date from
+``sitemap_lastmod.json``, moved by the git pre-commit hook when one of their
+source files changes — see ``scripts/generate/sitemap_lastmod.py``.
+
 Output: frontend/public/sitemap.xml
 """
 
@@ -40,6 +46,7 @@ from xml.sax.saxutils import escape
 from scripts.merger_filters import load_mergers
 from scripts.slug import industry_path, merger_path, party_path
 from scripts.generate.static_data import anzsic
+from scripts.generate.sitemap_lastmod import pinned_lastmods
 from scripts.generate.static_data.loaders import load_related_parties
 from scripts.generate.static_data.outputs.parties import build_party_pages
 from scripts.paths import REPO_ROOT
@@ -198,13 +205,16 @@ def generate_sitemap(mergers, party_groups, related_parties):
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
 
+    # Hand-edited pages keep the date they were last edited (bumped by the
+    # pre-commit hook); data-driven pages change every run.
+    pinned = pinned_lastmods()
     for page in STATIC_PAGES:
         comment = STATIC_COMMENTS.get(page["path"])
         if comment:
             lines.append(f"  <!-- {comment} -->")
         lines.append(url_entry(
             loc=escape(f"{BASE_URL}{page['path']}"),
-            lastmod=TODAY,
+            lastmod=pinned.get(page["path"], TODAY),
             changefreq=page["changefreq"],
             priority=page["priority"],
         ))
