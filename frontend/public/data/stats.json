@@ -1,6 +1,6 @@
 {
   "total_mergers": 300,
-  "total_waivers": 465,
+  "total_waivers": 466,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 252,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 441,
+    "Approved": 442,
     "Not approved": 24
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.526881720430108,
-    "median_days": 21,
-    "average_business_days": 14.036559139784947,
-    "median_business_days": 14
+    "average_days": 20.532188841201716,
+    "median_days": 21.0,
+    "average_business_days": 14.040772532188841,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 175
+      "count": 176
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15049",
+      "merger_name": "Bridgepoint \u2013 Altano",
+      "determination": "Approved",
+      "determination_date": "2026-10-21T12:00:00Z",
+      "page_modified_datetime": "2026-10-21T18:11:57+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80046",
       "merger_name": "Imaging Associates Radiology - Sunraysia Radiology in Mildura, VIC",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-19T12:00:00Z",
       "page_modified_datetime": "2026-10-19T16:43:30+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-35053",
-      "merger_name": "Schneider Electric \u2013 Shelly Group SE",
-      "determination": "Approved",
-      "determination_date": "2026-10-16T12:00:00Z",
-      "page_modified_datetime": "2026-10-16T20:59:41+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
