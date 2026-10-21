@@ -1221,6 +1221,50 @@
       ]
     },
     {
+      "merger_id": "WA-80046",
+      "merger_name": "Imaging Associates Radiology - Sunraysia Radiology in Mildura, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-23T12:00:00Z",
+      "determination_publication_date": "2026-10-21T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-21T12:00:00Z",
+      "page_modified_datetime": "2026-10-21T18:08:40+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "IMAGING ASSOCIATES RADIOLOGY PTY LTD"
+        }
+      ],
+      "targets": [
+        {
+          "name": "COUNTRY RADIOLOGY PTY LTD T/A SUNRAYSIA RADIOLOGY"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "RADIA GROUP PTY LTD"
+        },
+        {
+          "name": "ADVENT PARTNERS PTY LTD"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "8520",
+          "name": "Pathology and Diagnostic Imaging Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-75056",
       "merger_name": "Visa - BioCatch",
       "status": "Assessment completed",
@@ -2946,58 +2990,6 @@
         {
           "code": "9421",
           "name": "Domestic Appliance Repair and Maintenance"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-75031",
-      "merger_name": "VetPartners \u2013 VetLove",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-10-09T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-20T12:00:00Z",
-      "latest_event_date": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-10-09T15:48:12+11:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "VETPARTNERS AUSTRALIA PTY LTD",
-          "canonical": {
-            "name": "VetPartners"
-          }
-        },
-        {
-          "name": "Unity HoldCo Pty Ltd",
-          "canonical": {
-            "name": "VetPartners"
-          }
-        },
-        {
-          "name": "EQT Fund Management S.\u00e0 r.l.",
-          "canonical": {
-            "name": "EQT Fund Management"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "VetLove Holdings Pty Ltd"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6970",
-          "name": "Veterinary Services"
         }
       ]
     }

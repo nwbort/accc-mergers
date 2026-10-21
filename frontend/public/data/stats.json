@@ -1,6 +1,6 @@
 {
   "total_mergers": 300,
-  "total_waivers": 464,
+  "total_waivers": 465,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 252,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 440,
+    "Approved": 441,
     "Not approved": 24
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.510775862068964,
-    "median_days": 21.0,
-    "average_business_days": 14.025862068965518,
-    "median_business_days": 14.0
+    "average_days": 20.526881720430108,
+    "median_days": 21,
+    "average_business_days": 14.036559139784947,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 174
+      "count": 175
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80046",
+      "merger_name": "Imaging Associates Radiology - Sunraysia Radiology in Mildura, VIC",
+      "determination": "Approved",
+      "determination_date": "2026-10-21T12:00:00Z",
+      "page_modified_datetime": "2026-10-21T18:08:40+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-75045",
       "merger_name": "EQT Fund Management - Intertek",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-16T12:00:00Z",
       "page_modified_datetime": "2026-10-16T20:59:41+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-90035",
-      "merger_name": "ORIX Aviation \u2013 AerFin",
-      "determination": "Approved",
-      "determination_date": "2026-10-16T12:00:00Z",
-      "page_modified_datetime": "2026-10-16T17:58:01+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

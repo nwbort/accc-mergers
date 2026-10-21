@@ -58220,13 +58220,13 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 10,
-        "min_days": 0,
+        "estimated_days": 13,
+        "min_days": 7,
         "max_days": 22,
-        "id_issued_estimated": "2026-09-20",
-        "id_issued_before": "2026-09-30",
+        "id_issued_estimated": "2026-09-17",
+        "id_issued_before": "2026-09-23",
         "id_issued_after": "2026-09-08",
-        "min_days_witness": "MN-80047",
+        "min_days_witness": "WA-80046",
         "max_days_witness": "WA-80043",
         "basis": "bracketed",
         "method_version": 1
@@ -58427,14 +58427,14 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 26,
+        "estimated_days": 23,
         "min_days": null,
-        "max_days": 38,
-        "id_issued_estimated": "2026-09-20",
+        "max_days": 30,
+        "id_issued_estimated": "2026-09-23",
         "id_issued_before": null,
-        "id_issued_after": "2026-09-08",
+        "id_issued_after": "2026-09-16",
         "min_days_witness": null,
-        "max_days_witness": "WA-80043",
+        "max_days_witness": "WA-80046",
         "basis": "upper-bound-only",
         "method_version": 1
       }
@@ -94453,7 +94453,7 @@
       "determination_publication_date": "2026-10-13T12:00:00Z",
       "accc_determination": "Approved",
       "accc_determination_raw": "ACCC determinationApproved",
-      "page_modified_datetime": "2026-10-14T11:04:41+11:00",
+      "page_modified_datetime": "2026-10-21T16:38:17+11:00",
       "acquirers": [
         {
           "name": "Armstrong Bidco, Inc.",
@@ -94516,12 +94516,12 @@
           "date": "2026-10-13T12:00:00Z",
           "title": "Notification waiver determination published",
           "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/moderated_files/KKR%20-%20Integer%20%28WA-30037%29%20-%20Notification%20waiver%20determination%20-%2013%20October%202026.pdf",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/KKR%20-%20Integer%20%28WA-30037%29%20-%20Notification%20waiver%20determination%20-%2013%20October%202026_3.pdf",
           "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
           "determination_table_content": [
             {
               "item": "Acquisition",
-              "details": "Armstrong Bidco, Inc. (Bidco) applied for a notification waiver in\nrespect of its proposed acquisition of 75% of the equity interests in\nInteger Holdings Corporation (Integer), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+              "details": "Armstrong Bidco, Inc. (Bidco) applied for a notification waiver in\nrespect of its proposed acquisition of [Redacted - Confidential] [a\nmajority] of the equity interests in Integer Holdings Corporation\n(Integer), as described in the transaction documents provided as\npart of the application (the Acquisition)."
             },
             {
               "item": "Determination",
@@ -94540,7 +94540,7 @@
               "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap between KKR and Integer in the\nsupply of medical device contract development and\nmanufacturing services in Australia\nb. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
             }
           ],
-          "url_gh": "/mergers/WA-30037/KKR - Integer (WA-30037) - Notification waiver determination - 13 October 2026.pdf",
+          "url_gh": "/mergers/WA-30037/KKR - Integer (WA-30037) - Notification waiver determination - 13 October 2026_3.pdf",
           "is_determination_event": true,
           "phase": "Waiver"
         },
@@ -134878,6 +134878,157 @@
           ],
           "targets": [
             "RED OCTOBER GOLD PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/imaging-associates-radiology-sunraysia-radiology-in-mildura-vic",
+      "merger_name": "Imaging Associates Radiology - Sunraysia Radiology in Mildura, VIC",
+      "status": "Assessment completed",
+      "merger_id": "WA-80046",
+      "effective_notification_datetime": "2026-09-23T12:00:00Z",
+      "original_notification_datetime": "2026-09-23T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-21T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-21T18:08:40+11:00",
+      "acquirers": [
+        {
+          "name": "IMAGING ASSOCIATES RADIOLOGY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "23 653 118 211",
+          "party_page": {
+            "id": "imaging-associates-radiology-pty-ltd",
+            "name": "Imaging Associates Radiology Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "COUNTRY RADIOLOGY PTY LTD T/A SUNRAYSIA RADIOLOGY",
+          "identifier_type": "ABN",
+          "identifier": "20 609 954 636",
+          "party_page": {
+            "id": "country-radiology-pty-ltd-t-a-sunraysia-radiology",
+            "name": "Country Radiology Pty Ltd T/A Sunraysia Radiology"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "RADIA GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 653 117 009",
+          "party_page": {
+            "id": "radia-group-pty-ltd",
+            "name": "Radia Group Pty Ltd"
+          }
+        },
+        {
+          "name": "ADVENT PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 006 235 632",
+          "party_page": {
+            "id": "advent-partners-pty-ltd",
+            "name": "Advent Partners Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "8520",
+          "name": "Pathology and Diagnostic Imaging Services"
+        }
+      ],
+      "merger_description": "Imaging Associates Radiology Pty Ltd (**IA Radiology**) proposes to acquire 100% of the shares in Country Radiology Pty Ltd trading as Sunraysia Radiology (**Sunraysia Radiology**).\n\nIA Radiology is a wholly owned subsidiary of Radia Group Pty Ltd (**Imaging Associates**), which is majority owned by a combination of funds managed by private equity firm Advent Partners Pty Ltd (**Advent Partners**), together with other shareholders comprising radiologists and management of Imaging Associates.\n\nImaging Associates provides on-site diagnostic imaging (**DI**) services from 28 private clinics (including private hospitals) in metropolitan and regional Melbourne, metropolitan Adelaide and Wagga Wagga in the Riverina region of New South Wales. Imaging Associates also provides DI services to public hospitals, and teleradiology services.\n\nSunraysia Radiology is an independent provider of on-site DI services operating from a single private clinic in Mildura, Victoria. Sunraysia Radiology does not provide any services to public hospitals or private hospitals and does not provide teleradiology services.",
+      "events": [
+        {
+          "date": "2026-10-21T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Imaging%20Associates%20Radiology%20-%20Sunraysia%20Radiology%20%28WA-80046%29%20-%20Notification%20waiver%20determination%20-%2020%20October%202026_2.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Imaging Associates Radiology Pty Ltd (IA Radiology) applied for a\nnotification waiver in respect of its proposed acquisition of 100% of\nthe share capital in Country Radiology Pty Ltd (Sunraysia Radiology),\nas described in the transaction documents provided as part of the\napplication (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "20 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, IA Radiology, provides on-site diagnostic imaging (DI)\nservices from 28 private clinics (including private hospitals) in\nmetropolitan and regional Melbourne, metropolitan Adelaide and\nWagga Wagga in the Riverina region of New South Wales. Imaging\nAssociates also provides DI services to public hospitals, and\nteleradiology services.\nIA Radiology is a wholly owned subsidiary of Radia Group Pty Ltd\n(Imaging Associates), which is majority owned by a combination of\nfunds managed by private equity firm Advent Partners Pty Ltd,\ntogether with other shareholders comprising radiologists and\nmanagement of Imaging Associates.\nThe target, Sunraysia Radiology, is an independent provider of on-\nsite DI services operating from a single private clinic in Mildura,\nVictoria. Sunraysia Radiology does not provide any services to public\nhospitals or private hospitals and does not provide teleradiology\nservices."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. there is no horizontal overlap between IA Radiology and\nSunraysia Radiology in the supply of DI services in the\nMildura region\nb. there are alternative suppliers of DI services in Mildura and\nthe surrounding region.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-80046/Imaging Associates Radiology - Sunraysia Radiology (WA-80046) - Notification waiver determination - 20 October 2026_2.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-23T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-35028",
+          "merger_name": "efex - OnPlatinum",
+          "acquirers": [
+            "THINKEX HOLDINGS PTY LTD"
+          ],
+          "targets": [
+            "COMMS GROUP LTD",
+            "ON GROUP HOLDINGS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-75031",
+          "merger_name": "VetPartners \u2013 VetLove",
+          "acquirers": [
+            "VETPARTNERS AUSTRALIA PTY LTD",
+            "Unity HoldCo Pty Ltd"
+          ],
+          "targets": [
+            "VetLove Holdings Pty Ltd"
+          ],
+          "status": "Under assessment"
+        },
+        {
+          "merger_id": "WA-05005",
+          "merger_name": "Ironbark - Investment in Viola Private Wealth",
+          "acquirers": [
+            "IBWM PTY LTD"
+          ],
+          "targets": [
+            "VIOLA GROUP HOLDINGS PTY LTD"
           ],
           "accc_determination": "Approved"
         }
