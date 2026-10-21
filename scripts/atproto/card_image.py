@@ -28,6 +28,12 @@ from PIL import Image, ImageDraw, ImageFont
 #: size the site's own image uses.
 WIDTH, HEIGHT = 1200, 630
 
+#: The site's generic cards are drawn at twice that (2400x1260). LinkedIn
+#: re-encodes what it scrapes and a 1x card came back soft; the extra pixels
+#: survive that. Same aspect ratio, so every crop is unchanged. The per-post
+#: cards stay at 1x: they are uploaded as blobs, and Bluesky caps those at 1 MB.
+STATUS_CARD_SCALE = 2
+
 #: Card fills, keyed by tone. The hexes are the Tailwind 700 shades the site
 #: uses for the same outcomes; each clears 4.5:1 against white text.
 TONES = {
@@ -93,7 +99,8 @@ def render_status_card(*, kind: str, headline: str) -> bytes | None:
     The site's pages share these as their Open Graph image (see
     ``scripts/generate/og_cards.py``), so it carries no matter name: the
     unfurl prints the page title under it. Same layout and colours as the
-    per-post card, with the headline in the title's place.
+    per-post card, with the headline in the title's place, drawn at
+    :data:`STATUS_CARD_SCALE` times the size.
     """
     bold = _find(_BOLD_FONTS)
     regular = _find(_REGULAR_FONTS)
@@ -102,37 +109,43 @@ def render_status_card(*, kind: str, headline: str) -> bytes | None:
     try:
         tone = tone_for(f"_:{kind}:_", headline)
         return _draw(bold, regular, TONES[tone], "ACCC merger register", headline,
-                     "Every ACCC merger review, tracked", centre=True)
+                     "Every ACCC merger review, tracked", centre=True, scale=STATUS_CARD_SCALE)
     except (OSError, ValueError):
         return None
 
 
 def _draw(
     bold: str, regular: str, fill: str, headline: str, title: str, detail: str,
-    *, centre: bool = False,
+    *, centre: bool = False, scale: int = 1,
 ) -> bytes:
-    image = Image.new("RGB", (WIDTH, HEIGHT), fill)
+    # The layout is written at 1x; every length goes through px() so a larger
+    # card is the same card with more pixels, not a different layout.
+    def px(n: int) -> int:
+        return n * scale
+
+    width, height, margin = px(WIDTH), px(HEIGHT), px(_MARGIN)
+    image = Image.new("RGB", (width, height), fill)
     draw = ImageDraw.Draw(image)
-    text_width = WIDTH - 2 * _MARGIN
+    text_width = width - 2 * margin
 
     # Full-opacity tints rather than faded white: contrast has to hold.
     white, soft = "#ffffff", "#f3f4f6"
 
-    headline_font = ImageFont.truetype(bold, 40)
+    headline_font = ImageFont.truetype(bold, px(40))
     headline_lines = _wrap(draw, headline, headline_font, text_width)[:2]
-    y = 70
+    y = px(70)
     for line in headline_lines:
-        draw.text((_MARGIN, y), line, font=headline_font, fill=soft)
-        y += 52
-    draw.rectangle((_MARGIN, y + 14, _MARGIN + 96, y + 20), fill=white)
+        draw.text((margin, y), line, font=headline_font, fill=soft)
+        y += px(52)
+    draw.rectangle((margin, y + px(14), margin + px(96), y + px(20)), fill=white)
 
     # Largest title size that fits, so a short name is loud and a long one is
     # still whole; only a title that fits at no size is cut.
-    title_top, title_bottom = y + 56, HEIGHT - 150
+    title_top, title_bottom = y + px(56), height - px(150)
     for size in _TITLE_SIZES:
-        font = ImageFont.truetype(bold, size)
+        font = ImageFont.truetype(bold, px(size))
         lines = _wrap(draw, title, font, text_width)
-        line_height = int(size * 1.18)
+        line_height = int(px(size) * 1.18)
         if len(lines) <= _MAX_TITLE_LINES and len(lines) * line_height <= title_bottom - title_top:
             break
     else:
@@ -144,15 +157,15 @@ def _draw(
         block = min(len(lines), _MAX_TITLE_LINES) * line_height
         title_top += max(0, (title_bottom - title_top - block) // 2)
     for line in lines[:_MAX_TITLE_LINES]:
-        draw.text((_MARGIN, title_top), line, font=font, fill=white)
+        draw.text((margin, title_top), line, font=font, fill=white)
         title_top += line_height
 
-    detail_font = ImageFont.truetype(regular, 32)
+    detail_font = ImageFont.truetype(regular, px(32))
     detail_line = _wrap(draw, detail, detail_font, text_width)[0] if detail else ""
-    draw.text((_MARGIN, HEIGHT - 118), detail_line, font=detail_font, fill=soft)
+    draw.text((margin, height - px(118)), detail_line, font=detail_font, fill=soft)
 
-    site_font = ImageFont.truetype(bold, 30)
-    draw.text((_MARGIN, HEIGHT - 68), "mergers.fyi", font=site_font, fill=soft)
+    site_font = ImageFont.truetype(bold, px(30))
+    draw.text((margin, height - px(68)), "mergers.fyi", font=site_font, fill=soft)
 
     out = io.BytesIO()
     image.save(out, format="PNG", optimize=True)

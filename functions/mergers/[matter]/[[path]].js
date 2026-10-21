@@ -38,6 +38,11 @@ export function mergerPath(id, name) {
 // falls back to the shared image.
 const DEFAULT_OG_IMAGE = 'https://mergers.fyi/og-image.png';
 const OG_CARD_RE = /^[a-z0-9-]+\.png$/;
+// The cards are drawn at 2x (scripts/atproto/card_image.py STATUS_CARD_SCALE);
+// the shared image is still 1200x630. Same aspect ratio either way.
+function ogImageSize(image) {
+  return image === DEFAULT_OG_IMAGE ? [1200, 630] : [2400, 1260];
+}
 export function mergerOgImage(merger) {
   const card = merger?.og_card;
   return typeof card === 'string' && OG_CARD_RE.test(card)
@@ -57,7 +62,9 @@ function buildOgHtml(merger, canonicalUrl) {
   const stage = merger.stage ? ` - ${escapeHtml(merger.stage)}` : '';
   const description = `Status: ${statusLabel}${stage}.&#10;Find merger analysis, commentary, decisions and more. Track ACCC merger reviews on mergers.fyi`;
   const publishDate = merger.effective_notification_datetime ?? merger.original_notification_datetime ?? '';
-  const image = escapeHtml(mergerOgImage(merger));
+  const rawImage = mergerOgImage(merger);
+  const image = escapeHtml(rawImage);
+  const [imageWidth, imageHeight] = ogImageSize(rawImage);
 
   return `<!doctype html>
 <html lang="en">
@@ -73,8 +80,8 @@ function buildOgHtml(merger, canonicalUrl) {
 <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
 <meta property="og:site_name" content="Australian Merger Tracker" />
 <meta property="og:image" content="${image}" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+<meta property="og:image:width" content="${imageWidth}" />
+<meta property="og:image:height" content="${imageHeight}" />
 ${publishDate ? `<meta property="article:published_time" content="${escapeHtml(publishDate)}" />` : ''}
 <meta property="article:author" content="Nick Twort" />
 <meta name="twitter:card" content="summary_large_image" />

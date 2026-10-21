@@ -113,6 +113,7 @@ def test_status_cards_render_as_open_graph_pngs(kind, headline):
     if png is None:
         pytest.skip("no usable font on this machine")
     assert png.startswith(b"\x89PNG")
-    # Width and height from the IHDR chunk: 1200x630, the size the tags declare.
-    assert int.from_bytes(png[16:20], "big") == 1200
-    assert int.from_bytes(png[20:24], "big") == 630
+    # Width and height from the IHDR chunk: 2400x1260, the size the Pages
+    # Function's tags declare for a card.
+    assert int.from_bytes(png[16:20], "big") == 2400
+    assert int.from_bytes(png[20:24], "big") == 1260

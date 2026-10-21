@@ -174,3 +174,28 @@ describe('matter ID case redirect', () => {
     expect(response.status).toBe(599);
   });
 });
+
+describe('link-preview page for bots', () => {
+  const detailUrl = 'https://mergers.fyi/mergers/MN-01068';
+  const bot = 'LinkedInBot/1.0 (compatible; Mozilla/5.0; Apache-HttpClient +http://www.linkedin.com)';
+
+  async function ogPage(merger) {
+    const env = makeEnv({ [dataPath]: jsonResponse(merger) });
+    const response = await onRequest(makeContext({ url: detailUrl, env, userAgent: bot }));
+    return response.text();
+  }
+
+  it('declares the 2x size for a milestone card', async () => {
+    const html = await ogPage({ ...MERGER_JSON, og_card: 'cleared-by-the-accc.png' });
+    expect(html).toContain('<meta property="og:image" content="https://mergers.fyi/og/cleared-by-the-accc.png" />');
+    expect(html).toContain('<meta property="og:image:width" content="2400" />');
+    expect(html).toContain('<meta property="og:image:height" content="1260" />');
+  });
+
+  it('keeps the shared image at its own size', async () => {
+    const html = await ogPage(MERGER_JSON);
+    expect(html).toContain('<meta property="og:image" content="https://mergers.fyi/og-image.png" />');
+    expect(html).toContain('<meta property="og:image:width" content="1200" />');
+    expect(html).toContain('<meta property="og:image:height" content="630" />');
+  });
+});
