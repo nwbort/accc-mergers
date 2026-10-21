@@ -539,6 +539,11 @@
           "identifier_type": null
         },
         {
+          "name": "TPG Inc.",
+          "identifier": "SEC \u2013 872063362",
+          "identifier_type": null
+        },
+        {
           "name": "TPG, Inc",
           "identifier": "US EIN  872063362",
           "identifier_type": null
@@ -548,6 +553,18 @@
         "acquirer": [],
         "target": [],
         "other": [
+          {
+            "merger_id": "MN-45032",
+            "merger_name": "Novotech - Agilex",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-20T12:00:00Z",
+            "determination_date": null
+          },
           {
             "merger_id": "MN-75058",
             "merger_name": "Kinetic - Tassielink",
@@ -622,11 +639,11 @@
           }
         ]
       },
-      "merger_count": 6,
-      "phase_1_count": 2,
+      "merger_count": 7,
+      "phase_1_count": 3,
       "phase_2_count": 0,
       "waiver_count": 4,
-      "active_count": 1,
+      "active_count": 2,
       "phase_duration": {
         "average_days": 24.0,
         "median_days": 24,

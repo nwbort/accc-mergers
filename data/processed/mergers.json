@@ -19641,6 +19641,76 @@
     "is_waiver": false
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/novotech-agilex",
+    "merger_name": "Novotech - Agilex",
+    "status": "Under assessment",
+    "merger_id": "MN-45032",
+    "effective_notification_datetime": "2026-10-20T12:00:00Z",
+    "original_notification_datetime": "2026-10-20T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-12-01T12:00:00Z",
+    "page_modified_datetime": "2026-10-21T12:05:27+11:00",
+    "consultation_response_due_date": "2026-10-28T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "NOVOTECH AUS BIDCO PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "49 621 146 423"
+      }
+    ],
+    "targets": [
+      {
+        "name": "AGILEX BIOLABS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "41 630 526 699"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "HLS PATHOLOGY HOLDINGS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "26 088 128 778"
+      },
+      {
+        "name": "TPG Inc.",
+        "identifier_type": null,
+        "identifier": "SEC \u2013 872063362"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6419",
+        "name": "Other Auxiliary Finance and Investment Services"
+      },
+      {
+        "code": "6910",
+        "name": "Scientific Research Services"
+      },
+      {
+        "code": "8520",
+        "name": "Pathology and Diagnostic Imaging Services"
+      }
+    ],
+    "merger_description": "Novotech Aus BidCo Pty Ltd, a subsidiary of Novotech SG Holdings Pty Ltd (Novotech) proposes to acquire 100% of the shares in Agilex Biolabs Pty Ltd (Agilex).\n\nNovotech is a full-service clinical research organisation (CRO) and science advisory company, operating worldwide. In Australia, Novotech provides CRO services offering clinical trial design and management across principally Phases I to III of clinical trial development. Novotech does not have any laboratories in Australia and does not provide any bioanalytical laboratory services from Australia. It operates laboratories in Shanghai and Taipei from which it supplies some offshore laboratory services for clinical trials in Australia. Novotech also has a sample collection and storage facility in North Carolina (USA).\n\nNovotech\u2019s controlling shareholders are private investment funds affiliated with TPG Inc (TPG). TPG is a global alternative asset management firm headquartered in the United States with $306 billion of assets under management as at 31 March 2026.\n\nAgilex is an Australian specialist bioanalytical services provider supporting non-clinical and clinical drug development programmes across Phases I to III, with Phase I being a core focus. Agilex's services are focused on bioanalysis and specialised sample processing. Agilex has laboratories in Adelaide and Brisbane, with a Sydney facility in development.",
+    "events": [
+      {
+        "date": "2026-10-21T12:00:00Z",
+        "title": "Phase 1 consultation",
+        "display_title": "Phase 1 consultation",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Novotech%20Agilex%20-%203PQ%20AR%20-%2021%20October%202026.docx",
+        "url_gh": "/mergers/MN-45032/Novotech Agilex - 3PQ AR - 21 October 2026.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-10-20T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/national-dental-care-%E2%80%93-business-assets-comprising-the-comfy-dental-clinic-mandurah-wa",
     "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
     "status": "Assessment completed",
@@ -29749,7 +29819,7 @@
     "determination_publication_date": "2026-10-21T12:00:00Z",
     "accc_determination": "Approved",
     "accc_determination_raw": "ACCC determinationApproved",
-    "page_modified_datetime": "2026-10-21T11:37:56+11:00",
+    "page_modified_datetime": "2026-10-21T12:06:43+11:00",
     "consultation_response_due_date": "2026-09-21T12:00:00Z",
     "acquirers": [
       {
@@ -29853,7 +29923,7 @@
           }
         ],
         "url_gh": "/mergers/MN-75045/EQT Fund Management - Intertek - Phase 1 determination - 20 October 2026.pdf",
-        "status": "live",
+        "status": "removed",
         "is_determination_event": true,
         "phase": "Phase 1"
       }

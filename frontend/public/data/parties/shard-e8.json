@@ -116,6 +116,42 @@
         "completed_count": 2
       }
     },
+    "novotech-aus-bidco-pty-ltd": {
+      "id": "novotech-aus-bidco-pty-ltd",
+      "canonical_name": "Novotech Aus Bidco Pty Ltd",
+      "members": [
+        {
+          "name": "NOVOTECH AUS BIDCO PTY LTD",
+          "identifier": "49 621 146 423",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-45032",
+            "merger_name": "Novotech - Agilex",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-20T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "outline-global-pty-ltd": {
       "id": "outline-global-pty-ltd",
       "canonical_name": "Outline Global Pty Ltd",

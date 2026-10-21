@@ -34906,6 +34906,169 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/novotech-agilex",
+      "merger_name": "Novotech - Agilex",
+      "status": "Under assessment",
+      "merger_id": "MN-45032",
+      "effective_notification_datetime": "2026-10-20T12:00:00Z",
+      "original_notification_datetime": "2026-10-20T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-12-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-21T12:05:27+11:00",
+      "consultation_response_due_date": "2026-10-28T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "NOVOTECH AUS BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "49 621 146 423",
+          "party_page": {
+            "id": "novotech-aus-bidco-pty-ltd",
+            "name": "Novotech Aus Bidco Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "AGILEX BIOLABS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 630 526 699",
+          "party_page": {
+            "id": "agilex-biolabs-pty-ltd",
+            "name": "Agilex Biolabs Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HLS PATHOLOGY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 088 128 778",
+          "party_page": {
+            "id": "hls-pathology-holdings-pty-ltd",
+            "name": "Hls Pathology Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "TPG Inc.",
+          "identifier_type": null,
+          "identifier": "SEC \u2013 872063362",
+          "canonical": {
+            "id": "tpg-inc",
+            "name": "TPG Inc."
+          },
+          "party_page": {
+            "id": "tpg-inc",
+            "name": "TPG Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        },
+        {
+          "code": "8520",
+          "name": "Pathology and Diagnostic Imaging Services"
+        }
+      ],
+      "merger_description": "Novotech Aus BidCo Pty Ltd, a subsidiary of Novotech SG Holdings Pty Ltd (Novotech) proposes to acquire 100% of the shares in Agilex Biolabs Pty Ltd (Agilex).\n\nNovotech is a full-service clinical research organisation (CRO) and science advisory company, operating worldwide. In Australia, Novotech provides CRO services offering clinical trial design and management across principally Phases I to III of clinical trial development. Novotech does not have any laboratories in Australia and does not provide any bioanalytical laboratory services from Australia. It operates laboratories in Shanghai and Taipei from which it supplies some offshore laboratory services for clinical trials in Australia. Novotech also has a sample collection and storage facility in North Carolina (USA).\n\nNovotech\u2019s controlling shareholders are private investment funds affiliated with TPG Inc (TPG). TPG is a global alternative asset management firm headquartered in the United States with $306 billion of assets under management as at 31 March 2026.\n\nAgilex is an Australian specialist bioanalytical services provider supporting non-clinical and clinical drug development programmes across Phases I to III, with Phase I being a core focus. Agilex's services are focused on bioanalysis and specialised sample processing. Agilex has laboratories in Adelaide and Brisbane, with a Sydney facility in development.",
+      "events": [
+        {
+          "date": "2026-10-21T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Novotech%20Agilex%20-%203PQ%20AR%20-%2021%20October%202026.docx",
+          "url_gh": "/mergers/MN-45032/Novotech Agilex - 3PQ AR - 21 October 2026.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-20T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-40016",
+          "merger_name": "Creative Planning \u2013 MASECO",
+          "acquirers": [
+            "CP Britannia Bidco Limited",
+            "Creative Planning Holdco, LLC"
+          ],
+          "targets": [
+            "MASECO LLP"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-75050",
+          "merger_name": "Perun (TPG) - Zembl",
+          "acquirers": [
+            "Perun BidCo Pty Ltd",
+            "Perun TopCo Pty Ltd"
+          ],
+          "targets": [
+            "ZEMBL PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-55037",
+          "merger_name": "Covetrus \u2014 MWI",
+          "acquirers": [
+            "Covetrus, Inc."
+          ],
+          "targets": [
+            "MWI Veterinary Supply, Inc."
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 180,
+        "as_of": "2026-10-20",
+        "estimated_at": "2026-10-21",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 39,
+        "min_days": null,
+        "max_days": 46,
+        "id_issued_estimated": "2026-09-11",
+        "id_issued_before": null,
+        "id_issued_after": "2026-09-04",
+        "min_days_witness": null,
+        "max_days_witness": "WA-45031",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/national-dental-care-%E2%80%93-business-assets-comprising-the-comfy-dental-clinic-mandurah-wa",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
       "status": "Assessment completed",
@@ -53977,7 +54140,7 @@
       "determination_publication_date": "2026-10-21T12:00:00Z",
       "accc_determination": "Approved",
       "accc_determination_raw": "ACCC determinationApproved",
-      "page_modified_datetime": "2026-10-21T11:37:56+11:00",
+      "page_modified_datetime": "2026-10-21T12:06:43+11:00",
       "consultation_response_due_date": "2026-09-21T12:00:00Z",
       "acquirers": [
         {

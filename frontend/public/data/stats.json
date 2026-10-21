@@ -1,10 +1,10 @@
 {
-  "total_mergers": 299,
+  "total_mergers": 300,
   "total_waivers": 464,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 252,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 86
+      "count": 87
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-45032",
+      "merger_name": "Novotech - Agilex",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-10-21T12:05:27+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-15053",
       "merger_name": "Fruitico \u2013 Lease and option to purchase Terra Farm and Sunsweet Farm",
@@ -205,16 +215,6 @@
       "page_modified_datetime": "2026-10-15T14:49:34+11:00",
       "is_waiver": false,
       "is_refiled": true
-    },
-    {
-      "merger_id": "MN-50040",
-      "merger_name": "FlightSafety International / Commercial Training Solutions",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-13T12:00:00Z",
-      "page_modified_datetime": "2026-10-14T10:26:45+11:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
@@ -223,7 +223,7 @@
       "merger_name": "EQT Fund Management - Intertek",
       "determination": "Approved",
       "determination_date": "2026-10-21T12:00:00Z",
-      "page_modified_datetime": "2026-10-21T11:37:56+11:00",
+      "page_modified_datetime": "2026-10-21T12:06:43+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
