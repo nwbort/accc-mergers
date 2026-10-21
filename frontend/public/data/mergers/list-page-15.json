@@ -1533,6 +1533,53 @@
       ]
     },
     {
+      "merger_id": "WA-85057",
+      "merger_name": "INPEX \u2013 Further interest in the Ichthys LNG Project",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-25T12:00:00Z",
+      "determination_publication_date": "2026-10-21T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-21T12:00:00Z",
+      "page_modified_datetime": "2026-10-21T18:13:09+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "INPEX ICHTHYS PTY LTD"
+        },
+        {
+          "name": "INPEX HOLDINGS AUSTRALIA PTY LTD"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ICHTHYS LNG PTY LTD"
+        },
+        {
+          "name": "JERA ICHTHYS PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "INPEX CORPORATION"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0700",
+          "name": "Oil and Gas Extraction"
+        },
+        {
+          "code": "1011",
+          "name": "Petroleum Exploration"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-25048",
       "merger_name": "Colas \u2013 Quarry Products Harlaxton",
       "status": "Under assessment",
@@ -2901,64 +2948,6 @@
         {
           "code": "6999",
           "name": "Other Professional, Scientific and Technical Services n.e.c."
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-60048",
-      "merger_name": "Ingenia - Peet - Flagstone JV",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-10-09T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-20T12:00:00Z",
-      "latest_event_date": "2026-10-12T12:00:00Z",
-      "page_modified_datetime": "2026-10-12T17:07:34+11:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Ingenia Communities Holdings Limited"
-        }
-      ],
-      "targets": [
-        {
-          "name": "PEET LIMITED"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "BN (AUST) INVESTMENTS PTY LTD",
-          "canonical": {
-            "name": "Brown-Neaves Investment"
-          }
-        },
-        {
-          "name": "BECHEL PTY LTD",
-          "canonical": {
-            "name": "Brown-Neaves Investment"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "3211",
-          "name": "Land Development and Subdivision"
-        },
-        {
-          "code": "3212",
-          "name": "Site Preparation Services"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6711",
-          "name": "Residential Property Operators"
         }
       ]
     }

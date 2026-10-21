@@ -1,6 +1,6 @@
 {
   "total_mergers": 300,
-  "total_waivers": 466,
+  "total_waivers": 467,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 252,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 442,
+    "Approved": 443,
     "Not approved": 24
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.532188841201716,
-    "median_days": 21.0,
-    "average_business_days": 14.040772532188841,
-    "median_business_days": 14.0
+    "average_days": 20.54389721627409,
+    "median_days": 21,
+    "average_business_days": 14.047109207708779,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85057",
+      "merger_name": "INPEX \u2013 Further interest in the Ichthys LNG Project",
+      "determination": "Approved",
+      "determination_date": "2026-10-21T12:00:00Z",
+      "page_modified_datetime": "2026-10-21T18:13:09+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-15049",
       "merger_name": "Bridgepoint \u2013 Altano",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-19T12:00:00Z",
       "page_modified_datetime": "2026-10-19T16:45:00+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-40048",
-      "merger_name": "Dicker Data \u2013 Sektor",
-      "determination": "Approved",
-      "determination_date": "2026-10-19T12:00:00Z",
-      "page_modified_datetime": "2026-10-19T16:43:30+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
