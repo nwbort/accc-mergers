@@ -95,3 +95,41 @@ class TestIndustryCodesWithMergers:
         assert industry_codes_with_mergers([{}]) == set()
         assert industry_codes_with_mergers([{"anzsic_codes": None}]) == set()
         assert industry_codes_with_mergers([{"anzsic_codes": [{"code": ""}]}]) == set()
+
+
+class TestPinnedStaticLastmods:
+    """The hand-edited pages whose sitemap date the pre-commit hook maintains."""
+
+    def test_every_pinned_page_is_a_static_page_with_real_sources(self):
+        from scripts.generate.generate_sitemap import STATIC_PAGES
+        from scripts.generate.sitemap_lastmod import load_pinned
+        from scripts.paths import REPO_ROOT
+
+        static_paths = {page["path"] for page in STATIC_PAGES}
+        for path, page in load_pinned().items():
+            assert path in static_paths
+            assert page["sources"]
+            for source in page["sources"]:
+                assert (REPO_ROOT / source).exists(), source
+
+    def test_touched_pages_matches_on_source_files(self):
+        from scripts.generate.sitemap_lastmod import touched_pages
+
+        pinned = {
+            "/privacy": {"sources": ["a.jsx"], "lastmod": "2026-01-01"},
+            "/copyright": {"sources": ["b.jsx", "c.json"], "lastmod": "2026-01-01"},
+        }
+        assert touched_pages(pinned, {"c.json", "unrelated.py"}) == ["/copyright"]
+        assert touched_pages(pinned, {"unrelated.py"}) == []
+
+    def test_patch_sitemap_rewrites_only_the_named_page(self):
+        from scripts.generate.generate_sitemap import url_entry
+        from scripts.generate.sitemap_lastmod import patch_sitemap
+
+        xml = "\n".join([
+            url_entry("https://mergers.fyi/", "2026-01-01", "daily", "1.0"),
+            url_entry("https://mergers.fyi/privacy", "2026-01-01", "monthly", "0.8"),
+        ])
+        patched = patch_sitemap(xml, {"/privacy": "2026-10-21"})
+        assert patched.count("2026-10-21") == 1
+        assert "<loc>https://mergers.fyi/privacy</loc>\n    <lastmod>2026-10-21" in patched

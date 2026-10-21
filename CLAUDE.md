@@ -324,6 +324,10 @@ scripts/                  # A Python package — entry points run as `python -m 
 │   ├── generate_similar_mergers.py # Suggest similar mergers by industry/party overlap
 │   ├── generate_weekly_digest.py  # Generate digest.json for weekly summary
 │   ├── generate_sitemap.py   # Generate sitemap.xml (runs in pipeline.yml beside the RSS feed)
+│   ├── sitemap_lastmod.py    # Pinned lastmods for hand-edited pages (commentary, author,
+│                         #   privacy, copyright) in sitemap_lastmod.json; bumped by the
+│                         #   .githooks/pre-commit hook when a page's sources are committed.
+│                         #   Enable with `git config core.hooksPath .githooks`
 │   ├── generate_rss_feed.py  # Generate RSS feed
 │   ├── og_cards.py       # The generic link-preview cards (frontend/public/og/) and which one
 │                         #   each merger page shows (detail files' og_card). Run by hand
