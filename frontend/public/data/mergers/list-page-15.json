@@ -1552,7 +1552,10 @@
           "name": "INPEX ICHTHYS PTY LTD"
         },
         {
-          "name": "INPEX HOLDINGS AUSTRALIA PTY LTD"
+          "name": "INPEX HOLDINGS AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "Inpex Corporation"
+          }
         }
       ],
       "targets": [
@@ -1560,12 +1563,18 @@
           "name": "ICHTHYS LNG PTY LTD"
         },
         {
-          "name": "JERA ICHTHYS PTY LTD"
+          "name": "JERA ICHTHYS PTY LTD",
+          "canonical": {
+            "name": "Jera Ichthys Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "INPEX CORPORATION"
+          "name": "INPEX CORPORATION",
+          "canonical": {
+            "name": "Inpex Corporation"
+          }
         }
       ],
       "anzsic_codes": [

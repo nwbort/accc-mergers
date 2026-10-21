@@ -22,9 +22,13 @@
       "name": "INPEX HOLDINGS AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "61 150 217 315",
+      "canonical": {
+        "id": "inpex-corporation",
+        "name": "Inpex Corporation"
+      },
       "party_page": {
-        "id": "inpex-holdings-australia-pty-ltd",
-        "name": "Inpex Holdings Australia Pty Ltd"
+        "id": "inpex-corporation",
+        "name": "Inpex Corporation"
       }
     }
   ],
@@ -42,8 +46,12 @@
       "name": "JERA ICHTHYS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "18 158 193 241",
+      "canonical": {
+        "id": "jera-ichthys-pty-ltd",
+        "name": "Jera Ichthys Pty Ltd"
+      },
       "party_page": {
-        "id": "jera-ichthys-pty-ltd-2",
+        "id": "jera-ichthys-pty-ltd",
         "name": "Jera Ichthys Pty Ltd"
       }
     }
@@ -53,8 +61,12 @@
       "name": "INPEX CORPORATION",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "inpex-corporation",
+        "name": "Inpex Corporation"
+      },
       "party_page": {
-        "id": "inpex-corporation-2",
+        "id": "inpex-corporation",
         "name": "Inpex Corporation"
       }
     }

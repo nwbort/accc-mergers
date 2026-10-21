@@ -492,8 +492,13 @@
     },
     "jera-ichthys-pty-ltd": {
       "id": "jera-ichthys-pty-ltd",
-      "canonical_name": "JERA Ichthys Pty Ltd",
+      "canonical_name": "Jera Ichthys Pty Ltd",
       "members": [
+        {
+          "name": "JERA ICHTHYS PTY LTD",
+          "identifier": "18 158 193 241",
+          "identifier_type": "ABN"
+        },
         {
           "name": "JERA Ichthys Pty Ltd",
           "identifier": "158 193 241",
@@ -503,6 +508,18 @@
       "mergers": {
         "acquirer": [],
         "target": [
+          {
+            "merger_id": "WA-85057",
+            "merger_name": "INPEX \u2013 Further interest in the Ichthys LNG Project",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-25T12:00:00Z",
+            "determination_date": "2026-10-21T12:00:00Z"
+          },
           {
             "merger_id": "MN-05004",
             "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
@@ -518,10 +535,10 @@
         ],
         "other": []
       },
-      "merger_count": 1,
+      "merger_count": 2,
       "phase_1_count": 1,
       "phase_2_count": 0,
-      "waiver_count": 0,
+      "waiver_count": 1,
       "active_count": 0,
       "phase_duration": {
         "average_days": 26.0,
@@ -530,7 +547,13 @@
         "median_business_days": 17,
         "completed_count": 1
       },
-      "waiver_duration": null
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
     },
     "ma-asset-management-ltd": {
       "id": "ma-asset-management-ltd",
