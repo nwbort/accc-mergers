@@ -1,4 +1,4 @@
-import { act, render, screen, within } from '@testing-library/react';
+import { act, cleanup, configure, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Link, MemoryRouter, Route, Routes, useNavigate } from 'react-router';
@@ -63,6 +63,11 @@ function shown(expected) {
     && (typeof expected === 'string' ? el.textContent === expected : expected.test(el.textContent));
 }
 
+// These tests render up to 200 cards at a time. Run alone that is quick, but
+// in the full parallel suite a render can outlast Testing Library's default
+// one-second wait, so the async queries here get longer.
+configure({ asyncUtilTimeout: 5000 });
+
 // Stands in for the detail page: just a way back.
 function GoBack() {
   const navigate = useNavigate();
@@ -86,6 +91,9 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  // Unmount before the stubs go: a render still in flight would otherwise
+  // mount its infinite-scroll observer after IntersectionObserver is gone.
+  cleanup();
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
 });
