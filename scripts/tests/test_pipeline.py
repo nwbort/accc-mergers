@@ -3,6 +3,7 @@ static data generation, cutoff logic, and extraction helpers."""
 
 import sys
 import json
+from urllib.parse import unquote
 import unittest.mock
 from datetime import date, datetime
 
@@ -2607,9 +2608,21 @@ class TestDetectMissingQuestionnaires:
 # ---------------------------------------------------------------------------
 
 class TestDetectMissingWaiverDeterminations:
-    def _run(self, mergers, tmp_path, monkeypatch):
+    def _run(self, mergers, tmp_path, monkeypatch, mirrored=True):
         out = tmp_path / "missing_waiver_determinations.json"
         monkeypatch.setattr(extract_mergers, "MISSING_WAIVER_DETERMINATIONS_PATH", str(out))
+        matters = tmp_path / "matters"
+        monkeypatch.setattr(extract_mergers, "MATTERS_DIR", str(matters))
+        if mirrored:
+            # Mirror every linked document, as a successful download would.
+            for merger in mergers:
+                for event in merger.get('events', []):
+                    if event.get('url'):
+                        name = unquote(event['url'].rsplit('/', 1)[-1])
+                        event.setdefault('url_gh', f"/mergers/{merger['merger_id']}/{name}")
+                        path = matters / merger['merger_id'] / name
+                        path.parent.mkdir(parents=True, exist_ok=True)
+                        path.write_bytes(b'%PDF')
         detect_missing_waiver_determinations(mergers)
         if not out.exists():
             return None
@@ -2645,6 +2658,36 @@ class TestDetectMissingWaiverDeterminations:
         result = self._run(mergers, tmp_path, monkeypatch)
         assert result['open'] == []
         assert result['resolved'] == ['WA-1', 'WA-2', 'WA-3']
+
+    def test_linked_but_not_downloaded_opens_issue(self, tmp_path, monkeypatch):
+        # WA-90039: the PDF answered 503, so url_gh points at nothing.
+        url = ('https://www.accc.gov.au/system/files/moderated_files/'
+               'Uber%20%E2%80%93%20Delivery%20Hero%20%28WA-90039%29%20-%20'
+               'Notification%20waiver%20determination%20-%2022%20October%202026.pdf')
+        mergers = [{
+            'merger_id': 'WA-90039',
+            'merger_name': 'Uber – Delivery Hero',
+            'accc_determination': 'Not approved',
+            'events': [{'title': 'Notification waiver determination published',
+                        'url': url, 'is_determination_event': True,
+                        'url_gh': '/mergers/WA-90039/x.pdf'}],
+        }]
+        result = self._run(mergers, tmp_path, monkeypatch, mirrored=False)
+        assert [i['merger_id'] for i in result['open']] == ['WA-90039']
+        issue = result['open'][0]
+        assert issue['title'].startswith('Waiver determination not downloaded:')
+        assert issue['title'].endswith('(WA-90039)')
+        assert url in issue['body']
+        assert 'once the determination has been downloaded' in issue['body']
+        assert result['resolved'] == []
+
+    def test_downloading_the_document_resolves(self, tmp_path, monkeypatch):
+        mergers = [{'merger_id': 'WA-90039', 'accc_determination': 'Not approved',
+                    'events': [{'title': 'Notification waiver determination published',
+                                'url': 'https://x/WA-90039%20determination.pdf'}]}]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert result['open'] == []
+        assert result['resolved'] == ['WA-90039']
 
     def test_waiver_recognised_by_stage_without_is_waiver_flag(self, tmp_path, monkeypatch):
         mergers = [{'merger_id': 'XX-1', 'stage': 'Waiver application',
@@ -4051,3 +4094,58 @@ class TestMergeEventsRelocatedDocument:
             self._existing(), 'MN-90027', set(),
         )
         assert len(merged) == 2
+
+
+class TestFetchAttachmentRetries:
+    """A newly published document can answer 503 for a few moments (WA-90039's
+    determination did). The download must retry that, never retry a 4xx, and
+    never leave a partial file that would be mistaken for a finished one."""
+
+    URL = 'https://www.accc.gov.au/system/files/moderated_files/x.pdf'
+
+    class _Response:
+        def __init__(self, status, body=b'%PDF-1.7'):
+            self.status_code = status
+            self._body = body
+
+        def raise_for_status(self):
+            if self.status_code >= 400:
+                raise extract_mergers.accc_http._cffi.exceptions.HTTPError(
+                    f'HTTP Error {self.status_code}', 0, self)
+
+        def iter_content(self, chunk_size):
+            yield self._body
+
+    def _run(self, statuses, tmp_path, monkeypatch):
+        responses = iter(self._Response(s) for s in statuses)
+        calls = []
+
+        def fake_get(url, **kwargs):
+            calls.append(url)
+            return next(responses)
+
+        monkeypatch.setattr(extract_mergers.accc_http, 'get', fake_get)
+        monkeypatch.setattr(extract_mergers.time, 'sleep', lambda s: None)
+        path = tmp_path / 'x.pdf'
+        try:
+            extract_mergers._fetch_to_file(self.URL, str(path))
+        except extract_mergers.accc_http.RequestException:
+            pass
+        return path, calls
+
+    def test_a_503_is_retried_until_it_clears(self, tmp_path, monkeypatch):
+        path, calls = self._run([503, 503, 200], tmp_path, monkeypatch)
+        assert len(calls) == 3
+        assert path.read_bytes() == b'%PDF-1.7'
+
+    def test_a_404_is_not_retried(self, tmp_path, monkeypatch):
+        path, calls = self._run([404, 200], tmp_path, monkeypatch)
+        assert len(calls) == 1
+        assert not path.exists()
+
+    def test_giving_up_leaves_no_file(self, tmp_path, monkeypatch):
+        attempts = len(extract_mergers.DOWNLOAD_RETRY_DELAYS) + 1
+        path, calls = self._run([503] * attempts, tmp_path, monkeypatch)
+        assert len(calls) == attempts
+        assert not path.exists()
+        assert not (tmp_path / 'x.pdf.part').exists()

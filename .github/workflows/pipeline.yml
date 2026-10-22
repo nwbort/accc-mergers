@@ -864,9 +864,9 @@ jobs:
       # detect_missing_questionnaires and detect_missing_waiver_determinations
       # each write a JSON file listing matters whose page lacks a document the
       # ACCC normally publishes (a notification's questionnaire, a decided
-      # waiver's determination). The tracking-issues action opens one issue per
-      # matter and ntfys about the new ones, and auto-closes an issue once the
-      # document appears. An issue that exists in ANY state is never
+      # waiver's determination, or one linked there that failed to download).
+      # The tracking-issues action opens one issue per matter and ntfys about
+      # the new ones, and auto-closes an issue once the document appears. An issue that exists in ANY state is never
       # re-created, so closing one is how a matter with no document by design
       # (e.g. a confidential assessment) is marked as expected.
 
@@ -888,8 +888,8 @@ jobs:
         with:
           file: data/processed/missing_waiver_determinations.json
           label: missing-waiver-determination
-          label-description: Decided waiver with no determination document on the ACCC register
-          close-comment: A determination document is now on the ACCC register for this waiver — closing automatically.
+          label-description: Decided waiver whose determination is missing from the ACCC register or failed to download
+          close-comment: This waiver's determination is now on the ACCC register and downloaded — closing automatically.
           notify-title: Missing waiver determination
           ntfy-topic: ${{ secrets.NTFY_TOPIC }}
           ntfy-token: ${{ secrets.NTFY_TOKEN }}
