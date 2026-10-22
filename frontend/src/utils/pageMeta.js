@@ -278,6 +278,11 @@ export const STATIC_PAGE_META = {
     description:
       'How fast the ACCC is deciding Australian merger notifications and waivers right now — recent decision times against the all-time baseline, and how they track the open caseload.',
   },
+  '/quarterly': {
+    title: 'Quarterly report',
+    description:
+      'A quarter-by-quarter report on Australia\'s merger regime: notifications and waivers, clearance rates, ACCC decision times, the industries deals came from, and every Phase 2, public benefit and Tribunal milestone.',
+  },
   '/commentary': {
     title: 'Commentary',
     description:

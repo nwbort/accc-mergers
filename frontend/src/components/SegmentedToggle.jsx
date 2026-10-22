@@ -22,7 +22,7 @@ function SegmentedToggle({ ariaLabel, options, value, onChange }) {
             type="button"
             onClick={() => onChange(option.value)}
             aria-pressed={selected}
-            className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-full font-medium whitespace-nowrap transition-all duration-150 ${
               selected
                 ? 'bg-white text-gray-900 shadow-sm'
                 : 'text-gray-600 hover:text-gray-900'

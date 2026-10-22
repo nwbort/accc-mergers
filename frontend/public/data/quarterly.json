@@ -1,0 +1,524 @@
+{
+  "as_at": "2026-10-22",
+  "duration_buckets": [
+    "0\u20134",
+    "5\u20139",
+    "10\u201314",
+    "15\u201319",
+    "20\u201324",
+    "25\u201329",
+    "30\u201349",
+    "50+"
+  ],
+  "quarters": [
+    {
+      "quarter": "2026-Q1",
+      "label": "Q1 2026",
+      "start": "2026-01-01",
+      "end": "2026-03-31",
+      "complete": true,
+      "notifications": {
+        "filed": 50,
+        "phase_1_decided": 32,
+        "cleared": 30,
+        "referred_to_phase_2": 2,
+        "refused": 0,
+        "ceased": 0,
+        "clearance_rate": 0.9375,
+        "timing": {
+          "count": 32,
+          "median": 17.0,
+          "average": 19.5,
+          "p90": 26,
+          "buckets": [
+            0,
+            0,
+            0,
+            24,
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        "average_cleared": 17.9,
+        "average_referred": 44.5
+      },
+      "waivers": {
+        "decided": 71,
+        "granted": 65,
+        "refused": 6,
+        "refused_refiled": 6,
+        "clearance_rate": 0.9155,
+        "timing": {
+          "count": 71,
+          "median": 11,
+          "average": 11.0,
+          "p90": 17,
+          "buckets": [
+            5,
+            22,
+            30,
+            11,
+            3,
+            0,
+            0,
+            0
+          ]
+        },
+        "average_granted": 11.0,
+        "average_refused": 10.7
+      },
+      "matters": 121,
+      "overseas_party": 61,
+      "industries": [
+        {
+          "code": "M",
+          "name": "Professional, Scientific and Technical Services",
+          "count": 37
+        },
+        {
+          "code": "C",
+          "name": "Manufacturing",
+          "count": 26
+        },
+        {
+          "code": "J",
+          "name": "Information Media and Telecommunications",
+          "count": 23
+        },
+        {
+          "code": "K",
+          "name": "Financial and Insurance Services",
+          "count": 21
+        },
+        {
+          "code": "F",
+          "name": "Wholesale Trade",
+          "count": 13
+        }
+      ],
+      "milestones": [
+        {
+          "merger_id": "MN-01019",
+          "merger_name": "Ampol \u2013 EG Australia",
+          "kind": "referred",
+          "date": "2026-01-21"
+        },
+        {
+          "merger_id": "MN-01068",
+          "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+          "kind": "referred",
+          "date": "2026-01-29"
+        }
+      ]
+    },
+    {
+      "quarter": "2026-Q2",
+      "label": "Q2 2026",
+      "start": "2026-04-01",
+      "end": "2026-06-30",
+      "complete": true,
+      "notifications": {
+        "filed": 95,
+        "phase_1_decided": 81,
+        "cleared": 77,
+        "referred_to_phase_2": 4,
+        "refused": 0,
+        "ceased": 0,
+        "clearance_rate": 0.9506,
+        "timing": {
+          "count": 81,
+          "median": 17,
+          "average": 19.5,
+          "p90": 27,
+          "buckets": [
+            0,
+            0,
+            0,
+            59,
+            10,
+            8,
+            2,
+            2
+          ]
+        },
+        "average_cleared": 18.3,
+        "average_referred": 41.5
+      },
+      "waivers": {
+        "decided": 176,
+        "granted": 168,
+        "refused": 8,
+        "refused_refiled": 7,
+        "clearance_rate": 0.9545,
+        "timing": {
+          "count": 176,
+          "median": 12.0,
+          "average": 12.5,
+          "p90": 19,
+          "buckets": [
+            5,
+            37,
+            78,
+            48,
+            8,
+            0,
+            0,
+            0
+          ]
+        },
+        "average_granted": 12.2,
+        "average_refused": 17.8
+      },
+      "matters": 271,
+      "overseas_party": 107,
+      "industries": [
+        {
+          "code": "K",
+          "name": "Financial and Insurance Services",
+          "count": 68
+        },
+        {
+          "code": "C",
+          "name": "Manufacturing",
+          "count": 64
+        },
+        {
+          "code": "M",
+          "name": "Professional, Scientific and Technical Services",
+          "count": 51
+        },
+        {
+          "code": "G",
+          "name": "Retail Trade",
+          "count": 33
+        },
+        {
+          "code": "J",
+          "name": "Information Media and Telecommunications",
+          "count": 26
+        }
+      ],
+      "milestones": [
+        {
+          "merger_id": "MN-30003",
+          "merger_name": "MicroStar Logistics - Konvoy",
+          "kind": "referred",
+          "date": "2026-04-01"
+        },
+        {
+          "merger_id": "MN-65005",
+          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "kind": "referred",
+          "date": "2026-04-16"
+        },
+        {
+          "merger_id": "MN-01019",
+          "merger_name": "Ampol \u2013 EG Australia",
+          "kind": "phase_2_outcome",
+          "date": "2026-06-02",
+          "detail": "Approved with conditions"
+        },
+        {
+          "merger_id": "MN-30002",
+          "merger_name": "Peter Warren - Wakeling Automotive",
+          "kind": "referred",
+          "date": "2026-06-02"
+        },
+        {
+          "merger_id": "MN-30002",
+          "merger_name": "Peter Warren - Wakeling Automotive",
+          "kind": "phase_2_outcome",
+          "date": "2026-06-15",
+          "detail": "Assessment ceased"
+        },
+        {
+          "merger_id": "MN-90009",
+          "merger_name": "Trescal \u2013 TR Calibration",
+          "kind": "referred",
+          "date": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "quarter": "2026-Q3",
+      "label": "Q3 2026",
+      "start": "2026-07-01",
+      "end": "2026-09-30",
+      "complete": true,
+      "notifications": {
+        "filed": 113,
+        "phase_1_decided": 119,
+        "cleared": 116,
+        "referred_to_phase_2": 3,
+        "refused": 0,
+        "ceased": 2,
+        "clearance_rate": 0.9748,
+        "timing": {
+          "count": 119,
+          "median": 18,
+          "average": 21.0,
+          "p90": 33,
+          "buckets": [
+            0,
+            0,
+            0,
+            76,
+            23,
+            8,
+            10,
+            2
+          ]
+        },
+        "average_cleared": 20.4,
+        "average_referred": 42.0
+      },
+      "waivers": {
+        "decided": 183,
+        "granted": 176,
+        "refused": 7,
+        "refused_refiled": 3,
+        "clearance_rate": 0.9617,
+        "timing": {
+          "count": 183,
+          "median": 17,
+          "average": 16.2,
+          "p90": 21,
+          "buckets": [
+            0,
+            10,
+            48,
+            89,
+            36,
+            0,
+            0,
+            0
+          ]
+        },
+        "average_granted": 16.1,
+        "average_refused": 18.9
+      },
+      "matters": 296,
+      "overseas_party": 139,
+      "industries": [
+        {
+          "code": "K",
+          "name": "Financial and Insurance Services",
+          "count": 129
+        },
+        {
+          "code": "M",
+          "name": "Professional, Scientific and Technical Services",
+          "count": 78
+        },
+        {
+          "code": "C",
+          "name": "Manufacturing",
+          "count": 77
+        },
+        {
+          "code": "G",
+          "name": "Retail Trade",
+          "count": 43
+        },
+        {
+          "code": "F",
+          "name": "Wholesale Trade",
+          "count": 38
+        }
+      ],
+      "milestones": [
+        {
+          "merger_id": "MN-01068",
+          "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+          "kind": "phase_2_outcome",
+          "date": "2026-07-01",
+          "detail": "Not approved"
+        },
+        {
+          "merger_id": "MN-01072",
+          "merger_name": "Saipem S.p.A - Subsea7 S.A.",
+          "kind": "referred",
+          "date": "2026-07-02"
+        },
+        {
+          "merger_id": "MN-90009",
+          "merger_name": "Trescal \u2013 TR Calibration",
+          "kind": "phase_2_outcome",
+          "date": "2026-07-10",
+          "detail": "Assessment ceased"
+        },
+        {
+          "merger_id": "MN-01068",
+          "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+          "kind": "tribunal_application",
+          "date": "2026-07-15",
+          "detail": "Coles"
+        },
+        {
+          "merger_id": "MN-65020",
+          "merger_name": "Regis Resources - Vault Minerals",
+          "kind": "ceased",
+          "date": "2026-07-16"
+        },
+        {
+          "merger_id": "MN-01068",
+          "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+          "kind": "judicial_review",
+          "date": "2026-07-17",
+          "detail": "Coles"
+        },
+        {
+          "merger_id": "MN-05013",
+          "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+          "kind": "referred",
+          "date": "2026-07-17"
+        },
+        {
+          "merger_id": "MN-30003",
+          "merger_name": "MicroStar Logistics - Konvoy",
+          "kind": "phase_2_outcome",
+          "date": "2026-08-07",
+          "detail": "Not approved"
+        },
+        {
+          "merger_id": "MN-40017",
+          "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+          "kind": "referred",
+          "date": "2026-08-18"
+        },
+        {
+          "merger_id": "MN-50011",
+          "merger_name": "Journey Beyond - SeaLink Rottnest",
+          "kind": "ceased",
+          "date": "2026-08-26"
+        },
+        {
+          "merger_id": "MN-40017",
+          "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+          "kind": "phase_2_outcome",
+          "date": "2026-08-28",
+          "detail": "Assessment ceased"
+        },
+        {
+          "merger_id": "MN-65005",
+          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "kind": "phase_2_outcome",
+          "date": "2026-09-23",
+          "detail": "Not approved"
+        }
+      ]
+    },
+    {
+      "quarter": "2026-Q4",
+      "label": "Q4 2026",
+      "start": "2026-10-01",
+      "end": "2026-12-31",
+      "complete": false,
+      "notifications": {
+        "filed": 29,
+        "phase_1_decided": 18,
+        "cleared": 18,
+        "referred_to_phase_2": 0,
+        "refused": 0,
+        "ceased": 0,
+        "clearance_rate": 1.0,
+        "timing": {
+          "count": 18,
+          "median": 19.5,
+          "average": 19.3,
+          "p90": 25,
+          "buckets": [
+            0,
+            0,
+            0,
+            9,
+            6,
+            3,
+            0,
+            0
+          ]
+        },
+        "average_cleared": 19.3,
+        "average_referred": null
+      },
+      "waivers": {
+        "decided": 37,
+        "granted": 34,
+        "refused": 3,
+        "refused_refiled": 0,
+        "clearance_rate": 0.9189,
+        "timing": {
+          "count": 37,
+          "median": 18,
+          "average": 16.8,
+          "p90": 23,
+          "buckets": [
+            1,
+            4,
+            4,
+            16,
+            12,
+            0,
+            0,
+            0
+          ]
+        },
+        "average_granted": 16.3,
+        "average_refused": 23.3
+      },
+      "matters": 66,
+      "overseas_party": 24,
+      "industries": [
+        {
+          "code": "K",
+          "name": "Financial and Insurance Services",
+          "count": 29
+        },
+        {
+          "code": "M",
+          "name": "Professional, Scientific and Technical Services",
+          "count": 18
+        },
+        {
+          "code": "C",
+          "name": "Manufacturing",
+          "count": 17
+        },
+        {
+          "code": "F",
+          "name": "Wholesale Trade",
+          "count": 12
+        },
+        {
+          "code": "E",
+          "name": "Construction",
+          "count": 11
+        }
+      ],
+      "milestones": [
+        {
+          "merger_id": "MN-65005",
+          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "kind": "tribunal_application",
+          "date": "2026-10-01",
+          "detail": "IAG"
+        },
+        {
+          "merger_id": "MN-65005",
+          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "kind": "tribunal_application",
+          "date": "2026-10-05",
+          "detail": "RACWA"
+        },
+        {
+          "merger_id": "MN-65005",
+          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "kind": "public_benefit_application",
+          "date": "2026-10-13"
+        }
+      ]
+    }
+  ]
+}

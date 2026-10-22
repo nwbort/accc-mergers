@@ -89,10 +89,10 @@ FILE_COUNT_WARN_RATIO = 0.8
 VITE_BUILD_FILES = 60
 
 # Prerendered pages that aren't one-per-record: frontend/prerender.js walks
-# STATIC_PAGE_META (currently 12 routes, minus the root it skips) and Vite emits
+# STATIC_PAGE_META (currently 13 routes, minus the root it skips) and Vite emits
 # the root index.html itself. Same tolerance argument as above — this is a
 # dozen files, not a thousand, so it is a constant rather than a JS parse.
-PRERENDERED_STATIC_PAGES = 13
+PRERENDERED_STATIC_PAGES = 14
 
 # Per-merger data files, as frontend/prerender.js matches them (MATTER_FILE_RE).
 _MATTER_FILE_RE = re.compile(r"^(MN|WA)-\d+\.json$", re.IGNORECASE)
