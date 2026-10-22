@@ -93,7 +93,7 @@ function MergerListTable({ mergers, selectedIndex, isTracked, sortField, sortDir
                   idx === selectedIndex ? 'bg-primary/5' : ''
                 }`}
               >
-                <td className="px-4 py-3 min-w-[14rem]">
+                <td className="px-4 py-3 sm:min-w-[14rem]">
                   <div className="flex items-start gap-1.5">
                     {tracked && (
                       <FaStar className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-primary" aria-label="Tracked" role="img" />
@@ -114,16 +114,19 @@ function MergerListTable({ mergers, selectedIndex, isTracked, sortField, sortDir
                   </div>
                 </td>
                 <td className="px-4 py-3">
-                  <div className="flex flex-wrap items-center gap-1">
+                  {/* The solid form, as on the cards, so the two views of
+                      the same list read the same. */}
+                  <div className="flex flex-wrap items-center gap-1.5">
                     <StatusBadge
                       status={merger.status}
                       determination={merger.accc_determination}
                       hasConditions={merger.has_conditions}
                       appeal={merger.appeal}
+                      solid
                     />
-                    {merger.under_appeal && <AppealBadge />}
-                    {merger.is_waiver && <WaiverBadge />}
-                    {merger.is_refiled && <RefiledBadge />}
+                    {merger.under_appeal && <AppealBadge solid />}
+                    {merger.is_waiver && <WaiverBadge solid />}
+                    {merger.is_refiled && <RefiledBadge solid />}
                   </div>
                 </td>
                 <td className="px-4 py-3 whitespace-nowrap text-gray-700 hidden sm:table-cell">
