@@ -56,6 +56,13 @@ function scrollToEnd() {
   });
 }
 
+// The results count is one sentence split across spans (phones see only
+// "50 of 200"), so match it on the paragraph's whole text.
+function shown(expected) {
+  return (_, el) => el?.tagName === 'P'
+    && (typeof expected === 'string' ? el.textContent === expected : expected.test(el.textContent));
+}
+
 // Stands in for the detail page: just a way back.
 function GoBack() {
   const navigate = useNavigate();
@@ -98,27 +105,27 @@ function renderPage(entry = '/mergers') {
 describe('Mergers', () => {
   it('loads the whole list in one request', async () => {
     renderPage();
-    expect(await screen.findByText(/^Showing \d+ of 200 mergers$/)).toBeInTheDocument();
+    expect(await screen.findByText(shown(/^Showing \d+ of 200 mergers$/))).toBeInTheDocument();
     const listFetches = fetchSpy.mock.calls.filter(([url]) => url.includes('/data/mergers/'));
     expect(listFetches).toHaveLength(1);
   });
 
   it('loads the next 50 as the reader scrolls to the end of the list', async () => {
     renderPage();
-    expect(await screen.findByText('Showing 50 of 200 mergers')).toBeInTheDocument();
+    expect(await screen.findByText(shown('Showing 50 of 200 mergers'))).toBeInTheDocument();
     scrollToEnd();
-    expect(screen.getByText('Showing 100 of 200 mergers')).toBeInTheDocument();
+    expect(screen.getByText(shown('Showing 100 of 200 mergers'))).toBeInTheDocument();
   });
 
   it('filters by industry division from the URL', async () => {
     renderPage('/mergers?industry=G');
-    expect(await screen.findByText('Showing 20 of 20 mergers')).toBeInTheDocument();
+    expect(await screen.findByText(shown('Showing 20 of 20 mergers'))).toBeInTheDocument();
   });
 
   it('shows each filter option with its count', async () => {
     const user = userEvent.setup();
     renderPage('/mergers?phase=waivers');
-    await screen.findByText(/^Showing/);
+    await screen.findByText(shown(/^Showing/));
     // A filter in the URL opens the panel only on wide screens.
     if (!screen.queryByLabelText('Industry')) {
       await user.click(screen.getByRole('button', { name: 'Toggle filters' }));
@@ -134,7 +141,7 @@ describe('Mergers', () => {
   it('switches to a table whose headers sort the list', async () => {
     const user = userEvent.setup();
     renderPage('/mergers?industry=G');
-    await screen.findByText(/^Showing/);
+    await screen.findByText(shown(/^Showing/));
     await user.click(screen.getByRole('button', { name: 'Table view' }));
     const table = await screen.findByRole('table');
     expect(within(table).getAllByRole('row')).toHaveLength(21);
@@ -160,7 +167,7 @@ describe('Mergers', () => {
         </TrackingProvider>
       </HelmetProvider>
     );
-    expect(await screen.findByText('Showing 200 of 200 mergers')).toBeInTheDocument();
+    expect(await screen.findByText(shown('Showing 200 of 200 mergers'))).toBeInTheDocument();
   });
 
   it('comes back to as many pages as were showing on Back', async () => {
@@ -177,12 +184,12 @@ describe('Mergers', () => {
         </TrackingProvider>
       </HelmetProvider>
     );
-    await screen.findByText('Showing 50 of 200 mergers');
+    await screen.findByText(shown('Showing 50 of 200 mergers'));
     for (let i = 0; i < 3; i++) scrollToEnd();
-    expect(screen.getByText('Showing 200 of 200 mergers')).toBeInTheDocument();
+    expect(screen.getByText(shown('Showing 200 of 200 mergers'))).toBeInTheDocument();
     await user.click(screen.getByRole('link', { name: 'View merger details for Wholesale deal 171' }));
     await user.click(await screen.findByRole('button', { name: 'Back' }));
-    expect(await screen.findByText('Showing 200 of 200 mergers')).toBeInTheDocument();
+    expect(await screen.findByText(shown('Showing 200 of 200 mergers'))).toBeInTheDocument();
   });
 
   it('starts from the top on an ordinary visit', async () => {
@@ -202,13 +209,13 @@ describe('Mergers', () => {
     );
     // A link to the list, with no restore state: back to the first page.
     await user.click(screen.getByRole('link', { name: 'Mergers' }));
-    expect(await screen.findByText('Showing 50 of 200 mergers')).toBeInTheDocument();
+    expect(await screen.findByText(shown('Showing 50 of 200 mergers'))).toBeInTheDocument();
   });
 
   it('remembers the chosen view for the next visit, without putting it in the URL', async () => {
     const user = userEvent.setup();
     const first = renderPage();
-    await screen.findByText(/^Showing/);
+    await screen.findByText(shown(/^Showing/));
     expect(screen.queryByRole('table')).not.toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: 'Table view' }));
     expect(screen.getByRole('table')).toBeInTheDocument();
@@ -238,7 +245,7 @@ describe('Mergers', () => {
 
     async function openFilters(user, entry = '/mergers') {
       renderPage(entry);
-      await screen.findByText(/^Showing/);
+      await screen.findByText(shown(/^Showing/));
       if (!screen.queryByRole('group', { name: 'Quick date ranges' })) {
         await user.click(screen.getByRole('button', { name: 'Toggle filters' }));
       }
@@ -251,7 +258,7 @@ describe('Mergers', () => {
       MERGERS.forEach((m, i) => { if (i < 5) m.determination_publication_date = '2025-06-01T12:00:00Z'; });
       try {
         await openFilters(user, '/mergers?from=2025-01-01&to=2025-12-31');
-        expect(screen.getByText('Showing 0 of 0 mergers')).toBeInTheDocument();
+        expect(screen.getByText(shown('Showing 0 of 0 mergers'))).toBeInTheDocument();
         expect(screen.getByText('Notification date', { selector: 'p' })).toBeInTheDocument();
         expect(screen.queryByRole('button', { name: 'Determined' })).not.toBeInTheDocument();
       } finally {
@@ -265,17 +272,17 @@ describe('Mergers', () => {
       const quick = screen.getByRole('button', { name: /^Last 90 days/ });
       await user.click(quick);
       const recent = notifiedIn('2026-07-25', '2026-10-22');
-      expect(screen.getByText(`Showing ${Math.min(50, recent)} of ${recent} mergers`)).toBeInTheDocument();
+      expect(screen.getByText(shown(`Showing ${Math.min(50, recent)} of ${recent} mergers`))).toBeInTheDocument();
       expect(quick).toHaveAttribute('aria-pressed', 'true');
       await user.click(screen.getByRole('button', { name: 'Clear dates' }));
-      expect(screen.getByText('Showing 50 of 200 mergers')).toBeInTheDocument();
+      expect(screen.getByText(shown('Showing 50 of 200 mergers'))).toBeInTheDocument();
     });
 
     it('reads a range from the URL, open-ended or not', async () => {
       const user = userEvent.setup();
       await openFilters(user, '/mergers?from=2026-09-01');
       const fromSept = notifiedIn('2026-09-01', '2026-12-31');
-      expect(screen.getByText(`Showing ${fromSept} of ${fromSept} mergers`)).toBeInTheDocument();
+      expect(screen.getByText(shown(`Showing ${fromSept} of ${fromSept} mergers`))).toBeInTheDocument();
       expect(screen.getByText('From 01 Sep 2026')).toBeInTheDocument();
     });
   });

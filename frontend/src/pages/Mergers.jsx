@@ -518,12 +518,18 @@ function Mergers() {
         </div>
 
         {/* Results count, view & sort */}
-        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-4">
-          <p className="text-sm text-gray-500">
-            Showing {visibleMergers.length} of {sortedMergers.length} mergers
+        {/* One line at every width: on phones the count drops to "50 of
+            767" (screen readers still hear the whole sentence) and the gaps
+            tighten, rather than the controls wrapping under it. If space
+            still runs out, the sort select narrows; the count never does. */}
+        <div className="flex items-center justify-between gap-3 sm:gap-4 mb-4">
+          <p className="flex-shrink-0 whitespace-nowrap text-sm text-gray-500 tabular-nums">
+            <span className="sr-only sm:not-sr-only">Showing </span>
+            {visibleMergers.length} of {sortedMergers.length}
+            <span className="sr-only sm:not-sr-only"> mergers</span>
           </p>
-          <div className="flex items-center gap-3">
-            <div role="group" aria-label="View" className="flex rounded-lg border border-gray-200 bg-white p-0.5">
+          <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+            <div role="group" aria-label="View" className="flex flex-shrink-0 rounded-lg border border-gray-200 bg-white p-0.5">
               {[
                 { value: 'cards', label: 'Cards', Icon: FaList },
                 { value: 'table', label: 'Table', Icon: FaTable },
@@ -550,11 +556,11 @@ function Mergers() {
                 );
               })}
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex min-w-0 items-center gap-2">
               <label htmlFor="sort" className="text-sm text-gray-500 hidden sm:inline">Sort by</label>
               <select
                 id="sort"
-                className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
+                className="min-w-0 truncate px-2 sm:px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
                 value={sortField}
                 onChange={(e) => {
                   const field = e.target.value;
@@ -570,7 +576,7 @@ function Mergers() {
               </select>
               <button
                 onClick={() => setSort(sortField, sortDir === 'asc' ? 'desc' : 'asc')}
-                className="p-1 text-gray-500 hover:text-gray-700 transition-all"
+                className="flex-shrink-0 p-1 text-gray-500 hover:text-gray-700 transition-all"
                 aria-label={`Change sort order to ${sortDir === 'asc' ? directionLabels.desc : directionLabels.asc}`}
                 title={`${sortDir === 'asc' ? directionLabels.asc : directionLabels.desc} — click for ${sortDir === 'asc' ? directionLabels.desc : directionLabels.asc}`}
               >
