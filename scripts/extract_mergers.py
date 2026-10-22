@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, unquote
 import unicodedata
 import re
+import time
 from datetime import datetime, timedelta, timezone
 from markdownify import markdownify as md
 from scripts.parse.parse_determination import parse_determination_pdf
@@ -183,6 +184,53 @@ def _is_determination_attachment(event_title: str | None, filename: str) -> bool
     return 'determination' in filename.lower()
 
 
+# Delays before each retry of an attachment download. The ACCC answers 503 for
+# a few moments while a newly published document propagates (WA-90039's
+# determination did, on the run triggered by the register email announcing it),
+# and a download that fails on that run is not retried until extraction next
+# runs, which a quiet scheduled run skips.
+DOWNLOAD_RETRY_DELAYS = (5, 15, 30)
+
+
+def _is_transient_download_error(error) -> bool:
+    """Whether a failed attachment download is worth retrying.
+
+    A server error or a dropped connection may clear on its own; a 4xx (the
+    link is wrong, or Akamai has refused us) will not.
+    """
+    response = getattr(error, 'response', None)
+    status = getattr(response, 'status_code', None)
+    return status is None or status >= 500
+
+
+def _fetch_to_file(url, local_filepath):
+    """Download ``url`` to ``local_filepath``, retrying transient failures.
+
+    Written to a temporary file and renamed into place, so a download cut off
+    part-way never leaves a truncated file behind: an existing file is taken as
+    already downloaded and would never be fetched again. Raises the last
+    ``accc_http.RequestException`` once the retries are spent.
+    """
+    temp_filepath = f"{local_filepath}.part"
+    for attempt, delay in enumerate((*DOWNLOAD_RETRY_DELAYS, None)):
+        try:
+            response = accc_http.get(url, stream=True, timeout=30)
+            response.raise_for_status()
+            with open(temp_filepath, 'wb') as f_out:
+                for chunk in response.iter_content(chunk_size=8192):
+                    f_out.write(chunk)
+            os.replace(temp_filepath, local_filepath)
+            return
+        except accc_http.RequestException as e:
+            if os.path.exists(temp_filepath):
+                os.remove(temp_filepath)
+            if delay is None or not _is_transient_download_error(e):
+                raise
+            print(f"Retrying {url} in {delay}s (attempt {attempt + 1} failed: {e})",
+                  file=sys.stderr)
+            time.sleep(delay)
+
+
 def download_attachment(merger_id, attachment_url, event_title=None, cached_determination_data=None):
     """
     Downloads an attachment if it doesn't already exist locally.
@@ -238,14 +286,7 @@ def download_attachment(merger_id, attachment_url, event_title=None, cached_dete
 
         # Check if the file already exists before downloading
         if not os.path.exists(local_filepath):
-            # Download the file
-            response = accc_http.get(attachment_url, stream=True, timeout=30)
-            response.raise_for_status()  # Raise an exception for bad status codes
-
-            # Save the file
-            with open(local_filepath, 'wb') as f_out:
-                for chunk in response.iter_content(chunk_size=8192):
-                    f_out.write(chunk)
+            _fetch_to_file(attachment_url, local_filepath)
 
         # Check if this is a determination PDF and parse it.
         is_determination = _is_determination_attachment(event_title, filename)
@@ -1880,14 +1921,17 @@ def detect_inferred_phase_2(all_mergers_data):
         )
 
 
-def _tracking_issue(merger, heading, kind, summary, rows, explanation, extra=''):
+def _tracking_issue(merger, heading, kind, summary, rows, explanation, extra='',
+                    closes_when=None):
     """Build one tracking-issue entry for a matter missing a document.
 
     The shape ``.github/actions/tracking-issues`` reads. The title is
     "{heading}: {name} ({merger_id})" — the action matches an issue to its
     matter by that "(merger_id)", so it is built here and nowhere else. The
     body is the details table (``rows`` after the merger link and ID), any
-    ``extra`` section, then ``explanation`` and the standard auto-close note.
+    ``extra`` section, then ``explanation`` and the standard auto-close note,
+    which says the issue closes once ``closes_when`` (by default, "``kind``
+    appears on the register").
     """
     merger_id = merger['merger_id']
     name = merger.get('merger_name', '')
@@ -1902,8 +1946,8 @@ def _tracking_issue(merger, heading, kind, summary, rows, explanation, extra='')
         f"{extra}"
         f"### Why this issue exists\n\n"
         f"{explanation}\n\n"
-        f"- This issue will **close automatically** once {kind} appears "
-        f"on the register.\n"
+        f"- This issue will **close automatically** once "
+        f"{closes_when or f'{kind} appears on the register'}.\n"
         f"- If none is expected, close this issue manually. The pipeline never "
         f"reopens or re-creates a closed issue.\n\n"
         f"[View on mergers.fyi]({mergers_fyi_url(merger_id)})"
@@ -2044,8 +2088,8 @@ def detect_missing_questionnaires(all_mergers_data, probe=None):
 MISSING_WAIVER_DETERMINATIONS_PATH = 'data/processed/missing_waiver_determinations.json'
 
 
-def _has_determination_document(merger):
-    """True when the matter's timeline links a determination document.
+def _determination_document_events(merger):
+    """The matter's timeline events that link a determination document.
 
     A determination row with no attachment doesn't count: the ACCC sometimes
     lists "Notification waiver determination published" before the PDF is up
@@ -2053,14 +2097,27 @@ def _has_determination_document(merger):
     ("Notiification waiver determination") can't read as a missing document,
     then the title and the attachment's URL.
     """
-    return any(
-        event.get('url') and (
+    return [
+        event for event in merger.get('events', [])
+        if event.get('url') and (
             event.get('is_determination_event')
             or 'determination' in (event.get('title') or '').lower()
             or 'determination' in unquote(event.get('url') or '').lower()
         )
-        for event in merger.get('events', [])
-    )
+    ]
+
+
+def _is_mirrored(merger_id, event):
+    """Whether ``event``'s document was downloaded, so the site can serve it.
+
+    ``url_gh`` is set from the page's link whether or not the download
+    succeeded, so a failed one (WA-90039's answered 503) leaves the site
+    linking to a file that isn't there and no reasons parsed from it. For a
+    DOCX, ``url_gh`` names the converted PDF, which is what gets served.
+    """
+    url_gh = event.get('url_gh')
+    return bool(url_gh) and os.path.exists(
+        os.path.join(MATTERS_DIR, merger_id, os.path.basename(url_gh)))
 
 
 def detect_missing_waiver_determinations(all_mergers_data):
@@ -2080,9 +2137,11 @@ def detect_missing_waiver_determinations(all_mergers_data):
     Writes ``MISSING_WAIVER_DETERMINATIONS_PATH`` with two lists for the
     pipeline, mirroring :func:`detect_missing_questionnaires`:
 
-      - ``open``:     issue content for each waiver with no determination document.
-      - ``resolved``: IDs of decided waivers that do have one — any open
-                      tracking issue for them should be closed.
+      - ``open``:     issue content for each waiver with no determination
+                      document, or whose linked one was never downloaded.
+      - ``resolved``: IDs of decided waivers whose determination is linked and
+                      mirrored — any open tracking issue for them should be
+                      closed.
 
     The pipeline never reopens or re-creates an issue that exists in any state,
     so closing one is the owner's way of saying "this one is expected".
@@ -2098,8 +2157,29 @@ def detect_missing_waiver_determinations(all_mergers_data):
             continue
         if not (merger.get('accc_determination') or merger.get('determination_publication_date')):
             continue
-        if _has_determination_document(merger):
+        documents = _determination_document_events(merger)
+        if documents and any(_is_mirrored(merger_id, e) for e in documents):
             resolved.append(merger_id)
+            continue
+
+        if documents:
+            to_open.append(_tracking_issue(
+                merger,
+                heading='Waiver determination not downloaded',
+                kind='the determination document',
+                closes_when='the determination has been downloaded',
+                summary=('is a decided waiver application whose determination '
+                         'is linked on the ACCC register but was not downloaded.'),
+                rows=[('Determination', merger.get('accc_determination')),
+                      ('Published', (merger.get('determination_publication_date') or '')[:10]),
+                      ('Document', documents[0]['url'])],
+                explanation=("The pipeline mirrors every determination so the site "
+                             "can preview it and parse its statement of reasons. "
+                             "This one failed to download (the run log names the "
+                             "error), so the site links to a file that isn't there. "
+                             "A later run retries it while the waiver is still being "
+                             "scraped; dispatching `pipeline.yml` retries it now."),
+            ))
             continue
 
         issue = _tracking_issue(
@@ -2120,7 +2200,7 @@ def detect_missing_waiver_determinations(all_mergers_data):
         to_open.append(issue)
 
     _write_tracking_issues(MISSING_WAIVER_DETERMINATIONS_PATH, to_open, resolved,
-                           'No determination document on the register for waivers')
+                           'No mirrored determination document for waivers')
 
 
 def extract_nocc_data():
