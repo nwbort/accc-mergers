@@ -106,10 +106,6 @@ runs:
           exit 0
         }
 
-        # A plain log line, not a ::notice:: annotation: an empty topic is
-        # also how the watchlist step says "nothing matched" on every run
-        # (it can't skip without revealing a match), so an annotation here
-        # would flag routine runs as if something were misconfigured.
         if [ -z "${NTFY_TOPIC}" ]; then
           echo "No ntfy topic given — skipping notification."
           not_sent
