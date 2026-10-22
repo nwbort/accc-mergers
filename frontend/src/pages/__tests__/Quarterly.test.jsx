@@ -17,7 +17,7 @@ function ok(json) {
 
 const BUCKETS = ['0–4', '5–9', '10–14', '15–19', '20–24', '25–29', '30–49', '50+'];
 
-function block(key, label, { complete = true, filed, decided, p1Median, wMedian, milestones = [] }) {
+function block(key, label, { complete = true, filed, decided, p1Median, wMedian, milestones = [], findings = [] }) {
   return {
     quarter: key,
     label,
@@ -53,6 +53,7 @@ function block(key, label, { complete = true, filed, decided, p1Median, wMedian,
       { code: 'C', name: 'Manufacturing', count: 20 },
     ],
     milestones,
+    findings,
   };
 }
 
@@ -66,6 +67,10 @@ const FIXTURE = {
       decided: 183,
       p1Median: 18,
       wMedian: 17,
+      findings: [
+        '113 notifications filed, up 19% on Q2 2026, and 183 waiver applications decided, up 4% on Q2 2026.',
+        '1 matter referred to phase 2; 1 phase 2 review concluded (1 not approved).',
+      ],
       milestones: [
         { merger_id: 'MN-01068', merger_name: 'Coles – Kalgoorlie', kind: 'phase_2_outcome', date: '2026-07-01', detail: 'Not approved' },
         { merger_id: 'MN-01068', merger_name: 'Coles – Kalgoorlie', kind: 'tribunal_application', date: '2026-07-15', detail: 'Coles' },
@@ -165,5 +170,32 @@ describe('Quarterly report', () => {
       'Q2 2026',
       'Q3 2026',
     ]);
+  });
+});
+
+describe('Quarterly report PDF link', () => {
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  it('offers the PDF for a complete quarter', async () => {
+    renderPage();
+    await ready();
+    expect(screen.getByRole('link', { name: 'Download PDF' })).toHaveAttribute(
+      'href',
+      '/data/reports/quarterly-report-2026-Q3.pdf'
+    );
+  });
+
+  it('offers none for the quarter in progress, which has no PDF', async () => {
+    renderPage('/quarterly?q=2026-Q4');
+    await ready();
+    expect(screen.queryByRole('link', { name: 'Download PDF' })).not.toBeInTheDocument();
   });
 });

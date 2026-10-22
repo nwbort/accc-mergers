@@ -17,7 +17,6 @@ import {
   MILESTONE_LABELS,
   bucketShares,
   formatRate,
-  keyFindings,
   percentChange,
   pickQuarter,
   previousQuarter,
@@ -424,7 +423,7 @@ function Quarterly() {
   const compareVolume = Boolean(previous) && quarter.complete;
   const n = quarter.notifications;
   const w = quarter.waivers;
-  const findings = keyFindings(quarter, previous);
+  const findings = quarter.findings || [];
   const selectorQuarters = quarters.slice(-SELECTOR_QUARTERS);
   // A quarter reached by ?q= that has dropped off the selector still shows as
   // selected, rather than leaving the toggle with nothing pressed.
@@ -446,12 +445,26 @@ function Quarterly() {
               {!quarter.complete && <> &middot; quarter to date, as at {formatDateLong(data.as_at)}</>}
             </p>
           </div>
-          <SegmentedToggle
-            ariaLabel="Quarter"
-            options={selectorQuarters.map((q) => ({ value: q.quarter, label: q.label }))}
-            value={quarter.quarter}
-            onChange={selectQuarter}
-          />
+          <div className="flex flex-wrap items-center gap-3">
+            {quarter.complete && (
+              <a
+                href={API_ENDPOINTS.quarterlyReportPdf(quarter.quarter)}
+                download
+                className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm font-medium text-gray-700 hover:border-primary hover:text-primary"
+              >
+                <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M10 2a1 1 0 011 1v8.59l2.3-2.3a1 1 0 111.4 1.42l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.42L9 11.59V3a1 1 0 011-1zM4 15a1 1 0 011 1v1h10v-1a1 1 0 112 0v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2a1 1 0 011-1z" />
+                </svg>
+                Download PDF
+              </a>
+            )}
+            <SegmentedToggle
+              ariaLabel="Quarter"
+              options={selectorQuarters.map((q) => ({ value: q.quarter, label: q.label }))}
+              value={quarter.quarter}
+              onChange={selectQuarter}
+            />
+          </div>
         </header>
 
         <div className={`${CARD} overflow-hidden mb-6`}>

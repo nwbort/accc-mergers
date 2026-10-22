@@ -3,8 +3,9 @@
  *
  * The generator publishes one block per calendar quarter (see
  * scripts/generate/static_data/outputs/quarterly.py). Everything here is about
- * reading one quarter against the one before it: which quarter the URL names,
- * how far a figure moved, and the handful of sentences the page leads with.
+ * reading one quarter against the one before it: which quarter the URL names
+ * and how far a figure moved. The sentences the page leads with are written by
+ * the generator (each quarter's `findings`), so the PDF report says the same.
  */
 
 /**
@@ -38,86 +39,6 @@ export function percentChange(after, before) {
 /** A 0–1 rate as a whole percentage string ("96%"), or an en dash. */
 export function formatRate(rate) {
   return rate == null ? '–' : `${Math.round(rate * 100)}%`;
-}
-
-function plural(n, one, many = `${one}s`) {
-  return `${n} ${n === 1 ? one : many}`;
-}
-
-function volumeClause(after, before, previousLabel) {
-  const change = percentChange(after, before);
-  if (change === null) return '';
-  if (change === 0) return `, level with ${previousLabel}`;
-  return `, ${change > 0 ? 'up' : 'down'} ${Math.abs(change)}% on ${previousLabel}`;
-}
-
-function timingClause(after, before, previousLabel) {
-  if (after == null || before == null) return '';
-  const delta = Math.round((after - before) * 10) / 10;
-  if (delta === 0) return `, the same as ${previousLabel}`;
-  const magnitude = Math.abs(delta);
-  return `, ${magnitude} ${magnitude === 1 ? 'day' : 'days'} ${delta > 0 ? 'slower' : 'faster'} than ${previousLabel}`;
-}
-
-const OUTCOME_KINDS = new Set(['phase_2_outcome', 'public_benefit_outcome']);
-
-/**
- * The page's lead: what moved this quarter, as a short list of sentences.
- *
- * Volume comparisons are left off for a quarter still in progress — a few
- * weeks of filings against a full quarter would always read as a fall — but
- * its timing figures still compare, since a median doesn't scale with time.
- */
-export function keyFindings(quarter, previous) {
-  if (!quarter) return [];
-  const prevLabel = previous?.label;
-  const compareVolume = Boolean(previous) && quarter.complete;
-  const n = quarter.notifications;
-  const w = quarter.waivers;
-  const findings = [];
-
-  findings.push(
-    `${plural(n.filed, 'notification')} filed${
-      compareVolume ? volumeClause(n.filed, previous.notifications.filed, prevLabel) : ''
-    }, and ${plural(w.decided, 'waiver application')} decided${
-      compareVolume ? volumeClause(w.decided, previous.waivers.decided, prevLabel) : ''
-    }.`
-  );
-
-  if (n.timing.median != null) {
-    findings.push(
-      `Phase 1 reviews concluded in a median ${n.timing.median} business days${
-        previous ? timingClause(n.timing.median, previous.notifications.timing.median, prevLabel) : ''
-      }; waivers in ${w.timing.median ?? '–'}${
-        previous ? timingClause(w.timing.median, previous.waivers.timing.median, prevLabel) : ''
-      }.`
-    );
-  }
-
-  if (n.phase_1_decided || w.decided) {
-    findings.push(
-      `${formatRate(w.clearance_rate)} of waivers were granted and ${formatRate(n.clearance_rate)} of phase 1 reviews ended in approval.`
-    );
-  }
-
-  const referred = n.referred_to_phase_2;
-  const outcomes = quarter.milestones.filter((m) => OUTCOME_KINDS.has(m.kind));
-  if (referred || outcomes.length) {
-    const parts = [];
-    if (referred) parts.push(`${plural(referred, 'matter')} referred to phase 2`);
-    if (outcomes.length) {
-      const counts = {};
-      for (const m of outcomes) counts[m.detail] = (counts[m.detail] || 0) + 1;
-      const detail = Object.entries(counts)
-        .map(([label, count]) => `${count} ${label.toLowerCase()}`)
-        .join(', ');
-      parts.push(`${plural(outcomes.length, 'phase 2 review')} concluded (${detail})`);
-    }
-    const joined = parts.join('; ');
-    findings.push(`${joined.charAt(0).toUpperCase()}${joined.slice(1)}.`);
-  }
-
-  return findings;
 }
 
 /** Each bucket's share of `buckets`' total, as whole percentages. */

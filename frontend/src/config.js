@@ -38,6 +38,7 @@ export const API_ENDPOINTS = {
   digest: '/data/digest.json',  // Weekly digest of merger activity
   analysis: '/data/analysis.json',  // Pre-computed analysis data
   quarterly: '/data/quarterly.json',  // Quarter-by-quarter report (volume, outcomes, timing, milestones)
+  quarterlyReportPdf: (quarter) => `/data/reports/quarterly-report-${quarter}.pdf`,  // The same report as a PDF, complete quarters only
   phase2: '/data/phase2.json',  // Current + completed Phase 2 matters with statutory milestones
   refiledNotifications: '/data/refiled-notifications.json',  // Waivers declined then re-filed as notifications
   referralProbabilityByDay: '/data/referral-probability-by-day.json',  // P(Phase 2 referral | still undecided at business day N), positional by day

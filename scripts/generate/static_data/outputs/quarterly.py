@@ -18,6 +18,9 @@ one before it. Each block answers the questions a quarterly round-up asks:
 - **Beyond phase 1.** Every phase 2 referral, phase 2 outcome, public benefit
   application, Tribunal application and Federal Court review in the quarter,
   as a dated list of matters.
+- **In brief.** ``findings``, a few sentences saying what moved against the
+  previous quarter. Written here rather than in the page so the page and the
+  PDF report (``generate/quarterly_pdf.py``) say the same thing.
 
 Bucketing follows :func:`analysis.current_status`: a decision counts towards
 the quarter it was *made* in, not the quarter the matter was filed in, so a
@@ -343,6 +346,96 @@ def _quarter_block(quarter, notifications, waivers, milestones, as_at: date) -> 
     }
 
 
+def _plural(n: int, one: str, many: str | None = None) -> str:
+    return f"{n} {one if n == 1 else (many or one + 's')}"
+
+
+def format_rate(rate: float | None) -> str:
+    """A 0–1 rate as a whole percentage ("96%"), or an en dash."""
+    return "\u2013" if rate is None else f"{round(rate * 100)}%"
+
+
+def percent_change(after: int | None, before: int | None) -> int | None:
+    """Whole-percent change from ``before`` to ``after``; None without a base."""
+    if after is None or not before:
+        return None
+    return round((after - before) / before * 100)
+
+
+def _volume_clause(after: int, before: int, previous_label: str) -> str:
+    change = percent_change(after, before)
+    if change is None:
+        return ""
+    if change == 0:
+        return f", level with {previous_label}"
+    return f", {'up' if change > 0 else 'down'} {abs(change)}% on {previous_label}"
+
+
+def _number(value: float) -> str:
+    return str(int(value)) if float(value).is_integer() else f"{value:.1f}"
+
+
+def _timing_clause(after, before, previous_label: str) -> str:
+    if after is None or before is None:
+        return ""
+    delta = round(after - before, 1)
+    if delta == 0:
+        return f", the same as {previous_label}"
+    unit = "day" if abs(delta) == 1 else "days"
+    return f", {_number(abs(delta))} {unit} {'slower' if delta > 0 else 'faster'} than {previous_label}"
+
+
+_OUTCOME_KINDS = {"phase_2_outcome", "public_benefit_outcome"}
+
+
+def findings(block: dict, previous: dict | None) -> list[str]:
+    """What moved this quarter, as a short list of sentences.
+
+    Volume comparisons are left off for a quarter still in progress — a few
+    weeks of filings against a full quarter would always read as a fall — but
+    its timing still compares, since a median doesn't scale with time.
+    """
+    prev_label = previous["label"] if previous else ""
+    compare_volume = previous is not None and block["complete"]
+    n, w = block["notifications"], block["waivers"]
+    out = [
+        f"{_plural(n['filed'], 'notification')} filed"
+        f"{_volume_clause(n['filed'], previous['notifications']['filed'], prev_label) if compare_volume else ''}"
+        f", and {_plural(w['decided'], 'waiver application')} decided"
+        f"{_volume_clause(w['decided'], previous['waivers']['decided'], prev_label) if compare_volume else ''}."
+    ]
+
+    if n["timing"]["median"] is not None:
+        p1 = _timing_clause(n["timing"]["median"], previous["notifications"]["timing"]["median"], prev_label) if previous else ""
+        wv = _timing_clause(w["timing"]["median"], previous["waivers"]["timing"]["median"], prev_label) if previous else ""
+        waiver_median = "\u2013" if w["timing"]["median"] is None else _number(w["timing"]["median"])
+        out.append(
+            f"Phase 1 reviews concluded in a median {_number(n['timing']['median'])} business days{p1}; "
+            f"waivers in {waiver_median}{wv}."
+        )
+
+    if n["phase_1_decided"] or w["decided"]:
+        out.append(
+            f"{format_rate(w['clearance_rate'])} of waivers were granted and "
+            f"{format_rate(n['clearance_rate'])} of phase 1 reviews ended in approval."
+        )
+
+    referred = n["referred_to_phase_2"]
+    outcomes = [m for m in block["milestones"] if m["kind"] in _OUTCOME_KINDS]
+    if referred or outcomes:
+        parts = []
+        if referred:
+            parts.append(f"{_plural(referred, 'matter')} referred to phase 2")
+        if outcomes:
+            counts = Counter(m.get("detail") for m in outcomes)
+            detail = ", ".join(f"{count} {str(label).lower()}" for label, count in counts.items())
+            parts.append(f"{_plural(len(outcomes), 'phase 2 review')} concluded ({detail})")
+        joined = "; ".join(parts)
+        out.append(f"{joined[0].upper()}{joined[1:]}.")
+
+    return out
+
+
 def generate(mergers: list, as_at: date | None = None) -> dict:
     """Return the quarterly.json payload for pre-enriched mergers.
 
@@ -360,6 +453,8 @@ def generate(mergers: list, as_at: date | None = None) -> dict:
         _quarter_block(q, notifications, waivers, milestones, as_at)
         for q in _quarters_between(FIRST_QUARTER, last)
     ]
+    for previous, block in zip([None] + quarters, quarters):
+        block["findings"] = findings(block, previous)
     return {
         "as_at": as_at.isoformat(),
         "duration_buckets": [_bucket_label(i) for i in range(len(DURATION_BUCKETS) + 1)],

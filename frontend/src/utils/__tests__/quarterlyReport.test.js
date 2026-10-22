@@ -2,7 +2,6 @@ import { describe, expect, it } from 'vitest';
 import {
   bucketShares,
   formatRate,
-  keyFindings,
   percentChange,
   pickQuarter,
   previousQuarter,
@@ -90,32 +89,5 @@ describe('figures', () => {
   it('turns bucket counts into shares', () => {
     expect(bucketShares([1, 1, 2])).toEqual([25, 25, 50]);
     expect(bucketShares([0, 0])).toEqual([0, 0]);
-  });
-});
-
-describe('keyFindings', () => {
-  it('compares volume and timing with the previous quarter', () => {
-    const [volume, timing, rates, phase2] = keyFindings(Q3, Q2);
-    expect(volume).toBe(
-      '113 notifications filed, up 13% on Q2 2026, and 183 waiver applications decided, up 22% on Q2 2026.'
-    );
-    expect(timing).toBe(
-      'Phase 1 reviews concluded in a median 18 business days, 1 day slower than Q2 2026; waivers in 17, 5 days slower than Q2 2026.'
-    );
-    expect(rates).toBe('96% of waivers were granted and 98% of phase 1 reviews ended in approval.');
-    expect(phase2).toBe(
-      '2 matters referred to phase 2; 3 phase 2 reviews concluded (2 not approved, 1 assessment ceased).'
-    );
-  });
-
-  it('leaves volume uncompared for a quarter still in progress', () => {
-    const [volume] = keyFindings(Q4, Q3);
-    expect(volume).toBe('29 notifications filed, and 150 waiver applications decided.');
-  });
-
-  it('has no comparisons for the first quarter', () => {
-    const [volume, timing] = keyFindings(Q2, null);
-    expect(volume).not.toContain(' on ');
-    expect(timing).toBe('Phase 1 reviews concluded in a median 17 business days; waivers in 12.');
   });
 });

@@ -23,7 +23,7 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 - `scripts/` is a package: entry points run as `python -m scripts.…` from the
   repo root, never by file path (the modules import each other absolutely)
 - Dependencies (`scripts/requirements.txt`): beautifulsoup4, lxml, requests,
-  markdownify, pdfplumber, cryptography, pytesseract
+  markdownify, pdfplumber, cryptography, pytesseract, reportlab
 
 ### Cloudflare Workers (`workers/`)
 
@@ -139,7 +139,8 @@ frontend/src/
 │                         #   quarterly.json: volume, clearance rates, timing
 │                         #   histograms, industries, overseas-party share and every
 │                         #   post-phase-1 milestone. ?q=2026-Q3 picks the quarter;
-│                         #   the default is the latest complete one
+│                         #   the default is the latest complete one. A complete
+│                         #   quarter links its PDF (data/reports/, below)
 │   ├── Phase2.jsx        # /phase-2
 │   ├── RefiledNotifications.jsx # /refiled-notifications
 │   ├── NickTwort.jsx     # /nick-twort
@@ -335,6 +336,10 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   .githooks/pre-commit hook when a page's sources are committed.
 │                         #   Enable with `git config core.hooksPath .githooks`
 │   ├── generate_rss_feed.py  # Generate RSS feed
+│   ├── quarterly_pdf.py  # The /quarterly report as a PDF per complete quarter
+│                         #   (reportlab), into public/data/reports/. Called by
+│                         #   generate_static_data; deterministic, so an unchanged
+│                         #   quarter is not a diff
 │   ├── og_cards.py       # The generic link-preview cards (frontend/public/og/) and which one
 │                         #   each merger page shows (detail files' og_card). Run by hand
 │                         #   to redraw; a test fails if a card is missing
@@ -663,7 +668,8 @@ exists rather than 404ing into the SPA's `index.html`.
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
 | `analysis.json` | Pre-computed analysis data. `current_status` (powering `/current-status`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window's `notifications`/`waivers` block carries its own flat `duration_histogram` (business days → matters decided in exactly that many), the recent-window twin of the all-time histograms below, so the same ECDF can be drawn over just what was decided lately. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, since that stage ends at filing rather than at a decision; the estimate is a calendar-day figure but is published here in business days, like every other duration on the page). No waiver inflow is published, since a waiver only reaches the register once decided. `phase1_duration`/`waiver_duration` each carry a `duration_histogram`: a nested count map, business days → calendar days → number of completed reviews with that exact pair. It replaced a flat list holding one object per review — same distribution (the records are anonymous, so a multiset of pairs is exactly the list), a third of the file. Read business days by summing each inner map; read calendar days by folding the inner keys together (`frontend/src/utils/durationEcdf.js`) |
-| `quarterly.json` | One block per calendar quarter since Q1 2026 (`outputs/quarterly.py`). Decisions are bucketed by decision date, notification inflow by filing date; waivers have no inflow (they reach the register only once decided). Each block: notification and waiver counts and outcomes, clearance rates, timing (median/average/p90 and a bucketed histogram, labels in `duration_buckets`), top ANZSIC divisions, the overseas-party count (a floor — see `is_overseas_party`) and the dated post-phase-1 `milestones`. The current quarter is included with `complete: false` |
+| `quarterly.json` | One block per calendar quarter since Q1 2026 (`outputs/quarterly.py`). Decisions are bucketed by decision date, notification inflow by filing date; waivers have no inflow (they reach the register only once decided). Each block: notification and waiver counts and outcomes, clearance rates, timing (median/average/p90 and a bucketed histogram, labels in `duration_buckets`), top ANZSIC divisions, the overseas-party count (a floor — see `is_overseas_party`) and the dated post-phase-1 `milestones`. The current quarter is included with `complete: false`. Each block's `findings` are the page's "in brief" sentences, written here so the page and the PDF agree |
+| `reports/quarterly-report-{YYYY}-Q{n}.pdf` | The quarterly report as a PDF, one per complete quarter, drawn from `quarterly.json` by `scripts/generate/quarterly_pdf.py`. Redrawn every run but byte-for-byte deterministic; self-pruning |
 | `referral-probability-by-day.json` | Modelled probability of a Phase 2 referral by elapsed business day |
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |
 | `theories_of_harm.json` | Keyword-classified theory-of-harm taxonomy |

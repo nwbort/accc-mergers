@@ -196,3 +196,53 @@ class TestIndustries:
         industries = _quarter(quarterly.generate(mergers, as_at=AS_AT), '2026-Q3')['industries']
         assert industries[0] == {'code': 'K', 'name': industries[0]['name'], 'count': 2}
         assert {i['code']: i['count'] for i in industries} == {'K': 2, 'C': 1}
+
+
+def _summary(key, label, *, complete=True, filed=100, decided=150, p1_median=17, w_median=12,
+             referred=2, milestones=()):
+    return {
+        'quarter': key, 'label': label, 'complete': complete,
+        'notifications': {
+            'filed': filed, 'phase_1_decided': 90, 'referred_to_phase_2': referred,
+            'clearance_rate': 88 / 90, 'timing': {'median': p1_median},
+        },
+        'waivers': {'decided': decided, 'clearance_rate': 0.96, 'timing': {'median': w_median}},
+        'milestones': list(milestones),
+    }
+
+
+Q2 = _summary('2026-Q2', 'Q2 2026')
+Q3 = _summary('2026-Q3', 'Q3 2026', filed=113, decided=183, p1_median=18, w_median=17, milestones=[
+    {'kind': 'phase_2_outcome', 'detail': 'Not approved'},
+    {'kind': 'phase_2_outcome', 'detail': 'Not approved'},
+    {'kind': 'phase_2_outcome', 'detail': 'Assessment ceased'},
+    {'kind': 'tribunal_application', 'detail': 'Coles'},
+])
+Q4 = _summary('2026-Q4', 'Q4 2026', complete=False, filed=29)
+
+
+class TestFindings:
+    def test_compares_volume_and_timing_with_the_previous_quarter(self):
+        assert quarterly.findings(Q3, Q2) == [
+            '113 notifications filed, up 13% on Q2 2026, and 183 waiver applications decided, up 22% on Q2 2026.',
+            'Phase 1 reviews concluded in a median 18 business days, 1 day slower than Q2 2026; '
+            'waivers in 17, 5 days slower than Q2 2026.',
+            '96% of waivers were granted and 98% of phase 1 reviews ended in approval.',
+            '2 matters referred to phase 2; 3 phase 2 reviews concluded (2 not approved, 1 assessment ceased).',
+        ]
+
+    def test_leaves_volume_uncompared_for_a_quarter_in_progress(self):
+        assert quarterly.findings(Q4, Q3)[0] == '29 notifications filed, and 150 waiver applications decided.'
+
+    def test_first_quarter_has_no_comparisons(self):
+        assert quarterly.findings(Q2, None)[1] == (
+            'Phase 1 reviews concluded in a median 17 business days; waivers in 12.'
+        )
+
+    def test_half_day_medians_keep_their_half(self):
+        q = _summary('2026-Q4', 'Q4 2026', p1_median=19.5)
+        assert 'median 19.5 business days, 1.5 days slower than Q3 2026' in quarterly.findings(q, Q3)[1]
+
+    def test_every_quarter_carries_its_findings(self):
+        payload = quarterly.generate([], as_at=AS_AT)
+        assert all(isinstance(q['findings'], list) and q['findings'] for q in payload['quarters'])
