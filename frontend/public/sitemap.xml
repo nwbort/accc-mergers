@@ -104,6 +104,26 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Quarterly Reports (one page per quarter, latest first in priority) -->
+  <url>
+    <loc>https://mergers.fyi/quarterly/26Q1</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mergers.fyi/quarterly/26Q2</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mergers.fyi/quarterly/26Q3</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Industry Detail Pages (ANZSIC nodes with merger activity) -->
   <url>
     <loc>https://mergers.fyi/industries/01/agriculture</loc>

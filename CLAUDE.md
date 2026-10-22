@@ -23,7 +23,7 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 - `scripts/` is a package: entry points run as `python -m scripts.…` from the
   repo root, never by file path (the modules import each other absolutely)
 - Dependencies (`scripts/requirements.txt`): beautifulsoup4, lxml, requests,
-  markdownify, pdfplumber, cryptography, pytesseract
+  markdownify, pdfplumber, cryptography, pytesseract, reportlab
 
 ### Cloudflare Workers (`workers/`)
 
@@ -139,6 +139,16 @@ frontend/src/
 │                         #   curve per matter type over the selected window, and the
 │                         #   trend chart. No methodology copy — see the generator
 │                         #   docstrings
+│   ├── Quarterly.jsx     # /quarterly (not in the navbar; command palette and `g q`).
+│                         #   One calendar quarter against the one before, from
+│                         #   quarterly.json: volume, clearance rates, timing
+│                         #   histograms, pre-notification estimates, industries,
+│                         #   Tribunal reviews and every post-phase-1 milestone.
+│                         #   /quarterly/26Q3 is one quarter (prerendered, its own
+│                         #   canonical, in the sitemap); /quarterly shows the latest
+│                         #   with its canonical on that quarter's dated URL, and is
+│                         #   not in the sitemap. Each quarter links its PDF
+│                         #   (data/reports/, below)
 │   ├── Phase2.jsx        # /phase-2
 │   ├── RefiledNotifications.jsx # /refiled-notifications
 │   ├── NickTwort.jsx     # /nick-twort
@@ -345,6 +355,11 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   .githooks/pre-commit hook when a page's sources are committed.
 │                         #   Enable with `git config core.hooksPath .githooks`
 │   ├── generate_rss_feed.py  # Generate RSS feed
+│   ├── quarterly_pdf.py  # The /quarterly report as a PDF per complete quarter
+│                         #   (reportlab), into public/data/reports/, drawn from the
+│                         #   committed quarterly.json by quarterly-report.yml — not
+│                         #   by the pipeline. Deterministic, so an unchanged
+│                         #   quarter is not a diff
 │   ├── og_cards.py       # The generic link-preview cards (frontend/public/og/) and which one
 │                         #   each merger page shows (detail files' og_card). Run by hand
 │                         #   to redraw; a test fails if a card is missing
@@ -399,6 +414,11 @@ data/
 │                         #   Court judgment, not a file; the scrape follows those to the
 │                         #   judgment's Word document on fedcourt.gov.au and mirrors the DOCX
 │                         #   (converted to PDF by pipeline.yml like any other).
+│                         #   quarterly_commentary.json is hand-written commentary
+│                         #   for the quarterly report, keyed by quarter as the page
+│                         #   URL names it (26Q3): a list of markdown points, each
+│                         #   shown in "The quarter in brief" on /quarterly and in
+│                         #   the PDF. Edit and push; the pipeline regenerates.
 │                         #   judicial_reviews.json is a hand-maintained overlay of Federal Court
 │                         #   judicial reviews, keyed by merger_id, merged in at
 │                         #   generate_static_data time (loaders.load_judicial_reviews +
@@ -672,6 +692,8 @@ exists rather than 404ing into the SPA's `index.html`.
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
 | `analysis.json` | Pre-computed analysis data. `current_status` (powering `/current-status`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window's `notifications`/`waivers` block carries its own flat `duration_histogram` (business days → matters decided in exactly that many), the recent-window twin of the all-time histograms below, so the same ECDF can be drawn over just what was decided lately. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, since that stage ends at filing rather than at a decision; the estimate is a calendar-day figure but is published here in business days, like every other duration on the page). No waiver inflow is published, since a waiver only reaches the register once decided. `phase1_duration`/`waiver_duration` each carry a `duration_histogram`: a nested count map, business days → calendar days → number of completed reviews with that exact pair. It replaced a flat list holding one object per review — same distribution (the records are anonymous, so a multiset of pairs is exactly the list), a third of the file. Read business days by summing each inner map; read calendar days by folding the inner keys together (`frontend/src/utils/durationEcdf.js`) |
+| `quarterly.json` | One block per calendar quarter since Q1 2026 (`outputs/quarterly.py`). Decisions are bucketed by decision date, notification inflow by filing date; waivers have no inflow (they reach the register only once decided). Each block: notification and waiver counts and outcomes, clearance rates, timing (median/average/p90 and a bucketed histogram, labels in `duration_buckets`), top ANZSIC divisions and the dated post-phase-1 `milestones` (each with the `label` the page and PDF show; a phase 2 outcome is labelled as the outcome itself). Each block's `pre_notification` is the estimated business days the quarter's notifications spent before filing (keyed by filing date, measured as `current_status` measures it; bucket labels in `pre_notification_buckets`). Each block's `appeals` lists the Tribunal matters live at some point in the quarter, with counts lodged / concluded / open at quarter end and a one-line `note` per matter shared by the page and the PDF. Only complete quarters are published: the quarter in progress appears once it has ended. `url_key` is the short `26Q3` form the page's path uses (`/quarterly/26Q3`); `report_pdf` is the quarter's PDF filename. `commentary` is hand-written points from `data/processed/quarterly_commentary.json` (keyed `26Q3`, each `{commentary, author?, date?}`, markdown), shown in the brief after the generated `findings` on the page and in the PDF. Each block's `findings` are the page's "in brief" sentences, written here so the page and the PDF agree |
+| `reports/mergers-fyi-quarterly-merger-report-{YYYY}Q{n}.pdf` | The quarterly report as a PDF, one per quarter in `quarterly.json`, drawn from `quarterly.json` by `scripts/generate/quarterly_pdf.py` in `quarterly-report.yml` (not `generate_static_data`). Redrawn after every pipeline run but byte-for-byte deterministic; self-pruning |
 | `referral-probability-by-day.json` | Modelled probability of a Phase 2 referral by elapsed business day |
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |
 | `theories_of_harm.json` | Keyword-classified theory-of-harm taxonomy |
@@ -687,6 +709,7 @@ exists rather than 404ing into the SPA's `index.html`.
 |----------|---------|---------|
 | `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere and post to LinkedIn (API) → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, or whose linked determination failed to download, `missing-waiver-determination`), then runs all four detectors. The two ATmosphere steps and the LinkedIn step are `continue-on-error` and skip without their credentials — an unreachable PDS or API must not cost the run its scrape |
 | `linkedin-share-links.yml` | `workflow_run` after `pipeline.yml` completes on `main`, manual | Send each new milestone's LinkedIn share link over ntfy, once Cloudflare Pages serves the matter's data as pushed (`share_links.py --wait-for-deploy`; LinkedIn caches the first scrape for a week), then commit `linkedin_posts.json` with `[skip ci]`. A workflow of its own so the wait doesn't hold the pipeline's concurrency group. Inert without `LINKEDIN_SHARE_LINKS` and `NTFY_TOPIC` |
+| `quarterly-report.yml` | `workflow_run` after `pipeline.yml` completes on `main`, manual | Draw the quarterly report PDFs from the committed `quarterly.json` (`python -m scripts.generate.quarterly_pdf`) and commit them if they changed. Its own workflow so typesetting stays out of the pipeline's run and concurrency group. Commits *without* `[skip ci]`, since the PDFs are deployed; the `GITHUB_TOKEN` push doesn't retrigger the pipeline |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `publish-lexicons.yml` | Push to `main` touching `atproto/lexicons/**` or the workflow itself, manual (with a `dry_run` input) | Publish the `fyi.mergers.*` schemas as `com.atproto.lexicon.schema` records. Its own workflow rather than a pipeline step: a lexicon changes only when a person edits one, so a path-filtered push fires exactly then, where `pipeline.yml` would re-read both records several times a day to learn nothing moved. A missing `ATPROTO_APP_PASSWORD` skips a push run and fails a manual one |
 | `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |

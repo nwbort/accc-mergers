@@ -37,6 +37,7 @@ export const NAV_PAGES = [
     paletteOrder: 8,
   },
   { label: 'Refiled waivers', path: '/refiled-notifications', inNavbar: false, inPalette: true, paletteOrder: 10 },
+  { label: 'Quarterly report', path: '/quarterly', shortcut: 'q', inNavbar: false, inPalette: true, paletteOrder: 11 },
 ];
 
 /**

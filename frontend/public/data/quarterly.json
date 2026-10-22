@@ -1,0 +1,537 @@
+{
+  "as_at": "2026-10-23",
+  "duration_buckets": [
+    "0\u20134",
+    "5\u20139",
+    "10\u201314",
+    "15\u201319",
+    "20\u201324",
+    "25\u201329",
+    "30\u201349",
+    "50+"
+  ],
+  "pre_notification_buckets": [
+    "0",
+    "1\u201310",
+    "11\u201320",
+    "21\u201340",
+    "41\u201360",
+    "61+"
+  ],
+  "quarters": [
+    {
+      "quarter": "2026-Q1",
+      "url_key": "26Q1",
+      "report_pdf": "mergers-fyi-quarterly-merger-report-2026Q1.pdf",
+      "label": "Q1 2026",
+      "start": "2026-01-01",
+      "end": "2026-03-31",
+      "notifications": {
+        "filed": 50,
+        "phase_1_decided": 32,
+        "cleared": 30,
+        "referred_to_phase_2": 2,
+        "refused": 0,
+        "ceased": 0,
+        "clearance_rate": 0.9375,
+        "timing": {
+          "count": 32,
+          "median": 17.0,
+          "average": 19.5,
+          "p90": 26,
+          "buckets": [
+            0,
+            0,
+            0,
+            24,
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        "average_cleared": 17.9,
+        "average_referred": 44.5
+      },
+      "waivers": {
+        "decided": 71,
+        "granted": 65,
+        "refused": 6,
+        "refused_refiled": 6,
+        "clearance_rate": 0.9155,
+        "timing": {
+          "count": 71,
+          "median": 11,
+          "average": 11.0,
+          "p90": 17,
+          "buckets": [
+            5,
+            22,
+            30,
+            11,
+            3,
+            0,
+            0,
+            0
+          ]
+        },
+        "average_granted": 11.0,
+        "average_refused": 10.7
+      },
+      "pre_notification": {
+        "count": 51,
+        "median": 9,
+        "average": 9.8,
+        "p90": 22,
+        "buckets": [
+          12,
+          22,
+          11,
+          5,
+          1,
+          0
+        ]
+      },
+      "matters": 121,
+      "industries": [
+        {
+          "code": "M",
+          "name": "Professional, Scientific and Technical Services",
+          "count": 37
+        },
+        {
+          "code": "C",
+          "name": "Manufacturing",
+          "count": 26
+        },
+        {
+          "code": "J",
+          "name": "Information Media and Telecommunications",
+          "count": 23
+        },
+        {
+          "code": "K",
+          "name": "Financial and Insurance Services",
+          "count": 21
+        },
+        {
+          "code": "F",
+          "name": "Wholesale Trade",
+          "count": 13
+        }
+      ],
+      "appeals": {
+        "lodged": 0,
+        "concluded": 0,
+        "open_at_end": 0,
+        "matters": []
+      },
+      "commentary": [],
+      "milestones": [
+        {
+          "merger_id": "MN-01019",
+          "merger_name": "Ampol \u2013 EG Australia",
+          "kind": "referred",
+          "date": "2026-01-21",
+          "label": "Referred to phase 2"
+        },
+        {
+          "merger_id": "MN-01068",
+          "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+          "kind": "referred",
+          "date": "2026-01-29",
+          "label": "Referred to phase 2"
+        }
+      ],
+      "findings": [
+        "50 notifications filed, and 71 waiver applications decided.",
+        "Phase 1 reviews concluded in a median 17 business days; waivers in 11.",
+        "Notifications filed had spent an estimated median 9 business days in pre-notification.",
+        "92% of waivers were granted and 94% of phase 1 reviews ended in approval.",
+        "2 matters referred to phase 2."
+      ]
+    },
+    {
+      "quarter": "2026-Q2",
+      "url_key": "26Q2",
+      "report_pdf": "mergers-fyi-quarterly-merger-report-2026Q2.pdf",
+      "label": "Q2 2026",
+      "start": "2026-04-01",
+      "end": "2026-06-30",
+      "notifications": {
+        "filed": 95,
+        "phase_1_decided": 81,
+        "cleared": 77,
+        "referred_to_phase_2": 4,
+        "refused": 0,
+        "ceased": 0,
+        "clearance_rate": 0.9506,
+        "timing": {
+          "count": 81,
+          "median": 17,
+          "average": 19.5,
+          "p90": 27,
+          "buckets": [
+            0,
+            0,
+            0,
+            59,
+            10,
+            8,
+            2,
+            2
+          ]
+        },
+        "average_cleared": 18.3,
+        "average_referred": 41.5
+      },
+      "waivers": {
+        "decided": 176,
+        "granted": 168,
+        "refused": 8,
+        "refused_refiled": 7,
+        "clearance_rate": 0.9545,
+        "timing": {
+          "count": 176,
+          "median": 12.0,
+          "average": 12.5,
+          "p90": 19,
+          "buckets": [
+            5,
+            37,
+            78,
+            48,
+            8,
+            0,
+            0,
+            0
+          ]
+        },
+        "average_granted": 12.2,
+        "average_refused": 17.8
+      },
+      "pre_notification": {
+        "count": 94,
+        "median": 14.5,
+        "average": 18.4,
+        "p90": 39,
+        "buckets": [
+          4,
+          20,
+          42,
+          21,
+          6,
+          1
+        ]
+      },
+      "matters": 271,
+      "industries": [
+        {
+          "code": "K",
+          "name": "Financial and Insurance Services",
+          "count": 68
+        },
+        {
+          "code": "C",
+          "name": "Manufacturing",
+          "count": 64
+        },
+        {
+          "code": "M",
+          "name": "Professional, Scientific and Technical Services",
+          "count": 51
+        },
+        {
+          "code": "G",
+          "name": "Retail Trade",
+          "count": 33
+        },
+        {
+          "code": "J",
+          "name": "Information Media and Telecommunications",
+          "count": 26
+        }
+      ],
+      "appeals": {
+        "lodged": 0,
+        "concluded": 0,
+        "open_at_end": 0,
+        "matters": []
+      },
+      "commentary": [],
+      "milestones": [
+        {
+          "merger_id": "MN-30003",
+          "merger_name": "MicroStar Logistics - Konvoy",
+          "kind": "referred",
+          "date": "2026-04-01",
+          "label": "Referred to phase 2"
+        },
+        {
+          "merger_id": "MN-65005",
+          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "kind": "referred",
+          "date": "2026-04-16",
+          "label": "Referred to phase 2"
+        },
+        {
+          "merger_id": "MN-01019",
+          "merger_name": "Ampol \u2013 EG Australia",
+          "kind": "phase_2_outcome",
+          "date": "2026-06-02",
+          "label": "Approved with conditions"
+        },
+        {
+          "merger_id": "MN-30002",
+          "merger_name": "Peter Warren - Wakeling Automotive",
+          "kind": "referred",
+          "date": "2026-06-02",
+          "label": "Referred to phase 2"
+        },
+        {
+          "merger_id": "MN-30002",
+          "merger_name": "Peter Warren - Wakeling Automotive",
+          "kind": "phase_2_outcome",
+          "date": "2026-06-15",
+          "label": "Assessment ceased"
+        },
+        {
+          "merger_id": "MN-90009",
+          "merger_name": "Trescal \u2013 TR Calibration",
+          "kind": "referred",
+          "date": "2026-06-30",
+          "label": "Referred to phase 2"
+        }
+      ],
+      "findings": [
+        "95 notifications filed, up 90% on Q1 2026, and 176 waiver applications decided, up 148% on Q1 2026.",
+        "Phase 1 reviews concluded in a median 17 business days, the same as Q1 2026; waivers in 12, 1 day slower than Q1 2026.",
+        "Notifications filed had spent an estimated median 14.5 business days in pre-notification, 5.5 days longer than Q1 2026.",
+        "95% of waivers were granted and 95% of phase 1 reviews ended in approval.",
+        "4 matters referred to phase 2; 2 phase 2 reviews concluded (1 approved with conditions, 1 assessment ceased)."
+      ]
+    },
+    {
+      "quarter": "2026-Q3",
+      "url_key": "26Q3",
+      "report_pdf": "mergers-fyi-quarterly-merger-report-2026Q3.pdf",
+      "label": "Q3 2026",
+      "start": "2026-07-01",
+      "end": "2026-09-30",
+      "notifications": {
+        "filed": 113,
+        "phase_1_decided": 119,
+        "cleared": 116,
+        "referred_to_phase_2": 3,
+        "refused": 0,
+        "ceased": 2,
+        "clearance_rate": 0.9748,
+        "timing": {
+          "count": 119,
+          "median": 18,
+          "average": 21.0,
+          "p90": 33,
+          "buckets": [
+            0,
+            0,
+            0,
+            76,
+            23,
+            8,
+            10,
+            2
+          ]
+        },
+        "average_cleared": 20.4,
+        "average_referred": 42.0
+      },
+      "waivers": {
+        "decided": 183,
+        "granted": 176,
+        "refused": 7,
+        "refused_refiled": 3,
+        "clearance_rate": 0.9617,
+        "timing": {
+          "count": 183,
+          "median": 17,
+          "average": 16.2,
+          "p90": 21,
+          "buckets": [
+            0,
+            10,
+            48,
+            89,
+            36,
+            0,
+            0,
+            0
+          ]
+        },
+        "average_granted": 16.1,
+        "average_refused": 18.9
+      },
+      "pre_notification": {
+        "count": 113,
+        "median": 16,
+        "average": 19.2,
+        "p90": 36,
+        "buckets": [
+          2,
+          33,
+          43,
+          26,
+          5,
+          4
+        ]
+      },
+      "matters": 296,
+      "industries": [
+        {
+          "code": "K",
+          "name": "Financial and Insurance Services",
+          "count": 129
+        },
+        {
+          "code": "M",
+          "name": "Professional, Scientific and Technical Services",
+          "count": 78
+        },
+        {
+          "code": "C",
+          "name": "Manufacturing",
+          "count": 77
+        },
+        {
+          "code": "G",
+          "name": "Retail Trade",
+          "count": 43
+        },
+        {
+          "code": "F",
+          "name": "Wholesale Trade",
+          "count": 38
+        }
+      ],
+      "appeals": {
+        "lodged": 1,
+        "concluded": 0,
+        "open_at_end": 1,
+        "matters": [
+          {
+            "tribunal_number": "ACT 1 of 2026",
+            "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026",
+            "merger_id": "MN-01068",
+            "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+            "appellant": "Coles",
+            "filed_date": "2026-07-15",
+            "hearing_date": "2026-11-09",
+            "concluded_date": null,
+            "outcome": null,
+            "outcome_label": null,
+            "note": "Lodged this quarter; open at quarter end; hearing listed for 9 Nov 2026",
+            "lodged_in_quarter": true,
+            "concluded_in_quarter": false,
+            "open_at_end": true
+          }
+        ]
+      },
+      "commentary": [],
+      "milestones": [
+        {
+          "merger_id": "MN-01068",
+          "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+          "kind": "phase_2_outcome",
+          "date": "2026-07-01",
+          "label": "Not approved"
+        },
+        {
+          "merger_id": "MN-01072",
+          "merger_name": "Saipem S.p.A - Subsea7 S.A.",
+          "kind": "referred",
+          "date": "2026-07-02",
+          "label": "Referred to phase 2"
+        },
+        {
+          "merger_id": "MN-90009",
+          "merger_name": "Trescal \u2013 TR Calibration",
+          "kind": "phase_2_outcome",
+          "date": "2026-07-10",
+          "label": "Assessment ceased"
+        },
+        {
+          "merger_id": "MN-01068",
+          "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+          "kind": "tribunal_application",
+          "date": "2026-07-15",
+          "label": "Tribunal review sought",
+          "detail": "Coles"
+        },
+        {
+          "merger_id": "MN-65020",
+          "merger_name": "Regis Resources - Vault Minerals",
+          "kind": "ceased",
+          "date": "2026-07-16",
+          "label": "Phase 1 review ceased"
+        },
+        {
+          "merger_id": "MN-01068",
+          "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+          "kind": "judicial_review",
+          "date": "2026-07-17",
+          "label": "Federal Court review sought",
+          "detail": "Coles"
+        },
+        {
+          "merger_id": "MN-05013",
+          "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+          "kind": "referred",
+          "date": "2026-07-17",
+          "label": "Referred to phase 2"
+        },
+        {
+          "merger_id": "MN-30003",
+          "merger_name": "MicroStar Logistics - Konvoy",
+          "kind": "phase_2_outcome",
+          "date": "2026-08-07",
+          "label": "Not approved"
+        },
+        {
+          "merger_id": "MN-40017",
+          "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+          "kind": "referred",
+          "date": "2026-08-18",
+          "label": "Referred to phase 2"
+        },
+        {
+          "merger_id": "MN-50011",
+          "merger_name": "Journey Beyond - SeaLink Rottnest",
+          "kind": "ceased",
+          "date": "2026-08-26",
+          "label": "Phase 1 review ceased"
+        },
+        {
+          "merger_id": "MN-40017",
+          "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+          "kind": "phase_2_outcome",
+          "date": "2026-08-28",
+          "label": "Assessment ceased"
+        },
+        {
+          "merger_id": "MN-65005",
+          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "kind": "phase_2_outcome",
+          "date": "2026-09-23",
+          "label": "Not approved"
+        }
+      ],
+      "findings": [
+        "113 notifications filed, up 19% on Q2 2026, and 183 waiver applications decided, up 4% on Q2 2026.",
+        "Phase 1 reviews concluded in a median 18 business days, 1 day slower than Q2 2026; waivers in 17, 5 days slower than Q2 2026.",
+        "Notifications filed had spent an estimated median 16 business days in pre-notification, 1.5 days longer than Q2 2026.",
+        "96% of waivers were granted and 97% of phase 1 reviews ended in approval.",
+        "3 matters referred to phase 2; 5 phase 2 reviews concluded (3 not approved, 2 assessment ceased).",
+        "1 Tribunal review opened: Coles (ACT 1 of 2026); 1 open at quarter end."
+      ]
+    }
+  ]
+}

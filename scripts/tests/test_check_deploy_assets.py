@@ -235,7 +235,7 @@ class TestCountDeployFiles:
         assert counts["breakdown"]["pdfs"] == 4
         assert counts["breakdown"]["build"] == VITE_BUILD_FILES
         assert counts["prerendered_detail"] == {
-            "mergers": 3, "parties": 5, "industries": 6,
+            "mergers": 3, "parties": 5, "industries": 6, "quarters": 0,
             "static": PRERENDERED_STATIC_PAGES,
         }
         assert counts["total"] == sum(counts["breakdown"].values())
@@ -257,6 +257,15 @@ class TestCountDeployFiles:
         counts = count_deploy_files(tmp_path)
 
         assert counts["prerendered_detail"]["industries"] == 40
+
+    def test_quarterly_report_pages_are_counted(self, tmp_path):
+        """prerender.js writes a /quarterly/{quarter} page per published quarter."""
+        import json
+        make_deployment(tmp_path)
+        data = tmp_path / "frontend" / "public" / "data"
+        data.mkdir(parents=True, exist_ok=True)
+        (data / "quarterly.json").write_text(json.dumps({"quarters": [{}, {}, {}]}))
+        assert count_deploy_files(tmp_path)["prerendered_detail"]["quarters"] == 3
 
     def test_unreadable_industry_file_does_not_break_the_count(self, tmp_path):
         """This runs on every push to report a file count; a parse error is the

@@ -30,6 +30,7 @@ const Analysis = lazy(() => import('./pages/Analysis'));
 const Phase2 = lazy(() => import('./pages/Phase2'));
 const RefiledNotifications = lazy(() => import('./pages/RefiledNotifications'));
 const CurrentStatus = lazy(() => import('./pages/CurrentStatus'));
+const Quarterly = lazy(() => import('./pages/Quarterly'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const Copyright = lazy(() => import('./pages/Copyright'));
 const Feedback = lazy(() => import('./pages/Feedback'));
@@ -69,6 +70,8 @@ function AppContent() {
             <Route path="/phase-2" element={<Phase2 />} />
             <Route path="/refiled-notifications" element={<RefiledNotifications />} />
             <Route path="/current-status" element={<CurrentStatus />} />
+            <Route path="/quarterly" element={<Quarterly />} />
+            <Route path="/quarterly/:quarter" element={<Quarterly />} />
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/copyright" element={<Copyright />} />

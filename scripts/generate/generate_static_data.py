@@ -27,6 +27,9 @@ Output files:
   - upcoming-events.json        - Future consultation/determination dates
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
+  - quarterly.json              - Quarter-by-quarter volume, outcomes, timing and milestones
+  (reports/mergers-fyi-quarterly-merger-report-*.pdf are drawn from quarterly.json by
+   generate/quarterly_pdf.py, in quarterly-report.yml rather than here)
   - serial-acquirers.json       - Serial-acquirer ("creeping acquisitions") detection
   - theories_of_harm.json       - Keyword-classified theory-of-harm taxonomy
   - phase2.json                 - Current + completed Phase 2 matters with statutory milestones
@@ -62,6 +65,7 @@ from scripts.generate.static_data.loaders import (
     load_commentary,
     load_mergers,
     load_nocc_data,
+    load_quarterly_commentary,
     load_questionnaire_data,
     load_related_mergers,
     load_judicial_reviews,
@@ -81,6 +85,7 @@ from scripts.generate.static_data.outputs import (
     parties,
     phase2,
     questionnaires,
+    quarterly,
     refiled,
     serial_acquirers,
     stats,
@@ -204,6 +209,7 @@ def main():
         ("upcoming-events.json", upcoming_events.generate(enriched)),
         ("commentary.json", commentary_out.generate(enriched, commentary)),
         ("analysis.json", analysis.generate(enriched)),
+        ("quarterly.json", quarterly.generate(enriched, commentary=load_quarterly_commentary())),
         ("serial-acquirers.json", serial_acquirers.generate(enriched)),
         ("theories_of_harm.json", theories_of_harm.generate(enriched, nocc_data)),
         ("phase2.json", phase2.generate(enriched)),

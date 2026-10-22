@@ -8,6 +8,7 @@ from scripts.paths import REPO_ROOT
 
 MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
+QUARTERLY_COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "quarterly_commentary.json"
 QUESTIONNAIRE_JSON = REPO_ROOT / "data" / "processed" / "questionnaire_data.json"
 NOCC_JSON = REPO_ROOT / "data" / "processed" / "nocc_data.json"
 RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
@@ -184,6 +185,25 @@ def load_commentary() -> dict:
         return {k: v for k, v in data.items() if not k.startswith('_')}
     except (json.JSONDecodeError, IOError) as e:
         print(f"Warning: Could not load commentary.json: {e}")
+        return {}
+
+
+def load_quarterly_commentary() -> dict:
+    """Load hand-written quarterly commentary, keyed as the file writes it.
+
+    Keys are quarters (``26Q3``; see ``outputs.quarterly.normalise_quarter_key``
+    for the forms accepted), each a list of ``{commentary, author?, date?}``.
+    Metadata keys starting with ``_`` are dropped. A missing or unreadable file
+    is no commentary, not a failed run.
+    """
+    if not QUARTERLY_COMMENTARY_JSON.exists():
+        return {}
+    try:
+        with open(QUARTERLY_COMMENTARY_JSON, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return {k: v for k, v in data.items() if not k.startswith('_')}
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"Warning: Could not load quarterly_commentary.json: {e}")
         return {}
 
 

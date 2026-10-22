@@ -133,3 +133,30 @@ class TestPinnedStaticLastmods:
         patched = patch_sitemap(xml, {"/privacy": "2026-10-21"})
         assert patched.count("2026-10-21") == 1
         assert "<loc>https://mergers.fyi/privacy</loc>\n    <lastmod>2026-10-21" in patched
+
+
+class TestQuarterlyReports:
+    QUARTERS = [
+        {"url_key": "26Q2", "end": "2026-06-30"},
+        {"url_key": "26Q3", "end": "2026-09-30"},
+    ]
+
+    def test_each_quarter_page_is_listed_and_the_latest_ranks_highest(self):
+        from scripts.generate.generate_sitemap import quarterly_entries
+        q2, q3 = quarterly_entries(self.QUARTERS)
+        assert "<loc>https://mergers.fyi/quarterly/26Q2</loc>" in q2
+        assert "<lastmod>2026-07-01</lastmod>" in q2 and "<priority>0.5</priority>" in q2
+        assert "<loc>https://mergers.fyi/quarterly/26Q3</loc>" in q3
+        assert "<lastmod>2026-10-01</lastmod>" in q3 and "<priority>0.8</priority>" in q3
+
+    def test_the_bare_quarterly_url_is_not_listed(self):
+        # It canonicalises to the latest quarter's page, so it isn't advertised.
+        from scripts.generate.generate_sitemap import STATIC_PAGES, generate_sitemap
+        assert "/quarterly" not in {page["path"] for page in STATIC_PAGES}
+        xml = generate_sitemap([], [], [], self.QUARTERS)
+        assert "<loc>https://mergers.fyi/quarterly</loc>" not in xml
+        assert xml.count("/quarterly/") == 2
+
+    def test_missing_quarterly_json_lists_no_quarters(self, tmp_path):
+        from scripts.generate.generate_sitemap import load_quarters
+        assert load_quarters(tmp_path / "absent.json") == []

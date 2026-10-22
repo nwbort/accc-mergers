@@ -89,10 +89,10 @@ FILE_COUNT_WARN_RATIO = 0.8
 VITE_BUILD_FILES = 60
 
 # Prerendered pages that aren't one-per-record: frontend/prerender.js walks
-# STATIC_PAGE_META (currently 12 routes, minus the root it skips) and Vite emits
+# STATIC_PAGE_META (currently 13 routes, minus the root it skips) and Vite emits
 # the root index.html itself. Same tolerance argument as above — this is a
 # dozen files, not a thousand, so it is a constant rather than a JS parse.
-PRERENDERED_STATIC_PAGES = 13
+PRERENDERED_STATIC_PAGES = 14
 
 # Per-merger data files, as frontend/prerender.js matches them (MATTER_FILE_RE).
 _MATTER_FILE_RE = re.compile(r"^(MN|WA)-\d+\.json$", re.IGNORECASE)
@@ -199,9 +199,17 @@ def count_deploy_files(root=Path("."), asset_limit=PAGES_ASSET_LIMIT):
     except (OSError, ValueError, AttributeError, TypeError):
         pass
 
+    # prerender.js writes one /quarterly/{quarter} page per published quarter.
+    quarters = 0
+    try:
+        payload = json.loads((data_dir / "quarterly.json").read_text(encoding="utf-8"))
+        quarters = len(payload.get("quarters", []))
+    except (OSError, ValueError, AttributeError, TypeError):
+        pass
+
     breakdown = {
         "public": _count_files(root / "frontend" / "public"),
-        "prerendered": mergers + parties + industries + PRERENDERED_STATIC_PAGES,
+        "prerendered": mergers + parties + industries + quarters + PRERENDERED_STATIC_PAGES,
         "pdfs": pdfs,
         "build": VITE_BUILD_FILES,
     }
@@ -211,6 +219,7 @@ def count_deploy_files(root=Path("."), asset_limit=PAGES_ASSET_LIMIT):
             "mergers": mergers,
             "parties": parties,
             "industries": industries,
+            "quarters": quarters,
             "static": PRERENDERED_STATIC_PAGES,
         },
         "total": sum(breakdown.values()),
