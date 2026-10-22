@@ -138,9 +138,6 @@ function DateRangeFilter({ range, timeline, ranges, counts, onRangeChange }) {
             );
           })}
         </div>
-        <p className="mt-2 text-xs text-gray-500">
-          Drag across the chart to pick a range, or press one bar for its {unit}.
-        </p>
       </div>
     </div>
   );
