@@ -72,10 +72,7 @@ function DateRangeFilter({ range, timeline, ranges, counts, onRangeChange }) {
 
   return (
     <div className="space-y-3">
-      <div>
-        <p className={SECTION_HEADING}>Date notified</p>
-        <p className="mt-1 text-xs text-gray-500">When the matter was notified, or the waiver applied for.</p>
-      </div>
+      <p className={SECTION_HEADING}>Notification date</p>
 
       <div role="group" aria-label="Quick date ranges" className="flex flex-wrap gap-1.5">
         {ranges.map((r, i) => {

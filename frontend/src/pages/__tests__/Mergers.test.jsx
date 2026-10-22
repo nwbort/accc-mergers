@@ -234,7 +234,7 @@ describe('Mergers', () => {
       try {
         await openFilters(user, '/mergers?from=2025-01-01&to=2025-12-31');
         expect(screen.getByText('Showing 0 of 0 mergers')).toBeInTheDocument();
-        expect(screen.getByText('Date notified')).toBeInTheDocument();
+        expect(screen.getByText('Notification date')).toBeInTheDocument();
         expect(screen.queryByRole('button', { name: 'Determined' })).not.toBeInTheDocument();
       } finally {
         MERGERS.forEach((m) => { m.determination_publication_date = m.effective_notification_datetime; });
