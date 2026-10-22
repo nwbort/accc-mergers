@@ -15,7 +15,6 @@ import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import {
-  MILESTONE_LABELS,
   bucketShares,
   formatRate,
   percentChange,
@@ -387,11 +386,6 @@ function PreNotificationCard({ quarter, previous, buckets }) {
             previous={before?.count ? { label: previous.label, ...before } : null}
             color={COLORS.accent}
           />
-          <p className="mt-3 text-xs text-gray-500">
-            Pre-notification never appears on the register. It is estimated from the order the ACCC
-            issued case numbers in, so the figures for the latest filings can still move as later
-            case numbers appear.
-          </p>
         </div>
       </div>
     </section>
@@ -433,17 +427,6 @@ function IndustriesCard({ quarter }) {
           </ol>
         )}
       </div>
-      {quarter.matters > 0 && (
-        <p className="border-t border-gray-100 bg-gray-50/60 px-6 py-4 text-sm text-gray-700">
-          <strong>{formatRate(quarter.overseas_party / quarter.matters)}</strong> involved an
-          overseas-registered acquirer or target ({quarter.overseas_party} of {quarter.matters})
-          <span className="block mt-1 text-gray-500">
-            A party counts when the register gives it a foreign registration number, or no ABN or
-            ACN and an overseas legal form (Inc, GmbH, S.p.A.&hellip;). Unclear cases are left out,
-            so this is a floor.
-          </span>
-        </p>
-      )}
     </div>
   );
 }
@@ -554,7 +537,7 @@ function MilestonesCard({ quarter }) {
                 </span>
                 <span className="flex items-center gap-2 sm:w-60 flex-shrink-0 text-sm font-medium text-gray-900">
                   <span className={`h-2 w-2 flex-shrink-0 rounded-full ${MILESTONE_DOTS[m.kind] || 'bg-gray-400'}`} aria-hidden="true" />
-                  {MILESTONE_LABELS[m.kind] || m.kind}
+                  {m.label}
                 </span>
                 <span className="min-w-0 text-sm">
                   <Link to={mergerPath(m.merger_id, m.merger_name)} className="text-primary hover:underline">

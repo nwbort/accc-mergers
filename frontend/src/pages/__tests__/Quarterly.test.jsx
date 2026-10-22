@@ -99,8 +99,8 @@ const FIXTURE = {
         '1 matter referred to phase 2; 1 phase 2 review concluded (1 not approved).',
       ],
       milestones: [
-        { merger_id: 'MN-01068', merger_name: 'Coles – Kalgoorlie', kind: 'phase_2_outcome', date: '2026-07-01', detail: 'Not approved' },
-        { merger_id: 'MN-01068', merger_name: 'Coles – Kalgoorlie', kind: 'tribunal_application', date: '2026-07-15', detail: 'Coles' },
+        { merger_id: 'MN-01068', merger_name: 'Coles – Kalgoorlie', kind: 'phase_2_outcome', date: '2026-07-01', label: 'Not approved' },
+        { merger_id: 'MN-01068', merger_name: 'Coles – Kalgoorlie', kind: 'tribunal_application', date: '2026-07-15', label: 'Tribunal review sought', detail: 'Coles' },
       ],
     }),
   ],
@@ -166,6 +166,9 @@ describe('Quarterly report', () => {
     expect(links).toHaveLength(2);
     expect(links[0]).toHaveAttribute('href', expect.stringMatching(/^\/mergers\/MN-01068/));
     expect(within(list).getByText('Tribunal review sought')).toBeInTheDocument();
+    // A phase 2 outcome reads as the outcome, not "Phase 2 outcome".
+    expect(within(list).getByText('Not approved')).toBeInTheDocument();
+    expect(within(list).queryByText(/Phase 2 outcome/)).not.toBeInTheDocument();
   });
 
   it('switches quarter, with no quarter in progress on offer', async () => {

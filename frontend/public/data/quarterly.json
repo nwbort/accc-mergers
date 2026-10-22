@@ -1,5 +1,5 @@
 {
-  "as_at": "2026-10-22",
+  "as_at": "2026-10-23",
   "duration_buckets": [
     "0\u20134",
     "5\u20139",
@@ -92,7 +92,6 @@
         ]
       },
       "matters": 121,
-      "overseas_party": 61,
       "industries": [
         {
           "code": "M",
@@ -132,13 +131,15 @@
           "merger_id": "MN-01019",
           "merger_name": "Ampol \u2013 EG Australia",
           "kind": "referred",
-          "date": "2026-01-21"
+          "date": "2026-01-21",
+          "label": "Referred to phase 2"
         },
         {
           "merger_id": "MN-01068",
           "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
           "kind": "referred",
-          "date": "2026-01-29"
+          "date": "2026-01-29",
+          "label": "Referred to phase 2"
         }
       ],
       "findings": [
@@ -222,7 +223,6 @@
         ]
       },
       "matters": 271,
-      "overseas_party": 107,
       "industries": [
         {
           "code": "K",
@@ -262,39 +262,43 @@
           "merger_id": "MN-30003",
           "merger_name": "MicroStar Logistics - Konvoy",
           "kind": "referred",
-          "date": "2026-04-01"
+          "date": "2026-04-01",
+          "label": "Referred to phase 2"
         },
         {
           "merger_id": "MN-65005",
           "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
           "kind": "referred",
-          "date": "2026-04-16"
+          "date": "2026-04-16",
+          "label": "Referred to phase 2"
         },
         {
           "merger_id": "MN-01019",
           "merger_name": "Ampol \u2013 EG Australia",
           "kind": "phase_2_outcome",
           "date": "2026-06-02",
-          "detail": "Approved with conditions"
+          "label": "Approved with conditions"
         },
         {
           "merger_id": "MN-30002",
           "merger_name": "Peter Warren - Wakeling Automotive",
           "kind": "referred",
-          "date": "2026-06-02"
+          "date": "2026-06-02",
+          "label": "Referred to phase 2"
         },
         {
           "merger_id": "MN-30002",
           "merger_name": "Peter Warren - Wakeling Automotive",
           "kind": "phase_2_outcome",
           "date": "2026-06-15",
-          "detail": "Assessment ceased"
+          "label": "Assessment ceased"
         },
         {
           "merger_id": "MN-90009",
           "merger_name": "Trescal \u2013 TR Calibration",
           "kind": "referred",
-          "date": "2026-06-30"
+          "date": "2026-06-30",
+          "label": "Referred to phase 2"
         }
       ],
       "findings": [
@@ -378,7 +382,6 @@
         ]
       },
       "matters": 296,
-      "overseas_party": 139,
       "industries": [
         {
           "code": "K",
@@ -436,79 +439,86 @@
           "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
           "kind": "phase_2_outcome",
           "date": "2026-07-01",
-          "detail": "Not approved"
+          "label": "Not approved"
         },
         {
           "merger_id": "MN-01072",
           "merger_name": "Saipem S.p.A - Subsea7 S.A.",
           "kind": "referred",
-          "date": "2026-07-02"
+          "date": "2026-07-02",
+          "label": "Referred to phase 2"
         },
         {
           "merger_id": "MN-90009",
           "merger_name": "Trescal \u2013 TR Calibration",
           "kind": "phase_2_outcome",
           "date": "2026-07-10",
-          "detail": "Assessment ceased"
+          "label": "Assessment ceased"
         },
         {
           "merger_id": "MN-01068",
           "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
           "kind": "tribunal_application",
           "date": "2026-07-15",
+          "label": "Tribunal review sought",
           "detail": "Coles"
         },
         {
           "merger_id": "MN-65020",
           "merger_name": "Regis Resources - Vault Minerals",
           "kind": "ceased",
-          "date": "2026-07-16"
+          "date": "2026-07-16",
+          "label": "Phase 1 review ceased"
         },
         {
           "merger_id": "MN-01068",
           "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
           "kind": "judicial_review",
           "date": "2026-07-17",
+          "label": "Federal Court review sought",
           "detail": "Coles"
         },
         {
           "merger_id": "MN-05013",
           "merger_name": "Zoetis \u2013 Neogen Genomics Business",
           "kind": "referred",
-          "date": "2026-07-17"
+          "date": "2026-07-17",
+          "label": "Referred to phase 2"
         },
         {
           "merger_id": "MN-30003",
           "merger_name": "MicroStar Logistics - Konvoy",
           "kind": "phase_2_outcome",
           "date": "2026-08-07",
-          "detail": "Not approved"
+          "label": "Not approved"
         },
         {
           "merger_id": "MN-40017",
           "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
           "kind": "referred",
-          "date": "2026-08-18"
+          "date": "2026-08-18",
+          "label": "Referred to phase 2"
         },
         {
           "merger_id": "MN-50011",
           "merger_name": "Journey Beyond - SeaLink Rottnest",
           "kind": "ceased",
-          "date": "2026-08-26"
+          "date": "2026-08-26",
+          "label": "Phase 1 review ceased"
         },
         {
           "merger_id": "MN-40017",
           "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
           "kind": "phase_2_outcome",
           "date": "2026-08-28",
-          "detail": "Assessment ceased"
+          "label": "Assessment ceased"
         },
         {
           "merger_id": "MN-65005",
           "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
           "kind": "phase_2_outcome",
           "date": "2026-09-23",
-          "detail": "Not approved"
+          "label": "Not approved"
         }
       ],
       "findings": [
@@ -517,7 +527,7 @@
         "Notifications filed had spent an estimated median 16 business days in pre-notification, 1.5 days longer than Q2 2026.",
         "96% of waivers were granted and 97% of phase 1 reviews ended in approval.",
         "3 matters referred to phase 2; 5 phase 2 reviews concluded (3 not approved, 2 assessment ceased).",
-        "1 Tribunal review sought: Coles (ACT 1 of 2026); 1 open at quarter end."
+        "1 Tribunal review opened: Coles (ACT 1 of 2026); 1 open at quarter end."
       ]
     }
   ]

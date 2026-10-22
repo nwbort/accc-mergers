@@ -18,8 +18,7 @@ one before it. Each block answers the questions a quarterly round-up asks:
   the order case numbers were issued in (see :mod:`static_data.prenotification`)
   and measured in business days exactly as /current-status measures it. Keyed
   by filing date, since filing is what ends the stage.
-- **Who and what.** The ANZSIC divisions the quarter's matters sat in, and the
-  share of them with an overseas-registered party.
+- **Who and what.** The ANZSIC divisions the quarter's matters sat in.
 - **Tribunal reviews.** Every Australian Competition Tribunal application live
   at some point in the quarter — lodged before it ended and not concluded
   before it began — with what happened to it in the quarter, its hearing and
@@ -85,21 +84,6 @@ PRE_NOTIFICATION_BUCKETS = [0, 10, 20, 40, 60]
 
 #: How many ANZSIC divisions each quarter lists.
 TOP_INDUSTRIES = 5
-
-# A party name that says it is Australian, whatever its identifier field holds:
-# trustee companies and the like often carry their ACN in the name instead.
-_AUSTRALIAN_NAME = re.compile(r"\b(pty|acn|abn|arsn|arbn)\b", re.IGNORECASE)
-
-# Legal forms that only an overseas entity carries. Deliberately excludes the
-# forms Australia shares with other jurisdictions ("Limited", "Ltd", "Trust"),
-# so the share this feeds is a lower bound, not an estimate.
-_OVERSEAS_LEGAL_FORM = re.compile(
-    r"\b(inc|llc|l\.?l\.?c|llp|l\.?p|lp|gmbh|s\.?a\.?s|s\.?p\.?a|s\.?r\.?l|s\.?à\.? ?r\.?l|"
-    r"sarl|b\.?v|n\.?v|ag|plc|ulc|oyj?|ab|se|k\.?k|corp|corporation|s\.?a|ltda|bhd|pte|"
-    r"anonim şirketi)\.?(?=$|[\s,)])",
-    re.IGNORECASE,
-)
-
 
 def _quarter_of(iso: str | None) -> tuple[int, int] | None:
     """``(year, quarter)`` an ISO date or datetime string falls in."""
@@ -178,36 +162,6 @@ def _quarters_between(first: tuple[int, int], last: tuple[int, int]) -> list[tup
     return quarters
 
 
-def is_overseas_party(party: dict) -> bool:
-    """True when a party's register entry marks it as registered outside Australia.
-
-    The register records an ABN or ACN for an Australian entity. An overseas
-    one has neither: it carries its home registry's number instead (a VAT
-    number, an EIN, a Delaware file number) or nothing at all. So a party with
-    no ABN/ACN counts as overseas when it gives some other registration number,
-    or, giving none, when its name carries a legal form only an overseas
-    entity has (Inc, GmbH, S.p.A., ...). A name that itself cites an ACN or
-    says "Pty" is Australian whatever the identifier field holds.
-
-    Individuals, trusts and Limited companies with no number given are left
-    out, which is why the share this feeds is a floor.
-    """
-    if party.get("identifier_type"):
-        return False
-    name = party.get("name") or ""
-    if _AUSTRALIAN_NAME.search(name):
-        return False
-    if (party.get("identifier") or "").strip():
-        return True
-    return bool(_OVERSEAS_LEGAL_FORM.search(name))
-
-
-def has_overseas_party(merger: dict) -> bool:
-    """True when any acquirer or target is overseas-registered (see above)."""
-    parties = (merger.get("acquirers") or []) + (merger.get("targets") or [])
-    return any(is_overseas_party(p) for p in parties)
-
-
 def _bucket_labels(bounds: list[int]) -> list[str]:
     """``[4, 9]`` → ``["0–4", "5–9", "10+"]``; a one-value bucket is just its value."""
     labels = []
@@ -250,15 +204,37 @@ def _rate(numerator: int, denominator: int) -> float | None:
     return round(numerator / denominator, 4) if denominator else None
 
 
+#: How each milestone kind reads in the page's and the PDF's list.
+MILESTONE_LABELS = {
+    "referred": "Referred to phase 2",
+    "phase_1_refused": "Not approved at phase 1",
+    "ceased": "Phase 1 review ceased",
+    "public_benefit_application": "Public benefit application",
+    "public_benefit_outcome": "Public benefit outcome",
+    "tribunal_application": "Tribunal review sought",
+    "judicial_review": "Federal Court review sought",
+}
+
+#: Kinds whose detail *is* the milestone: a phase 2 review is listed as how it
+#: ended ("Not approved"), not as "Phase 2 outcome · Not approved".
+_LABELLED_BY_DETAIL = {"phase_2_outcome"}
+
+
 def _matter_ref(merger: dict, kind: str, on: str, detail: str | None = None) -> dict:
+    """One milestone row. ``label`` is what the list shows; ``detail``, when
+    present, is extra context shown after the matter (an applicant's name)."""
     entry = {
         "merger_id": merger.get("merger_id"),
         "merger_name": merger.get("merger_name"),
         "kind": kind,
         "date": on[:10],
     }
-    if detail:
-        entry["detail"] = detail
+    if kind in _LABELLED_BY_DETAIL and detail:
+        entry["label"] = detail
+    else:
+        entry["label"] = MILESTONE_LABELS.get(kind, kind)
+        if detail and kind != "phase_1_refused":  # its label already says it
+            entry["detail"] = detail
     return entry
 
 
@@ -507,7 +483,6 @@ def _quarter_block(quarter, notifications, waivers, milestones, pre_notification
         # can't place, neither of which has a usable estimate.
         "pre_notification": _timing(pre_days, PRE_NOTIFICATION_BUCKETS),
         "matters": len(arrivals),
-        "overseas_party": sum(1 for m in arrivals if has_overseas_party(m)),
         "industries": _industries(arrivals),
         "appeals": _quarter_appeals(appeals, start, end),
         "commentary": commentary.get(quarter, []),
@@ -610,7 +585,7 @@ def findings(block: dict, previous: dict | None) -> list[str]:
         if referred:
             parts.append(f"{_plural(referred, 'matter')} referred to phase 2")
         if outcomes:
-            counts = Counter(m.get("detail") for m in outcomes)
+            counts = Counter(m.get("label") if m["kind"] in _LABELLED_BY_DETAIL else m.get("detail") for m in outcomes)
             detail = ", ".join(f"{count} {str(label).lower()}" for label, count in counts.items())
             parts.append(f"{_plural(len(outcomes), 'phase 2 review')} concluded ({detail})")
         joined = "; ".join(parts)
@@ -622,7 +597,7 @@ def findings(block: dict, previous: dict | None) -> list[str]:
         parts = []
         if lodged:
             who = ", ".join(f"{m['appellant']} ({m['tribunal_number']})" for m in lodged)
-            parts.append(f"{_plural(len(lodged), 'Tribunal review')} sought: {who}")
+            parts.append(f"{_plural(len(lodged), 'Tribunal review')} opened: {who}")
         if appeals["concluded"]:
             parts.append(f"{_plural(appeals['concluded'], 'Tribunal review')} concluded")
         parts.append(f"{appeals['open_at_end']} open at quarter end")

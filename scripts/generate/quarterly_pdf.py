@@ -65,17 +65,6 @@ PANEL = colors.HexColor("#f8fafc")
 SLOWER = "#C42A38"
 FASTER = "#047857"
 
-MILESTONE_LABELS = {
-    "referred": "Referred to phase 2",
-    "phase_1_refused": "Not approved at phase 1",
-    "phase_2_outcome": "Phase 2 outcome",
-    "ceased": "Phase 1 review ceased",
-    "public_benefit_application": "Public benefit application",
-    "public_benefit_outcome": "Public benefit outcome",
-    "tribunal_application": "Tribunal review sought",
-    "judicial_review": "Federal Court review sought",
-}
-
 PAGE_W, PAGE_H = A4
 MARGIN = 16 * mm
 # SimpleDocTemplate's frame pads its text area by 6pt a side; a table sized to
@@ -511,10 +500,6 @@ def _pre_notification(payload: dict, q: dict, prev: dict | None) -> list:
            "filing, as a share of those notifications", "caption"),
         Spacer(1, 6),
         row,
-        Spacer(1, 2),
-        _p("Pre-notification never appears on the register. It is estimated from the order the ACCC issued "
-           "case numbers in, so the figures for the latest filings can still move as later case numbers "
-           "appear.", "caption"),
     ]
 
 
@@ -543,14 +528,6 @@ def _industries(q: dict) -> list:
         ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
     ]))
     flow.append(table)
-    if q["matters"]:
-        flow += [
-            Spacer(1, 6),
-            _p(f'<b>{format_rate(q["overseas_party"] / q["matters"])}</b> involved an overseas-registered '
-               f'acquirer or target ({q["overseas_party"]} of {q["matters"]}). A party counts when the register '
-               "gives it a foreign registration number, or no ABN or ACN and an overseas legal form (Inc, GmbH, "
-               "S.p.A.…); unclear cases are left out, so this is a floor.", "caption"),
-        ]
     return flow
 
 
@@ -569,7 +546,7 @@ def _milestones(q: dict) -> list:
             matter += f' <font color="#6b7280">· {escape(m["detail"])}</font>'
         rows.append([
             _p(f'<font color="#6b7280">{_short_date(m["date"])}</font>', "small"),
-            _p(f'<b>{MILESTONE_LABELS.get(m["kind"], m["kind"])}</b>', "small"),
+            _p(f'<b>{escape(m["label"])}</b>', "small"),
             _p(matter, "small"),
         ])
     table = Table(rows, colWidths=[24 * mm, 48 * mm, CONTENT_W - 72 * mm], repeatRows=0)

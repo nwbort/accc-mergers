@@ -145,12 +145,19 @@ class TestMilestones:
         payload = quarterly.generate([m], as_at=AS_AT)
         assert [e['kind'] for e in _quarter(payload, '2026-Q2')['milestones']] == ['referred']
         q3 = _quarter(payload, '2026-Q3')['milestones']
+        # A phase 2 outcome is listed as the outcome itself, with no separate detail.
         assert q3 == [{
             'merger_id': 'MN-1', 'merger_name': 'MN-1 deal', 'kind': 'phase_2_outcome',
-            'date': '2026-08-20', 'detail': 'Approved with conditions',
+            'date': '2026-08-20', 'label': 'Approved with conditions',
         }]
         q4 = _quarter(quarterly.generate([m], as_at=date(2027, 1, 5)), '2026-Q4')['milestones']
-        assert [(e['kind'], e['detail']) for e in q4] == [('tribunal_application', 'Rival')]
+        assert [(e['label'], e['detail']) for e in q4] == [('Tribunal review sought', 'Rival')]
+
+    def test_a_refusal_at_phase_1_does_not_repeat_itself(self):
+        m = _notification('MN-1', '2026-07-01', 'Not approved', '2026-08-01')
+        [milestone] = _quarter(quarterly.generate([m], as_at=AS_AT), '2026-Q3')['milestones']
+        assert milestone['label'] == 'Not approved at phase 1'
+        assert 'detail' not in milestone
 
     def test_a_phase_1_cessation_is_its_own_milestone(self):
         m = _notification('MN-1', '2026-07-01', status='Assessment ceased', ceased_date='2026-07-20T12:00:00Z')
@@ -158,38 +165,6 @@ class TestMilestones:
         assert [e['kind'] for e in q3['milestones']] == ['ceased']
         assert q3['notifications']['ceased'] == 1
         assert q3['notifications']['phase_1_decided'] == 0
-
-
-class TestOverseasParty:
-    def test_australian_identifier_is_never_overseas(self):
-        assert not quarterly.is_overseas_party({'name': 'Acme Inc', 'identifier_type': 'ABN', 'identifier': '1'})
-
-    def test_foreign_registry_number_is_overseas(self):
-        assert quarterly.is_overseas_party({'name': 'Rominvest', 'identifier_type': None, 'identifier': 'VAT 0172'})
-
-    def test_overseas_legal_form_without_a_number(self):
-        for name in ['Salsa Bidco, Inc.', 'Equans SAS', 'Rominvest S.p.A.', 'TDR Capital LLP', 'Foo GmbH']:
-            assert quarterly.is_overseas_party({'name': name, 'identifier_type': None, 'identifier': ''}), name
-
-    def test_ambiguous_names_are_left_out(self):
-        for name in [
-            'Smiths Detection Group Limited',
-            'Glenn Family Trust',
-            'Jane Citizen',
-            'K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE',
-            'APL Investments (Pty) Ltd',
-        ]:
-            assert not quarterly.is_overseas_party({'name': name, 'identifier_type': None, 'identifier': ''}), name
-
-    def test_share_counts_filings_and_decided_waivers(self):
-        overseas = [{'name': 'Bidco Inc', 'identifier_type': None, 'identifier': ''}]
-        mergers = [
-            _notification('MN-1', '2026-07-01', targets=overseas),
-            _notification('MN-2', '2026-07-01'),
-            _waiver('WA-1', '2026-06-20', '2026-07-03', acquirers=overseas),
-        ]
-        q3 = _quarter(quarterly.generate(mergers, as_at=AS_AT), '2026-Q3')
-        assert (q3['matters'], q3['overseas_party']) == (3, 2)
 
 
 class TestIndustries:
@@ -218,9 +193,9 @@ def _summary(key, label, *, filed=100, decided=150, p1_median=17, w_median=12,
 
 Q2 = _summary('2026-Q2', 'Q2 2026')
 Q3 = _summary('2026-Q3', 'Q3 2026', filed=113, decided=183, p1_median=18, w_median=17, milestones=[
-    {'kind': 'phase_2_outcome', 'detail': 'Not approved'},
-    {'kind': 'phase_2_outcome', 'detail': 'Not approved'},
-    {'kind': 'phase_2_outcome', 'detail': 'Assessment ceased'},
+    {'kind': 'phase_2_outcome', 'label': 'Not approved'},
+    {'kind': 'phase_2_outcome', 'label': 'Not approved'},
+    {'kind': 'phase_2_outcome', 'label': 'Assessment ceased'},
     {'kind': 'tribunal_application', 'detail': 'Coles'},
 ])
 
@@ -334,7 +309,7 @@ class TestAppeals:
         appeals[1]['appellant'] = 'Other'
         q4 = _quarter(quarterly.generate([self._merger(*appeals)], as_at=date(2027, 1, 5)), '2026-Q4')
         assert q4['findings'][-1] == (
-            '2 Tribunal reviews sought: Applicant (ACT 3 of 2026), Other (ACT 4 of 2026); 2 open at quarter end.'
+            '2 Tribunal reviews opened: Applicant (ACT 3 of 2026), Other (ACT 4 of 2026); 2 open at quarter end.'
         )
 
 

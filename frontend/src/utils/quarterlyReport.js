@@ -44,15 +44,3 @@ export function bucketShares(buckets) {
   const total = (buckets || []).reduce((sum, n) => sum + n, 0);
   return (buckets || []).map((n) => (total ? Math.round((n / total) * 1000) / 10 : 0));
 }
-
-/** Display label for a milestone kind. */
-export const MILESTONE_LABELS = {
-  referred: 'Referred to phase 2',
-  phase_1_refused: 'Not approved at phase 1',
-  phase_2_outcome: 'Phase 2 outcome',
-  ceased: 'Phase 1 review ceased',
-  public_benefit_application: 'Public benefit application',
-  public_benefit_outcome: 'Public benefit outcome',
-  tribunal_application: 'Tribunal review sought',
-  judicial_review: 'Federal Court review sought',
-};
