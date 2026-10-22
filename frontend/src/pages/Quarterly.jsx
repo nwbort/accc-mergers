@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate, useParams, useSearchParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 import ReactMarkdown from 'react-markdown';
 import { Bar } from 'react-chartjs-2';
 import '../utils/chartSetup';
@@ -12,7 +12,7 @@ import { formatDateLong, formatDateMedium } from '../utils/dates';
 import { formatMedian } from '../utils/formatMedian';
 import { industryPath, mergerPath } from '../utils/slug';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
-import { STATIC_PAGE_META, quarterlyMeta, quarterlyPath } from '../utils/pageMeta';
+import { STATIC_PAGE_META, quarterlyMeta } from '../utils/pageMeta';
 import NotFound from './NotFound';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import {
@@ -20,7 +20,6 @@ import {
   findQuarter,
   formatRate,
   percentChange,
-  pickQuarter,
   previousQuarter,
 } from '../utils/quarterlyReport';
 
@@ -568,24 +567,17 @@ function MilestonesCard({ quarter }) {
 function Quarterly() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.quarterly, { cacheKey: 'quarterly-data' });
   const { quarter: quarterParam } = useParams();
-  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-
-  // Links from before the path form (?q=26Q3, ?q=2026-Q3) land on it.
-  const legacyKey = !quarterParam && searchParams.get('q');
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage error={error} />;
   if (!data) return null;
 
   const quarters = data.quarters || [];
-  if (legacyKey) {
-    const legacy = findQuarter(quarters, legacyKey);
-    return <Navigate to={legacy ? quarterlyPath(legacy) : '/quarterly'} replace />;
-  }
-  // A dated URL naming no published quarter is a 404, not the latest report
-  // under a wrong address.
-  const quarter = quarterParam ? findQuarter(quarters, quarterParam) : pickQuarter(quarters, null);
+  // quarterly.json publishes complete quarters only, oldest first, so the bare
+  // URL's quarter is the last one to have ended. A dated URL naming no
+  // published quarter is a 404, not the latest report under a wrong address.
+  const quarter = quarterParam ? findQuarter(quarters, quarterParam) : quarters[quarters.length - 1] || null;
   if (quarterParam && !quarter) return <NotFound />;
 
   if (!quarter) {

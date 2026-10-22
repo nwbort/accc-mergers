@@ -142,8 +142,8 @@ frontend/src/
 │                         #   /quarterly/26Q3 is one quarter (prerendered, its own
 │                         #   canonical, in the sitemap); /quarterly shows the latest
 │                         #   with its canonical on that quarter's dated URL, and is
-│                         #   not in the sitemap. Old ?q= links redirect. Each
-│                         #   quarter links its PDF (data/reports/, below)
+│                         #   not in the sitemap. Each quarter links its PDF
+│                         #   (data/reports/, below)
 │   ├── Phase2.jsx        # /phase-2
 │   ├── RefiledNotifications.jsx # /refiled-notifications
 │   ├── NickTwort.jsx     # /nick-twort

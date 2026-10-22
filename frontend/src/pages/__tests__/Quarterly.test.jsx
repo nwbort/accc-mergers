@@ -251,13 +251,6 @@ describe('Quarterly report', () => {
     expect(currentPath()).toBe('/quarterly/26Q2');
   });
 
-  it('sends older ?q= links to the dated page', async () => {
-    renderPage('/quarterly?q=26Q2');
-    await waitFor(() => expect(currentPath()).toBe('/quarterly/26Q2'));
-    renderPage('/quarterly?q=2026-Q2');
-    await waitFor(() => expect(screen.getAllByTestId('location').at(-1)).toHaveTextContent('/quarterly/26Q2'));
-  });
-
   it('is a 404 for a quarter that has not been published', async () => {
     renderPage('/quarterly/26Q4');
     await waitFor(() => {

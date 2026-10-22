@@ -8,23 +8,11 @@
  * the generator (each quarter's `findings`), so the PDF report says the same.
  */
 
-/**
- * The quarter a `?q=` value names, else the latest. quarterly.json publishes
- * complete quarters only, so the latest is the last quarter to have ended.
- *
- * `?q=` is the short `url_key` (`26Q3`), matched case-insensitively. The long
- * `2026-Q3` the page used to write is still accepted so older links work.
- */
-export function pickQuarter(quarters, key) {
-  if (!quarters?.length) return null;
-  return findQuarter(quarters, key) || quarters[quarters.length - 1];
-}
-
-/** The quarter `key` names exactly (`26Q3`, any case, or `2026-Q3`), else null. */
+/** The quarter a `/quarterly/26Q3` path names (any case), else null. */
 export function findQuarter(quarters, key) {
   const wanted = key?.trim().toUpperCase();
   if (!wanted) return null;
-  return (quarters || []).find((q) => q.url_key?.toUpperCase() === wanted || q.quarter === wanted) || null;
+  return (quarters || []).find((q) => q.url_key?.toUpperCase() === wanted) || null;
 }
 
 /** The quarter before `quarter` in the published list, or null for the first. */

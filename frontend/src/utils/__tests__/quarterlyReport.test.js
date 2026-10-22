@@ -4,7 +4,6 @@ import {
   findQuarter,
   formatRate,
   percentChange,
-  pickQuarter,
   previousQuarter,
 } from '../quarterlyReport';
 
@@ -50,31 +49,12 @@ const Q3 = quarter('2026-Q3', {
 });
 const QUARTERS = [Q2, Q3];
 
-describe('pickQuarter', () => {
-  it('honours a quarter named in the URL by its short key', () => {
-    expect(pickQuarter(QUARTERS, '26Q2')).toBe(Q2);
-    expect(pickQuarter(QUARTERS, '26q2')).toBe(Q2);
-  });
-
-  it('still reads the long form older links used', () => {
-    expect(pickQuarter(QUARTERS, '2026-Q2')).toBe(Q2);
-  });
-
-  it('defaults to the latest quarter', () => {
-    expect(pickQuarter(QUARTERS, null)).toBe(Q3);
-    expect(pickQuarter(QUARTERS, '1999-Q1')).toBe(Q3);
-  });
-
-  it('is null with nothing published', () => {
-    expect(pickQuarter([], null)).toBeNull();
-  });
-});
-
 describe('findQuarter', () => {
   it('matches exactly, or not at all', () => {
     expect(findQuarter(QUARTERS, '26Q3')).toBe(Q3);
     expect(findQuarter(QUARTERS, '26q3')).toBe(Q3);
-    expect(findQuarter(QUARTERS, '2026-Q3')).toBe(Q3);
+    // Only the short form is an address; the long key is not.
+    expect(findQuarter(QUARTERS, '2026-Q3')).toBeNull();
     expect(findQuarter(QUARTERS, '26Q4')).toBeNull();
     expect(findQuarter(QUARTERS, null)).toBeNull();
   });
