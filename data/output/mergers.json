@@ -143290,6 +143290,158 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/uber-%E2%80%93-delivery-hero",
+      "merger_name": "Uber \u2013 Delivery Hero",
+      "status": "Assessment completed",
+      "merger_id": "WA-90039",
+      "effective_notification_datetime": "2026-09-24T12:00:00Z",
+      "original_notification_datetime": "2026-09-24T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-22T12:00:00Z",
+      "accc_determination": "Not approved",
+      "accc_determination_raw": "ACCC determinationNot approved",
+      "page_modified_datetime": "2026-10-22T17:00:18+11:00",
+      "acquirers": [
+        {
+          "name": "Uber International Technologies II Corporation",
+          "identifier_type": null,
+          "identifier": "Delaware Division of Corporations No. 10696555",
+          "party_page": {
+            "id": "uber-international-technologies-ii-corporation",
+            "name": "Uber International Technologies II Corporation"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "TABSQUARE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "54 625 052 271",
+          "party_page": {
+            "id": "tabsquare-pty-ltd",
+            "name": "Tabsquare Pty Ltd"
+          }
+        },
+        {
+          "name": "Delivery Hero SE",
+          "identifier_type": null,
+          "identifier": "HRB 198015 B",
+          "party_page": {
+            "id": "delivery-hero-se",
+            "name": "Delivery Hero SE"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Uber Technologies, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware Division of Corporations No. 4849283",
+          "canonical": {
+            "id": "uber",
+            "name": "Uber"
+          },
+          "party_page": {
+            "id": "uber",
+            "name": "Uber"
+          }
+        },
+        {
+          "name": "Uber International Technologies Corporation",
+          "identifier_type": null,
+          "identifier": "Delaware Division of Corporations No. 10026898",
+          "canonical": {
+            "id": "uber",
+            "name": "Uber"
+          },
+          "party_page": {
+            "id": "uber",
+            "name": "Uber"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4310",
+          "name": "Non-Store Retailing"
+        },
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "5102",
+          "name": "Courier Pick-up and Delivery Services"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Uber Technologies, Inc., via its indirect wholly-owned subsidiary Uber International Technologies II (together, **Uber**) proposes to acquire a majority of, and up to 100% of, the share capital of Delivery Hero SE (**Delivery Hero**), which is listed on the Frankfurt Stock Exchange (the **Acquisition**). The Acquisition will take place by way of a voluntary public takeover offer for the acquisition of all shares not directly held by Uber in cash with a minimum acceptance threshold of 50% plus one share. Uber currently owns between 20-25% of the share capital in Delivery Hero.\n\nUber is a Delaware corporation listed on the New York Stock Exchange. Uber was founded in 2009 and operates a technology platform for ride-hailing, food and other consumer goods delivery, and freight logistics services, operating in over 70 countries including Australia. Uber\u2019s consumer-facing brands and services include Uber Eats (ordering and delivery of food and other consumer goods), as well as Uber (ride-hailing), and Uber Freight (logistics) (mainly in the US).\u00a0  \n\nDelivery Hero is a European multinational incorporated in Germany, mainly operating an online delivery and ordering platform for food and other consumer goods across Europe, the Middle East, Africa, Asia, and the Americas under various brand names.\n\nDelivery Hero does not currently operate an Australian delivery and ordering platform or provide any delivery or ordering services in Australia. After having originally entered the Australian market in 2011, Delivery Hero consolidated its local operations under its subsidiary brand Foodora in 2016 and exited the Australian market in August 2018. Currently, Delivery Hero provides digital restaurant management services in Australia via its wholly owned subsidiary, Tabsquare, comprising digital ordering via QR codes and kiosks, point of sale integration, and analytics and reporting services.",
+      "events": [
+        {
+          "date": "2026-10-22T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Not approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Uber%20%E2%80%93%20Delivery%20Hero%20%28WA-90039%29%20-%20Notification%20waiver%20determination%20-%2022%20October%202026.pdf",
+          "url_gh": "/mergers/WA-90039/Uber \u2013 Delivery Hero (WA-90039) - Notification waiver determination - 22 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-24T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-20018",
+          "merger_name": "Uber - Blacklane",
+          "acquirers": [
+            "Uber Technologies, Inc"
+          ],
+          "targets": [
+            "Blacklane GmbH"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-60032",
+          "merger_name": "Atlas Holdings and KPS \u2013 shares in joint venture and interest in C&D Technologies",
+          "acquirers": [
+            "ACR III Edison Holdings LLC",
+            "Ampere Holdings I B.V."
+          ],
+          "targets": [
+            "C&D Technologies Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-85002",
+          "merger_name": "ServiceNow - Veza",
+          "acquirers": [
+            "ServiceNow, Inc."
+          ],
+          "targets": [
+            "Veza Technologies, Inc."
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/hcltech-jaspersoft",
       "merger_name": "HCLTech - Jaspersoft",
       "status": "Assessment completed",

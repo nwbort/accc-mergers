@@ -1,6 +1,6 @@
 {
   "total_mergers": 300,
-  "total_waivers": 467,
+  "total_waivers": 468,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 252,
@@ -19,7 +19,7 @@
   },
   "by_waiver_determination": {
     "Approved": 443,
-    "Not approved": 24
+    "Not approved": 25
   },
   "clearance_rate": {
     "cleared": 250,
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.54389721627409,
-    "median_days": 21,
-    "average_business_days": 14.047109207708779,
-    "median_business_days": 14
+    "average_days": 20.55982905982906,
+    "median_days": 21.0,
+    "average_business_days": 14.057692307692308,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 176
+      "count": 177
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -88,7 +88,7 @@
     },
     {
       "name": "Cafes and Restaurants",
-      "count": 24
+      "count": 25
     },
     {
       "name": "Supermarket and Grocery Stores",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-90039",
+      "merger_name": "Uber \u2013 Delivery Hero",
+      "determination": "Not approved",
+      "determination_date": "2026-10-22T12:00:00Z",
+      "page_modified_datetime": "2026-10-22T17:00:18+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85057",
       "merger_name": "INPEX \u2013 Further interest in the Ichthys LNG Project",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-05056",
-      "merger_name": "Brookfield Corporation \u2013 Reliance Worldwide Corporation",
-      "determination": "Approved",
-      "determination_date": "2026-10-19T12:00:00Z",
-      "page_modified_datetime": "2026-10-19T16:45:00+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
