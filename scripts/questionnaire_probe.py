@@ -52,7 +52,11 @@ DATED_STEM_TEMPLATES = (
     '{n} - Third-party questionnaire - Phase 1 consultation - {d}',
 )
 REQUEST_TIMEOUT = 15
-MAX_WORKERS = 8
+# The ACCC takes ~6s to answer each probe from CI, missing file or not, so wall
+# time is rounds of requests: at 8 workers a matter's ~33 candidates cost ~24s,
+# most of the enrich step. 24 is the scraper's PARALLEL_JOBS against the same
+# host, so this asks no more of it than every run already does.
+MAX_WORKERS = 24
 
 
 def _name_variants(name: str) -> list[str]:

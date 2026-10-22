@@ -22,6 +22,7 @@ from scripts.parse.parse_questionnaire import (
     _build_caches_from_existing as _build_q_caches,
     _DEFAULT_CACHE_PATH as _Q_CACHE_PATH,
     _NEG_CACHE_KEY as _Q_NEG_CACHE_KEY,
+    _DUP_CACHE_KEY as _Q_DUP_CACHE_KEY,
 )
 from scripts.normalization import normalize_determination, normalize_dashes
 from scripts.constants.site import REPO, mergers_fyi_url
@@ -1606,8 +1607,10 @@ def enrich_with_questionnaire_data(mergers_data):
         # unchanged PDFs are not re-parsed and non-questionnaire PDFs are not
         # re-opened for the content-detection fallback.
         q_cache, q_neg_cache = _build_q_caches(_Q_CACHE_PATH)
+        q_dup_shas: dict = {}
         questionnaire_data = process_all_questionnaires(
             MATTERS_DIR, cache=q_cache, neg_cache=q_neg_cache,
+            dup_shas=q_dup_shas,
         )
 
         if not questionnaire_data:
@@ -1623,6 +1626,8 @@ def enrich_with_questionnaire_data(mergers_data):
         payload = dict(questionnaire_data)
         if q_neg_cache:
             payload[_Q_NEG_CACHE_KEY] = sorted(q_neg_cache)
+        if q_dup_shas:
+            payload[_Q_DUP_CACHE_KEY] = q_dup_shas
         with open('data/processed/questionnaire_data.json', 'w', encoding='utf-8') as f:
             json.dump(payload, f, indent=2, sort_keys=True)
         print("Wrote data/processed/questionnaire_data.json", file=sys.stderr)
