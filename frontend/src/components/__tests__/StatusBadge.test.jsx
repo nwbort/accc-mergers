@@ -145,8 +145,11 @@ describe('StatusBadge', () => {
       expect(badge.querySelector('svg')).not.toBeNull();
     });
 
-    it('writes a 2 for a Phase 2 referral', () => {
-      expect(glyph({ status: 'Under assessment', determination: 'Referred to phase 2' })).toHaveTextContent('2');
+    it('shows a Phase 2 referral as the clock, in amber', () => {
+      const badge = glyph({ status: 'Under assessment', determination: 'Referred to phase 2' });
+      expect(badge.querySelector('svg')).not.toBeNull();
+      expect(badge).toHaveClass('bg-amber-400');
+      expect(badge).toHaveAccessibleName('Determination: Referred to phase 2');
     });
 
     it('keeps a concluded appeal in the tooltip', () => {

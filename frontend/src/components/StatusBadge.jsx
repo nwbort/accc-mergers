@@ -31,11 +31,12 @@ const STYLED_STATUSES = [
 
 // Symbols for the states OUTCOME_ICONS deliberately leaves without one,
 // used only by the `glyph` form, where there is no text to fall back on. A
-// "2" rather than an icon for a Phase 2 referral: no stock glyph says it.
+// Phase 2 referral is still under assessment, so it shares the clock; its
+// amber fill is what tells the two apart.
 const LIVE_GLYPHS = {
   [MERGER_STATUS.UNDER_ASSESSMENT]: FaRegClock,
   [MERGER_STATUS.ASSESSMENT_SUSPENDED]: FaPause,
-  [MERGER_STATUS.REFERRED_TO_PHASE_2]: '2',
+  [MERGER_STATUS.REFERRED_TO_PHASE_2]: FaRegClock,
 };
 
 /**
@@ -99,7 +100,7 @@ function StatusBadge({ status, determination, label, hasConditions, appeal, soli
         aria-label={ariaLabel}
         title={words}
       >
-        {typeof Symbol === 'string' ? Symbol : Symbol ? <Symbol className="w-3 h-3" aria-hidden="true" /> : '•'}
+        {Symbol ? <Symbol className="w-3 h-3" aria-hidden="true" /> : '•'}
       </span>
     );
   }
