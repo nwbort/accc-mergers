@@ -3,7 +3,7 @@
 A printable, attachable twin of the /quarterly page, drawn from the same
 ``quarterly.json`` block so the two can't disagree: the same headline figures,
 the same "in brief" sentences (written by the generator, not here), the same
-charts and the same list of post-phase-1 milestones.
+charts, pre-notification estimates and list of post-phase-1 milestones.
 
 One file per *complete* quarter. The quarter in progress gets none: a PDF is
 a thing people forward, and a few weeks of a quarter forwarded as "the Q4
@@ -54,6 +54,7 @@ REPORTS_DIRNAME = "reports"
 # The site's palette (frontend/src/constants/chartColors.js, tailwind.config.js).
 PRIMARY = colors.HexColor("#335145")
 TEAL = colors.HexColor("#6b8f7f")
+CORAL = colors.HexColor("#e07a5f")    # chartColors accent: pre-notification
 SAGE = colors.HexColor("#8cafa0")
 INK = colors.HexColor("#111827")
 MUTED = colors.HexColor("#6b7280")
@@ -271,8 +272,9 @@ def _shares(buckets: list[int]) -> list[float]:
     return [round(n / total * 100, 1) if total else 0 for n in buckets]
 
 
-def _timing_chart(buckets: list[str], current: dict, previous: dict | None, colour) -> Drawing:
-    width, height = CONTENT_W / 2 - 6, 52 * mm
+def _timing_chart(buckets: list[str], current: dict, previous: dict | None, colour,
+                  width: float = CONTENT_W / 2 - 6) -> Drawing:
+    height = 52 * mm
     drawing = Drawing(width, height)
     chart = VerticalBarChart()
     chart.x, chart.y = 24, 48
@@ -399,6 +401,52 @@ def _timing(payload: dict, q: dict, prev: dict | None) -> list:
         ("RIGHTPADDING", (0, 0), (-1, -1), 6),
     ]))
     return [row]
+
+
+def _pre_notification(payload: dict, q: dict, prev: dict | None) -> list:
+    pre = q.get("pre_notification") or {}
+    if not pre.get("count"):
+        return []
+    before = (prev or {}).get("pre_notification") or {}
+    change = ""
+    if before.get("median") is not None:
+        delta = round(pre["median"] - before["median"], 1)
+        if delta == 0:
+            change = f'<font color="#4b5563">Same as {prev["label"]}</font>'
+        else:
+            colour = SLOWER if delta > 0 else FASTER
+            word = "longer" if delta > 0 else "shorter"
+            change = f'<font color="{colour}">{_number(abs(delta))} {word} than {prev["label"]}</font>'
+
+    def stat(label, value, extra=""):
+        cell = [_p(label.upper(), "label"), Spacer(1, 2),
+                _p(f'{_number(value)}<font size="9" color="#6b7280"> business days</font>', "value")]
+        if extra:
+            cell += [Spacer(1, 1), _p(extra, "caption")]
+        return cell + [Spacer(1, 8)]
+
+    stats = stat("Median", pre["median"], change) + stat("Average", pre["average"]) + stat("90% within", pre["p90"])
+    current = {"label": q["label"], "timing": pre}
+    previous = {"label": prev["label"], "timing": before} if before.get("count") else None
+    chart = _timing_chart(payload["pre_notification_buckets"], current, previous, CORAL,
+                          width=CONTENT_W / 2 + 20 * mm)
+    row = Table([[stats, chart]], colWidths=[CONTENT_W / 2 - 20 * mm, CONTENT_W / 2 + 20 * mm])
+    row.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+    ]))
+    return [
+        _p("Pre-notification", "h2"),
+        _p(f"Estimated time the {pre['count']} notifications filed this quarter spent with the ACCC before "
+           "filing, as a share of those notifications", "caption"),
+        Spacer(1, 6),
+        row,
+        Spacer(1, 2),
+        _p("Pre-notification never appears on the register. It is estimated from the order the ACCC issued "
+           "case numbers in, so the figures for the latest filings can still move as later case numbers "
+           "appear.", "caption"),
+    ]
 
 
 def _industries(q: dict) -> list:
@@ -539,6 +587,8 @@ def build_pdf(payload: dict, quarter_key: str, path: Path) -> None:
         KeepTogether([_outcomes(q)]),
         Spacer(1, 14),
         KeepTogether(_timing(payload, q, prev)),
+        Spacer(1, 12),
+        KeepTogether(_pre_notification(payload, q, prev)),
         Spacer(1, 12),
         KeepTogether(_industries(q)),
         Spacer(1, 14),

@@ -226,7 +226,12 @@ function days(value) {
   return value == null ? '–' : `${formatMedian(value)} business days`;
 }
 
-function TimingChart({ id, title, buckets, current, previous, color }) {
+/**
+ * Two quarters' distributions as side-by-side bars, each bucket's share of
+ * its quarter's total so a busy quarter and a quiet one compare on shape. The
+ * canvas is presentational; the sr-only table beside it carries the numbers.
+ */
+function ShareChart({ id, caption, buckets, current, previous, color, height = 'h-64' }) {
   const currentShares = bucketShares(current.buckets);
   const previousShares = previous ? bucketShares(previous.buckets) : null;
   const datasets = [];
@@ -269,39 +274,117 @@ function TimingChart({ id, title, buckets, current, previous, color }) {
   };
 
   return (
+    <>
+      <div className={height} role="img" aria-labelledby={`${id}-title`} aria-describedby={`${id}-summary`}>
+        <Bar data={{ labels: buckets, datasets }} options={options} role="presentation" />
+      </div>
+      <div className="sr-only">
+        <table id={`${id}-summary`}>
+          <caption>{caption}</caption>
+          <thead>
+            <tr>
+              <th>Business days</th>
+              {previousShares && <th>{previous.label}</th>}
+              <th>{current.label}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {buckets.map((bucket, i) => (
+              <tr key={bucket}>
+                <td>{bucket}</td>
+                {previousShares && <td>{previousShares[i]}%</td>}
+                <td>{currentShares[i]}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
+}
+
+function TimingChart({ id, title, buckets, current, previous, color }) {
+  return (
     <div className={`${CARD} overflow-hidden`}>
       <CardHeader
         id={`${id}-title`}
         title={title}
-        subtitle={`Share of decisions by business days taken – median ${days(current.median)}, 90% within ${days(current.p90)}`}
+        subtitle={`Share of decisions by business days taken \u2013 median ${days(current.median)}, 90% within ${days(current.p90)}`}
       />
       <div className="p-6">
-        <div className="h-64" role="img" aria-labelledby={`${id}-title`} aria-describedby={`${id}-summary`}>
-          <Bar data={{ labels: buckets, datasets }} options={options} role="presentation" />
-        </div>
-        <div className="sr-only">
-          <table id={`${id}-summary`}>
-            <caption>{title}: share of decisions by business days taken</caption>
-            <thead>
-              <tr>
-                <th>Business days</th>
-                {previousShares && <th>{previous.label}</th>}
-                <th>{current.label}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {buckets.map((bucket, i) => (
-                <tr key={bucket}>
-                  <td>{bucket}</td>
-                  {previousShares && <td>{previousShares[i]}%</td>}
-                  <td>{currentShares[i]}%</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <ShareChart
+          id={id}
+          caption={`${title}: share of decisions by business days taken`}
+          buckets={buckets}
+          current={current}
+          previous={previous}
+          color={color}
+        />
       </div>
     </div>
+  );
+}
+
+/**
+ * How long the quarter's notifications spent in pre-notification before they
+ * were filed. A longer stage is the adverse direction for a deal timetable, so
+ * a longer median takes the same red as a slower review.
+ */
+function PreNotificationCard({ quarter, previous, buckets }) {
+  const pre = quarter.pre_notification;
+  if (!pre?.count) return null;
+  const before = previous?.pre_notification;
+  const delta = before?.median != null ? Math.round((pre.median - before.median) * 10) / 10 : null;
+  const stats = [
+    { label: 'Median', value: pre.median },
+    { label: 'Average', value: pre.average },
+    { label: '90% within', value: pre.p90 },
+  ];
+  const id = 'chart-quarterly-pre-notification';
+
+  return (
+    <section className="mb-6">
+      <div className={`${CARD} overflow-hidden`}>
+        <CardHeader
+          id={`${id}-title`}
+          title="Pre-notification"
+          subtitle={`Estimated time notifications filed this quarter spent with the ACCC before filing \u2013 ${pre.count} notifications`}
+        />
+        <div className="grid grid-cols-3 divide-x divide-gray-100 border-b border-gray-100">
+          {stats.map(({ label, value }) => (
+            <div key={label} className="p-5">
+              <p className={SECTION_HEADING}>{label}</p>
+              <p className="mt-1.5 text-2xl font-bold tracking-tight text-gray-900">
+                {value == null ? '\u2013' : formatMedian(value)}
+                {value != null && <span className="ml-1 text-sm font-normal text-gray-500">BD</span>}
+              </p>
+              {label === 'Median' && delta !== null && (
+                <Delta tone={delta > 0 ? 'worse' : delta < 0 ? 'better' : 'neutral'}>
+                  {delta === 0
+                    ? `Same as ${previous.label}`
+                    : `${formatMedian(Math.abs(delta))} ${delta > 0 ? 'longer' : 'shorter'} than ${previous.label}`}
+                </Delta>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="p-6">
+          <ShareChart
+            id={id}
+            caption="Share of notifications filed by estimated business days in pre-notification"
+            buckets={buckets}
+            current={{ label: quarter.label, ...pre }}
+            previous={before?.count ? { label: previous.label, ...before } : null}
+            color={COLORS.accent}
+          />
+          <p className="mt-3 text-xs text-gray-500">
+            Pre-notification never appears on the register. It is estimated from the order the ACCC
+            issued case numbers in, so the figures for the latest filings can still move as later
+            case numbers appear.
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -566,6 +649,12 @@ function Quarterly() {
             />
           </div>
         </section>
+
+        <PreNotificationCard
+          quarter={quarter}
+          previous={previous}
+          buckets={data.pre_notification_buckets || []}
+        />
 
         <section className="mb-6">
           <IndustriesCard quarter={quarter} />

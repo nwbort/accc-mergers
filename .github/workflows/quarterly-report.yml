@@ -1,0 +1,79 @@
+name: Quarterly report PDFs
+
+# Draw frontend/public/data/reports/quarterly-report-{YYYY}-Q{n}.pdf, one per
+# complete quarter, from the quarterly.json the pipeline commits (see
+# scripts/generate/quarterly_pdf.py). The /quarterly page links to them.
+#
+# A workflow of its own rather than a pipeline step: the PDFs are a rendering
+# of data the pipeline has already committed, and nothing the pipeline does
+# next reads them, so drawing them there only lengthens a run that holds the
+# pipeline-main concurrency group (an email-triggered run queues behind it)
+# and puts a typesetting failure in the same job as the scrape.
+#
+# Runs after every pipeline run on main, since that is the only thing that
+# changes quarterly.json; a change to the drawing code lands as a push to main,
+# which runs the pipeline and so this too. workflow_run fires even though the
+# pipeline pushes with GITHUB_TOKEN, which a push trigger would not. The output
+# is deterministic, so a run whose quarters didn't move commits nothing.
+
+on:
+  workflow_run:
+    workflows: [Merger Pipeline]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: quarterly-report
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion != 'cancelled'
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Draw quarterly report PDFs
+        run: python -m scripts.generate.quarterly_pdf
+
+      # No "[skip ci]", unlike linkedin-share-links.yml: these files are
+      # deployed, and Cloudflare Pages skips building a commit that carries it.
+      # The push is made with GITHUB_TOKEN, so it does not start the pipeline
+      # (or this workflow) again.
+      - name: Commit PDFs
+        run: |
+          git add -A frontend/public/data/reports
+          if git diff --staged --quiet; then
+            echo "Quarterly report PDFs unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update quarterly report PDFs"
+          # The pipeline may have pushed meanwhile. Its commits never touch
+          # reports/, so a rebase is always clean; retry the push if it races.
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep $((attempt * 10))
+          done
+          echo "::error::Could not push the quarterly report PDFs after 3 attempts"
+          exit 1

@@ -246,3 +246,41 @@ class TestFindings:
     def test_every_quarter_carries_its_findings(self):
         payload = quarterly.generate([], as_at=AS_AT)
         assert all(isinstance(q['findings'], list) and q['findings'] for q in payload['quarters'])
+
+
+class TestPreNotification:
+    def _filed(self, merger_id, filed, days, **extra):
+        return _notification(
+            merger_id, filed,
+            pre_notification={'estimated_days': days},
+            original_notification_datetime=f'{filed}T12:00:00Z',
+            **extra,
+        )
+
+    def test_keyed_by_filing_date_in_business_days(self):
+        # Filed Wed 15 Jul; 14 calendar days earlier is Wed 1 Jul — 10 business days.
+        mergers = [self._filed('MN-1', '2026-07-15', 14), self._filed('MN-2', '2026-04-15', 0)]
+        payload = quarterly.generate(mergers, as_at=AS_AT)
+        q3 = _quarter(payload, '2026-Q3')['pre_notification']
+        assert (q3['count'], q3['median'], q3['average']) == (1, 10, 10)
+        assert q3['buckets'] == [0, 1, 0, 0, 0, 0]
+        q2 = _quarter(payload, '2026-Q2')['pre_notification']
+        assert (q2['count'], q2['median'], q2['buckets'][0]) == (1, 0, 1)
+
+    def test_matters_without_an_estimate_are_left_out(self):
+        mergers = [_notification('MN-1', '2026-07-15')]
+        pre = _quarter(quarterly.generate(mergers, as_at=AS_AT), '2026-Q3')['pre_notification']
+        assert pre['count'] == 0 and pre['median'] is None
+
+    def test_bucket_labels(self):
+        payload = quarterly.generate([], as_at=AS_AT)
+        assert payload['pre_notification_buckets'] == ['0', '1–10', '11–20', '21–40', '41–60', '61+']
+
+    def test_finding_compares_with_the_previous_quarter(self):
+        q2 = dict(Q2, pre_notification={'median': 14.5})
+        q3 = dict(Q3, pre_notification={'median': 16})
+        assert ('Notifications filed had spent an estimated median 16 business days in '
+                'pre-notification, 1.5 days longer than Q2 2026.') in quarterly.findings(q3, q2)
+
+    def test_no_finding_without_an_estimate(self):
+        assert not any('pre-notification' in f for f in quarterly.findings(Q3, Q2))

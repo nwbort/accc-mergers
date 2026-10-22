@@ -17,7 +17,7 @@ function ok(json) {
 
 const BUCKETS = ['0–4', '5–9', '10–14', '15–19', '20–24', '25–29', '30–49', '50+'];
 
-function block(key, label, { complete = true, filed, decided, p1Median, wMedian, milestones = [], findings = [] }) {
+function block(key, label, { complete = true, filed, decided, p1Median, wMedian, preMedian = 15, milestones = [], findings = [] }) {
   return {
     quarter: key,
     label,
@@ -46,6 +46,9 @@ function block(key, label, { complete = true, filed, decided, p1Median, wMedian,
       average_granted: 15.1,
       average_refused: 18.9,
     },
+    pre_notification: {
+      count: filed, median: preMedian, average: 18.4, p90: 36, buckets: [2, 20, filed - 40, 12, 4, 2],
+    },
     matters: filed + decided,
     overseas_party: 50,
     industries: [
@@ -60,13 +63,15 @@ function block(key, label, { complete = true, filed, decided, p1Median, wMedian,
 const FIXTURE = {
   as_at: '2026-10-22',
   duration_buckets: BUCKETS,
+  pre_notification_buckets: ['0', '1–10', '11–20', '21–40', '41–60', '61+'],
   quarters: [
-    block('2026-Q2', 'Q2 2026', { filed: 95, decided: 176, p1Median: 17, wMedian: 12 }),
+    block('2026-Q2', 'Q2 2026', { filed: 95, decided: 176, p1Median: 17, wMedian: 12, preMedian: 14.5 }),
     block('2026-Q3', 'Q3 2026', {
       filed: 113,
       decided: 183,
       p1Median: 18,
       wMedian: 17,
+      preMedian: 16,
       findings: [
         '113 notifications filed, up 19% on Q2 2026, and 183 waiver applications decided, up 4% on Q2 2026.',
         '1 matter referred to phase 2; 1 phase 2 review concluded (1 not approved).',
@@ -170,6 +175,35 @@ describe('Quarterly report', () => {
       'Q2 2026',
       'Q3 2026',
     ]);
+  });
+});
+
+describe('Quarterly report pre-notification', () => {
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  it('gives the median against the previous quarter, longer as adverse', async () => {
+    renderPage();
+    await ready();
+    const card = screen.getByRole('heading', { name: 'Pre-notification' }).closest('section');
+    expect(within(card).getByText(/113 notifications/)).toBeInTheDocument();
+    expect(within(card).getByText('1.5 longer than Q2 2026')).toHaveClass('text-declined-dark');
+    expect(within(card).getByText('90% within')).toBeInTheDocument();
+  });
+
+  it('pairs its chart with a data table over its own buckets', async () => {
+    renderPage();
+    await ready();
+    const table = document.getElementById('chart-quarterly-pre-notification-summary');
+    expect(within(table).getAllByRole('row')).toHaveLength(7);
+    expect(within(table).getByText('61+')).toBeInTheDocument();
   });
 });
 

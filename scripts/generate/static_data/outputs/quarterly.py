@@ -13,6 +13,11 @@ one before it. Each block answers the questions a quarterly round-up asks:
   the average split by outcome (a refusal or referral runs longer than a
   clearance), and a bucketed histogram the page draws against the previous
   quarter's.
+- **Pre-notification.** How long the quarter's notifications are estimated
+  to have spent working with the ACCC before they were filed, inferred from
+  the order case numbers were issued in (see :mod:`static_data.prenotification`)
+  and measured in business days exactly as /current-status measures it. Keyed
+  by filing date, since filing is what ends the stage.
 - **Who and what.** The ANZSIC divisions the quarter's matters sat in, and the
   share of them with an overseas-registered party.
 - **Beyond phase 1.** Every phase 2 referral, phase 2 outcome, public benefit
@@ -48,7 +53,7 @@ from ..durations import phase_1_end_date
 from ..enrichment import phase_2_outcome
 from ..filters import filter_notifications, filter_waivers
 from ..loaders import FORWARD_REFILE_RELATIONSHIPS
-from .analysis import _division_for_code, _percentile
+from .analysis import _division_for_code, _percentile, _pre_notification_durations
 
 _SYDNEY = ZoneInfo("Australia/Sydney")
 
@@ -61,6 +66,11 @@ FIRST_QUARTER = (2026, 1)
 #: the last bucket is open-ended. Five-day steps up to the phase 1 clock's 30,
 #: then wider ones for the extended reviews and waivers that run long.
 DURATION_BUCKETS = [4, 9, 14, 19, 24, 29, 49]
+
+#: Bucket bounds for pre-notification, in business days. Wider than the review
+#: buckets: the stage has no statutory clock and runs from nothing (a matter
+#: filed the day its case was opened) to several months.
+PRE_NOTIFICATION_BUCKETS = [0, 10, 20, 40, 60]
 
 #: How many ANZSIC divisions each quarter lists.
 TOP_INDUSTRIES = 5
@@ -141,18 +151,25 @@ def has_overseas_party(merger: dict) -> bool:
     return any(is_overseas_party(p) for p in parties)
 
 
-def _bucket_label(index: int) -> str:
-    low = 0 if index == 0 else DURATION_BUCKETS[index - 1] + 1
-    if index == len(DURATION_BUCKETS):
-        return f"{low}+"
-    return f"{low}–{DURATION_BUCKETS[index]}"
+def _bucket_labels(bounds: list[int]) -> list[str]:
+    """``[4, 9]`` → ``["0–4", "5–9", "10+"]``; a one-value bucket is just its value."""
+    labels = []
+    for index in range(len(bounds) + 1):
+        low = 0 if index == 0 else bounds[index - 1] + 1
+        if index == len(bounds):
+            labels.append(f"{low}+")
+        elif low == bounds[index]:
+            labels.append(str(low))
+        else:
+            labels.append(f"{low}–{bounds[index]}")
+    return labels
 
 
-def _bucketed(business_days: list[int]) -> list[int]:
-    """Counts per :data:`DURATION_BUCKETS` bucket, the last open-ended."""
-    counts = [0] * (len(DURATION_BUCKETS) + 1)
+def _bucketed(business_days: list[int], bounds: list[int] = DURATION_BUCKETS) -> list[int]:
+    """Counts per bucket of ``bounds`` (inclusive upper bounds), the last open-ended."""
+    counts = [0] * (len(bounds) + 1)
     for bus in business_days:
-        index = next((i for i, upper in enumerate(DURATION_BUCKETS) if bus <= upper), len(DURATION_BUCKETS))
+        index = next((i for i, upper in enumerate(bounds) if bus <= upper), len(bounds))
         counts[index] += 1
     return counts
 
@@ -161,14 +178,14 @@ def _average(values: list[int]) -> float | None:
     return round(sum(values) / len(values), 1) if values else None
 
 
-def _timing(business_days: list[int]) -> dict:
+def _timing(business_days: list[int], bounds: list[int] = DURATION_BUCKETS) -> dict:
     ordered = sorted(business_days)
     return {
         "count": len(ordered),
         "median": stat_median(ordered) if ordered else None,
         "average": _average(ordered),
         "p90": _percentile(ordered, 0.9),
-        "buckets": _bucketed(ordered),
+        "buckets": _bucketed(ordered, bounds),
     }
 
 
@@ -255,7 +272,7 @@ def _industries(mergers: list) -> list[dict]:
     return [{"code": code, "name": names[code], "count": n} for code, n in ranked]
 
 
-def _quarter_block(quarter, notifications, waivers, milestones, as_at: date) -> dict:
+def _quarter_block(quarter, notifications, waivers, milestones, pre_notification, as_at: date) -> dict:
     key = _quarter_key(quarter)
     start, end = _quarter_bounds(quarter)
 
@@ -303,6 +320,8 @@ def _quarter_block(quarter, notifications, waivers, milestones, as_at: date) -> 
         else:
             w_granted.append(bus)
 
+    pre_days = [bus for filed_on, bus in pre_notification if _quarter_of(filed_on) == quarter]
+
     p1_decided = len(p1_cleared) + len(p1_referred) + len(p1_refused)
     w_decided = len(w_granted) + len(w_refused)
 
@@ -339,6 +358,10 @@ def _quarter_block(quarter, notifications, waivers, milestones, as_at: date) -> 
             "average_granted": _average(w_granted),
             "average_refused": _average(w_refused),
         },
+        # ``count`` is the notifications with an estimate; ``filed`` above is
+        # all of them. The gap is voluntary-period matters and IDs the counter
+        # can't place, neither of which has a usable estimate.
+        "pre_notification": _timing(pre_days, PRE_NOTIFICATION_BUCKETS),
         "matters": len(arrivals),
         "overseas_party": sum(1 for m in arrivals if has_overseas_party(m)),
         "industries": _industries(arrivals),
@@ -414,6 +437,22 @@ def findings(block: dict, previous: dict | None) -> list[str]:
             f"waivers in {waiver_median}{wv}."
         )
 
+    pre = block.get("pre_notification") or {}
+    if pre.get("median") is not None:
+        before = (previous or {}).get("pre_notification", {}).get("median") if previous else None
+        change = ""
+        if before is not None:
+            delta = round(pre["median"] - before, 1)
+            if delta == 0:
+                change = f", the same as {prev_label}"
+            else:
+                unit = "day" if abs(delta) == 1 else "days"
+                change = f", {_number(abs(delta))} {unit} {'longer' if delta > 0 else 'shorter'} than {prev_label}"
+        out.append(
+            f"Notifications filed had spent an estimated median {_number(pre['median'])} business days "
+            f"in pre-notification{change}."
+        )
+
     if n["phase_1_decided"] or w["decided"]:
         out.append(
             f"{format_rate(w['clearance_rate'])} of waivers were granted and "
@@ -447,16 +486,18 @@ def generate(mergers: list, as_at: date | None = None) -> dict:
     notifications = filter_notifications(mergers)
     waivers = filter_waivers(mergers)
     milestones = _milestones(mergers)
+    pre_notification = _pre_notification_durations(notifications)
 
     last = max(FIRST_QUARTER, _quarter_of(as_at.isoformat()))
     quarters = [
-        _quarter_block(q, notifications, waivers, milestones, as_at)
+        _quarter_block(q, notifications, waivers, milestones, pre_notification, as_at)
         for q in _quarters_between(FIRST_QUARTER, last)
     ]
     for previous, block in zip([None] + quarters, quarters):
         block["findings"] = findings(block, previous)
     return {
         "as_at": as_at.isoformat(),
-        "duration_buckets": [_bucket_label(i) for i in range(len(DURATION_BUCKETS) + 1)],
+        "duration_buckets": _bucket_labels(DURATION_BUCKETS),
+        "pre_notification_buckets": _bucket_labels(PRE_NOTIFICATION_BUCKETS),
         "quarters": quarters,
     }

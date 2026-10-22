@@ -29,8 +29,8 @@ Output files:
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
   - quarterly.json              - Quarter-by-quarter volume, outcomes, timing and milestones
-  - reports/quarterly-report-{YYYY}-Q{n}.pdf - The same report as a PDF, one per
-                                  complete quarter (see generate/quarterly_pdf.py)
+  (reports/quarterly-report-*.pdf are drawn from quarterly.json by
+   generate/quarterly_pdf.py, in quarterly-report.yml rather than here)
   - serial-acquirers.json       - Serial-acquirer ("creeping acquisitions") detection
   - theories_of_harm.json       - Keyword-classified theory-of-harm taxonomy
   - phase2.json                 - Current + completed Phase 2 matters with statutory milestones
@@ -50,7 +50,6 @@ import json
 import os
 import sys
 
-from scripts.generate import quarterly_pdf
 from scripts.generate.static_data.business_days import check_holiday_horizon
 from scripts.generate.static_data.enrichment import (
     enrich_merger,
@@ -225,11 +224,6 @@ def main():
         with open(out_path, 'w', encoding='utf-8') as f:
             json.dump(payload, f, indent=2)
         print(f"✓ Generated {out_path}")
-
-    print("\nDrawing quarterly report PDFs...")
-    with open(OUTPUT_DIR / "quarterly.json", encoding='utf-8') as f:
-        reports = quarterly_pdf.generate(json.load(f), OUTPUT_DIR / quarterly_pdf.REPORTS_DIRNAME)
-    print(f"✓ Drew {len(reports)} quarterly report PDF(s) in {OUTPUT_DIR / quarterly_pdf.REPORTS_DIRNAME}")
 
     print("\nGenerating individual merger files...")
     n = individual.generate(enriched, OUTPUT_DIR)

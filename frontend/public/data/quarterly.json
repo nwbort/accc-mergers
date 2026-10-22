@@ -10,6 +10,14 @@
     "30\u201349",
     "50+"
   ],
+  "pre_notification_buckets": [
+    "0",
+    "1\u201310",
+    "11\u201320",
+    "21\u201340",
+    "41\u201360",
+    "61+"
+  ],
   "quarters": [
     {
       "quarter": "2026-Q1",
@@ -69,6 +77,20 @@
         "average_granted": 11.0,
         "average_refused": 10.7
       },
+      "pre_notification": {
+        "count": 51,
+        "median": 9,
+        "average": 9.8,
+        "p90": 22,
+        "buckets": [
+          12,
+          22,
+          11,
+          5,
+          1,
+          0
+        ]
+      },
       "matters": 121,
       "overseas_party": 61,
       "industries": [
@@ -115,6 +137,7 @@
       "findings": [
         "50 notifications filed, and 71 waiver applications decided.",
         "Phase 1 reviews concluded in a median 17 business days; waivers in 11.",
+        "Notifications filed had spent an estimated median 9 business days in pre-notification.",
         "92% of waivers were granted and 94% of phase 1 reviews ended in approval.",
         "2 matters referred to phase 2."
       ]
@@ -176,6 +199,20 @@
         },
         "average_granted": 12.2,
         "average_refused": 17.8
+      },
+      "pre_notification": {
+        "count": 94,
+        "median": 14.5,
+        "average": 18.4,
+        "p90": 39,
+        "buckets": [
+          4,
+          20,
+          42,
+          21,
+          6,
+          1
+        ]
       },
       "matters": 271,
       "overseas_party": 107,
@@ -249,6 +286,7 @@
       "findings": [
         "95 notifications filed, up 90% on Q1 2026, and 176 waiver applications decided, up 148% on Q1 2026.",
         "Phase 1 reviews concluded in a median 17 business days, the same as Q1 2026; waivers in 12, 1 day slower than Q1 2026.",
+        "Notifications filed had spent an estimated median 14.5 business days in pre-notification, 5.5 days longer than Q1 2026.",
         "95% of waivers were granted and 95% of phase 1 reviews ended in approval.",
         "4 matters referred to phase 2; 2 phase 2 reviews concluded (1 approved with conditions, 1 assessment ceased)."
       ]
@@ -310,6 +348,20 @@
         },
         "average_granted": 16.1,
         "average_refused": 18.9
+      },
+      "pre_notification": {
+        "count": 113,
+        "median": 16,
+        "average": 19.2,
+        "p90": 36,
+        "buckets": [
+          2,
+          33,
+          43,
+          26,
+          5,
+          4
+        ]
       },
       "matters": 296,
       "overseas_party": 139,
@@ -424,6 +476,7 @@
       "findings": [
         "113 notifications filed, up 19% on Q2 2026, and 183 waiver applications decided, up 4% on Q2 2026.",
         "Phase 1 reviews concluded in a median 18 business days, 1 day slower than Q2 2026; waivers in 17, 5 days slower than Q2 2026.",
+        "Notifications filed had spent an estimated median 16 business days in pre-notification, 1.5 days longer than Q2 2026.",
         "96% of waivers were granted and 97% of phase 1 reviews ended in approval.",
         "3 matters referred to phase 2; 5 phase 2 reviews concluded (3 not approved, 2 assessment ceased)."
       ]
@@ -486,6 +539,20 @@
         "average_granted": 16.3,
         "average_refused": 23.3
       },
+      "pre_notification": {
+        "count": 29,
+        "median": 19,
+        "average": 21.4,
+        "p90": 33,
+        "buckets": [
+          0,
+          1,
+          17,
+          9,
+          1,
+          1
+        ]
+      },
       "matters": 66,
       "overseas_party": 24,
       "industries": [
@@ -540,6 +607,7 @@
       "findings": [
         "29 notifications filed, and 37 waiver applications decided.",
         "Phase 1 reviews concluded in a median 19.5 business days, 1.5 days slower than Q3 2026; waivers in 18, 1 day slower than Q3 2026.",
+        "Notifications filed had spent an estimated median 19 business days in pre-notification, 3 days longer than Q3 2026.",
         "92% of waivers were granted and 100% of phase 1 reviews ended in approval."
       ]
     }
