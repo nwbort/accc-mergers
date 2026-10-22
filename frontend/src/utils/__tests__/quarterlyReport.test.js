@@ -32,7 +32,6 @@ function quarter(key, overrides = {}) {
       ...overrides.waivers,
     },
     milestones: overrides.milestones ?? [],
-    complete: overrides.complete ?? true,
   };
 }
 
@@ -47,22 +46,19 @@ const Q3 = quarter('2026-Q3', {
     { kind: 'tribunal_application', detail: 'Coles' },
   ],
 });
-const Q4 = quarter('2026-Q4', { complete: false, notifications: { filed: 29 } });
-const QUARTERS = [Q2, Q3, Q4];
+const QUARTERS = [Q2, Q3];
 
 describe('pickQuarter', () => {
   it('honours a quarter named in the URL', () => {
     expect(pickQuarter(QUARTERS, '2026-Q2')).toBe(Q2);
-    expect(pickQuarter(QUARTERS, '2026-Q4')).toBe(Q4);
   });
 
-  it('defaults to the latest complete quarter, not the one in progress', () => {
+  it('defaults to the latest quarter', () => {
     expect(pickQuarter(QUARTERS, null)).toBe(Q3);
     expect(pickQuarter(QUARTERS, '1999-Q1')).toBe(Q3);
   });
 
-  it('falls back to the latest quarter when none is complete, and null when empty', () => {
-    expect(pickQuarter([Q4], null)).toBe(Q4);
+  it('is null with nothing published', () => {
     expect(pickQuarter([], null)).toBeNull();
   });
 });

@@ -35,10 +35,14 @@ def _payload():
         _notification('MN-2', '2026-07-01', '2026-07-22'),
         _notification('MN-3', '2026-07-01', '2026-08-12', 'Referred to phase 2'),
     ]
+    mergers[2]['appeals'] = [{
+        'tribunal_number': 'ACT 9 of 2026', 'tribunal_url': 'https://tribunal.example/act-9',
+        'appellant': 'Acquirer', 'status': 'current', 'filed_date': '2026-09-01',
+    }]
     return quarterly.generate(mergers, as_at=date(2026, 10, 22))
 
 
-def test_one_pdf_per_complete_quarter(tmp_path):
+def test_one_pdf_per_published_quarter(tmp_path):
     names = quarterly_pdf.generate(_payload(), tmp_path)
     assert names == [
         'quarterly-report-2026-Q1.pdf',
@@ -84,6 +88,20 @@ def test_report_links_each_matter_and_its_own_page(tmp_path):
     assert b'https://mergers.fyi/quarterly?q=2026-Q3' in raw
     # Q3's milestones only: MN-1 was decided in Q2 without going further.
     assert b'/mergers/MN-1/' not in raw
+
+
+def test_report_links_back_into_the_site(tmp_path):
+    quarterly_pdf.generate(_payload(), tmp_path)
+    raw = (tmp_path / 'quarterly-report-2026-Q3.pdf').read_bytes()
+    for path in (b'/analysis', b'/current-status', b'/industries/K/', b'/phase-2', b'/mergers'):
+        assert b'https://mergers.fyi' + path in raw, path
+
+
+def test_report_carries_tribunal_reviews(tmp_path):
+    quarterly_pdf.generate(_payload(), tmp_path)
+    assert b'https://tribunal.example/act-9' in (tmp_path / 'quarterly-report-2026-Q3.pdf').read_bytes()
+    # Lodged in Q3, so not in Q2's report.
+    assert b'tribunal.example' not in (tmp_path / 'quarterly-report-2026-Q2.pdf').read_bytes()
 
 
 def test_filename_matches_the_page_link():

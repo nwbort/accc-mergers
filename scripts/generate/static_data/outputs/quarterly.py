@@ -20,6 +20,10 @@ one before it. Each block answers the questions a quarterly round-up asks:
   by filing date, since filing is what ends the stage.
 - **Who and what.** The ANZSIC divisions the quarter's matters sat in, and the
   share of them with an overseas-registered party.
+- **Tribunal reviews.** Every Australian Competition Tribunal application live
+  at some point in the quarter — lodged before it ended and not concluded
+  before it began — with what happened to it in the quarter, its hearing and
+  its outcome, plus how many were lodged, concluded and still open at the end.
 - **Beyond phase 1.** Every phase 2 referral, phase 2 outcome, public benefit
   application, Tribunal application and Federal Court review in the quarter,
   as a dated list of matters.
@@ -36,8 +40,9 @@ filed this quarter" would undercount every application still in front of the
 ACCC (see ``analysis.current_status`` for the same reasoning). For waivers,
 decisions are the only honest count, and the page labels them so.
 
-The current quarter is included and flagged ``complete: false``, so the page
-can show it as a quarter to date rather than as a quiet quarter.
+Only complete quarters are published. The quarter in progress is a few weeks of
+filings, and every figure in it would read as a collapse against the quarter
+before, so it appears once it has ended.
 """
 
 import re
@@ -46,7 +51,7 @@ from datetime import date, datetime
 from statistics import median as stat_median
 from zoneinfo import ZoneInfo
 
-from scripts.constants import merger_status
+from scripts.constants import merger_status, tribunal
 
 from ..business_days import calculate_business_days
 from ..durations import phase_1_end_date
@@ -256,6 +261,93 @@ def _milestones(mergers: list) -> list[dict]:
     return events
 
 
+def _appeal_records(mergers: list) -> list[dict]:
+    """Every Tribunal matter on the register, each tagged with its merger."""
+    records = []
+    for m in mergers:
+        for appeal in m.get("appeals") or []:
+            if not appeal.get("filed_date"):
+                continue
+            concluded = appeal.get("status") == tribunal.APPEAL_STATUS_CONCLUDED
+            outcome = appeal.get("outcome") if concluded else None
+            records.append({
+                "tribunal_number": appeal.get("tribunal_number"),
+                "tribunal_url": appeal.get("tribunal_url"),
+                "merger_id": m.get("merger_id"),
+                "merger_name": m.get("merger_name"),
+                "appellant": appeal.get("appellant"),
+                "filed_date": appeal["filed_date"][:10],
+                "hearing_date": (appeal.get("hearing_date") or "")[:10] or None,
+                "concluded": concluded,
+                "concluded_date": (appeal.get("concluded_date") or "")[:10] or None,
+                "outcome": outcome,
+                "outcome_label": tribunal.APPEAL_OUTCOME_LABELS.get(outcome) if outcome else None,
+            })
+    records.sort(key=lambda a: (a["filed_date"], a["tribunal_number"] or ""))
+    return records
+
+
+def _day(iso: str) -> str:
+    d = date.fromisoformat(iso)
+    return f"{d.day} {d.strftime('%b %Y')}"
+
+
+def _appeal_note(a: dict, concluded_here: bool, open_at_end: bool, start_iso: str) -> str:
+    """One line on where a Tribunal matter stood in the quarter.
+
+    Written here so the page and the PDF describe each matter identically.
+    """
+    parts = ["Lodged this quarter" if a["filed_date"] >= start_iso else "Carried in from an earlier quarter"]
+    if concluded_here:
+        parts.append(f"concluded {_day(a['concluded_date'])}" + (f": {a['outcome_label']}" if a["outcome_label"] else ""))
+    elif open_at_end:
+        parts.append("open at quarter end")
+        if a["concluded"] and a["concluded_date"]:
+            parts.append(f"since concluded {_day(a['concluded_date'])}"
+                         + (f": {a['outcome_label']}" if a["outcome_label"] else ""))
+        elif a["hearing_date"]:
+            parts.append(f"hearing listed for {_day(a['hearing_date'])}")
+    return "; ".join(parts)
+
+
+def _quarter_appeals(records: list[dict], start: date, end: date) -> dict:
+    """The Tribunal matters live during ``start``–``end``, and what each did then.
+
+    A matter recorded as concluded with no date is taken to have ended before
+    any quarter it would otherwise run past, so it can't be counted open.
+    """
+    start_iso, end_iso = start.isoformat(), end.isoformat()
+    matters = []
+    for a in records:
+        if a["filed_date"] > end_iso:
+            continue
+        concluded_on = a["concluded_date"]
+        if a["concluded"]:
+            # Over before the quarter began: concluded earlier, or undated and
+            # lodged earlier (lodged in the quarter, it was live in it).
+            ended_before = concluded_on < start_iso if concluded_on else a["filed_date"] < start_iso
+            if ended_before:
+                continue
+        concluded_here = a["concluded"] and concluded_on is not None and start_iso <= concluded_on <= end_iso
+        open_at_end = not a["concluded"] or (concluded_on is not None and concluded_on > end_iso)
+        matters.append({
+            **{k: v for k, v in a.items() if k != "concluded"},
+            "note": _appeal_note(a, concluded_here, open_at_end, start_iso),
+            # What is known *now* about a matter that was open at quarter end
+            # — its outcome, if it has since concluded — is kept, but these
+            # flags describe the quarter itself.
+            "lodged_in_quarter": a["filed_date"] >= start_iso,
+            "concluded_in_quarter": concluded_here,
+            "open_at_end": open_at_end,
+        })
+    return {
+        "lodged": sum(1 for m in matters if m["lodged_in_quarter"]),
+        "concluded": sum(1 for m in matters if m["concluded_in_quarter"]),
+        "open_at_end": sum(1 for m in matters if m["open_at_end"]),
+        "matters": matters,
+    }
+
+
 def _industries(mergers: list) -> list[dict]:
     """Top ANZSIC divisions among ``mergers``, each matter counted once per division."""
     counts: Counter = Counter()
@@ -272,7 +364,7 @@ def _industries(mergers: list) -> list[dict]:
     return [{"code": code, "name": names[code], "count": n} for code, n in ranked]
 
 
-def _quarter_block(quarter, notifications, waivers, milestones, pre_notification, as_at: date) -> dict:
+def _quarter_block(quarter, notifications, waivers, milestones, pre_notification, appeals) -> dict:
     key = _quarter_key(quarter)
     start, end = _quarter_bounds(quarter)
 
@@ -335,7 +427,6 @@ def _quarter_block(quarter, notifications, waivers, milestones, pre_notification
         "label": f"Q{quarter[1]} {quarter[0]}",
         "start": start.isoformat(),
         "end": end.isoformat(),
-        "complete": end < as_at,
         "notifications": {
             "filed": len(filed),
             "phase_1_decided": p1_decided,
@@ -365,6 +456,7 @@ def _quarter_block(quarter, notifications, waivers, milestones, pre_notification
         "matters": len(arrivals),
         "overseas_party": sum(1 for m in arrivals if has_overseas_party(m)),
         "industries": _industries(arrivals),
+        "appeals": _quarter_appeals(appeals, start, end),
         "milestones": [e for e in milestones if _quarter_of(e["date"]) == quarter],
     }
 
@@ -414,12 +506,10 @@ _OUTCOME_KINDS = {"phase_2_outcome", "public_benefit_outcome"}
 def findings(block: dict, previous: dict | None) -> list[str]:
     """What moved this quarter, as a short list of sentences.
 
-    Volume comparisons are left off for a quarter still in progress — a few
-    weeks of filings against a full quarter would always read as a fall — but
-    its timing still compares, since a median doesn't scale with time.
+    Comparisons are left off for the first quarter, which has nothing before it.
     """
     prev_label = previous["label"] if previous else ""
-    compare_volume = previous is not None and block["complete"]
+    compare_volume = previous is not None
     n, w = block["notifications"], block["waivers"]
     out = [
         f"{_plural(n['filed'], 'notification')} filed"
@@ -472,6 +562,18 @@ def findings(block: dict, previous: dict | None) -> list[str]:
         joined = "; ".join(parts)
         out.append(f"{joined[0].upper()}{joined[1:]}.")
 
+    appeals = block.get("appeals") or {}
+    if appeals.get("matters"):
+        lodged = [m for m in appeals["matters"] if m["lodged_in_quarter"]]
+        parts = []
+        if lodged:
+            who = ", ".join(f"{m['appellant']} ({m['tribunal_number']})" for m in lodged)
+            parts.append(f"{_plural(len(lodged), 'Tribunal review')} sought: {who}")
+        if appeals["concluded"]:
+            parts.append(f"{_plural(appeals['concluded'], 'Tribunal review')} concluded")
+        parts.append(f"{appeals['open_at_end']} open at quarter end")
+        out.append("; ".join(parts) + ".")
+
     return out
 
 
@@ -479,7 +581,8 @@ def generate(mergers: list, as_at: date | None = None) -> dict:
     """Return the quarterly.json payload for pre-enriched mergers.
 
     ``as_at`` defaults to today in Sydney, as for ``analysis.current_status``:
-    it decides which quarter is the current, incomplete one.
+    the quarter it falls in is still running, so the last quarter published is
+    the one before.
     """
     if as_at is None:
         as_at = datetime.now(_SYDNEY).date()
@@ -487,10 +590,12 @@ def generate(mergers: list, as_at: date | None = None) -> dict:
     waivers = filter_waivers(mergers)
     milestones = _milestones(mergers)
     pre_notification = _pre_notification_durations(notifications)
+    appeals = _appeal_records(notifications)
 
-    last = max(FIRST_QUARTER, _quarter_of(as_at.isoformat()))
+    year, q = _quarter_of(as_at.isoformat())
+    last = (year - 1, 4) if q == 1 else (year, q - 1)
     quarters = [
-        _quarter_block(q, notifications, waivers, milestones, pre_notification, as_at)
+        _quarter_block(q, notifications, waivers, milestones, pre_notification, appeals)
         for q in _quarters_between(FIRST_QUARTER, last)
     ]
     for previous, block in zip([None] + quarters, quarters):

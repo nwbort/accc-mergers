@@ -9,19 +9,13 @@
  */
 
 /**
- * The quarter a `?q=` value names, else the latest complete quarter, else the
- * latest of any kind.
- *
- * Defaulting to the latest *complete* quarter is what a quarterly report means:
- * the quarter in progress is a few weeks of filings, and leading with it would
- * read every figure as a collapse.
+ * The quarter a `?q=` value names, else the latest. quarterly.json publishes
+ * complete quarters only, so the latest is the last quarter to have ended.
  */
 export function pickQuarter(quarters, key) {
   if (!quarters?.length) return null;
   const named = key && quarters.find((q) => q.quarter === key);
-  if (named) return named;
-  const complete = quarters.filter((q) => q.complete);
-  return complete.length ? complete[complete.length - 1] : quarters[quarters.length - 1];
+  return named || quarters[quarters.length - 1];
 }
 
 /** The quarter before `quarter` in the published list, or null for the first. */

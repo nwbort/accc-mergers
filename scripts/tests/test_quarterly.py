@@ -58,21 +58,26 @@ def _quarter(payload, key):
 
 
 class TestQuarterRange:
-    def test_runs_from_the_mandatory_regime_to_the_current_quarter(self):
+    def test_runs_from_the_mandatory_regime_to_the_last_complete_quarter(self):
         payload = quarterly.generate([], as_at=AS_AT)
-        assert [q['quarter'] for q in payload['quarters']] == [
-            '2026-Q1', '2026-Q2', '2026-Q3', '2026-Q4',
+        assert [q['quarter'] for q in payload['quarters']] == ['2026-Q1', '2026-Q2', '2026-Q3']
+
+    def test_the_quarter_in_progress_is_left_out(self):
+        assert [q['quarter'] for q in quarterly.generate([], as_at=date(2026, 9, 30))['quarters']] == [
+            '2026-Q1', '2026-Q2',
         ]
+        # The first day of a quarter publishes the one that just ended.
+        assert quarterly.generate([], as_at=date(2026, 10, 1))['quarters'][-1]['quarter'] == '2026-Q3'
+        # Across a year boundary.
+        assert quarterly.generate([], as_at=date(2027, 2, 1))['quarters'][-1]['quarter'] == '2026-Q4'
 
-    def test_only_the_current_quarter_is_incomplete(self):
-        payload = quarterly.generate([], as_at=AS_AT)
-        assert [q['complete'] for q in payload['quarters']] == [True, True, True, False]
-        q3 = _quarter(payload, '2026-Q3')
+    def test_nothing_before_the_first_quarter_ends(self):
+        assert quarterly.generate([], as_at=date(2026, 3, 31))['quarters'] == []
+
+    def test_quarter_bounds_and_label(self):
+        q3 = _quarter(quarterly.generate([], as_at=AS_AT), '2026-Q3')
         assert (q3['start'], q3['end'], q3['label']) == ('2026-07-01', '2026-09-30', 'Q3 2026')
-
-    def test_quarter_ending_yesterday_is_complete(self):
-        payload = quarterly.generate([], as_at=date(2026, 10, 1))
-        assert _quarter(payload, '2026-Q3')['complete'] is True
+        assert 'complete' not in q3
 
     def test_bucket_labels_match_bucket_counts(self):
         payload = quarterly.generate([_waiver('WA-1', '2026-07-01', '2026-07-03')], as_at=AS_AT)
@@ -144,7 +149,7 @@ class TestMilestones:
             'merger_id': 'MN-1', 'merger_name': 'MN-1 deal', 'kind': 'phase_2_outcome',
             'date': '2026-08-20', 'detail': 'Approved with conditions',
         }]
-        q4 = _quarter(payload, '2026-Q4')['milestones']
+        q4 = _quarter(quarterly.generate([m], as_at=date(2027, 1, 5)), '2026-Q4')['milestones']
         assert [(e['kind'], e['detail']) for e in q4] == [('tribunal_application', 'Rival')]
 
     def test_a_phase_1_cessation_is_its_own_milestone(self):
@@ -198,10 +203,10 @@ class TestIndustries:
         assert {i['code']: i['count'] for i in industries} == {'K': 2, 'C': 1}
 
 
-def _summary(key, label, *, complete=True, filed=100, decided=150, p1_median=17, w_median=12,
+def _summary(key, label, *, filed=100, decided=150, p1_median=17, w_median=12,
              referred=2, milestones=()):
     return {
-        'quarter': key, 'label': label, 'complete': complete,
+        'quarter': key, 'label': label,
         'notifications': {
             'filed': filed, 'phase_1_decided': 90, 'referred_to_phase_2': referred,
             'clearance_rate': 88 / 90, 'timing': {'median': p1_median},
@@ -218,7 +223,6 @@ Q3 = _summary('2026-Q3', 'Q3 2026', filed=113, decided=183, p1_median=18, w_medi
     {'kind': 'phase_2_outcome', 'detail': 'Assessment ceased'},
     {'kind': 'tribunal_application', 'detail': 'Coles'},
 ])
-Q4 = _summary('2026-Q4', 'Q4 2026', complete=False, filed=29)
 
 
 class TestFindings:
@@ -230,9 +234,6 @@ class TestFindings:
             '96% of waivers were granted and 98% of phase 1 reviews ended in approval.',
             '2 matters referred to phase 2; 3 phase 2 reviews concluded (2 not approved, 1 assessment ceased).',
         ]
-
-    def test_leaves_volume_uncompared_for_a_quarter_in_progress(self):
-        assert quarterly.findings(Q4, Q3)[0] == '29 notifications filed, and 150 waiver applications decided.'
 
     def test_first_quarter_has_no_comparisons(self):
         assert quarterly.findings(Q2, None)[1] == (
@@ -284,3 +285,54 @@ class TestPreNotification:
 
     def test_no_finding_without_an_estimate(self):
         assert not any('pre-notification' in f for f in quarterly.findings(Q3, Q2))
+
+
+class TestAppeals:
+    def _merger(self, *appeals):
+        return _notification(
+            'MN-1', '2026-02-02', 'Referred to phase 2', '2026-03-10',
+            appeals=list(appeals),
+        )
+
+    @staticmethod
+    def _appeal(number, filed, status='current', concluded=None, outcome=None, hearing=None):
+        return {
+            'tribunal_number': number, 'tribunal_url': f'https://tribunal.example/{number}',
+            'appellant': 'Applicant', 'status': status, 'filed_date': filed,
+            'concluded_date': concluded, 'outcome': outcome, 'hearing_date': hearing,
+        }
+
+    def test_an_appeal_counts_in_every_quarter_it_was_live(self):
+        appeal = self._appeal('ACT 1 of 2026', '2026-05-10', 'concluded', '2026-08-20', 'affirmed')
+        payload = quarterly.generate([self._merger(appeal)], as_at=date(2027, 1, 5))
+        q2, q3, q4 = (_quarter(payload, k)['appeals'] for k in ('2026-Q2', '2026-Q3', '2026-Q4'))
+        assert (q2['lodged'], q2['concluded'], q2['open_at_end']) == (1, 0, 1)
+        assert (q3['lodged'], q3['concluded'], q3['open_at_end']) == (0, 1, 0)
+        assert q4['matters'] == []
+        assert q2['matters'][0]['note'] == (
+            'Lodged this quarter; open at quarter end; since concluded 20 Aug 2026: ACCC decision affirmed'
+        )
+        assert q3['matters'][0]['note'] == (
+            'Carried in from an earlier quarter; concluded 20 Aug 2026: ACCC decision affirmed'
+        )
+
+    def test_open_appeal_notes_its_hearing(self):
+        appeal = self._appeal('ACT 1 of 2026', '2026-07-15', hearing='2026-11-09')
+        q3 = _quarter(quarterly.generate([self._merger(appeal)], as_at=AS_AT), '2026-Q3')['appeals']
+        assert q3['matters'][0]['note'] == 'Lodged this quarter; open at quarter end; hearing listed for 9 Nov 2026'
+        assert q3['matters'][0]['tribunal_url'] == 'https://tribunal.example/ACT 1 of 2026'
+        assert q3['matters'][0]['merger_id'] == 'MN-1'
+
+    def test_lodged_after_the_quarter_is_not_in_it(self):
+        appeal = self._appeal('ACT 3 of 2026', '2026-10-01')
+        payload = quarterly.generate([self._merger(appeal)], as_at=date(2027, 1, 5))
+        assert _quarter(payload, '2026-Q3')['appeals']['matters'] == []
+        assert _quarter(payload, '2026-Q4')['appeals']['lodged'] == 1
+
+    def test_finding_names_each_application(self):
+        appeals = [self._appeal('ACT 3 of 2026', '2026-10-01'), self._appeal('ACT 4 of 2026', '2026-10-05')]
+        appeals[1]['appellant'] = 'Other'
+        q4 = _quarter(quarterly.generate([self._merger(*appeals)], as_at=date(2027, 1, 5)), '2026-Q4')
+        assert q4['findings'][-1] == (
+            '2 Tribunal reviews sought: Applicant (ACT 3 of 2026), Other (ACT 4 of 2026); 2 open at quarter end.'
+        )

@@ -5,9 +5,8 @@ A printable, attachable twin of the /quarterly page, drawn from the same
 the same "in brief" sentences (written by the generator, not here), the same
 charts, pre-notification estimates and list of post-phase-1 milestones.
 
-One file per *complete* quarter. The quarter in progress gets none: a PDF is
-a thing people forward, and a few weeks of a quarter forwarded as "the Q4
-report" would be read as a collapse. Every complete quarter is redrawn on
+One file per quarter in quarterly.json, which publishes complete quarters
+only. Every quarter is redrawn on
 every run rather than frozen, because late register changes (a refused waiver
 re-filed weeks later, a re-dated determination) still move its figures — and
 the output is byte-for-byte deterministic (reportlab's ``invariant`` mode, no
@@ -45,7 +44,7 @@ from xml.sax.saxutils import escape
 from scripts.generate.static_data.outputs.quarterly import format_rate, percent_change
 from scripts.generate.static_data.prune import prune_stale_files
 from scripts.paths import REPO_ROOT
-from scripts.slug import merger_path
+from scripts.slug import industry_path, merger_path
 
 SITE = "https://mergers.fyi"
 DATA_DIR = REPO_ROOT / "frontend" / "public" / "data"
@@ -78,7 +77,11 @@ MILESTONE_LABELS = {
 
 PAGE_W, PAGE_H = A4
 MARGIN = 16 * mm
-CONTENT_W = PAGE_W - 2 * MARGIN
+# SimpleDocTemplate's frame pads its text area by 6pt a side; a table sized to
+# the full margin-to-margin width overhangs that and is re-centred, sitting
+# 6pt left of the paragraphs around it.
+FRAME_PADDING = 6
+CONTENT_W = PAGE_W - 2 * MARGIN - 2 * FRAME_PADDING
 BAND_H = 14 * mm
 
 _STYLE = {
@@ -126,6 +129,34 @@ def _p(text: str, style: str) -> Paragraph:
     return Paragraph(text, _STYLE[style])
 
 
+def _url(path: str) -> str:
+    return SITE + path
+
+
+def _a(text: str, url: str, colour: str | None = None) -> str:
+    """Inline link markup. Links into the site are set in the surrounding
+    text's own colour unless ``colour`` says otherwise, so a page reads as
+    text rather than a wall of blue, while every heading, figure label and
+    name still goes somewhere."""
+    attr = f' color="{colour}"' if colour else ""
+    return f'<link href="{escape(url)}"{attr}>{text}</link>'
+
+
+def _h2(text: str, path: str | None = None) -> Paragraph:
+    return _p(_a(text, _url(path)) if path else text, "h2")
+
+
+def _section(*flowables) -> KeepTogether:
+    """A section that moves to the next page whole rather than splitting.
+
+    Every section is wrapped in one, so a heading never strands at the foot of
+    a page and no table or paragraph breaks across pages. One taller than a
+    whole page (a very long milestones list) still has to split; KeepTogether
+    then falls back to splitting it between rows.
+    """
+    return KeepTogether(list(flowables))
+
+
 # --- Headline tiles ----------------------------------------------------------
 
 def _volume_delta(value, before, previous_label, compare) -> str:
@@ -152,15 +183,15 @@ def _timing_delta(value, before, previous_label) -> str:
 def _tiles(q: dict, prev: dict | None) -> Table:
     n, w = q["notifications"], q["waivers"]
     label = prev["label"] if prev else ""
-    compare = prev is not None and q["complete"]
+    compare = prev is not None
     tiles = [
-        ("NOTIFICATIONS FILED", _number(n["filed"]),
+        (_a("NOTIFICATIONS FILED", _url("/mergers")), _number(n["filed"]),
          _volume_delta(n["filed"], prev and prev["notifications"]["filed"], label, compare)),
-        ("WAIVERS DECIDED", _number(w["decided"]),
+        (_a("WAIVERS DECIDED", _url("/mergers")), _number(w["decided"]),
          _volume_delta(w["decided"], prev and prev["waivers"]["decided"], label, compare)),
-        ("PHASE 1 MEDIAN", f'{_number(n["timing"]["median"])}<font size="9" color="#6b7280"> business days</font>',
+        (_a("PHASE 1 MEDIAN", _url("/current-status")), f'{_number(n["timing"]["median"])}<font size="9" color="#6b7280"> business days</font>',
          _timing_delta(n["timing"]["median"], prev and prev["notifications"]["timing"]["median"], label)),
-        ("WAIVER MEDIAN", f'{_number(w["timing"]["median"])}<font size="9" color="#6b7280"> business days</font>',
+        (_a("WAIVER MEDIAN", _url("/current-status")), f'{_number(w["timing"]["median"])}<font size="9" color="#6b7280"> business days</font>',
          _timing_delta(w["timing"]["median"], prev and prev["waivers"]["timing"]["median"], label)),
     ]
     cells = [[[_p(t, "label"), Spacer(1, 3), _p(v, "value"), Spacer(1, 2), _p(d, "caption")] for t, v, d in tiles]]
@@ -251,7 +282,7 @@ def _volume_chart(quarters: list[dict], selected: dict) -> Drawing:
     chart.x, chart.y = 26, 40
     chart.width, chart.height = width - 34, height - 50
     chart.data = [[get(q) for q in quarters] for _, get, _ in series]
-    chart.categoryAxis.categoryNames = [q["label"] if q["complete"] else f'{q["label"]} (to date)' for q in quarters]
+    chart.categoryAxis.categoryNames = [q["label"] for q in quarters]
     _style_axes(chart)
     _axis(chart, max(max(row) for row in chart.data) or 1)
     chart.barSpacing = 1.5
@@ -352,14 +383,15 @@ def _outcomes(q: dict) -> Table:
         [("Average when granted", _days(w["average_granted"])),
          ("Average when refused", _days(w["average_refused"])),
          ("Refused", w["refused"])],
-        f'{w["refused_refiled"]} of {w["refused"]} refused waivers have since been re-filed as a notification.'
+        f'{w["refused_refiled"]} of {w["refused"]} refused waivers have since been '
+        + _a("re-filed as a notification", _url("/refiled-notifications"), "#335145") + "."
         if w["refused"] else None,
         half,
     )
     p1_rows = [
         ("Average when approved", _days(n["average_cleared"])),
         ("Average when referred", _days(n["average_referred"])),
-        ("Referred to phase 2", n["referred_to_phase_2"]),
+        (_a("Referred to phase 2", _url("/phase-2")), n["referred_to_phase_2"]),
     ]
     if n["refused"]:
         p1_rows.append(("Not approved", n["refused"]))
@@ -388,7 +420,7 @@ def _timing(payload: dict, q: dict, prev: dict | None) -> list:
         before = {"label": prev["label"], "timing": prev[key]["timing"]} if prev else None
         t = q[key]["timing"]
         cells.append([
-            _p(title, "h2"),
+            _h2(title, "/analysis"),
             _p(f"Share of decisions by business days taken – median {_days(t['median'])}, "
                f"90% within {_days(t['p90'])}", "caption"),
             Spacer(1, 4),
@@ -437,7 +469,7 @@ def _pre_notification(payload: dict, q: dict, prev: dict | None) -> list:
         ("RIGHTPADDING", (0, 0), (-1, -1), 0),
     ]))
     return [
-        _p("Pre-notification", "h2"),
+        _h2("Pre-notification", "/current-status"),
         _p(f"Estimated time the {pre['count']} notifications filed this quarter spent with the ACCC before "
            "filing, as a share of those notifications", "caption"),
         Spacer(1, 6),
@@ -450,7 +482,7 @@ def _pre_notification(payload: dict, q: dict, prev: dict | None) -> list:
 
 
 def _industries(q: dict) -> list:
-    flow = [_p("Where the deals were", "h2"),
+    flow = [_h2("Where the deals were", "/industries"),
             _p("Notifications filed and waivers decided, by ANZSIC division", "caption"),
             Spacer(1, 6)]
     top = q["industries"]
@@ -463,7 +495,8 @@ def _industries(q: dict) -> list:
         bar = Drawing(bar_w, 7)
         bar.add(Rect(0, 0, bar_w, 6, rx=3, ry=3, fillColor=colors.HexColor("#f3f4f6"), strokeColor=None))
         bar.add(Rect(0, 0, bar_w * industry["count"] / biggest, 6, rx=3, ry=3, fillColor=PRIMARY, strokeColor=None))
-        rows.append([_p(escape(industry["name"]), "small"), bar, _p(str(industry["count"]), "small_right")])
+        name = _a(escape(industry["name"]), _url(industry_path(industry["code"], industry["name"])))
+        rows.append([_p(name, "small"), bar, _p(str(industry["count"]), "small_right")])
     table = Table(rows, colWidths=[CONTENT_W * 0.48, bar_w + 6, CONTENT_W * 0.10 - 6])
     table.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
@@ -485,7 +518,7 @@ def _industries(q: dict) -> list:
 
 
 def _milestones(q: dict) -> list:
-    flow = [_p("Beyond phase 1", "h2"),
+    flow = [_h2("Beyond phase 1", "/phase-2"),
             _p("Phase 2 referrals and outcomes, public benefit applications, and Tribunal and court reviews",
                "caption"),
             Spacer(1, 6)]
@@ -514,13 +547,58 @@ def _milestones(q: dict) -> list:
     return flow + [table]
 
 
-def _notes() -> list:
+def _appeals(q: dict) -> list:
+    appeals = q.get("appeals") or {}
+    matters = appeals.get("matters") or []
+    flow = [
+        _h2("Tribunal reviews"),
+        _p("Applications to the Australian Competition Tribunal for review of an ACCC determination, "
+           "live at some point in the quarter", "caption"),
+        Spacer(1, 6),
+    ]
+    if not matters:
+        return flow + [_p("No Tribunal reviews were live this quarter.", "caption")]
+    flow += [
+        _p(f'<b>{appeals["lodged"]}</b> lodged \u00b7 <b>{appeals["concluded"]}</b> concluded \u00b7 '
+           f'<b>{appeals["open_at_end"]}</b> open at quarter end', "small"),
+        Spacer(1, 5),
+    ]
+    rows = [[_p(f'<font color="#6b7280">{h}</font>', "label") for h in ("MATTER", "MERGER", "APPLICANT", "STATUS")]]
+    for m in matters:
+        number = _a(escape(m["tribunal_number"] or ""), m["tribunal_url"], "#335145") if m.get("tribunal_url") \
+            else escape(m["tribunal_number"] or "")
+        merger = _a(escape(m["merger_name"]), _url(merger_path(m["merger_id"], m["merger_name"])), "#335145")
+        rows.append([
+            _p(f"<b>{number}</b><br/><font color=\"#6b7280\">lodged {_short_date(m['filed_date'])}</font>", "small"),
+            _p(merger, "small"),
+            _p(escape(m.get("appellant") or "\u2013"), "small"),
+            _p(escape(m["note"]), "small"),
+        ])
+    table = Table(rows, colWidths=[32 * mm, CONTENT_W - 32 * mm - 24 * mm - 62 * mm, 24 * mm, 62 * mm], repeatRows=1)
+    table.setStyle(TableStyle([
+        ("LINEBELOW", (0, 0), (-1, -1), 0.4, RULE),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+        ("TOPPADDING", (0, 0), (-1, -1), 4),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+    ]))
+    return flow + [table]
+
+
+def _notes(q: dict) -> list:
+    page = _url(f"/quarterly?q={q['quarter']}")
     return [
         _p("Notes", "h2"),
         _p("Decisions count in the quarter they were made; notifications in the quarter they were filed. "
            "Waivers reach the ACCC's register only once decided, so they are counted when decided. Phase 1 "
            "timing runs from notification to the phase 1 determination, or to the referral for a matter sent to "
            "phase 2. All durations are business days, as the statutory clocks count them.", "caption"),
+        Spacer(1, 4),
+        _p(f'The interactive version of this report is at {_a("mergers.fyi/quarterly", page, "#335145")}. '
+           f'Every matter is on {_a("mergers.fyi/mergers", _url("/mergers"), "#335145")}, with live decision times on '
+           f'{_a("mergers.fyi/current-status", _url("/current-status"), "#335145")} and longer-run analysis on '
+           f'{_a("mergers.fyi/analysis", _url("/analysis"), "#335145")}.', "caption"),
     ]
 
 
@@ -528,6 +606,8 @@ def _notes() -> list:
 
 def _page_decorations(quarter: dict):
     page_url = f"{SITE}/quarterly?q={quarter['quarter']}"
+    # The band and footer line up with the text, not the bare page margin.
+    EDGE = MARGIN + FRAME_PADDING
 
     def draw(canvas, doc):
         canvas.saveState()
@@ -535,20 +615,21 @@ def _page_decorations(quarter: dict):
         canvas.rect(0, PAGE_H - BAND_H, PAGE_W, BAND_H, stroke=0, fill=1)
         canvas.setFillColor(colors.white)
         canvas.setFont("Helvetica-Bold", 11)
-        canvas.drawString(MARGIN, PAGE_H - BAND_H + 5 * mm, "australian merger tracker")
+        canvas.drawString(EDGE, PAGE_H - BAND_H + 5 * mm, "australian merger tracker")
+        canvas.linkURL(SITE, (EDGE, PAGE_H - BAND_H, EDGE + 60 * mm, PAGE_H), relative=0)
         canvas.setFont("Helvetica", 9)
-        canvas.drawRightString(PAGE_W - MARGIN, PAGE_H - BAND_H + 5 * mm, f"Quarterly report · {quarter['label']}")
+        canvas.drawRightString(PAGE_W - EDGE, PAGE_H - BAND_H + 5 * mm, f"Quarterly report · {quarter['label']}")
         canvas.setStrokeColor(RULE)
         canvas.setLineWidth(0.5)
-        canvas.line(MARGIN, 13 * mm, PAGE_W - MARGIN, 13 * mm)
+        canvas.line(EDGE, 13 * mm, PAGE_W - EDGE, 13 * mm)
         canvas.setFillColor(MUTED)
         canvas.setFont("Helvetica", 7)
         canvas.drawString(
-            MARGIN, 9 * mm,
+            EDGE, 9 * mm,
             "Source: ACCC acquisitions register, via mergers.fyi. Data CC BY 4.0. Not legal advice.",
         )
-        canvas.drawRightString(PAGE_W - MARGIN, 9 * mm, f"{page_url}  ·  {doc.page}")
-        canvas.linkURL(page_url, (PAGE_W - MARGIN - 80 * mm, 7 * mm, PAGE_W - MARGIN, 12 * mm), relative=0)
+        canvas.drawRightString(PAGE_W - EDGE, 9 * mm, f"{page_url}  ·  {doc.page}")
+        canvas.linkURL(page_url, (PAGE_W - EDGE - 80 * mm, 7 * mm, PAGE_W - EDGE, 12 * mm), relative=0)
         canvas.restoreState()
 
     return draw
@@ -568,40 +649,44 @@ def build_pdf(payload: dict, quarter_key: str, path: Path) -> None:
         author="mergers.fyi", subject="Australian merger regime: quarterly report",
         creator="mergers.fyi", invariant=1,
     )
+    page = _url(f"/quarterly?q={q['quarter']}")
     story = [
-        _p(f"Quarterly report: {q['label']}", "title"),
+        _p(_a(f"Quarterly report: {q['label']}", page), "title"),
         Spacer(1, 3),
-        _p(f"Australia's merger regime, {_long_date(q['start'])} – {_long_date(q['end'])}", "subtitle"),
+        _p(f"Australia's merger regime, {_long_date(q['start'])} \u2013 {_long_date(q['end'])}", "subtitle"),
         Spacer(1, 10),
-        _tiles(q, prev),
-        Spacer(1, 8),
-        _brief(q),
+        _section(_tiles(q, prev), Spacer(1, 8), _brief(q)),
         Spacer(1, 14),
-        KeepTogether([
-            _p("Volume by quarter", "h2"),
+        _section(
+            _h2("Volume by quarter", "/analysis"),
             _p("Waivers reach the ACCC's register only once decided, so they are counted when decided", "caption"),
             Spacer(1, 6),
             _volume_chart(quarters, q),
-        ]),
+        ),
         Spacer(1, 12),
-        KeepTogether([_outcomes(q)]),
+        _section(_outcomes(q)),
         Spacer(1, 14),
-        KeepTogether(_timing(payload, q, prev)),
+        _section(*_timing(payload, q, prev)),
         Spacer(1, 12),
-        KeepTogether(_pre_notification(payload, q, prev)),
+        _section(*_pre_notification(payload, q, prev)),
         Spacer(1, 12),
-        KeepTogether(_industries(q)),
+        _section(*_industries(q)),
         Spacer(1, 14),
-        *_milestones(q),
+        _section(*_appeals(q)),
         Spacer(1, 14),
-        KeepTogether(_notes()),
+        _section(*_milestones(q)),
+        Spacer(1, 14),
+        _section(*_notes(q)),
     ]
     decorate = _page_decorations(q)
     doc.build(story, onFirstPage=decorate, onLaterPages=decorate)
 
 
 def generate(payload: dict, out_dir: Path) -> list[str]:
-    """Draw a PDF for every complete quarter in ``payload``; prune the rest.
+    """Draw a PDF for every quarter in ``payload``; prune the rest.
+
+    quarterly.json publishes complete quarters only, so this never draws a
+    quarter still in progress.
 
     Returns the file names written. A quarter's file is only rewritten when its
     bytes change, so an unchanged report keeps its mtime as well as its hash.
@@ -610,8 +695,6 @@ def generate(payload: dict, out_dir: Path) -> list[str]:
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
     for q in payload.get("quarters", []):
-        if not q.get("complete"):
-            continue
         name = report_filename(q["quarter"])
         target = out_dir / name
         scratch = out_dir / f".{name}.tmp"

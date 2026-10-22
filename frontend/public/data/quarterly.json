@@ -24,7 +24,6 @@
       "label": "Q1 2026",
       "start": "2026-01-01",
       "end": "2026-03-31",
-      "complete": true,
       "notifications": {
         "filed": 50,
         "phase_1_decided": 32,
@@ -120,6 +119,12 @@
           "count": 13
         }
       ],
+      "appeals": {
+        "lodged": 0,
+        "concluded": 0,
+        "open_at_end": 0,
+        "matters": []
+      },
       "milestones": [
         {
           "merger_id": "MN-01019",
@@ -147,7 +152,6 @@
       "label": "Q2 2026",
       "start": "2026-04-01",
       "end": "2026-06-30",
-      "complete": true,
       "notifications": {
         "filed": 95,
         "phase_1_decided": 81,
@@ -243,6 +247,12 @@
           "count": 26
         }
       ],
+      "appeals": {
+        "lodged": 0,
+        "concluded": 0,
+        "open_at_end": 0,
+        "matters": []
+      },
       "milestones": [
         {
           "merger_id": "MN-30003",
@@ -296,7 +306,6 @@
       "label": "Q3 2026",
       "start": "2026-07-01",
       "end": "2026-09-30",
-      "complete": true,
       "notifications": {
         "filed": 113,
         "phase_1_decided": 119,
@@ -392,6 +401,29 @@
           "count": 38
         }
       ],
+      "appeals": {
+        "lodged": 1,
+        "concluded": 0,
+        "open_at_end": 1,
+        "matters": [
+          {
+            "tribunal_number": "ACT 1 of 2026",
+            "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026",
+            "merger_id": "MN-01068",
+            "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+            "appellant": "Coles",
+            "filed_date": "2026-07-15",
+            "hearing_date": "2026-11-09",
+            "concluded_date": null,
+            "outcome": null,
+            "outcome_label": null,
+            "note": "Lodged this quarter; open at quarter end; hearing listed for 9 Nov 2026",
+            "lodged_in_quarter": true,
+            "concluded_in_quarter": false,
+            "open_at_end": true
+          }
+        ]
+      },
       "milestones": [
         {
           "merger_id": "MN-01068",
@@ -478,137 +510,8 @@
         "Phase 1 reviews concluded in a median 18 business days, 1 day slower than Q2 2026; waivers in 17, 5 days slower than Q2 2026.",
         "Notifications filed had spent an estimated median 16 business days in pre-notification, 1.5 days longer than Q2 2026.",
         "96% of waivers were granted and 97% of phase 1 reviews ended in approval.",
-        "3 matters referred to phase 2; 5 phase 2 reviews concluded (3 not approved, 2 assessment ceased)."
-      ]
-    },
-    {
-      "quarter": "2026-Q4",
-      "label": "Q4 2026",
-      "start": "2026-10-01",
-      "end": "2026-12-31",
-      "complete": false,
-      "notifications": {
-        "filed": 29,
-        "phase_1_decided": 18,
-        "cleared": 18,
-        "referred_to_phase_2": 0,
-        "refused": 0,
-        "ceased": 0,
-        "clearance_rate": 1.0,
-        "timing": {
-          "count": 18,
-          "median": 19.5,
-          "average": 19.3,
-          "p90": 25,
-          "buckets": [
-            0,
-            0,
-            0,
-            9,
-            6,
-            3,
-            0,
-            0
-          ]
-        },
-        "average_cleared": 19.3,
-        "average_referred": null
-      },
-      "waivers": {
-        "decided": 37,
-        "granted": 34,
-        "refused": 3,
-        "refused_refiled": 0,
-        "clearance_rate": 0.9189,
-        "timing": {
-          "count": 37,
-          "median": 18,
-          "average": 16.8,
-          "p90": 23,
-          "buckets": [
-            1,
-            4,
-            4,
-            16,
-            12,
-            0,
-            0,
-            0
-          ]
-        },
-        "average_granted": 16.3,
-        "average_refused": 23.3
-      },
-      "pre_notification": {
-        "count": 29,
-        "median": 19,
-        "average": 21.4,
-        "p90": 33,
-        "buckets": [
-          0,
-          1,
-          17,
-          9,
-          1,
-          1
-        ]
-      },
-      "matters": 66,
-      "overseas_party": 24,
-      "industries": [
-        {
-          "code": "K",
-          "name": "Financial and Insurance Services",
-          "count": 29
-        },
-        {
-          "code": "M",
-          "name": "Professional, Scientific and Technical Services",
-          "count": 18
-        },
-        {
-          "code": "C",
-          "name": "Manufacturing",
-          "count": 17
-        },
-        {
-          "code": "F",
-          "name": "Wholesale Trade",
-          "count": 12
-        },
-        {
-          "code": "E",
-          "name": "Construction",
-          "count": 11
-        }
-      ],
-      "milestones": [
-        {
-          "merger_id": "MN-65005",
-          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-          "kind": "tribunal_application",
-          "date": "2026-10-01",
-          "detail": "IAG"
-        },
-        {
-          "merger_id": "MN-65005",
-          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-          "kind": "tribunal_application",
-          "date": "2026-10-05",
-          "detail": "RACWA"
-        },
-        {
-          "merger_id": "MN-65005",
-          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-          "kind": "public_benefit_application",
-          "date": "2026-10-13"
-        }
-      ],
-      "findings": [
-        "29 notifications filed, and 37 waiver applications decided.",
-        "Phase 1 reviews concluded in a median 19.5 business days, 1.5 days slower than Q3 2026; waivers in 18, 1 day slower than Q3 2026.",
-        "Notifications filed had spent an estimated median 19 business days in pre-notification, 3 days longer than Q3 2026.",
-        "92% of waivers were granted and 100% of phase 1 reviews ended in approval."
+        "3 matters referred to phase 2; 5 phase 2 reviews concluded (3 not approved, 2 assessment ceased).",
+        "1 Tribunal review sought: Coles (ACT 1 of 2026); 1 open at quarter end."
       ]
     }
   ]

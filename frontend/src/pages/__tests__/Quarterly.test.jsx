@@ -17,13 +17,12 @@ function ok(json) {
 
 const BUCKETS = ['0–4', '5–9', '10–14', '15–19', '20–24', '25–29', '30–49', '50+'];
 
-function block(key, label, { complete = true, filed, decided, p1Median, wMedian, preMedian = 15, milestones = [], findings = [] }) {
+function block(key, label, { filed, decided, p1Median, wMedian, preMedian = 15, milestones = [], findings = [], appeals = null }) {
   return {
     quarter: key,
     label,
     start: `${key.slice(0, 4)}-0${(Number(key.slice(-1)) - 1) * 3 + 1}-01`.replace('-010-', '-10-'),
     end: '2026-09-30',
-    complete,
     notifications: {
       filed,
       phase_1_decided: 40,
@@ -57,6 +56,7 @@ function block(key, label, { complete = true, filed, decided, p1Median, wMedian,
     ],
     milestones,
     findings,
+    appeals: appeals ?? { lodged: 0, concluded: 0, open_at_end: 0, matters: [] },
   };
 }
 
@@ -72,6 +72,20 @@ const FIXTURE = {
       p1Median: 18,
       wMedian: 17,
       preMedian: 16,
+      appeals: {
+        lodged: 1,
+        concluded: 0,
+        open_at_end: 1,
+        matters: [{
+          tribunal_number: 'ACT 1 of 2026',
+          tribunal_url: 'https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026',
+          merger_id: 'MN-01068',
+          merger_name: 'Coles – Kalgoorlie',
+          appellant: 'Coles',
+          filed_date: '2026-07-15',
+          note: 'Lodged this quarter; open at quarter end; hearing listed for 9 Nov 2026',
+        }],
+      },
       findings: [
         '113 notifications filed, up 19% on Q2 2026, and 183 waiver applications decided, up 4% on Q2 2026.',
         '1 matter referred to phase 2; 1 phase 2 review concluded (1 not approved).',
@@ -81,7 +95,6 @@ const FIXTURE = {
         { merger_id: 'MN-01068', merger_name: 'Coles – Kalgoorlie', kind: 'tribunal_application', date: '2026-07-15', detail: 'Coles' },
       ],
     }),
-    block('2026-Q4', 'Q4 2026', { complete: false, filed: 29, decided: 37, p1Median: 19.5, wMedian: 18 }),
   ],
 };
 
@@ -116,7 +129,7 @@ describe('Quarterly report', () => {
     dataCache.clear();
   });
 
-  it('opens on the latest complete quarter', async () => {
+  it('opens on the latest quarter', async () => {
     renderPage();
     await ready();
     expect(screen.getByRole('button', { name: 'Q3 2026', pressed: true })).toBeInTheDocument();
@@ -147,15 +160,42 @@ describe('Quarterly report', () => {
     expect(within(list).getByText('Tribunal review sought')).toBeInTheDocument();
   });
 
-  it('switches quarter, and shows the one in progress as to date', async () => {
+  it('switches quarter, with no quarter in progress on offer', async () => {
     const user = userEvent.setup();
     renderPage();
     await ready();
-    await user.click(screen.getByRole('button', { name: 'Q4 2026' }));
-    expect(screen.getByText(/quarter to date, as at 22 October 2026/)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Q4 2026' })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Q2 2026' }));
     expect(screen.getByText('Nothing went beyond phase 1 this quarter.')).toBeInTheDocument();
-    // No volume comparison for a part quarter.
-    expect(screen.queryByText(/on Q3 2026/)).not.toBeInTheDocument();
+    expect(screen.getByText('No Tribunal reviews were live this quarter.')).toBeInTheDocument();
+    expect(screen.queryByText(/to date/)).not.toBeInTheDocument();
+  });
+
+  it('lists Tribunal reviews, linking out to the Tribunal and in to the merger', async () => {
+    renderPage();
+    await ready();
+    const card = screen.getByRole('heading', { name: 'Tribunal reviews' }).closest('section');
+    expect(within(card).getByRole('link', { name: /ACT 1 of 2026/ })).toHaveAttribute(
+      'href',
+      'https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026'
+    );
+    expect(within(card).getByRole('link', { name: 'Coles – Kalgoorlie' })).toHaveAttribute(
+      'href',
+      expect.stringMatching(/^\/mergers\/MN-01068/)
+    );
+    expect(within(card).getByText(/hearing listed for 9 Nov 2026/)).toBeInTheDocument();
+    expect(within(card).getByText('Open at quarter end').nextSibling).toHaveTextContent('1');
+  });
+
+  it('links card headings into the rest of the site', async () => {
+    renderPage();
+    await ready();
+    const href = (name) => screen.getByRole('link', { name }).getAttribute('href');
+    expect(href('Volume by quarter')).toBe('/analysis');
+    expect(href('Pre-notification')).toBe('/current-status');
+    expect(href('Where the deals were')).toBe('/industries');
+    expect(href('Beyond phase 1')).toBe('/phase-2');
+    expect(href('re-filed as a notification')).toBe('/refiled-notifications');
   });
 
   it('honours a quarter named in the URL', async () => {
@@ -168,7 +208,7 @@ describe('Quarterly report', () => {
     renderPage();
     await ready();
     const volume = document.getElementById('chart-quarterly-volume-summary');
-    expect(within(volume).getAllByRole('row')).toHaveLength(4);
+    expect(within(volume).getAllByRole('row')).toHaveLength(3);
     const waiverTiming = document.getElementById('chart-quarterly-waiver-timing-summary');
     expect(within(waiverTiming).getAllByRole('columnheader').map((th) => th.textContent)).toEqual([
       'Business days',
@@ -218,18 +258,12 @@ describe('Quarterly report PDF link', () => {
     dataCache.clear();
   });
 
-  it('offers the PDF for a complete quarter', async () => {
+  it('offers the quarter as a PDF', async () => {
     renderPage();
     await ready();
     expect(screen.getByRole('link', { name: 'Download PDF' })).toHaveAttribute(
       'href',
       '/data/reports/quarterly-report-2026-Q3.pdf'
     );
-  });
-
-  it('offers none for the quarter in progress, which has no PDF', async () => {
-    renderPage('/quarterly?q=2026-Q4');
-    await ready();
-    expect(screen.queryByRole('link', { name: 'Download PDF' })).not.toBeInTheDocument();
   });
 });

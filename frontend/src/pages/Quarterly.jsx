@@ -90,11 +90,17 @@ function TimingTile({ label, value, previous, previousLabel }) {
   );
 }
 
-function CardHeader({ id, title, subtitle }) {
+// Links into the rest of the site are set as plain text that underlines on
+// hover, so a card heading goes somewhere without the page reading as a wall
+// of links.
+const QUIET_LINK = 'hover:text-primary hover:underline underline-offset-2';
+const INLINE_LINK = 'text-primary hover:underline underline-offset-2';
+
+function CardHeader({ id, title, subtitle, to }) {
   return (
     <div className="px-6 py-5 border-b border-gray-100">
       <h2 id={id} className="text-base font-semibold text-gray-900">
-        {title}
+        {to ? <Link to={to} className={QUIET_LINK}>{title}</Link> : title}
       </h2>
       {subtitle && <p className="text-sm text-gray-500 mt-0.5">{subtitle}</p>}
     </div>
@@ -117,7 +123,7 @@ function VolumeChart({ quarters, selected }) {
     { label: 'Phase 1 reviews concluded', key: (q) => q.notifications.phase_1_decided, color: COLORS.sage },
     { label: 'Waivers decided', key: (q) => q.waivers.decided, color: COLORS.teal },
   ];
-  const labels = quarters.map((q) => (q.complete ? q.label : `${q.label} (to date)`));
+  const labels = quarters.map((q) => q.label);
   const data = {
     labels,
     datasets: series.map((s) => ({
@@ -156,6 +162,7 @@ function VolumeChart({ quarters, selected }) {
         <CardHeader
           id="chart-quarterly-volume-title"
           title="Volume by quarter"
+          to="/analysis"
           subtitle="Waivers reach the ACCC's register only once decided, so they are counted when decided"
         />
         <div className="p-6">
@@ -209,8 +216,8 @@ function OutcomeCard({ title, rate, granted, decided, rows, footnote }) {
           {granted} of {decided} approved
         </p>
         <dl className="mt-5 divide-y divide-gray-100 border-t border-gray-100 text-sm">
-          {rows.map(({ label, value }) => (
-            <div key={label} className="flex items-baseline justify-between gap-4 py-2.5">
+          {rows.map(({ label, key, value }) => (
+            <div key={key ?? label} className="flex items-baseline justify-between gap-4 py-2.5">
               <dt className="text-gray-600">{label}</dt>
               <dd className="font-semibold text-gray-900 text-right">{value}</dd>
             </div>
@@ -309,6 +316,7 @@ function TimingChart({ id, title, buckets, current, previous, color }) {
       <CardHeader
         id={`${id}-title`}
         title={title}
+        to="/current-status"
         subtitle={`Share of decisions by business days taken \u2013 median ${days(current.median)}, 90% within ${days(current.p90)}`}
       />
       <div className="p-6">
@@ -348,6 +356,7 @@ function PreNotificationCard({ quarter, previous, buckets }) {
         <CardHeader
           id={`${id}-title`}
           title="Pre-notification"
+          to="/current-status"
           subtitle={`Estimated time notifications filed this quarter spent with the ACCC before filing \u2013 ${pre.count} notifications`}
         />
         <div className="grid grid-cols-3 divide-x divide-gray-100 border-b border-gray-100">
@@ -396,6 +405,7 @@ function IndustriesCard({ quarter }) {
       <CardHeader
         id="quarterly-industries-title"
         title="Where the deals were"
+        to="/industries"
         subtitle="Notifications filed and waivers decided, by ANZSIC division"
       />
       <div className="p-6">
@@ -437,6 +447,72 @@ function IndustriesCard({ quarter }) {
   );
 }
 
+/**
+ * Applications to the Australian Competition Tribunal live during the quarter.
+ * Each matter links out to the Tribunal's own page and in to the merger; the
+ * one-line status is written by the generator so it matches the PDF.
+ */
+function AppealsCard({ quarter }) {
+  const appeals = quarter.appeals;
+  if (!appeals) return null;
+  const counts = [
+    { label: 'Lodged', value: appeals.lodged },
+    { label: 'Concluded', value: appeals.concluded },
+    { label: 'Open at quarter end', value: appeals.open_at_end },
+  ];
+  return (
+    <section className="mb-6">
+      <div className={`${CARD} overflow-hidden`}>
+        <CardHeader
+          id="quarterly-appeals-title"
+          title="Tribunal reviews"
+          subtitle="Applications to the Australian Competition Tribunal for review of an ACCC determination, live at some point in the quarter"
+        />
+        {appeals.matters.length === 0 ? (
+          <p className="p-6 text-sm text-gray-500">No Tribunal reviews were live this quarter.</p>
+        ) : (
+          <>
+            <dl className="grid grid-cols-3 divide-x divide-gray-100 border-b border-gray-100">
+              {counts.map(({ label, value }) => (
+                // Bottom-aligned so the counts line up when a long label wraps.
+                <div key={label} className="flex flex-col justify-between p-5">
+                  <dt className={SECTION_HEADING}>{label}</dt>
+                  <dd className="mt-1.5 text-2xl font-bold tracking-tight text-gray-900">{value}</dd>
+                </div>
+              ))}
+            </dl>
+            <ul className="divide-y divide-gray-100">
+              {appeals.matters.map((m) => (
+                <li key={m.tribunal_number} className="px-6 py-4">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <p className="flex items-center gap-2 text-sm font-semibold text-gray-900">
+                      <span className="h-2 w-2 flex-shrink-0 rounded-full bg-tribunal-appeal" aria-hidden="true" />
+                      {m.tribunal_url ? (
+                        <a href={m.tribunal_url} target="_blank" rel="noopener noreferrer" className={QUIET_LINK}>
+                          {m.tribunal_number}
+                          <span className="sr-only"> (opens the Tribunal&apos;s site in a new tab)</span>
+                        </a>
+                      ) : (
+                        m.tribunal_number
+                      )}
+                      {m.appellant && <span className="font-normal text-gray-600">&middot; {m.appellant}</span>}
+                    </p>
+                    <span className="text-sm text-gray-500 tabular-nums">Lodged {formatDateMedium(m.filed_date)}</span>
+                  </div>
+                  <Link to={mergerPath(m.merger_id, m.merger_name)} className={`mt-1 block text-sm ${INLINE_LINK}`}>
+                    {m.merger_name}
+                  </Link>
+                  <p className="mt-1 text-sm text-gray-600">{m.note}</p>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+    </section>
+  );
+}
+
 function MilestonesCard({ quarter }) {
   return (
     <section className="mb-6">
@@ -444,6 +520,7 @@ function MilestonesCard({ quarter }) {
         <CardHeader
           id="quarterly-milestones-title"
           title="Beyond phase 1"
+          to="/phase-2"
           subtitle="Phase 2 referrals and outcomes, public benefit applications, and Tribunal and court reviews"
         />
         {quarter.milestones.length === 0 ? (
@@ -503,7 +580,7 @@ function Quarterly() {
 
   const previous = previousQuarter(quarters, quarter);
   const prevLabel = previous?.label;
-  const compareVolume = Boolean(previous) && quarter.complete;
+  const compareVolume = Boolean(previous);
   const n = quarter.notifications;
   const w = quarter.waivers;
   const findings = quarter.findings || [];
@@ -525,12 +602,10 @@ function Quarterly() {
             </h1>
             <p className="mt-1 text-sm text-gray-500">
               {quarter.label} &middot; {formatDateLong(quarter.start)} &ndash; {formatDateLong(quarter.end)}
-              {!quarter.complete && <> &middot; quarter to date, as at {formatDateLong(data.as_at)}</>}
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            {quarter.complete && (
-              <a
+            <a
                 href={API_ENDPOINTS.quarterlyReportPdf(quarter.quarter)}
                 download
                 className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm font-medium text-gray-700 hover:border-primary hover:text-primary"
@@ -540,7 +615,6 @@ function Quarterly() {
                 </svg>
                 Download PDF
               </a>
-            )}
             <SegmentedToggle
               ariaLabel="Quarter"
               options={selectorQuarters.map((q) => ({ value: q.quarter, label: q.label }))}
@@ -608,7 +682,12 @@ function Quarterly() {
               ]}
               footnote={
                 w.refused
-                  ? `${w.refused_refiled} of ${w.refused} refused waivers have since been re-filed as a notification.`
+                  ? (
+                    <>
+                      {w.refused_refiled} of {w.refused} refused waivers have since been{' '}
+                      <Link to="/refiled-notifications" className={INLINE_LINK}>re-filed as a notification</Link>.
+                    </>
+                  )
                   : null
               }
             />
@@ -620,7 +699,11 @@ function Quarterly() {
               rows={[
                 { label: 'Average when approved', value: days(n.average_cleared) },
                 { label: 'Average when referred', value: days(n.average_referred) },
-                { label: 'Referred to phase 2', value: n.referred_to_phase_2 },
+                {
+                  label: <Link to="/phase-2" className={QUIET_LINK}>Referred to phase 2</Link>,
+                  key: 'referred',
+                  value: n.referred_to_phase_2,
+                },
                 ...(n.refused ? [{ label: 'Not approved', value: n.refused }] : []),
                 ...(n.ceased ? [{ label: 'Ceased in phase 1', value: n.ceased }] : []),
               ]}
@@ -659,6 +742,8 @@ function Quarterly() {
         <section className="mb-6">
           <IndustriesCard quarter={quarter} />
         </section>
+
+        <AppealsCard quarter={quarter} />
 
         <MilestonesCard quarter={quarter} />
       </div>
