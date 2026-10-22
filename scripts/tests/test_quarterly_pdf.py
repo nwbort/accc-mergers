@@ -45,9 +45,9 @@ def _payload(commentary=None):
 def test_one_pdf_per_published_quarter(tmp_path):
     names = quarterly_pdf.generate(_payload(), tmp_path)
     assert names == [
-        'quarterly-report-2026-Q1.pdf',
-        'quarterly-report-2026-Q2.pdf',
-        'quarterly-report-2026-Q3.pdf',
+        'mergers-fyi-quarterly-merger-report-2026Q1.pdf',
+        'mergers-fyi-quarterly-merger-report-2026Q2.pdf',
+        'mergers-fyi-quarterly-merger-report-2026Q3.pdf',
     ]
     assert sorted(p.name for p in tmp_path.iterdir()) == names
     for name in names:
@@ -64,7 +64,7 @@ def test_output_is_deterministic(tmp_path):
 
 def test_an_unchanged_report_is_not_rewritten(tmp_path):
     quarterly_pdf.generate(_payload(), tmp_path)
-    target = tmp_path / 'quarterly-report-2026-Q3.pdf'
+    target = tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q3.pdf'
     mtime = target.stat().st_mtime_ns
     quarterly_pdf.generate(_payload(), tmp_path)
     assert target.stat().st_mtime_ns == mtime
@@ -83,33 +83,33 @@ def test_report_links_each_matter_and_its_own_page(tmp_path):
     # Link annotations are stored uncompressed, so their URIs can be read off
     # the raw bytes without a PDF parser (pdfplumber is mocked in this suite).
     quarterly_pdf.generate(_payload(), tmp_path)
-    raw = (tmp_path / 'quarterly-report-2026-Q3.pdf').read_bytes()
+    raw = (tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q3.pdf').read_bytes()
     assert b'https://mergers.fyi/mergers/MN-3/' in raw
-    assert b'https://mergers.fyi/quarterly?q=26Q3' in raw
+    assert b'https://mergers.fyi/quarterly/26Q3' in raw
     # Q3's milestones only: MN-1 was decided in Q2 without going further.
     assert b'/mergers/MN-1/' not in raw
 
 
 def test_report_links_back_into_the_site(tmp_path):
     quarterly_pdf.generate(_payload(), tmp_path)
-    raw = (tmp_path / 'quarterly-report-2026-Q3.pdf').read_bytes()
+    raw = (tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q3.pdf').read_bytes()
     for path in (b'/analysis', b'/current-status', b'/industries/K/', b'/phase-2', b'/mergers'):
         assert b'https://mergers.fyi' + path in raw, path
 
 
 def test_report_carries_tribunal_reviews(tmp_path):
     quarterly_pdf.generate(_payload(), tmp_path)
-    assert b'https://tribunal.example/act-9' in (tmp_path / 'quarterly-report-2026-Q3.pdf').read_bytes()
+    assert b'https://tribunal.example/act-9' in (tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q3.pdf').read_bytes()
     # Lodged in Q3, so not in Q2's report.
-    assert b'tribunal.example' not in (tmp_path / 'quarterly-report-2026-Q2.pdf').read_bytes()
+    assert b'tribunal.example' not in (tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q2.pdf').read_bytes()
 
 
 def test_commentary_joins_the_brief_with_its_links(tmp_path):
     commentary = {'26Q3': [{'commentary': 'See the [tracker](https://mergers.fyi/phase-2?from=comment).',
                             'author': 'Nick'}]}
     quarterly_pdf.generate(_payload(commentary), tmp_path)
-    assert b'https://mergers.fyi/phase-2?from=comment' in (tmp_path / 'quarterly-report-2026-Q3.pdf').read_bytes()
-    assert b'from=comment' not in (tmp_path / 'quarterly-report-2026-Q2.pdf').read_bytes()
+    assert b'https://mergers.fyi/phase-2?from=comment' in (tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q3.pdf').read_bytes()
+    assert b'from=comment' not in (tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q2.pdf').read_bytes()
 
 
 def test_inline_markdown():
@@ -124,6 +124,24 @@ def test_inline_markdown():
     assert quarterly_pdf.inline_markdown('one\n\ntwo\nthree') == 'one<br/><br/>two three'
 
 
-def test_filename_matches_the_page_link():
-    # frontend/src/config.js quarterlyReportPdf builds the same name.
-    assert quarterly_pdf.report_filename('2026-Q3') == 'quarterly-report-2026-Q3.pdf'
+def test_files_are_named_for_whoever_downloads_them(tmp_path):
+    payload = _payload()
+    assert [q['report_pdf'] for q in payload['quarters']] == [
+        'mergers-fyi-quarterly-merger-report-2026Q1.pdf',
+        'mergers-fyi-quarterly-merger-report-2026Q2.pdf',
+        'mergers-fyi-quarterly-merger-report-2026Q3.pdf',
+    ]
+
+
+def test_files_under_an_old_name_are_pruned(tmp_path):
+    (tmp_path / 'quarterly-report-2026-Q3.pdf').write_bytes(b'%PDF-old')
+    quarterly_pdf.generate(_payload(), tmp_path)
+    assert not (tmp_path / 'quarterly-report-2026-Q3.pdf').exists()
+
+
+def test_footer_links_the_site_and_there_are_no_notes(tmp_path):
+    quarterly_pdf.generate(_payload(), tmp_path)
+    raw = (tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q3.pdf').read_bytes()
+    assert b'/URI (https://mergers.fyi)' in raw
+    # The notes' pointer links (e.g. to mergers.fyi/analysis as a sentence) are gone.
+    assert b'The interactive version' not in raw

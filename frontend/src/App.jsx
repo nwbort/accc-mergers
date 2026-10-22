@@ -71,6 +71,7 @@ function AppContent() {
             <Route path="/refiled-notifications" element={<RefiledNotifications />} />
             <Route path="/current-status" element={<CurrentStatus />} />
             <Route path="/quarterly" element={<Quarterly />} />
+            <Route path="/quarterly/:quarter" element={<Quarterly />} />
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/copyright" element={<Copyright />} />

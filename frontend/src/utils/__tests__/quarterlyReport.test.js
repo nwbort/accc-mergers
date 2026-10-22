@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   bucketShares,
+  findQuarter,
   formatRate,
   percentChange,
   pickQuarter,
@@ -66,6 +67,16 @@ describe('pickQuarter', () => {
 
   it('is null with nothing published', () => {
     expect(pickQuarter([], null)).toBeNull();
+  });
+});
+
+describe('findQuarter', () => {
+  it('matches exactly, or not at all', () => {
+    expect(findQuarter(QUARTERS, '26Q3')).toBe(Q3);
+    expect(findQuarter(QUARTERS, '26q3')).toBe(Q3);
+    expect(findQuarter(QUARTERS, '2026-Q3')).toBe(Q3);
+    expect(findQuarter(QUARTERS, '26Q4')).toBeNull();
+    expect(findQuarter(QUARTERS, null)).toBeNull();
   });
 });
 

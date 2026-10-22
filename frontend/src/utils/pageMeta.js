@@ -235,6 +235,33 @@ export function industryMeta(industry, code, indexName) {
  * the two cannot drift. Routes deliberately absent: /feedback (a form, nothing
  * to crawl) and the /* NotFound catch-all.
  */
+/** The page for one quarter of quarterly.json: `/quarterly/26Q3`. */
+export function quarterlyPath(quarter) {
+  return `/quarterly/${quarter.url_key}`;
+}
+
+/**
+ * Meta for one quarter's report, from its quarterly.json block. The
+ * description leads with the generated findings, so a search result says what
+ * happened that quarter rather than what the page is.
+ */
+export function quarterlyMeta(quarter) {
+  const title = `Quarterly merger report \u2013 ${quarter.label}`;
+  const lead = (quarter.findings || []).slice(0, 2).join(' ');
+  const path = quarterlyPath(quarter);
+  return {
+    title,
+    description:
+      `Australia's merger regime in ${quarter.label}: notifications, waivers, ACCC decision times, ` +
+      `Phase 2 and Tribunal reviews.${lead ? ` ${lead}` : ''}`,
+    path,
+    type: 'website',
+    structuredData: [
+      breadcrumbSchema([{ name: 'Quarterly report', path: '/quarterly' }], quarter.label, path),
+    ],
+  };
+}
+
 export const STATIC_PAGE_META = {
   '/': {
     // Note the bare title: <SEO> appends " | Australian Merger Tracker", so a

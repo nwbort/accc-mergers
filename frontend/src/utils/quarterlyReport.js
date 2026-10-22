@@ -17,9 +17,14 @@
  */
 export function pickQuarter(quarters, key) {
   if (!quarters?.length) return null;
+  return findQuarter(quarters, key) || quarters[quarters.length - 1];
+}
+
+/** The quarter `key` names exactly (`26Q3`, any case, or `2026-Q3`), else null. */
+export function findQuarter(quarters, key) {
   const wanted = key?.trim().toUpperCase();
-  const named = wanted && quarters.find((q) => q.url_key?.toUpperCase() === wanted || q.quarter === wanted);
-  return named || quarters[quarters.length - 1];
+  if (!wanted) return null;
+  return (quarters || []).find((q) => q.url_key?.toUpperCase() === wanted || q.quarter === wanted) || null;
 }
 
 /** The quarter before `quarter` in the published list, or null for the first. */

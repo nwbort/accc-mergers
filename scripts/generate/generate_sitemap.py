@@ -37,10 +37,19 @@ the pipeline regenerates what they show on every run. Hand-edited pages
 ``sitemap_lastmod.json``, moved by the git pre-commit hook when one of their
 source files changes — see ``scripts/generate/sitemap_lastmod.py``.
 
+Sitemap policy — quarterly reports: each quarter is its own page,
+``/quarterly/26Q3``, and only those are listed. ``/quarterly`` itself shows the
+latest quarter but declares that quarter's URL as its canonical, so listing it
+would advertise a URL that points elsewhere. The latest quarter gets the
+highest priority, which is what steers a crawler to the newest report; a past
+quarter is dated the day after it ended, when it was first published, since
+it changes little once complete.
+
 Output: frontend/public/sitemap.xml
 """
 
-from datetime import datetime, timezone
+import json
+from datetime import date, datetime, timedelta, timezone
 from xml.sax.saxutils import escape
 
 from scripts.merger_filters import load_mergers
@@ -54,6 +63,7 @@ from scripts.paths import REPO_ROOT
 
 BASE_URL = "https://mergers.fyi"
 SITEMAP_OUT = REPO_ROOT / "frontend" / "public" / "sitemap.xml"
+QUARTERLY_JSON = REPO_ROOT / "frontend" / "public" / "data" / "quarterly.json"
 
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
@@ -66,7 +76,6 @@ STATIC_PAGES = [
     {"path": "/phase-2",     "changefreq": "daily",   "priority": "0.7"},
     {"path": "/refiled-notifications", "changefreq": "daily", "priority": "0.6"},
     {"path": "/current-status", "changefreq": "daily", "priority": "0.7"},
-    {"path": "/quarterly",   "changefreq": "weekly",  "priority": "0.7"},
     {"path": "/commentary",  "changefreq": "weekly",  "priority": "0.7"},
     {"path": "/digest",      "changefreq": "weekly",  "priority": "0.7"},
     {"path": "/nick-twort",  "changefreq": "monthly", "priority": "0.8"},
@@ -83,7 +92,6 @@ STATIC_COMMENTS = {
     "/phase-2":     "Phase 2 Tracker Page",
     "/refiled-notifications": "Refiled Notifications Page",
     "/current-status": "Current Status Page",
-    "/quarterly":   "Quarterly Report Page",
     "/commentary":  "Commentary Page",
     "/digest":      "Digest Page",
     "/nick-twort":  "About / Author Page",
@@ -200,7 +208,30 @@ def url_entry(loc, lastmod, changefreq, priority):
     )
 
 
-def generate_sitemap(mergers, party_groups, related_parties):
+def load_quarters(path=QUARTERLY_JSON) -> list[dict]:
+    """The published quarters, oldest first; none if quarterly.json is absent."""
+    try:
+        return json.loads(path.read_text(encoding="utf-8")).get("quarters", [])
+    except (OSError, ValueError, AttributeError):
+        return []
+
+
+def quarterly_entries(quarters: list[dict]) -> list[str]:
+    """One entry per quarter page, the latest weighted highest (see policy above)."""
+    entries = []
+    for index, quarter in enumerate(quarters):
+        latest = index == len(quarters) - 1
+        published = date.fromisoformat(quarter["end"]) + timedelta(days=1)
+        entries.append(url_entry(
+            loc=escape(f"{BASE_URL}/quarterly/{quarter['url_key']}"),
+            lastmod=published.isoformat(),
+            changefreq="monthly" if latest else "yearly",
+            priority="0.8" if latest else "0.5",
+        ))
+    return entries
+
+
+def generate_sitemap(mergers, party_groups, related_parties, quarters=None):
     listed_party_groups = sitemap_party_groups(party_groups, related_parties)
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -220,6 +251,11 @@ def generate_sitemap(mergers, party_groups, related_parties):
             changefreq=page["changefreq"],
             priority=page["priority"],
         ))
+        lines.append("")
+
+    if quarters:
+        lines.append("  <!-- Quarterly Reports (one page per quarter, latest first in priority) -->")
+        lines.extend(quarterly_entries(quarters))
         lines.append("")
 
     lines.append("  <!-- Industry Detail Pages (ANZSIC nodes with merger activity) -->")
@@ -277,12 +313,14 @@ def main():
     mergers = load_mergers()
     related_parties = load_related_parties()
     party_groups = build_party_pages(mergers, related_parties)
-    sitemap = generate_sitemap(mergers, party_groups, related_parties)
+    quarters = load_quarters()
+    sitemap = generate_sitemap(mergers, party_groups, related_parties, quarters)
     SITEMAP_OUT.write_text(sitemap, encoding="utf-8")
     industry_count = len(industry_codes_with_mergers(mergers))
     listed_parties = len(sitemap_party_groups(party_groups, related_parties))
     print(
         f"Wrote sitemap with {len(STATIC_PAGES)} static pages, "
+        f"{len(quarters)} quarterly reports, "
         f"{industry_count} industry pages, "
         f"{listed_parties} of {len(party_groups)} party pages "
         f"and {len(mergers)} merger pages -> {SITEMAP_OUT}"

@@ -1,7 +1,7 @@
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { MemoryRouter } from 'react-router';
+import { MemoryRouter, Route, Routes, useLocation } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
 import Quarterly from '../Quarterly';
 import { dataCache } from '../../utils/dataCache';
@@ -21,6 +21,7 @@ function block(key, label, { filed, decided, p1Median, wMedian, preMedian = 15, 
   return {
     quarter: key,
     url_key: `${key.slice(2, 4)}${key.slice(-2)}`,
+    report_pdf: `mergers-fyi-quarterly-merger-report-${key.replace('-', '')}.pdf`,
     label,
     start: `${key.slice(0, 4)}-0${(Number(key.slice(-1)) - 1) * 3 + 1}-01`.replace('-010-', '-10-'),
     end: '2026-09-30',
@@ -114,11 +115,24 @@ function renderPage(initialEntry = '/quarterly') {
   return render(
     <HelmetProvider>
       <MemoryRouter initialEntries={[initialEntry]}>
-        <Quarterly />
+        <Routes>
+          <Route path="/quarterly" element={<Quarterly />} />
+          <Route path="/quarterly/:quarter" element={<Quarterly />} />
+        </Routes>
+        <LocationProbe />
       </MemoryRouter>
     </HelmetProvider>
   );
 }
+
+// Renders the router's current path so tests can see where a link or a
+// redirect left the page.
+function LocationProbe() {
+  const location = useLocation();
+  return <output data-testid="location">{location.pathname + location.search}</output>;
+}
+
+const currentPath = () => screen.getByTestId('location').textContent;
 
 async function ready() {
   await waitFor(() => {
@@ -209,16 +223,47 @@ describe('Quarterly report', () => {
     expect(href('re-filed as a notification')).toBe('/refiled-notifications');
   });
 
-  it('honours a quarter named in the URL, short form or long', async () => {
-    renderPage('/quarterly?q=26Q2');
+  it('opens the quarter its path names', async () => {
+    renderPage('/quarterly/26Q2');
     await ready();
     expect(screen.getByRole('button', { name: 'Q2 2026', pressed: true })).toBeInTheDocument();
+    expect(currentPath()).toBe('/quarterly/26Q2');
   });
 
-  it('still opens an older long-form link', async () => {
-    renderPage('/quarterly?q=2026-Q2');
+  it('shows the latest quarter at /quarterly, canonical to its dated page', async () => {
+    renderPage('/quarterly');
     await ready();
-    expect(screen.getByRole('button', { name: 'Q2 2026', pressed: true })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Q3 2026', pressed: true })).toBeInTheDocument();
+    expect(currentPath()).toBe('/quarterly');
+    await waitFor(() => {
+      expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute(
+        'href',
+        'https://mergers.fyi/quarterly/26Q3'
+      );
+    });
+  });
+
+  it('moves to the dated page when another quarter is chosen', async () => {
+    const user = userEvent.setup();
+    renderPage('/quarterly');
+    await ready();
+    await user.click(screen.getByRole('button', { name: 'Q2 2026' }));
+    expect(currentPath()).toBe('/quarterly/26Q2');
+  });
+
+  it('sends older ?q= links to the dated page', async () => {
+    renderPage('/quarterly?q=26Q2');
+    await waitFor(() => expect(currentPath()).toBe('/quarterly/26Q2'));
+    renderPage('/quarterly?q=2026-Q2');
+    await waitFor(() => expect(screen.getAllByTestId('location').at(-1)).toHaveTextContent('/quarterly/26Q2'));
+  });
+
+  it('is a 404 for a quarter that has not been published', async () => {
+    renderPage('/quarterly/26Q4');
+    await waitFor(() => {
+      expect(screen.queryByRole('button', { name: 'Q3 2026' })).not.toBeInTheDocument();
+      expect(screen.getByRole('heading', { level: 1 })).not.toHaveTextContent('Quarterly report');
+    });
   });
 
   it('adds hand-written commentary to the brief as its own point', async () => {
@@ -287,12 +332,16 @@ describe('Quarterly report PDF link', () => {
     dataCache.clear();
   });
 
-  it('offers the quarter as a PDF', async () => {
+  it('offers the quarter as a PDF, saved under its own name', async () => {
     renderPage();
     await ready();
     expect(screen.getByRole('link', { name: 'Download PDF' })).toHaveAttribute(
+      'download',
+      'mergers-fyi-quarterly-merger-report-2026Q3.pdf'
+    );
+    expect(screen.getByRole('link', { name: 'Download PDF' })).toHaveAttribute(
       'href',
-      '/data/reports/quarterly-report-2026-Q3.pdf'
+      '/data/reports/mergers-fyi-quarterly-merger-report-2026Q3.pdf'
     );
   });
 });

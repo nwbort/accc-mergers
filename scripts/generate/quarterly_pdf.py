@@ -1,4 +1,4 @@
-"""The quarterly report as a PDF — ``reports/quarterly-report-{YYYY}-Q{n}.pdf``.
+"""The quarterly report as a PDF — ``reports/mergers-fyi-quarterly-merger-report-{YYYY}Q{n}.pdf``.
 
 A printable, attachable twin of the /quarterly page, drawn from the same
 ``quarterly.json`` block so the two can't disagree: the same headline figures,
@@ -90,9 +90,9 @@ _STYLE = {
 }
 
 
-def report_filename(quarter_key: str) -> str:
-    """``2026-Q3`` → ``quarterly-report-2026-Q3.pdf`` (the page links to this)."""
-    return f"quarterly-report-{quarter_key}.pdf"
+def _page_path(q: dict) -> str:
+    """The quarter's own page, ``/quarterly/26Q3``."""
+    return f"/quarterly/{q['url_key']}"
 
 
 def _number(value) -> str:
@@ -600,26 +600,8 @@ def _appeals(q: dict) -> list:
     return flow + [table]
 
 
-def _notes(q: dict) -> list:
-    page = _url(f"/quarterly?q={q['url_key']}")
-    return [
-        _p("Notes", "h2"),
-        _p("Decisions count in the quarter they were made; notifications in the quarter they were filed. "
-           "Waivers reach the ACCC's register only once decided, so they are counted when decided. Phase 1 "
-           "timing runs from notification to the phase 1 determination, or to the referral for a matter sent to "
-           "phase 2. All durations are business days, as the statutory clocks count them.", "caption"),
-        Spacer(1, 4),
-        _p(f'The interactive version of this report is at {_a("mergers.fyi/quarterly", page, "#335145")}. '
-           f'Every matter is on {_a("mergers.fyi/mergers", _url("/mergers"), "#335145")}, with live decision times on '
-           f'{_a("mergers.fyi/current-status", _url("/current-status"), "#335145")} and longer-run analysis on '
-           f'{_a("mergers.fyi/analysis", _url("/analysis"), "#335145")}.', "caption"),
-    ]
-
-
-# --- Document ----------------------------------------------------------------
-
 def _page_decorations(quarter: dict):
-    page_url = f"{SITE}/quarterly?q={quarter['url_key']}"
+    page_url = SITE + _page_path(quarter)
     # The band and footer line up with the text, not the bare page margin.
     EDGE = MARGIN + FRAME_PADDING
 
@@ -638,10 +620,15 @@ def _page_decorations(quarter: dict):
         canvas.line(EDGE, 13 * mm, PAGE_W - EDGE, 13 * mm)
         canvas.setFillColor(MUTED)
         canvas.setFont("Helvetica", 7)
-        canvas.drawString(
-            EDGE, 9 * mm,
-            "Source: ACCC acquisitions register, via mergers.fyi. Data CC BY 4.0. Not legal advice.",
-        )
+        source, site, rest = "Source: ACCC acquisitions register, via ", "mergers.fyi", ". Data CC BY 4.0. Not legal advice."
+        canvas.drawString(EDGE, 9 * mm, source)
+        x = EDGE + canvas.stringWidth(source, "Helvetica", 7)
+        site_w = canvas.stringWidth(site, "Helvetica", 7)
+        canvas.setFillColor(PRIMARY)
+        canvas.drawString(x, 9 * mm, site)
+        canvas.linkURL(SITE, (x, 8 * mm, x + site_w, 11.5 * mm), relative=0)
+        canvas.setFillColor(MUTED)
+        canvas.drawString(x + site_w, 9 * mm, rest)
         canvas.drawRightString(PAGE_W - EDGE, 9 * mm, f"{page_url}  ·  {doc.page}")
         canvas.linkURL(page_url, (PAGE_W - EDGE - 80 * mm, 7 * mm, PAGE_W - EDGE, 12 * mm), relative=0)
         canvas.restoreState()
@@ -663,7 +650,7 @@ def build_pdf(payload: dict, quarter_key: str, path: Path) -> None:
         author="mergers.fyi", subject="Australian merger regime: quarterly report",
         creator="mergers.fyi", invariant=1,
     )
-    page = _url(f"/quarterly?q={q['url_key']}")
+    page = _url(_page_path(q))
     story = [
         _p(_a(f"Quarterly report: {q['label']}", page), "title"),
         Spacer(1, 3),
@@ -689,8 +676,6 @@ def build_pdf(payload: dict, quarter_key: str, path: Path) -> None:
         _section(*_appeals(q)),
         Spacer(1, 14),
         _section(*_milestones(q)),
-        Spacer(1, 14),
-        _section(*_notes(q)),
     ]
     decorate = _page_decorations(q)
     doc.build(story, onFirstPage=decorate, onLaterPages=decorate)
@@ -709,7 +694,7 @@ def generate(payload: dict, out_dir: Path) -> list[str]:
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
     for q in payload.get("quarters", []):
-        name = report_filename(q["quarter"])
+        name = q["report_pdf"]
         target = out_dir / name
         scratch = out_dir / f".{name}.tmp"
         build_pdf(payload, q["quarter"], scratch)
@@ -718,7 +703,9 @@ def generate(payload: dict, out_dir: Path) -> list[str]:
         else:
             scratch.replace(target)
         written.append(name)
-    prune_stale_files(out_dir, set(written), pattern="quarterly-report-*.pdf", label=REPORTS_DIRNAME)
+    # Every PDF in reports/ is this generator's, so prune by extension: that
+    # also clears files left under an earlier naming scheme.
+    prune_stale_files(out_dir, set(written), pattern="*.pdf", label=REPORTS_DIRNAME)
     return written
 
 

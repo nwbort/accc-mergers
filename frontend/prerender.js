@@ -34,6 +34,7 @@ import {
   industryMeta,
   mergerMeta,
   partyMeta,
+  quarterlyMeta,
   serialiseJsonLd,
 } from './src/utils/pageMeta.js';
 import { industryPath, mergerPath } from './src/utils/slug.js';
@@ -328,6 +329,20 @@ export function industryBody(industry, code, meta) {
   );
 }
 
+export function quarterlyBody(quarter, meta) {
+  // Plain text for the crawler-facing body: commentary's markdown links keep
+  // their words, emphasis markers go, and everything is escaped.
+  const plain = (md) => md.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*_]{1,2}([^*_]+)[*_]{1,2}/g, '$1');
+  const points = [
+    ...(quarter.findings || []),
+    ...(quarter.commentary || []).map((c) => plain(c.commentary)),
+  ].map(escapeHtml);
+  return shell(
+    headerCard(meta.title, '') +
+      section('The quarter in brief', `<div class="${CARD} p-5">${list(points)}</div>`),
+  );
+}
+
 export function staticBody(meta) {
   return shell(
     headerCard(
@@ -342,7 +357,7 @@ export function staticBody(meta) {
 // template. Tag-targeted regexes keep this resilient to unrelated changes in
 // index.html (inlined CSS, hashed script names, etc.).
 export function renderPage(template, meta, body) {
-  const canonicalUrl = `${SITE_URL}${meta.path}`;
+  const canonicalUrl = `${SITE_URL}${meta.canonicalPath || meta.path}`;
   const title = escapeHtml(fullTitle(meta.title));
   const description = escapeHtml(meta.description);
   const type = meta.type || 'website';
@@ -422,7 +437,7 @@ export default function prerenderMergers() {
       // data files, without running a build, to check the deployment against
       // Cloudflare Pages' 20,000-file limit — these pages are over half of it.
       // If you change what gets a page here, update count_deploy_files() too.
-      const counts = { mergers: 0, parties: 0, industries: 0, static: 0 };
+      const counts = { mergers: 0, parties: 0, industries: 0, quarters: 0, static: 0 };
 
       // Reads every *.json in `dir`, maps it through `toPage`, and writes the
       // result. A malformed or unrecognised file is warned about and skipped so
@@ -594,10 +609,33 @@ export default function prerenderMergers() {
         );
       }
 
+      // One page per published quarter, /quarterly/26Q3. /quarterly itself
+      // shows the latest and declares that quarter's page canonical, so the
+      // report is indexed once, at an address that never changes what it shows.
+      let latestQuarter = null;
+      try {
+        const quarters = readJson(join(dataDir, 'quarterly.json')).quarters || [];
+        for (const quarter of quarters) {
+          const meta = quarterlyMeta(quarter);
+          writePage(outDir, meta.path, renderPage(template, meta, quarterlyBody(quarter, meta)));
+          counts.quarters++;
+        }
+        latestQuarter = quarters[quarters.length - 1] || null;
+      } catch (err) {
+        this.warn(`prerender: skipping quarterly reports: ${err.message}`);
+      }
+
       for (const [path, base] of Object.entries(STATIC_PAGE_META)) {
         // The homepage is dist/index.html — the very template being stamped.
         if (path === '/') continue;
-        const meta = { ...base, path };
+        let meta = { ...base, path };
+        if (path === '/quarterly' && latestQuarter) {
+          const latest = quarterlyMeta(latestQuarter);
+          meta = { ...latest, path, canonicalPath: latest.path };
+          writePage(outDir, path, renderPage(template, meta, quarterlyBody(latestQuarter, meta)));
+          counts.static++;
+          continue;
+        }
         writePage(outDir, path, renderPage(template, meta, staticBody(meta)));
         counts.static++;
       }
@@ -605,7 +643,8 @@ export default function prerenderMergers() {
       const total = Object.values(counts).reduce((a, b) => a + b, 0);
       this.info(
         `prerender: wrote ${total} page(s) — ${counts.mergers} merger, ` +
-          `${counts.parties} party, ${counts.industries} industry, ${counts.static} static`,
+          `${counts.parties} party, ${counts.industries} industry, ${counts.quarters} quarterly, ` +
+          `${counts.static} static`,
       );
     },
   };

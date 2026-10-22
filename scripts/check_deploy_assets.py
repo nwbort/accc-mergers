@@ -199,9 +199,17 @@ def count_deploy_files(root=Path("."), asset_limit=PAGES_ASSET_LIMIT):
     except (OSError, ValueError, AttributeError, TypeError):
         pass
 
+    # prerender.js writes one /quarterly/{quarter} page per published quarter.
+    quarters = 0
+    try:
+        payload = json.loads((data_dir / "quarterly.json").read_text(encoding="utf-8"))
+        quarters = len(payload.get("quarters", []))
+    except (OSError, ValueError, AttributeError, TypeError):
+        pass
+
     breakdown = {
         "public": _count_files(root / "frontend" / "public"),
-        "prerendered": mergers + parties + industries + PRERENDERED_STATIC_PAGES,
+        "prerendered": mergers + parties + industries + quarters + PRERENDERED_STATIC_PAGES,
         "pdfs": pdfs,
         "build": VITE_BUILD_FILES,
     }
@@ -211,6 +219,7 @@ def count_deploy_files(root=Path("."), asset_limit=PAGES_ASSET_LIMIT):
             "mergers": mergers,
             "parties": parties,
             "industries": industries,
+            "quarters": quarters,
             "static": PRERENDERED_STATIC_PAGES,
         },
         "total": sum(breakdown.values()),

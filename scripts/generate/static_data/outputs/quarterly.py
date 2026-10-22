@@ -100,6 +100,17 @@ def _quarter_key(quarter: tuple[int, int]) -> str:
     return f"{quarter[0]}-Q{quarter[1]}"
 
 
+def report_filename(quarter: tuple[int, int]) -> str:
+    """``(2026, 3)`` → ``mergers-fyi-quarterly-merger-report-2026Q3.pdf``.
+
+    The quarter's PDF, drawn by ``generate/quarterly_pdf.py`` and published on
+    each block as ``report_pdf`` so the page links to exactly the name the PDF
+    was saved under. Named for whoever downloads it: it says what it is and
+    where it came from once it's sitting in a downloads folder.
+    """
+    return f"mergers-fyi-quarterly-merger-report-{quarter[0]}Q{quarter[1]}.pdf"
+
+
 def url_key(quarter: tuple[int, int]) -> str:
     """``(2026, 3)`` → ``26Q3``: the quarter as the page URL and commentary name it."""
     return f"{quarter[0] % 100:02d}Q{quarter[1]}"
@@ -453,6 +464,7 @@ def _quarter_block(quarter, notifications, waivers, milestones, pre_notification
     return {
         "quarter": key,
         "url_key": url_key(quarter),
+        "report_pdf": report_filename(quarter),
         "label": f"Q{quarter[1]} {quarter[0]}",
         "start": start.isoformat(),
         "end": end.isoformat(),

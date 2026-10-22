@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router';
+import { Link, Navigate, useNavigate, useParams, useSearchParams } from 'react-router';
 import ReactMarkdown from 'react-markdown';
 import { Bar } from 'react-chartjs-2';
 import '../utils/chartSetup';
@@ -12,10 +12,12 @@ import { formatDateLong, formatDateMedium } from '../utils/dates';
 import { formatMedian } from '../utils/formatMedian';
 import { industryPath, mergerPath } from '../utils/slug';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
-import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { STATIC_PAGE_META, quarterlyMeta, quarterlyPath } from '../utils/pageMeta';
+import NotFound from './NotFound';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import {
   bucketShares,
+  findQuarter,
   formatRate,
   percentChange,
   pickQuarter,
@@ -554,22 +556,42 @@ function MilestonesCard({ quarter }) {
   );
 }
 
+/**
+ * /quarterly/26Q3 is one quarter's report; /quarterly is the latest quarter.
+ *
+ * The bare URL renders the latest quarter in place rather than redirecting, so
+ * it stays a stable link to "the current report", but it declares the dated
+ * URL as its canonical: search engines index each report once, at an address
+ * that never changes what it shows, and the canonical moves on by itself each
+ * quarter. The sitemap lists only the dated pages (see generate_sitemap.py).
+ */
 function Quarterly() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.quarterly, { cacheKey: 'quarterly-data' });
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { quarter: quarterParam } = useParams();
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  // Links from before the path form (?q=26Q3, ?q=2026-Q3) land on it.
+  const legacyKey = !quarterParam && searchParams.get('q');
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage error={error} />;
   if (!data) return null;
 
   const quarters = data.quarters || [];
-  const quarter = pickQuarter(quarters, searchParams.get('q'));
-  const seo = <SEO title={PAGE_META.title} description={PAGE_META.description} url="/quarterly" />;
+  if (legacyKey) {
+    const legacy = findQuarter(quarters, legacyKey);
+    return <Navigate to={legacy ? quarterlyPath(legacy) : '/quarterly'} replace />;
+  }
+  // A dated URL naming no published quarter is a 404, not the latest report
+  // under a wrong address.
+  const quarter = quarterParam ? findQuarter(quarters, quarterParam) : pickQuarter(quarters, null);
+  if (quarterParam && !quarter) return <NotFound />;
 
   if (!quarter) {
     return (
       <>
-        {seo}
+        <SEO title={PAGE_META.title} description={PAGE_META.description} url="/quarterly" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Quarterly report</h1>
           <p className="mt-3 text-sm text-gray-600">This page is still being generated. Please check back shortly.</p>
@@ -586,15 +608,16 @@ function Quarterly() {
   const findings = quarter.findings || [];
   const commentary = quarter.commentary || [];
   const selectorQuarters = quarters.slice(-SELECTOR_QUARTERS);
-  // A quarter reached by ?q= that has dropped off the selector still shows as
+  // A quarter reached by its URL that has dropped off the selector still shows as
   // selected, rather than leaving the toggle with nothing pressed.
   if (!selectorQuarters.includes(quarter)) selectorQuarters.unshift(quarter);
 
-  const selectQuarter = (key) => setSearchParams(key ? { q: key } : {}, { replace: true });
+  const selectQuarter = (key) => navigate(`/quarterly/${key}`);
+  const meta = quarterlyMeta(quarter);
 
   return (
     <>
-      {seo}
+      <SEO title={meta.title} description={meta.description} url={meta.path} structuredData={meta.structuredData} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-6 flex flex-wrap items-end justify-between gap-3">
           <div>
@@ -607,8 +630,8 @@ function Quarterly() {
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <a
-                href={API_ENDPOINTS.quarterlyReportPdf(quarter.quarter)}
-                download
+                href={API_ENDPOINTS.quarterlyReportPdf(quarter.report_pdf)}
+                download={quarter.report_pdf}
                 className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm font-medium text-gray-700 hover:border-primary hover:text-primary"
               >
                 <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">

@@ -12,6 +12,7 @@ import {
   mergerMeta,
   mergerOgImage,
   partyMeta,
+  quarterlyMeta,
 } from '../pageMeta.js';
 import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
@@ -383,5 +384,27 @@ describe('tailwind config', () => {
   it('scans prerender.js for classes', () => {
     const config = readFixture('tailwind.config.js');
     expect(config).toContain('./prerender.js');
+  });
+});
+
+describe('quarterlyMeta', () => {
+  const quarter = {
+    quarter: '2026-Q3',
+    url_key: '26Q3',
+    label: 'Q3 2026',
+    findings: ['113 notifications filed.', 'Phase 1 took 18 days.', 'Third point.'],
+  };
+
+  it('addresses the quarter by its dated path', () => {
+    const meta = quarterlyMeta(quarter);
+    expect(meta.path).toBe('/quarterly/26Q3');
+    expect(meta.title).toBe('Quarterly merger report – Q3 2026');
+    expect(meta.title).not.toContain('Australian Merger Tracker');
+  });
+
+  it('leads the description with the first two findings', () => {
+    const { description } = quarterlyMeta(quarter);
+    expect(description).toContain('113 notifications filed. Phase 1 took 18 days.');
+    expect(description).not.toContain('Third point.');
   });
 });
