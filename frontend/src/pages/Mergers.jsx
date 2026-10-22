@@ -20,6 +20,7 @@ import {
 import { buildTimeline, dayOf, quickRanges } from '../utils/dateTimeline';
 import { australianToday, toDateString } from '../utils/dates';
 import { loadListPosition, saveListPosition } from '../utils/mergerListPosition';
+import { loadListView, saveListView } from '../utils/mergerListView';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { DEFAULT_SORT, SORT_FIELDS, SORT_FIELDS_BY_VALUE, normaliseSort, splitSort, sortMergers } from '../utils/mergerSort';
@@ -141,7 +142,10 @@ function Mergers() {
   const sortBy = normaliseSort(searchParams.get('sort') || DEFAULT_SORT);
   const { field: sortField, dir: sortDir } = splitSort(sortBy);
   const directionLabels = SORT_FIELDS_BY_VALUE[sortField];
-  const tableView = searchParams.get('view') === 'table';
+  // Cards or table: the reader's own preference, kept in localStorage rather
+  // than the URL (see utils/mergerListView.js).
+  const [listView, setListView] = useState(loadListView);
+  const tableView = listView === 'table';
 
   // Coming back to the list — Back, or the detail page's "Back to all
   // mergers" — puts the reader where they were: as many pages showing, at
@@ -521,10 +525,10 @@ function Mergers() {
           <div className="flex items-center gap-3">
             <div role="group" aria-label="View" className="flex rounded-lg border border-gray-200 bg-white p-0.5">
               {[
-                { value: '', label: 'Cards', Icon: FaList },
+                { value: 'cards', label: 'Cards', Icon: FaList },
                 { value: 'table', label: 'Table', Icon: FaTable },
               ].map(({ value, label, Icon }) => {
-                const active = (value === 'table') === tableView;
+                const active = value === listView;
                 return (
                   <button
                     key={label}
@@ -532,7 +536,10 @@ function Mergers() {
                     aria-pressed={active}
                     aria-label={`${label} view`}
                     title={`${label} view`}
-                    onClick={() => updateParam('view', value)}
+                    onClick={() => {
+                      setListView(value);
+                      saveListView(value);
+                    }}
                     className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-sm transition-colors ${
                       active ? 'bg-primary text-white' : 'text-gray-500 hover:text-gray-700'
                     }`}

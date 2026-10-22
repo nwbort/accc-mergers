@@ -67,6 +67,7 @@ let fetchSpy;
 beforeEach(() => {
   dataCache.clear();
   sessionStorage.clear();
+  localStorage.clear();
   observers.clear();
   vi.stubGlobal('IntersectionObserver', StubIntersectionObserver);
   window.matchMedia = window.matchMedia || (() => ({ matches: false, addEventListener() {}, removeEventListener() {} }));
@@ -132,7 +133,9 @@ describe('Mergers', () => {
 
   it('switches to a table whose headers sort the list', async () => {
     const user = userEvent.setup();
-    renderPage('/mergers?view=table&industry=G');
+    renderPage('/mergers?industry=G');
+    await screen.findByText(/^Showing/);
+    await user.click(screen.getByRole('button', { name: 'Table view' }));
     const table = await screen.findByRole('table');
     expect(within(table).getAllByRole('row')).toHaveLength(21);
 
@@ -200,6 +203,21 @@ describe('Mergers', () => {
     // A link to the list, with no restore state: back to the first page.
     await user.click(screen.getByRole('link', { name: 'Mergers' }));
     expect(await screen.findByText('Showing 50 of 200 mergers')).toBeInTheDocument();
+  });
+
+  it('remembers the chosen view for the next visit, without putting it in the URL', async () => {
+    const user = userEvent.setup();
+    const first = renderPage();
+    await screen.findByText(/^Showing/);
+    expect(screen.queryByRole('table')).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Table view' }));
+    expect(screen.getByRole('table')).toBeInTheDocument();
+    expect(localStorage.getItem('mergers_list_view')).toBe('table');
+    first.unmount();
+
+    renderPage();
+    expect(await screen.findByRole('table')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Table view' })).toHaveAttribute('aria-pressed', 'true');
   });
 
   describe('date filter', () => {
