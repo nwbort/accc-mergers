@@ -7,10 +7,11 @@ from scripts.generate.og_cards import current_card
 
 from ..enrichment import slim_for_site, strip_event_status
 from ..prune import prune_stale_files
+from .list import LIST_FILES_GLOB
 
-# ``mergers/`` also holds the paginated list written by :mod:`.list`; those
-# files belong to that generator and are never pruned from here.
-LIST_FILES = ("list-page-*.json", "list-meta.json")
+# ``mergers/`` also holds the list written by :mod:`.list`; those files belong
+# to that generator and are never pruned from here.
+LIST_FILES = (LIST_FILES_GLOB,)
 
 
 def generate(mergers: list, output_dir: Path) -> int:

@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import { describe, it, expect } from 'vitest';
 
 import {
+  DIVISION_NAMES,
   DIVISION_SUBDIVISION_RANGES,
   ORPHAN_FILE_STEM,
   divisionFileName,
@@ -89,5 +90,16 @@ describe('industryDivisionUrl', () => {
   it('points at the division file under /data/industries', () => {
     expect(industryDivisionUrl('4520')).toBe('/data/industries/H.json');
     expect(industryDivisionUrl('nonsense')).toBe('/data/industries/_orphans.json');
+  });
+});
+
+describe('DIVISION_NAMES', () => {
+  it('names every division, exactly as the ANZSIC tree the pipeline uses does', () => {
+    const tree = JSON.parse(
+      readFileSync(resolve(repoRoot, 'scripts', 'generate', 'static_data', 'anzsic_codes.json'), 'utf8'),
+    );
+    const fromTree = Object.fromEntries(tree.map((row) => [row.anzsic_division_code, row.anzsic_division]));
+    expect(DIVISION_NAMES).toEqual(fromTree);
+    expect(Object.keys(DIVISION_NAMES).sort()).toEqual(DIVISION_SUBDIVISION_RANGES.map(([d]) => d).sort());
   });
 });

@@ -60,6 +60,30 @@ export const DIVISION_SUBDIVISION_RANGES = [
   ['S', 94, 96],  // Other Services
 ];
 
+// Division titles, for the merger list's industry filter. ANZSIC 2006 is a
+// frozen standard, so these are as fixed as the range table above.
+export const DIVISION_NAMES = {
+  A: 'Agriculture, Forestry and Fishing',
+  B: 'Mining',
+  C: 'Manufacturing',
+  D: 'Electricity, Gas, Water and Waste Services',
+  E: 'Construction',
+  F: 'Wholesale Trade',
+  G: 'Retail Trade',
+  H: 'Accommodation and Food Services',
+  I: 'Transport, Postal and Warehousing',
+  J: 'Information Media and Telecommunications',
+  K: 'Financial and Insurance Services',
+  L: 'Rental, Hiring and Real Estate Services',
+  M: 'Professional, Scientific and Technical Services',
+  N: 'Administrative and Support Services',
+  O: 'Public Administration and Safety',
+  P: 'Education and Training',
+  Q: 'Health Care and Social Assistance',
+  R: 'Arts and Recreation Services',
+  S: 'Other Services',
+};
+
 // Where a code with no derivable division goes. Note that a code the ACCC has
 // mistyped is *not* automatically one of these: "5400" looks like a class and
 // resolves to division J without being a real ANZSIC node, so it is filed under

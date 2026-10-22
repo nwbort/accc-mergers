@@ -1,11 +1,5 @@
-import { beforeEach, describe, expect, it } from 'vitest';
-import { buildSearchIndex, searchMergers, clearSearchIndex } from '../searchIndex';
-import { dataCache } from '../dataCache';
-
-// searchIndex uses dataCache under the hood, so flush it before every test.
-beforeEach(() => {
-  dataCache.clear();
-});
+import { describe, expect, it } from 'vitest';
+import { buildSearchIndex, searchMergers, searchPredicate } from '../searchIndex';
 
 const sample = [
   {
@@ -111,30 +105,16 @@ describe('buildSearchIndex', () => {
     expect(index.get('MN-BARE')).toBe('bare minimum mn-bare');
   });
 
-  it('returns the cached index on the second call rather than rebuilding', () => {
-    const first = buildSearchIndex(sample);
-    // Rebuild from a different input — should still get the cached value.
-    const second = buildSearchIndex([
-      {
-        merger_id: 'MN-NEW',
-        merger_name: 'Different',
-        acquirers: [],
-        targets: [],
-        anzsic_codes: [],
-      },
-    ]);
-    expect(second).toBe(first);
+  it('returns the same index for the same array rather than rebuilding', () => {
+    expect(buildSearchIndex(sample)).toBe(buildSearchIndex(sample));
   });
 
-  it('rebuilds after clearSearchIndex()', () => {
+  it('builds a fresh index for a new array, so refreshed data is never searched stale', () => {
     const first = buildSearchIndex(sample);
-    clearSearchIndex();
-    const rebuilt = buildSearchIndex([
-      { merger_id: 'MN-NEW', merger_name: 'Different' },
-    ]);
-    expect(rebuilt).not.toBe(first);
-    expect(rebuilt.size).toBe(1);
-    expect(rebuilt.has('MN-NEW')).toBe(true);
+    const refreshed = buildSearchIndex([{ merger_id: 'MN-NEW', merger_name: 'Different' }]);
+    expect(refreshed).not.toBe(first);
+    expect(refreshed.size).toBe(1);
+    expect(refreshed.has('MN-NEW')).toBe(true);
   });
 });
 
@@ -237,15 +217,23 @@ describe('searchMergers', () => {
   });
 });
 
-describe('clearSearchIndex', () => {
-  it('removes the cached index without affecting other cache keys', () => {
-    buildSearchIndex(sample);
-    dataCache.set('other-key', 'other-value');
-    clearSearchIndex();
-    expect(dataCache.get('other-key')).toBe('other-value');
-    // Calling build again should produce a fresh index (different reference).
-    const first = buildSearchIndex(sample);
-    const second = buildSearchIndex(sample);
-    expect(first).toBe(second); // now cached again
+describe('searchPredicate', () => {
+  it('is null when the term holds no tokens', () => {
+    const index = buildSearchIndex(sample);
+    expect(searchPredicate('', index)).toBeNull();
+    expect(searchPredicate('   ', index)).toBeNull();
+  });
+
+  it('matches what searchMergers keeps', () => {
+    const index = buildSearchIndex(sample);
+    const matches = searchPredicate('woolworths food', index);
+    expect(sample.filter(matches)).toEqual(searchMergers(sample, 'woolworths food', index));
+    expect(matches(sample[1])).toBe(true);
+    expect(matches(sample[0])).toBe(false);
+  });
+
+  it('matches nothing missing from the index', () => {
+    const matches = searchPredicate('ampol', buildSearchIndex(sample));
+    expect(matches({ merger_id: 'MN-UNKNOWN', merger_name: 'Ampol' })).toBe(false);
   });
 });

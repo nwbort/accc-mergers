@@ -6,7 +6,7 @@ file that stops being generated is simply left behind and keeps being served.
 That happens whenever the underlying set of ids shrinks — most often when a
 party is folded into a canonical group in ``related_parties.json`` (the old
 one-merger party page lingers), but also when a matter is deduped away, an
-ANZSIC tag is corrected, or a paginated list loses its last page.
+ANZSIC tag is corrected, or a generator retires a file it used to write.
 
 :func:`prune_stale_files` is called by each generator with the exact set of
 names it just wrote, so pruning always reflects what the generator itself

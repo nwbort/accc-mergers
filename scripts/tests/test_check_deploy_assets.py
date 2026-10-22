@@ -280,12 +280,10 @@ class TestCountDeployFiles:
         assert count_deploy_files(tmp_path)["prerendered_detail"]["parties"] == 3
 
     def test_only_matter_files_count_as_merger_pages(self, tmp_path):
-        """mergers/ also holds list-page-N.json and list-meta.json, which are
-        data rather than pages."""
+        """mergers/ also holds list.json, which is data rather than a page."""
         make_deployment(tmp_path, mergers=2)
         d = tmp_path / "frontend/public/data/mergers"
-        (d / "list-page-1.json").write_text("{}")
-        (d / "list-meta.json").write_text("{}")
+        (d / "list.json").write_text("{}")
 
         assert count_deploy_files(tmp_path)["prerendered_detail"]["mergers"] == 2
 

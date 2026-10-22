@@ -82,7 +82,7 @@ describe('CommandPalette', () => {
   });
 
   it('filters pages by query and searches cached mergers', async () => {
-    dataCache.set('mergers-list', mergerFixture);
+    dataCache.set('mergers-list', { mergers: mergerFixture });
     const user = userEvent.setup();
     renderPalette();
 
@@ -124,7 +124,7 @@ describe('CommandPalette', () => {
   });
 
   it('does not show a loading row for a cached list that is simply empty', async () => {
-    dataCache.set('mergers-list', mergerFixture);
+    dataCache.set('mergers-list', { mergers: mergerFixture });
     dataCache.set('parties-list', { parties: [], total_parties: 0 });
     dataCache.set('industries-list', { industries: [] });
     const user = userEvent.setup();
@@ -141,10 +141,7 @@ describe('CommandPalette', () => {
       if (url.includes('parties.json')) {
         return Promise.resolve(ok(partiesFixture));
       }
-      if (url.includes('list-meta.json')) {
-        return Promise.resolve(ok({ total_pages: 1 }));
-      }
-      if (url.includes('list-page-1.json')) {
+      if (url.includes('mergers/list.json')) {
         return Promise.resolve(ok({ mergers: mergerFixture }));
       }
       return Promise.reject(new Error(`Unexpected fetch: ${url}`));
@@ -176,7 +173,7 @@ describe('CommandPalette', () => {
       ],
       total_parties: 2,
     };
-    dataCache.set('mergers-list', manyMergers);
+    dataCache.set('mergers-list', { mergers: manyMergers });
     dataCache.set('parties-list', twoParties);
 
     const user = userEvent.setup();
@@ -197,7 +194,7 @@ describe('CommandPalette', () => {
   });
 
   it('navigates arrow keys through results and opens the selected item on Enter', async () => {
-    dataCache.set('mergers-list', mergerFixture);
+    dataCache.set('mergers-list', { mergers: mergerFixture });
     const onClose = vi.fn();
     const user = userEvent.setup();
     renderPalette({ onClose });
@@ -213,15 +210,12 @@ describe('CommandPalette', () => {
   });
 
   it('lazily fetches the merger list on a cold cache and shows a loading row', async () => {
-    let resolveMeta;
+    let resolveList;
     const fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
-      if (url.includes('list-meta.json')) {
+      if (url.includes('mergers/list.json')) {
         return new Promise((resolve) => {
-          resolveMeta = () => resolve(ok({ total_pages: 1 }));
+          resolveList = () => resolve(ok({ mergers: mergerFixture }));
         });
-      }
-      if (url.includes('list-page-1.json')) {
-        return Promise.resolve(ok({ mergers: mergerFixture }));
       }
       return Promise.reject(new Error(`Unexpected fetch: ${url}`));
     });
@@ -234,10 +228,10 @@ describe('CommandPalette', () => {
 
     expect(screen.getByText('Loading mergers…')).toBeInTheDocument();
 
-    resolveMeta();
+    resolveList();
 
     expect(await screen.findByRole('option', { name: 'Ampol / Z Energy' })).toBeInTheDocument();
-    expect(dataCache.get('mergers-list')).toEqual(mergerFixture);
+    expect(dataCache.get('mergers-list')).toEqual({ mergers: mergerFixture });
     fetchSpy.mockRestore();
   });
 });
