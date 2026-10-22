@@ -18,6 +18,7 @@ Called by ``generate_static_data`` straight after it writes quarterly.json;
 """
 
 import json
+import re
 from datetime import date
 from pathlib import Path
 
@@ -207,9 +208,45 @@ def _tiles(q: dict, prev: dict | None) -> Table:
     return table
 
 
+_MD_LINK = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")
+_MD_BOLD = re.compile(r"\*\*(.+?)\*\*|__(.+?)__")
+_MD_ITALIC = re.compile(r"(?<![*\w])\*(?!\s)(.+?)(?<!\s)\*(?!\*)|(?<![_\w])_(?!\s)(.+?)(?<!\s)_(?![_\w])")
+
+
+def inline_markdown(text: str) -> str:
+    """The markdown commentary is written in, as reportlab paragraph markup.
+
+    Only the inline subset a point in a bulleted brief can use: links, bold,
+    italics and line breaks. Everything else passes through as text, escaped,
+    so a stray ``<`` can't break the paragraph parser.
+    """
+    links = []
+
+    def stash(match):
+        links.append((match.group(1), match.group(2)))
+        return f"\x00{len(links) - 1}\x00"
+
+    out = escape(_MD_LINK.sub(stash, text))
+    out = _MD_BOLD.sub(lambda m: f"<b>{m.group(1) or m.group(2)}</b>", out)
+    out = _MD_ITALIC.sub(lambda m: f"<i>{m.group(1) or m.group(2)}</i>", out)
+    for index, (label, url) in enumerate(links):
+        out = out.replace(f"\x00{index}\x00", _a(escape(label), url, "#335145"))
+    return out.replace("\n\n", "<br/><br/>").replace("\n", " ")
+
+
+def _commentary_point(entry: dict) -> str:
+    text = inline_markdown(entry["commentary"])
+    if entry.get("author"):
+        text += f' <font color="#6b7280">\u2014 {escape(entry["author"])}</font>'
+    return text
+
+
 def _brief(q: dict) -> Table:
+    points = [escape(f) for f in q.get("findings", [])]
+    # Hand-written commentary, after the generated points: each its own point.
+    points += [_commentary_point(entry) for entry in q.get("commentary", [])]
     items = ListFlowable(
-        [ListItem(_p(escape(f), "body"), leftIndent=10, value="•") for f in q.get("findings", [])],
+        [ListItem(_p(point, "body"), leftIndent=10, value="\u2022") for point in points],
         bulletType="bullet", bulletColor=PRIMARY, leftIndent=10, bulletFontSize=9,
     )
     table = Table([[[_p("THE QUARTER IN BRIEF", "label"), Spacer(1, 4), items]]], colWidths=[CONTENT_W])
@@ -587,7 +624,7 @@ def _appeals(q: dict) -> list:
 
 
 def _notes(q: dict) -> list:
-    page = _url(f"/quarterly?q={q['quarter']}")
+    page = _url(f"/quarterly?q={q['url_key']}")
     return [
         _p("Notes", "h2"),
         _p("Decisions count in the quarter they were made; notifications in the quarter they were filed. "
@@ -605,7 +642,7 @@ def _notes(q: dict) -> list:
 # --- Document ----------------------------------------------------------------
 
 def _page_decorations(quarter: dict):
-    page_url = f"{SITE}/quarterly?q={quarter['quarter']}"
+    page_url = f"{SITE}/quarterly?q={quarter['url_key']}"
     # The band and footer line up with the text, not the bare page margin.
     EDGE = MARGIN + FRAME_PADDING
 
@@ -649,7 +686,7 @@ def build_pdf(payload: dict, quarter_key: str, path: Path) -> None:
         author="mergers.fyi", subject="Australian merger regime: quarterly report",
         creator="mergers.fyi", invariant=1,
     )
-    page = _url(f"/quarterly?q={q['quarter']}")
+    page = _url(f"/quarterly?q={q['url_key']}")
     story = [
         _p(_a(f"Quarterly report: {q['label']}", page), "title"),
         Spacer(1, 3),

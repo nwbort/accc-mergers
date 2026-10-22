@@ -11,10 +11,14 @@
 /**
  * The quarter a `?q=` value names, else the latest. quarterly.json publishes
  * complete quarters only, so the latest is the last quarter to have ended.
+ *
+ * `?q=` is the short `url_key` (`26Q3`), matched case-insensitively. The long
+ * `2026-Q3` the page used to write is still accepted so older links work.
  */
 export function pickQuarter(quarters, key) {
   if (!quarters?.length) return null;
-  const named = key && quarters.find((q) => q.quarter === key);
+  const wanted = key?.trim().toUpperCase();
+  const named = wanted && quarters.find((q) => q.url_key?.toUpperCase() === wanted || q.quarter === wanted);
   return named || quarters[quarters.length - 1];
 }
 

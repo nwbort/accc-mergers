@@ -1,0 +1,10 @@
+{
+  "_README": "Your own commentary for the quarterly report. Key each quarter as it appears in the page URL (e.g. '26Q3' for July–September 2026). Each quarter is a list: every entry becomes its own point in 'The quarter in brief', after the generated ones, on both /quarterly and the PDF. Only 'commentary' is required; it supports markdown (**bold**, *italic*, [links](https://mergers.fyi/phase-2)). 'author' is shown after the point. Keys starting with '_' are ignored.",
+  "_example": [
+    {
+      "commentary": "More of the same: more deals notified, high clearance rates and longer timeframes. See the [Phase 2 tracker](https://mergers.fyi/phase-2) for the matters still running.",
+      "author": "Your Name",
+      "date": "2026-10-23"
+    }
+  ]
+}

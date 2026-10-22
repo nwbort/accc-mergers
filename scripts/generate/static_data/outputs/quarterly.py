@@ -30,6 +30,12 @@ one before it. Each block answers the questions a quarterly round-up asks:
 - **In brief.** ``findings``, a few sentences saying what moved against the
   previous quarter. Written here rather than in the page so the page and the
   PDF report (``generate/quarterly_pdf.py``) say the same thing.
+- **Commentary.** ``commentary``, hand-written points for the quarter from
+  ``data/processed/quarterly_commentary.json``, shown in the brief beside the
+  generated findings.
+
+Each quarter is keyed ``2026-Q3`` in ``quarter`` and carries ``url_key``
+(``26Q3``), the short form the page's ``?q=`` and the commentary file use.
 
 Bucketing follows :func:`analysis.current_status`: a decision counts towards
 the quarter it was *made* in, not the quarter the matter was filed in, so a
@@ -108,6 +114,52 @@ def _quarter_of(iso: str | None) -> tuple[int, int] | None:
 
 def _quarter_key(quarter: tuple[int, int]) -> str:
     return f"{quarter[0]}-Q{quarter[1]}"
+
+
+def url_key(quarter: tuple[int, int]) -> str:
+    """``(2026, 3)`` → ``26Q3``: the quarter as the page URL and commentary name it."""
+    return f"{quarter[0] % 100:02d}Q{quarter[1]}"
+
+
+_QUARTER_KEY = re.compile(r"^(?:(\d{2})|(\d{4}))-?Q([1-4])$", re.IGNORECASE)
+
+
+def normalise_quarter_key(key: str) -> tuple[int, int] | None:
+    """``26Q3``, ``26q3``, ``2026Q3`` or ``2026-Q3`` → ``(2026, 3)``; None otherwise."""
+    match = _QUARTER_KEY.match(key.strip())
+    if not match:
+        return None
+    short, full, q = match.groups()
+    return (2000 + int(short) if short else int(full)), int(q)
+
+
+def _commentary_by_quarter(commentary: dict | None) -> dict[tuple[int, int], list[dict]]:
+    """Hand-written commentary, keyed by quarter, each entry cleaned to
+    ``{commentary, author?, date?}``. Blank entries are dropped; a key that
+    names no quarter is reported and skipped rather than failing the run."""
+    out: dict[tuple[int, int], list[dict]] = {}
+    for key, entries in (commentary or {}).items():
+        quarter = normalise_quarter_key(key)
+        if quarter is None:
+            print(f"Warning: quarterly_commentary.json key {key!r} is not a quarter (use e.g. '26Q3'); skipped")
+            continue
+        if isinstance(entries, (str, dict)):
+            entries = [entries]
+        cleaned = []
+        for entry in entries or []:
+            if isinstance(entry, str):
+                entry = {"commentary": entry}
+            text = (entry.get("commentary") or "").strip() if isinstance(entry, dict) else ""
+            if not text:
+                continue
+            item = {"commentary": text}
+            for field in ("author", "date"):
+                if entry.get(field):
+                    item[field] = str(entry[field])
+            cleaned.append(item)
+        if cleaned:
+            out.setdefault(quarter, []).extend(cleaned)
+    return out
 
 
 def _quarter_bounds(quarter: tuple[int, int]) -> tuple[date, date]:
@@ -364,7 +416,7 @@ def _industries(mergers: list) -> list[dict]:
     return [{"code": code, "name": names[code], "count": n} for code, n in ranked]
 
 
-def _quarter_block(quarter, notifications, waivers, milestones, pre_notification, appeals) -> dict:
+def _quarter_block(quarter, notifications, waivers, milestones, pre_notification, appeals, commentary) -> dict:
     key = _quarter_key(quarter)
     start, end = _quarter_bounds(quarter)
 
@@ -424,6 +476,7 @@ def _quarter_block(quarter, notifications, waivers, milestones, pre_notification
 
     return {
         "quarter": key,
+        "url_key": url_key(quarter),
         "label": f"Q{quarter[1]} {quarter[0]}",
         "start": start.isoformat(),
         "end": end.isoformat(),
@@ -457,6 +510,7 @@ def _quarter_block(quarter, notifications, waivers, milestones, pre_notification
         "overseas_party": sum(1 for m in arrivals if has_overseas_party(m)),
         "industries": _industries(arrivals),
         "appeals": _quarter_appeals(appeals, start, end),
+        "commentary": commentary.get(quarter, []),
         "milestones": [e for e in milestones if _quarter_of(e["date"]) == quarter],
     }
 
@@ -577,12 +631,12 @@ def findings(block: dict, previous: dict | None) -> list[str]:
     return out
 
 
-def generate(mergers: list, as_at: date | None = None) -> dict:
+def generate(mergers: list, as_at: date | None = None, commentary: dict | None = None) -> dict:
     """Return the quarterly.json payload for pre-enriched mergers.
 
     ``as_at`` defaults to today in Sydney, as for ``analysis.current_status``:
     the quarter it falls in is still running, so the last quarter published is
-    the one before.
+    the one before. ``commentary`` is quarterly_commentary.json as loaded.
     """
     if as_at is None:
         as_at = datetime.now(_SYDNEY).date()
@@ -591,11 +645,12 @@ def generate(mergers: list, as_at: date | None = None) -> dict:
     milestones = _milestones(mergers)
     pre_notification = _pre_notification_durations(notifications)
     appeals = _appeal_records(notifications)
+    by_quarter = _commentary_by_quarter(commentary)
 
     year, q = _quarter_of(as_at.isoformat())
     last = (year - 1, 4) if q == 1 else (year, q - 1)
     quarters = [
-        _quarter_block(q, notifications, waivers, milestones, pre_notification, appeals)
+        _quarter_block(q, notifications, waivers, milestones, pre_notification, appeals, by_quarter)
         for q in _quarters_between(FIRST_QUARTER, last)
     ]
     for previous, block in zip([None] + quarters, quarters):

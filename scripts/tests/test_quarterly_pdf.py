@@ -29,7 +29,7 @@ def _notification(merger_id, filed, decided, outcome='Approved'):
     }
 
 
-def _payload():
+def _payload(commentary=None):
     mergers = [
         _notification('MN-1', '2026-04-01', '2026-04-22'),
         _notification('MN-2', '2026-07-01', '2026-07-22'),
@@ -39,7 +39,7 @@ def _payload():
         'tribunal_number': 'ACT 9 of 2026', 'tribunal_url': 'https://tribunal.example/act-9',
         'appellant': 'Acquirer', 'status': 'current', 'filed_date': '2026-09-01',
     }]
-    return quarterly.generate(mergers, as_at=date(2026, 10, 22))
+    return quarterly.generate(mergers, as_at=date(2026, 10, 22), commentary=commentary)
 
 
 def test_one_pdf_per_published_quarter(tmp_path):
@@ -85,7 +85,7 @@ def test_report_links_each_matter_and_its_own_page(tmp_path):
     quarterly_pdf.generate(_payload(), tmp_path)
     raw = (tmp_path / 'quarterly-report-2026-Q3.pdf').read_bytes()
     assert b'https://mergers.fyi/mergers/MN-3/' in raw
-    assert b'https://mergers.fyi/quarterly?q=2026-Q3' in raw
+    assert b'https://mergers.fyi/quarterly?q=26Q3' in raw
     # Q3's milestones only: MN-1 was decided in Q2 without going further.
     assert b'/mergers/MN-1/' not in raw
 
@@ -102,6 +102,26 @@ def test_report_carries_tribunal_reviews(tmp_path):
     assert b'https://tribunal.example/act-9' in (tmp_path / 'quarterly-report-2026-Q3.pdf').read_bytes()
     # Lodged in Q3, so not in Q2's report.
     assert b'tribunal.example' not in (tmp_path / 'quarterly-report-2026-Q2.pdf').read_bytes()
+
+
+def test_commentary_joins_the_brief_with_its_links(tmp_path):
+    commentary = {'26Q3': [{'commentary': 'See the [tracker](https://mergers.fyi/phase-2?from=comment).',
+                            'author': 'Nick'}]}
+    quarterly_pdf.generate(_payload(commentary), tmp_path)
+    assert b'https://mergers.fyi/phase-2?from=comment' in (tmp_path / 'quarterly-report-2026-Q3.pdf').read_bytes()
+    assert b'from=comment' not in (tmp_path / 'quarterly-report-2026-Q2.pdf').read_bytes()
+
+
+def test_inline_markdown():
+    assert quarterly_pdf.inline_markdown('**Bold** and *italic* and _also_') == (
+        '<b>Bold</b> and <i>italic</i> and <i>also</i>'
+    )
+    assert quarterly_pdf.inline_markdown('[A & B](https://x.example/?a=1&b=2)') == (
+        '<link href="https://x.example/?a=1&amp;b=2" color="#335145">A &amp; B</link>'
+    )
+    # Markup-looking text is escaped, not interpreted; snake_case is left alone.
+    assert quarterly_pdf.inline_markdown('a < b, merger_id') == 'a &lt; b, merger_id'
+    assert quarterly_pdf.inline_markdown('one\n\ntwo\nthree') == 'one<br/><br/>two three'
 
 
 def test_filename_matches_the_page_link():

@@ -336,3 +336,46 @@ class TestAppeals:
         assert q4['findings'][-1] == (
             '2 Tribunal reviews sought: Applicant (ACT 3 of 2026), Other (ACT 4 of 2026); 2 open at quarter end.'
         )
+
+
+class TestUrlKeyAndCommentary:
+    def test_each_quarter_carries_its_short_url_key(self):
+        payload = quarterly.generate([], as_at=AS_AT)
+        assert [q['url_key'] for q in payload['quarters']] == ['26Q1', '26Q2', '26Q3']
+
+    def test_quarter_keys_in_every_form_people_write(self):
+        for key in ('26Q3', '26q3', '2026Q3', '2026-Q3', ' 26Q3 '):
+            assert quarterly.normalise_quarter_key(key) == (2026, 3), key
+        for key in ('Q3', '26Q5', '2026-3', 'summer'):
+            assert quarterly.normalise_quarter_key(key) is None, key
+
+    def test_commentary_attaches_to_its_quarter(self):
+        commentary = {
+            '26Q3': [{'commentary': '  More of the same.  ', 'author': 'Nick', 'date': '2026-10-23'}],
+            '2026-Q2': 'A bare string works too.',
+        }
+        payload = quarterly.generate([], as_at=AS_AT, commentary=commentary)
+        assert _quarter(payload, '2026-Q3')['commentary'] == [
+            {'commentary': 'More of the same.', 'author': 'Nick', 'date': '2026-10-23'},
+        ]
+        assert _quarter(payload, '2026-Q2')['commentary'] == [{'commentary': 'A bare string works too.'}]
+        assert _quarter(payload, '2026-Q1')['commentary'] == []
+
+    def test_blank_entries_and_unknown_keys_are_skipped(self, capsys):
+        commentary = {'26Q3': [{'commentary': ''}, {'author': 'x'}], 'later': ['?']}
+        payload = quarterly.generate([], as_at=AS_AT, commentary=commentary)
+        assert _quarter(payload, '2026-Q3')['commentary'] == []
+        assert "'later' is not a quarter" in capsys.readouterr().out
+
+    def test_commentary_for_an_unpublished_quarter_waits_for_it(self):
+        commentary = {'26Q4': ['Written early.']}
+        assert all(not q['commentary'] for q in quarterly.generate([], as_at=AS_AT, commentary=commentary)['quarters'])
+        q4 = quarterly.generate([], as_at=date(2027, 1, 5), commentary=commentary)['quarters'][-1]
+        assert q4['commentary'] == [{'commentary': 'Written early.'}]
+
+    def test_the_committed_commentary_file_loads(self):
+        from scripts.generate.static_data.loaders import load_quarterly_commentary
+        loaded = load_quarterly_commentary()
+        assert all(not k.startswith('_') for k in loaded)
+        for key in loaded:
+            assert quarterly.normalise_quarter_key(key) is not None, key

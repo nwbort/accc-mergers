@@ -11,6 +11,7 @@ function quarter(key, overrides = {}) {
   const [year, q] = key.split('-');
   return {
     quarter: key,
+    url_key: `${year.slice(2)}${q}`,
     label: `${q} ${year}`,
     notifications: {
       filed: 100,
@@ -49,7 +50,12 @@ const Q3 = quarter('2026-Q3', {
 const QUARTERS = [Q2, Q3];
 
 describe('pickQuarter', () => {
-  it('honours a quarter named in the URL', () => {
+  it('honours a quarter named in the URL by its short key', () => {
+    expect(pickQuarter(QUARTERS, '26Q2')).toBe(Q2);
+    expect(pickQuarter(QUARTERS, '26q2')).toBe(Q2);
+  });
+
+  it('still reads the long form older links used', () => {
     expect(pickQuarter(QUARTERS, '2026-Q2')).toBe(Q2);
   });
 

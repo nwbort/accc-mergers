@@ -1,4 +1,5 @@
 import { Link, useSearchParams } from 'react-router';
+import ReactMarkdown from 'react-markdown';
 import { Bar } from 'react-chartjs-2';
 import '../utils/chartSetup';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -447,6 +448,22 @@ function IndustriesCard({ quarter }) {
   );
 }
 
+const SITE_ORIGIN = 'https://mergers.fyi';
+const COMMENTARY_LINK = 'text-primary underline underline-offset-2 hover:no-underline';
+
+/**
+ * A link in hand-written commentary. One into this site — a bare path, or a
+ * full mergers.fyi URL, which is what the PDF needs — routes in the app
+ * rather than reloading the page; anything else is an ordinary link.
+ */
+function CommentaryLink({ href = '', children }) {
+  const path = href.startsWith(SITE_ORIGIN) ? href.slice(SITE_ORIGIN.length) || '/' : href;
+  if (path.startsWith('/')) {
+    return <Link to={path} className={COMMENTARY_LINK}>{children}</Link>;
+  }
+  return <a href={href} className={COMMENTARY_LINK}>{children}</a>;
+}
+
 /**
  * Applications to the Australian Competition Tribunal live during the quarter.
  * Each matter links out to the Tribunal's own page and in to the merger; the
@@ -584,6 +601,7 @@ function Quarterly() {
   const n = quarter.notifications;
   const w = quarter.waivers;
   const findings = quarter.findings || [];
+  const commentary = quarter.commentary || [];
   const selectorQuarters = quarters.slice(-SELECTOR_QUARTERS);
   // A quarter reached by ?q= that has dropped off the selector still shows as
   // selected, rather than leaving the toggle with nothing pressed.
@@ -617,8 +635,8 @@ function Quarterly() {
               </a>
             <SegmentedToggle
               ariaLabel="Quarter"
-              options={selectorQuarters.map((q) => ({ value: q.quarter, label: q.label }))}
-              value={quarter.quarter}
+              options={selectorQuarters.map((q) => ({ value: q.url_key, label: q.label }))}
+              value={quarter.url_key}
               onChange={selectQuarter}
             />
           </div>
@@ -653,12 +671,28 @@ function Quarterly() {
               previousLabel={prevLabel}
             />
           </div>
-          {findings.length > 0 && (
+          {(findings.length > 0 || commentary.length > 0) && (
             <div className="border-t border-gray-100 bg-gray-50/60 px-6 py-5">
               <h2 className={SECTION_HEADING}>The quarter in brief</h2>
               <ul className="mt-3 space-y-2 text-sm text-gray-800 list-disc pl-5 marker:text-primary">
                 {findings.map((finding) => (
                   <li key={finding}>{finding}</li>
+                ))}
+                {/* Hand-written points (quarterly_commentary.json), after the
+                    generated ones. Markdown, rendered inline so a point stays
+                    one bullet. */}
+                {commentary.map((entry) => (
+                  <li key={entry.commentary}>
+                    <ReactMarkdown
+                      components={{
+                        p: ({ children }) => <>{children}</>,
+                        a: ({ href, children }) => <CommentaryLink href={href}>{children}</CommentaryLink>,
+                      }}
+                    >
+                      {entry.commentary}
+                    </ReactMarkdown>
+                    {entry.author && <span className="text-gray-500"> &mdash; {entry.author}</span>}
+                  </li>
                 ))}
               </ul>
             </div>

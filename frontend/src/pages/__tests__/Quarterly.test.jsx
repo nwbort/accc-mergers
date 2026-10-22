@@ -17,9 +17,10 @@ function ok(json) {
 
 const BUCKETS = ['0–4', '5–9', '10–14', '15–19', '20–24', '25–29', '30–49', '50+'];
 
-function block(key, label, { filed, decided, p1Median, wMedian, preMedian = 15, milestones = [], findings = [], appeals = null }) {
+function block(key, label, { filed, decided, p1Median, wMedian, preMedian = 15, milestones = [], findings = [], appeals = null, commentary = [] }) {
   return {
     quarter: key,
+    url_key: `${key.slice(2, 4)}${key.slice(-2)}`,
     label,
     start: `${key.slice(0, 4)}-0${(Number(key.slice(-1)) - 1) * 3 + 1}-01`.replace('-010-', '-10-'),
     end: '2026-09-30',
@@ -56,6 +57,7 @@ function block(key, label, { filed, decided, p1Median, wMedian, preMedian = 15, 
     ],
     milestones,
     findings,
+    commentary,
     appeals: appeals ?? { lodged: 0, concluded: 0, open_at_end: 0, matters: [] },
   };
 }
@@ -72,6 +74,12 @@ const FIXTURE = {
       p1Median: 18,
       wMedian: 17,
       preMedian: 16,
+      commentary: [
+        {
+          commentary: 'More of the same, but see the [Phase 2 tracker](https://mergers.fyi/phase-2) and the [ACCC](https://www.accc.gov.au/).',
+          author: 'Nick Twort',
+        },
+      ],
       appeals: {
         lodged: 1,
         concluded: 0,
@@ -198,10 +206,28 @@ describe('Quarterly report', () => {
     expect(href('re-filed as a notification')).toBe('/refiled-notifications');
   });
 
-  it('honours a quarter named in the URL', async () => {
+  it('honours a quarter named in the URL, short form or long', async () => {
+    renderPage('/quarterly?q=26Q2');
+    await ready();
+    expect(screen.getByRole('button', { name: 'Q2 2026', pressed: true })).toBeInTheDocument();
+  });
+
+  it('still opens an older long-form link', async () => {
     renderPage('/quarterly?q=2026-Q2');
     await ready();
     expect(screen.getByRole('button', { name: 'Q2 2026', pressed: true })).toBeInTheDocument();
+  });
+
+  it('adds hand-written commentary to the brief as its own point', async () => {
+    renderPage();
+    await ready();
+    const brief = screen.getByRole('heading', { name: 'The quarter in brief' }).parentElement;
+    const point = within(brief).getByText(/More of the same/).closest('li');
+    expect(point).toHaveTextContent('More of the same, but see the Phase 2 tracker and the ACCC. — Nick Twort');
+    // A mergers.fyi link routes in the app; anything else stays external.
+    expect(within(point).getByRole('link', { name: 'Phase 2 tracker' })).toHaveAttribute('href', '/phase-2');
+    expect(within(point).getByRole('link', { name: 'ACCC' })).toHaveAttribute('href', 'https://www.accc.gov.au/');
+    expect(within(brief).getAllByRole('listitem')).toHaveLength(3);
   });
 
   it('pairs each chart with a data table', async () => {
