@@ -120,8 +120,7 @@ frontend/src/
 │   ├── Mergers.jsx       # /mergers. Loads the whole list once (mergers/list.json) and
 │                         #   searches/filters/sorts it client-side. Cards by default
 │                         #   (MergerListCard), or a compact table with ?view=table
-│                         #   (MergerListTable). Three pages of 50 scroll in on their
-│                         #   own, then a "Show more" button, so the footer is reachable
+│                         #   (MergerListTable). Infinite scroll, 50 at a time
 │   ├── MergerDetail.jsx  # /mergers/:id and /mergers/:id/:slug
 │   ├── Industries.jsx    # /industries (not in the navbar; reachable from the command
 │                         #   palette and the `g i` shortcut)

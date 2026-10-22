@@ -25,10 +25,6 @@ const PAGE_META = STATIC_PAGE_META['/mergers'];
 
 const SEARCH_DEBOUNCE_MS = 300;
 const PAGE_SIZE = 50;
-// Pages appended automatically as the reader scrolls. Past this a "Show more"
-// button takes over, so the footer can be reached without first scrolling
-// through every merger on the register.
-const AUTO_LOAD_PAGES = 3;
 // Stable empty list while loading, so memos keyed on it don't churn.
 const NO_MERGERS = [];
 
@@ -284,16 +280,15 @@ function Mergers() {
     [filtersOpen, mergers, filterTests]
   );
 
+  // Paginated slice of sorted results
   const visibleMergers = sortedMergers.slice(0, page * PAGE_SIZE);
-  const remaining = sortedMergers.length - visibleMergers.length;
-  const hasMore = remaining > 0;
-  const autoLoad = hasMore && page < AUTO_LOAD_PAGES;
+  const hasMore = visibleMergers.length < sortedMergers.length;
 
   // Sentinel element watched by IntersectionObserver to trigger the next page
   const sentinelRef = useRef(null);
 
   useEffect(() => {
-    if (!autoLoad) return undefined;
+    if (!hasMore) return undefined;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -305,7 +300,7 @@ function Mergers() {
     const el = sentinelRef.current;
     if (el) observer.observe(el);
     return () => observer.disconnect();
-  }, [autoLoad, page]);
+  }, [hasMore]);
 
   // j/k/Enter keyboard navigation for the merger list
   const handleListKeyDown = useCallback((e) => {
@@ -571,20 +566,7 @@ function Mergers() {
           )}
         </div>
 
-        {autoLoad && <div ref={sentinelRef} className="h-12" />}
-
-        {hasMore && !autoLoad && (
-          <div className="mt-6 flex justify-center">
-            <button
-              type="button"
-              onClick={() => setPage((p) => p + 1)}
-              className="px-4 py-2 rounded-xl text-sm font-medium bg-white border border-gray-200 text-gray-700 shadow-card hover:border-gray-300 hover:text-primary transition-colors"
-            >
-              Show {Math.min(PAGE_SIZE, remaining)} more
-              <span className="text-gray-500 font-normal"> · {remaining} not shown</span>
-            </button>
-          </div>
-        )}
+        {hasMore && <div ref={sentinelRef} className="h-12" />}
 
         {sortedMergers.length === 0 && (
           <div className="text-center py-16">

@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { act, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Link, MemoryRouter, Route, Routes, useNavigate } from 'react-router';
@@ -34,16 +34,26 @@ const MERGERS = Array.from({ length: 200 }, (_, i) => {
   };
 });
 
-// jsdom has no IntersectionObserver. This one reports the sentinel as visible
-// as soon as it is observed, as a reader scrolling straight down would.
-class VisibleIntersectionObserver {
+// jsdom has no IntersectionObserver. This one records what it watches, and
+// scrollToEnd() reports the infinite-scroll sentinel as visible, as a reader
+// reaching the bottom of the list would.
+const observers = new Set();
+class StubIntersectionObserver {
   constructor(callback) {
     this.callback = callback;
   }
   observe() {
-    this.callback([{ isIntersecting: true }]);
+    observers.add(this);
   }
-  disconnect() {}
+  disconnect() {
+    observers.delete(this);
+  }
+}
+
+function scrollToEnd() {
+  act(() => {
+    observers.forEach((o) => o.callback([{ isIntersecting: true }]));
+  });
 }
 
 // Stands in for the detail page: just a way back.
@@ -57,7 +67,8 @@ let fetchSpy;
 beforeEach(() => {
   dataCache.clear();
   sessionStorage.clear();
-  vi.stubGlobal('IntersectionObserver', VisibleIntersectionObserver);
+  observers.clear();
+  vi.stubGlobal('IntersectionObserver', StubIntersectionObserver);
   window.matchMedia = window.matchMedia || (() => ({ matches: false, addEventListener() {}, removeEventListener() {} }));
   fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation((url) => (
     url.includes('mergers/list.json')
@@ -91,14 +102,11 @@ describe('Mergers', () => {
     expect(listFetches).toHaveLength(1);
   });
 
-  it('stops scrolling in more after a few pages and offers a button instead', async () => {
-    const user = userEvent.setup();
+  it('loads the next 50 as the reader scrolls to the end of the list', async () => {
     renderPage();
-    // Three pages arrive on their own; the fourth waits for the button.
-    expect(await screen.findByText('Showing 150 of 200 mergers')).toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: /Show 50 more/ }));
-    expect(screen.getByText('Showing 200 of 200 mergers')).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /more/ })).not.toBeInTheDocument();
+    expect(await screen.findByText('Showing 50 of 200 mergers')).toBeInTheDocument();
+    scrollToEnd();
+    expect(screen.getByText('Showing 100 of 200 mergers')).toBeInTheDocument();
   });
 
   it('filters by industry division from the URL', async () => {
@@ -166,8 +174,9 @@ describe('Mergers', () => {
         </TrackingProvider>
       </HelmetProvider>
     );
-    await screen.findByText('Showing 150 of 200 mergers');
-    await user.click(screen.getByRole('button', { name: /Show 50 more/ }));
+    await screen.findByText('Showing 50 of 200 mergers');
+    for (let i = 0; i < 3; i++) scrollToEnd();
+    expect(screen.getByText('Showing 200 of 200 mergers')).toBeInTheDocument();
     await user.click(screen.getByRole('link', { name: 'View merger details for Wholesale deal 171' }));
     await user.click(await screen.findByRole('button', { name: 'Back' }));
     expect(await screen.findByText('Showing 200 of 200 mergers')).toBeInTheDocument();
@@ -188,8 +197,8 @@ describe('Mergers', () => {
         </TrackingProvider>
       </HelmetProvider>
     );
-    // A link to the list, with no restore state: back to the automatic pages.
+    // A link to the list, with no restore state: back to the first page.
     await user.click(screen.getByRole('link', { name: 'Mergers' }));
-    expect(await screen.findByText('Showing 150 of 200 mergers')).toBeInTheDocument();
+    expect(await screen.findByText('Showing 50 of 200 mergers')).toBeInTheDocument();
   });
 });
