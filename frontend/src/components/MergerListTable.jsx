@@ -114,9 +114,24 @@ function MergerListTable({ mergers, selectedIndex, isTracked, sortField, sortDir
                   </div>
                 </td>
                 <td className="px-4 py-3">
+                  {/* Phones get symbols only, the worded chips don't fit;
+                      their words stay in each symbol's accessible name and
+                      tooltip. Only one of the two is ever displayed. */}
+                  <div className="flex flex-wrap items-center gap-1 sm:hidden">
+                    <StatusBadge
+                      status={merger.status}
+                      determination={merger.accc_determination}
+                      hasConditions={merger.has_conditions}
+                      appeal={merger.appeal}
+                      glyph
+                    />
+                    {merger.under_appeal && <AppealBadge glyph />}
+                    {merger.is_waiver && <WaiverBadge glyph />}
+                    {merger.is_refiled && <RefiledBadge glyph />}
+                  </div>
                   {/* The solid form, as on the cards, so the two views of
                       the same list read the same. */}
-                  <div className="flex flex-wrap items-center gap-1.5">
+                  <div className="hidden sm:flex flex-wrap items-center gap-1.5">
                     <StatusBadge
                       status={merger.status}
                       determination={merger.accc_determination}

@@ -5,8 +5,10 @@ import {
   EMPHATIC_OUTCOMES,
   DEFAULT_STATUS_STYLE,
   DEFAULT_SOLID_STATUS_STYLE,
+  GLYPH_BADGE_SHAPE_CLASSES,
   SOLID_BADGE_SHAPE_CLASSES,
 } from '../constants/mergerStatus';
+import { FaPause, FaRegClock } from 'react-icons/fa';
 import { OUTCOME_ICONS } from '../constants/outcomeIcons';
 import { resolveEffectiveDetermination } from '../constants/appeal';
 
@@ -27,6 +29,15 @@ const STYLED_STATUSES = [
   MERGER_STATUS.ASSESSMENT_CEASED,
 ];
 
+// Symbols for the states OUTCOME_ICONS deliberately leaves without one,
+// used only by the `glyph` form, where there is no text to fall back on. A
+// "2" rather than an icon for a Phase 2 referral: no stock glyph says it.
+const LIVE_GLYPHS = {
+  [MERGER_STATUS.UNDER_ASSESSMENT]: FaRegClock,
+  [MERGER_STATUS.ASSESSMENT_SUSPENDED]: FaPause,
+  [MERGER_STATUS.REFERRED_TO_PHASE_2]: '2',
+};
+
 /**
  * The status or determination a matter is carrying, as a badge.
  *
@@ -34,8 +45,12 @@ const STYLED_STATUSES = [
  * rather than tinted. The merger list wears it above every card's title, where
  * the result is what the reader came for. Everywhere else the badge is a tint,
  * and only the few adverse outcomes (EMPHATIC_OUTCOMES) fill anyway.
+ *
+ * `glyph` shrinks the solid form to its symbol alone (the merger table at
+ * phone width): same colour, and the words move to the accessible name and a
+ * tooltip. "With conditions" and an appeal's result are left to those too.
  */
-function StatusBadge({ status, determination, label, hasConditions, appeal, solid = false }) {
+function StatusBadge({ status, determination, label, hasConditions, appeal, solid = false, glyph = false }) {
   // A concluded tribunal appeal can replace the ACCC's determination with the
   // one that now stands, plus a suffix noting whether it was confirmed or
   // overturned (mirrors the "· with conditions" treatment). Resolved by the
@@ -55,7 +70,7 @@ function StatusBadge({ status, determination, label, hasConditions, appeal, soli
     styleKey = status;
   }
 
-  const filled = solid || EMPHATIC_OUTCOMES.includes(styleKey);
+  const filled = solid || glyph || EMPHATIC_OUTCOMES.includes(styleKey);
   const statusStyle =
     (styleKey && (filled ? SOLID_STATUS_COLORS[styleKey] : STATUS_COLORS[styleKey])) ||
     (solid ? DEFAULT_SOLID_STATUS_STYLE : DEFAULT_STATUS_STYLE);
@@ -73,6 +88,21 @@ function StatusBadge({ status, determination, label, hasConditions, appeal, soli
     ? `Determination: ${effectiveDetermination}${showConditions ? ', with conditions' : ''}`
     : `Status: ${status}`;
   const ariaLabel = appealSuffix ? `${ariaLabelBase}, ${appealSuffix}` : ariaLabelBase;
+
+  if (glyph) {
+    const Symbol = Icon || (styleKey && LIVE_GLYPHS[styleKey]);
+    const words = [displayText, showConditions && 'with conditions', appealSuffix].filter(Boolean).join(' · ');
+    return (
+      <span
+        className={`inline-flex items-center flex-shrink-0 border ${GLYPH_BADGE_SHAPE_CLASSES} ${statusStyle}`}
+        role="img"
+        aria-label={ariaLabel}
+        title={words}
+      >
+        {typeof Symbol === 'string' ? Symbol : Symbol ? <Symbol className="w-3 h-3" aria-hidden="true" /> : '•'}
+      </span>
+    );
+  }
 
   return (
     // role="img" (not role="status", which would turn every badge in a list
