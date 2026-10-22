@@ -355,9 +355,9 @@ sed -n '112,152p' scripts/generate/generate_static_data.py
     n = individual.generate(enriched, OUTPUT_DIR)
     print(f"✓ Generated {n} individual merger files in {OUTPUT_DIR / 'mergers'}")
 
-    print("\nGenerating paginated list files...")
-    pages = list_out.generate(enriched, OUTPUT_DIR, page_size=50)
-    print(f"✓ Generated {pages} paginated list files (50 mergers/page)")
+    print("\nGenerating merger list file...")
+    n = list_out.generate(enriched, OUTPUT_DIR)
+    print(f"✓ Generated {OUTPUT_DIR / 'mergers' / 'list.json'} ({n} mergers)")
 
     print("\nGenerating paginated timeline files...")
     pages = timeline.generate(enriched, OUTPUT_DIR, page_size=100)
@@ -382,9 +382,9 @@ sed -n '112,152p' scripts/generate/generate_static_data.py
 
 The output files are written directly into `frontend/public/data/`, which is the Vite project's static assets folder. Because these files are committed to git, Cloudflare Pages picks them up on every push and serves them without any build step or server-side rendering.
 
-Large collections (mergers, timeline events) are paginated: 50 mergers per list page, 100 events per timeline page. This keeps initial page loads fast — the frontend only fetches the first page and loads more on demand.
+The merger list is a single file, `mergers/list.json`, holding a lightweight record (no events, no description) for every merger. The /mergers page searches, filters and sorts it entirely in the browser, so it needs all of it up front; at ~110 KB gzipped, one request beats paging it in. It was once split into 50-merger pages, which cost a round trip each and reshuffled the list as they arrived.
 
-Individual merger files (`mergers/{id}.json`) are written separately from the paginated list files. The list pages contain lightweight records (no events, no description) for the searchable list view; individual files contain the full detail including events, parties, and documents.
+Individual merger files (`mergers/{id}.json`) are written separately from the list file and contain the full detail including events, parties, and documents.
 
 ## The Frontend
 
@@ -496,8 +496,7 @@ export const FEEDBACK_ENDPOINT = "https://signup.mergers.fyi/feedback";
 export const TURNSTILE_SITE_KEY = "0x4AAAAAACg1KC_xTS0WAPpu";
 
 export const API_ENDPOINTS = {
-  mergersListPage: (page) => `/data/mergers/list-page-${page}.json`,  // Paginated merger list
-  mergersListMeta: '/data/mergers/list-meta.json',  // Pagination metadata for mergers list
+  mergersList: '/data/mergers/list.json',  // Every merger, lightweight — the /mergers page and command palette
   mergerDetail: (id) => `/data/mergers/${id}.json`,  // Individual merger file
   stats: '/data/stats.json',
   timelinePage: (page) => `/data/timeline/timeline-page-${page}.json`,  // Paginated timeline

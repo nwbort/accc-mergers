@@ -1,24 +1,26 @@
-import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
-import { FaSearch, FaTimes, FaSlidersH, FaArrowDown, FaStar } from 'react-icons/fa';
-import { useSearchParams, useNavigate } from 'react-router';
+import { useState, useEffect, useLayoutEffect, useMemo, useRef, useCallback } from 'react';
+import { FaSearch, FaTimes, FaSlidersH, FaArrowDown, FaList, FaTable } from 'react-icons/fa';
+import { useSearchParams, useNavigate, useLocation, useNavigationType } from 'react-router';
 import { mergerPath } from '../utils/slug';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
-import StatusBadge from '../components/StatusBadge';
-import TrackButton from '../components/TrackButton';
-import WaiverBadge from '../components/WaiverBadge';
-import AppealBadge from '../components/AppealBadge';
-import RefiledBadge from '../components/RefiledBadge';
+import MergerListCard from '../components/MergerListCard';
+import MergerListTable from '../components/MergerListTable';
+import DateRangeFilter from '../components/DateRangeFilter';
 import SEO from '../components/SEO';
-import { formatDate } from '../utils/dates';
-import { getBusinessDayProgress } from '../utils/businessDayProgress';
 import { API_ENDPOINTS } from '../config';
-import { dataCache } from '../utils/dataCache';
+import { useFetchData } from '../hooks/useFetchData';
 import { useTracking } from '../context/TrackingContext';
 import { useDebounce } from '../hooks/useDebounce';
-import { buildSearchIndex, searchMergers, clearSearchIndex } from '../utils/searchIndex';
-import { PHASES, isPublicBenefitStage } from '../constants/mergerStatus';
-import { getOutcomeRail } from '../constants/outcomeRail';
+import { buildSearchIndex } from '../utils/searchIndex';
+import { MERGERS_LIST_KEY } from '../utils/mergerList';
+import {
+  FILTER_PARAMS, activeFilterTests, applyFilters, dateRangeFrom, filterOptions,
+} from '../utils/mergerFilters';
+import { buildTimeline, dayOf, quickRanges } from '../utils/dateTimeline';
+import { australianToday, toDateString } from '../utils/dates';
+import { loadListPosition, saveListPosition } from '../utils/mergerListPosition';
+import { loadListView, saveListView } from '../utils/mergerListView';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { DEFAULT_SORT, SORT_FIELDS, SORT_FIELDS_BY_VALUE, normaliseSort, splitSort, sortMergers } from '../utils/mergerSort';
@@ -29,170 +31,210 @@ const PAGE_META = STATIC_PAGE_META['/mergers'];
 
 const SEARCH_DEBOUNCE_MS = 300;
 const PAGE_SIZE = 50;
-// Caps how many ANZSIC chips a card shows before folding the rest into a
-// "+N more" chip, so a multi-industry deal doesn't grow noticeably taller
-// than its neighbours in the list.
-const MAX_VISIBLE_INDUSTRY_CHIPS = 3;
-// Max concurrent page fetches to avoid saturating the connection pool
-const FETCH_BATCH_SIZE = 4;
+// Stable empty list while loading, so memos keyed on it don't churn.
+const NO_MERGERS = [];
+
+// Whether this document has shown the list before — see restoredPosition.
+let listShownThisDocument = false;
+
+const SELECT_CLASSES = 'w-full px-3 py-2.5 bg-gray-50 border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none';
+
+const withCount = (label, count) => `${label} (${count})`;
+
+// A filter select: highlighted while set, each option carrying its count.
+function FilterSelect({ id, label, value, allLabel, options, onChange }) {
+  return (
+    <div>
+      <label htmlFor={id} className={`block ${SECTION_HEADING} mb-2`}>
+        {label}
+      </label>
+      <select
+        id={id}
+        className={`${SELECT_CLASSES} ${value ? 'border-primary border-2' : 'border-gray-200'}`}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      >
+        <option value="">{allLabel}</option>
+        {options.map((o) => (
+          <option key={o.value} value={o.value}>
+            {o.count === undefined ? o.label : withCount(o.label, o.count)}
+          </option>
+        ))}
+        {/* A shared link can name a value the data no longer has (a year
+            with nothing left in it, say). Keep it selectable so the select
+            still says what is being applied. */}
+        {value && !options.some((o) => o.value === value) && (
+          <option value={value}>{value}</option>
+        )}
+      </select>
+    </div>
+  );
+}
+
+// An on/off filter, styled as a switch.
+function FilterSwitch({ heading, label, checked, onToggle }) {
+  return (
+    <div>
+      <p className={`${SECTION_HEADING} mb-2`} aria-hidden="true">{heading}</p>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={checked}
+        onClick={onToggle}
+        className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm transition-all ${
+          checked
+            ? 'bg-primary/5 border-2 border-primary text-primary'
+            : 'bg-gray-50 border border-gray-200 text-gray-500 hover:bg-gray-100'
+        }`}
+      >
+        <span
+          className={`relative inline-flex h-5 w-9 flex-shrink-0 items-center rounded-full transition-colors ${
+            checked ? 'bg-primary' : 'bg-gray-300'
+          }`}
+        >
+          <span
+            className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transform transition-transform ${
+              checked ? 'translate-x-4' : 'translate-x-0.5'
+            }`}
+          />
+        </span>
+        <span className="font-medium">{label}</span>
+      </button>
+    </div>
+  );
+}
 
 function Mergers() {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
-  const [mergers, setMergers] = useState(() => dataCache.get('mergers-list') || []);
-  const [loading, setLoading] = useState(() => !dataCache.has('mergers-list'));
-  const [error, setError] = useState(null);
-  // Total merger count from list-meta.json — known from the very first request,
-  // well before every page has loaded, so the unfiltered "of N" count doesn't
-  // have to creep up page by page while the rest load in the background.
-  const [totalMergerCount, setTotalMergerCount] = useState(() => dataCache.get('mergers-list')?.length ?? null);
-  const [page, setPage] = useState(1);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const location = useLocation();
+  const navigationType = useNavigationType();
   const listRef = useRef(null);
+
+  // The whole list is one file (~110 KB gzipped). useFetchData shares it with
+  // the command palette through dataCache and keeps it fresh in the
+  // background.
+  const { data, loading, error } = useFetchData(API_ENDPOINTS.mergersList, { cacheKey: MERGERS_LIST_KEY });
+  const mergers = data?.mergers ?? NO_MERGERS;
+  const searchIndex = useMemo(() => buildSearchIndex(mergers), [mergers]);
 
   // searchTerm is kept as local state so the input is responsive and debouncing works.
   // All other filter values are derived directly from the URL (source of truth).
   const [searchTerm, setSearchTerm] = useState(() => searchParams.get('q') || '');
+  const debouncedSearchTerm = useDebounce(searchTerm, SEARCH_DEBOUNCE_MS);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const { isTracked, toggleTracking } = useTracking();
 
-  // Derive filter state from URL params — no local state duplication needed
-  const statusFilter = searchParams.get('status') || 'all';
-  const phaseFilter = searchParams.get('phase') || 'all';
+  const paramString = searchParams.toString();
+  // 'all' was the phase and status selects' old "no filter" value; old links
+  // still carry it.
+  const unlessAll = (value) => (value && value !== 'all' ? value : '');
+  const phaseFilter = unlessAll(searchParams.get('phase'));
+  const statusFilter = unlessAll(searchParams.get('status'));
+  const fromParam = searchParams.get('from') || '';
+  const toParam = searchParams.get('to') || '';
+  const dateRange = dateRangeFrom(fromParam, toParam);
+  const industryFilter = searchParams.get('industry') || '';
+  const conditionsOnly = searchParams.get('conditions') === 'true';
+  const trackedOnly = searchParams.get('tracked') === 'true';
   // An unrecognised ?sort= folds back to the default, so the select and the
   // direction labels always describe the order actually applied.
   const sortBy = normaliseSort(searchParams.get('sort') || DEFAULT_SORT);
   const { field: sortField, dir: sortDir } = splitSort(sortBy);
   const directionLabels = SORT_FIELDS_BY_VALUE[sortField];
-  const trackedOnly = searchParams.get('tracked') === 'true';
+  // Cards or table: the reader's own preference, kept in localStorage rather
+  // than the URL (see utils/mergerListView.js).
+  const [listView, setListView] = useState(loadListView);
+  const tableView = listView === 'table';
 
-  // Initialize search index from session cache if merger data is already cached
-  const [searchIndex, setSearchIndex] = useState(() => {
-    const cachedMergers = dataCache.get('mergers-list') || [];
-    return cachedMergers.length ? buildSearchIndex(cachedMergers) : null;
-  });
+  // Coming back to the list — Back, or the detail page's "Back to all
+  // mergers" — puts the reader where they were: as many pages showing, at
+  // the same scroll offset. Read once, on mount. Loading the page also counts
+  // as a POP, but that is an arrival rather than a return, so a POP only
+  // restores once the list has already been shown in this document.
+  const [restoredPosition] = useState(() => (
+    (navigationType === 'POP' && listShownThisDocument) || location.state?.restoreListPosition
+      ? loadListPosition(paramString)
+      : null
+  ));
+  useEffect(() => {
+    listShownThisDocument = true;
+  }, []);
+  const [page, setPage] = useState(() => restoredPosition?.page ?? 1);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
-  const debouncedSearchTerm = useDebounce(searchTerm, SEARCH_DEBOUNCE_MS);
+  // Back to the first page, and no keyboard selection, whenever what the list
+  // holds or its order changes. Keyed on the inputs rather than on the
+  // filtered array, so tracking a merger or a background data refresh leaves
+  // the reader where they are.
+  const listKey = [debouncedSearchTerm, ...FILTER_PARAMS.map((k) => searchParams.get(k)), sortBy].join('\u0000');
+  const [pagedListKey, setPagedListKey] = useState(listKey);
+  if (pagedListKey !== listKey) {
+    setPagedListKey(listKey);
+    setPage(1);
+    setSelectedIndex(-1);
+  }
 
   // Sync searchTerm from URL on back/forward navigation; also persist filter state.
   // For regular typing, searchTerm is set directly on the input (see onChange below)
   // so React skips the extra render when this effect fires with the same value.
   useEffect(() => {
     setSearchTerm(searchParams.get('q') || '');
-    sessionStorage.setItem('mergers_filter_params', searchParams.toString());
-  }, [searchParams]);
+    sessionStorage.setItem('mergers_filter_params', paramString);
+  }, [searchParams, paramString]);
 
   // Auto-open the filter panel on desktop when the page is loaded with active filters
   // (e.g. arriving from a shared link). Run once on mount only.
   useEffect(() => {
-    const hasActiveFilters =
-      searchParams.get('phase') ||
-      searchParams.get('status') ||
-      searchParams.get('tracked') === 'true';
+    const hasActiveFilters = FILTER_PARAMS.some((k) => searchParams.get(k) && searchParams.get(k) !== 'all');
     if (hasActiveFilters && window.matchMedia('(min-width: 768px)').matches) {
       setFiltersOpen(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    fetchMergers();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // Remember the position as the reader scrolls and pages. A layout effect so
+  // the last save on leaving runs before the list's DOM is removed — once it
+  // is, the browser clamps scrollY to the next page's (shorter) height.
+  const positionRef = useRef({ params: paramString, page });
+  useLayoutEffect(() => {
+    positionRef.current = { params: paramString, page };
+  }, [paramString, page]);
+  useLayoutEffect(() => {
+    let frame = 0;
+    const save = () => {
+      const { params, page: p } = positionRef.current;
+      saveListPosition(params, p, window.scrollY);
+    };
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        save();
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(frame);
+      save();
+    };
   }, []);
 
-  const fetchMergers = async () => {
-    // Only render progressively on a cold visit — if a full list is already
-    // cached (and showing), replacing it with a partial page-1-only list
-    // while the rest re-fetches in the background would be a visible regression.
-    const isColdVisit = mergers.length === 0;
+  // Scroll back to the saved offset once the list it was measured on is
+  // rendered. In a frame, so it lands after ScrollToTop's reset to the top.
+  const restoredRef = useRef(false);
+  const listReady = mergers.length > 0;
+  useEffect(() => {
+    if (!restoredPosition || restoredRef.current || !listReady) return undefined;
+    const frame = requestAnimationFrame(() => {
+      restoredRef.current = true;
+      window.scrollTo(0, restoredPosition.y);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [restoredPosition, listReady]);
 
-    try {
-      // First, fetch metadata to know how many pages there are
-      const metaResponse = await fetch(API_ENDPOINTS.mergersListMeta);
-
-      if (!metaResponse.ok) throw new Error('Failed to fetch merger list metadata');
-
-      const meta = await metaResponse.json();
-      const totalPages = meta.total_pages;
-      setTotalMergerCount(meta.total);
-
-      // list-page-N.json files are sorted ascending by notification date
-      // (oldest first — new mergers only ever append to the last page, so
-      // regenerating the pipeline only touches that one file). The default
-      // frontend sort is modified-desc (most recently updated first), which
-      // has no page it lines up with exactly, but recently-updated matters
-      // skew heavily toward recently-notified ones (most activity happens
-      // while a matter is still open), so the last page — the same one
-      // notification-desc wants — is still the best available first screen.
-      // For notification-asc, page 1 is already the right first screen; the
-      // determination and name sorts have no page/sort correlation, so page
-      // 1 is just a reasonable default there too.
-      const initialPage = (sortBy === DEFAULT_SORT || sortBy === 'notification-desc') ? totalPages : 1;
-
-      const initialResponse = await fetch(API_ENDPOINTS.mergersListPage(initialPage));
-      if (!initialResponse.ok) throw new Error('Failed to fetch merger page');
-      const initialPageData = await initialResponse.json();
-      let allMergers = initialPageData.mergers;
-
-      if (isColdVisit) {
-        // Render immediately with just this one page so users aren't stuck
-        // looking at a spinner while the remaining ~8 pages load in the
-        // background. The rest fill in silently (no progress UI) since a
-        // banner that appears then disappears just shifts the list under it.
-        // The search index is built without touching the shared dataCache
-        // entry — that entry is reserved for the complete, final index so a
-        // stale partial index is never mistaken for a complete one.
-        setMergers(allMergers);
-        setSearchIndex(buildSearchIndex(allMergers, { cache: false }));
-        setLoading(false);
-      }
-
-      // Fetch remaining pages in batches to avoid saturating the browser's
-      // connection pool. Promise.all within each batch still parallelises
-      // those requests. Order doesn't matter — the default sort is always
-      // re-applied to the combined list on render.
-      const remainingPages = [];
-      for (let p = 1; p <= totalPages; p++) {
-        if (p !== initialPage) remainingPages.push(p);
-      }
-
-      for (let i = 0; i < remainingPages.length; i += FETCH_BATCH_SIZE) {
-        const batchPages = remainingPages.slice(i, i + FETCH_BATCH_SIZE);
-        const batchResponses = await Promise.all(
-          batchPages.map((p) => fetch(API_ENDPOINTS.mergersListPage(p)))
-        );
-        const batchResults = await Promise.allSettled(
-          batchResponses.map((r) => {
-            if (!r.ok) throw new Error('Failed to fetch merger page');
-            return r.json();
-          })
-        );
-        const batchMergers = batchResults
-          .filter((r) => r.status === 'fulfilled')
-          .flatMap((r) => r.value.mergers);
-        allMergers = allMergers.concat(batchMergers);
-
-        if (isColdVisit) {
-          setMergers(allMergers);
-          setSearchIndex(buildSearchIndex(allMergers, { cache: false }));
-        }
-      }
-
-      // Only now — once every page has arrived — write the shared caches, so
-      // a partial list/index is never persisted as if it were complete.
-      dataCache.set('mergers-list', allMergers);
-      clearSearchIndex();
-      setMergers(allMergers);
-      setSearchIndex(buildSearchIndex(allMergers));
-    } catch (err) {
-      console.error('Failed to load mergers list:', err);
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const updateParam = (key, value, defaultValue) => {
+  const updateParam = (key, value, defaultValue = '') => {
     const params = new URLSearchParams(searchParams);
     if (value && value !== defaultValue) {
       params.set(key, value);
@@ -204,49 +246,50 @@ function Mergers() {
     setSearchParams(params, { replace: true });
   };
 
+  // The date range is two params that always change together.
+  const setDateRange = (range) => {
+    const params = new URLSearchParams(searchParams);
+    params.delete('from');
+    params.delete('to');
+    if (range) {
+      if (range.from !== '0000-01-01') params.set('from', range.from);
+      if (range.to !== '9999-12-31') params.set('to', range.to);
+    }
+    setSearchParams(params, { replace: true });
+  };
+
+  const setSort = (field, dir) => updateParam('sort', `${field}-${dir}`, DEFAULT_SORT);
+
+  // Picking a field keeps the direction when it is already the sort, and
+  // otherwise starts from that field's natural direction; the table headers
+  // flip the direction when clicked again, as sortable headers do.
+  const sortByColumn = (field) => {
+    if (field === sortField) setSort(field, sortDir === 'asc' ? 'desc' : 'asc');
+    else setSort(field, SORT_FIELDS_BY_VALUE[field].defaultDir);
+  };
+
   const activeFilterCount = [
-    phaseFilter !== 'all',
-    statusFilter !== 'all',
-    trackedOnly,
+    phaseFilter, statusFilter, dateRange, industryFilter, conditionsOnly, trackedOnly,
   ].filter(Boolean).length;
 
-  // Filtered mergers (unsorted). Recomputes only when data or filter values change.
-  // Starting from the raw `mergers` array avoids an up-front spread on every run —
-  // each .filter() call already produces a new array.
-  const filteredMergers = useMemo(() => {
-    if (!mergers.length || !searchIndex) return [];
+  const filterTests = useMemo(
+    () => activeFilterTests(
+      {
+        q: debouncedSearchTerm,
+        phase: phaseFilter,
+        status: statusFilter,
+        from: fromParam,
+        to: toParam,
+        industry: industryFilter,
+        conditions: conditionsOnly ? 'true' : '',
+        tracked: trackedOnly ? 'true' : '',
+      },
+      { isTracked, searchIndex },
+    ),
+    [debouncedSearchTerm, phaseFilter, statusFilter, fromParam, toParam, industryFilter, conditionsOnly, trackedOnly, isTracked, searchIndex]
+  );
 
-    let filtered = mergers;
-
-    if (trackedOnly) {
-      filtered = filtered.filter((m) => isTracked(m.merger_id));
-    }
-
-    if (phaseFilter === 'phase1') {
-      filtered = filtered.filter((m) => m.stage && m.stage.includes(PHASES.PHASE_1));
-    } else if (phaseFilter === 'phase2') {
-      // reached_phase_2 keeps a matter that has since moved on to the public
-      // benefit phase (see outputs/list.py).
-      filtered = filtered.filter((m) => m.reached_phase_2 || (m.stage && m.stage.includes(PHASES.PHASE_2)));
-    } else if (phaseFilter === 'public-benefit') {
-      filtered = filtered.filter((m) => isPublicBenefitStage(m.stage));
-    } else if (phaseFilter === 'waivers') {
-      filtered = filtered.filter((m) => m.is_waiver);
-    }
-
-    if (statusFilter !== 'all') {
-      filtered = filtered.filter((m) => {
-        const displayedOutcome = m.accc_determination || m.status;
-        return displayedOutcome === statusFilter;
-      });
-    }
-
-    if (debouncedSearchTerm) {
-      filtered = searchMergers(filtered, debouncedSearchTerm, searchIndex);
-    }
-
-    return filtered;
-  }, [mergers, searchIndex, debouncedSearchTerm, statusFilter, phaseFilter, trackedOnly, isTracked]);
+  const filteredMergers = useMemo(() => applyFilters(mergers, filterTests), [mergers, filterTests]);
 
   // Sorted mergers — separate memo so changing sort order only re-sorts,
   // not re-filters. sortMergers spreads its input so the original is not mutated.
@@ -255,34 +298,34 @@ function Mergers() {
     [filteredMergers, sortBy]
   );
 
-  // Status options for the dropdown — only recomputes when the data changes
-  const outcomes = useMemo(
-    () => ['all', ...new Set(mergers.map((m) => m.accc_determination || m.status))],
-    [mergers]
+  // The date filter's axis runs from the first notification on the register
+  // to today (in Australia, where the register's dates are).
+  const dateAxis = useMemo(() => {
+    let first = null;
+    for (const m of mergers) {
+      const d = dayOf(m.effective_notification_datetime);
+      if (d && (!first || d < first)) first = d;
+    }
+    if (!first) return null;
+    const today = toDateString(australianToday());
+    return { timeline: buildTimeline(first, today), ranges: quickRanges(first, today) };
+  }, [mergers]);
+
+  // Each select's options and counts. Only worked out while the panel is open.
+  const options = useMemo(
+    () => (filtersOpen ? filterOptions(mergers, filterTests, dateAxis ?? {}) : null),
+    [filtersOpen, mergers, filterTests, dateAxis]
   );
 
   // Paginated slice of sorted results
   const visibleMergers = sortedMergers.slice(0, page * PAGE_SIZE);
   const hasMore = visibleMergers.length < sortedMergers.length;
 
-  // With no search/filter active, sortedMergers *is* every merger, so its count
-  // otherwise creeps up page by page while background pages are still loading.
-  // The real total is already known from list-meta.json, so use that instead.
-  const hasActiveSearchOrFilter = activeFilterCount > 0 || Boolean(debouncedSearchTerm);
-  const displayedTotal = !hasActiveSearchOrFilter && totalMergerCount !== null
-    ? totalMergerCount
-    : sortedMergers.length;
-
-  // Reset to page 1 whenever filters or sort order change
-  useEffect(() => {
-    setPage(1);
-  }, [filteredMergers, sortBy]);
-
   // Sentinel element watched by IntersectionObserver to trigger the next page
   const sentinelRef = useRef(null);
 
   useEffect(() => {
-    if (!hasMore) return;
+    if (!hasMore) return undefined;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -295,11 +338,6 @@ function Mergers() {
     if (el) observer.observe(el);
     return () => observer.disconnect();
   }, [hasMore]);
-
-  // Reset keyboard selection when the visible list changes
-  useEffect(() => {
-    setSelectedIndex(-1);
-  }, [sortedMergers]);
 
   // j/k/Enter keyboard navigation for the merger list
   const handleListKeyDown = useCallback((e) => {
@@ -367,14 +405,14 @@ function Mergers() {
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
-                  updateParam('q', e.target.value, '');
+                  updateParam('q', e.target.value);
                 }}
               />
               {searchTerm && (
                 <button
                   onClick={() => {
                     setSearchTerm('');
-                    updateParam('q', '', '');
+                    updateParam('q', '');
                   }}
                   // right-2 + p-1 pads the 16px glyph out to a 24px hit area
                   // (WCAG 2.5.8) while leaving it where it was.
@@ -408,97 +446,65 @@ function Mergers() {
             </button>
           </div>
 
-          {/* Collapsible filter panel */}
-          {filtersOpen && (
+          {/* Collapsible filter panel. Each count is what picking that option
+              would leave, given the search and the other filters. */}
+          {filtersOpen && options && (
             <div className="mt-4 pt-4 border-t border-gray-100 animate-fade-in">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div>
-                  <label
-                    htmlFor="phase"
-                    className={`block ${SECTION_HEADING} mb-2`}
-                  >
-                    Phase
-                  </label>
-                  <select
-                    id="phase"
-                    className={`w-full px-3 py-2.5 bg-gray-50 border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none ${
-                      phaseFilter !== 'all' ? 'border-primary border-2' : 'border-gray-200'
-                    }`}
-                    value={phaseFilter}
-                    onChange={(e) => updateParam('phase', e.target.value, 'all')}
-                    aria-label="Filter by merger phase"
-                  >
-                    <option value="all">All phases</option>
-                    <option value="phase1">{PHASES.PHASE_1}</option>
-                    <option value="phase2">{PHASES.PHASE_2}</option>
-                    <option value="public-benefit">{PHASES.PUBLIC_BENEFITS}</option>
-                    <option value="waivers">{PHASES.WAIVER}</option>
-                  </select>
-                </div>
-                <div>
-                  <label
-                    htmlFor="status"
-                    className={`block ${SECTION_HEADING} mb-2`}
-                  >
-                    Status
-                  </label>
-                  <select
-                    id="status"
-                    className={`w-full px-3 py-2.5 bg-gray-50 border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none ${
-                      statusFilter !== 'all' ? 'border-primary border-2' : 'border-gray-200'
-                    }`}
-                    value={statusFilter}
-                    onChange={(e) => updateParam('status', e.target.value, 'all')}
-                    aria-label="Filter by merger status"
-                  >
-                    {outcomes.map((outcome) => (
-                      <option key={outcome} value={outcome}>
-                      {outcome === 'all'
-                        ? 'All statuses'
-                        : outcome}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label
-                    className={`block ${SECTION_HEADING} mb-2`}
-                  >
-                    Tracked
-                  </label>
-                  <button
-                    role="switch"
-                    aria-checked={trackedOnly}
-                    onClick={() => updateParam('tracked', !trackedOnly ? 'true' : '', '')}
-                    className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm transition-all ${
-                      trackedOnly
-                        ? 'bg-primary/5 border-2 border-primary text-primary'
-                        : 'bg-gray-50 border border-gray-200 text-gray-500 hover:bg-gray-100'
-                    }`}
-                  >
-                    <span
-                      className={`relative inline-flex h-5 w-9 flex-shrink-0 items-center rounded-full transition-colors ${
-                        trackedOnly ? 'bg-primary' : 'bg-gray-300'
-                      }`}
-                    >
-                      <span
-                        className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transform transition-transform ${
-                          trackedOnly ? 'translate-x-4' : 'translate-x-0.5'
-                        }`}
-                      />
-                    </span>
-                    <span className="font-medium">Tracked mergers only</span>
-                  </button>
-                </div>
+                <FilterSelect
+                  id="phase"
+                  label="Phase"
+                  value={phaseFilter}
+                  allLabel="All phases"
+                  options={options.phase}
+                  onChange={(v) => updateParam('phase', v)}
+                />
+                <FilterSelect
+                  id="status"
+                  label="Status"
+                  value={statusFilter}
+                  allLabel="All statuses"
+                  options={options.status}
+                  onChange={(v) => updateParam('status', v)}
+                />
+                <FilterSelect
+                  id="industry"
+                  label="Industry"
+                  value={industryFilter}
+                  allLabel="All industries"
+                  options={options.industry}
+                  onChange={(v) => updateParam('industry', v)}
+                />
+                <FilterSwitch
+                  heading="Conditions"
+                  label={withCount('Approved with conditions', options.conditions)}
+                  checked={conditionsOnly}
+                  onToggle={() => updateParam('conditions', conditionsOnly ? '' : 'true')}
+                />
+                <FilterSwitch
+                  heading="Tracked"
+                  label="Tracked mergers only"
+                  checked={trackedOnly}
+                  onToggle={() => updateParam('tracked', trackedOnly ? '' : 'true')}
+                />
               </div>
+              {dateAxis && (
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <DateRangeFilter
+                    range={dateRange}
+                    timeline={dateAxis.timeline}
+                    ranges={dateAxis.ranges}
+                    counts={options.date}
+                    onRangeChange={setDateRange}
+                  />
+                </div>
+              )}
               {activeFilterCount > 0 && (
                 <div className="mt-3 pt-3 border-t border-gray-100 flex justify-end">
                   <button
                     onClick={() => {
                       const params = new URLSearchParams(searchParams);
-                      params.delete('phase');
-                      params.delete('status');
-                      params.delete('tracked');
+                      FILTER_PARAMS.forEach((k) => params.delete(k));
                       setSearchParams(params, { replace: true });
                     }}
                     className="text-xs text-gray-500 hover:text-gray-700 transition-colors"
@@ -511,210 +517,102 @@ function Mergers() {
           )}
         </div>
 
-        {/* Results count & Sort */}
-        <div className="flex items-center justify-between mb-4">
-          <p className="text-sm text-gray-500">
-            Showing {visibleMergers.length} of {displayedTotal} mergers
+        {/* Results count, view & sort */}
+        {/* One line at every width: on phones the count drops to "50 of
+            767" (screen readers still hear the whole sentence) and the gaps
+            tighten, rather than the controls wrapping under it. If space
+            still runs out, the sort select narrows; the count never does. */}
+        <div className="flex items-center justify-between gap-3 sm:gap-4 mb-4">
+          <p className="flex-shrink-0 whitespace-nowrap text-sm text-gray-500 tabular-nums">
+            <span className="sr-only sm:not-sr-only">Showing </span>
+            {visibleMergers.length} of {sortedMergers.length}
+            <span className="sr-only sm:not-sr-only"> mergers</span>
           </p>
-          <div className="flex items-center gap-2">
-            <label htmlFor="sort" className="text-sm text-gray-500 hidden sm:inline">Sort by</label>
-            <select
-              id="sort"
-              className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
-              value={sortField}
-              onChange={(e) => {
-                const field = e.target.value;
-                // Keep the direction when only re-sorting the same field;
-                // switching fields starts from that field's natural direction.
-                const dir = field === sortField ? sortDir : SORT_FIELDS_BY_VALUE[field].defaultDir;
-                updateParam('sort', `${field}-${dir}`, DEFAULT_SORT);
-              }}
-              aria-label="Sort field"
-            >
-              {SORT_FIELDS.map((opt) => (
-                <option key={opt.value} value={opt.value}>{opt.label}</option>
-              ))}
-            </select>
-            <button
-              onClick={() => {
-                updateParam('sort', `${sortField}-${sortDir === 'asc' ? 'desc' : 'asc'}`, DEFAULT_SORT);
-              }}
-              className="p-1 text-gray-500 hover:text-gray-700 transition-all"
-              aria-label={`Change sort order to ${sortDir === 'asc' ? directionLabels.desc : directionLabels.asc}`}
-              title={`${sortDir === 'asc' ? directionLabels.asc : directionLabels.desc} — click for ${sortDir === 'asc' ? directionLabels.desc : directionLabels.asc}`}
-            >
-              <FaArrowDown className={`h-4 w-4 transition-transform ${sortDir === 'asc' ? 'rotate-180' : ''}`} aria-hidden="true" />
-            </button>
+          <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+            <div role="group" aria-label="View" className="flex flex-shrink-0 rounded-lg border border-gray-200 bg-white p-0.5">
+              {[
+                { value: 'cards', label: 'Cards', Icon: FaList },
+                { value: 'table', label: 'Table', Icon: FaTable },
+              ].map(({ value, label, Icon }) => {
+                const active = value === listView;
+                return (
+                  <button
+                    key={label}
+                    type="button"
+                    aria-pressed={active}
+                    aria-label={`${label} view`}
+                    title={`${label} view`}
+                    onClick={() => {
+                      setListView(value);
+                      saveListView(value);
+                    }}
+                    className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-sm transition-colors ${
+                      active ? 'bg-primary text-white' : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  >
+                    <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+                    <span className="hidden sm:inline">{label}</span>
+                  </button>
+                );
+              })}
+            </div>
+            <div className="flex min-w-0 items-center gap-2">
+              <label htmlFor="sort" className="text-sm text-gray-500 hidden sm:inline">Sort by</label>
+              <select
+                id="sort"
+                className="min-w-0 truncate px-2 sm:px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
+                value={sortField}
+                onChange={(e) => {
+                  const field = e.target.value;
+                  // Keep the direction when only re-sorting the same field;
+                  // switching fields starts from that field's natural direction.
+                  setSort(field, field === sortField ? sortDir : SORT_FIELDS_BY_VALUE[field].defaultDir);
+                }}
+                aria-label="Sort field"
+              >
+                {SORT_FIELDS.map((opt) => (
+                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+              <button
+                onClick={() => setSort(sortField, sortDir === 'asc' ? 'desc' : 'asc')}
+                className="flex-shrink-0 p-1 text-gray-500 hover:text-gray-700 transition-all"
+                aria-label={`Change sort order to ${sortDir === 'asc' ? directionLabels.desc : directionLabels.asc}`}
+                title={`${sortDir === 'asc' ? directionLabels.asc : directionLabels.desc} — click for ${sortDir === 'asc' ? directionLabels.desc : directionLabels.asc}`}
+              >
+                <FaArrowDown className={`h-4 w-4 transition-transform ${sortDir === 'asc' ? 'rotate-180' : ''}`} aria-hidden="true" />
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Mergers List */}
-        <div ref={listRef} className="space-y-3">
-          {visibleMergers.map((merger, idx) => {
-            // Compute once per item rather than calling isTracked 4 times in the JSX
-            const tracked = isTracked(merger.merger_id);
-            const isSelected = idx === selectedIndex;
-            const businessDayProgress = getBusinessDayProgress(merger);
-            const railColor = getOutcomeRail({
-              status: merger.status,
-              determination: merger.accc_determination,
-              appeal: merger.appeal,
-            });
-            return (
-              <div
-                key={merger.merger_id}
-                data-merger-index={idx}
-                role="link"
-                tabIndex={0}
-                aria-label={`View merger details for ${merger.merger_name}`}
-                onClick={() => navigate(mergerPath(merger.merger_id, merger.merger_name))}
-                onMouseDown={(e) => { if (e.button === 1) e.preventDefault(); }}
-                onAuxClick={(e) => {
-                  if (e.button === 1) window.open(mergerPath(merger.merger_id, merger.merger_name), '_blank');
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    navigate(mergerPath(merger.merger_id, merger.merger_name));
-                  }
-                }}
-                className={`relative overflow-hidden bg-white rounded-2xl border shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 cursor-pointer ${
-                  isSelected ? 'border-primary/40 ring-2 ring-primary/20' : 'border-gray-100'
-                }`}
-              >
-                {/* Outcome rail. Decoration only: the status badge below states
-                    the same outcome in words, so nothing is carried by colour
-                    alone. Clipped to the card's radius by overflow-hidden. */}
-                <span
-                  className={`absolute inset-y-0 left-0 w-1.5 ${railColor}`}
-                  aria-hidden="true"
+        <div ref={listRef}>
+          {tableView ? (
+            visibleMergers.length > 0 && (
+              <MergerListTable
+                mergers={visibleMergers}
+                selectedIndex={selectedIndex}
+                isTracked={isTracked}
+                sortField={sortField}
+                sortDir={sortDir}
+                onSort={sortByColumn}
+              />
+            )
+          ) : (
+            <div className="space-y-3">
+              {visibleMergers.map((merger, idx) => (
+                <MergerListCard
+                  key={merger.merger_id}
+                  merger={merger}
+                  index={idx}
+                  selected={idx === selectedIndex}
+                  tracked={isTracked(merger.merger_id)}
+                  onToggleTracking={toggleTracking}
                 />
-                <div className="p-5 pl-6">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex-1 min-w-0">
-                      {/* The outcome leads the card, above the name, the way it
-                          leads the detail page. In the top-right corner it sat
-                          the width of the card away from the matter it belongs
-                          to and read as chrome next to the Track button. An
-                          appeal, the waiver flag and the refiled flag all ride
-                          alongside it in the same solid style — "NOT APPROVED
-                          · UNDER APPEAL" or "APPROVED · WAIVER · REFILED" —
-                          rather than as separately-styled badges elsewhere on
-                          the card. */}
-                      <div className="flex flex-wrap items-center gap-1.5 mb-2">
-                        <StatusBadge
-                          status={merger.status}
-                          determination={merger.accc_determination}
-                          hasConditions={merger.has_conditions}
-                          appeal={merger.appeal}
-                          solid
-                        />
-                        {merger.under_appeal && <AppealBadge solid />}
-                        {merger.is_waiver && <WaiverBadge solid />}
-                        {merger.is_refiled && <RefiledBadge solid />}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        {tracked && (
-                          <FaStar className="h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
-                        )}
-                        {/* h2, not h3: the results list sits directly under
-                            the page h1, so an h3 would skip a level. min-w-0
-                            keeps truncate working now that this row is just
-                            the star + name — the other badges all sit beside
-                            the outcome badge above so they can't eat into its
-                            width. */}
-                        <h2 className="min-w-0 flex-1 text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
-                          {merger.merger_name}
-                        </h2>
-                      </div>
-                      <p className="text-xs text-gray-500 mt-1">
-                        {merger.merger_id} · {merger.stage || 'N/A'}
-                      </p>
-                    </div>
-                    {/* The same control the detail page's header carries, so
-                        tracking looks the same wherever it's offered. */}
-                    <div className="hidden md:flex items-center gap-2 flex-shrink-0">
-                      <TrackButton
-                        active={tracked}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          toggleTracking(merger.merger_id);
-                        }}
-                        activeLabel="Tracking"
-                        inactiveLabel="Track"
-                        activeAriaLabel="Stop tracking this merger"
-                        inactiveAriaLabel="Track this merger for updates"
-                      />
-                    </div>
-                  </div>
-
-                  <div className={`mt-4 grid gap-4 ${
-                    businessDayProgress ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'
-                  }`}>
-                    <div className={businessDayProgress ? 'order-1' : ''}>
-                      <p className="text-xs text-gray-500 mb-0.5">
-                        {merger.is_waiver ? 'Application date' : 'Notification date'}
-                      </p>
-                      <p className="text-sm font-medium text-gray-700">
-                        {!merger.effective_notification_datetime && merger.status?.toLowerCase().includes('suspended')
-                          ? 'None - assessment suspended'
-                          : formatDate(merger.effective_notification_datetime)}
-                      </p>
-                    </div>
-                    {(merger.determination_publication_date || (merger.end_of_determination_period && !merger.status?.toLowerCase().includes('suspended'))) && (
-                      <div className={businessDayProgress ? 'order-3 md:order-2 col-span-2 md:col-span-1' : ''}>
-                        <p className="text-xs text-gray-500 mb-0.5">
-                          {merger.determination_publication_date ? 'Determination date' : 'End of determination period'}
-                        </p>
-                        <p className="text-sm font-medium text-gray-700">
-                          {merger.determination_publication_date
-                            ? formatDate(merger.determination_publication_date)
-                            : formatDate(merger.end_of_determination_period)}
-                        </p>
-                      </div>
-                    )}
-                    {businessDayProgress && (
-                      <div className="order-2 md:order-3">
-                        <p className="text-xs text-gray-500 mb-0.5">Business days</p>
-                        <p className={`text-sm font-medium ${
-                          businessDayProgress.overdue ? 'text-amber-700' : 'text-gray-700'
-                        }`}>
-                          {businessDayProgress.overdue
-                            ? 'Overdue'
-                            : `${businessDayProgress.elapsed}/${businessDayProgress.total}`}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {merger.anzsic_codes.slice(0, MAX_VISIBLE_INDUSTRY_CHIPS).map((code) => (
-                        <span
-                          key={`${merger.merger_id}-anzsic-${code.code || code.name}`}
-                          className="inline-flex items-center px-2 py-1 rounded-md text-xs leading-none bg-gray-50 text-gray-500 border border-gray-100"
-                        >
-                          {code.name}
-                        </span>
-                      ))}
-                      {/* Capped rather than left to wrap freely — a multi-industry
-                          deal could otherwise grow a card several lines taller
-                          than its neighbours in the list. */}
-                      {merger.anzsic_codes.length > MAX_VISIBLE_INDUSTRY_CHIPS && (
-                        <span
-                          className="inline-flex items-center px-2 py-1 rounded-md text-xs leading-none bg-gray-50 text-gray-500 border border-gray-100"
-                          title={merger.anzsic_codes.slice(MAX_VISIBLE_INDUSTRY_CHIPS).map((code) => code.name).join(', ')}
-                        >
-                          +{merger.anzsic_codes.length - MAX_VISIBLE_INDUSTRY_CHIPS} more
-                        </span>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-          })}
+              ))}
+            </div>
+          )}
         </div>
 
         {hasMore && <div ref={sentinelRef} className="h-12" />}

@@ -57,7 +57,7 @@ _EVENT_KIND_PHRASES: tuple[tuple[str, str], ...] = (
 def load_matters(directory: Path | None = None) -> list[dict]:
     """Read every generated merger detail file, oldest matter id first.
 
-    The directory also holds the paginated list files, which carry no
+    The directory also holds the merger list file, which carries no
     ``merger_id`` and are skipped on that basis rather than by filename - the
     list files have been renamed before now.
     """

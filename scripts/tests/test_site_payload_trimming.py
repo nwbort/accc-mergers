@@ -141,12 +141,12 @@ def test_detail_files_are_written_slimmed(tmp_path):
     assert len(written['events'][0]['determination_table_content']) == 1
 
 
-# --- paginated list pages ---------------------------------------------------
+# --- merger list --------------------------------------------------------------
 
-def test_list_page_parties_are_names_and_canonical_names(tmp_path):
+def test_list_parties_are_names_and_canonical_names(tmp_path):
     list_output.generate([_merger()], tmp_path)
 
-    entry = json.loads((tmp_path / 'mergers' / 'list-page-1.json').read_text())['mergers'][0]
+    entry = json.loads((tmp_path / 'mergers' / 'list.json').read_text())['mergers'][0]
     assert entry['acquirers'] == [{'name': 'Buyer One', 'canonical': {'name': 'Buyer Group'}}]
     assert entry['targets'] == [{'name': 'Target One'}]
     assert entry['other_parties'] == []

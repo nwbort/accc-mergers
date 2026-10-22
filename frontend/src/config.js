@@ -25,8 +25,7 @@ export const BLUESKY_PROFILE_URL = "https://bsky.app/profile/mergers.fyi";
 export const TURNSTILE_SITE_KEY = "0x4AAAAAACg1KC_xTS0WAPpu";
 
 export const API_ENDPOINTS = {
-  mergersListPage: (page) => `/data/mergers/list-page-${page}.json`,  // Paginated merger list
-  mergersListMeta: '/data/mergers/list-meta.json',  // Pagination metadata for mergers list
+  mergersList: '/data/mergers/list.json',  // Every merger, lightweight — the /mergers page and command palette
   mergerDetail: (id) => `/data/mergers/${id}.json`,  // Individual merger file
   stats: '/data/stats.json',
   industries: '/data/industries.json',

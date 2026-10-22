@@ -1,8 +1,7 @@
-"""Paginated lightweight merger list + metadata file.
+"""Lightweight merger list: every merger, in one file.
 
 Writes:
-  <output_dir>/mergers/list-page-{N}.json
-  <output_dir>/mergers/list-meta.json
+  <output_dir>/mergers/list.json
 """
 
 import json
@@ -13,6 +12,12 @@ from scripts.constants import merger_status
 from ..enrichment import reached_phase_2
 from ..loaders import FORWARD_REFILE_RELATIONSHIPS
 from ..prune import prune_stale_files
+
+LIST_FILE = "list.json"
+# Everything in mergers/ this generator owns, including the retired
+# list-page-{N}.json / list-meta.json files it now prunes. Matter files are
+# named MN-/WA-..., so nothing of individual.py's matches.
+LIST_FILES_GLOB = "list*.json"
 
 
 def _party_names(parties: list | None) -> list:
@@ -112,54 +117,34 @@ def _lightweight(m: dict) -> dict:
     return entry
 
 
-def generate(mergers: list, output_dir: Path, page_size: int = 50) -> int:
-    """Generate paginated merger list files. Returns number of pages written.
+def generate(mergers: list, output_dir: Path) -> int:
+    """Write the lightweight merger list as one file. Returns the merger count.
 
-    Page files beyond the current last page are pruned, so a list that shrinks
-    (e.g. after a dedup) doesn't keep serving a trailing page of stale entries.
+    The list used to be split into 50-merger ``list-page-{N}.json`` files plus
+    a ``list-meta.json``, but every consumer (the /mergers page, the command
+    palette) needs the whole list to search, filter and sort it, so the pages
+    only cost round trips. The whole list is ~120 KB gzipped. Those legacy
+    files are pruned here.
+
+    One merger per line: compact on the wire, but a pipeline commit still
+    diffs as the handful of matters that changed rather than one giant line.
+    Ordered by notification date ascending so the line order is stable.
     """
     mergers_dir = Path(output_dir) / "mergers"
     mergers_dir.mkdir(parents=True, exist_ok=True)
 
     lightweight_mergers = [_lightweight(m) for m in mergers]
-
-    # Sort by notification date ascending (oldest first, newest last).
-    # New mergers always append to the last page, so only the last page file
-    # changes per scrape run rather than cascading through all pages.
     lightweight_mergers.sort(key=lambda x: x.get('effective_notification_datetime') or '')
 
-    total_mergers = len(lightweight_mergers)
-    total_pages = (total_mergers + page_size - 1) // page_size
-
-    for page_num in range(1, total_pages + 1):
-        start_idx = (page_num - 1) * page_size
-        end_idx = min(start_idx + page_size, total_mergers)
-        page_data = {
-            "mergers": lightweight_mergers[start_idx:end_idx],
-            "page": page_num,
-            "page_size": page_size,
-        }
-
-        out_path = mergers_dir / f"list-page-{page_num}.json"
-        with open(out_path, 'w', encoding='utf-8') as f:
-            json.dump(page_data, f, indent=2)
-
-    meta_data = {
-        "total": total_mergers,
-        "page_size": page_size,
-        "total_pages": total_pages,
-    }
-    meta_path = mergers_dir / "list-meta.json"
-    with open(meta_path, 'w', encoding='utf-8') as f:
-        json.dump(meta_data, f, indent=2)
-
-    # Only the paginated list is ours to prune — the per-merger detail files in
-    # this same directory belong to :mod:`.individual`.
-    prune_stale_files(
-        mergers_dir,
-        {f"list-page-{n}.json" for n in range(1, total_pages + 1)},
-        pattern="list-page-*.json",
-        label="mergers",
+    lines = ",\n".join(
+        json.dumps(m, ensure_ascii=False, separators=(',', ':')) for m in lightweight_mergers
     )
+    out_path = mergers_dir / LIST_FILE
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write('{"mergers":[\n' + lines + '\n]}\n')
 
-    return total_pages
+    # Only the list is ours to prune — the per-merger detail files in this
+    # same directory belong to :mod:`.individual`.
+    prune_stale_files(mergers_dir, {LIST_FILE}, pattern=LIST_FILES_GLOB, label="mergers")
+
+    return len(lightweight_mergers)

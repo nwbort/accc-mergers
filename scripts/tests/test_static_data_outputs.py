@@ -2210,37 +2210,39 @@ class TestIndividualGenerate:
         assert not (mergers_dir / 'MN-9999.json').exists()
         assert (mergers_dir / 'MN-0001.json').exists()
 
-    def test_does_not_prune_the_paginated_list(self, tmp_path):
+    def test_does_not_prune_the_list(self, tmp_path):
         # mergers/ is shared with the list generator; those files aren't ours.
-        list_out.generate(_enriched_fixture(), tmp_path, page_size=2)
+        list_out.generate(_enriched_fixture(), tmp_path)
         individual.generate(_enriched_fixture(), tmp_path)
-        assert (tmp_path / 'mergers' / 'list-page-1.json').exists()
-        assert (tmp_path / 'mergers' / 'list-meta.json').exists()
+        assert (tmp_path / 'mergers' / 'list.json').exists()
 
 
 # ---------------------------------------------------------------------------
-# list (paginated)
+# list
 # ---------------------------------------------------------------------------
+
+def _read_list(tmp_path):
+    with open(tmp_path / 'mergers' / 'list.json') as f:
+        return json.load(f)['mergers']
+
 
 class TestListGenerate:
-    def test_writes_pages_and_meta(self, tmp_path):
-        pages = list_out.generate(_enriched_fixture(), tmp_path, page_size=2)
-        assert pages == 2
-        assert (tmp_path / 'mergers' / 'list-page-1.json').exists()
-        assert (tmp_path / 'mergers' / 'list-page-2.json').exists()
-        assert (tmp_path / 'mergers' / 'list-meta.json').exists()
+    def test_writes_every_merger_to_one_file(self, tmp_path):
+        assert list_out.generate(_enriched_fixture(), tmp_path) == 4
+        assert len(_read_list(tmp_path)) == 4
 
-    def test_meta_content(self, tmp_path):
-        list_out.generate(_enriched_fixture(), tmp_path, page_size=3)
-        with open(tmp_path / 'mergers' / 'list-meta.json') as f:
-            meta = json.load(f)
-        assert meta == {'total': 4, 'page_size': 3, 'total_pages': 2}
+    def test_one_merger_per_line(self, tmp_path):
+        # Keeps a pipeline commit's diff to the matters that changed.
+        list_out.generate(_enriched_fixture(), tmp_path)
+        lines = (tmp_path / 'mergers' / 'list.json').read_text().splitlines()
+        assert lines[0] == '{"mergers":['
+        assert lines[-1] == ']}'
+        assert len(lines) == 4 + 2
+        assert all(json.loads(line.rstrip(','))['merger_id'] for line in lines[1:-1])
 
     def test_sorted_ascending_by_notification(self, tmp_path):
-        list_out.generate(_enriched_fixture(), tmp_path, page_size=50)
-        with open(tmp_path / 'mergers' / 'list-page-1.json') as f:
-            page = json.load(f)
-        dates = [m['effective_notification_datetime'] for m in page['mergers']]
+        list_out.generate(_enriched_fixture(), tmp_path)
+        dates = [m['effective_notification_datetime'] for m in _read_list(tmp_path)]
         assert dates == sorted(dates)
 
     def test_flags_the_earlier_matter_as_refiled(self, tmp_path):
@@ -2253,24 +2255,22 @@ class TestListGenerate:
             'merger_name': 'Epsilon waiver',
         }
         enriched = [enrich_merger(m) for m in mergers]
-        list_out.generate(enriched, tmp_path, page_size=50)
-        with open(tmp_path / 'mergers' / 'list-page-1.json') as f:
-            page = json.load(f)
-        by_id = {m['merger_id']: m for m in page['mergers']}
+        list_out.generate(enriched, tmp_path)
+        by_id = {m['merger_id']: m for m in _read_list(tmp_path)}
         assert by_id['MN-0001']['is_refiled'] is True
         assert by_id['WA-0003']['is_refiled'] is False
 
-    def test_prunes_pages_beyond_the_last(self, tmp_path):
-        list_out.generate(_enriched_fixture(), tmp_path, page_size=2)
-        assert (tmp_path / 'mergers' / 'list-page-2.json').exists()
-        # Same data, bigger pages — page 2 no longer exists.
-        list_out.generate(_enriched_fixture(), tmp_path, page_size=50)
-        assert not (tmp_path / 'mergers' / 'list-page-2.json').exists()
-        assert (tmp_path / 'mergers' / 'list-page-1.json').exists()
+    def test_prunes_the_retired_paginated_files(self, tmp_path):
+        mergers_dir = tmp_path / 'mergers'
+        mergers_dir.mkdir(parents=True)
+        for name in ('list-page-1.json', 'list-page-2.json', 'list-meta.json'):
+            (mergers_dir / name).write_text('{}')
+        list_out.generate(_enriched_fixture(), tmp_path)
+        assert sorted(p.name for p in mergers_dir.glob('list*.json')) == ['list.json']
 
     def test_does_not_prune_individual_merger_files(self, tmp_path):
         individual.generate(_enriched_fixture(), tmp_path)
-        list_out.generate(_enriched_fixture(), tmp_path, page_size=50)
+        list_out.generate(_enriched_fixture(), tmp_path)
         assert (tmp_path / 'mergers' / 'MN-0001.json').exists()
 
 
