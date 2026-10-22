@@ -120,4 +120,45 @@ describe('StatusBadge', () => {
     expect(screen.getByText('· on appeal')).toBeInTheDocument();
     expect(screen.getByRole('img').className).toMatch(/red/);
   });
+
+  describe('glyph form', () => {
+    const glyph = (props) => {
+      render(<StatusBadge glyph {...props} />);
+      return screen.getByRole('img');
+    };
+
+    it('shows a tick for a clearance, conditions or not, and keeps the words in its name and tooltip', () => {
+      const badge = glyph({ status: 'Assessment completed', determination: 'Approved', hasConditions: true });
+      expect(badge).toHaveAccessibleName('Determination: Approved, with conditions');
+      expect(badge).toHaveAttribute('title', 'Approved · with conditions');
+      expect(badge.querySelector('svg')).not.toBeNull();
+      expect(badge).not.toHaveTextContent(/approved/i);
+    });
+
+    it('fills every outcome in its solid colour', () => {
+      expect(glyph({ status: 'Assessment completed', determination: 'Approved' })).toHaveClass('bg-emerald-700');
+    });
+
+    it('gives a live matter a symbol too, since there is no text beside it', () => {
+      const badge = glyph({ status: 'Under assessment' });
+      expect(badge).toHaveAccessibleName('Status: Under assessment');
+      expect(badge.querySelector('svg')).not.toBeNull();
+    });
+
+    it('shows a Phase 2 referral as the clock, in amber', () => {
+      const badge = glyph({ status: 'Under assessment', determination: 'Referred to phase 2' });
+      expect(badge.querySelector('svg')).not.toBeNull();
+      expect(badge).toHaveClass('bg-amber-400');
+      expect(badge).toHaveAccessibleName('Determination: Referred to phase 2');
+    });
+
+    it('keeps a concluded appeal in the tooltip', () => {
+      const badge = glyph({
+        status: 'Assessment completed',
+        determination: 'Not approved',
+        appeal: { status: 'concluded', outcome: 'affirmed', effective_determination: 'Not approved' },
+      });
+      expect(badge.getAttribute('title')).toMatch(/^Not approved · /);
+    });
+  });
 });

@@ -1,20 +1,18 @@
-import { dataCache } from './dataCache';
-
-const SEARCH_INDEX_KEY = 'mergers-search-index';
+// One index per merger array. The list is only ever replaced wholesale (a
+// fresh fetch, or a background revalidation swapping in new data), so keying
+// on the array itself means a new list always gets a new index and an old one
+// can never be served stale — no explicit invalidation needed.
+const indexCache = new WeakMap();
 
 /**
  * Build a pre-computed search index for fast lookups.
  * Creates a normalized lowercase searchable string for each merger
  * by concatenating all searchable fields (name, ID, parties, industries).
  *
- * The index is cached using the dataCache utility for performance.
+ * Memoised per array, so the Mergers page and the command palette share one
+ * index over the same cached list.
  *
  * @param {Array} mergers - Array of merger objects
- * @param {Object} [options]
- * @param {boolean} [options.cache=true] - Whether to read/write the shared
- *   dataCache entry. Pass `false` while building an index over a partial
- *   (still-loading) merger list so an incomplete index is never mistaken for
- *   the cached, complete one.
  * @returns {Map} Map of merger_id -> searchable string
  *
  * @example
@@ -28,11 +26,9 @@ const SEARCH_INDEX_KEY = 'mergers-search-index';
  * const index = buildSearchIndex(mergers);
  * // index.get('MN-01019') => 'ampol / z energy mn-01019 ampol limited z energy petroleum retailing'
  */
-export function buildSearchIndex(mergers, { cache = true } = {}) {
-  // Check cache first
-  if (cache && dataCache.has(SEARCH_INDEX_KEY)) {
-    return dataCache.get(SEARCH_INDEX_KEY);
-  }
+export function buildSearchIndex(mergers) {
+  const cached = indexCache.get(mergers);
+  if (cached) return cached;
 
   const index = new Map();
 
@@ -86,11 +82,7 @@ export function buildSearchIndex(mergers, { cache = true } = {}) {
     index.set(merger.merger_id, searchString);
   }
 
-  // Cache for future use
-  if (cache) {
-    dataCache.set(SEARCH_INDEX_KEY, index);
-  }
-
+  indexCache.set(mergers, index);
   return index;
 }
 
@@ -143,21 +135,26 @@ function tokenize(searchTerm) {
  * // even non-adjacently (e.g. "... google ... wiz ...")
  */
 export function searchMergers(mergers, searchTerm, searchIndex) {
-  if (!searchTerm) return mergers;
-
-  const tokens = tokenize(searchTerm);
-  if (!tokens.length) return mergers;
-
-  return mergers.filter((merger) => {
-    const searchString = searchIndex.get(merger.merger_id);
-    return searchString && tokens.every((token) => searchString.includes(token));
-  });
+  const matches = searchPredicate(searchTerm, searchIndex);
+  return matches ? mergers.filter(matches) : mergers;
 }
 
 /**
- * Clear the search index cache.
- * Call this when the merger data has been updated to force a rebuild.
+ * The search as a predicate over a merger, or null when the term holds no
+ * tokens (nothing to filter on). Lets the merger list combine search with its
+ * other filters, and leave it out when counting a filter's options.
+ *
+ * @param {string} searchTerm - Term to search for
+ * @param {Map} searchIndex - Pre-built search index from buildSearchIndex()
+ * @returns {((merger: Object) => boolean) | null}
  */
-export function clearSearchIndex() {
-  dataCache.clear(SEARCH_INDEX_KEY);
+export function searchPredicate(searchTerm, searchIndex) {
+  if (!searchTerm) return null;
+  const tokens = tokenize(searchTerm);
+  if (!tokens.length) return null;
+
+  return (merger) => {
+    const searchString = searchIndex.get(merger.merger_id);
+    return Boolean(searchString) && tokens.every((token) => searchString.includes(token));
+  };
 }

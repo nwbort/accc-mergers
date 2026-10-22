@@ -222,8 +222,7 @@ All data files are pre-generated into `frontend/public/data/`:
 | File | Description |
 |------|-------------|
 | `mergers/{id}.json` | Individual merger detail files |
-| `mergers/list-page-{N}.json` | Paginated lightweight merger lists (50/page) |
-| `mergers/list-meta.json` | Pagination metadata for merger list |
+| `mergers/list.json` | Lightweight list of every merger, one per line (the /mergers page and command palette) |
 | `stats.json` | Aggregated statistics (counts, averages, medians) |
 | `industries.json` | ANZSIC codes with merger counts |
 | `industries/{division}.json` | Every ANZSIC node under that division, with its mergers |

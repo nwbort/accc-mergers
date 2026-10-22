@@ -28,6 +28,7 @@ import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { mergerMeta } from '../utils/pageMeta';
 import { getDecidedOutcome, getHeaderStatus, getPhaseStatus, getDeterminationDocUrl, determinationForEvent } from '../utils/mergerOutcome';
 import { MERGER_STATUS } from '../constants/mergerStatus';
+import { RESTORE_LIST_POSITION_STATE } from '../utils/mergerListPosition';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS, APPEAL_OUTCOME_LABELS } from '../constants/appeal';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
 import {
@@ -380,6 +381,7 @@ function MergerDetail() {
         {/* Back button */}
         <Link
           to={backToMergers}
+          state={RESTORE_LIST_POSITION_STATE}
           className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary mb-5 transition-colors"
           aria-label="Return to all mergers list"
         >

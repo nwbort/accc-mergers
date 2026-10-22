@@ -117,7 +117,12 @@ frontend/src/
 ├── config.js             # API endpoint constants, SUBSCRIBE_ENDPOINT, TURNSTILE_SITE_KEY
 ├── pages/                # Route components
 │   ├── Dashboard.jsx     # /
-│   ├── Mergers.jsx       # /mergers
+│   ├── Mergers.jsx       # /mergers. Loads the whole list once (mergers/list.json) and
+│                         #   searches/filters/sorts it client-side. Cards by default
+│                         #   (MergerListCard), or a compact table (MergerListTable); the
+│                         #   choice is a per-reader localStorage preference
+│                         #   (utils/mergerListView.js), not a URL param. Infinite scroll,
+│                         #   50 at a time
 │   ├── MergerDetail.jsx  # /mergers/:id and /mergers/:id/:slug
 │   ├── Industries.jsx    # /industries (not in the navbar; reachable from the command
 │                         #   palette and the `g i` shortcut)
@@ -248,7 +253,7 @@ frontend/src/
 │                         #   and jsdom cannot catch it, so utils/__tests__/chartSetup.test.js
 │                         #   guards both halves), dates.js, dataCache.js, lastVisit.js,
 │                         #   classNames.js, searchIndex.js,
-│                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js, phase2Summary.js,
+│                         #   businessDayProgress.js, formatMedian.js, phase2Summary.js,
 │                         #   industryGroups.js, slug.js, shard.js, preNotification.js, pageMeta.js,
 │                         #   industryDivision.js (which industries/ file an ANZSIC code is in —
 │                         #   mirrors scripts/industry_division.py) and industryNode.js (reads one
@@ -261,6 +266,17 @@ frontend/src/
 │                         #   #assessment-timeline instead),
 │                         #   mergerSort.js (the merger list's ?sort= vocabulary: the field table
 │                         #   the select is built from and the comparator it drives),
+│                         #   mergerFilters.js (the merger list's filters, one search param and
+│                         #   one predicate each; each select's option counts are taken with every
+│                         #   *other* filter applied. The date filter is ?from=/?to= (YYYY-MM-DD,
+│                         #   either end open) on the notification date), dateTimeline.js (that filter's geometry: weekly bars,
+│                         #   monthly past ~18 months, and the quick ranges. Drawn by
+│                         #   components/DateRangeFilter.jsx, whose bars are a pointer-only drag
+│                         #   shortcut; the quick ranges are the keyboard route),
+│                         #   mergerList.js (the shared dataCache key for
+│                         #   mergers/list.json), mergerListPosition.js (how far down the list the
+│                         #   reader was, restored on Back or the detail page's "Back to all
+│                         #   mergers" link, which carries RESTORE_LIST_POSITION_STATE),
 │                         #   timelineAxis.js (the horizontal milestone track's geometry —
 │                         #   percentAlong, clampedLabelStyle and the above/below-line
 │                         #   offsets — shared by Phase2Timeline and the refiled cards;
@@ -646,8 +662,7 @@ exists rather than 404ing into the SPA's `index.html`.
 | File | Description |
 |------|-------------|
 | `mergers/{id}.json` | Individual merger detail files |
-| `mergers/list-page-{N}.json` | Paginated lightweight merger lists (50/page) |
-| `mergers/list-meta.json` | Pagination metadata for merger list |
+| `mergers/list.json` | Lightweight list of every merger, one per line so a pipeline commit diffs per matter. One file, not pages: the /mergers page searches, filters and sorts the whole list in the browser, and it is ~110 KB gzipped. Shared with the command palette under one `dataCache` key (`utils/mergerList.js`) |
 | `stats.json` | Aggregated statistics (counts, averages, medians) |
 | `industries.json` | ANZSIC codes (as tagged on mergers) with merger counts |
 | `industries/{division}.json` | One file per ANZSIC division, holding every node in its subtree (division/subdivision/group/class) — see *Industry nodes are packed by ANZSIC division* above. Each node carries hierarchy metadata (name, level, parent, children), stat counts, durations and an ordered list of merger ids; the summaries sit once per file in a `mergers` map (each carries `notification_date`/`determination_date` to drive industry-follow notifications). Generated for the full ANZSIC tree from `scripts/generate/static_data/anzsic_codes.json`. Codes outside that tree are filed by the same rule, falling to `_orphans.json` only when no division can be derived |

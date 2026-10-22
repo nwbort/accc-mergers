@@ -16,8 +16,7 @@ Output files:
 
   frontend/public/data/ (deployed to Cloudflare Pages):
   - mergers/{id}.json           - Individual merger files (one per merger)
-  - mergers/list-page-{N}.json  - Paginated lightweight merger lists (50/page)
-  - mergers/list-meta.json      - Pagination metadata for merger list
+  - mergers/list.json           - Lightweight list of every merger (search/filter/sort)
   - stats.json                  - Aggregated statistics
   - industries.json             - ANZSIC codes with merger counts
   - industries/{division}.json  - Every ANZSIC node in that division, with
@@ -224,9 +223,9 @@ def main():
     n = individual.generate(enriched, OUTPUT_DIR)
     print(f"✓ Generated {n} individual merger files in {OUTPUT_DIR / 'mergers'}")
 
-    print("\nGenerating paginated list files...")
-    pages = list_out.generate(enriched, OUTPUT_DIR, page_size=50)
-    print(f"✓ Generated {pages} paginated list files (50 mergers/page)")
+    print("\nGenerating merger list file...")
+    n = list_out.generate(enriched, OUTPUT_DIR)
+    print(f"✓ Generated {OUTPUT_DIR / 'mergers' / 'list.json'} ({n} mergers)")
 
     print("\nGenerating industry division files...")
     n = industries.generate_detail_files(enriched, OUTPUT_DIR)

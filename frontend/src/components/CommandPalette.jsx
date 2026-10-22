@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router';
 import { FaSearch } from 'react-icons/fa';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
+import { MERGERS_LIST_KEY } from '../utils/mergerList';
 import { buildSearchIndex, searchMergers } from '../utils/searchIndex';
-import { fetchAllMergers } from '../utils/fetchAllMergers';
 import { industryPath, mergerPath, partyPath } from '../utils/slug';
 import { NAV_PAGES } from '../constants/navPages';
 
@@ -36,10 +36,15 @@ function shareBudget(matchCounts) {
   return limits;
 }
 
-// The parties and industries lists are cached as their whole payloads
-// (`parties.json`'s { parties, total_parties }, `industries.json`'s
-// { industries }) under the same keys their pages use, so the two share one
+// Each list is cached as its whole payload (`mergers/list.json`'s { mergers },
+// `parties.json`'s { parties, total_parties }, `industries.json`'s
+// { industries }) under the same key its page uses, so the two share one
 // fetch.
+const MERGERS_SOURCE = {
+  cacheKey: MERGERS_LIST_KEY,
+  url: API_ENDPOINTS.mergersList,
+  field: 'mergers',
+};
 const PARTIES_SOURCE = {
   cacheKey: 'parties-list',
   url: API_ENDPOINTS.parties,
@@ -146,12 +151,8 @@ export default function CommandPalette({ isOpen, onClose }) {
 
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [mergers, setMergers] = useState(() => dataCache.get('mergers-list') || []);
-  const [searchIndex, setSearchIndex] = useState(() => {
-    const cached = dataCache.get('mergers-list');
-    return cached?.length ? buildSearchIndex(cached) : null;
-  });
-  const [mergersLoading, setMergersLoading] = useState(false);
+  const { list: mergers, loading: mergersLoading } = useCachedList(isOpen, MERGERS_SOURCE);
+  const searchIndex = useMemo(() => buildSearchIndex(mergers), [mergers]);
   const { list: parties, loading: partiesLoading } = useCachedList(isOpen, PARTIES_SOURCE);
   const { list: industries, loading: industriesLoading } = useCachedList(
     isOpen,
@@ -166,28 +167,8 @@ export default function CommandPalette({ isOpen, onClose }) {
     if (isOpen) {
       setQuery('');
       setSelectedIndex(0);
-      const cached = dataCache.get('mergers-list');
-      if (cached?.length) {
-        setMergers(cached);
-        setSearchIndex(buildSearchIndex(cached));
-      } else {
-        setMergersLoading(true);
-      }
     }
   }
-
-  // Lazily fetch the full merger list if it isn't cached yet (e.g. a cold
-  // visit that opened the palette before Mergers ever loaded).
-  useEffect(() => {
-    if (!isOpen || dataCache.has('mergers-list')) return;
-    fetchAllMergers()
-      .then(({ mergers: allMergers, searchIndex: index }) => {
-        setMergers(allMergers);
-        setSearchIndex(index);
-      })
-      .catch((err) => console.error('Command palette failed to load mergers:', err))
-      .finally(() => setMergersLoading(false));
-  }, [isOpen]);
 
   const trimmedQuery = query.trim();
 
@@ -201,7 +182,7 @@ export default function CommandPalette({ isOpen, onClose }) {
   // ever show more than that). The final per-group slice happens below once
   // both counts are known, so they can share the budget.
   const mergerMatches = useMemo(() => {
-    if (!trimmedQuery || !searchIndex) return [];
+    if (!trimmedQuery) return [];
     return searchMergers(mergers, trimmedQuery, searchIndex).slice(0, MAX_ENTITY_RESULTS);
   }, [trimmedQuery, mergers, searchIndex]);
 
