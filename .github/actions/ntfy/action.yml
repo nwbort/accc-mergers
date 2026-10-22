@@ -107,7 +107,7 @@ runs:
         }
 
         if [ -z "${NTFY_TOPIC}" ]; then
-          echo "::notice::No ntfy topic configured — skipping notification."
+          echo "No ntfy topic given — skipping notification."
           not_sent
         fi
 
