@@ -1,13 +1,7 @@
 import { useRef } from 'react';
 import { formatDateMedium } from '../utils/dates';
 import { overlaps } from '../utils/dateTimeline';
-import { DATE_FIELDS } from '../utils/mergerFilters';
 import { SECTION_HEADING } from '../utils/classNames';
-
-const FIELD_HELP = {
-  notified: 'When the matter was notified, or the waiver applied for.',
-  determined: 'When the ACCC published its determination.',
-};
 
 const OPEN_START = '0000-01-01';
 const OPEN_END = '9999-12-31';
@@ -25,23 +19,21 @@ const sameRange = (a, b) => Boolean(a && b && a.from === b.from && a.to === b.to
 
 /**
  * The merger list's date filter: quick ranges, and a histogram of the list
- * over time that can be dragged across for any other range, on the
- * notification or the determination date.
+ * over time that can be dragged across for any other range, all on the date
+ * each matter was notified.
  *
  * The bars are a pointer-only shortcut and hidden from assistive tech; the
  * quick ranges are the keyboard and screen-reader route, and the selected
  * range is always stated in words above the chart.
  *
  * @param {Object} props
- * @param {string} props.field - 'notified' | 'determined'
  * @param {{from: string, to: string}|null} props.range - Inclusive YYYY-MM-DD bounds
  * @param {Object} props.timeline - From buildTimeline()
  * @param {Array} props.ranges - From quickRanges()
  * @param {{bars: number[], ranges: number[]}} props.counts
- * @param {(field: string) => void} props.onFieldChange
  * @param {(range: {from: string, to: string}|null) => void} props.onRangeChange
  */
-function DateRangeFilter({ field, range, timeline, ranges, counts, onFieldChange, onRangeChange }) {
+function DateRangeFilter({ range, timeline, ranges, counts, onRangeChange }) {
   const { bars, unit } = timeline;
   const barsRef = useRef(null);
   const dragRef = useRef(null);
@@ -80,25 +72,10 @@ function DateRangeFilter({ field, range, timeline, ranges, counts, onFieldChange
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <p className={SECTION_HEADING}>Date</p>
-        <div role="group" aria-label="Date to filter on" className="flex rounded-lg border border-gray-200 bg-white p-0.5">
-          {DATE_FIELDS.map((f) => (
-            <button
-              key={f.value}
-              type="button"
-              aria-pressed={field === f.value}
-              onClick={() => onFieldChange(f.value)}
-              className={`px-2.5 py-1 rounded-md text-sm transition-colors ${
-                field === f.value ? 'bg-primary text-white' : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
+      <div>
+        <p className={SECTION_HEADING}>Date notified</p>
+        <p className="mt-1 text-xs text-gray-500">When the matter was notified, or the waiver applied for.</p>
       </div>
-      <p className="text-xs text-gray-500">{FIELD_HELP[field]}</p>
 
       <div role="group" aria-label="Quick date ranges" className="flex flex-wrap gap-1.5">
         {ranges.map((r, i) => {

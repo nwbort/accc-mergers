@@ -15,7 +15,7 @@ import { useDebounce } from '../hooks/useDebounce';
 import { buildSearchIndex } from '../utils/searchIndex';
 import { MERGERS_LIST_KEY } from '../utils/mergerList';
 import {
-  DEFAULT_DATE_FIELD, FILTER_PARAMS, activeFilterTests, applyFilters, dateRangeFrom, filterOptions, normaliseDateField,
+  FILTER_PARAMS, activeFilterTests, applyFilters, dateRangeFrom, filterOptions,
 } from '../utils/mergerFilters';
 import { buildTimeline, dayOf, quickRanges } from '../utils/dateTimeline';
 import { australianToday, toDateString } from '../utils/dates';
@@ -132,7 +132,6 @@ function Mergers() {
   const statusFilter = unlessAll(searchParams.get('status'));
   const fromParam = searchParams.get('from') || '';
   const toParam = searchParams.get('to') || '';
-  const dateField = normaliseDateField(searchParams.get('date'));
   const dateRange = dateRangeFrom(fromParam, toParam);
   const industryFilter = searchParams.get('industry') || '';
   const conditionsOnly = searchParams.get('conditions') === 'true';
@@ -277,14 +276,13 @@ function Mergers() {
         status: statusFilter,
         from: fromParam,
         to: toParam,
-        date: dateField,
         industry: industryFilter,
         conditions: conditionsOnly ? 'true' : '',
         tracked: trackedOnly ? 'true' : '',
       },
       { isTracked, searchIndex },
     ),
-    [debouncedSearchTerm, phaseFilter, statusFilter, fromParam, toParam, dateField, industryFilter, conditionsOnly, trackedOnly, isTracked, searchIndex]
+    [debouncedSearchTerm, phaseFilter, statusFilter, fromParam, toParam, industryFilter, conditionsOnly, trackedOnly, isTracked, searchIndex]
   );
 
   const filteredMergers = useMemo(() => applyFilters(mergers, filterTests), [mergers, filterTests]);
@@ -311,8 +309,8 @@ function Mergers() {
 
   // Each select's options and counts. Only worked out while the panel is open.
   const options = useMemo(
-    () => (filtersOpen ? filterOptions(mergers, filterTests, { field: dateField, ...dateAxis }) : null),
-    [filtersOpen, mergers, filterTests, dateField, dateAxis]
+    () => (filtersOpen ? filterOptions(mergers, filterTests, dateAxis ?? {}) : null),
+    [filtersOpen, mergers, filterTests, dateAxis]
   );
 
   // Paginated slice of sorted results
@@ -489,12 +487,10 @@ function Mergers() {
               {dateAxis && (
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <DateRangeFilter
-                    field={dateField}
                     range={dateRange}
                     timeline={dateAxis.timeline}
                     ranges={dateAxis.ranges}
                     counts={options.date}
-                    onFieldChange={(f) => updateParam('date', f, DEFAULT_DATE_FIELD)}
                     onRangeChange={setDateRange}
                   />
                 </div>

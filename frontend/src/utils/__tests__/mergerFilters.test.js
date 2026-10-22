@@ -4,7 +4,7 @@ import {
   applyFilters,
   dateRangeFrom,
   filterOptions,
-  matchesDateRange,
+  notifiedInRange,
   mergerDivisions,
 } from '../mergerFilters';
 import { buildSearchIndex } from '../searchIndex';
@@ -97,15 +97,15 @@ describe('activeFilterTests + applyFilters', () => {
     expect(filtered({ from: '2026-03-01' })).toEqual(['MN-1', 'WA-2']);
   });
 
-  it('filters by determination date, leaving open matters out', () => {
-    expect(filtered({ date: 'determined', from: '2026-03-01', to: '2026-03-31' })).toEqual(['WA-2']);
-    expect(filtered({ date: 'determined', from: '2025-01-01', to: '2026-12-31' })).toEqual(['MN-1', 'WA-2']);
+  it('matches on the notification date, never the determination date', () => {
+    // WA-2 was decided on 20 March; MN-1 was notified in October.
+    expect(filtered({ from: '2026-03-20', to: '2026-03-20' })).toEqual([]);
+    // A ?date= left in an old link changes nothing.
+    expect(filtered({ date: 'determined', from: '2026-10-01', to: '2026-10-31' })).toEqual(['MN-1']);
   });
 
-  it('ignores dates that are not dates, and an unknown date field', () => {
+  it('ignores dates that are not dates', () => {
     expect(filtered({ from: 'yesterday', to: '' })).toEqual(ids(MERGERS));
-    // "open" was once a field; an old link falls back to notified.
-    expect(filtered({ date: 'open', from: '2025-11-01', to: '2025-11-01' })).toEqual(['MN-3']);
   });
 
   it('filters by ANZSIC division, through any of a matter\'s codes', () => {
@@ -125,11 +125,9 @@ describe('activeFilterTests + applyFilters', () => {
   });
 });
 
-describe('matchesDateRange', () => {
+describe('notifiedInRange', () => {
   it('never matches a matter with no notification date', () => {
-    for (const field of ['notified', 'determined']) {
-      expect(matchesDateRange(MERGERS[3], field, '2000-01-01', '2099-12-31')).toBe(false);
-    }
+    expect(notifiedInRange(MERGERS[3], '2000-01-01', '2099-12-31')).toBe(false);
   });
 });
 
@@ -179,17 +177,13 @@ describe('filterOptions date counts', () => {
   };
   const ranges = [{ from: '2026-01-01', to: '2026-12-31' }];
 
-  it('counts each bar and quick range on the chosen date field', () => {
-    const notified = filterOptions(MERGERS, [], { field: 'notified', timeline, ranges }).date;
-    expect(notified).toEqual({ bars: [1, 1], ranges: [2] });
-    // MN-3 (notified in November) is still open, so it has no determination.
-    const determined = filterOptions(MERGERS, [], { field: 'determined', timeline, ranges }).date;
-    expect(determined).toEqual({ bars: [0, 1], ranges: [2] });
+  it('counts each bar and quick range by notification date', () => {
+    expect(filterOptions(MERGERS, [], { timeline, ranges }).date).toEqual({ bars: [1, 1], ranges: [2] });
   });
 
   it('ignores the date range itself but honours the other filters', () => {
     const tests = activeFilterTests({ from: '2026-03-01', to: '2026-03-31', phase: 'waivers' }, ctx);
-    const { date } = filterOptions(MERGERS, tests, { field: 'notified', timeline, ranges });
+    const { date } = filterOptions(MERGERS, tests, { timeline, ranges });
     expect(date.bars).toEqual([0, 1]);
     expect(date.ranges).toEqual([1]);
   });

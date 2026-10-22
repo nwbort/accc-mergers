@@ -14,7 +14,7 @@ import { searchPredicate } from './searchIndex';
 import { dayOf, isIsoDate } from './dateTimeline';
 
 /** Search params that hold a filter (the search box's `q` is handled apart). */
-export const FILTER_PARAMS = ['phase', 'status', 'from', 'to', 'date', 'industry', 'conditions', 'tracked'];
+export const FILTER_PARAMS = ['phase', 'status', 'from', 'to', 'industry', 'conditions', 'tracked'];
 
 /** What the status badge shows, and so what the status filter matches on. */
 export const displayedOutcome = (m) => m.accc_determination || m.status;
@@ -30,29 +30,13 @@ export const PHASE_OPTIONS = [
 
 const PHASE_TESTS = Object.fromEntries(PHASE_OPTIONS.map((o) => [o.value, o.test]));
 
-// Which of a matter's dates the date range (`?from=` / `?to=`) is matched
-// against, in `?date=`. Notified is the default and is left out of the URL.
-export const DATE_FIELDS = [
-  { value: 'notified', label: 'Notified' },
-  { value: 'determined', label: 'Determined' },
-];
-export const DEFAULT_DATE_FIELD = 'notified';
-
-/** Fold an unrecognised `?date=` back to the default. */
-export const normaliseDateField = (value) => (
-  DATE_FIELDS.some((f) => f.value === value) ? value : DEFAULT_DATE_FIELD
-);
-
 /**
- * Does `m` fall in [from, to] (inclusive YYYY-MM-DD strings) on `field`?
- *
- * A matter with no date of that kind (an open matter, for determined; a
- * suspended assessment, for notified) is outside every range.
+ * Was `m` notified (or, for a waiver, applied for) in [from, to], inclusive
+ * YYYY-MM-DD strings? A matter with no notification date (a suspended
+ * assessment) is outside every range.
  */
-export function matchesDateRange(m, field, from, to) {
+export function notifiedInRange(m, from, to) {
   const notified = dayOf(m.effective_notification_datetime);
-  const determined = dayOf(m.determination_publication_date);
-  if (field === 'determined') return Boolean(determined) && determined >= from && determined <= to;
   return Boolean(notified) && notified >= from && notified <= to;
 }
 
@@ -94,17 +78,16 @@ export function mergerDivisions(m) {
  * fixed-choice ones) are left out rather than passed as always-true
  * predicates.
  *
- * @param {Object} values - Raw param values: { q, phase, status, from, to, date, industry, conditions, tracked }
+ * @param {Object} values - Raw param values: { q, phase, status, from, to, industry, conditions, tracked }
  * @param {Object} ctx - { isTracked, searchIndex }
  */
 export function activeFilterTests(values, { isTracked, searchIndex }) {
   const tests = [];
-  const { q, phase, status, from, to, date, industry, conditions, tracked } = values;
+  const { q, phase, status, from, to, industry, conditions, tracked } = values;
   const range = dateRangeFrom(from, to);
-  const dateField = normaliseDateField(date);
   if (phase && PHASE_TESTS[phase]) tests.push(['phase', PHASE_TESTS[phase]]);
   if (status && status !== 'all') tests.push(['status', (m) => displayedOutcome(m) === status]);
-  if (range) tests.push(['date', (m) => matchesDateRange(m, dateField, range.from, range.to)]);
+  if (range) tests.push(['date', (m) => notifiedInRange(m, range.from, range.to)]);
   if (industry) tests.push(['industry', (m) => mergerDivisions(m).has(industry)]);
   if (conditions === 'true') tests.push(['conditions', (m) => Boolean(m.has_conditions)]);
   if (tracked === 'true') tests.push(['tracked', (m) => isTracked(m.merger_id)]);
@@ -136,11 +119,11 @@ const countWhere = (list, test) => list.reduce((n, m) => (test(m) ? n + 1 : n), 
  * The *counts* come from the list filtered by every other filter.
  *
  * The date filter's counts are per histogram bar and per quick range (see
- * utils/dateTimeline.js), on the chosen date field.
+ * utils/dateTimeline.js).
  *
- * @param {Object} dateAxis - { field, timeline, ranges }
+ * @param {Object} dateAxis - { timeline, ranges }
  */
-export function filterOptions(mergers, tests, { field = DEFAULT_DATE_FIELD, timeline, ranges = [] } = {}) {
+export function filterOptions(mergers, tests, { timeline, ranges = [] } = {}) {
   const facet = (key) => applyFilters(mergers, tests, key);
 
   const phaseBase = facet('phase');
@@ -161,7 +144,7 @@ export function filterOptions(mergers, tests, { field = DEFAULT_DATE_FIELD, time
     .map((value) => ({ value, label: value, count: countWhere(statusBase, (m) => displayedOutcome(m) === value) }));
 
   const dateBase = facet('date');
-  const inRange = ({ from, to }) => countWhere(dateBase, (m) => matchesDateRange(m, field, from, to));
+  const inRange = ({ from, to }) => countWhere(dateBase, (m) => notifiedInRange(m, from, to));
   const date = {
     bars: timeline ? timeline.bars.map(inRange) : [],
     ranges: ranges.map(inRange),

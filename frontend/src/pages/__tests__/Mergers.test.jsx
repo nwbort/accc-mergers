@@ -221,28 +221,21 @@ describe('Mergers', () => {
     async function openFilters(user, entry = '/mergers') {
       renderPage(entry);
       await screen.findByText(/^Showing/);
-      if (!screen.queryByRole('group', { name: 'Date to filter on' })) {
+      if (!screen.queryByRole('group', { name: 'Quick date ranges' })) {
         await user.click(screen.getByRole('button', { name: 'Toggle filters' }));
       }
     }
 
-    it('offers only the notification and determination dates', async () => {
+    it('filters on the notification date only', async () => {
       const user = userEvent.setup();
-      await openFilters(user);
-      const group = screen.getByRole('group', { name: 'Date to filter on' });
-      expect(within(group).getAllByRole('button').map((b) => b.textContent)).toEqual(['Notified', 'Determined']);
-    });
-
-    it('filters on the determination date when that is chosen', async () => {
-      const user = userEvent.setup();
-      // Give five matters a 2025 determination, so the two dates differ.
+      // Give five matters a 2025 determination: a 2025 range still finds none,
+      // since none of them was notified then.
       MERGERS.forEach((m, i) => { if (i < 5) m.determination_publication_date = '2025-06-01T12:00:00Z'; });
       try {
         await openFilters(user, '/mergers?from=2025-01-01&to=2025-12-31');
         expect(screen.getByText('Showing 0 of 0 mergers')).toBeInTheDocument();
-        await user.click(screen.getByRole('button', { name: 'Determined' }));
-        expect(screen.getByText('When the ACCC published its determination.')).toBeInTheDocument();
-        expect(screen.getByText('Showing 5 of 5 mergers')).toBeInTheDocument();
+        expect(screen.getByText('Date notified')).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: 'Determined' })).not.toBeInTheDocument();
       } finally {
         MERGERS.forEach((m) => { m.determination_publication_date = m.effective_notification_datetime; });
       }
