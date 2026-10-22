@@ -267,12 +267,11 @@ frontend/src/
 │                         #   mergerFilters.js (the merger list's filters, one search param and
 │                         #   one predicate each; each select's option counts are taken with every
 │                         #   *other* filter applied. The date filter is ?from=/?to= (YYYY-MM-DD,
-│                         #   either end open) on the date named by ?date= — notified (default),
-│                         #   determined, or open, meaning under review at any point in the range),
-│                         #   dateTimeline.js (that filter's geometry: weekly bars, monthly past
-│                         #   ~18 months; the month each bar sits under; the quick ranges. Drawn
-│                         #   by components/DateRangeFilter.jsx, whose bars are a pointer-only
-│                         #   drag shortcut — the month buttons are the accessible route),
+│                         #   either end open) on the date named by ?date= — notified (default)
+│                         #   or determined), dateTimeline.js (that filter's geometry: weekly bars,
+│                         #   monthly past ~18 months, and the quick ranges. Drawn by
+│                         #   components/DateRangeFilter.jsx, whose bars are a pointer-only drag
+│                         #   shortcut; the quick ranges are the keyboard route),
 │                         #   mergerList.js (the shared dataCache key for
 │                         #   mergers/list.json), mergerListPosition.js (how far down the list the
 │                         #   reader was, restored on Back or the detail page's "Back to all

@@ -11,7 +11,7 @@
 import { PHASES, isPublicBenefitStage } from '../constants/mergerStatus';
 import { DIVISION_NAMES, divisionForCode } from './industryDivision';
 import { searchPredicate } from './searchIndex';
-import { dayOf, isIsoDate, overlaps } from './dateTimeline';
+import { dayOf, isIsoDate } from './dateTimeline';
 
 /** Search params that hold a filter (the search box's `q` is handled apart). */
 export const FILTER_PARAMS = ['phase', 'status', 'from', 'to', 'date', 'industry', 'conditions', 'tracked'];
@@ -35,7 +35,6 @@ const PHASE_TESTS = Object.fromEntries(PHASE_OPTIONS.map((o) => [o.value, o.test
 export const DATE_FIELDS = [
   { value: 'notified', label: 'Notified' },
   { value: 'determined', label: 'Determined' },
-  { value: 'open', label: 'Under review' },
 ];
 export const DEFAULT_DATE_FIELD = 'notified';
 
@@ -47,16 +46,13 @@ export const normaliseDateField = (value) => (
 /**
  * Does `m` fall in [from, to] (inclusive YYYY-MM-DD strings) on `field`?
  *
- * Notified and determined match on that one day. "Under review" matches a
- * matter that was open at any point in the range: notified by its end and not
- * yet decided by its start. A matter with no notification date (a suspended
- * assessment) matches none of them.
+ * A matter with no date of that kind (an open matter, for determined; a
+ * suspended assessment, for notified) is outside every range.
  */
 export function matchesDateRange(m, field, from, to) {
   const notified = dayOf(m.effective_notification_datetime);
   const determined = dayOf(m.determination_publication_date);
   if (field === 'determined') return Boolean(determined) && determined >= from && determined <= to;
-  if (field === 'open') return Boolean(notified) && overlaps(notified, determined || '9999-12-31', from, to);
   return Boolean(notified) && notified >= from && notified <= to;
 }
 
@@ -139,8 +135,8 @@ const countWhere = (list, test) => list.reduce((n, m) => (test(m) ? n + 1 : n), 
  * vanish just because another filter leaves it empty — it shows (0) instead.
  * The *counts* come from the list filtered by every other filter.
  *
- * The date filter's counts are per histogram bar, per month button and per
- * quick range (see utils/dateTimeline.js), all on the chosen date field.
+ * The date filter's counts are per histogram bar and per quick range (see
+ * utils/dateTimeline.js), on the chosen date field.
  *
  * @param {Object} dateAxis - { field, timeline, ranges }
  */
@@ -168,7 +164,6 @@ export function filterOptions(mergers, tests, { field = DEFAULT_DATE_FIELD, time
   const inRange = ({ from, to }) => countWhere(dateBase, (m) => matchesDateRange(m, field, from, to));
   const date = {
     bars: timeline ? timeline.bars.map(inRange) : [],
-    months: timeline ? timeline.months.map(inRange) : [],
     ranges: ranges.map(inRange),
   };
 

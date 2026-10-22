@@ -7,10 +7,8 @@ import { SECTION_HEADING } from '../utils/classNames';
 const FIELD_HELP = {
   notified: 'When the matter was notified, or the waiver applied for.',
   determined: 'When the ACCC published its determination.',
-  open: 'Open at any point in the range: notified by its end, not yet decided by its start.',
 };
 
-const MAX_ALIGNED_MONTHS = 24;
 const OPEN_START = '0000-01-01';
 const OPEN_END = '9999-12-31';
 
@@ -26,31 +24,27 @@ function rangeLabel(range) {
 const sameRange = (a, b) => Boolean(a && b && a.from === b.from && a.to === b.to);
 
 /**
- * The merger list's date filter: a histogram of the list over time that can
- * be dragged across, the months under it as buttons, and quick ranges beside
- * it, on whichever date the reader picks.
+ * The merger list's date filter: quick ranges, and a histogram of the list
+ * over time that can be dragged across for any other range, on the
+ * notification or the determination date.
  *
  * The bars are a pointer-only shortcut and hidden from assistive tech; the
- * month buttons and quick ranges reach every range the bars can, a month at a
- * time, from a keyboard or screen reader.
+ * quick ranges are the keyboard and screen-reader route, and the selected
+ * range is always stated in words above the chart.
  *
  * @param {Object} props
- * @param {string} props.field - 'notified' | 'determined' | 'open'
+ * @param {string} props.field - 'notified' | 'determined'
  * @param {{from: string, to: string}|null} props.range - Inclusive YYYY-MM-DD bounds
  * @param {Object} props.timeline - From buildTimeline()
  * @param {Array} props.ranges - From quickRanges()
- * @param {{bars: number[], months: number[], ranges: number[]}} props.counts
+ * @param {{bars: number[], ranges: number[]}} props.counts
  * @param {(field: string) => void} props.onFieldChange
  * @param {(range: {from: string, to: string}|null) => void} props.onRangeChange
  */
 function DateRangeFilter({ field, range, timeline, ranges, counts, onFieldChange, onRangeChange }) {
-  const { bars, months, unit } = timeline;
+  const { bars, unit } = timeline;
   const barsRef = useRef(null);
   const dragRef = useRef(null);
-  // A tapped month waiting for a second tap to make it a range. Kept with the
-  // range it set, so a drag, a quick range or a cleared filter in between
-  // means the next tap starts afresh rather than extending something stale.
-  const anchorRef = useRef(null);
 
   const maxCount = Math.max(1, ...counts.bars);
   const columns = { gridTemplateColumns: `repeat(${bars.length}, minmax(0, 1fr))` };
@@ -65,7 +59,6 @@ function DateRangeFilter({ field, range, timeline, ranges, counts, onFieldChange
     const lo = Math.min(a, b);
     const hi = Math.max(a, b);
     const next = { from: bars[lo].from, to: bars[hi].to };
-    anchorRef.current = null;
     if (!sameRange(next, range)) onRangeChange(next);
   };
 
@@ -82,32 +75,13 @@ function DateRangeFilter({ field, range, timeline, ranges, counts, onFieldChange
   };
   const endDrag = () => { dragRef.current = null; };
 
-  const tapMonth = (i) => {
-    const anchor = anchorRef.current;
-    if (anchor && sameRange(anchor.range, range) && anchor.index !== i) {
-      const lo = months[Math.min(anchor.index, i)];
-      const hi = months[Math.max(anchor.index, i)];
-      const next = { from: lo.from, to: hi.to };
-      anchorRef.current = null;
-      onRangeChange(next);
-      return;
-    }
-    const next = { from: months[i].from, to: months[i].to };
-    anchorRef.current = { index: i, range: next };
-    onRangeChange(next);
-  };
-
   const selected = (from, to) => Boolean(range && overlaps(from, to, range.from, range.to));
-  const monthName = (mo, i) => `${mo.name} ${mo.year}, ${counts.months[i]} mergers`;
-  // Past two years the months under the bars get too narrow to press, even
-  // on a wide screen; the wrapping grid takes over everywhere.
-  const alignedMonths = months.length <= MAX_ALIGNED_MONTHS;
   const unitLabel = unit === 'week' ? 'Week of' : '';
 
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <p className={SECTION_HEADING} id="date-filter-heading">Date</p>
+        <p className={SECTION_HEADING}>Date</p>
         <div role="group" aria-label="Date to filter on" className="flex rounded-lg border border-gray-200 bg-white p-0.5">
           {DATE_FIELDS.map((f) => (
             <button
@@ -134,7 +108,7 @@ function DateRangeFilter({ field, range, timeline, ranges, counts, onFieldChange
               key={r.key}
               type="button"
               aria-pressed={active}
-              onClick={() => { anchorRef.current = null; onRangeChange(active ? null : { from: r.from, to: r.to }); }}
+              onClick={() => onRangeChange(active ? null : { from: r.from, to: r.to })}
               className={`px-3 py-1 rounded-full text-sm border transition-colors ${
                 active
                   ? 'bg-primary text-white border-primary'
@@ -155,7 +129,7 @@ function DateRangeFilter({ field, range, timeline, ranges, counts, onFieldChange
         {range && (
           <button
             type="button"
-            onClick={() => { anchorRef.current = null; onRangeChange(null); }}
+            onClick={() => onRangeChange(null)}
             className="text-xs text-gray-500 hover:text-gray-700 underline p-1"
           >
             Clear dates
@@ -190,58 +164,8 @@ function DateRangeFilter({ field, range, timeline, ranges, counts, onFieldChange
             );
           })}
         </div>
-        {/* Under the bars, each month spans its own weeks. Where that would
-            make them narrower than a fingertip (phones, or a long register),
-            they wrap as a grid of their own instead. Only one of the two is
-            ever displayed, so assistive tech meets one set of buttons. */}
-        {alignedMonths && (
-          <div role="group" aria-labelledby="date-filter-heading" className="hidden sm:grid gap-px" style={columns}>
-            {months.map((mo, i) => (
-              <button
-                key={mo.key}
-                type="button"
-                aria-pressed={selected(mo.from, mo.to)}
-                aria-label={monthName(mo, i)}
-                onClick={() => tapMonth(i)}
-                style={{ gridColumn: `${mo.firstBar + 1} / ${mo.lastBar + 2}` }}
-                className={`min-w-0 overflow-hidden pt-1 pb-0.5 text-left border-t-2 leading-tight transition-colors ${
-                  selected(mo.from, mo.to)
-                    ? 'border-primary text-gray-900 font-semibold'
-                    : 'border-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                }`}
-              >
-                {mo.showsName && <span className="block text-xs whitespace-nowrap">{mo.name}</span>}
-                {mo.showsYear && <span className="block text-[10px] text-gray-500 font-normal tabular-nums">{mo.year}</span>}
-              </button>
-            ))}
-          </div>
-        )}
-        <div
-          role="group"
-          aria-labelledby="date-filter-heading"
-          className={`${alignedMonths ? 'grid sm:hidden' : 'grid'} mt-2 gap-1.5 grid-cols-[repeat(auto-fill,minmax(3.25rem,1fr))]`}
-        >
-          {months.map((mo, i) => (
-            <button
-              key={mo.key}
-              type="button"
-              aria-pressed={selected(mo.from, mo.to)}
-              aria-label={monthName(mo, i)}
-              onClick={() => tapMonth(i)}
-              className={`flex flex-col items-center py-1 rounded-lg border text-xs leading-tight transition-colors ${
-                selected(mo.from, mo.to)
-                  ? 'border-primary bg-primary/5 text-gray-900 font-semibold'
-                  : 'border-gray-200 text-gray-600 hover:border-gray-300'
-              }`}
-            >
-              <span>{mo.name}</span>
-              {/* gray-600, not 500: it has to clear 4.5:1 on the selected tint too. */}
-              <span className="text-[10px] text-gray-600 font-normal tabular-nums">{mo.year}</span>
-            </button>
-          ))}
-        </div>
         <p className="mt-2 text-xs text-gray-500">
-          Drag across the bars, or tap a month and then another to cover the months between.
+          Drag across the chart to pick a range, or press one bar for its {unit}.
         </p>
       </div>
     </div>

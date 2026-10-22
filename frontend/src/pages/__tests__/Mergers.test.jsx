@@ -218,10 +218,6 @@ describe('Mergers', () => {
       vi.useRealTimers();
     });
 
-    // Each month is rendered twice, under the bars and as a wrapping grid, and
-    // CSS shows one; jsdom applies no CSS, so take the first.
-    const month = (name) => screen.getAllByRole('button', { name })[0];
-
     async function openFilters(user, entry = '/mergers') {
       renderPage(entry);
       await screen.findByText(/^Showing/);
@@ -230,36 +226,26 @@ describe('Mergers', () => {
       }
     }
 
-    it('selects a month with one tap and a run of months with a second', async () => {
+    it('offers only the notification and determination dates', async () => {
       const user = userEvent.setup();
       await openFilters(user);
-      const march = month(/^Mar 2026, \d+ mergers$/);
-      await user.click(march);
-      const inMarch = notifiedIn('2026-03-01', '2026-03-31');
-      expect(screen.getByText(`Showing ${Math.min(50, inMarch)} of ${inMarch} mergers`)).toBeInTheDocument();
-      expect(march).toHaveAttribute('aria-pressed', 'true');
-
-      await user.click(month(/^May 2026, /));
-      const marToMay = notifiedIn('2026-03-01', '2026-05-31');
-      expect(screen.getByText(`Showing 50 of ${marToMay} mergers`)).toBeInTheDocument();
-      expect(month(/^Apr 2026, /)).toHaveAttribute('aria-pressed', 'true');
-      expect(screen.getByText('01 Mar 2026 – 31 May 2026')).toBeInTheDocument();
-
-      // A third tap starts a new selection rather than extending this one.
-      await user.click(month(/^Jan 2026, /));
-      expect(month(/^Apr 2026, /)).toHaveAttribute('aria-pressed', 'false');
+      const group = screen.getByRole('group', { name: 'Date to filter on' });
+      expect(within(group).getAllByRole('button').map((b) => b.textContent)).toEqual(['Notified', 'Determined']);
     });
 
-    it('counts each month on the chosen date', async () => {
+    it('filters on the determination date when that is chosen', async () => {
       const user = userEvent.setup();
-      await openFilters(user);
-      const label = `Feb 2026, ${notifiedIn('2026-02-01', '2026-02-28')} mergers`;
-      expect(month(label)).toBeInTheDocument();
-      await user.click(screen.getByRole('button', { name: 'Under review' }));
-      // Every fixture matter is decided the day it is notified, so "under
-      // review" in a month is the same set as notified in it.
-      expect(month(label)).toBeInTheDocument();
-      expect(screen.getByText(/^Open at any point in the range/)).toBeInTheDocument();
+      // Give five matters a 2025 determination, so the two dates differ.
+      MERGERS.forEach((m, i) => { if (i < 5) m.determination_publication_date = '2025-06-01T12:00:00Z'; });
+      try {
+        await openFilters(user, '/mergers?from=2025-01-01&to=2025-12-31');
+        expect(screen.getByText('Showing 0 of 0 mergers')).toBeInTheDocument();
+        await user.click(screen.getByRole('button', { name: 'Determined' }));
+        expect(screen.getByText('When the ACCC published its determination.')).toBeInTheDocument();
+        expect(screen.getByText('Showing 5 of 5 mergers')).toBeInTheDocument();
+      } finally {
+        MERGERS.forEach((m) => { m.determination_publication_date = m.effective_notification_datetime; });
+      }
     });
 
     it('applies and clears a quick range', async () => {

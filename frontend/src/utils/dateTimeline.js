@@ -1,6 +1,6 @@
 /**
- * Geometry for the merger list's date filter: the bars of its histogram, the
- * month buttons under them, and the quick ranges beside them.
+ * Geometry for the merger list's date filter: the bars of its histogram and
+ * the quick ranges above it.
  *
  * Everything here is a plain YYYY-MM-DD string, compared as strings. Register
  * dates are Australian calendar days stored at a nominal midday UTC, so the
@@ -9,16 +9,10 @@
  */
 
 const DAY_MS = 24 * 60 * 60 * 1000;
-const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 // Weekly bars until the span would make them too thin to read or hit, then
 // monthly. 78 weeks is a year and a half.
 const MAX_WEEKLY_BARS = 78;
-// Past this many months the labels can't all fit, so only the first month and
-// each January are written out; every month stays a button, named for screen
-// readers.
-const MAX_LABELLED_MONTHS = 18;
-
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
 const toMs = (iso) => Date.parse(`${iso}T00:00:00Z`);
@@ -43,64 +37,28 @@ export function monthsBetween(first, last) {
   let [y, m] = first.split('-').map(Number);
   const [y1, m1] = last.split('-').map(Number);
   while (y < y1 || (y === y1 && m <= m1)) {
-    months.push({
-      key: `${y}-${pad(m)}`,
-      year: y,
-      month: m,
-      name: MONTH_NAMES[m - 1],
-      from: `${y}-${pad(m)}-01`,
-      to: `${y}-${pad(m)}-${pad(lastDayOfMonth(y, m))}`,
-    });
+    months.push({ from: `${y}-${pad(m)}-01`, to: `${y}-${pad(m)}-${pad(lastDayOfMonth(y, m))}` });
     if (m === 12) { y += 1; m = 1; } else { m += 1; }
   }
   return months;
 }
 
 /**
- * The histogram's bars and the month buttons under them, from `first` to
- * `today`.
- *
- * Weekly bars start on Mondays. Each month knows which bars it spans
- * (`firstBar`/`lastBar`, inclusive), so its button can sit under exactly those
- * bars; a bar belongs to the month it starts in. With monthly bars that is one
- * bar per month.
+ * The histogram's bars, from `first` to `today`: weeks starting on Mondays,
+ * or calendar months once the span is too long for weekly bars to read.
  */
 export function buildTimeline(first, today) {
-  const months = monthsBetween(first, today);
   const mondayOffset = (new Date(toMs(first)).getUTCDay() + 6) % 7;
   const start = addDays(first, -mondayOffset);
   const weekCount = Math.floor((toMs(today) - toMs(start)) / (7 * DAY_MS)) + 1;
-  const unit = weekCount <= MAX_WEEKLY_BARS ? 'week' : 'month';
-
-  const bars = unit === 'week'
-    ? Array.from({ length: weekCount }, (_, i) => {
+  if (weekCount <= MAX_WEEKLY_BARS) {
+    const bars = Array.from({ length: weekCount }, (_, i) => {
       const from = addDays(start, i * 7);
       return { from, to: addDays(from, 6) };
-    })
-    : months.map(({ from, to }) => ({ from, to }));
-
-  const labelled = months.length <= MAX_LABELLED_MONTHS;
-  const monthSpans = months
-    .map((mo, i) => {
-      let firstBar = -1;
-      let lastBar = -1;
-      bars.forEach((b, j) => {
-        if (b.from >= mo.from && b.from <= mo.to) {
-          if (firstBar < 0) firstBar = j;
-          lastBar = j;
-        }
-      });
-      // The first month can start mid-week, inside a bar that began the month
-      // before; it still owns that first bar.
-      if (i === 0 && firstBar < 0) { firstBar = 0; lastBar = 0; }
-      // The year is written under the first month and each January; when
-      // there are too many months to label, those are the only ones labelled.
-      const showsYear = i === 0 || mo.month === 1;
-      return { ...mo, firstBar, lastBar, showsYear, showsName: labelled || showsYear };
-    })
-    .filter((mo) => mo.firstBar >= 0);
-
-  return { unit, bars, months: monthSpans };
+    });
+    return { unit: 'week', bars };
+  }
+  return { unit: 'month', bars: monthsBetween(first, today) };
 }
 
 /**

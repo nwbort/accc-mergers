@@ -23,23 +23,11 @@ describe('buildTimeline', () => {
     expect(bars.at(-1).to >= '2026-10-22').toBe(true);
   });
 
-  it('puts every bar under exactly one month button', () => {
-    const { bars, months } = buildTimeline('2025-08-08', '2026-10-22');
-    const covered = months.flatMap((m) => Array.from({ length: m.lastBar - m.firstBar + 1 }, (_, i) => m.firstBar + i));
-    expect(covered).toEqual(bars.map((_, i) => i));
-  });
-
-  it('names every month, with the year under the first and each January', () => {
-    const { months } = buildTimeline('2025-08-08', '2026-10-22');
-    expect(months.every((m) => m.showsName)).toBe(true);
-    expect(months.filter((m) => m.showsYear).map((m) => m.key)).toEqual(['2025-08', '2026-01']);
-  });
-
-  it('switches to monthly bars, labelling only the year marks, once the span is long', () => {
-    const { unit, bars, months } = buildTimeline('2025-08-08', '2027-12-01');
+  it('switches to monthly bars once the span is long', () => {
+    const { unit, bars } = buildTimeline('2025-08-08', '2027-12-01');
     expect(unit).toBe('month');
-    expect(bars).toHaveLength(months.length);
-    expect(months.filter((m) => m.showsName).map((m) => m.key)).toEqual(['2025-08', '2026-01', '2027-01']);
+    expect(bars[0]).toEqual({ from: '2025-08-01', to: '2025-08-31' });
+    expect(bars).toHaveLength(29);
   });
 });
 
