@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, unquote
 import unicodedata
 import re
+import time
 from datetime import datetime, timedelta, timezone
 from markdownify import markdownify as md
 from scripts.parse.parse_determination import parse_determination_pdf
@@ -183,6 +184,53 @@ def _is_determination_attachment(event_title: str | None, filename: str) -> bool
     return 'determination' in filename.lower()
 
 
+# Delays before each retry of an attachment download. The ACCC answers 503 for
+# a few moments while a newly published document propagates (WA-90039's
+# determination did, on the run triggered by the register email announcing it),
+# and a download that fails on that run is not retried until extraction next
+# runs, which a quiet scheduled run skips.
+DOWNLOAD_RETRY_DELAYS = (5, 15, 30)
+
+
+def _is_transient_download_error(error) -> bool:
+    """Whether a failed attachment download is worth retrying.
+
+    A server error or a dropped connection may clear on its own; a 4xx (the
+    link is wrong, or Akamai has refused us) will not.
+    """
+    response = getattr(error, 'response', None)
+    status = getattr(response, 'status_code', None)
+    return status is None or status >= 500
+
+
+def _fetch_to_file(url, local_filepath):
+    """Download ``url`` to ``local_filepath``, retrying transient failures.
+
+    Written to a temporary file and renamed into place, so a download cut off
+    part-way never leaves a truncated file behind: an existing file is taken as
+    already downloaded and would never be fetched again. Raises the last
+    ``accc_http.RequestException`` once the retries are spent.
+    """
+    temp_filepath = f"{local_filepath}.part"
+    for attempt, delay in enumerate((*DOWNLOAD_RETRY_DELAYS, None)):
+        try:
+            response = accc_http.get(url, stream=True, timeout=30)
+            response.raise_for_status()
+            with open(temp_filepath, 'wb') as f_out:
+                for chunk in response.iter_content(chunk_size=8192):
+                    f_out.write(chunk)
+            os.replace(temp_filepath, local_filepath)
+            return
+        except accc_http.RequestException as e:
+            if os.path.exists(temp_filepath):
+                os.remove(temp_filepath)
+            if delay is None or not _is_transient_download_error(e):
+                raise
+            print(f"Retrying {url} in {delay}s (attempt {attempt + 1} failed: {e})",
+                  file=sys.stderr)
+            time.sleep(delay)
+
+
 def download_attachment(merger_id, attachment_url, event_title=None, cached_determination_data=None):
     """
     Downloads an attachment if it doesn't already exist locally.
@@ -238,14 +286,7 @@ def download_attachment(merger_id, attachment_url, event_title=None, cached_dete
 
         # Check if the file already exists before downloading
         if not os.path.exists(local_filepath):
-            # Download the file
-            response = accc_http.get(attachment_url, stream=True, timeout=30)
-            response.raise_for_status()  # Raise an exception for bad status codes
-
-            # Save the file
-            with open(local_filepath, 'wb') as f_out:
-                for chunk in response.iter_content(chunk_size=8192):
-                    f_out.write(chunk)
+            _fetch_to_file(attachment_url, local_filepath)
 
         # Check if this is a determination PDF and parse it.
         is_determination = _is_determination_attachment(event_title, filename)
