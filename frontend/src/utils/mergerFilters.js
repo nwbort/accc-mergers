@@ -11,9 +11,10 @@
 import { PHASES, isPublicBenefitStage } from '../constants/mergerStatus';
 import { DIVISION_NAMES, divisionForCode } from './industryDivision';
 import { searchPredicate } from './searchIndex';
+import { dayOf, isIsoDate, overlaps } from './dateTimeline';
 
 /** Search params that hold a filter (the search box's `q` is handled apart). */
-export const FILTER_PARAMS = ['phase', 'status', 'notified', 'industry', 'conditions', 'tracked'];
+export const FILTER_PARAMS = ['phase', 'status', 'from', 'to', 'date', 'industry', 'conditions', 'tracked'];
 
 /** What the status badge shows, and so what the status filter matches on. */
 export const displayedOutcome = (m) => m.accc_determination || m.status;
@@ -29,34 +30,47 @@ export const PHASE_OPTIONS = [
 
 const PHASE_TESTS = Object.fromEntries(PHASE_OPTIONS.map((o) => [o.value, o.test]));
 
-const DAY_MS = 24 * 60 * 60 * 1000;
-
-// Rolling windows, ahead of the calendar years. Measured back from now, so a
-// shared `?notified=30d` link always means "lately", not a fixed date range.
-export const NOTIFIED_WINDOWS = [
-  { value: '30d', label: 'Last 30 days', days: 30 },
-  { value: '90d', label: 'Last 90 days', days: 90 },
-  { value: '12m', label: 'Last 12 months', days: 365 },
+// Which of a matter's dates the date range (`?from=` / `?to=`) is matched
+// against, in `?date=`. Notified is the default and is left out of the URL.
+export const DATE_FIELDS = [
+  { value: 'notified', label: 'Notified' },
+  { value: 'determined', label: 'Determined' },
+  { value: 'open', label: 'Under review' },
 ];
+export const DEFAULT_DATE_FIELD = 'notified';
 
-const WINDOW_DAYS = Object.fromEntries(NOTIFIED_WINDOWS.map((w) => [w.value, w.days]));
+/** Fold an unrecognised `?date=` back to the default. */
+export const normaliseDateField = (value) => (
+  DATE_FIELDS.some((f) => f.value === value) ? value : DEFAULT_DATE_FIELD
+);
 
-const notificationMs = (m) => {
-  const t = Date.parse(m.effective_notification_datetime);
-  return Number.isNaN(t) ? null : t;
-};
+/**
+ * Does `m` fall in [from, to] (inclusive YYYY-MM-DD strings) on `field`?
+ *
+ * Notified and determined match on that one day. "Under review" matches a
+ * matter that was open at any point in the range: notified by its end and not
+ * yet decided by its start. A matter with no notification date (a suspended
+ * assessment) matches none of them.
+ */
+export function matchesDateRange(m, field, from, to) {
+  const notified = dayOf(m.effective_notification_datetime);
+  const determined = dayOf(m.determination_publication_date);
+  if (field === 'determined') return Boolean(determined) && determined >= from && determined <= to;
+  if (field === 'open') return Boolean(notified) && overlaps(notified, determined || '9999-12-31', from, to);
+  return Boolean(notified) && notified >= from && notified <= to;
+}
 
-/** Calendar year a matter was notified (or applied, for a waiver), as a string. */
-export const notifiedYear = (m) => m.effective_notification_datetime?.slice(0, 4) || null;
-
-/** Does `m` fall in the `?notified=` value — a rolling window or a year? */
-export function matchesNotified(m, value, now = Date.now()) {
-  const days = WINDOW_DAYS[value];
-  if (days) {
-    const t = notificationMs(m);
-    return t !== null && t >= now - days * DAY_MS;
-  }
-  return notifiedYear(m) === value;
+/**
+ * The range in the URL, or null when neither end is a usable date. Either end
+ * may be left open; a range given backwards is turned round.
+ */
+export function dateRangeFrom(fromParam, toParam) {
+  const from = isIsoDate(fromParam) ? fromParam : null;
+  const to = isIsoDate(toParam) ? toParam : null;
+  if (!from && !to) return null;
+  const lo = from || '0000-01-01';
+  const hi = to || '9999-12-31';
+  return lo <= hi ? { from: lo, to: hi } : { from: hi, to: lo };
 }
 
 // A matter can be tagged with several codes, so it can sit in several
@@ -84,15 +98,17 @@ export function mergerDivisions(m) {
  * fixed-choice ones) are left out rather than passed as always-true
  * predicates.
  *
- * @param {Object} values - Raw param values: { q, phase, status, notified, industry, conditions, tracked }
- * @param {Object} ctx - { isTracked, searchIndex, now }
+ * @param {Object} values - Raw param values: { q, phase, status, from, to, date, industry, conditions, tracked }
+ * @param {Object} ctx - { isTracked, searchIndex }
  */
-export function activeFilterTests(values, { isTracked, searchIndex, now = Date.now() }) {
+export function activeFilterTests(values, { isTracked, searchIndex }) {
   const tests = [];
-  const { q, phase, status, notified, industry, conditions, tracked } = values;
+  const { q, phase, status, from, to, date, industry, conditions, tracked } = values;
+  const range = dateRangeFrom(from, to);
+  const dateField = normaliseDateField(date);
   if (phase && PHASE_TESTS[phase]) tests.push(['phase', PHASE_TESTS[phase]]);
   if (status && status !== 'all') tests.push(['status', (m) => displayedOutcome(m) === status]);
-  if (notified) tests.push(['notified', (m) => matchesNotified(m, notified, now)]);
+  if (range) tests.push(['date', (m) => matchesDateRange(m, dateField, range.from, range.to)]);
   if (industry) tests.push(['industry', (m) => mergerDivisions(m).has(industry)]);
   if (conditions === 'true') tests.push(['conditions', (m) => Boolean(m.has_conditions)]);
   if (tracked === 'true') tests.push(['tracked', (m) => isTracked(m.merger_id)]);
@@ -122,8 +138,13 @@ const countWhere = (list, test) => list.reduce((n, m) => (test(m) ? n + 1 : n), 
  * The option *lists* come from the whole data set, so an option doesn't
  * vanish just because another filter leaves it empty — it shows (0) instead.
  * The *counts* come from the list filtered by every other filter.
+ *
+ * The date filter's counts are per histogram bar, per month button and per
+ * quick range (see utils/dateTimeline.js), all on the chosen date field.
+ *
+ * @param {Object} dateAxis - { field, timeline, ranges }
  */
-export function filterOptions(mergers, tests, now = Date.now()) {
+export function filterOptions(mergers, tests, { field = DEFAULT_DATE_FIELD, timeline, ranges = [] } = {}) {
   const facet = (key) => applyFilters(mergers, tests, key);
 
   const phaseBase = facet('phase');
@@ -143,12 +164,13 @@ export function filterOptions(mergers, tests, now = Date.now()) {
     .sort((a, b) => statusTotals.get(b) - statusTotals.get(a) || a.localeCompare(b))
     .map((value) => ({ value, label: value, count: countWhere(statusBase, (m) => displayedOutcome(m) === value) }));
 
-  const notifiedBase = facet('notified');
-  const years = [...new Set(mergers.map(notifiedYear).filter(Boolean))].sort().reverse();
-  const notified = [
-    ...NOTIFIED_WINDOWS.map(({ value, label }) => ({ value, label })),
-    ...years.map((y) => ({ value: y, label: y })),
-  ].map((o) => ({ ...o, count: countWhere(notifiedBase, (m) => matchesNotified(m, o.value, now)) }));
+  const dateBase = facet('date');
+  const inRange = ({ from, to }) => countWhere(dateBase, (m) => matchesDateRange(m, field, from, to));
+  const date = {
+    bars: timeline ? timeline.bars.map(inRange) : [],
+    months: timeline ? timeline.months.map(inRange) : [],
+    ranges: ranges.map(inRange),
+  };
 
   const present = new Set();
   for (const m of mergers) mergerDivisions(m).forEach((d) => present.add(d));
@@ -160,5 +182,5 @@ export function filterOptions(mergers, tests, now = Date.now()) {
 
   const conditions = countWhere(facet('conditions'), (m) => m.has_conditions);
 
-  return { phase, status, notified, industry, conditions };
+  return { phase, status, date, industry, conditions };
 }

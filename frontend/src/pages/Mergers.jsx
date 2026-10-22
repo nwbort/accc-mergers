@@ -6,6 +6,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import MergerListCard from '../components/MergerListCard';
 import MergerListTable from '../components/MergerListTable';
+import DateRangeFilter from '../components/DateRangeFilter';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
@@ -13,7 +14,11 @@ import { useTracking } from '../context/TrackingContext';
 import { useDebounce } from '../hooks/useDebounce';
 import { buildSearchIndex } from '../utils/searchIndex';
 import { MERGERS_LIST_KEY } from '../utils/mergerList';
-import { FILTER_PARAMS, activeFilterTests, applyFilters, filterOptions } from '../utils/mergerFilters';
+import {
+  DEFAULT_DATE_FIELD, FILTER_PARAMS, activeFilterTests, applyFilters, dateRangeFrom, filterOptions, normaliseDateField,
+} from '../utils/mergerFilters';
+import { buildTimeline, dayOf, quickRanges } from '../utils/dateTimeline';
+import { australianToday, toDateString } from '../utils/dates';
 import { loadListPosition, saveListPosition } from '../utils/mergerListPosition';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
@@ -125,7 +130,10 @@ function Mergers() {
   const unlessAll = (value) => (value && value !== 'all' ? value : '');
   const phaseFilter = unlessAll(searchParams.get('phase'));
   const statusFilter = unlessAll(searchParams.get('status'));
-  const notifiedFilter = searchParams.get('notified') || '';
+  const fromParam = searchParams.get('from') || '';
+  const toParam = searchParams.get('to') || '';
+  const dateField = normaliseDateField(searchParams.get('date'));
+  const dateRange = dateRangeFrom(fromParam, toParam);
   const industryFilter = searchParams.get('industry') || '';
   const conditionsOnly = searchParams.get('conditions') === 'true';
   const trackedOnly = searchParams.get('tracked') === 'true';
@@ -235,6 +243,18 @@ function Mergers() {
     setSearchParams(params, { replace: true });
   };
 
+  // The date range is two params that always change together.
+  const setDateRange = (range) => {
+    const params = new URLSearchParams(searchParams);
+    params.delete('from');
+    params.delete('to');
+    if (range) {
+      if (range.from !== '0000-01-01') params.set('from', range.from);
+      if (range.to !== '9999-12-31') params.set('to', range.to);
+    }
+    setSearchParams(params, { replace: true });
+  };
+
   const setSort = (field, dir) => updateParam('sort', `${field}-${dir}`, DEFAULT_SORT);
 
   // Picking a field keeps the direction when it is already the sort, and
@@ -246,7 +266,7 @@ function Mergers() {
   };
 
   const activeFilterCount = [
-    phaseFilter, statusFilter, notifiedFilter, industryFilter, conditionsOnly, trackedOnly,
+    phaseFilter, statusFilter, dateRange, industryFilter, conditionsOnly, trackedOnly,
   ].filter(Boolean).length;
 
   const filterTests = useMemo(
@@ -255,14 +275,16 @@ function Mergers() {
         q: debouncedSearchTerm,
         phase: phaseFilter,
         status: statusFilter,
-        notified: notifiedFilter,
+        from: fromParam,
+        to: toParam,
+        date: dateField,
         industry: industryFilter,
         conditions: conditionsOnly ? 'true' : '',
         tracked: trackedOnly ? 'true' : '',
       },
       { isTracked, searchIndex },
     ),
-    [debouncedSearchTerm, phaseFilter, statusFilter, notifiedFilter, industryFilter, conditionsOnly, trackedOnly, isTracked, searchIndex]
+    [debouncedSearchTerm, phaseFilter, statusFilter, fromParam, toParam, dateField, industryFilter, conditionsOnly, trackedOnly, isTracked, searchIndex]
   );
 
   const filteredMergers = useMemo(() => applyFilters(mergers, filterTests), [mergers, filterTests]);
@@ -274,10 +296,23 @@ function Mergers() {
     [filteredMergers, sortBy]
   );
 
+  // The date filter's axis runs from the first notification on the register
+  // to today (in Australia, where the register's dates are).
+  const dateAxis = useMemo(() => {
+    let first = null;
+    for (const m of mergers) {
+      const d = dayOf(m.effective_notification_datetime);
+      if (d && (!first || d < first)) first = d;
+    }
+    if (!first) return null;
+    const today = toDateString(australianToday());
+    return { timeline: buildTimeline(first, today), ranges: quickRanges(first, today) };
+  }, [mergers]);
+
   // Each select's options and counts. Only worked out while the panel is open.
   const options = useMemo(
-    () => (filtersOpen ? filterOptions(mergers, filterTests) : null),
-    [filtersOpen, mergers, filterTests]
+    () => (filtersOpen ? filterOptions(mergers, filterTests, { field: dateField, ...dateAxis }) : null),
+    [filtersOpen, mergers, filterTests, dateField, dateAxis]
   );
 
   // Paginated slice of sorted results
@@ -431,14 +466,6 @@ function Mergers() {
                   onChange={(v) => updateParam('status', v)}
                 />
                 <FilterSelect
-                  id="notified"
-                  label="Notified"
-                  value={notifiedFilter}
-                  allLabel="Any time"
-                  options={options.notified}
-                  onChange={(v) => updateParam('notified', v)}
-                />
-                <FilterSelect
                   id="industry"
                   label="Industry"
                   value={industryFilter}
@@ -459,6 +486,19 @@ function Mergers() {
                   onToggle={() => updateParam('tracked', trackedOnly ? '' : 'true')}
                 />
               </div>
+              {dateAxis && (
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <DateRangeFilter
+                    field={dateField}
+                    range={dateRange}
+                    timeline={dateAxis.timeline}
+                    ranges={dateAxis.ranges}
+                    counts={options.date}
+                    onFieldChange={(f) => updateParam('date', f, DEFAULT_DATE_FIELD)}
+                    onRangeChange={setDateRange}
+                  />
+                </div>
+              )}
               {activeFilterCount > 0 && (
                 <div className="mt-3 pt-3 border-t border-gray-100 flex justify-end">
                   <button

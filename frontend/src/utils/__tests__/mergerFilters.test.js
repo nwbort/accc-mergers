@@ -2,13 +2,13 @@ import { describe, expect, it } from 'vitest';
 import {
   activeFilterTests,
   applyFilters,
+  dateRangeFrom,
   filterOptions,
-  matchesNotified,
+  matchesDateRange,
   mergerDivisions,
 } from '../mergerFilters';
 import { buildSearchIndex } from '../searchIndex';
 
-const NOW = Date.parse('2026-10-22T00:00:00Z');
 
 const MERGERS = [
   {
@@ -19,6 +19,7 @@ const MERGERS = [
     has_conditions: true,
     stage: 'Phase 1 - initial assessment',
     effective_notification_datetime: '2026-10-01T12:00:00Z',
+    determination_publication_date: '2026-10-15T12:00:00Z',
     anzsic_codes: [{ code: '4000', name: 'Fuel Retailing' }, { code: '3321', name: 'Petroleum Product Wholesaling' }],
   },
   {
@@ -29,6 +30,7 @@ const MERGERS = [
     is_waiver: true,
     stage: 'Waiver application',
     effective_notification_datetime: '2026-03-01T12:00:00Z',
+    determination_publication_date: '2026-03-20T12:00:00Z',
     anzsic_codes: [{ code: '3600', name: 'Grocery Wholesaling' }],
   },
   {
@@ -58,7 +60,6 @@ function filtered(values, ctx = {}) {
   const tests = activeFilterTests(values, {
     isTracked: () => false,
     searchIndex: buildSearchIndex(MERGERS),
-    now: NOW,
     ...ctx,
   });
   return ids(applyFilters(MERGERS, tests));
@@ -88,10 +89,30 @@ describe('activeFilterTests + applyFilters', () => {
     expect(filtered({ status: 'all' })).toEqual(ids(MERGERS));
   });
 
-  it('filters by notification window or year', () => {
-    expect(filtered({ notified: '30d' })).toEqual(['MN-1']);
-    expect(filtered({ notified: '12m' })).toEqual(['MN-1', 'WA-2', 'MN-3']);
-    expect(filtered({ notified: '2025' })).toEqual(['MN-3']);
+  it('filters by notification date range by default', () => {
+    expect(filtered({ from: '2026-01-01', to: '2026-12-31' })).toEqual(['MN-1', 'WA-2']);
+    expect(filtered({ from: '2026-10-01', to: '2026-10-01' })).toEqual(['MN-1']);
+    // Either end may be left open.
+    expect(filtered({ to: '2025-12-31' })).toEqual(['MN-3']);
+    expect(filtered({ from: '2026-03-01' })).toEqual(['MN-1', 'WA-2']);
+  });
+
+  it('filters by determination date, leaving open matters out', () => {
+    expect(filtered({ date: 'determined', from: '2026-03-01', to: '2026-03-31' })).toEqual(['WA-2']);
+    expect(filtered({ date: 'determined', from: '2025-01-01', to: '2026-12-31' })).toEqual(['MN-1', 'WA-2']);
+  });
+
+  it('filters to matters under review at any point in the range', () => {
+    // WA-2 ran 1-20 March 2026; MN-3 has been open since November 2025.
+    expect(filtered({ date: 'open', from: '2026-03-10', to: '2026-03-10' })).toEqual(['WA-2', 'MN-3']);
+    expect(filtered({ date: 'open', from: '2026-03-21', to: '2026-04-30' })).toEqual(['MN-3']);
+    // MN-1 was decided on 15 October, so it was still open that day.
+    expect(filtered({ date: 'open', from: '2026-10-15', to: '2026-10-31' })).toEqual(['MN-1', 'MN-3']);
+  });
+
+  it('ignores dates that are not dates, and an unknown date field', () => {
+    expect(filtered({ from: 'yesterday', to: '' })).toEqual(ids(MERGERS));
+    expect(filtered({ date: 'bogus', from: '2025-11-01', to: '2025-11-01' })).toEqual(['MN-3']);
   });
 
   it('filters by ANZSIC division, through any of a matter\'s codes', () => {
@@ -111,10 +132,20 @@ describe('activeFilterTests + applyFilters', () => {
   });
 });
 
-describe('matchesNotified', () => {
-  it('never puts a matter with no notification date in a window or year', () => {
-    expect(matchesNotified(MERGERS[3], '12m', NOW)).toBe(false);
-    expect(matchesNotified(MERGERS[3], '2026', NOW)).toBe(false);
+describe('matchesDateRange', () => {
+  it('never matches a matter with no notification date', () => {
+    for (const field of ['notified', 'determined', 'open']) {
+      expect(matchesDateRange(MERGERS[3], field, '2000-01-01', '2099-12-31')).toBe(false);
+    }
+  });
+});
+
+describe('dateRangeFrom', () => {
+  it('turns a backwards range round and opens a missing end', () => {
+    expect(dateRangeFrom('2026-05-01', '2026-04-01')).toEqual({ from: '2026-04-01', to: '2026-05-01' });
+    expect(dateRangeFrom('2026-05-01', null)).toEqual({ from: '2026-05-01', to: '9999-12-31' });
+    expect(dateRangeFrom(null, '')).toBeNull();
+    expect(dateRangeFrom('2026-02-30', null)).toBeNull();
   });
 });
 
@@ -126,11 +157,11 @@ describe('mergerDivisions', () => {
 });
 
 describe('filterOptions', () => {
-  const ctx = { isTracked: () => false, searchIndex: buildSearchIndex(MERGERS), now: NOW };
+  const ctx = { isTracked: () => false, searchIndex: buildSearchIndex(MERGERS) };
 
   it('counts each option against every other filter, but not its own', () => {
     const tests = activeFilterTests({ phase: 'phase2', status: 'Approved' }, ctx);
-    const options = filterOptions(MERGERS, tests, NOW);
+    const options = filterOptions(MERGERS, tests);
     // Phase counts ignore the phase filter but honour status = Approved.
     expect(options.phase.find((o) => o.value === 'phase1').count).toBe(1);
     expect(options.phase.find((o) => o.value === 'phase2').count).toBe(0);
@@ -140,11 +171,33 @@ describe('filterOptions', () => {
   });
 
   it('lists every option from the whole data set, most common status first', () => {
-    const options = filterOptions(MERGERS, [], NOW);
+    const options = filterOptions(MERGERS, []);
     expect(options.status.map((o) => o.value)).toEqual(['Approved', 'Under assessment']);
-    expect(options.notified.map((o) => o.value)).toEqual(['30d', '90d', '12m', '2026', '2025']);
     expect(options.industry.map((o) => o.label)).toEqual(['Mining', 'Retail Trade', 'Wholesale Trade']);
     expect(options.industry.find((o) => o.value === 'F').count).toBe(2);
     expect(options.conditions).toBe(1);
+  });
+});
+
+describe('filterOptions date counts', () => {
+  const ctx = { isTracked: () => false, searchIndex: buildSearchIndex(MERGERS) };
+  const timeline = {
+    bars: [{ from: '2025-11-01', to: '2025-11-30' }, { from: '2026-03-01', to: '2026-03-31' }],
+    months: [{ from: '2025-11-01', to: '2025-11-30' }, { from: '2026-03-01', to: '2026-03-31' }],
+  };
+  const ranges = [{ from: '2026-01-01', to: '2026-12-31' }];
+
+  it('counts each bar, month and quick range on the chosen date field', () => {
+    const notified = filterOptions(MERGERS, [], { field: 'notified', timeline, ranges }).date;
+    expect(notified).toEqual({ bars: [1, 1], months: [1, 1], ranges: [2] });
+    const open = filterOptions(MERGERS, [], { field: 'open', timeline, ranges }).date;
+    expect(open.bars).toEqual([1, 2]);
+  });
+
+  it('ignores the date range itself but honours the other filters', () => {
+    const tests = activeFilterTests({ from: '2026-03-01', to: '2026-03-31', phase: 'waivers' }, ctx);
+    const { date } = filterOptions(MERGERS, tests, { field: 'notified', timeline, ranges });
+    expect(date.bars).toEqual([0, 1]);
+    expect(date.ranges).toEqual([1]);
   });
 });

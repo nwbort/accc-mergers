@@ -201,4 +201,85 @@ describe('Mergers', () => {
     await user.click(screen.getByRole('link', { name: 'Mergers' }));
     expect(await screen.findByText('Showing 50 of 200 mergers')).toBeInTheDocument();
   });
+
+  describe('date filter', () => {
+    const notifiedIn = (from, to) => MERGERS.filter((m) => {
+      const d = m.effective_notification_datetime.slice(0, 10);
+      return d >= from && d <= to;
+    }).length;
+
+    beforeEach(() => {
+      // Pin "today" (and so the quick ranges) without faking the timers
+      // userEvent and the debounce run on.
+      vi.useFakeTimers({ toFake: ['Date'] });
+      vi.setSystemTime(new Date('2026-10-22T02:00:00Z'));
+    });
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    // Each month is rendered twice, under the bars and as a wrapping grid, and
+    // CSS shows one; jsdom applies no CSS, so take the first.
+    const month = (name) => screen.getAllByRole('button', { name })[0];
+
+    async function openFilters(user, entry = '/mergers') {
+      renderPage(entry);
+      await screen.findByText(/^Showing/);
+      if (!screen.queryByRole('group', { name: 'Date to filter on' })) {
+        await user.click(screen.getByRole('button', { name: 'Toggle filters' }));
+      }
+    }
+
+    it('selects a month with one tap and a run of months with a second', async () => {
+      const user = userEvent.setup();
+      await openFilters(user);
+      const march = month(/^Mar 2026, \d+ mergers$/);
+      await user.click(march);
+      const inMarch = notifiedIn('2026-03-01', '2026-03-31');
+      expect(screen.getByText(`Showing ${Math.min(50, inMarch)} of ${inMarch} mergers`)).toBeInTheDocument();
+      expect(march).toHaveAttribute('aria-pressed', 'true');
+
+      await user.click(month(/^May 2026, /));
+      const marToMay = notifiedIn('2026-03-01', '2026-05-31');
+      expect(screen.getByText(`Showing 50 of ${marToMay} mergers`)).toBeInTheDocument();
+      expect(month(/^Apr 2026, /)).toHaveAttribute('aria-pressed', 'true');
+      expect(screen.getByText('01 Mar 2026 – 31 May 2026')).toBeInTheDocument();
+
+      // A third tap starts a new selection rather than extending this one.
+      await user.click(month(/^Jan 2026, /));
+      expect(month(/^Apr 2026, /)).toHaveAttribute('aria-pressed', 'false');
+    });
+
+    it('counts each month on the chosen date', async () => {
+      const user = userEvent.setup();
+      await openFilters(user);
+      const label = `Feb 2026, ${notifiedIn('2026-02-01', '2026-02-28')} mergers`;
+      expect(month(label)).toBeInTheDocument();
+      await user.click(screen.getByRole('button', { name: 'Under review' }));
+      // Every fixture matter is decided the day it is notified, so "under
+      // review" in a month is the same set as notified in it.
+      expect(month(label)).toBeInTheDocument();
+      expect(screen.getByText(/^Open at any point in the range/)).toBeInTheDocument();
+    });
+
+    it('applies and clears a quick range', async () => {
+      const user = userEvent.setup();
+      await openFilters(user);
+      const quick = screen.getByRole('button', { name: /^Last 90 days/ });
+      await user.click(quick);
+      const recent = notifiedIn('2026-07-25', '2026-10-22');
+      expect(screen.getByText(`Showing ${Math.min(50, recent)} of ${recent} mergers`)).toBeInTheDocument();
+      expect(quick).toHaveAttribute('aria-pressed', 'true');
+      await user.click(screen.getByRole('button', { name: 'Clear dates' }));
+      expect(screen.getByText('Showing 50 of 200 mergers')).toBeInTheDocument();
+    });
+
+    it('reads a range from the URL, open-ended or not', async () => {
+      const user = userEvent.setup();
+      await openFilters(user, '/mergers?from=2026-09-01');
+      const fromSept = notifiedIn('2026-09-01', '2026-12-31');
+      expect(screen.getByText(`Showing ${fromSept} of ${fromSept} mergers`)).toBeInTheDocument();
+      expect(screen.getByText('From 01 Sep 2026')).toBeInTheDocument();
+    });
+  });
 });
