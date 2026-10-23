@@ -10,17 +10,22 @@ name: Quarterly report PDFs
 # pipeline-main concurrency group (an email-triggered run queues behind it)
 # and puts a typesetting failure in the same job as the scrape.
 #
-# Runs after every pipeline run on main, since that is the only thing that
-# changes quarterly.json; a change to the drawing code lands as a push to main,
-# which runs the pipeline and so this too. workflow_run fires even though the
-# pipeline pushes with GITHUB_TOKEN, which a push trigger would not. The output
-# is deterministic, so a run whose quarters didn't move commits nothing.
+# Runs only when quarterly.json or the drawing code changes. The pipeline is
+# what changes quarterly.json (a new quarter included: it appears there once it
+# has ended), but it pushes with GITHUB_TOKEN, which never fires a push
+# trigger, so it dispatches this workflow itself when its commit touched the
+# file. The push trigger covers everything else: a change to the drawing code,
+# or to quarterly.json, pushed by a person. The output is deterministic, so a
+# run whose quarters didn't move commits nothing.
 
 on:
-  workflow_run:
-    workflows: [Merger Pipeline]
-    types: [completed]
+  push:
     branches: [main]
+    paths:
+      - frontend/public/data/quarterly.json
+      - scripts/generate/quarterly_pdf.py
+      - scripts/requirements.txt
+      - .github/workflows/quarterly-report.yml
   workflow_dispatch:
 
 concurrency:
@@ -33,7 +38,6 @@ permissions:
 jobs:
   draw:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion != 'cancelled'
     timeout-minutes: 10
     steps:
       - name: Check out repository

@@ -11,9 +11,9 @@ every run rather than frozen, because late register changes (a refused waiver
 re-filed weeks later, a re-dated determination) still move its figures — and
 the output is byte-for-byte deterministic (reportlab's ``invariant`` mode, no
 timestamps in the content), so a redraw with nothing new is not a diff and
-the pipeline commits a PDF only when its contents moved.
+the workflow commits a PDF only when its contents moved.
 
-Called by ``generate_static_data`` straight after it writes quarterly.json;
+Drawn by quarterly-report.yml whenever quarterly.json or this code changes;
 ``python -m scripts.generate.quarterly_pdf`` redraws from the committed JSON.
 """
 
