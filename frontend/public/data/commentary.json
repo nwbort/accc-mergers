@@ -1,6 +1,60 @@
 {
   "items": [
     {
+      "merger_id": "MN-65020",
+      "merger_name": "Regis Resources - Vault Minerals",
+      "status": "Assessment ceased",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-22T12:00:00Z",
+      "determination_publication_date": null,
+      "determination_url": null,
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "REGIS RESOURCES LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "28 009 174 761",
+          "party_page": {
+            "id": "regis-resources-limited",
+            "name": "Regis Resources Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "VAULT MINERALS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "73 068 647 610",
+          "party_page": {
+            "id": "vault-minerals-limited",
+            "name": "Vault Minerals Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0803",
+          "name": "Copper Ore Mining"
+        },
+        {
+          "code": "0804",
+          "name": "Gold Ore Mining"
+        },
+        {
+          "code": "0807",
+          "name": "Silver-Lead-Zinc Ore Mining"
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "Vault Minerals received a competing proposal from Genesis Minerals, which Vault's board determined was a superior proposal under its scheme implementation deed with Regis. On 13 July 2026 Regis [announced](https://app.sharelinktechnologies.com/announcement-preview/asx/589e6f76b6f0536844891e93b60ee246) that it would not exercise its matching right, as the terms needed to match the Genesis proposal did not meet its value and return thresholds, and that it expected Vault to terminate the deed, triggering a break fee of about A$50.7 million payable to Regis. The ACCC's consideration of this notification ceased at Regis's request a few days later. Genesis's acquisition of Vault was subsequently [granted a notification waiver](/mergers/WA-40036).",
+          "tags": [],
+          "date": "2026-10-23"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-15034",
       "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
       "status": "Assessment completed",
@@ -1226,5 +1280,5 @@
       ]
     }
   ],
-  "count": 20
+  "count": 21
 }
