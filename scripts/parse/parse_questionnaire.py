@@ -28,6 +28,13 @@ def _file_sha256(pdf_path: Path) -> str:
 
 _NEG_CACHE_KEY = '_not_questionnaire_shas'
 
+# Re-downloads the dedup step collapses (``Foo_0.pdf`` beside ``Foo.pdf``, same
+# deadline) never appear in the output, so without this their SHA-256 would
+# never reach the positive cache and every run would re-parse them from
+# scratch. Stored as ``{dropped sha: kept sha}``; the dropped copy resolves to
+# the kept copy's parse, which is all the dedup ever reads of it.
+_DUP_CACHE_KEY = '_duplicate_questionnaire_shas'
+
 
 def _build_caches_from_existing(json_path: Path):
     """Return (positive_cache, negative_cache) from a previously written JSON file.
@@ -37,6 +44,9 @@ def _build_caches_from_existing(json_path: Path):
     - ``negative_cache`` is a set of SHA-256 hashes of PDFs that have already been
       examined and confirmed NOT to be questionnaires (avoids re-opening them on
       the content-detection fallback).
+
+    Duplicates recorded under ``_DUP_CACHE_KEY`` are folded into
+    ``positive_cache`` as aliases of the copy that was kept.
     """
     cache: Dict[str, Dict] = {}
     neg_cache: set = set()
@@ -52,13 +62,19 @@ def _build_caches_from_existing(json_path: Path):
         if key == _NEG_CACHE_KEY and isinstance(entry, list):
             neg_cache.update(entry)
             continue
-        if not isinstance(entry, dict):
+        if not isinstance(entry, dict) or key.startswith('_'):
             continue
         candidates = [entry] + list(entry.get('all_questionnaires', []))
         for c in candidates:
             sha = c.get('_sha256')
             if sha:
                 cache[sha] = c
+
+    duplicates = data.get(_DUP_CACHE_KEY)
+    if isinstance(duplicates, dict):
+        for dropped_sha, kept_sha in duplicates.items():
+            if kept_sha in cache and dropped_sha not in cache:
+                cache[dropped_sha] = cache[kept_sha]
     return cache, neg_cache
 
 
@@ -641,6 +657,7 @@ def process_all_questionnaires(
     matters_dir: str = "data/raw/matters",
     cache: Optional[Dict[str, Dict]] = None,
     neg_cache: Optional[set] = None,
+    dup_shas: Optional[Dict[str, str]] = None,
 ) -> Dict[str, Dict]:
     """
     Process all questionnaire PDFs in the matters directory.
@@ -662,6 +679,9 @@ def process_all_questionnaires(
             confirmed NOT to be questionnaires. Used to skip the content
             detection fallback (which opens each PDF). Newly examined
             non-questionnaire PDFs are added to this set.
+        dup_shas: Optional mutable dict, filled with ``{dropped sha: kept
+            sha}`` for every re-download the dedup step collapses, so the
+            caller can persist it under ``_DUP_CACHE_KEY``.
         When ``cache``/``neg_cache`` are omitted, both are loaded from
         ``data/processed/questionnaire_data.json`` on disk.
 
@@ -788,13 +808,15 @@ def process_all_questionnaires(
         # deadline are identical (i.e. the scraper downloaded the same file
         # twice).  Different deadlines with the same base name means the ACCC
         # re-released the questionnaire with an extended deadline — keep both.
-        seen: set = set()
+        kept_sha_by_key: Dict[tuple, str] = {}
         unique = []
         for p in parsed:
             key = (_norm(p['file_name']), p.get('deadline_iso') or '')
-            if key not in seen:
-                seen.add(key)
+            if key not in kept_sha_by_key:
+                kept_sha_by_key[key] = p['_sha256']
                 unique.append(p)
+            elif dup_shas is not None and p['_sha256'] != kept_sha_by_key[key]:
+                dup_shas[p['_sha256']] = kept_sha_by_key[key]
 
         # Sort latest-first; treat missing deadline as oldest
         unique.sort(

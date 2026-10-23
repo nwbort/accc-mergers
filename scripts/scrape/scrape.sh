@@ -173,8 +173,19 @@ fetch_matter_page() {
   trap 'rm -f "$temp_html"' RETURN
 
   # Download the page. The --fail flag ensures curl exits with an error on HTTP failures (like 404).
-  if ! accc_curl --fail "$full_url" -o "$temp_html"; then
-      echo "FAILED: $full_url" >&2
+  #
+  # A run typically loses one or two of ~100 pages, a different few each time,
+  # and an unfetched page isn't revisited until the next run. Why they fail
+  # hasn't been seen (the status wasn't logged), so retry on any error rather
+  # than curl's transient-only default, which would skip an Akamai 403: no
+  # register page is known to fail for good, so a retried 404 costs seconds
+  # in a run that fetches 24 at a time. --max-time bounds each attempt, where a
+  # stalled fetch previously held its xargs slot until the job timed out.
+  local http_status
+  if ! http_status=$(accc_curl --fail --max-time 30 \
+         --retry 2 --retry-delay 5 --retry-all-errors \
+         -w '%{http_code}' "$full_url" -o "$temp_html"); then
+      echo "FAILED: $full_url (HTTP ${http_status:-000})" >&2
       record_fetch "failed" "" "$link"
       # Returning a non-zero status will cause xargs to stop
       return 1
