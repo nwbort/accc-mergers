@@ -49,6 +49,14 @@ class Sent(list):
     fail = False
 
 
+@pytest.fixture(autouse=True)
+def slept(monkeypatch):
+    """Seconds slept between links, recorded instead of waited out."""
+    calls = []
+    monkeypatch.setattr(share_links.time, "sleep", calls.append)
+    return calls
+
+
 @pytest.fixture
 def sent(monkeypatch):
     calls = Sent()
@@ -98,6 +106,14 @@ def test_a_new_milestone_is_sent_once(state_file, configured, sent, monkeypatch)
     assert load_state(state_file)["posted"]["MN-02000:notified:2026-08-15"]["shareLink"]
     assert main([]) == 0
     assert sent == ["MN-02000:notified:2026-08-15"]
+
+
+def test_links_are_spaced_out(state_file, configured, sent, slept, monkeypatch):
+    save_state({"posted": {}, "seeded": True}, state_file)
+    use_matters(monkeypatch, [matter(), matter("MN-02000"), matter("MN-03000")])
+    assert main([]) == 0
+    assert len(sent) == 3
+    assert slept == [share_links.LINK_SPACING_SECONDS] * 2
 
 
 def test_an_undelivered_link_is_retried_next_run(state_file, configured, sent, monkeypatch):

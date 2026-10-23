@@ -27,7 +27,9 @@ workflow after the pipeline (``linkedin-share-links.yml``), with
 ``--wait-for-deploy``: a link is only sent once
 mergers.fyi serves the very detail file checked out for its matter.
 One that hasn't appeared by the deadline is left unsent and unrecorded, and
-the next run tries again.
+the next run tries again. When several links are due they go out
+``LINK_SPACING_SECONDS`` apart, since a phone handed a burst of them at once
+loses track.
 
 It shares ``data/processed/linkedin_posts.json`` with ``post_linkedin``: the
 first run seeds it, a milestone is recorded once its notification is
@@ -68,6 +70,10 @@ SHARE_URL = "https://www.linkedin.com/feed/"
 
 #: How often to look at the live site while waiting for a deploy.
 DEPLOY_POLL_SECONDS = 20
+
+#: Gap between notifications when several are due, so a phone isn't handed a
+#: burst of links at once.
+LINK_SPACING_SECONDS = 30
 
 
 def share_text(milestone: Milestone) -> str:
@@ -239,7 +245,9 @@ def main(argv: list[str] | None = None) -> int:
         batch = wait_for_deploy(batch, by_id, timeout=args.wait_for_deploy)
     failures = 0
     try:
-        for milestone in batch:
+        for index, milestone in enumerate(batch):
+            if index:
+                time.sleep(LINK_SPACING_SECONDS)
             if not notify(milestone, topic=topic, server=server, token=token):
                 failures += 1
                 continue
