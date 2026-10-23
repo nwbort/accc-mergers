@@ -411,14 +411,14 @@
       32,
       42
     ],
-    "as_at": "2026-10-23"
+    "as_at": "2026-10-24"
   },
   "current_status": {
-    "as_at": "2026-10-23",
+    "as_at": "2026-10-24",
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 39,
+        "notifications_filed": 38,
         "notifications": {
           "median": 18.0,
           "average": 19.0,
@@ -441,12 +441,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 18,
-          "average": 16.7,
-          "p90": 23,
+          "median": 17.0,
+          "average": 16.3,
+          "p90": 22,
           "min": 3,
           "max": 24,
-          "count": 59,
+          "count": 52,
           "duration_histogram": {
             "3": 1,
             "5": 1,
@@ -456,20 +456,20 @@
             "10": 1,
             "11": 1,
             "12": 2,
-            "13": 2,
+            "13": 1,
             "14": 2,
             "15": 5,
             "16": 6,
             "17": 3,
-            "18": 5,
-            "19": 9,
-            "20": 4,
+            "18": 4,
+            "19": 7,
+            "20": 3,
             "21": 3,
             "22": 2,
             "23": 2,
-            "24": 5
+            "24": 3
           },
-          "median_delta": 4
+          "median_delta": 3.0
         }
       },
       {
@@ -564,12 +564,12 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 19,
-          "average": 22.0,
+          "median": 19.0,
+          "average": 22.1,
           "p90": 40,
           "min": 7,
           "max": 74,
-          "count": 39,
+          "count": 38,
           "days": 30,
           "median_delta": 4.5
         },
@@ -951,11 +951,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 179,
+      "count": 180,
       "outcome_mix": {
-        "Approved": 179
+        "Approved": 180
       },
-      "median_business_days": 17
+      "median_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -975,20 +975,20 @@
       "median_business_days": null
     },
     {
-      "division": "Unknown",
-      "count": 2,
-      "outcome_mix": {
-        "Approved": 2
-      },
-      "median_business_days": 21.5
-    },
-    {
       "division": "Commissioner Woodward",
       "count": 1,
       "outcome_mix": {
         "Approved": 1
       },
       "median_business_days": 18
+    },
+    {
+      "division": "Unknown",
+      "count": 1,
+      "outcome_mix": {
+        "Approved": 1
+      },
+      "median_business_days": 21
     }
   ],
   "waiver_by_commission_division": [

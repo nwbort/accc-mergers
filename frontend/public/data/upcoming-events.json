@@ -3,16 +3,6 @@
     {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
-      "date": "2026-10-23T12:00:00Z",
-      "merger_id": "MN-15048",
-      "merger_name": "Camp Australia \u2013 Jabiru",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-10-15T12:00:00Z"
-    },
-    {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
       "date": "2026-10-26T12:00:00Z",
       "merger_id": "MN-01126",
       "merger_name": "IPLiving - Springwood Living Group",
@@ -532,6 +522,26 @@
       "effective_notification_datetime": "2026-05-12T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-12-22T12:00:00Z",
+      "merger_id": "MN-01072",
+      "merger_name": "Saipem S.p.A - Subsea7 S.A.",
+      "status": "Under assessment",
+      "stage": "Phase 2 - detailed assessment",
+      "effective_notification_datetime": "2026-04-27T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Public benefit determination due",
+      "date": "2026-12-22T12:00:00Z",
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "status": "Under assessment",
+      "stage": "Public benefit phase",
+      "effective_notification_datetime": "2026-03-03T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2027-03-30T12:00:00Z",
@@ -543,6 +553,6 @@
       "tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026"
     }
   ],
-  "count": 54,
+  "count": 55,
   "days_ahead": 60
 }
