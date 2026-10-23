@@ -86,6 +86,48 @@
         "completed_count": 1
       }
     },
+    "continental-global-holding-netherlands-b-v": {
+      "id": "continental-global-holding-netherlands-b-v",
+      "canonical_name": "Continental Global Holding Netherlands B.V.",
+      "members": [
+        {
+          "name": "Continental Global Holding Netherlands B.V.",
+          "identifier": "KVK 34298284",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60049",
+            "merger_name": "Tuhu \u2013 Conti Trade Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-29T12:00:00Z",
+            "determination_date": "2026-10-23T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
     "crowdstrike-inc": {
       "id": "crowdstrike-inc",
       "canonical_name": "CrowdStrike, Inc.",

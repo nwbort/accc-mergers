@@ -44406,13 +44406,13 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 18,
+        "estimated_days": 16,
         "min_days": 10,
         "max_days": 29,
-        "id_issued_estimated": "2026-09-21",
+        "id_issued_estimated": "2026-09-23",
         "id_issued_before": "2026-09-29",
         "id_issued_after": "2026-09-10",
-        "min_days_witness": "WA-60050",
+        "min_days_witness": "WA-60049",
         "max_days_witness": "WA-60047",
         "basis": "bracketed",
         "method_version": 1
@@ -118514,6 +118514,177 @@
           ],
           "targets": [
             "Built Living Holdings Pty Limited"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/tuhu-%E2%80%93-conti-trade-australia",
+      "merger_name": "Tuhu \u2013 Conti Trade Australia",
+      "status": "Assessment completed",
+      "merger_id": "WA-60049",
+      "effective_notification_datetime": "2026-09-29T12:00:00Z",
+      "original_notification_datetime": "2026-09-29T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-23T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-23T16:59:30+11:00",
+      "acquirers": [
+        {
+          "name": "TUHU Car Inc.",
+          "identifier_type": null,
+          "identifier": "Company No. 353269",
+          "party_page": {
+            "id": "tuhu-car-inc",
+            "name": "TUHU Car Inc."
+          }
+        },
+        {
+          "name": "TUHU Car (Hong Kong) Limited",
+          "identifier_type": null,
+          "identifier": "Company No. 71006223",
+          "party_page": {
+            "id": "tuhu-car-hong-kong-limited",
+            "name": "TUHU Car (Hong Kong) Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "TYRE AND AUTO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 164 707 484",
+          "party_page": {
+            "id": "tyre-and-auto-pty-ltd",
+            "name": "Tyre And Auto Pty Ltd"
+          }
+        },
+        {
+          "name": "Continental Global Holding Netherlands B.V.",
+          "identifier_type": null,
+          "identifier": "KVK 34298284",
+          "party_page": {
+            "id": "continental-global-holding-netherlands-b-v",
+            "name": "Continental Global Holding Netherlands B.V."
+          }
+        },
+        {
+          "name": "CONTI TRADE AUSTRALIA PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "11 600 284 777",
+          "party_page": {
+            "id": "conti-trade-australia-pty-ltd",
+            "name": "Conti Trade Australia Pty. Ltd."
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "3922",
+          "name": "Tyre Retailing"
+        },
+        {
+          "code": "9411",
+          "name": "Automotive Electrical Services"
+        },
+        {
+          "code": "9412",
+          "name": "Automotive Body, Paint and Interior Repair"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "merger_description": "TUHU Car (Hong Kong) Limited (**Tuhu**), via a special purpose vehicle, proposes to acquire 100% of the issued share capital in Conti Trade Australia Pty Ltd (**Conti Trade Australia**), a wholly owned subsidiary of Continental Global Holding Netherlands B.V. (the **Acquisition**). TUHU Car Inc. is the guarantor for Tuhu\u2019s obligations under the share sale and purchase agreement.\n\nTuhu is a Hong Kong Stock Exchange listed company that operates an automotive service network in China, Hong Kong, Malaysia and the United States. Tuhu combines its offline physical workshops with online portals which manage customer service, inventory and supply chains, and workshop operations. Tuhu (including its connected entities) does not have any operational presence in Australia.\n\nConti Trade Australia holds owns 100% of the issued share capital in Tyre and Auto Pty Ltd, which trades as mycar Tyre & Auto (**mycar**) \u2013 the former Kmart Tyre & Auto Service. mycar is a tyre, automotive service and repair business, operating in approximately 279 locations across Australia. There are mycar\u00a0sites in all Australian states and territories.",
+      "events": [
+        {
+          "date": "2026-10-23T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Tuhu%20-%20Conti%20Trade%20Australia%20%28WA-60049%29%20-%20Notification%20waiver%20determination%20-%2023%20October%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "TUHU Car (Hong Kong) Limited (Tuhu), via a special purpose vehicle,\nproposes to acquire 100% of the issued share capital in Conti Trade\nAustralia Pty Ltd (Conti Trade Australia) from Continental Global\nHoldings Netherlands B.V., as described in the transaction\ndocuments provided as part of the application (the Acquisition).\nTUHU Car Inc. is the guarantor for Tuhu\u2019s obligations under the share\nsale and purchase agreement.\nTuhu and TUHU Car Inc. applied for a notification waiver in respect\nof the Acquisition."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "23 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Tuhu, is a Hong Kong Stock Exchange listed company\nthat operates an automotive service network in China, Hong Kong,\nMalaysia and the United States. Tuhu combines its offline physical\nworkshops with online portals that manage customer service,\ninventory and supply chains, and workshop operations. Tuhu\n(including its connected entities) does not have any operational\npresence in Australia.\nThe target, Conti Trade Australia, holds 100% of the issued share\ncapital in Tyre and Auto Pty Ltd, which trades as mycar Tyre & Auto\n(mycar) \u2013 the former Kmart Tyre & Auto Service. mycar is a tyre,\nautomotive service and repair business operating in approximately\n279 locations across Australia. There are mycar sites in all\nAustralian states and territories."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given there is no horizontal overlap or\nvertical relationship between Tuhu and Conti Trade Australia in the\nsupply of automotive aftermarket services in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-60049/Tuhu - Conti Trade Australia (WA-60049) - Notification waiver determination - 23 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-29T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-90006",
+          "merger_name": "CARe \u2013 MotorOne Autobody",
+          "acquirers": [
+            "CARE AUTOBODY PTY LTD"
+          ],
+          "targets": [
+            "MOTORONE AUTOBODY PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-80024",
+          "merger_name": "Allianz \u2013 certain assets of nib\u2019s Australian travel insurance business",
+          "acquirers": [
+            "AWP Australia Pty Ltd"
+          ],
+          "targets": [
+            "nib Travel Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-01119",
+          "merger_name": "Triton - Bureau Veritas Fuel & Coal Testing, Inspection and Certification Division",
+          "acquirers": [
+            "Power BidCo US LLC",
+            "Power BidCo Netherlands B.V."
+          ],
+          "targets": [
+            "IOL Investments B.V.",
+            "Inspectorate International Ltd"
           ],
           "accc_determination": "Approved"
         }

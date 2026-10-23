@@ -1,6 +1,6 @@
 {
   "total_mergers": 301,
-  "total_waivers": 468,
+  "total_waivers": 469,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 253,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 443,
+    "Approved": 444,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.55982905982906,
-    "median_days": 21.0,
-    "average_business_days": 14.057692307692308,
-    "median_business_days": 14.0
+    "average_days": 20.567164179104477,
+    "median_days": 21,
+    "average_business_days": 14.063965884861407,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60049",
+      "merger_name": "Tuhu \u2013 Conti Trade Australia",
+      "determination": "Approved",
+      "determination_date": "2026-10-23T12:00:00Z",
+      "page_modified_datetime": "2026-10-23T16:59:30+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-70039",
       "merger_name": "Architectus \u2013 SBA",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-20T12:00:00Z",
       "page_modified_datetime": "2026-10-20T17:32:03+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-55038",
-      "merger_name": "Woodside \u2013 PetroChina\u2019s interest in Browse unincorporated joint venture",
-      "determination": "Approved",
-      "determination_date": "2026-10-20T12:00:00Z",
-      "page_modified_datetime": "2026-10-20T17:17:39+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
