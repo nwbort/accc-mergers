@@ -55343,6 +55343,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-19T12:00:00Z",
+          "title": "Phase 1 Consultation",
+          "display_title": "Phase 1 Consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/ABB%20-%20Rotork%20%28MN-75061%29%20-%20Third-party%20questionnaire%20-%2019%20Oct%202026_1.docx",
+          "url_gh": "/mergers/MN-75061/ABB - Rotork (MN-75061) - Third-party questionnaire - 19 Oct 2026_1.pdf",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
@@ -55354,6 +55363,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "MN-90027",
@@ -55392,17 +55402,17 @@
         }
       ],
       "phase_1_estimate": {
-        "expected_business_days": 18,
+        "expected_business_days": 17,
         "range_business_days": [
-          16,
-          21
+          15,
+          19
         ],
-        "basis": "global",
-        "question_bucket": null,
-        "question_count": null,
-        "sample_size": 255,
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 180,
         "as_of": "2026-10-17",
-        "estimated_at": "2026-10-19",
+        "estimated_at": "2026-10-23",
         "method_version": 2
       },
       "pre_notification": {
