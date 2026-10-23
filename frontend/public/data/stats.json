@@ -1,10 +1,10 @@
 {
-  "total_mergers": 300,
+  "total_mergers": 301,
   "total_waivers": 468,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 252,
-    "Under assessment": 43,
+    "Under assessment": 44,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-35035",
+      "merger_name": "Sun Pharma - Organon",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-22T12:00:00Z",
+      "page_modified_datetime": "2026-10-23T12:49:59+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-45032",
       "merger_name": "Novotech - Agilex",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-15T12:00:00Z",
       "page_modified_datetime": "2026-10-16T15:31:05+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-20040",
-      "merger_name": "Tabcorp - BetMakers",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-15T12:00:00Z",
-      "page_modified_datetime": "2026-10-15T19:10:57+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
