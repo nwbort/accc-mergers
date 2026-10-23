@@ -1,18 +1,31 @@
 /**
- * The promo banner the dashboard is currently running, or null to run none.
+ * The promo banners the dashboard runs, in priority order.
  *
- * Everything that makes a campaign a campaign lives here; PromoCard just
- * renders it. To switch the banner to a different page, rewrite this object -
- * and give `campaign` a new id, because it keys the localStorage dismissal so
- * a new id brings the card back for everyone who dismissed the previous one.
+ * Everything that makes a campaign a campaign lives here; PromoStack shows the
+ * first one the reader hasn't dismissed, and the next steps up into its place
+ * when they dismiss it. Empty the list to run none.
+ *
+ * `campaign` keys the localStorage dismissal. To point a banner at something
+ * new, give it a new id, so it comes back for everyone who dismissed the old
+ * one; reusing an id keeps it hidden from them.
  */
 
-import { FaGaugeHigh } from 'react-icons/fa6';
+import { FaGaugeHigh, FaFileLines } from 'react-icons/fa6';
 
-export const DASHBOARD_PROMO = {
-  campaign: 'current-status-v1',
-  to: '/current-status',
-  icon: FaGaugeHigh,
-  title: 'How fast is the ACCC deciding mergers right now?',
-  description: 'See recent waiver and phase 1 decision times against the all-time baseline.',
-};
+export const DASHBOARD_PROMOS = [
+  {
+    campaign: 'current-status-v1',
+    to: '/current-status',
+    icon: FaGaugeHigh,
+    title: 'How fast is the ACCC deciding mergers right now?',
+    description: 'See recent waiver and phase 1 decision times against the all-time baseline.',
+  },
+  {
+    // Names its quarter, so a new quarter wants a new id, link and title.
+    campaign: 'quarterly-report-26Q3',
+    to: '/quarterly/26Q3',
+    icon: FaFileLines,
+    title: 'The Q3 2026 quarterly merger report is out',
+    description: 'Volumes, clearance rates, timing and Tribunal reviews for the quarter, with a PDF to download.',
+  },
+];

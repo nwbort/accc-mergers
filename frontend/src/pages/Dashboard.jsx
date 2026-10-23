@@ -9,8 +9,8 @@ import ErrorMessage from '../components/ErrorMessage';
 import UpcomingEventsTimeline from '../components/UpcomingEventsTimeline';
 import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
 import RecentMergersCards from '../components/RecentMergersCards';
-import PromoCard from '../components/PromoCard';
-import { DASHBOARD_PROMO } from '../constants/promo';
+import PromoStack from '../components/PromoStack';
+import { DASHBOARD_PROMOS } from '../constants/promo';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { getCalendarDaysUntil, isDatePast } from '../utils/dates';
@@ -193,7 +193,7 @@ function Dashboard() {
         />
       </div>
 
-      {DASHBOARD_PROMO && <PromoCard {...DASHBOARD_PROMO} />}
+      <PromoStack promos={DASHBOARD_PROMOS} />
 
       {/* Recent Determinations */}
       {stats.recent_determinations && (
