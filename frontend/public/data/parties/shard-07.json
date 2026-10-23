@@ -68,6 +68,48 @@
         "completed_count": 3
       }
     },
+    "anz-australian-staff-superannuation-scheme": {
+      "id": "anz-australian-staff-superannuation-scheme",
+      "canonical_name": "ANZ Australian Staff Superannuation Scheme",
+      "members": [
+        {
+          "name": "ANZ Australian Staff Superannuation Scheme",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-45033",
+            "merger_name": "ANZ Australian Staff Superannuation Scheme \u2013 further investment in Vinva Australian Equities Fund unit trust",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-01T12:00:00Z",
+            "determination_date": "2026-10-23T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
     "australian-cash-services-jvco": {
       "id": "australian-cash-services-jvco",
       "canonical_name": "Australian Cash Services (JVCo)",

@@ -44,6 +44,48 @@
       },
       "waiver_duration": null
     },
+    "anz-staff-superannuation-australia-pty-limited": {
+      "id": "anz-staff-superannuation-australia-pty-limited",
+      "canonical_name": "Anz Staff Superannuation (Australia) Pty. Limited",
+      "members": [
+        {
+          "name": "ANZ STAFF SUPERANNUATION (AUSTRALIA) PTY. LIMITED",
+          "identifier": "92 006 680 664",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45033",
+            "merger_name": "ANZ Australian Staff Superannuation Scheme \u2013 further investment in Vinva Australian Equities Fund unit trust",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-01T12:00:00Z",
+            "determination_date": "2026-10-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
     "apollo-australia-bidco-pty-ltd": {
       "id": "apollo-australia-bidco-pty-ltd",
       "canonical_name": "Apollo Australia Bidco Pty Ltd",

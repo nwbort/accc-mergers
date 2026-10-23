@@ -35218,15 +35218,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 39,
-        "min_days": null,
+        "estimated_days": 29,
+        "min_days": 19,
         "max_days": 46,
-        "id_issued_estimated": "2026-09-11",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-09-21",
+        "id_issued_before": "2026-10-01",
         "id_issued_after": "2026-09-04",
-        "min_days_witness": null,
+        "min_days_witness": "WA-45033",
         "max_days_witness": "WA-45031",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -55619,15 +55619,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 32,
-        "min_days": null,
+        "estimated_days": 29,
+        "min_days": 4,
         "max_days": 39,
-        "id_issued_estimated": "2026-09-15",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-09-18",
+        "id_issued_before": "2026-10-13",
         "id_issued_after": "2026-09-08",
-        "min_days_witness": null,
+        "min_days_witness": "WA-75069",
         "max_days_witness": "WA-75060",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -107863,6 +107863,148 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/anz-australian-staff-superannuation-scheme-%E2%80%93-further-investment-in-vinva-australian-equities-fund-unit-trust",
+      "merger_name": "ANZ Australian Staff Superannuation Scheme \u2013 further investment in Vinva Australian Equities Fund unit trust",
+      "status": "Assessment completed",
+      "merger_id": "WA-45033",
+      "effective_notification_datetime": "2026-10-01T12:00:00Z",
+      "original_notification_datetime": "2026-10-01T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-23T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-23T17:02:59+11:00",
+      "acquirers": [
+        {
+          "name": "ANZ STAFF SUPERANNUATION (AUSTRALIA) PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "92 006 680 664",
+          "party_page": {
+            "id": "anz-staff-superannuation-australia-pty-limited",
+            "name": "Anz Staff Superannuation (Australia) Pty. Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Vinva Australian Equities Fund (ARSN 144 766 530)",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "vinva-australian-equities-fund-arsn-144-766-530",
+            "name": "Vinva Australian Equities Fund (ARSN 144 766 530)"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ANZ Australian Staff Superannuation Scheme",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "anz-australian-staff-superannuation-scheme",
+            "name": "ANZ Australian Staff Superannuation Scheme"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "The proposed acquisition is the issue of units in the Vinva Australian Equities Fund (the **Vinva Fund**) to ANZ Staff Superannuation (Australia) Pty Limited (the **Super Trustee**) in its capacity as trustee of the ANZ Australian Staff Superannuation Scheme (the **Scheme**), in consideration for the Super Trustee investing $150 million into the Vinva Fund as a passive investment (the **Acquisition**).\n\nThe Super Trustee is a non-controlled subsidiary of Australia and New Zealand Banking Group Limited (**ANZ**). ANZ and other ANZ subsidiaries (who are connected entities of the Super Trustee) provide banking and other financial services in Australia and internationally to wholesale and retail clients. ANZ also offers investment advisory services to individual investors under its \u2018Private Bank\u2019 brand, which includes giving advice about, and arranging investments in, managed investment products.\n\nThe sole business of the Super Trustee is the provision of superannuation benefits and superannuation products to current and former ANZ Bank group employees and their spouses/partners in the Super Trustee\u2019s capacity as trustee of the Scheme, an APRA-regulated complying superannuation fund.  \n\nVinva Investment Management Limited (**Vinva**), the operator and responsible entity of the Vinva Fund, operates in the market of providing managed investment products to wholesale and, indirectly, retail investors throughout Australia.\n\nThe Acquisition would increase the Super Trustee\u2019s existing holding in the Vinva Fund to more than 20% of the issued units. The Super Trustee\u2019s involvement with the Vinva Fund and Vinva is as a passive investor in investments offered by the Vinva, including the Vinva Fund.",
+      "events": [
+        {
+          "date": "2026-10-23T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/ANZ%20Australian%20Staff%20Superannuation%20Scheme%20%E2%80%93%20further%20investment%20in%20Vinva%20Australian%20Equities%20Fund%20unit%20trust%20%28WA-45033%29%20-%20Notification%20waiver%20determination%20-%2023%20October%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "ANZ Staff Superannuation (Australia) Pty Limited (the Super\nTrustee) in its capacity as trustee of the ANZ Australian Staff\nSuperannuation Scheme (the Scheme) applied for a notification\nwaiver in respect of its proposed further investment of $150 million\nfor units in the Vinva Australian Equities Fund (the Vinva Fund), as\ndescribed in the documents provided as part of the application (the\nAcquisition).\nThe Acquisition would increase the Super Trustee\u2019s existing holding\nin the Vinva Fund to more than 20% of the issued units."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "23 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The Super Trustee\u2019s sole business is the provision of superannuation\nbenefits and superannuation products to current and former ANZ\nBank group employees and their spouses/partners in the Super\nTrustee\u2019s capacity as trustee of the Scheme, an APRA-regulated\ncomplying superannuation fund.\nThe Super Trustee is a non-controlled subsidiary of Australia and\nNew Zealand Banking Group Limited (ANZ). ANZ and other ANZ\nsubsidiaries (who are connected entities of the Super Trustee)\nprovide banking and other financial services in Australia and\ninternationally to wholesale and retail clients. ANZ also offers\ninvestment advisory services to individual investors under its \u2018Private\nBank\u2019 brand, which includes giving advice about, and arranging\ninvestments in, managed investment products.\nVinva Investment Management Limited (Vinva), the operator and\nresponsible entity of the Vinva Fund, operates in the market of\nproviding managed investment products to wholesale and, indirectly,\nretail investors throughout Australia."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the Acquisition does not result in any substantive change in\nthe control of the Vinva Fund, or the control of the entities\nwhich the Vinva Fund has interests in\nb. while the broader ANZ corporate group (through its \u2018Private\nBank\u2019 brand) and Vinva overlap in the supply of managed\ninvestment products, the Super Trustee must perform its\nduties and exercise its powers in the best financial interests\nof the Scheme\u2019s beneficiaries.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-45033/ANZ Australian Staff Superannuation Scheme \u2013 further investment in Vinva Australian Equities Fund unit trust (WA-45033) - Notification waiver determination - 23 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-01T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-35030",
+          "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
+          "acquirers": [
+            "AUSTRALIAN ADMINISTRATION SERVICES PTY. LIMITED"
+          ],
+          "targets": [
+            "GROW TECHNOLOGY SERVICES LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-35047",
+          "merger_name": "REST \u2013 Quinbrook III Partnership and Quinbrook III (AU) Co-Investment Trust",
+          "acquirers": [
+            "Retail Employees Superannuation Trust"
+          ],
+          "targets": [
+            "Quinbrook III SCSp",
+            "Quinbrook III (AU) Co-Investment Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-80041",
+          "merger_name": "REST - Perth Airport",
+          "acquirers": [
+            "Retail Employees Superannuation Pty Limited as the Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST"
+          ],
+          "targets": [
+            "PERTH AIRPORT DEVELOPMENT GROUP PTY LTD",
+            "Australian Retirement Trust Pty Ltd as trustee for ART Infrastructure Trust 3"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/francisco-partners-sermo",
       "merger_name": "Francisco Partners - Sermo",
       "status": "Assessment completed",
@@ -130746,6 +130888,183 @@
             "Avendus Capital Private Limited"
           ],
           "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/australian-rugby-league-commission-%E2%80%93-novotel-sydney-international-airport-nsw",
+      "merger_name": "Australian Rugby League Commission \u2013 Novotel Sydney International Airport, NSW",
+      "status": "Assessment completed",
+      "merger_id": "WA-75069",
+      "effective_notification_datetime": "2026-10-13T12:00:00Z",
+      "original_notification_datetime": "2026-10-13T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-23T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-23T17:02:06+11:00",
+      "acquirers": [
+        {
+          "name": "AUSTRALIAN RUGBY LEAGUE COMMISSION LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "94 003 107 293",
+          "party_page": {
+            "id": "australian-rugby-league-commission-limited",
+            "name": "Australian Rugby League Commission Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CHARTER HALL DIRECT SYDNEY AIRPORT FUND",
+          "identifier_type": "ABN",
+          "identifier": "20 437 274 197",
+          "party_page": {
+            "id": "charter-hall-direct-sydney-airport-fund",
+            "name": "Charter Hall Direct Sydney Airport Fund"
+          }
+        },
+        {
+          "name": "THE TRUST COMPANY (AUSTRALIA) LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "21 000 000 993",
+          "canonical": {
+            "id": "the-trust-company-australia-limited",
+            "name": "The Trust Company (Australia) Limited"
+          },
+          "party_page": {
+            "id": "the-trust-company-australia-limited",
+            "name": "The Trust Company (Australia) Limited"
+          }
+        },
+        {
+          "name": "CHARTER HALL FLK FUNDS MANAGEMENT LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "99 138 125 881",
+          "party_page": {
+            "id": "charter-hall-flk-funds-management-limited",
+            "name": "Charter Hall Flk Funds Management Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "4530",
+          "name": "Clubs (Hospitality)"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "9112",
+          "name": "Sports and Physical Recreation Clubs and Sports Professionals"
+        },
+        {
+          "code": "9114",
+          "name": "Sports and Physical Recreation Administrative Service"
+        },
+        {
+          "code": "9559",
+          "name": "Other Interest Group Services n.e.c."
+        }
+      ],
+      "merger_description": "Australian Rugby League Commission Limited (**ARLC**) proposes to acquire 100% of the freehold land interest, buildings,\u00a0licenses and business assets (both tangible and intangible) of the Novotel Sydney International Airport in Wolli Creek, New South Wales (the **Novotel**) from entities of Charter Hall, as described in the transaction documents provided as part of the application (the **Acquisition**).\n\nThe Novotel, located at 22 Levey Street, Wolli Creek, New South Wales, offers hotel accommodation services (and ancillary services related to the operation of a hotel).\n\nARLC is the peak administrative body of the sport of rugby league in Australia and as part of its broader investment strategy owns and operates accommodation and hospitality venues across New South Wales and Queensland.",
+      "events": [
+        {
+          "date": "2026-10-23T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Australian%20Rugby%20League%20Commission%20%E2%80%93%20Novotel%20Sydney%20International%20Airport%20%28WA-75069%29%20-%20Notification%20waiver%20determination%20-%2023%20October%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Australian Rugby League Commission Limited (ARLC) applied for a\nnotification waiver in respect of its proposed acquisition of 100% of\nthe freehold land interest, buildings, licenses and business assets\n(both tangible and intangible) of the Novotel Sydney International\nAirport in Wolli Creek, New South Wales (the Novotel) from entities\nof Charter Hall, as described in the transaction documents provided\nas part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "23 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, ARLC, is the peak administrative body of the sport of\nrugby league in Australia and as part of its broader investment\nstrategy owns and operates accommodation and hospitality venues\nacross New South Wales and Queensland.\nThe target, the Novotel, is located at 22 Levey Street, Wolli Creek,\nNew South Wales, and offers hotel accommodation services (and\nancillary services related to the operation of a hotel).\nThe vendor is The Trust Company (Australia) Limited as custodian\nfor the Charter Hall Direct Sydney Airport Fund and Charter Hall FLK\nFunds Management Limited, as trustee of the Charter Hall Direct\nSydney Airport Fund.\nARLC and the Novotel both supply short-term accommodation\nservices in Sydney, New South Wales."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. there is no horizontal overlap between ARLC and the Novotel\nin the supply of short-term accommodation in the Sydney\nAirport area, and only a very small overlap in Sydney more\nbroadly\nb. there are alternative suppliers of short-term accommodation\nin the Sydney Airport area and in Sydney more broadly.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-75069/Australian Rugby League Commission \u2013 Novotel Sydney International Airport (WA-75069) - Notification waiver determination - 23 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-13T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-90007",
+          "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+          "acquirers": [
+            "Volt Managed Investment Trust 2",
+            "Volt Managed Investment Trust 1"
+          ],
+          "targets": [
+            "VOLT HOLDCO PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-10011",
+          "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
+          "acquirers": [
+            "Wentworth Inn Prop TC Pty Ltd",
+            "Wentworth Inn OpCo II Pty Ltd"
+          ],
+          "targets": [
+            "THE TRUST COMPANY (AUSTRALIA) LIMITED",
+            "PEARL HOTELS D 1993 PTY LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-85053",
+          "merger_name": "Funds managed by New Forests \u2013 Forestry plantations of AKD",
+          "acquirers": [
+            "The Trustee for ANZLAFF Sub 4",
+            "The Trustee for ANZLAFF Sub 1"
+          ],
+          "targets": [
+            "HEYWOOD PLANTATIONS PTY LTD",
+            "ASSOCIATED KILN DRIERS PTY. LIMITED"
+          ],
+          "status": "Under assessment"
         }
       ]
     },
