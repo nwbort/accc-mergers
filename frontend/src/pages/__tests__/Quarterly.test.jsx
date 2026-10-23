@@ -328,11 +328,11 @@ describe('Quarterly report PDF link', () => {
   it('offers the quarter as a PDF, saved under its own name', async () => {
     renderPage();
     await ready();
-    expect(screen.getByRole('link', { name: 'Download PDF' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'Download report' })).toHaveAttribute(
       'download',
       'mergers-fyi-quarterly-merger-report-2026Q3.pdf'
     );
-    expect(screen.getByRole('link', { name: 'Download PDF' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'Download report' })).toHaveAttribute(
       'href',
       '/data/reports/mergers-fyi-quarterly-merger-report-2026Q3.pdf'
     );
