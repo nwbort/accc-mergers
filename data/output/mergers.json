@@ -69107,13 +69107,13 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 19,
-        "min_days": 1,
+        "estimated_days": 24,
+        "min_days": 11,
         "max_days": 44,
-        "id_issued_estimated": "2026-09-13",
-        "id_issued_before": "2026-10-01",
+        "id_issued_estimated": "2026-09-08",
+        "id_issued_before": "2026-09-21",
         "id_issued_after": "2026-08-19",
-        "min_days_witness": "MN-95044",
+        "min_days_witness": "WA-95045",
         "max_days_witness": "WA-95041",
         "basis": "bracketed",
         "method_version": 1
@@ -69266,15 +69266,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 18,
-        "min_days": null,
+        "estimated_days": 17,
+        "min_days": 10,
         "max_days": 43,
-        "id_issued_estimated": "2026-09-13",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-09-14",
+        "id_issued_before": "2026-09-21",
         "id_issued_after": "2026-08-19",
-        "min_days_witness": null,
+        "min_days_witness": "WA-95045",
         "max_days_witness": "WA-95041",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -148049,6 +148049,139 @@
           "targets": [
             "Li Jinyang",
             "Zhejiang Hanfeng Venture Capital Partnership (Limited Partnership)"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/aerfin-acquisition-of-aircraft-from-qantas",
+      "merger_name": "AerFin - acquisition of aircraft from Qantas",
+      "status": "Assessment completed",
+      "merger_id": "WA-95045",
+      "effective_notification_datetime": "2026-09-21T12:00:00Z",
+      "original_notification_datetime": "2026-09-21T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-23T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-23T17:14:15+11:00",
+      "acquirers": [
+        {
+          "name": "AerFin Limited",
+          "identifier_type": null,
+          "identifier": "CRN  07371844",
+          "party_page": {
+            "id": "aerfin-limited-2",
+            "name": "AerFin Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Qantas Airways Limited",
+          "identifier_type": "ABN",
+          "identifier": "16 009 661 901",
+          "party_page": {
+            "id": "qantas-airways-limited",
+            "name": "Qantas Airways Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3499",
+          "name": "Other Machinery and Equipment Wholesaling n.e.c."
+        },
+        {
+          "code": "4900",
+          "name": "Air and Space Transport"
+        }
+      ],
+      "merger_description": "AerFin Limited (**AerFin**) proposes to acquire Boeing 737-838 aircraft and engines from Qantas Airways Limited (**Qantas**), with delivery of each individual aircraft and engines due to take place progressively from October 2026 to May 2033 as the aircraft are retired by Qantas (the **Acquisition**).\n\nAerFin is a UK-headquartered global aviation services company specialising in aftermarket material supply (referred to as used serviceable material (**USM**)), aircraft and engine trading, and nose-to-tail component support solutions. AerFin buys, sells, leases and repairs aircraft, engines and parts. AerFin generally targets mid-life and end-of-life commercial aircraft and engines (typically 8-15 years old) and monetises them principally through teardown, repair and sale of USM, and from time to time through whole-asset sales, short-term leasing of engines or other high value parts and related support programmes. AerFin's customers are airlines, aircraft lessors and aircraft maintenance, repair and overhaul organisations. While AerFin does make some USM sales to customers in Australia, AerFin does not have a physical presence in Australia.\n\nQantas is an Australian-based domestic and international airline. Qantas also operates airline-related businesses including freight operations and loyalty programs, and various airline subsidiaries, namely Jetstar Airways Pty Limited (which operates domestic and international flights), regional airline QantasLink and Network Aviation.",
+      "events": [
+        {
+          "date": "2026-10-23T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/AerFin%20-%20acquisition%20of%20aircraft%20from%20Qantas%20%28WA-95045%29%20-%20Notification%20waiver%20determination%20-%2023%20October%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "AerFin Limited (AerFin) applied for a notification waiver in respect of\nits proposed acquisition of Boeing 737-838 aircraft and engines from\nQantas Airways Limited (Qantas) as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "23 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, AerFin, is a UK-headquartered global aviation services\ncompany specialising in aftermarket material supply (referred to as\nused serviceable material (USM)), aircraft and engine trading, and\nnose-to-tail component support solutions. AerFin buys, sells, leases\nand repairs aircraft, engines and parts. AerFin generally targets mid-\nlife and end-of-life commercial aircraft and engines (typically 8-15\nyears old) and monetises them principally through teardown, repair\nand sale of USM, and from time-to-time through whole-asset sales,\nshort-term leasing of engines or other high value parts and related\nsupport programmes. AerFin\u2019s customers are airlines, aircraft\nlessors and aircraft maintenance, repair and overhaul organisations.\nWhile AerFin does make some USM sales to customers in Australia,\nAerFin does not have a physical presence in Australia.\nQantas is an Australian-based domestic and international airline.\nQantas also operates airline-related businesses including freight\noperations and loyalty programs, and various airline subsidiaries,\nnamely Jetstar Airways Pty Limited (which operates domestic and\ninternational flights), regional airline QantasLink and Network\nAviation."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application, and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the Acquisition represents a small proportion of the total\nglobal supply of retired commercial aircraft\nb. there are alternative suppliers and acquirers of aircraft and\ncomponent parts globally.\n\u2022 In these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-95045/AerFin - acquisition of aircraft from Qantas (WA-95045) - Notification waiver determination - 23 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-21T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-90035",
+          "merger_name": "ORIX Aviation \u2013 AerFin",
+          "acquirers": [
+            "ORIX Aviation Systems Limited"
+          ],
+          "targets": [
+            "AerFin Limited",
+            "Atlantic Holdco Limited"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-30012",
+          "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
+          "acquirers": [
+            "ENDEAVOUR GROUP LIMITED"
+          ],
+          "targets": [
+            "UPPER HUNTER MOTORS PTY LTD",
+            "Bottlemart Muswellbrook"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-05034",
+          "merger_name": "Aurizon \u2013 transactions related to the relocation of a rail corridor at Moranbah North",
+          "acquirers": [
+            "AURIZON NETWORK PTY LTD"
+          ],
+          "targets": [
+            "Anglo American plc",
+            "QUEENSLAND TREASURY HOLDINGS PTY LTD"
           ],
           "accc_determination": "Approved"
         }

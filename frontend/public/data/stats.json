@@ -1,6 +1,6 @@
 {
   "total_mergers": 301,
-  "total_waivers": 474,
+  "total_waivers": 475,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 253,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 449,
+    "Approved": 450,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.548523206751057,
-    "median_days": 21.0,
-    "average_business_days": 14.056962025316455,
-    "median_business_days": 14.0
+    "average_days": 20.57263157894737,
+    "median_days": 21,
+    "average_business_days": 14.07578947368421,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-95045",
+      "merger_name": "AerFin - acquisition of aircraft from Qantas",
+      "determination": "Approved",
+      "determination_date": "2026-10-23T12:00:00Z",
+      "page_modified_datetime": "2026-10-23T17:14:15+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-05055",
       "merger_name": "Ochre Health - Health E Medical & Health E Allied Services, Vic",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-75045",
-      "merger_name": "EQT Fund Management - Intertek",
-      "determination": "Approved",
-      "determination_date": "2026-10-21T12:00:00Z",
-      "page_modified_datetime": "2026-10-21T12:32:29+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
