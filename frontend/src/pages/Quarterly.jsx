@@ -243,8 +243,13 @@ function days(value) {
  * Two quarters' distributions as side-by-side bars, each bucket's share of
  * its quarter's total so a busy quarter and a quiet one compare on shape. The
  * canvas is presentational; the sr-only table beside it carries the numbers.
+ *
+ * A bucket's two bars sit flush, sized by `categoryPercentage` (the share of
+ * the bucket's slot they fill) rather than capped at a thickness: a capped bar
+ * stays centred in its half of a wide slot, opening a gap between the pair.
  */
-function ShareChart({ id, caption, buckets, current, previous, color, height = 'h-64' }) {
+function ShareChart({ id, caption, buckets, current, previous, color, height = 'h-64', categoryPercentage = 0.8 }) {
+  const bar = { borderRadius: 4, barPercentage: 0.94, categoryPercentage };
   const currentShares = bucketShares(current.buckets);
   const previousShares = previous ? bucketShares(previous.buckets) : null;
   const datasets = [];
@@ -253,16 +258,14 @@ function ShareChart({ id, caption, buckets, current, previous, color, height = '
       label: previous.label,
       data: previousShares,
       backgroundColor: `${color}55`,
-      borderRadius: 4,
-      maxBarThickness: 28,
+      ...bar,
     });
   }
   datasets.push({
     label: current.label,
     data: currentShares,
     backgroundColor: color,
-    borderRadius: 4,
-    maxBarThickness: 28,
+    ...bar,
   });
   const options = {
     responsive: true,
@@ -391,6 +394,9 @@ function PreNotificationCard({ quarter, previous, buckets }) {
             current={{ label: quarter.label, ...pre }}
             previous={before?.count ? { label: previous.label, ...before } : null}
             color={COLORS.accent}
+            // A full-width card with few buckets: a narrower group keeps the
+            // bars about as thick as the half-width timing charts'.
+            categoryPercentage={0.5}
           />
         </div>
       </div>
