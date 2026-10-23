@@ -1,6 +1,6 @@
 {
   "total_mergers": 301,
-  "total_waivers": 471,
+  "total_waivers": 474,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 253,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 446,
+    "Approved": 449,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.547770700636942,
-    "median_days": 21,
-    "average_business_days": 14.05307855626327,
-    "median_business_days": 14
+    "average_days": 20.548523206751057,
+    "median_days": 21.0,
+    "average_business_days": 14.056962025316455,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 178
+      "count": 179
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,39 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05055",
+      "merger_name": "Ochre Health - Health E Medical & Health E Allied Services, Vic",
+      "determination": "Approved",
+      "determination_date": "2026-10-23T12:00:00Z",
+      "page_modified_datetime": "2026-10-23T17:06:44+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-15050",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Dentists of Tasmania clinic, Sorell, TAS",
+      "determination": "Approved",
+      "determination_date": "2026-10-23T12:00:00Z",
+      "page_modified_datetime": "2026-10-23T17:05:09+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-90043",
+      "merger_name": "Cerberus \u2013 Mechanical Engineering Business of Goodwin",
+      "determination": "Approved",
+      "determination_date": "2026-10-23T12:00:00Z",
+      "page_modified_datetime": "2026-10-23T17:04:04+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-45033",
       "merger_name": "ANZ Australian Staff Superannuation Scheme \u2013 further investment in Vinva Australian Equities Fund unit trust",
       "determination": "Approved",
@@ -315,39 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-85054",
-      "merger_name": "Xylem - Flow Controls",
-      "determination": "Approved",
-      "determination_date": "2026-10-21T12:00:00Z",
-      "page_modified_datetime": "2026-10-21T09:14:08+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-80043",
-      "merger_name": "Coles \u2013 supermarket site in Narangba East, Qld",
-      "determination": "Not approved",
-      "determination_date": "2026-10-20T12:00:00Z",
-      "page_modified_datetime": "2026-10-20T19:46:21+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-55039",
-      "merger_name": "Vermont Information Processing \u2013 Vintrace",
-      "determination": "Approved",
-      "determination_date": "2026-10-20T12:00:00Z",
-      "page_modified_datetime": "2026-10-20T17:40:00+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

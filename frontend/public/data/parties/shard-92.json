@@ -104,6 +104,48 @@
         "completed_count": 1
       }
     },
+    "goodwin-submersible-pumps-australia-pty-ltd": {
+      "id": "goodwin-submersible-pumps-australia-pty-ltd",
+      "canonical_name": "Goodwin Submersible Pumps Australia Pty Ltd",
+      "members": [
+        {
+          "name": "GOODWIN SUBMERSIBLE PUMPS AUSTRALIA PTY LTD",
+          "identifier": "86 601 155 837",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90043",
+            "merger_name": "Cerberus \u2013 Mechanical Engineering Business of Goodwin",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-09T12:00:00Z",
+            "determination_date": "2026-10-23T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
     "greenwich-care-pty-limited": {
       "id": "greenwich-care-pty-limited",
       "canonical_name": "Greenwich Care Pty Limited",
