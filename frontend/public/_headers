@@ -29,6 +29,11 @@
 #   reports the wrong content type here, the DNS TXT method at
 #   _atproto.mergers.fyi is the documented alternative — see docs/atproto.md.
 
+# - /assets/* is Vite's build output only (nothing in public/ lands there), and
+#   every filename carries a content hash, so a changed file is a new URL and
+#   the old one can be cached for good. /fonts/ is deliberately not included:
+#   its filenames are fixed, so a replaced font would stay stale for a year.
+
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
@@ -41,3 +46,6 @@
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
   Access-Control-Allow-Origin: *
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
