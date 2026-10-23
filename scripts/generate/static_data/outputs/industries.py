@@ -152,12 +152,26 @@ def _node_payload(
 
 
 def _write_division_file(industries_dir: Path, stem: str, payload: dict) -> str:
-    """Write one division file; returns the file name written."""
+    """Write one division file; returns the file name written.
+
+    One node and one merger summary per line, like ``mergers/list.json``:
+    compact on the wire (the largest division, Manufacturing, is about half
+    the size without an indent), but a pipeline commit still diffs as the
+    nodes and summaries that changed rather than one giant line.
+    """
+    def compact(value) -> str:
+        return json.dumps(value, ensure_ascii=False, separators=(',', ':'))
+
+    def keyed_lines(mapping: dict) -> str:
+        return ",\n".join(f"{compact(k)}:{compact(v)}" for k, v in mapping.items())
+
     out_path = industries_dir / f"{stem}.json"
     with open(out_path, 'w', encoding='utf-8') as f:
-        # Compact: these are machine-read payloads and the largest division
-        # (Manufacturing, 214 nodes) is about half the size without the indent.
-        json.dump(payload, f, separators=(',', ':'))
+        f.write(
+            f'{{"division":{compact(payload["division"])},\n'
+            f'"nodes":{{\n{keyed_lines(payload["nodes"])}\n}},\n'
+            f'"mergers":{{\n{keyed_lines(payload["mergers"])}\n}}}}\n'
+        )
     return out_path.name
 
 
