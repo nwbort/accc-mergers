@@ -21,37 +21,39 @@ function readDismissed(promos) {
 }
 
 /**
- * A queue of dismissible promo banners, shown one at a time.
+ * The dismissible promo banners, stacked.
  *
- * `promos` is in priority order (see constants/promo.js). The reader sees the
- * first campaign they haven't dismissed; dismissing it brings the next one up
- * into the same spot, and once every campaign is dismissed nothing renders.
- * Each dismissal is remembered per campaign id, so adding a campaign to the
- * list shows it to readers who dismissed the others without resurfacing
- * those.
+ * `promos` is in priority order (see constants/promo.js), top to bottom. Every
+ * campaign the reader hasn't dismissed is shown; dismissing one closes the gap
+ * and the ones below move up. Once every campaign is dismissed nothing
+ * renders. Each dismissal is remembered per campaign id, so adding a campaign
+ * to the list shows it to readers who dismissed the others without
+ * resurfacing those.
  */
 function PromoStack({ promos }) {
   const [dismissed, setDismissed] = useState(() => readDismissed(promos));
 
-  const current = promos.find(({ campaign }) => !dismissed.has(campaign));
+  const live = promos.filter(({ campaign }) => !dismissed.has(campaign));
 
-  const dismissCurrent = useCallback(() => {
-    if (!current) return;
+  const dismiss = useCallback((campaign) => {
     try {
-      localStorage.setItem(storageKey(current.campaign), '1');
+      localStorage.setItem(storageKey(campaign), '1');
     } catch {
       // Ignore storage failures (private browsing, quota) - the card just
       // reappears next visit.
     }
-    setDismissed((prev) => new Set(prev).add(current.campaign));
-  }, [current]);
+    setDismissed((prev) => new Set(prev).add(campaign));
+  }, []);
 
-  if (!current) return null;
+  if (live.length === 0) return null;
 
-  // Keyed by campaign so the next card mounts fresh rather than inheriting
-  // the dismissed one's DOM (and its hover state).
-  const { campaign, ...card } = current;
-  return <PromoCard key={campaign} {...card} onDismiss={dismissCurrent} />;
+  return (
+    <div className="mb-8 space-y-3">
+      {live.map(({ campaign, ...card }) => (
+        <PromoCard key={campaign} {...card} onDismiss={() => dismiss(campaign)} />
+      ))}
+    </div>
+  );
 }
 
 export default PromoStack;

@@ -26,7 +26,7 @@ function PromoCard({ to, icon: Icon, title, description, onDismiss }) {
   }, []);
 
   return (
-    <div className="relative mb-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-200 group bg-primary hover:bg-primary-dark">
+    <div className="relative rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-200 group bg-primary hover:bg-primary-dark">
       <Link to={to} onClick={clickThrough} className="flex items-center gap-4 p-6 pr-12 rounded-2xl">
         {Icon && (
           <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center text-xl text-white group-hover:scale-105 transition-transform duration-200">
@@ -40,7 +40,7 @@ function PromoCard({ to, icon: Icon, title, description, onDismiss }) {
       </Link>
       <button
         onClick={dismiss}
-        aria-label="Dismiss"
+        aria-label={`Dismiss: ${title}`}
         className="absolute top-1/2 right-4 -translate-y-1/2 text-white/70 hover:text-white transition-colors p-1"
       >
         <FaXmark className="h-3.5 w-3.5" aria-hidden="true" />

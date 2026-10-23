@@ -16,6 +16,10 @@ function renderStack(promos = PROMOS) {
   );
 }
 
+function bannerTitles() {
+  return screen.queryAllByRole('heading').map((h) => h.textContent);
+}
+
 describe('PromoStack', () => {
   beforeEach(() => {
     localStorage.clear();
@@ -27,37 +31,43 @@ describe('PromoStack', () => {
     vi.unstubAllGlobals();
   });
 
-  it('shows only the first campaign', () => {
+  it('stacks every campaign in list order', () => {
     renderStack();
+    expect(bannerTitles()).toEqual(['First banner', 'Second banner']);
     expect(screen.getByRole('link', { name: /First banner/ })).toHaveAttribute('href', '/first');
-    expect(screen.queryByText('Second banner')).toBeNull();
+    expect(screen.getByRole('link', { name: /Second banner/ })).toHaveAttribute('href', '/second');
   });
 
-  it('brings the next campaign up when one is dismissed, and remembers it', () => {
+  it('drops a dismissed campaign, closes the gap, and remembers it', () => {
     const { unmount } = renderStack();
-    fireEvent.click(screen.getByRole('button', { name: 'Dismiss' }));
-    expect(screen.queryByText('First banner')).toBeNull();
-    expect(screen.getByRole('link', { name: /Second banner/ })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Dismiss: First banner' }));
+    expect(bannerTitles()).toEqual(['Second banner']);
     expect(localStorage.getItem('promo_dismissed_first')).toBe('1');
+    expect(localStorage.getItem('promo_dismissed_second')).toBeNull();
 
     unmount();
     renderStack();
-    expect(screen.queryByText('First banner')).toBeNull();
-    expect(screen.getByText('Second banner')).toBeInTheDocument();
+    expect(bannerTitles()).toEqual(['Second banner']);
+  });
+
+  it('dismisses a lower banner without touching the ones above', () => {
+    renderStack();
+    fireEvent.click(screen.getByRole('button', { name: 'Dismiss: Second banner' }));
+    expect(bannerTitles()).toEqual(['First banner']);
+    expect(localStorage.getItem('promo_dismissed_second')).toBe('1');
   });
 
   it('skips a campaign dismissed on an earlier visit', () => {
     localStorage.setItem('promo_dismissed_first', '1');
     renderStack();
-    expect(screen.getByText('Second banner')).toBeInTheDocument();
+    expect(bannerTitles()).toEqual(['Second banner']);
   });
 
   it('renders nothing once every campaign is dismissed', () => {
     const { container } = renderStack();
-    fireEvent.click(screen.getByRole('button', { name: 'Dismiss' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Dismiss' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Dismiss: First banner' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Dismiss: Second banner' }));
     expect(container).toBeEmptyDOMElement();
-    expect(localStorage.getItem('promo_dismissed_second')).toBe('1');
   });
 
   it('renders nothing for an empty list', () => {

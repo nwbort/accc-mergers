@@ -1,9 +1,9 @@
 /**
  * The promo banners the dashboard runs, in priority order.
  *
- * Everything that makes a campaign a campaign lives here; PromoStack shows the
- * first one the reader hasn't dismissed, and the next steps up into its place
- * when they dismiss it. Empty the list to run none.
+ * Everything that makes a campaign a campaign lives here; PromoStack stacks
+ * every one the reader hasn't dismissed, top to bottom in this order, and the
+ * rest move up when they dismiss one. Empty the list to run none.
  *
  * `campaign` keys the localStorage dismissal. To point a banner at something
  * new, give it a new id, so it comes back for everyone who dismissed the old
