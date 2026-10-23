@@ -3,12 +3,12 @@
   "total_waivers": 468,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 252,
-    "Under assessment": 44,
+    "Assessment completed": 253,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 245,
+    "Approved": 246,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 250,
+    "cleared": 251,
     "not_cleared": 2,
-    "total": 252,
+    "total": 253,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.56201550387597,
-    "median_days": 26.0,
-    "average_business_days": 20.108527131782946,
-    "median_business_days": 18.0,
+    "average_days": 29.536679536679536,
+    "median_days": 26,
+    "average_business_days": 20.092664092664094,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 56,
-        "percentage": 21.7
+        "percentage": 21.6
       },
       "day20": {
-        "count": 186,
-        "percentage": 72.1
+        "count": 187,
+        "percentage": 72.2
       },
       "day30": {
-        "count": 241,
+        "count": 242,
         "percentage": 93.4
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-70039",
+      "merger_name": "Architectus \u2013 SBA",
+      "determination": "Approved",
+      "determination_date": "2026-10-23T12:00:00Z",
+      "page_modified_datetime": "2026-10-23T15:44:53+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-90039",
       "merger_name": "Uber \u2013 Delivery Hero",
       "determination": "Not approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-75056",
-      "merger_name": "Visa - BioCatch",
-      "determination": "Approved",
-      "determination_date": "2026-10-20T12:00:00Z",
-      "page_modified_datetime": "2026-10-20T13:33:38+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
