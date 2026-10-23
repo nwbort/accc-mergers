@@ -22,9 +22,13 @@
       "name": "Cerberus Capital Management, L.P.",
       "identifier_type": null,
       "identifier": "Company number  2332406",
+      "canonical": {
+        "id": "cerberus-capital-management-lp",
+        "name": "Cerberus Capital Management LP"
+      },
       "party_page": {
-        "id": "cerberus-capital-management-l-p",
-        "name": "Cerberus Capital Management, L.P."
+        "id": "cerberus-capital-management-lp",
+        "name": "Cerberus Capital Management LP"
       }
     }
   ],
@@ -33,6 +37,10 @@
       "name": "Goodwin PLC",
       "identifier_type": null,
       "identifier": "CRN  00305907",
+      "canonical": {
+        "id": "goodwin-plc",
+        "name": "Goodwin PLC"
+      },
       "party_page": {
         "id": "goodwin-plc",
         "name": "Goodwin PLC"
@@ -89,9 +97,13 @@
       "name": "Goodwin International Limited",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "goodwin-plc",
+        "name": "Goodwin PLC"
+      },
       "party_page": {
-        "id": "goodwin-international-limited",
-        "name": "Goodwin International Limited"
+        "id": "goodwin-plc",
+        "name": "Goodwin PLC"
       }
     }
   ],
