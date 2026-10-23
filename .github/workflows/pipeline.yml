@@ -647,6 +647,16 @@ jobs:
                 | grep -qx "data/output/cli/cli-manifest.json"; then
               echo "publish_cli=true" >> "$GITHUB_OUTPUT"
             fi
+            # Same reason for the quarterly report PDFs: quarterly-report.yml
+            # can't watch quarterly.json with a push trigger, so it is
+            # dispatched (which GITHUB_TOKEN can do) when this commit moved it.
+            # A new quarter first appears here too, once it has ended.
+            if [ "$GITHUB_REF" = "refs/heads/main" ] \
+                && git diff HEAD^..HEAD --name-only \
+                | grep -qx "frontend/public/data/quarterly.json"; then
+              gh workflow run quarterly-report.yml --ref main \
+                || echo "::warning::Could not dispatch quarterly-report.yml"
+            fi
           fi
 
       # The LinkedIn share links (the stopgap until the API is approved) are
