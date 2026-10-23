@@ -55,7 +55,6 @@ REPORTS_DIRNAME = "reports"
 PRIMARY = colors.HexColor("#335145")
 TEAL = colors.HexColor("#6b8f7f")
 CORAL = colors.HexColor("#e07a5f")    # chartColors accent: pre-notification
-SAGE = colors.HexColor("#8cafa0")
 INK = colors.HexColor("#111827")
 MUTED = colors.HexColor("#6b7280")
 RULE = colors.HexColor("#e5e7eb")
@@ -296,31 +295,41 @@ def _axis(chart: VerticalBarChart, value: float) -> None:
     chart.valueAxis.valueStep = step
 
 
+def _volume_quarter_colour(index: int, count: int, selected: bool) -> colors.Color:
+    """The selected quarter in full primary, the others faded behind it, older ones fainter."""
+    if selected:
+        return PRIMARY
+    alpha = 0.2 + 0.35 * index / (count - 1) if count > 1 else 0.4
+    return colors.Color(PRIMARY.red, PRIMARY.green, PRIMARY.blue, alpha=alpha)
+
+
 def _volume_chart(quarters: list[dict], selected: dict) -> Drawing:
     width, height = CONTENT_W, 62 * mm
     drawing = Drawing(width, height)
     series = [
-        ("Notifications filed", lambda q: q["notifications"]["filed"], PRIMARY),
-        ("Phase 1 reviews concluded", lambda q: q["notifications"]["phase_1_decided"], SAGE),
-        ("Waivers decided", lambda q: q["waivers"]["decided"], TEAL),
+        ("Notifications filed", lambda q: q["notifications"]["filed"]),
+        ("Phase 1 reviews concluded", lambda q: q["notifications"]["phase_1_decided"]),
+        ("Waivers decided", lambda q: q["waivers"]["decided"]),
     ]
+    # Grouped by measure, one bar per quarter within each, so a measure's
+    # change over time sits side by side.
     chart = VerticalBarChart()
     chart.x, chart.y = 26, 40
     chart.width, chart.height = width - 34, height - 50
-    chart.data = [[get(q) for q in quarters] for _, get, _ in series]
-    chart.categoryAxis.categoryNames = [q["label"] for q in quarters]
+    chart.data = [[get(q) for _, get in series] for q in quarters]
+    chart.categoryAxis.categoryNames = [name for name, _ in series]
     _style_axes(chart)
     _axis(chart, max(max(row) for row in chart.data) or 1)
     chart.barSpacing = 1.5
     chart.groupSpacing = 14
-    for i, (_, _, colour) in enumerate(series):
+    shades = [
+        _volume_quarter_colour(i, len(quarters), q["quarter"] == selected["quarter"])
+        for i, q in enumerate(quarters)
+    ]
+    for i, colour in enumerate(shades):
         chart.bars[i].fillColor = colour
-        # The selected quarter in full colour, the others faded behind it.
-        for j, q in enumerate(quarters):
-            if q["quarter"] != selected["quarter"]:
-                chart.bars[(i, j)].fillColor = colors.Color(colour.red, colour.green, colour.blue, alpha=0.4)
     drawing.add(chart)
-    drawing.add(_legend(26, 0, [(c, name) for name, _, c in series]))
+    drawing.add(_legend(26, 0, [(c, q["label"]) for c, q in zip(shades, quarters)]))
     return drawing
 
 
@@ -538,20 +547,28 @@ def _milestones(q: dict) -> list:
             Spacer(1, 6)]
     if not q["milestones"]:
         return flow + [_p("Nothing went beyond phase 1 this quarter.", "caption")]
+    # One run per matter: the matter named once in the first column, spanning
+    # its rows, and the earlier steps in it (context rows) set in italics.
+    milestones = q["milestones"]
+    starts = [i for i, m in enumerate(milestones) if i == 0 or milestones[i - 1]["merger_id"] != m["merger_id"]]
     rows = []
-    for m in q["milestones"]:
-        url = SITE + merger_path(m["merger_id"], m["merger_name"])
-        matter = f'<link href="{escape(url)}" color="#335145">{escape(m["merger_name"])}</link>'
-        if m.get("detail"):
-            matter += f' <font color="#6b7280">· {escape(m["detail"])}</font>'
+    for i, m in enumerate(milestones):
+        styled = (lambda text: f"<i>{text}</i>") if m.get("context") else (lambda text: text)
+        if i in starts:
+            url = SITE + merger_path(m["merger_id"], m["merger_name"])
+            matter = _p(f'<link href="{escape(url)}" color="#335145">{escape(m["merger_name"])}</link>', "small")
+        else:
+            matter = ""
         rows.append([
-            _p(f'<font color="#6b7280">{_short_date(m["date"])}</font>', "small"),
-            _p(f'<b>{escape(m["label"])}</b>', "small"),
-            _p(matter, "small"),
+            matter,
+            _p(styled(f'<font color="#6b7280">{_short_date(m["date"])}</font>'), "small"),
+            _p(styled(f'<b>{escape(m["label"])}</b>'), "small"),
         ])
-    table = Table(rows, colWidths=[24 * mm, 48 * mm, CONTENT_W - 72 * mm], repeatRows=0)
+    ends = starts[1:] + [len(milestones)]
+    table = Table(rows, colWidths=[80 * mm, 24 * mm, CONTENT_W - 104 * mm], repeatRows=0)
     table.setStyle(TableStyle([
-        ("LINEABOVE", (0, 0), (-1, -1), 0.4, RULE),
+        *[("LINEABOVE", (0, i), (-1, i), 0.4, RULE) for i in starts],
+        *[("SPAN", (0, i), (0, end - 1)) for i, end in zip(starts, ends) if end - 1 > i],
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("LEFTPADDING", (0, 0), (-1, -1), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 6),

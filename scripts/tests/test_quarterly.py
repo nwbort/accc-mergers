@@ -53,6 +53,11 @@ def _waiver(merger_id, filed, decided, determination='Approved', **extra):
 AS_AT = date(2026, 10, 22)
 
 
+def _own(milestones):
+    """A quarter's own milestones, without the earlier rows shown as context."""
+    return [e for e in milestones if not e.get('context')]
+
+
 def _quarter(payload, key):
     return next(q for q in payload['quarters'] if q['quarter'] == key)
 
@@ -143,15 +148,49 @@ class TestMilestones:
             appeals=[{'filed_date': '2026-10-02', 'appellant': 'Rival'}],
         )
         payload = quarterly.generate([m], as_at=AS_AT)
-        assert [e['kind'] for e in _quarter(payload, '2026-Q2')['milestones']] == ['referred']
-        q3 = _quarter(payload, '2026-Q3')['milestones']
+        assert [e['kind'] for e in _own(_quarter(payload, '2026-Q2')['milestones'])] == ['referred']
+        q3 = _own(_quarter(payload, '2026-Q3')['milestones'])
         # A phase 2 outcome is listed as the outcome itself, with no separate detail.
         assert q3 == [{
             'merger_id': 'MN-1', 'merger_name': 'MN-1 deal', 'kind': 'phase_2_outcome',
             'date': '2026-08-20', 'label': 'Approved with conditions',
         }]
         q4 = _quarter(quarterly.generate([m], as_at=date(2027, 1, 5)), '2026-Q4')['milestones']
-        assert [(e['label'], e['detail']) for e in q4] == [('Tribunal review sought', 'Rival')]
+        assert [(e['label'], e['detail']) for e in _own(q4)] == [('Tribunal review sought', 'Rival')]
+
+    def test_a_quarters_milestones_are_grouped_by_matter(self):
+        first = _notification(
+            'MN-1', '2026-03-02', 'Referred to phase 2', '2026-04-14',
+            stage='Phase 2 - detailed assessment',
+            phase_2_determination='Not approved', phase_2_determination_date='2026-07-01T12:00:00Z',
+            appeals=[{'filed_date': '2026-07-15', 'appellant': 'Acquirer'}],
+        )
+        second = _notification('MN-2', '2026-05-01', 'Referred to phase 2', '2026-07-02')
+        q3 = _quarter(quarterly.generate([first, second], as_at=AS_AT), '2026-Q3')['milestones']
+        # MN-1's appeal follows its own outcome rather than MN-2's earlier referral,
+        # and each matter opens with how it got there, marked as context.
+        assert [(e['merger_id'], e['kind'], e.get('context', False)) for e in q3] == [
+            ('MN-1', 'notified', True), ('MN-1', 'referred', True),
+            ('MN-1', 'phase_2_outcome', False), ('MN-1', 'tribunal_application', False),
+            ('MN-2', 'notified', True), ('MN-2', 'referred', False),
+        ]
+        assert q3[0] == {
+            'merger_id': 'MN-1', 'merger_name': 'MN-1 deal', 'kind': 'notified',
+            'date': '2026-03-02', 'label': 'Notified', 'context': True,
+        }
+
+    def test_context_rows_are_not_counted_as_the_quarters_outcomes(self):
+        m = _notification(
+            'MN-1', '2026-03-02', 'Referred to phase 2', '2026-04-14',
+            stage='Phase 2 - detailed assessment',
+            phase_2_determination='Not approved', phase_2_determination_date='2026-06-20T12:00:00Z',
+            appeals=[{'filed_date': '2026-07-15', 'appellant': 'Acquirer'}],
+        )
+        q3 = _quarter(quarterly.generate([m], as_at=AS_AT), '2026-Q3')
+        assert [e['kind'] for e in q3['milestones'] if e.get('context')] == [
+            'notified', 'referred', 'phase_2_outcome',
+        ]
+        assert not any('phase 2 review' in f for f in q3['findings'])
 
     def test_a_refusal_at_phase_1_does_not_repeat_itself(self):
         m = _notification('MN-1', '2026-07-01', 'Not approved', '2026-08-01')

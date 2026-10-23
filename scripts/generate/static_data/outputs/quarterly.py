@@ -217,6 +217,7 @@ def _rate(numerator: int, denominator: int) -> float | None:
 
 #: How each milestone kind reads in the page's and the PDF's list.
 MILESTONE_LABELS = {
+    "notified": "Notified",
     "referred": "Referred to phase 2",
     "phase_1_refused": "Not approved at phase 1",
     "ceased": "Phase 1 review ceased",
@@ -498,8 +499,44 @@ def _quarter_block(quarter, notifications, waivers, milestones, pre_notification
         "industries": _industries(arrivals),
         "appeals": _quarter_appeals(appeals, start, end),
         "commentary": commentary.get(quarter, []),
-        "milestones": [e for e in milestones if _quarter_of(e["date"]) == quarter],
+        "milestones": _with_context(
+            [e for e in milestones if _quarter_of(e["date"]) == quarter], milestones, notifications, start,
+        ),
     }
+
+
+def _with_context(events: list[dict], milestones: list[dict], notifications: list, start: date) -> list[dict]:
+    """The quarter's milestones, each matter's preceded by how it got there.
+
+    For every matter in the list, its notification and milestones from before
+    the quarter are added as ``context`` rows, so a Tribunal review lodged this
+    quarter reads after the referral and outcome that led to it. Context rows
+    are not the quarter's own and nothing counts them.
+    """
+    ids = {e["merger_id"] for e in events}
+    earlier = [
+        _matter_ref(m, "notified", m["effective_notification_datetime"])
+        for m in notifications
+        if m.get("merger_id") in ids and m.get("effective_notification_datetime")
+    ] + [e for e in milestones if e["merger_id"] in ids]
+    context = [{**e, "context": True} for e in earlier if e["date"] < start.isoformat()]
+    return _by_matter(events, context)
+
+
+def _by_matter(events: list[dict], context: list[dict] = ()) -> list[dict]:
+    """Milestones grouped by matter, each matter's in date order.
+
+    Matters are ordered by their first milestone in the quarter, so the list
+    still reads forward through the quarter while one matter's run (a phase 2
+    outcome, then the Tribunal and court reviews it drew) stays together.
+    ``context`` rows join their matter's run but play no part in that order.
+    """
+    first: dict[str, str] = {}
+    for e in events:
+        key = e["merger_id"] or ""
+        first[key] = min(first.get(key, e["date"]), e["date"])
+    rows = [*events, *(e for e in context if (e["merger_id"] or "") in first)]
+    return sorted(rows, key=lambda e: (first[e["merger_id"] or ""], e["merger_id"] or "", e["date"], e["kind"]))
 
 
 def _plural(n: int, one: str, many: str | None = None) -> str:
@@ -591,7 +628,7 @@ def findings(block: dict, previous: dict | None) -> list[str]:
         )
 
     referred = n["referred_to_phase_2"]
-    outcomes = [m for m in block["milestones"] if m["kind"] in _OUTCOME_KINDS]
+    outcomes = [m for m in block["milestones"] if m["kind"] in _OUTCOME_KINDS and not m.get("context")]
     if referred or outcomes:
         parts = []
         if referred:

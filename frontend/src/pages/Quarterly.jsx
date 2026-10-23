@@ -118,20 +118,33 @@ const LEGEND = {
   },
 };
 
+/**
+ * A quarter's bar colour in the volume chart: the selected quarter in full
+ * primary, the others faded behind it, older ones fainter, so each group reads
+ * left to right as a trend.
+ */
+function volumeQuarterColor(index, count, isSelected) {
+  if (isSelected) return COLORS.primary;
+  const alpha = count > 1 ? 0.2 + (0.35 * index) / (count - 1) : 0.4;
+  return `rgba(51, 81, 69, ${alpha.toFixed(2)})`;
+}
+
 function VolumeChart({ quarters, selected }) {
   const series = [
-    { label: 'Notifications filed', key: (q) => q.notifications.filed, color: COLORS.primary },
-    { label: 'Phase 1 reviews concluded', key: (q) => q.notifications.phase_1_decided, color: COLORS.sage },
-    { label: 'Waivers decided', key: (q) => q.waivers.decided, color: COLORS.teal },
+    { label: 'Notifications filed', key: (q) => q.notifications.filed },
+    { label: 'Phase 1 reviews concluded', key: (q) => q.notifications.phase_1_decided },
+    { label: 'Waivers decided', key: (q) => q.waivers.decided },
   ];
   const labels = quarters.map((q) => q.label);
+  // Grouped by measure, one bar per quarter within each, so a measure's change
+  // over time sits side by side.
+  const colours = quarters.map((q, i) => volumeQuarterColor(i, quarters.length, q.quarter === selected.quarter));
   const data = {
-    labels,
-    datasets: series.map((s) => ({
-      label: s.label,
-      data: quarters.map(s.key),
-      // The selected quarter in full colour, the rest faded behind it.
-      backgroundColor: quarters.map((q) => (q.quarter === selected.quarter ? s.color : `${s.color}66`)),
+    labels: series.map((s) => s.label),
+    datasets: quarters.map((q, i) => ({
+      label: q.label,
+      data: series.map((s) => s.key(q)),
+      backgroundColor: colours[i],
       borderRadius: 4,
       maxBarThickness: 40,
     })),
@@ -141,15 +154,7 @@ function VolumeChart({ quarters, selected }) {
     maintainAspectRatio: false,
     animation: false,
     plugins: {
-      legend: { ...LEGEND, labels: { ...LEGEND.labels, generateLabels: (chart) =>
-        chart.data.datasets.map((ds, i) => ({
-          text: ds.label,
-          fillStyle: series[i].color,
-          strokeStyle: series[i].color,
-          pointStyle: 'rectRounded',
-          datasetIndex: i,
-          hidden: !chart.isDatasetVisible(i),
-        })) } },
+      legend: LEGEND,
     },
     scales: {
       x: { grid: { display: false }, ticks: { font: { size: 11 } } },
@@ -238,8 +243,13 @@ function days(value) {
  * Two quarters' distributions as side-by-side bars, each bucket's share of
  * its quarter's total so a busy quarter and a quiet one compare on shape. The
  * canvas is presentational; the sr-only table beside it carries the numbers.
+ *
+ * A bucket's two bars sit flush, sized by `categoryPercentage` (the share of
+ * the bucket's slot they fill) rather than capped at a thickness: a capped bar
+ * stays centred in its half of a wide slot, opening a gap between the pair.
  */
-function ShareChart({ id, caption, buckets, current, previous, color, height = 'h-64' }) {
+function ShareChart({ id, caption, buckets, current, previous, color, height = 'h-64', categoryPercentage = 0.8 }) {
+  const bar = { borderRadius: 4, barPercentage: 0.94, categoryPercentage };
   const currentShares = bucketShares(current.buckets);
   const previousShares = previous ? bucketShares(previous.buckets) : null;
   const datasets = [];
@@ -248,16 +258,14 @@ function ShareChart({ id, caption, buckets, current, previous, color, height = '
       label: previous.label,
       data: previousShares,
       backgroundColor: `${color}55`,
-      borderRadius: 4,
-      maxBarThickness: 28,
+      ...bar,
     });
   }
   datasets.push({
     label: current.label,
     data: currentShares,
     backgroundColor: color,
-    borderRadius: 4,
-    maxBarThickness: 28,
+    ...bar,
   });
   const options = {
     responsive: true,
@@ -386,6 +394,9 @@ function PreNotificationCard({ quarter, previous, buckets }) {
             current={{ label: quarter.label, ...pre }}
             previous={before?.count ? { label: previous.label, ...before } : null}
             color={COLORS.accent}
+            // A full-width card with few buckets: a narrower group keeps the
+            // bars about as thick as the half-width timing charts'.
+            categoryPercentage={0.5}
           />
         </div>
       </div>
@@ -514,6 +525,17 @@ function AppealsCard({ quarter }) {
   );
 }
 
+/** The quarter's milestones as one run per matter, in the order they come. */
+function groupByMatter(milestones) {
+  const groups = [];
+  for (const m of milestones) {
+    const last = groups[groups.length - 1];
+    if (last && last.merger_id === m.merger_id) last.rows.push(m);
+    else groups.push({ merger_id: m.merger_id, merger_name: m.merger_name, rows: [m] });
+  }
+  return groups;
+}
+
 function MilestonesCard({ quarter }) {
   return (
     <section className="mb-6">
@@ -527,25 +549,35 @@ function MilestonesCard({ quarter }) {
         {quarter.milestones.length === 0 ? (
           <p className="p-6 text-sm text-gray-500">Nothing went beyond phase 1 this quarter.</p>
         ) : (
+          // One entry per matter, named once beside its run of milestones.
+          // Earlier steps in the matter (context rows) are set in italics.
           <ul className="divide-y divide-gray-100">
-            {quarter.milestones.map((m) => (
+            {groupByMatter(quarter.milestones).map((group) => (
               <li
-                key={`${m.merger_id}-${m.kind}-${m.date}-${m.detail ?? ''}`}
-                className="flex flex-col gap-1 px-6 py-3.5 sm:flex-row sm:items-baseline sm:gap-4"
+                key={group.merger_id}
+                className="flex flex-col gap-2 px-6 py-3.5 sm:flex-row sm:gap-4"
               >
-                <span className="w-28 flex-shrink-0 text-sm text-gray-500 tabular-nums">
-                  {formatDateMedium(m.date)}
-                </span>
-                <span className="flex items-center gap-2 sm:w-60 flex-shrink-0 text-sm font-medium text-gray-900">
-                  <span className={`h-2 w-2 flex-shrink-0 rounded-full ${MILESTONE_DOTS[m.kind] || 'bg-gray-400'}`} aria-hidden="true" />
-                  {m.label}
-                </span>
-                <span className="min-w-0 text-sm">
-                  <Link to={mergerPath(m.merger_id, m.merger_name)} className="text-primary hover:underline">
-                    {m.merger_name}
+                <span className="min-w-0 text-sm sm:w-72 sm:flex-shrink-0">
+                  <Link to={mergerPath(group.merger_id, group.merger_name)} className="text-primary hover:underline">
+                    {group.merger_name}
                   </Link>
-                  {m.detail && <span className="text-gray-600"> &middot; {m.detail}</span>}
                 </span>
+                <ul className="space-y-2">
+                  {group.rows.map((m) => (
+                    <li
+                      key={`${m.kind}-${m.date}-${m.detail ?? ''}`}
+                      className={`flex items-baseline gap-4 text-sm${m.context ? ' italic' : ''}`}
+                    >
+                      <span className="w-28 flex-shrink-0 text-gray-500 tabular-nums">
+                        {formatDateMedium(m.date)}
+                      </span>
+                      <span className="flex items-center gap-2 font-medium text-gray-900">
+                        <span className={`h-2 w-2 flex-shrink-0 rounded-full ${MILESTONE_DOTS[m.kind] || 'bg-gray-400'}`} aria-hidden="true" />
+                        {m.label}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>
