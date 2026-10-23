@@ -553,10 +553,12 @@ def _milestones(q: dict) -> list:
         matter = f'<link href="{escape(url)}" color="#335145">{escape(m["merger_name"])}</link>'
         if m.get("detail"):
             matter += f' <font color="#6b7280">· {escape(m["detail"])}</font>'
+        # Earlier steps in the matter, there for context, are set in italics.
+        styled = (lambda text: f"<i>{text}</i>") if m.get("context") else (lambda text: text)
         rows.append([
-            _p(f'<font color="#6b7280">{_short_date(m["date"])}</font>', "small"),
-            _p(f'<b>{escape(m["label"])}</b>', "small"),
-            _p(matter, "small"),
+            _p(styled(f'<font color="#6b7280">{_short_date(m["date"])}</font>'), "small"),
+            _p(styled(f'<b>{escape(m["label"])}</b>'), "small"),
+            _p(styled(matter), "small"),
         ])
     table = Table(rows, colWidths=[24 * mm, 48 * mm, CONTENT_W - 72 * mm], repeatRows=0)
     # The list comes grouped by matter, so a rule marks where one matter's run

@@ -535,6 +535,7 @@ function MilestonesCard({ quarter }) {
           to="/phase-2"
           subtitle="Phase 2 referrals and outcomes, public benefit applications, and Tribunal and court reviews"
         />
+        {/* Earlier steps in each matter (context rows) are set in italics. */}
         {quarter.milestones.length === 0 ? (
           <p className="p-6 text-sm text-gray-500">Nothing went beyond phase 1 this quarter.</p>
         ) : (
@@ -548,7 +549,7 @@ function MilestonesCard({ quarter }) {
                   i > 0 && quarter.milestones[i - 1].merger_id === m.merger_id
                     ? 'pb-3.5'
                     : `py-3.5${i > 0 ? ' border-t border-gray-100' : ''}`
-                }`}
+                }${m.context ? ' italic' : ''}`}
               >
                 <span className="w-28 flex-shrink-0 text-sm text-gray-500 tabular-nums">
                   {formatDateMedium(m.date)}
