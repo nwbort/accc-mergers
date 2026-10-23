@@ -8,12 +8,30 @@
       "members": [
         {
           "name": "AerFin Limited",
+          "identifier": "CRN  07371844",
+          "identifier_type": null
+        },
+        {
+          "name": "AerFin Limited",
           "identifier": "Company number (UK)  07371844",
           "identifier_type": null
         }
       ],
       "mergers": {
-        "acquirer": [],
+        "acquirer": [
+          {
+            "merger_id": "WA-95045",
+            "merger_name": "AerFin - acquisition of aircraft from Qantas",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-21T12:00:00Z",
+            "determination_date": "2026-10-23T12:00:00Z"
+          }
+        ],
         "target": [
           {
             "merger_id": "WA-90035",
@@ -30,18 +48,18 @@
         ],
         "other": []
       },
-      "merger_count": 1,
+      "merger_count": 2,
       "phase_1_count": 0,
       "phase_2_count": 0,
-      "waiver_count": 1,
+      "waiver_count": 2,
       "active_count": 0,
       "phase_duration": null,
       "waiver_duration": {
-        "average_days": 25.0,
-        "median_days": 25,
-        "average_business_days": 18.0,
-        "median_business_days": 18,
-        "completed_count": 1
+        "average_days": 28.5,
+        "median_days": 28.5,
+        "average_business_days": 20.5,
+        "median_business_days": 20.5,
+        "completed_count": 2
       }
     },
     "conyers-trust-company-cayman-ltd-as-trustee-for-the-ifm-global-infrastructure-fu": {

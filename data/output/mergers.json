@@ -143754,6 +143754,10 @@
           "name": "AerFin Limited",
           "identifier_type": null,
           "identifier": "Company number (UK)  07371844",
+          "canonical": {
+            "id": "aerfin-limited",
+            "name": "AerFin Limited"
+          },
           "party_page": {
             "id": "aerfin-limited",
             "name": "AerFin Limited"
@@ -148071,8 +148075,12 @@
           "name": "AerFin Limited",
           "identifier_type": null,
           "identifier": "CRN  07371844",
+          "canonical": {
+            "id": "aerfin-limited",
+            "name": "AerFin Limited"
+          },
           "party_page": {
-            "id": "aerfin-limited-2",
+            "id": "aerfin-limited",
             "name": "AerFin Limited"
           }
         }

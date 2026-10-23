@@ -2,48 +2,6 @@
   "shard": 156,
   "shard_count": 256,
   "parties": {
-    "aerfin-limited-2": {
-      "id": "aerfin-limited-2",
-      "canonical_name": "AerFin Limited",
-      "members": [
-        {
-          "name": "AerFin Limited",
-          "identifier": "CRN  07371844",
-          "identifier_type": null
-        }
-      ],
-      "mergers": {
-        "acquirer": [
-          {
-            "merger_id": "WA-95045",
-            "merger_name": "AerFin - acquisition of aircraft from Qantas",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-09-21T12:00:00Z",
-            "determination_date": "2026-10-23T12:00:00Z"
-          }
-        ],
-        "target": [],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 0,
-      "phase_2_count": 0,
-      "waiver_count": 1,
-      "active_count": 0,
-      "phase_duration": null,
-      "waiver_duration": {
-        "average_days": 32.0,
-        "median_days": 32,
-        "average_business_days": 23.0,
-        "median_business_days": 23,
-        "completed_count": 1
-      }
-    },
     "atlantic-holdco-limited": {
       "id": "atlantic-holdco-limited",
       "canonical_name": "Atlantic Holdco Limited",
