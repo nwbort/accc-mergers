@@ -25,7 +25,7 @@ export const DASHBOARD_PROMOS = [
     campaign: 'quarterly-report-26Q3',
     to: '/quarterly/26Q3',
     icon: FaFileLines,
-    title: 'The Q3 2026 quarterly merger report is out',
-    description: 'Volumes, clearance rates, timing and Tribunal reviews for the quarter in our quarterly report.',
+    title: 'The Q3 2026 merger report is out',
+    description: 'Volumes, clearance rates, timing and Tribunal reviews in our quarterly report.',
   },
 ];
