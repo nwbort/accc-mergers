@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { FEATURE_EVENTS, pingFeatureEvent } from '../utils/trackEvent';
 
 // Set to false to hide the popup entirely (e.g. between feedback campaigns).
-const ENABLED = true;
+const ENABLED = false;
 
 // Set to false to suppress the popup on mobile screens (< 768px).
 const SHOW_ON_MOBILE = false;
