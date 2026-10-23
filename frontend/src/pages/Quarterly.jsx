@@ -525,6 +525,17 @@ function AppealsCard({ quarter }) {
   );
 }
 
+/** The quarter's milestones as one run per matter, in the order they come. */
+function groupByMatter(milestones) {
+  const groups = [];
+  for (const m of milestones) {
+    const last = groups[groups.length - 1];
+    if (last && last.merger_id === m.merger_id) last.rows.push(m);
+    else groups.push({ merger_id: m.merger_id, merger_name: m.merger_name, rows: [m] });
+  }
+  return groups;
+}
+
 function MilestonesCard({ quarter }) {
   return (
     <section className="mb-6">
@@ -535,35 +546,38 @@ function MilestonesCard({ quarter }) {
           to="/phase-2"
           subtitle="Phase 2 referrals and outcomes, public benefit applications, and Tribunal and court reviews"
         />
-        {/* Earlier steps in each matter (context rows) are set in italics. */}
         {quarter.milestones.length === 0 ? (
           <p className="p-6 text-sm text-gray-500">Nothing went beyond phase 1 this quarter.</p>
         ) : (
-          // The list comes grouped by matter, so a rule marks where one
-          // matter's run ends rather than separating every row.
-          <ul>
-            {quarter.milestones.map((m, i) => (
+          // One entry per matter, named once beside its run of milestones.
+          // Earlier steps in the matter (context rows) are set in italics.
+          <ul className="divide-y divide-gray-100">
+            {groupByMatter(quarter.milestones).map((group) => (
               <li
-                key={`${m.merger_id}-${m.kind}-${m.date}-${m.detail ?? ''}`}
-                className={`flex flex-col gap-1 px-6 sm:flex-row sm:items-baseline sm:gap-4 ${
-                  i > 0 && quarter.milestones[i - 1].merger_id === m.merger_id
-                    ? 'pb-3.5'
-                    : `py-3.5${i > 0 ? ' border-t border-gray-100' : ''}`
-                }${m.context ? ' italic' : ''}`}
+                key={group.merger_id}
+                className="flex flex-col gap-2 px-6 py-3.5 sm:flex-row sm:gap-4"
               >
-                <span className="w-28 flex-shrink-0 text-sm text-gray-500 tabular-nums">
-                  {formatDateMedium(m.date)}
-                </span>
-                <span className="flex items-center gap-2 sm:w-60 flex-shrink-0 text-sm font-medium text-gray-900">
-                  <span className={`h-2 w-2 flex-shrink-0 rounded-full ${MILESTONE_DOTS[m.kind] || 'bg-gray-400'}`} aria-hidden="true" />
-                  {m.label}
-                </span>
-                <span className="min-w-0 text-sm">
-                  <Link to={mergerPath(m.merger_id, m.merger_name)} className="text-primary hover:underline">
-                    {m.merger_name}
+                <span className="min-w-0 text-sm sm:w-72 sm:flex-shrink-0">
+                  <Link to={mergerPath(group.merger_id, group.merger_name)} className="text-primary hover:underline">
+                    {group.merger_name}
                   </Link>
-                  {m.detail && <span className="text-gray-600"> &middot; {m.detail}</span>}
                 </span>
+                <ul className="space-y-2">
+                  {group.rows.map((m) => (
+                    <li
+                      key={`${m.kind}-${m.date}-${m.detail ?? ''}`}
+                      className={`flex items-baseline gap-4 text-sm${m.context ? ' italic' : ''}`}
+                    >
+                      <span className="w-28 flex-shrink-0 text-gray-500 tabular-nums">
+                        {formatDateMedium(m.date)}
+                      </span>
+                      <span className="flex items-center gap-2 font-medium text-gray-900">
+                        <span className={`h-2 w-2 flex-shrink-0 rounded-full ${MILESTONE_DOTS[m.kind] || 'bg-gray-400'}`} aria-hidden="true" />
+                        {m.label}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>

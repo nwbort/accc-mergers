@@ -176,9 +176,9 @@ describe('Quarterly report', () => {
     renderPage();
     await ready();
     const list = screen.getByRole('heading', { name: 'Beyond phase 1' }).closest('section');
-    const links = within(list).getAllByRole('link', { name: 'Coles – Kalgoorlie' });
-    expect(links).toHaveLength(2);
-    expect(links[0]).toHaveAttribute('href', expect.stringMatching(/^\/mergers\/MN-01068/));
+    // A matter is named once, however many of its milestones the quarter holds.
+    const link = within(list).getByRole('link', { name: 'Coles – Kalgoorlie' });
+    expect(link).toHaveAttribute('href', expect.stringMatching(/^\/mergers\/MN-01068/));
     expect(within(list).getByText('Tribunal review sought')).toBeInTheDocument();
     // A phase 2 outcome reads as the outcome, not "Phase 2 outcome".
     expect(within(list).getByText('Not approved')).toBeInTheDocument();

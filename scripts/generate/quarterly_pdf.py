@@ -547,26 +547,28 @@ def _milestones(q: dict) -> list:
             Spacer(1, 6)]
     if not q["milestones"]:
         return flow + [_p("Nothing went beyond phase 1 this quarter.", "caption")]
+    # One run per matter: the matter named once in the first column, spanning
+    # its rows, and the earlier steps in it (context rows) set in italics.
+    milestones = q["milestones"]
+    starts = [i for i, m in enumerate(milestones) if i == 0 or milestones[i - 1]["merger_id"] != m["merger_id"]]
     rows = []
-    for m in q["milestones"]:
-        url = SITE + merger_path(m["merger_id"], m["merger_name"])
-        matter = f'<link href="{escape(url)}" color="#335145">{escape(m["merger_name"])}</link>'
-        if m.get("detail"):
-            matter += f' <font color="#6b7280">· {escape(m["detail"])}</font>'
-        # Earlier steps in the matter, there for context, are set in italics.
+    for i, m in enumerate(milestones):
         styled = (lambda text: f"<i>{text}</i>") if m.get("context") else (lambda text: text)
+        if i in starts:
+            url = SITE + merger_path(m["merger_id"], m["merger_name"])
+            matter = _p(f'<link href="{escape(url)}" color="#335145">{escape(m["merger_name"])}</link>', "small")
+        else:
+            matter = ""
         rows.append([
+            matter,
             _p(styled(f'<font color="#6b7280">{_short_date(m["date"])}</font>'), "small"),
             _p(styled(f'<b>{escape(m["label"])}</b>'), "small"),
-            _p(styled(matter), "small"),
         ])
-    table = Table(rows, colWidths=[24 * mm, 48 * mm, CONTENT_W - 72 * mm], repeatRows=0)
-    # The list comes grouped by matter, so a rule marks where one matter's run
-    # starts rather than separating every row.
-    starts = [i for i, m in enumerate(q["milestones"])
-              if i == 0 or q["milestones"][i - 1]["merger_id"] != m["merger_id"]]
+    ends = starts[1:] + [len(milestones)]
+    table = Table(rows, colWidths=[80 * mm, 24 * mm, CONTENT_W - 104 * mm], repeatRows=0)
     table.setStyle(TableStyle([
         *[("LINEABOVE", (0, i), (-1, i), 0.4, RULE) for i in starts],
+        *[("SPAN", (0, i), (0, end - 1)) for i, end in zip(starts, ends) if end - 1 > i],
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("LEFTPADDING", (0, 0), (-1, -1), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 6),
