@@ -158,7 +158,9 @@ own post box with the post already written. Nothing goes out until you press
   exact detail file on `main` (`--wait-for-deploy 900`). Sent any earlier,
   LinkedIn would scrape the old card, or the home page for a matter not yet
   deployed, and keep it for a week. A matter still not live after 15 minutes
-  is left for the next run. The state file is committed by that workflow with
+  is left for the next run. When several links are due they go out 30 seconds
+  apart (`LINK_SPACING_SECONDS`), so the phone isn't handed a burst at once.
+  The state file is committed by that workflow with
   `[skip ci]`. Waiting inside the pipeline would hold its concurrency group, so
   an email-triggered run would queue behind it.
 - The post box posts as whoever is signed in. To post as the page, switch the
