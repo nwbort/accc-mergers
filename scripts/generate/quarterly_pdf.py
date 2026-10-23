@@ -559,8 +559,12 @@ def _milestones(q: dict) -> list:
             _p(matter, "small"),
         ])
     table = Table(rows, colWidths=[24 * mm, 48 * mm, CONTENT_W - 72 * mm], repeatRows=0)
+    # The list comes grouped by matter, so a rule marks where one matter's run
+    # starts rather than separating every row.
+    starts = [i for i, m in enumerate(q["milestones"])
+              if i == 0 or q["milestones"][i - 1]["merger_id"] != m["merger_id"]]
     table.setStyle(TableStyle([
-        ("LINEABOVE", (0, 0), (-1, -1), 0.4, RULE),
+        *[("LINEABOVE", (0, i), (-1, i), 0.4, RULE) for i in starts],
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("LEFTPADDING", (0, 0), (-1, -1), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 6),

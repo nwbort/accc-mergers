@@ -153,6 +153,20 @@ class TestMilestones:
         q4 = _quarter(quarterly.generate([m], as_at=date(2027, 1, 5)), '2026-Q4')['milestones']
         assert [(e['label'], e['detail']) for e in q4] == [('Tribunal review sought', 'Rival')]
 
+    def test_a_quarters_milestones_are_grouped_by_matter(self):
+        first = _notification(
+            'MN-1', '2026-03-02', 'Referred to phase 2', '2026-04-14',
+            stage='Phase 2 - detailed assessment',
+            phase_2_determination='Not approved', phase_2_determination_date='2026-07-01T12:00:00Z',
+            appeals=[{'filed_date': '2026-07-15', 'appellant': 'Acquirer'}],
+        )
+        second = _notification('MN-2', '2026-05-01', 'Referred to phase 2', '2026-07-02')
+        q3 = _quarter(quarterly.generate([first, second], as_at=AS_AT), '2026-Q3')['milestones']
+        # MN-1's appeal follows its own outcome rather than MN-2's earlier referral.
+        assert [(e['merger_id'], e['kind']) for e in q3] == [
+            ('MN-1', 'phase_2_outcome'), ('MN-1', 'tribunal_application'), ('MN-2', 'referred'),
+        ]
+
     def test_a_refusal_at_phase_1_does_not_repeat_itself(self):
         m = _notification('MN-1', '2026-07-01', 'Not approved', '2026-08-01')
         [milestone] = _quarter(quarterly.generate([m], as_at=AS_AT), '2026-Q3')['milestones']

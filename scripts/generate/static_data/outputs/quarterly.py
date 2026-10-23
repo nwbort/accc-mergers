@@ -498,8 +498,22 @@ def _quarter_block(quarter, notifications, waivers, milestones, pre_notification
         "industries": _industries(arrivals),
         "appeals": _quarter_appeals(appeals, start, end),
         "commentary": commentary.get(quarter, []),
-        "milestones": [e for e in milestones if _quarter_of(e["date"]) == quarter],
+        "milestones": _by_matter([e for e in milestones if _quarter_of(e["date"]) == quarter]),
     }
+
+
+def _by_matter(events: list[dict]) -> list[dict]:
+    """Milestones grouped by matter, each matter's in date order.
+
+    Matters are ordered by their first milestone in the list, so the list still
+    reads forward through the quarter while one matter's run (a phase 2
+    outcome, then the Tribunal and court reviews it drew) stays together.
+    """
+    first: dict[str, str] = {}
+    for e in events:
+        key = e["merger_id"] or ""
+        first[key] = min(first.get(key, e["date"]), e["date"])
+    return sorted(events, key=lambda e: (first[e["merger_id"] or ""], e["merger_id"] or "", e["date"], e["kind"]))
 
 
 def _plural(n: int, one: str, many: str | None = None) -> str:

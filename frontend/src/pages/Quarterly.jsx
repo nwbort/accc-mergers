@@ -538,11 +538,17 @@ function MilestonesCard({ quarter }) {
         {quarter.milestones.length === 0 ? (
           <p className="p-6 text-sm text-gray-500">Nothing went beyond phase 1 this quarter.</p>
         ) : (
-          <ul className="divide-y divide-gray-100">
-            {quarter.milestones.map((m) => (
+          // The list comes grouped by matter, so a rule marks where one
+          // matter's run ends rather than separating every row.
+          <ul>
+            {quarter.milestones.map((m, i) => (
               <li
                 key={`${m.merger_id}-${m.kind}-${m.date}-${m.detail ?? ''}`}
-                className="flex flex-col gap-1 px-6 py-3.5 sm:flex-row sm:items-baseline sm:gap-4"
+                className={`flex flex-col gap-1 px-6 sm:flex-row sm:items-baseline sm:gap-4 ${
+                  i > 0 && quarter.milestones[i - 1].merger_id === m.merger_id
+                    ? 'pb-3.5'
+                    : `py-3.5${i > 0 ? ' border-t border-gray-100' : ''}`
+                }`}
               >
                 <span className="w-28 flex-shrink-0 text-sm text-gray-500 tabular-nums">
                   {formatDateMedium(m.date)}
