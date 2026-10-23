@@ -118,20 +118,33 @@ const LEGEND = {
   },
 };
 
+/**
+ * A quarter's bar colour in the volume chart: the selected quarter in full
+ * primary, the others faded behind it, older ones fainter, so each group reads
+ * left to right as a trend.
+ */
+function volumeQuarterColor(index, count, isSelected) {
+  if (isSelected) return COLORS.primary;
+  const alpha = count > 1 ? 0.2 + (0.35 * index) / (count - 1) : 0.4;
+  return `rgba(51, 81, 69, ${alpha.toFixed(2)})`;
+}
+
 function VolumeChart({ quarters, selected }) {
   const series = [
-    { label: 'Notifications filed', key: (q) => q.notifications.filed, color: COLORS.primary },
-    { label: 'Phase 1 reviews concluded', key: (q) => q.notifications.phase_1_decided, color: COLORS.sage },
-    { label: 'Waivers decided', key: (q) => q.waivers.decided, color: COLORS.teal },
+    { label: 'Notifications filed', key: (q) => q.notifications.filed },
+    { label: 'Phase 1 reviews concluded', key: (q) => q.notifications.phase_1_decided },
+    { label: 'Waivers decided', key: (q) => q.waivers.decided },
   ];
   const labels = quarters.map((q) => q.label);
+  // Grouped by measure, one bar per quarter within each, so a measure's change
+  // over time sits side by side.
+  const colours = quarters.map((q, i) => volumeQuarterColor(i, quarters.length, q.quarter === selected.quarter));
   const data = {
-    labels,
-    datasets: series.map((s) => ({
-      label: s.label,
-      data: quarters.map(s.key),
-      // The selected quarter in full colour, the rest faded behind it.
-      backgroundColor: quarters.map((q) => (q.quarter === selected.quarter ? s.color : `${s.color}66`)),
+    labels: series.map((s) => s.label),
+    datasets: quarters.map((q, i) => ({
+      label: q.label,
+      data: series.map((s) => s.key(q)),
+      backgroundColor: colours[i],
       borderRadius: 4,
       maxBarThickness: 40,
     })),
@@ -141,15 +154,7 @@ function VolumeChart({ quarters, selected }) {
     maintainAspectRatio: false,
     animation: false,
     plugins: {
-      legend: { ...LEGEND, labels: { ...LEGEND.labels, generateLabels: (chart) =>
-        chart.data.datasets.map((ds, i) => ({
-          text: ds.label,
-          fillStyle: series[i].color,
-          strokeStyle: series[i].color,
-          pointStyle: 'rectRounded',
-          datasetIndex: i,
-          hidden: !chart.isDatasetVisible(i),
-        })) } },
+      legend: LEGEND,
     },
     scales: {
       x: { grid: { display: false }, ticks: { font: { size: 11 } } },
