@@ -244,13 +244,17 @@ def main(argv: list[str] | None = None) -> int:
         by_id = {matter["merger_id"]: matter for matter in matters}
         batch = wait_for_deploy(batch, by_id, timeout=args.wait_for_deploy)
     failures = 0
+    # Only a delivered link needs the gap after it: a failed one reached no phone.
+    spacing_due = False
     try:
-        for index, milestone in enumerate(batch):
-            if index:
+        for milestone in batch:
+            if spacing_due:
                 time.sleep(LINK_SPACING_SECONDS)
+                spacing_due = False
             if not notify(milestone, topic=topic, server=server, token=token):
                 failures += 1
                 continue
+            spacing_due = True
             state["posted"][milestone.key] = {
                 "shareLink": True,
                 "sentAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
