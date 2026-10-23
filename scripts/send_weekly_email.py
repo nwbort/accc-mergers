@@ -21,6 +21,9 @@ Optional environment variables:
                                LinkedIn and Bluesky accounts, 'signup' asks a
                                forwarded reader to subscribe. Feedback weeks
                                override either with the feedback ask.
+
+The promo card above that strip is not an env var: it is whatever PROMO says,
+edited in this file like the dashboard's constants/promo.js.
 """
 
 import json
@@ -53,6 +56,18 @@ DEFAULT_BANNER = "social"
 def banner_choice() -> str:
     """The BANNER env var, or the default when unset. Validated in main()."""
     return os.environ.get("BANNER", "").strip().lower() or DEFAULT_BANNER
+
+
+# The promo card under the scoreboard: the email's twin of the dashboard's
+# PromoStack banners (frontend/src/constants/promo.js). Nothing about a
+# particular campaign lives in build_promo; point it at something new by
+# editing this, or set it to None to run none. `path` is relative to SITE_BASE.
+PROMO: dict | None = {
+    "path": "/quarterly/26Q3",
+    "title": "The Q3 2026 merger report is out",
+    "description": "Volumes, clearance rates, timing and Tribunal reviews in our quarterly report.",
+    "cta": "Read the report",
+}
 RESEND_API_BASE = "https://api.resend.com"
 SEND_FROM = os.environ.get("SEND_FROM", "Australian Merger Tracker <digest@mergers.fyi>")
 
@@ -233,7 +248,7 @@ def _text_section(title: str, headers: list[str], rows: list[list[str]], empty_m
     return "\n".join(lines)
 
 
-def build_text_email(digest: dict, banner: str | None = None) -> str:
+def build_text_email(digest: dict, banner: str | None = None, promo: dict | None = PROMO) -> str:
     """Build a plain-text version of the weekly digest email."""
     banner = banner or banner_choice()
     date_range = format_date_range(digest["period_start"], digest["period_end"])
@@ -277,6 +292,9 @@ def build_text_email(digest: dict, banner: str | None = None) -> str:
     if ongoing_appeals:
         lines.append(f"Under appeal         : {len(ongoing_appeals)}")
     lines.append("")
+
+    if promo:
+        lines += [promo["title"], promo.get("description", ""), f"{SITE_BASE}{promo['path']}", ""]
 
     new_rows = [
         [m.get("merger_name", m["merger_id"]), format_date(m.get("effective_notification_datetime"))]
@@ -1058,7 +1076,34 @@ def _wordmark(dot: str, size: int, color: str) -> str:
     )
 
 
-def build_html_email(digest: dict, banner: str | None = None) -> str:
+def build_promo(promo: dict | None) -> str:
+    """The promo card: a solid green block, like the dashboard's PromoCard.
+
+    The title and a call-to-action line both carry the link, rather than one
+    anchor wrapping the whole cell, which Outlook won't render as a link.
+    """
+    if not promo:
+        return ""
+    href = esc(f"{SITE_BASE}{promo['path']}")
+    title = esc(promo["title"])
+    description = esc(promo.get("description", ""))
+    cta = esc(promo.get("cta", "Read more"))
+    return f"""<tr>
+          <td class="gutter" bgcolor="#ffffff" style="background-color:#ffffff;padding-left:40px;padding-right:40px;padding-top:28px;">
+            <table {FULL_TABLE}>
+              <tr>
+                <td bgcolor="{GREEN}" style="background-color:{GREEN};padding:20px 24px;font-family:{FONT};">
+                  <a href="{href}" style="font-size:16px;line-height:22px;font-weight:700;color:#ffffff;text-decoration:none;">{title}</a>
+                  {f'<div style="font-size:14px;line-height:21px;color:{FOOTER_TEXT};padding-top:4px;">{description}</div>' if description else ""}
+                  <div style="padding-top:12px;font-size:13px;line-height:18px;"><a href="{href}" style="color:#ffffff;font-weight:700;text-decoration:underline;">{cta}&nbsp;&rarr;</a></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>"""
+
+
+def build_html_email(digest: dict, banner: str | None = None, promo: dict | None = PROMO) -> str:
     banner = banner or banner_choice()
     date_range = format_date_range(digest["period_start"], digest["period_end"])
     show_feedback = _is_feedback_week(digest.get("period_start", ""))
@@ -1194,9 +1239,12 @@ def build_html_email(digest: dict, banner: str | None = None) -> str:
           </td>
         </tr>
 
+        <!-- PROMO -->
+        {build_promo(promo)}
+
         <!-- BANNER -->
         <tr>
-          <td class="gutter" {white}{gutter}padding-top:28px;">
+          <td class="gutter" {white}{gutter}padding-top:{"12" if promo else "28"}px;">
             <table {FULL_TABLE}>
               <tr>
                 <td bgcolor="{GREEN_PALE}" style="background-color:{GREEN_PALE};border-left:3px solid {GREEN};

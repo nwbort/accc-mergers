@@ -6,6 +6,7 @@ publishes one as a plain "Approved" and carries the conditions separately in
 as an unconditional one in both the lede and the tables.
 """
 
+import json
 import re
 import sys
 import unittest.mock
@@ -277,3 +278,41 @@ class TestHeaderBanner:
         assert 'Were you forwarded' in swe.build_html_email(_digest())
         monkeypatch.delenv('BANNER')
         assert swe.LINKEDIN_URL in swe.build_html_email(_digest())
+
+
+class TestPromo:
+    PROMO = {
+        'path': '/somewhere',
+        'title': 'Something new & shiny',
+        'description': 'A description of it.',
+        'cta': 'Go see',
+    }
+
+    def test_promo_card_links_its_page_in_both_versions(self):
+        html = swe.build_html_email(_digest(), promo=self.PROMO)
+        assert html.count(f'href="{swe.SITE_BASE}/somewhere"') == 2
+        assert 'Something new &amp; shiny' in html
+        assert 'Go see' in html
+        text = swe.build_text_email(_digest(), promo=self.PROMO)
+        assert 'Something new & shiny' in text
+        assert f'{swe.SITE_BASE}/somewhere' in text
+
+    def test_no_promo_renders_no_card(self):
+        html = swe.build_html_email(_digest(), promo=None)
+        assert '<!-- PROMO -->' in html  # the slot, empty
+        assert swe.build_promo(None) == ''
+        assert 'Something new' not in swe.build_text_email(_digest(), promo=None)
+
+    def test_promo_sits_alongside_the_header_banner(self):
+        html = swe.build_html_email(_digest(), promo=self.PROMO)
+        assert f'href="{swe.LINKEDIN_URL}"' in html
+
+    def test_default_promo_points_at_a_real_quarter(self):
+        promo = swe.PROMO
+        if promo is None:
+            return
+        assert promo['path'].startswith('/')
+        if promo['path'].startswith('/quarterly/'):
+            data = json.loads((swe.Path(__file__).resolve().parents[2] / 'frontend/public/data/quarterly.json').read_text())
+            keys = {q['url_key'] for q in data['quarters']}
+            assert promo['path'].removeprefix('/quarterly/') in keys
