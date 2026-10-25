@@ -36347,13 +36347,16 @@
   {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/stripe-openrouter",
     "merger_name": "Stripe - OpenRouter",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-90037",
     "effective_notification_datetime": "2026-10-02T12:00:00Z",
     "original_notification_datetime": "2026-10-02T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-11-16T12:00:00Z",
-    "page_modified_datetime": "2026-10-02T15:38:17+10:00",
+    "determination_publication_date": "2026-10-26T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-10-26T10:37:08+11:00",
     "consultation_response_due_date": "2026-10-12T12:00:00Z",
     "acquirers": [
       {
@@ -36369,7 +36372,13 @@
         "identifier": "Delaware File Number  7412265"
       }
     ],
-    "other_parties": [],
+    "other_parties": [
+      {
+        "name": "Patrick Collison",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
     "anzsic_codes": [
       {
         "code": "5420",
@@ -36415,6 +36424,43 @@
         "date": "2026-10-02T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-10-26T12:00:00Z",
+        "title": "Stripe - OpenRouter - Phase 1 Determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Stripe-OpenRouter%20-%20Phase%201%20Determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "Stripe, LLC (Stripe) proposes to acquire 100% of the outstanding\ncapital stock of OpenRouter Inc. (OpenRouter) (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, Stripe, is a financial technology group active in the\nprovision of payment processing and financial infrastructure\nsoftware for businesses. Stripe\u2019s services grant companies the\nability to accept credit card payments, digital wallets, and global\ncurrency transactions. Stripe provides an AI gateway feature as part\nof a token billing service for Stripe customers.\nThe target, OpenRouter, is a technology company active within the\nwider artificial intelligence sector, providing infrastructure services\nthat facilitate access to Large Language Models and other\ngenerative AI models. OpenRouter\u2019s business focuses on enabling\naccess, comparison and use AI models from different providers\nthrough a single interface AI gateway. The AI gateway is\nOpenRouter\u2019s only product."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the Parties",
+            "details": "There is limited overlap between Stripe and OpenRouter (together,\nthe Parties). While both are broadly active in the supply of AI\ngateway services, Stripe offers an AI gateway as a feature of its\nbroader services, whereas supplying an AI gateway is OpenRouter\u2019s\nprincipal business activity."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u25aa The aggregation in the supply of AI Gateway services in Australia\nas a result of the Acquisition is estimated to be low and Stripe\u2019s\nAI Gateway service is not a close competitor to OpenRouter\u2019s\nservice.\n\u25aa Post-Acquisition, the merged firm would continue to face\ncompetition from other providers of AI Gateway services."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-90037/Stripe-OpenRouter - Phase 1 Determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false

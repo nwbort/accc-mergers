@@ -370,6 +370,48 @@
       },
       "waiver_duration": null
     },
+    "patrick-collison": {
+      "id": "patrick-collison",
+      "canonical_name": "Patrick Collison",
+      "members": [
+        {
+          "name": "Patrick Collison",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-90037",
+            "merger_name": "Stripe - OpenRouter",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-02T12:00:00Z",
+            "determination_date": "2026-10-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
     "river-capital-pty-ltd": {
       "id": "river-capital-pty-ltd",
       "canonical_name": "River Capital Pty Ltd",

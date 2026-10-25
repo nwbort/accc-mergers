@@ -3,12 +3,12 @@
   "total_waivers": 475,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 254,
-    "Under assessment": 42,
+    "Assessment completed": 255,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 247,
+    "Approved": 248,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 252,
+    "cleared": 253,
     "not_cleared": 2,
-    "total": 254,
+    "total": 255,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.54230769230769,
-    "median_days": 26.0,
-    "average_business_days": 20.1,
-    "median_business_days": 18.0,
+    "average_days": 29.521072796934867,
+    "median_days": 26,
+    "average_business_days": 20.080459770114942,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
-        "count": 56,
-        "percentage": 21.5
+        "count": 57,
+        "percentage": 21.8
       },
       "day20": {
-        "count": 187,
-        "percentage": 71.9
+        "count": 188,
+        "percentage": 72.0
       },
       "day30": {
-        "count": 243,
+        "count": 244,
         "percentage": 93.5
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-90037",
+      "merger_name": "Stripe - OpenRouter",
+      "determination": "Approved",
+      "determination_date": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T10:37:08+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-20039",
       "merger_name": "Calvary \u2013 Southern Cross Care (Tasmania)",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-21T12:00:00Z",
       "page_modified_datetime": "2026-10-21T18:13:09+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15049",
-      "merger_name": "Bridgepoint \u2013 Altano",
-      "determination": "Approved",
-      "determination_date": "2026-10-21T12:00:00Z",
-      "page_modified_datetime": "2026-10-21T18:11:57+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
