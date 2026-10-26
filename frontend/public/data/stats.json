@@ -3,12 +3,12 @@
   "total_waivers": 475,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 255,
-    "Under assessment": 42,
+    "Assessment completed": 256,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 248,
+    "Approved": 249,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 253,
+    "cleared": 254,
     "not_cleared": 2,
-    "total": 255,
+    "total": 256,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.521072796934867,
-    "median_days": 26,
-    "average_business_days": 20.080459770114942,
-    "median_business_days": 18,
+    "average_days": 29.52671755725191,
+    "median_days": 26.0,
+    "average_business_days": 20.080152671755727,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 57,
         "percentage": 21.8
       },
       "day20": {
-        "count": 188,
-        "percentage": 72.0
+        "count": 189,
+        "percentage": 72.1
       },
       "day30": {
-        "count": 244,
+        "count": 245,
         "percentage": 93.5
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-85042",
+      "merger_name": "Vets Central \u2013 Vital Vet Animal Hospital",
+      "determination": "Approved",
+      "determination_date": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T12:31:41+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-90037",
       "merger_name": "Stripe - OpenRouter",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Not approved",
       "determination_date": "2026-10-22T12:00:00Z",
       "page_modified_datetime": "2026-10-22T17:00:18+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85057",
-      "merger_name": "INPEX \u2013 Further interest in the Ichthys LNG Project",
-      "determination": "Approved",
-      "determination_date": "2026-10-21T12:00:00Z",
-      "page_modified_datetime": "2026-10-21T18:13:09+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
