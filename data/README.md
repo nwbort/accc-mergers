@@ -11,7 +11,7 @@ This project's own data is licensed under CC BY 4.0 (see
 
 ### `raw/`
 
-Raw data scraped from the ACCC website by `scripts/scrape.sh`:
+Raw data scraped from the ACCC website by `scripts/scrape/scrape.sh`:
 
 - `acquisitions-register.html` — main acquisitions register listing page.
   This is a transient working artifact: it is re-fetched fresh at the start
@@ -37,12 +37,32 @@ Intermediate JSON written by the extraction pipeline (mainly
   register's single headline determination can no longer say which was Phase
   2's (see `scripts/stage_determinations.py`)
 - `questionnaire_data.json` — parsed questionnaire metadata
+- `nocc_data.json` — parsed Notice of Competition Concerns summaries, keyed
+  by `merger_id` (source of the generated `noccs/{id}.json`)
+- `phase1_estimates.json` — frozen filing-time Phase 1 duration estimates,
+  keyed by `merger_id` (written by
+  `scripts/generate/static_data/phase1_estimate.py`)
 - `commentary.json` — hand-authored commentary keyed by `merger_id`
   (edited via `scripts/tools/commentary.py`)
 - `related_mergers.json` — manual `WA-*` → `MN-*` pairs for waivers that
   were re-filed as formal notifications, plus a `rejected` list of
   suggested pairs reviewed and found not to be refiles (the detector never
   suggests those again)
+- `related_parties.json` — canonical party groups (same real-world entity),
+  plus, once a suggestion has been turned down, a `rejected` list the detector
+  never re-suggests (edited via `scripts/tools/related_parties.py`;
+  suggestions from `scripts/detect/detect_related_parties.py`)
+- `tribunal_appeals.json` — Australian Competition Tribunal appeals keyed by
+  `merger_id`, one record per tribunal matter; hand-maintained apart from each
+  record's `documents[]`, which `scripts/scrape/scrape_tribunal.py` fills in
+- `judicial_reviews.json` — Federal Court judicial reviews keyed by
+  `merger_id`, entirely hand-maintained
+- `quarterly_commentary.json` — hand-written points for the quarterly report,
+  keyed by quarter as the page URL names it (`26Q3`)
+- `advisors.json.enc` — encrypted advisor data, backend-only and created by
+  the first save in `scripts/tools/advisors.py` (see
+  [`scripts/tools/README.md`](../scripts/tools/README.md)); the cleartext
+  `advisors.json` is gitignored
 - `similar_mergers.json` — generated suggestions of related mergers per
   merger (from `generate_similar_mergers.py`)
 - `atproto_records.json` — content digest of each `fyi.mergers.matter` record
@@ -71,7 +91,7 @@ offline analysis and external consumers.
   Only `cli-manifest.json` is tracked; it holds the version counter and
   bundle checksum that `generate-cli-data.sh` uses to detect change between
   runs. `cli-bundle.json` and `cli-merger-manifest.json` are gitignored —
-  regenerate them with `./scripts/generate-cli-data.sh`. The CLI itself
+  regenerate them with `./scripts/generate/generate-cli-data.sh`. The CLI itself
   downloads `cli.sqlite` from the orphan `cli-dist` branch, built from the
   bundle during the pipeline run; nothing consumes these files from `main`.
 
@@ -86,24 +106,28 @@ of `generate_weekly_digest.py` can deduplicate against the prior week.
   being overwritten during extraction (manual edits). Set `freeze_events: true`
   (or use an empty object) to freeze the whole event list, or
   `freeze_events: ["Event title", ...]` to freeze only specific events while
-  still updating the rest from the scraped page.
+  still updating the rest from the scraped page. Released with
+  `python -m scripts.unfreeze_mergers`.
+- `known_notification_dates.json` — manually confirmed or frozen notification
+  dates, for matters whose register page doesn't give one (candidates are
+  suggested by `scripts/fix_missing_notification_dates.py`).
 
 ## Pipeline flow
 
 ```
 ACCC website
-    │  scripts/scrape.sh
+    │  scripts/scrape/scrape.sh
     ▼
 data/raw/
-    │  scripts/extract_mergers.py
+    │  python -m scripts.extract_mergers
     ▼
 data/processed/
-    │  scripts/generate_static_data.py
+    │  python -m scripts.generate.generate_static_data
     ├──────────────► frontend/public/data/                  (deployed)
     └──────────────► data/output/                           (offline analysis)
 ```
 
 1. **Scrape**: ACCC register and matter pages → `raw/`
 2. **Extract**: HTML/PDF parsing → `processed/`
-3. **Generate**: enrich + paginate → `frontend/public/data/` and
+3. **Generate**: enrich + write the static JSON → `frontend/public/data/` and
    `output/`

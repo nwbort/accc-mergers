@@ -72,6 +72,9 @@ scrape/scrape.sh ──► extract_mergers.py ──► generate/generate_static
 | `generate/generate_sitemap.py` | `sitemap.xml` for search-engine crawlers. |
 | `generate/generate-cli-data.sh` | Bundles processed data for the `accc-mergers-cli` consumer. |
 | `generate/build_cli_sqlite.py` | Builds the SQLite database the CLI ships. |
+| `generate/quarterly_pdf.py` | The quarterly report PDFs, drawn from the committed `quarterly.json` by `quarterly-report.yml` (not by the pipeline). |
+| `generate/og_cards.py` | Draws the generic link-preview cards in `frontend/public/og/` and picks each merger page's `og_card`. Run by hand to redraw. |
+| `generate/sitemap_lastmod.py` | Pinned sitemap `lastmod` dates for hand-edited pages (`sitemap_lastmod.json`), bumped by the `.githooks/pre-commit` hook. |
 
 ### Top level — extraction, shared helpers, maintenance
 
@@ -79,29 +82,39 @@ scrape/scrape.sh ──► extract_mergers.py ──► generate/generate_static
 | --- | --- |
 | `extract_mergers.py` | Parse `data/raw/` HTML and supporting PDFs into `data/processed/mergers.json`. |
 | `enrich_pdfs.py` | Second extraction phase — the PDF parsing `extract_mergers.py --skip-pdf-enrich` defers. |
+| `stage_determinations.py` | Records the determination each phase reached, so the Phase 2 outcome survives the stage moving on to the public benefit phase. |
+| `accc_http.py` | HTTP GETs to accc.gov.au, via `curl_cffi` with a Chrome fingerprint. |
+| `questionnaire_probe.py` | Guesses a missing questionnaire's URL from recent filename shapes (HEAD probe); report-only. |
 | `cutoff.py` | Determines which mergers are old enough to skip during scraping/extraction. Used as a module *and* as a CLI. |
 | `normalization.py` | Shared string/value normalisation (e.g. determination labels). |
 | `date_utils.py` | Date parsing helpers shared across the pipeline. |
 | `merger_filters.py` | Canonical predicates and loaders over `mergers.json` (single source of truth for "active", "waiver", etc.). |
 | `slug.py` | URL slugs for mergers, parties and industries. Pinned to `slug-cases.json`. |
+| `shard.py` | Which `parties/shard-{nn}.json` bucket a party lives in. Pinned to `shard-cases.json`; mirrors `frontend/src/utils/shard.js`. |
+| `industry_division.py` | Which `industries/{division}.json` file an ANZSIC code is packed into. Pinned to `industry-division-cases.json`; mirrors `frontend/src/utils/industryDivision.js`. |
 | `paths.py` | `REPO_ROOT` / `SCRIPTS_DIR` anchors, so no module has to know how deep it sits. |
 | `compress_pdfs.py` | Shrinks oversized PDFs so Cloudflare Pages will deploy them. |
 | `check_deploy_assets.py` | Safety net: reports files still over the Pages asset limit. |
-| `check_phase2_notice_ocr_needed.py` | Tells the extract workflow whether it needs to install Tesseract. |
+| `check_phase2_notice_ocr_needed.py` | Tells `pipeline.yml` whether it needs to install Tesseract. |
+| `check_watchlist.py` | Reports which merger IDs in `WATCHLIST_MATTER_IDS` changed this pipeline run, for a private ntfy push. |
 | `fix_missing_notification_dates.py` | Suggests default notification dates for records missing one. |
-| `unfreeze_mergers.py` | Clears frozen event data so a merger is re-parsed from scratch. |
+| `unfreeze_mergers.py` | Removes a merger (or some of its event titles) from `data/frozen_events_mergers.json`, so its events are re-scraped. |
 | `send_weekly_email.py` | Renders and sends the weekly digest via Resend. |
 | `build.sh` | Cloudflare Pages build entry point (`bash scripts/build.sh`). |
 
 ## Subdirectories
 
 - [`tools/`](tools/) — Interactive admin web UIs (`resolver.py`,
-  `commentary.py`). Not part of the automated pipeline; run by hand to
-  edit the processed JSON.
+  `commentary.py`, `related_parties.py`, `advisors.py`). Not part of the
+  automated pipeline; run by hand to edit the processed JSON.
 - [`tests/`](tests/) — Pytest suite covering the pipeline,
   duplicate-detection, filters, and static-data generators.
 - `constants/` — Canonical string constants (e.g. merger status
   values).
+- `atproto/` — ATmosphere publishing: the lexicon and matter publishers and the
+  Bluesky poster (see [`docs/atproto.md`](../docs/atproto.md)).
+- `linkedin/` — LinkedIn posting and the ntfy share-link stopgap (see
+  [`docs/linkedin.md`](../docs/linkedin.md)).
 - `generate/static_data/` — Building blocks for `generate_static_data.py`
   (loaders, filters, enrichment, per-merger estimators, individual output
   writers). Two estimators attach derived fields to every merger:
