@@ -661,6 +661,11 @@ def generate(mergers: list, as_at: date | None = None, commentary: dict | None =
     ``as_at`` defaults to today in Sydney, as for ``analysis.current_status``:
     the quarter it falls in is still running, so the last quarter published is
     the one before. ``commentary`` is quarterly_commentary.json as loaded.
+
+    ``as_at`` only chooses which quarters are complete; it is deliberately not
+    written into the payload. Stamping the run date would change the file on
+    the first run of every day with no data behind it, and each change
+    dispatches quarterly-report.yml to redraw the PDFs.
     """
     if as_at is None:
         as_at = datetime.now(_SYDNEY).date()
@@ -680,7 +685,6 @@ def generate(mergers: list, as_at: date | None = None, commentary: dict | None =
     for previous, block in zip([None] + quarters, quarters):
         block["findings"] = findings(block, previous)
     return {
-        "as_at": as_at.isoformat(),
         "duration_buckets": _bucket_labels(DURATION_BUCKETS),
         "pre_notification_buckets": _bucket_labels(PRE_NOTIFICATION_BUCKETS),
         "quarters": quarters,

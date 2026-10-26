@@ -64,7 +64,6 @@ function block(key, label, { filed, decided, p1Median, wMedian, preMedian = 15, 
 }
 
 const FIXTURE = {
-  as_at: '2026-10-22',
   duration_buckets: BUCKETS,
   pre_notification_buckets: ['0', '1–10', '11–20', '21–40', '41–60', '61+'],
   quarters: [
