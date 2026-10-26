@@ -1,6 +1,6 @@
 {
   "total_mergers": 304,
-  "total_waivers": 478,
+  "total_waivers": 479,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 257,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 453,
+    "Approved": 454,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.59205020920502,
-    "median_days": 21.0,
-    "average_business_days": 14.085774058577407,
-    "median_business_days": 14.0
+    "average_days": 20.60125260960334,
+    "median_days": 21,
+    "average_business_days": 14.089770354906054,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 90
+      "count": 91
     },
     {
       "name": "Computer System Design and Related Services",
@@ -92,7 +92,7 @@
     },
     {
       "name": "Supermarket and Grocery Stores",
-      "count": 23
+      "count": 24
     }
   ],
   "recent_mergers": [
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70042",
+      "merger_name": "Attindas \u2013 Activ Medical Disposable group",
+      "determination": "Approved",
+      "determination_date": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T17:34:58+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-25059",
       "merger_name": "Tasmanian Department of Health \u2013 leasehold interest in vacant site at Hobart International Airport",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-23T12:00:00Z",
       "page_modified_datetime": "2026-10-23T17:04:04+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-45033",
-      "merger_name": "ANZ Australian Staff Superannuation Scheme \u2013 further investment in Vinva Australian Equities Fund unit trust",
-      "determination": "Approved",
-      "determination_date": "2026-10-23T12:00:00Z",
-      "page_modified_datetime": "2026-10-23T17:02:59+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
