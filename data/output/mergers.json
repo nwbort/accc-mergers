@@ -41817,10 +41817,158 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 24,
-        "min_days": null,
+        "estimated_days": 12,
+        "min_days": 0,
         "max_days": 31,
-        "id_issued_estimated": "2026-09-21",
+        "id_issued_estimated": "2026-10-03",
+        "id_issued_before": "2026-10-15",
+        "id_issued_after": "2026-09-14",
+        "min_days_witness": "MN-55042",
+        "max_days_witness": "WA-55039",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/aub-%E2%80%93-one-underwriting",
+      "merger_name": "AUB \u2013 One Underwriting",
+      "status": "Under assessment",
+      "merger_id": "MN-55042",
+      "effective_notification_datetime": "2026-10-23T12:00:00Z",
+      "original_notification_datetime": "2026-10-23T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-12-04T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T16:30:44+11:00",
+      "consultation_response_due_date": "2026-11-02T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "AUSTAGENCIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "76 006 090 464",
+          "canonical": {
+            "id": "aub-group",
+            "name": "AUB Group"
+          },
+          "party_page": {
+            "id": "aub-group",
+            "name": "AUB Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ONE UNDERWRITING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 006 767 540",
+          "party_page": {
+            "id": "one-underwriting-pty-ltd",
+            "name": "One Underwriting Pty Ltd"
+          }
+        },
+        {
+          "name": "AON HOLDINGS AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "33 000 435 218",
+          "party_page": {
+            "id": "aon-holdings-australia-pty-limited",
+            "name": "Aon Holdings Australia Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "AUB GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "60 000 000 715",
+          "canonical": {
+            "id": "aub-group",
+            "name": "AUB Group"
+          },
+          "party_page": {
+            "id": "aub-group",
+            "name": "AUB Group"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6420",
+          "name": "Auxiliary Insurance Services"
+        }
+      ],
+      "merger_description": "Austagencies Pty Ltd, a wholly owned subsidiary of AUB Group Limited (**AUB**), proposes to acquire 100% of the shares in One Underwriting Pty Ltd (**One Underwriting**) from Aon Holdings Australia Pty Ltd.\n\nAUB is an ASX200 global insurance intermediary group with a portfolio spanning underwriting agencies, general and specialist retail brokers, authorised representative and broking networks, wholesale brokers, insurance technology platforms, and specialist claims and loss adjustment services.\n\nOne Underwriting is an indirectly wholly owned subsidiary of Aon Corporation Australia Limited and is an Australian insurance underwriting agency that designs, distributes and manages commercial insurance products under delegated authority for multiple insurers. One Underwriting distributes insurance solutions to retail brokers nationally, with products placed across domestic and international insurance markets across a range of commercial lines.",
+      "events": [
+        {
+          "date": "2026-10-23T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-05038",
+          "merger_name": "AUB \u2013 further interest in Sura Technology",
+          "acquirers": [
+            "AUSTAGENCIES PTY LTD"
+          ],
+          "targets": [
+            "SURA TECHNOLOGY RISKS (AUST) PTY LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-40023",
+          "merger_name": "AUB \u2013 further interest in KJ Risk",
+          "acquirers": [
+            "AUSTBROKERS CORPORATE PTY LTD"
+          ],
+          "targets": [
+            "KJ RISK GROUP PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-35028",
+          "merger_name": "efex - OnPlatinum",
+          "acquirers": [
+            "THINKEX HOLDINGS PTY LTD"
+          ],
+          "targets": [
+            "COMMS GROUP LTD",
+            "ON GROUP HOLDINGS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          21
+        ],
+        "basis": "global",
+        "question_bucket": null,
+        "question_count": null,
+        "sample_size": 258,
+        "as_of": "2026-10-23",
+        "estimated_at": "2026-10-26",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 20,
+        "min_days": null,
+        "max_days": 39,
+        "id_issued_estimated": "2026-10-03",
         "id_issued_before": null,
         "id_issued_after": "2026-09-14",
         "min_days_witness": null,

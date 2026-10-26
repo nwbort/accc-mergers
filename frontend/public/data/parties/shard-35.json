@@ -62,6 +62,18 @@
       "mergers": {
         "acquirer": [
           {
+            "merger_id": "MN-55042",
+            "merger_name": "AUB \u2013 One Underwriting",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-23T12:00:00Z",
+            "determination_date": null
+          },
+          {
             "merger_id": "WA-05038",
             "merger_name": "AUB \u2013 further interest in Sura Technology",
             "is_waiver": true,
@@ -90,11 +102,11 @@
           }
         ]
       },
-      "merger_count": 2,
-      "phase_1_count": 0,
+      "merger_count": 3,
+      "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 2,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": null,
       "waiver_duration": {
         "average_days": 19.5,
