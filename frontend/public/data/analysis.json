@@ -20,7 +20,7 @@
         "23": 5,
         "24": 2,
         "25": 11,
-        "26": 7,
+        "26": 8,
         "27": 3
       },
       "18": {
@@ -132,17 +132,17 @@
     },
     "stats": {
       "average": 20.1,
-      "median": 18.0,
+      "median": 18,
       "min": 15,
       "max": 59,
-      "count": 262
+      "count": 263
     },
     "calendar_stats": {
       "average": 29.5,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 262
+      "count": 263
     }
   },
   "waiver_duration": {
@@ -410,7 +410,7 @@
       46,
       37,
       32,
-      41
+      40
     ],
     "as_at": "2026-10-26"
   },
@@ -421,16 +421,16 @@
         "days": 30,
         "notifications_filed": 38,
         "notifications": {
-          "median": 18.0,
-          "average": 18.9,
+          "median": 17,
+          "average": 18.8,
           "p90": 25,
           "min": 15,
           "max": 26,
-          "count": 24,
+          "count": 25,
           "duration_histogram": {
             "15": 7,
             "16": 2,
-            "17": 3,
+            "17": 4,
             "19": 1,
             "20": 2,
             "21": 4,
@@ -439,7 +439,7 @@
             "25": 2,
             "26": 1
           },
-          "median_delta": 0.0
+          "median_delta": -1
         },
         "waivers": {
           "median": 17,
@@ -476,16 +476,16 @@
         "days": 90,
         "notifications_filed": 106,
         "notifications": {
-          "median": 18,
+          "median": 18.0,
           "average": 20.8,
           "p90": 27,
           "min": 15,
           "max": 56,
-          "count": 105,
+          "count": 106,
           "duration_histogram": {
             "15": 19,
             "16": 13,
-            "17": 10,
+            "17": 11,
             "18": 11,
             "19": 8,
             "20": 6,
@@ -544,12 +544,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18.0,
+        "median": 18,
         "average": 20.1,
         "p90": 27,
         "min": 15,
         "max": 59,
-        "count": 262
+        "count": 263
       },
       "waivers": {
         "median": 14,
@@ -682,9 +682,9 @@
           "count": 36
         },
         {
-          "median": 19.5,
-          "average": 19.1,
-          "count": 22
+          "median": 19,
+          "average": 19.0,
+          "count": 23
         }
       ],
       "waivers": [
@@ -779,7 +779,7 @@
         46,
         37,
         32,
-        41
+        40
       ]
     }
   },
@@ -859,11 +859,11 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "average_business_days": 21.6,
-      "median_business_days": 19.5,
-      "average_calendar_days": 32.8,
-      "median_calendar_days": 28.0,
-      "count": 42
+      "average_business_days": 21.5,
+      "median_business_days": 19,
+      "average_calendar_days": 32.6,
+      "median_calendar_days": 28,
+      "count": 43
     },
     {
       "code": "D",
@@ -913,11 +913,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "average_business_days": 19.9,
-      "median_business_days": 18,
-      "average_calendar_days": 29.2,
-      "median_calendar_days": 27,
-      "count": 77
+      "average_business_days": 19.8,
+      "median_business_days": 18.0,
+      "average_calendar_days": 29.1,
+      "median_calendar_days": 27.0,
+      "count": 78
     },
     {
       "code": "E",
@@ -950,11 +950,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 182,
+      "count": 183,
       "outcome_mix": {
-        "Approved": 182
+        "Approved": 183
       },
-      "median_business_days": 17.0
+      "median_business_days": 17
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -967,9 +967,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 38,
+      "count": 37,
       "outcome_mix": {
-        "Unknown": 38
+        "Unknown": 37
       },
       "median_business_days": null
     },
@@ -1031,7 +1031,7 @@
     "histogram": {
       "15": 57,
       "16": 42,
-      "17": 28,
+      "17": 29,
       "18": 27,
       "19": 22,
       "20": 13,
@@ -1053,9 +1053,9 @@
     },
     "stats": {
       "mean_used_bd": 18.3,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 2.9,
-      "count": 242
+      "count": 243
     },
     "extended_count": 11
   },
@@ -1123,11 +1123,11 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "approved": 40,
+      "approved": 41,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.048
+      "in_progress": 9,
+      "phase2_referral_rate": 0.047
     },
     {
       "code": "M",
@@ -1159,10 +1159,10 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 75,
+      "approved": 76,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 16,
+      "in_progress": 15,
       "phase2_referral_rate": 0.026
     },
     {

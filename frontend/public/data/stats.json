@@ -3,12 +3,12 @@
   "total_waivers": 475,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 256,
-    "Under assessment": 41,
+    "Assessment completed": 257,
+    "Under assessment": 40,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 249,
+    "Approved": 250,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 254,
+    "cleared": 255,
     "not_cleared": 2,
-    "total": 256,
+    "total": 257,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.52671755725191,
-    "median_days": 26.0,
-    "average_business_days": 20.080152671755727,
-    "median_business_days": 18.0,
+    "average_days": 29.513307984790874,
+    "median_days": 26,
+    "average_business_days": 20.068441064638783,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 57,
-        "percentage": 21.8
+        "percentage": 21.7
       },
       "day20": {
-        "count": 189,
-        "percentage": 72.1
+        "count": 190,
+        "percentage": 72.2
       },
       "day30": {
-        "count": 245,
+        "count": 246,
         "percentage": 93.5
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-45029",
+      "merger_name": "Schreiber Foods \u2013 Real Dairy Australia",
+      "determination": "Approved",
+      "determination_date": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T15:02:22+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-85042",
       "merger_name": "Vets Central \u2013 Vital Vet Animal Hospital",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-90039",
-      "merger_name": "Uber \u2013 Delivery Hero",
-      "determination": "Not approved",
-      "determination_date": "2026-10-22T12:00:00Z",
-      "page_modified_datetime": "2026-10-22T17:00:18+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
