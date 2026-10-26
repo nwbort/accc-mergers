@@ -317,7 +317,8 @@ class TestPromo:
         # One link around the whole card; classic Outlook links the title and
         # the call to action instead.
         assert _modern_view(html).count(href) == 1
-        assert _outlook_view(html).count(href) == 2
+        # Title, description and call to action.
+        assert _outlook_view(html).count(href) == 3
         assert 'Something new &amp; shiny' in html
         assert 'Go see' in html
         text = swe.build_text_email(_digest(), promo=self.PROMO)
@@ -366,13 +367,18 @@ class TestWholeCardLinks:
             assert len(links) == 1
             assert 'display:block' in links[0]
 
-    def test_outlook_links_each_title(self):
+    def test_outlook_links_every_line_of_a_card(self):
         outlook = _outlook_view(self._html())
         assert 'display:block' not in ''.join(
             re.findall(rf'<a href="{swe.SITE_BASE}/mergers/[^"]*"[^>]*>', outlook)
         )
-        for mid in ('MN-1', 'MN-2', 'MN-3'):
-            assert outlook.count(f'href="{swe.SITE_BASE}/mergers/{mid}"') == 1
+        sections = outlook.split('<!-- SECTIONS -->')[1].split('<!-- FOOTER -->')[0]
+        unlinked = _text(re.sub(r'<a [^>]*>.*?</a>', '', sections, flags=re.DOTALL))
+        # Section heads, group labels and column heads are all that is left.
+        for card_text in ('New Co', 'MN-2', 'Notified', 'Cleared Co', 'CLEARED',
+                          'Phase 1 &middot;', 'Pending Co', '1 Apr 2026'):
+            assert card_text in _text(sections)
+            assert card_text not in unlinked
 
     def test_no_link_nests_inside_another(self):
         html = self._html()
