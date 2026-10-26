@@ -2,7 +2,10 @@
 
 - **Status:** Proposed
 - **Date:** 2026-07-07
-- **Spec:** item 30 in [repo-review-specs.md](repo-review-specs.md)
+- **Spec:** item 30 in
+  [`repo-review-specs.md`](https://github.com/nwbort/accc-mergers/blob/35fb1d74687c91700238675b28642702dc098cf7/docs/repo-review-specs.md#30-move-bulky-raw-data-out-of-the-deploy-triggering-repo-path)
+  (added in [#575](https://github.com/nwbort/accc-mergers/pull/575), removed
+  in [#690](https://github.com/nwbort/accc-mergers/pull/690))
 - **Decision:** Adopt Option A (orphan `raw-data` branch) as a follow-up
   implementation item; apply Option C's partial-clone guidance immediately;
   defer Option B (Cloudflare R2) unless Pages platform limits start to bite.

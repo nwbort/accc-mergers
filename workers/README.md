@@ -27,7 +27,8 @@ workers/<worker-name>/
     └── index.js     # entry point (main = "src/index.js")
 ```
 
-and the same npm scripts, so you never have to look them up:
+and the same npm scripts, so you never have to look them up (except that
+`mergers-digest-signup` has no `tail` script yet — use `npx wrangler tail`):
 
 ```bash
 npm install
@@ -42,8 +43,8 @@ Secrets are never committed. Each `wrangler.toml` lists the
 
 ## CI
 
-[`workers-test.yml`](../.github/workflows/workers-test.yml) (manual —
-`workflow_dispatch`) walks every directory here and runs `npm ci`,
+[`workers-test.yml`](../.github/workflows/workers-test.yml) (pull requests
+touching `workers/**`, plus manual `workflow_dispatch`) walks every directory here and runs `npm ci`,
 `npm test --if-present`, then `npm run deploy:dry`. It finds Workers by
 globbing `workers/*/package.json`, so a new Worker directory following the
 layout above is picked up with no change to the workflow. Only

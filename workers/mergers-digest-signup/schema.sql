@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS feedback (
 -- rows once the frontend pings it (see ALLOWED_EVENT_TYPES in src/index.js).
 CREATE TABLE IF NOT EXISTS feature_events (
   event_type TEXT    NOT NULL,
-  day        TEXT    NOT NULL, -- UTC date, YYYY-MM-DD
+  day        TEXT    NOT NULL, -- Australia/Sydney date, YYYY-MM-DD
   count      INTEGER NOT NULL DEFAULT 0,
   PRIMARY KEY (event_type, day)
 );

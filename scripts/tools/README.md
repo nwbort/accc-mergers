@@ -43,7 +43,7 @@ are combined and de-duplicated, and you're prompted for the merged canonical
 name. Writes back to `data/processed/related_parties.json`.
 
 This is the hand-editing counterpart to `scripts/detect/detect_related_parties.py`,
-which suggests new groups daily via a pull request. The grouping rules — how a
+which suggests new groups via a pull request on each `pipeline.yml` run. The grouping rules — how a
 party is matched to a group by ABN or normalised name — live in
 `scripts/detect/party_matching.py`; once a group is recorded, each matching party on a
 merger detail page links to the register filtered by the group's canonical name.
@@ -74,7 +74,7 @@ automatically.
 
 To work through the register newest-first and decide new groupings from the
 `merger_description` text (rather than from name-similarity signals), use
-`../related_parties_batch.py` — a plain CLI, not a web UI:
+[`../detect/related_parties_batch.py`](../detect/related_parties_batch.py) — a plain CLI, not a web UI:
 
 ```bash
 # Mergers ranked 31st-40th by notification date, newest first
@@ -137,7 +137,7 @@ python -m scripts.tools.advisors   # opens already unlocked
 
 The tool reads/writes `advisors.json.enc` directly; commit that file after
 editing. There is no committed `.enc` to start with — the first save creates
-it. To bootstrap from the existing plaintext template instead, use the CLI
+it. To bootstrap from a local plaintext `advisors.json` instead, use the CLI
 (which honours `ADVISORS_PASSPHRASE` or prompts):
 
 ```bash
@@ -166,7 +166,7 @@ env:
 
 ## Dependencies
 
-All three tools need `fastapi`, `uvicorn`, and `pydantic` on top of the base
+All four tools need `fastapi`, `uvicorn`, and `pydantic` on top of the base
 pipeline requirements. `advisors.py` additionally needs `cryptography` (it is
 pinned in `scripts/requirements.txt`):
 

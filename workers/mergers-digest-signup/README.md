@@ -1,6 +1,6 @@
 # Cloudflare Worker — `mergers-digest-signup`
 
-Handles two endpoints used by the [mergers.fyi](https://mergers.fyi)
+Handles three endpoints used by the [mergers.fyi](https://mergers.fyi)
 frontend:
 
 - `POST /` — weekly-digest email signup. Validates a Cloudflare
