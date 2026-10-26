@@ -258,9 +258,60 @@
       "notification_end_of_determination_period": "2026-04-02T12:00:00Z"
     }
   ],
+  "not_refiled": [
+    {
+      "waiver_id": "WA-90039",
+      "waiver_name": "Uber \u2013 Delivery Hero",
+      "waiver_filed_date": "2026-09-24T12:00:00Z",
+      "waiver_declined_date": "2026-10-22T12:00:00Z"
+    },
+    {
+      "waiver_id": "WA-60046",
+      "waiver_name": "Lactalis \u2013 Saputo Dairy UK",
+      "waiver_filed_date": "2026-09-15T12:00:00Z",
+      "waiver_declined_date": "2026-10-20T12:00:00Z"
+    },
+    {
+      "waiver_id": "WA-80043",
+      "waiver_name": "Coles \u2013 supermarket site in Narangba East, Qld",
+      "waiver_filed_date": "2026-09-15T12:00:00Z",
+      "waiver_declined_date": "2026-10-20T12:00:00Z"
+    },
+    {
+      "waiver_id": "WA-85051",
+      "waiver_name": "MedHealth \u2013 Integrity Medico-Legal",
+      "waiver_filed_date": "2026-09-03T12:00:00Z",
+      "waiver_declined_date": "2026-10-06T12:00:00Z"
+    },
+    {
+      "waiver_id": "WA-20036",
+      "waiver_name": "Sinopec \u2013 Park Fuels",
+      "waiver_filed_date": "2026-08-28T12:00:00Z",
+      "waiver_declined_date": "2026-09-24T12:00:00Z"
+    },
+    {
+      "waiver_id": "WA-80040",
+      "waiver_name": "Sims \u2013 business assets of OneStop Metal Recycling in TAS",
+      "waiver_filed_date": "2026-08-20T12:00:00Z",
+      "waiver_declined_date": "2026-09-16T12:00:00Z"
+    },
+    {
+      "waiver_id": "WA-05045",
+      "waiver_name": "Grafton Motor Group \u2013 Grafton Mazda",
+      "waiver_filed_date": "2026-07-31T12:00:00Z",
+      "waiver_declined_date": "2026-08-27T12:00:00Z"
+    },
+    {
+      "waiver_id": "WA-75015",
+      "waiver_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
+      "waiver_filed_date": "2026-03-17T12:00:00Z",
+      "waiver_declined_date": "2026-04-02T12:00:00Z"
+    }
+  ],
   "count": {
     "current": 4,
-    "completed": 13
+    "completed": 13,
+    "not_refiled": 8
   },
   "phase_1_clearance_rate": {
     "cleared": 12,

@@ -710,7 +710,7 @@ exists rather than 404ing into the SPA's `index.html`.
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |
 | `theories_of_harm.json` | Keyword-classified theory-of-harm taxonomy |
 | `phase2.json` | Current + completed Phase 2 matters with statutory milestones |
-| `refiled-notifications.json` | Waivers declined then re-filed as notifications, split into current/completed |
+| `refiled-notifications.json` | Waivers declined then re-filed as notifications, split into current/completed, plus `not_refiled`: declined waivers with no re-filed notification (yet) |
 | `extensions.json` | Phase 1 timeline extensions parsed from register notices (day counts, reasons, per-matter clock totals, Phase 2 correlation). Not read by the frontend since the `/extensions` page was removed |
 | `questionnaires/{id}.json` | Lazy-loaded questionnaire files |
 | `noccs/{id}.json` | Notice of Competition Concerns summaries (consumed by the CLI data bundle, not fetched by the frontend) |

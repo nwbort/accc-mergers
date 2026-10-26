@@ -58,7 +58,8 @@ class TestReturnsValidShape:
         assert payload == {
             'current': [],
             'completed': [],
-            'count': {'current': 0, 'completed': 0},
+            'not_refiled': [],
+            'count': {'current': 0, 'completed': 0, 'not_refiled': 0},
             'phase_1_clearance_rate': {'cleared': 0, 'referred': 0, 'total': 0, 'rate': None},
             'straight_phase_1_clearance_rate': {'cleared': 0, 'referred': 0, 'total': 0, 'rate': None},
             'phase_duration': None,
@@ -83,7 +84,7 @@ class TestCurrentVsCompleted:
     def test_pair_without_notification_determination_is_current(self):
         mergers = [_waiver(), _current_notification()]
         payload = refiled.generate(mergers)
-        assert payload['count'] == {'current': 1, 'completed': 0}
+        assert payload['count'] == {'current': 1, 'completed': 0, 'not_refiled': 0}
         entry = payload['current'][0]
         assert entry['waiver_id'] == 'WA-0001'
         assert entry['notification_id'] == 'MN-0001'
@@ -95,7 +96,7 @@ class TestCurrentVsCompleted:
             _completed_notification(),
         ]
         payload = refiled.generate(mergers)
-        assert payload['count'] == {'current': 0, 'completed': 1}
+        assert payload['count'] == {'current': 0, 'completed': 1, 'not_refiled': 0}
         entry = payload['completed'][0]
         assert entry['notification_determination'] == 'Approved'
         assert entry['notification_determination_date'] == '2025-04-01T09:00:00Z'
@@ -103,7 +104,7 @@ class TestCurrentVsCompleted:
     def test_mergers_without_related_merger_are_ignored(self):
         mergers = [{'merger_id': 'MN-9999', 'merger_name': 'Unrelated'}]
         payload = refiled.generate(mergers)
-        assert payload['count'] == {'current': 0, 'completed': 0}
+        assert payload['count'] == {'current': 0, 'completed': 0, 'not_refiled': 0}
 
     def test_suspended_refiled_pairs_are_excluded(self):
         # Only waiver_refiled ("refiled_as"/"refiled_from") pairs belong on
@@ -112,12 +113,12 @@ class TestCurrentVsCompleted:
         waiver['related_merger']['relationship'] = 'suspended_refiled_as'
         mergers = [waiver, _current_notification()]
         payload = refiled.generate(mergers)
-        assert payload['count'] == {'current': 0, 'completed': 0}
+        assert payload['count'] == {'current': 0, 'completed': 0, 'not_refiled': 0}
 
     def test_dangling_relationship_without_matching_merger_is_ignored(self):
         mergers = [_waiver(notification_id='MN-9999')]
         payload = refiled.generate(mergers)
-        assert payload['count'] == {'current': 0, 'completed': 0}
+        assert payload['count'] == {'current': 0, 'completed': 0, 'not_refiled': 0}
 
     def test_referred_notification_later_ceased_is_completed_as_ceased(self):
         # A matter referred to Phase 2 and then abandoned ends as a ceased
@@ -130,7 +131,7 @@ class TestCurrentVsCompleted:
         ceased['phase_1_determination_date'] = '2025-03-01T09:00:00Z'
         mergers = [_waiver(merger_id='WA-0005', notification_id='MN-0005'), ceased]
         payload = refiled.generate(mergers)
-        assert payload['count'] == {'current': 0, 'completed': 1}
+        assert payload['count'] == {'current': 0, 'completed': 1, 'not_refiled': 0}
         entry = payload['completed'][0]
         assert entry['notification_determination'] == 'Assessment ceased'
         assert entry['notification_determination_date'] == '2025-06-01T09:00:00Z'
@@ -293,7 +294,7 @@ class TestPhaseDuration:
             referred,
         ]
         payload = refiled.generate(mergers)
-        assert payload['count'] == {'current': 1, 'completed': 0}
+        assert payload['count'] == {'current': 1, 'completed': 0, 'not_refiled': 0}
         assert payload['phase_duration'] is not None
         assert payload['phase_duration']['completed_count'] == 1
 
@@ -324,3 +325,55 @@ class TestSorting:
         mergers = [early_waiver, early, late_waiver, late]
         payload = refiled.generate(mergers)
         assert [e['notification_id'] for e in payload['completed']] == ['MN-0002', 'MN-0001']
+
+
+def _declined_waiver(merger_id='WA-0009', declined='2025-05-01T09:00:00Z'):
+    return {
+        'merger_id': merger_id,
+        'merger_name': 'Abandoned deal',
+        'is_waiver': True,
+        'status': 'Assessment completed',
+        'accc_determination': 'Not approved',
+        'effective_notification_datetime': '2025-04-01T09:00:00Z',
+        'determination_publication_date': declined,
+    }
+
+
+class TestNotRefiled:
+    def test_declined_waiver_without_pair_is_listed(self):
+        payload = refiled.generate([_declined_waiver()])
+        assert payload['count']['not_refiled'] == 1
+        assert payload['not_refiled'] == [{
+            'waiver_id': 'WA-0009',
+            'waiver_name': 'Abandoned deal',
+            'waiver_filed_date': '2025-04-01T09:00:00Z',
+            'waiver_declined_date': '2025-05-01T09:00:00Z',
+        }]
+
+    def test_refiled_waiver_is_not_listed(self):
+        waiver = _waiver()
+        waiver['is_waiver'] = True
+        payload = refiled.generate([waiver, _current_notification()])
+        assert payload['not_refiled'] == []
+        assert payload['count']['current'] == 1
+
+    def test_approved_waiver_is_not_listed(self):
+        waiver = _declined_waiver()
+        waiver['accc_determination'] = 'Approved'
+        assert refiled.generate([waiver])['not_refiled'] == []
+
+    def test_dangling_pair_counts_as_not_refiled(self):
+        # The paired notification isn't in the data, so nothing was re-filed
+        # that the page can show.
+        waiver = _waiver(notification_id='MN-9999')
+        waiver['is_waiver'] = True
+        payload = refiled.generate([waiver])
+        assert [e['waiver_id'] for e in payload['not_refiled']] == ['WA-0001']
+
+    def test_sorted_most_recently_declined_first(self):
+        mergers = [
+            _declined_waiver('WA-0001', '2025-01-01T09:00:00Z'),
+            _declined_waiver('WA-0002', '2025-09-01T09:00:00Z'),
+        ]
+        payload = refiled.generate(mergers)
+        assert [e['waiver_id'] for e in payload['not_refiled']] == ['WA-0002', 'WA-0001']

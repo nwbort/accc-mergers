@@ -226,6 +226,38 @@ function RefiledList({ pairs, showOutcome, emptyMessage }) {
   );
 }
 
+// A declined waiver with no notification on the register yet. Some will still
+// be re-filed, so the card counts the days since the decline rather than
+// presenting the list as final.
+function NotRefiledCard({ waiver }) {
+  const daysSinceDeclined = calculateDuration(waiver.waiver_declined_date, new Date().toISOString());
+
+  return (
+    <li className="py-3 first:pt-0 last:pb-0 flex items-start justify-between gap-3">
+      <div className="min-w-0">
+        <Link
+          to={mergerPath(waiver.waiver_id, waiver.waiver_name)}
+          className="block text-sm font-semibold text-gray-900 hover:text-primary transition-colors truncate"
+        >
+          {waiver.waiver_name}
+        </Link>
+        <p className="text-xs text-gray-500 mt-0.5">
+          {waiver.waiver_id}
+          {' · Filed '}
+          {formatDateMedium(waiver.waiver_filed_date)}
+          {' · Declined '}
+          {formatDateMedium(waiver.waiver_declined_date)}
+        </p>
+      </div>
+      {daysSinceDeclined !== null && (
+        <p className="flex-shrink-0 text-xs font-medium text-gray-700 whitespace-nowrap">
+          {daysSinceDeclined} day{daysSinceDeclined !== 1 ? 's' : ''} ago
+        </p>
+      )}
+    </li>
+  );
+}
+
 function RefiledNotifications() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.refiledNotifications, { cacheKey: 'refiled-notifications' });
 
@@ -234,6 +266,7 @@ function RefiledNotifications() {
 
   const current = data?.current || [];
   const completed = data?.completed || [];
+  const notRefiled = data?.not_refiled || [];
   const all = [...current, ...completed];
   const totalPairs = all.length;
   const medianDaysToRefile = median(
@@ -323,7 +356,7 @@ function RefiledNotifications() {
           />
         </section>
 
-        <section aria-labelledby="refiled-completed-heading">
+        <section aria-labelledby="refiled-completed-heading" className="mb-8">
           <h2 id="refiled-completed-heading" className="text-lg font-semibold text-gray-900 mb-4">
             Completed
           </h2>
@@ -332,6 +365,23 @@ function RefiledNotifications() {
             showOutcome
             emptyMessage="No re-filed notifications have been determined yet."
           />
+        </section>
+
+        <section aria-labelledby="not-refiled-heading">
+          <h2 id="not-refiled-heading" className="text-lg font-semibold text-gray-900 mb-4">
+            Declined waivers not re-filed
+          </h2>
+          <div className={`${CARD} p-5 sm:p-6`}>
+            {notRefiled.length === 0 ? (
+              <p className="text-gray-500 text-sm">Every declined waiver has been re-filed as a notification.</p>
+            ) : (
+              <ul className="divide-y divide-gray-100">
+                {notRefiled.map((waiver) => (
+                  <NotRefiledCard key={waiver.waiver_id} waiver={waiver} />
+                ))}
+              </ul>
+            )}
+          </div>
         </section>
       </div>
     </>

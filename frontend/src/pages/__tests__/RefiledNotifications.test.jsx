@@ -138,4 +138,28 @@ describe('RefiledNotifications', () => {
     expect(within(card).getByText('10 Dec 2026')).toBeInTheDocument();
     expect(within(card).getByText('Phase 2')).toBeInTheDocument();
   });
+
+  it('lists declined waivers that have not been re-filed', async () => {
+    const notRefiled = {
+      waiver_id: 'WA-90039',
+      waiver_name: 'Uber – Delivery Hero',
+      waiver_filed_date: '2026-09-24T12:00:00Z',
+      waiver_declined_date: '2026-10-22T12:00:00Z',
+    };
+    renderPage(payload({ not_refiled: [notRefiled] }));
+
+    const section = (await screen.findByRole('heading', { name: 'Declined waivers not re-filed' }))
+      .closest('section');
+    const link = within(section).getByRole('link', { name: 'Uber – Delivery Hero' });
+    expect(link).toHaveAttribute('href', expect.stringMatching(/^\/mergers\/WA-90039/));
+    expect(within(section).getByText(/Declined 22 Oct 2026/)).toBeInTheDocument();
+  });
+
+  it('says so when every declined waiver has been re-filed', async () => {
+    renderPage(payload({ not_refiled: [] }));
+
+    const section = (await screen.findByRole('heading', { name: 'Declined waivers not re-filed' }))
+      .closest('section');
+    expect(within(section).getByText(/Every declined waiver has been re-filed/)).toBeInTheDocument();
+  });
 });
