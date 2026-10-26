@@ -91,6 +91,7 @@ GREEN_ON_PALE = "#2C4A3E"  # banner text
 FOOTER_TEXT = "#CBDDD2"    # links on the green footer
 FOOTER_MUTED = "#A9C6B6"   # small print on the green footer
 WORDMARK_DOT = "#10b981"   # the accent "." in the mergers.fyi wordmark
+FOOTER_DOT = "#6EE7B7"     # the same dot, lightened to read on the green footer
 INK = "#111827"            # headings, matter names, figures
 BODY_TEXT = "#4B5563"
 MUTED = "#6B7280"
@@ -112,6 +113,47 @@ MONO = "Consolas,'SF Mono',Menlo,monospace"
 # and the 640px column is pinned by a ghost table inside an MSO conditional.
 TABLE = 'cellpadding="0" cellspacing="0" border="0" role="presentation"'
 FULL_TABLE = f'width="100%" {TABLE}'
+
+# Whole-card links. Every client but classic Outlook (Word engine) lets an <a>
+# be a padded block wrapping tables and divs, so the whole card is the link.
+# Word ignores display:block and padding on <a> and drops links that span
+# block content, so it gets no wrapper: the cell keeps its padding through
+# mso-padding-alt, and each run of the card's text carries its own copy of
+# the link (mso_link, mso_text), so any line of it is a click target.
+NOT_MSO_OPEN, NOT_MSO_CLOSE = "<!--[if !mso]><!-->", "<!--<![endif]-->"
+
+
+def block_link(href: str, inner: str, padding: str, cls: str = "") -> str:
+    """``inner`` wrapped in one block link, for every client but classic Outlook.
+
+    The enclosing <td> should carry ``padding:0;mso-padding-alt:{padding}`` so
+    the padding sits inside the link where it can, and on the cell where not.
+    """
+    class_attr = f' class="{cls}"' if cls else ""
+    return (
+        f'{NOT_MSO_OPEN}<a href="{href}"{class_attr} style="display:block;padding:{padding};'
+        f'color:{INK};text-decoration:none;">{NOT_MSO_CLOSE}'
+        f"{inner}"
+        f"{NOT_MSO_OPEN}</a>{NOT_MSO_CLOSE}"
+    )
+
+
+def mso_link(href: str, inner: str, style: str) -> str:
+    """A link only classic Outlook sees: the text-level fallback for a
+    block_link, which can't hold a link of its own (links don't nest)."""
+    return (
+        f'<!--[if mso]><a href="{href}" style="{style}"><![endif]-->'
+        f"{inner}<!--[if mso]></a><![endif]-->"
+    )
+
+
+def mso_text(href: str | None, inner: str, color: str) -> str:
+    """One run of a card's text linked for classic Outlook, in its own colour,
+    so every line of the card is a click target there, not just the title.
+    Word gives a link its own colour, so the run's colour goes on the link."""
+    if not href:
+        return inner
+    return mso_link(href, inner, f"color:{color};text-decoration:none;")
 
 # ---------------------------------------------------------------------------
 # Data loading
@@ -465,26 +507,26 @@ def chip(label: str, pale: str, dark: str) -> str:
     )
 
 
-def waiver_chip() -> str:
-    return " " + chip("WAIVER", "#EEF0EF", MUTED)
+def waiver_chip(href: str | None = None) -> str:
+    return " " + mso_text(href, chip("WAIVER", "#EEF0EF", MUTED), MUTED)
 
 
-def pill(label: str, pale: str, dark: str, size: int = 10) -> str:
+def pill(label: str, pale: str, dark: str, size: int = 10, href: str | None = None) -> str:
     """A padded label cell. A <td> is the only element Outlook pads."""
     return (
         f'<td bgcolor="{pale}" style="background-color:{pale};padding:3px 8px;'
         f'font-size:{size}px;font-weight:700;letter-spacing:0.6px;color:{dark};'
-        f'white-space:nowrap;">{label}</td>'
+        f'white-space:nowrap;">{mso_text(href, label, dark)}</td>'
     )
 
 
-def pill_line(pills: list[str], meta: str) -> str:
+def pill_line(pills: list[str], meta: str, href: str | None = None) -> str:
     """Pills followed by a meta line, kept on one row in every client."""
     gap = '<td width="6" style="font-size:1px;line-height:1px;">&nbsp;</td>'
     cells = "".join(p + gap for p in pills)
     return (
         f"<table {TABLE}><tr>{cells}"
-        f'<td style="font-size:12px;line-height:18px;color:{MUTED};">{meta}</td></tr></table>'
+        f'<td style="font-size:12px;line-height:18px;color:{MUTED};">{mso_text(href, meta, MUTED)}</td></tr></table>'
     )
 
 
@@ -619,9 +661,11 @@ def _tiles(cells: list[tuple]) -> str:
         if i:
             tds.append(f'<td width="{gap}%" style="font-size:1px;line-height:1px;">&nbsp;</td>')
         tds.append(
-            f'<td class="tile" width="{share}" valign="top" bgcolor="{TILE_BG}" style="background-color:{TILE_BG};'
-            f'border-top:3px solid {color["border"]};padding:12px 14px;">'
-            f'<a href="{SITE_BASE}/digest#{anchor}" style="text-decoration:none;">'
+            # The padding is on the link so the whole tile is clickable; Outlook
+            # ignores padding on <a>, so mso-padding-alt keeps it on the cell.
+            f'<td width="{share}" valign="top" bgcolor="{TILE_BG}" style="background-color:{TILE_BG};'
+            f'border-top:3px solid {color["border"]};padding:0;mso-padding-alt:12px 14px;">'
+            f'<a href="{SITE_BASE}/digest#{anchor}" class="tile" style="display:block;padding:12px 14px;text-decoration:none;">'
             f'<span class="tile-n" style="font-size:28px;line-height:32px;font-weight:700;color:{INK};">{n}</span><br>'
             f'<span style="font-size:12px;line-height:16px;color:{MUTED};">{label}</span>'
             "</a></td>"
@@ -688,28 +732,36 @@ def section_table(rows: str) -> str:
     return f"<table {FULL_TABLE}>{rows}</table>"
 
 
-def bar_row(color: str, inner: str, last: bool) -> str:
-    """A list row with a slim outcome-coloured rule down its left edge."""
+def bar_row(merger: dict, color: str, inner: str, last: bool) -> str:
+    """A list row with a slim outcome-coloured rule down its left edge, the
+    whole row a link to the matter."""
     divider = "" if last else f"border-bottom:1px solid {LINE};"
     return (
-        f'<tr><td colspan="2" style="padding:18px 0;{divider}">'
-        f"<table {FULL_TABLE}><tr>"
-        f'<td width="3" bgcolor="{color}" style="background-color:{color};font-size:1px;line-height:1px;">&nbsp;</td>'
-        f'<td width="16" style="font-size:1px;line-height:1px;">&nbsp;</td>'
-        f'<td valign="top">{inner}</td></tr></table></td></tr>'
+        f'<tr><td colspan="2" style="padding:0;mso-padding-alt:18px 0;{divider}">'
+        + block_link(merger_url(merger), (
+            f"<table {FULL_TABLE}><tr>"
+            f'<td width="3" bgcolor="{color}" style="background-color:{color};font-size:1px;line-height:1px;">&nbsp;</td>'
+            f'<td width="16" style="font-size:1px;line-height:1px;">&nbsp;</td>'
+            f'<td valign="top">{inner}</td></tr></table>'
+        ), "18px 0")
+        + "</td></tr>"
     )
 
 
 def row_title(merger: dict, size: int = 15) -> str:
-    return (
-        f'<a href="{merger_url(merger)}" style="color:{INK};font-size:{size}px;'
-        f'line-height:{size + 6}px;font-weight:700;text-decoration:none;">{merger_name(merger)}</a>'
+    style = (
+        f"color:{INK};font-size:{size}px;line-height:{size + 6}px;"
+        "font-weight:700;text-decoration:none;"
+    )
+    return mso_link(
+        merger_url(merger), f'<span style="{style}">{merger_name(merger)}</span>', style,
     )
 
 
-def row_detail(text: str) -> str:
+def row_detail(text: str, href: str | None = None) -> str:
     return (
-        f'<div style="font-size:13px;line-height:19px;color:{BODY_TEXT};padding-top:6px;">{text}</div>'
+        f'<div style="font-size:13px;line-height:19px;color:{BODY_TEXT};padding-top:6px;">'
+        f'{mso_text(href, text, BODY_TEXT)}</div>'
         if text else ""
     )
 
@@ -733,17 +785,18 @@ def build_new_deals(mergers: list) -> str:
                 meta_bits.append(
                     f"Decision due {esc(format_date(m.get('end_of_determination_period')))}"
                 )
+            href = merger_url(m)
             desc = truncate(m.get("merger_description", ""))
             desc_html = (
                 f'<div style="font-size:14px;line-height:21px;color:{BODY_TEXT};'
-                f'padding-top:8px;">{esc(desc)}</div>'
+                f'padding-top:8px;">{mso_text(href, esc(desc), BODY_TEXT)}</div>'
                 if desc else ""
             )
-            waiver = waiver_chip() if m.get("is_waiver") else ""
-            rows += bar_row(c["border"], (
+            waiver = waiver_chip(href) if m.get("is_waiver") else ""
+            rows += bar_row(m, c["border"], (
                 f"{row_title(m, 16)}{waiver}"
                 f'<div style="font-size:12px;line-height:18px;color:{MUTED};padding-top:4px;">'
-                f'{" &nbsp;&middot;&nbsp; ".join(meta_bits)}</div>'
+                f'{mso_text(href, " &nbsp;&middot;&nbsp; ".join(meta_bits), MUTED)}</div>'
                 f"{desc_html}"
             ), last=i == len(mergers) - 1)
     return section_table(rows)
@@ -924,17 +977,18 @@ def build_decisions(digest: dict) -> str:
                 esc(format_date(e["date"])),
                 esc(m.get("merger_id", "")),
             ) if x]
-            waiver = waiver_chip() if m.get("is_waiver") and e["chip_label"] != "CLEARED" else ""
+            href = merger_url(m)
+            waiver = waiver_chip(href) if m.get("is_waiver") and e["chip_label"] != "CLEARED" else ""
             # The register records a conditional clearance as a plain
             # "Approved", so the row says so rather than letting it read as an
             # unconditional clearance.
-            pills = [pill(e["chip_label"], e["color"]["pale"], e["color"]["dark"])]
+            pills = [pill(e["chip_label"], e["color"]["pale"], e["color"]["dark"], href=href)]
             if e.get("with_conditions"):
-                pills.append(pill("WITH CONDITIONS", e["color"]["pale"], e["color"]["dark"]))
-            rows += bar_row(e["color"]["border"], (
+                pills.append(pill("WITH CONDITIONS", e["color"]["pale"], e["color"]["dark"], href=href))
+            rows += bar_row(m, e["color"]["border"], (
                 f"{row_title(m)}{waiver}"
-                f'<div style="padding-top:7px;">{pill_line(pills, " &middot; ".join(meta_bits))}</div>'
-                f'{row_detail(esc(e["detail"]))}'
+                f'<div style="padding-top:7px;">{pill_line(pills, " &middot; ".join(meta_bits), href)}</div>'
+                f'{row_detail(esc(e["detail"]), href)}'
             ), last=i == len(entries) - 1)
     return section_table(rows)
 
@@ -952,6 +1006,7 @@ def _appeal_rows(mergers: list, chip_label: str, show_hearing: bool) -> str:
     c = COLORS["tribunal_appeal"]
     for i, m in enumerate(mergers):
         appeal = m.get("appeal") or {}
+        href = merger_url(m)
         hearing = (
             f"Hearing {esc(format_date(appeal['hearing_date']))}"
             if show_hearing and appeal.get("hearing_date") else ""
@@ -967,10 +1022,10 @@ def _appeal_rows(mergers: list, chip_label: str, show_hearing: bool) -> str:
             detail_bits.append(f"Lodged by {esc(appeal['appellant'])}")
         if appeal.get("tribunal_number"):
             detail_bits.append(esc(appeal["tribunal_number"]))
-        rows += bar_row(c["border"], (
+        rows += bar_row(m, c["border"], (
             f"{row_title(m)}"
-            f'<div style="padding-top:7px;">{pill_line([pill(chip_label, c["pale"], c["dark"])], " &middot; ".join(meta_bits))}</div>'
-            f'{row_detail(" &middot; ".join(detail_bits))}'
+            f'<div style="padding-top:7px;">{pill_line([pill(chip_label, c["pale"], c["dark"], href=href)], " &middot; ".join(meta_bits), href)}</div>'
+            f'{row_detail(" &middot; ".join(detail_bits), href)}'
         ), last=i == len(mergers) - 1)
     return rows
 
@@ -1038,17 +1093,28 @@ def build_pipeline(digest: dict) -> str:
             divider = f"border-bottom:1px solid {LINE};"
             dt = due_dt(m)
             soon = cutoff is not None and dt is not None and dt <= cutoff
+            href = merger_url(m)
             due = esc(format_date(m.get("end_of_determination_period")))
             due_html = (
-                f'<table {TABLE} align="right"><tr>{pill(due, DUE_SOON_BG, DUE_SOON, 12)}</tr></table>'
+                f'<table {TABLE} align="right"><tr>{pill(due, DUE_SOON_BG, DUE_SOON, 12, href)}</tr></table>'
                 if soon
-                else f'<span style="font-size:13px;color:{BODY_TEXT};">{due}</span>'
+                else mso_text(href, f'<span style="font-size:13px;color:{BODY_TEXT};">{due}</span>', BODY_TEXT)
             )
-            waiver = waiver_chip() if m.get("is_waiver") else ""
+            waiver = waiver_chip(href) if m.get("is_waiver") else ""
+            name_style = f"color:{INK};text-decoration:none;"
+            name = mso_link(
+                merger_url(m), f'<span style="{name_style}">{merger_name(m)}</span>', name_style,
+            )
+            # The two columns sit in a table of their own so one link can
+            # span the row.
             rows += (
-                f'<tr><td style="padding:10px 16px 10px 0;{divider}font-size:14px;line-height:20px;" valign="top">'
-                f'<a href="{merger_url(m)}" style="color:{INK};text-decoration:none;">{merger_name(m)}</a>{waiver}</td>'
-                f'<td width="110" align="right" style="padding:10px 0;{divider}" valign="top">{due_html}</td></tr>'
+                f'<tr><td colspan="2" style="padding:0;mso-padding-alt:10px 0;{divider}">'
+                + block_link(merger_url(m), (
+                    f"<table {FULL_TABLE}><tr>"
+                    f'<td style="padding-right:16px;font-size:14px;line-height:20px;" valign="top">{name}{waiver}</td>'
+                    f'<td width="110" align="right" valign="top">{due_html}</td></tr></table>'
+                ), "10px 0")
+                + "</td></tr>"
             )
     return section_table(rows)
 
@@ -1079,8 +1145,8 @@ def _wordmark(dot: str, size: int, color: str) -> str:
 def build_promo(promo: dict | None) -> str:
     """The promo card: a solid green block, like the dashboard's PromoCard.
 
-    The title and a call-to-action line both carry the link, rather than one
-    anchor wrapping the whole cell, which Outlook won't render as a link.
+    The whole card is the link; classic Outlook, which won't render a link
+    around a whole cell, gets each line of the card as a link.
     """
     if not promo:
         return ""
@@ -1088,14 +1154,21 @@ def build_promo(promo: dict | None) -> str:
     title = esc(promo["title"])
     description = esc(promo.get("description", ""))
     cta = esc(promo.get("cta", "Read more"))
+    title_style = "font-size:16px;line-height:22px;font-weight:700;color:#ffffff;text-decoration:none;"
+    cta_style = "color:#ffffff;font-weight:700;text-decoration:underline;"
+    inner = (
+        mso_link(href, f'<span style="{title_style}">{title}</span>', title_style)
+        + (f'<div style="font-size:14px;line-height:21px;color:{FOOTER_TEXT};padding-top:4px;">{mso_text(href, description, FOOTER_TEXT)}</div>' if description else "")
+        + '<div style="padding-top:12px;font-size:13px;line-height:18px;">'
+        + mso_link(href, f'<span style="{cta_style}">{cta}&nbsp;&rarr;</span>', cta_style)
+        + "</div>"
+    )
     return f"""<tr>
           <td class="gutter" bgcolor="#ffffff" style="background-color:#ffffff;padding-left:40px;padding-right:40px;padding-top:28px;">
             <table {FULL_TABLE}>
               <tr>
-                <td bgcolor="{GREEN}" style="background-color:{GREEN};padding:20px 24px;font-family:{FONT};">
-                  <a href="{href}" style="font-size:16px;line-height:22px;font-weight:700;color:#ffffff;text-decoration:none;">{title}</a>
-                  {f'<div style="font-size:14px;line-height:21px;color:{FOOTER_TEXT};padding-top:4px;">{description}</div>' if description else ""}
-                  <div style="padding-top:12px;font-size:13px;line-height:18px;"><a href="{href}" style="color:#ffffff;font-weight:700;text-decoration:underline;">{cta}&nbsp;&rarr;</a></div>
+                <td bgcolor="{GREEN}" style="background-color:{GREEN};padding:0;mso-padding-alt:20px 24px;font-family:{FONT};">
+                  {block_link(href, inner, "20px 24px")}
                 </td>
               </tr>
             </table>
@@ -1182,7 +1255,7 @@ def build_html_email(digest: dict, banner: str | None = None, promo: dict | None
     @media only screen and (max-width:620px) {{
       .gutter {{padding-left:20px !important;padding-right:20px !important;}}
       .headline {{font-size:28px !important;line-height:34px !important;}}
-      .tile {{padding:10px 8px !important;}}
+      a.tile {{padding:10px 8px !important;}}
       .tile-n {{font-size:22px !important;line-height:26px !important;}}
     }}
   </style>
@@ -1215,9 +1288,9 @@ def build_html_email(digest: dict, banner: str | None = None, promo: dict | None
           <td class="gutter" {white}{gutter}padding-top:28px;font-family:{FONT};">
             <table {FULL_TABLE}>
               <tr>
-                <td valign="middle">{_wordmark(WORDMARK_DOT, 17, GREEN)}</td>
-                <td align="right" valign="middle" style="font-size:13px;color:{MUTED};">
-                  {esc(date_range)}&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{SITE_BASE}/digest" style="color:{GREEN};font-weight:600;text-decoration:none;">View online</a>
+                <td valign="middle"><a href="{SITE_BASE}" style="text-decoration:none;">{_wordmark(WORDMARK_DOT, 17, GREEN)}</a></td>
+                <td align="right" valign="middle" style="font-size:13px;">
+                  <a href="{SITE_BASE}/digest" style="color:{MUTED};text-decoration:none;">{esc(date_range)}&nbsp;&nbsp;&middot;&nbsp;&nbsp;<span style="color:{GREEN};font-weight:600;">View online</span></a>
                 </td>
               </tr>
             </table>
@@ -1268,7 +1341,7 @@ def build_html_email(digest: dict, banner: str | None = None, promo: dict | None
           <td class="gutter" bgcolor="{GREEN}" style="background-color:{GREEN};{gutter}padding-top:28px;padding-bottom:28px;font-family:{FONT};">
             <table {FULL_TABLE}>
               <tr>
-                <td valign="middle"><a href="{SITE_BASE}" style="text-decoration:none;">{_wordmark("#6EE7B7", 15, "#ffffff")}</a></td>
+                <td valign="middle"><a href="{SITE_BASE}" style="text-decoration:none;">{_wordmark(FOOTER_DOT, 15, "#ffffff")}</a></td>
                 <td align="right" valign="middle" style="font-size:12px;">
                   <a href="{SITE_BASE}/digest" style="color:{FOOTER_TEXT};text-decoration:underline;">View in browser</a>
                   &nbsp;&nbsp;
@@ -1278,7 +1351,7 @@ def build_html_email(digest: dict, banner: str | None = None, promo: dict | None
               <tr>
                 <td colspan="2" style="padding-top:10px;font-size:12px;line-height:18px;color:{FOOTER_MUTED};">
                   You&rsquo;re receiving this because you subscribed to the mergers.fyi weekly digest
-                  at <a href="{SITE_BASE}" style="color:#ffffff;text-decoration:none;font-weight:600;">mergers.fyi</a>.
+                  at <a href="{SITE_BASE}" style="color:#ffffff;text-decoration:none;font-weight:600;">mergers<span style="color:{FOOTER_DOT};">.</span>fyi</a>.
                 </td>
               </tr>
             </table>

@@ -52,6 +52,29 @@ def _text(html):
     return re.sub(r'<[^>]+>', '', html)
 
 
+def _modern_view(html):
+    """The email as every client but classic Outlook reads it: the mso-only
+    conditional comments are just comments."""
+    return re.sub(r'<!--\[if mso\]>.*?<!\[endif\]-->', '', html, flags=re.DOTALL)
+
+
+def _outlook_view(html):
+    """The email as classic Outlook reads it: mso-only content shown, the
+    not-mso blocks dropped."""
+    html = re.sub(r'<!--\[if !mso\]><!-->.*?<!--<!\[endif\]-->', '', html, flags=re.DOTALL)
+    return re.sub(r'<!--\[if mso\]>(.*?)<!\[endif\]-->', r'\1', html, flags=re.DOTALL)
+
+
+def _nested_links(html):
+    """True when an <a> opens inside another, which no client renders."""
+    depth = 0
+    for tag in re.findall(r'<(/?)a[ >]', html):
+        depth += -1 if tag else 1
+        if depth > 1:
+            return True
+    return False
+
+
 class TestConditionsNote:
     def test_no_note_when_nothing_was_conditional(self):
         assert swe.conditions_note(0) == ''
@@ -290,7 +313,12 @@ class TestPromo:
 
     def test_promo_card_links_its_page_in_both_versions(self):
         html = swe.build_html_email(_digest(), promo=self.PROMO)
-        assert html.count(f'href="{swe.SITE_BASE}/somewhere"') == 2
+        href = f'href="{swe.SITE_BASE}/somewhere"'
+        # One link around the whole card; classic Outlook links the title and
+        # the call to action instead.
+        assert _modern_view(html).count(href) == 1
+        # Title, description and call to action.
+        assert _outlook_view(html).count(href) == 3
         assert 'Something new &amp; shiny' in html
         assert 'Go see' in html
         text = swe.build_text_email(_digest(), promo=self.PROMO)
@@ -316,3 +344,63 @@ class TestPromo:
             data = json.loads((swe.Path(__file__).resolve().parents[2] / 'frontend/public/data/quarterly.json').read_text())
             keys = {q['url_key'] for q in data['quarters']}
             assert promo['path'].removeprefix('/quarterly/') in keys
+
+
+class TestWholeCardLinks:
+    """Every card links as a whole where the client allows it, and classic
+    Outlook, which can't link a block, keeps a link on the title."""
+
+    def _html(self):
+        digest = _digest(
+            cleared=[_cleared('MN-1', 'Cleared Co')],
+            new_deals=[{'merger_id': 'MN-2', 'merger_name': 'New Co',
+                        'effective_notification_datetime': '2026-03-03T00:00:00Z'}],
+        )
+        digest['ongoing_phase_1'] = [{'merger_id': 'MN-3', 'merger_name': 'Pending Co',
+                                      'end_of_determination_period': '2026-04-01T00:00:00Z'}]
+        return swe.build_html_email(digest)
+
+    def test_each_matter_is_one_block_link(self):
+        modern = _modern_view(self._html())
+        for mid in ('MN-1', 'MN-2', 'MN-3'):
+            links = re.findall(rf'<a href="{swe.SITE_BASE}/mergers/{mid}"([^>]*)>', modern)
+            assert len(links) == 1
+            assert 'display:block' in links[0]
+
+    def test_outlook_links_every_line_of_a_card(self):
+        outlook = _outlook_view(self._html())
+        assert 'display:block' not in ''.join(
+            re.findall(rf'<a href="{swe.SITE_BASE}/mergers/[^"]*"[^>]*>', outlook)
+        )
+        sections = outlook.split('<!-- SECTIONS -->')[1].split('<!-- FOOTER -->')[0]
+        unlinked = _text(re.sub(r'<a [^>]*>.*?</a>', '', sections, flags=re.DOTALL))
+        # Section heads, group labels and column heads are all that is left.
+        for card_text in ('New Co', 'MN-2', 'Notified', 'Cleared Co', 'CLEARED',
+                          'Phase 1 &middot;', 'Pending Co', '1 Apr 2026'):
+            assert card_text in _text(sections)
+            assert card_text not in unlinked
+
+    def test_no_link_nests_inside_another(self):
+        html = self._html()
+        assert not _nested_links(_modern_view(html))
+        assert not _nested_links(_outlook_view(html))
+
+    def test_scoreboard_tiles_are_padded_block_links(self):
+        tiles = re.findall(rf'<a href="{swe.SITE_BASE}/digest#[^"]*" class="tile" style="([^"]*)"', self._html())
+        assert tiles
+        assert all('display:block' in t and 'padding:' in t for t in tiles)
+
+
+class TestMastheadAndFooter:
+    def test_wordmark_links_home_and_date_links_the_digest(self):
+        html = swe.build_html_email(_digest())
+        masthead = html.split('<!-- MASTHEAD -->')[1].split('<!-- HEADLINE')[0]
+        assert f'<a href="{swe.SITE_BASE}" style="text-decoration:none;"><span' in masthead
+        # The date and "View online" are one link.
+        digest_link = re.search(rf'<a href="{swe.SITE_BASE}/digest"[^>]*>(.*?)</a>', masthead).group(1)
+        assert '2–8 March 2026' in digest_link
+        assert 'View online' in digest_link
+
+    def test_footer_signoff_wears_the_wordmark_dot(self):
+        html = swe.build_html_email(_digest())
+        assert f'mergers<span style="color:{swe.FOOTER_DOT};">.</span>fyi</a>.' in html
