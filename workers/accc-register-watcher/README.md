@@ -2,7 +2,7 @@
 
 Watches for emails from the ACCC's merger register update mailing list and
 fires a `repository_dispatch` event (`new_merger_detected`) so the [Merger
-Pipeline](../.github/workflows/pipeline.yml) workflow runs immediately,
+Pipeline](../../.github/workflows/pipeline.yml) workflow runs immediately,
 instead of waiting for its next scheduled run (see the pipeline's
 `on.repository_dispatch` trigger and the `custom_title` run-name, both
 already wired up to receive this).
@@ -29,7 +29,7 @@ the scraper even finishes.
 
 ## Setup
 
-Steps 1–3 are one-time dashboard/account configuration outside this repo;
+Steps 1, 4 and 5 are one-time dashboard/account configuration outside this repo;
 Cloudflare Email Routing rules aren't expressible in `wrangler.toml`.
 
 1. **Enable Email Routing** on the Cloudflare zone you want to receive mail
@@ -99,5 +99,6 @@ Send (or wait for) an email to the configured address, then check the
 
 | File | Purpose |
 | --- | --- |
-| `src/index.js` | Worker `email()` handler — sender allowlist check, dispatches to GitHub. |
+| `src/index.js` | Worker `email()` handler — sender allowlist check, matter-ID extraction, dispatches to GitHub. |
+| `src/index.test.js` | `node --test` suite (`npm test`) for the exported helpers. |
 | `wrangler.toml` | Worker config: target repo, sender allowlist, secret documentation. |

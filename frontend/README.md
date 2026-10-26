@@ -9,7 +9,8 @@ whole site client-side — there is no backend server.
 - **dashboard**: Overview with key statistics and visualizations
 - **merger list**: Searchable and filterable list of all mergers
 - **detailed views**: Comprehensive information for each merger including timeline and events
-- **timeline view**: Chronological display of all mergers
+- **phase 2 tracker**: Current and completed Phase 2 matters with their statutory milestones
+- **quarterly report**: Each calendar quarter against the one before, with a PDF per quarter
 - **industry analysis**: ANZSIC industry classifications and merger counts
 - **charts & analytics**: Phase duration analysis, approval rates, and more
 
