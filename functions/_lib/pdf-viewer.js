@@ -7,7 +7,8 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ro
 .banner a{color:#a7f3d0;text-decoration:none}
 .banner a:hover{color:#fff;text-decoration:underline}
 .left{display:flex;align-items:center;gap:10px;min-width:0}
-.site{font-weight:600;white-space:nowrap}
+.banner a.site{color:#fff;font-size:15px;font-weight:800;white-space:nowrap}
+.site .dot{color:#6ee7b7}
 .sep{color:rgba(255,255,255,.3)}
 .doc{color:rgba(255,255,255,.75);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .right{display:flex;align-items:center;gap:10px;flex-shrink:0}
@@ -47,7 +48,7 @@ export function renderViewer({ matterId, displayName, rawPdfUrl, mergerPageUrl }
 <body>
   <div class="banner">
     <div class="left">
-      <a href="/" class="site">mergers.fyi</a>
+      <a href="/" class="site">mergers<span class="dot">.</span>fyi</a>
       <span class="sep">|</span>
       <span class="doc">${esc(displayName)}</span>
     </div>
