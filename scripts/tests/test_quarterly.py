@@ -67,6 +67,14 @@ class TestQuarterRange:
         payload = quarterly.generate([], as_at=AS_AT)
         assert [q['quarter'] for q in payload['quarters']] == ['2026-Q1', '2026-Q2', '2026-Q3']
 
+    def test_the_run_date_is_not_in_the_payload(self):
+        # Same data on two days of the same quarter must give the same file,
+        # or every day's first run commits a diff and redraws the PDFs.
+        mergers = [_waiver('WA-1', '2026-07-01', '2026-07-03')]
+        assert quarterly.generate(mergers, as_at=date(2026, 10, 26)) == quarterly.generate(
+            mergers, as_at=date(2026, 10, 27)
+        )
+
     def test_the_quarter_in_progress_is_left_out(self):
         assert [q['quarter'] for q in quarterly.generate([], as_at=date(2026, 9, 30))['quarters']] == [
             '2026-Q1', '2026-Q2',
