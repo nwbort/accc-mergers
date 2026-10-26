@@ -276,6 +276,48 @@
       },
       "waiver_duration": null
     },
+    "matrix-acquisition-topco-ltd": {
+      "id": "matrix-acquisition-topco-ltd",
+      "canonical_name": "Matrix Acquisition TopCo Ltd",
+      "members": [
+        {
+          "name": "Matrix Acquisition TopCo Ltd",
+          "identifier": "17383637",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40046",
+            "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 McGill and Partners Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-29T12:00:00Z",
+            "determination_date": "2026-10-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "novartis-australia-pty-limited": {
       "id": "novartis-australia-pty-limited",
       "canonical_name": "Novartis Australia Pty Limited",

@@ -1,6 +1,6 @@
 {
   "total_mergers": 304,
-  "total_waivers": 476,
+  "total_waivers": 478,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 257,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 451,
+    "Approved": 453,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.571428571428573,
+    "average_days": 20.59205020920502,
     "median_days": 21.0,
-    "average_business_days": 14.07563025210084,
+    "average_business_days": 14.085774058577407,
     "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 180
+      "count": 181
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -72,7 +72,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 45
+      "count": 46
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25059",
+      "merger_name": "Tasmanian Department of Health \u2013 leasehold interest in vacant site at Hobart International Airport",
+      "determination": "Approved",
+      "determination_date": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T17:32:01+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-40046",
+      "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 McGill and Partners Group",
+      "determination": "Approved",
+      "determination_date": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T17:15:02+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-75064",
       "merger_name": "BMD Fleet \u2013 East Coast Commercial Vehicles dealerships",
       "determination": "Approved",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-23T12:00:00Z",
       "page_modified_datetime": "2026-10-23T17:02:59+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75069",
-      "merger_name": "Australian Rugby League Commission \u2013 Novotel Sydney International Airport, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-10-23T12:00:00Z",
-      "page_modified_datetime": "2026-10-23T17:02:06+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60049",
-      "merger_name": "Tuhu \u2013 Conti Trade Australia",
-      "determination": "Approved",
-      "determination_date": "2026-10-23T12:00:00Z",
-      "page_modified_datetime": "2026-10-23T16:59:30+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

@@ -254,6 +254,48 @@
         "completed_count": 1
       }
     },
+    "mcgill-and-partners-australia-pty-ltd": {
+      "id": "mcgill-and-partners-australia-pty-ltd",
+      "canonical_name": "Mcgill And Partners Australia Pty Ltd",
+      "members": [
+        {
+          "name": "MCGILL AND PARTNERS AUSTRALIA PTY LTD",
+          "identifier": "11 654 226 749",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40046",
+            "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 McGill and Partners Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-29T12:00:00Z",
+            "determination_date": "2026-10-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "varsity-brands-inc": {
       "id": "varsity-brands-inc",
       "canonical_name": "Varsity Brands, Inc.",
