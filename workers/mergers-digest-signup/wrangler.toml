@@ -33,7 +33,7 @@ binding = "DB"
 database_name = "mergers-feedback"
 database_id = "e3eac500-d498-4be3-b0da-d80f0fa173cd"
 
-# KV namespace for per-IP rate limit counters (signup + feedback).
+# KV namespace for per-IP rate limit counters (signup, feedback and event).
 # Setup:
 #   1. wrangler kv namespace create RATE_LIMIT_KV
 #   2. Copy the id from the output and paste it below
