@@ -1,6 +1,6 @@
 {
   "total_mergers": 304,
-  "total_waivers": 480,
+  "total_waivers": 481,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 257,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 455,
+    "Approved": 456,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.616666666666667,
-    "median_days": 21.0,
-    "average_business_days": 14.1,
-    "median_business_days": 14.0
+    "average_days": 20.60914760914761,
+    "median_days": 21,
+    "average_business_days": 14.093555093555093,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -76,19 +76,19 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 39
+      "count": 40
+    },
+    {
+      "name": "Accommodation",
+      "count": 27
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
       "count": 26
     },
     {
-      "name": "Accommodation",
-      "count": 26
-    },
-    {
       "name": "Cafes and Restaurants",
-      "count": 25
+      "count": 26
     },
     {
       "name": "Supermarket and Grocery Stores",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01131",
+      "merger_name": "MA Financial (Redcape Fund) \u2013 Caves Coastal Bar & Bungalows",
+      "determination": "Approved",
+      "determination_date": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T17:39:22+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-01129",
       "merger_name": "Accel-KKR - Eleco",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-23T12:00:00Z",
       "page_modified_datetime": "2026-10-23T17:06:44+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15050",
-      "merger_name": "National Dental Care \u2013 business assets comprising the Dentists of Tasmania clinic, Sorell, TAS",
-      "determination": "Approved",
-      "determination_date": "2026-10-23T12:00:00Z",
-      "page_modified_datetime": "2026-10-23T17:05:09+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

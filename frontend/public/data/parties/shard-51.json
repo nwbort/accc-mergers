@@ -520,13 +520,35 @@
           "identifier_type": "ABN"
         },
         {
+          "name": "MAHF Custodian Pty Ltd",
+          "identifier": "96 619 512 060",
+          "identifier_type": "ABN"
+        },
+        {
           "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier": "43 139 067 244",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Redcape Hotel Group Pty Ltd",
           "identifier": "43 139 067 244",
           "identifier_type": "ABN"
         }
       ],
       "mergers": {
         "acquirer": [
+          {
+            "merger_id": "WA-01131",
+            "merger_name": "MA Financial (Redcape Fund) \u2013 Caves Coastal Bar & Bungalows",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-09T12:00:00Z",
+            "determination_date": "2026-10-26T12:00:00Z"
+          },
           {
             "merger_id": "WA-85040",
             "merger_name": "MA Financial (Redcape Fund) \u2013 Seven hospitality venues in NSW",
@@ -604,18 +626,18 @@
         ],
         "other": []
       },
-      "merger_count": 6,
+      "merger_count": 7,
       "phase_1_count": 0,
       "phase_2_count": 0,
-      "waiver_count": 6,
+      "waiver_count": 7,
       "active_count": 0,
       "phase_duration": null,
       "waiver_duration": {
-        "average_days": 19.5,
-        "median_days": 20.0,
-        "average_business_days": 13.333333333333334,
-        "median_business_days": 13.5,
-        "completed_count": 6
+        "average_days": 19.142857142857142,
+        "median_days": 19,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 7
       }
     },
     "rissafety-enterprises-pty-ltd": {
