@@ -1,4 +1,4 @@
-import { act, cleanup, configure, render, screen, within } from '@testing-library/react';
+import { act, cleanup, configure, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Link, MemoryRouter, Route, Routes, useNavigate } from 'react-router';
@@ -50,7 +50,11 @@ class StubIntersectionObserver {
   }
 }
 
-function scrollToEnd() {
+// The observer is created in an effect after the list renders, so on a slow
+// run the results count can be on screen before anything is watching the
+// sentinel. Wait for it, or the scroll is reported to nobody.
+async function scrollToEnd() {
+  await waitFor(() => expect(observers.size).toBeGreaterThan(0));
   act(() => {
     observers.forEach((o) => o.callback([{ isIntersecting: true }]));
   });
@@ -121,7 +125,7 @@ describe('Mergers', () => {
   it('loads the next 50 as the reader scrolls to the end of the list', async () => {
     renderPage();
     expect(await screen.findByText(shown('Showing 50 of 200 mergers'))).toBeInTheDocument();
-    scrollToEnd();
+    await scrollToEnd();
     expect(screen.getByText(shown('Showing 100 of 200 mergers'))).toBeInTheDocument();
   });
 
@@ -193,7 +197,7 @@ describe('Mergers', () => {
       </HelmetProvider>
     );
     await screen.findByText(shown('Showing 50 of 200 mergers'));
-    for (let i = 0; i < 3; i++) scrollToEnd();
+    for (let i = 0; i < 3; i++) await scrollToEnd();
     expect(screen.getByText(shown('Showing 200 of 200 mergers'))).toBeInTheDocument();
     await user.click(screen.getByRole('link', { name: 'View merger details for Wholesale deal 171' }));
     await user.click(await screen.findByRole('button', { name: 'Back' }));
