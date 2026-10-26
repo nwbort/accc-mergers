@@ -48,9 +48,12 @@ be reached.
 | High-confidence related parties auto-merged into `main` | 4 (bypasses batching) | `pipeline.yml` — likewise |
 | Missing notification dates PR opened, or updated with new candidates | default (3) | `pipeline.yml` |
 | A watchlisted merger changed | default (3) | `pipeline.yml` — see [Watchlist](#watchlist) below |
+| New `missing-questionnaire` or `missing-waiver-determination` tracking issue(s) | default (3) | `pipeline.yml`, via `.github/actions/tracking-issues` — only for newly created issues |
+| A milestone's LinkedIn share link, ready to post by hand | default (3) | `linkedin-share-links.yml` — see [linkedin.md](linkedin.md) |
 
 Tapping a notification opens the PR (or, for an auto-merge, its
-`needs-verification` issue).
+`needs-verification` issue; for a tracking issue, the open issues with that
+label; for a share link, the matter's page).
 
 ### Why "or updated with new candidates" and not "or updated"
 

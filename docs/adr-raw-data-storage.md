@@ -2,7 +2,7 @@
 
 - **Status:** Proposed
 - **Date:** 2026-07-07
-- **Spec:** item 30 in [repo-review-specs.md](repo-review-specs.md)
+- **Spec:** item 30 in `repo-review-specs.md` (never committed)
 - **Decision:** Adopt Option A (orphan `raw-data` branch) as a follow-up
   implementation item; apply Option C's partial-clone guidance immediately;
   defer Option B (Cloudflare R2) unless Pages platform limits start to bite.

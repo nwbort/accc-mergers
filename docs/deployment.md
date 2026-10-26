@@ -8,11 +8,11 @@ The architecture is fully static:
 
 - **GitHub Actions** runs the pipeline (scrape, extract, generate) and commits updated data files
 - **Cloudflare Pages** serves the React frontend and static JSON data
-- **Cloudflare Worker** handles email digest signup form submissions
+- **Cloudflare Workers** handle digest signup and feedback submissions, and trigger the pipeline when the ACCC's register mailing list sends an email
 - No backend server required
 
 ```
-GitHub Actions (pipeline.yml — hourly)
+GitHub Actions (pipeline.yml — weekdays 4×/day, Sundays once, on push, on register email)
     ↓
 Scrapes ACCC → data/raw/matters/*.html
     ↓
@@ -21,7 +21,7 @@ Extracts → data/processed/mergers.json
 Generates static data files:
   - frontend/public/data/
   - data/output/ (CLI bundle)
-  - frontend/public/feed.xml (RSS)
+  - frontend/public/feed.xml (RSS), frontend/public/sitemap.xml
     ↓
 Commits to main branch
     ↓
@@ -35,7 +35,7 @@ Build configuration is codified in the repo:
 - **`wrangler.toml`** — Pages project settings (name, output directory, compatibility date)
 - **`scripts/build.sh`** — Build script that compiles the frontend and copies PDFs into the output
 
-The build script runs `npm ci && npm run build`, then writes the site's ATProto DID to `dist/.well-known/atproto-did` (only when one is configured — see [`atproto.md`](atproto.md)) and copies all PDFs from `data/raw/matters/` into `dist/mergers/`, preserving the folder structure (e.g., `dist/mergers/MN-40008/file.pdf`). Documents are served at `mergers.fyi/mergers/{id}/file.pdf`.
+The build script runs `npm ci && npm run build`, then writes the site's ATProto DID to `dist/.well-known/atproto-did` (only when one is configured — see [`atproto.md`](atproto.md)) and copies all PDFs from `data/raw/matters/` into `dist/mergers/`, preserving the folder structure (e.g., `dist/mergers/MN-40008/file.pdf`). PDFs over Pages' 25 MiB per-asset limit are left out of `dist/`; the Pages Function redirects those to the document's source URL. Documents are served at `mergers.fyi/mergers/{id}/file.pdf`.
 
 ### Dashboard settings
 
@@ -65,7 +65,7 @@ wrangler.toml
 
 Between them these cover everything that reaches the deployed output: the SPA
 and its committed JSON (`frontend/`), the Pages Function serving
-`/mergers/{matter}/*.pdf` (`functions/`), the PDFs `build.sh` copies into
+`/mergers/{matter}/*.pdf` and the link-preview page for bots (`functions/`), the PDFs `build.sh` copies into
 `dist/mergers/` (`data/raw/matters/`), the DID `build.sh` writes to
 `/.well-known/atproto-did` (`atproto/identity.json` — see
 [`atproto.md`](atproto.md)), and the two files that decide how the build
@@ -120,15 +120,22 @@ secret).
 
 ## GitHub workflows
 
+The main ones are below. `quarterly-report.yml`, `linkedin-share-links.yml`,
+`publish-lexicons.yml`, `check-deploy-assets.yml`, `revert-auto-merge.yml` and
+`publish-cli-sqlite.yml` are covered in the root
+[`CLAUDE.md`](../CLAUDE.md#github-actions-workflows).
+
 ### `pipeline.yml` — Main pipeline (scheduled + on push to main)
 
 The primary automated workflow. Runs end-to-end on a schedule and on every push to `main`:
 
 1. **Scrape** — runs `scripts/scrape/scrape.sh` to fetch new/updated ACCC merger pages into `data/raw/matters/`
-2. **Extract** — runs `extract_mergers.py`, `generate_similar_mergers.py`, `generate_static_data.py`, `generate-cli-data.sh`, `generate_rss_feed.py`, `generate_sitemap.py`
-3. **Convert** — detects unconverted DOCX attachments, installs LibreOffice, converts to PDF; re-runs extraction if any were converted
-4. **Commit** — commits all staged changes in a single commit, rebases, and pushes
-5. **Detect** — runs all four detectors, each opening, refreshing or auto-closing its own review PR (see below)
+2. **Extract** — runs `extract_mergers.py --skip-pdf-enrich` to parse new/changed matters into `data/processed/mergers.json` and download their attachments
+3. **Convert** — detects unconverted DOCX attachments, installs LibreOffice, converts to PDF
+4. **Enrich and generate** — runs `enrich_pdfs.py`, `generate_similar_mergers.py`, `generate_static_data.py`, `generate-cli-data.sh`, `generate_rss_feed.py`, `generate_sitemap.py`, then compresses oversized PDFs
+5. **Publish** — publishes matters to the ATmosphere and posts new milestones to Bluesky and LinkedIn (see [`atproto.md`](atproto.md), [`linkedin.md`](linkedin.md)); each step is `continue-on-error` and skips without its credentials
+6. **Commit** — commits all staged changes in a single commit, rebases, and pushes
+7. **Detect** — runs all four detectors, each opening, refreshing or auto-closing its own review PR (see below)
 
 Also accepts a `workflow_dispatch` with an `all_mergers` boolean input to force full re-extraction, and a `repository_dispatch` event (`new_merger_detected`) fired by the `accc-register-watcher` Cloudflare Email Worker when the ACCC's register update mailing list sends an email.
 
@@ -181,23 +188,23 @@ from the fix branch and hands it to the detector as `$PREVIOUS_DATA_FILE`;
 `fix_missing_notification_dates.py` reads it via `--previous-known-dates` and
 carries each existing entry forward verbatim.
 
-### `weekly-digest.yml` — Weekly digest generation (Sat 22:00 UTC)
+### `weekly-digest.yml` — Weekly digest generation (Sun 8:36 AM Sydney time)
 
 Runs `generate_weekly_digest.py` to generate `digest.json` for the weekly summary.
 
-### `send-weekly-email.yml` — Weekly email send (Sun 23:00 UTC)
+### `send-weekly-email.yml` — Weekly email send (manual)
 
-Sends the weekly digest email via the Cloudflare Worker using `send_weekly_email.py`.
+Sends the weekly digest email via the Cloudflare Worker using `send_weekly_email.py`. Its Monday schedule is currently commented out, so it runs only on `workflow_dispatch` (with `dry_run`, `audience` and `banner` inputs).
 
 ### `test.yml` — Python test suite
 
-Runs `pytest scripts/tests/` on pull requests touching `scripts/**` or
-`fixtures/*.json`, and on demand (`workflow_dispatch`).
+Runs `pytest scripts/tests/` on pull requests touching `scripts/**`,
+`atproto/**` or `fixtures/*.json`, and on demand (`workflow_dispatch`).
 
 ### `frontend-test.yml` — Frontend tests
 
 Runs the frontend test suite on pull requests touching
-`frontend/**`, `functions/**` or `fixtures/slug-cases.json`, and on
+`frontend/**`, `functions/**` or `fixtures/*.json`, and on
 demand (`workflow_dispatch`).
 
 ### `workers-test.yml` — Cloudflare Worker tests
@@ -211,7 +218,7 @@ globbing `workers/*/package.json`, so a new Worker is covered automatically.
 
 ### `scrape-tribunal.yml` — Tribunal matter scraper (scheduled + manual)
 
-Runs daily (6:23 AM UTC) and on demand (`workflow_dispatch`, with an optional space-separated `merger_ids` input). Runs `scrape_tribunal.py` to fill in `data/processed/tribunal_appeals.json`'s `documents[]` from the live Australian Competition Tribunal matter pages, mirrors the linked PDFs into `data/raw/matters/`, and commits the result.
+Runs hourly at :23 from 8am to 7pm Sydney time on weekdays, and on demand (`workflow_dispatch`, with an optional space-separated `merger_ids` input and a `save_pages` input that uploads each fetched matter page as an artifact). Runs `scrape_tribunal.py` to fill in `data/processed/tribunal_appeals.json`'s `documents[]` from the live Australian Competition Tribunal matter pages, mirrors the linked PDFs into `data/raw/matters/`, and commits the result.
 
 The tribunal site is behind Cloudflare's managed challenge, so the scraper drives a real Chrome (headful, under Xvfb) via [nodriver](https://github.com/ultrafunkamsterdam/nodriver) to solve it — a genuine browser executing the challenge JS, which a plain `curl`/`requests` fetch can't do. That's what lets this run unattended in CI. If a matter's challenge doesn't clear within the timeout, that entry is left untouched and the run is flagged with a `::warning::` annotation (and a non-zero exit), while any matters that did scrape are still committed. See [Running the tribunal scraper](#running-the-tribunal-scraper) below.
 
@@ -226,14 +233,19 @@ All data files are pre-generated into `frontend/public/data/`:
 | `stats.json` | Aggregated statistics (counts, averages, medians) |
 | `industries.json` | ANZSIC codes with merger counts |
 | `industries/{division}.json` | Every ANZSIC node under that division, with its mergers |
+| `parties.json` | Every party with merger counts |
+| `parties/shard-{nn}.json` | Mergers per party, packed into 256 buckets by party id |
 | `upcoming-events.json` | Future consultation/determination dates |
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity |
 | `analysis.json` | Pre-computed analysis data |
-| `similar_mergers.json` | Similarity pairs between mergers |
+
+The root [`CLAUDE.md`](../CLAUDE.md#static-data-files) lists the rest.
 
 Additional output:
-- `frontend/public/feed.xml` — RSS feed
+- `frontend/public/feed.xml` — RSS (Atom) feed
+- `frontend/public/sitemap.xml` — sitemap
+- `data/processed/similar_mergers.json` — similarity pairs between mergers (an input to `generate_static_data.py`)
 - `data/output/cli/` — CLI build inputs. Only `cli-manifest.json` is tracked
   (version counter + bundle checksum); `cli-bundle.json` and
   `cli-merger-manifest.json` are gitignored and regenerated on demand.
@@ -250,7 +262,7 @@ python -m scripts.generate.generate_rss_feed
 
 ### Running the tribunal scraper
 
-`scripts/scrape/scrape_tribunal.py` fills in tribunal filing documents in `data/processed/tribunal_appeals.json` from the live Australian Competition Tribunal matter pages. It normally runs unattended from the [`scrape-tribunal.yml`](#scrape-tribunalyml--tribunal-matter-scraper-scheduled--manual) workflow (daily + on demand), so there's usually nothing to do by hand — but it works anywhere a Chrome/Chromium binary is available if you want to run it yourself:
+`scripts/scrape/scrape_tribunal.py` fills in tribunal filing documents in `data/processed/tribunal_appeals.json` from the live Australian Competition Tribunal matter pages. It normally runs unattended from the [`scrape-tribunal.yml`](#scrape-tribunalyml--tribunal-matter-scraper-scheduled--manual) workflow (hourly on weekdays + on demand), so there's usually nothing to do by hand — but it works anywhere a Chrome/Chromium binary is available if you want to run it yourself:
 
 ```bash
 pip install -r scripts/requirements-tribunal.txt   # nodriver, requests, beautifulsoup4, lxml
@@ -346,6 +358,6 @@ The static data includes raw dates; the frontend calculates business days at ren
 
 ### Build failures
 
-1. Check Node.js version matches `.nvmrc` (24.18.0)
+1. Check Node.js version matches `.node-version` / `frontend/.nvmrc` (24.18.0)
 2. Run `npm install` locally to verify dependencies
 3. Check for errors in build output

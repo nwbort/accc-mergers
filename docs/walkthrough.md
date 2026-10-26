@@ -5,7 +5,7 @@
 
 ## Overview
 
-This codebase is a fully static web application that tracks and publishes ACCC merger review data. There is no backend server. Instead, a scheduled GitHub Actions pipeline scrapes the ACCC website, parses the HTML, and generates pre-built JSON files that a React SPA reads directly. Cloudflare Pages hosts the frontend and serves those JSON files as a pseudo-API.
+This codebase is a fully static web application that tracks and publishes ACCC merger review data. There is no backend server. Instead, a GitHub Actions pipeline (scheduled, and also triggered by pushes and by the ACCC's register update emails) scrapes the ACCC website, parses the HTML, and generates pre-built JSON files that a React SPA reads directly. Cloudflare Pages hosts the frontend and serves those JSON files as a pseudo-API.
 
 The three major layers are:
 
@@ -25,8 +25,8 @@ The scraper's job is purely about fetching and storing raw HTML. All interpretat
 
 - Uses `pup` (a command-line HTML parser written in Go) to extract links from the register index page — no Python parsing needed at this stage.
 - Fetches 24 pages in parallel using `xargs -P 24` to keep the scrape fast.
-- After downloading each matter page it immediately runs `clean_file()`, a single-pass Perl rewrite that strips out dynamic tokens (cache-busted asset URLs, random DOM IDs, analytics snippets) so that git diffs only contain meaningful content changes.
-- Reads `data/processed/mergers.json` (output of the previous run) and calls `cutoff.py` to get a list of URL paths that should be skipped — approved mergers more than 3 weeks old no longer need re-scraping.
+- After downloading each matter page it immediately runs `clean_file()`, a single-pass Perl rewrite that strips out dynamic tokens (cache-busted asset URLs, random DOM IDs, form build IDs, the Drupal settings blob, analytics snippets) so that git diffs only contain meaningful content changes.
+- Pipes the register's links, together with `data/processed/mergers.json` (output of the previous run), through `scripts/scrape/scrape_targets.py`, which drops matters past the cutoff (approved mergers more than 3 weeks old no longer need re-scraping) and adds back any still-active matter the listing failed to mention.
 - Saves each page as `data/raw/matters/{MATTER_NUMBER}.html`, where the matter number (e.g. `MN-12345` or `WA-67890`) is extracted via `pup` from the page itself.
 
 ```bash
@@ -52,56 +52,66 @@ Variables are exported (not just set) because the parallel `xargs` workers each 
 The `clean_file` function is the most important detail of the scraper. Without it every run would produce huge, noisy git diffs full of auto-generated asset fingerprints that have nothing to do with the actual merger data.
 
 ```bash
-sed -n '67,86p' scripts/scrape/scrape.sh
+sed -n '101,125p' scripts/scrape/scrape.sh
 ```
 
 ```output
   perl -i -0777 -pe '
+    # Collapse the entire Drupal settings JSON blob to a static placeholder.
+    # It is machine config full of per-request churn (session/build tokens such
+    # as libraries, permissionsHash, css_js_query_string, view_dom_id, ct,
+    # _bhlid, brid, ...) that nothing in the pipeline consumes. Replacing it
+    # wholesale beats stripping each field individually, so new tokens the
+    # upstream site adds inside it never produce diff noise again.
+    s{(<script type="application/json" data-drupal-selector="drupal-settings-json">).*?(</script>)}{${1}STATIC_DRUPAL_SETTINGS${2}}s;
     s/js-view-dom-id-[a-f0-9]{64}/js-view-dom-id-STATIC/g;
     s/(id="edit-submit-accc-search-site--)[^"\n]+"/${1}STATIC"/g;
+    s/(id="edit-actions)--[0-9]+"/${1}"/g;
+    s/(data-drupal-selector="form-)[^"\n]+(" type="hidden" name="form_build_id")/${1}STATIC${2}/g;
+    s/(name="form_build_id" value="form-)[^"\n]+"/${1}STATIC"/g;
     s/(css\/css_)[^.\n]+\.css/${1}STATIC.css/g;
     s/(js\/js_)[^.\n]+\.js/${1}STATIC.js/g;
-    s/("libraries":")[^"\n]+"/${1}STATIC_LIBRARIES"/g;
-    s/("permissionsHash":")[^"\n]+"/${1}STATIC_HASH"/g;
-    s/("view_dom_id":")[a-f0-9]{64}/${1}STATIC"/g;
-    s/(views_dom_id:)[a-f0-9]{64}/${1}STATIC/g;
     s/include=[^"&>\n]+/include=STATIC/g;
     s/href="https:\/\/app\.readspeaker\.com\/[^"\n]+"/href="STATIC_READSPEAKER_URL"/g;
     s/(icons\.svg\?t)[^#\n]+#/${1}STATIC#/g;
     s/(\?t)[^">\n]+/${1}STATIC/g;
-    s/("css_js_query_string":")[^"\n]+"/${1}STATIC"/g;
     s/[ \t]*\n[ \t]*<script>!function\(e\)\{var n="https:\/\/s\.go-mpulse\.net\/boomerang\/".*?\(window\);<\/script><\/head>/\n  <\/head>/s;
     s{(<meta name="dcterms\.modified"[^\n]*/>\n)(<meta name="dcterms\.created"[^\n]*/>\n)}{$2$1}g;
     s{(<link rel="canonical"[^\n]*/>\n)(<link rel="shortlink"[^\n]*/>\n)}{$2$1}g;
-    s#(<a[^>]*class="[^"]*megamenu-page-link-level-3[^"]*"[^>]*href=")[^"]*("[^>]*>[[:space:]]*<span>)[^<]*(</span>)#${1}STATIC_HREF${2}STATIC_TEXT${3}#g;
+    s{(<nav class="accc-entity-hierarchy-megamenu"[^>]*>).*?</nav>}{${1}STATIC_MEGAMENU</nav>}s;
     s/\n{3,}/\n\n/g;
   ' "$file"
 ```
 
-The `-0777` flag puts Perl into "slurp mode" — the entire file is read as a single string — which allows the BOOMR analytics script pattern to match across multiple lines. Without it, multi-line patterns would silently fail while single-line patterns would still work. Each substitution targets a specific source of noise: fingerprinted CSS/JS filenames, 64-character DOM IDs, Readspeaker analytics URLs, and so on.
+The `-0777` flag puts Perl into "slurp mode" — the entire file is read as a single string — which allows the Drupal settings blob, the BOOMR analytics script and the megamenu patterns to match across multiple lines. Without it, multi-line patterns would silently fail while single-line patterns would still work. Each substitution targets a specific source of noise: fingerprinted CSS/JS filenames, 64-character DOM IDs, form build IDs, Readspeaker analytics URLs, and so on.
 
-The cutoff filter runs before fetching to save bandwidth. `cutoff.py` reads the previous run's `mergers.json` and outputs the URL paths of any merger that was approved more than 3 weeks ago (or for waivers — any that received a determination more than 3 weeks ago). Those paths are passed to `grep -vxFf` to remove them from the link list before `xargs` starts fetching.
+The target selection runs before fetching to save bandwidth. `scrape_targets.py` reads the previous run's `mergers.json` and drops the link of any merger past its cutoff (see [the cutoff module](#the-cutoff-module-scriptscutoffpy) below), de-duplicates the listing, and unions it with the still-active matters already recorded — the register paginates over an unstable sort, so a matter can silently drop out of one crawl's listing. Comparisons use a normalised key, since the ACCC serves each matter under two spellings of the register path.
 
 ```bash
-sed -n '254,268p' scripts/scrape/scrape.sh
+sed -n '339,358p' scripts/scrape/scrape.sh
 ```
 
 ```output
+# 4. Work out which matters to fetch.
+#
+# scrape_targets.py drops matters past cutoff (unless --all), de-duplicates the
+# listing, and — importantly — adds back any matter we already know about that
+# this crawl's listing failed to mention. The register paginates over an
+# unstable sort, so a matter can silently drop out of the listing and then
+# never be re-scraped again; see scripts/scrape/scrape_targets.py for detail.
+if [ "$SCRAPE_ALL" = true ]; then
+  echo "Scraping all mergers (--all flag specified)"
+  select_args=(--all)
+else
+  select_args=()
+fi
 
-  if [ -f "$MERGERS_JSON" ]; then
-    python3 "$SCRIPT_DIR/cutoff.py" --paths "$MERGERS_JSON" > "$skip_paths_file" 2>/dev/null || true
-  fi
+if [ -n "$SCRAPE_REPORT_DIR" ]; then
+  select_args+=(--stats-json "${SCRAPE_REPORT_DIR}/targets.json")
+fi
 
-  skip_count=$(wc -l < "$skip_paths_file" | tr -d ' ')
-  if [ "$skip_count" -gt 0 ]; then
-    echo "Skipping $skip_count merger(s) past cutoff date (use --all to scrape all)"
-
-    # Filter out links that exactly match a skip path. Single grep call vs.
-    # spawning one per link.
-    links_to_fetch=$(grep -vxFf "$skip_paths_file" <<< "$relative_links" || true)
-  else
-    links_to_fetch="$relative_links"
-  fi
+links_to_fetch=$(printf '%s\n' "$relative_links" \
+  | python3 -m scripts.scrape.scrape_targets "${select_args[@]}" "$MERGERS_JSON")
 ```
 
 ### Step 2 — Extraction (`scripts/extract_mergers.py`)
@@ -117,13 +127,13 @@ The top-level `main()` function drives the flow in 11 numbered steps:
 5. Dispatch `parse_merger_file()` for each file via `ProcessPoolExecutor`
 6. Collect results, filtering out `None` (failed parses)
 7. Re-append skipped mergers from the previous run (so they are not lost)
-8. Enrich with questionnaire data, NOCC summaries, and auto-fix missing dates
+8. Enrich with questionnaire data, NOCC summaries, and auto-fix missing dates — skipped under `--skip-pdf-enrich`, which the pipeline passes so it can convert DOCX attachments first and then run this pass separately via `scripts/enrich_pdfs.py`
 9. Mark each merger as a waiver or notification
 10. Sort by merger ID for stable diffs
-11. Write to `data/processed/mergers.json`
+11. Write to `data/processed/mergers.json` (through the shared `save_mergers` writer)
 
 ```bash
-sed -n '976,999p' scripts/extract_mergers.py
+sed -n '2458,2481p' scripts/extract_mergers.py
 ```
 
 ```output
@@ -157,10 +167,10 @@ The merger ID is pre-extracted with a regex (`get_merger_id_from_file`) before d
 
 #### `parse_merger_file()` — parsing a single HTML file
 
-Each worker calls this function. It uses seven private helpers, each responsible for one logical slice of the page:
+Each worker calls this function. A set of private helpers each handle one logical slice of the page, followed by a few inference passes and the per-phase determination records (`scripts/stage_determinations.py`):
 
 ```bash
-sed -n '639,666p' scripts/extract_mergers.py
+sed -n '1536,1569p' scripts/extract_mergers.py
 ```
 
 ```output
@@ -186,53 +196,45 @@ sed -n '639,666p' scripts/extract_mergers.py
         merger_data['events'] = _merge_events(
             scraped_events, existing_merger_data, merger_id, frozen_events_mergers
         )
-        _add_synthetic_events(merger_data)
+
+        _infer_determination_date_from_events(merger_data)
+        _infer_determination_date_from_unlinked_event(merger_data)
+        _calculate_missing_end_of_determination_period(merger_data, merger_id)
+        records = stage_determinations.resolve(merger_data, existing_merger_data)
+        persisted = stage_determinations.to_persist(merger_data, records)
+        if persisted:
+            merger_data[stage_determinations.FIELD] = persisted
+        _add_synthetic_events(merger_data, records)
 
         if field_overrides and merger_id in field_overrides:
             merger_data.update(field_overrides[merger_id])
-
-        return merger_data
 ```
 
 Several helpers preserve data from the previous run when a field is absent from the current HTML — `_extract_dates_and_status` keeps `end_of_determination_period` this way, and `_extract_consultation_date` keeps `consultation_response_due_date`. The ACCC frequently removes these fields from the page once the relevant deadline has passed, so without preservation they would silently disappear from the data.
 
-Field overrides (`frozen_events_mergers.json`) are applied last, after all scraping, so they can always win over whatever the page says.
+Field overrides (`data/frozen_events_mergers.json`) are applied last, after all scraping, so they can always win over whatever the page says.
 
 #### Events: scraping, merging, and synthetic events
 
 Events are the most complex part of the extraction. There are three functions involved:
 
-- **`_scrape_events`** — reads the attachment tables on the page to produce a fresh list of events, downloading any new PDF/DOCX attachments as a side-effect. Determination PDFs are parsed immediately (via `parse_determination_pdf`) to extract the commission division and decision table.
-- **`_merge_events`** — reconciles the freshly-scraped events with the existing events from the previous run. Events are matched by attachment URL where possible, falling back to title. Events that disappear from the page get `status: removed` rather than being silently deleted. Frozen mergers have their existing events preserved and only genuinely new ones appended.
-- **`_add_synthetic_events`** — appends two synthetic entries not present as documents on the page: a "Merger notified to ACCC" event (from `effective_notification_datetime`) and a phase determination event (from `determination_publication_date` + `accc_determination`). These make the timeline complete for the frontend without requiring separate scraping.
+- **`_scrape_events`** — reads the attachment tables on the page to produce a fresh list of events, downloading any new PDF/DOCX attachments as a side-effect. Determination PDFs are parsed immediately (via `parse_determination_pdf`) to extract the commission division and decision table, reusing the previous run's parse when the attachment URL is unchanged. It also calls `_scrape_consultation_events` to read the questionnaire out of the ACCC's newer structured Consultation section, flagging those events `is_questionnaire_event`.
+- **`_merge_events`** — reconciles the freshly-scraped events with the existing events from the previous run. Events are matched by attachment URL where possible, falling back to title (and, for consultation documents re-uploaded under a new URL, to the normalised attachment filename). Events that disappear from the page get `status: removed` rather than being silently deleted. Fully frozen mergers have their existing events preserved and only genuinely new ones appended; a merger can instead freeze just a listed set of event titles.
+- **`_add_synthetic_events`** — appends a synthetic "Merger notified to ACCC" event (from `effective_notification_datetime`), then calls `_flag_determination_event` for the headline determination (from `determination_publication_date` + `accc_determination`) and for every other phase's recorded determination. Each call flags the matching document event as the determination event, or adds a synthetic one if there is none. These make the timeline complete for the frontend without requiring separate scraping.
 
 ```bash
-sed -n '555,620p' scripts/extract_mergers.py
+sed -n '1423,1454p' scripts/extract_mergers.py
 ```
 
 ```output
-def _add_synthetic_events(merger_data):
-    """Add notification and determination synthetic events if not already present."""
+def _flag_determination_event(merger_data, phase, determination, det_date):
+    """Mark the event holding ``phase``'s determination, or add one.
+
+    ``phase`` is the register's stage label the determination was made in;
+    it titles the event "<phase> determination: <determination>".
+    """
     events = merger_data['events']
-
-    # Notification event
-    if merger_data.get('effective_notification_datetime'):
-        notification_title = 'Merger notified to ACCC'
-        if not any(e['title'] == notification_title for e in events):
-            events.append({
-                'date': merger_data['effective_notification_datetime'],
-                'title': notification_title,
-                'display_title': notification_title,
-            })
-
-    # Determination event
-    if not merger_data.get('determination_publication_date'):
-        return
-
-    determination = merger_data.get('accc_determination', 'Decision made')
-    phase = merger_data.get('stage', 'Phase 1')
     determination_title = f"{phase} determination: {determination}"
-    det_date = merger_data['determination_publication_date']
 
     # Remove old format determination events to avoid duplicates
     merger_data['events'] = [
@@ -246,50 +248,30 @@ def _add_synthetic_events(merger_data):
     # events table date differ by one day, e.g. MN-01090).
     # Also check the URL in case the event title is just the parties' names
     # while the attached PDF filename contains "determination".
-    existing_det_event = next(
-        (e for e in events
-         if _dates_within_one_day(e.get('date'), det_date)
-         and ('determination' in e.get('title', '').lower()
-              or 'determination' in e.get('url', '').lower())
-         and e.get('url')),
-        None
-    )
-
-    if existing_det_event:
-        existing_det_event['display_title'] = determination_title
-        existing_det_event['is_determination_event'] = True
-        if 'phase' not in existing_det_event:
-            if 'waiver' in phase.lower():
-                existing_det_event['phase'] = 'Waiver'
-            else:
-                existing_det_event['phase'] = phase.split(' - ')[0] if ' - ' in phase else phase
-        # Remove any redundant plain-text status row with the same title that
-        # the ACCC sometimes publishes alongside the document row.
-        merger_data['events'] = [
-            e for e in merger_data['events']
-            if not (e['title'] == determination_title and not e.get('url'))
-        ]
-    else:
-        if not any(e['title'] == determination_title for e in events):
-            events.append({
-                'date': det_date,
-                'title': determination_title,
-                'display_title': determination_title,
-                'is_determination_event': True,
-            })
+    # The ACCC publishes the determination instrument alongside "Summary of
+    # reasons"/"Statement of reasons" documents on the same date; attach the
+    # determination outcome to the instrument itself, not its reasons.
+    candidate_events = [
+        e for e in events
+        if _dates_within_one_day(e.get('date'), det_date)
+        and ('determination' in e.get('title', '').lower()
+             or 'determination' in e.get('url', '').lower())
+        and e.get('url')
+    ]
+    existing_det_event = min(candidate_events, key=_mentions_reasons, default=None)
 ```
 
-The ±1 day tolerance in `_dates_within_one_day` is a real-world edge case: the ACCC's "determination publication date" field sometimes differs by a day from the date shown on the actual events table row (e.g. MN-01090). Without this tolerance a duplicate synthetic determination event would be created alongside the document event, resulting in two entries on the frontend timeline.
+The ±1 day tolerance in `_dates_within_one_day` is a real-world edge case: the ACCC's "determination publication date" field sometimes differs by a day from the date shown on the actual events table row (e.g. MN-01090). Without this tolerance a duplicate synthetic determination event would be created alongside the document event, resulting in two entries on the frontend timeline. When nothing matches within a day, a determination PDF up to 4 days earlier is accepted instead (MN-30008 was decided on 11 June but registered on 15 June), and among same-day candidates the instrument is preferred over its "Summary/Statement of reasons".
 
 #### The cutoff module (`scripts/cutoff.py`)
 
-Both `scrape.sh` and `extract_mergers.py` use this module to decide which mergers still need active attention. The rules are:
+Both `scrape.sh` (via `scrape_targets.py`) and `extract_mergers.py` use this module to decide which mergers still need active attention. The rules are:
 
 - **Waivers** (merger ID starts with `WA-` or stage contains "Waiver"): skip 3 weeks after *any* determination, regardless of outcome.
-- **Notifications** (merger ID starts with `MN-`): skip 3 weeks after an *Approved* determination only. Declined or contested mergers remain in scope indefinitely.
+- **Notifications** (merger ID starts with `MN-`): skip 3 weeks after an *Approved* determination only — 5 weeks when it was approved with conditions. Declined or contested mergers remain in scope indefinitely.
 
 ```bash
-sed -n '31,54p' scripts/cutoff.py
+sed -n '37,64p' scripts/cutoff.py
 ```
 
 ```output
@@ -313,6 +295,10 @@ def get_cutoff_date(merger: dict, cutoff_weeks: int = CUTOFF_WEEKS) -> datetime:
     # For regular notifications: only cut off if approved
     determination = merger.get('accc_determination', '')
     if determination == merger_status.APPROVED:
+        # Imported here: enrichment imports this module.
+        from scripts.generate.static_data.enrichment import detect_has_conditions
+        if detect_has_conditions(merger):
+            cutoff_weeks = max(cutoff_weeks, CONDITIONAL_CUTOFF_WEEKS)
         return determination_date + timedelta(weeks=cutoff_weeks)
 
     # Not approved or no determination - keep processing
@@ -330,10 +316,10 @@ The enrichment step adds computed fields that would be expensive to recalculate 
 - Flags for whether questionnaire and NOCC data are available (`has_questionnaire`, `has_nocc`)
 - Per-event `phase` labels extracted from event titles
 
-Enriched mergers are then linked to related mergers (waiver-to-notification pairs) and similar mergers (from `similar_mergers.json`, pre-computed by `generate_similar_mergers.py` from party and ANZSIC overlap).
+Enriched mergers are then linked to related mergers (waiver-to-notification pairs), similar mergers (from `data/processed/similar_mergers.json`, pre-computed by `generate_similar_mergers.py` from party and ANZSIC overlap), canonical party groups, Tribunal appeals and Federal Court judicial reviews, and given their frozen phase-1 estimate and pre-notification bounds.
 
 ```bash
-sed -n '112,152p' scripts/generate/generate_static_data.py
+sed -n '204,255p' scripts/generate/generate_static_data.py
 ```
 
 ```output
@@ -341,9 +327,19 @@ sed -n '112,152p' scripts/generate/generate_static_data.py
     single_file_outputs = [
         ("stats.json", stats.generate(enriched)),
         ("industries.json", industries.generate_index(enriched)),
+        ("parties.json", parties.generate_index(party_groups)),
         ("upcoming-events.json", upcoming_events.generate(enriched)),
         ("commentary.json", commentary_out.generate(enriched, commentary)),
         ("analysis.json", analysis.generate(enriched)),
+        ("quarterly.json", quarterly.generate(enriched, commentary=load_quarterly_commentary())),
+        ("serial-acquirers.json", serial_acquirers.generate(enriched)),
+        ("theories_of_harm.json", theories_of_harm.generate(enriched, nocc_data)),
+        ("phase2.json", phase2.generate(enriched)),
+        ("refiled-notifications.json", refiled.generate(enriched)),
+        ("extensions.json", extensions.generate(enriched)),
+        # P(Phase 2 referral | still undecided at business day N); not consumed
+        # by the frontend yet — a building block for a future per-merger risk feature.
+        ("referral-probability-by-day.json", referral_probability_by_day(enriched)),
     ]
     for filename, payload in single_file_outputs:
         out_path = OUTPUT_DIR / filename
@@ -359,17 +355,18 @@ sed -n '112,152p' scripts/generate/generate_static_data.py
     n = list_out.generate(enriched, OUTPUT_DIR)
     print(f"✓ Generated {OUTPUT_DIR / 'mergers' / 'list.json'} ({n} mergers)")
 
-    print("\nGenerating paginated timeline files...")
-    pages = timeline.generate(enriched, OUTPUT_DIR, page_size=100)
-    print(f"✓ Generated {pages} paginated timeline files (100 events/page)")
-
-    print("\nGenerating individual industry files...")
+    print("\nGenerating industry division files...")
     n = industries.generate_detail_files(enriched, OUTPUT_DIR)
-    print(f"✓ Generated {n} individual industry files in {OUTPUT_DIR / 'industries'}")
+    print(f"✓ Generated {n} industry division files in {OUTPUT_DIR / 'industries'}")
+
+    print("\nGenerating party detail files...")
+    n = parties.generate_detail_files(party_groups, OUTPUT_DIR)
+    print(f"✓ Generated {n} party records in {OUTPUT_DIR / 'parties'} "
+          f"({SHARD_COUNT} shard buckets)")
 
     if questionnaire_data:
         print("\nGenerating questionnaire files...")
-        q_count = questionnaires.generate(questionnaire_data, OUTPUT_DIR)
+        q_count = questionnaires.generate(questionnaire_data, OUTPUT_DIR, mergers=enriched)
         print(f"✓ Generated {q_count} questionnaire files in {OUTPUT_DIR / 'questionnaires'}")
 
     if nocc_data:
@@ -380,7 +377,7 @@ sed -n '112,152p' scripts/generate/generate_static_data.py
     print("\nDone!")
 ```
 
-The output files are written directly into `frontend/public/data/`, which is the Vite project's static assets folder. Because these files are committed to git, Cloudflare Pages picks them up on every push and serves them without any build step or server-side rendering.
+The output files are written directly into `frontend/public/data/`, which is the Vite project's static assets folder. Because these files are committed to git, Cloudflare Pages picks them up on every push; the Vite build copies them through unchanged and serves them as plain static files, with no server-side rendering (the build does prerender static HTML for each merger page from them).
 
 The merger list is a single file, `mergers/list.json`, holding a lightweight record (no events, no description) for every merger. The /mergers page searches, filters and sorts it entirely in the browser, so it needs all of it up front; at ~110 KB gzipped, one request beats paging it in. It was once split into 50-merger pages, which cost a round trip each and reshuffled the list as they arrived.
 
@@ -400,7 +397,7 @@ The entry point (`main.jsx`) mounts the React root in strict mode. `App.jsx` wra
 The keyboard shortcut system lives inside `AppContent` (the inner component) rather than at the provider level so it can reference React Router's navigation context.
 
 ```bash
-sed -n '36,50p' frontend/src/App.jsx
+sed -n '56,80p' frontend/src/App.jsx
 ```
 
 ```output
@@ -408,14 +405,24 @@ sed -n '36,50p' frontend/src/App.jsx
             <Route path="/" element={<Dashboard />} />
             <Route path="/mergers" element={<Mergers />} />
             <Route path="/mergers/:id" element={<MergerDetail />} />
-            <Route path="/timeline" element={<Timeline />} />
+            <Route path="/mergers/:id/:slug" element={<MergerDetail />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/industries/:code" element={<IndustryDetail />} />
+            <Route path="/industries/:code/:slug" element={<IndustryDetail />} />
+            <Route path="/parties" element={<Parties />} />
+            <Route path="/parties/:id" element={<PartyDetail />} />
+            <Route path="/parties/:id/:slug" element={<PartyDetail />} />
             <Route path="/commentary" element={<Commentary />} />
             <Route path="/digest" element={<Digest />} />
             <Route path="/analysis" element={<Analysis />} />
+            <Route path="/phase-2" element={<Phase2 />} />
+            <Route path="/refiled-notifications" element={<RefiledNotifications />} />
+            <Route path="/current-status" element={<CurrentStatus />} />
+            <Route path="/quarterly" element={<Quarterly />} />
+            <Route path="/quarterly/:quarter" element={<Quarterly />} />
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/copyright" element={<Copyright />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
@@ -425,49 +432,36 @@ sed -n '36,50p' frontend/src/App.jsx
 
 Every page that needs JSON uses the `useFetchData` hook. It provides three things that plain `fetch` does not:
 
-1. **Module-level in-memory cache** — `dataCache` is a `Map` stored at module scope, so it survives route changes. When the user switches from the Dashboard to the Mergers list and back, stats data is returned synchronously from the cache without a network round-trip or a loading spinner. The cache has no TTL — it lives for the session.
+1. **Module-level in-memory cache** — `dataCache` is a `Map` stored at module scope, so it survives route changes. When the user switches from the Dashboard to the Mergers list and back, stats data is returned synchronously from the cache without a network round-trip or a loading spinner. The cache has no TTL — it lives for the session — but whatever is on screen is kept fresh in the background: `useBackgroundRefresh` (mounted once from `App.jsx`) calls `dataCache.revalidate` when the tab regains visibility and on a long fallback interval, and mounted hooks re-render only if the data actually changed.
 
 2. **Abort on unmount** — an `AbortController` is created per fetch. The cleanup function returned from `useEffect` calls `controller.abort()`, so responses that arrive after a component unmounts are discarded rather than touching state on a dead component.
 
 3. **SPA 404 detection** — Cloudflare Pages serves `index.html` for any unknown path (to support client-side routing). That means a missing `.json` file returns HTTP 200 with HTML, which `JSON.parse` rejects with a `SyntaxError`. The hook catches this and converts it to an HTTP 404 error so callers can distinguish "file missing" from real network errors.
 
 ```bash
-sed -n '25,35p' frontend/src/utils/dataCache.js
+sed -n '72,93p' frontend/src/utils/dataCache.js
 ```
 
 ```output
-  },
-};
-```
-
-```bash
-cat frontend/src/utils/dataCache.js
-```
-
-```output
-// Simple in-memory data cache to prevent reload flicker when switching tabs
-// Data persists across route changes since this is a module-level cache
-
-const cache = new Map();
-
-export const dataCache = {
-  get(key) {
-    return cache.get(key);
-  },
-
-  set(key, data) {
-    cache.set(key, data);
-  },
-
-  has(key) {
-    return cache.has(key);
-  },
-
-  clear(key) {
-    if (key) {
-      cache.delete(key);
-    } else {
-      cache.clear();
+  // Re-fetches `url` in the background and, if the result differs from
+  // what's cached under `key`, stores it and notifies subscribers so any
+  // mounted useFetchData hooks re-render with the fresh data. `no-store`
+  // bypasses the browser's HTTP cache — the whole point is checking whether
+  // the pipeline has published something new since the last fetch. Errors
+  // (offline, a bad response) are swallowed: this runs silently, leaving
+  // whatever's already cached in place.
+  async revalidate(key, url) {
+    try {
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) return;
+      const data = await res.json();
+      const previous = cache.get(key);
+      cache.set(key, { data, fetchedAt: Date.now() });
+      if (!previous || JSON.stringify(previous.data) !== JSON.stringify(data)) {
+        listeners.get(key)?.forEach((cb) => cb(data));
+      }
+    } catch {
+      // Offline, aborted, or an unparseable body — leave the cache as-is.
     }
   },
 };
@@ -475,7 +469,7 @@ export const dataCache = {
 
 ### API endpoints (`src/config.js`)
 
-All JSON file paths are defined in one place. Each endpoint is either a static string (e.g. `/data/stats.json`) or a function that produces a path from an ID (e.g. `mergerDetail(id) => `/data/mergers/${id}.json``). This means a change to the file naming convention only needs to happen in `config.js`.
+All JSON file paths are defined in one place. Each endpoint is either a static string (e.g. `/data/stats.json`) or a function that produces a path from an ID (e.g. `mergerDetail(id) => `/data/mergers/${id}.json``). This means a change to the file naming convention only needs to happen in `config.js` — except for the packed party and industry files, whose file names are computed by `utils/shard.js` and `utils/industryDivision.js`.
 
 ```bash
 cat frontend/src/config.js
@@ -485,9 +479,22 @@ cat frontend/src/config.js
 // API configuration for static JSON files
 // These files are generated by generate_static_data.py and served from /data/
 
-// Cloudflare Worker endpoints — both served from signup.mergers.fyi
+// Party records are packed into fixed shard buckets rather than one file per
+// party — see frontend/src/utils/shard.js for why, and note that the SPA and
+// the Python generator have to agree on the bucketing rule exactly.
+import { partyShardName } from './utils/shard';
+// Industry nodes are likewise packed one file per ANZSIC division rather than
+// one per node — see frontend/src/utils/industryDivision.js.
+import { industryDivisionUrl } from './utils/industryDivision';
+
+// Cloudflare Worker endpoints — all served from signup.mergers.fyi
 export const SUBSCRIBE_ENDPOINT = "https://signup.mergers.fyi";
 export const FEEDBACK_ENDPOINT = "https://signup.mergers.fyi/feedback";
+// Privacy-preserving feature-usage ping — see frontend/src/utils/trackEvent.js
+export const EVENT_ENDPOINT = "https://signup.mergers.fyi/event";
+
+// The site's Bluesky account (handle mergers.fyi, see atproto/identity.json).
+export const BLUESKY_PROFILE_URL = "https://bsky.app/profile/mergers.fyi";
 
 // Cloudflare Turnstile site key (public — safe to commit).
 // 1. Go to Cloudflare Dashboard > Turnstile > Add site
@@ -499,26 +506,33 @@ export const API_ENDPOINTS = {
   mergersList: '/data/mergers/list.json',  // Every merger, lightweight — the /mergers page and command palette
   mergerDetail: (id) => `/data/mergers/${id}.json`,  // Individual merger file
   stats: '/data/stats.json',
-  timelinePage: (page) => `/data/timeline/timeline-page-${page}.json`,  // Paginated timeline
-  timelineMeta: '/data/timeline/timeline-meta.json',  // Pagination metadata for timeline
   industries: '/data/industries.json',
-  industryDetail: (code) => `/data/industries/${code}.json`,  // Individual industry file with mergers
+  industryDivision: industryDivisionUrl,  // Division file holding this node (and every other node under the same division)
+  parties: '/data/parties.json',
+  partyShard: (id) => `/data/parties/${partyShardName(id)}`,  // Bucket holding this party's record
   upcomingEvents: '/data/upcoming-events.json',
   commentary: '/data/commentary.json',  // Mergers with user commentary
   digest: '/data/digest.json',  // Weekly digest of merger activity
   analysis: '/data/analysis.json',  // Pre-computed analysis data
+  quarterly: '/data/quarterly.json',  // Quarter-by-quarter report (volume, outcomes, timing, milestones)
+  quarterlyReportPdf: (filename) => `/data/reports/${filename}`,  // A quarter's PDF, named by its quarterly.json block's report_pdf
+  phase2: '/data/phase2.json',  // Current + completed Phase 2 matters with statutory milestones
+  refiledNotifications: '/data/refiled-notifications.json',  // Waivers declined then re-filed as notifications
+  referralProbabilityByDay: '/data/referral-probability-by-day.json',  // P(Phase 2 referral | still undecided at business day N), positional by day
   questionnaire: (id) => `/data/questionnaires/${id}.json`,  // Questionnaire data (lazy-loaded)
 };
 ```
 
 ### Global state — merger tracking (`src/context/TrackingContext.jsx`)
 
-Users can "track" individual mergers to receive notifications when new events or upcoming deadlines appear. All tracking state is managed in `TrackingContext`, which wraps the entire app.
+Users can "track" individual mergers to receive notifications when new events or upcoming deadlines appear, and follow industries to hear about new filings and determinations in them. All tracking state is managed in `TrackingContext`, which wraps the entire app.
 
 **What it stores (all persisted to `localStorage`):**
 
 - `trackedMergerIds` — array of merger IDs the user is watching
+- `trackedIndustries` — followed industries (code and name)
 - `seenEventKeys` — Set of event keys (derived from `merger_id + date + title`) that the user has already seen in the notification panel
+- the auto-track settings: re-filed matters already auto-tracked, and the opt-in to auto-track every matter that reaches Phase 2
 
 **How events are fetched:**
 
@@ -528,18 +542,25 @@ The context then synthesises upcoming events directly from the individual merger
 
 **Seen event deduplication:**
 
-Events are identified by a stable key: `${merger_id}_${date}_${display_title}`. When a merger is first tracked, all its current events are immediately marked as seen (via `newlyTrackedIds`), so only events that appear *after* tracking began show as new.
+Events are identified by a stable key: `${merger_id}_${date}_${display_title}` (prefixed with `ind_${industry_code}_` for industry-follow events; a Tribunal appeal document is keyed by its link instead, since its title is edited by hand). When a merger is first tracked, all its current events are immediately marked as seen (via `newlyTrackedIds`), so only events that appear *after* tracking began show as new.
 
 ```bash
-sed -n '12,17p' frontend/src/context/TrackingContext.jsx
+sed -n '45,57p' frontend/src/context/TrackingContext.jsx
 ```
 
 ```output
+// Generate a unique key for an event
 // Use a consistent order and normalize the title field for stability
 const getEventKey = (event) => {
+  // A tribunal appeal document is keyed by its document link, not its title:
+  // the title carries a comment added by hand, often after followers have
+  // already been notified, and a title-based key would announce the same
+  // document again.
+  const docUrl = event.is_appeal && (event.url || event.url_gh);
+  if (docUrl) return `${event.merger_id}_${event.date}_appeal_${docUrl}`;
   // Normalize title: prefer display_title, then title, then event_type_display, finally type
   const title = event.display_title || event.title || event.event_type_display || event.type || '';
-  return `${event.merger_id}_${event.date}_${title}`;
+  return titleKey(event, title);
 };
 ```
 
@@ -551,18 +572,19 @@ The title normalisation cascade (`display_title → title → event_type_display
 
 The pipeline runs on four triggers:
 
-- **Schedule** — four times a day on weekdays at 7:08, 11:08, 15:08, 19:08 AEST; once on Sundays at 7:08 AEST
+- **Schedule** — four times a day on weekdays at 7:08, 11:08, 15:08, 19:08 Sydney time; once on Sundays at 7:08
 - **Push to main** — immediately after any commit (so manual data fixes are picked up without waiting for the next schedule)
-- **`repository_dispatch`** — fired by the scraper workflow when a new merger is detected (near-real-time updates)
+- **`repository_dispatch`** (`new_merger_detected`) — fired by the `accc-register-watcher` Cloudflare Email Worker whenever the ACCC's register update mailing list sends an email (near-real-time updates)
 - **`workflow_dispatch`** — manual trigger, with an `all_mergers` boolean to force a full re-extraction
 
-The pipeline runs as a single job with no parallelism — the steps are inherently sequential (scrape → extract → generate). An important detail: extraction can run *twice* in one pipeline run. If the scraper downloads any DOCX files (the ACCC sometimes publishes documents in Word format), LibreOffice converts them to PDF and then extraction runs again to pick up the questionnaire data that was just unlocked.
+The pipeline runs as a single job with no parallelism — the steps are inherently sequential (scrape → extract → generate). An important detail: extraction is split into *two* phases. The download phase (`extract_mergers.py --skip-pdf-enrich`) parses the HTML and downloads attachments; if any DOCX files arrive (the ACCC sometimes publishes documents in Word format), LibreOffice converts them to PDF; then the enrich phase (`scripts/enrich_pdfs.py`) parses questionnaire, NOCC and Phase 2 Notice PDFs, so the converted documents are picked up in the same run.
 
 ```bash
-sed -n '122,140p' .github/workflows/pipeline.yml
+sed -n '230,246p' .github/workflows/pipeline.yml
 ```
 
 ```output
+      - name: Check for scrape changes
         id: scrape-changes
         run: |
           git add -A
@@ -573,26 +595,27 @@ sed -n '122,140p' .github/workflows/pipeline.yml
           fi
 
       # --- Extract phase 1: HTML parse + attachment download ---
+      # extract_mergers.py downloads attachment PDFs / DOCX files as a side
+      # effect of parsing each matter page. We skip questionnaire/NOCC PDF
+      # parsing here so we can convert any newly downloaded DOCX files first,
+      # then do the PDF-parse pass in phase 2 below.
 
       - name: Run extraction (download phase)
-        if: steps.scrape-changes.outputs.changed == 'true' || github.event_name != 'schedule'
 ```
 
 The "check for scrape changes" step is a key optimisation. On scheduled runs, extraction only proceeds if the scrape actually changed something. The paginated index page, `acquisitions-register.html`, never enters this check at all: it changes slightly on every fetch (a timestamp, a session token) even when no merger data has changed, and it is only ever used as a transient working file within a single scrape run to derive matter links. Rather than committing it and then filtering it back out, it is **git-ignored** (see `.gitignore`), so `git add -A` never stages it and it can never be mistaken for a change signal.
 
 ### Concurrent-run safety and rebase handling
 
-Because the pipeline can run multiple times simultaneously (e.g. a scheduled run overlaps with a push-triggered run), the commit step uses `git pull --rebase` to incorporate any commits made by the concurrent run before pushing. This avoids rejected pushes.
+Pipeline runs are serialised by a `concurrency` group, but other things still push to `main` while a run is scraping (the tribunal scraper, the quarterly report, a person), so the commit step uses `git pull --rebase` to incorporate those commits before pushing. This avoids rejected pushes. A genuine rebase conflict is not hand-merged: the run gives up its commit and dispatches a fresh pipeline run on the new `main` (at most three times in a chain).
 
 A subtle problem arises from the rebase: after a merge, HTML files that both runs touched are reconstructed from the merge base plus patches from each side. This can reintroduce the raw dynamic tokens that `clean_file` already stripped, because git's three-way merge applies text patches without understanding Perl regex semantics. The pipeline detects this: after rebasing it checks which HTML files were in the rebased commit and re-runs `scrape.sh --clean-file` on each one, then amends the commit if anything changed.
 
 ```bash
-sed -n '231,255p' .github/workflows/pipeline.yml
+sed -n '618,638p' .github/workflows/pipeline.yml
 ```
 
 ```output
-            git pull --rebase --autostash || { git rebase --abort; exit 1; }
-
             # After rebase, re-clean any HTML files that changed. A 3-way merge
             # during rebase can reintroduce raw dynamic tokens if both the local
             # commit and the pulled commits touched the same file.
@@ -622,12 +645,12 @@ Putting it all together, here is the full path from ACCC website to browser:
 
 ```
 ACCC website
-  └─ scrape.sh (hourly GitHub Actions)
+  └─ scrape.sh (pipeline.yml: weekdays 4×/day, Sundays, on push, on register email)
        ├─ pup extracts matter page links from register index
        ├─ xargs -P24 fetches each matter page in parallel
        ├─ clean_file() strips dynamic tokens via Perl
        └─ data/raw/matters/{MN,WA}-*.html (committed to git)
-            └─ extract_mergers.py (daily, or on scrape changes)
+            └─ extract_mergers.py + enrich_pdfs.py (on scrape changes, or any non-scheduled run)
                  ├─ ProcessPoolExecutor parses all HTML in parallel
                  ├─ Downloads attachments, parses determination PDFs
                  ├─ Merges with previous run's data (preserving frozen events)
@@ -641,7 +664,7 @@ ACCC website
                                      └─ React SPA reads /data/*.json at runtime
                                           ├─ useFetchData hook + in-memory cache
                                           ├─ TrackingContext for merger notifications
-                                          └─ Pages: Dashboard, Mergers, Timeline, etc.
+                                          └─ Pages: Dashboard, Mergers, Industries, Analysis, etc.
 ```
 
 ## Key Design Decisions Worth Knowing
@@ -652,4 +675,4 @@ ACCC website
 
 **Incremental by default, full rebuild on demand.** The cutoff logic and existing-data merging mean normal runs only touch active mergers. The `--all` flag on both `scrape.sh` and `extract_mergers.py` forces a full rebuild — used rarely, for fixing historical data or recovering from bugs.
 
-**Frozen events.** `data/frozen_events_mergers.json` is the escape hatch for cases where the ACCC's website has incorrect or missing data. Any merger listed there has its events array preserved exactly as last scraped, with only genuinely new events (matched by URL) appended. Field overrides in the same file can correct any other field.
+**Frozen events.** `data/frozen_events_mergers.json` is the escape hatch for cases where the ACCC's website has incorrect or missing data. Any merger listed there has its events array preserved exactly as last scraped, with only genuinely new events (matched by URL) appended — or, if it lists specific event titles, just those events are frozen. Field overrides in the same file can correct any other field.
