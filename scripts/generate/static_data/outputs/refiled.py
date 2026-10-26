@@ -2,7 +2,8 @@
 
 Surfaces every merger originally filed as a waiver application, declined,
 and later re-filed as a formal notification — the ``waiver_refiled`` pairs
-recorded in ``related_mergers.json``. Companion view to the Phase 2 tracker
+recorded in ``related_mergers.json`` — and, alongside them, every declined
+waiver that has not (yet) been re-filed. Companion view to the Phase 2 tracker
 (``phase2.py``). Relies on ``link_related_mergers`` having already attached
 ``related_merger`` to each merger (see :func:`static_data.enrichment`).
 """
@@ -58,6 +59,15 @@ def _entry(waiver: dict, notification: dict) -> dict:
         # Statutory Phase 2 deadline — the right-hand end of the timeline for a
         # referred matter that hasn't been determined yet.
         'notification_end_of_determination_period': notification.get('end_of_determination_period'),
+    }
+
+
+def _not_refiled_entry(waiver: dict) -> dict:
+    return {
+        'waiver_id': waiver.get('merger_id'),
+        'waiver_name': waiver.get('merger_name'),
+        'waiver_filed_date': waiver.get('effective_notification_datetime'),
+        'waiver_declined_date': waiver.get('determination_publication_date'),
     }
 
 
@@ -124,13 +134,16 @@ def generate(mergers: list) -> dict:
     has concluded counts, including referrals still awaiting a Phase 2 outcome.
     ``phase_1_clearance_rate`` / ``straight_phase_1_clearance_rate`` split the
     same two populations by Phase 1 outcome — cleared in Phase 1 vs referred to
-    Phase 2.
+    Phase 2. ``not_refiled`` lists the declined waivers with no re-filed
+    notification paired to them, most recently declined first — some will
+    still be re-filed, so it is a "not yet" list rather than a final one.
     """
     by_id = {m.get('merger_id'): m for m in mergers if m.get('merger_id')}
 
     current = []
     completed = []
     refiled_notifications = []
+    refiled_waiver_ids = set()
     for merger in mergers:
         related = merger.get('related_merger')
         if not related or related.get('relationship') != 'refiled_as':
@@ -139,6 +152,7 @@ def generate(mergers: list) -> dict:
         if not notification:
             continue
         entry = _entry(merger, notification)
+        refiled_waiver_ids.add(merger.get('merger_id'))
         # Every paired notification counts towards the Phase 1 duration stats:
         # collect_phase_1_durations only measures matters whose Phase 1 has
         # concluded, which includes a referral to Phase 2 even while the final
@@ -154,6 +168,14 @@ def generate(mergers: list) -> dict:
     # Completed: most recently determined first.
     completed.sort(key=lambda e: e['notification_determination_date'] or '', reverse=True)
 
+    not_refiled = [
+        _not_refiled_entry(m) for m in mergers
+        if m.get('is_waiver')
+        and m.get('accc_determination') in merger_status.BLOCKED_DETERMINATIONS
+        and m.get('merger_id') not in refiled_waiver_ids
+    ]
+    not_refiled.sort(key=lambda e: e['waiver_declined_date'] or '', reverse=True)
+
     refiled_ids = {e['notification_id'] for e in current} | {e['notification_id'] for e in completed}
     straight_notifications = [
         m for m in filter_notifications(mergers) if m.get('merger_id') not in refiled_ids
@@ -162,7 +184,12 @@ def generate(mergers: list) -> dict:
     return {
         'current': current,
         'completed': completed,
-        'count': {'current': len(current), 'completed': len(completed)},
+        'not_refiled': not_refiled,
+        'count': {
+            'current': len(current),
+            'completed': len(completed),
+            'not_refiled': len(not_refiled),
+        },
         'phase_1_clearance_rate': _phase_1_clearance_rate(refiled_notifications),
         'straight_phase_1_clearance_rate': _phase_1_clearance_rate(straight_notifications),
         'phase_duration': _rounded(phase_1_duration_stats(refiled_notifications)),
