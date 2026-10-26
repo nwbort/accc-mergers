@@ -66,7 +66,7 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
     # Merger IDs keyed by target so the run summary can name what was skipped
     # or recovered, rather than only counting it.
     ids_by_key = {}
-    skip_keys = set()
+    skip_keys = {}
     known_paths = []
     for merger in mergers:
         url = merger.get('url', '')
@@ -80,7 +80,7 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         if merger_id:
             ids_by_key[key] = merger_id
         if not scrape_all and should_skip_merger(merger, cutoff_weeks=cutoff_weeks):
-            skip_keys.add(key)
+            skip_keys[key] = path
         else:
             known_paths.append(path)
 
@@ -94,6 +94,8 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         'duplicates': 0,
         'skipped': 0,
         'skipped_mergers': [],
+        'skipped_unlisted': 0,
+        'skipped_unlisted_mergers': [],
         'recovered': 0,
         'recovered_paths': [],
         'recovered_mergers': [],
@@ -134,6 +136,18 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         stats['recovered'] += 1
         stats['recovered_paths'].append(path)
         stats['recovered_mergers'].append(
+            {'merger_id': ids_by_key.get(key), 'path': path}
+        )
+
+    # Past-cutoff matters the listing didn't serve this run. They aren't
+    # fetched either way, but counting them keeps 'skipped' plus this equal to
+    # the cutoff count extract_mergers.py prints (which reads mergers.json, not
+    # the listing), and names the cold matters an unstable crawl dropped.
+    for key, path in skip_keys.items():
+        if key in listing_seen:
+            continue
+        stats['skipped_unlisted'] += 1
+        stats['skipped_unlisted_mergers'].append(
             {'merger_id': ids_by_key.get(key), 'path': path}
         )
 
@@ -207,6 +221,8 @@ def main():
         print(f"    Listing served {stats['duplicates']} duplicate link(s)", file=sys.stderr)
     if stats['skipped']:
         print(f"    Skipping {stats['skipped']} merger(s) past cutoff", file=sys.stderr)
+    if stats['skipped_unlisted']:
+        print(f"    {stats['skipped_unlisted']} more past cutoff were missing from the listing", file=sys.stderr)
     if stats['recovered']:
         print(f"    Recovered {stats['recovered']} merger(s) missing from the listing:", file=sys.stderr)
         for path in stats['recovered_paths']:

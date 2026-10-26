@@ -120,6 +120,7 @@ def render(stats: dict, fetched, failed, changed_ids) -> str:
 
     fetched_ids = _ids(fetched)
     skipped_ids = _ids(stats.get('skipped_mergers', []))
+    unlisted_ids = _ids(stats.get('skipped_unlisted_mergers', []))
     recovered_ids = _ids(stats.get('recovered_mergers', []))
     # Only count pages we fetched this run: a page can also show as changed
     # because an earlier run left it dirty.
@@ -131,6 +132,7 @@ def render(stats: dict, fetched, failed, changed_ids) -> str:
         f"| Links in register listing | {stats.get('listing', 0)} |",
         f"| Duplicate links dropped | {stats.get('duplicates', 0)} |",
         f"| Skipped (past cutoff) | {stats.get('skipped', 0)} |",
+        f"| Past cutoff, missing from listing | {stats.get('skipped_unlisted', 0)} |",
         f"| Recovered (missing from listing) | {stats.get('recovered', 0)} |",
         f'| Pages fetched | {len(fetched)} |',
         f'| Pages changed | {len(changed_fetched)} |',
@@ -146,6 +148,8 @@ def render(stats: dict, fetched, failed, changed_ids) -> str:
         lines += _block('Recovered from outside the listing', recovered_ids)
     if skipped_ids:
         lines += _block('Skipped — past cutoff, not scraped', skipped_ids)
+    if unlisted_ids:
+        lines += _block('Past cutoff and missing from the listing', unlisted_ids)
     if failed:
         lines += _block('Fetch failures',
                         [e['path'] for e in failed])

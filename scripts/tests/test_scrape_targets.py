@@ -176,6 +176,26 @@ class TestSelectTargetsStats:
             {'merger_id': 'MN-2', 'path': f'{REGISTER}/settled-deal'}
         ]
 
+    def test_names_past_cutoff_mergers_missing_from_the_listing(self):
+        # extract_mergers.py counts every past-cutoff record; the listing-based
+        # 'skipped' misses the cold ones a crawl dropped. Together they agree.
+        mergers = [_completed('MN-1', 'listed-deal'), _completed('MN-2', 'dropped-deal')]
+
+        _, stats = select_targets([f'{REGISTER}/listed-deal'], mergers)
+
+        assert stats['skipped'] == 1
+        assert stats['skipped_unlisted'] == 1
+        assert stats['skipped_unlisted_mergers'] == [
+            {'merger_id': 'MN-2', 'path': f'{REGISTER}/dropped-deal'}
+        ]
+
+    def test_all_reports_no_past_cutoff_mergers(self):
+        mergers = [_completed('MN-1', 'old-deal')]
+
+        _, stats = select_targets([], mergers, scrape_all=True)
+
+        assert stats['skipped_unlisted'] == 0
+
     def test_names_the_mergers_recovered_from_outside_the_listing(self):
         mergers = [_active('MN-3', 'dropped-deal')]
 
