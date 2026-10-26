@@ -338,6 +338,42 @@
         "completed_count": 1
       }
     },
+    "soilmec-investments-pty-limited": {
+      "id": "soilmec-investments-pty-limited",
+      "canonical_name": "Soilmec Investments Pty Limited",
+      "members": [
+        {
+          "name": "Soilmec Investments Pty Limited",
+          "identifier": "36 133 190 646",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20042",
+            "merger_name": "Webuild \u2013 Trevi Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-24T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "strategic-accountants-and-business-advisors-pty-ltd": {
       "id": "strategic-accountants-and-business-advisors-pty-ltd",
       "canonical_name": "Strategic Accountants And Business Advisors Pty Ltd",

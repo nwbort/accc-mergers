@@ -426,6 +426,42 @@
         "completed_count": 1
       },
       "waiver_duration": null
+    },
+    "trevi-finanziaria-industriale-s-p-a": {
+      "id": "trevi-finanziaria-industriale-s-p-a",
+      "canonical_name": "Trevi \u2013 Finanziaria Industriale S.p.A.",
+      "members": [
+        {
+          "name": "Trevi \u2013 Finanziaria Industriale S.p.A.",
+          "identifier": "Companies Register of Forl\u00ecCesena 01547370401",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20042",
+            "merger_name": "Webuild \u2013 Trevi Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-24T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
     }
   }
 }

@@ -20880,10 +20880,177 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 34,
-        "min_days": null,
+        "estimated_days": 23,
+        "min_days": 0,
         "max_days": 52,
-        "id_issued_estimated": "2026-09-11",
+        "id_issued_estimated": "2026-09-22",
+        "id_issued_before": "2026-10-15",
+        "id_issued_after": "2026-08-24",
+        "min_days_witness": "MN-20042",
+        "max_days_witness": "WA-20038",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/webuild-%E2%80%93-trevi-group",
+      "merger_name": "Webuild \u2013 Trevi Group",
+      "status": "Under assessment",
+      "merger_id": "MN-20042",
+      "effective_notification_datetime": "2026-10-24T12:00:00Z",
+      "original_notification_datetime": "2026-10-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-12-04T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T12:19:50+11:00",
+      "consultation_response_due_date": "2026-11-02T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Webuild S.p.A.",
+          "identifier_type": null,
+          "identifier": "Companies Register of Milano Monza Brianza Lodi 00830660155",
+          "party_page": {
+            "id": "webuild-s-p-a",
+            "name": "Webuild S.p.A."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Trevi \u2013 Finanziaria Industriale S.p.A.",
+          "identifier_type": null,
+          "identifier": "Companies Register of Forl\u00ecCesena 01547370401",
+          "party_page": {
+            "id": "trevi-finanziaria-industriale-s-p-a",
+            "name": "Trevi \u2013 Finanziaria Industriale S.p.A."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Soilmec Australia Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "53 133 190 717",
+          "party_page": {
+            "id": "soilmec-australia-pty-limited",
+            "name": "Soilmec Australia Pty Limited"
+          }
+        },
+        {
+          "name": "Trevi Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "91 161 293 401",
+          "party_page": {
+            "id": "trevi-australia-pty-ltd",
+            "name": "Trevi Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "Soilmec Investments Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "36 133 190 646",
+          "party_page": {
+            "id": "soilmec-investments-pty-limited",
+            "name": "Soilmec Investments Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2462",
+          "name": "Mining and Construction Machinery Manufacturing"
+        },
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        },
+        {
+          "code": "3411",
+          "name": "Agricultural and Construction Machinery Wholesaling"
+        }
+      ],
+      "merger_description": "Webuild S.p.A. (**Webuild**) proposes to acquire all of the ordinary share capital of Trevi Finanziaria Industriale S.p.A. (**Trevi Group**), (the **Acquisition**). The Acquisition will be implemented by way of a voluntary tender offer, announced on 29 July 2026 and made under Italian securities law.\n\nWebuild is a global operator specialising in the design and construction of large, complex infrastructure in the sustainable mobility (railways, metros, roads, bridges and tunnels), hydropower (dams, power plants), water, and green buildings sectors.\n\nTrevi Group operates globally and specialises in underground engineering (special foundations and ground stabilisation). Trevi Group's operations are organised in two divisions: (i) Trevi, which is involved in the design and execution of special foundation works and ground consolidation for major infrastructure projects (including dams and levees, ports, ground and underground transportation, and industrial and civil buildings); and (ii) Soilmec, which designs, manufactures, and markets machinery, equipment, and services for foundation engineering.\n\nBoth Webuild and Trevi Group are active in the sector of design, engineering, and construction of large-scale infrastructure and complex civil works. Trevi, through Soilmec, also designs, manufactures and markets specialist ground engineering machinery and equipment.",
+      "events": [
+        {
+          "date": "2026-10-26T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Webuild%20-%20Trevi%20Group%20-%20third-party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-20042/Webuild - Trevi Group - third-party questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-24T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-05026",
+          "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
+          "acquirers": [
+            "MERCER INVESTMENTS (AUSTRALIA) LIMITED"
+          ],
+          "targets": [
+            "One MEA Holdings Pte. Ltd",
+            "The Trustee for Stockland Residential Rental Partnership Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-70039",
+          "merger_name": "Architectus \u2013 SBA",
+          "acquirers": [
+            "Architectus Services BidCo Pty Ltd"
+          ],
+          "targets": [
+            "SBA Architects Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-35013",
+          "merger_name": "Estia Health \u2013 Norsan residential aged care business",
+          "acquirers": [
+            "ESTIA INVESTMENTS PTY. LTD."
+          ],
+          "targets": [
+            "NORSAN PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 184,
+        "as_of": "2026-10-24",
+        "estimated_at": "2026-10-26",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 32,
+        "min_days": null,
+        "max_days": 61,
+        "id_issued_estimated": "2026-09-22",
         "id_issued_before": null,
         "id_issued_after": "2026-08-24",
         "min_days_witness": null,
