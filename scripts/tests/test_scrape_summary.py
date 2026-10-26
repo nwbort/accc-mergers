@@ -120,6 +120,15 @@ class TestRender:
         assert '| Skipped (past cutoff) | 1 |' in out
         assert '`MN-5`' in out
 
+    def test_names_past_cutoff_matters_missing_from_the_listing(self):
+        stats = {'skipped_unlisted': 1,
+                 'skipped_unlisted_mergers': [{'merger_id': 'WA-7', 'path': '/g'}]}
+
+        out = render(stats, [], [], set())
+
+        assert '| Past cutoff, missing from listing | 1 |' in out
+        assert 'Past cutoff and missing from the listing (1):** `WA-7`' in out
+
     def test_names_matters_recovered_from_outside_the_listing(self):
         stats = {'recovered': 1,
                  'recovered_mergers': [{'merger_id': 'MN-6', 'path': '/f'}]}
