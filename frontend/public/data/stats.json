@@ -1,10 +1,10 @@
 {
-  "total_mergers": 303,
+  "total_mergers": 304,
   "total_waivers": 475,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 257,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -107,6 +107,16 @@
       "is_refiled": false
     },
     {
+      "merger_id": "MN-75065",
+      "merger_name": "Monadelphous - Tyden Power",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-23T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T16:51:42+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-55042",
       "merger_name": "AUB \u2013 One Underwriting",
       "status": "Under assessment",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-16T12:00:00Z",
       "page_modified_datetime": "2026-10-19T10:25:53+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-01127",
-      "merger_name": "CVS Group \u2013 Karrinyup Small Animal Hospital",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-15T12:00:00Z",
-      "page_modified_datetime": "2026-10-23T09:16:51+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

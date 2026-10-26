@@ -23287,6 +23287,15 @@
         "date": "2026-10-23T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-10-26T12:00:00Z",
+        "title": "Phase 1 consultation",
+        "display_title": "Phase 1 consultation",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/AUB%20-%20One%20Underwriting%20-%20third-party%20questionnaire.docx",
+        "url_gh": "/mergers/MN-55042/AUB - One Underwriting - third-party questionnaire.pdf",
+        "status": "live"
       }
     ],
     "is_waiver": false
@@ -30767,6 +30776,61 @@
         "url": "https://www.accc.gov.au/system/files/moderated_files/ABB%20-%20Rotork%20%28MN-75061%29%20-%20Third-party%20questionnaire%20-%2019%20Oct%202026_1.docx",
         "url_gh": "/mergers/MN-75061/ABB - Rotork (MN-75061) - Third-party questionnaire - 19 Oct 2026_1.pdf",
         "status": "live"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/monadelphous-tyden-power-0",
+    "merger_name": "Monadelphous - Tyden Power",
+    "status": "Under assessment",
+    "merger_id": "MN-75065",
+    "effective_notification_datetime": "2026-10-23T12:00:00Z",
+    "original_notification_datetime": "2026-10-23T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-12-04T12:00:00Z",
+    "page_modified_datetime": "2026-10-26T16:51:42+11:00",
+    "consultation_response_due_date": "2026-11-02T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "MONADELPHOUS GROUP LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "28 008 988 547"
+      }
+    ],
+    "targets": [
+      {
+        "name": "TYDEN POWER PTY. LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "75 612 521 212"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "3109",
+        "name": "Other Heavy and Civil Engineering Construction"
+      },
+      {
+        "code": "3232",
+        "name": "Electrical Services"
+      }
+    ],
+    "merger_description": "Monadelphous Group Limited (**Monadelphous**)\u00a0proposes to acquire 100% of the issued share capital in Tyden Power Pty Ltd (**Tyden Power**) (the **Acquisition**).\n\nMonadelphous is an ASX-listed Australian engineering group providing construction, maintenance and industrial services to the resources, energy and infrastructure sectors. Monadelphous, through its various business units, provides high voltage (**HV**) electrical services principally in Western Australia, Victoria and Queensland.\n\nTyden Power is a New South Wales-based provider of HV engineering, testing, commissioning, maintenance and construction services to customers in the energy, utilities and infrastructure sectors.\n\nFollowing completion, Tyden Power will become a wholly-owned subsidiary of Monadelphous.",
+    "events": [
+      {
+        "date": "2026-10-26T12:00:00Z",
+        "title": "Phase 1 consultation",
+        "display_title": "Phase 1 consultation",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Monadelphous%20-%20Tyden%20Power%20-%20third-party%20questionnaire_4.docx",
+        "url_gh": "/mergers/MN-75065/Monadelphous - Tyden Power - third-party questionnaire_4.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-10-23T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
       }
     ],
     "is_waiver": false
