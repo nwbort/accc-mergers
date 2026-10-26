@@ -105639,15 +105639,23 @@
           "name": "MCGILL AND PARTNERS AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "11 654 226 749",
+          "canonical": {
+            "id": "mcgill-and-partners-group-ltd",
+            "name": "McGill and Partners Group Ltd"
+          },
           "party_page": {
-            "id": "mcgill-and-partners-australia-pty-ltd",
-            "name": "Mcgill And Partners Australia Pty Ltd"
+            "id": "mcgill-and-partners-group-ltd",
+            "name": "McGill and Partners Group Ltd"
           }
         },
         {
           "name": "McGill and Partners Group Ltd",
           "identifier_type": null,
           "identifier": "11872874",
+          "canonical": {
+            "id": "mcgill-and-partners-group-ltd",
+            "name": "McGill and Partners Group Ltd"
+          },
           "party_page": {
             "id": "mcgill-and-partners-group-ltd",
             "name": "McGill and Partners Group Ltd"
