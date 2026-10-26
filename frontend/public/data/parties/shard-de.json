@@ -86,6 +86,48 @@
       },
       "waiver_duration": null
     },
+    "bmd-fleet-pty-ltd": {
+      "id": "bmd-fleet-pty-ltd",
+      "canonical_name": "Bmd Fleet Pty Ltd",
+      "members": [
+        {
+          "name": "BMD FLEET PTY LTD",
+          "identifier": "75 660 011 512",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75064",
+            "merger_name": "BMD Fleet \u2013 East Coast Commercial Vehicles dealerships",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-06T12:00:00Z",
+            "determination_date": "2026-10-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
     "brunswick-hotel-tt-pty-ltd": {
       "id": "brunswick-hotel-tt-pty-ltd",
       "canonical_name": "Brunswick Hotel Tt Pty Ltd",

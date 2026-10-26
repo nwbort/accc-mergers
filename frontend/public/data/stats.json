@@ -1,6 +1,6 @@
 {
   "total_mergers": 304,
-  "total_waivers": 475,
+  "total_waivers": 476,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 257,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 450,
+    "Approved": 451,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.57263157894737,
-    "median_days": 21,
-    "average_business_days": 14.07578947368421,
-    "median_business_days": 14
+    "average_days": 20.571428571428573,
+    "median_days": 21.0,
+    "average_business_days": 14.07563025210084,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 179
+      "count": 180
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 89
+      "count": 90
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75064",
+      "merger_name": "BMD Fleet \u2013 East Coast Commercial Vehicles dealerships",
+      "determination": "Approved",
+      "determination_date": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-10-26T17:11:36+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-45029",
       "merger_name": "Schreiber Foods \u2013 Real Dairy Australia",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-70039",
-      "merger_name": "Architectus \u2013 SBA",
-      "determination": "Approved",
-      "determination_date": "2026-10-23T12:00:00Z",
-      "page_modified_datetime": "2026-10-23T15:44:53+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

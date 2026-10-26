@@ -56020,13 +56020,13 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 29,
-        "min_days": 4,
+        "estimated_days": 27,
+        "min_days": 11,
         "max_days": 39,
-        "id_issued_estimated": "2026-09-18",
-        "id_issued_before": "2026-10-13",
+        "id_issued_estimated": "2026-09-20",
+        "id_issued_before": "2026-10-06",
         "id_issued_after": "2026-09-08",
-        "min_days_witness": "WA-75069",
+        "min_days_witness": "WA-75064",
         "max_days_witness": "WA-75060",
         "basis": "bracketed",
         "method_version": 1
@@ -56148,14 +56148,14 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 23,
+        "estimated_days": 16,
         "min_days": 10,
-        "max_days": 45,
-        "id_issued_estimated": "2026-09-30",
+        "max_days": 24,
+        "id_issued_estimated": "2026-10-07",
         "id_issued_before": "2026-10-13",
-        "id_issued_after": "2026-09-08",
+        "id_issued_after": "2026-09-29",
         "min_days_witness": "WA-75069",
-        "max_days_witness": "WA-75060",
+        "max_days_witness": "WA-75064",
         "basis": "bracketed",
         "method_version": 1
       }
@@ -131816,6 +131816,183 @@
           "targets": [
             "Redpoint Investments Pte Ltd",
             "Avendus Capital Private Limited"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bmd-fleet-%E2%80%93-east-coast-commercial-vehicles-dealerships",
+      "merger_name": "BMD Fleet \u2013 East Coast Commercial Vehicles dealerships",
+      "status": "Assessment completed",
+      "merger_id": "WA-75064",
+      "effective_notification_datetime": "2026-10-06T12:00:00Z",
+      "original_notification_datetime": "2026-10-06T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-26T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-26T17:11:36+11:00",
+      "acquirers": [
+        {
+          "name": "BMD FLEET PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 660 011 512",
+          "party_page": {
+            "id": "bmd-fleet-pty-ltd",
+            "name": "Bmd Fleet Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "EAST COAST COMMERCIAL VEHICLE DISPOSALS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "71 011 036 285",
+          "party_page": {
+            "id": "east-coast-commercial-vehicle-disposals-pty-ltd",
+            "name": "East Coast Commercial Vehicle Disposals Pty. Ltd."
+          }
+        },
+        {
+          "name": "CRANEFM Investments Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "619 795 836",
+          "party_page": {
+            "id": "cranefm-investments-pty-ltd",
+            "name": "CRANEFM Investments Pty Ltd"
+          }
+        },
+        {
+          "name": "EAST COAST COMMERCIALS (GOLD COAST) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "24 147 442 500",
+          "party_page": {
+            "id": "east-coast-commercials-gold-coast-pty-ltd",
+            "name": "East Coast Commercials (Gold Coast) Pty Ltd"
+          }
+        },
+        {
+          "name": "BBMG INVESTMENTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 624 128 749",
+          "party_page": {
+            "id": "bbmg-investments-pty-ltd",
+            "name": "Bbmg Investments Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "B.M.D. CONSTRUCTIONS PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "59 010 126 100",
+          "party_page": {
+            "id": "b-m-d-constructions-pty-limited",
+            "name": "B.M.D. Constructions Pty. Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        },
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "BMD Fleet Pty Ltd (**BMD Fleet**), an existing shareholder in East Coast Commercial Vehicles, proposes to acquire the remaining shares of East Coast Commercial Vehicles held by BBMG Investments Pty Ltd (**BBMG**) and CRANEFM Investments Pty Ltd (**Crane**) (the **Acquisition**). Following the Acquisition, BMD Fleet will hold 100% of the shares in East Coast Commercial Vehicles.\n\nEast Coast Commercial Vehicles is the trading name of East Coast Commercial Vehicle Disposals Pty Ltd (**ECCVD**) and East Coast Commercial Vehicles (Gold Coast) Pty Ltd (**ECCGC**), which supply new and used commercial vehicles and certain related services (such as vehicle servicing and finance) from two motor vehicle dealerships located at 1169-1175 Beaudesert Road, Acacia Ridge, Queensland and 277 Scottsdale Drive, Robina, Queensland respectively.\n\nBMD Fleet is an Australian company within the broader BMD Group, whose principal activities are in civil construction and infrastructure. BMD Fleet manages the vehicle fleet operated across the BMD Group.\n\nBMD Constructions Pty Limited, a related entity to BMD Fleet within the BMD Group, holds a motor vehicle dealership licence and operates a small used vehicle dealership, Better Motor Deals, from its premises located at 7 Bingera Dr, Port of Brisbane QLD 4178. Better Motor Deals supplies the BMD Group's end-of-life (3\u20134-year-old) sports utility vehicles (**SUV**s) and light commercial vehicles (**LCV**s).\n\nBBMG is a member of the Bartons Automotive Group, a Brisbane based automotive dealership group engaged in the retail sale and servicing of new and used vehicles (and ancillary services) in Brisbane's eastern suburbs of Wynnum and Capalaba.\u00a0Crane holds a minority ownership interest in ECCVD and ECCGC.",
+      "events": [
+        {
+          "date": "2026-10-26T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/BMD%20Fleet%20%E2%80%93%20East%20Coast%20Commercial%20Vehicles%20dealerships%20%28WA-75064%29%20-%20Notification%20waiver%20determination%20-%2023%20October%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "BMD Fleet Pty Ltd (BMD Fleet) applied for a notification waiver in\nrespect of its proposed acquisition of the remaining shares of East\nCoast Commercial Vehicles held by BBMG Investments Pty Ltd and\nCRANEFM Investments Pty Ltd, as described in the transaction\ndocuments provided as part of the application (the Acquisition).\nFollowing the Acquisition, BMD Fleet will hold 100% of the shares in\nEast Coast Commercial Vehicles."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "23 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, BMD Fleet, is an Australian company within the broader\nBMD Group, whose principal activities are in civil construction and\ninfrastructure. BMD Fleet manages the vehicle fleet operated across\nthe BMD Group.\nBMD Constructions Pty Limited, a related entity to BMD Fleet within\nthe BMD Group, holds a motor vehicle dealership licence and\noperates a small used vehicle dealership, Better Motor Deals, from\nits premises located at 7 Bingera Dr, Port of Brisbane QLD 4178.\nBetter Motor Deals supplies the BMD Group's end-of-life (3\u20134 year\nold) sports utility vehicles (SUVs) and light commercial vehicles\n(LCVs).\nThe target, East Coast Commercial Vehicles, is the trading name of\nEast Coast Commercial Vehicle Disposals Pty Ltd and East Coast\nCommercial Vehicles (Gold Coast) Pty Ltd, which supply new and\nused commercial vehicles and certain related services (such as\nvehicle servicing and finance) from two motor vehicle dealerships\nlocated at 1169-1175 Beaudesert Road, Acacia Ridge, Queensland\nand 277 Scottsdale Drive, Robina, Queensland respectively."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the parties\u2019 combined share in the supply of used\ncommercial vehicles (particularly SUVs and LCVs) in the\nGold Coast to Brisbane region of Queensland is low and the\nincrease in share of supply arising from the Acquisition\nwould be small\nb. there are alternative suppliers of used commercial vehicles\n(including SUVs and LCVs) to customers in the Gold Coast\nto Brisbane region of Queensland, as well as south-east\nQueensland more broadly\nc. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-75064/BMD Fleet \u2013 East Coast Commercial Vehicles dealerships (WA-75064) - Notification waiver determination - 23 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-06T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-05024",
+          "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
+          "acquirers": [
+            "B.M.D. HOLDINGS PTY. LIMITED"
+          ],
+          "targets": [
+            "BAJARA PLANT HIRE PTY LTD",
+            "Stirling Earthworks Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-95033",
+          "merger_name": "bp - bp Gateway",
+          "acquirers": [
+            "BP AUSTRALIA PTY LTD"
+          ],
+          "targets": [
+            "M. & H.J. WEBB PTY. LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-05017",
+          "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+          "acquirers": [
+            "TWG HUNTER DEALERSHIPS PTY LTD"
+          ],
+          "targets": [
+            "SHARTON MOTORS PTY LTD",
+            "N&M Burton Pty Ltd"
           ],
           "accc_determination": "Approved"
         }
