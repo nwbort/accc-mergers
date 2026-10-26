@@ -23,13 +23,14 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 - `scripts/` is a package: entry points run as `python -m scripts.…` from the
   repo root, never by file path (the modules import each other absolutely)
 - Dependencies (`scripts/requirements.txt`): beautifulsoup4, lxml, requests,
-  markdownify, pdfplumber, cryptography, pytesseract, reportlab
+  curl_cffi, markdownify, pdfplumber, cryptography, pytesseract, pillow,
+  reportlab
 
 ### Cloudflare Workers (`workers/`)
 
 One directory per Worker, each named after the Worker it deploys (the directory name matches `name` in its `wrangler.toml`). All are deployed separately via wrangler — see [`workers/README.md`](workers/README.md).
 
-- `workers/mergers-digest-signup/` — public HTTP API: digest email signup (validates Cloudflare Turnstile tokens, adds to a Resend audience) and `POST /feedback` writes to the `mergers-feedback` D1 database
+- `workers/mergers-digest-signup/` — public HTTP API: digest email signup (validates Cloudflare Turnstile tokens, adds to a Resend audience) and `POST /feedback` writes to the `mergers-feedback` D1 database; `POST /event` bumps an aggregate, per-day feature-usage counter in the same database (`utils/trackEvent.js`)
 - `workers/accc-register-watcher/` — Email Worker bound to a mailbox subscribed to the ACCC's register update mailing list; fires a `repository_dispatch` (`new_merger_detected`) to trigger `pipeline.yml` immediately on each email. See its README for the Cloudflare Email Routing setup
 - `workers/feedback-admin/` — private read-only viewer over the same feedback D1 database, gated behind an `x-secret` header
 
@@ -153,9 +154,10 @@ frontend/src/
 │   ├── RefiledNotifications.jsx # /refiled-notifications
 │   ├── NickTwort.jsx     # /nick-twort
 │   ├── PrivacyPolicy.jsx # /privacy
+│   ├── Copyright.jsx     # /copyright
 │   ├── Feedback.jsx      # /feedback
 │   └── NotFound.jsx      # * (404)
-├── components/           # ~45 reusable components, flat (no subdirectories).
+├── components/           # ~57 reusable components, flat (no subdirectories).
 │                         #   Deliberately not enumerated here — `ls` is accurate and
 │                         #   this list was not. The ones worth knowing before you
 │                         #   add another:
@@ -244,7 +246,9 @@ frontend/src/
 │                         #   in App.jsx),
 │                         #   mergerStatus.js, appeal.js, regime.js, cardStyles.js,
 │                         #   chartColors.js, outcomeDotColors.js, outcomeHeader.js,
-│                         #   outcomeIcons.js, outcomeRail.js, statutoryDeadlines.js
+│                         #   outcomeIcons.js, outcomeRail.js, statutoryDeadlines.js,
+│                         #   headerButton.js (the Track/Share header pill variants),
+│                         #   promo.js (the dashboard's promo banners, in priority order)
 ├── context/              # TrackingContext.jsx — global merger + industry follow state via localStorage
 │                         #   (industry follows flag only new filings/determinations)
 ├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js,
@@ -291,7 +295,11 @@ frontend/src/
 │                         #   percentAlong, clampedLabelStyle and the above/below-line
 │                         #   offsets — shared by Phase2Timeline and the refiled cards;
 │                         #   MergerTimeline keeps its own positioning code but the same
-│                         #   conventions)
+│                         #   conventions), timelineExtensions.js (where each extension sits
+│                         #   on the detail timeline), mergerListView.js, quarterlyReport.js
+│                         #   (reading helpers for quarterly.json), share.js (share-menu URLs),
+│                         #   trackEvent.js (the anonymous feature-usage ping to the signup
+│                         #   Worker's POST /event)
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at
@@ -324,6 +332,9 @@ scripts/                  # A Python package — entry points run as `python -m 
 ├── cutoff.py             # Skip old mergers logic
 ├── merger_filters.py     # Canonical merger loading/filtering helpers (single source of truth)
 ├── paths.py              # REPO_ROOT / SCRIPTS_DIR anchors, so no module hardcodes its own depth
+├── accc_http.py          # HTTP requests to accc.gov.au (curl_cffi, impersonating Chrome)
+├── stage_determinations.py # Which phase each of a matter's determinations belongs to
+│                         #   (see *Public benefit phase* below)
 ├── build.sh              # Cloudflare Pages build entry point (`bash scripts/build.sh`):
 │                         #   builds the frontend, then copies data/raw/matters PDFs into dist/
 ├── scrape/
@@ -473,7 +484,7 @@ npm run dev       # Vite dev server at localhost:5173
 npm run build     # Production build to dist/
 npm run lint      # ESLint
 npm run preview   # Preview production build
-npm test          # Vitest suite (~333 tests); npm run test:watch to iterate
+npm test          # Vitest suite (~870 tests); npm run test:watch to iterate
 
 # Data pipeline (from repo root)
 pip install -r scripts/requirements.txt
@@ -492,7 +503,8 @@ python -m scripts.linkedin.post_linkedin --dry-run   # LinkedIn twin; see docs/l
 python -m pytest scripts/tests/
 cd workers/<worker-name> && npm test   # per-Worker suite, where one exists
 
-# Cloudflare Workers (same scripts in every workers/* directory)
+# Cloudflare Workers (same scripts in every workers/* directory, except that
+# mergers-digest-signup has no `tail` — use `npx wrangler tail` there)
 cd workers/<worker-name>   # dir name == deployed Worker name
 npm install
 npm run dev          # local wrangler dev server
@@ -509,7 +521,7 @@ npm run tail         # stream live logs
 - **Python**: Type hints in function signatures. Docstrings for modules and functions. ProcessPoolExecutor for concurrent extraction in extract_mergers.py.
 - **ESLint**: Flat config (eslint.config.js). Unused vars ignore pattern `^[A-Z_]`.
 - **Accessibility**: WCAG 2.2 AA. Colour families in `tailwind.config.js` keep text on the `dark` shade (the `DEFAULT`s are fills and several fail as small text); badges are `role="img"`, never `role="status"`; charts pair a presentational canvas with a labelled wrapper and an `sr-only` data table; every route has an `h1`. See `docs/accessibility.md` for the conventions and how to re-run the axe audit.
-- **Node version**: 24.18.0 (pinned in both `.nvmrc` and `.node-version`)
+- **Node version**: 24.18.0 (pinned in both `frontend/.nvmrc` and the root `.node-version`)
 - **Commit messages**: describe the change only — no Claude/AI attribution. `.claude/settings.json` turns the default trailers off (`attribution.commit`/`pr` empty, `sessionUrl` false) and a `PreToolUse` hook (`.claude/hooks/check_commit_message.py`) denies any `git commit` whose message carries a `Co-Authored-By: Claude` trailer, a "Generated with Claude Code" line, or a claude.ai session link. Mentioning Claude Code in a message is fine; claiming it as the author is not.
 
 ## Key Data Flow
