@@ -1,10 +1,10 @@
 {
-  "total_mergers": 304,
+  "total_mergers": 305,
   "total_waivers": 481,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 259,
-    "Under assessment": 40,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-55046",
+      "merger_name": "USCO \u2013 ITM",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-10-27T16:56:39+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-20042",
       "merger_name": "Webuild \u2013 Trevi Group",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-16T12:00:00Z",
       "page_modified_datetime": "2026-10-19T15:22:48+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-80047",
-      "merger_name": "Thoma Bravo - Tanda",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-16T12:00:00Z",
-      "page_modified_datetime": "2026-10-19T10:25:53+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

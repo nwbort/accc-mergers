@@ -180,6 +180,42 @@
       },
       "waiver_duration": null
     },
+    "itr-industries-ltd": {
+      "id": "itr-industries-ltd",
+      "canonical_name": "ITR Industries Ltd",
+      "members": [
+        {
+          "name": "ITR Industries Ltd",
+          "identifier": "South Korean registration number 6138129011",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-55046",
+            "merger_name": "USCO \u2013 ITM",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-26T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "loaded-net-australia-pty-ltd": {
       "id": "loaded-net-australia-pty-ltd",
       "canonical_name": "Loaded Net Australia Pty Ltd",
