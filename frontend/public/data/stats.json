@@ -3,12 +3,12 @@
   "total_waivers": 481,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 257,
-    "Under assessment": 42,
+    "Assessment completed": 258,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 250,
+    "Approved": 251,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 255,
+    "cleared": 256,
     "not_cleared": 2,
-    "total": 257,
+    "total": 258,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.513307984790874,
-    "median_days": 26,
-    "average_business_days": 20.068441064638783,
-    "median_business_days": 18,
+    "average_days": 29.5,
+    "median_days": 26.0,
+    "average_business_days": 20.056818181818183,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 57,
-        "percentage": 21.7
+        "percentage": 21.6
       },
       "day20": {
-        "count": 190,
-        "percentage": 72.2
+        "count": 191,
+        "percentage": 72.3
       },
       "day30": {
-        "count": 246,
-        "percentage": 93.5
+        "count": 247,
+        "percentage": 93.6
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-95044",
+      "merger_name": "Olin - Huntsman",
+      "determination": "Approved",
+      "determination_date": "2026-10-27T12:00:00Z",
+      "page_modified_datetime": "2026-10-27T15:30:16+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-01131",
       "merger_name": "MA Financial (Redcape Fund) \u2013 Caves Coastal Bar & Bungalows",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-23T12:00:00Z",
       "page_modified_datetime": "2026-10-23T17:14:15+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-05055",
-      "merger_name": "Ochre Health - Health E Medical & Health E Allied Services, Vic",
-      "determination": "Approved",
-      "determination_date": "2026-10-23T12:00:00Z",
-      "page_modified_datetime": "2026-10-23T17:06:44+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
