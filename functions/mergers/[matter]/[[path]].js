@@ -1,4 +1,4 @@
-import { renderViewer } from '../../_lib/pdf-viewer.js';
+import { renderNotFound, renderViewer } from '../../_lib/pdf-viewer.js';
 
 const BOT_UA_RE = /LinkedInBot|facebookexternalhit|Twitterbot|Slackbot|Discordbot|TelegramBot|WhatsApp|bingbot|Pinterestbot|Applebot|Iframely|rogerbot|embedly|outbrain|quora link preview|Slack|vkShare|W3C_Validator|redditbot|flipboard|tumblr|bitlybot|SkypeUriPreview|nuzzel|Disqus|Qwantify|pinterestbot|Baiduspider/i;
 
@@ -96,16 +96,21 @@ ${publishDate ? `<meta property="article:published_time" content="${escapeHtml(p
 </html>`;
 }
 
-async function serveOgPage(matterId, origin, env) {
-  const dataUrl = new URL(`/data/mergers/${matterId}.json`, origin);
-  let merger;
+// The matter's generated detail file, or null if there isn't one.
+async function loadMerger(matterId, origin, env) {
   try {
+    const dataUrl = new URL(`/data/mergers/${matterId}.json`, origin);
     const resp = await env.ASSETS.fetch(new Request(dataUrl.toString()));
     if (!resp.ok) return null;
-    merger = await resp.json();
+    return await resp.json();
   } catch {
     return null;
   }
+}
+
+async function serveOgPage(matterId, origin, env) {
+  const merger = await loadMerger(matterId, origin, env);
+  if (!merger) return null;
   // Canonical URL includes the readable slug derived from the merger name, so
   // it matches what the SPA renders and what the sitemap lists.
   const canonicalUrl = `${origin}${mergerPath(matterId, merger.merger_name)}`;
@@ -139,21 +144,7 @@ function canonicalisePath(path) {
 // The source URL on the ACCC/Tribunal site that this document was scraped from,
 // or null if we don't have one. Each event in the matter's JSON carries both the
 // upstream `url` and the `url_gh` path we serve it under.
-async function sourceUrlForDocument(path, origin, env) {
-  const match = path.match(/^\/mergers\/((MN|WA)-\d+)\//i);
-  if (!match) return null;
-  const matterId = match[1].toUpperCase();
-
-  let merger;
-  try {
-    const dataUrl = new URL(`/data/mergers/${matterId}.json`, origin);
-    const resp = await env.ASSETS.fetch(new Request(dataUrl.toString()));
-    if (!resp.ok) return null;
-    merger = await resp.json();
-  } catch {
-    return null;
-  }
-
+function sourceUrlForDocument(path, merger) {
   // url_gh is stored unencoded ("/mergers/MN-01068/NOCC - March 2026.pdf") while
   // the request path arrives percent-encoded, so compare both sides decoded.
   const wanted = safeDecode(canonicalisePath(path));
@@ -173,24 +164,75 @@ async function sourceUrlForDocument(path, origin, env) {
   }
 }
 
-// Serve the PDF itself from the deployment's static assets.
+// Find the PDF behind a document path, as one of:
+//   { asset }     the deployed file
+//   { sourceUrl } not deployed, but we know where it was scraped from
+//   { merger }    neither — merger is the matter's detail file, or null
 //
 // Documents over Cloudflare Pages' 25 MiB per-asset limit are left out of the
 // deployment by scripts/build.sh (the whole deploy is rejected otherwise), so
 // for those the asset lookup misses and Pages answers with the SPA shell rather
-// than a 404. Treat "didn't come back as a PDF" as the miss and redirect to the
-// document's source URL, so the link still resolves for the reader.
-async function serveRawPdf(path, origin, env) {
+// than a 404. Treat "didn't come back as a PDF" as the miss, and fall back to
+// the document's source URL so the link still resolves for the reader.
+async function locatePdf(path, matterId, origin, env) {
   const assetUrl = new URL(path, origin);
-  const response = await env.ASSETS.fetch(new Request(assetUrl.toString()));
+  const asset = await env.ASSETS.fetch(new Request(assetUrl.toString()));
 
-  const contentType = response.headers.get('Content-Type') || '';
-  if (response.ok && contentType.toLowerCase().includes('application/pdf')) {
-    return response;
+  const contentType = asset.headers.get('Content-Type') || '';
+  if (asset.ok && contentType.toLowerCase().includes('application/pdf')) {
+    return { asset };
   }
 
-  const sourceUrl = await sourceUrlForDocument(path, origin, env);
-  return sourceUrl ? Response.redirect(sourceUrl, 302) : response;
+  const merger = await loadMerger(matterId, origin, env);
+  const sourceUrl = merger && sourceUrlForDocument(path, merger);
+  return sourceUrl ? { sourceUrl } : { merger };
+}
+
+// Security headers — Pages Functions override the top-level _headers file for
+// any response they produce, so we repeat the baseline set here. The CSP
+// mirrors public/_headers with the additions needed by this inline viewer:
+//   • style-src 'unsafe-inline' for the <style> block rendered in the HTML
+//   • object-src 'self' for the <object data="...pdf"> preview
+const VIEWER_CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data:",
+  "font-src 'self' data:",
+  "connect-src 'self'",
+  "object-src 'self'",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "upgrade-insecure-requests",
+].join('; ');
+
+function viewerResponse(html, { status = 200, cacheControl = 'public, max-age=3600' } = {}) {
+  return new Response(html, {
+    status,
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': cacheControl,
+      'Content-Security-Policy': VIEWER_CSP,
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+    },
+  });
+}
+
+// A document path that resolves to nothing. Served as a real 404 in the
+// viewer's chrome, rather than letting the SPA shell turn the filename into a
+// slug and drop the reader on the matter page without saying why. Cached
+// briefly, since the pipeline may publish the document soon after.
+function notFoundResponse(matterId, displayName, merger) {
+  const html = renderNotFound({
+    matterId,
+    displayName,
+    mergerPageUrl: merger ? mergerPath(matterId, merger.merger_name) : '/mergers',
+    backLabel: merger ? 'Back to merger' : 'Browse all mergers',
+  });
+  return viewerResponse(html, { status: 404, cacheControl: 'public, max-age=300' });
 }
 
 export async function onRequest(context) {
@@ -232,19 +274,6 @@ export async function onRequest(context) {
     return context.next();
   }
 
-  // If ?raw param is present, serve the actual PDF from static assets
-  // (used by the embedded viewer and direct download links)
-  if (url.searchParams.has('raw')) {
-    return serveRawPdf(path, url.origin, env);
-  }
-
-  // Mobile browsers (Android, iPhone, iPod) don't support inline PDF rendering
-  // via <object> tags — serve the raw PDF directly instead of the viewer wrapper
-  const ua = request.headers.get('User-Agent') || '';
-  if (/Android|iPhone|iPod/i.test(ua)) {
-    return serveRawPdf(path, url.origin, env);
-  }
-
   // Extract matter ID from the path: /mergers/{MN,WA}-XXXXX/filename.pdf
   const match = path.match(/^\/mergers\/((MN|WA)-\d+)\//i);
   if (!match) {
@@ -255,6 +284,27 @@ export async function onRequest(context) {
   const canonicalPath = canonicalisePath(path);
   const displayName = safeDecode(path.split('/').pop()).replace(/\.pdf$/i, '');
 
+  const located = await locatePdf(path, matterId, url.origin, env);
+  if (located.sourceUrl) {
+    return Response.redirect(located.sourceUrl, 302);
+  }
+  if (!located.asset) {
+    return notFoundResponse(matterId, displayName, located.merger);
+  }
+
+  // If ?raw param is present, serve the actual PDF from static assets
+  // (used by the embedded viewer and direct download links).
+  // Mobile browsers (Android, iPhone, iPod) don't support inline PDF rendering
+  // via <object> tags — serve the raw PDF directly instead of the viewer wrapper
+  const ua = request.headers.get('User-Agent') || '';
+  if (url.searchParams.has('raw') || /Android|iPhone|iPod/i.test(ua)) {
+    return located.asset;
+  }
+
+  // The viewer only needed to know the file exists; the <object> below fetches
+  // it again with ?raw=1.
+  await located.asset.body?.cancel();
+
   const html = renderViewer({
     matterId,
     displayName,
@@ -262,33 +312,5 @@ export async function onRequest(context) {
     mergerPageUrl: `/mergers/${matterId}`,
   });
 
-  // Security headers — Pages Functions override the top-level _headers file for
-  // any response they produce, so we repeat the baseline set here. The CSP
-  // mirrors public/_headers with the additions needed by this inline viewer:
-  //   • style-src 'unsafe-inline' for the <style> block rendered in the HTML
-  //   • object-src 'self' for the <object data="...pdf"> preview
-  const csp = [
-    "default-src 'self'",
-    "script-src 'self'",
-    "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data:",
-    "font-src 'self' data:",
-    "connect-src 'self'",
-    "object-src 'self'",
-    "frame-ancestors 'none'",
-    "base-uri 'self'",
-    "form-action 'self'",
-    "upgrade-insecure-requests",
-  ].join('; ');
-
-  return new Response(html, {
-    headers: {
-      'Content-Type': 'text/html; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600',
-      'Content-Security-Policy': csp,
-      'X-Content-Type-Options': 'nosniff',
-      'X-Frame-Options': 'DENY',
-      'Referrer-Policy': 'strict-origin-when-cross-origin',
-    },
-  });
+  return viewerResponse(html);
 }
