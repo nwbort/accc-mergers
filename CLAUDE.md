@@ -80,7 +80,7 @@ site serves that run's data, because LinkedIn caches whatever it scrapes first. 
 
 ### Cloudflare Pages Functions (`functions/`)
 
-Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently the PDF viewer wrapper for `/mergers/{matter}/*.pdf`, and the Open Graph page served to link-preview bots on merger detail URLs.
+Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently the PDF viewer wrapper for `/mergers/{matter}/*.pdf` (which also redirects a retired duplicate's old path to the copy that replaced it; see `scripts/document_versions.py`), and the Open Graph page served to link-preview bots on merger detail URLs.
 
 ## Project Structure
 
@@ -320,6 +320,14 @@ scripts/                  # A Python package — entry points run as `python -m 
 ├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (review PR
 │                         #   from pipeline.yml; carries its earlier guess forward, see its docstring)
 ├── compress_pdfs.py      # Shrink oversized PDFs so Pages will serve them
+├── document_versions.py  # Retire byte-identical "_N" re-uploads of a document: each re-bind
+│                         #   in _merge_events records the old copy in the event's internal
+│                         #   previous_versions (URL, title, date); extract_mergers then deletes
+│                         #   it only if its bytes match the current file (a DOCX is compared as
+│                         #   the original and takes its converted PDF with it). Differing copies
+│                         #   are kept. The detail file publishes only retired_url_gh, which the
+│                         #   PDF Pages Function 301s to the surviving copy. `python -m
+│                         #   scripts.document_versions [--apply]` backfills leftovers on disk
 ├── check_deploy_assets.py # CI check: no deploy asset exceeds Cloudflare Pages' 25 MiB limit
 ├── check_watchlist.py    # CI check: has a watchlisted merger changed this run? (see docs/notifications.md)
 ├── unfreeze_mergers.py   # Unfreeze entries in data/frozen_events_mergers.json (whole merger or single events)

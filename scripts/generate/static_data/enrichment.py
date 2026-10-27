@@ -7,7 +7,7 @@ All downstream generators consume the already-enriched objects.
 import re
 from datetime import timedelta
 
-from scripts import stage_determinations
+from scripts import document_versions, stage_determinations
 from scripts.constants import merger_status, tribunal
 from scripts.cutoff import is_waiver_merger
 from scripts.date_utils import parse_iso_datetime
@@ -187,6 +187,9 @@ SITE_UNUSED_EVENT_FIELDS = frozenset({
     'determination_commission_division',
     'phase2_notice_commission_division',
     'phase2_notice_division_checked',
+    # Internal history of re-uploads; only the retired copies' served paths
+    # are published, as ``retired_url_gh`` (see slim_for_site).
+    document_versions.FIELD,
 })
 
 # The only determination-table rows the site renders. MergerDetail shows the
@@ -216,8 +219,11 @@ def slim_for_site(merger: dict) -> dict:
     offline analysis and for the CLI bundle (generate-cli-data.sh), which
     indexes every determination row into its full-text search. So the deployed
     copy drops the fields no page reads and, from each event, the
-    determination-table rows the page never renders. The input merger is left
-    unmutated because the same object feeds other outputs.
+    determination-table rows the page never renders. Each event's internal
+    ``previous_versions`` history is reduced to ``retired_url_gh``, the
+    served paths of its deleted duplicate copies, for the PDF redirect. The
+    input merger is left unmutated because the same object feeds other
+    outputs.
     """
     slim = {
         k: v for k, v in merger.items()
@@ -232,6 +238,11 @@ def slim_for_site(merger: dict) -> dict:
     slim_events = []
     for event in events:
         slim_event = {k: v for k, v in event.items() if k not in SITE_UNUSED_EVENT_FIELDS}
+        # The PDF Pages Function redirects these old links to url_gh, since
+        # their byte-identical files are no longer deployed.
+        retired = document_versions.retired_url_gh(event)
+        if retired:
+            slim_event['retired_url_gh'] = retired
         rows = slim_event.get('determination_table_content')
         if isinstance(rows, list):
             kept = [row for row in rows if _is_rendered_determination_row(row)]

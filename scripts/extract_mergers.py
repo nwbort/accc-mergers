@@ -27,6 +27,7 @@ from scripts.parse.parse_questionnaire import (
 from scripts.normalization import normalize_determination, normalize_dashes
 from scripts.constants.site import REPO, mergers_fyi_url
 from scripts.cutoff import get_skipped_merger_ids, is_waiver_merger
+from scripts import document_versions
 from scripts.merger_filters import save_mergers
 from scripts.date_utils import parse_text_to_iso, parse_iso_datetime
 from scripts.generate.static_data.enrichment import is_phase_2_referral_event
@@ -973,6 +974,8 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                 # it knows of, but a re-scrape shouldn't drop the flag first.
                 if existing_event.get('is_determination_event'):
                     updated_event['is_determination_event'] = existing_event['is_determination_event']
+                if existing_event.get(document_versions.FIELD):
+                    updated_event[document_versions.FIELD] = existing_event[document_versions.FIELD]
                 merged_events.append(updated_event)
                 existing_urls_processed.add(url)
             else:
@@ -997,6 +1000,9 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                         updated_event['display_title'] = existing_event['display_title']
                     if existing_event.get('is_determination_event'):
                         updated_event['is_determination_event'] = existing_event['is_determination_event']
+                    # Keep the replaced document's URL and title on record, so
+                    # prune_superseded can retire its file if the bytes match.
+                    document_versions.record_superseded(existing_event, updated_event)
                     merged_events.append(updated_event)
                     existing_urls_processed.add(updated_event['url'])
                     continue
@@ -1102,6 +1108,7 @@ def _drop_superseded_removed_events(events):
                 if (event.get('display_title', event['title']) != event['title']
                         and successor.get('display_title', successor['title']) == successor['title']):
                     successor['display_title'] = event['display_title']
+                document_versions.record_superseded(event, successor)
                 continue
         kept_events.append(event)
     return kept_events
@@ -2484,6 +2491,16 @@ def main():
     for merger_id in skipped_merger_ids:
         if merger_id in existing_mergers:
             all_mergers_data.append(existing_mergers[merger_id])
+
+    # 7b. Delete re-uploaded documents that are byte-identical to the copy
+    #     their event now points at (see scripts/document_versions.py), before
+    #     enrichment scans the folders, so a retired copy is never parsed.
+    retired = document_versions.prune_all(all_mergers_data, MATTERS_DIR)
+    if retired:
+        print(f"Retired {len(retired)} byte-identical re-uploaded document file(s):",
+              file=sys.stderr)
+        for name in retired:
+            print(f"  {name}", file=sys.stderr)
 
     # 8. PDF-parsing enrichment. Skipped when the pipeline is going to run it
     #    separately via enrich_pdfs.py (after its DOCX→PDF conversion step).

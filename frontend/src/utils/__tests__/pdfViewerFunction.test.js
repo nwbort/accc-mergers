@@ -140,6 +140,69 @@ describe('PDF asset serving', () => {
   });
 });
 
+// The pipeline deletes byte-identical re-uploads of a document
+// (scripts/document_versions.py) and lists their old paths on the surviving
+// event, so links to an old copy keep working.
+describe('retired duplicate redirect', () => {
+  const OLD_PATH = '/mergers/MN-30003/Questionnaire - 9 Feb 2026_0.pdf';
+  const NEW_PATH = '/mergers/MN-30003/Questionnaire - 9 Feb 2026_4.pdf';
+  // A function, as a Response body can only be read once.
+  const retiredData = () => ({
+    '/data/mergers/MN-30003.json': jsonResponse({
+      events: [{
+        title: 'Questionnaire',
+        url: 'https://www.accc.gov.au/system/files/Questionnaire%20-%209%20Feb%202026_4.docx',
+        url_gh: NEW_PATH,
+        retired_url_gh: [OLD_PATH],
+      }],
+    }),
+  });
+
+  it('redirects a raw request for a retired copy to the surviving one', async () => {
+    const env = makeEnv({ ...retiredData(), [NEW_PATH]: pdfResponse() });
+    const response = await onRequest(
+      makeContext({ url: `https://mergers.fyi${encodeURI(OLD_PATH)}?raw=1`, env }),
+    );
+
+    expect(response.status).toBe(302);
+    expect(response.headers.get('Location')).toBe(`https://mergers.fyi${encodeURI(NEW_PATH)}?raw=1`);
+  });
+
+  it('redirects the viewer page too, so it names the document served', async () => {
+    const env = makeEnv({ ...retiredData(), [NEW_PATH]: pdfResponse() });
+    const response = await onRequest(
+      makeContext({ url: `https://mergers.fyi${encodeURI(OLD_PATH)}`, env }),
+    );
+
+    expect(response.status).toBe(302);
+    expect(response.headers.get('Location')).toBe(`https://mergers.fyi${encodeURI(NEW_PATH)}`);
+  });
+
+  it('serves a retired path that is somehow still deployed rather than redirecting', async () => {
+    const env = makeEnv({ ...retiredData(), [OLD_PATH]: pdfResponse() });
+    const response = await onRequest(
+      makeContext({ url: `https://mergers.fyi${encodeURI(OLD_PATH)}?raw=1`, env }),
+    );
+
+    expect(response.status).toBe(200);
+    expect(response.headers.get('Content-Type')).toBe('application/pdf');
+  });
+
+  it('never redirects outside the matter', async () => {
+    const env = makeEnv({
+      '/data/mergers/MN-30003.json': jsonResponse({
+        events: [{ url_gh: '/mergers/MN-99999/Other.pdf', retired_url_gh: [OLD_PATH] }],
+      }),
+    });
+    const response = await onRequest(
+      makeContext({ url: `https://mergers.fyi${encodeURI(OLD_PATH)}?raw=1`, env }),
+    );
+
+    expect(response.status).toBe(200);
+    expect(response.headers.get('Content-Type')).toContain('text/html');
+  });
+});
+
 describe('matter ID case redirect', () => {
   it('redirects a bare lowercase matter ID to its uppercase form', async () => {
     const env = makeEnv({});

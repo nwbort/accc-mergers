@@ -136,30 +136,35 @@ function canonicalisePath(path) {
   return path.replace(/^\/mergers\/(?:MN|WA)-\d+\//i, `/mergers/${match[1].toUpperCase()}/`);
 }
 
-// The source URL on the ACCC/Tribunal site that this document was scraped from,
-// or null if we don't have one. Each event in the matter's JSON carries both the
-// upstream `url` and the `url_gh` path we serve it under.
-async function sourceUrlForDocument(path, origin, env) {
+// The events of the matter a document path belongs to, from its detail JSON,
+// or null if the matter or its data can't be found.
+async function eventsForDocument(path, origin, env) {
   const match = path.match(/^\/mergers\/((MN|WA)-\d+)\//i);
   if (!match) return null;
   const matterId = match[1].toUpperCase();
 
-  let merger;
   try {
     const dataUrl = new URL(`/data/mergers/${matterId}.json`, origin);
     const resp = await env.ASSETS.fetch(new Request(dataUrl.toString()));
     if (!resp.ok) return null;
-    merger = await resp.json();
+    const merger = await resp.json();
+    return merger.events || [];
   } catch {
     return null;
   }
+}
 
-  // url_gh is stored unencoded ("/mergers/MN-01068/NOCC - March 2026.pdf") while
-  // the request path arrives percent-encoded, so compare both sides decoded.
-  const wanted = safeDecode(canonicalisePath(path));
-  const event = (merger.events || []).find(
-    (e) => e.url_gh && e.url && safeDecode(canonicalisePath(e.url_gh)) === wanted,
-  );
+// url_gh is stored unencoded ("/mergers/MN-01068/NOCC - March 2026.pdf") while
+// the request path arrives percent-encoded, so compare both sides decoded.
+function samePath(a, b) {
+  return safeDecode(canonicalisePath(a)) === safeDecode(canonicalisePath(b));
+}
+
+// The source URL on the ACCC/Tribunal site that this document was scraped from,
+// or null if we don't have one. Each event in the matter's JSON carries both the
+// upstream `url` and the `url_gh` path we serve it under.
+function sourceUrlForDocument(path, events) {
+  const event = events.find((e) => e.url_gh && e.url && samePath(e.url_gh, path));
   if (!event) return null;
 
   // Only ever bounce to http(s) — the events are scraped from accc.gov.au and
@@ -173,23 +178,52 @@ async function sourceUrlForDocument(path, origin, env) {
   }
 }
 
+// Where a retired copy of a document now lives. The ACCC often re-uploads a
+// document unchanged under a new "_N" filename; the pipeline keeps the newest
+// and deletes byte-identical older copies (scripts/document_versions.py),
+// listing their old paths on the surviving event as `retired_url_gh`. Links
+// to an old copy are sent on to the one we still serve. Only ever a
+// same-matter /mergers/ path, so the redirect stays on this site. A 302, not
+// a 301: the mapping is data, and the ACCC can reuse an old "_N" name for a
+// new document, which a browser-cached permanent redirect would hide.
+function retiredDocumentTarget(path, events) {
+  const event = events.find(
+    (e) => e.url_gh && (e.retired_url_gh || []).some((old) => samePath(old, path)),
+  );
+  if (!event) return null;
+  const target = canonicalisePath(event.url_gh);
+  const matter = path.match(/^\/mergers\/((?:MN|WA)-\d+)\//i)[1].toUpperCase();
+  return target.startsWith(`/mergers/${matter}/`) ? target : null;
+}
+
+function isPdfResponse(response) {
+  const contentType = response.headers.get('Content-Type') || '';
+  return response.ok && contentType.toLowerCase().includes('application/pdf');
+}
+
 // Serve the PDF itself from the deployment's static assets.
 //
-// Documents over Cloudflare Pages' 25 MiB per-asset limit are left out of the
-// deployment by scripts/build.sh (the whole deploy is rejected otherwise), so
+// A retired duplicate (see retiredDocumentTarget) is redirected to the copy
+// that replaced it. Documents over Cloudflare Pages' 25 MiB per-asset limit
+// are left out of the deployment by scripts/build.sh (the whole deploy is rejected otherwise), so
 // for those the asset lookup misses and Pages answers with the SPA shell rather
 // than a 404. Treat "didn't come back as a PDF" as the miss and redirect to the
 // document's source URL, so the link still resolves for the reader.
-async function serveRawPdf(path, origin, env) {
-  const assetUrl = new URL(path, origin);
+async function serveRawPdf(url, env) {
+  const path = url.pathname;
+  const assetUrl = new URL(path, url.origin);
   const response = await env.ASSETS.fetch(new Request(assetUrl.toString()));
+  if (isPdfResponse(response)) return response;
 
-  const contentType = response.headers.get('Content-Type') || '';
-  if (response.ok && contentType.toLowerCase().includes('application/pdf')) {
-    return response;
+  const events = await eventsForDocument(path, url.origin, env);
+  if (!events) return response;
+
+  const retiredTarget = retiredDocumentTarget(path, events);
+  if (retiredTarget) {
+    return Response.redirect(new URL(retiredTarget + url.search, url.origin).toString(), 302);
   }
 
-  const sourceUrl = await sourceUrlForDocument(path, origin, env);
+  const sourceUrl = sourceUrlForDocument(path, events);
   return sourceUrl ? Response.redirect(sourceUrl, 302) : response;
 }
 
@@ -235,20 +269,33 @@ export async function onRequest(context) {
   // If ?raw param is present, serve the actual PDF from static assets
   // (used by the embedded viewer and direct download links)
   if (url.searchParams.has('raw')) {
-    return serveRawPdf(path, url.origin, env);
+    return serveRawPdf(url, env);
   }
 
   // Mobile browsers (Android, iPhone, iPod) don't support inline PDF rendering
   // via <object> tags — serve the raw PDF directly instead of the viewer wrapper
   const ua = request.headers.get('User-Agent') || '';
   if (/Android|iPhone|iPod/i.test(ua)) {
-    return serveRawPdf(path, url.origin, env);
+    return serveRawPdf(url, env);
   }
 
   // Extract matter ID from the path: /mergers/{MN,WA}-XXXXX/filename.pdf
   const match = path.match(/^\/mergers\/((MN|WA)-\d+)\//i);
   if (!match) {
     return context.next();
+  }
+
+  // A retired duplicate is no longer deployed. Send the reader to the copy
+  // that replaced it, so the address bar and viewer title name the document
+  // we actually serve; anything else missing renders the viewer as before
+  // (an oversized PDF still resolves through the raw fetch's fallback).
+  const asset = await env.ASSETS.fetch(new Request(new URL(path, url.origin).toString(), { method: 'HEAD' }));
+  if (!isPdfResponse(asset)) {
+    const events = await eventsForDocument(path, url.origin, env);
+    const retiredTarget = events && retiredDocumentTarget(path, events);
+    if (retiredTarget) {
+      return Response.redirect(new URL(retiredTarget + url.search, url.origin).toString(), 302);
+    }
   }
 
   const matterId = match[1].toUpperCase();
