@@ -22,6 +22,8 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ro
 .fallback p{max-width:360px;line-height:1.5}
 .fallback .btn-dl{background:#335145;color:#fff;padding:10px 20px;font-size:14px;border-radius:10px;text-decoration:none!important}
 .fallback .btn-dl:hover{background:#223a30;color:#fff}
+.fallback h1{font-size:18px;font-weight:600;color:#111827}
+.fallback .hint{font-size:14px;color:#6b7280}
 @media(max-width:640px){.banner{padding:0 12px;gap:8px}.doc,.sep{display:none}}
 `.trim();
 
@@ -32,6 +34,21 @@ function esc(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+function banner({ displayName, mergerPageUrl, mergerLinkLabel }) {
+  return `<div class="banner">
+    <div class="left">
+      <a href="/" class="site">mergers<span class="dot">.</span>fyi</a>
+      <span class="sep">|</span>
+      <span class="doc">${esc(displayName)}</span>
+    </div>
+    <div class="right">
+      <a href="${esc(mergerPageUrl)}" class="btn btn-primary">
+        ${esc(mergerLinkLabel)} &rarr;
+      </a>
+    </div>
+  </div>`;
 }
 
 export function renderViewer({ matterId, displayName, rawPdfUrl, mergerPageUrl }) {
@@ -46,18 +63,7 @@ export function renderViewer({ matterId, displayName, rawPdfUrl, mergerPageUrl }
   <style>${CSS}</style>
 </head>
 <body>
-  <div class="banner">
-    <div class="left">
-      <a href="/" class="site">mergers<span class="dot">.</span>fyi</a>
-      <span class="sep">|</span>
-      <span class="doc">${esc(displayName)}</span>
-    </div>
-    <div class="right">
-      <a href="${esc(mergerPageUrl)}" class="btn btn-primary">
-        View merger &rarr;
-      </a>
-    </div>
-  </div>
+  ${banner({ displayName, mergerPageUrl, mergerLinkLabel: 'View merger' })}
   <div class="viewer">
     <object data="${esc(rawPdfUrl)}" type="application/pdf">
       <div class="fallback">
@@ -66,6 +72,36 @@ export function renderViewer({ matterId, displayName, rawPdfUrl, mergerPageUrl }
         <a href="${esc(rawPdfUrl)}" class="btn btn-dl">Download PDF</a>
       </div>
     </object>
+  </div>
+</body>
+</html>`;
+}
+
+// The same chrome around a "document not found" message, for a PDF path that
+// matches no deployed file and no known source URL. Without it the miss falls
+// through to the SPA shell, which reads the filename as a slug and quietly
+// lands the reader on the matter page. `mergerPageUrl` is the matter page when
+// the matter exists, else the merger list — `backLabel` says which.
+export function renderNotFound({ matterId, displayName, mergerPageUrl, backLabel }) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Document not found – ${esc(matterId)} | Australian Merger Tracker</title>
+  <meta name="robots" content="noindex">
+  <style>${CSS}</style>
+</head>
+<body>
+  ${banner({ displayName, mergerPageUrl, mergerLinkLabel: backLabel })}
+  <div class="viewer">
+    <div class="fallback">
+      <div class="fallback-icon">${DOCUMENT_ICON}</div>
+      <h1>Document not found</h1>
+      <p>We couldn't find <strong>${esc(displayName)}.pdf</strong> among the documents for ${esc(matterId)}.</p>
+      <p class="hint">The link may be mistyped, or the document may have been renamed.</p>
+      <a href="${esc(mergerPageUrl)}" class="btn btn-dl">${esc(backLabel)}</a>
+    </div>
   </div>
 </body>
 </html>`;
