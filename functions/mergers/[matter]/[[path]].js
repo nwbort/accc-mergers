@@ -164,10 +164,31 @@ function sourceUrlForDocument(path, merger) {
   }
 }
 
+// Where a retired copy of a document now lives, or null. The ACCC often
+// re-uploads a document unchanged under a new "_N" filename; the pipeline
+// keeps the newest and deletes byte-identical older copies
+// (scripts/document_versions.py), listing their old paths on the surviving
+// event as `retired_url_gh`. Only ever a same-matter /mergers/ path, so the
+// redirect stays on this site. Sent as a 302, not a 301: the mapping is data,
+// and the ACCC can reuse an old "_N" name for a new document, which a
+// browser-cached permanent redirect would hide.
+function retiredDocumentTarget(path, matterId, merger) {
+  const wanted = safeDecode(canonicalisePath(path));
+  const event = (merger.events || []).find(
+    (e) => e.url_gh && (e.retired_url_gh || []).some(
+      (old) => safeDecode(canonicalisePath(old)) === wanted,
+    ),
+  );
+  if (!event) return null;
+  const target = canonicalisePath(event.url_gh);
+  return target.startsWith(`/mergers/${matterId}/`) ? target : null;
+}
+
 // Find the PDF behind a document path, as one of:
-//   { asset }     the deployed file
-//   { sourceUrl } not deployed, but we know where it was scraped from
-//   { merger }    neither — merger is the matter's detail file, or null
+//   { asset }         the deployed file
+//   { retiredTarget } a deleted duplicate; the path of the copy that replaced it
+//   { sourceUrl }     not deployed, but we know where it was scraped from
+//   { merger }        none of these — merger is the matter's detail file, or null
 //
 // Documents over Cloudflare Pages' 25 MiB per-asset limit are left out of the
 // deployment by scripts/build.sh (the whole deploy is rejected otherwise), so
@@ -184,6 +205,8 @@ async function locatePdf(path, matterId, origin, env) {
   }
 
   const merger = await loadMerger(matterId, origin, env);
+  const retiredTarget = merger && retiredDocumentTarget(path, matterId, merger);
+  if (retiredTarget) return { retiredTarget };
   const sourceUrl = merger && sourceUrlForDocument(path, merger);
   return sourceUrl ? { sourceUrl } : { merger };
 }
@@ -285,6 +308,11 @@ export async function onRequest(context) {
   const displayName = safeDecode(path.split('/').pop()).replace(/\.pdf$/i, '');
 
   const located = await locatePdf(path, matterId, url.origin, env);
+  if (located.retiredTarget) {
+    // Keeps ?raw, so the viewer, its embedded PDF and direct links all land
+    // on the matching form of the surviving document.
+    return Response.redirect(new URL(located.retiredTarget + url.search, url.origin).toString(), 302);
+  }
   if (located.sourceUrl) {
     return Response.redirect(located.sourceUrl, 302);
   }
