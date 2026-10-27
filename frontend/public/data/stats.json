@@ -1,6 +1,6 @@
 {
   "total_mergers": 307,
-  "total_waivers": 482,
+  "total_waivers": 484,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 259,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 457,
+    "Approved": 459,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.62448132780083,
+    "average_days": 20.65082644628099,
     "median_days": 21.0,
-    "average_business_days": 14.103734439834025,
+    "average_business_days": 14.119834710743802,
     "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 183
+      "count": 185
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55041",
+      "merger_name": "Thoma Bravo \u2013 Accelerant Holdings",
+      "determination": "Approved",
+      "determination_date": "2026-10-27T12:00:00Z",
+      "page_modified_datetime": "2026-10-27T17:20:17+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-70041",
+      "merger_name": "DCP Capital \u2013 Vitaco",
+      "determination": "Approved",
+      "determination_date": "2026-10-27T12:00:00Z",
+      "page_modified_datetime": "2026-10-27T17:17:16+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85058",
       "merger_name": "Redwood Services Group \u2013 Virtual IT Department",
       "determination": "Approved",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-26T12:00:00Z",
       "page_modified_datetime": "2026-10-26T15:02:22+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-85042",
-      "merger_name": "Vets Central \u2013 Vital Vet Animal Hospital",
-      "determination": "Approved",
-      "determination_date": "2026-10-26T12:00:00Z",
-      "page_modified_datetime": "2026-10-26T12:31:41+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-90037",
-      "merger_name": "Stripe - OpenRouter",
-      "determination": "Approved",
-      "determination_date": "2026-10-26T12:00:00Z",
-      "page_modified_datetime": "2026-10-26T10:37:08+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

@@ -2,6 +2,48 @@
   "shard": 151,
   "shard_count": 256,
   "parties": {
+    "cherry-tree-bidco": {
+      "id": "cherry-tree-bidco",
+      "canonical_name": "Cherry Tree BidCo",
+      "members": [
+        {
+          "name": "Cherry Tree BidCo",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-55041",
+            "merger_name": "Thoma Bravo \u2013 Accelerant Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-28T12:00:00Z",
+            "determination_date": "2026-10-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "crowe-advisory-llc": {
       "id": "crowe-advisory-llc",
       "canonical_name": "Crowe Advisory LLC",

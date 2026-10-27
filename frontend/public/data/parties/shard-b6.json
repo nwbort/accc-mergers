@@ -67,6 +67,53 @@
         "completed_count": 1
       }
     },
+    "dcp-general-partner-ii-ltd": {
+      "id": "dcp-general-partner-ii-ltd",
+      "canonical_name": "DCP General Partner II, Ltd",
+      "members": [
+        {
+          "name": "DCP Capital Partners II, L.P.",
+          "identifier": "CIMA ID  1624276",
+          "identifier_type": null
+        },
+        {
+          "name": "DCP General Partner II, Ltd",
+          "identifier": "CIMA ID  1624276",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70041",
+            "merger_name": "DCP Capital \u2013 Vitaco",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-02T12:00:00Z",
+            "determination_date": "2026-10-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
     "delta-specialised-energy-pty-ltd": {
       "id": "delta-specialised-energy-pty-ltd",
       "canonical_name": "Delta Specialised Energy Pty Ltd",
