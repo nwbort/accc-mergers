@@ -1,4 +1,4 @@
-import { renderViewer } from '../../_lib/pdf-viewer.js';
+import { renderNotFound, renderViewer } from '../../_lib/pdf-viewer.js';
 
 const BOT_UA_RE = /LinkedInBot|facebookexternalhit|Twitterbot|Slackbot|Discordbot|TelegramBot|WhatsApp|bingbot|Pinterestbot|Applebot|Iframely|rogerbot|embedly|outbrain|quora link preview|Slack|vkShare|W3C_Validator|redditbot|flipboard|tumblr|bitlybot|SkypeUriPreview|nuzzel|Disqus|Qwantify|pinterestbot|Baiduspider/i;
 
@@ -96,16 +96,21 @@ ${publishDate ? `<meta property="article:published_time" content="${escapeHtml(p
 </html>`;
 }
 
-async function serveOgPage(matterId, origin, env) {
-  const dataUrl = new URL(`/data/mergers/${matterId}.json`, origin);
-  let merger;
+// The matter's generated detail file, or null if there isn't one.
+async function loadMerger(matterId, origin, env) {
   try {
+    const dataUrl = new URL(`/data/mergers/${matterId}.json`, origin);
     const resp = await env.ASSETS.fetch(new Request(dataUrl.toString()));
     if (!resp.ok) return null;
-    merger = await resp.json();
+    return await resp.json();
   } catch {
     return null;
   }
+}
+
+async function serveOgPage(matterId, origin, env) {
+  const merger = await loadMerger(matterId, origin, env);
+  if (!merger) return null;
   // Canonical URL includes the readable slug derived from the merger name, so
   // it matches what the SPA renders and what the sitemap lists.
   const canonicalUrl = `${origin}${mergerPath(matterId, merger.merger_name)}`;
@@ -136,35 +141,16 @@ function canonicalisePath(path) {
   return path.replace(/^\/mergers\/(?:MN|WA)-\d+\//i, `/mergers/${match[1].toUpperCase()}/`);
 }
 
-// The events of the matter a document path belongs to, from its detail JSON,
-// or null if the matter or its data can't be found.
-async function eventsForDocument(path, origin, env) {
-  const match = path.match(/^\/mergers\/((MN|WA)-\d+)\//i);
-  if (!match) return null;
-  const matterId = match[1].toUpperCase();
-
-  try {
-    const dataUrl = new URL(`/data/mergers/${matterId}.json`, origin);
-    const resp = await env.ASSETS.fetch(new Request(dataUrl.toString()));
-    if (!resp.ok) return null;
-    const merger = await resp.json();
-    return merger.events || [];
-  } catch {
-    return null;
-  }
-}
-
-// url_gh is stored unencoded ("/mergers/MN-01068/NOCC - March 2026.pdf") while
-// the request path arrives percent-encoded, so compare both sides decoded.
-function samePath(a, b) {
-  return safeDecode(canonicalisePath(a)) === safeDecode(canonicalisePath(b));
-}
-
 // The source URL on the ACCC/Tribunal site that this document was scraped from,
 // or null if we don't have one. Each event in the matter's JSON carries both the
 // upstream `url` and the `url_gh` path we serve it under.
-function sourceUrlForDocument(path, events) {
-  const event = events.find((e) => e.url_gh && e.url && samePath(e.url_gh, path));
+function sourceUrlForDocument(path, merger) {
+  // url_gh is stored unencoded ("/mergers/MN-01068/NOCC - March 2026.pdf") while
+  // the request path arrives percent-encoded, so compare both sides decoded.
+  const wanted = safeDecode(canonicalisePath(path));
+  const event = (merger.events || []).find(
+    (e) => e.url_gh && e.url && safeDecode(canonicalisePath(e.url_gh)) === wanted,
+  );
   if (!event) return null;
 
   // Only ever bounce to http(s) — the events are scraped from accc.gov.au and
@@ -178,53 +164,98 @@ function sourceUrlForDocument(path, events) {
   }
 }
 
-// Where a retired copy of a document now lives. The ACCC often re-uploads a
-// document unchanged under a new "_N" filename; the pipeline keeps the newest
-// and deletes byte-identical older copies (scripts/document_versions.py),
-// listing their old paths on the surviving event as `retired_url_gh`. Links
-// to an old copy are sent on to the one we still serve. Only ever a
-// same-matter /mergers/ path, so the redirect stays on this site. A 302, not
-// a 301: the mapping is data, and the ACCC can reuse an old "_N" name for a
-// new document, which a browser-cached permanent redirect would hide.
-function retiredDocumentTarget(path, events) {
-  const event = events.find(
-    (e) => e.url_gh && (e.retired_url_gh || []).some((old) => samePath(old, path)),
+// Where a retired copy of a document now lives, or null. The ACCC often
+// re-uploads a document unchanged under a new "_N" filename; the pipeline
+// keeps the newest and deletes byte-identical older copies
+// (scripts/document_versions.py), listing their old paths on the surviving
+// event as `retired_url_gh`. Only ever a same-matter /mergers/ path, so the
+// redirect stays on this site. Sent as a 302, not a 301: the mapping is data,
+// and the ACCC can reuse an old "_N" name for a new document, which a
+// browser-cached permanent redirect would hide.
+function retiredDocumentTarget(path, matterId, merger) {
+  const wanted = safeDecode(canonicalisePath(path));
+  const event = (merger.events || []).find(
+    (e) => e.url_gh && (e.retired_url_gh || []).some(
+      (old) => safeDecode(canonicalisePath(old)) === wanted,
+    ),
   );
   if (!event) return null;
   const target = canonicalisePath(event.url_gh);
-  const matter = path.match(/^\/mergers\/((?:MN|WA)-\d+)\//i)[1].toUpperCase();
-  return target.startsWith(`/mergers/${matter}/`) ? target : null;
+  return target.startsWith(`/mergers/${matterId}/`) ? target : null;
 }
 
-function isPdfResponse(response) {
-  const contentType = response.headers.get('Content-Type') || '';
-  return response.ok && contentType.toLowerCase().includes('application/pdf');
-}
-
-// Serve the PDF itself from the deployment's static assets.
+// Find the PDF behind a document path, as one of:
+//   { asset }         the deployed file
+//   { retiredTarget } a deleted duplicate; the path of the copy that replaced it
+//   { sourceUrl }     not deployed, but we know where it was scraped from
+//   { merger }        none of these — merger is the matter's detail file, or null
 //
-// A retired duplicate (see retiredDocumentTarget) is redirected to the copy
-// that replaced it. Documents over Cloudflare Pages' 25 MiB per-asset limit
-// are left out of the deployment by scripts/build.sh (the whole deploy is rejected otherwise), so
+// Documents over Cloudflare Pages' 25 MiB per-asset limit are left out of the
+// deployment by scripts/build.sh (the whole deploy is rejected otherwise), so
 // for those the asset lookup misses and Pages answers with the SPA shell rather
-// than a 404. Treat "didn't come back as a PDF" as the miss and redirect to the
-// document's source URL, so the link still resolves for the reader.
-async function serveRawPdf(url, env) {
-  const path = url.pathname;
-  const assetUrl = new URL(path, url.origin);
-  const response = await env.ASSETS.fetch(new Request(assetUrl.toString()));
-  if (isPdfResponse(response)) return response;
+// than a 404. Treat "didn't come back as a PDF" as the miss, and fall back to
+// the document's source URL so the link still resolves for the reader.
+async function locatePdf(path, matterId, origin, env) {
+  const assetUrl = new URL(path, origin);
+  const asset = await env.ASSETS.fetch(new Request(assetUrl.toString()));
 
-  const events = await eventsForDocument(path, url.origin, env);
-  if (!events) return response;
-
-  const retiredTarget = retiredDocumentTarget(path, events);
-  if (retiredTarget) {
-    return Response.redirect(new URL(retiredTarget + url.search, url.origin).toString(), 302);
+  const contentType = asset.headers.get('Content-Type') || '';
+  if (asset.ok && contentType.toLowerCase().includes('application/pdf')) {
+    return { asset };
   }
 
-  const sourceUrl = sourceUrlForDocument(path, events);
-  return sourceUrl ? Response.redirect(sourceUrl, 302) : response;
+  const merger = await loadMerger(matterId, origin, env);
+  const retiredTarget = merger && retiredDocumentTarget(path, matterId, merger);
+  if (retiredTarget) return { retiredTarget };
+  const sourceUrl = merger && sourceUrlForDocument(path, merger);
+  return sourceUrl ? { sourceUrl } : { merger };
+}
+
+// Security headers — Pages Functions override the top-level _headers file for
+// any response they produce, so we repeat the baseline set here. The CSP
+// mirrors public/_headers with the additions needed by this inline viewer:
+//   • style-src 'unsafe-inline' for the <style> block rendered in the HTML
+//   • object-src 'self' for the <object data="...pdf"> preview
+const VIEWER_CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data:",
+  "font-src 'self' data:",
+  "connect-src 'self'",
+  "object-src 'self'",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "upgrade-insecure-requests",
+].join('; ');
+
+function viewerResponse(html, { status = 200, cacheControl = 'public, max-age=3600' } = {}) {
+  return new Response(html, {
+    status,
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': cacheControl,
+      'Content-Security-Policy': VIEWER_CSP,
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+    },
+  });
+}
+
+// A document path that resolves to nothing. Served as a real 404 in the
+// viewer's chrome, rather than letting the SPA shell turn the filename into a
+// slug and drop the reader on the matter page without saying why. Cached
+// briefly, since the pipeline may publish the document soon after.
+function notFoundResponse(matterId, displayName, merger) {
+  const html = renderNotFound({
+    matterId,
+    displayName,
+    mergerPageUrl: merger ? mergerPath(matterId, merger.merger_name) : '/mergers',
+    backLabel: merger ? 'Back to merger' : 'Browse all mergers',
+  });
+  return viewerResponse(html, { status: 404, cacheControl: 'public, max-age=300' });
 }
 
 export async function onRequest(context) {
@@ -266,41 +297,41 @@ export async function onRequest(context) {
     return context.next();
   }
 
-  // If ?raw param is present, serve the actual PDF from static assets
-  // (used by the embedded viewer and direct download links)
-  if (url.searchParams.has('raw')) {
-    return serveRawPdf(url, env);
-  }
-
-  // Mobile browsers (Android, iPhone, iPod) don't support inline PDF rendering
-  // via <object> tags — serve the raw PDF directly instead of the viewer wrapper
-  const ua = request.headers.get('User-Agent') || '';
-  if (/Android|iPhone|iPod/i.test(ua)) {
-    return serveRawPdf(url, env);
-  }
-
   // Extract matter ID from the path: /mergers/{MN,WA}-XXXXX/filename.pdf
   const match = path.match(/^\/mergers\/((MN|WA)-\d+)\//i);
   if (!match) {
     return context.next();
   }
 
-  // A retired duplicate is no longer deployed. Send the reader to the copy
-  // that replaced it, so the address bar and viewer title name the document
-  // we actually serve; anything else missing renders the viewer as before
-  // (an oversized PDF still resolves through the raw fetch's fallback).
-  const asset = await env.ASSETS.fetch(new Request(new URL(path, url.origin).toString(), { method: 'HEAD' }));
-  if (!isPdfResponse(asset)) {
-    const events = await eventsForDocument(path, url.origin, env);
-    const retiredTarget = events && retiredDocumentTarget(path, events);
-    if (retiredTarget) {
-      return Response.redirect(new URL(retiredTarget + url.search, url.origin).toString(), 302);
-    }
-  }
-
   const matterId = match[1].toUpperCase();
   const canonicalPath = canonicalisePath(path);
   const displayName = safeDecode(path.split('/').pop()).replace(/\.pdf$/i, '');
+
+  const located = await locatePdf(path, matterId, url.origin, env);
+  if (located.retiredTarget) {
+    // Keeps ?raw, so the viewer, its embedded PDF and direct links all land
+    // on the matching form of the surviving document.
+    return Response.redirect(new URL(located.retiredTarget + url.search, url.origin).toString(), 302);
+  }
+  if (located.sourceUrl) {
+    return Response.redirect(located.sourceUrl, 302);
+  }
+  if (!located.asset) {
+    return notFoundResponse(matterId, displayName, located.merger);
+  }
+
+  // If ?raw param is present, serve the actual PDF from static assets
+  // (used by the embedded viewer and direct download links).
+  // Mobile browsers (Android, iPhone, iPod) don't support inline PDF rendering
+  // via <object> tags — serve the raw PDF directly instead of the viewer wrapper
+  const ua = request.headers.get('User-Agent') || '';
+  if (url.searchParams.has('raw') || /Android|iPhone|iPod/i.test(ua)) {
+    return located.asset;
+  }
+
+  // The viewer only needed to know the file exists; the <object> below fetches
+  // it again with ?raw=1.
+  await located.asset.body?.cancel();
 
   const html = renderViewer({
     matterId,
@@ -309,33 +340,5 @@ export async function onRequest(context) {
     mergerPageUrl: `/mergers/${matterId}`,
   });
 
-  // Security headers — Pages Functions override the top-level _headers file for
-  // any response they produce, so we repeat the baseline set here. The CSP
-  // mirrors public/_headers with the additions needed by this inline viewer:
-  //   • style-src 'unsafe-inline' for the <style> block rendered in the HTML
-  //   • object-src 'self' for the <object data="...pdf"> preview
-  const csp = [
-    "default-src 'self'",
-    "script-src 'self'",
-    "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data:",
-    "font-src 'self' data:",
-    "connect-src 'self'",
-    "object-src 'self'",
-    "frame-ancestors 'none'",
-    "base-uri 'self'",
-    "form-action 'self'",
-    "upgrade-insecure-requests",
-  ].join('; ');
-
-  return new Response(html, {
-    headers: {
-      'Content-Type': 'text/html; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600',
-      'Content-Security-Policy': csp,
-      'X-Content-Type-Options': 'nosniff',
-      'X-Frame-Options': 'DENY',
-      'Referrer-Policy': 'strict-origin-when-cross-origin',
-    },
-  });
+  return viewerResponse(html);
 }

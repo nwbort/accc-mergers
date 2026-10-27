@@ -106,14 +106,15 @@ describe('PDF asset serving', () => {
     expect(response.headers.get('Location')).toBe(`https://mergers.fyi${encodeURI(PDF_PATH)}?raw=1`);
   });
 
-  it('falls back to the asset response when no source URL is known', async () => {
+  it('serves a not-found page when no source URL is known', async () => {
     const env = makeEnv({
       [dataPath]: jsonResponse({ ...MERGER_JSON, events: [{ title: 'No link' }] }),
     });
     const response = await onRequest(makeContext({ url: rawUrl, env }));
 
-    expect(response.status).toBe(200);
+    expect(response.status).toBe(404);
     expect(response.headers.get('Content-Type')).toContain('text/html');
+    await expect(response.text()).resolves.toContain('Document not found');
   });
 
   it('refuses to redirect to a non-http(s) source URL', async () => {
@@ -124,8 +125,8 @@ describe('PDF asset serving', () => {
     });
     const response = await onRequest(makeContext({ url: rawUrl, env }));
 
-    expect(response.status).toBe(200);
-    expect(response.headers.get('Content-Type')).toContain('text/html');
+    expect(response.status).toBe(404);
+    expect(response.headers.get('Location')).toBeNull();
   });
 
   it('still renders the viewer wrapper for a desktop request', async () => {
@@ -198,8 +199,62 @@ describe('retired duplicate redirect', () => {
       makeContext({ url: `https://mergers.fyi${encodeURI(OLD_PATH)}?raw=1`, env }),
     );
 
-    expect(response.status).toBe(200);
-    expect(response.headers.get('Content-Type')).toContain('text/html');
+    expect(response.status).toBe(404);
+  });
+});
+
+describe('document not found', () => {
+  const missingUrl = 'https://mergers.fyi/mergers/MN-01068/Not%20a%20real%20document.pdf';
+
+  it('shows the miss in the viewer chrome with a link back to the matter', async () => {
+    // Without this the SPA shell would treat the filename as a slug and send
+    // the reader to the matter page with no explanation.
+    const env = makeEnv({ [dataPath]: jsonResponse(MERGER_JSON) });
+    const response = await onRequest(makeContext({ url: missingUrl, env }));
+    const html = await response.text();
+
+    expect(response.status).toBe(404);
+    expect(html).toContain('Document not found');
+    expect(html).toContain('Not a real document.pdf');
+    expect(html).toContain('href="/mergers/MN-01068/woolworths-coles-kalgoorlie"');
+    expect(html).toContain('noindex');
+    expect(html).not.toContain('<object');
+  });
+
+  it('links to the merger list when the matter itself does not exist', async () => {
+    const env = makeEnv({});
+    const response = await onRequest(
+      makeContext({ url: 'https://mergers.fyi/mergers/MN-99999/Anything.pdf', env }),
+    );
+    const html = await response.text();
+
+    expect(response.status).toBe(404);
+    expect(html).toContain('href="/mergers"');
+    expect(html).toContain('Browse all mergers');
+  });
+
+  it('serves the not-found page on mobile too', async () => {
+    const env = makeEnv({ [dataPath]: jsonResponse(MERGER_JSON) });
+    const response = await onRequest(
+      makeContext({
+        url: missingUrl,
+        env,
+        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)',
+      }),
+    );
+
+    expect(response.status).toBe(404);
+    await expect(response.text()).resolves.toContain('Document not found');
+  });
+
+  it('sends a desktop reader straight to the source URL for an undeployed PDF', async () => {
+    const env = makeEnv({ [dataPath]: jsonResponse(MERGER_JSON) });
+    const response = await onRequest(
+      makeContext({ url: `https://mergers.fyi${encodeURI(PDF_PATH)}`, env }),
+    );
+
+    expect(response.status).toBe(302);
+    expect(response.headers.get('Location')).toBe(SOURCE_URL);
   });
 });
 
