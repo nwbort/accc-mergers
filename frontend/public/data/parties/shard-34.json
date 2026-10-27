@@ -513,6 +513,48 @@
         "completed_count": 1
       },
       "waiver_duration": null
+    },
+    "the-virtual-it-department-qld-pty-ltd": {
+      "id": "the-virtual-it-department-qld-pty-ltd",
+      "canonical_name": "The Virtual It Department (Qld) Pty Ltd",
+      "members": [
+        {
+          "name": "THE VIRTUAL IT DEPARTMENT (QLD) PTY LTD",
+          "identifier": "80 694 581 265",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85058",
+            "merger_name": "Redwood Services Group \u2013 Virtual IT Department",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-29T12:00:00Z",
+            "determination_date": "2026-10-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "total_mergers": 307,
-  "total_waivers": 481,
+  "total_waivers": 482,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 259,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 456,
+    "Approved": 457,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.60914760914761,
-    "median_days": 21,
-    "average_business_days": 14.093555093555093,
-    "median_business_days": 14
+    "average_days": 20.62448132780083,
+    "median_days": 21.0,
+    "average_business_days": 14.103734439834025,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 182
+      "count": 183
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 79
+      "count": 80
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85058",
+      "merger_name": "Redwood Services Group \u2013 Virtual IT Department",
+      "determination": "Approved",
+      "determination_date": "2026-10-27T12:00:00Z",
+      "page_modified_datetime": "2026-10-27T17:15:05+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-45030",
       "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-26T12:00:00Z",
       "page_modified_datetime": "2026-10-26T10:37:08+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-20039",
-      "merger_name": "Calvary \u2013 Southern Cross Care (Tasmania)",
-      "determination": "Approved",
-      "determination_date": "2026-10-23T12:00:00Z",
-      "page_modified_datetime": "2026-10-23T17:23:38+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
