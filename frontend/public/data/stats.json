@@ -1,10 +1,10 @@
 {
-  "total_mergers": 305,
+  "total_mergers": 306,
   "total_waivers": 481,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 259,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-15043",
+      "merger_name": "NYK - NS United",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-27T12:00:00Z",
+      "page_modified_datetime": "2026-10-27T17:02:09+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-55046",
       "merger_name": "USCO \u2013 ITM",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-16T12:00:00Z",
       "page_modified_datetime": "2026-10-19T18:05:04+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-70047",
-      "merger_name": "Australian Venue Co \u2013 assets of Molly\u2019s Irish Pub, Highgate and Molly\u2019s Irish Pub, Victoria Park, Perth",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-16T12:00:00Z",
-      "page_modified_datetime": "2026-10-19T15:22:48+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

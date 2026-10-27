@@ -64,6 +64,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-11-03T12:00:00Z",
+      "merger_id": "MN-15043",
+      "merger_name": "NYK - NS United",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-27T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-11-03T12:00:00Z",
       "merger_id": "MN-55046",
       "merger_name": "USCO \u2013 ITM",
       "status": "Under assessment",
@@ -484,6 +494,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-12-08T12:00:00Z",
+      "merger_id": "MN-15043",
+      "merger_name": "NYK - NS United",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-27T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-12-17T12:00:00Z",
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
@@ -523,6 +543,6 @@
       "tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026"
     }
   ],
-  "count": 52,
+  "count": 54,
   "days_ahead": 60
 }

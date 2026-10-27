@@ -18150,6 +18150,137 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/nyk-ns-united",
+      "merger_name": "NYK - NS United",
+      "status": "Under assessment",
+      "merger_id": "MN-15043",
+      "effective_notification_datetime": "2026-10-27T12:00:00Z",
+      "original_notification_datetime": "2026-10-27T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-12-08T12:00:00Z",
+      "page_modified_datetime": "2026-10-27T17:02:09+11:00",
+      "consultation_response_due_date": "2026-11-03T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Nippon Yusen Kabushiki Kaisha",
+          "identifier_type": null,
+          "identifier": "NA",
+          "party_page": {
+            "id": "nippon-yusen-kabushiki-kaisha",
+            "name": "Nippon Yusen Kabushiki Kaisha"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "NS United Kaiun Kaisha",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ns-united-kaiun-kaisha",
+            "name": "NS United Kaiun Kaisha"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4810",
+          "name": "Water Freight Transport"
+        }
+      ],
+      "merger_description": "Nippon Yusen Kabushiki Kaisha (**NYK**) proposes to acquire sole control of NS United Kaiun Kaisha (**NS United**) through a tender offer and a subsequent reduction of general minority shareholders by way of share consolidation (the **Acquisition**).\n\nNYK is a Japanese shipping and logistics company that is part of the NYK Group, an integrated logistics enterprise that operates globally with a focus on maritime transportation businesses such as container shipping, dry bulk shipping, car shipping and energy shipping, as well as logistics businesses including warehousing and transportation management.\n\nNS United is part of the NSU Group, a Japanese shipping company whose principal business is the maritime shipping of various dry bulk cargoes, including raw materials for steel, energy resources and food products.\n\nNYK and NS United both supply ocean-going dry bulk carrier shipping services, and ocean-going liquefied petroleum gas carrier shipping services.\n\nNYK currently holds 18.35% of the shares in NS United and is expected to hold approximately 83.33% following the implementation of the Acquisition. As part of the share consolidation, NYK will acquire a portion of the NS United shares currently held by Nippon Steel Corporation, who will hold the remaining interest in NS United post-Acquisition.",
+      "events": [
+        {
+          "date": "2026-10-27T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/NYK%20-%20NS%20United%20-%20third-party%20questionnaire_0.docx",
+          "url_gh": "/mergers/MN-15043/NYK - NS United - third-party questionnaire_0.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-27T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-75060",
+          "merger_name": "Mitsui \u2013 further interest in Norse Maritime",
+          "acquirers": [
+            "Mitsui & Co., Ltd."
+          ],
+          "targets": [
+            "Norse Maritime A/S",
+            "Clipper Bulk Shipping Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-50037",
+          "merger_name": "Alceon \u2013 Engage Squared",
+          "acquirers": [
+            "Bellagio Bidco Pty Ltd"
+          ],
+          "targets": [
+            "ENGAGE SQUARED PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-65022",
+          "merger_name": "Hapag-Lloyd - ZIM",
+          "acquirers": [
+            "Hapag-Lloyd Aktiengesellschaft"
+          ],
+          "targets": [
+            "ZIM Integrated Shipping Services Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 187,
+        "as_of": "2026-10-27",
+        "estimated_at": "2026-10-27",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 59,
+        "min_days": 54,
+        "max_days": 74,
+        "id_issued_estimated": "2026-08-29",
+        "id_issued_before": "2026-09-03",
+        "id_issued_after": "2026-08-14",
+        "min_days_witness": "WA-15044",
+        "max_days_witness": "WA-15041",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/camp-australia-%E2%80%93-jabiru",
       "merger_name": "Camp Australia \u2013 Jabiru",
       "status": "Under assessment",
