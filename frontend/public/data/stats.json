@@ -1,10 +1,10 @@
 {
-  "total_mergers": 306,
+  "total_mergers": 307,
   "total_waivers": 481,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 259,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 91
+      "count": 92
     },
     {
       "name": "Computer System Design and Related Services",
@@ -103,6 +103,16 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-27T12:00:00Z",
       "page_modified_datetime": "2026-10-27T17:02:09+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-20041",
+      "merger_name": "Hopper Motor Group \u2013 Essendon Kia",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-10-27T17:12:39+11:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-17T12:00:00Z",
       "page_modified_datetime": "2026-10-20T10:05:45+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-10039",
-      "merger_name": "Koch \u2013 50% interest in certain assets of OCP Nutricrops",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-16T12:00:00Z",
-      "page_modified_datetime": "2026-10-19T18:05:04+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
