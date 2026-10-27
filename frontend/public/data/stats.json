@@ -3,12 +3,12 @@
   "total_waivers": 481,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 258,
-    "Under assessment": 41,
+    "Assessment completed": 259,
+    "Under assessment": 40,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 251,
+    "Approved": 252,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 256,
+    "cleared": 257,
     "not_cleared": 2,
-    "total": 258,
+    "total": 259,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.5,
-    "median_days": 26.0,
-    "average_business_days": 20.056818181818183,
-    "median_business_days": 18.0,
+    "average_days": 29.467924528301886,
+    "median_days": 26,
+    "average_business_days": 20.037735849056602,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
-        "count": 57,
-        "percentage": 21.6
+        "count": 58,
+        "percentage": 21.9
       },
       "day20": {
-        "count": 191,
-        "percentage": 72.3
+        "count": 192,
+        "percentage": 72.5
       },
       "day30": {
-        "count": 247,
+        "count": 248,
         "percentage": 93.6
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-45030",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+      "determination": "Approved",
+      "determination_date": "2026-10-27T12:00:00Z",
+      "page_modified_datetime": "2026-10-27T15:57:14+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-95044",
       "merger_name": "Olin - Huntsman",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-95045",
-      "merger_name": "AerFin - acquisition of aircraft from Qantas",
-      "determination": "Approved",
-      "determination_date": "2026-10-23T12:00:00Z",
-      "page_modified_datetime": "2026-10-23T17:14:15+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
