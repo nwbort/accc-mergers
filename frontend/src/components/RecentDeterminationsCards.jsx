@@ -4,6 +4,7 @@ import { DETERMINATION_LABELS, isConditionalApproval, isPhase2Determination } fr
 import { getCardStyle, NEW_ITEM_BORDER } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
 import MergerCardBody, { CHIP_BASE_CLASS } from './MergerCardBody';
+import WaiverBadge from './WaiverBadge';
 import EmptyStateCard from './EmptyStateCard';
 
 function getDeterminationCardStyle(item) {
@@ -38,7 +39,7 @@ function RecentDeterminationsCards({ determinations }) {
           <MergerCardBody
             style={style}
             label={DETERMINATION_LABELS[item.determination] || item.determination}
-            chip={isNewItem(item.merger_id) ? 'New' : null}
+            isNew={isNewItem(item.merger_id)}
             mergerId={item.merger_id}
             mergerName={item.merger_name}
           >
@@ -55,11 +56,7 @@ function RecentDeterminationsCards({ determinations }) {
                 With conditions
               </span>
             )}
-            {item.is_waiver && (
-              <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
-                Waiver
-              </span>
-            )}
+            {item.is_waiver && <WaiverBadge solid />}
           </MergerCardBody>
         )}
       />

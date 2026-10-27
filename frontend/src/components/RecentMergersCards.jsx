@@ -4,6 +4,8 @@ import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getCardStyle, NEW_ITEM_BORDER } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
 import MergerCardBody, { CHIP_BASE_CLASS } from './MergerCardBody';
+import WaiverBadge from './WaiverBadge';
+import RefiledBadge from './RefiledBadge';
 import EmptyStateCard from './EmptyStateCard';
 
 // Mergers still under assessment stay calm: a white card with a green
@@ -86,7 +88,7 @@ function RecentMergersCards({ mergers }) {
             <MergerCardBody
               style={style}
               label={merger.accc_determination || merger.status}
-              chip={isNewItem(merger.merger_id) ? 'New' : null}
+              isNew={isNewItem(merger.merger_id)}
               mergerId={merger.merger_id}
               mergerName={merger.merger_name}
             >
@@ -96,16 +98,8 @@ function RecentMergersCards({ mergers }) {
                 {merger.is_waiver ? 'Applied' : 'Notified'}{' '}
                 {formatDate(merger.effective_notification_datetime)}
               </span>
-              {merger.is_waiver && (
-                <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
-                  Waiver
-                </span>
-              )}
-              {merger.is_refiled && (
-                <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
-                  Refiled
-                </span>
-              )}
+              {merger.is_waiver && <WaiverBadge solid />}
+              {merger.is_refiled && <RefiledBadge solid />}
             </MergerCardBody>
           )
         }
