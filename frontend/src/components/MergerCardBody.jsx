@@ -1,23 +1,24 @@
 import { Link } from 'react-router';
 import { mergerPath } from '../utils/slug';
+import NewBadge from './NewBadge';
 
-// Shared chip base for the small inline badges (the top-right "New" flag and
-// any caller-supplied meta-row chips like "Waiver") laid over a card's style.
+// Shared chip base for the caller-supplied meta-row chips (a tribunal number,
+// "Phase 2", "With conditions") laid over a card's style. Flags that are badges
+// elsewhere on the site — New, Waiver, Refiled — use the badge components
+// instead, so they look the same here as everywhere else.
 export const CHIP_BASE_CLASS = 'inline-flex items-center rounded-md px-2 py-1 leading-none';
 
 // Common body for the dashboard/Phase 2 card grids: an uppercase label row
 // (with an optional top-right chip), a title link using the stretched-link
 // trick so the whole card is clickable, and a meta row of caller-supplied
-// children.
-function MergerCardBody({ style, label, chip, mergerId, mergerName, children }) {
+// children. `isNew` puts a NewBadge top right.
+function MergerCardBody({ style, label, isNew = false, mergerId, mergerName, children }) {
   return (
     <>
-      {chip ? (
+      {isNew ? (
         <div className="flex items-start justify-between gap-2">
           <span className="text-xs font-semibold uppercase tracking-wide">{label}</span>
-          <span className={`${CHIP_BASE_CLASS} text-xs font-semibold ${style.chip}`}>
-            {chip}
-          </span>
+          <NewBadge className="flex-shrink-0" />
         </div>
       ) : (
         <span className="text-xs font-semibold uppercase tracking-wide">{label}</span>
