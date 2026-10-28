@@ -352,8 +352,12 @@ scripts/                  # A Python package — entry points run as `python -m 
 │   ├── scrape.sh         # Bash wrapper using pup to scrape ACCC register
 │   ├── scrape_targets.py # Decide which matters need re-scraping
 │   ├── scrape_summary.py # Human-readable summary of a scrape run for the Actions log
-│   └── scrape_tribunal.py # Scrape Australian Competition Tribunal matter pages (drives a
+│   ├── scrape_tribunal.py # Scrape Australian Competition Tribunal matter pages (drives a
 │                         #   real Chrome via nodriver; deps in requirements-tribunal.txt)
+│   ├── comcourts_portal.py # Fetch + parse a Federal Court file on the Commonwealth Courts
+│                         #   Portal (plain urllib; ported from nwbort/scrape-fed)
+│   └── scrape_federal_court.py # Fill judicial_reviews.json's portal blocks; mirrors orders
+│                         #   (plain HTTP) and judgments (scrape_tribunal's Chrome downloader)
 ├── parse/
 │   ├── parse_determination.py   # Extract text from determination PDFs
 │   ├── parse_questionnaire.py   # Process questionnaire documents
@@ -400,6 +404,7 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   stopgap (ntfy push of a prefilled composer link). State in
 │                         #   data/processed/linkedin_posts.json
 ├── constants/            # Shared Python literals (merger_status.py, site.py, tribunal.py,
+│                         #   judicial_review.py,
 │                         #   regime.py — mirrors frontend/src/constants/regime.js; keep in step)
 ├── tools/                # Interactive admin web UIs (resolver, commentary, advisors, related_parties)
 └── tests/                # Pytest suite covering the pipeline, generators, and CI checks
@@ -441,14 +446,28 @@ data/
 │                         #   URL names it (26Q3): a list of markdown points, each
 │                         #   shown in "The quarter in brief" on /quarterly and in
 │                         #   the PDF. Edit and push; the pipeline regenerates.
-│                         #   judicial_reviews.json is a hand-maintained overlay of Federal Court
-│                         #   judicial reviews, keyed by merger_id, merged in at
-│                         #   generate_static_data time (loaders.load_judicial_reviews +
-│                         #   enrichment.link_judicial_reviews). Sets the merger's
-│                         #   judicial_review record (applicant, filed date, case number, case
-│                         #   URL) for a link-out card to the Commonwealth Courts Portal. Unlike
-│                         #   tribunal_appeals.json there is no scraping and no documents are
-│                         #   mirrored — every field is entered by hand.
+│                         #   judicial_reviews.json is the Federal Court twin of
+│                         #   tribunal_appeals.json, keyed by merger_id, a list of one record
+│                         #   per Federal Court file, merged in at generate_static_data time
+│                         #   (loaders.load_judicial_reviews + enrichment.link_judicial_reviews).
+│                         #   Hand-maintained apart from each record's `portal` block, which
+│                         #   scripts/scrape/scrape_federal_court.py fills in from the
+│                         #   Commonwealth Courts Portal (in scrape-tribunal.yml, after the
+│                         #   tribunal scrape): file details, and per application its listings
+│                         #   (orders and judgments mirrored under data/raw/matters/), documents
+│                         #   filed (merged additively, like the tribunal's) and parties with
+│                         #   contact details (kept, never published). Unlike a tribunal appeal
+│                         #   the lifecycle is read off the portal (constants/judicial_review.py):
+│                         #   concluded once the court finalises the file, the outcome from the
+│                         #   "Finalised - ..." listing; hand status/outcome override. The merger
+│                         #   gets `judicial_reviews` (one per file: the detail page's card),
+│                         #   a `judicial_review` summary in the old single-record shape, and
+│                         #   `under_judicial_review` while any file is current, which reads
+│                         #   "Under judicial review" on the header line and washes it indigo as
+│                         #   an appeal does. Every document filed, order and judgment becomes a
+│                         #   timeline event (`is_appeal`, `review_forum: 'federal_court'`, so
+│                         #   it collapses with tribunal runs); future hearings (not chambers or
+│                         #   administrative listings) are upcoming events.
 ├── README.md             # Layout + provenance of everything under data/
 ├── known_notification_dates.json # Manually-confirmed/frozen notification dates
 ├── frozen_events_mergers.json # Mergers whose event timeline is pinned against re-scrape
@@ -735,7 +754,7 @@ exists rather than 404ing into the SPA's `index.html`.
 | `quarterly-report.yml` | Dispatched by `pipeline.yml` when its commit changes `quarterly.json`, push to `main` touching `quarterly.json`, `quarterly_pdf.py`, `scripts/requirements.txt` or the workflow, manual | Draw the quarterly report PDFs from the committed `quarterly.json` (`python -m scripts.generate.quarterly_pdf`) and commit them if they changed. Its own workflow so typesetting stays out of the pipeline's run and concurrency group. Commits *without* `[skip ci]`, since the PDFs are deployed; the `GITHUB_TOKEN` push doesn't retrigger the pipeline |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `publish-lexicons.yml` | Push to `main` touching `atproto/lexicons/**` or the workflow itself, manual (with a `dry_run` input) | Publish the `fyi.mergers.*` schemas as `com.atproto.lexicon.schema` records. Its own workflow rather than a pipeline step: a lexicon changes only when a person edits one, so a path-filtered push fires exactly then, where `pipeline.yml` would re-read both records several times a day to learn nothing moved. A missing `ATPROTO_APP_PASSWORD` skips a push run and fails a manual one |
-| `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |
+| `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json`, then Federal Court files from the Commonwealth Courts Portal into `judicial_reviews.json`, and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge (and the Federal Court judgments site's), so it runs in CI; the portal itself is plain HTTP. Deps: `scripts/requirements-tribunal.txt` |
 | `weekly-digest.yml` | Weekly (Sunday, Sydney time), manual | Generate `digest.json` |
 | `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
 | `test.yml` | Pull requests touching `scripts/**`, `atproto/**` or `fixtures/*.json`, manual | Run the Python test suite |

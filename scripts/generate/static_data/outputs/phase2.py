@@ -60,6 +60,8 @@ def _entry(merger: dict) -> dict:
         # Whether the matter is under review at the Australian Competition
         # Tribunal — surfaces an "Under appeal" chip on the completed card.
         'under_appeal': bool(merger.get('under_appeal')),
+        # Its Federal Court twin: an "Under judicial review" chip.
+        'under_judicial_review': bool(merger.get('under_judicial_review')),
         # True for a matter (typically a ceased assessment) later re-filed as
         # a separate notification — the opposite direction to stats.py's
         # "recent mergers" is_refiled flag, which marks the re-filed matter.

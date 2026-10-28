@@ -56,7 +56,11 @@ Intermediate JSON written by the extraction pipeline (mainly
   `merger_id`, one record per tribunal matter; hand-maintained apart from each
   record's `documents[]`, which `scripts/scrape/scrape_tribunal.py` fills in
 - `judicial_reviews.json` — Federal Court judicial reviews keyed by
-  `merger_id`, entirely hand-maintained
+  `merger_id`, one record per Federal Court file; hand-maintained apart from
+  each record's `portal` block (the file's listings, orders, judgments,
+  documents filed and parties, as the Commonwealth Courts Portal shows them),
+  which `scripts/scrape/scrape_federal_court.py` fills in. The parties' contact
+  details are kept here but never published
 - `quarterly_commentary.json` — hand-written points for the quarterly report,
   keyed by quarter as the page URL names it (`26Q3`)
 - `advisors.json.enc` — encrypted advisor data, backend-only and created by

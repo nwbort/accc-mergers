@@ -34,6 +34,7 @@ tests run without network or PDF tooling installed.
 | `test_linkedin_posts.py` | `linkedin/post_linkedin.py` and its client — little-text escaping, the article card, seeding, read-back (and posting on when a token can't read back), token refresh. |
 | `test_linkedin_share_links.py` | `linkedin/share_links.py` — the composer link, recording only what ntfy delivered, and standing down once API posting is on. |
 | `test_scrape_tribunal.py` | `scrape/scrape_tribunal.py`'s parsing and download helpers. |
+| `test_scrape_federal_court.py` | `scrape/scrape_federal_court.py` and the Commonwealth Courts Portal parser in `scrape/comcourts_portal.py`, against the real portal pages saved in `scripts/tests/fixtures/comcourts/`. |
 | `test_parse_phase2_notice.py` | `parse/parse_phase2_notice.py` — the referral details read off a Phase 2 Notice. |
 | `test_determination_text.py` | `parse/determination_text.py`'s cleaning heuristics. |
 | `test_questionnaire_cache.py` | The questionnaire parse cache, and the re-downloads the dedup step drops. |
@@ -45,7 +46,7 @@ tests run without network or PDF tooling installed.
 | `test_fix_missing_notification_dates.py` | `fix_missing_notification_dates.py` — the missing-notification-date detector. |
 | `test_public_benefit.py` | The public benefit phase, end to end through the pipeline. |
 | `test_tribunal_appeals.py` | The Australian Competition Tribunal appeal overlay. |
-| `test_judicial_reviews.py` | The Federal Court judicial review overlay. |
+| `test_judicial_reviews.py` | The Federal Court judicial review overlay: the lifecycle read off the portal, timeline events and upcoming hearings. |
 | `test_phase1_estimate.py` | `generate/static_data/phase1_estimate.py`. |
 | `test_prenotification.py` | `generate/static_data/prenotification.py`. |
 | `test_prune.py` | `generate/static_data/prune.py` — removal of no-longer-generated output files. |

@@ -54,6 +54,8 @@ def generate(mergers: list, commentary: dict) -> dict:
                 appeal = _appeal_summary(m)
                 if appeal:
                     item["appeal"] = appeal
+            if m.get('under_judicial_review'):
+                item["under_judicial_review"] = True
             items.append(item)
 
     # Sort by most recent comment date descending

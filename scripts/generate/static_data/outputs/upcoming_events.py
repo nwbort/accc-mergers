@@ -7,7 +7,7 @@ suspended mergers using :func:`static_data.filters.exclude_for_public_output`.
 
 from datetime import datetime, timedelta, timezone
 
-from scripts.constants import merger_status  # noqa: F401  (kept for parity)
+from scripts.constants import judicial_review, merger_status  # noqa: F401  (merger_status kept for parity)
 
 from ..business_days import add_business_days, subtract_business_days
 from ..filters import exclude_for_public_output
@@ -179,6 +179,37 @@ def generate(mergers: list, days_ahead: int = 60) -> dict:
             "effective_notification_datetime": m.get('effective_notification_datetime'),
             "tribunal_number": appeal.get('tribunal_number'),
         })
+
+    # Federal Court hearings on a live judicial review, read off the court's
+    # own listings (data/processed/judicial_reviews.json, scraped from the
+    # Commonwealth Courts Portal) rather than entered by hand, and like the
+    # tribunal's not limited to the days_ahead window. Only listings someone
+    # attends count: the judge's administrative listings in chambers don't
+    # (constants.judicial_review.is_hearing, published as ``hearing``).
+    for m in exclude_for_public_output(mergers):
+        if not m.get('under_judicial_review'):
+            continue
+        for review in m.get('judicial_reviews') or []:
+            if review.get('status') != judicial_review.STATUS_CURRENT:
+                continue
+            for listing in review.get('listings') or []:
+                if not listing.get('hearing'):
+                    continue
+                parsed = parse_iso_datetime(listing.get('date'))
+                if parsed is None or parsed.replace(tzinfo=None) < now:
+                    continue
+                events.append({
+                    "type": "federal_court_hearing",
+                    "event_type_display": "Federal Court hearing",
+                    "date": parsed.strftime('%Y-%m-%dT12:00:00Z'),
+                    "merger_id": m['merger_id'],
+                    "merger_name": m['merger_name'],
+                    "status": m.get('status'),
+                    "stage": m.get('stage'),
+                    "effective_notification_datetime": m.get('effective_notification_datetime'),
+                    "case_number": review.get('case_number'),
+                    "hearing_reason": listing.get('reason'),
+                })
 
     events.sort(key=lambda x: x['date'])
 

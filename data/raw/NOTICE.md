@@ -10,7 +10,7 @@ stable copy:
   and submissions and other documents written by merger parties and third
   parties;
 - filings and decisions from the Australian Competition Tribunal, and
-  judgments of the Federal Court of Australia.
+  orders and judgments of the Federal Court of Australia.
 
 None of it is covered by this repository's licences: not the MIT licence
 (`LICENSE`), which covers the code, and not CC BY 4.0 (`LICENSE-DATA`), which
