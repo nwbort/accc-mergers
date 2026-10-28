@@ -3845,6 +3845,7 @@
           "is_appeal": true,
           "review_forum": "federal_court",
           "appeal_filed_by": "Coles Supermarkets Australia Pty Limited",
+          "court_outcome": null,
           "case_number": "NSD1310/2026",
           "phase": null
         },
@@ -3858,6 +3859,7 @@
           "is_appeal": true,
           "review_forum": "federal_court",
           "appeal_filed_by": "Australian Competition and Consumer Commission",
+          "court_outcome": null,
           "case_number": "NSD1310/2026",
           "phase": null
         },
@@ -3871,6 +3873,7 @@
           "is_appeal": true,
           "review_forum": "federal_court",
           "appeal_filed_by": "Coles Supermarkets Australia Pty Limited",
+          "court_outcome": null,
           "case_number": "NSD1310/2026",
           "phase": null
         },
@@ -3884,6 +3887,7 @@
           "is_appeal": true,
           "review_forum": "federal_court",
           "appeal_filed_by": "Coles Supermarkets Australia Pty Limited",
+          "court_outcome": null,
           "case_number": "NSD1310/2026",
           "phase": null
         },
@@ -3897,6 +3901,35 @@
           "is_appeal": true,
           "review_forum": "federal_court",
           "appeal_filed_by": "Coles Supermarkets Australia Pty Limited",
+          "court_outcome": null,
+          "case_number": "NSD1310/2026",
+          "phase": null
+        },
+        {
+          "date": "2026-08-27T12:00:00Z",
+          "title": "Administrative Listing",
+          "display_title": "Federal Court \u2013 Administrative Listing",
+          "appeal_base_title": "Federal Court \u2013 Administrative Listing",
+          "url": null,
+          "url_gh": null,
+          "is_appeal": true,
+          "review_forum": "federal_court",
+          "appeal_filed_by": null,
+          "court_outcome": "Finalised - Discontinued/Withdrawn",
+          "case_number": "NSD1310/2026",
+          "phase": null
+        },
+        {
+          "date": "2026-08-07T12:00:00Z",
+          "title": "Administrative Listing",
+          "display_title": "Federal Court \u2013 Administrative Listing",
+          "appeal_base_title": "Federal Court \u2013 Administrative Listing",
+          "url": null,
+          "url_gh": null,
+          "is_appeal": true,
+          "review_forum": "federal_court",
+          "appeal_filed_by": null,
+          "court_outcome": null,
           "case_number": "NSD1310/2026",
           "phase": null
         },
@@ -3909,7 +3942,8 @@
           "url_gh": "/mergers/MN-01068/P_NSD1310_2026_2835642.pdf",
           "is_appeal": true,
           "review_forum": "federal_court",
-          "appeal_filed_by": "Justice O'Bryan",
+          "appeal_filed_by": null,
+          "court_outcome": "Adjourned - For review of progress",
           "case_number": "NSD1310/2026",
           "phase": null
         },
@@ -3922,7 +3956,22 @@
           "url_gh": "/mergers/MN-01068/2026FCA1000.pdf",
           "is_appeal": true,
           "review_forum": "federal_court",
-          "appeal_filed_by": "Justice O'Bryan",
+          "appeal_filed_by": null,
+          "court_outcome": "Adjourned - For review of progress",
+          "case_number": "NSD1310/2026",
+          "phase": null
+        },
+        {
+          "date": "2026-07-24T12:00:00Z",
+          "title": "Administrative Listing",
+          "display_title": "Federal Court \u2013 Administrative Listing",
+          "appeal_base_title": "Federal Court \u2013 Administrative Listing",
+          "url": null,
+          "url_gh": null,
+          "is_appeal": true,
+          "review_forum": "federal_court",
+          "appeal_filed_by": null,
+          "court_outcome": "Adjourned - Judgment Reserved",
           "case_number": "NSD1310/2026",
           "phase": null
         },
@@ -3935,7 +3984,8 @@
           "url_gh": "/mergers/MN-01068/P_NSD1310_2026_2829036.pdf",
           "is_appeal": true,
           "review_forum": "federal_court",
-          "appeal_filed_by": "Justice O'Bryan",
+          "appeal_filed_by": null,
+          "court_outcome": "Adjourned - For review of progress",
           "case_number": "NSD1310/2026",
           "phase": null
         }
@@ -4460,13 +4510,11 @@
           "outcome": "withdrawn",
           "concluded_date": "2026-08-27",
           "court": "Federal Court of Australia, New South Wales Registry",
-          "docket": "Justice O'Bryan",
           "listings": [
             {
               "date": "2026-08-27",
               "time": "8:30",
               "reason": "Administrative Listing",
-              "presiding": "Justice O'Bryan",
               "location": "Chambers",
               "outcome": "Finalised - Discontinued/Withdrawn",
               "hearing": false
@@ -4475,7 +4523,6 @@
               "date": "2026-08-07",
               "time": "17:00",
               "reason": "Administrative Listing",
-              "presiding": "Justice O'Bryan",
               "location": "Chambers",
               "outcome": null,
               "hearing": false
@@ -4484,29 +4531,14 @@
               "date": "2026-07-28",
               "time": "13:00",
               "reason": "Judgment",
-              "presiding": "Justice O'Bryan",
               "location": "Chambers",
               "outcome": "Adjourned - For review of progress",
-              "hearing": false,
-              "orders": [
-                {
-                  "url": "https://www.comcourts.gov.au/file/Federal/P/NSD1310/2026/4066335/event/33021628/document/2835642",
-                  "url_gh": "/mergers/MN-01068/P_NSD1310_2026_2835642.pdf"
-                }
-              ],
-              "judgments": [
-                {
-                  "citation": "[2026] FCA 1000",
-                  "url": "https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/2026/2026fca1000",
-                  "url_gh": "/mergers/MN-01068/2026FCA1000.pdf"
-                }
-              ]
+              "hearing": false
             },
             {
               "date": "2026-07-24",
               "time": "10:00",
               "reason": "Administrative Listing",
-              "presiding": "Justice O'Bryan",
               "location": "Chambers",
               "outcome": "Adjourned - Judgment Reserved",
               "hearing": false
@@ -4515,16 +4547,9 @@
               "date": "2026-07-21",
               "time": "9:30",
               "reason": "First Case Management Hearing",
-              "presiding": "Justice O'Bryan",
               "location": "VIC - Remote",
               "outcome": "Adjourned - For review of progress",
-              "hearing": true,
-              "orders": [
-                {
-                  "url": "https://www.comcourts.gov.au/file/Federal/P/NSD1310/2026/4066335/event/33006778/document/2829036",
-                  "url_gh": "/mergers/MN-01068/P_NSD1310_2026_2829036.pdf"
-                }
-              ]
+              "hearing": true
             }
           ]
         }
