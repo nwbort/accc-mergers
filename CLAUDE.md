@@ -468,10 +468,12 @@ data/
 │                         #   a `judicial_review` summary in the old single-record shape, and
 │                         #   `under_judicial_review` while any file is current, which reads
 │                         #   "Under judicial review" on the header line and washes it indigo as
-│                         #   an appeal does. Every document filed, order and judgment becomes a
-│                         #   timeline event (`is_appeal`, `review_forum: 'federal_court'`, so
-│                         #   it collapses with tribunal runs); future hearings (not chambers or
-│                         #   administrative listings) are upcoming events.
+│                         #   an appeal does. Every document filed, order, judgment and past court
+│                         #   listing becomes a timeline event (`is_appeal`, `review_forum:
+│                         #   'federal_court'`, so it collapses with tribunal runs; a listing that
+│                         #   made orders or gave judgment is told by those, carrying its outcome
+│                         #   as `court_outcome`); future hearings (not chambers or administrative
+│                         #   listings) are upcoming events. No judge is published.
 ├── README.md             # Layout + provenance of everything under data/
 ├── known_notification_dates.json # Manually-confirmed/frozen notification dates
 ├── frozen_events_mergers.json # Mergers whose event timeline is pinned against re-scrape

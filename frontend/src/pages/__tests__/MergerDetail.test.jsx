@@ -154,34 +154,25 @@ function judicialReview(overrides = {}) {
     outcome: 'withdrawn',
     concluded_date: '2026-08-27',
     court: 'Federal Court of Australia, New South Wales Registry',
-    docket: "Justice O'Bryan",
     listings: [
       {
-        date: '2026-08-27', time: '8:30', reason: 'Administrative Listing',
-        presiding: "Justice O'Bryan", location: 'Chambers',
+        date: '2026-08-27', time: '8:30', reason: 'Administrative Listing', location: 'Chambers',
         outcome: 'Finalised - Discontinued/Withdrawn', hearing: false,
-      },
-      {
-        date: '2026-07-28', time: '13:00', reason: 'Judgment',
-        presiding: "Justice O'Bryan", location: 'Chambers',
-        outcome: 'Adjourned - For review of progress', hearing: false,
-        orders: [{ url: 'https://www.comcourts.gov.au/x', url_gh: '/mergers/MN-65005/P_NSD1310_2026_2835642.pdf' }],
-        judgments: [{ citation: '[2026] FCA 1000', url: 'https://www.judgments.fedcourt.gov.au/x', url_gh: '/mergers/MN-65005/2026FCA1000.pdf' }],
       },
     ],
     ...overrides,
   };
 }
 
-function reviewEvent(title, date, filedBy) {
+function reviewEvent(title, date, extra = {}) {
   return {
     date: `${date}T12:00:00Z`,
     title,
     display_title: `Federal Court – ${title}`,
     is_appeal: true,
     review_forum: 'federal_court',
-    appeal_filed_by: filedBy,
     case_number: 'NSD1310/2026',
+    ...extra,
   };
 }
 
@@ -194,9 +185,12 @@ function mergerWithReview(review, { underReview = false } = {}) {
     under_judicial_review: underReview,
     events: [
       ...base.events,
-      reviewEvent('Originating Application for Judicial Review', '2026-07-17', 'Coles Supermarkets Australia Pty Limited'),
-      reviewEvent('Affidavit', '2026-07-18', 'Coles Supermarkets Australia Pty Limited'),
-      reviewEvent('Notice of Discontinuance', '2026-08-25', 'Coles Supermarkets Australia Pty Limited'),
+      reviewEvent('Originating Application for Judicial Review', '2026-07-17',
+        { appeal_filed_by: 'Coles Supermarkets Australia Pty Limited' }),
+      reviewEvent('Judgment [2026] FCA 1000', '2026-07-28',
+        { url_gh: '/mergers/MN-65005/2026FCA1000.pdf', court_outcome: 'Adjourned - For review of progress' }),
+      reviewEvent('Administrative Listing', '2026-08-27',
+        { court_outcome: 'Finalised - Discontinued/Withdrawn' }),
     ],
   };
 }
@@ -229,24 +223,37 @@ describe('MergerDetail judicial reviews', () => {
     expect(await screen.findByText('Under judicial review')).toBeInTheDocument();
   });
 
-  it('shows the review card with its listings, orders and judgment', async () => {
+  it('makes the whole review card the link to the portal, saying how it ended', async () => {
     renderMerger(mergerWithReview(judicialReview()));
-    expect(await screen.findByText('Judicial review requested by Coles on 17 July 2026')).toBeInTheDocument();
-    expect(screen.getByText("Justice O'Bryan")).toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: /Judgment \[2026\] FCA 1000/ })).not.toBeInTheDocument();
-
-    screen.getByRole('button', { name: 'Show 2 court listings' }).click();
-    expect(await screen.findByRole('link', { name: /View Judgment \[2026\] FCA 1000/ }))
-      .toHaveAttribute('href', '/mergers/MN-65005/2026FCA1000.pdf');
-    expect(screen.getByRole('link', { name: /View Orders from the Judgment/ }))
-      .toHaveAttribute('href', '/mergers/MN-65005/P_NSD1310_2026_2835642.pdf');
-    expect(screen.getByText('Finalised - Discontinued/Withdrawn')).toBeInTheDocument();
+    const card = await screen.findByRole('link', { name: /Judicial review requested by Coles on 17 July 2026/ });
+    expect(card).toHaveAttribute('href', 'https://www.comcourts.gov.au/file/Federal/P/nsd1310/2026/actions');
+    expect(card).toHaveTextContent('Federal Court of Australia · NSD1310/2026 · Review discontinued on 27 August 2026');
+    expect(within(card).queryByText('Concluded')).not.toBeInTheDocument();
+    expect(screen.queryByText('Courts Portal')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /court listing/ })).not.toBeInTheDocument();
   });
 
-  it('collapses Tribunal and Federal Court documents into one run', async () => {
+  it('gives a live review its next hearing on the card', async () => {
+    const future = new Date();
+    future.setDate(future.getDate() + 30);
+    const date = `${future.getFullYear()}-${String(future.getMonth() + 1).padStart(2, '0')}-${String(future.getDate()).padStart(2, '0')}`;
+    renderMerger(mergerWithReview(
+      judicialReview({
+        status: 'current', outcome: null, concluded_date: null,
+        listings: [{ date, time: '10:15', reason: 'Case Management Hearing', location: 'Court 18A', hearing: true }],
+      }),
+      { underReview: true },
+    ));
+    const card = await screen.findByRole('link', { name: /Judicial review requested by Coles/ });
+    expect(card).toHaveTextContent(/Next hearing .* · Case Management Hearing · 10:15 · Court 18A/);
+  });
+
+  it('puts the court listings on the timeline, collapsed with the Tribunal documents', async () => {
     renderMerger(mergerWithReview(judicialReview()));
     expect(await screen.findByRole('button', { name: 'Show 3 more Tribunal and Federal Court documents' }))
       .toBeInTheDocument();
-    expect(screen.getByText('Federal Court – Notice of Discontinuance')).toBeInTheDocument();
+    // The newest, the finalising listing, heads the run with its outcome.
+    expect(screen.getByText('Federal Court – Administrative Listing')).toBeInTheDocument();
+    expect(screen.getByText('Finalised - Discontinued/Withdrawn')).toBeInTheDocument();
   });
 });

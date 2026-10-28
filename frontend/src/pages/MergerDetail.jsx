@@ -676,8 +676,9 @@ function MergerDetail() {
         })}
 
         {/* Federal Court judicial reviews, one card per file, below the
-            Tribunal's. Each carries the court's listings with their orders
-            and judgments; the documents filed are on the timeline. */}
+            Tribunal's and built the same way: the card links the file on the
+            Courts Portal, and everything that has happened on it (listings,
+            orders, judgments, documents filed) is on the timeline. */}
         {judicialReviews.map((review, i) => (
           <JudicialReviewCard key={review.case_number || i} review={review} />
         ))}
@@ -855,11 +856,14 @@ function MergerDetail() {
                           <p className="text-xs text-gray-500 mt-0.5">
                             {formatDateMedium(event.date)}
                           </p>
-                          {event.is_appeal && (event.appeal_filed_by || event.appeal_confidentiality) && (
+                          {event.is_appeal && (event.appeal_filed_by || event.appeal_confidentiality || event.court_outcome) && (
                             <p className="text-xs text-gray-500 mt-0.5">
                               {[
                                 event.appeal_filed_by,
                                 event.appeal_confidentiality,
+                                // A Federal Court listing's outcome, on it and
+                                // on the orders or judgment made at it.
+                                event.court_outcome,
                                 // Which matter or file, when there is more than one.
                                 event.review_forum === REVIEW_FORUM_FEDERAL_COURT
                                   ? (severalReviews ? event.case_number : null)

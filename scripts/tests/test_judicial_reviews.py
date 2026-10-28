@@ -12,7 +12,7 @@ covered by test_scrape_federal_court.py.
 import json
 import sys
 import unittest.mock
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 # Mock heavy transitive imports before importing modules that need them
@@ -114,9 +114,13 @@ def _record(**overrides):
     return record
 
 
-def _linked(*records, merger_id='MN-0001'):
+# Fixed, so which listings have happened doesn't depend on when this runs.
+TODAY = date(2026, 10, 28)
+
+
+def _linked(*records, merger_id='MN-0001', today=TODAY):
     mergers = [enrich_merger(_phase2_not_approved(merger_id))]
-    linked = link_judicial_reviews(mergers, {merger_id: list(records)})
+    linked = link_judicial_reviews(mergers, {merger_id: list(records)}, today=today)
     return linked, mergers[0]
 
 
@@ -187,13 +191,13 @@ class TestLinkJudicialReviews:
         assert review['concluded_date'] == '2026-08-27'
         assert m['judicial_review']['outcome'] == 'withdrawn'
 
-    def test_record_carries_court_and_docket_not_parties(self):
+    def test_record_carries_court_not_parties_or_judge(self):
         _, m = _linked(_record(portal=_portal()))
         review = m['judicial_reviews'][0]
         assert review['court'] == 'Federal Court of Australia, New South Wales Registry'
-        assert review['docket'] == "Justice O'Bryan"
-        assert 'parties' not in json.dumps(review)
-        assert 'business_phone' not in json.dumps(m)
+        published = json.dumps(m)
+        for absent in ('docket', 'presiding', "O'Bryan", 'business_phone', 'parties'):
+            assert absent not in published, absent
 
     def test_listings_are_flagged_as_hearings(self):
         _, m = _linked(_record(portal=_portal()))
@@ -202,20 +206,32 @@ class TestLinkJudicialReviews:
             ('2026-07-28', False), ('2026-07-21', True),
         ]
         assert 'event_id' not in listings[0]
-        assert listings[0]['judgments'][0]['url_gh'] == '/mergers/MN-0001/2026FCA1000.pdf'
+        # Its orders and judgment are on the timeline instead.
+        assert 'judgments' not in listings[0] and 'orders' not in listings[0]
 
     def test_timeline_events(self):
-        _, m = _linked(_record(portal=_portal()))
+        _, m = _linked(_record(portal=_portal(finalised='2026-08-27')))
         review_events = [e for e in m['events'] if e.get('review_forum') == 'federal_court']
-        assert [(e['date'], e['display_title'], e['url_gh']) for e in review_events] == [
-            ('2026-07-17T12:00:00Z', 'Federal Court – Originating Application for Judicial Review', None),
-            ('2026-07-28T12:00:00Z', 'Federal Court – Orders', '/mergers/MN-0001/P_NSD1310_2026_2835642.pdf'),
-            ('2026-07-28T12:00:00Z', 'Federal Court – Judgment [2026] FCA 1000', '/mergers/MN-0001/2026FCA1000.pdf'),
+        assert [(e['date'][:10], e['display_title'], e['url_gh'], e['court_outcome']) for e in review_events] == [
+            ('2026-07-17', 'Federal Court – Originating Application for Judicial Review', None, None),
+            ('2026-08-27', 'Federal Court – Administrative Listing', None, 'Finalised - Discontinued/Withdrawn'),
+            # A listing that made orders or gave judgment is told by them.
+            ('2026-07-28', 'Federal Court – Orders', '/mergers/MN-0001/P_NSD1310_2026_2835642.pdf',
+             'Adjourned - For review of progress'),
+            ('2026-07-28', 'Federal Court – Judgment [2026] FCA 1000', '/mergers/MN-0001/2026FCA1000.pdf',
+             'Adjourned - For review of progress'),
+            ('2026-07-21', 'Federal Court – First Case Management Hearing', None, None),
         ]
         assert all(e['is_appeal'] for e in review_events)
         assert review_events[0]['appeal_filed_by'] == 'Coles Supermarkets Australia Pty Limited'
-        assert review_events[1]['appeal_filed_by'] == "Justice O'Bryan"
+        assert all(e['appeal_filed_by'] is None for e in review_events[1:])
         assert review_events[0]['case_number'] == 'NSD1310/2026'
+
+    def test_listings_still_to_come_are_not_on_the_timeline(self):
+        _, m = _linked(_record(portal=_portal()), today=date(2026, 7, 25))
+        titles = [e['title'] for e in m['events'] if e.get('review_forum')]
+        assert 'First Case Management Hearing' in titles
+        assert not any(t.startswith(('Orders', 'Judgment')) for t in titles)
 
     def test_orders_named_by_listing(self):
         listings = [{
@@ -225,6 +241,7 @@ class TestLinkJudicialReviews:
         _, m = _linked(_record(portal=_portal(listings=listings)))
         titles = [e['title'] for e in m['events'] if e.get('review_forum')]
         assert 'Orders (First Case Management Hearing)' in titles
+        assert 'First Case Management Hearing' not in titles
 
     def test_two_files_summarised(self):
         _, m = _linked(
