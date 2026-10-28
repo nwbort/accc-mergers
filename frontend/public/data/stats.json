@@ -3,12 +3,12 @@
   "total_waivers": 484,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 260,
-    "Under assessment": 42,
+    "Assessment completed": 261,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 253,
+    "Approved": 254,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 258,
+    "cleared": 259,
     "not_cleared": 2,
-    "total": 260,
+    "total": 261,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.458646616541355,
-    "median_days": 26.0,
-    "average_business_days": 20.030075187969924,
-    "median_business_days": 18.0,
+    "average_days": 29.44943820224719,
+    "median_days": 26,
+    "average_business_days": 20.02247191011236,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 58,
-        "percentage": 21.8
+        "percentage": 21.7
       },
       "day20": {
-        "count": 193,
-        "percentage": 72.6
+        "count": 194,
+        "percentage": 72.7
       },
       "day30": {
-        "count": 249,
+        "count": 250,
         "percentage": 93.6
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-65039",
+      "merger_name": "ASSA ABLOY \u2013 Gunnebo Entrance Control",
+      "determination": "Approved",
+      "determination_date": "2026-10-28T12:00:00Z",
+      "page_modified_datetime": "2026-10-28T14:58:06+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-25053",
       "merger_name": "Altius \u2013 Converge International",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-26T12:00:00Z",
       "page_modified_datetime": "2026-10-26T17:15:02+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75064",
-      "merger_name": "BMD Fleet \u2013 East Coast Commercial Vehicles dealerships",
-      "determination": "Approved",
-      "determination_date": "2026-10-26T12:00:00Z",
-      "page_modified_datetime": "2026-10-26T17:11:36+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
