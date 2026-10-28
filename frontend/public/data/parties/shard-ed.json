@@ -339,12 +339,29 @@
           "name": "FORTITUDE INVESTMENT PARTNERS",
           "identifier": "97 635 593 949",
           "identifier_type": "ABN"
+        },
+        {
+          "name": "FORTITUDE INVESTMENT PARTNERS PTY LTD",
+          "identifier": "97 635 593 949",
+          "identifier_type": "ABN"
         }
       ],
       "mergers": {
         "acquirer": [],
         "target": [],
         "other": [
+          {
+            "merger_id": "WA-35054",
+            "merger_name": "Northpharm Services - Wesley Pharmacy Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-01T12:00:00Z",
+            "determination_date": "2026-10-28T12:00:00Z"
+          },
           {
             "merger_id": "WA-30041",
             "merger_name": "FVS Services Group \u2013 Alexon and Jetfire Fire Protection",
@@ -371,18 +388,18 @@
           }
         ]
       },
-      "merger_count": 2,
+      "merger_count": 3,
       "phase_1_count": 0,
       "phase_2_count": 0,
-      "waiver_count": 2,
+      "waiver_count": 3,
       "active_count": 0,
       "phase_duration": null,
       "waiver_duration": {
-        "average_days": 14.0,
-        "median_days": 14.0,
-        "average_business_days": 9.0,
-        "median_business_days": 9.0,
-        "completed_count": 2
+        "average_days": 18.333333333333332,
+        "median_days": 14,
+        "average_business_days": 12.0,
+        "median_business_days": 9,
+        "completed_count": 3
       }
     },
     "richard-lee-simpson": {

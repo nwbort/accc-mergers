@@ -775,6 +775,48 @@
         "completed_count": 2
       }
     },
+    "the-trustee-for-the-mcfadden-family-trust": {
+      "id": "the-trustee-for-the-mcfadden-family-trust",
+      "canonical_name": "The trustee for the McFADDEN FAMILY TRUST",
+      "members": [
+        {
+          "name": "The trustee for the McFADDEN FAMILY TRUST",
+          "identifier": "20 063 671 374",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75067",
+            "merger_name": "Alpin Investments \u2013 Best Sheds",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": "2026-10-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
     "totalcom-corp-pty-ltd": {
       "id": "totalcom-corp-pty-ltd",
       "canonical_name": "Totalcom Corp Pty Ltd",
