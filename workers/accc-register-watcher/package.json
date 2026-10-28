@@ -17,5 +17,9 @@
   },
   "dependencies": {
     "postal-mime": "^2.4.4"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "workerd": true
   }
 }
