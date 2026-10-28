@@ -1,10 +1,10 @@
 {
-  "total_mergers": 309,
+  "total_mergers": 310,
   "total_waivers": 488,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 262,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 190
+      "count": 191
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10044",
+      "merger_name": "OCTA \u2013 Woodside-EDL LNG JV",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-28T12:00:00Z",
+      "page_modified_datetime": "2026-10-29T10:01:25+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-45028",
       "merger_name": "Endeavour Group \u2013 retail liquor site in Penrith, NSW",
@@ -205,16 +215,6 @@
       "page_modified_datetime": "2026-10-21T10:14:59+11:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-85060",
-      "merger_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-19T12:00:00Z",
-      "page_modified_datetime": "2026-10-19T15:24:50+11:00",
-      "is_waiver": false,
-      "is_refiled": true
     }
   ],
   "recent_determinations": [

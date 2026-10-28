@@ -311,6 +311,42 @@
         "completed_count": 1
       }
     },
+    "woodside-energy-lng-fuels-and-power-pty-ltd": {
+      "id": "woodside-energy-lng-fuels-and-power-pty-ltd",
+      "canonical_name": "Woodside Energy (Lng Fuels And Power) Pty Ltd",
+      "members": [
+        {
+          "name": "WOODSIDE ENERGY (LNG FUELS AND POWER) PTY LTD",
+          "identifier": "75 626 310 727",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-10044",
+            "merger_name": "OCTA \u2013 Woodside-EDL LNG JV",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-28T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "zashvin-pty-ltd": {
       "id": "zashvin-pty-ltd",
       "canonical_name": "Zashvin Pty. Ltd.",
