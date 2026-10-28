@@ -471,6 +471,30 @@
             "24": 3
           },
           "median_delta": 3.0
+        },
+        "phase_1_speed": {
+          "day15": {
+            "count": 8,
+            "percentage": 28.6
+          },
+          "day20": {
+            "count": 19,
+            "percentage": 67.9
+          },
+          "day30": {
+            "count": 28,
+            "percentage": 100.0
+          }
+        },
+        "determinations": {
+          "phase_1": {
+            "Approved": 28
+          },
+          "phase_2": {},
+          "waivers": {
+            "Approved": 53,
+            "Not approved": 4
+          }
         }
       },
       {
@@ -540,6 +564,35 @@
             "24": 5
           },
           "median_delta": 4.0
+        },
+        "phase_1_speed": {
+          "day15": {
+            "count": 19,
+            "percentage": 17.6
+          },
+          "day20": {
+            "count": 70,
+            "percentage": 64.8
+          },
+          "day30": {
+            "count": 99,
+            "percentage": 91.7
+          }
+        },
+        "determinations": {
+          "phase_1": {
+            "Approved": 103,
+            "Referred to phase 2": 1,
+            "Approved with conditions": 4
+          },
+          "phase_2": {
+            "Not approved": 2,
+            "Assessment ceased": 1
+          },
+          "waivers": {
+            "Approved": 174,
+            "Not approved": 11
+          }
         }
       }
     ],

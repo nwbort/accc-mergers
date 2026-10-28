@@ -5,6 +5,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
 import TurnaroundTrendChart from '../components/TurnaroundTrendChart';
 import DurationEcdfChart from '../components/DurationEcdfChart';
+import OutcomeSummaryCards from '../components/OutcomeSummaryCards';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatMedian } from '../utils/formatMedian';
@@ -209,6 +210,27 @@ function CurrentStatus() {
           caption={`Cumulative share of the phase 1 reviews completed in the last ${entry.days} days, by business day`}
           countHeading="Reviews concluded"
         />
+
+        {/* The dashboard's closing cards, cut to the matters decided in the
+            window. Empty cards stay in place with a note so the grid doesn't
+            reflow on the window toggle. Absent from a payload generated
+            before the window carried them. */}
+        {entry.determinations && (
+          <OutcomeSummaryCards
+            idPrefix="chart-window"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6"
+            speed={entry.phase_1_speed}
+            phase1Counts={entry.determinations.phase_1}
+            phase2Counts={entry.determinations.phase_2}
+            waiverCounts={entry.determinations.waivers}
+            emptyMessages={{
+              speed: 'No phase 1 reviews concluded in this window.',
+              phase1: 'No phase 1 determinations in this window.',
+              phase2: 'No phase 2 reviews concluded in this window.',
+              waivers: 'No waiver determinations in this window.',
+            }}
+          />
+        )}
 
         <section>
           <div className={`${CARD} overflow-hidden`}>

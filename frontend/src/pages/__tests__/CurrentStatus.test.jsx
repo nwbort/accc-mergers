@@ -16,6 +16,7 @@ vi.mock('react-chartjs-2', () => ({
   Line: () => null,
   Bar: () => null,
   Scatter: () => null,
+  Doughnut: () => null,
 }));
 
 function ok(json) {
@@ -61,6 +62,17 @@ describe('Current status', () => {
             count: 64, median_delta: 4,
             duration_histogram: { 8: 10, 17: 24, 21: 24, 23: 6 },
           },
+          // Read off the same 46 reviews and 64 waivers as the blocks above.
+          phase_1_speed: {
+            day15: { count: 23, percentage: 50 },
+            day20: { count: 23, percentage: 50 },
+            day30: { count: 44, percentage: 95.7 },
+          },
+          determinations: {
+            phase_1: { Approved: 45, 'Referred to phase 2': 1 },
+            phase_2: {},
+            waivers: { Approved: 60, 'Not approved': 4 },
+          },
         },
         {
           days: 90,
@@ -74,6 +86,16 @@ describe('Current status', () => {
             median: 15, average: 15.2, p90: 21, min: 5, max: 24,
             count: 179, median_delta: 2,
             duration_histogram: { 5: 40, 15: 50, 18: 71, 21: 10, 24: 8 },
+          },
+          phase_1_speed: {
+            day15: { count: 40, percentage: 34.5 },
+            day20: { count: 70, percentage: 60.3 },
+            day30: { count: 112, percentage: 96.6 },
+          },
+          determinations: {
+            phase_1: { Approved: 110, 'Approved with conditions': 3, 'Referred to phase 2': 3 },
+            phase_2: { 'Not approved': 2, 'Assessment ceased': 1 },
+            waivers: { Approved: 168, 'Not approved': 11 },
           },
         },
       ],
@@ -366,6 +388,32 @@ describe('Current status', () => {
     expect(screen.queryByRole('table', { name: /waiver applications decided/ })).not.toBeInTheDocument();
     expect(screen.getByRole('table', { name: /phase 1 reviews completed/ })).toBeInTheDocument();
     expect(within(headline('Waiver')).getByText('17')).toBeInTheDocument();
+  });
+
+  it('carries the dashboard\'s summary cards, cut to the window', async () => {
+    await renderPage();
+
+    expect(screen.getByRole('heading', { name: 'Phase 1 speed' })).toBeInTheDocument();
+    expect(screen.getByText((_, el) => el?.tagName === 'SPAN' && el.textContent === '95.7%(44)')).toBeInTheDocument();
+
+    const waivers = screen.getByRole('table', { name: 'Waiver determination breakdown' });
+    expect(within(waivers).getByRole('row', { name: /Not approved/ })).toHaveTextContent('4');
+
+    // No phase 2 review concluded in the last 30 days: the card stays, saying so.
+    expect(screen.getByRole('heading', { name: 'Phase 2 determinations' })).toBeInTheDocument();
+    expect(screen.getByText('No phase 2 reviews concluded in this window.')).toBeInTheDocument();
+  });
+
+  it('re-cuts the summary cards when another window is selected', async () => {
+    const user = userEvent.setup();
+    await renderPage();
+
+    await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
+
+    expect(screen.getByText((_, el) => el?.tagName === 'SPAN' && el.textContent === '96.6%(112)')).toBeInTheDocument();
+    const phase2 = screen.getByRole('table', { name: /Phase 2 determination breakdown/ });
+    expect(within(phase2).getByRole('row', { name: /Assessment ceased/ })).toHaveTextContent('1');
+    expect(screen.queryByText('No phase 2 reviews concluded in this window.')).not.toBeInTheDocument();
   });
 
   it('says the page is still generating when the payload predates the series', async () => {

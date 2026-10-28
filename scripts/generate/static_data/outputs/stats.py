@@ -11,6 +11,62 @@ from ..filters import filter_notifications, filter_waivers
 from ..loaders import BACKWARD_REFILE_RELATIONSHIPS
 
 
+def phase_1_outcome_label(merger: dict) -> str | None:
+    """The phase 1 outcome a determination chart counts ``merger`` under.
+
+    ``phase_1_determination`` already reads "Referred to phase 2" for a
+    referral; approvals are split by whether conditions were imposed, since a
+    clearance bought with a s 87B undertaking is a different result from an
+    unconditional one. ``None`` while phase 1 is still open.
+    """
+    det = merger.get('phase_1_determination')
+    if det == merger_status.APPROVED and merger.get('has_conditions'):
+        return merger_status.APPROVED_WITH_CONDITIONS
+    return det or None
+
+
+def phase_2_outcome_label(merger: dict) -> tuple[str | None, str | None]:
+    """``(outcome, date)`` a phase 2 chart counts ``merger`` under, if concluded.
+
+    Includes reviews the parties withdrew from, which end as a ceased
+    assessment rather than a determination (see :func:`phase_2_outcome`), with
+    approvals split by conditions as at phase 1. ``(None, None)`` for a matter
+    that never reached phase 2 or is still in it.
+    """
+    if not reached_phase_2(merger):
+        return None, None
+    det, det_date = phase_2_outcome(merger)
+    if not (det and det_date):
+        return None, None
+    if det == merger_status.APPROVED and merger.get('has_conditions'):
+        det = merger_status.APPROVED_WITH_CONDITIONS
+    return det, det_date
+
+
+# Business-day marks the "Phase 1 speed" card reports the share concluded by.
+PHASE_1_SPEED_DAYS = (15, 20, 30)
+
+
+def phase_1_speed(business_days: list[int]) -> dict | None:
+    """``{"day15": {count, percentage}, ...}``: completed reviews by each mark.
+
+    Shared by stats.json (every review) and analysis.json's current_status
+    windows (the reviews decided in each), so the dashboard and
+    /current-status cards read the same shape. ``None`` with nothing decided.
+    """
+    total = len(business_days)
+    if not total:
+        return None
+    result = {}
+    for mark in PHASE_1_SPEED_DAYS:
+        count = sum(1 for d in business_days if d <= mark)
+        result[f"day{mark}"] = {
+            "count": count,
+            "percentage": round((count / total) * 100, 1),
+        }
+    return result
+
+
 def _as_event_datetime(value: str | None) -> str | None:
     """Promote a bare ``YYYY-MM-DD`` to the event datetime format.
 
@@ -104,12 +160,9 @@ def generate(mergers: list) -> dict:
     # different result from an unconditional one.
     by_determination = defaultdict(int)
     for m in notification_mergers:
-        det = m.get('phase_1_determination')
-        if not det:
-            continue
-        if det == merger_status.APPROVED and m.get('has_conditions'):
-            det = merger_status.APPROVED_WITH_CONDITIONS
-        by_determination[det] += 1
+        det = phase_1_outcome_label(m)
+        if det:
+            by_determination[det] += 1
 
     # By Phase 2 outcome (notifications only). Counts the Phase 2 reviews that
     # have concluded — including the ones the parties withdrew from, which end
@@ -121,14 +174,9 @@ def generate(mergers: list) -> dict:
     # from an unconditional one.
     by_phase_2_determination = defaultdict(int)
     for m in notification_mergers:
-        if not reached_phase_2(m):
-            continue
-        det, det_date = phase_2_outcome(m)
-        if not (det and det_date):
-            continue
-        if det == merger_status.APPROVED and m.get('has_conditions'):
-            det = merger_status.APPROVED_WITH_CONDITIONS
-        by_phase_2_determination[det] += 1
+        det, _ = phase_2_outcome_label(m)
+        if det:
+            by_phase_2_determination[det] += 1
 
     # By waiver determination
     by_waiver_determination = defaultdict(int)
@@ -172,27 +220,7 @@ def generate(mergers: list) -> dict:
     median_business = round(median(business_durations), 1) if business_durations else None
 
     # Pre-compute percentile statistics for business days
-    total_completed = len(business_durations)
-    percentile_stats = None
-    if total_completed > 0:
-        day15_count = sum(1 for d in business_durations if d <= 15)
-        day20_count = sum(1 for d in business_durations if d <= 20)
-        day30_count = sum(1 for d in business_durations if d <= 30)
-
-        percentile_stats = {
-            "day15": {
-                "count": day15_count,
-                "percentage": round((day15_count / total_completed) * 100, 1),
-            },
-            "day20": {
-                "count": day20_count,
-                "percentage": round((day20_count / total_completed) * 100, 1),
-            },
-            "day30": {
-                "count": day30_count,
-                "percentage": round((day30_count / total_completed) * 100, 1),
-            },
-        }
+    percentile_stats = phase_1_speed(business_durations)
 
     # Top industries (including waivers)
     industry_counts = defaultdict(int)

@@ -53,6 +53,7 @@ from ..business_days import calculate_business_days, calculate_calendar_days, is
 from ..enrichment import reached_phase_2
 from ..durations import collect_phase_1_durations, collect_waiver_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers, is_waiver
+from .stats import phase_1_outcome_label, phase_1_speed, phase_2_outcome_label
 
 _MAX_DIVISION_LABEL_LENGTH = 200
 
@@ -702,7 +703,10 @@ def current_status(mergers: list, as_at: date | None = None) -> dict:
       day N" curve can be drawn for what the ACCC has just decided. Each
       window also carries ``notifications_filed``, the inflow over the same
       period, so the page can show what is arriving beside what is being
-      cleared.
+      cleared. ``phase_1_speed`` (share of the window's phase 1 reviews
+      concluded by business days 15/20/30) and ``determinations`` (outcome
+      counts for phase 1, phase 2 and waivers decided in the window) are the
+      window's cut of the dashboard's breakdowns in stats.json.
     - ``all_time`` — the same statistics over every decided matter, the
       baseline every window is compared against.
     - ``monthly`` — the same medians per decision-month, aligned index-for-index
@@ -746,6 +750,31 @@ def current_status(mergers: list, as_at: date | None = None) -> dict:
         if m.get('effective_notification_datetime')
     ]
 
+    # (decision date, outcome) per decided matter, for the windowed
+    # determination breakdowns: the same outcomes the dashboard charts over
+    # every matter, bucketed like the durations by when they were decided.
+    phase_1_outcomes = [
+        (phase_1_end_date(m)[:10], label)
+        for m in notifications
+        if phase_1_end_date(m) and (label := phase_1_outcome_label(m))
+    ]
+    phase_2_outcomes = [
+        (decided[:10], label)
+        for m in notifications
+        for label, decided in [phase_2_outcome_label(m)]
+        if label
+    ]
+    waiver_outcomes = [
+        (m['determination_publication_date'][:10], m['accc_determination'])
+        for m in filter_waivers(mergers)
+        if m.get('accc_determination') and m.get('determination_publication_date')
+    ]
+
+    def _window_outcomes(outcomes: list[tuple[str, str]], days: int) -> dict[str, int]:
+        cutoff = (as_at - timedelta(days=days)).isoformat()
+        as_at_iso = as_at.isoformat()
+        return dict(Counter(label for decided, label in outcomes if cutoff < decided <= as_at_iso))
+
     def _window_durations(durations: list[tuple[str, int]], days: int) -> list[int]:
         cutoff = (as_at - timedelta(days=days)).isoformat()
         as_at_iso = as_at.isoformat()
@@ -783,6 +812,14 @@ def current_status(mergers: list, as_at: date | None = None) -> dict:
                 else None
             )
             entry[key] = stats
+        # The window's twin of stats.json's phase_duration.percentiles, so
+        # the "Phase 1 speed" card reads the same shape on both pages.
+        entry["phase_1_speed"] = phase_1_speed(_window_durations(notification_durations, days))
+        entry["determinations"] = {
+            "phase_1": _window_outcomes(phase_1_outcomes, days),
+            "phase_2": _window_outcomes(phase_2_outcomes, days),
+            "waivers": _window_outcomes(waiver_outcomes, days),
+        }
         windows.append(entry)
 
     # Pre-notification is keyed by filing date, so it needs its own window cut

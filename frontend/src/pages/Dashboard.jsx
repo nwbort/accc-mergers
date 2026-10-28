@@ -1,9 +1,7 @@
 import { useEffect } from 'react';
 import { FaMagnifyingGlass, FaStopwatch, FaChartLine } from 'react-icons/fa6';
-import { Doughnut } from 'react-chartjs-2';
-import '../utils/chartSetup';
 import StatCard from '../components/StatCard';
-import { CARD } from '../utils/classNames';
+import OutcomeSummaryCards from '../components/OutcomeSummaryCards';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import UpcomingEventsTimeline from '../components/UpcomingEventsTimeline';
@@ -17,8 +15,7 @@ import { getCalendarDaysUntil, isDatePast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
 import { formatMedian } from '../utils/formatMedian';
-import { CHART_PALETTE, CHART_PALETTE_ORDER, DETERMINATION_COLORS } from '../constants/chartColors';
-import { MERGER_STATUS, PHASE_2_OUTCOME_ORDER } from '../constants/mergerStatus';
+import { MERGER_STATUS } from '../constants/mergerStatus';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 
 // Title and description live in the shared table so this page and the
@@ -58,90 +55,6 @@ function Dashboard() {
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage error={error} />;
   if (!stats) return null;
-
-  const determinationLabels = Object.keys(stats.by_determination);
-  const determinationData = {
-    labels: determinationLabels,
-    datasets: [
-      {
-        data: Object.values(stats.by_determination),
-        backgroundColor: determinationLabels.map((label, i) =>
-          DETERMINATION_COLORS[label] || CHART_PALETTE_ORDER[i % CHART_PALETTE_ORDER.length]
-        ),
-        borderWidth: 0,
-        borderRadius: 4,
-      },
-    ],
-  };
-
-  // Concluded Phase 2 reviews only — matters still in Phase 2 have no outcome
-  // to chart yet. Any outcome the fixed order doesn't know about is appended
-  // rather than dropped.
-  const phase2Counts = stats.by_phase_2_determination || {};
-  const phase2Labels = [
-    ...PHASE_2_OUTCOME_ORDER.filter((label) => phase2Counts[label]),
-    ...Object.keys(phase2Counts).filter((label) => !PHASE_2_OUTCOME_ORDER.includes(label)),
-  ];
-  const phase2DeterminationData = {
-    labels: phase2Labels,
-    datasets: [
-      {
-        data: phase2Labels.map((label) => phase2Counts[label]),
-        backgroundColor: phase2Labels.map((label, i) =>
-          DETERMINATION_COLORS[label] || CHART_PALETTE_ORDER[i % CHART_PALETTE_ORDER.length]
-        ),
-        borderWidth: 0,
-        borderRadius: 4,
-      },
-    ],
-  };
-
-  const waiverLabels = [MERGER_STATUS.APPROVED, MERGER_STATUS.NOT_APPROVED].filter(
-    (label) => stats.by_waiver_determination && stats.by_waiver_determination[label]
-  );
-  const waiverDeterminationData = {
-    labels: waiverLabels,
-    datasets: [
-      {
-        data: waiverLabels.map((label) => stats.by_waiver_determination[label]),
-        backgroundColor: waiverLabels.map((label) =>
-          DETERMINATION_COLORS[label] || CHART_PALETTE.accent
-        ),
-        borderWidth: 0,
-        borderRadius: 4,
-      },
-    ],
-  };
-
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
-    cutout: '65%',
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: {
-          padding: 16,
-          usePointStyle: true,
-          pointStyle: 'circle',
-          font: {
-            size: 12,
-            family: 'Inter, sans-serif',
-          },
-        },
-      },
-      tooltip: {
-        callbacks: {
-          label: (item) => {
-            const total = item.dataset.data.reduce((sum, val) => sum + val, 0);
-            const pct = total > 0 ? Math.round((item.parsed / total) * 100) : 0;
-            return ` ${item.parsed} (${pct}%)`;
-          },
-        },
-      },
-    },
-  };
 
   return (
     <>
@@ -229,110 +142,12 @@ function Dashboard() {
         ) : null;
       })()}
 
-      {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
-        {/* Phase 1 Duration Table */}
-        {stats.phase_duration.percentiles && (
-          <div className={`${CARD} p-6 flex flex-col`}>
-            <h2 className="text-base font-semibold text-gray-900 mb-5">
-              Phase 1 speed
-            </h2>
-            <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 flex-1 content-around">
-              {[
-                { label: 'By day 15', data: stats.phase_duration.percentiles.day15 },
-                { label: 'By day 20', data: stats.phase_duration.percentiles.day20 },
-                { label: 'By day 30', data: stats.phase_duration.percentiles.day30 },
-              ].flatMap(({ label, data }, index) => [
-                <span key={`${label}-label`} className={`text-sm text-gray-600 py-3 ${index < 2 ? 'border-b border-gray-50' : ''}`}>{label}</span>,
-                <div key={`${label}-bar`} className="bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                  <div
-                    className="bg-primary h-1.5 rounded-full transition-all duration-500"
-                    style={{ width: `${data.percentage}%` }}
-                  />
-                </div>,
-                <span key={`${label}-pct`} className={`text-sm font-semibold text-gray-900 tabular-nums text-right py-3 whitespace-nowrap ${index < 2 ? 'border-b border-gray-50' : ''}`}>
-                  {data.percentage}%
-                  <span className="text-gray-500 font-normal ml-1">({data.count})</span>
-                </span>,
-              ])}
-            </div>
-          </div>
-        )}
-
-        {/* Phase 1 Determination Distribution */}
-        {Object.keys(stats.by_determination).length > 0 && (
-          <div className={`${CARD} p-6`}>
-            <h2 id="chart-phase1-title" className="text-base font-semibold text-gray-900 mb-5">
-              Phase 1 determinations
-            </h2>
-            <div className="h-64" role="img" aria-labelledby="chart-phase1-title" aria-describedby="chart-phase1-summary">
-              <Doughnut data={determinationData} options={chartOptions} role="presentation" />
-            </div>
-            {/* The sr-only wrapper has to be a div: `sr-only`'s width: 1px is
-                only a minimum for a table box, so a bare sr-only table lays
-                out at its full content width and — being absolutely
-                positioned against the viewport — widens the whole page on
-                mobile. The div clips it for real. */}
-            <div className="sr-only">
-              <table id="chart-phase1-summary">
-                <caption>Phase 1 determination breakdown</caption>
-                <thead><tr><th>Determination</th><th>Count</th></tr></thead>
-                <tbody>
-                  {Object.entries(stats.by_determination).map(([det, count]) => (
-                    <tr key={det}><td>{det}</td><td>{count}</td></tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
-        {/* Phase 2 Determination Distribution */}
-        {phase2Labels.length > 0 && (
-          <div className={`${CARD} p-6`}>
-            <h2 id="chart-phase2-title" className="text-base font-semibold text-gray-900 mb-5">
-              Phase 2 determinations
-            </h2>
-            <div className="h-64" role="img" aria-labelledby="chart-phase2-title" aria-describedby="chart-phase2-summary">
-              <Doughnut data={phase2DeterminationData} options={chartOptions} role="presentation" />
-            </div>
-            <div className="sr-only">
-              <table id="chart-phase2-summary">
-                <caption>Phase 2 determination breakdown, including ceased assessments</caption>
-                <thead><tr><th>Outcome</th><th>Count</th></tr></thead>
-                <tbody>
-                  {phase2Labels.map((det) => (
-                    <tr key={det}><td>{det}</td><td>{phase2Counts[det]}</td></tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
-        {/* Waiver Determination Distribution */}
-        {stats.by_waiver_determination && Object.keys(stats.by_waiver_determination).length > 0 && (
-          <div className={`${CARD} p-6`}>
-            <h2 id="chart-waiver-title" className="text-base font-semibold text-gray-900 mb-5">
-              Waiver determinations
-            </h2>
-            <div className="h-64" role="img" aria-labelledby="chart-waiver-title" aria-describedby="chart-waiver-summary">
-              <Doughnut data={waiverDeterminationData} options={chartOptions} role="presentation" />
-            </div>
-            <div className="sr-only">
-              <table id="chart-waiver-summary">
-                <caption>Waiver determination breakdown</caption>
-                <thead><tr><th>Determination</th><th>Count</th></tr></thead>
-                <tbody>
-                  {Object.entries(stats.by_waiver_determination).map(([det, count]) => (
-                    <tr key={det}><td>{det}</td><td>{count}</td></tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-      </div>
+      <OutcomeSummaryCards
+        speed={stats.phase_duration.percentiles}
+        phase1Counts={stats.by_determination}
+        phase2Counts={stats.by_phase_2_determination}
+        waiverCounts={stats.by_waiver_determination}
+      />
     </div>
     </>
   );
