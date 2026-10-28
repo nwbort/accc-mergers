@@ -1,6 +1,6 @@
 {
   "total_mergers": 308,
-  "total_waivers": 484,
+  "total_waivers": 485,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 262,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 459,
+    "Approved": 460,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.65082644628099,
-    "median_days": 21.0,
-    "average_business_days": 14.119834710743802,
-    "median_business_days": 14.0
+    "average_days": 20.668041237113403,
+    "median_days": 21,
+    "average_business_days": 14.131958762886597,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 186
+      "count": 187
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-10041",
+      "merger_name": "Platinum Equity - SuperStroke",
+      "determination": "Approved",
+      "determination_date": "2026-10-28T12:00:00Z",
+      "page_modified_datetime": "2026-10-28T17:29:46+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-65039",
       "merger_name": "ASSA ABLOY \u2013 Gunnebo Entrance Control",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-26T12:00:00Z",
       "page_modified_datetime": "2026-10-26T17:34:58+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-25059",
-      "merger_name": "Tasmanian Department of Health \u2013 leasehold interest in vacant site at Hobart International Airport",
-      "determination": "Approved",
-      "determination_date": "2026-10-26T12:00:00Z",
-      "page_modified_datetime": "2026-10-26T17:32:01+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
