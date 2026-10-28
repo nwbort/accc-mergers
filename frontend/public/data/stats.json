@@ -3,12 +3,12 @@
   "total_waivers": 484,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 261,
-    "Under assessment": 42,
+    "Assessment completed": 262,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 254,
+    "Approved": 255,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 259,
+    "cleared": 260,
     "not_cleared": 2,
-    "total": 261,
+    "total": 262,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.44943820224719,
-    "median_days": 26,
-    "average_business_days": 20.02247191011236,
-    "median_business_days": 18,
+    "average_days": 29.44402985074627,
+    "median_days": 26.0,
+    "average_business_days": 20.01865671641791,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 58,
-        "percentage": 21.7
+        "percentage": 21.6
       },
       "day20": {
-        "count": 194,
-        "percentage": 72.7
+        "count": 195,
+        "percentage": 72.8
       },
       "day30": {
-        "count": 250,
-        "percentage": 93.6
+        "count": 251,
+        "percentage": 93.7
       }
     }
   },
@@ -230,6 +230,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-80045",
+      "merger_name": "Apiam - Goulburn Valley Equine Hospital",
+      "determination": "Approved",
+      "determination_date": "2026-10-28T12:00:00Z",
+      "page_modified_datetime": "2026-10-28T14:56:47+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-25053",
       "merger_name": "Altius \u2013 Converge International",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-26T12:00:00Z",
       "page_modified_datetime": "2026-10-26T17:32:01+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-40046",
-      "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 McGill and Partners Group",
-      "determination": "Approved",
-      "determination_date": "2026-10-26T12:00:00Z",
-      "page_modified_datetime": "2026-10-26T17:15:02+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
