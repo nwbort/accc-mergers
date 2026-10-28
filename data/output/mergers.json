@@ -21831,8 +21831,208 @@
       },
       "pre_notification": {
         "estimated_days": 27,
-        "min_days": null,
+        "min_days": 0,
         "max_days": 61,
+        "id_issued_estimated": "2026-09-27",
+        "id_issued_before": "2026-10-24",
+        "id_issued_after": "2026-08-24",
+        "min_days_witness": "MN-20044",
+        "max_days_witness": "WA-20038",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/4k-automotive-group-%E2%80%93-peninsula-motor-group",
+      "merger_name": "4K Automotive Group \u2013 Peninsula Motor Group",
+      "status": "Under assessment",
+      "merger_id": "MN-20044",
+      "effective_notification_datetime": "2026-10-27T12:00:00Z",
+      "original_notification_datetime": "2026-10-27T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-12-08T12:00:00Z",
+      "page_modified_datetime": "2026-10-28T15:48:22+11:00",
+      "consultation_response_due_date": "2026-11-03T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "4K COMMERCIAL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "71 701 798 745",
+          "party_page": {
+            "id": "4k-commercial-group-pty-ltd",
+            "name": "4K Commercial Group Pty Ltd"
+          }
+        },
+        {
+          "name": "4K CENTRAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "37 676 924 708",
+          "party_page": {
+            "id": "4k-central-pty-ltd",
+            "name": "4K Central Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "KUMAR MOTORS (BANKSTOWN) PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "96 003 857 832",
+          "party_page": {
+            "id": "kumar-motors-bankstown-pty-limited",
+            "name": "Kumar Motors (Bankstown) Pty. Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "4K PRESTIGE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "20 663 657 636",
+          "party_page": {
+            "id": "4k-prestige-pty-limited",
+            "name": "4K Prestige Pty Limited"
+          }
+        },
+        {
+          "name": "4K GILBERTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 676 928 171",
+          "party_page": {
+            "id": "4k-gilberts-pty-ltd",
+            "name": "4K Gilberts Pty Ltd"
+          }
+        },
+        {
+          "name": "OLTOY PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "65 075 865 548",
+          "party_page": {
+            "id": "oltoy-pty-limited",
+            "name": "Oltoy Pty Limited"
+          }
+        },
+        {
+          "name": "4K AUTOMOTIVE GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 062 618 964",
+          "party_page": {
+            "id": "4k-automotive-group-pty-ltd",
+            "name": "4K Automotive Group Pty Ltd"
+          }
+        },
+        {
+          "name": "CLINTONS MOTORS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "92 008 444 844",
+          "party_page": {
+            "id": "clintons-motors-pty-limited",
+            "name": "Clintons Motors Pty Limited"
+          }
+        },
+        {
+          "name": "4K MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 677 442 983",
+          "party_page": {
+            "id": "4k-motors-pty-ltd",
+            "name": "4K Motors Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Subsidiaries of 4K Automotive Group Pty Ltd (**4K Automotive Group**), via a business sale and purchase agreement, propose to acquire the following from Kumar Motors (Bankstown) Pty Limited (part of the wider Peninsula Motor Group):\n\n* 4K Central Pty Ltd proposes to acquire substantially all of the assets of the GAC, Suzuki, Isuzu UTE, MG, Hyundai, Kia and Holden motor vehicle dealerships located in Condell Park, NSW (together, the **Target dealerships**).\n* 4K Commercial Group Pty Ltd proposes to acquire the Hyundai Trucks Australia and Peninsula Hyundai Trucks businesses.\n\n4K Automotive Group is an Australian automotive retail group operating 10 motor vehicle dealerships across seven different locations in NSW\u00a0(the **4K Dealerships**). The 4K Dealerships are authorised dealers of Toyota, BMW, Hyundai, Kia, Geely, Volkswagen and Lexus and supply new and used vehicles, vehicle servicing, repairs and spare parts.\n\nThe Target dealerships supply new and used vehicles, vehicle servicing, repairs and spare parts. Hyundai Trucks Australia imports and wholesale supplies new Hyundai internal combustion engine (ICE) trucks. The Peninsula Hyundai Trucks business supplies new Hyundai ICE trucks on a retail basis, as well as vehicle servicing, repairs and spare parts.\n\nBoth 4K Automotive Group and the Target dealerships overlap in the supply of new and used vehicles, vehicle servicing, repairs and spare parts, in southwest Sydney, NSW.",
+      "events": [
+        {
+          "date": "2026-10-28T12:00:00Z",
+          "title": "Questionnaire",
+          "display_title": "Questionnaire",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/%20Peninsula%20Motor%20Group%20-%20Questionnaire%20-%20October%202026.docx",
+          "url_gh": "/mergers/MN-20044/Peninsula Motor Group - Questionnaire - October 2026.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-10-27T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-85017",
+          "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+          "acquirers": [
+            "MANDURAH AUTO GROUP PTY LTD",
+            "PEEL MOTOR GROUP PTY LTD"
+          ],
+          "targets": [
+            "WA AUTOMOTIVE PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-25001",
+          "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
+          "acquirers": [
+            "ALBANY MOTORS PTY LTD"
+          ],
+          "targets": [
+            "Esperance Motor Group Pty Ltd",
+            "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-05045",
+          "merger_name": "Grafton Motor Group \u2013 Grafton Mazda",
+          "acquirers": [
+            "GTOWN MOTORS PTY LTD"
+          ],
+          "targets": [
+            "KEN CASSON MOTORS PTY. LIMITED"
+          ],
+          "accc_determination": "Not approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 187,
+        "as_of": "2026-10-27",
+        "estimated_at": "2026-10-28",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 30,
+        "min_days": null,
+        "max_days": 64,
         "id_issued_estimated": "2026-09-27",
         "id_issued_before": null,
         "id_issued_after": "2026-08-24",

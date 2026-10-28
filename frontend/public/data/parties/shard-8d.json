@@ -2,6 +2,42 @@
   "shard": 141,
   "shard_count": 256,
   "parties": {
+    "clintons-motors-pty-limited": {
+      "id": "clintons-motors-pty-limited",
+      "canonical_name": "Clintons Motors Pty Limited",
+      "members": [
+        {
+          "name": "CLINTONS MOTORS PTY LIMITED",
+          "identifier": "92 008 444 844",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20044",
+            "merger_name": "4K Automotive Group \u2013 Peninsula Motor Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-27T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "exterran-thailand-ltd": {
       "id": "exterran-thailand-ltd",
       "canonical_name": "Exterran (Thailand) Ltd",

@@ -338,6 +338,42 @@
         "completed_count": 1
       }
     },
+    "oltoy-pty-limited": {
+      "id": "oltoy-pty-limited",
+      "canonical_name": "Oltoy Pty Limited",
+      "members": [
+        {
+          "name": "OLTOY PTY LIMITED",
+          "identifier": "65 075 865 548",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20044",
+            "merger_name": "4K Automotive Group \u2013 Peninsula Motor Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-27T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "online-education-services-pty-ltd": {
       "id": "online-education-services-pty-ltd",
       "canonical_name": "Online Education Services Pty Ltd",

@@ -2,6 +2,42 @@
   "shard": 236,
   "shard_count": 256,
   "parties": {
+    "4k-commercial-group-pty-ltd": {
+      "id": "4k-commercial-group-pty-ltd",
+      "canonical_name": "4K Commercial Group Pty Ltd",
+      "members": [
+        {
+          "name": "4K COMMERCIAL GROUP PTY LTD",
+          "identifier": "71 701 798 745",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20044",
+            "merger_name": "4K Automotive Group \u2013 Peninsula Motor Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-27T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "airtrunk-syd3-pty-ltd": {
       "id": "airtrunk-syd3-pty-ltd",
       "canonical_name": "Airtrunk Syd3 Pty Ltd",
