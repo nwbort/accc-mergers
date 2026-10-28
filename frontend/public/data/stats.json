@@ -3,12 +3,12 @@
   "total_waivers": 484,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 259,
-    "Under assessment": 43,
+    "Assessment completed": 260,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 252,
+    "Approved": 253,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 257,
+    "cleared": 258,
     "not_cleared": 2,
-    "total": 259,
+    "total": 260,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.467924528301886,
-    "median_days": 26,
-    "average_business_days": 20.037735849056602,
-    "median_business_days": 18,
+    "average_days": 29.458646616541355,
+    "median_days": 26.0,
+    "average_business_days": 20.030075187969924,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 58,
-        "percentage": 21.9
+        "percentage": 21.8
       },
       "day20": {
-        "count": 192,
-        "percentage": 72.5
+        "count": 193,
+        "percentage": 72.6
       },
       "day30": {
-        "count": 248,
+        "count": 249,
         "percentage": 93.6
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-25053",
+      "merger_name": "Altius \u2013 Converge International",
+      "determination": "Approved",
+      "determination_date": "2026-10-28T12:00:00Z",
+      "page_modified_datetime": "2026-10-28T09:50:39+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-55041",
       "merger_name": "Thoma Bravo \u2013 Accelerant Holdings",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-45029",
-      "merger_name": "Schreiber Foods \u2013 Real Dairy Australia",
-      "determination": "Approved",
-      "determination_date": "2026-10-26T12:00:00Z",
-      "page_modified_datetime": "2026-10-26T15:02:22+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
