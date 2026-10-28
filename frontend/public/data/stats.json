@@ -1,10 +1,10 @@
 {
-  "total_mergers": 308,
+  "total_mergers": 309,
   "total_waivers": 488,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 262,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -67,16 +67,16 @@
       "count": 80
     },
     {
+      "name": "Non-Residential Property Operators",
+      "count": 47
+    },
+    {
       "name": "Software Publishing",
       "count": 47
     },
     {
-      "name": "Non-Residential Property Operators",
-      "count": 46
-    },
-    {
       "name": "Pubs, Taverns and Bars",
-      "count": 40
+      "count": 41
     },
     {
       "name": "Accommodation",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-45028",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Penrith, NSW",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-28T12:00:00Z",
+      "page_modified_datetime": "2026-10-29T09:27:37+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-20044",
       "merger_name": "4K Automotive Group \u2013 Peninsula Motor Group",
@@ -205,16 +215,6 @@
       "page_modified_datetime": "2026-10-19T15:24:50+11:00",
       "is_waiver": false,
       "is_refiled": true
-    },
-    {
-      "merger_id": "MN-01126",
-      "merger_name": "IPLiving - Springwood Living Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-19T12:00:00Z",
-      "page_modified_datetime": "2026-10-19T13:44:24+11:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
