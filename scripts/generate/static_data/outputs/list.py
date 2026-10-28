@@ -108,6 +108,10 @@ def _lightweight(m: dict) -> dict:
     appeal = _appeal_summary(m)
     if appeal:
         entry["appeal"] = appeal
+    # The Federal Court twin of under_appeal. Carried only while true, as it
+    # is so rare, so the ordinary entry is no larger.
+    if m.get('under_judicial_review'):
+        entry["under_judicial_review"] = True
     # A matter that has moved on from Phase 2 to the public benefit phase no
     # longer says "Phase 2" in its stage, but the list's Phase 2 filter should
     # still find it. Carried only where the stage doesn't already say so, so

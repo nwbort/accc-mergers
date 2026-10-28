@@ -281,13 +281,17 @@ def _appeals(merger: dict) -> list[dict]:
         _set(entry, "outcome", appeal.get("outcome"))
         out.append(entry)
 
-    review = merger.get("judicial_review") or {}
-    if review:
+    # One entry per Federal Court file, likewise. A detail file generated
+    # before ``judicial_reviews`` existed has only ``judicial_review``.
+    reviews = merger.get("judicial_reviews") or [r for r in [merger.get("judicial_review")] if r]
+    for review in reviews:
         entry = {"forum": "federal-court-of-australia"}
         _set(entry, "caseNumber", review.get("case_number"))
         _set(entry, "caseUrl", review.get("case_url"))
         _set(entry, "applicant", review.get("applicant"))
         _set(entry, "filedOn", _date(review.get("filed_date")))
+        _set(entry, "status", review.get("status"))
+        _set(entry, "outcome", review.get("outcome"))
         out.append(entry)
 
     return out

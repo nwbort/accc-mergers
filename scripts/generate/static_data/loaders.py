@@ -2,7 +2,7 @@
 
 import json
 
-from scripts.constants import tribunal
+from scripts.constants import judicial_review, tribunal
 from scripts.merger_filters import load_mergers as _load_mergers
 from scripts.paths import REPO_ROOT
 
@@ -155,8 +155,10 @@ def load_tribunal_appeals() -> dict:
 def load_judicial_reviews() -> dict:
     """Load Federal Court judicial review data from judicial_reviews.json.
 
-    Returns a dict keyed by merger_id mapping to the judicial review record
-    (applicant, filed date, case number, case URL). Metadata keys (starting
+    Returns a dict keyed by merger_id mapping to the list of Federal Court
+    files filed against that merger (each with applicant, filed date, case
+    number, case URL and, once scraped, the portal block) — see
+    ``constants.judicial_review.review_records``. Metadata keys (starting
     with ``_``) are stripped. Returns an empty dict if the file is missing or
     malformed.
     """
@@ -166,7 +168,11 @@ def load_judicial_reviews() -> dict:
     try:
         with open(JUDICIAL_REVIEWS_JSON, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        return {k: v for k, v in data.items() if not k.startswith('_')}
+        return {
+            k: judicial_review.review_records(v)
+            for k, v in data.items()
+            if not k.startswith('_')
+        }
     except (json.JSONDecodeError, IOError) as e:
         print(f"Warning: Could not load judicial_reviews.json: {e}")
         return {}

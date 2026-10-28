@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { API_ENDPOINTS } from '../config';
 import { MERGER_STATUS } from '../constants/mergerStatus';
+import { JUDICIAL_REVIEW_STATUS } from '../constants/judicialReview';
 import { pingFeatureEvent, trackIndustryEvent, trackMergerEvent } from '../utils/trackEvent';
 import { fetchIndustryNode } from '../utils/industryNode';
 
@@ -346,6 +347,35 @@ export function TrackingProvider({ children }) {
                 tribunal_number: merger.appeal.tribunal_number,
               });
             }
+          }
+
+          // Federal Court hearings on a live judicial review, the same way and
+          // for the same reason: read off the court's listings, only those
+          // someone attends (`hearing`), with no look-ahead window (mirrors
+          // upcoming_events.py).
+          if (merger.under_judicial_review) {
+            (merger.judicial_reviews || []).forEach((review) => {
+              if (review.status === JUDICIAL_REVIEW_STATUS.CONCLUDED) return;
+              (review.listings || []).forEach((listing) => {
+                if (!listing.hearing || !listing.date) return;
+                if (new Date(listing.date) <= now) return;
+                syntheticUpcomingEvents.push({
+                  type: 'federal_court_hearing',
+                  event_type_display: 'Federal Court hearing',
+                  display_title: 'Federal Court hearing',
+                  title: 'Federal Court hearing',
+                  date: listing.date,
+                  merger_id: merger.merger_id,
+                  merger_name: merger.merger_name,
+                  status: merger.status,
+                  stage: merger.stage,
+                  effective_notification_datetime: merger.effective_notification_datetime,
+                  is_waiver: merger.is_waiver,
+                  case_number: review.case_number,
+                  hearing_reason: listing.reason,
+                });
+              });
+            });
           }
 
           // Skip if already determined, a waiver, or assessment is no longer active.

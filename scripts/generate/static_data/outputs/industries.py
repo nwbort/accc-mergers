@@ -223,6 +223,8 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             # A Tribunal appeal sits on top of the ACCC outcome rather than
             # replacing it, so the list shows it as its own badge beside it.
             "under_appeal": bool(m.get('under_appeal')),
+            # Its Federal Court twin, carried only while true (it is rare).
+            **({"under_judicial_review": True} if m.get('under_judicial_review') else {}),
             "phase": classify_phase(m),
             # Dates that drive industry-level "follow" notifications: a merger
             # being filed in the industry and its determination being published.

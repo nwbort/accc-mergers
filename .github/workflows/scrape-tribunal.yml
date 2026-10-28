@@ -6,12 +6,18 @@ name: Scrape Tribunal
 # Chrome (headful, under Xvfb) via nodriver to solve it — which means this runs
 # unattended in CI, unlike the old curl-based scraper. See that script's
 # docstring and docs/deployment.md.
+#
+# Then does the same for Federal Court judicial reviews: each
+# judicial_reviews.json record's portal block, from the Commonwealth Courts
+# Portal (scripts/scrape/scrape_federal_court.py). The portal itself is plain
+# HTTP; only its judgments (judgments.fedcourt.gov.au) need the Chrome set up
+# here, and the same downloader the tribunal scraper uses for its decisions.
 
 on:
   workflow_dispatch:
     inputs:
       merger_ids:
-        description: 'Optional space-separated merger_ids to scrape (default: all with a tribunal_url)'
+        description: 'Optional space-separated merger_ids to scrape (default: all with a tribunal_url or Federal Court case)'
         required: false
         default: ''
       save_pages:
@@ -102,6 +108,17 @@ jobs:
         read -ra merger_ids <<< "$MERGER_IDS"
         xvfb-run -a python -m scripts.scrape.scrape_tribunal "${merger_ids[@]}"
 
+    - name: Run the Federal Court scraper
+      # Runs even if the tribunal scrape failed: the two are independent, and
+      # each leaves a file it couldn't fetch untouched. Chrome only starts if
+      # there is a judgment not yet mirrored.
+      if: ${{ !cancelled() }}
+      env:
+        MERGER_IDS: ${{ inputs.merger_ids }}
+      run: |
+        read -ra merger_ids <<< "$MERGER_IDS"
+        xvfb-run -a python -m scripts.scrape.scrape_federal_court "${merger_ids[@]}"
+
     - name: Upload fetched tribunal pages
       # The tribunal site is behind Cloudflare, so the page as the scraper saw
       # it can't be re-fetched afterwards with curl. Keep it, so a run that
@@ -144,13 +161,13 @@ jobs:
       run: |-
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add data/processed/tribunal_appeals.json data/raw/matters
+        git add data/processed/tribunal_appeals.json data/processed/judicial_reviews.json data/raw/matters
         if git diff --staged --quiet; then
           echo "No changes to commit"
           echo "committed=false" >> "$GITHUB_OUTPUT"
           exit 0
         fi
-        git commit -m "Update scraped tribunal data: $(TZ='Australia/Sydney' date)"
+        git commit -m "Update scraped tribunal and Federal Court data: $(TZ='Australia/Sydney' date)"
         git pull --rebase || { git rebase --abort; exit 1; }
         git push
         echo "committed=true" >> "$GITHUB_OUTPUT"

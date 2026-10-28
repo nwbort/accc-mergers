@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { flushSync } from 'react-dom';
 import { useParams, useNavigate, useLocation, Link } from 'react-router';
-import { FaChevronLeft, FaLink, FaComment, FaGavel, FaBalanceScale } from 'react-icons/fa';
+import { FaChevronLeft, FaLink, FaComment, FaGavel } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
@@ -17,6 +17,7 @@ import DeterminationExplanationSection from '../components/DeterminationExplanat
 import Phase2NoticeMattersSection from '../components/Phase2NoticeMattersSection';
 import MergerTimeline from '../components/MergerTimeline';
 import MergerOutcomeHeading from '../components/MergerOutcomeHeading';
+import JudicialReviewCard from '../components/JudicialReviewCard';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDateMedium, formatDateLong } from '../utils/dates';
@@ -30,6 +31,7 @@ import { getDecidedOutcome, getHeaderStatus, getPhaseStatus, getDeterminationDoc
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { RESTORE_LIST_POSITION_STATE } from '../utils/mergerListPosition';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS, APPEAL_OUTCOME_LABELS } from '../constants/appeal';
+import { REVIEW_FORUM_FEDERAL_COURT, judicialReviewsOf, judicialReviewState } from '../constants/judicialReview';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
 import {
   getAppealFadeAccent,
@@ -61,12 +63,14 @@ function appealDocumentUrl(appeal) {
   return document?.url_gh ?? document?.url ?? appeal.tribunal_url;
 }
 
-// Tribunal appeal documents tend to arrive in a burst and clutter the
-// timeline. When more than two land back-to-back (most recent first, since
-// sortedEvents is date-descending), keep only the newest one visible and
-// collapse the rest behind a toggle. appealRunLength maps the run's start
-// index to its size; appealRunStart maps every other member of that run back
-// to the start index so it can be hidden until expanded.
+// Tribunal appeal and Federal Court documents tend to arrive in a burst and
+// clutter the timeline. When more than two land back-to-back (most recent
+// first, since sortedEvents is date-descending), keep only the newest one
+// visible and collapse the rest behind a toggle. Both forums' documents count
+// towards one run, since they interleave by date when a decision is before
+// both at once. appealRunLength maps the run's start index to its size;
+// appealRunStart maps every other member of that run back to the start index
+// so it can be hidden until expanded.
 function findAppealRuns(sortedEvents) {
   const appealRunLength = new Map();
   const appealRunStart = new Map();
@@ -81,6 +85,15 @@ function findAppealRuns(sortedEvents) {
     i = j - 1;
   }
   return { appealRunLength, appealRunStart };
+}
+
+// What a collapsed run's toggle calls the documents it hides, by where they
+// were filed.
+function reviewDocumentsLabel(events) {
+  const federalCourt = events.some((e) => e.review_forum === REVIEW_FORUM_FEDERAL_COURT);
+  const tribunal = events.some((e) => e.review_forum !== REVIEW_FORUM_FEDERAL_COURT);
+  if (federalCourt && tribunal) return 'Tribunal and Federal Court documents';
+  return federalCourt ? 'Federal Court documents' : 'tribunal appeal documents';
 }
 
 // How long a row reached from a notification link stays highlighted.
@@ -285,7 +298,13 @@ function MergerDetail() {
     timelineRows.push({ type: 'event', event: sortedEvents[i], idx: i });
     const runLength = appealRunLength.get(i);
     if (runLength) {
-      timelineRows.push({ type: 'appeal-toggle', idx: i, runLength, expanded: expandedAppealRuns.has(i) });
+      timelineRows.push({
+        type: 'appeal-toggle',
+        idx: i,
+        runLength,
+        expanded: expandedAppealRuns.has(i),
+        documentsLabel: reviewDocumentsLabel(sortedEvents.slice(i + 1, i + runLength)),
+      });
     }
   }
 
@@ -333,8 +352,9 @@ function MergerDetail() {
   // is contested rather than settled. Keyed off the appeal, not the outcome: a
   // third party appealing a clearance is as unsettled as a party appealing a
   // refusal, and a live matter with something short of a final determination
-  // under appeal gets the same fade from its own colour.
-  const appealFade = merger.under_appeal ? headerStyle : null;
+  // under appeal gets the same fade from its own colour. A live Federal Court
+  // judicial review contests the decision just as much, so it fades the same.
+  const appealFade = merger.under_appeal || merger.under_judicial_review ? headerStyle : null;
   const headerBlockStyle = getAppealFadeStyle(appealFade);
   // Kept for the rare matter carrying a determination that getDecidedOutcome
   // doesn't recognise as an ending; otherwise the header block is the only
@@ -352,6 +372,10 @@ function MergerDetail() {
     ? merger.appeals
     : (merger.appeal ? [merger.appeal] : []);
   const severalMatters = tribunalMatters.length > 1;
+  // Likewise one entry per Federal Court file.
+  const judicialReviews = judicialReviewsOf(merger);
+  const severalReviews = judicialReviews.length > 1;
+  const reviewFields = (tribunalMatters.length > 0 ? 1 : 0) + (judicialReviews.length > 0 ? 1 : 0);
 
   // Built by the same helper the build-time prerenderer uses, so the raw HTML
   // crawlers read and the head React renders here cannot drift apart.
@@ -485,9 +509,9 @@ function MergerDetail() {
 
           {/* Determination & appeal. The stage that used to lead this row
               now rides on the status line above the title. */}
-          {(showDeterminationField || tribunalMatters.length > 0) && (
+          {(showDeterminationField || reviewFields > 0) && (
             <div className={`grid grid-cols-1 ${
-              showDeterminationField && tribunalMatters.length > 0 ? 'md:grid-cols-2' : 'md:grid-cols-1'
+              (showDeterminationField ? 1 : 0) + reviewFields > 1 ? 'md:grid-cols-2' : 'md:grid-cols-1'
             } gap-6 mt-6 pt-6 border-t border-gray-100`}>
               {showDeterminationField && (
                 <div>
@@ -535,6 +559,40 @@ function MergerDetail() {
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
                               aria-label={`View this matter on the Australian Competition Tribunal website${appeal.tribunal_number ? ` (${appeal.tribunal_number})` : ''}: ${state}`}
+                            >
+                              {text}
+                              <ExternalLinkIcon />
+                            </a>
+                          ) : (
+                            text
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+              {judicialReviews.length > 0 && (
+                <div>
+                  <h2 className={`${SECTION_HEADING} mb-1.5`}>
+                    {severalReviews ? 'Judicial reviews' : 'Judicial review'}
+                  </h2>
+                  <ul className="space-y-1">
+                    {judicialReviews.map((review, i) => {
+                      const state = judicialReviewState(review);
+                      // As for the Tribunal: with several files, each says which it is.
+                      const text = severalReviews && review.case_number
+                        ? `${review.case_number}: ${state}`
+                        : state;
+                      return (
+                        <li key={review.case_number || i} className="text-sm font-medium text-gray-900">
+                          {review.case_url ? (
+                            <a
+                              href={review.case_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
+                              aria-label={`View this file on the Commonwealth Courts Portal${review.case_number ? ` (${review.case_number})` : ''}: ${state}`}
                             >
                               {text}
                               <ExternalLinkIcon />
@@ -617,33 +675,13 @@ function MergerDetail() {
           );
         })}
 
-        {/* Judicial review link — a Federal Court review is a separate avenue
-            from a Tribunal appeal, so this links straight to the court's own
-            case page on the Commonwealth Courts Portal rather than to any
-            locally-hosted document. */}
-        {merger.judicial_review?.case_url && (
-          <a
-            href={merger.judicial_review.case_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-amber-50/80 rounded-2xl border border-amber-200/60 shadow-card p-4 mb-6 hover:bg-amber-50 hover:border-amber-300/60 transition-all group"
-            aria-label={`View the judicial review case${merger.judicial_review.applicant ? ` requested by ${merger.judicial_review.applicant}` : ''} on the Commonwealth Courts Portal`}
-          >
-            <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
-              <FaBalanceScale className="h-4 w-4 text-amber-600" aria-hidden="true" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-900">
-                {merger.judicial_review.applicant ? `Judicial review requested by ${merger.judicial_review.applicant}` : 'Judicial review requested'}
-                {merger.judicial_review.filed_date ? ` on ${formatDateLong(merger.judicial_review.filed_date)}` : ''}
-              </p>
-              <p className="text-xs text-gray-500 mt-0.5">
-                {merger.judicial_review.case_number}
-              </p>
-            </div>
-            <ExternalLinkIcon className="h-3.5 w-3.5 text-amber-600 flex-shrink-0" />
-          </a>
-        )}
+        {/* Federal Court judicial reviews, one card per file, below the
+            Tribunal's and built the same way: the card links the file on the
+            Courts Portal, and everything that has happened on it (listings,
+            orders, judgments, documents filed) is on the timeline. */}
+        {judicialReviews.map((review, i) => (
+          <JudicialReviewCard key={review.case_number || i} review={review} />
+        ))}
 
         {/* Determination explanation (waivers and Phase 1 approved notifications) */}
         <DeterminationExplanationSection merger={merger} />
@@ -782,8 +820,8 @@ function MergerDetail() {
                                 aria-expanded={row.expanded}
                               >
                                 {row.expanded
-                                  ? 'Show fewer tribunal appeal documents'
-                                  : `Show ${row.runLength - 1} more tribunal appeal documents`}
+                                  ? `Show fewer ${row.documentsLabel}`
+                                  : `Show ${row.runLength - 1} more ${row.documentsLabel}`}
                               </button>
                             </div>
                           </div>
@@ -818,13 +856,18 @@ function MergerDetail() {
                           <p className="text-xs text-gray-500 mt-0.5">
                             {formatDateMedium(event.date)}
                           </p>
-                          {event.is_appeal && (event.appeal_filed_by || event.appeal_confidentiality) && (
+                          {event.is_appeal && (event.appeal_filed_by || event.appeal_confidentiality || event.court_outcome) && (
                             <p className="text-xs text-gray-500 mt-0.5">
                               {[
                                 event.appeal_filed_by,
                                 event.appeal_confidentiality,
-                                // Which matter, when there is more than one.
-                                severalMatters ? event.tribunal_number : null,
+                                // A Federal Court listing's outcome, on it and
+                                // on the orders or judgment made at it.
+                                event.court_outcome,
+                                // Which matter or file, when there is more than one.
+                                event.review_forum === REVIEW_FORUM_FEDERAL_COURT
+                                  ? (severalReviews ? event.case_number : null)
+                                  : (severalMatters ? event.tribunal_number : null),
                               ].filter(Boolean).join(' · ')}
                             </p>
                           )}

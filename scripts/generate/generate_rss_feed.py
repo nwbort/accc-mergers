@@ -47,10 +47,12 @@ def collect_feed_entries(mergers: list) -> list:
             entry_id = f"{merger_url}#{date}-{id_title[:50]}"
             # Two tribunal matters on one merger can each file the same
             # document on the same day (the ACCC's notice of address for
-            # service, say). Only the later of a clashing pair takes its
-            # matter's number, so no existing entry's id moves.
-            if entry_id in seen_ids and event.get('tribunal_number'):
-                entry_id = f"{entry_id}-{event['tribunal_number']}"
+            # service, say), as can two Federal Court files. Only the later
+            # of a clashing pair takes its matter's number, so no existing
+            # entry's id moves.
+            matter_number = event.get('tribunal_number') or event.get('case_number')
+            if entry_id in seen_ids and matter_number:
+                entry_id = f"{entry_id}-{matter_number}"
             seen_ids.add(entry_id)
             entries.append({
                 "title": f"{merger_name}: {title}",

@@ -107,6 +107,17 @@ describe('MergerOutcomeHeading', () => {
     expect(screen.getByText('Under appeal')).toBeInTheDocument();
   });
 
+  it('sets a live judicial review as a second status, like an appeal', () => {
+    render(
+      <MergerOutcomeHeading
+        merger={{ ...completed, accc_determination: 'Not approved', under_judicial_review: true }}
+      />
+    );
+    expect(screen.getByText('Not approved')).toBeInTheDocument();
+    expect(screen.getByText('Under judicial review')).toBeInTheDocument();
+    expect(screen.queryByText('Under appeal')).not.toBeInTheDocument();
+  });
+
   it('says nothing about an appeal that has finished and left no mark', () => {
     render(<MergerOutcomeHeading merger={completed} />);
     expect(screen.queryByText('Under appeal')).not.toBeInTheDocument();

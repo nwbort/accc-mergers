@@ -70,18 +70,22 @@ def current_card(matter: dict) -> str | None:
 
     Latest by date, ties going to the later milestone in ``milestones()``'s
     own order (ceased after notified on the same day); an undated
-    determination sorts last, as it does in the posting queue. A Tribunal
-    review only counts while it is still running: once it concludes, the card
-    falls back to the determination it was about.
+    determination sorts last, as it does in the posting queue. A Tribunal or
+    Federal Court review only counts while it is still running: once it
+    concludes, the card falls back to the determination it was about.
     """
     found = [
         m for m in milestones(matter)
-        if not (_kind(m) == "tribunal" and not matter.get("under_appeal"))
+        if not (_kind(m) in _LIVE_FLAGS and not matter.get(_LIVE_FLAGS[_kind(m)]))
     ]
     if not found:
         return None
     _, latest = max(enumerate(found), key=lambda pair: (pair[1].date, pair[0]))
     return card_for(latest)
+
+
+# Review milestones, and the flag that says the review is still running.
+_LIVE_FLAGS = {"tribunal": "under_appeal", "judicial-review": "under_judicial_review"}
 
 
 def _kind(milestone: Milestone) -> str:

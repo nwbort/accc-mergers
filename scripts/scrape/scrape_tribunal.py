@@ -1289,6 +1289,23 @@ async def _resolve_redirect(tab, link: str) -> str | None:
 async def download_judgment(browser, merger_id: str, url: str) -> str | None:
     """Mirror the file behind a tribunal-decisions wrapper ``url``.
 
+    The wrapper names a Federal Court judgment page; see
+    :func:`download_judgment_page`, which does the work. Returns ``url_gh``,
+    or None if ``url`` isn't a wrapper or the file couldn't be fetched.
+    """
+    page_url = judgment_page_url(url)
+    if page_url is None:
+        return None
+    print(f"    Following decision {url} to {page_url}", flush=True)
+    return await download_judgment_page(browser, merger_id, page_url)
+
+
+async def download_judgment_page(browser, merger_id: str, page_url: str) -> str | None:
+    """Mirror the file behind a Federal Court judgment page.
+
+    Shared with :mod:`scripts.scrape.scrape_federal_court`, whose judgments
+    are linked straight to the page rather than through a tribunal wrapper.
+
     Works in a tab of its own, so the matter page the other documents are
     fetched from is left as it was:
 
@@ -1302,13 +1319,13 @@ async def download_judgment(browser, merger_id: str, url: str) -> str | None:
 
     Saved under ``data/raw/matters/{merger_id}/`` like any other document; a
     DOCX is converted to PDF by the pipeline, so ``url_gh`` names the PDF.
-    Returns ``url_gh``, or None if the file couldn't be fetched.
+    Returns ``url_gh``, or None if the file couldn't be fetched (including a
+    judgment that isn't published yet, which the next run retries).
     """
-    page_url = judgment_page_url(url)
-    if page_url is None:
+    if not is_judgment_host_url(page_url):
+        print(f"    Warning: {page_url} is not a Federal Court https URL", file=sys.stderr)
         return None
 
-    print(f"    Following decision {url} to {page_url}", flush=True)
     side_tab = None
     try:
         side_tab = await _with_timeout(
@@ -1377,7 +1394,7 @@ async def download_judgment(browser, merger_id: str, url: str) -> str | None:
             print(f"    Downloaded {filename}")
         return f"/mergers/{merger_id}/{get_serve_filename(filename)}"
     except Exception as e:
-        print(f"    Warning: following {url} failed: {e}", file=sys.stderr)
+        print(f"    Warning: following {page_url} failed: {e}", file=sys.stderr)
         return None
     finally:
         if side_tab is not None:
@@ -1452,7 +1469,9 @@ def _apply_scraped(existing: dict, scraped: dict) -> dict:
     return merged
 
 
-def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
+def merge_documents(
+    existing: list[dict], scraped: list[dict], key=document_key
+) -> list[dict]:
     """Merge a freshly scraped document list onto the one already on file.
 
     The scraped list drives the contents and ordering, but the merge is
@@ -1469,19 +1488,22 @@ def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
 
     To drop a document for good, delete it from ``tribunal_appeals.json`` by
     hand — it will not come back unless the tribunal republishes it.
+
+    ``key`` identifies a document across runs; the Federal Court scraper
+    passes its own, since the portal's documents filed carry no link.
     """
     existing = list(existing or [])
-    scraped_by_key = {document_key(doc): doc for doc in scraped}
+    scraped_by_key = {key(doc): doc for doc in scraped}
 
     # Start from the scraped list, refreshed with anything we already held.
-    existing_by_key = {document_key(doc): doc for doc in existing}
+    existing_by_key = {key(doc): doc for doc in existing}
     merged = [
-        _apply_scraped(existing_by_key[document_key(doc)], doc)
-        if document_key(doc) in existing_by_key
+        _apply_scraped(existing_by_key[key(doc)], doc)
+        if key(doc) in existing_by_key
         else doc
         for doc in scraped
     ]
-    merged_index = {document_key(doc): i for i, doc in enumerate(merged)}
+    merged_index = {key(doc): i for i, doc in enumerate(merged)}
 
     # Walk the old list backwards re-inserting whatever the page dropped, each
     # one immediately before the nearest document that followed it and is still
@@ -1490,22 +1512,22 @@ def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
     # since each insert lands at the same index as the one before it.
     anchor = len(merged)
     for doc in reversed(existing):
-        key = document_key(doc)
-        if key in scraped_by_key:
-            anchor = merged_index[key]
+        doc_key = key(doc)
+        if doc_key in scraped_by_key:
+            anchor = merged_index[doc_key]
             continue
         merged.insert(anchor, doc)
-        merged_index = {document_key(d): i for i, d in enumerate(merged)}
+        merged_index = {key(d): i for i, d in enumerate(merged)}
 
     return merged
 
 
-def dropped_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
+def dropped_documents(
+    existing: list[dict], scraped: list[dict], key=document_key
+) -> list[dict]:
     """Return the documents on file that the scraped page no longer lists."""
-    scraped_keys = {document_key(doc) for doc in scraped}
-    return [
-        doc for doc in (existing or []) if document_key(doc) not in scraped_keys
-    ]
+    scraped_keys = {key(doc) for doc in scraped}
+    return [doc for doc in (existing or []) if key(doc) not in scraped_keys]
 
 
 def matter_label(merger_id: str, record: dict) -> str:

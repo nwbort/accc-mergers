@@ -5,10 +5,11 @@ All downstream generators consume the already-enriched objects.
 """
 
 import re
-from datetime import timedelta
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 from scripts import document_versions, stage_determinations
-from scripts.constants import merger_status, tribunal
+from scripts.constants import judicial_review, merger_status, tribunal
 from scripts.cutoff import is_waiver_merger
 from scripts.date_utils import parse_iso_datetime
 from scripts.normalization import normalize_determination
@@ -922,17 +923,183 @@ def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
     return linked
 
 
-def link_judicial_reviews(enriched_mergers: list, judicial_reviews: dict) -> int:
+# Federal Court review events are labelled with this prefix on the timeline,
+# as tribunal ones are with "Tribunal appeal –".
+JUDICIAL_REVIEW_EVENT_PREFIX = 'Federal Court'
+
+# Timeline events and the detail page carry this as ``review_forum`` on
+# Federal Court events, so they can be told apart from tribunal ones (which
+# share ``is_appeal``, and with it the collapsed runs and the link-based
+# notification keys).
+REVIEW_FORUM_FEDERAL_COURT = 'federal_court'
+
+# "Today" for which listings have happened: the court sits in Australian time,
+# so a server-local date would run a day out (as in outputs/analysis.py).
+_SYDNEY = ZoneInfo('Australia/Sydney')
+
+
+def _judicial_review_event(
+    review: dict, title: str, date: str | None, filed_by: str | None = None,
+    url: str | None = None, url_gh: str | None = None, outcome: str | None = None,
+) -> dict:
+    """One timeline event from a Federal Court file.
+
+    ``filed_by`` is set only for a document filed; orders, judgments and
+    listings carry the listing's ``outcome`` instead ("Adjourned - For review
+    of progress"), never the judge.
+    """
+    display_title = f"{JUDICIAL_REVIEW_EVENT_PREFIX} – {title}"
+    return {
+        'date': _normalise_appeal_date(date),
+        'title': title,
+        'display_title': display_title,
+        # What the RSS id and the follow notifications key on (see
+        # _appeal_event); there is no hand comment here to keep it apart from.
+        'appeal_base_title': display_title,
+        'url': url,
+        'url_gh': url_gh,
+        'is_appeal': True,
+        'review_forum': REVIEW_FORUM_FEDERAL_COURT,
+        'appeal_filed_by': (filed_by or '').strip() or None,
+        'court_outcome': (outcome or '').strip() or None,
+        'case_number': review.get('case_number'),
+        'phase': None,
+    }
+
+
+def _judicial_review_events(review: dict, today: date | None = None) -> list[dict]:
+    """Everything that has happened on a Federal Court file, as timeline
+    events: each document filed, and each court listing up to ``today``.
+
+    Documents filed are a register only (the public can't download them), so
+    those events carry no link. A listing that made orders or delivered a
+    judgment is told by those documents, one event each with its link and the
+    listing's outcome; orders are titled by the listing they were made at,
+    except at a judgment listing, where the judgment beside them already says
+    so. Any other listing is an event of its own, titled by its reason
+    ("Administrative Listing"). Listings still to come are left to the
+    upcoming events (outputs.upcoming_events).
+    """
+    today = (today or datetime.now(_SYDNEY).date()).isoformat()
+    events = []
+    for app in (review.get('portal') or {}).get('applications') or []:
+        for doc in app.get('documents') or []:
+            events.append(_judicial_review_event(
+                review, doc.get('title') or 'Document filed', doc.get('date'),
+                filed_by=doc.get('filed_by'), url=doc.get('url'),
+            ))
+        for listing in app.get('events') or []:
+            if not listing.get('date') or listing['date'] > today:
+                continue
+            reason = (listing.get('reason') or '').strip()
+            outcome = listing.get('outcome')
+            orders = listing.get('orders') or []
+            judgments = listing.get('judgments') or []
+            if not orders and not judgments:
+                events.append(_judicial_review_event(
+                    review, reason or 'Court listing', listing['date'], outcome=outcome,
+                ))
+                continue
+            named = reason and reason.lower() != 'judgment'
+            for order in orders:
+                events.append(_judicial_review_event(
+                    review, f"Orders ({reason})" if named else 'Orders', listing['date'],
+                    url=order.get('url'), url_gh=order.get('url_gh'), outcome=outcome,
+                ))
+            for judgment in judgments:
+                citation = judgment.get('citation')
+                events.append(_judicial_review_event(
+                    review, f"Judgment {citation}" if citation else 'Judgment', listing['date'],
+                    url=judgment.get('url'), url_gh=judgment.get('url_gh'), outcome=outcome,
+                ))
+    return events
+
+
+def _judicial_review_listing(listing: dict) -> dict:
+    """A court listing as published, for the next hearing and the upcoming
+    events: no portal ids or judge, and flagged as a hearing or not so the
+    site needn't know the administrative listing rule. Its orders and
+    judgments are on the timeline instead."""
+    return {
+        'date': listing.get('date'),
+        'time': listing.get('time') or None,
+        'reason': listing.get('reason') or None,
+        'location': listing.get('location') or None,
+        'outcome': listing.get('outcome') or None,
+        'hearing': judicial_review.is_hearing(listing),
+    }
+
+
+def _judicial_review_record(review: dict) -> dict:
+    """One Federal Court file as published on a merger's ``judicial_reviews``.
+
+    The portal's parties (and their lawyers' contact details) are kept in
+    judicial_reviews.json but not published.
+    """
+    file = (review.get('portal') or {}).get('file') or {}
+    return {
+        'case_number': review.get('case_number') or file.get('number'),
+        'case_url': review.get('case_url') or file.get('url'),
+        'applicant': review.get('applicant'),
+        'filed_date': review.get('filed_date') or file.get('filing_date'),
+        'status': judicial_review.status(review),
+        'outcome': judicial_review.outcome(review),
+        'concluded_date': judicial_review.concluded_date(review),
+        'court': file.get('court'),
+        'listings': [_judicial_review_listing(e) for e in judicial_review.listings(review)],
+    }
+
+
+def summarise_judicial_reviews(records: list[dict]) -> dict:
+    """The merger-level ``judicial_review`` summary of its Federal Court files.
+
+    Keeps the original single-record shape (applicant, filed date, case
+    number, case URL) for everything that reads one review per merger, as
+    ``appeal`` does for tribunal matters: applicants and case numbers joined,
+    the earliest filing date, and current while any file is.
+    """
+    current = [r for r in records if r['status'] == judicial_review.STATUS_CURRENT]
+    concluded = sorted(
+        (r for r in records if r['status'] == judicial_review.STATUS_CONCLUDED),
+        key=lambda r: r.get('concluded_date') or '',
+    )
+    filed = sorted(r['filed_date'] for r in records if r.get('filed_date'))
+    last = concluded[-1] if concluded and not current else None
+    return {
+        'applicant': _join_names([r.get('applicant') for r in records]),
+        'filed_date': filed[0] if filed else None,
+        'case_number': _join_names([r.get('case_number') for r in records]),
+        'case_url': records[0].get('case_url'),
+        'status': judicial_review.STATUS_CURRENT if current else judicial_review.STATUS_CONCLUDED,
+        'outcome': last.get('outcome') if last else None,
+        'concluded_date': last.get('concluded_date') if last else None,
+    }
+
+
+def link_judicial_reviews(
+    enriched_mergers: list, judicial_reviews: dict, today: date | None = None
+) -> int:
     """Attach Federal Court judicial review data to mergers in-place.
 
-    For every merger with an entry in ``judicial_reviews`` (keyed by
-    merger_id), sets ``judicial_review`` to the review record (applicant,
-    filed date, case number, case URL) so a link-out card to the court's
-    Commonwealth Courts Portal case page can be rendered on the detail page.
+    ``judicial_reviews`` is keyed by merger_id, each entry the list of Federal
+    Court files against that merger (see
+    :func:`constants.judicial_review.review_records`). For every merger with
+    one:
 
-    Unlike tribunal appeals, no documents are scraped or mirrored, and no
-    lifecycle status is tracked — this is deliberately a much lighter overlay.
-    Returns the number of mergers linked.
+      * ``judicial_reviews`` holds one record per file (see
+        :func:`_judicial_review_record`), its status and outcome read off the
+        portal unless set by hand;
+      * ``judicial_review`` is the merger-level summary
+        (:func:`summarise_judicial_reviews`);
+      * ``under_judicial_review`` is True while any file is current, the
+        judicial review twin of ``under_appeal``; and
+      * every document filed, order, judgment and past court listing is
+        appended to ``events`` (see :func:`_judicial_review_events`), flagged
+        ``is_appeal`` (so it collapses with the tribunal's documents and is
+        keyed the same way) and ``review_forum: 'federal_court'``.
+
+    The ACCC-scraped status and determination are never touched. Returns the
+    number of mergers linked.
     """
     if not judicial_reviews:
         return 0
@@ -940,16 +1107,24 @@ def link_judicial_reviews(enriched_mergers: list, judicial_reviews: dict) -> int
     linked = 0
     for merger in enriched_mergers:
         mid = merger.get('merger_id', '')
-        review = judicial_reviews.get(mid)
-        if not review:
+        raw_records = judicial_review.review_records(judicial_reviews.get(mid))
+        if not raw_records:
             continue
 
-        merger['judicial_review'] = {
-            'applicant': review.get('applicant'),
-            'filed_date': review.get('filed_date'),
-            'case_number': review.get('case_number'),
-            'case_url': review.get('case_url'),
-        }
+        raw_records = sorted(
+            raw_records, key=lambda r: (r.get('filed_date') is None, r.get('filed_date') or '')
+        )
+        records = [_judicial_review_record(r) for r in raw_records]
+        merger['judicial_reviews'] = records
+        merger['judicial_review'] = summarise_judicial_reviews(records)
+        merger['under_judicial_review'] = any(
+            r['status'] == judicial_review.STATUS_CURRENT for r in records
+        )
+
+        review_events = [e for r in raw_records for e in _judicial_review_events(r, today)]
+        if review_events:
+            merger['events'] = list(merger.get('events') or []) + review_events
+
         linked += 1
     return linked
 

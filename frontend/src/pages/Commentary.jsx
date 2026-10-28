@@ -7,6 +7,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import StatusBadge from '../components/StatusBadge';
 import WaiverBadge from '../components/WaiverBadge';
 import AppealBadge from '../components/AppealBadge';
+import JudicialReviewBadge from '../components/JudicialReviewBadge';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
@@ -80,6 +81,7 @@ function Commentary() {
                       solid
                     />
                     {item.under_appeal && <AppealBadge solid />}
+                    {item.under_judicial_review && <JudicialReviewBadge solid />}
                     {item.is_waiver && <WaiverBadge solid />}
                   </div>
                   <Link

@@ -4,6 +4,7 @@ import StatusBadge from './StatusBadge';
 import TrackButton from './TrackButton';
 import WaiverBadge from './WaiverBadge';
 import AppealBadge from './AppealBadge';
+import JudicialReviewBadge from './JudicialReviewBadge';
 import RefiledBadge from './RefiledBadge';
 import { formatDate } from '../utils/dates';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
@@ -75,6 +76,7 @@ function MergerListCard({ merger, index, selected, tracked, onToggleTracking }) 
                 solid
               />
               {merger.under_appeal && <AppealBadge solid />}
+              {merger.under_judicial_review && <JudicialReviewBadge solid />}
               {merger.is_waiver && <WaiverBadge solid />}
               {merger.is_refiled && <RefiledBadge solid />}
             </div>

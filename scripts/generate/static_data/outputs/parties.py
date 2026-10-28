@@ -196,6 +196,8 @@ def _merger_summary(m: dict) -> dict:
         # A Tribunal appeal sits on top of the ACCC outcome rather than
         # replacing it, so the list shows it as its own badge beside it.
         'under_appeal': bool(m.get('under_appeal')),
+        # Its Federal Court twin, carried only while true (it is rare).
+        **({'under_judicial_review': True} if m.get('under_judicial_review') else {}),
         'phase': classify_phase(m),
         'notification_date': m.get('effective_notification_datetime') or m.get('original_notification_datetime'),
         'determination_date': m.get('determination_publication_date'),

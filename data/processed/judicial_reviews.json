@@ -1,9 +1,192 @@
 {
-  "_comment": "Manually-maintained Federal Court of Australia judicial review data, keyed by ACCC merger_id. Merged into the frontend data by scripts/static_data (see loaders.load_judicial_reviews and enrichment.link_judicial_reviews). Unlike tribunal_appeals.json, no documents are scraped or mirrored here — this is just enough to surface a link-out card to the court's own case page on the Commonwealth Courts Portal. Fields: applicant (who sought the review), filed_date (bare ISO 'YYYY-MM-DD'), case_number (the Federal Court file number, e.g. 'NSD1310/2026'), case_url (the Commonwealth Courts Portal case page, e.g. https://www.comcourts.gov.au/file/Federal/P/nsd1310/2026/actions). All fields are hand-maintained.",
-  "MN-01068": {
-    "applicant": "Coles",
-    "filed_date": "2026-07-17",
-    "case_number": "NSD1310/2026",
-    "case_url": "https://www.comcourts.gov.au/file/Federal/P/nsd1310/2026/actions"
-  }
+  "_comment": "Federal Court of Australia judicial review data, keyed by ACCC merger_id. Each value is a LIST of records, one per Federal Court file (a bare record is still read as a list of one, but write lists). Hand-maintained fields: applicant (who sought the review), filed_date (bare ISO 'YYYY-MM-DD'), case_number (the Federal Court file number, e.g. 'NSD1310/2026'), case_url (the file's Commonwealth Courts Portal page, e.g. https://www.comcourts.gov.au/file/Federal/P/nsd1310/2026/actions), and optionally status ('current' | 'concluded'), outcome (withdrawn / dismissed / set_aside — see scripts/constants/judicial_review.py) and concluded_date, which override what is derived from the portal. The 'portal' block is written by scripts/scrape/scrape_federal_court.py (the 'Scrape Tribunal' workflow) from the portal: file details, and per application its listings (with orders and judgments, mirrored under data/raw/matters/{merger_id}/ and recorded as url_gh), its documents filed and its parties (with contact details, which are not published to the site). Do not edit 'portal' by hand except to drop a document filed for good: they are merged additively. A record without a 'portal' block (not yet scraped) still renders from the hand fields. Merged into the frontend data by scripts/generate/static_data (loaders.load_judicial_reviews and enrichment.link_judicial_reviews): while any file is current the merger is 'under judicial review'; every document filed, order, judgment and past court listing becomes a timeline event, and upcoming hearings are upcoming events.",
+  "MN-01068": [
+    {
+      "applicant": "Coles",
+      "filed_date": "2026-07-17",
+      "case_number": "NSD1310/2026",
+      "case_url": "https://www.comcourts.gov.au/file/Federal/P/nsd1310/2026/actions",
+      "portal": {
+        "file": {
+          "court": "Federal Court of Australia, New South Wales Registry",
+          "number": "NSD1310/2026",
+          "title": "COLES SUPERMARKETS AUSTRALIA PTY LIMITED v AUSTRALIAN COMPETITION AND CONSUMER COMMISSION",
+          "filing_date": "2026-07-17",
+          "finalised_date": "2026-08-27",
+          "url": "https://www.comcourts.gov.au/file/Federal/P/NSD1310/2026/actions"
+        },
+        "applications": [
+          {
+            "title": "MISCELLANEOUS",
+            "type": "Judicial Review",
+            "filed": "2026-07-17",
+            "status": "Closed",
+            "finalised": "2026-08-27",
+            "level": 1,
+            "id": "4066335",
+            "events": [
+              {
+                "date": "2026-08-27",
+                "time": "8:30",
+                "reason": "Administrative Listing",
+                "presiding": "Justice O'Bryan",
+                "location": "Chambers",
+                "outcome": "Finalised - Discontinued/Withdrawn",
+                "event_id": "33079582",
+                "outcomes": [
+                  {
+                    "order_type": "Directions Orders",
+                    "decision_type": "Directions - free text order specific to case"
+                  }
+                ]
+              },
+              {
+                "date": "2026-08-07",
+                "time": "17:00",
+                "reason": "Administrative Listing",
+                "presiding": "Justice O'Bryan",
+                "location": "Chambers",
+                "outcome": "",
+                "event_id": "33079582"
+              },
+              {
+                "date": "2026-07-28",
+                "time": "13:00",
+                "reason": "Judgment",
+                "presiding": "Justice O'Bryan",
+                "location": "Chambers",
+                "outcome": "Adjourned - For review of progress",
+                "event_id": "33021628",
+                "orders": [
+                  {
+                    "title": "View orders",
+                    "url": "https://www.comcourts.gov.au/file/Federal/P/NSD1310/2026/4066335/event/33021628/document/2835642",
+                    "url_gh": "/mergers/MN-01068/P_NSD1310_2026_2835642.pdf"
+                  }
+                ],
+                "judgments": [
+                  {
+                    "citation": "[2026] FCA 1000",
+                    "url": "https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/2026/2026fca1000",
+                    "url_gh": "/mergers/MN-01068/2026FCA1000.pdf"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "order_type": "Directions Orders",
+                    "decision_type": "Directions - free text order specific to case"
+                  }
+                ]
+              },
+              {
+                "date": "2026-07-24",
+                "time": "10:00",
+                "reason": "Administrative Listing",
+                "presiding": "Justice O'Bryan",
+                "location": "Chambers",
+                "outcome": "Adjourned - Judgment Reserved",
+                "event_id": "33021628"
+              },
+              {
+                "date": "2026-07-21",
+                "time": "9:30",
+                "reason": "First Case Management Hearing",
+                "presiding": "Justice O'Bryan",
+                "location": "VIC - Remote",
+                "outcome": "Adjourned - For review of progress",
+                "event_id": "33006778",
+                "orders": [
+                  {
+                    "title": "View orders",
+                    "url": "https://www.comcourts.gov.au/file/Federal/P/NSD1310/2026/4066335/event/33006778/document/2829036",
+                    "url_gh": "/mergers/MN-01068/P_NSD1310_2026_2829036.pdf"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "order_type": "Directions Orders",
+                    "decision_type": "Directions - free text order specific to case"
+                  }
+                ]
+              }
+            ],
+            "documents": [
+              {
+                "date": "2026-08-25",
+                "time": "11:27",
+                "title": "Notice of Discontinuance",
+                "filed_by": "Coles Supermarkets Australia Pty Limited"
+              },
+              {
+                "date": "2026-07-20",
+                "time": "15:32",
+                "title": "Notice of Address for Service",
+                "filed_by": "Australian Competition and Consumer Commission"
+              },
+              {
+                "date": "2026-07-17",
+                "time": "14:05",
+                "title": "Applicant's Genuine Steps Statement",
+                "filed_by": "Coles Supermarkets Australia Pty Limited"
+              },
+              {
+                "date": "2026-07-17",
+                "time": "14:05",
+                "title": "Affidavit",
+                "filed_by": "Coles Supermarkets Australia Pty Limited"
+              },
+              {
+                "date": "2026-07-17",
+                "time": "14:05",
+                "title": "Originating Application for Judicial Review",
+                "filed_by": "Coles Supermarkets Australia Pty Limited"
+              }
+            ],
+            "parties": [
+              {
+                "role": "Respondent",
+                "name": "Australian Competition and Consumer Commission",
+                "end_date": ""
+              },
+              {
+                "role": "Legal Representative Respondent",
+                "name": "Australian Government Solicitor",
+                "end_date": "",
+                "contact": {
+                  "address": "Level 33 300 George St, BRISBANE 4000",
+                  "business_fax": "07 3360 5799",
+                  "business_phone": "07 3360 5600"
+                }
+              },
+              {
+                "role": "Applicant",
+                "name": "Coles Supermarkets Australia Pty Limited",
+                "end_date": ""
+              },
+              {
+                "role": "Legal Representative Applicant",
+                "name": "Herbert Smith Freehills Kramer",
+                "end_date": "",
+                "contact": {
+                  "address": "Level 22, 80 Collins Street, MELBOURNE 3000",
+                  "business_fax": "03 9288 1567",
+                  "business_phone": "03 9288 1234"
+                }
+              },
+              {
+                "role": "Provisional Docket",
+                "name": "National Operations Registrar",
+                "end_date": "2026-07-20"
+              },
+              {
+                "role": "Docket",
+                "name": "Justice O'Bryan",
+                "end_date": "2026-08-27"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }
