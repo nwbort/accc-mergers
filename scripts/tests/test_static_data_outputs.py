@@ -1284,6 +1284,37 @@ class TestCurrentStatus:
         assert all(w['notifications_filed'] == 0 for w in payload['windows'])
         assert all('waivers_filed' not in w for w in payload['windows'])
 
+    def test_windows_break_down_outcomes_and_phase_1_speed(self):
+        mergers = [
+            # Decided inside the 30-day window ending 15 Mar.
+            self._decided('MN-1', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z'),
+            {**self._decided('WA-1', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z', waiver=True),
+             'accc_determination': 'Not approved'},
+            # Decided in January: inside 90 days, outside 30.
+            self._decided('MN-2', '2026-01-02T00:00:00Z', '2026-02-10T00:00:00Z'),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+        by_days = {w['days']: w for w in payload['windows']}
+
+        assert by_days[30]['determinations'] == {
+            'phase_1': {'Approved': 1},
+            'phase_2': {},
+            'waivers': {'Not approved': 1},
+        }
+        assert by_days[90]['determinations']['phase_1'] == {'Approved': 2}
+        # MN-1 took 6 business days, MN-2 over 20: the same shape as
+        # stats.json's phase_duration.percentiles, over the window's reviews.
+        assert by_days[30]['phase_1_speed']['day15'] == {'count': 1, 'percentage': 100.0}
+        assert by_days[90]['phase_1_speed']['day15'] == {'count': 1, 'percentage': 50.0}
+
+    def test_a_window_with_no_phase_1_decisions_has_no_speed(self):
+        mergers = [self._decided('MN-1', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z')]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+        by_days = {w['days']: w for w in payload['windows']}
+
+        assert by_days[30]['phase_1_speed'] is None
+        assert by_days[30]['determinations']['phase_1'] == {}
+
     def _with_pre_notification(self, merger_id, filed, decided, days):
         merger = self._decided(merger_id, filed, decided)
         merger['pre_notification'] = {'estimated_days': days, 'basis': 'bracketed'}
