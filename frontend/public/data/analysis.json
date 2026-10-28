@@ -221,7 +221,7 @@
       },
       "14": {
         "18": 3,
-        "20": 13,
+        "20": 14,
         "21": 6,
         "22": 5,
         "24": 1
@@ -298,17 +298,17 @@
     },
     "stats": {
       "average": 14.1,
-      "median": 14,
+      "median": 14.0,
       "min": 2,
       "max": 24,
-      "count": 487
+      "count": 488
     },
     "calendar_stats": {
       "average": 20.7,
-      "median": 21,
+      "median": 21.0,
       "min": 2,
       "max": 39,
-      "count": 487
+      "count": 488
     }
   },
   "monthly_volume": {
@@ -342,7 +342,7 @@
       44,
       38,
       31,
-      37
+      38
     ],
     "waivers": [
       0,
@@ -358,7 +358,7 @@
       72,
       69,
       54,
-      11
+      12
     ],
     "waivers_pending_estimate": [
       0,
@@ -373,8 +373,8 @@
       0,
       0,
       0,
-      2,
-      45
+      1,
+      46
     ]
   },
   "open_caseload": {
@@ -410,27 +410,27 @@
       46,
       37,
       32,
-      41
+      42
     ],
-    "as_at": "2026-10-28"
+    "as_at": "2026-10-29"
   },
   "current_status": {
-    "as_at": "2026-10-28",
+    "as_at": "2026-10-29",
     "windows": [
       {
         "days": 30,
         "notifications_filed": 42,
         "notifications": {
-          "median": 17.5,
-          "average": 18.6,
-          "p90": 24,
+          "median": 18.0,
+          "average": 18.8,
+          "p90": 25,
           "min": 15,
           "max": 26,
-          "count": 30,
+          "count": 28,
           "duration_histogram": {
-            "15": 8,
+            "15": 7,
             "16": 2,
-            "17": 5,
+            "17": 4,
             "18": 2,
             "19": 2,
             "20": 2,
@@ -440,25 +440,24 @@
             "25": 2,
             "26": 1
           },
-          "median_delta": -0.5
+          "median_delta": 0.0
         },
         "waivers": {
           "median": 17.0,
-          "average": 16.4,
+          "average": 16.6,
           "p90": 22,
           "min": 3,
           "max": 24,
           "count": 60,
           "duration_histogram": {
             "3": 1,
-            "5": 1,
             "7": 1,
             "8": 2,
             "9": 2,
             "10": 1,
             "11": 2,
             "12": 2,
-            "14": 3,
+            "14": 4,
             "15": 5,
             "16": 8,
             "17": 3,
@@ -474,21 +473,21 @@
         },
         "phase_1_speed": {
           "day15": {
-            "count": 8,
-            "percentage": 26.7
+            "count": 7,
+            "percentage": 25.0
           },
           "day20": {
-            "count": 21,
-            "percentage": 70.0
+            "count": 19,
+            "percentage": 67.9
           },
           "day30": {
-            "count": 30,
+            "count": 28,
             "percentage": 100.0
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 30
+            "Approved": 28
           },
           "phase_2": {},
           "waivers": {
@@ -499,14 +498,14 @@
       },
       {
         "days": 90,
-        "notifications_filed": 106,
+        "notifications_filed": 107,
         "notifications": {
-          "median": 18.0,
-          "average": 20.7,
+          "median": 18,
+          "average": 20.5,
           "p90": 26,
           "min": 15,
           "max": 56,
-          "count": 110,
+          "count": 109,
           "duration_histogram": {
             "15": 19,
             "16": 13,
@@ -526,7 +525,6 @@
             "34": 1,
             "38": 2,
             "41": 1,
-            "44": 1,
             "49": 1,
             "52": 1,
             "56": 1
@@ -534,12 +532,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 18.0,
+          "median": 18,
           "average": 16.6,
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 188,
+          "count": 189,
           "duration_histogram": {
             "3": 1,
             "5": 1,
@@ -551,7 +549,7 @@
             "11": 7,
             "12": 6,
             "13": 6,
-            "14": 8,
+            "14": 9,
             "15": 15,
             "16": 16,
             "17": 13,
@@ -568,29 +566,29 @@
         "phase_1_speed": {
           "day15": {
             "count": 19,
-            "percentage": 17.3
+            "percentage": 17.4
           },
           "day20": {
             "count": 72,
-            "percentage": 65.5
+            "percentage": 66.1
           },
           "day30": {
             "count": 101,
-            "percentage": 91.8
+            "percentage": 92.7
           }
         },
         "determinations": {
           "phase_1": {
             "Approved": 105,
             "Referred to phase 2": 1,
-            "Approved with conditions": 4
+            "Approved with conditions": 3
           },
           "phase_2": {
             "Not approved": 2,
             "Assessment ceased": 1
           },
           "waivers": {
-            "Approved": 177,
+            "Approved": 178,
             "Not approved": 11
           }
         }
@@ -606,20 +604,20 @@
         "count": 268
       },
       "waivers": {
-        "median": 14,
+        "median": 14.0,
         "average": 14.1,
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 487
+        "count": 488
       }
     },
     "pre_notification": {
       "windows": [
         {
-          "median": 18.0,
-          "average": 21.3,
-          "p90": 38,
+          "median": 18.5,
+          "average": 21.9,
+          "p90": 41,
           "min": 9,
           "max": 74,
           "count": 42,
@@ -627,23 +625,23 @@
           "median_delta": 4.0
         },
         {
-          "median": 16.0,
-          "average": 18.7,
-          "p90": 36,
+          "median": 16,
+          "average": 18.9,
+          "p90": 38,
           "min": 0,
           "max": 74,
-          "count": 106,
+          "count": 107,
           "days": 90,
-          "median_delta": 2.0
+          "median_delta": 1.5
         }
       ],
       "all_time": {
-        "median": 14,
-        "average": 17.6,
+        "median": 14.5,
+        "average": 17.7,
         "p90": 35,
         "min": 0,
         "max": 112,
-        "count": 295
+        "count": 296
       }
     },
     "monthly": {
@@ -813,9 +811,9 @@
           "count": 60
         },
         {
-          "median": 17,
-          "average": 16.7,
-          "count": 57
+          "median": 17.0,
+          "average": 16.6,
+          "count": 58
         }
       ],
       "open_caseload": [
@@ -833,7 +831,7 @@
         46,
         37,
         32,
-        41
+        42
       ]
     }
   },
@@ -1021,9 +1019,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 38,
+      "count": 39,
       "outcome_mix": {
-        "Unknown": 38
+        "Unknown": 39
       },
       "median_business_days": null
     },
@@ -1047,12 +1045,12 @@
   "waiver_by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 412,
+      "count": 413,
       "outcome_mix": {
-        "Approved": 411,
+        "Approved": 412,
         "Not approved": 1
       },
-      "median_business_days": 14.0
+      "median_business_days": 14
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -1162,7 +1160,7 @@
       "approved": 21,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 5,
+      "in_progress": 6,
       "phase2_referral_rate": 0.087
     },
     {
@@ -1171,7 +1169,7 @@
       "approved": 32,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 6,
+      "in_progress": 7,
       "phase2_referral_rate": 0.086
     },
     {
@@ -1180,7 +1178,7 @@
       "approved": 41,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 10,
+      "in_progress": 11,
       "phase2_referral_rate": 0.047
     },
     {
@@ -1216,7 +1214,7 @@
       "approved": 78,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 14,
+      "in_progress": 15,
       "phase2_referral_rate": 0.025
     },
     {
@@ -1252,7 +1250,7 @@
       "approved": 13,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 2,
+      "in_progress": 3,
       "phase2_referral_rate": 0.0
     },
     {
@@ -1338,7 +1336,7 @@
     },
     {
       "quarter": "2026-Q4",
-      "notifications": 37,
+      "notifications": 38,
       "referred": 0
     }
   ]

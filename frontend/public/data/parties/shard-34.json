@@ -215,6 +215,42 @@
         "completed_count": 1
       }
     },
+    "harrington-penrith-pty-ltd-atf-the-penrith-unit-trust": {
+      "id": "harrington-penrith-pty-ltd-atf-the-penrith-unit-trust",
+      "canonical_name": "Harrington Penrith Pty Ltd Atf The Penrith Unit Trust",
+      "members": [
+        {
+          "name": "HARRINGTON PENRITH PTY LTD ATF THE PENRITH UNIT TRUST",
+          "identifier": "673 442 558",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-45028",
+            "merger_name": "Endeavour Group \u2013 retail liquor site in Penrith, NSW",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-28T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "intersurgical-aktiengesellschaft-ag": {
       "id": "intersurgical-aktiengesellschaft-ag",
       "canonical_name": "Intersurgical Aktiengesellschaft AG",

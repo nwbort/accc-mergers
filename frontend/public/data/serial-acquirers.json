@@ -112,6 +112,25 @@
       "count": 5
     },
     {
+      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "412",
+      "anzsic_name": "Specialised Food Retailing",
+      "merger_ids": [
+        "MN-30012",
+        "MN-50027",
+        "MN-10027",
+        "MN-45028"
+      ],
+      "dates": [
+        "2026-05-22T12:00:00Z",
+        "2026-06-22T12:00:00Z",
+        "2026-08-14T12:00:00Z",
+        "2026-10-28T12:00:00Z"
+      ],
+      "count": 4
+    },
+    {
       "acquirer_name": "Coles Group",
       "canonical_id": "coles",
       "anzsic_code": "671",
@@ -218,23 +237,6 @@
       "count": 3
     },
     {
-      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
-      "canonical_id": null,
-      "anzsic_code": "412",
-      "anzsic_name": "Specialised Food Retailing",
-      "merger_ids": [
-        "MN-30012",
-        "MN-50027",
-        "MN-10027"
-      ],
-      "dates": [
-        "2026-05-22T12:00:00Z",
-        "2026-06-22T12:00:00Z",
-        "2026-08-14T12:00:00Z"
-      ],
-      "count": 3
-    },
-    {
       "acquirer_name": "Accenture",
       "canonical_id": "accenture-plc",
       "anzsic_code": "700",
@@ -267,6 +269,66 @@
         "2026-07-28T12:00:00Z"
       ],
       "count": 3
+    },
+    {
+      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "121",
+      "anzsic_name": "Beverage Manufacturing",
+      "merger_ids": [
+        "MN-10027",
+        "MN-45028"
+      ],
+      "dates": [
+        "2026-08-14T12:00:00Z",
+        "2026-10-28T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "360",
+      "anzsic_name": "Grocery, Liquor and Tobacco Product Wholesaling",
+      "merger_ids": [
+        "MN-10027",
+        "MN-45028"
+      ],
+      "dates": [
+        "2026-08-14T12:00:00Z",
+        "2026-10-28T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "452",
+      "anzsic_name": "Pubs, Taverns and Bars",
+      "merger_ids": [
+        "MN-10027",
+        "MN-45028"
+      ],
+      "dates": [
+        "2026-08-14T12:00:00Z",
+        "2026-10-28T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "671",
+      "anzsic_name": "Property Operators",
+      "merger_ids": [
+        "MN-10027",
+        "MN-45028"
+      ],
+      "dates": [
+        "2026-08-14T12:00:00Z",
+        "2026-10-28T12:00:00Z"
+      ],
+      "count": 2
     },
     {
       "acquirer_name": "Australian Venue Co",
@@ -854,5 +916,5 @@
       "count": 2
     }
   ],
-  "count": 53
+  "count": 57
 }
