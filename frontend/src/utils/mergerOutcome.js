@@ -11,6 +11,7 @@
 
 import { MERGER_STATUS, PHASES, isPublicBenefitStage } from '../constants/mergerStatus';
 import { resolveEffectiveDetermination } from '../constants/appeal';
+import { UNDER_JUDICIAL_REVIEW_LABEL } from '../constants/judicialReview';
 
 // Determinations that end a matter. A live matter's accc_determination is null,
 // so a decided outcome only ever appears once the register has published one.
@@ -131,8 +132,8 @@ export function getOutcomeText(merger) {
 /**
  * Phase and status as one phrase, for text that leaves the page (share posts,
  * email subjects): "Phase 1 approved", "Phase 2 under assessment", "Waiver
- * not approved". A live appeal follows as a second status, as it does on the
- * header line: "Phase 2 not approved · Under appeal".
+ * not approved". A live appeal or judicial review follows as a second status,
+ * as it does on the header line: "Phase 2 not approved · Under appeal".
  *
  * The phase is left off where the status already names it ("Referred to
  * phase 2") or the outcome carries the public benefit qualifier, as on the
@@ -143,7 +144,11 @@ export function getPhaseStatus(merger) {
   if (!outcome) return null;
   const phase = merger.is_waiver ? 'Waiver' : getStageLabel(merger);
   const status = phase ? `${phase} ${outcome.charAt(0).toLowerCase()}${outcome.slice(1)}` : outcome;
-  return merger.under_appeal ? `${status} · Under appeal` : status;
+  return [
+    status,
+    merger.under_appeal && 'Under appeal',
+    merger.under_judicial_review && UNDER_JUDICIAL_REVIEW_LABEL,
+  ].filter(Boolean).join(' · ');
 }
 
 /**

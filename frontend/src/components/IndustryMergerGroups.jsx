@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import StatusBadge from './StatusBadge';
 import WaiverBadge from './WaiverBadge';
 import AppealBadge from './AppealBadge';
+import JudicialReviewBadge from './JudicialReviewBadge';
 import { mergerPath } from '../utils/slug';
 import { groupMergersByPhase } from '../utils/industryGroups';
 import { getOutcomeRail } from '../constants/outcomeRail';
@@ -77,6 +78,7 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                         />
                         {merger.is_waiver && <WaiverBadge solid />}
                         {merger.under_appeal && <AppealBadge solid />}
+                        {merger.under_judicial_review && <JudicialReviewBadge solid />}
                       </div>
                     </Link>
                   );
@@ -102,6 +104,7 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                       />
                       {merger.is_waiver && <WaiverBadge solid />}
                       {merger.under_appeal && <AppealBadge solid />}
+                      {merger.under_judicial_review && <JudicialReviewBadge solid />}
                     </div>
                     <h4 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
                       {merger.merger_name}

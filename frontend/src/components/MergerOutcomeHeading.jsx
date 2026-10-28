@@ -1,4 +1,5 @@
-import { FaGavel } from 'react-icons/fa';
+import { FaBalanceScale, FaGavel } from 'react-icons/fa';
+import { UNDER_JUDICIAL_REVIEW_LABEL } from '../constants/judicialReview';
 import { getOutcomeHeaderStyle } from '../constants/outcomeHeader';
 import { OUTCOME_ICONS } from '../constants/outcomeIcons';
 import { getHeaderStatus, getOutcomeText, getStageLabel } from '../utils/mergerOutcome';
@@ -77,6 +78,16 @@ function MergerOutcomeHeading({ merger }) {
               reads lighter than the tick or cross it is paired with. */}
           <FaGavel className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
           <span>Under appeal</span>
+        </span>
+      )}
+      {/* A live Federal Court judicial review is the same kind of thing: a
+          second status the matter carries while the court looks at the ACCC's
+          decision, set the same way and wearing the balance scale that is the
+          review's own glyph (JudicialReviewBadge), sized to match the gavel. */}
+      {merger.under_judicial_review && (
+        <span className="inline-flex items-center gap-2">
+          <FaBalanceScale className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+          <span>{UNDER_JUDICIAL_REVIEW_LABEL}</span>
         </span>
       )}
       {/* A type flag rather than a status, so — unlike the outcome and the

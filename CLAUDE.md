@@ -168,7 +168,8 @@ frontend/src/
 │                         #     ScrollToTop, ErrorBoundary, ErrorCard, ErrorMessage
 │                         #   - Badges (all role="img", never role="status"):
 │                         #     StatusBadge, WaiverBadge, NewBadge, AppealBadge,
-│                         #     RefiledBadge. StatusBadge marks each decided
+│                         #     JudicialReviewBadge (its Federal Court twin, same
+│                         #     indigo, balance-scale glyph), RefiledBadge. StatusBadge marks each decided
 │                         #     outcome with a glyph (constants/outcomeIcons.js,
 │                         #     shared with MergerOutcomeHeading) and has two
 │                         #     forms (both in mergerStatus.js): a tint
@@ -194,7 +195,9 @@ frontend/src/
 │                         #     the matter carries, so it is set in the same
 │                         #     type and wears the gavel that is the appeal's
 │                         #     own glyph everywhere it appears (AppealBadge
-│                         #     too). Nothing on the line is shrunk into a chip,
+│                         #     too). A live Federal Court judicial review is
+│                         #     another such status ("Under judicial review",
+│                         #     balance scale), and washes the header indigo too. Nothing on the line is shrunk into a chip,
 │                         #     and the detail page shows no separate status or
 │                         #     appeal badge. MergerDetail fills the whole title block
 │                         #     from constants/outcomeHeader.js, which has two
@@ -247,7 +250,8 @@ frontend/src/
 │                         #   constants/__tests__/navPages.test.js pins the invariants:
 │                         #   unique paths and chord keys, and every path a real route
 │                         #   in App.jsx),
-│                         #   mergerStatus.js, appeal.js, regime.js, cardStyles.js,
+│                         #   mergerStatus.js, appeal.js, judicialReview.js (mirrors
+│                         #   scripts/constants/judicial_review.py), regime.js, cardStyles.js,
 │                         #   chartColors.js, outcomeDotColors.js, outcomeHeader.js,
 │                         #   outcomeIcons.js, outcomeRail.js, statutoryDeadlines.js,
 │                         #   headerButton.js (the Track/Share header pill variants),

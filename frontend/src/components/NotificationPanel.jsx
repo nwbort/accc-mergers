@@ -16,6 +16,7 @@ const UPCOMING_EVENT_TYPES = new Set([
   'public_benefit_assessment',
   'public_benefit_response_due',
   'tribunal_hearing',
+  'federal_court_hearing',
 ]);
 
 // Each event row is a link to its place on the merger's page. A new row keeps

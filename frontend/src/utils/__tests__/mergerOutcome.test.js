@@ -170,6 +170,13 @@ describe('getPhaseStatus', () => {
     expect(getPhaseStatus({ ...approved, under_appeal: true })).toBe('Phase 1 approved · Under appeal');
   });
 
+  it('adds a live judicial review the same way, after any appeal', () => {
+    expect(getPhaseStatus({ ...approved, under_judicial_review: true }))
+      .toBe('Phase 1 approved · Under judicial review');
+    expect(getPhaseStatus({ ...approved, under_appeal: true, under_judicial_review: true }))
+      .toBe('Phase 1 approved · Under appeal · Under judicial review');
+  });
+
   it('calls a waiver a waiver, which has no phase', () => {
     expect(getPhaseStatus({ ...approved, is_waiver: true, stage: 'Waiver' })).toBe('Waiver approved');
   });

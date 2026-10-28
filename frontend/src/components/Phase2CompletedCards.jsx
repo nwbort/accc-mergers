@@ -1,6 +1,7 @@
 import { calculateDuration } from '../utils/dates';
 import { DETERMINATION_LABELS, isConditionalApproval } from '../constants/mergerStatus';
 import { getCardStyle } from '../constants/cardStyles';
+import { UNDER_JUDICIAL_REVIEW_LABEL } from '../constants/judicialReview';
 import CardCollapseGrid from './CardCollapseGrid';
 import MergerCardBody, { CHIP_BASE_CLASS } from './MergerCardBody';
 
@@ -58,6 +59,11 @@ function Phase2CompletedCards({ matters }) {
             {item.under_appeal && (
               <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
                 Under appeal
+              </span>
+            )}
+            {item.under_judicial_review && (
+              <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
+                {UNDER_JUDICIAL_REVIEW_LABEL}
               </span>
             )}
           </MergerCardBody>

@@ -62,6 +62,13 @@ const EVENT_TYPES = {
     tile: 'bg-rose-50 text-rose-600',
     chip: 'bg-rose-50 text-rose-700 border-rose-200/60',
   },
+  // The other review of an ACCC decision, styled as its peer.
+  federal_court_hearing: {
+    label: 'Federal Court hearing',
+    Icon: FaScaleBalanced,
+    tile: 'bg-rose-50 text-rose-600',
+    chip: 'bg-rose-50 text-rose-700 border-rose-200/60',
+  },
 };
 
 const DEFAULT_EVENT_TYPE = {
@@ -75,11 +82,12 @@ const getEventType = (type) => EVENT_TYPES[type] || DEFAULT_EVENT_TYPE;
 
 // Within a single calendar day, surface the most consequential deadlines
 // first: the later the phase the higher it ranks (public benefit, then Phase
-// 2, then Phase 1); within a phase a tribunal hearing outranks a
+// 2, then Phase 1); within a phase a tribunal or court hearing outranks a
 // determination, which ranks above concerns notices, which rank above
 // consultations; ties fall back to the merger name so the order is stable.
 const EVENT_TYPE_ORDER = {
   tribunal_hearing: 0,
+  federal_court_hearing: 0,
   determination_due: 1,
   public_benefit_assessment: 2,
   notice_of_competition_concerns: 2,

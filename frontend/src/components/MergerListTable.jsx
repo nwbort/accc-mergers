@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import StatusBadge from './StatusBadge';
 import WaiverBadge from './WaiverBadge';
 import AppealBadge from './AppealBadge';
+import JudicialReviewBadge from './JudicialReviewBadge';
 import RefiledBadge from './RefiledBadge';
 import { formatDate } from '../utils/dates';
 import { mergerPath } from '../utils/slug';
@@ -126,6 +127,7 @@ function MergerListTable({ mergers, selectedIndex, isTracked, sortField, sortDir
                       glyph
                     />
                     {merger.under_appeal && <AppealBadge glyph />}
+                    {merger.under_judicial_review && <JudicialReviewBadge glyph />}
                     {merger.is_waiver && <WaiverBadge glyph />}
                     {merger.is_refiled && <RefiledBadge glyph />}
                   </div>
@@ -140,6 +142,7 @@ function MergerListTable({ mergers, selectedIndex, isTracked, sortField, sortDir
                       solid
                     />
                     {merger.under_appeal && <AppealBadge solid />}
+                    {merger.under_judicial_review && <JudicialReviewBadge solid />}
                     {merger.is_waiver && <WaiverBadge solid />}
                     {merger.is_refiled && <RefiledBadge solid />}
                   </div>
