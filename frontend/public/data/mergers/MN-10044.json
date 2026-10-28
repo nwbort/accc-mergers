@@ -127,6 +127,15 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-29T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/OCTA%20-%20Woodside-EDL%20LNG%20JV%20-%20Questionnaire%20-%20October%202026.docx",
+      "url_gh": "/mergers/MN-10044/OCTA - Woodside-EDL LNG JV - Questionnaire - October 2026.pdf",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
@@ -136,6 +145,7 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
+  "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-55038",
@@ -174,15 +184,15 @@
     }
   ],
   "phase_1_estimate": {
-    "expected_business_days": 18,
+    "expected_business_days": 19,
     "range_business_days": [
       16,
-      21
+      24
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 265,
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 5,
+    "sample_size": 29,
     "as_of": "2026-10-28",
     "estimated_at": "2026-10-28",
     "method_version": 2
