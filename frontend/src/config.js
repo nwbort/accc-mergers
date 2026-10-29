@@ -17,6 +17,9 @@ export const EVENT_ENDPOINT = "https://signup.mergers.fyi/event";
 
 // The site's Bluesky account (handle mergers.fyi, see atproto/identity.json).
 export const BLUESKY_PROFILE_URL = "https://bsky.app/profile/mergers.fyi";
+// The site's LinkedIn company page.
+export const LINKEDIN_PROFILE_URL = "https://www.linkedin.com/company/mergers-fyi";
+// Which of the two the navbar links to: constants/socialProfiles.js.
 
 // Cloudflare Turnstile site key (public — safe to commit).
 // 1. Go to Cloudflare Dashboard > Turnstile > Add site
