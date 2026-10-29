@@ -593,6 +593,48 @@
       },
       "waiver_duration": null
     },
+    "stichting-pensioenfonds-abp": {
+      "id": "stichting-pensioenfonds-abp",
+      "canonical_name": "Stichting Pensioenfonds ABP",
+      "members": [
+        {
+          "name": "Stichting Pensioenfonds ABP",
+          "identifier": "KVK number  41074000",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01130",
+            "merger_name": "ABP - Macquarie Agriculture Fund Crop Australia 2",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-29T12:00:00Z",
+            "determination_date": "2026-10-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
     "the-trustee-for-berkwill-family-trust": {
       "id": "the-trustee-for-berkwill-family-trust",
       "canonical_name": "The Trustee for Berkwill Family Trust",

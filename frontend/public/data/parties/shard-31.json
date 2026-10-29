@@ -212,6 +212,48 @@
         "completed_count": 1
       }
     },
+    "labiosa-investments-holding-b-v": {
+      "id": "labiosa-investments-holding-b-v",
+      "canonical_name": "Labiosa Investments Holding B.V.",
+      "members": [
+        {
+          "name": "Labiosa Investments Holding B.V.",
+          "identifier": "KVK number  99673215",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01130",
+            "merger_name": "ABP - Macquarie Agriculture Fund Crop Australia 2",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-29T12:00:00Z",
+            "determination_date": "2026-10-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
     "parker-hannifin-corporation": {
       "id": "parker-hannifin-corporation",
       "canonical_name": "Parker-Hannifin Corporation",

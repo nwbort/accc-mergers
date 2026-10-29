@@ -1,6 +1,6 @@
 {
   "total_mergers": 310,
-  "total_waivers": 488,
+  "total_waivers": 489,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 263,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 463,
+    "Approved": 464,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.68032786885246,
-    "median_days": 21.0,
-    "average_business_days": 14.14139344262295,
-    "median_business_days": 14.0
+    "average_days": 20.699386503067483,
+    "median_days": 21,
+    "average_business_days": 14.155419222903886,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 191
+      "count": 192
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 92
+      "count": 93
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01130",
+      "merger_name": "ABP - Macquarie Agriculture Fund Crop Australia 2",
+      "determination": "Approved",
+      "determination_date": "2026-10-29T12:00:00Z",
+      "page_modified_datetime": "2026-10-29T16:46:40+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-05049",
       "merger_name": "Imagine Education \u2013 Eden Academy",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-45030",
-      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
-      "determination": "Approved",
-      "determination_date": "2026-10-27T12:00:00Z",
-      "page_modified_datetime": "2026-10-27T15:57:14+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
