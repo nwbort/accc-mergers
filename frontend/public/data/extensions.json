@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 310,
-    "matters_extended": 22,
-    "share_extended_pct": 7.1,
-    "extension_events_total": 33,
-    "total_extension_bd": 363,
-    "median_matter_extension_bd": 15,
+    "matters_extended": 23,
+    "share_extended_pct": 7.4,
+    "extension_events_total": 34,
+    "total_extension_bd": 373,
+    "median_matter_extension_bd": 14.5,
     "longest_single_bd": 30,
     "phase_2_total": 9,
     "extended_escalated_to_phase_2": 8,
-    "escalation_rate_given_extension_pct": 36.4,
+    "escalation_rate_given_extension_pct": 34.8,
     "phase_2_preceded_by_extension_pct": 88.9,
     "base_phase_2_rate_pct": 2.9,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 23,
-      "business_days": 261
+      "events": 24,
+      "business_days": 271
     },
     {
       "category": "ACCC information request",
@@ -66,7 +66,7 @@
     },
     {
       "month": "2026-10",
-      "count": 5
+      "count": 6
     }
   ],
   "matters": [
@@ -417,6 +417,27 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 12 business days \u2013 following request by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-75058",
+      "merger_name": "Kinetic - Tassielink",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-09-29T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 10,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-10-29T12:00:00Z",
+          "business_days": 10,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 10 business days - following request by parties"
         }
       ]
     },
