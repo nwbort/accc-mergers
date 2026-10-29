@@ -83167,6 +83167,10 @@
           "name": "Killara Pty Ltd (as trustee for Lane Settlement)",
           "identifier_type": "ACN",
           "identifier": "098 712 068",
+          "canonical": {
+            "id": "killara-pty-ltd-as-trustee-for-lane-settlement",
+            "name": "Killara Pty Ltd (as trustee for Lane Settlement)"
+          },
           "party_page": {
             "id": "killara-pty-ltd-as-trustee-for-lane-settlement",
             "name": "Killara Pty Ltd (as trustee for Lane Settlement)"
@@ -83185,6 +83189,10 @@
           "name": "Killara Pty Ltd (as trustee for Richard Eckersley Trust)",
           "identifier_type": "ACN",
           "identifier": "098 712 068",
+          "canonical": {
+            "id": "killara-pty-ltd-as-trustee-for-lane-settlement",
+            "name": "Killara Pty Ltd (as trustee for Lane Settlement)"
+          },
           "party_page": {
             "id": "killara-pty-ltd-as-trustee-for-lane-settlement",
             "name": "Killara Pty Ltd (as trustee for Lane Settlement)"
@@ -124105,6 +124113,10 @@
           "name": "Mitsubishi Electric Corporation",
           "identifier_type": null,
           "identifier": "TSE code  6503",
+          "canonical": {
+            "id": "mitsubishi-electric-corporation",
+            "name": "Mitsubishi Electric Corporation"
+          },
           "party_page": {
             "id": "mitsubishi-electric-corporation",
             "name": "Mitsubishi Electric Corporation"
@@ -124145,9 +124157,13 @@
           "name": "MITSUBISHI ELECTRIC AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "58 001 215 792",
+          "canonical": {
+            "id": "mitsubishi-electric-corporation",
+            "name": "Mitsubishi Electric Corporation"
+          },
           "party_page": {
-            "id": "mitsubishi-electric-australia-pty-ltd",
-            "name": "Mitsubishi Electric Australia Pty Ltd"
+            "id": "mitsubishi-electric-corporation",
+            "name": "Mitsubishi Electric Corporation"
           }
         }
       ],
