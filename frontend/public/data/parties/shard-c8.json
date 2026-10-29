@@ -122,6 +122,48 @@
         "completed_count": 1
       }
     },
+    "mitsubishi-electric-us-holdings": {
+      "id": "mitsubishi-electric-us-holdings",
+      "canonical_name": "Mitsubishi Electric US Holdings",
+      "members": [
+        {
+          "name": "Mitsubishi Electric US Holdings",
+          "identifier": "Delaware File Number  3503188",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60051",
+            "merger_name": "Mitsubishi Electric Corporation \u2013 Power Costs, Inc.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-05T12:00:00Z",
+            "determination_date": "2026-10-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "ochre-health-pty-limited": {
       "id": "ochre-health-pty-limited",
       "canonical_name": "Ochre Health Pty Limited",

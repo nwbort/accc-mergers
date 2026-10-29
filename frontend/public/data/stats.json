@@ -1,6 +1,6 @@
 {
   "total_mergers": 310,
-  "total_waivers": 491,
+  "total_waivers": 492,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 264,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 466,
+    "Approved": 467,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.70264765784114,
-    "median_days": 21,
-    "average_business_days": 14.160896130346233,
-    "median_business_days": 14
+    "average_days": 20.709349593495936,
+    "median_days": 21.0,
+    "average_business_days": 14.16869918699187,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
@@ -64,7 +64,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 80
+      "count": 81
     },
     {
       "name": "Non-Residential Property Operators",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60051",
+      "merger_name": "Mitsubishi Electric Corporation \u2013 Power Costs, Inc.",
+      "determination": "Approved",
+      "determination_date": "2026-10-29T12:00:00Z",
+      "page_modified_datetime": "2026-10-29T18:14:08+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-10046",
       "merger_name": "Seidler Equity \u2013 Eco Outdoor",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-28T12:00:00Z",
       "page_modified_datetime": "2026-10-28T14:56:47+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-25053",
-      "merger_name": "Altius \u2013 Converge International",
-      "determination": "Approved",
-      "determination_date": "2026-10-28T12:00:00Z",
-      "page_modified_datetime": "2026-10-28T09:50:39+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
