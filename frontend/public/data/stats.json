@@ -1,10 +1,10 @@
 {
-  "total_mergers": 310,
+  "total_mergers": 311,
   "total_waivers": 492,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 264,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10040",
+      "merger_name": "Calvary \u2013 14 Healthscope hospitals and Healthscope Independence Services",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-29T12:00:00Z",
+      "page_modified_datetime": "2026-10-30T10:08:39+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-10044",
       "merger_name": "OCTA \u2013 Woodside-EDL LNG JV",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-20T12:00:00Z",
       "page_modified_datetime": "2026-10-21T12:05:27+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-15053",
-      "merger_name": "Fruitico \u2013 Lease and option to purchase Terra Farm and Sunsweet Farm",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-20T12:00:00Z",
-      "page_modified_datetime": "2026-10-21T10:14:59+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

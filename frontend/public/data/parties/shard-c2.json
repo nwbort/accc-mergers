@@ -416,6 +416,42 @@
       "phase_duration": null,
       "waiver_duration": null
     },
+    "lcmhc-2-limited": {
+      "id": "lcmhc-2-limited",
+      "canonical_name": "Lcmhc 2 Limited",
+      "members": [
+        {
+          "name": "LCMHC 2 LIMITED",
+          "identifier": "62 692 981 445",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-10040",
+            "merger_name": "Calvary \u2013 14 Healthscope hospitals and Healthscope Independence Services",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-29T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "links-recruitment-limited": {
       "id": "links-recruitment-limited",
       "canonical_name": "Links Recruitment Limited",
