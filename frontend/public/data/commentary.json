@@ -1,6 +1,73 @@
 {
   "items": [
     {
+      "merger_id": "MN-01037",
+      "merger_name": "Anglo American - Teck Resources",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": false,
+      "effective_notification_datetime": "2025-10-24T12:00:00Z",
+      "determination_publication_date": "2025-11-18T12:00:00Z",
+      "determination_url": "/mergers/MN-01037/Anglo American - Teck Resources - Phase 1 determination - 18 November 2025.pdf",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Anglo American plc",
+          "identifier_type": null,
+          "identifier": "03564138",
+          "canonical": {
+            "id": "anglo-american-plc",
+            "name": "Anglo American"
+          },
+          "party_page": {
+            "id": "anglo-american-plc",
+            "name": "Anglo American"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Teck Resources Limited",
+          "identifier_type": null,
+          "identifier": "4460561",
+          "party_page": {
+            "id": "teck-resources-limited",
+            "name": "Teck Resources Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "080",
+          "name": "Metal Ore Mining"
+        },
+        {
+          "code": "0803",
+          "name": "Copper Ore Mining"
+        },
+        {
+          "code": "0807",
+          "name": "Silver-Lead-Zinc Ore Mining"
+        },
+        {
+          "code": "0809",
+          "name": "Other Metal Ore Mining"
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "Anglo American's global merger with Teck Resources was cleared by the ACCC. While the parties have overlaps in copper concentrate, molybdenum and sulphuric acid globally, the ACCC determined that:\n\n- there are no horizontal overlaps or vertical relationships between the parties in Australia;\n- neither party has copper mining or production activities in Australia, nor do they supply copper products, molybdenum or sulphuric acid to Australian customers; and\n- globally, the merged entity's market share would be small to modest with multiple alternative suppliers remaining.\n\nAnglo American operates steelmaking coal operations in Australia, while Teck Resources' Australian activities are limited to zinc concentrate supply and closure activities at its Lennard Shelf operations in Western Australia.",
+          "tags": [],
+          "date": "2026-01-19"
+        },
+        {
+          "commentary": "On 29 October 2026, the acquisition by Anglo American of Teck Resources was the first acquisition to be granted an extension for it to be put into effect.",
+          "tags": [],
+          "date": "2026-10-29"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-65020",
       "merger_name": "Regis Resources - Vault Minerals",
       "status": "Assessment ceased",
@@ -964,68 +1031,6 @@
       "comments": [
         {
           "commentary": "Asahi's second warehouse lease assessed by the ACCC, this time for a site at Weedman and Montgomery Streets, Redbank, Queensland. Goodman will construct the warehouse and lease it to Asahi on a long-term basis. Similar to the Deer Park acquisition, the ACCC found that:\n\n- there is no horizontal competitive overlap;\n- there are suitable alternative sites available for Asahi's competitors; and\n- the acquisition does not limit or prevent competition from rivals.",
-          "tags": [],
-          "date": "2026-01-19"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-01037",
-      "merger_name": "Anglo American - Teck Resources",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": false,
-      "effective_notification_datetime": "2025-10-24T12:00:00Z",
-      "determination_publication_date": "2025-11-18T12:00:00Z",
-      "determination_url": "/mergers/MN-01037/Anglo American - Teck Resources - Phase 1 determination - 18 November 2025.pdf",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Anglo American plc",
-          "identifier_type": null,
-          "identifier": "03564138",
-          "canonical": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          },
-          "party_page": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Teck Resources Limited",
-          "identifier_type": null,
-          "identifier": "4460561",
-          "party_page": {
-            "id": "teck-resources-limited",
-            "name": "Teck Resources Limited"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "080",
-          "name": "Metal Ore Mining"
-        },
-        {
-          "code": "0803",
-          "name": "Copper Ore Mining"
-        },
-        {
-          "code": "0807",
-          "name": "Silver-Lead-Zinc Ore Mining"
-        },
-        {
-          "code": "0809",
-          "name": "Other Metal Ore Mining"
-        }
-      ],
-      "comments": [
-        {
-          "commentary": "Anglo American's global merger with Teck Resources was cleared by the ACCC. While the parties have overlaps in copper concentrate, molybdenum and sulphuric acid globally, the ACCC determined that:\n\n- there are no horizontal overlaps or vertical relationships between the parties in Australia;\n- neither party has copper mining or production activities in Australia, nor do they supply copper products, molybdenum or sulphuric acid to Australian customers; and\n- globally, the merged entity's market share would be small to modest with multiple alternative suppliers remaining.\n\nAnglo American operates steelmaking coal operations in Australia, while Teck Resources' Australian activities are limited to zinc concentrate supply and closure activities at its Lennard Shelf operations in Western Australia.",
           "tags": [],
           "date": "2026-01-19"
         }
