@@ -3,12 +3,12 @@
   "total_waivers": 488,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 262,
-    "Under assessment": 43,
+    "Assessment completed": 263,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 255,
+    "Approved": 256,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,16 +22,16 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 260,
+    "cleared": 261,
     "not_cleared": 2,
-    "total": 262,
+    "total": 263,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.44402985074627,
-    "median_days": 26.0,
-    "average_business_days": 20.01865671641791,
-    "median_business_days": 18.0,
+    "average_days": 29.46840148698885,
+    "median_days": 26,
+    "average_business_days": 20.03717472118959,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 58,
@@ -39,10 +39,10 @@
       },
       "day20": {
         "count": 195,
-        "percentage": 72.8
+        "percentage": 72.5
       },
       "day30": {
-        "count": 251,
+        "count": 252,
         "percentage": 93.7
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-05049",
+      "merger_name": "Imagine Education \u2013 Eden Academy",
+      "determination": "Approved",
+      "determination_date": "2026-10-29T12:00:00Z",
+      "page_modified_datetime": "2026-10-29T12:35:03+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-30042",
       "merger_name": "Goldman Sachs \u2013 NOJA Power",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-27T12:00:00Z",
       "page_modified_datetime": "2026-10-27T15:57:14+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-95044",
-      "merger_name": "Olin - Huntsman",
-      "determination": "Approved",
-      "determination_date": "2026-10-27T12:00:00Z",
-      "page_modified_datetime": "2026-10-27T15:30:16+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
