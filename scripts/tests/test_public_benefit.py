@@ -536,6 +536,19 @@ class TestEnrichment:
         assert m['end_of_determination_period'] == '2026-12-21T12:00:00Z'
         assert not m.get('end_of_determination_period_derived')
 
+    def test_extension_moves_only_the_deadline(self):
+        # A remedy-offer extension (s 51ABZZE(2)(a)) pushes out the end of the
+        # period, but the assessment stays at BD 20 after the application
+        # (s 51ABZZA(3)) and the remedy window at BD 35 (s 51ABZZE(3)(c)).
+        # MN-65005: 15 days onto 22 Dec 2026 left them at 10 Nov and 1 Dec.
+        merger = _public_benefit_applied()
+        merger['end_of_determination_period'] = '2027-01-25T12:00:00Z'  # 14 Dec + 15 BD
+        m = enrich_merger(_stored(merger, _phase_2_decided()))
+
+        assert m['end_of_determination_period'] == '2027-01-25T12:00:00Z'
+        assert m['public_benefit_assessment_date'] == '2026-11-02T12:00:00Z'
+        assert m['public_benefit_response_date'] == '2026-11-23T12:00:00Z'
+
     def test_stale_deadline_is_dropped_before_the_application_appears(self):
         merger = _public_benefit_applied()
         merger['events'] = merger['events'][:-1]

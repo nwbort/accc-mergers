@@ -14,7 +14,7 @@ import {
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getOutcomeDot } from '../constants/outcomeDotColors';
 import { SECTION_HEADING } from '../utils/classNames';
-import { getTimelineExtensions } from '../utils/timelineExtensions';
+import { extensionPhaseLabel, getTimelineExtensions, PUBLIC_BENEFIT } from '../utils/timelineExtensions';
 
 // Statutory window the ACCC works to for merger waiver applications. Waivers
 // aren't published with an explicit end-of-determination date, so we derive the
@@ -436,7 +436,8 @@ function MergerTimeline({ merger }) {
       const toPct = axisPct(parseDateOnly(ext.to), start, end);
       const days = `${ext.businessDays} business day${ext.businessDays === 1 ? '' : 's'}`;
       const granted = formatDateMedium(ext.date);
-      const phase = `Phase ${ext.phase}`;
+      const phase = extensionPhaseLabel(ext.phase);
+      const deadline = ext.phase === PUBLIC_BENEFIT ? 'public benefit' : phase;
       const reason = ext.reason ? `, following ${ext.reason}` : '';
       return {
         id: `extension-${i}`,
@@ -446,7 +447,7 @@ function MergerTimeline({ merger }) {
         label: `${phase} timeline extended by ${days} on ${granted}${reason}`,
         hint: {
           title: `${phase} timeline extended by ${days}`,
-          body: `Granted ${granted}${reason}. Moved the ${phase} deadline from ${formatDateMedium(ext.from)} to ${formatDateMedium(ext.to)}.`,
+          body: `Granted ${granted}${reason}. Moved the ${deadline} deadline from ${formatDateMedium(ext.from)} to ${formatDateMedium(ext.to)}.`,
         },
       };
     })

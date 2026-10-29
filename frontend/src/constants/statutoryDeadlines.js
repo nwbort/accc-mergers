@@ -18,3 +18,10 @@ export const WAIVER_DEADLINE_BD = 25;
  * day phase 1 was due (not from the referral, which can land early).
  */
 export const PHASE_2_DEADLINE_BD = 90;
+
+/**
+ * Business days the public benefit phase runs, counted from the day the
+ * parties applied (the register's application date). Mirrors
+ * scripts/constants/merger_status.py PUBLIC_BENEFIT_BUSINESS_DAYS.
+ */
+export const PUBLIC_BENEFIT_DEADLINE_BD = 50;

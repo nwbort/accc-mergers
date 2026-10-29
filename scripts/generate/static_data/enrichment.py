@@ -311,10 +311,16 @@ def _set_public_benefit_timetable(
     would read as overdue. The register's own date supersedes the derived one
     as soon as it is published, and folds in any extension.
 
-    From the deadline, business day 1 is recovered the way the Phase 2 notice
-    date is, and the two interim milestones are set: the public benefit
-    assessment (BD 20, until one appears among the events) and the parties'
-    last day to respond or offer a remedy (BD 35).
+    The two interim milestones are then set from business day 1: the public
+    benefit assessment (BD 20, until one appears among the events) and the
+    parties' last day to respond or offer a remedy (BD 35). Both are counted
+    from the application, not back from the deadline, because an extension
+    moves only the deadline: s 51ABZZA(3) fixes the assessment at the 20th
+    business day after the application, and s 51ABZZE(4) moves the BD 35
+    remedy window only for extensions other than one following a remedy
+    offer (MN-65005's 15-day extension left them at 10 Nov and 1 Dec 2026).
+    Only with no application date to count from is business day 1 recovered
+    from the deadline, the way the Phase 2 notice date is.
     """
     period_end = m.get('end_of_determination_period')
     det_dt = parse_iso_datetime(phase_2_det_date) if phase_2_det_date else None
@@ -322,26 +328,29 @@ def _set_public_benefit_timetable(
         add_business_days(det_dt.replace(tzinfo=None), 45).strftime('%Y-%m-%d')
         if det_dt else ''
     )
-    if not period_end or period_end[:10] < stale_before:
-        application = public_benefit_application_date(m, phase_2_det_date)
-        start = parse_iso_datetime(application) if application else None
-        if start is None:
-            m['end_of_determination_period'] = None
-            return
+    application = public_benefit_application_date(m, phase_2_det_date)
+    first_day = parse_iso_datetime(application) if application else None
+    if first_day is not None:
+        first_day = first_day.replace(tzinfo=None)
         if application_scraped:
             # The register's field is the day the application was made, day 0;
             # the phase's business day 1 is the day after.
-            start += timedelta(days=1)
-        end = add_business_days(start.replace(tzinfo=None), merger_status.PUBLIC_BENEFIT_BUSINESS_DAYS)
+            first_day += timedelta(days=1)
+    if not period_end or period_end[:10] < stale_before:
+        if first_day is None:
+            m['end_of_determination_period'] = None
+            return
+        end = add_business_days(first_day, merger_status.PUBLIC_BENEFIT_BUSINESS_DAYS)
         m['end_of_determination_period'] = end.strftime('%Y-%m-%dT12:00:00Z')
         m['end_of_determination_period_derived'] = True
 
-    end_dt = parse_iso_datetime(m['end_of_determination_period'])
-    if end_dt is None:
-        return
-    first_day = subtract_business_days(
-        end_dt.replace(tzinfo=None), merger_status.PUBLIC_BENEFIT_BUSINESS_DAYS
-    )
+    if first_day is None:
+        end_dt = parse_iso_datetime(m['end_of_determination_period'])
+        if end_dt is None:
+            return
+        first_day = subtract_business_days(
+            end_dt.replace(tzinfo=None), merger_status.PUBLIC_BENEFIT_BUSINESS_DAYS
+        )
     if not any(is_public_benefit_assessment_event(e.get('title', '')) for e in m.get('events', [])):
         assessment = add_business_days(first_day, merger_status.PUBLIC_BENEFIT_ASSESSMENT_BD)
         m['public_benefit_assessment_date'] = assessment.strftime('%Y-%m-%dT12:00:00Z')
