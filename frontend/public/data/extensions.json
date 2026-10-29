@@ -3,8 +3,8 @@
     "notifications_total": 310,
     "matters_extended": 23,
     "share_extended_pct": 7.4,
-    "extension_events_total": 34,
-    "total_extension_bd": 373,
+    "extension_events_total": 35,
+    "total_extension_bd": 388,
     "median_matter_extension_bd": 14.5,
     "longest_single_bd": 30,
     "phase_2_total": 9,
@@ -27,8 +27,8 @@
     },
     {
       "category": "Remedy under consideration",
-      "events": 4,
-      "business_days": 54
+      "events": 5,
+      "business_days": 69
     }
   ],
   "by_month": [
@@ -66,7 +66,7 @@
     },
     {
       "month": "2026-10",
-      "count": 6
+      "count": 7
     }
   ],
   "matters": [
@@ -102,6 +102,34 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 15 business days \u2013 following request by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "stage": "Public benefit phase",
+      "status": "Under assessment",
+      "notification_date": "2026-03-03T12:00:00Z",
+      "phase_1_determination": "Referred to phase 2",
+      "phase_1_determination_date": "2026-04-16T12:00:00Z",
+      "escalated_to_phase_2": true,
+      "total_extension_bd": 35,
+      "extension_count": 2,
+      "extensions": [
+        {
+          "date": "2026-06-26T12:00:00Z",
+          "business_days": 20,
+          "reason_category": "ACCC information request",
+          "reason_detail": "request for further information",
+          "title": "Timeline extended by 20 business days - following request for further information"
+        },
+        {
+          "date": "2026-10-29T12:00:00Z",
+          "business_days": 15,
+          "reason_category": "Remedy under consideration",
+          "reason_detail": "remedy offered by parties",
+          "title": "Timeline extended by 15 business days \u2013 following remedy offered by parties"
         }
       ]
     },
@@ -277,27 +305,6 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 5 business days - following request by parties"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-65005",
-      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "stage": "Public benefit phase",
-      "status": "Under assessment",
-      "notification_date": "2026-03-03T12:00:00Z",
-      "phase_1_determination": "Referred to phase 2",
-      "phase_1_determination_date": "2026-04-16T12:00:00Z",
-      "escalated_to_phase_2": true,
-      "total_extension_bd": 20,
-      "extension_count": 1,
-      "extensions": [
-        {
-          "date": "2026-06-26T12:00:00Z",
-          "business_days": 20,
-          "reason_category": "ACCC information request",
-          "reason_detail": "request for further information",
-          "title": "Timeline extended by 20 business days - following request for further information"
         }
       ]
     },
