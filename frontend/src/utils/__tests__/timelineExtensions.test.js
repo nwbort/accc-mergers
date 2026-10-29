@@ -4,9 +4,11 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   extensionBusinessDays,
+  extensionPhaseLabel,
   extensionReason,
   getTimelineExtensions,
   isExtensionTitle,
+  PUBLIC_BENEFIT,
 } from '../timelineExtensions';
 
 // Golden fixture shared with scripts/tests/test_extension_titles.py — the
@@ -91,7 +93,34 @@ describe('getTimelineExtensions', () => {
     })).toEqual([]);
   });
 
-  it('skips extensions granted after the phase 2 determination', () => {
+  it('anchors public benefit extensions 50 business days on from the application', () => {
+    // MN-65005: the register's deadline moved from 22 Dec 2026 to 1 Feb 2027.
+    const result = getTimelineExtensions({
+      effective_notification_datetime: '2026-02-10T12:00:00Z',
+      end_of_determination_period: '2027-02-01T12:00:00Z',
+      phase_1_determination: 'Referred to phase 2',
+      phase_1_determination_date: '2026-03-24T12:00:00Z',
+      phase_2_determination_date: '2026-09-22T12:00:00Z',
+      public_benefit_application_date: '2026-10-13T12:00:00Z',
+      stage: 'Public benefit phase',
+      events: [
+        { date: '2026-10-29T12:00:00Z', title: 'Timeline extended by 15 business days – following remedy offered by parties' },
+      ],
+    });
+
+    expect(result).toEqual([{
+      date: '2026-10-29T12:00:00Z',
+      businessDays: 15,
+      reason: 'remedy offered by parties',
+      phase: PUBLIC_BENEFIT,
+      from: '2026-12-22',
+      to: '2027-02-01',
+    }]);
+    expect(extensionPhaseLabel(PUBLIC_BENEFIT)).toBe('Public benefit phase');
+    expect(extensionPhaseLabel(2)).toBe('Phase 2');
+  });
+
+  it('skips extensions granted after the phase 2 determination with no public benefit application', () => {
     expect(getTimelineExtensions({
       effective_notification_datetime: '2026-03-03T12:00:00Z',
       phase_1_determination: 'Referred to phase 2',
