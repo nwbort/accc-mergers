@@ -1,6 +1,6 @@
 {
   "total_mergers": 310,
-  "total_waivers": 490,
+  "total_waivers": 491,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 264,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 465,
+    "Approved": 466,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.70408163265306,
-    "median_days": 21.0,
-    "average_business_days": 14.161224489795918,
-    "median_business_days": 14.0
+    "average_days": 20.70264765784114,
+    "median_days": 21,
+    "average_business_days": 14.160896130346233,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 193
+      "count": 194
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-10046",
+      "merger_name": "Seidler Equity \u2013 Eco Outdoor",
+      "determination": "Approved",
+      "determination_date": "2026-10-29T12:00:00Z",
+      "page_modified_datetime": "2026-10-29T18:12:44+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-90042",
       "merger_name": "Blackstone \u2013 Discovery Education",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-55041",
-      "merger_name": "Thoma Bravo \u2013 Accelerant Holdings",
-      "determination": "Approved",
-      "determination_date": "2026-10-27T12:00:00Z",
-      "page_modified_datetime": "2026-10-27T17:20:17+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

@@ -16392,15 +16392,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 29,
-        "min_days": null,
+        "estimated_days": 23,
+        "min_days": 19,
         "max_days": 36,
-        "id_issued_estimated": "2026-09-29",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-10-05",
+        "id_issued_before": "2026-10-09",
         "id_issued_after": "2026-09-22",
-        "min_days_witness": null,
+        "min_days_witness": "WA-10046",
         "max_days_witness": "WA-10041",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -83125,6 +83125,195 @@
           ],
           "targets": [
             "BCI Acquisitions, Inc."
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/seidler-equity-%E2%80%93-eco-outdoor",
+      "merger_name": "Seidler Equity \u2013 Eco Outdoor",
+      "status": "Assessment completed",
+      "merger_id": "WA-10046",
+      "effective_notification_datetime": "2026-10-09T12:00:00Z",
+      "original_notification_datetime": "2026-10-09T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-29T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-29T18:12:44+11:00",
+      "acquirers": [
+        {
+          "name": "Rockstars BidCo 1 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "702 581 815",
+          "party_page": {
+            "id": "rockstars-bidco-1-pty-ltd",
+            "name": "Rockstars BidCo 1 Pty Ltd"
+          }
+        },
+        {
+          "name": "Rockstars BidCo 2 Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware File No 10788183",
+          "party_page": {
+            "id": "rockstars-bidco-2-inc",
+            "name": "Rockstars BidCo 2 Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Killara Pty Ltd (as trustee for Lane Settlement)",
+          "identifier_type": "ACN",
+          "identifier": "098 712 068",
+          "party_page": {
+            "id": "killara-pty-ltd-as-trustee-for-lane-settlement",
+            "name": "Killara Pty Ltd (as trustee for Lane Settlement)"
+          }
+        },
+        {
+          "name": "Kerr Stumbles Pty Ltd (as trustee for Kerr Stumbles Family Trust)",
+          "identifier_type": "ACN",
+          "identifier": "137 714 786",
+          "party_page": {
+            "id": "kerr-stumbles-pty-ltd-as-trustee-for-kerr-stumbles-family-trust",
+            "name": "Kerr Stumbles Pty Ltd (as trustee for Kerr Stumbles Family Trust)"
+          }
+        },
+        {
+          "name": "Killara Pty Ltd (as trustee for Richard Eckersley Trust)",
+          "identifier_type": "ACN",
+          "identifier": "098 712 068",
+          "party_page": {
+            "id": "killara-pty-ltd-as-trustee-for-lane-settlement",
+            "name": "Killara Pty Ltd (as trustee for Lane Settlement)"
+          }
+        },
+        {
+          "name": "ECO OUTDOOR AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 097 041 462",
+          "party_page": {
+            "id": "eco-outdoor-australia-pty-ltd",
+            "name": "Eco Outdoor Australia Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Eco Outdoor SA Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "78 149 580 898",
+          "party_page": {
+            "id": "eco-outdoor-sa-pty-ltd",
+            "name": "Eco Outdoor SA Pty Ltd"
+          }
+        },
+        {
+          "name": "Seidler Equity Australia III, LP",
+          "identifier_type": "ABN",
+          "identifier": "77 469 278 013",
+          "party_page": {
+            "id": "seidler-equity-australia-iii-lp",
+            "name": "Seidler Equity Australia III, LP"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4211",
+          "name": "Furniture Retailing"
+        },
+        {
+          "code": "4231",
+          "name": "Hardware and Building Supplies Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Seidler Equity, through a newly incorporated vehicle, Rockstars BidCo 1 Pty Ltd, proposes to acquire the total issued share capital in Eco Outdoor Australia Pty Ltd (**Eco Outdoor**) (the **Acquisition**).\n\nSeidler Equity is a private investment firm specialising in providing long-term equity capital to family-owned businesses across Australia with a presence in the United States. Within Australia, Seidler Equity holds interests in various other industries, including consumer products, professional services, and business services.\n\nEco Outdoor is an Australian retailer and distributor of high-end outdoor architectural products, including natural stone and porcelain pavers, tiles, cladding, decking and flooring materials and pool surface materials. It also supplies outdoor furniture, accessories and fabrics. The company operates in Sydney, Melbourne, Brisbane, Perth, and Adelaide, and supplies residential and commercial customers, as well as architects, designers, and landscape professionals. Eco Outdoor sources its products both domestically and internationally.\n\nFollowing the Acquisition, Eco Outdoor will be indirectly owned in the following proportions: (i) 45% by entities managed or advised by Seidler Equity and (ii) 55% by the vendors, being Kerr Stumbles Pty Ltd (as trustee for Kerr Stumbles Family Trust), Killara Pty Ltd (as trustee for Lane Settlement) and Killara Pty Ltd (as trustee for Richard Eckersley Trust).",
+      "events": [
+        {
+          "date": "2026-10-29T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Seidler%20Equity%20-%20Eco%20Outdoor%20%28WA-10046%29%20-%20Notification%20waiver%20determination%20-%2028%20October%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Seidler Equity, via Rockstars BidCo 1 Pty Ltd and Rockstars BidCo 2\nInc., applied for a notification waiver in respect of its proposed\nacquisition of the total issued share capital in Eco Outdoor Australia\nPty Ltd (Eco Outdoor), as described in the transaction documents\nprovided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "28 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Seidler Equity, is a private investment firm specialising\nin providing long-term equity capital to family-owned businesses\nacross Australia with a presence in the United States. Within\nAustralia, Seidler Equity holds interests in various other industries,\nincluding consumer products, professional services, and business\nservices.\nThe target, Eco Outdoor is an Australian retailer and distributor of\noutdoor architectural products, including natural stone and porcelain\npavers, tiles, cladding, bricks, and flooring materials. It also supplies\noutdoor furniture, accessories and fabrics. It supplies its goods and\nservices to residential and commercial customers, as well as\narchitects, designers and landscape professionals.\nFollowing the Acquisition, the vendors, being Kerr Stumbles Pty Ltd\n(as trustee for Kerr Stumbles Family Trust), Killara Pty Ltd (as trustee\nfor Lane Settlement) and Killara Pty Ltd (as trustee for Richard\nEckersley Trust) will retain a 55% indirect interest in Eco Outdoor."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular, there is no horizontal overlap\nor vertical relationship between Seidler Equity (including its\ncontrolled portfolio companies) and Eco Furniture in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-10046/Seidler Equity - Eco Outdoor (WA-10046) - Notification waiver determination - 28 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-09T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-01112",
+          "merger_name": "State Swim \u2013 In2Swim",
+          "acquirers": [
+            "DOLPHIN BIDCO PTY LTD"
+          ],
+          "targets": [
+            "IN2SWIM PTY LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-15038",
+          "merger_name": "Cinven \u2013 Salsify",
+          "acquirers": [
+            "Salsa Bidco, Inc."
+          ],
+          "targets": [
+            "Salsify, Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-01129",
+          "merger_name": "Accel-KKR - Eleco",
+          "acquirers": [
+            "Avocet Bidco Limited"
+          ],
+          "targets": [
+            "Eleco PLC"
           ],
           "accc_determination": "Approved"
         }
