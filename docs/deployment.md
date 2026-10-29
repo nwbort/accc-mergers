@@ -358,6 +358,6 @@ The static data includes raw dates; the frontend calculates business days at ren
 
 ### Build failures
 
-1. Check Node.js version matches `.node-version` / `frontend/.nvmrc` (26.12.1)
+1. Check Node.js version matches `.node-version` / `frontend/.nvmrc` (26.13.0)
 2. Run `npm install` locally to verify dependencies
 3. Check for errors in build output
