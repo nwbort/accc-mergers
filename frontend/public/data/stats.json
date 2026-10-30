@@ -1,6 +1,6 @@
 {
   "total_mergers": 312,
-  "total_waivers": 493,
+  "total_waivers": 494,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 267,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 468,
+    "Approved": 469,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.703853955375255,
-    "median_days": 21,
-    "average_business_days": 14.168356997971603,
-    "median_business_days": 14
+    "average_days": 20.69838056680162,
+    "median_days": 21.0,
+    "average_business_days": 14.168016194331983,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 94
+      "count": 95
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45034",
+      "merger_name": "EQT Holdings \u2013 Platinum Investment Management",
+      "determination": "Approved",
+      "determination_date": "2026-10-30T12:00:00Z",
+      "page_modified_datetime": "2026-10-30T17:12:26+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80052",
       "merger_name": "SCEE Group \u2013 Entire Group",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-28T12:00:00Z",
       "page_modified_datetime": "2026-10-28T17:33:30+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75067",
-      "merger_name": "Alpin Investments \u2013 Best Sheds",
-      "determination": "Approved",
-      "determination_date": "2026-10-28T12:00:00Z",
-      "page_modified_datetime": "2026-10-28T17:31:59+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

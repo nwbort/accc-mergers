@@ -550,6 +550,48 @@
       },
       "waiver_duration": null
     },
+    "platinum-investment-management-limited": {
+      "id": "platinum-investment-management-limited",
+      "canonical_name": "Platinum Investment Management Limited",
+      "members": [
+        {
+          "name": "PLATINUM INVESTMENT MANAGEMENT LIMITED",
+          "identifier": "25 063 565 006",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45034",
+            "merger_name": "EQT Holdings \u2013 Platinum Investment Management",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-12T12:00:00Z",
+            "determination_date": "2026-10-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
     "psc-transport-insurance-brokers-pty-ltd": {
       "id": "psc-transport-insurance-brokers-pty-ltd",
       "canonical_name": "Psc Transport Insurance Brokers Pty Ltd",
