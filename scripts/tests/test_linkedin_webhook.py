@@ -42,6 +42,7 @@ def state_file(tmp_path, monkeypatch):
 @pytest.fixture
 def configured(monkeypatch):
     monkeypatch.setenv("LINKEDIN_WEBHOOK_URL", URL)
+    monkeypatch.setenv("LINKEDIN_WEBHOOK_API_KEY", "key")
     monkeypatch.delenv("LINKEDIN_POST_ENABLED", raising=False)
 
 
@@ -62,8 +63,8 @@ class Sent(list):
 def sent(monkeypatch):
     calls = Sent()
 
-    def fake_deliver(body, *, url):
-        assert url == URL
+    def fake_deliver(body, *, url, api_key):
+        assert (url, api_key) == (URL, "key")
         calls.append(body["key"])
         return not calls.fail
 
@@ -183,20 +184,22 @@ def test_deliver_posts_json_and_reports_status(monkeypatch):
     class Response:
         status_code = 200
 
-    def fake_post(url, json, timeout):
-        captured.update(url=url, json=json)
+    def fake_post(url, json, headers, timeout):
+        captured.update(url=url, json=json, headers=headers)
         return Response()
 
     monkeypatch.setattr(webhook.requests, "post", fake_post)
     assert webhook.deliver({"key": "k"}, url=URL)
-    assert captured == {"url": URL, "json": {"key": "k"}}
+    assert captured == {"url": URL, "json": {"key": "k"}, "headers": {}}
+    assert webhook.deliver({"key": "k"}, url=URL, api_key="key")
+    assert captured["headers"] == {"x-make-apikey": "key"}
 
     Response.status_code = 410
     assert not webhook.deliver({"key": "k"}, url=URL)
 
 
 def test_a_failed_delivery_does_not_log_the_url(monkeypatch, capsys):
-    def boom(url, json, timeout):
+    def boom(url, json, headers, timeout):
         raise requests.ConnectionError(f"Max retries exceeded with url: {url}")
 
     monkeypatch.setattr(webhook.requests, "post", boom)

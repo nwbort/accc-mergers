@@ -100,10 +100,15 @@ def payload(milestone: Milestone, matter: dict) -> dict:
     }
 
 
-def deliver(body: dict, *, url: str) -> bool:
+#: The header a Make webhook with API key authentication reads.
+API_KEY_HEADER = "x-make-apikey"
+
+
+def deliver(body: dict, *, url: str, api_key: str = "") -> bool:
     """POST one payload. ``True`` if the webhook accepted it."""
+    headers = {API_KEY_HEADER: api_key} if api_key else {}
     try:
-        response = requests.post(url, json=body, timeout=30)
+        response = requests.post(url, json=body, headers=headers, timeout=30)
     except requests.RequestException as exc:
         # requests puts the URL in the message, and the URL is the secret.
         print(f"  webhook failed for {body['key']}: {type(exc).__name__}", file=sys.stderr)
@@ -125,7 +130,8 @@ def send_sample(matters: list[dict], by_id: dict[str, dict]) -> int:
         print("No milestones on the register to sample.", file=sys.stderr)
         return 1
     latest = max(every, key=lambda m: m.date)
-    if not deliver(payload(latest, by_id[_matter_id(latest)]), url=url):
+    if not deliver(payload(latest, by_id[_matter_id(latest)]), url=url,
+                   api_key=config.webhook_api_key()):
         return 1
     print(f"Sent {latest.key} as a sample; nothing recorded.")
     return 0
@@ -191,6 +197,7 @@ def main(argv: list[str] | None = None) -> int:
         print("Nothing to post.")
         return 0
 
+    api_key = config.webhook_api_key()
     batch = due[: args.max_posts]
     if args.wait_for_deploy > 0:
         batch = wait_for_deploy(batch, by_id, timeout=args.wait_for_deploy)
@@ -201,7 +208,8 @@ def main(argv: list[str] | None = None) -> int:
             if spacing_due:
                 time.sleep(POST_SPACING_SECONDS)
                 spacing_due = False
-            if not deliver(payload(milestone, by_id[_matter_id(milestone)]), url=url):
+            if not deliver(payload(milestone, by_id[_matter_id(milestone)]), url=url,
+                           api_key=api_key):
                 failures += 1
                 continue
             spacing_due = True

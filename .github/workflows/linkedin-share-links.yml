@@ -65,6 +65,7 @@ jobs:
       - name: Post LinkedIn milestones via webhook
         env:
           LINKEDIN_WEBHOOK_URL: ${{ secrets.LINKEDIN_WEBHOOK_URL }}
+          LINKEDIN_WEBHOOK_API_KEY: ${{ secrets.LINKEDIN_WEBHOOK_API_KEY }}
           LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
         run: python -m scripts.linkedin.webhook --wait-for-deploy 900
 

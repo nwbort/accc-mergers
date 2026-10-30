@@ -99,5 +99,13 @@ def webhook_url() -> str:
     return _env("LINKEDIN_WEBHOOK_URL")
 
 
+def webhook_api_key() -> str:
+    """The key a Make webhook with API key authentication expects, or ``""``.
+
+    Sent as the ``x-make-apikey`` header. A secret like the URL, never printed.
+    """
+    return _env("LINKEDIN_WEBHOOK_API_KEY")
+
+
 def _env(name: str) -> str:
     return os.environ.get(name, "").strip()

@@ -165,13 +165,15 @@ Scenarios map these keys by name, so add new keys rather than renaming existing 
 ### Setting it up
 
 1. In Make, create a scenario whose trigger is **Webhooks → Custom webhook**.
-   Add a webhook and copy its URL. The URL is the only credential: anyone who
-   has it can post as the page.
+   Add a webhook and copy its URL. Turn on its **API key authentication**
+   too. Without it the URL is the only credential, and anyone who has it can
+   post as the page. The script sends the key as the `x-make-apikey` header.
 2. Teach the webhook the payload's shape. With the webhook waiting for data
    (it is after you create it, or press **Redetermine data structure**), run:
 
    ```bash
-   LINKEDIN_WEBHOOK_URL=… python -m scripts.linkedin.webhook --sample
+   LINKEDIN_WEBHOOK_URL=… LINKEDIN_WEBHOOK_API_KEY=… \
+     python -m scripts.linkedin.webhook --sample
    ```
 
    This sends the register's latest milestone and records nothing.
@@ -184,7 +186,8 @@ Scenarios map these keys by name, so add new keys rather than renaming existing 
    executions**. A post LinkedIn refuses then waits in Make to be retried,
    instead of being lost. Schedule the scenario to run **immediately as data
    arrives**, and switch it on.
-6. Add the repo secret **`LINKEDIN_WEBHOOK_URL`**. The next
+6. Add the repo secrets **`LINKEDIN_WEBHOOK_URL`** and, if the webhook has
+   one, **`LINKEDIN_WEBHOOK_API_KEY`**. The next
    `linkedin-share-links.yml` run (after the pipeline, or dispatched by hand)
    posts whatever is new.
 
