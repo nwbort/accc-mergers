@@ -199,15 +199,18 @@ Scenarios map these keys by name, so add new keys rather than renaming existing 
    order they were sent. Schedule the scenario to run **immediately as data
    arrives**, and switch it on.
 6. Add the repo secrets **`LINKEDIN_WEBHOOK_URL`** and, if the webhook has
-   one, **`LINKEDIN_WEBHOOK_API_KEY`**. The next
-   `linkedin-share-links.yml` run (after the pipeline, or dispatched by hand)
-   posts whatever is new.
+   one, **`LINKEDIN_WEBHOOK_API_KEY`**. The next `pipeline.yml` run posts
+   whatever is new.
 
 ### How it behaves
 
-- It runs in `linkedin-share-links.yml` with `--wait-for-deploy 900`, like the
-  share links. A milestone goes out only once mergers.fyi serves its matter's
-  detail file. If LinkedIn scrapes the link, it gets this run's card.
+- It runs inside `pipeline.yml`, after the Bluesky and LinkedIn API steps,
+  and its state is committed with the run's data. It doesn't wait for the
+  deploy, unlike the share links: the post brings its own card, so LinkedIn
+  never scrapes the page. A reader who clicks through on a brand-new matter in
+  the minute or two before Cloudflare Pages deploys may land before the page
+  exists, as on Bluesky. Like the other publishing steps, it can't fail the
+  pipeline.
 - It shares `linkedin_posts.json`, so it continues from the milestones the
   share links already announced. If that file doesn't exist, the first run
   seeds it and posts nothing.

@@ -15,10 +15,14 @@ image, for a link post; and the commentary in LinkedIn's "little" format, for
 a module that passes text straight to the Posts API, where an unescaped ``(``
 can truncate a post.
 
-It runs in ``linkedin-share-links.yml`` beside ``share_links``, after the
-pipeline, with ``--wait-for-deploy``: a milestone goes out only once
-mergers.fyi serves its matter's detail file as checked out here, so a link
-LinkedIn does scrape gets this run's card rather than last week's.
+It runs inside ``pipeline.yml``, beside ``post_bluesky`` and
+``post_linkedin``, so its state lands in the same commit as the data it
+describes. Unlike ``share_links`` it doesn't wait for the deploy: the post
+carries its own card (title, description, and one of the committed ``og/``
+images), so LinkedIn never scrapes the page and can't cache a stale preview.
+The cost is that a reader who clicks through on a brand-new matter in the
+minute or two before Pages deploys lands before its page exists, as on
+Bluesky. ``--wait-for-deploy`` is still there for a run that wants it.
 
 It shares ``data/processed/linkedin_posts.json`` with the other two: the first
 run seeds it if it doesn't exist, and a milestone is recorded once the webhook
