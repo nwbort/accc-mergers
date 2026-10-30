@@ -121,6 +121,16 @@
       "effective_notification_datetime": "2026-09-10T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-11-06T12:00:00Z",
+      "merger_id": "MN-90044",
+      "merger_name": "Stellex and ONA \u2013 Score",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-29T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2026-11-09T12:00:00Z",
@@ -504,6 +514,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-12-10T12:00:00Z",
+      "merger_id": "MN-90044",
+      "merger_name": "Stellex and ONA \u2013 Score",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-29T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-12-17T12:00:00Z",
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
@@ -533,6 +553,6 @@
       "tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026"
     }
   ],
-  "count": 53,
+  "count": 55,
   "days_ahead": 60
 }

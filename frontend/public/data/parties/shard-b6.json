@@ -2,6 +2,42 @@
   "shard": 182,
   "shard_count": 256,
   "parties": {
+    "buchan-2-ltd": {
+      "id": "buchan-2-ltd",
+      "canonical_name": "Buchan 2 Ltd",
+      "members": [
+        {
+          "name": "Buchan 2 Ltd",
+          "identifier": "UK Companies House  SC644003",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90044",
+            "merger_name": "Stellex and ONA \u2013 Score",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-29T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "c-mcmahon-enterprises-pty-ltd": {
       "id": "c-mcmahon-enterprises-pty-ltd",
       "canonical_name": "C McMahon Enterprises Pty Ltd",
