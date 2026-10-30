@@ -30,6 +30,7 @@ from scripts.extract_mergers import (
     detect_inferred_phase_2,
     detect_missing_questionnaires,
     detect_missing_waiver_determinations,
+    detect_missing_determinations,
     _infer_determination_date_from_events,
     _infer_determination_date_from_unlinked_event,
     _extract_anzsic_codes,
@@ -2707,6 +2708,89 @@ class TestDetectMissingWaiverDeterminations:
         out.write_text('{"open": [{"merger_id": "WA-OLD"}], "resolved": []}')
         monkeypatch.setattr(extract_mergers, "MISSING_WAIVER_DETERMINATIONS_PATH", str(out))
         detect_missing_waiver_determinations([])
+        assert not out.exists()
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: detect_missing_determinations (notifications)
+# ---------------------------------------------------------------------------
+
+class TestDetectMissingDeterminations:
+    def _run(self, mergers, tmp_path, monkeypatch, mirrored=True):
+        out = tmp_path / "missing_determinations.json"
+        monkeypatch.setattr(extract_mergers, "MISSING_DETERMINATIONS_PATH", str(out))
+        matters = tmp_path / "matters"
+        monkeypatch.setattr(extract_mergers, "MATTERS_DIR", str(matters))
+        if mirrored:
+            for merger in mergers:
+                for event in merger.get('events', []):
+                    if event.get('url'):
+                        name = unquote(event['url'].rsplit('/', 1)[-1])
+                        event.setdefault('url_gh', f"/mergers/{merger['merger_id']}/{name}")
+                        path = matters / merger['merger_id'] / name
+                        path.parent.mkdir(parents=True, exist_ok=True)
+                        path.write_bytes(b'%PDF')
+        detect_missing_determinations(mergers)
+        if not out.exists():
+            return None
+        with open(out) as f:
+            return json.load(f)
+
+    def test_determination_row_without_attachment_opens_issue(self, tmp_path, monkeypatch):
+        # MN-30033: "... - Phase 1 determination" listed with no PDF attached.
+        mergers = [{
+            'merger_id': 'MN-30033',
+            'merger_name': 'Brown & Hurley - Schmitz Cargobull and Freighter Group',
+            'stage': 'Phase 1 - initial assessment',
+            'accc_determination': 'Approved',
+            'determination_publication_date': '2026-10-30T12:00:00Z',
+            'events': [
+                {'title': 'Brown & Hurley - Schmitz Cargobull and Freighter Group - '
+                          'Phase 1 determination', 'date': '2026-10-30T12:00:00Z'},
+                {'title': 'Phase 1 - initial assessment determination: Approved',
+                 'date': '2026-10-30T12:00:00Z', 'is_determination_event': True},
+                {'title': 'Third party questionnaire', 'url': 'https://x/q.docx',
+                 'is_questionnaire_event': True},
+            ],
+        }]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert [i['merger_id'] for i in result['open']] == ['MN-30033']
+        issue = result['open'][0]
+        assert issue['title'].startswith('Missing determination:')
+        assert issue['title'].endswith('(MN-30033)')
+        assert 'decided notified acquisition' in issue['body']
+        assert result['resolved'] == []
+
+    def test_mirrored_document_resolves(self, tmp_path, monkeypatch):
+        mergers = [{'merger_id': 'MN-1', 'accc_determination': 'Approved', 'events': [{
+            'title': 'Acme - Target - Phase 1 determination', 'url': 'https://x/a.pdf'}]}]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert result['open'] == []
+        assert result['resolved'] == ['MN-1']
+
+    def test_linked_but_not_downloaded_opens_issue(self, tmp_path, monkeypatch):
+        mergers = [{'merger_id': 'MN-1', 'accc_determination': 'Approved', 'events': [{
+            'title': 'Acme - Target - Phase 1 determination', 'url': 'https://x/a.pdf',
+            'url_gh': '/mergers/MN-1/a.pdf'}]}]
+        result = self._run(mergers, tmp_path, monkeypatch, mirrored=False)
+        issue = result['open'][0]
+        assert issue['title'].startswith('Determination not downloaded:')
+        assert 'while the matter is still being scraped' in issue['body']
+
+    def test_waivers_and_undecided_notifications_are_ignored(self, tmp_path, monkeypatch):
+        mergers = [
+            {'merger_id': 'WA-1', 'accc_determination': 'Approved', 'events': []},
+            {'merger_id': 'XX-2', 'stage': 'Waiver application',
+             'accc_determination': 'Approved', 'events': []},
+            {'merger_id': 'MN-3', 'stage': 'Phase 1 - initial assessment', 'events': []},
+        ]
+        assert self._run(mergers, tmp_path, monkeypatch) is None
+
+    def test_removes_stale_file_when_no_decided_notifications(self, tmp_path, monkeypatch):
+        out = tmp_path / "missing_determinations.json"
+        out.write_text('{"open": [{"merger_id": "MN-OLD"}], "resolved": []}')
+        monkeypatch.setattr(extract_mergers, "MISSING_DETERMINATIONS_PATH", str(out))
+        detect_missing_determinations([])
         assert not out.exists()
 
 
