@@ -871,10 +871,11 @@ jobs:
           echo "Confirmed Phase 2 mergers: ${CLOSE_COUNT}; tracking issues closed: ${CLOSED}"
 
       # --- Missing-document tracking issues ---
-      # detect_missing_questionnaires and detect_missing_waiver_determinations
-      # each write a JSON file listing matters whose page lacks a document the
-      # ACCC normally publishes (a notification's questionnaire, a decided
-      # waiver's determination, or one linked there that failed to download).
+      # detect_missing_questionnaires, detect_missing_waiver_determinations and
+      # detect_missing_determinations each write a JSON file listing matters
+      # whose page lacks a document the ACCC normally publishes (a
+      # notification's questionnaire, a decided waiver's or notification's
+      # determination, or one linked there that failed to download).
       # The tracking-issues action opens one issue per matter and ntfys about
       # the new ones, and auto-closes an issue once the document appears. An issue that exists in ANY state is never
       # re-created, so closing one is how a matter with no document by design
@@ -901,6 +902,19 @@ jobs:
           label-description: Decided waiver whose determination is missing from the ACCC register or failed to download
           close-comment: This waiver's determination is now on the ACCC register and downloaded — closing automatically.
           notify-title: Missing waiver determination
+          ntfy-topic: ${{ secrets.NTFY_TOPIC }}
+          ntfy-token: ${{ secrets.NTFY_TOKEN }}
+          ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
+          github-token: ${{ github.token }}
+
+      - name: Manage missing determination issues
+        uses: ./.github/actions/tracking-issues
+        with:
+          file: data/processed/missing_determinations.json
+          label: missing-determination
+          label-description: Decided notification whose determination is missing from the ACCC register or failed to download
+          close-comment: This merger's determination is now on the ACCC register and downloaded — closing automatically.
+          notify-title: Missing determination
           ntfy-topic: ${{ secrets.NTFY_TOPIC }}
           ntfy-token: ${{ secrets.NTFY_TOKEN }}
           ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}

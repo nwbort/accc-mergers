@@ -2132,6 +2132,65 @@ def _is_mirrored(merger_id, event):
         os.path.join(MATTERS_DIR, merger_id, os.path.basename(url_gh)))
 
 
+def _detect_missing_determinations(all_mergers_data, *, waivers, path, noun,
+                                   explanation, report):
+    """Shared body of the two missing-determination checks.
+
+    Checks the decided matters of one kind (``waivers`` or notifications) and
+    writes ``path`` for the tracking-issues action. ``noun`` names the matter in
+    the issue ("waiver application", "notified acquisition"); ``explanation``
+    is the "why" paragraph for a matter with no document at all.
+    """
+    to_open = []
+    resolved = []
+    heading_kind = 'Waiver determination' if waivers else 'Determination'
+
+    for merger in all_mergers_data:
+        merger_id = merger.get('merger_id')
+        if not merger_id or is_waiver_merger(merger) != waivers:
+            continue
+        if not (merger.get('accc_determination') or merger.get('determination_publication_date')):
+            continue
+        documents = _determination_document_events(merger)
+        if documents and any(_is_mirrored(merger_id, e) for e in documents):
+            resolved.append(merger_id)
+            continue
+
+        if documents:
+            to_open.append(_tracking_issue(
+                merger,
+                heading=f'{heading_kind} not downloaded',
+                kind='the determination document',
+                closes_when='the determination has been downloaded',
+                summary=(f'is a decided {noun} whose determination '
+                         'is linked on the ACCC register but was not downloaded.'),
+                rows=[('Determination', merger.get('accc_determination')),
+                      ('Published', (merger.get('determination_publication_date') or '')[:10]),
+                      ('Document', documents[0]['url'])],
+                explanation=("The pipeline mirrors every determination so the site "
+                             "can preview it and parse its statement of reasons. "
+                             "This one failed to download (the run log names the "
+                             "error), so the site links to a file that isn't there. "
+                             "A later run retries it while the matter is still being "
+                             "scraped; dispatching `pipeline.yml` retries it now."),
+            ))
+            continue
+
+        to_open.append(_tracking_issue(
+            merger,
+            heading=f'Missing {heading_kind.lower()}',
+            kind='a determination document',
+            summary=(f'is a decided {noun} on the ACCC register '
+                     'with no determination document on its page.'),
+            rows=[('Determination', merger.get('accc_determination')),
+                  ('Published', (merger.get('determination_publication_date') or '')[:10]),
+                  ('ACCC stage', merger.get('stage'))],
+            explanation=explanation,
+        ))
+
+    _write_tracking_issues(path, to_open, resolved, report)
+
+
 def detect_missing_waiver_determinations(all_mergers_data):
     """Find decided waivers on the register that have no determination document.
 
@@ -2160,59 +2219,52 @@ def detect_missing_waiver_determinations(all_mergers_data):
 
     Removes the file when there are no decided waivers at all.
     """
-    to_open = []
-    resolved = []
+    _detect_missing_determinations(
+        all_mergers_data,
+        waivers=True,
+        path=MISSING_WAIVER_DETERMINATIONS_PATH,
+        noun='waiver application',
+        explanation=("The ACCC publishes a determination with every waiver "
+                     "decision. Either it hasn't been uploaded yet, or the page "
+                     "links to the wrong thing. Waivers stop being scraped three "
+                     "weeks after the decision, so a document uploaded later than "
+                     "that won't be picked up on its own."),
+        report='No mirrored determination document for waivers',
+    )
 
-    for merger in all_mergers_data:
-        merger_id = merger.get('merger_id')
-        if not merger_id or not is_waiver_merger(merger):
-            continue
-        if not (merger.get('accc_determination') or merger.get('determination_publication_date')):
-            continue
-        documents = _determination_document_events(merger)
-        if documents and any(_is_mirrored(merger_id, e) for e in documents):
-            resolved.append(merger_id)
-            continue
 
-        if documents:
-            to_open.append(_tracking_issue(
-                merger,
-                heading='Waiver determination not downloaded',
-                kind='the determination document',
-                closes_when='the determination has been downloaded',
-                summary=('is a decided waiver application whose determination '
-                         'is linked on the ACCC register but was not downloaded.'),
-                rows=[('Determination', merger.get('accc_determination')),
-                      ('Published', (merger.get('determination_publication_date') or '')[:10]),
-                      ('Document', documents[0]['url'])],
-                explanation=("The pipeline mirrors every determination so the site "
-                             "can preview it and parse its statement of reasons. "
-                             "This one failed to download (the run log names the "
-                             "error), so the site links to a file that isn't there. "
-                             "A later run retries it while the waiver is still being "
-                             "scraped; dispatching `pipeline.yml` retries it now."),
-            ))
-            continue
+MISSING_DETERMINATIONS_PATH = 'data/processed/missing_determinations.json'
 
-        issue = _tracking_issue(
-            merger,
-            heading='Missing waiver determination',
-            kind='a determination document',
-            summary=('is a decided waiver application on the ACCC register '
-                     'with no determination document on its page.'),
-            rows=[('Determination', merger.get('accc_determination')),
-                  ('Published', (merger.get('determination_publication_date') or '')[:10]),
-                  ('ACCC stage', merger.get('stage'))],
-            explanation=("The ACCC publishes a determination with every waiver "
-                         "decision. Either it hasn't been uploaded yet, or the page "
-                         "links to the wrong thing. Waivers stop being scraped three "
-                         "weeks after the decision, so a document uploaded later than "
-                         "that won't be picked up on its own."),
-        )
-        to_open.append(issue)
 
-    _write_tracking_issues(MISSING_WAIVER_DETERMINATIONS_PATH, to_open, resolved,
-                           'No mirrored determination document for waivers')
+def detect_missing_determinations(all_mergers_data):
+    """Find decided notifications on the register that have no determination document.
+
+    The notification twin of :func:`detect_missing_waiver_determinations`, with
+    its own file and issue label. MN-30033 is the case it was written for: the
+    page lists "... - Phase 1 determination" the day the decision is published,
+    with no PDF attached yet. As for a waiver, the outcome still shows (it
+    comes from the page's determination field); the mirrored PDF and the
+    reasons parsed from it are what's missing.
+
+    Any linked, mirrored determination document resolves the matter, whichever
+    phase it belongs to — the same test the waiver check applies.
+
+    Writes ``MISSING_DETERMINATIONS_PATH`` in the same ``{open, resolved}``
+    shape, and removes it when there are no decided notifications at all.
+    """
+    _detect_missing_determinations(
+        all_mergers_data,
+        waivers=False,
+        path=MISSING_DETERMINATIONS_PATH,
+        noun='notified acquisition',
+        explanation=("The ACCC publishes a determination with every decision on "
+                     "a notification. Either it hasn't been uploaded yet, or the "
+                     "page links to the wrong thing. An approved notification "
+                     "stops being scraped three weeks after the decision (five "
+                     "if cleared on conditions), so a document uploaded later "
+                     "than that won't be picked up on its own."),
+        report='No mirrored determination document for notifications',
+    )
 
 
 def extract_nocc_data():
@@ -2372,6 +2424,7 @@ def run_pdf_enrichment(all_mergers_data, frozen_events_mergers):
     detect_inferred_phase_2(all_mergers_data)
     detect_missing_questionnaires(all_mergers_data, probe=probe_questionnaire)
     detect_missing_waiver_determinations(all_mergers_data)
+    detect_missing_determinations(all_mergers_data)
     return all_mergers_data
 
 def main():

@@ -4,9 +4,9 @@ description: >-
   push an ntfy notification for the new ones, and auto-close an issue once
   the document appears.
 
-# The missing-questionnaire and missing-waiver-determination checks in
-# pipeline.yml share one lifecycle, so they share this action rather than two
-# near-identical copies of the plumbing. Each detector in
+# The missing-questionnaire, missing-waiver-determination and
+# missing-determination checks in pipeline.yml share one lifecycle, so they
+# share this action rather than near-identical copies of the plumbing. Each detector in
 # scripts/extract_mergers.py writes a JSON file of the shape
 #
 #   {"open":     [{"merger_id", "merger_name", "title", "body"}, ...],

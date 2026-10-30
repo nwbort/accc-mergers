@@ -761,7 +761,7 @@ exists rather than 404ing into the SPA's `index.html`.
 
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
-| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere and post to LinkedIn (API) → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, or whose linked determination failed to download, `missing-waiver-determination`), then runs all four detectors. The two ATmosphere steps and the LinkedIn step are `continue-on-error` and skip without their credentials — an unreachable PDS or API must not cost the run its scrape |
+| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere and post to LinkedIn (API) → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, or whose linked determination failed to download, `missing-waiver-determination`, and its notification twin `missing-determination`), then runs all four detectors. The two ATmosphere steps and the LinkedIn step are `continue-on-error` and skip without their credentials — an unreachable PDS or API must not cost the run its scrape |
 | `linkedin-share-links.yml` | `workflow_run` after `pipeline.yml` completes on `main`, manual | Hand each new milestone to the Make.com webhook (`webhook.py`, `LINKEDIN_WEBHOOK_URL`), or failing that send its LinkedIn share link over ntfy, once Cloudflare Pages serves the matter's data as pushed (`share_links.py --wait-for-deploy`; LinkedIn caches the first scrape for a week), then commit `linkedin_posts.json` with `[skip ci]`. A workflow of its own so the wait doesn't hold the pipeline's concurrency group. Inert without `LINKEDIN_WEBHOOK_URL`, or `LINKEDIN_SHARE_LINKS` and `NTFY_TOPIC` |
 | `quarterly-report.yml` | Dispatched by `pipeline.yml` when its commit changes `quarterly.json`, push to `main` touching `quarterly.json`, `quarterly_pdf.py`, `scripts/requirements.txt` or the workflow, manual | Draw the quarterly report PDFs from the committed `quarterly.json` (`python -m scripts.generate.quarterly_pdf`) and commit them if they changed. Its own workflow so typesetting stays out of the pipeline's run and concurrency group. Commits *without* `[skip ci]`, since the PDFs are deployed; the `GITHUB_TOKEN` push doesn't retrigger the pipeline |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
@@ -810,11 +810,12 @@ re-read two records that move perhaps once a year.
   (`related_parties.json`'s `rejected`), or the next run merges it straight back.
 - `ntfy/` — publish a push notification to an [ntfy](https://ntfy.sh) topic.
 - `tracking-issues/` — the missing-document issue lifecycle shared by the
-  `missing-questionnaire` and `missing-waiver-determination` checks: one issue
+  `missing-questionnaire`, `missing-waiver-determination` and
+  `missing-determination` checks: one issue
   per matter a detector lists, an ntfy push for new ones, auto-close once the
   document appears, and never re-create an issue that exists in any state. The
   detectors write its input through `_write_tracking_issues` /
-  `_tracking_issue` in `extract_mergers.py`; a third check is another call to
+  `_tracking_issue` in `extract_mergers.py`; another check is another call to
   each, not another copy.
 
 ### Push notifications
