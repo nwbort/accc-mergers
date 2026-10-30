@@ -41,6 +41,7 @@ def configured(monkeypatch):
     monkeypatch.setenv("LINKEDIN_SHARE_LINKS", "true")
     monkeypatch.setenv("NTFY_TOPIC", "topic")
     monkeypatch.delenv("LINKEDIN_POST_ENABLED", raising=False)
+    monkeypatch.delenv("LINKEDIN_WEBHOOK_URL", raising=False)
 
 
 class Sent(list):

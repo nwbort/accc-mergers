@@ -69,9 +69,13 @@ own `LINKEDIN_POST_ENABLED` switch and its own seeded state file
 (`data/processed/linkedin_posts.json`), and is inert without credentials. A
 company page needs the Community Management API, which provides refresh
 tokens and read-back. A personal profile works with a 60-day access token and
-no read-back. Until the API is approved, `share_links.py` (`LINKEDIN_SHARE_LINKS`)
+no read-back. Until the API is approved, `webhook.py` (`LINKEDIN_WEBHOOK_URL`)
+POSTs each milestone as JSON to a Make.com scenario that posts it to the
+company page (a webhook, not RSS, because a webhook only spends Make credits
+when called), and failing that `share_links.py` (`LINKEDIN_SHARE_LINKS`)
 pushes each milestone to a phone over ntfy as a LinkedIn composer link to post
-by hand, sharing the same state file. Those links unfurl with a generic card
+by hand. All three share the same state file, and exactly one acts: API, then
+webhook, then share links. Those links unfurl with a generic card
 for the matter's latest milestone — 14 committed PNGs in `frontend/public/og/`,
 drawn by `scripts/generate/og_cards.py`, which also writes each detail file's
 `og_card` for the Pages Function, prerenderer and SPA to read. The links are
@@ -404,8 +408,10 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   State lives in data/processed/atproto_{records,posts}.json
 ├── linkedin/             # LinkedIn posting (see docs/linkedin.md): post_linkedin.py reuses
 │                         #   atproto/post_bluesky.py's milestones/state helpers; client.py is a
-│                         #   hand-rolled REST client over requests; share_links.py is the manual
-│                         #   stopgap (ntfy push of a prefilled composer link). State in
+│                         #   hand-rolled REST client over requests; webhook.py is the stopgap
+│                         #   (one JSON POST per milestone to a Make.com scenario that posts to
+│                         #   the page), share_links.py the manual one (ntfy push of a
+│                         #   prefilled composer link). State in
 │                         #   data/processed/linkedin_posts.json
 ├── constants/            # Shared Python literals (merger_status.py, site.py, tribunal.py,
 │                         #   judicial_review.py,
@@ -756,7 +762,7 @@ exists rather than 404ing into the SPA's `index.html`.
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
 | `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere and post to LinkedIn (API) → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, or whose linked determination failed to download, `missing-waiver-determination`), then runs all four detectors. The two ATmosphere steps and the LinkedIn step are `continue-on-error` and skip without their credentials — an unreachable PDS or API must not cost the run its scrape |
-| `linkedin-share-links.yml` | `workflow_run` after `pipeline.yml` completes on `main`, manual | Send each new milestone's LinkedIn share link over ntfy, once Cloudflare Pages serves the matter's data as pushed (`share_links.py --wait-for-deploy`; LinkedIn caches the first scrape for a week), then commit `linkedin_posts.json` with `[skip ci]`. A workflow of its own so the wait doesn't hold the pipeline's concurrency group. Inert without `LINKEDIN_SHARE_LINKS` and `NTFY_TOPIC` |
+| `linkedin-share-links.yml` | `workflow_run` after `pipeline.yml` completes on `main`, manual | Hand each new milestone to the Make.com webhook (`webhook.py`, `LINKEDIN_WEBHOOK_URL`), or failing that send its LinkedIn share link over ntfy, once Cloudflare Pages serves the matter's data as pushed (`share_links.py --wait-for-deploy`; LinkedIn caches the first scrape for a week), then commit `linkedin_posts.json` with `[skip ci]`. A workflow of its own so the wait doesn't hold the pipeline's concurrency group. Inert without `LINKEDIN_WEBHOOK_URL`, or `LINKEDIN_SHARE_LINKS` and `NTFY_TOPIC` |
 | `quarterly-report.yml` | Dispatched by `pipeline.yml` when its commit changes `quarterly.json`, push to `main` touching `quarterly.json`, `quarterly_pdf.py`, `scripts/requirements.txt` or the workflow, manual | Draw the quarterly report PDFs from the committed `quarterly.json` (`python -m scripts.generate.quarterly_pdf`) and commit them if they changed. Its own workflow so typesetting stays out of the pipeline's run and concurrency group. Commits *without* `[skip ci]`, since the PDFs are deployed; the `GITHUB_TOKEN` push doesn't retrigger the pipeline |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `publish-lexicons.yml` | Push to `main` touching `atproto/lexicons/**` or the workflow itself, manual (with a `dry_run` input) | Publish the `fyi.mergers.*` schemas as `com.atproto.lexicon.schema` records. Its own workflow rather than a pipeline step: a lexicon changes only when a person edits one, so a path-filtered push fires exactly then, where `pipeline.yml` would re-read both records several times a day to learn nothing moved. A missing `ATPROTO_APP_PASSWORD` skips a push run and fails a manual one |

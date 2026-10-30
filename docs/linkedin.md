@@ -118,6 +118,99 @@ This route has two drawbacks:
 2. Set the repo variable **`LINKEDIN_POST_ENABLED=true`**. The next pipeline
    run seeds the state file, and the run after that is the first to post.
 
+## Before the API is approved: a Make.com webhook
+
+`scripts/linkedin/webhook.py` posts to the company page without a LinkedIn app
+of our own. A [Make.com](https://www.make.com) scenario holds the LinkedIn
+connection. For each milestone the API poster would post, the script POSTs one
+JSON object to the scenario's webhook, and the scenario posts it to the page.
+
+Make's free plan covers it. A webhook spends credits only when it's called,
+about 2 per post (the trigger plus the LinkedIn module). The register produces
+about 135 milestones a month (late 2026), so that's about 270 of the free 1,000
+credits. An RSS trigger would cost more and be slower, because Make and Zapier
+spend a credit on every poll whether or not anything is new. Zapier's free plan
+allows 100 tasks a month, which is too few to post every milestone.
+
+### What the webhook receives
+
+```json
+{
+  "key": "MN-01016:determined:2025-09-05",
+  "matter_id": "MN-01016",
+  "date": "2025-09-05",
+  "headline": "Cleared by the ACCC",
+  "title": "Asahi – Warehouse site on Tilburn Rd, Deer Park (Vic)",
+  "text": "Cleared by the ACCC: Asahi – …\n\nAsahi will enter …\n\nMN-01016 · Phase 1 - initial assessment · 5 Sep 2025\n\nhttps://mergers.fyi/mergers/MN-01016?m=determined\n\n#accc",
+  "commentary": "Cleared by the ACCC: Asahi – …\n\nAsahi will enter …\n\nMN-01016 · Phase 1 - initial assessment · 5 Sep 2025\n\n#accc",
+  "commentary_little": "Cleared by the ACCC: Asahi – … Deer Park \\(Vic\\) … {hashtag|\\#|accc}",
+  "url": "https://mergers.fyi/mergers/MN-01016?m=determined",
+  "description": "Asahi will enter into an agreement for lease …",
+  "image_url": "https://mergers.fyi/og/cleared-by-the-accc.png"
+}
+```
+
+- `text` is the whole post as plain text, link included, for a **text post**
+  that LinkedIn unfurls (the same text as the share links below).
+- `commentary` is the post without the link, for a **link/article post**. Map
+  the card from `url`, `title`, `description` and `image_url`. The image is the
+  generic card for the matter's latest milestone (see the share links below).
+- `commentary_little` is `commentary` in LinkedIn's
+  ["little" format](#what-a-post-looks-like). Use it only if posts with
+  brackets in them come out truncated, which would mean the module passes text
+  straight to the Posts API without escaping it.
+
+Scenarios map these keys by name, so add new keys rather than renaming existing ones.
+
+### Setting it up
+
+1. In Make, create a scenario whose trigger is **Webhooks → Custom webhook**.
+   Add a webhook and copy its URL. The URL is the only credential: anyone who
+   has it can post as the page.
+2. Teach the webhook the payload's shape. With the webhook waiting for data
+   (it is after you create it, or press **Redetermine data structure**), run:
+
+   ```bash
+   LINKEDIN_WEBHOOK_URL=… python -m scripts.linkedin.webhook --sample
+   ```
+
+   This sends the register's latest milestone and records nothing.
+3. Add the **LinkedIn** app's company post module (a link/article post if one
+   is offered, otherwise the company text post). Connect it as an admin of the
+   page and pick the page. Map the fields as described above.
+4. Run the scenario once (**Run once**, then `--sample` again) and check the
+   post. Delete it from the page afterwards.
+5. In the scenario's settings, turn on **Allow storing of incomplete
+   executions**. A post LinkedIn refuses then waits in Make to be retried,
+   instead of being lost. Schedule the scenario to run **immediately as data
+   arrives**, and switch it on.
+6. Add the repo secret **`LINKEDIN_WEBHOOK_URL`**. The next
+   `linkedin-share-links.yml` run (after the pipeline, or dispatched by hand)
+   posts whatever is new.
+
+### How it behaves
+
+- It runs in `linkedin-share-links.yml` with `--wait-for-deploy 900`, like the
+  share links. A milestone goes out only once mergers.fyi serves its matter's
+  detail file. If LinkedIn scrapes the link, it gets this run's card.
+- It shares `linkedin_posts.json`, so it continues from the milestones the
+  share links already announced. If that file doesn't exist, the first run
+  seeds it and posts nothing.
+- A milestone is recorded once the webhook accepts it. Accepting the request is
+  all the script can see. A scenario that fails afterwards (for example because
+  the LinkedIn connection expired) shows up in Make's history and incomplete
+  executions, not in the Actions run.
+- There's no read-back. If the state commit is lost, the next run posts the
+  same milestones again.
+- `--max-posts` (default 10) caps each run, and posts go out 5 seconds apart.
+- The share links stand down while `LINKEDIN_WEBHOOK_URL` is set, and the
+  webhook stands down once `LINKEDIN_POST_ENABLED` is set. Only one of the
+  three handles any milestone.
+
+```bash
+python -m scripts.linkedin.webhook --dry-run    # print the payloads that are due
+```
+
 ## Before the API is approved: share links
 
 `scripts/linkedin/share_links.py` gets the posts out by hand while the API
@@ -171,9 +264,10 @@ It needs the repo variable **`LINKEDIN_SHARE_LINKS=true`** and the existing
 `NTFY_TOPIC` secret (`NTFY_TOKEN` and `NTFY_SERVER` are used if set). It
 shares `linkedin_posts.json` with the API poster. Its first run seeds that file
 and sends nothing, and a milestone is recorded only once its notification is
-delivered. When you later set `LINKEDIN_POST_ENABLED`, the share links stop by
-themselves and the API carries on from the same point, so nothing is
-announced twice. At most 10 links go out per run, like the posts.
+delivered. When you later set `LINKEDIN_WEBHOOK_URL` or
+`LINKEDIN_POST_ENABLED`, the share links stop by themselves and the new route
+carries on from the same point, so nothing is announced twice. At most 10
+links go out per run, like the posts.
 
 ```bash
 python -m scripts.linkedin.share_links --dry-run    # see the links that are due

@@ -89,5 +89,15 @@ def posting_enabled() -> bool:
     return _env("LINKEDIN_POST_ENABLED").lower() in {"1", "true", "yes"}
 
 
+def webhook_url() -> str:
+    """Where ``scripts.linkedin.webhook`` hands each milestone, or ``""``.
+
+    A Make.com (or Zapier, Pipedream, n8n) custom webhook whose scenario posts
+    to the company page. The URL is the only credential - anyone holding it
+    can post as the page - so it is a secret and is never printed.
+    """
+    return _env("LINKEDIN_WEBHOOK_URL")
+
+
 def _env(name: str) -> str:
     return os.environ.get(name, "").strip()
