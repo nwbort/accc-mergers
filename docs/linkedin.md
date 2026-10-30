@@ -126,9 +126,9 @@ connection. For each milestone the API poster would post, the script POSTs one
 JSON object to the scenario's webhook, and the scenario posts it to the page.
 
 Make's free plan covers it. A webhook spends credits only when it's called,
-about 2 per post (the trigger plus the LinkedIn module). The register produces
-about 135 milestones a month (late 2026), so that's about 270 of the free 1,000
-credits. An RSS trigger would cost more and be slower, because Make and Zapier
+about 3 per post (the trigger, the image download and the LinkedIn module).
+The register produces about 135 milestones a month (late 2026), so that's
+about 400 of the free 1,000 credits. An RSS trigger would cost more and be slower, because Make and Zapier
 spend a credit on every poll whether or not anything is new. Zapier's free plan
 allows 100 tasks a month, which is too few to post every milestone.
 
@@ -150,15 +150,17 @@ allows 100 tasks a month, which is too few to post every milestone.
 }
 ```
 
-- `text` is the whole post as plain text, link included, for a **text post**
-  that LinkedIn unfurls (the same text as the share links below).
-- `commentary` is the post without the link, for a **link/article post**. Map
-  the card from `url`, `title`, `description` and `image_url`. The image is the
-  generic card for the matter's latest milestone (see the share links below).
-- `commentary_little` is `commentary` in LinkedIn's
-  ["little" format](#what-a-post-looks-like). Use it only if posts with
-  brackets in them come out truncated, which would mean the module passes text
-  straight to the Posts API without escaping it.
+- `commentary_little` is the post without the link, in LinkedIn's
+  ["little" format](#what-a-post-looks-like), with brackets escaped and `#accc`
+  as a hashtag template. Map **this** to the Make LinkedIn module's Content.
+  The module passes Content to the Posts API unchanged, so plain text with a
+  `(` in it can be cut off.
+- `url`, `title`, `description` and `image_url` make the post's link card.
+  The image is the generic card for the matter's latest milestone (see the
+  share links below).
+- `text` (the whole post as plain text, link included) and `commentary`
+  (`commentary_little` without the escapes) are for a destination that wants
+  plain text.
 
 Scenarios map these keys by name, so add new keys rather than renaming existing ones.
 
@@ -177,14 +179,24 @@ Scenarios map these keys by name, so add new keys rather than renaming existing 
    ```
 
    This sends the register's latest milestone and records nothing.
-3. Add the **LinkedIn** app's company post module (a link/article post if one
-   is offered, otherwise the company text post). Connect it as an admin of the
-   page and pick the page. Map the fields as described above.
-4. Run the scenario once (**Run once**, then `--sample` again) and check the
+3. Add **HTTP → Download a file** with URL `{{1.image_url}}`. LinkedIn's
+   API doesn't fetch link previews itself, so the card image has to be
+   uploaded with the post.
+4. Add **LinkedIn → Create a Company Text Post**. Connect it as an admin of
+   the page, pick the page, and set:
+   - Content: `{{1.commentary_little}}`
+   - Media Type: **Article**
+   - Link: URL `{{1.url}}`, Title `{{1.title}}`, Description `{{1.description}}`
+   - Thumbnail: map the file from the Download step (File name `{{3.fileName}}`,
+     Data `{{3.data}}`), with Thumbnail Alt Text `{{1.headline}}`
+
+   Without the Article media type, the link shows as bare text with no card.
+   Run the scenario once (**Run once**, then `--sample` again) and check the
    post. Delete it from the page afterwards.
 5. In the scenario's settings, turn on **Allow storing of incomplete
-   executions**. A post LinkedIn refuses then waits in Make to be retried,
-   instead of being lost. Schedule the scenario to run **immediately as data
+   executions** and **Sequential processing**. A post LinkedIn refuses then
+   waits in Make to be retried instead of being lost, and posts go out in the
+   order they were sent. Schedule the scenario to run **immediately as data
    arrives**, and switch it on.
 6. Add the repo secrets **`LINKEDIN_WEBHOOK_URL`** and, if the webhook has
    one, **`LINKEDIN_WEBHOOK_API_KEY`**. The next
