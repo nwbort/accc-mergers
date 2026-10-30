@@ -35,7 +35,8 @@ It shares ``data/processed/linkedin_posts.json`` with ``post_linkedin``: the
 first run seeds it, a milestone is recorded once its notification is
 delivered, and when the API is switched on it picks up from where the links
 left off rather than re-announcing them. It stands down once
-``LINKEDIN_POST_ENABLED`` is set, so the two can't both handle a milestone.
+``LINKEDIN_POST_ENABLED`` or ``LINKEDIN_WEBHOOK_URL`` is set
+(``scripts.linkedin.webhook``), so two of them can't both handle a milestone.
 
 Usage:
     python -m scripts.linkedin.share_links [--dry-run] [--max-links N]
@@ -217,6 +218,9 @@ def main(argv: list[str] | None = None) -> int:
 
     if config.posting_enabled():
         print("LINKEDIN_POST_ENABLED is set - the API poster has this; skipping.")
+        return 0
+    if config.webhook_url():
+        print("LINKEDIN_WEBHOOK_URL is set - the webhook poster has this; skipping.")
         return 0
     if not share_links_enabled():
         print("LINKEDIN_SHARE_LINKS is not set - skipping. See docs/linkedin.md.",

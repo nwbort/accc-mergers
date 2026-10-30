@@ -1,9 +1,15 @@
 name: LinkedIn share links
 
-# Until the LinkedIn API route is approved: push each new milestone to a phone
-# over ntfy as a ready-to-post LinkedIn link (see docs/linkedin.md). Stands
-# down by itself once LINKEDIN_POST_ENABLED is set, and skips without
-# LINKEDIN_SHARE_LINKS or NTFY_TOPIC.
+# Until the LinkedIn API route is approved, one of two stopgaps (see
+# docs/linkedin.md):
+#
+# - LINKEDIN_WEBHOOK_URL: hand each new milestone to a Make.com scenario that
+#   posts it to the company page (scripts/linkedin/webhook.py).
+# - LINKEDIN_SHARE_LINKS + NTFY_TOPIC: push each new milestone to a phone over
+#   ntfy as a ready-to-post LinkedIn link (scripts/linkedin/share_links.py).
+#
+# The webhook wins when both are set, and both stand down by themselves once
+# LINKEDIN_POST_ENABLED is set; with neither configured nothing happens.
 #
 # A workflow of its own, run after pipeline.yml rather than as a step of it,
 # because it has to wait for the deploy. LinkedIn scrapes a link the moment it
@@ -56,8 +62,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Send LinkedIn share links
+      - name: Post LinkedIn milestones via webhook
         env:
+          LINKEDIN_WEBHOOK_URL: ${{ secrets.LINKEDIN_WEBHOOK_URL }}
+          LINKEDIN_WEBHOOK_API_KEY: ${{ secrets.LINKEDIN_WEBHOOK_API_KEY }}
+          LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
+        run: python -m scripts.linkedin.webhook --wait-for-deploy 900
+
+      # Stands down while LINKEDIN_WEBHOOK_URL is set, so it needs the secret
+      # too, to know. Runs even if the webhook step failed: it would only
+      # skip, and the state commit below must still happen.
+      - name: Send LinkedIn share links
+        if: ${{ !cancelled() }}
+        env:
+          LINKEDIN_WEBHOOK_URL: ${{ secrets.LINKEDIN_WEBHOOK_URL }}
           LINKEDIN_SHARE_LINKS: ${{ vars.LINKEDIN_SHARE_LINKS }}
           LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
@@ -66,20 +84,21 @@ jobs:
         run: python -m scripts.linkedin.share_links --wait-for-deploy 900
 
       # "[skip ci]" keeps Pages from rebuilding for a file it doesn't deploy.
-      # Runs even if some links failed to send, so the ones that went out are
+      # Runs even if some failed to send, so the ones that went out are
       # recorded. If this push is lost, they are sent again next time: a
-      # duplicate notification, not a missing one.
-      - name: Commit share-link state
+      # duplicate notification (or, through the webhook, a duplicate post),
+      # not a missing one.
+      - name: Commit LinkedIn state
         if: always()
         run: |
           state=data/processed/linkedin_posts.json
           if [ -f "$state" ]; then git add "$state"; fi
           if git diff --staged --quiet; then
-            echo "No share-link state to commit"
+            echo "No LinkedIn state to commit"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "Record LinkedIn share links sent [skip ci]"
+          git commit -m "Record LinkedIn milestones sent [skip ci]"
           git pull --rebase --autostash origin main
           git push
