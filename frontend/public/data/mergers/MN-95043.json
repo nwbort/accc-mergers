@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bright-duggan-%E2%80%93-civium",
   "merger_name": "Bright & Duggan \u2013 Civium",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-95043",
   "effective_notification_datetime": "2026-10-02T12:00:00Z",
   "original_notification_datetime": "2026-10-02T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-11-16T12:00:00Z",
+  "determination_publication_date": "2026-10-29T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-10-13T12:00:00Z",
   "acquirers": [
     {
@@ -25,22 +27,9 @@
   ],
   "targets": [
     {
-      "name": "CIVIUM (NATIONAL) PTY LTD",
+      "name": "STRATHFIELD STRATA MANAGEMENT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "47 634 838 378",
-      "canonical": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      },
-      "party_page": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      }
-    },
-    {
-      "name": "CIVIUM PROPERTY PTY LIMITED",
-      "identifier_type": "ABN",
-      "identifier": "93 108 927 859",
+      "identifier": "34 075 915 570",
       "canonical": {
         "id": "civium-property-group",
         "name": "Civium Property Group"
@@ -64,74 +53,9 @@
       }
     },
     {
-      "name": "STRATHFIELD STRATA MANAGEMENT PTY LTD",
+      "name": "CIVIUM HOLDINGS (QLD) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "34 075 915 570",
-      "canonical": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      },
-      "party_page": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      }
-    },
-    {
-      "name": "BARARD MANAGEMENT PTY. LTD.",
-      "identifier_type": "ABN",
-      "identifier": "26 010 622 125",
-      "canonical": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      },
-      "party_page": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      }
-    },
-    {
-      "name": "INDEPENDENT STRATA MANAGEMENT PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "65 143 715 986",
-      "canonical": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      },
-      "party_page": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      }
-    },
-    {
-      "name": "CIVIUM FACILITIES MANAGEMENT PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "61 660 478 991",
-      "canonical": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      },
-      "party_page": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      }
-    },
-    {
-      "name": "CIVIUM HOLDINGS (VIC) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "35 135 248 047",
-      "canonical": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      },
-      "party_page": {
-        "id": "civium-property-group",
-        "name": "Civium Property Group"
-      }
-    },
-    {
-      "name": "CIVIUM MANAGEMENT GROUP PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "24 609 939 200",
+      "identifier": "36 144 552 527",
       "canonical": {
         "id": "civium-property-group",
         "name": "Civium Property Group"
@@ -155,9 +79,87 @@
       }
     },
     {
-      "name": "CIVIUM HOLDINGS (QLD) PTY LTD",
+      "name": "CIVIUM MANAGEMENT GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "36 144 552 527",
+      "identifier": "24 609 939 200",
+      "canonical": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      },
+      "party_page": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      }
+    },
+    {
+      "name": "CIVIUM HOLDINGS (VIC) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "35 135 248 047",
+      "canonical": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      },
+      "party_page": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      }
+    },
+    {
+      "name": "CIVIUM FACILITIES MANAGEMENT PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "61 660 478 991",
+      "canonical": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      },
+      "party_page": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      }
+    },
+    {
+      "name": "INDEPENDENT STRATA MANAGEMENT PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "65 143 715 986",
+      "canonical": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      },
+      "party_page": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      }
+    },
+    {
+      "name": "BARARD MANAGEMENT PTY. LTD.",
+      "identifier_type": "ABN",
+      "identifier": "26 010 622 125",
+      "canonical": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      },
+      "party_page": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      }
+    },
+    {
+      "name": "CIVIUM PROPERTY PTY LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "93 108 927 859",
+      "canonical": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      },
+      "party_page": {
+        "id": "civium-property-group",
+        "name": "Civium Property Group"
+      }
+    },
+    {
+      "name": "CIVIUM (NATIONAL) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "47 634 838 378",
       "canonical": {
         "id": "civium-property-group",
         "name": "Civium Property Group"
@@ -170,12 +172,16 @@
   ],
   "other_parties": [
     {
-      "name": "SHERWOOD TOPCO LTD",
+      "name": "JOHNS LYNG GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "54 688 487 103",
+      "identifier": "86 620 466 248",
+      "canonical": {
+        "id": "johns-lyng-group",
+        "name": "Johns Lyng Group"
+      },
       "party_page": {
-        "id": "sherwood-topco-ltd",
-        "name": "Sherwood Topco Ltd"
+        "id": "johns-lyng-group",
+        "name": "Johns Lyng Group"
       }
     },
     {
@@ -192,16 +198,12 @@
       }
     },
     {
-      "name": "JOHNS LYNG GROUP LIMITED",
+      "name": "SHERWOOD TOPCO LTD",
       "identifier_type": "ABN",
-      "identifier": "86 620 466 248",
-      "canonical": {
-        "id": "johns-lyng-group",
-        "name": "Johns Lyng Group"
-      },
+      "identifier": "54 688 487 103",
       "party_page": {
-        "id": "johns-lyng-group",
-        "name": "Johns Lyng Group"
+        "id": "sherwood-topco-ltd",
+        "name": "Sherwood Topco Ltd"
       }
     }
   ],
@@ -239,13 +241,27 @@
       "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Bright%20%26%20Duggan%20-%20Civium_3.docx",
       "url_gh": "/mergers/MN-95043/Questionnaire - Bright and Duggan - Civium_3.pdf",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-29T12:00:00Z",
+      "title": "Bright & Duggan - Civium - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Bright%20%26%20Duggan%20-%20Civium%20-%20Phase%201%20determination.pdf",
+      "determination_table_content": [
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information provided by third parties and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 the market share increment resulting from the Acquisition is\nestimated to be low in each relevant state or territory due to\nCivium\u2019s limited presence in New South Wales, Victoria and\nQueensland, and Bright & Duggan\u2019s limited presence in the ACT.\n\u2022 Bright & Duggan would likely continue to face competition from\nalternative independent suppliers of strata management\nservices, building management services or suppliers of both\nstrata and building management services.\n\u2022 Bright & Duggan would be unlikely to have the ability and\nincentive to engage in anti-competitive bundling or tying post-\nacquisition given the number of alternative independent\nsuppliers."
+        }
+      ],
+      "url_gh": "/mergers/MN-95043/Bright and Duggan - Civium - Phase 1 determination.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-10-29T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "has_questionnaire": true,
@@ -313,5 +329,5 @@
     "basis": "bracketed",
     "method_version": 1
   },
-  "og_card": "notified-to-the-accc.png"
+  "og_card": "cleared-by-the-accc.png"
 }

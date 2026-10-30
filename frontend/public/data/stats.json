@@ -3,12 +3,12 @@
   "total_waivers": 492,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 264,
-    "Under assessment": 42,
+    "Assessment completed": 265,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 257,
+    "Approved": 258,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 262,
+    "cleared": 263,
     "not_cleared": 2,
-    "total": 264,
+    "total": 265,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.44074074074074,
-    "median_days": 26.0,
-    "average_business_days": 20.022222222222222,
-    "median_business_days": 18.0,
+    "average_days": 29.431734317343174,
+    "median_days": 26,
+    "average_business_days": 20.014760147601475,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 58,
-        "percentage": 21.5
+        "percentage": 21.4
       },
       "day20": {
-        "count": 196,
-        "percentage": 72.6
+        "count": 197,
+        "percentage": 72.7
       },
       "day30": {
-        "count": 253,
+        "count": 254,
         "percentage": 93.7
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-95043",
+      "merger_name": "Bright & Duggan \u2013 Civium",
+      "determination": "Approved",
+      "determination_date": "2026-10-29T12:00:00Z",
+      "page_modified_datetime": "2026-10-30T10:57:27+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-60051",
       "merger_name": "Mitsubishi Electric Corporation \u2013 Power Costs, Inc.",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-28T12:00:00Z",
       "page_modified_datetime": "2026-10-28T14:58:06+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-80045",
-      "merger_name": "Apiam - Goulburn Valley Equine Hospital",
-      "determination": "Approved",
-      "determination_date": "2026-10-28T12:00:00Z",
-      "page_modified_datetime": "2026-10-28T14:56:47+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
