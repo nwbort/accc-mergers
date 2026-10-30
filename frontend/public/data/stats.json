@@ -1,6 +1,6 @@
 {
   "total_mergers": 312,
-  "total_waivers": 492,
+  "total_waivers": 493,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 267,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 467,
+    "Approved": 468,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.709349593495936,
-    "median_days": 21.0,
-    "average_business_days": 14.16869918699187,
-    "median_business_days": 14.0
+    "average_days": 20.703853955375255,
+    "median_days": 21,
+    "average_business_days": 14.168356997971603,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -79,12 +79,12 @@
       "count": 41
     },
     {
-      "name": "Accommodation",
+      "name": "Engineering Design and Engineering Consulting Services",
       "count": 27
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
-      "count": 26
+      "name": "Accommodation",
+      "count": 27
     },
     {
       "name": "Cafes and Restaurants",
@@ -92,7 +92,7 @@
     },
     {
       "name": "Supermarket and Grocery Stores",
-      "count": 24
+      "count": 25
     }
   ],
   "recent_mergers": [
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80052",
+      "merger_name": "SCEE Group \u2013 Entire Group",
+      "determination": "Approved",
+      "determination_date": "2026-10-30T12:00:00Z",
+      "page_modified_datetime": "2026-10-30T17:10:18+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-30033",
       "merger_name": "Brown & Hurley - Schmitz Cargobull and Freighter Group",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-28T12:00:00Z",
       "page_modified_datetime": "2026-10-28T17:31:59+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-35054",
-      "merger_name": "Northpharm Services - Wesley Pharmacy Group",
-      "determination": "Approved",
-      "determination_date": "2026-10-28T12:00:00Z",
-      "page_modified_datetime": "2026-10-28T17:30:56+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
