@@ -548,21 +548,6 @@ jobs:
           LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
         run: python -m scripts.linkedin.post_linkedin
 
-      # Until the API is approved: the same milestones handed to a Make.com
-      # scenario that posts them to the company page (docs/linkedin.md).
-      # Skips without LINKEDIN_WEBHOOK_URL, and stands down once
-      # LINKEDIN_POST_ENABLED is set. It needs no wait for the deploy, unlike
-      # the share links: the post carries its own card (title, description and
-      # one of the committed og/ images), so LinkedIn never scrapes the page.
-      - name: Post new milestones to LinkedIn via webhook
-        if: steps.enrich-gate.outputs.run == 'true'
-        continue-on-error: true
-        env:
-          LINKEDIN_WEBHOOK_URL: ${{ secrets.LINKEDIN_WEBHOOK_URL }}
-          LINKEDIN_WEBHOOK_API_KEY: ${{ secrets.LINKEDIN_WEBHOOK_API_KEY }}
-          LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
-        run: python -m scripts.linkedin.webhook
-
       - name: Stage extracted data
         if: steps.enrich-gate.outputs.run == 'true'
         run: |
@@ -674,11 +659,10 @@ jobs:
             fi
           fi
 
-      # The LinkedIn share links (the manual stopgap) are not sent from here:
-      # LinkedIn scrapes their preview from the live page, so
-      # linkedin-share-links.yml runs once this workflow finishes and waits
-      # for Cloudflare Pages to serve the data it pushed, so the wait doesn't
-      # hold this workflow's concurrency group.
+      # The LinkedIn share links (the stopgap until the API is approved) are
+      # not sent from here: linkedin-share-links.yml runs once this workflow
+      # finishes and waits for Cloudflare Pages to serve the data it pushed,
+      # so the wait doesn't hold this workflow's concurrency group.
 
       # --- Publish cli.sqlite to the cli-dist orphan branch ---
       # Inlined here (rather than a separate workflow triggered by push to
