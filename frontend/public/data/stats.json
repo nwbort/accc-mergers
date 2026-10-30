@@ -3,12 +3,12 @@
   "total_waivers": 492,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 266,
-    "Under assessment": 40,
+    "Assessment completed": 267,
+    "Under assessment": 39,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 259,
+    "Approved": 260,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 264,
+    "cleared": 265,
     "not_cleared": 2,
-    "total": 266,
-    "rate": 0.992
+    "total": 267,
+    "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.408088235294116,
-    "median_days": 26.0,
-    "average_business_days": 20.003676470588236,
-    "median_business_days": 18.0,
+    "average_days": 29.4029304029304,
+    "median_days": 26,
+    "average_business_days": 20.0,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 58,
-        "percentage": 21.3
+        "percentage": 21.2
       },
       "day20": {
-        "count": 198,
-        "percentage": 72.8
+        "count": 199,
+        "percentage": 72.9
       },
       "day30": {
-        "count": 255,
+        "count": 256,
         "percentage": 93.8
       }
     }
@@ -223,7 +223,18 @@
       "merger_name": "Brown & Hurley - Schmitz Cargobull and Freighter Group",
       "determination": "Approved",
       "determination_date": "2026-10-30T12:00:00Z",
-      "page_modified_datetime": "2026-10-30T15:00:44+11:00",
+      "page_modified_datetime": "2026-10-30T15:05:48+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "MN-85049",
+      "merger_name": "APEM Group - Resource Strategies",
+      "determination": "Approved",
+      "determination_date": "2026-10-30T12:00:00Z",
+      "page_modified_datetime": "2026-10-30T15:03:35+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-28T12:00:00Z",
       "page_modified_datetime": "2026-10-28T17:30:56+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-10041",
-      "merger_name": "Platinum Equity - SuperStroke",
-      "determination": "Approved",
-      "determination_date": "2026-10-28T12:00:00Z",
-      "page_modified_datetime": "2026-10-28T17:29:46+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

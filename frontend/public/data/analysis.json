@@ -33,7 +33,7 @@
       "19": {
         "25": 2,
         "27": 11,
-        "28": 6,
+        "28": 7,
         "29": 3,
         "32": 1
       },
@@ -132,17 +132,17 @@
     },
     "stats": {
       "average": 20.0,
-      "median": 18.0,
+      "median": 18,
       "min": 15,
       "max": 59,
-      "count": 272
+      "count": 273
     },
     "calendar_stats": {
       "average": 29.4,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 272
+      "count": 273
     }
   },
   "waiver_duration": {
@@ -410,7 +410,7 @@
       46,
       37,
       32,
-      40
+      39
     ],
     "as_at": "2026-10-30"
   },
@@ -421,18 +421,18 @@
         "days": 30,
         "notifications_filed": 40,
         "notifications": {
-          "median": 18.0,
+          "median": 18,
           "average": 18.8,
           "p90": 25,
           "min": 15,
           "max": 26,
-          "count": 32,
+          "count": 33,
           "duration_histogram": {
             "15": 7,
             "16": 3,
             "17": 5,
             "18": 3,
-            "19": 2,
+            "19": 3,
             "20": 2,
             "21": 4,
             "22": 1,
@@ -440,7 +440,7 @@
             "25": 3,
             "26": 1
           },
-          "median_delta": 0.0
+          "median_delta": 0
         },
         "waivers": {
           "median": 17.0,
@@ -474,20 +474,20 @@
         "phase_1_speed": {
           "day15": {
             "count": 7,
-            "percentage": 21.9
+            "percentage": 21.2
           },
           "day20": {
-            "count": 22,
-            "percentage": 68.8
+            "count": 23,
+            "percentage": 69.7
           },
           "day30": {
-            "count": 32,
+            "count": 33,
             "percentage": 100.0
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 32
+            "Approved": 33
           },
           "phase_2": {},
           "waivers": {
@@ -500,18 +500,18 @@
         "days": 90,
         "notifications_filed": 109,
         "notifications": {
-          "median": 18,
+          "median": 18.0,
           "average": 20.4,
           "p90": 25,
           "min": 15,
           "max": 56,
-          "count": 113,
+          "count": 114,
           "duration_histogram": {
             "15": 19,
             "16": 14,
             "17": 13,
             "18": 14,
-            "19": 9,
+            "19": 10,
             "20": 6,
             "21": 12,
             "22": 1,
@@ -566,20 +566,20 @@
         "phase_1_speed": {
           "day15": {
             "count": 19,
-            "percentage": 16.8
+            "percentage": 16.7
           },
           "day20": {
-            "count": 75,
-            "percentage": 66.4
+            "count": 76,
+            "percentage": 66.7
           },
           "day30": {
-            "count": 105,
-            "percentage": 92.9
+            "count": 106,
+            "percentage": 93.0
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 109,
+            "Approved": 110,
             "Referred to phase 2": 1,
             "Approved with conditions": 3
           },
@@ -596,12 +596,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18.0,
+        "median": 18,
         "average": 20.0,
         "p90": 27,
         "min": 15,
         "max": 59,
-        "count": 272
+        "count": 273
       },
       "waivers": {
         "median": 14.0,
@@ -734,9 +734,9 @@
           "count": 36
         },
         {
-          "median": 18.0,
+          "median": 18,
           "average": 18.8,
-          "count": 32
+          "count": 33
         }
       ],
       "waivers": [
@@ -831,7 +831,7 @@
         46,
         37,
         32,
-        40
+        39
       ]
     }
   },
@@ -948,10 +948,10 @@
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
       "average_business_days": 20.2,
-      "median_business_days": 17.0,
+      "median_business_days": 17,
       "average_calendar_days": 30.0,
-      "median_calendar_days": 26.0,
-      "count": 70
+      "median_calendar_days": 26,
+      "count": 71
     },
     {
       "code": "O",
@@ -1002,9 +1002,9 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 190,
+      "count": 192,
       "outcome_mix": {
-        "Approved": 190
+        "Approved": 192
       },
       "median_business_days": 17.0
     },
@@ -1019,19 +1019,11 @@
     },
     {
       "division": "Not yet determined",
-      "count": 37,
+      "count": 36,
       "outcome_mix": {
-        "Unknown": 37
+        "Unknown": 36
       },
       "median_business_days": null
-    },
-    {
-      "division": "Unknown",
-      "count": 2,
-      "outcome_mix": {
-        "Approved": 2
-      },
-      "median_business_days": 19.0
     },
     {
       "division": "Commissioner Woodward",
@@ -1040,6 +1032,14 @@
         "Approved": 1
       },
       "median_business_days": 18
+    },
+    {
+      "division": "Unknown",
+      "count": 1,
+      "outcome_mix": {
+        "Approved": 1
+      },
+      "median_business_days": 21
     }
   ],
   "waiver_by_commission_division": [
@@ -1085,7 +1085,7 @@
       "16": 43,
       "17": 31,
       "18": 30,
-      "19": 23,
+      "19": 24,
       "20": 13,
       "21": 15,
       "22": 7,
@@ -1105,9 +1105,9 @@
     },
     "stats": {
       "mean_used_bd": 18.3,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 2.8,
-      "count": 252
+      "count": 253
     },
     "extended_count": 11
   },
@@ -1184,11 +1184,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "approved": 67,
+      "approved": 68,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.043
+      "in_progress": 9,
+      "phase2_referral_rate": 0.042
     },
     {
       "code": "E",
