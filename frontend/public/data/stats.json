@@ -3,12 +3,12 @@
   "total_waivers": 494,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 267,
-    "Under assessment": 40,
+    "Assessment completed": 268,
+    "Under assessment": 39,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 260,
+    "Approved": 261,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,16 +22,16 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 265,
+    "cleared": 266,
     "not_cleared": 2,
-    "total": 267,
+    "total": 268,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.4029304029304,
-    "median_days": 26,
-    "average_business_days": 20.0,
-    "median_business_days": 18,
+    "average_days": 29.412408759124087,
+    "median_days": 26.0,
+    "average_business_days": 20.01094890510949,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 58,
@@ -39,10 +39,10 @@
       },
       "day20": {
         "count": 199,
-        "percentage": 72.9
+        "percentage": 72.6
       },
       "day30": {
-        "count": 256,
+        "count": 257,
         "percentage": 93.8
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-25048",
+      "merger_name": "Colas \u2013 Quarry Products Harlaxton",
+      "determination": "Approved",
+      "determination_date": "2026-10-30T12:00:00Z",
+      "page_modified_datetime": "2026-10-30T17:43:03+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-45034",
       "merger_name": "EQT Holdings \u2013 Platinum Investment Management",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-30042",
-      "merger_name": "Goldman Sachs \u2013 NOJA Power",
-      "determination": "Approved",
-      "determination_date": "2026-10-28T12:00:00Z",
-      "page_modified_datetime": "2026-10-28T17:33:30+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

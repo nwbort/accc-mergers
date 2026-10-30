@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/colas-%E2%80%93-quarry-products-harlaxton",
   "merger_name": "Colas \u2013 Quarry Products Harlaxton",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-25048",
   "effective_notification_datetime": "2026-09-28T12:00:00Z",
   "original_notification_datetime": "2026-09-28T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-11-10T12:00:00Z",
+  "determination_publication_date": "2026-10-30T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-10-06T12:00:00Z",
   "acquirers": [
     {
@@ -139,13 +141,27 @@
       "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Colas%20-%20Quarry%20Products%20Harlaxton.docx",
       "url_gh": "/mergers/MN-25048/Questionnaire - Colas - Quarry Products Harlaxton.pdf",
       "phase": null
+    },
+    {
+      "date": "2026-10-30T12:00:00Z",
+      "title": "Colas -Quarry Products Harlaxton - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Colas%20-%20Quarry%20Products%20Harlaxton%20-%20Phase%201%20determination%20-%2030%20October%202026_0.pdf",
+      "determination_table_content": [
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third partes and publicly available\ninformation.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The merged entity would likely continue to face competition\nfrom alternative suppliers of quarry materials in\nToowoomba/Warwick in the Southern Downs region of\nQueensland.\n\u2022 While a market participant suggested that the Acquisition could\nenable the parties to foreclose rival suppliers of road\nconstruction and road pavement services from accessing quarry\nmaterials, the ACCC considers that the merged firm would be\nunlikely to have the ability and incentive to do so. In particular,\nrival suppliers would continue to have access to alternative\nsources of quarry materials in the Toowoomba/Warwick region,\nand Colas has limited downstream activities in the\nToowoomba/Warwick region."
+        }
+      ],
+      "url_gh": "/mergers/MN-25048/Colas - Quarry Products Harlaxton - Phase 1 determination - 30 October 2026_0.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-10-30T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "has_questionnaire": true,
@@ -211,5 +227,5 @@
     "basis": "bracketed",
     "method_version": 1
   },
-  "og_card": "notified-to-the-accc.png"
+  "og_card": "cleared-by-the-accc.png"
 }
