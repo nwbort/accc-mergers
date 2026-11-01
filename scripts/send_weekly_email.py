@@ -62,12 +62,11 @@ def banner_choice() -> str:
 # PromoStack banners (frontend/src/constants/promo.js). Nothing about a
 # particular campaign lives in build_promo; point it at something new by
 # editing this, or set it to None to run none. `path` is relative to SITE_BASE.
-PROMO: dict | None = {
-    "path": "/quarterly/26Q3",
-    "title": "The Q3 2026 merger report is out",
-    "description": "Volumes, clearance rates, timing and Tribunal reviews in our quarterly report.",
-    "cta": "Read the report",
-}
+# A campaign looks like:
+#   {"path": "/quarterly/26Q3", "title": "The Q3 2026 merger report is out",
+#    "description": "Volumes, clearance rates, timing and Tribunal reviews in our quarterly report.",
+#    "cta": "Read the report"}
+PROMO: dict | None = None
 RESEND_API_BASE = "https://api.resend.com"
 SEND_FROM = os.environ.get("SEND_FROM", "Australian Merger Tracker <digest@mergers.fyi>")
 
