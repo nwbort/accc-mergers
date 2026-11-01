@@ -16366,6 +16366,177 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/acurio-nepean-sydney-southwest-and-campbelltown-private-hospitals",
+      "merger_name": "ACURIO - Nepean, Sydney Southwest, and Campbelltown Private Hospitals",
+      "status": "Under assessment",
+      "merger_id": "MN-10043",
+      "effective_notification_datetime": "2026-10-30T12:00:00Z",
+      "original_notification_datetime": "2026-10-30T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-12-11T12:00:00Z",
+      "page_modified_datetime": "2026-11-02T10:10:34+11:00",
+      "consultation_response_due_date": "2026-11-09T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "ACURIO Health Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "16 641 153 728",
+          "party_page": {
+            "id": "acurio-health-pty-ltd",
+            "name": "ACURIO Health Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ANZ Hospitals Pty Ltd (administrators appointed) (receivers and managers appointed)",
+          "identifier_type": "ABN",
+          "identifier": "14 631 014 938",
+          "party_page": {
+            "id": "anz-hospitals-pty-ltd",
+            "name": "Anz Hospitals Pty Ltd"
+          }
+        },
+        {
+          "name": "Healthscope Operations Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "85 006 405 152",
+          "canonical": {
+            "id": "healthscope",
+            "name": "Healthscope"
+          },
+          "party_page": {
+            "id": "healthscope",
+            "name": "Healthscope"
+          }
+        },
+        {
+          "name": "Healthscope NewCo Pty Ltd (administrators appointed) (receivers and managers appointed)",
+          "identifier_type": "ABN",
+          "identifier": "80 092 450 274",
+          "canonical": {
+            "id": "healthscope",
+            "name": "Healthscope"
+          },
+          "party_page": {
+            "id": "healthscope",
+            "name": "Healthscope"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        },
+        {
+          "code": "8401",
+          "name": "Hospitals (Except Psychiatric Hospitals)"
+        },
+        {
+          "code": "8402",
+          "name": "Psychiatric Hospitals"
+        }
+      ],
+      "merger_description": "ACURIO Health Pty Ltd (**Acurio**) proposes to acquire three private hospitals located in the greater Sydney area from Healthscope Operations Pty Ltd (**Healthscope**) (the **Acquisition**). The three private hospitals that are the subject of the Acquisition are:\n\n* Nepean Private Hospital in Kingswood;\n* Sydney Southwest Private Hospital in Liverpool; and\n* Campbelltown Private Hospital in Campbelltown.\n\nThe Acquisition forms part of a broader consortium acquisition of Healthscope's portfolio. The other consortium members are Calvary, Healthe Care and KnG Group, which will each acquire separate hospitals pursuant to inter-conditional sale agreements.\n\nAcurio is a private hospital operator, which currently operates The George Centre in the Gledswood Hills and Sydney Day Hospital in the Sydney central business district. The George Centre is a 61-bed private hospital offering overnight accommodation. It offers maternity and paediatric services, with a 26-bed private maternity unit, as well as a range of other surgical services. Sydney Day Hospital is a day surgery which does not offer overnight accommodation.\n\nHealthscope operates a network of private hospitals across Australia. On 26 May 2025, Healthscope's parent entities entered into receivership, with McGrathNicol appointed as Receivers to complete a sale of the business. The Receivers conducted an extended sale process over Healthscope's hospital portfolio.",
+      "events": [
+        {
+          "date": "2026-11-02T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Acurio%20-%20Nepean%2C%20Sydney%20Southwest%20and%20Campbeltown%20Private%20Hospitals%20-%20Questionnaire%20-%202%20November%202026.docx",
+          "url_gh": "/mergers/MN-10043/Acurio - Nepean, Sydney Southwest and Campbeltown Private Hospitals - Questionnaire - 2 November 2026.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-30T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-10040",
+          "merger_name": "Calvary \u2013 14 Healthscope hospitals and Healthscope Independence Services",
+          "acquirers": [
+            "LCMHC 2 LIMITED"
+          ],
+          "targets": [
+            "HEALTHSCOPE NEWCO PTY LTD",
+            "HEALTHSCOPE OPERATIONS PTY LTD"
+          ],
+          "status": "Under assessment"
+        },
+        {
+          "merger_id": "MN-40013",
+          "merger_name": "Calvary - Hobart Private Hospital",
+          "acquirers": [
+            "LITTLE COMPANY OF MARY HEALTH CARE LIMITED"
+          ],
+          "targets": [
+            "HEALTHSCOPE OPERATIONS PTY LTD",
+            "ANZ HOSPITALS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-55010",
+          "merger_name": "Calvary - Holmesglen Private Hospital",
+          "acquirers": [
+            "LITTLE COMPANY OF MARY HEALTH CARE LIMITED"
+          ],
+          "targets": [
+            "HEALTHSCOPE MANAGEMENT PTY LTD",
+            "ANZ HOSPITALS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 19,
+        "range_business_days": [
+          17,
+          22
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "4-5",
+        "question_count": 4,
+        "sample_size": 31,
+        "as_of": "2026-10-30",
+        "estimated_at": "2026-11-01",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 27,
+        "min_days": 21,
+        "max_days": 38,
+        "id_issued_estimated": "2026-10-03",
+        "id_issued_before": "2026-10-09",
+        "id_issued_after": "2026-09-22",
+        "min_days_witness": "WA-10046",
+        "max_days_witness": "WA-10041",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/octa-%E2%80%93-woodside-edl-lng-jv",
       "merger_name": "OCTA \u2013 Woodside-EDL LNG JV",
       "status": "Under assessment",

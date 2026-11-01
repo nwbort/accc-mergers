@@ -1,10 +1,10 @@
 {
-  "total_mergers": 313,
+  "total_mergers": 314,
   "total_waivers": 494,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 268,
-    "Under assessment": 40,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 195
+      "count": 196
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10043",
+      "merger_name": "ACURIO - Nepean, Sydney Southwest, and Campbelltown Private Hospitals",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-30T12:00:00Z",
+      "page_modified_datetime": "2026-11-02T10:10:34+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-65041",
       "merger_name": "GLNG Participants \u2013 Greater Meridian CSG Project assets",
@@ -205,16 +215,6 @@
       "page_modified_datetime": "2026-10-26T16:51:42+11:00",
       "is_waiver": false,
       "is_refiled": true
-    },
-    {
-      "merger_id": "MN-55042",
-      "merger_name": "AUB \u2013 One Underwriting",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-23T12:00:00Z",
-      "page_modified_datetime": "2026-10-26T16:30:44+11:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [

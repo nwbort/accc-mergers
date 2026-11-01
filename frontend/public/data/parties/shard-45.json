@@ -52,11 +52,28 @@
           "name": "ANZ HOSPITALS PTY LTD",
           "identifier": "14 631 014 938",
           "identifier_type": "ABN"
+        },
+        {
+          "name": "ANZ Hospitals Pty Ltd (administrators appointed) (receivers and managers appointed)",
+          "identifier": "14 631 014 938",
+          "identifier_type": "ABN"
         }
       ],
       "mergers": {
         "acquirer": [],
         "target": [
+          {
+            "merger_id": "MN-10043",
+            "merger_name": "ACURIO - Nepean, Sydney Southwest, and Campbelltown Private Hospitals",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-30T12:00:00Z",
+            "determination_date": null
+          },
           {
             "merger_id": "MN-10040",
             "merger_name": "Calvary \u2013 14 Healthscope hospitals and Healthscope Independence Services",
@@ -108,11 +125,11 @@
         ],
         "other": []
       },
-      "merger_count": 4,
-      "phase_1_count": 4,
+      "merger_count": 5,
+      "phase_1_count": 5,
       "phase_2_count": 0,
       "waiver_count": 0,
-      "active_count": 1,
+      "active_count": 2,
       "phase_duration": {
         "average_days": 42.0,
         "median_days": 32,
