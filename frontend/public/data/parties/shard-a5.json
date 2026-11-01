@@ -504,6 +504,42 @@
         "completed_count": 1
       }
     },
+    "papl-upstream-pty-limited": {
+      "id": "papl-upstream-pty-limited",
+      "canonical_name": "PAPL (Upstream) Pty Limited",
+      "members": [
+        {
+          "name": "PAPL (Upstream) Pty Limited",
+          "identifier": "58 131 318 888",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65041",
+            "merger_name": "GLNG Participants \u2013 Greater Meridian CSG Project assets",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-30T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "wisdom-bidco-pty-ltd": {
       "id": "wisdom-bidco-pty-ltd",
       "canonical_name": "Wisdom BidCo Pty Ltd",

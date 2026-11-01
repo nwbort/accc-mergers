@@ -1,10 +1,10 @@
 {
-  "total_mergers": 312,
+  "total_mergers": 313,
   "total_waivers": 494,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 268,
-    "Under assessment": 39,
+    "Under assessment": 40,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-65041",
+      "merger_name": "GLNG Participants \u2013 Greater Meridian CSG Project assets",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-30T12:00:00Z",
+      "page_modified_datetime": "2026-11-02T09:19:14+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-90044",
       "merger_name": "Stellex and ONA \u2013 Score",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-23T12:00:00Z",
       "page_modified_datetime": "2026-10-26T16:30:44+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-35035",
-      "merger_name": "Sun Pharma - Organon",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-22T12:00:00Z",
-      "page_modified_datetime": "2026-10-23T12:49:59+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
