@@ -141,6 +141,16 @@
       "effective_notification_datetime": "2026-10-30T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-11-09T12:00:00Z",
+      "merger_id": "MN-40049",
+      "merger_name": "Coles \u2013 supermarket site in Cannonvale Central (QLD)",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-30T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2026-11-09T12:00:00Z",
@@ -535,6 +545,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-12-11T12:00:00Z",
+      "merger_id": "MN-40049",
+      "merger_name": "Coles \u2013 supermarket site in Cannonvale Central (QLD)",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-30T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-12-11T12:00:00Z",
       "merger_id": "MN-65041",
       "merger_name": "GLNG Participants \u2013 Greater Meridian CSG Project assets",
       "status": "Under assessment",
@@ -573,6 +593,6 @@
       "tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026"
     }
   ],
-  "count": 57,
+  "count": 59,
   "days_ahead": 60
 }

@@ -1,0 +1,152 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-cannonvale-central-qld",
+  "merger_name": "Coles \u2013 supermarket site in Cannonvale Central (QLD)",
+  "status": "Under assessment",
+  "merger_id": "MN-40049",
+  "effective_notification_datetime": "2026-10-30T12:00:00Z",
+  "original_notification_datetime": "2026-10-30T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-12-11T12:00:00Z",
+  "consultation_response_due_date": "2026-11-09T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "45 004 189 708",
+      "canonical": {
+        "id": "coles",
+        "name": "Coles Group"
+      },
+      "party_page": {
+        "id": "coles",
+        "name": "Coles Group"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "The trustee for The Spinks & Co Trust",
+      "identifier_type": "ABN",
+      "identifier": "64 261 723 900",
+      "party_page": {
+        "id": "the-trustee-for-the-spinks-co-trust",
+        "name": "The trustee for The Spinks & Co Trust"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "3020",
+      "name": "Non-Residential Building Construction"
+    },
+    {
+      "code": "3211",
+      "name": "Land Development and Subdivision"
+    },
+    {
+      "code": "4110",
+      "name": "Supermarket and Grocery Stores"
+    },
+    {
+      "code": "4122",
+      "name": "Fruit and Vegetable Retailing"
+    },
+    {
+      "code": "4279",
+      "name": "Other Store-Based Retailing n.e.c."
+    },
+    {
+      "code": "6712",
+      "name": "Non-Residential Property Operators"
+    }
+  ],
+  "merger_description": "Coles Group Limited (**Coles**) is an Australian public company (ASX: COL) that primarily operates:\n\n* supermarkets nationwide through its subsidiary, Coles Supermarkets Australia Pty Ltd (**CSA**); and\n* retail liquor stores nationwide, trading under the Liquorland, Liquorland Warehouse and Liquorland Cellars brands.\n\nSpinksCo (**Lessor**) is a property development company that specialises in retail development projects across Queensland.\n\nCSA has signed a letter of offer with the lessor, which is intended to facilitate Coles acquiring a leasehold interest in a new convenience-based neighbourhood centre to be developed at 34 Central Avenue, Cannonvale Queensland 4802 for the purposes of a Coles supermarket (the **Acquisition**).\n\nThe proposed Coles supermarket is anticipated to open around March 2030.",
+  "events": [
+    {
+      "date": "2026-11-02T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Coles-Cannonvale%20Central%20%28QLD%29%20third-party%20questionnaire.docx",
+      "url_gh": "/mergers/MN-40049/Coles-Cannonvale Central (QLD) third-party questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-30T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-01068",
+      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+      "acquirers": [
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
+      ],
+      "targets": [
+        "M Holdings 4 Pty Ltd"
+      ],
+      "accc_determination": "Not approved"
+    },
+    {
+      "merger_id": "MN-01090",
+      "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
+      "acquirers": [
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
+      ],
+      "targets": [
+        "Tipalea Private No.31 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-05030",
+      "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
+      "acquirers": [
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
+      ],
+      "targets": [
+        "The Trustee for Saracen Property Holdings Unit Trust"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 191,
+    "as_of": "2026-10-30",
+    "estimated_at": "2026-11-01",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 23,
+    "min_days": null,
+    "max_days": 30,
+    "id_issued_estimated": "2026-10-07",
+    "id_issued_before": null,
+    "id_issued_after": "2026-09-30",
+    "min_days_witness": null,
+    "max_days_witness": "WA-40048",
+    "basis": "upper-bound-only",
+    "method_version": 1
+  },
+  "og_card": "notified-to-the-accc.png"
+}

@@ -1,10 +1,10 @@
 {
-  "total_mergers": 314,
+  "total_mergers": 315,
   "total_waivers": 494,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 268,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 47
+      "count": 48
     },
     {
       "name": "Software Publishing",
@@ -87,15 +87,25 @@
       "count": 27
     },
     {
-      "name": "Cafes and Restaurants",
+      "name": "Supermarket and Grocery Stores",
       "count": 26
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 25
+      "name": "Cafes and Restaurants",
+      "count": 26
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40049",
+      "merger_name": "Coles \u2013 supermarket site in Cannonvale Central (QLD)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-30T12:00:00Z",
+      "page_modified_datetime": "2026-11-02T10:47:45+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-10043",
       "merger_name": "ACURIO - Nepean, Sydney Southwest, and Campbelltown Private Hospitals",
@@ -205,16 +215,6 @@
       "page_modified_datetime": "2026-10-26T12:19:50+11:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75065",
-      "merger_name": "Monadelphous - Tyden Power",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-23T12:00:00Z",
-      "page_modified_datetime": "2026-10-26T16:51:42+11:00",
-      "is_waiver": false,
-      "is_refiled": true
     }
   ],
   "recent_determinations": [

@@ -13,7 +13,8 @@
         "MN-70022",
         "MN-05030",
         "MN-05046",
-        "MN-75042"
+        "MN-75042",
+        "MN-40049"
       ],
       "dates": [
         "2025-11-27T12:00:00Z",
@@ -23,9 +24,31 @@
         "2026-06-23T12:00:00Z",
         "2026-07-24T12:00:00Z",
         "2026-08-19T12:00:00Z",
-        "2026-09-30T12:00:00Z"
+        "2026-09-30T12:00:00Z",
+        "2026-10-30T12:00:00Z"
       ],
-      "count": 8
+      "count": 9
+    },
+    {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "671",
+      "anzsic_name": "Property Operators",
+      "merger_ids": [
+        "MN-01068",
+        "MN-01090",
+        "MN-05046",
+        "MN-75042",
+        "MN-40049"
+      ],
+      "dates": [
+        "2025-11-27T12:00:00Z",
+        "2026-03-12T12:00:00Z",
+        "2026-08-19T12:00:00Z",
+        "2026-09-30T12:00:00Z",
+        "2026-10-30T12:00:00Z"
+      ],
+      "count": 5
     },
     {
       "acquirer_name": "Australian Venue Co",
@@ -112,6 +135,44 @@
       "count": 5
     },
     {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "412",
+      "anzsic_name": "Specialised Food Retailing",
+      "merger_ids": [
+        "MN-01068",
+        "MN-05046",
+        "MN-75042",
+        "MN-40049"
+      ],
+      "dates": [
+        "2025-11-27T12:00:00Z",
+        "2026-08-19T12:00:00Z",
+        "2026-09-30T12:00:00Z",
+        "2026-10-30T12:00:00Z"
+      ],
+      "count": 4
+    },
+    {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "427",
+      "anzsic_name": "Pharmaceutical and Other Store-Based Retailing",
+      "merger_ids": [
+        "MN-65028",
+        "MN-05046",
+        "MN-75042",
+        "MN-40049"
+      ],
+      "dates": [
+        "2026-07-09T12:00:00Z",
+        "2026-08-19T12:00:00Z",
+        "2026-09-30T12:00:00Z",
+        "2026-10-30T12:00:00Z"
+      ],
+      "count": 4
+    },
+    {
       "acquirer_name": "ENDEAVOUR GROUP LIMITED",
       "canonical_id": null,
       "anzsic_code": "412",
@@ -127,25 +188,6 @@
         "2026-06-22T12:00:00Z",
         "2026-08-14T12:00:00Z",
         "2026-10-28T12:00:00Z"
-      ],
-      "count": 4
-    },
-    {
-      "acquirer_name": "Coles Group",
-      "canonical_id": "coles",
-      "anzsic_code": "671",
-      "anzsic_name": "Property Operators",
-      "merger_ids": [
-        "MN-01068",
-        "MN-01090",
-        "MN-05046",
-        "MN-75042"
-      ],
-      "dates": [
-        "2025-11-27T12:00:00Z",
-        "2026-03-12T12:00:00Z",
-        "2026-08-19T12:00:00Z",
-        "2026-09-30T12:00:00Z"
       ],
       "count": 4
     },
@@ -182,40 +224,6 @@
         "2026-02-13T12:00:00Z",
         "2026-06-02T12:00:00Z",
         "2026-10-15T12:00:00Z"
-      ],
-      "count": 3
-    },
-    {
-      "acquirer_name": "Coles Group",
-      "canonical_id": "coles",
-      "anzsic_code": "412",
-      "anzsic_name": "Specialised Food Retailing",
-      "merger_ids": [
-        "MN-01068",
-        "MN-05046",
-        "MN-75042"
-      ],
-      "dates": [
-        "2025-11-27T12:00:00Z",
-        "2026-08-19T12:00:00Z",
-        "2026-09-30T12:00:00Z"
-      ],
-      "count": 3
-    },
-    {
-      "acquirer_name": "Coles Group",
-      "canonical_id": "coles",
-      "anzsic_code": "427",
-      "anzsic_name": "Pharmaceutical and Other Store-Based Retailing",
-      "merger_ids": [
-        "MN-65028",
-        "MN-05046",
-        "MN-75042"
-      ],
-      "dates": [
-        "2026-07-09T12:00:00Z",
-        "2026-08-19T12:00:00Z",
-        "2026-09-30T12:00:00Z"
       ],
       "count": 3
     },
@@ -269,6 +277,36 @@
         "2026-07-28T12:00:00Z"
       ],
       "count": 3
+    },
+    {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "302",
+      "anzsic_name": "Non-Residential Building Construction",
+      "merger_ids": [
+        "MN-05046",
+        "MN-40049"
+      ],
+      "dates": [
+        "2026-08-19T12:00:00Z",
+        "2026-10-30T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "321",
+      "anzsic_name": "Land Development and Site Preparation Services",
+      "merger_ids": [
+        "MN-05046",
+        "MN-40049"
+      ],
+      "dates": [
+        "2026-08-19T12:00:00Z",
+        "2026-10-30T12:00:00Z"
+      ],
+      "count": 2
     },
     {
       "acquirer_name": "ENDEAVOUR GROUP LIMITED",
@@ -916,5 +954,5 @@
       "count": 2
     }
   ],
-  "count": 57
+  "count": 59
 }
