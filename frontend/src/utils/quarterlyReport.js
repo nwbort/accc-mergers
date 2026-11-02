@@ -8,6 +8,9 @@
  * the generator (each quarter's `findings`), so the PDF report says the same.
  */
 
+import { format } from 'date-fns';
+import { parseDateOnly } from './dates';
+
 /** The quarter a `/quarterly/26Q3` path names (any case), else null. */
 export function findQuarter(quarters, key) {
   const wanted = key?.trim().toUpperCase();
@@ -36,4 +39,23 @@ export function formatRate(rate) {
 export function bucketShares(buckets) {
   const total = (buckets || []).reduce((sum, n) => sum + n, 0);
   return (buckets || []).map((n) => (total ? Math.round((n / total) * 1000) / 10 : 0));
+}
+
+/**
+ * Which edition of a quarter's report this is: `{ short: 'v2 · 2 Nov 2026',
+ * long: 'Version 2, updated 2 November 2026' }`, or null for a block with no
+ * version. A quarter's figures keep moving after it ends, so the generator
+ * bumps `version` whenever its block changes (see
+ * scripts/generate/static_data/quarterly_versions.py); the PDF's band carries
+ * the same short form.
+ */
+export function versionLabel(quarter) {
+  if (!quarter?.version) return null;
+  const dated = quarter.version_date ? parseDateOnly(quarter.version_date) : null;
+  return {
+    short: dated ? `v${quarter.version} · ${format(dated, 'd MMM yyyy')}` : `v${quarter.version}`,
+    long: dated
+      ? `Version ${quarter.version}, updated ${format(dated, 'd MMMM yyyy')}`
+      : `Version ${quarter.version}`,
+  };
 }

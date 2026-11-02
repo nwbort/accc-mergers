@@ -11,7 +11,9 @@ every run rather than frozen, because late register changes (a refused waiver
 re-filed weeks later, a re-dated determination) still move its figures — and
 the output is byte-for-byte deterministic (reportlab's ``invariant`` mode, no
 timestamps in the content), so a redraw with nothing new is not a diff and
-the workflow commits a PDF only when its contents moved.
+the workflow commits a PDF only when its contents moved. Each page's band
+names the report's version (``v2 · 2 Nov 2026``, see
+``static_data/quarterly_versions.py``), so a saved copy says which it is.
 
 Drawn by quarterly-report.yml whenever quarterly.json or this code changes;
 ``python -m scripts.generate.quarterly_pdf`` redraws from the committed JSON.
@@ -59,6 +61,9 @@ INK = colors.HexColor("#111827")
 MUTED = colors.HexColor("#6b7280")
 RULE = colors.HexColor("#e5e7eb")
 PANEL = colors.HexColor("#f8fafc")
+# Secondary text on the PRIMARY band: a pale green-grey, quieter than white
+# but still well clear of the band (5.7:1).
+BAND_TINT = colors.HexColor("#c3d4cb")
 # Text colours for a median's move (tailwind's declined-dark / cleared-dark):
 # slower is adverse for a deal, faster favourable.
 SLOWER = "#C42A38"
@@ -617,6 +622,45 @@ def _appeals(q: dict) -> list:
     return flow + [table]
 
 
+def version_label(quarter: dict) -> str | None:
+    """``v2 · 2 Nov 2026``: which edition of the quarter's report this is.
+
+    A quarter's figures keep moving after it ends (see
+    ``static_data/quarterly_versions.py``), so a printed copy has to say which
+    version it is. None for a block that carries no version.
+    """
+    if not quarter.get("version"):
+        return None
+    label = f"v{quarter['version']}"
+    if quarter.get("version_date"):
+        d = date.fromisoformat(quarter["version_date"][:10])
+        label += f" · {d.day} {d.strftime('%b %Y')}"
+    return label
+
+
+def _draw_band_title(canvas, right: float, y: float, quarter: dict) -> None:
+    """The band's right-hand title, ``Quarterly report · Q3 2026 · v2 · 2 Nov 2026``.
+
+    The version reads as part of the title but a step quieter: the same size,
+    in the band's pale tint rather than white, with the number itself in bold
+    so it can be found at a glance. Drawn right to left from ``right``.
+    """
+    pieces = [(f"Quarterly report · {quarter['label']}", "Helvetica", colors.white)]
+    version = version_label(quarter)
+    if version:
+        number, _, dated = version.partition(" · ")
+        pieces.append(("  ·  ", "Helvetica", BAND_TINT))
+        pieces.append((number, "Helvetica-Bold", BAND_TINT))
+        if dated:
+            pieces.append((f" · {dated}", "Helvetica", BAND_TINT))
+    x = right - sum(canvas.stringWidth(text, font, 9) for text, font, _ in pieces)
+    for text, font, colour in pieces:
+        canvas.setFont(font, 9)
+        canvas.setFillColor(colour)
+        canvas.drawString(x, y, text)
+        x += canvas.stringWidth(text, font, 9)
+
+
 def _page_decorations(quarter: dict):
     page_url = SITE + _page_path(quarter)
     # The band and footer line up with the text, not the bare page margin.
@@ -630,8 +674,7 @@ def _page_decorations(quarter: dict):
         canvas.setFont("Helvetica-Bold", 11)
         canvas.drawString(EDGE, PAGE_H - BAND_H + 5 * mm, "australian merger tracker")
         canvas.linkURL(SITE, (EDGE, PAGE_H - BAND_H, EDGE + 60 * mm, PAGE_H), relative=0)
-        canvas.setFont("Helvetica", 9)
-        canvas.drawRightString(PAGE_W - EDGE, PAGE_H - BAND_H + 5 * mm, f"Quarterly report · {quarter['label']}")
+        _draw_band_title(canvas, PAGE_W - EDGE, PAGE_H - BAND_H + 5 * mm, quarter)
         canvas.setStrokeColor(RULE)
         canvas.setLineWidth(0.5)
         canvas.line(EDGE, 13 * mm, PAGE_W - EDGE, 13 * mm)
@@ -664,7 +707,9 @@ def build_pdf(payload: dict, quarter_key: str, path: Path) -> None:
         str(path), pagesize=A4,
         leftMargin=MARGIN, rightMargin=MARGIN, topMargin=BAND_H + 9 * mm, bottomMargin=18 * mm,
         title=f"Quarterly merger report – {q['label']}",
-        author="mergers.fyi", subject="Australian merger regime: quarterly report",
+        author="mergers.fyi",
+        subject="Australian merger regime: quarterly report"
+        + (f" ({version_label(q)})" if version_label(q) else ""),
         creator="mergers.fyi", invariant=1,
     )
     page = _url(_page_path(q))

@@ -21,6 +21,7 @@ import {
   formatRate,
   percentChange,
   previousQuarter,
+  versionLabel,
 } from '../utils/quarterlyReport';
 
 // Title and description live in the shared table so this page and the
@@ -638,6 +639,7 @@ function Quarterly() {
 
   const selectQuarter = (key) => navigate(`/quarterly/${key}`);
   const meta = quarterlyMeta(quarter);
+  const version = versionLabel(quarter);
 
   return (
     <>
@@ -648,8 +650,22 @@ function Quarterly() {
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
               Quarterly report
             </h1>
-            <p className="mt-1 text-sm text-gray-500">
-              {quarter.label} &middot; {formatDateLong(quarter.start)} &ndash; {formatDateLong(quarter.end)}
+            <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-500">
+              <span>
+                {quarter.label} &middot; {formatDateLong(quarter.start)} &ndash; {formatDateLong(quarter.end)}
+              </span>
+              {/* The report's edition: its figures keep moving after the
+                  quarter ends, so a reader comparing against a saved PDF can
+                  see which version each one is. Same short form as the PDF. */}
+              {version && (
+                <span
+                  className="inline-flex items-center rounded-full border border-gray-200 bg-white px-2 py-0.5 text-xs font-medium text-gray-600 tabular-nums"
+                  title={version.long}
+                >
+                  <span className="sr-only">{version.long}</span>
+                  <span aria-hidden="true">{version.short}</span>
+                </span>
+              )}
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">

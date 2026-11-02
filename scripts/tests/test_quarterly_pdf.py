@@ -1,7 +1,10 @@
 """Tests for the quarterly report PDFs (generate/quarterly_pdf.py)."""
 
+import base64
+import re
 import sys
 import unittest.mock
+import zlib
 from datetime import date
 
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
@@ -145,3 +148,41 @@ def test_footer_links_the_site_and_there_are_no_notes(tmp_path):
     assert b'/URI (https://mergers.fyi)' in raw
     # The notes' pointer links (e.g. to mergers.fyi/analysis as a sentence) are gone.
     assert b'The interactive version' not in raw
+
+
+def test_version_label():
+    assert quarterly_pdf.version_label({'version': 2, 'version_date': '2026-11-02'}) == 'v2 · 2 Nov 2026'
+    assert quarterly_pdf.version_label({'version': 1}) == 'v1'
+    assert quarterly_pdf.version_label({}) is None
+
+
+def _page_text(raw: bytes) -> bytes:
+    """Every content stream in a PDF, decoded (reportlab writes them
+    ASCII85-encoded and Flate-compressed)."""
+    out = []
+    for match in re.finditer(rb'stream\r?\n(.*?)endstream', raw, re.S):
+        body = match.group(1).strip()
+        try:
+            out.append(zlib.decompress(base64.a85decode(body.removesuffix(b'~>'))))
+        except (ValueError, zlib.error):
+            out.append(body)
+    return b'\n'.join(out)
+
+
+def test_band_carries_the_report_version(tmp_path):
+    payload = _payload()
+    for block in payload['quarters']:
+        block['version'], block['version_date'] = 3, '2026-11-02'
+    quarterly_pdf.generate(payload, tmp_path)
+    raw = (tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q3.pdf').read_bytes()
+    text = _page_text(raw)
+    assert b'(v3)' in text
+    assert b'2 Nov 2026' in text
+    assert b'quarterly report \\(v3 \\267 2 Nov 2026\\)' in raw  # the subject metadata
+
+
+def test_an_unversioned_payload_still_draws(tmp_path):
+    quarterly_pdf.generate(_payload(), tmp_path)
+    raw = (tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q3.pdf').read_bytes()
+    assert b'(Quarterly report' in _page_text(raw)
+    assert b'(v1)' not in _page_text(raw)

@@ -61,6 +61,7 @@ from scripts.generate.static_data.enrichment import (
 )
 from scripts.generate.static_data.phase1_estimate import attach_phase_1_estimates
 from scripts.generate.static_data.prenotification import attach_prenotification_estimates
+from scripts.generate.static_data.quarterly_versions import apply_versions as apply_quarterly_versions
 from scripts.generate.static_data.loaders import (
     load_commentary,
     load_mergers,
@@ -209,7 +210,11 @@ def main():
         ("upcoming-events.json", upcoming_events.generate(enriched)),
         ("commentary.json", commentary_out.generate(enriched, commentary)),
         ("analysis.json", analysis.generate(enriched)),
-        ("quarterly.json", quarterly.generate(enriched, commentary=load_quarterly_commentary())),
+        # Stamped with each quarter's report version (v1, v2, …), bumped when
+        # its block changes; history in data/processed/quarterly_versions.json.
+        ("quarterly.json", apply_quarterly_versions(
+            quarterly.generate(enriched, commentary=load_quarterly_commentary()),
+        )),
         ("serial-acquirers.json", serial_acquirers.generate(enriched)),
         ("theories_of_harm.json", theories_of_harm.generate(enriched, nocc_data)),
         ("phase2.json", phase2.generate(enriched)),
