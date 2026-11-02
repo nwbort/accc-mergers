@@ -133,7 +133,7 @@ The primary automated workflow. Runs end-to-end on a schedule and on every push 
 2. **Extract** — runs `extract_mergers.py --skip-pdf-enrich` to parse new/changed matters into `data/processed/mergers.json` and download their attachments
 3. **Convert** — detects unconverted DOCX attachments, installs LibreOffice, converts to PDF
 4. **Enrich and generate** — runs `enrich_pdfs.py`, `generate_similar_mergers.py`, `generate_static_data.py`, `generate-cli-data.sh`, `generate_rss_feed.py`, `generate_sitemap.py`, then compresses oversized PDFs
-5. **Publish** — publishes matters to the ATmosphere and posts new milestones to Bluesky and LinkedIn (see [`atproto.md`](atproto.md), [`linkedin.md`](linkedin.md)); each step is `continue-on-error` and skips without its credentials
+5. **Publish** — publishes matters to the ATmosphere and posts new milestones to Bluesky (see [`atproto.md`](atproto.md); LinkedIn posts go out afterwards from `linkedin-share-links.yml`, see [`linkedin.md`](linkedin.md)); each step is `continue-on-error` and skips without its credentials
 6. **Commit** — commits all staged changes in a single commit, rebases, and pushes
 7. **Detect** — runs all four detectors, each opening, refreshing or auto-closing its own review PR (see below)
 

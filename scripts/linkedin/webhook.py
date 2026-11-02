@@ -1,32 +1,29 @@
-"""Hand each new milestone to a webhook that posts it to the LinkedIn page.
+"""Hand each new milestone to a Make.com webhook that posts it to the LinkedIn page.
 
-The route for while LinkedIn's own API is out of reach: a Make.com scenario
-(or Zapier, Pipedream, n8n - anything with a custom webhook trigger and a
-LinkedIn company page action) holds the LinkedIn connection, and this POSTs
-it one JSON object per milestone. Make's free plan is enough, because a
-webhook only spends credits when it is called, where an RSS watcher spends
-one on every poll whether or not anything is new.
+A Make.com scenario holds the LinkedIn connection, and this POSTs it one JSON
+object per milestone. Make's free plan is enough, because a webhook only
+spends credits when it is called, where an RSS watcher spends one on every
+poll whether or not anything is new.
 
-The milestones are ``post_linkedin``'s, chosen by the same ``milestones()``,
-and the post is the same one, offered in the shapes a scenario might want
-(see ``payload``): plain text with the link in it, for a text post; the
-commentary without the link plus the link, title, description and card
-image, for a link post; and the commentary in LinkedIn's "little" format, for
-a module that passes text straight to the Posts API, where an unescaped ``(``
-can truncate a post.
+The milestones are ``post_bluesky``'s, chosen by the same ``milestones()``,
+and the post is offered in the shapes a scenario might want (see
+``payload``): plain text with the link in it, for a text post; the commentary
+without the link plus the link, title, description and card image, for a link
+post; and the commentary in LinkedIn's "little" format (``scripts.linkedin.text``),
+for Make's LinkedIn module, which passes its text to LinkedIn unchanged, where
+an unescaped ``(`` can truncate a post.
 
 It runs in ``linkedin-share-links.yml`` beside ``share_links``, after the
 pipeline, with ``--wait-for-deploy``: a milestone goes out only once
 mergers.fyi serves its matter's detail file as checked out here, so a link
 LinkedIn does scrape gets this run's card rather than last week's.
 
-It shares ``data/processed/linkedin_posts.json`` with the other two: the first
-run seeds it if it doesn't exist, and a milestone is recorded once the webhook
-accepts it. Accepted is all this can know - a scenario that fails afterwards
-(an expired LinkedIn connection, say) is Make's to report and retry, not this
-run's. It stands down once ``LINKEDIN_POST_ENABLED`` is set, and
-``share_links`` stands down while ``LINKEDIN_WEBHOOK_URL`` is set, so only one
-of the three handles a milestone.
+It shares ``data/processed/linkedin_posts.json`` with ``share_links``: the
+first run seeds it if it doesn't exist, and a milestone is recorded once the
+webhook accepts it. Accepted is all this can know - a scenario that fails
+afterwards (an expired LinkedIn connection, say) is Make's to report and
+retry, not this run's. ``share_links`` stands down while
+``LINKEDIN_WEBHOOK_URL`` is set, so only one of the two handles a milestone.
 
 Usage:
     python -m scripts.linkedin.webhook [--dry-run] [--max-posts N]
@@ -58,8 +55,8 @@ from scripts.atproto.post_bluesky import (
 )
 from scripts.atproto.records import load_matters
 from scripts.linkedin import config
-from scripts.linkedin.post_linkedin import post_text, preview
 from scripts.linkedin.share_links import _matter_id, page_link, share_text, wait_for_deploy
+from scripts.linkedin.text import post_text, preview
 
 #: Gap between posts when several are due, so the page doesn't publish a
 #: burst at once.
@@ -178,9 +175,6 @@ def main(argv: list[str] | None = None) -> int:
                              ensure_ascii=False))
         return 0
 
-    if config.posting_enabled():
-        print("LINKEDIN_POST_ENABLED is set - the API poster has this; skipping.")
-        return 0
     url = config.webhook_url()
     if not url:
         print("LINKEDIN_WEBHOOK_URL is not set - skipping. See docs/linkedin.md.",

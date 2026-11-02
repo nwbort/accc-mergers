@@ -81,7 +81,7 @@ Intermediate JSON written by the extraction pipeline (mainly
   what stops switching posting on from replaying the whole register.
 - `linkedin_posts.json` — the same, for LinkedIn (see
   [`docs/linkedin.md`](../docs/linkedin.md)). Seeded separately, on the first
-  run with LinkedIn posting enabled.
+  run with the Make.com webhook (or share links) configured.
 
 ### `output/`
 

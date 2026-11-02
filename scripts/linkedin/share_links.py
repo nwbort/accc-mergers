@@ -1,7 +1,7 @@
 """Push a ready-to-post LinkedIn link to a phone for each new milestone.
 
-The stopgap for while the API route is unavailable: no LinkedIn app, no token,
-no approval. For each milestone ``post_linkedin`` would post, this builds a
+The manual fallback to the Make.com webhook (``scripts.linkedin.webhook``):
+no scenario, no LinkedIn connection. For each new milestone this builds a
 ``linkedin.com/feed/?shareActive=true&text=...`` link, which opens LinkedIn's
 own composer with the post already written, and sends it as an ntfy
 notification (``NTFY_TOPIC``) whose "Copy LinkedIn link" button puts the link
@@ -10,7 +10,7 @@ hands linkedin.com links to the LinkedIn app, which opens without the text, so
 tapping the notification itself opens the matter page instead. The notification
 body is the link alone. Nothing is posted until a person presses Post.
 
-The post is the same one the API would make, as plain text rather than in
+The post is the same one the webhook sends, as plain text rather than in
 LinkedIn's "little" format (the composer escapes what a person types). The
 link to the matter page goes in the text, ahead of the hashtags, so LinkedIn
 unfurls it into the page's own preview card: the generic card for the matter's
@@ -31,12 +31,11 @@ the next run tries again. When several links are due they go out
 ``LINK_SPACING_SECONDS`` apart, since a phone handed a burst of them at once
 loses track.
 
-It shares ``data/processed/linkedin_posts.json`` with ``post_linkedin``: the
-first run seeds it, a milestone is recorded once its notification is
-delivered, and when the API is switched on it picks up from where the links
-left off rather than re-announcing them. It stands down once
-``LINKEDIN_POST_ENABLED`` or ``LINKEDIN_WEBHOOK_URL`` is set
-(``scripts.linkedin.webhook``), so two of them can't both handle a milestone.
+It shares ``data/processed/linkedin_posts.json`` with ``webhook``: the first
+run seeds it, a milestone is recorded once its notification is delivered, and
+when the webhook is configured it picks up from where the links left off
+rather than re-announcing them. It stands down while ``LINKEDIN_WEBHOOK_URL``
+is set, so the two can't both handle a milestone.
 
 Usage:
     python -m scripts.linkedin.share_links [--dry-run] [--max-links N]
@@ -65,7 +64,7 @@ from scripts.atproto.post_bluesky import (
 from scripts.atproto import config as atproto_config
 from scripts.atproto.records import load_matters
 from scripts.linkedin import config
-from scripts.linkedin.post_linkedin import hashtag_templates, preview, summary_text
+from scripts.linkedin.text import hashtag_templates, preview, summary_text
 
 SHARE_URL = "https://www.linkedin.com/feed/"
 
@@ -216,9 +215,6 @@ def main(argv: list[str] | None = None) -> int:
             print(f"[link: {share_url(milestone)}]")
         return 0
 
-    if config.posting_enabled():
-        print("LINKEDIN_POST_ENABLED is set - the API poster has this; skipping.")
-        return 0
     if config.webhook_url():
         print("LINKEDIN_WEBHOOK_URL is set - the webhook poster has this; skipping.")
         return 0

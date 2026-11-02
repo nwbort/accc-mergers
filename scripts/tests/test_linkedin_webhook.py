@@ -2,8 +2,8 @@
 
 What matters: the payload carries the post in every shape a scenario might
 map, a milestone is only recorded once the webhook accepts it, the webhook URL
-never reaches the log, and exactly one of the API poster, the webhook and the
-share links handles a milestone.
+never reaches the log, and only one of the webhook and the share links
+handles a milestone.
 """
 
 import pytest
@@ -43,7 +43,6 @@ def state_file(tmp_path, monkeypatch):
 def configured(monkeypatch):
     monkeypatch.setenv("LINKEDIN_WEBHOOK_URL", URL)
     monkeypatch.setenv("LINKEDIN_WEBHOOK_API_KEY", "key")
-    monkeypatch.delenv("LINKEDIN_POST_ENABLED", raising=False)
 
 
 @pytest.fixture(autouse=True)
@@ -149,14 +148,6 @@ def test_an_undeployed_matter_is_left_for_the_next_run(state_file, configured, s
     assert main(["--wait-for-deploy", "60"]) == 0
     assert sent == []
     assert "MN-01016:notified:2026-08-15" not in load_state(state_file)["posted"]
-
-
-def test_it_stands_down_when_the_api_poster_is_on(state_file, configured, sent, monkeypatch):
-    monkeypatch.setenv("LINKEDIN_POST_ENABLED", "true")
-    save_state({"posted": {}, "seeded": True}, state_file)
-    use_matters(monkeypatch, [matter()])
-    assert main([]) == 0
-    assert sent == []
 
 
 def test_it_needs_a_url(state_file, configured, sent, monkeypatch):

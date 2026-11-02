@@ -113,7 +113,8 @@ scrape/scrape.sh ──► extract_mergers.py ──► generate/generate_static
   values).
 - `atproto/` — ATmosphere publishing: the lexicon and matter publishers and the
   Bluesky poster (see [`docs/atproto.md`](../docs/atproto.md)).
-- `linkedin/` — LinkedIn posting and the ntfy share-link stopgap (see
+- `linkedin/` — LinkedIn posting via a Make.com webhook, and the ntfy
+  share-link fallback (see
   [`docs/linkedin.md`](../docs/linkedin.md)).
 - `generate/static_data/` — Building blocks for `generate_static_data.py`
   (loaders, filters, enrichment, per-merger estimators, individual output
