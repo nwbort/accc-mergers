@@ -46,8 +46,11 @@ from scripts.date_utils import parse_iso_datetime
 # ---------------------------------------------------------------------------
 
 SITE_BASE = "https://mergers.fyi"
-BLUESKY_URL = "https://bsky.app/profile/mergers.fyi"
-LINKEDIN_URL = "https://www.linkedin.com/company/mergers-fyi"
+# On-domain redirects (frontend/public/_redirects) rather than the profiles
+# themselves: links off the sending domain are a spam-filter signal, and a
+# mergers.fyi path on bsky.app reads like a lookalike link to a classifier.
+BLUESKY_URL = f"{SITE_BASE}/bluesky"
+LINKEDIN_URL = f"{SITE_BASE}/linkedin"
 
 BANNERS = ("social", "signup")
 DEFAULT_BANNER = "social"
