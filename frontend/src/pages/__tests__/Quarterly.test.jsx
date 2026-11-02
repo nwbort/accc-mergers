@@ -17,7 +17,7 @@ function ok(json) {
 
 const BUCKETS = ['0–4', '5–9', '10–14', '15–19', '20–24', '25–29', '30–49', '50+'];
 
-function block(key, label, { filed, decided, p1Median, wMedian, preMedian = 15, milestones = [], findings = [], appeals = null, commentary = [] }) {
+function block(key, label, { filed, decided, p1Median, wMedian, preMedian = 15, milestones = [], findings = [], appeals = null, commentary = [], version, versionDate }) {
   return {
     quarter: key,
     url_key: `${key.slice(2, 4)}${key.slice(-2)}`,
@@ -60,6 +60,7 @@ function block(key, label, { filed, decided, p1Median, wMedian, preMedian = 15, 
     findings,
     commentary,
     appeals: appeals ?? { lodged: 0, concluded: 0, open_at_end: 0, matters: [] },
+    ...(version ? { version, version_date: versionDate } : {}),
   };
 }
 
@@ -69,6 +70,8 @@ const FIXTURE = {
   quarters: [
     block('2026-Q2', 'Q2 2026', { filed: 95, decided: 176, p1Median: 17, wMedian: 12, preMedian: 14.5 }),
     block('2026-Q3', 'Q3 2026', {
+      version: '2.1',
+      versionDate: '2026-11-02',
       filed: 113,
       decided: 183,
       p1Median: 18,
@@ -155,6 +158,19 @@ describe('Quarterly report', () => {
     await ready();
     expect(screen.getByRole('button', { name: 'Q3 2026', pressed: true })).toBeInTheDocument();
     expect(screen.getByText(/1 July 2026/)).toBeInTheDocument();
+  });
+
+  it('shows which version of the report this is', async () => {
+    renderPage();
+    await ready();
+    expect(screen.getByText('v2.1 · 2 Nov 2026')).toBeInTheDocument();
+    expect(screen.getByText('Version 2.1, updated 2 November 2026')).toBeInTheDocument();
+  });
+
+  it('shows no version for a quarter that has none', async () => {
+    renderPage('/quarterly/26Q2');
+    await ready();
+    expect(screen.queryByText(/^v\d/)).not.toBeInTheDocument();
   });
 
   it('leads with the quarter in brief, compared with the one before', async () => {

@@ -63,6 +63,12 @@ Intermediate JSON written by the extraction pipeline (mainly
   details are kept here but never published
 - `quarterly_commentary.json` — hand-written points for the quarterly report,
   keyed by quarter as the page URL names it (`26Q3`)
+- `quarterly_versions.json` — each quarterly report's version history,
+  keyed the same way: a new version (with the date it appeared) whenever the
+  quarter's block in `quarterly.json` changes — minor (`v2.1`) when only its
+  histograms moved, major (`v3`) otherwise (written by
+  `scripts/generate/static_data/quarterly_versions.py`; delete a quarter to
+  restart it at v1)
 - `advisors.json.enc` — encrypted advisor data, backend-only and created by
   the first save in `scripts/tools/advisors.py` (see
   [`scripts/tools/README.md`](../scripts/tools/README.md)); the cleartext

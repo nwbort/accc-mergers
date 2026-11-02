@@ -401,3 +401,55 @@ class TestUrlKeyAndCommentary:
         assert all(not k.startswith('_') for k in loaded)
         for key in loaded:
             assert quarterly.normalise_quarter_key(key) is not None, key
+
+
+class TestReviewOutcomeMilestones:
+    def test_a_concluded_federal_court_review_is_its_own_milestone(self):
+        m = _notification(
+            'MN-1', '2026-03-02', 'Referred to phase 2', '2026-04-14',
+            stage='Phase 2 - detailed assessment',
+            phase_2_determination='Not approved', phase_2_determination_date='2026-07-01T12:00:00Z',
+            judicial_reviews=[{
+                'applicant': 'Coles', 'filed_date': '2026-07-17',
+                'status': 'concluded', 'outcome': 'withdrawn', 'concluded_date': '2026-08-27',
+            }],
+        )
+        q3 = _own(_quarter(quarterly.generate([m], as_at=AS_AT), '2026-Q3')['milestones'])
+        assert [(e['date'], e['kind'], e['label'], e.get('detail')) for e in q3] == [
+            ('2026-07-01', 'phase_2_outcome', 'Not approved', None),
+            ('2026-07-17', 'judicial_review', 'Federal Court review sought', 'Coles'),
+            ('2026-08-27', 'judicial_review_outcome', 'Federal Court review discontinued', None),
+        ]
+
+    def test_a_current_review_has_no_outcome_milestone(self):
+        m = _notification(
+            'MN-1', '2026-03-02', 'Referred to phase 2', '2026-04-14',
+            judicial_reviews=[{'applicant': 'Coles', 'filed_date': '2026-07-17', 'status': 'current'}],
+            appeals=[{'filed_date': '2026-07-20', 'appellant': 'Rival', 'status': 'current'}],
+        )
+        q3 = _own(_quarter(quarterly.generate([m], as_at=AS_AT), '2026-Q3')['milestones'])
+        assert [e['kind'] for e in q3] == ['judicial_review', 'tribunal_application']
+
+    def test_a_concluded_tribunal_review_reads_as_its_outcome(self):
+        m = _notification(
+            'MN-1', '2026-03-02', 'Referred to phase 2', '2026-04-14',
+            appeals=[
+                {'filed_date': '2026-07-20', 'appellant': 'Rival', 'status': 'concluded',
+                 'outcome': 'affirmed', 'concluded_date': '2026-09-10'},
+                {'filed_date': '2026-07-21', 'appellant': 'Other', 'status': 'concluded',
+                 'concluded_date': '2026-09-11'},
+            ],
+        )
+        q3 = _own(_quarter(quarterly.generate([m], as_at=AS_AT), '2026-Q3')['milestones'])
+        assert [e['label'] for e in q3 if e['kind'] == 'tribunal_outcome'] == [
+            'Tribunal affirmed ACCC decision', 'Tribunal review concluded',
+        ]
+
+    def test_the_bare_judicial_review_summary_still_counts(self):
+        m = _notification(
+            'MN-1', '2026-03-02', 'Referred to phase 2', '2026-04-14',
+            judicial_review={'applicant': 'Coles', 'filed_date': '2026-07-17',
+                             'status': 'concluded', 'outcome': 'dismissed', 'concluded_date': '2026-08-27'},
+        )
+        q3 = _own(_quarter(quarterly.generate([m], as_at=AS_AT), '2026-Q3')['milestones'])
+        assert [e['label'] for e in q3] == ['Federal Court review sought', 'Federal Court review dismissed']

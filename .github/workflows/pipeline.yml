@@ -537,7 +537,7 @@ jobs:
         run: |
           git add data/processed/mergers.json data/processed/questionnaire_data.json \
             data/processed/nocc_data.json data/processed/similar_mergers.json \
-            data/processed/phase1_estimates.json \
+            data/processed/phase1_estimates.json data/processed/quarterly_versions.json \
             data/raw/matters/ frontend/public/data/ \
             frontend/public/feed.xml frontend/public/sitemap.xml data/output/ \
             data/frozen_events_mergers.json

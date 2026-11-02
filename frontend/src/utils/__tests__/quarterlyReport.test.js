@@ -5,6 +5,7 @@ import {
   formatRate,
   percentChange,
   previousQuarter,
+  versionLabel,
 } from '../quarterlyReport';
 
 function quarter(key, overrides = {}) {
@@ -82,5 +83,27 @@ describe('figures', () => {
   it('turns bucket counts into shares', () => {
     expect(bucketShares([1, 1, 2])).toEqual([25, 25, 50]);
     expect(bucketShares([0, 0])).toEqual([0, 0]);
+  });
+});
+
+describe('versionLabel', () => {
+  it('reads the version and the day it was published', () => {
+    expect(versionLabel({ version: '2', version_date: '2026-11-02' })).toEqual({
+      short: 'v2 · 2 Nov 2026',
+      long: 'Version 2, updated 2 November 2026',
+    });
+  });
+
+  it('reads a minor version', () => {
+    expect(versionLabel({ version: '4.1', version_date: '2026-11-02' }).short).toBe('v4.1 · 2 Nov 2026');
+  });
+
+  it('reads a bare version without a date', () => {
+    expect(versionLabel({ version: '1' })).toEqual({ short: 'v1', long: 'Version 1' });
+  });
+
+  it('is null for a quarter with no version', () => {
+    expect(versionLabel({})).toBeNull();
+    expect(versionLabel(null)).toBeNull();
   });
 });
