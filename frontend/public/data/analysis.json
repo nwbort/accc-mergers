@@ -378,8 +378,8 @@
       0,
       0,
       0,
-      48,
-      3
+      43,
+      6
     ]
   },
   "open_caseload": {
@@ -419,10 +419,10 @@
       42,
       42
     ],
-    "as_at": "2026-11-02"
+    "as_at": "2026-11-03"
   },
   "current_status": {
-    "as_at": "2026-11-02",
+    "as_at": "2026-11-03",
     "windows": [
       {
         "days": 30,
@@ -506,19 +506,19 @@
       },
       {
         "days": 90,
-        "notifications_filed": 109,
+        "notifications_filed": 104,
         "notifications": {
-          "median": 18.0,
+          "median": 18,
           "average": 20.5,
           "p90": 25,
           "min": 15,
           "max": 56,
-          "count": 114,
+          "count": 113,
           "duration_histogram": {
             "15": 19,
             "16": 13,
             "17": 12,
-            "18": 14,
+            "18": 13,
             "19": 11,
             "20": 6,
             "21": 12,
@@ -537,15 +537,15 @@
             "52": 1,
             "56": 1
           },
-          "median_delta": 0.0
+          "median_delta": 0
         },
         "waivers": {
-          "median": 18.0,
+          "median": 18,
           "average": 16.7,
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 184,
+          "count": 183,
           "duration_histogram": {
             "3": 1,
             "5": 1,
@@ -561,7 +561,7 @@
             "15": 12,
             "16": 16,
             "17": 13,
-            "18": 27,
+            "18": 26,
             "19": 24,
             "20": 17,
             "21": 12,
@@ -574,20 +574,20 @@
         "phase_1_speed": {
           "day15": {
             "count": 19,
-            "percentage": 16.7
+            "percentage": 16.8
           },
           "day20": {
-            "count": 75,
-            "percentage": 65.8
+            "count": 74,
+            "percentage": 65.5
           },
           "day30": {
-            "count": 106,
-            "percentage": 93.0
+            "count": 105,
+            "percentage": 92.9
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 110,
+            "Approved": 109,
             "Referred to phase 2": 1,
             "Approved with conditions": 3
           },
@@ -596,7 +596,7 @@
             "Assessment ceased": 1
           },
           "waivers": {
-            "Approved": 173,
+            "Approved": 172,
             "Not approved": 11
           }
         }
@@ -633,14 +633,14 @@
           "median_delta": 4.0
         },
         {
-          "median": 16,
-          "average": 19.4,
+          "median": 16.0,
+          "average": 19.8,
           "p90": 38,
           "min": 0,
           "max": 74,
-          "count": 109,
+          "count": 104,
           "days": 90,
-          "median_delta": 1
+          "median_delta": 1.0
         }
       ],
       "all_time": {
