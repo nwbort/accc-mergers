@@ -2,7 +2,6 @@
 /matters/*  /mergers/:splat  301
 
 # On-domain aliases for the social profiles, so the digest email links only to
-# mergers.fyi (Resend flags off-domain links as a spam signal). 302, not 301:
-# browsers cache a 301 indefinitely, so a moved profile couldn't be re-pointed.
-/bluesky   https://bsky.app/profile/mergers.fyi                302
-/linkedin  https://www.linkedin.com/company/mergers-fyi       302
+# mergers.fyi (Resend flags off-domain links as a spam signal).
+/bluesky   https://bsky.app/profile/mergers.fyi                301
+/linkedin  https://www.linkedin.com/company/mergers-fyi       301
