@@ -2,7 +2,7 @@
 
 What matters: the link opens the composer with the whole post in it, a
 milestone is only recorded once its notification is delivered, and the
-notifier steps aside the moment the API poster is switched on.
+notifier steps aside while the Make.com webhook is configured.
 """
 
 from urllib.parse import parse_qs, urlparse
@@ -40,7 +40,6 @@ def state_file(tmp_path, monkeypatch):
 def configured(monkeypatch):
     monkeypatch.setenv("LINKEDIN_SHARE_LINKS", "true")
     monkeypatch.setenv("NTFY_TOPIC", "topic")
-    monkeypatch.delenv("LINKEDIN_POST_ENABLED", raising=False)
     monkeypatch.delenv("LINKEDIN_WEBHOOK_URL", raising=False)
 
 
@@ -133,14 +132,6 @@ def test_an_undelivered_link_is_retried_next_run(state_file, configured, sent, m
     sent.fail = True
     assert main([]) == 1
     assert "MN-01016:notified:2026-08-15" not in load_state(state_file)["posted"]
-
-
-def test_it_stands_down_when_the_api_poster_is_on(state_file, configured, sent, monkeypatch):
-    monkeypatch.setenv("LINKEDIN_POST_ENABLED", "true")
-    save_state({"posted": {}, "seeded": True}, state_file)
-    use_matters(monkeypatch, [matter()])
-    assert main([]) == 0
-    assert sent == []
 
 
 @pytest.mark.parametrize("missing", ["LINKEDIN_SHARE_LINKS", "NTFY_TOPIC"])

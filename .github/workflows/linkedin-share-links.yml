@@ -1,15 +1,14 @@
 name: LinkedIn share links
 
-# Until the LinkedIn API route is approved, one of two stopgaps (see
-# docs/linkedin.md):
+# Posts each new milestone to LinkedIn one of two ways (see docs/linkedin.md):
 #
-# - LINKEDIN_WEBHOOK_URL: hand each new milestone to a Make.com scenario that
-#   posts it to the company page (scripts/linkedin/webhook.py).
-# - LINKEDIN_SHARE_LINKS + NTFY_TOPIC: push each new milestone to a phone over
-#   ntfy as a ready-to-post LinkedIn link (scripts/linkedin/share_links.py).
+# - LINKEDIN_WEBHOOK_URL: hand it to a Make.com scenario that posts it to the
+#   company page (scripts/linkedin/webhook.py).
+# - LINKEDIN_SHARE_LINKS + NTFY_TOPIC: the manual fallback, pushing it to a
+#   phone over ntfy as a ready-to-post LinkedIn link
+#   (scripts/linkedin/share_links.py).
 #
-# The webhook wins when both are set, and both stand down by themselves once
-# LINKEDIN_POST_ENABLED is set; with neither configured nothing happens.
+# The webhook wins when both are set; with neither configured nothing happens.
 #
 # A workflow of its own, run after pipeline.yml rather than as a step of it,
 # because it has to wait for the deploy. LinkedIn scrapes a link the moment it
@@ -66,7 +65,6 @@ jobs:
         env:
           LINKEDIN_WEBHOOK_URL: ${{ secrets.LINKEDIN_WEBHOOK_URL }}
           LINKEDIN_WEBHOOK_API_KEY: ${{ secrets.LINKEDIN_WEBHOOK_API_KEY }}
-          LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
         run: python -m scripts.linkedin.webhook --wait-for-deploy 900
 
       # Stands down while LINKEDIN_WEBHOOK_URL is set, so it needs the secret
@@ -77,7 +75,6 @@ jobs:
         env:
           LINKEDIN_WEBHOOK_URL: ${{ secrets.LINKEDIN_WEBHOOK_URL }}
           LINKEDIN_SHARE_LINKS: ${{ vars.LINKEDIN_SHARE_LINKS }}
-          LINKEDIN_POST_ENABLED: ${{ vars.LINKEDIN_POST_ENABLED }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}
           NTFY_SERVER: ${{ vars.NTFY_SERVER }}
