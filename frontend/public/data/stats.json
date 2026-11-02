@@ -3,12 +3,12 @@
   "total_waivers": 494,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 268,
-    "Under assessment": 42,
+    "Assessment completed": 269,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 261,
+    "Approved": 262,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 266,
+    "cleared": 267,
     "not_cleared": 2,
-    "total": 268,
+    "total": 269,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.412408759124087,
-    "median_days": 26.0,
-    "average_business_days": 20.01094890510949,
-    "median_business_days": 18.0,
+    "average_days": 29.403636363636362,
+    "median_days": 26,
+    "average_business_days": 20.007272727272728,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 58,
-        "percentage": 21.2
+        "percentage": 21.1
       },
       "day20": {
-        "count": 199,
-        "percentage": 72.6
+        "count": 200,
+        "percentage": 72.7
       },
       "day30": {
-        "count": 257,
+        "count": 258,
         "percentage": 93.8
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-60044",
+      "merger_name": "Airbus, Leonardo and Thales \u2013 Space activities joint venture",
+      "determination": "Approved",
+      "determination_date": "2026-11-02T12:00:00Z",
+      "page_modified_datetime": "2026-11-02T10:41:30+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-25048",
       "merger_name": "Colas \u2013 Quarry Products Harlaxton",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-05049",
-      "merger_name": "Imagine Education \u2013 Eden Academy",
-      "determination": "Approved",
-      "determination_date": "2026-10-29T12:00:00Z",
-      "page_modified_datetime": "2026-10-29T12:35:03+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
