@@ -284,6 +284,42 @@
       },
       "waiver_duration": null
     },
+    "healthe-care-northpark-pty-ltd": {
+      "id": "healthe-care-northpark-pty-ltd",
+      "canonical_name": "Healthe Care Northpark Pty Ltd",
+      "members": [
+        {
+          "name": "HEALTHE CARE NORTHPARK PTY LTD",
+          "identifier": "58 701 276 593",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-25058",
+            "merger_name": "Healthe Care \u2013 Knox Private, Ringwood Private, Northpark Private, Victorian Rehabilitation Centre and Geelong Clinic",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-02T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "ontotext-usa-inc": {
       "id": "ontotext-usa-inc",
       "canonical_name": "Ontotext USA Inc.",
