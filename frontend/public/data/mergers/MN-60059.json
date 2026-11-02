@@ -66,9 +66,13 @@
       "name": "MERCHANT WEALTH PARTNERS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "28 664 594 405",
+      "canonical": {
+        "id": "merchant-wealth-partners-llc",
+        "name": "Merchant Wealth Partners, LLC"
+      },
       "party_page": {
-        "id": "merchant-wealth-partners-pty-ltd",
-        "name": "Merchant Wealth Partners Pty Ltd"
+        "id": "merchant-wealth-partners-llc",
+        "name": "Merchant Wealth Partners, LLC"
       }
     },
     {
@@ -93,6 +97,10 @@
       "name": "Merchant Wealth Partners, LLC",
       "identifier_type": null,
       "identifier": "Delaware file no. 7703979",
+      "canonical": {
+        "id": "merchant-wealth-partners-llc",
+        "name": "Merchant Wealth Partners, LLC"
+      },
       "party_page": {
         "id": "merchant-wealth-partners-llc",
         "name": "Merchant Wealth Partners, LLC"
