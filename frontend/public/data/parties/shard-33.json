@@ -380,6 +380,42 @@
         "completed_count": 1
       }
     },
+    "mbs-advice-licence-pty-ltd": {
+      "id": "mbs-advice-licence-pty-ltd",
+      "canonical_name": "Mbs Advice Licence Pty Ltd",
+      "members": [
+        {
+          "name": "MBS ADVICE LICENCE PTY LTD",
+          "identifier": "25 654 854 136",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-60059",
+            "merger_name": "Merchant Wealth Partners - minority investment in Ironbark Financial Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-02T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "smile-partners-instyle-pty-ltd": {
       "id": "smile-partners-instyle-pty-ltd",
       "canonical_name": "Smile Partners (Instyle) Pty Ltd",
