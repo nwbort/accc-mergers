@@ -212,6 +212,48 @@
         "completed_count": 1
       }
     },
+    "pearson-plc": {
+      "id": "pearson-plc",
+      "canonical_name": "Pearson plc.",
+      "members": [
+        {
+          "name": "Pearson plc.",
+          "identifier": "UK Company Number  00053723",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80050",
+            "merger_name": "Pearson plc \u2013 Workera Corp",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-05T12:00:00Z",
+            "determination_date": "2026-11-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "spring-topco-limited": {
       "id": "spring-topco-limited",
       "canonical_name": "Spring Topco Limited",
