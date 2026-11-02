@@ -1,6 +1,6 @@
 {
   "total_mergers": 315,
-  "total_waivers": 495,
+  "total_waivers": 497,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 269,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 470,
+    "Approved": 472,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.719191919191918,
+    "average_days": 20.736418511066397,
     "median_days": 21,
-    "average_business_days": 14.17979797979798,
+    "average_business_days": 14.191146881287727,
     "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 196
+      "count": 198
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 81
+      "count": 82
     },
     {
       "name": "Non-Residential Property Operators",
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20047",
+      "merger_name": "Macquarie Korea Asset Management \u2013 Hwasung Cosmetics and Nowcos",
+      "determination": "Approved",
+      "determination_date": "2026-11-02T12:00:00Z",
+      "page_modified_datetime": "2026-11-02T16:38:08+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-60055",
+      "merger_name": "TD SYNNEX - BlueStar",
+      "determination": "Approved",
+      "determination_date": "2026-11-02T12:00:00Z",
+      "page_modified_datetime": "2026-11-02T16:36:09+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80049",
       "merger_name": "Samsung C&T - Powertech",
       "determination": "Approved",
@@ -326,28 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-90042",
-      "merger_name": "Blackstone \u2013 Discovery Education",
-      "determination": "Approved",
-      "determination_date": "2026-10-29T12:00:00Z",
-      "page_modified_datetime": "2026-10-29T17:13:11+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-05054",
-      "merger_name": "Stanmore \u2013 Exxaro Australia Holdings",
-      "determination": "Approved",
-      "determination_date": "2026-10-29T12:00:00Z",
-      "page_modified_datetime": "2026-10-29T16:57:06+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
