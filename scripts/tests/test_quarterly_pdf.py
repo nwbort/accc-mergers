@@ -151,8 +151,9 @@ def test_footer_links_the_site_and_there_are_no_notes(tmp_path):
 
 
 def test_version_label():
-    assert quarterly_pdf.version_label({'version': 2, 'version_date': '2026-11-02'}) == 'v2 · 2 Nov 2026'
-    assert quarterly_pdf.version_label({'version': 1}) == 'v1'
+    assert quarterly_pdf.version_label({'version': '2', 'version_date': '2026-11-02'}) == 'v2 · 2 Nov 2026'
+    assert quarterly_pdf.version_label({'version': '4.1', 'version_date': '2026-11-02'}) == 'v4.1 · 2 Nov 2026'
+    assert quarterly_pdf.version_label({'version': '1'}) == 'v1'
     assert quarterly_pdf.version_label({}) is None
 
 
@@ -172,7 +173,7 @@ def _page_text(raw: bytes) -> bytes:
 def test_band_carries_the_report_version(tmp_path):
     payload = _payload()
     for block in payload['quarters']:
-        block['version'], block['version_date'] = 3, '2026-11-02'
+        block['version'], block['version_date'] = '3', '2026-11-02'
     quarterly_pdf.generate(payload, tmp_path)
     raw = (tmp_path / 'mergers-fyi-quarterly-merger-report-2026Q3.pdf').read_bytes()
     text = _page_text(raw)

@@ -70,7 +70,7 @@ const FIXTURE = {
   quarters: [
     block('2026-Q2', 'Q2 2026', { filed: 95, decided: 176, p1Median: 17, wMedian: 12, preMedian: 14.5 }),
     block('2026-Q3', 'Q3 2026', {
-      version: 2,
+      version: '2.1',
       versionDate: '2026-11-02',
       filed: 113,
       decided: 183,
@@ -163,8 +163,8 @@ describe('Quarterly report', () => {
   it('shows which version of the report this is', async () => {
     renderPage();
     await ready();
-    expect(screen.getByText('v2 · 2 Nov 2026')).toBeInTheDocument();
-    expect(screen.getByText('Version 2, updated 2 November 2026')).toBeInTheDocument();
+    expect(screen.getByText('v2.1 · 2 Nov 2026')).toBeInTheDocument();
+    expect(screen.getByText('Version 2.1, updated 2 November 2026')).toBeInTheDocument();
   });
 
   it('shows no version for a quarter that has none', async () => {

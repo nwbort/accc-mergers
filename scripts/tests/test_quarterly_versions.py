@@ -17,7 +17,7 @@ def test_first_sighting_is_v1_dated_today():
     payload = _payload()
     store = qv.stamp_versions(payload, {}, '2026-11-02')
     assert [(q['version'], q['version_date']) for q in payload['quarters']] == [
-        (1, '2026-11-02'), (1, '2026-11-02'),
+        ('1', '2026-11-02'), ('1', '2026-11-02'),
     ]
     assert list(store) == ['26Q2', '26Q3']
     assert store['26Q3'][0]['digest'] == qv.block_digest(payload['quarters'][1])
@@ -36,9 +36,9 @@ def test_a_changed_quarter_moves_to_the_next_version():
     payload = _payload(notifications={'filed': 114})
     store = qv.stamp_versions(payload, store, '2026-11-20')
     q2, q3 = payload['quarters']
-    assert (q2['version'], q2['version_date']) == (1, '2026-11-02')
-    assert (q3['version'], q3['version_date']) == (2, '2026-11-20')
-    assert [v['version'] for v in store['26Q3']] == [1, 2]
+    assert (q2['version'], q2['version_date']) == ('1', '2026-11-02')
+    assert (q3['version'], q3['version_date']) == ('2', '2026-11-20')
+    assert [v['version'] for v in store['26Q3']] == ['1', '2']
 
 
 def test_returning_to_earlier_content_is_still_a_new_version():
@@ -46,7 +46,7 @@ def test_returning_to_earlier_content_is_still_a_new_version():
     store = qv.stamp_versions(_payload(notifications={'filed': 114}), store, '2026-11-03')
     payload = _payload()
     qv.stamp_versions(payload, store, '2026-11-04')
-    assert payload['quarters'][1]['version'] == 3
+    assert payload['quarters'][1]['version'] == '3'
 
 
 def test_digest_ignores_the_version_fields_themselves():
@@ -68,13 +68,15 @@ def test_load_and_save_round_trip(tmp_path, monkeypatch):
     monkeypatch.setattr(qv, 'VERSIONS_STORE_PATH', path)
     assert qv.load_store() == {}
     payload = qv.apply_versions(_payload(), today='2026-11-02')
-    assert payload['quarters'][1]['version'] == 1
+    assert payload['quarters'][1]['version'] == '1'
     on_disk = json.loads(path.read_text())
     assert '_comment' in on_disk
     assert qv.load_store() == {k: v for k, v in on_disk.items() if k != '_comment'}
     qv.apply_versions(_payload(notifications={'filed': 2}), today='2026-11-05')
+    changed = _payload(notifications={'filed': 2})['quarters'][1]
     assert qv.load_store()['26Q3'][-1] == {
-        'version': 2, 'date': '2026-11-05', 'digest': qv.block_digest(_payload(notifications={'filed': 2})['quarters'][1]),
+        'version': '2', 'date': '2026-11-05',
+        'digest': qv.block_digest(changed), 'major_digest': qv.major_digest(changed),
     }
 
 
@@ -82,10 +84,55 @@ def test_numbering_continues_from_a_backfilled_history():
     """Versions backfilled from the PDF's git history carry no digest; the
     next change still numbers on from the last of them."""
     backfilled = {'26Q3': [
-        {'version': 1, 'date': '2026-10-23', 'digest': None, 'commit': 'f07ccbbd2'},
-        {'version': 2, 'date': '2026-10-26', 'digest': None, 'commit': '574985341'},
+        {'version': '1', 'date': '2026-10-23', 'digest': None, 'commit': 'f07ccbbd2'},
+        {'version': '2.1', 'date': '2026-10-26', 'digest': None, 'commit': '574985341'},
     ]}
     payload = _payload()
     store = qv.stamp_versions(payload, backfilled, '2026-11-02')
-    assert (payload['quarters'][1]['version'], payload['quarters'][1]['version_date']) == (3, '2026-11-02')
+    assert (payload['quarters'][1]['version'], payload['quarters'][1]['version_date']) == ('3', '2026-11-02')
     assert store['26Q3'][:2] == backfilled['26Q3']
+
+
+def _with_histograms(pre=(2, 33, 43), p1=(0, 76, 23), filed=113):
+    payload = _payload(notifications={'filed': filed, 'timing': {'median': 18, 'buckets': list(p1)}})
+    payload['quarters'][1]['pre_notification'] = {'median': 16, 'buckets': list(pre)}
+    return payload
+
+
+def test_a_histogram_only_change_is_a_minor_version():
+    store = qv.stamp_versions(_with_histograms(), {}, '2026-11-02')
+    payload = _with_histograms(pre=(2, 32, 44))
+    store = qv.stamp_versions(payload, store, '2026-11-03')
+    assert payload['quarters'][1]['version'] == '1.1'
+    payload = _with_histograms(pre=(2, 33, 43), p1=(0, 75, 24))
+    store = qv.stamp_versions(payload, store, '2026-11-04')
+    assert payload['quarters'][1]['version'] == '1.2'
+    assert payload['quarters'][0]['version'] == '1'
+
+
+def test_anything_else_is_a_major_version_and_restarts_the_minor_count():
+    store = qv.stamp_versions(_with_histograms(), {}, '2026-11-02')
+    store = qv.stamp_versions(_with_histograms(pre=(2, 32, 44)), store, '2026-11-03')
+    payload = _with_histograms(pre=(2, 32, 44), filed=114)
+    store = qv.stamp_versions(payload, store, '2026-11-04')
+    assert payload['quarters'][1]['version'] == '2'
+    payload = _with_histograms(pre=(2, 33, 43), filed=114)
+    qv.stamp_versions(payload, store, '2026-11-05')
+    assert payload['quarters'][1]['version'] == '2.1'
+
+
+def test_a_histogram_change_after_a_backfilled_entry_counts_as_major():
+    """A backfilled entry has no major digest to vouch that only the
+    histograms moved."""
+    backfilled = {'26Q3': [{'version': '2.3', 'date': '2026-11-02', 'digest': None, 'major_digest': None}]}
+    payload = _with_histograms()
+    qv.stamp_versions(payload, backfilled, '2026-11-03')
+    assert payload['quarters'][1]['version'] == '3'
+
+
+def test_versions_are_written_without_a_trailing_zero():
+    assert qv.format_version(2, 0) == '2'
+    assert qv.format_version(4, 1) == '4.1'
+    assert qv.parse_version('4.1') == (4, 1)
+    assert qv.parse_version('2') == (2, 0)
+    assert qv.parse_version(2) == (2, 0)

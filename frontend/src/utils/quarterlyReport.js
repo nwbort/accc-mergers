@@ -45,7 +45,8 @@ export function bucketShares(buckets) {
  * Which edition of a quarter's report this is: `{ short: 'v2 · 2 Nov 2026',
  * long: 'Version 2, updated 2 November 2026' }`, or null for a block with no
  * version. A quarter's figures keep moving after it ends, so the generator
- * bumps `version` whenever its block changes (see
+ * bumps `version` whenever its block changes: `'3'` for a change a reader
+ * would notice, `'3.1'` when only a histogram moved (see
  * scripts/generate/static_data/quarterly_versions.py); the PDF's band carries
  * the same short form.
  */
