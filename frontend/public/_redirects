@@ -1,2 +1,6 @@
 # Redirect old /matters/ document paths to /mergers/
 /matters/*  /mergers/:splat  301
+
+# Short links to the social profiles
+/bluesky   https://bsky.app/profile/mergers.fyi                301
+/linkedin  https://www.linkedin.com/company/mergers-fyi       301
