@@ -76,3 +76,16 @@ def test_load_and_save_round_trip(tmp_path, monkeypatch):
     assert qv.load_store()['26Q3'][-1] == {
         'version': 2, 'date': '2026-11-05', 'digest': qv.block_digest(_payload(notifications={'filed': 2})['quarters'][1]),
     }
+
+
+def test_numbering_continues_from_a_backfilled_history():
+    """Versions backfilled from the PDF's git history carry no digest; the
+    next change still numbers on from the last of them."""
+    backfilled = {'26Q3': [
+        {'version': 1, 'date': '2026-10-23', 'digest': None, 'commit': 'f07ccbbd2'},
+        {'version': 2, 'date': '2026-10-26', 'digest': None, 'commit': '574985341'},
+    ]}
+    payload = _payload()
+    store = qv.stamp_versions(payload, backfilled, '2026-11-02')
+    assert (payload['quarters'][1]['version'], payload['quarters'][1]['version_date']) == (3, '2026-11-02')
+    assert store['26Q3'][:2] == backfilled['26Q3']
