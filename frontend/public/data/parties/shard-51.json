@@ -510,6 +510,48 @@
         "completed_count": 1
       }
     },
+    "powertech-pty-ltd": {
+      "id": "powertech-pty-ltd",
+      "canonical_name": "Powertech Pty Ltd",
+      "members": [
+        {
+          "name": "POWERTECH PTY LTD",
+          "identifier": "16 081 990 052",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80049",
+            "merger_name": "Samsung C&T - Powertech",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-02T12:00:00Z",
+            "determination_date": "2026-11-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "redcape-fund": {
       "id": "redcape-fund",
       "canonical_name": "Redcape Fund",
