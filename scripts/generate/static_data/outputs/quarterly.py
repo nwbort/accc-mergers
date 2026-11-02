@@ -25,7 +25,8 @@ one before it. Each block answers the questions a quarterly round-up asks:
   its outcome, plus how many were lodged, concluded and still open at the end.
 - **Beyond phase 1.** Every phase 2 referral, phase 2 outcome, public benefit
   application, Tribunal application and Federal Court review in the quarter,
-  as a dated list of matters.
+  and each of those reviews' conclusion (withdrawn, dismissed, decided), as a
+  dated list of matters.
 - **In brief.** ``findings``, a few sentences saying what moved against the
   previous quarter. Written here rather than in the page so the page and the
   PDF report (``generate/quarterly_pdf.py``) say the same thing.
@@ -56,7 +57,7 @@ from datetime import date, datetime
 from statistics import median as stat_median
 from zoneinfo import ZoneInfo
 
-from scripts.constants import merger_status, tribunal
+from scripts.constants import judicial_review, merger_status, tribunal
 
 from ..business_days import calculate_business_days
 from ..durations import phase_1_end_date
@@ -225,11 +226,29 @@ MILESTONE_LABELS = {
     "public_benefit_outcome": "Public benefit outcome",
     "tribunal_application": "Tribunal review sought",
     "judicial_review": "Federal Court review sought",
+    "tribunal_outcome": "Tribunal review concluded",
+    "judicial_review_outcome": "Federal Court review concluded",
+}
+
+#: How a concluded review reads, by outcome; an outcome not listed (or not yet
+#: recorded) falls back to the kind's plain "concluded" label above.
+_TRIBUNAL_OUTCOME_MILESTONES = {
+    tribunal.OUTCOME_AFFIRMED: "Tribunal affirmed ACCC decision",
+    tribunal.OUTCOME_SET_ASIDE: "Tribunal set aside ACCC decision",
+    tribunal.OUTCOME_VARIED: "Tribunal varied ACCC decision",
+    tribunal.OUTCOME_WITHDRAWN: "Tribunal review withdrawn",
+    tribunal.OUTCOME_DISMISSED: "Tribunal review dismissed",
+}
+_JUDICIAL_REVIEW_OUTCOME_MILESTONES = {
+    judicial_review.OUTCOME_WITHDRAWN: "Federal Court review discontinued",
+    judicial_review.OUTCOME_DISMISSED: "Federal Court review dismissed",
+    judicial_review.OUTCOME_SET_ASIDE: "Federal Court set aside ACCC decision",
 }
 
 #: Kinds whose detail *is* the milestone: a phase 2 review is listed as how it
-#: ended ("Not approved"), not as "Phase 2 outcome · Not approved".
-_LABELLED_BY_DETAIL = {"phase_2_outcome"}
+#: ended ("Not approved"), not as "Phase 2 outcome · Not approved", and a
+#: concluded review likewise ("Federal Court review discontinued").
+_LABELLED_BY_DETAIL = {"phase_2_outcome", "tribunal_outcome", "judicial_review_outcome"}
 
 
 def _matter_ref(merger: dict, kind: str, on: str, detail: str | None = None) -> dict:
@@ -262,8 +281,9 @@ def _milestones(mergers: list) -> list[dict]:
     Kinds: ``referred`` (phase 1 → phase 2), ``phase_2_outcome`` (determination
     or cessation; ``detail`` names which), ``public_benefit_application``,
     ``tribunal_application`` (one per Tribunal matter, ``detail`` the
-    applicant), ``judicial_review`` and ``ceased`` (a phase 1 review the
-    parties dropped). A refused notification at phase 1 is ``phase_1_refused``.
+    applicant), ``tribunal_outcome`` (its conclusion, labelled by outcome),
+    ``judicial_review`` and ``judicial_review_outcome`` (the same pair for each
+    Federal Court file) and ``ceased`` (a phase 1 review the parties dropped). A refused notification at phase 1 is ``phase_1_refused``.
     """
     events = []
     for m in filter_notifications(mergers):
@@ -293,9 +313,22 @@ def _milestones(mergers: list) -> list[dict]:
         for appeal in m.get("appeals") or []:
             if appeal.get("filed_date"):
                 events.append(_matter_ref(m, "tribunal_application", appeal["filed_date"], appeal.get("appellant")))
-        review = m.get("judicial_review") or {}
-        if review.get("filed_date"):
-            events.append(_matter_ref(m, "judicial_review", review["filed_date"], review.get("applicant")))
+            if appeal.get("status") == tribunal.APPEAL_STATUS_CONCLUDED and appeal.get("concluded_date"):
+                events.append(_matter_ref(
+                    m, "tribunal_outcome", appeal["concluded_date"],
+                    _TRIBUNAL_OUTCOME_MILESTONES.get(appeal.get("outcome")),
+                ))
+        # One record per Federal Court file; the bare summary for a merger
+        # enriched before the list existed.
+        reviews = m.get("judicial_reviews") or ([m["judicial_review"]] if m.get("judicial_review") else [])
+        for review in reviews:
+            if review.get("filed_date"):
+                events.append(_matter_ref(m, "judicial_review", review["filed_date"], review.get("applicant")))
+            if review.get("status") == judicial_review.STATUS_CONCLUDED and review.get("concluded_date"):
+                events.append(_matter_ref(
+                    m, "judicial_review_outcome", review["concluded_date"],
+                    _JUDICIAL_REVIEW_OUTCOME_MILESTONES.get(review.get("outcome")),
+                ))
 
     events.sort(key=lambda e: (e["date"], e["merger_id"] or "", e["kind"]))
     return events

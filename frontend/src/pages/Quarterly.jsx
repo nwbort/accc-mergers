@@ -42,6 +42,8 @@ const MILESTONE_DOTS = {
   public_benefit_outcome: 'bg-phase-2',
   tribunal_application: 'bg-tribunal-appeal',
   judicial_review: 'bg-tribunal-appeal',
+  tribunal_outcome: 'bg-tribunal-appeal',
+  judicial_review_outcome: 'bg-tribunal-appeal',
 };
 
 /**
