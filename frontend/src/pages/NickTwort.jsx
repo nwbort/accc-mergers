@@ -120,7 +120,8 @@ export default function NickTwort() {
               className="text-emerald-700 font-medium hover:underline"
             >
               Econic Partners
-            </a>.
+            </a>{' '}
+            in Sydney.
           </p>
         </section>
 
