@@ -13,13 +13,10 @@
       "name": "Sumitomo Mitsui Trust Bank, Limited",
       "identifier_type": null,
       "identifier": "Financial Institution Registration Number: No.649 Kanto Finance Bureau of the Ministry of Finance",
-      "canonical": {
-        "id": "sumitomo-mitsui-trust-bank-limited",
-        "name": "Sumitomo Mitsui Trust Bank, Limited"
-      },
       "party_page": {
         "id": "sumitomo-mitsui-trust-bank-limited",
-        "name": "Sumitomo Mitsui Trust Bank, Limited"
+        "name": "Sumitomo Mitsui Trust Bank, Limited",
+        "curated": true
       }
     }
   ],
@@ -48,13 +45,10 @@
       "name": "IFM INVESTORS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "67 107 247 727",
-      "canonical": {
-        "id": "ifm-investors",
-        "name": "Ifm Investors"
-      },
       "party_page": {
         "id": "ifm-investors",
-        "name": "Ifm Investors"
+        "name": "Ifm Investors",
+        "curated": true
       }
     }
   ],

@@ -15,13 +15,10 @@
       "name": "Visa Open Connect Limited",
       "identifier_type": null,
       "identifier": "12227688",
-      "canonical": {
-        "id": "visa",
-        "name": "Visa"
-      },
       "party_page": {
         "id": "visa",
-        "name": "Visa"
+        "name": "Visa",
+        "curated": true
       }
     }
   ],
@@ -41,13 +38,10 @@
       "name": "Visa Inc",
       "identifier_type": null,
       "identifier": "4233619",
-      "canonical": {
-        "id": "visa",
-        "name": "Visa"
-      },
       "party_page": {
         "id": "visa",
-        "name": "Visa"
+        "name": "Visa",
+        "curated": true
       }
     }
   ],

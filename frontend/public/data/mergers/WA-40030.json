@@ -13,26 +13,20 @@
       "name": "TELSTRA AUSTRALIA NETWORKS PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "58 100 816 206",
-      "canonical": {
-        "id": "telstra-limited",
-        "name": "Telstra"
-      },
       "party_page": {
         "id": "telstra-limited",
-        "name": "Telstra"
+        "name": "Telstra",
+        "curated": true
       }
     },
     {
       "name": "TELSTRA INTERNATIONAL NETWORKS PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "56 142 220 157",
-      "canonical": {
-        "id": "telstra-limited",
-        "name": "Telstra"
-      },
       "party_page": {
         "id": "telstra-limited",
-        "name": "Telstra"
+        "name": "Telstra",
+        "curated": true
       }
     }
   ],
@@ -59,13 +53,10 @@
       "name": "Google LLC",
       "identifier_type": null,
       "identifier": "",
-      "canonical": {
-        "id": "google-llc",
-        "name": "Google"
-      },
       "party_page": {
         "id": "google-llc",
-        "name": "Google"
+        "name": "Google",
+        "curated": true
       }
     }
   ],

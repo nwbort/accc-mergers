@@ -91,6 +91,18 @@ def test_slim_for_site_keeps_a_public_benefit_determination_once_made():
     assert 'stage_determinations' not in slim
 
 
+def test_slim_for_site_drops_the_canonical_link_party_page_duplicates():
+    merger = _merger()
+    slim = slim_for_site(merger)
+
+    buyer = slim['acquirers'][0]
+    assert 'canonical' not in buyer
+    assert buyer['party_page'] == {'id': 'slug', 'name': 'Buyer One'}
+    assert buyer['identifier'] == '12 345 678 901'
+    # The full record (and so data/output/mergers.json) keeps it.
+    assert merger['acquirers'][0]['canonical']['name'] == 'Buyer Group'
+
+
 def test_slim_for_site_keeps_only_the_rendered_determination_rows():
     slim = slim_for_site(_merger())
 

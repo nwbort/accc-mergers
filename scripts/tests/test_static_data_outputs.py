@@ -3001,6 +3001,21 @@ class TestBuildPartyPages:
                     assert 'party_page' in p
                     assert p['party_page']['id']
 
+    def test_only_declared_group_pages_are_flagged_curated(self):
+        # The merger page colours a curated group's link differently; the
+        # flag replaces reading the (identical) ``canonical`` link for that.
+        mergers = _party_mergers_fixture()
+        parties.build_party_pages(mergers, [_COLES_GROUP])
+        pages = {
+            p['name']: p['party_page']
+            for m in mergers
+            for field in ('acquirers', 'targets', 'other_parties')
+            for p in m.get(field) or []
+        }
+        assert pages['COLES GROUP LIMITED'] == {'id': 'coles', 'name': 'Coles Group', 'curated': True}
+        uncurated = [page for name, page in pages.items() if 'COLES' not in name]
+        assert uncurated and all('curated' not in page for page in uncurated)
+
     def test_slug_collisions_between_unrelated_parties_are_disambiguated(self):
         # Two distinct, unlisted entities that happen to share a display name
         # (different ABNs, no canonical group) must not be folded into one

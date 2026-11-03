@@ -10,10 +10,12 @@ entity under the same name/ABN still share one page. This is what lets every
 resolve to a page — see issue #596.
 
 :func:`build_party_pages` does the clustering and, as a side effect, attaches
-a ``party_page`` field (``{"id", "name"}``) to every acquirer/target/other
-party dict in place, mirroring how :func:`static_data.enrichment.
-link_related_parties` attaches ``canonical`` — but for every party, not just
-ones matched to a declared group.
+a ``party_page`` field (``{"id", "name"}``, plus ``"curated": true`` when the
+page is a declared group's) to every acquirer/target/other party dict in
+place, mirroring how :func:`static_data.enrichment.link_related_parties`
+attaches ``canonical`` — but for every party, not just ones matched to a
+declared group. The deployed detail files keep only ``party_page``; the
+``curated`` flag is what the merger page styles group links by.
 
 ``generate_index`` returns the ``parties.json`` payload.
 ``generate_detail_files`` writes the party records into a fixed set of
@@ -53,7 +55,8 @@ def _title_case_name(name: str) -> str:
 def build_party_pages(mergers: list, party_groups: list) -> list:
     """Cluster every party appearance into a page group.
 
-    Attaches ``party_page`` (``{"id", "name"}``) to every party dict in place.
+    Attaches ``party_page`` (``{"id", "name"}``, plus ``"curated": True`` for a
+    declared group from ``related_parties.json``) to every party dict in place.
     Returns a list of group records, sorted by id for deterministic output::
 
         {"id": ..., "canonical_name": ...,
@@ -128,8 +131,11 @@ def build_party_pages(mergers: list, party_groups: list) -> list:
         # since appearances for a given merger are processed in that order.
         mergers_by_role: dict[str, dict] = {'acquirer': {}, 'target': {}, 'other': {}}
         assigned_role_by_merger: dict = {}
+        party_page = {'id': group_id, 'name': canonical_name}
+        if key[0] == 'canonical':
+            party_page['curated'] = True
         for merger, field, party in entry['appearances']:
-            party['party_page'] = {'id': group_id, 'name': canonical_name}
+            party['party_page'] = dict(party_page)
             role = ROLE_LABELS[field]
             merger_id = merger.get('merger_id')
             if merger_id in assigned_role_by_merger:

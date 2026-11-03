@@ -209,7 +209,7 @@ function MergerDetail() {
             {party.party_page?.id ? (
               <Link
                 to={partyPath(party.party_page.id, party.party_page.name)}
-                className={party.canonical?.name
+                className={party.party_page.curated
                   ? 'font-medium text-primary hover:text-primary-dark transition-colors'
                   : 'font-medium text-gray-900 hover:text-primary transition-colors'}
                 title={`View the party page for ${party.party_page.name || party.name}`}
@@ -217,17 +217,7 @@ function MergerDetail() {
                 {party.name}
               </Link>
             ) : (
-              <Link
-                to={`/mergers?q=${encodeURIComponent(party.canonical?.name || party.name)}`}
-                className={party.canonical?.name
-                  ? 'font-medium text-primary hover:text-primary-dark transition-colors'
-                  : 'font-medium text-gray-900 hover:text-primary transition-colors'}
-                title={party.canonical?.name
-                  ? `See all mergers involving ${party.canonical.name}`
-                  : `Search mergers for ${party.name}`}
-              >
-                {party.name}
-              </Link>
+              <span className="font-medium text-gray-900">{party.name}</span>
             )}
             {party.identifier && (
               <p className="text-sm text-gray-500">

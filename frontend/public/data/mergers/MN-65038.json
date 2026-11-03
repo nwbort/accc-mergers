@@ -13,13 +13,10 @@
       "name": "TTE Corporation",
       "identifier_type": null,
       "identifier": "593939",
-      "canonical": {
-        "id": "tcl-electronics",
-        "name": "TCL Electronics"
-      },
       "party_page": {
         "id": "tcl-electronics",
-        "name": "TCL Electronics"
+        "name": "TCL Electronics",
+        "curated": true
       }
     }
   ],
@@ -28,26 +25,20 @@
       "name": "SONY AUSTRALIA LIMITED",
       "identifier_type": "ABN",
       "identifier": "59 001 215 354",
-      "canonical": {
-        "id": "sony-corporation",
-        "name": "Sony Corporation"
-      },
       "party_page": {
         "id": "sony-corporation",
-        "name": "Sony Corporation"
+        "name": "Sony Corporation",
+        "curated": true
       }
     },
     {
       "name": "Sony Corporation",
       "identifier_type": null,
       "identifier": "7010401045660",
-      "canonical": {
-        "id": "sony-corporation",
-        "name": "Sony Corporation"
-      },
       "party_page": {
         "id": "sony-corporation",
-        "name": "Sony Corporation"
+        "name": "Sony Corporation",
+        "curated": true
       }
     }
   ],

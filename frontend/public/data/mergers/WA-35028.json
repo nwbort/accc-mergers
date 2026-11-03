@@ -24,26 +24,20 @@
       "name": "COMMS GROUP LTD",
       "identifier_type": "ABN",
       "identifier": "64 619 196 539",
-      "canonical": {
-        "id": "comms-group",
-        "name": "Comms Group"
-      },
       "party_page": {
         "id": "comms-group",
-        "name": "Comms Group"
+        "name": "Comms Group",
+        "curated": true
       }
     },
     {
       "name": "ON GROUP HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "68 622 185 808",
-      "canonical": {
-        "id": "comms-group",
-        "name": "Comms Group"
-      },
       "party_page": {
         "id": "comms-group",
-        "name": "Comms Group"
+        "name": "Comms Group",
+        "curated": true
       }
     }
   ],
@@ -52,13 +46,10 @@
       "name": "Advent Partners",
       "identifier_type": null,
       "identifier": "",
-      "canonical": {
-        "id": "advent-partners",
-        "name": "Advent Partners"
-      },
       "party_page": {
         "id": "advent-partners",
-        "name": "Advent Partners"
+        "name": "Advent Partners",
+        "curated": true
       }
     }
   ],

@@ -24,13 +24,10 @@
       "name": "J.S.B. Co., Ltd.",
       "identifier_type": null,
       "identifier": "130001017499",
-      "canonical": {
-        "id": "j-s-b-co",
-        "name": "J.S.B. Co"
-      },
       "party_page": {
         "id": "j-s-b-co",
-        "name": "J.S.B. Co"
+        "name": "J.S.B. Co",
+        "curated": true
       }
     }
   ],
@@ -39,26 +36,20 @@
       "name": "Warburg Pincus LLC",
       "identifier_type": null,
       "identifier": "2097098",
-      "canonical": {
-        "id": "warburg-pincus-llc",
-        "name": "Warburg Pincus LLC"
-      },
       "party_page": {
         "id": "warburg-pincus-llc",
-        "name": "Warburg Pincus LLC"
+        "name": "Warburg Pincus LLC",
+        "curated": true
       }
     },
     {
       "name": "J.S.B. AUS PTY LTD",
       "identifier_type": "ACN",
       "identifier": "698 489 566",
-      "canonical": {
-        "id": "j-s-b-co",
-        "name": "J.S.B. Co"
-      },
       "party_page": {
         "id": "j-s-b-co",
-        "name": "J.S.B. Co"
+        "name": "J.S.B. Co",
+        "curated": true
       }
     }
   ],

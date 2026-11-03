@@ -33,26 +33,20 @@
       "name": "MCGILL AND PARTNERS AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "11 654 226 749",
-      "canonical": {
-        "id": "mcgill-and-partners-group-ltd",
-        "name": "McGill and Partners Group Ltd"
-      },
       "party_page": {
         "id": "mcgill-and-partners-group-ltd",
-        "name": "McGill and Partners Group Ltd"
+        "name": "McGill and Partners Group Ltd",
+        "curated": true
       }
     },
     {
       "name": "McGill and Partners Group Ltd",
       "identifier_type": null,
       "identifier": "11872874",
-      "canonical": {
-        "id": "mcgill-and-partners-group-ltd",
-        "name": "McGill and Partners Group Ltd"
-      },
       "party_page": {
         "id": "mcgill-and-partners-group-ltd",
-        "name": "McGill and Partners Group Ltd"
+        "name": "McGill and Partners Group Ltd",
+        "curated": true
       }
     }
   ],
@@ -61,13 +55,10 @@
       "name": "EQT Fund Management S.\u00e0 r.l.",
       "identifier_type": null,
       "identifier": "Luxembourg Company Registration Number  B167972",
-      "canonical": {
-        "id": "eqt-fund-management-s-r-l",
-        "name": "EQT Fund Management"
-      },
       "party_page": {
         "id": "eqt-fund-management-s-r-l",
-        "name": "EQT Fund Management"
+        "name": "EQT Fund Management",
+        "curated": true
       }
     }
   ],

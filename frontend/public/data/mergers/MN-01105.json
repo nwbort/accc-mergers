@@ -14,13 +14,10 @@
       "name": "Siemens Mobility Holding B.V.",
       "identifier_type": null,
       "identifier": "LEI  529900JJ6XL7YX9GBM87",
-      "canonical": {
-        "id": "siemens-mobility-gmbh",
-        "name": "Siemens Mobility GmbH"
-      },
       "party_page": {
         "id": "siemens-mobility-gmbh",
-        "name": "Siemens Mobility GmbH"
+        "name": "Siemens Mobility GmbH",
+        "curated": true
       }
     }
   ],
@@ -29,13 +26,10 @@
       "name": "Mer Mec S.p.A.",
       "identifier_type": null,
       "identifier": "LEI  81560011DF7243CFC226",
-      "canonical": {
-        "id": "mermec",
-        "name": "MerMec"
-      },
       "party_page": {
         "id": "mermec",
-        "name": "MerMec"
+        "name": "MerMec",
+        "curated": true
       }
     }
   ],
@@ -44,65 +38,50 @@
       "name": "Siemens Aktiengesellschaft",
       "identifier_type": null,
       "identifier": "LEI  W38RGI023J3WT1HWRP32",
-      "canonical": {
-        "id": "siemens-mobility-gmbh",
-        "name": "Siemens Mobility GmbH"
-      },
       "party_page": {
         "id": "siemens-mobility-gmbh",
-        "name": "Siemens Mobility GmbH"
+        "name": "Siemens Mobility GmbH",
+        "curated": true
       }
     },
     {
       "name": "MERMEC AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "42 619 285 988",
-      "canonical": {
-        "id": "mermec",
-        "name": "MerMec"
-      },
       "party_page": {
         "id": "mermec",
-        "name": "MerMec"
+        "name": "MerMec",
+        "curated": true
       }
     },
     {
       "name": "SIEMENS MOBILITY PTY. LTD.",
       "identifier_type": "ABN",
       "identifier": "39 625 304 556",
-      "canonical": {
-        "id": "siemens-mobility-gmbh",
-        "name": "Siemens Mobility GmbH"
-      },
       "party_page": {
         "id": "siemens-mobility-gmbh",
-        "name": "Siemens Mobility GmbH"
+        "name": "Siemens Mobility GmbH",
+        "curated": true
       }
     },
     {
       "name": "Angelo Holding S.r.l.",
       "identifier_type": null,
       "identifier": "LEI  815600BFD5004E85D746",
-      "canonical": {
-        "id": "mermec",
-        "name": "MerMec"
-      },
       "party_page": {
         "id": "mermec",
-        "name": "MerMec"
+        "name": "MerMec",
+        "curated": true
       }
     },
     {
       "name": "Siemens Mobility GmbH",
       "identifier_type": null,
       "identifier": "LEI  529900LT6G2TUO3TZB94",
-      "canonical": {
-        "id": "siemens-mobility-gmbh",
-        "name": "Siemens Mobility GmbH"
-      },
       "party_page": {
         "id": "siemens-mobility-gmbh",
-        "name": "Siemens Mobility GmbH"
+        "name": "Siemens Mobility GmbH",
+        "curated": true
       }
     }
   ],

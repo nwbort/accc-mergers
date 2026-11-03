@@ -184,6 +184,15 @@ SITE_SPARSE_MERGER_FIELDS = frozenset({
     'public_benefits_determination_date',
 })
 
+# Party fields the detail page never reads. ``canonical`` (the curated
+# related-party group, attached by :func:`link_related_parties`) always equals
+# the party's ``party_page`` link whenever both are present, so the deployed
+# file keeps only ``party_page``, whose ``curated`` flag carries the one fact
+# ``canonical`` added. It stays in data/output/mergers.json, and the list
+# payload keeps its name for search (outputs/list.py).
+SITE_PARTY_FIELDS = ('acquirers', 'targets', 'other_parties')
+SITE_UNUSED_PARTY_FIELDS = frozenset({'canonical'})
+
 SITE_UNUSED_EVENT_FIELDS = frozenset({
     'determination_commission_division',
     'phase2_notice_commission_division',
@@ -220,7 +229,8 @@ def slim_for_site(merger: dict) -> dict:
     offline analysis and for the CLI bundle (generate-cli-data.sh), which
     indexes every determination row into its full-text search. So the deployed
     copy drops the fields no page reads and, from each event, the
-    determination-table rows the page never renders. Each event's internal
+    determination-table rows the page never renders, and from each party its
+    ``canonical`` link (duplicated by ``party_page``). Each event's internal
     ``previous_versions`` history is reduced to ``retired_url_gh``, the
     served paths of its deleted duplicate copies, for the PDF redirect. The
     input merger is left unmutated because the same object feeds other
@@ -231,6 +241,15 @@ def slim_for_site(merger: dict) -> dict:
         if k not in SITE_UNUSED_MERGER_FIELDS
         and not (k in SITE_SPARSE_MERGER_FIELDS and not v)
     }
+
+    for field in SITE_PARTY_FIELDS:
+        party_list = slim.get(field)
+        if isinstance(party_list, list):
+            slim[field] = [
+                {k: v for k, v in party.items() if k not in SITE_UNUSED_PARTY_FIELDS}
+                if isinstance(party, dict) else party
+                for party in party_list
+            ]
 
     events = slim.get('events')
     if not events:

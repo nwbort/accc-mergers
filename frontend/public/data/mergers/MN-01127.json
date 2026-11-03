@@ -13,13 +13,10 @@
       "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
       "identifier_type": "ABN",
       "identifier": "35 667 654 686",
-      "canonical": {
-        "id": "cvs-vets",
-        "name": "CVS Group"
-      },
       "party_page": {
         "id": "cvs-vets",
-        "name": "CVS Group"
+        "name": "CVS Group",
+        "curated": true
       }
     }
   ],
@@ -28,13 +25,10 @@
       "name": "The Trustee for SI-PHUONG TRUST",
       "identifier_type": "ABN",
       "identifier": "30 473 730 221",
-      "canonical": {
-        "id": "si-phuong-trust",
-        "name": "Si-Phuong Trust"
-      },
       "party_page": {
         "id": "si-phuong-trust",
-        "name": "Si-Phuong Trust"
+        "name": "Si-Phuong Trust",
+        "curated": true
       }
     }
   ],
@@ -43,26 +37,20 @@
       "name": "CVS (AUSTRALIA) HOLDINGS PROPRIETARY LIMITED",
       "identifier_type": "ABN",
       "identifier": "25 667 652 520",
-      "canonical": {
-        "id": "cvs-vets",
-        "name": "CVS Group"
-      },
       "party_page": {
         "id": "cvs-vets",
-        "name": "CVS Group"
+        "name": "CVS Group",
+        "curated": true
       }
     },
     {
       "name": "Alati Pty Ltd as trustee for Si-Phuong Trust",
       "identifier_type": "ACN",
       "identifier": "164 638 251",
-      "canonical": {
-        "id": "si-phuong-trust",
-        "name": "Si-Phuong Trust"
-      },
       "party_page": {
         "id": "si-phuong-trust",
-        "name": "Si-Phuong Trust"
+        "name": "Si-Phuong Trust",
+        "curated": true
       }
     }
   ],
