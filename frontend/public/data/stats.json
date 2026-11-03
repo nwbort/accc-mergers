@@ -1,10 +1,10 @@
 {
-  "total_mergers": 317,
+  "total_mergers": 318,
   "total_waivers": 498,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 269,
-    "Under assessment": 43,
+    "Under assessment": 44,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 200
+      "count": 201
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-60052",
+      "merger_name": "Healthe Care - Prince of Wales Private Hospital",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-02T12:00:00Z",
+      "page_modified_datetime": "2026-11-03T11:11:15+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25058",
       "merger_name": "Healthe Care \u2013 Knox Private, Ringwood Private, Northpark Private, Victorian Rehabilitation Centre and Geelong Clinic",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-27T12:00:00Z",
       "page_modified_datetime": "2026-10-27T17:02:09+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-20041",
-      "merger_name": "Hopper Motor Group \u2013 Essendon Kia",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-26T12:00:00Z",
-      "page_modified_datetime": "2026-10-27T17:12:39+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
