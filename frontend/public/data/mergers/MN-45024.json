@@ -14,13 +14,10 @@
       "name": "OEC Bidco Limited",
       "identifier_type": null,
       "identifier": "17225784",
-      "canonical": {
-        "id": "oeconnection",
-        "name": "OEConnection"
-      },
       "party_page": {
         "id": "oeconnection",
-        "name": "OEConnection"
+        "name": "OEConnection",
+        "curated": true
       }
     }
   ],
@@ -40,26 +37,20 @@
       "name": "OEConnection, LLC",
       "identifier_type": null,
       "identifier": "1196674",
-      "canonical": {
-        "id": "oeconnection",
-        "name": "OEConnection"
-      },
       "party_page": {
         "id": "oeconnection",
-        "name": "OEConnection"
+        "name": "OEConnection",
+        "curated": true
       }
     },
     {
       "name": "Francisco Partners Management, LP.",
       "identifier_type": null,
       "identifier": "SEC reference number  80173955",
-      "canonical": {
-        "id": "francisco-partners-management-l-p",
-        "name": "Francisco Partners Management"
-      },
       "party_page": {
         "id": "francisco-partners-management-l-p",
-        "name": "Francisco Partners Management"
+        "name": "Francisco Partners Management",
+        "curated": true
       }
     }
   ],

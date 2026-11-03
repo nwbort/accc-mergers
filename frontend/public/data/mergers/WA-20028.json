@@ -13,13 +13,10 @@
       "name": "Accenture Inc.",
       "identifier_type": null,
       "identifier": "Delaware registered number  3387477",
-      "canonical": {
-        "id": "accenture-plc",
-        "name": "Accenture"
-      },
       "party_page": {
         "id": "accenture-plc",
-        "name": "Accenture"
+        "name": "Accenture",
+        "curated": true
       }
     }
   ],
@@ -28,26 +25,20 @@
       "name": "Whalar GmbH",
       "identifier_type": null,
       "identifier": "HRB  210859",
-      "canonical": {
-        "id": "whalar-inc",
-        "name": "Whalar Inc"
-      },
       "party_page": {
         "id": "whalar-inc",
-        "name": "Whalar Inc"
+        "name": "Whalar Inc",
+        "curated": true
       }
     },
     {
       "name": "Whalar Inc",
       "identifier_type": null,
       "identifier": "Delaware company number  6534128",
-      "canonical": {
-        "id": "whalar-inc",
-        "name": "Whalar Inc"
-      },
       "party_page": {
         "id": "whalar-inc",
-        "name": "Whalar Inc"
+        "name": "Whalar Inc",
+        "curated": true
       }
     },
     {
@@ -74,26 +65,20 @@
       "name": "Accenture Australia Pty Limited",
       "identifier_type": "ABN",
       "identifier": "49 096 776 895",
-      "canonical": {
-        "id": "accenture-plc",
-        "name": "Accenture"
-      },
       "party_page": {
         "id": "accenture-plc",
-        "name": "Accenture"
+        "name": "Accenture",
+        "curated": true
       }
     },
     {
       "name": "Accenture plc",
       "identifier_type": null,
       "identifier": "Ireland registered number  471706",
-      "canonical": {
-        "id": "accenture-plc",
-        "name": "Accenture"
-      },
       "party_page": {
         "id": "accenture-plc",
-        "name": "Accenture"
+        "name": "Accenture",
+        "curated": true
       }
     }
   ],

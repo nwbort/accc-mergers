@@ -24,26 +24,20 @@
       "name": "EQT Keystone TopCo, LP",
       "identifier_type": null,
       "identifier": "EIN 414395672",
-      "canonical": {
-        "id": "eqt-fund-management-s-r-l",
-        "name": "EQT Fund Management"
-      },
       "party_page": {
         "id": "eqt-fund-management-s-r-l",
-        "name": "EQT Fund Management"
+        "name": "EQT Fund Management",
+        "curated": true
       }
     },
     {
       "name": "Qatar Holding LLC",
       "identifier_type": null,
       "identifier": "CIK: 0001539025, Qatar Financial Centre no. 00004",
-      "canonical": {
-        "id": "qatar-investment-authority",
-        "name": "Qatar Investment Authority"
-      },
       "party_page": {
         "id": "qatar-investment-authority",
-        "name": "Qatar Investment Authority"
+        "name": "Qatar Investment Authority",
+        "curated": true
       }
     },
     {
@@ -59,13 +53,10 @@
       "name": "QIA Infrastructure Holding LLC",
       "identifier_type": null,
       "identifier": "Qatar Financial Centre no. 01821",
-      "canonical": {
-        "id": "qatar-investment-authority",
-        "name": "Qatar Investment Authority"
-      },
       "party_page": {
         "id": "qatar-investment-authority",
-        "name": "Qatar Investment Authority"
+        "name": "Qatar Investment Authority",
+        "curated": true
       }
     }
   ],

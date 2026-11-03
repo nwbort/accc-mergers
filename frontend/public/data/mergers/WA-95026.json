@@ -13,13 +13,10 @@
       "name": "GOOGLE AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "33 102 417 032",
-      "canonical": {
-        "id": "google-llc",
-        "name": "Google"
-      },
       "party_page": {
         "id": "google-llc",
-        "name": "Google"
+        "name": "Google",
+        "curated": true
       }
     },
     {
@@ -37,26 +34,20 @@
       "name": "Telstra Singapore Pte. Ltd.",
       "identifier_type": null,
       "identifier": "Singapore registration No. 200209830G",
-      "canonical": {
-        "id": "telstra-limited",
-        "name": "Telstra"
-      },
       "party_page": {
         "id": "telstra-limited",
-        "name": "Telstra"
+        "name": "Telstra",
+        "curated": true
       }
     },
     {
       "name": "TELSTRA CORPORATION LIMITED",
       "identifier_type": "ABN",
       "identifier": "33 051 775 556",
-      "canonical": {
-        "id": "telstra-limited",
-        "name": "Telstra"
-      },
       "party_page": {
         "id": "telstra-limited",
-        "name": "Telstra"
+        "name": "Telstra",
+        "curated": true
       }
     }
   ],
@@ -65,13 +56,10 @@
       "name": "Google LLC",
       "identifier_type": null,
       "identifier": "FEIN 770493581",
-      "canonical": {
-        "id": "google-llc",
-        "name": "Google"
-      },
       "party_page": {
         "id": "google-llc",
-        "name": "Google"
+        "name": "Google",
+        "curated": true
       }
     }
   ],

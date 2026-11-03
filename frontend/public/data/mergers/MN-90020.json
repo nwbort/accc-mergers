@@ -24,13 +24,10 @@
       "name": "OpenAI Group PBC",
       "identifier_type": null,
       "identifier": "Delaware File Number  10381551",
-      "canonical": {
-        "id": "openai",
-        "name": "OpenAI"
-      },
       "party_page": {
         "id": "openai",
-        "name": "OpenAI"
+        "name": "OpenAI",
+        "curated": true
       }
     },
     {
@@ -48,13 +45,10 @@
       "name": "Gitpod, Inc.",
       "identifier_type": null,
       "identifier": "Delaware File Number  3353320",
-      "canonical": {
-        "id": "gitpod-gmbh",
-        "name": "Gitpod GmbH"
-      },
       "party_page": {
         "id": "gitpod-gmbh",
-        "name": "Gitpod GmbH"
+        "name": "Gitpod GmbH",
+        "curated": true
       }
     }
   ],
@@ -63,26 +57,20 @@
       "name": "Gitpod GmbH",
       "identifier_type": null,
       "identifier": "HRB  22228",
-      "canonical": {
-        "id": "gitpod-gmbh",
-        "name": "Gitpod GmbH"
-      },
       "party_page": {
         "id": "gitpod-gmbh",
-        "name": "Gitpod GmbH"
+        "name": "Gitpod GmbH",
+        "curated": true
       }
     },
     {
       "name": "OpenAI Foundation",
       "identifier_type": null,
       "identifier": "Delaware File Number  5902936",
-      "canonical": {
-        "id": "openai",
-        "name": "OpenAI"
-      },
       "party_page": {
         "id": "openai",
-        "name": "OpenAI"
+        "name": "OpenAI",
+        "curated": true
       }
     }
   ],

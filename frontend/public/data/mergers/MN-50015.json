@@ -15,13 +15,10 @@
       "name": "Mastercard Incorporated",
       "identifier_type": null,
       "identifier": "3390142",
-      "canonical": {
-        "id": "mastercard-incorporated",
-        "name": "MasterCard"
-      },
       "party_page": {
         "id": "mastercard-incorporated",
-        "name": "MasterCard"
+        "name": "MasterCard",
+        "curated": true
       }
     },
     {
@@ -37,13 +34,10 @@
       "name": "Mastercard International Incorporated",
       "identifier_type": null,
       "identifier": "648928",
-      "canonical": {
-        "id": "mastercard-incorporated",
-        "name": "MasterCard"
-      },
       "party_page": {
         "id": "mastercard-incorporated",
-        "name": "MasterCard"
+        "name": "MasterCard",
+        "curated": true
       }
     }
   ],

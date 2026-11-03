@@ -13,13 +13,10 @@
       "name": "KINETIC HOLDING COMPANY PTY LTD",
       "identifier_type": "ABN",
       "identifier": "49 601 254 880",
-      "canonical": {
-        "id": "kinetic",
-        "name": "Kinetic"
-      },
       "party_page": {
         "id": "kinetic",
-        "name": "Kinetic"
+        "name": "Kinetic",
+        "curated": true
       }
     }
   ],
@@ -28,26 +25,20 @@
       "name": "Tassielink Group Pty Ltd",
       "identifier_type": "ACN",
       "identifier": "643 785 611",
-      "canonical": {
-        "id": "tassielink",
-        "name": "Tassielink"
-      },
       "party_page": {
         "id": "tassielink",
-        "name": "Tassielink"
+        "name": "Tassielink",
+        "curated": true
       }
     },
     {
       "name": "TASMANIAN TOURS & TRAVEL PTY. LTD.",
       "identifier_type": "ABN",
       "identifier": "43 080 290 393",
-      "canonical": {
-        "id": "tassielink",
-        "name": "Tassielink"
-      },
       "party_page": {
         "id": "tassielink",
-        "name": "Tassielink"
+        "name": "Tassielink",
+        "curated": true
       }
     }
   ],
@@ -56,13 +47,10 @@
       "name": "TPG Inc.",
       "identifier_type": null,
       "identifier": "SEC  872063362",
-      "canonical": {
-        "id": "tpg-inc",
-        "name": "TPG Inc."
-      },
       "party_page": {
         "id": "tpg-inc",
-        "name": "TPG Inc."
+        "name": "TPG Inc.",
+        "curated": true
       }
     }
   ],

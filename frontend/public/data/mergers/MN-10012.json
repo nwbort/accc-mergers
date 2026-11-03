@@ -55,13 +55,10 @@
       "name": "The Trustee for AWARE SUPER",
       "identifier_type": "ABN",
       "identifier": "53 226 460 365",
-      "canonical": {
-        "id": "aware-super-pty-limited",
-        "name": "Aware Super Pty Limited"
-      },
       "party_page": {
         "id": "aware-super-pty-limited",
-        "name": "Aware Super Pty Limited"
+        "name": "Aware Super Pty Limited",
+        "curated": true
       }
     },
     {
@@ -77,13 +74,10 @@
       "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST",
       "identifier_type": "ABN",
       "identifier": "62 653 671 394",
-      "canonical": {
-        "id": "the-trustee-for-retail-employees-superannuation-trust",
-        "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST"
-      },
       "party_page": {
         "id": "the-trustee-for-retail-employees-superannuation-trust",
-        "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST"
+        "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST",
+        "curated": true
       }
     }
   ],

@@ -15,13 +15,10 @@
       "name": "Ireland Acquisition Sub Inc.",
       "identifier_type": null,
       "identifier": "",
-      "canonical": {
-        "id": "salesforce-inc",
-        "name": "Salesforce, Inc"
-      },
       "party_page": {
         "id": "salesforce-inc",
-        "name": "Salesforce, Inc"
+        "name": "Salesforce, Inc",
+        "curated": true
       }
     }
   ],
@@ -30,13 +27,10 @@
       "name": "Intercom, Inc.",
       "identifier_type": null,
       "identifier": "453543961",
-      "canonical": {
-        "id": "intercom",
-        "name": "Intercom"
-      },
       "party_page": {
         "id": "intercom",
-        "name": "Intercom"
+        "name": "Intercom",
+        "curated": true
       }
     }
   ],
@@ -45,39 +39,30 @@
       "name": "Intercom R&D Unlimited Company",
       "identifier_type": null,
       "identifier": "538158",
-      "canonical": {
-        "id": "intercom",
-        "name": "Intercom"
-      },
       "party_page": {
         "id": "intercom",
-        "name": "Intercom"
+        "name": "Intercom",
+        "curated": true
       }
     },
     {
       "name": "Salesforce Holdings LLC",
       "identifier_type": null,
       "identifier": "5673469",
-      "canonical": {
-        "id": "salesforce-inc",
-        "name": "Salesforce, Inc"
-      },
       "party_page": {
         "id": "salesforce-inc",
-        "name": "Salesforce, Inc"
+        "name": "Salesforce, Inc",
+        "curated": true
       }
     },
     {
       "name": "Salesforce, Inc.",
       "identifier_type": null,
       "identifier": "0001108524",
-      "canonical": {
-        "id": "salesforce-inc",
-        "name": "Salesforce, Inc"
-      },
       "party_page": {
         "id": "salesforce-inc",
-        "name": "Salesforce, Inc"
+        "name": "Salesforce, Inc",
+        "curated": true
       }
     }
   ],

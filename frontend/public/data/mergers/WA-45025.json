@@ -42,13 +42,10 @@
       "name": "POLAR 993 PTY LTD",
       "identifier_type": "ABN",
       "identifier": "77 642 129 226",
-      "canonical": {
-        "id": "imagine-education-investments",
-        "name": "Imagine Education Investments"
-      },
       "party_page": {
         "id": "imagine-education-investments",
-        "name": "Imagine Education Investments"
+        "name": "Imagine Education Investments",
+        "curated": true
       }
     },
     {
@@ -75,26 +72,20 @@
       "name": "Acclime Holdings HK Limited",
       "identifier_type": null,
       "identifier": "BRN70084973",
-      "canonical": {
-        "id": "acclime-holdings-limited",
-        "name": "Acclime"
-      },
       "party_page": {
         "id": "acclime-holdings-limited",
-        "name": "Acclime"
+        "name": "Acclime",
+        "curated": true
       }
     },
     {
       "name": "Warburg Pincus LLC",
       "identifier_type": null,
       "identifier": "",
-      "canonical": {
-        "id": "warburg-pincus-llc",
-        "name": "Warburg Pincus LLC"
-      },
       "party_page": {
         "id": "warburg-pincus-llc",
-        "name": "Warburg Pincus LLC"
+        "name": "Warburg Pincus LLC",
+        "curated": true
       }
     }
   ],

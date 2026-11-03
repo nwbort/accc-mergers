@@ -13,13 +13,10 @@
       "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "40 001 786 858",
-      "canonical": {
-        "id": "publicis-groupe",
-        "name": "Publicis Groupe"
-      },
       "party_page": {
         "id": "publicis-groupe",
-        "name": "Publicis Groupe"
+        "name": "Publicis Groupe",
+        "curated": true
       }
     }
   ],
@@ -39,13 +36,10 @@
       "name": "Publicis Groupe S.A.",
       "identifier_type": null,
       "identifier": "Paris Trade and Companies Registry no. 542 080 601",
-      "canonical": {
-        "id": "publicis-groupe",
-        "name": "Publicis Groupe"
-      },
       "party_page": {
         "id": "publicis-groupe",
-        "name": "Publicis Groupe"
+        "name": "Publicis Groupe",
+        "curated": true
       }
     }
   ],

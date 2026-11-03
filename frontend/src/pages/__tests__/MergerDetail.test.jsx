@@ -257,3 +257,37 @@ describe('MergerDetail judicial reviews', () => {
     expect(screen.getByText('Finalised - Discontinued/Withdrawn')).toBeInTheDocument();
   });
 });
+
+describe('MergerDetail party links', () => {
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  it('marks a curated related-party group by its party_page flag alone', async () => {
+    renderMerger({
+      ...merger([matter('ACT 3 of 2026', 'IAG', '2026-10-01', 'https://example.test/iag.pdf')]),
+      acquirers: [{
+        name: 'INSURANCE AUSTRALIA GROUP LIMITED',
+        party_page: { id: 'iag', name: 'IAG', curated: true },
+      }],
+      targets: [{
+        name: 'RAC INSURANCE PTY LIMITED',
+        party_page: { id: 'rac-insurance-pty-limited', name: 'Rac Insurance Pty Limited' },
+      }],
+    });
+
+    const curated = await screen.findByRole('link', { name: 'INSURANCE AUSTRALIA GROUP LIMITED' });
+    expect(curated).toHaveAttribute('href', expect.stringContaining('/parties/iag'));
+    expect(curated).toHaveClass('text-primary');
+
+    const plain = screen.getByRole('link', { name: 'RAC INSURANCE PTY LIMITED' });
+    expect(plain).toHaveClass('text-gray-900');
+    expect(plain).not.toHaveClass('text-primary');
+  });
+});

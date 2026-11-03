@@ -13,13 +13,10 @@
       "name": "IRIS CAPITAL HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "44 646 759 524",
-      "canonical": {
-        "id": "iris-capital",
-        "name": "Iris Capital"
-      },
       "party_page": {
         "id": "iris-capital",
-        "name": "Iris Capital"
+        "name": "Iris Capital",
+        "curated": true
       }
     }
   ],
@@ -28,26 +25,20 @@
       "name": "MAHF CUSTODIAN PTY LTD",
       "identifier_type": "ABN",
       "identifier": "96 619 512 060",
-      "canonical": {
-        "id": "redcape-fund",
-        "name": "Redcape Fund"
-      },
       "party_page": {
         "id": "redcape-fund",
-        "name": "Redcape Fund"
+        "name": "Redcape Fund",
+        "curated": true
       }
     },
     {
       "name": "REDCAPE HOTEL GROUP PTY LTD",
       "identifier_type": "ABN",
       "identifier": "43 139 067 244",
-      "canonical": {
-        "id": "redcape-fund",
-        "name": "Redcape Fund"
-      },
       "party_page": {
         "id": "redcape-fund",
-        "name": "Redcape Fund"
+        "name": "Redcape Fund",
+        "curated": true
       }
     }
   ],

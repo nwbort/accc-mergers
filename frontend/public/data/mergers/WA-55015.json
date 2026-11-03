@@ -13,13 +13,10 @@
       "name": "ALLIANZ AUSTRALIA SERVICES PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "66 002 947 257",
-      "canonical": {
-        "id": "allianz",
-        "name": "Allianz"
-      },
       "party_page": {
         "id": "allianz",
-        "name": "Allianz"
+        "name": "Allianz",
+        "curated": true
       }
     }
   ],
@@ -37,13 +34,10 @@
       "name": "The Trustee for Lendlease Victoria Cross Trust",
       "identifier_type": "ABN",
       "identifier": "26 397 448 085",
-      "canonical": {
-        "id": "lendlease",
-        "name": "Lendlease"
-      },
       "party_page": {
         "id": "lendlease",
-        "name": "Lendlease"
+        "name": "Lendlease",
+        "curated": true
       }
     }
   ],
@@ -52,26 +46,20 @@
       "name": "ALLIANZ AUSTRALIA INSURANCE LIMITED",
       "identifier_type": "ABN",
       "identifier": "15 000 122 850",
-      "canonical": {
-        "id": "allianz",
-        "name": "Allianz"
-      },
       "party_page": {
         "id": "allianz",
-        "name": "Allianz"
+        "name": "Allianz",
+        "curated": true
       }
     },
     {
       "name": "LENDLEASE CORPORATION LIMITED",
       "identifier_type": "ABN",
       "identifier": "32 000 226 228",
-      "canonical": {
-        "id": "lendlease",
-        "name": "Lendlease"
-      },
       "party_page": {
         "id": "lendlease",
-        "name": "Lendlease"
+        "name": "Lendlease",
+        "curated": true
       }
     }
   ],
