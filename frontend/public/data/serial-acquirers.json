@@ -279,6 +279,51 @@
       "count": 3
     },
     {
+      "acquirer_name": "Healthe Care Group",
+      "canonical_id": "healthe-care-group",
+      "anzsic_code": "624",
+      "anzsic_name": "Financial Asset Investing",
+      "merger_ids": [
+        "MN-25058",
+        "MN-60052"
+      ],
+      "dates": [
+        "2026-11-02T12:00:00Z",
+        "2026-11-02T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Healthe Care Group",
+      "canonical_id": "healthe-care-group",
+      "anzsic_code": "693",
+      "anzsic_name": "Legal and Accounting Services",
+      "merger_ids": [
+        "MN-25058",
+        "MN-60052"
+      ],
+      "dates": [
+        "2026-11-02T12:00:00Z",
+        "2026-11-02T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Healthe Care Group",
+      "canonical_id": "healthe-care-group",
+      "anzsic_code": "840",
+      "anzsic_name": "Hospitals",
+      "merger_ids": [
+        "MN-25058",
+        "MN-60052"
+      ],
+      "dates": [
+        "2026-11-02T12:00:00Z",
+        "2026-11-02T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "Coles Group",
       "canonical_id": "coles",
       "anzsic_code": "302",
@@ -954,5 +999,5 @@
       "count": 2
     }
   ],
-  "count": 59
+  "count": 62
 }
