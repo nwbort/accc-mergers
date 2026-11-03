@@ -111,6 +111,18 @@ export default function NickTwort() {
             ACCC's merger review process, the Commerce Commission's regulatory frameworks, and the economic approaches of
             Australian courts and tribunals in antitrust matters.
           </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Nick is currently a Principal at{' '}
+            <a
+              href="https://econicpartners.com/people/nick-twort"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-700 font-medium hover:underline"
+            >
+              Econic Partners
+            </a>{' '}
+            in Sydney.
+          </p>
         </section>
 
         {/* Merger Clearance Expertise */}
