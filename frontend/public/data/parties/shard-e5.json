@@ -86,6 +86,48 @@
       },
       "waiver_duration": null
     },
+    "enz-quealy-pty-limited": {
+      "id": "enz-quealy-pty-limited",
+      "canonical_name": "Enz Quealy Pty Limited",
+      "members": [
+        {
+          "name": "ENZ QUEALY PTY LIMITED",
+          "identifier": "45 138 256 443",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35051",
+            "merger_name": "Jaybro - Sewer Equipment Company Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": "2026-11-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "forge-co-invest-l-p": {
       "id": "forge-co-invest-l-p",
       "canonical_name": "Forge Co-Invest L.P.",
@@ -130,8 +172,13 @@
     },
     "jaybro-group-pty-ltd": {
       "id": "jaybro-group-pty-ltd",
-      "canonical_name": "Jaybro Group Pty Ltd.",
+      "canonical_name": "Jaybro Group Pty Ltd",
       "members": [
+        {
+          "name": "JAYBRO GROUP PTY LTD",
+          "identifier": "48 159 122 488",
+          "identifier_type": "ABN"
+        },
         {
           "name": "JAYBRO GROUP PTY LTD.",
           "identifier": "48 159 122 488",
@@ -140,6 +187,18 @@
       ],
       "mergers": {
         "acquirer": [
+          {
+            "merger_id": "WA-35051",
+            "merger_name": "Jaybro - Sewer Equipment Company Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": "2026-11-03T12:00:00Z"
+          },
           {
             "merger_id": "WA-30040",
             "merger_name": "Jaybro \u2013 Fastway Civil Supplies",
@@ -156,18 +215,18 @@
         "target": [],
         "other": []
       },
-      "merger_count": 1,
+      "merger_count": 2,
       "phase_1_count": 0,
       "phase_2_count": 0,
-      "waiver_count": 1,
+      "waiver_count": 2,
       "active_count": 0,
       "phase_duration": null,
       "waiver_duration": {
-        "average_days": 17.0,
-        "median_days": 17,
-        "average_business_days": 13.0,
-        "median_business_days": 13,
-        "completed_count": 1
+        "average_days": 22.0,
+        "median_days": 22.0,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 2
       }
     },
     "opal-healthcare": {

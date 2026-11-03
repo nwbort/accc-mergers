@@ -1,6 +1,6 @@
 {
   "total_mergers": 318,
-  "total_waivers": 498,
+  "total_waivers": 499,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 269,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 473,
+    "Approved": 474,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.751004016064257,
-    "median_days": 21.0,
-    "average_business_days": 14.20281124497992,
-    "median_business_days": 14.0
+    "average_days": 20.763527054108216,
+    "median_days": 21,
+    "average_business_days": 14.2124248496994,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 201
+      "count": 202
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35051",
+      "merger_name": "Jaybro - Sewer Equipment Company Australia",
+      "determination": "Approved",
+      "determination_date": "2026-11-03T12:00:00Z",
+      "page_modified_datetime": "2026-11-03T16:41:35+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80050",
       "merger_name": "Pearson plc \u2013 Workera Corp",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60051",
-      "merger_name": "Mitsubishi Electric Corporation \u2013 Power Costs, Inc.",
-      "determination": "Approved",
-      "determination_date": "2026-10-29T12:00:00Z",
-      "page_modified_datetime": "2026-10-29T18:14:08+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
