@@ -15,6 +15,7 @@ import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getOutcomeDot } from '../constants/outcomeDotColors';
 import { SECTION_HEADING } from '../utils/classNames';
 import { extensionPhaseLabel, getTimelineExtensions, PUBLIC_BENEFIT } from '../utils/timelineExtensions';
+import MateriallyIncompletePending from './MateriallyIncompletePending';
 
 // Statutory window the ACCC works to for merger waiver applications. Waivers
 // aren't published with an explicit end-of-determination date, so we derive the
@@ -140,7 +141,9 @@ function HintPanel({ hint, onClose }) {
 }
 
 // Shown when we can't draw a proportional axis: a suspended assessment with no
-// effective notification, or a pending waiver/notification with no end date yet.
+// effective notification, a materially incomplete notification (whose register
+// deadline is stale until an effective date is set), or a pending
+// waiver/notification with no end date yet.
 function MergerTimelineFallback({ merger, startStr }) {
   const suspended = merger.status?.toLowerCase().includes('suspended');
   const startLabel = merger.is_waiver ? 'Waiver application' : 'Notified';
@@ -152,7 +155,16 @@ function MergerTimelineFallback({ merger, startStr }) {
           {startLabel}
         </dt>
         <dd className="text-sm font-medium text-gray-900">
-          {suspended && !merger.effective_notification_datetime ? (
+          {merger.materially_incomplete ? (
+            <>
+              <MateriallyIncompletePending />
+              {merger.original_notification_datetime && (
+                <span className="text-gray-500 font-normal">
+                  {' '}(lodged {formatDateMedium(merger.original_notification_datetime)})
+                </span>
+              )}
+            </>
+          ) : suspended && !merger.effective_notification_datetime ? (
             <>
               None &ndash; assessment suspended
               {merger.original_notification_datetime && (
@@ -274,7 +286,7 @@ function MergerTimeline({ merger }) {
   }
 
   const hasRange = start && end && isValid(start) && isValid(end) && end > start;
-  if (!hasRange) {
+  if (!hasRange || merger.materially_incomplete) {
     return <MergerTimelineFallback merger={merger} startStr={startStr} />;
   }
 

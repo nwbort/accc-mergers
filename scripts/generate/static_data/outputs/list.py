@@ -112,6 +112,11 @@ def _lightweight(m: dict) -> dict:
     # is so rare, so the ordinary entry is no larger.
     if m.get('under_judicial_review'):
         entry["under_judicial_review"] = True
+    # A notification the ACCC has held to be materially incomplete (s 51ABZ):
+    # no effective notification date, and the end of determination period
+    # still on the register is stale. Carried only while true.
+    if m.get('materially_incomplete'):
+        entry["materially_incomplete"] = True
     # A matter that has moved on from Phase 2 to the public benefit phase no
     # longer says "Phase 2" in its stage, but the list's Phase 2 filter should
     # still find it. Carried only where the stage doesn't already say so, so

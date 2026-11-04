@@ -10,6 +10,7 @@ import { formatDate } from '../utils/dates';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
 import { getOutcomeRail } from '../constants/outcomeRail';
 import { mergerPath } from '../utils/slug';
+import MateriallyIncompletePending from './MateriallyIncompletePending';
 
 // Caps how many ANZSIC chips a card shows before folding the rest into a
 // "+N more" chip, so a multi-industry deal doesn't grow noticeably taller
@@ -124,9 +125,11 @@ function MergerListCard({ merger, index, selected, tracked, onToggleTracking }) 
               {merger.is_waiver ? 'Application date' : 'Notification date'}
             </p>
             <p className="text-sm font-medium text-gray-700">
-              {!merger.effective_notification_datetime && merger.status?.toLowerCase().includes('suspended')
-                ? 'None - assessment suspended'
-                : formatDate(merger.effective_notification_datetime)}
+              {merger.materially_incomplete
+                ? <MateriallyIncompletePending />
+                : !merger.effective_notification_datetime && merger.status?.toLowerCase().includes('suspended')
+                  ? 'None - assessment suspended'
+                  : formatDate(merger.effective_notification_datetime)}
             </p>
           </div>
           {(merger.determination_publication_date || (merger.end_of_determination_period && !merger.status?.toLowerCase().includes('suspended'))) && (
@@ -137,7 +140,9 @@ function MergerListCard({ merger, index, selected, tracked, onToggleTracking }) 
               <p className="text-sm font-medium text-gray-700">
                 {merger.determination_publication_date
                   ? formatDate(merger.determination_publication_date)
-                  : formatDate(merger.end_of_determination_period)}
+                  : merger.materially_incomplete
+                    ? <MateriallyIncompletePending />
+                    : formatDate(merger.end_of_determination_period)}
               </p>
             </div>
           )}

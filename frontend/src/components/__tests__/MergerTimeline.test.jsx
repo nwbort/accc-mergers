@@ -213,6 +213,24 @@ describe('MergerTimeline', () => {
     expect(screen.getByText(/originally 01 Apr 2026/i)).toBeInTheDocument();
   });
 
+  it('shows a materially incomplete notification as pending, not against its stale deadline', () => {
+    render(
+      <MergerTimeline
+        merger={{
+          effective_notification_datetime: null,
+          original_notification_datetime: '2026-05-18T12:00:00Z',
+          end_of_determination_period: '2026-07-01T12:00:00Z',
+          status: 'Under assessment',
+          materially_incomplete: true,
+        }}
+      />
+    );
+
+    expect(screen.getByText('Pending – materially incomplete')).toBeInTheDocument();
+    expect(screen.getByText(/lodged 18 May 2026/i)).toBeInTheDocument();
+    expect(screen.queryByText('Deadline')).not.toBeInTheDocument();
+  });
+
   describe('expected determination band', () => {
     // Notified 18 May 2026, 30-BD statutory deadline 1 Jul 2026, "today" is
     // 1 Jun 2026. 15 business days from 18 May lands on 10 Jun 2026 (1 and 8

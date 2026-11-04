@@ -377,6 +377,42 @@ def _set_public_benefit_timetable(
     m['public_benefit_response_date'] = response.strftime('%Y-%m-%dT12:00:00Z')
 
 
+_MATERIALLY_INCOMPLETE_MARKERS = (
+    'materially incomplete',
+    'not to have an effective notification date',
+    'not have an effective notification date',
+)
+
+
+def is_materially_incomplete(m: dict) -> bool:
+    """Is this notification waiting on an effective notification date?
+
+    Under s 51ABZ the ACCC can decide a notification is materially incomplete
+    and so taken not to have an effective notification date (MN-30003,
+    MN-95001, MN-55046). The register then blanks the effective date, but the
+    end of determination period it still shows is the one computed from the
+    original lodgement, which no longer means anything: the clock only starts
+    once the parties supply what is missing and the ACCC publishes a new
+    effective date. Until then the matter is in limbo, and this says so.
+
+    True for an undecided notification with no effective notification date
+    whose events include the s 51ABZ notice. Once an effective date appears
+    (MN-30003 got one a week later) it is false again; a suspended assessment
+    is told by its own status instead.
+    """
+    if m.get('is_waiver') or m.get('effective_notification_datetime'):
+        return False
+    if m.get('accc_determination') or m.get('determination_publication_date'):
+        return False
+    if 'suspended' in (m.get('status') or '').lower():
+        return False
+    return any(
+        marker in (event.get('title') or '').lower()
+        for event in m.get('events', [])
+        for marker in _MATERIALLY_INCOMPLETE_MARKERS
+    )
+
+
 def enrich_merger(
     merger: dict,
     commentary: dict = None,
@@ -562,6 +598,10 @@ def enrich_merger(
     ):
         m['phase_2_inferred'] = True
         m['stage'] = INFERRED_PHASE_2_STAGE
+
+    if is_materially_incomplete(m):
+        # Set only when true: every other matter reads it as absent.
+        m['materially_incomplete'] = True
 
     # Ensure anzsic_codes exists
     if 'anzsic_codes' not in m:

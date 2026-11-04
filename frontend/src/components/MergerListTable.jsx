@@ -5,6 +5,7 @@ import WaiverBadge from './WaiverBadge';
 import AppealBadge from './AppealBadge';
 import JudicialReviewBadge from './JudicialReviewBadge';
 import RefiledBadge from './RefiledBadge';
+import MateriallyIncompletePending from './MateriallyIncompletePending';
 import { formatDate } from '../utils/dates';
 import { mergerPath } from '../utils/slug';
 import { CARD } from '../utils/classNames';
@@ -45,6 +46,9 @@ function SortableHeader({ field, label, sortField, sortDir, onSort, className = 
 function DeterminedCell({ merger }) {
   if (merger.determination_publication_date) {
     return formatDate(merger.determination_publication_date);
+  }
+  if (merger.materially_incomplete) {
+    return <MateriallyIncompletePending />;
   }
   if (merger.end_of_determination_period && !merger.status?.toLowerCase().includes('suspended')) {
     return <span className="text-gray-500">Due {formatDate(merger.end_of_determination_period)}</span>;
@@ -148,9 +152,11 @@ function MergerListTable({ mergers, selectedIndex, isTracked, sortField, sortDir
                   </div>
                 </td>
                 <td className="px-4 py-3 whitespace-nowrap text-gray-700 hidden sm:table-cell">
-                  {merger.effective_notification_datetime
-                    ? formatDate(merger.effective_notification_datetime)
-                    : <span className="text-gray-500">—</span>}
+                  {merger.materially_incomplete
+                    ? <MateriallyIncompletePending />
+                    : merger.effective_notification_datetime
+                      ? formatDate(merger.effective_notification_datetime)
+                      : <span className="text-gray-500">—</span>}
                 </td>
                 <td className="px-4 py-3 whitespace-nowrap text-gray-700 hidden sm:table-cell">
                   <DeterminedCell merger={merger} />
