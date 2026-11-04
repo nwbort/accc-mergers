@@ -1,6 +1,6 @@
 {
   "total_mergers": 318,
-  "total_waivers": 499,
+  "total_waivers": 500,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 270,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 474,
+    "Approved": 475,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.763527054108216,
-    "median_days": 21,
-    "average_business_days": 14.2124248496994,
-    "median_business_days": 14
+    "average_days": 20.752,
+    "median_days": 21.0,
+    "average_business_days": 14.206,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 202
+      "count": 203
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 96
+      "count": 97
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-10048",
+      "merger_name": "TA Associates \u2013 MedEnvision",
+      "determination": "Approved",
+      "determination_date": "2026-11-04T12:00:00Z",
+      "page_modified_datetime": "2026-11-04T17:48:24+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-65038",
       "merger_name": "TCL Electronics \u2013 Sony\u2019s home entertainment business",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-30T12:00:00Z",
       "page_modified_datetime": "2026-10-30T15:05:48+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-85049",
-      "merger_name": "APEM Group - Resource Strategies",
-      "determination": "Approved",
-      "determination_date": "2026-10-30T12:00:00Z",
-      "page_modified_datetime": "2026-10-30T15:03:35+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

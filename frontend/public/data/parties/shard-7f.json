@@ -128,6 +128,48 @@
       },
       "waiver_duration": null
     },
+    "medenvision-partnership": {
+      "id": "medenvision-partnership",
+      "canonical_name": "MedEnvision Partnership",
+      "members": [
+        {
+          "name": "MedEnvision Partnership",
+          "identifier": "1007.291.847",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10048",
+            "merger_name": "TA Associates \u2013 MedEnvision",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-20T12:00:00Z",
+            "determination_date": "2026-11-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
     "mindbody-inc-us": {
       "id": "mindbody-inc-us",
       "canonical_name": "MindBody, Inc.(US)",
