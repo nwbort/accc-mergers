@@ -17,6 +17,10 @@ it in from the live tribunal pages. The "list of pages to scrape" is simply the
 set of records in tribunal_appeals.json that carry a ``tribunal_url`` — that
 file is the manual list, maintained by hand when a new matter is added. Each
 matter page's documents go to its own record, never to a sibling matter's.
+A matter marked ``concluded`` is skipped once every document on it is mirrored
+and :data:`CONCLUDED_GRACE_DAYS` have passed since its ``concluded_date``
+(:func:`is_settled`); name its merger_id, or pass ``--include-concluded``, to
+scrape it anyway.
 
 Getting past Cloudflare — a real browser, in CI
 -----------------------------------------------
@@ -88,7 +92,8 @@ it works anywhere a Chrome/Chromium binary is available::
 
   pip install -r scripts/requirements-tribunal.txt   # nodriver, requests, bs4, lxml
   python -m scripts.scrape.scrape_tribunal                 # scrape + download every matter with a tribunal_url
-  python -m scripts.scrape.scrape_tribunal MN-01068 ...    # scrape only these merger_ids' matters
+  python -m scripts.scrape.scrape_tribunal MN-01068 ...    # scrape only these merger_ids' matters (even if concluded)
+  python -m scripts.scrape.scrape_tribunal --include-concluded  # concluded matters too
   python -m scripts.scrape.scrape_tribunal --no-download   # record metadata only, skip file downloads
   python -m scripts.scrape.scrape_tribunal --dry-run       # parse and report, don't write or download
   git add data/processed/tribunal_appeals.json data/raw/matters
@@ -134,7 +139,7 @@ import tempfile
 import time
 import unicodedata
 import urllib.request
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from shutil import which
 from urllib.parse import parse_qs, unquote, urljoin, urlparse
@@ -142,7 +147,7 @@ from urllib.parse import parse_qs, unquote, urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
-from scripts.constants.tribunal import appeal_records
+from scripts.constants.tribunal import appeal_records, is_current_appeal
 from scripts.paths import REPO_ROOT
 
 # nodriver is only needed to actually fetch pages (it drives Chrome). Import it
@@ -1551,6 +1556,40 @@ def snapshot_name(merger_id: str, url: str) -> str:
     return f"{merger_id}-{slug}" if slug else merger_id
 
 
+# How long after a matter's concluded_date it is still scraped. Its status is
+# set by hand, usually on the day the Tribunal decides, and the reasons (or a
+# corrected version) can be published on the matter page some days later.
+CONCLUDED_GRACE_DAYS = 30
+
+
+def unmirrored_documents(record: dict) -> list[str]:
+    """Every document on file with a link but no local copy yet."""
+    return [
+        doc["url"]
+        for doc in record.get("documents") or []
+        if doc.get("url") and not doc.get("url_gh")
+    ]
+
+
+def is_settled(record: dict, today: date | None = None) -> bool:
+    """A concluded matter with nothing left to fetch, which a scheduled run
+    skips: ``status`` is ``concluded`` (set by hand; see
+    :func:`scripts.constants.tribunal.is_current_appeal`), more than
+    :data:`CONCLUDED_GRACE_DAYS` have passed since its ``concluded_date``
+    (when it has one), and every document on file is mirrored."""
+    if is_current_appeal(record) or unmirrored_documents(record):
+        return False
+    concluded = normalise_date(record.get("concluded_date"))
+    if concluded:
+        try:
+            concluded_on = date.fromisoformat(concluded)
+        except ValueError:
+            return False
+        if (today or date.today()) <= concluded_on + timedelta(days=CONCLUDED_GRACE_DAYS):
+            return False
+    return True
+
+
 def matter_key(merger_id: str, record: dict) -> tuple[str, str]:
     """Identify one tribunal matter across a run: ``(merger_id, tribunal_url)``."""
     return (merger_id, record.get("tribunal_url") or "")
@@ -1758,7 +1797,10 @@ async def scrape_matters(
 
 
 def scrape(
-    merger_ids: list[str] | None, dry_run: bool, download: bool = True
+    merger_ids: list[str] | None,
+    dry_run: bool,
+    download: bool = True,
+    include_concluded: bool = False,
 ) -> int:
     raw, records = load_appeals()
 
@@ -1772,12 +1814,17 @@ def scrape(
 
     # One target per tribunal matter. The records are the raw dict's own
     # objects (appeal_records doesn't copy), so updating one updates ``raw``.
-    targets = [
-        (mid, record)
-        for mid in selected
-        for record in appeal_records(records[mid])
-        if record.get("tribunal_url")
-    ]
+    # A concluded matter is skipped once settled (see is_settled); naming its
+    # merger_id, or --include-concluded, still scrapes it.
+    targets = []
+    for mid in selected:
+        for record in appeal_records(records[mid]):
+            if not record.get("tribunal_url"):
+                continue
+            if not (merger_ids or include_concluded) and is_settled(record):
+                print(f"Skipping {matter_label(mid, record)}: concluded")
+                continue
+            targets.append((mid, record))
 
     if not targets:
         print("No tribunal matters with a tribunal_url to scrape.")
@@ -1876,6 +1923,14 @@ def main() -> int:
         action="store_true",
         help="Record document metadata only; do not download the linked files.",
     )
+    parser.add_argument(
+        "--include-concluded",
+        action="store_true",
+        help=(
+            "Also scrape concluded matters (by default skipped once every document "
+            f"is mirrored and {CONCLUDED_GRACE_DAYS} days have passed since concluded_date)."
+        ),
+    )
     args = parser.parse_args()
 
     if uc is None:
@@ -1886,7 +1941,12 @@ def main() -> int:
         )
         return 1
 
-    return scrape(args.merger_ids or None, args.dry_run, download=not args.no_download)
+    return scrape(
+        args.merger_ids or None,
+        args.dry_run,
+        download=not args.no_download,
+        include_concluded=args.include_concluded,
+    )
 
 
 if __name__ == "__main__":

@@ -361,6 +361,8 @@ scripts/                  # A Python package — entry points run as `python -m 
 │   ├── scrape_summary.py # Human-readable summary of a scrape run for the Actions log
 │   ├── scrape_tribunal.py # Scrape Australian Competition Tribunal matter pages (drives a
 │                         #   real Chrome via nodriver; deps in requirements-tribunal.txt)
+│                         #   Skips a concluded matter once its documents are mirrored and
+│                         #   30 days have passed since concluded_date (--include-concluded)
 │   ├── comcourts_portal.py # Fetch + parse a Federal Court file on the Commonwealth Courts
 │                         #   Portal (plain urllib; ported from nwbort/scrape-fed)
 │   └── scrape_federal_court.py # Fill judicial_reviews.json's portal blocks; mirrors orders

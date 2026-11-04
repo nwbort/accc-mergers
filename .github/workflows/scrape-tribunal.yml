@@ -99,6 +99,9 @@ jobs:
       # likely to be flagged by Cloudflare than headless.
       # With save_pages, each fetched matter page is saved for the artifact
       # below; an empty TRIBUNAL_PAGE_SNAPSHOT_DIR saves nothing.
+      # A matter marked concluded is skipped once its documents are all
+      # mirrored and 30 days have passed since its concluded_date (naming its
+      # merger_id below scrapes it anyway).
       env:
         TRIBUNAL_PAGE_SNAPSHOT_DIR: ${{ inputs.save_pages && format('{0}/tribunal-pages', runner.temp) || '' }}
         # Passed through env, never interpolated into the script, and split
