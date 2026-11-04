@@ -5,7 +5,8 @@ invisible unless somebody goes looking. This is the other half - the same
 milestones as ordinary ``app.bsky.feed.post`` records, so the register shows
 up in a feed.
 
-What counts as worth posting is deliberately narrow: a matter arriving, being
+What counts as worth posting is deliberately narrow: a matter arriving (or
+being held materially incomplete, so it has not yet arrived), being
 referred to phase 2, being decided, the parties applying for a public benefit
 determination and that being decided, having its assessment ceased, or going
 to the Tribunal or the Federal Court. Questionnaires, timeline extensions and
@@ -178,6 +179,20 @@ def milestones(matter: dict) -> list[Milestone]:
             notified,
             "Notified to the ACCC",
             _detail(merger_id, matter.get("stage"), notified),
+        )
+
+    # The ACCC holding a notification materially incomplete (s 51ABZ). Only
+    # while the matter is still waiting on an effective notification date:
+    # once it has one, "Notified to the ACCC" is the news, and announcing the
+    # earlier hold then (or for the matters that went through it before this
+    # milestone existed) would report a resolved state as current.
+    if matter.get("materially_incomplete"):
+        held = _date(matter.get("materially_incomplete_date"))
+        add(
+            "incomplete",
+            held,
+            "Notification materially incomplete",
+            _detail(merger_id, matter.get("stage"), held),
         )
 
     if matter.get("phase_1_determination") == "Referred to phase 2":

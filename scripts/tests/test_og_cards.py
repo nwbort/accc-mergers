@@ -91,6 +91,18 @@ def test_a_running_tribunal_review_shows_until_it_concludes():
     assert current_card(concluded) == "cleared-by-the-accc.png"
 
 
+def test_a_materially_incomplete_notification_shows_its_card_until_it_has_a_date():
+    held = matter(
+        effective_notification_datetime=None,
+        materially_incomplete=True,
+        materially_incomplete_date="2026-11-04T12:00:00Z",
+    )
+    assert current_card(held) == "notification-materially-incomplete.png"
+    # Once the parties fill the gap the flag clears, and the matter has
+    # arrived: the notified card takes over.
+    assert current_card(matter()) == "notified-to-the-accc.png"
+
+
 def test_an_unknown_outcome_falls_back_to_the_shared_image():
     record = decided(accc_determination="Something new", phase_1_determination="Something new")
     assert current_card(record) is None

@@ -1,5 +1,6 @@
 """The materially incomplete (s 51ABZ) flag: enrichment and the merger list."""
 
+from scripts.atproto.post_bluesky import milestones
 from scripts.generate.static_data.enrichment import enrich_merger
 from scripts.generate.static_data.outputs.list import _lightweight
 
@@ -33,7 +34,19 @@ def _merger(**overrides) -> dict:
 def test_flags_a_notification_held_materially_incomplete():
     m = enrich_merger(_merger())
     assert m['materially_incomplete'] is True
+    assert m['materially_incomplete_date'] == '2026-11-04T12:00:00Z'
     assert _lightweight(m)['materially_incomplete'] is True
+
+
+def test_is_a_milestone_only_while_it_lasts():
+    held = enrich_merger(_merger())
+    [milestone] = milestones(held)
+    assert milestone.key == 'MN-55046:incomplete:2026-11-04'
+    assert milestone.headline == 'Notification materially incomplete'
+    # Resolved (or resolved before the milestone existed, like MN-30003):
+    # nothing to announce but the notification itself.
+    later = enrich_merger(_merger(effective_notification_datetime='2026-11-11T12:00:00Z'))
+    assert [m.key.split(':')[1] for m in milestones(later)] == ['notified']
 
 
 def test_clears_once_an_effective_date_is_set():

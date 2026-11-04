@@ -43,6 +43,7 @@ TONES = {
     "phase-2": "#b45309",  # amber-700
     "contested": "#4338ca",  # indigo-700
     "live": "#335145",  # the site's primary
+    "on-hold": "#4b5563",  # gray-600, the materially incomplete badge
 }
 
 #: Bold and regular faces, first hit wins. Liberation and DejaVu are on every
@@ -74,6 +75,8 @@ def tone_for(key: str, headline: str) -> str:
         return "refused" if headline.startswith(("Not approved", "Notification waiver refused")) else "cleared"
     if kind == "ceased":
         return "ceased"
+    if kind == "incomplete":
+        return "on-hold"
     if kind == "phase-2":
         return "phase-2"
     if kind in ("tribunal", "judicial-review"):

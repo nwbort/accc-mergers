@@ -384,6 +384,19 @@ _MATERIALLY_INCOMPLETE_MARKERS = (
 )
 
 
+def _materially_incomplete_notice_date(m: dict) -> str | None:
+    """The date of the latest s 51ABZ notice on the timeline, if any."""
+    dates = [
+        event.get('date')
+        for event in m.get('events', [])
+        if event.get('date') and any(
+            marker in (event.get('title') or '').lower()
+            for marker in _MATERIALLY_INCOMPLETE_MARKERS
+        )
+    ]
+    return max(dates, default=None)
+
+
 def is_materially_incomplete(m: dict) -> bool:
     """Is this notification waiting on an effective notification date?
 
@@ -600,8 +613,10 @@ def enrich_merger(
         m['stage'] = INFERRED_PHASE_2_STAGE
 
     if is_materially_incomplete(m):
-        # Set only when true: every other matter reads it as absent.
+        # Set only when true: every other matter reads it as absent. The
+        # notice's date dates the milestone the posters announce.
         m['materially_incomplete'] = True
+        m['materially_incomplete_date'] = _materially_incomplete_notice_date(m)
 
     # Ensure anzsic_codes exists
     if 'anzsic_codes' not in m:
