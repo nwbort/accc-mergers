@@ -39,7 +39,7 @@ import urllib.request
 from datetime import datetime
 from html import unescape
 from html.parser import HTMLParser
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urlencode, urljoin, urlparse
 
 BASE_URL = "https://www.comcourts.gov.au"
 USER_AGENT = "Mozilla/5.0 (compatible; mergers-fyi/1.0; +https://mergers.fyi)"
@@ -119,6 +119,51 @@ def judgment_link(year: str, court: str, number: str) -> dict:
     return out
 
 
+# --- Maintenance notice ------------------------------------------------------
+
+# The form the notice posts to: <form action=" /pas/file/warned" method="post">.
+_NOTICE_FORM_RE = re.compile(
+    r"<form\b[^>]*\baction\s*=\s*[\"']\s*(?P<action>[^\"']*/file/warned[^\"']*)[\"'][^>]*>"
+    r"(?P<body>.*?)</form>",
+    re.IGNORECASE | re.DOTALL,
+)
+_HIDDEN_INPUT_RE = re.compile(r"<input\b[^>]*>", re.IGNORECASE)
+_ATTR_RE = re.compile(r"(\w+)\s*=\s*[\"']([^\"']*)[\"']")
+
+
+def maintenance_notice(body: bytes | str, page_url: str = BASE_URL) -> dict | None:
+    """The scheduled-maintenance notice, if ``body`` is one, else None.
+
+    For some days before scheduled maintenance the portal answers every page
+    with a 200 "Notice — This system is due to shutdown for scheduled
+    maintenance at 21:00 AEDT Fri 06 Nov 2026" and a "Click here to continue"
+    button, a form that posts the page's CSRF token to ``/pas/file/warned``.
+    Posting it marks the session as warned and the portal 302s back to the
+    page. Parsed as it was, the notice would read as a file with no
+    applications.
+
+    Returns ``{'action': absolute URL, 'fields': {name: value}, 'message':
+    the maintenance time, or ''}``."""
+    if isinstance(body, bytes):
+        if b"/file/warned" not in body:
+            return None
+        body = body.decode("utf-8", "replace")
+    m = _NOTICE_FORM_RE.search(body)
+    if not m:
+        return None
+    fields = {}
+    for tag in _HIDDEN_INPUT_RE.findall(m.group("body")):
+        attrs = {k.lower(): unescape(v) for k, v in _ATTR_RE.findall(tag)}
+        if attrs.get("type", "").lower() == "hidden" and attrs.get("name"):
+            fields[attrs["name"]] = attrs.get("value", "")
+    when = re.search(r"scheduled maintenance at\s*(?:<[^>]+>\s*)*([^<]+)", body, re.IGNORECASE)
+    return {
+        "action": urljoin(page_url, m.group("action").strip()),
+        "fields": fields,
+        "message": clean(when.group(1)) if when else "",
+    }
+
+
 # --- HTTP --------------------------------------------------------------------
 
 
@@ -132,30 +177,61 @@ class Session:
     def get(self, url: str) -> tuple[bytes, dict]:
         """GET url, returning (body, headers). Redirects aren't followed: the
         portal answers anything it won't show the public with a 302 to its
-        login page, which is an error here, not content."""
+        login page, which is an error here, not content.
+
+        Ahead of scheduled maintenance the portal answers every page with a
+        notice instead (see :func:`maintenance_notice`) until the session
+        clicks through it. That is done here, once, and the page fetched
+        again, so callers never see the notice."""
+        body, headers = self._get_retrying(url)
+        notice = maintenance_notice(body, url)
+        if notice is None:
+            return body, headers
+        print(f"  Portal maintenance notice ({notice['message'] or 'no time given'}); continuing", flush=True)
+        self._post_retrying(notice["action"], notice["fields"], referer=url)
+        body, headers = self._get_retrying(url)
+        if maintenance_notice(body, url) is not None:
+            raise FetchError(f"{url}: still showing the maintenance notice after continuing")
+        return body, headers
+
+    def _get_retrying(self, url: str) -> tuple[bytes, dict]:
+        return self._retrying(url, lambda: self._get_once(url))
+
+    def _post_retrying(self, url: str, fields: dict[str, str], referer: str) -> None:
+        self._retrying(url, lambda: self._post_once(url, fields, referer))
+
+    def _retrying(self, url: str, request):
         last_error = None
         for attempt in range(1, FETCH_ATTEMPTS + 1):
             wait = self._last + REQUEST_DELAY_SECONDS - time.time()
             if wait > 0:
                 time.sleep(wait)
             try:
-                return self._get_once(url)
+                return request()
             except FetchError:
                 raise
             except Exception as e:
                 last_error = e
-                print(f"  GET {url} failed (attempt {attempt}/{FETCH_ATTEMPTS}): {e}", flush=True)
+                print(f"  {url} failed (attempt {attempt}/{FETCH_ATTEMPTS}): {e}", flush=True)
                 if attempt < FETCH_ATTEMPTS:
                     time.sleep(FETCH_RETRY_SECONDS)
             finally:
                 self._last = time.time()
-        raise FetchError(f"GET {url} failed: {last_error}")
+        raise FetchError(f"{url} failed: {last_error}")
 
-    def _get_once(self, url: str) -> tuple[bytes, dict]:
+    def _headers(self) -> dict[str, str]:
         headers = {"User-Agent": USER_AGENT}
         if self.cookies:
             headers["Cookie"] = "; ".join(f"{k}={v}" for k, v in self.cookies.items())
-        req = urllib.request.Request(url, headers=headers)
+        return headers
+
+    def _keep_cookies(self, headers) -> None:
+        for cookie in headers.get_all("Set-Cookie") or []:
+            name, _, value = cookie.split(";", 1)[0].partition("=")
+            self.cookies[name.strip()] = value.strip()
+
+    def _get_once(self, url: str) -> tuple[bytes, dict]:
+        req = urllib.request.Request(url, headers=self._headers())
         opener = urllib.request.build_opener(_NoRedirect)
         try:
             r = opener.open(req, timeout=REQUEST_TIMEOUT)
@@ -166,10 +242,31 @@ class Session:
                 raise FetchError(f"{url}: HTTP {e.code}")
             raise
         with r:
-            for cookie in r.headers.get_all("Set-Cookie") or []:
-                name, _, value = cookie.split(";", 1)[0].partition("=")
-                self.cookies[name.strip()] = value.strip()
+            self._keep_cookies(r.headers)
             return r.read(), dict(r.headers)
+
+    def _post_once(self, url: str, fields: dict[str, str], referer: str) -> None:
+        """Submit the maintenance notice's form. The portal answers with a
+        302 back to the page; that redirect is the success, and isn't
+        followed (the caller fetches the page again itself)."""
+        headers = self._headers()
+        headers["Referer"] = referer
+        headers["Content-Type"] = "application/x-www-form-urlencoded"
+        req = urllib.request.Request(
+            url, data=urlencode(fields).encode(), headers=headers, method="POST"
+        )
+        opener = urllib.request.build_opener(_NoRedirect)
+        try:
+            r = opener.open(req, timeout=REQUEST_TIMEOUT)
+        except urllib.error.HTTPError as e:
+            if e.code in (301, 302, 303, 307, 308):
+                self._keep_cookies(e.headers)
+                return
+            if e.code in (404, 410, 422):
+                raise FetchError(f"POST {url}: HTTP {e.code}")
+            raise
+        with r:
+            self._keep_cookies(r.headers)
 
     def get_html(self, url: str) -> str:
         data, _ = self.get(url)

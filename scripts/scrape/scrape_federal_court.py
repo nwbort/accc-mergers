@@ -15,7 +15,10 @@ orders and judgments), its documents filed and its parties. See
 
 As with the tribunal, the "list of files to scrape" is simply every record
 that carries a ``case_url`` (or a ``case_number``); add a record by hand to
-start tracking a new file.
+start tracking a new file. A file the court has finalised is skipped once
+every order and judgment on it is mirrored (:func:`is_settled`), so a closed
+review costs the schedule nothing; name its merger_id, or pass
+``--include-concluded``, to re-scrape it anyway.
 
 Ported from nwbort/scrape-fed, with the downloads moved into this repo's own
 tree:
@@ -55,7 +58,8 @@ the tribunal scraper::
 
   pip install -r scripts/requirements-tribunal.txt
   xvfb-run -a python -m scripts.scrape.scrape_federal_court             # every file
-  python -m scripts.scrape.scrape_federal_court MN-01068               # just these merger_ids
+  python -m scripts.scrape.scrape_federal_court MN-01068               # just these merger_ids (even if concluded)
+  python -m scripts.scrape.scrape_federal_court --include-concluded    # concluded files too
   python -m scripts.scrape.scrape_federal_court --no-download          # record metadata only
   python -m scripts.scrape.scrape_federal_court --dry-run              # parse and report, write nothing
 """
@@ -72,7 +76,7 @@ from email.message import Message
 from pathlib import Path
 from urllib.parse import urlparse
 
-from scripts.constants.judicial_review import review_records
+from scripts.constants.judicial_review import is_current, review_records
 from scripts.paths import REPO_ROOT
 from scripts.scrape import comcourts_portal as portal
 from scripts.scrape import scrape_tribunal as tribunal
@@ -106,6 +110,28 @@ def file_ref(record: dict) -> dict | None:
             except ValueError:
                 continue
     return None
+
+
+def unmirrored_urls(record: dict) -> list[str]:
+    """Every order or judgment on file that has no local copy yet."""
+    return [
+        item["url"]
+        for app in (record.get("portal") or {}).get("applications") or []
+        for event in app.get("events") or []
+        for kind in ("orders", "judgments")
+        for item in event.get(kind) or []
+        if item.get("url") and not item.get("url_gh")
+    ]
+
+
+def is_settled(record: dict) -> bool:
+    """A concluded file with nothing left to fetch, which a scheduled run
+    skips. Concluded is read as the site reads it
+    (:func:`scripts.constants.judicial_review.is_current`): the portal's
+    finalised date, unless the record sets ``status`` by hand. A file whose
+    orders or judgments aren't all mirrored is still scraped, so a judgment
+    published after the file closed is picked up."""
+    return bool(record.get("portal")) and not is_current(record) and not unmirrored_urls(record)
 
 
 def review_label(merger_id: str, record: dict) -> str:
@@ -386,7 +412,12 @@ async def scrape_reviews(
     return scraped, failed, unmirrored, dropped
 
 
-def scrape(merger_ids: list[str] | None, dry_run: bool, download: bool = True) -> int:
+def scrape(
+    merger_ids: list[str] | None,
+    dry_run: bool,
+    download: bool = True,
+    include_concluded: bool = False,
+) -> int:
     raw = load_reviews()
     records = {mid: v for mid, v in raw.items() if not mid.startswith("_")}
 
@@ -404,6 +435,12 @@ def scrape(merger_ids: list[str] | None, dry_run: bool, download: bool = True) -
         for record in review_records(records[mid]):
             if file_ref(record) is None:
                 print(f"Skipping {review_label(mid, record)}: no case_url or case_number")
+                continue
+            # A finalised file doesn't change, so a scheduled run leaves it
+            # alone. Naming its merger_id, or --include-concluded, still
+            # re-scrapes it.
+            if not (merger_ids or include_concluded) and is_settled(record):
+                print(f"Skipping {review_label(mid, record)}: concluded")
                 continue
             targets.append((mid, record))
     if not targets:
@@ -474,8 +511,18 @@ def main() -> int:
         action="store_true",
         help="Record the portal's tables only; do not download orders or judgments.",
     )
+    parser.add_argument(
+        "--include-concluded",
+        action="store_true",
+        help="Also re-scrape concluded files (by default skipped once every order and judgment is mirrored).",
+    )
     args = parser.parse_args()
-    return scrape(args.merger_ids or None, args.dry_run, download=not args.no_download)
+    return scrape(
+        args.merger_ids or None,
+        args.dry_run,
+        download=not args.no_download,
+        include_concluded=args.include_concluded,
+    )
 
 
 if __name__ == "__main__":

@@ -365,6 +365,9 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   Portal (plain urllib; ported from nwbort/scrape-fed)
 │   └── scrape_federal_court.py # Fill judicial_reviews.json's portal blocks; mirrors orders
 │                         #   (plain HTTP) and judgments (scrape_tribunal's Chrome downloader)
+│                         #   Skips a finalised file once everything on it is mirrored (name
+│                         #   its merger_id or pass --include-concluded to re-scrape), and
+│                         #   clicks through the portal's pre-maintenance notice page
 ├── parse/
 │   ├── parse_determination.py   # Extract text from determination PDFs
 │   ├── parse_questionnaire.py   # Process questionnaire documents

@@ -111,7 +111,10 @@ jobs:
     - name: Run the Federal Court scraper
       # Runs even if the tribunal scrape failed: the two are independent, and
       # each leaves a file it couldn't fetch untouched. Chrome only starts if
-      # there is a judgment not yet mirrored.
+      # there is a judgment not yet mirrored. A file the court has finalised
+      # is skipped once its orders and judgments are all mirrored (naming
+      # its merger_id below re-scrapes it), and the portal's pre-maintenance
+      # "Click here to continue" notice is clicked through by the scraper.
       if: ${{ !cancelled() }}
       env:
         MERGER_IDS: ${{ inputs.merger_ids }}
