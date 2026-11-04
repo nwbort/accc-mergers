@@ -112,6 +112,8 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
+  "materially_incomplete": true,
+  "materially_incomplete_date": "2026-11-04T12:00:00Z",
   "has_questionnaire": true,
   "similar_mergers": [
     {
@@ -174,5 +176,5 @@
     "basis": "upper-bound-only",
     "method_version": 1
   },
-  "og_card": null
+  "og_card": "notification-materially-incomplete.png"
 }

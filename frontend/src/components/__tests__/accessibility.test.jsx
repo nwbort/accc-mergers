@@ -4,6 +4,7 @@ import { beforeAll, describe, expect, it } from 'vitest';
 import AppealBadge from '../AppealBadge';
 import NewBadge from '../NewBadge';
 import RefiledBadge from '../RefiledBadge';
+import MateriallyIncompleteBadge from '../MateriallyIncompleteBadge';
 import StatusBadge from '../StatusBadge';
 import WaiverBadge from '../WaiverBadge';
 import Navbar from '../Navbar';
@@ -31,6 +32,7 @@ describe('accessibility invariants', () => {
     ['AppealBadge', <AppealBadge key="a" />],
     ['NewBadge', <NewBadge key="n" />],
     ['RefiledBadge', <RefiledBadge key="r" />],
+    ['MateriallyIncompleteBadge', <MateriallyIncompleteBadge key="mi" />],
     ['WaiverBadge', <WaiverBadge key="w" />],
     ['StatusBadge', <StatusBadge key="s" status="Under assessment" />],
   ];

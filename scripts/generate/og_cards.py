@@ -42,6 +42,7 @@ OG_DIR = REPO_ROOT / "frontend" / "public" / "og"
 #: used) gets no card, and its page keeps the shared image.
 CARDS: tuple[tuple[str, str], ...] = (
     ("notified", "Notified to the ACCC"),
+    ("incomplete", "Notification materially incomplete"),
     ("phase-2", "Referred to Phase 2"),
     ("determined", "Cleared by the ACCC"),
     ("determined", "Cleared with conditions by the ACCC"),
@@ -84,8 +85,13 @@ def current_card(matter: dict) -> str | None:
     return card_for(latest)
 
 
-# Review milestones, and the flag that says the review is still running.
-_LIVE_FLAGS = {"tribunal": "under_appeal", "judicial-review": "under_judicial_review"}
+# Milestones that only stand while a state lasts, and the flag that says it
+# still does: a review still running, a notification still incomplete.
+_LIVE_FLAGS = {
+    "tribunal": "under_appeal",
+    "judicial-review": "under_judicial_review",
+    "incomplete": "materially_incomplete",
+}
 
 
 def _kind(milestone: Milestone) -> str:

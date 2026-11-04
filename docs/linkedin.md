@@ -170,8 +170,9 @@ own post box with the post already written. Nothing goes out until you press
 - The preview's image is a **generic card for the matter's latest milestone**
   ("Cleared by the ACCC" in green, "Referred to Phase 2" in amber, and so on),
   not a per-matter picture; the preview prints the matter's name under it
-  anyway. There are 14 of them, one per headline the posters
-  use, committed in `frontend/public/og/` and chosen per matter by
+  anyway. There are 15 of them, one per headline the posters
+  use (grey "Notification materially incomplete" only while a matter is
+  waiting on an effective notification date), committed in `frontend/public/og/` and chosen per matter by
   `scripts/generate/og_cards.py`, which writes the choice into each
   `mergers/{id}.json` as `og_card`. The Pages Function that answers link
   preview bots (`functions/mergers/[matter]/[[path]].js`) reads that field, as
