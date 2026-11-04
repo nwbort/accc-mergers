@@ -55088,14 +55088,14 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 15,
+        "estimated_days": 7,
         "min_days": null,
-        "max_days": 21,
-        "id_issued_estimated": "2026-10-01",
+        "max_days": 14,
+        "id_issued_estimated": "2026-10-09",
         "id_issued_before": null,
-        "id_issued_after": "2026-09-25",
+        "id_issued_after": "2026-10-02",
         "min_days_witness": null,
-        "max_days_witness": "WA-70041",
+        "max_days_witness": "WA-70045",
         "basis": "upper-bound-only",
         "method_version": 1
       }
@@ -135701,6 +135701,121 @@
           ],
           "targets": [
             "nib Travel Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/svp-%E2%80%93-marelli",
+      "merger_name": "SVP \u2013 Marelli",
+      "status": "Assessment completed",
+      "merger_id": "WA-70045",
+      "effective_notification_datetime": "2026-10-09T12:00:00Z",
+      "original_notification_datetime": "2026-10-09T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-04T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-04T17:57:21+11:00",
+      "acquirers": [
+        {
+          "name": "Strategic Value Partners, L.P",
+          "identifier_type": null,
+          "identifier": "CRD#  138406 and SEC#  80172080",
+          "party_page": {
+            "id": "strategic-value-partners-l-p",
+            "name": "Strategic Value Partners, L.P"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Marelli Corporation",
+          "identifier_type": null,
+          "identifier": "Japanese Legal Entity Identifier  030001014831",
+          "party_page": {
+            "id": "marelli-corporation",
+            "name": "Marelli Corporation"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2319",
+          "name": "Other Motor Vehicle Parts Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Strategic Value Partners, L.P. (**SVP**) is a global investment firm focused on credit and private equity opportunities, with offices in the USA, UK and Japan. Investment funds managed directly or indirectly by SVP are proposing to acquire a majority of the equity and voting rights in Marelli Corporation, together with its subsidiaries (**Marelli**) (**the Acquisition**). The remainder of the equity in Marelli will be acquired by other members of an ad hoc group of lenders.\n\nSpecifically, the Acquisition will be accomplished via the acquisition of the equity of Marelli by a newly formed holding company (**TopCo**) through a debt-for-equity exchange in the context of Marelli\u2019s Chapter 11 bankruptcy case in the United States of America. Through TopCo, SVP will acquire shares representing a majority of the total equity in Marelli.\n\nMarelli is a supplier of components and systems for the automotive sector, including exhaust systems, aftermarket parts and services and motorsport products. Its product categories include lighting, suspension systems and shock absorbers, interiors, electronics, thermal, exhaust, and propulsion.\n\nMarelli makes sales to original equipment manufacturers and on the independent aftermarket. Marelli does not make direct sales to retail customers. In Australia, Marelli\u2019s activities include the sale of a limited number of products to a small group of customers, via two of its overseas subsidiaries.\n\nOne of SVP\u2019s portfolio companies, Wheel Pros, designs, assembles, markets, distributes, and sells high-end aftermarket custom wheels, performance tyres, powersports products, suspension systems, lighting systems, aesthetic enhancements, automotive performance improvements, and other automotive accessories. In Australia, Wheel Pros supplies car parts to retail customers, via independent dealers.",
+      "events": [
+        {
+          "date": "2026-11-04T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Notification waiver determination published",
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-09T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-11-04T12:00:00Z",
+          "title": "Waiver application determination: Approved",
+          "display_title": "Waiver application determination: Approved",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-90044",
+          "merger_name": "Stellex and ONA \u2013 Score",
+          "acquirers": [
+            "Stellex Partners III LP",
+            "OrbeNovo Advisory LLP"
+          ],
+          "targets": [
+            "Buchan 2 Ltd"
+          ],
+          "status": "Under assessment"
+        },
+        {
+          "merger_id": "WA-60032",
+          "merger_name": "Atlas Holdings and KPS \u2013 shares in joint venture and interest in C&D Technologies",
+          "acquirers": [
+            "ACR III Edison Holdings LLC",
+            "Ampere Holdings I B.V."
+          ],
+          "targets": [
+            "C&D Technologies Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-05051",
+          "merger_name": "Apax Funds \u2013 Remy & Geiser GmbH and Gerresheimer Primary Packaging Plastics GmbH",
+          "acquirers": [
+            "Click Europe Bidco GmbH",
+            "Apax Partners LLP"
+          ],
+          "targets": [
+            "Gerresheimer Primary Packaging Plastics GmbH",
+            "Remy & Geiser GmbH"
           ],
           "accc_determination": "Approved"
         }

@@ -1,6 +1,6 @@
 {
   "total_mergers": 318,
-  "total_waivers": 501,
+  "total_waivers": 502,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 270,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 476,
+    "Approved": 477,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.776447105788424,
-    "median_days": 21,
-    "average_business_days": 14.221556886227544,
-    "median_business_days": 14
+    "average_days": 20.786852589641434,
+    "median_days": 21.0,
+    "average_business_days": 14.229083665338646,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 203
+      "count": 204
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70045",
+      "merger_name": "SVP \u2013 Marelli",
+      "determination": "Approved",
+      "determination_date": "2026-11-04T12:00:00Z",
+      "page_modified_datetime": "2026-11-04T17:57:21+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85059",
       "merger_name": "SMM Perth \u2013 mining tenements of Rio Tinto related to the Winu copper-gold project in Western Australia",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-30T12:00:00Z",
       "page_modified_datetime": "2026-10-30T17:12:26+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-80052",
-      "merger_name": "SCEE Group \u2013 Entire Group",
-      "determination": "Approved",
-      "determination_date": "2026-10-30T12:00:00Z",
-      "page_modified_datetime": "2026-10-30T17:10:18+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
