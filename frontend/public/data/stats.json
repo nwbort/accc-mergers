@@ -1,6 +1,6 @@
 {
   "total_mergers": 318,
-  "total_waivers": 500,
+  "total_waivers": 501,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 270,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 475,
+    "Approved": 476,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.752,
-    "median_days": 21.0,
-    "average_business_days": 14.206,
-    "median_business_days": 14.0
+    "average_days": 20.776447105788424,
+    "median_days": 21,
+    "average_business_days": 14.221556886227544,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85059",
+      "merger_name": "SMM Perth \u2013 mining tenements of Rio Tinto related to the Winu copper-gold project in Western Australia",
+      "determination": "Approved",
+      "determination_date": "2026-11-04T12:00:00Z",
+      "page_modified_datetime": "2026-11-04T17:50:36+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-10048",
       "merger_name": "TA Associates \u2013 MedEnvision",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-30033",
-      "merger_name": "Brown & Hurley - Schmitz Cargobull and Freighter Group",
-      "determination": "Approved",
-      "determination_date": "2026-10-30T12:00:00Z",
-      "page_modified_datetime": "2026-10-30T15:05:48+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
