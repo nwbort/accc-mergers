@@ -5,6 +5,7 @@ import WaiverBadge from './WaiverBadge';
 import AppealBadge from './AppealBadge';
 import JudicialReviewBadge from './JudicialReviewBadge';
 import RefiledBadge from './RefiledBadge';
+import MateriallyIncompleteBadge from './MateriallyIncompleteBadge';
 import MateriallyIncompletePending from './MateriallyIncompletePending';
 import { formatDate } from '../utils/dates';
 import { mergerPath } from '../utils/slug';
@@ -134,6 +135,7 @@ function MergerListTable({ mergers, selectedIndex, isTracked, sortField, sortDir
                     {merger.under_judicial_review && <JudicialReviewBadge glyph />}
                     {merger.is_waiver && <WaiverBadge glyph />}
                     {merger.is_refiled && <RefiledBadge glyph />}
+                    {merger.materially_incomplete && <MateriallyIncompleteBadge glyph />}
                   </div>
                   {/* The solid form, as on the cards, so the two views of
                       the same list read the same. */}
@@ -149,6 +151,7 @@ function MergerListTable({ mergers, selectedIndex, isTracked, sortField, sortDir
                     {merger.under_judicial_review && <JudicialReviewBadge solid />}
                     {merger.is_waiver && <WaiverBadge solid />}
                     {merger.is_refiled && <RefiledBadge solid />}
+                    {merger.materially_incomplete && <MateriallyIncompleteBadge solid />}
                   </div>
                 </td>
                 <td className="px-4 py-3 whitespace-nowrap text-gray-700 hidden sm:table-cell">

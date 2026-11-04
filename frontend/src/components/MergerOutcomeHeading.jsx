@@ -5,6 +5,7 @@ import { OUTCOME_ICONS } from '../constants/outcomeIcons';
 import { getHeaderStatus, getOutcomeText, getStageLabel } from '../utils/mergerOutcome';
 import Phase2OddsReveal from './Phase2OddsReveal';
 import WaiverBadge from './WaiverBadge';
+import MateriallyIncompleteBadge from './MateriallyIncompleteBadge';
 
 /**
  * The line above a merger's title, sitting on the colour-filled header block
@@ -96,6 +97,7 @@ function MergerOutcomeHeading({ merger }) {
           site (merger list, Commentary, industry cards), and because that
           form fills its own box rather than relying on the fill it sits on. */}
       {merger.is_waiver && <WaiverBadge solid />}
+      {merger.materially_incomplete && <MateriallyIncompleteBadge solid />}
     </p>
   );
 }

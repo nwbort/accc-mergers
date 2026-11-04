@@ -6,6 +6,7 @@ import WaiverBadge from './WaiverBadge';
 import AppealBadge from './AppealBadge';
 import JudicialReviewBadge from './JudicialReviewBadge';
 import RefiledBadge from './RefiledBadge';
+import MateriallyIncompleteBadge from './MateriallyIncompleteBadge';
 import { formatDate } from '../utils/dates';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
 import { getOutcomeRail } from '../constants/outcomeRail';
@@ -80,6 +81,7 @@ function MergerListCard({ merger, index, selected, tracked, onToggleTracking }) 
               {merger.under_judicial_review && <JudicialReviewBadge solid />}
               {merger.is_waiver && <WaiverBadge solid />}
               {merger.is_refiled && <RefiledBadge solid />}
+              {merger.materially_incomplete && <MateriallyIncompleteBadge solid />}
             </div>
             <div className="flex items-center gap-2">
               {tracked && (
