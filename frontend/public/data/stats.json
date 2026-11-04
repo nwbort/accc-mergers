@@ -3,12 +3,12 @@
   "total_waivers": 499,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 269,
-    "Under assessment": 44,
+    "Assessment completed": 270,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 262,
+    "Approved": 263,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 267,
+    "cleared": 268,
     "not_cleared": 2,
-    "total": 269,
+    "total": 270,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.403636363636362,
-    "median_days": 26,
-    "average_business_days": 20.007272727272728,
-    "median_business_days": 18,
+    "average_days": 29.391304347826086,
+    "median_days": 26.0,
+    "average_business_days": 20.0,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 58,
-        "percentage": 21.1
+        "percentage": 21.0
       },
       "day20": {
-        "count": 200,
-        "percentage": 72.7
+        "count": 201,
+        "percentage": 72.8
       },
       "day30": {
-        "count": 258,
+        "count": 259,
         "percentage": 93.8
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-65038",
+      "merger_name": "TCL Electronics \u2013 Sony\u2019s home entertainment business",
+      "determination": "Approved",
+      "determination_date": "2026-11-04T12:00:00Z",
+      "page_modified_datetime": "2026-11-04T14:30:59+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-35051",
       "merger_name": "Jaybro - Sewer Equipment Company Australia",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-30T12:00:00Z",
       "page_modified_datetime": "2026-10-30T15:03:35+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-95043",
-      "merger_name": "Bright & Duggan \u2013 Civium",
-      "determination": "Approved",
-      "determination_date": "2026-10-29T12:00:00Z",
-      "page_modified_datetime": "2026-10-30T10:57:27+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
