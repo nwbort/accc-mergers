@@ -58,7 +58,8 @@
       "23": {
         "31": 2,
         "32": 1,
-        "33": 2
+        "33": 2,
+        "34": 1
       },
       "24": {
         "34": 4,
@@ -133,17 +134,17 @@
     },
     "stats": {
       "average": 20.0,
-      "median": 18.0,
+      "median": 18,
       "min": 15,
       "max": 59,
-      "count": 276
+      "count": 277
     },
     "calendar_stats": {
       "average": 29.4,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 276
+      "count": 277
     }
   },
   "waiver_duration": {
@@ -417,7 +418,7 @@
       37,
       32,
       42,
-      43
+      42
     ],
     "as_at": "2026-11-05"
   },
@@ -428,12 +429,12 @@
         "days": 30,
         "notifications_filed": 37,
         "notifications": {
-          "median": 18,
-          "average": 19.1,
-          "p90": 25,
+          "median": 18.5,
+          "average": 19.2,
+          "p90": 24,
           "min": 15,
           "max": 26,
-          "count": 29,
+          "count": 30,
           "duration_histogram": {
             "15": 3,
             "16": 3,
@@ -443,12 +444,12 @@
             "20": 2,
             "21": 2,
             "22": 1,
-            "23": 1,
+            "23": 2,
             "24": 1,
             "25": 2,
             "26": 1
           },
-          "median_delta": 0.0
+          "median_delta": 0.5
         },
         "waivers": {
           "median": 18.0,
@@ -481,20 +482,20 @@
         "phase_1_speed": {
           "day15": {
             "count": 3,
-            "percentage": 10.3
+            "percentage": 10.0
           },
           "day20": {
             "count": 21,
-            "percentage": 72.4
+            "percentage": 70.0
           },
           "day30": {
-            "count": 29,
+            "count": 30,
             "percentage": 100.0
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 29
+            "Approved": 30
           },
           "phase_2": {},
           "waivers": {
@@ -507,12 +508,12 @@
         "days": 90,
         "notifications_filed": 101,
         "notifications": {
-          "median": 18,
+          "median": 18.5,
           "average": 20.5,
           "p90": 25,
           "min": 15,
           "max": 56,
-          "count": 113,
+          "count": 114,
           "duration_histogram": {
             "15": 19,
             "16": 12,
@@ -522,7 +523,7 @@
             "20": 6,
             "21": 12,
             "22": 1,
-            "23": 5,
+            "23": 6,
             "24": 4,
             "25": 6,
             "26": 1,
@@ -536,7 +537,7 @@
             "52": 1,
             "56": 1
           },
-          "median_delta": 0.0
+          "median_delta": 0.5
         },
         "waivers": {
           "median": 18.0,
@@ -573,20 +574,20 @@
         "phase_1_speed": {
           "day15": {
             "count": 19,
-            "percentage": 16.8
+            "percentage": 16.7
           },
           "day20": {
             "count": 74,
-            "percentage": 65.5
+            "percentage": 64.9
           },
           "day30": {
-            "count": 105,
-            "percentage": 92.9
+            "count": 106,
+            "percentage": 93.0
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 109,
+            "Approved": 110,
             "Referred to phase 2": 1,
             "Approved with conditions": 3
           },
@@ -603,12 +604,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18.0,
+        "median": 18,
         "average": 20.0,
         "p90": 27,
         "min": 15,
         "max": 59,
-        "count": 276
+        "count": 277
       },
       "waivers": {
         "median": 14.0,
@@ -749,7 +750,7 @@
         {
           "median": null,
           "average": null,
-          "count": 2
+          "count": 3
         }
       ],
       "waivers": [
@@ -850,7 +851,7 @@
         37,
         32,
         42,
-        43
+        42
       ]
     }
   },
@@ -903,11 +904,11 @@
     {
       "code": "A",
       "name": "Agriculture, Forestry and Fishing",
-      "average_business_days": 22.0,
-      "median_business_days": 19,
-      "average_calendar_days": 31.9,
-      "median_calendar_days": 28,
-      "count": 9
+      "average_business_days": 22.1,
+      "median_business_days": 19.0,
+      "average_calendar_days": 32.1,
+      "median_calendar_days": 28.0,
+      "count": 10
     },
     {
       "code": "L",
@@ -922,10 +923,10 @@
       "code": "F",
       "name": "Wholesale Trade",
       "average_business_days": 21.5,
-      "median_business_days": 19.0,
+      "median_business_days": 19,
       "average_calendar_days": 32.5,
-      "median_calendar_days": 28.0,
-      "count": 44
+      "median_calendar_days": 28,
+      "count": 45
     },
     {
       "code": "B",
@@ -985,10 +986,10 @@
       "code": "C",
       "name": "Manufacturing",
       "average_business_days": 19.8,
-      "median_business_days": 18,
+      "median_business_days": 18.0,
       "average_calendar_days": 29.0,
-      "median_calendar_days": 27,
-      "count": 83
+      "median_calendar_days": 27.0,
+      "count": 84
     },
     {
       "code": "E",
@@ -1029,18 +1030,18 @@
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 79,
+      "count": 80,
       "outcome_mix": {
         "Referred to phase 2": 9,
-        "Approved": 70
+        "Approved": 71
       },
-      "median_business_days": 20
+      "median_business_days": 20.5
     },
     {
       "division": "Not yet determined",
-      "count": 40,
+      "count": 39,
       "outcome_mix": {
-        "Unknown": 40
+        "Unknown": 39
       },
       "median_business_days": null
     },
@@ -1108,7 +1109,7 @@
       "20": 13,
       "21": 15,
       "22": 7,
-      "23": 5,
+      "23": 6,
       "24": 7,
       "25": 9,
       "26": 2,
@@ -1124,9 +1125,9 @@
     },
     "stats": {
       "mean_used_bd": 18.3,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 2.7,
-      "count": 256
+      "count": 257
     },
     "extended_count": 11
   },
@@ -1167,11 +1168,11 @@
     {
       "code": "A",
       "name": "Agriculture, Forestry and Fishing",
-      "approved": 8,
+      "approved": 9,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 4,
-      "phase2_referral_rate": 0.111
+      "in_progress": 3,
+      "phase2_referral_rate": 0.1
     },
     {
       "code": "G",
@@ -1194,11 +1195,11 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "approved": 42,
+      "approved": 43,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 11,
-      "phase2_referral_rate": 0.045
+      "in_progress": 10,
+      "phase2_referral_rate": 0.044
     },
     {
       "code": "M",
@@ -1230,10 +1231,10 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 81,
+      "approved": 82,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 12,
+      "in_progress": 11,
       "phase2_referral_rate": 0.024
     },
     {

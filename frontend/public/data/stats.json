@@ -3,12 +3,12 @@
   "total_waivers": 502,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 270,
-    "Under assessment": 43,
+    "Assessment completed": 271,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 263,
+    "Approved": 264,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 268,
+    "cleared": 269,
     "not_cleared": 2,
-    "total": 270,
+    "total": 271,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.391304347826086,
-    "median_days": 26.0,
-    "average_business_days": 20.0,
-    "median_business_days": 18.0,
+    "average_days": 29.407942238267147,
+    "median_days": 26,
+    "average_business_days": 20.010830324909747,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 58,
-        "percentage": 21.0
+        "percentage": 20.9
       },
       "day20": {
         "count": 201,
-        "percentage": 72.8
+        "percentage": 72.6
       },
       "day30": {
-        "count": 259,
-        "percentage": 93.8
+        "count": 260,
+        "percentage": 93.9
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-10032",
+      "merger_name": "TurOSI - Cordina",
+      "determination": "Approved",
+      "determination_date": "2026-11-05T12:00:00Z",
+      "page_modified_datetime": "2026-11-05T10:11:39+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-70045",
       "merger_name": "SVP \u2013 Marelli",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-45034",
-      "merger_name": "EQT Holdings \u2013 Platinum Investment Management",
-      "determination": "Approved",
-      "determination_date": "2026-10-30T12:00:00Z",
-      "page_modified_datetime": "2026-10-30T17:12:26+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
