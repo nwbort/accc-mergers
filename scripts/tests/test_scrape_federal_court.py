@@ -371,3 +371,120 @@ class TestScrape:
         fc.scrape(None, dry_run=False, download=False)
         record = json.loads(reviews_file.read_text())['MN-01068'][0]
         assert record['portal']['applications'][0]['events'][2]['orders'][0]['url_gh'] == '/mergers/MN-01068/P.pdf'
+
+
+# --- Concluded files ---------------------------------------------------------
+
+
+def _mirror_all(data: dict) -> dict:
+    for app in data['applications']:
+        for event in app.get('events') or []:
+            for kind in ('orders', 'judgments'):
+                for item in event.get(kind) or []:
+                    item['url_gh'] = f'/mergers/MN-01068/{item["url"].rsplit("/", 1)[-1]}.pdf'
+    return data
+
+
+class TestConcluded:
+    def _settle(self, reviews_file, **record):
+        raw = json.loads(reviews_file.read_text())
+        raw['MN-01068'][0]['portal'] = _mirror_all(_fetch())
+        raw['MN-01068'][0].update(record)
+        reviews_file.write_text(json.dumps(raw))
+
+    def _requests(self, monkeypatch):
+        calls = []
+        real = portal.fetch_file
+        monkeypatch.setattr(
+            fc.portal, 'fetch_file',
+            lambda *a, **k: calls.append(a) or real(*a, **k),
+        )
+        return calls
+
+    def test_finalised_and_mirrored_is_settled(self):
+        assert fc.is_settled({'portal': _mirror_all(_fetch())})
+
+    def test_unmirrored_order_is_not_settled(self):
+        record = {'portal': _fetch()}
+        assert fc.unmirrored_urls(record)
+        assert not fc.is_settled(record)
+
+    def test_hand_set_current_is_not_settled(self):
+        assert not fc.is_settled({'status': 'current', 'portal': _mirror_all(_fetch())})
+
+    def test_never_scraped_is_not_settled(self):
+        assert not fc.is_settled({'case_number': 'NSD1310/2026'})
+
+    def test_scheduled_run_skips_settled_file(self, reviews_file, monkeypatch):
+        self._settle(reviews_file)
+        calls = self._requests(monkeypatch)
+        before = reviews_file.read_text()
+        assert fc.scrape(None, dry_run=False, download=False) == 0
+        assert calls == []
+        assert reviews_file.read_text() == before
+
+    def test_named_merger_is_scraped_even_if_concluded(self, reviews_file, monkeypatch):
+        self._settle(reviews_file)
+        calls = self._requests(monkeypatch)
+        fc.scrape(['MN-01068'], dry_run=True)
+        assert len(calls) == 1
+
+    def test_include_concluded(self, reviews_file, monkeypatch):
+        self._settle(reviews_file)
+        calls = self._requests(monkeypatch)
+        fc.scrape(None, dry_run=True, include_concluded=True)
+        assert len(calls) == 1
+
+
+# --- Maintenance notice ------------------------------------------------------
+
+
+ACTIONS = f'{BASE}/actions'
+
+
+class TestMaintenanceNotice:
+    def test_parses_notice(self):
+        notice = portal.maintenance_notice(_fixture('maintenance_notice.html').encode(), ACTIONS)
+        assert notice == {
+            'action': 'https://www.comcourts.gov.au/pas/file/warned',
+            'fields': {'authenticity_token': '9kRQ7EPFlA8l1K/XaHucHt81BxmcMLl8kUz8CB7vgso='},
+            'message': '21:00 AEDT Fri 06 Nov 2026',
+        }
+
+    @pytest.mark.parametrize('name', ['actions.html', 'events_and_orders.html', 'documents_filed.html'])
+    def test_ordinary_pages_are_not_notices(self, name):
+        assert portal.maintenance_notice(_fixture(name).encode()) is None
+        assert portal.maintenance_notice(_fixture(name)) is None
+
+    def _session(self, monkeypatch, pages):
+        session = portal.Session()
+        posts = []
+        monkeypatch.setattr(portal, 'REQUEST_DELAY_SECONDS', 0)
+        monkeypatch.setattr(session, '_get_once', lambda url: (pages.pop(0).encode(), {}))
+        monkeypatch.setattr(
+            session, '_post_once',
+            lambda url, fields, referer: posts.append((url, fields, referer)),
+        )
+        return session, posts
+
+    def test_clicks_through_and_refetches(self, monkeypatch):
+        session, posts = self._session(
+            monkeypatch, [_fixture('maintenance_notice.html'), _fixture('actions.html')]
+        )
+        assert session.get_html(ACTIONS) == _fixture('actions.html')
+        assert posts == [(
+            'https://www.comcourts.gov.au/pas/file/warned',
+            {'authenticity_token': '9kRQ7EPFlA8l1K/XaHucHt81BxmcMLl8kUz8CB7vgso='},
+            ACTIONS,
+        )]
+
+    def test_no_notice_no_post(self, monkeypatch):
+        session, posts = self._session(monkeypatch, [_fixture('actions.html')])
+        session.get_html(ACTIONS)
+        assert posts == []
+
+    def test_notice_that_wont_clear_is_an_error(self, monkeypatch):
+        notice = _fixture('maintenance_notice.html')
+        session, _ = self._session(monkeypatch, [notice, notice])
+        with pytest.raises(portal.FetchError, match='maintenance notice'):
+            session.get_html(ACTIONS)

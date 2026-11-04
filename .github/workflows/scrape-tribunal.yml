@@ -99,6 +99,9 @@ jobs:
       # likely to be flagged by Cloudflare than headless.
       # With save_pages, each fetched matter page is saved for the artifact
       # below; an empty TRIBUNAL_PAGE_SNAPSHOT_DIR saves nothing.
+      # A matter marked concluded is skipped once its documents are all
+      # mirrored and 30 days have passed since its concluded_date (naming its
+      # merger_id below scrapes it anyway).
       env:
         TRIBUNAL_PAGE_SNAPSHOT_DIR: ${{ inputs.save_pages && format('{0}/tribunal-pages', runner.temp) || '' }}
         # Passed through env, never interpolated into the script, and split
@@ -111,7 +114,10 @@ jobs:
     - name: Run the Federal Court scraper
       # Runs even if the tribunal scrape failed: the two are independent, and
       # each leaves a file it couldn't fetch untouched. Chrome only starts if
-      # there is a judgment not yet mirrored.
+      # there is a judgment not yet mirrored. A file the court has finalised
+      # is skipped once its orders and judgments are all mirrored (naming
+      # its merger_id below re-scrapes it), and the portal's pre-maintenance
+      # "Click here to continue" notice is clicked through by the scraper.
       if: ${{ !cancelled() }}
       env:
         MERGER_IDS: ${{ inputs.merger_ids }}

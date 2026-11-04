@@ -946,6 +946,81 @@ class TestScrapeSeveralMattersPerMerger:
         assert written['MN-0001'][1]['documents'] == held
 
 
+class TestConcludedMatters:
+    """A concluded matter is skipped once its documents are all mirrored and
+    the grace period after concluded_date has run."""
+
+    URL = 'https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026'
+    TODAY = __import__('datetime').date(2026, 11, 4)
+
+    def _record(self, **extra):
+        record = {
+            'tribunal_number': 'ACT 1 of 2026',
+            'tribunal_url': self.URL,
+            'status': 'concluded',
+            'concluded_date': '2026-09-01',
+            'documents': [_doc('2026-07-15', 'Application', url=f'{self.URL}/a.pdf',
+                               url_gh='/mergers/MN-0001/a.pdf')],
+        }
+        record.update(extra)
+        return record
+
+    def test_concluded_and_mirrored_is_settled(self):
+        assert scrape_tribunal.is_settled(self._record(), today=self.TODAY)
+
+    def test_current_is_not_settled(self):
+        assert not scrape_tribunal.is_settled(self._record(status='current'), today=self.TODAY)
+
+    def test_no_status_reads_as_current(self):
+        record = self._record()
+        del record['status']
+        assert not scrape_tribunal.is_settled(record, today=self.TODAY)
+
+    def test_within_grace_period_is_not_settled(self):
+        assert not scrape_tribunal.is_settled(
+            self._record(concluded_date='2026-10-20'), today=self.TODAY
+        )
+
+    def test_grace_period_boundary(self):
+        record = self._record(concluded_date='2026-10-05')   # 30 days before TODAY
+        assert not scrape_tribunal.is_settled(record, today=self.TODAY)
+        record['concluded_date'] = '2026-10-04'
+        assert scrape_tribunal.is_settled(record, today=self.TODAY)
+
+    def test_no_concluded_date_has_no_grace(self):
+        assert scrape_tribunal.is_settled(self._record(concluded_date=None), today=self.TODAY)
+
+    def test_unmirrored_document_is_not_settled(self):
+        record = self._record()
+        record['documents'].append(_doc('2026-08-01', 'Reasons', url=f'{self.URL}/r.pdf'))
+        assert scrape_tribunal.unmirrored_documents(record) == [f'{self.URL}/r.pdf']
+        assert not scrape_tribunal.is_settled(record, today=self.TODAY)
+
+    def _run(self, tmp_path, monkeypatch, merger_ids=None, **kwargs):
+        path = tmp_path / 'tribunal_appeals.json'
+        path.write_text(json.dumps({'MN-0001': [self._record()]}))
+        monkeypatch.setattr(scrape_tribunal, 'TRIBUNAL_APPEALS_JSON', path)
+        monkeypatch.setattr(scrape_tribunal, 'uc', types.SimpleNamespace(loop=asyncio.new_event_loop))
+        seen = []
+
+        async def _scrape_matters(targets, do_download):
+            seen.extend(mid for mid, _ in targets)
+            return {}, [], []
+
+        monkeypatch.setattr(scrape_tribunal, 'scrape_matters', _scrape_matters)
+        assert scrape_tribunal.scrape(merger_ids, dry_run=True, **kwargs) == 0
+        return seen
+
+    def test_scheduled_run_skips_settled_matter(self, tmp_path, monkeypatch):
+        assert self._run(tmp_path, monkeypatch) == []
+
+    def test_named_merger_is_scraped(self, tmp_path, monkeypatch):
+        assert self._run(tmp_path, monkeypatch, ['MN-0001']) == ['MN-0001']
+
+    def test_include_concluded(self, tmp_path, monkeypatch):
+        assert self._run(tmp_path, monkeypatch, include_concluded=True) == ['MN-0001']
+
+
 class TestMatterNaming:
     def test_label_names_the_matter(self):
         assert scrape_tribunal.matter_label(
