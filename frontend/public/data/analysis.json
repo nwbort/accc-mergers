@@ -346,7 +346,7 @@
       38,
       31,
       43,
-      4
+      5
     ],
     "waivers": [
       0,
@@ -417,7 +417,7 @@
       46,
       37,
       32,
-      42,
+      41,
       43
     ],
     "as_at": "2026-11-05"
@@ -427,7 +427,7 @@
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 38,
+        "notifications_filed": 39,
         "notifications": {
           "median": 18.5,
           "average": 19.2,
@@ -506,7 +506,7 @@
       },
       {
         "days": 90,
-        "notifications_filed": 102,
+        "notifications_filed": 103,
         "notifications": {
           "median": 18.5,
           "average": 20.5,
@@ -850,7 +850,7 @@
         46,
         37,
         32,
-        42,
+        41,
         43
       ]
     }
@@ -1147,6 +1147,13 @@
       "delta_calendar_days": 14
     },
     {
+      "merger_id": "MN-55046",
+      "merger_name": "USCO \u2013 ITM",
+      "original_date": "2026-10-26",
+      "effective_date": "2026-11-05",
+      "delta_calendar_days": 10
+    },
+    {
       "merger_id": "MN-60022",
       "merger_name": "Autodesk - MaintainX",
       "original_date": "2026-06-19",
@@ -1154,7 +1161,7 @@
       "delta_calendar_days": 4
     }
   ],
-  "restart_rate": 0.0094,
+  "restart_rate": 0.0125,
   "outcomes_by_division": [
     {
       "code": "S",
@@ -1356,7 +1363,7 @@
     },
     {
       "quarter": "2026-Q4",
-      "notifications": 47,
+      "notifications": 48,
       "referred": 0
     }
   ]
