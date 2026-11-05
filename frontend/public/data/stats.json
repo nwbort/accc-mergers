@@ -3,12 +3,12 @@
   "total_waivers": 503,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 271,
-    "Under assessment": 43,
+    "Assessment completed": 272,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 264,
+    "Approved": 265,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,16 +22,16 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 269,
+    "cleared": 270,
     "not_cleared": 2,
-    "total": 271,
+    "total": 272,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.407942238267147,
-    "median_days": 26,
-    "average_business_days": 20.010830324909747,
-    "median_business_days": 18,
+    "average_days": 29.503597122302157,
+    "median_days": 26.0,
+    "average_business_days": 20.07913669064748,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 58,
@@ -39,11 +39,11 @@
       },
       "day20": {
         "count": 201,
-        "percentage": 72.6
+        "percentage": 72.3
       },
       "day30": {
         "count": 260,
-        "percentage": 93.9
+        "percentage": 93.5
       }
     }
   },
@@ -230,6 +230,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-25047",
+      "merger_name": "Alcoa \u2013 South32 aluminium assets",
+      "determination": "Approved",
+      "determination_date": "2026-11-05T12:00:00Z",
+      "page_modified_datetime": "2026-11-05T16:37:47+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-10032",
       "merger_name": "TurOSI - Cordina",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-60044",
-      "merger_name": "Airbus, Leonardo and Thales \u2013 Space activities joint venture",
-      "determination": "Approved",
-      "determination_date": "2026-11-02T12:00:00Z",
-      "page_modified_datetime": "2026-11-02T10:41:30+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

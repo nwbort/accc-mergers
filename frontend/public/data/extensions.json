@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 319,
-    "matters_extended": 23,
-    "share_extended_pct": 7.2,
-    "extension_events_total": 37,
-    "total_extension_bd": 417,
-    "median_matter_extension_bd": 14.5,
+    "matters_extended": 24,
+    "share_extended_pct": 7.5,
+    "extension_events_total": 38,
+    "total_extension_bd": 422,
+    "median_matter_extension_bd": 14,
     "longest_single_bd": 30,
     "phase_2_total": 9,
     "extended_escalated_to_phase_2": 8,
-    "escalation_rate_given_extension_pct": 34.8,
+    "escalation_rate_given_extension_pct": 33.3,
     "phase_2_preceded_by_extension_pct": 88.9,
     "base_phase_2_rate_pct": 2.8,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 25,
-      "business_days": 285
+      "events": 26,
+      "business_days": 290
     },
     {
       "category": "Remedy under consideration",
@@ -70,7 +70,7 @@
     },
     {
       "month": "2026-11",
-      "count": 1
+      "count": 2
     }
   ],
   "matters": [
@@ -470,10 +470,10 @@
       "merger_id": "MN-25047",
       "merger_name": "Alcoa \u2013 South32 aluminium assets",
       "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "notification_date": "2026-09-10T12:00:00Z",
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-11-05T12:00:00Z",
       "escalated_to_phase_2": false,
       "total_extension_bd": 10,
       "extension_count": 1,
@@ -568,6 +568,27 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 6 business days - following request by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-75031",
+      "merger_name": "VetPartners \u2013 VetLove",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-10-09T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 5,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-11-05T12:00:00Z",
+          "business_days": 5,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 5 business days \u2013 following request by parties"
         }
       ]
     },
