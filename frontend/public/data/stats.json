@@ -1,10 +1,10 @@
 {
-  "total_mergers": 318,
+  "total_mergers": 319,
   "total_waivers": 502,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 271,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,15 +56,15 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 204
+      "count": 205
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 97
+      "count": 98
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 83
+      "count": 84
     },
     {
       "name": "Non-Residential Property Operators",
@@ -72,7 +72,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 47
+      "count": 48
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-65042",
+      "merger_name": "Thoma Bravo - Varonis",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-04T12:00:00Z",
+      "page_modified_datetime": "2026-11-05T12:11:45+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-60052",
       "merger_name": "Healthe Care - Prince of Wales Private Hospital",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-27T12:00:00Z",
       "page_modified_datetime": "2026-10-28T15:48:22+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-15043",
-      "merger_name": "NYK - NS United",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-27T12:00:00Z",
-      "page_modified_datetime": "2026-10-27T17:02:09+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

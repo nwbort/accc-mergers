@@ -29000,6 +29000,80 @@
     "is_waiver": false
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/thoma-bravo-varonis",
+    "merger_name": "Thoma Bravo - Varonis",
+    "status": "Under assessment",
+    "merger_id": "MN-65042",
+    "effective_notification_datetime": "2026-11-04T12:00:00Z",
+    "original_notification_datetime": "2026-11-04T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-12-16T12:00:00Z",
+    "page_modified_datetime": "2026-11-05T12:11:45+11:00",
+    "consultation_response_due_date": "2026-11-12T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Proofpoint, Inc",
+        "identifier_type": null,
+        "identifier": "3540718"
+      },
+      {
+        "name": "Vail Merger Sub, Inc",
+        "identifier_type": null,
+        "identifier": "10795571"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Varonis Systems, Inc.",
+        "identifier_type": null,
+        "identifier": "3869749"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Thoma Bravo, UGP LLC",
+        "identifier_type": null,
+        "identifier": "7725781"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "5420",
+        "name": "Software Publishing"
+      },
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      },
+      {
+        "code": "6419",
+        "name": "Other Auxiliary Finance and Investment Services"
+      },
+      {
+        "code": "7000",
+        "name": "Computer System Design and Related Services"
+      }
+    ],
+    "merger_description": "Thoma Bravo, UGP LLC. (**Thoma Bravo**), through its portfolio company Proofpoint, Inc. (**Proofpoint**), proposes to acquire the entire issued share capital of Varonis Systems, Inc. (**Varonis**) (the **Acquisition**).\n\n  \n\nThoma Bravo is a US-based investment firm with a focus on software and technology-enabled services businesses. Thoma Bravo supplies cybersecurity solutions in Australia through its portfolio company Proofpoint. Proofpoint offers an integrated suite of cloud-based solutions to help companies prevent targeted cyber threats and data loss.\n\n  \n\nVaronis is a cybersecurity company providing software for identifying, classifying and protecting sensitive data stored across an organisation's on-premises and cloud systems. Varonis\u2019 core product is its data security platform, a unified software platform delivered primarily as a Software-as-a-Service (SaaS) product for enterprise environments. Varonis\u2019 data security platform\u2019s principal capability is in 'data security posture management', a security approach that discovers, classifies, and monitors where sensitive data lives across cloud and other environments, to enable risk identification and mitigation.",
+    "events": [
+      {
+        "date": "2026-11-05T12:00:00Z",
+        "title": "Phase 1 consultation",
+        "display_title": "Phase 1 consultation",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%3A%20Thoma%20Bravo%20-%20Varonis.docx",
+        "url_gh": "/mergers/MN-65042/Questionnaire - Thoma Bravo - Varonis.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-11-04T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/freudenberg-home-and-cleaning-solutions-%E2%80%93-nilfisk",
     "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
     "status": "Assessment completed",

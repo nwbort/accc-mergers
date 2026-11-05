@@ -673,6 +673,42 @@
         "completed_count": 1
       }
     },
+    "proofpoint-inc": {
+      "id": "proofpoint-inc",
+      "canonical_name": "Proofpoint, Inc",
+      "members": [
+        {
+          "name": "Proofpoint, Inc",
+          "identifier": "3540718",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65042",
+            "merger_name": "Thoma Bravo - Varonis",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-04T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "satterley-elimbah-pty-ltd": {
       "id": "satterley-elimbah-pty-ltd",
       "canonical_name": "Satterley Elimbah Pty Ltd",

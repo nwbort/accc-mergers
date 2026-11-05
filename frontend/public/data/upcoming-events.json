@@ -142,6 +142,16 @@
       "effective_notification_datetime": "2026-05-12T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-11-12T12:00:00Z",
+      "merger_id": "MN-65042",
+      "merger_name": "Thoma Bravo - Varonis",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-04T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-11-12T12:00:00Z",
@@ -534,6 +544,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-12-16T12:00:00Z",
+      "merger_id": "MN-65042",
+      "merger_name": "Thoma Bravo - Varonis",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-04T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-12-22T12:00:00Z",
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A - Subsea7 S.A.",
@@ -553,6 +573,6 @@
       "tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026"
     }
   ],
-  "count": 55,
+  "count": 57,
   "days_ahead": 60
 }
