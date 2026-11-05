@@ -28,6 +28,10 @@ const PENDING_WAIVERS_LABEL = 'Waivers under assessment (estimated)';
 // tint so it separates from the notifications fill beneath it.
 const OPEN_WAIVERS_FILL = 'rgba(107, 143, 127, 0.4)';
 
+// Internal label of the caseload chart's line-only waiver outline, which the
+// legend and tooltip both leave out.
+const CASELOAD_WAIVER_OUTLINE = 'Open waivers outline';
+
 // Diagonal teal stripes for the estimated segment, so it reads as a
 // projection on top of the counted waivers rather than as more of them.
 // Built once; falls back to a flat tint where there is no 2D canvas (jsdom).
@@ -215,7 +219,16 @@ function Analysis() {
 
     // Monotone rather than a free tension: a stacked band drawn with
     // overshooting curves can dip below the series it sits on.
-    const waiverPoint = { pointRadius: 0, pointHoverRadius: 4, cubicInterpolationMode: 'monotone', borderWidth: 1.5 };
+    const waiverPoint = { pointRadius: 0, cubicInterpolationMode: 'monotone', borderWidth: 1.5 };
+
+    // Where a month end carries an estimate, the counted and estimated waivers
+    // read as one region: the counted band loses its top line there, and the
+    // outline (and hover marker) moves to the top of the estimate. Where both
+    // ends of a segment are fully counted, the estimate draws nothing at all —
+    // not even its zero-height fill, which the curve interpolation would
+    // otherwise open into a sliver between two different curves.
+    const isEstimated = (i) => (caseloadPending[i] ?? 0) > 0;
+    const segmentEstimated = (ctx) => isEstimated(ctx.p0DataIndex) || isEstimated(ctx.p1DataIndex);
 
     caseloadData = {
       labels: caseload.labels.map(formatMonthLabel),
@@ -244,6 +257,10 @@ function Analysis() {
           pointBackgroundColor: COLORS.teal,
           fill: '-1',
           ...waiverPoint,
+          pointHoverRadius: caseloadWaivers.map((_, i) => (isEstimated(i) ? 0 : 4)),
+          // Outlined by its own line-only twin below instead: styling this
+          // band's segments would split its fill too, leaving a seam.
+          ...(hasCaseloadPending ? { borderWidth: 0 } : {}),
         }] : []),
         ...(hasCaseloadPending ? [{
           label: PENDING_WAIVERS_LABEL,
@@ -254,6 +271,25 @@ function Analysis() {
           pointBackgroundColor: COLORS.teal,
           fill: '-1',
           ...waiverPoint,
+          pointHoverRadius: caseloadPending.map((_, i) => (isEstimated(i) ? 4 : 0)),
+          segment: {
+            borderColor: (ctx) => (segmentEstimated(ctx) ? undefined : 'transparent'),
+            backgroundColor: (ctx) => (segmentEstimated(ctx) ? undefined : 'transparent'),
+          },
+        }, {
+          // The counted band's top line, drawn only where it is the top of
+          // the waivers. Unfilled, so its segment styling splits nothing.
+          // A stack of its own, so it carries its running total itself.
+          label: CASELOAD_WAIVER_OUTLINE,
+          data: caseloadWaivers.map((n, i) => n + caseload.notifications[i]),
+          stack: 'outline',
+          borderColor: COLORS.teal,
+          fill: false,
+          ...waiverPoint,
+          pointHoverRadius: 0,
+          segment: {
+            borderColor: (ctx) => (segmentEstimated(ctx) ? 'transparent' : undefined),
+          },
         }] : []),
       ],
     };
@@ -272,6 +308,7 @@ function Analysis() {
           // Plain boxes, not point styles, so each swatch is the band's own
           // fill and the estimate's stripes show in the key.
           labels: {
+            filter: (item) => item.text !== CASELOAD_WAIVER_OUTLINE,
             boxWidth: 14,
             boxHeight: 14,
             padding: 16,
@@ -279,6 +316,18 @@ function Analysis() {
           },
         },
         tooltip: {
+          // The chart keeps counted and estimated waivers visually apart, but
+          // the tooltip gives one waiver figure: the estimate line is folded
+          // into the counted one, and a month with no waivers open says
+          // nothing about them.
+          filter: (item) => {
+            if (item.dataset.label === PENDING_WAIVERS_LABEL) return false;
+            if (item.dataset.label === CASELOAD_WAIVER_OUTLINE) return false;
+            if (item.dataset.label === 'Open waivers') {
+              return item.raw + (caseloadPending[item.dataIndex] ?? 0) > 0;
+            }
+            return true;
+          },
           callbacks: {
             title: (items) => {
               const i = items[0].dataIndex;
@@ -289,13 +338,14 @@ function Analysis() {
             // The stacked y is a running total, so read the dataset's own
             // value rather than parsed.y.
             label: (item) => {
-              const count = item.raw;
-              if (item.dataset.label === PENDING_WAIVERS_LABEL) {
-                return `~${count} waiver${count === 1 ? '' : 's'} under assessment (estimated)`;
-              }
               if (item.dataset.label === 'Open waivers') {
-                return `${count} waiver${count === 1 ? '' : 's'} still open (decided since)`;
+                const estimated = isEstimated(item.dataIndex);
+                const total = item.raw + (caseloadPending[item.dataIndex] ?? 0);
+                return estimated
+                  ? `~${total} waiver${total === 1 ? '' : 's'} still open (estimated)`
+                  : `${total} waiver${total === 1 ? '' : 's'} still open`;
               }
+              const count = item.raw;
               return `${count} notification${count === 1 ? '' : 's'} still open`;
             },
           },
