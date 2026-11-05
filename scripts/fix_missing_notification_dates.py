@@ -29,6 +29,19 @@ Any candidate already recorded there keeps that entry verbatim, so:
 * a date a human corrected on the branch, but hasn't merged yet, is preserved
   rather than overwritten on the next run.
 
+Materially incomplete notifications are not candidates
+-------------------------------------------------------
+A notification the ACCC holds materially incomplete under s 51ABZ (MN-30003,
+MN-55046) also has no effective notification date, but not because the page
+forgot to publish one: the ACCC has decided it doesn't have one yet, and a new
+effective date will be published once the parties supply what is missing.
+Freezing a guessed date for it would be wrong twice over: it would invent a
+notification date the ACCC has expressly withheld, and it would clear the
+matter's "materially incomplete" flag on the site. Such matters are skipped
+(``is_materially_incomplete``, the same test enrichment uses for the flag),
+and picked up again only if they somehow end up with no date once that flag
+no longer holds.
+
 Usage
 -----
   python -m scripts.fix_missing_notification_dates [--summary]
@@ -46,6 +59,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from scripts.constants.site import REPO as _REPO, mergers_fyi_url
+from scripts.generate.static_data.enrichment import is_materially_incomplete
 from scripts.merger_filters import load_mergers
 
 SCRIPT_DIR = Path(__file__).parent
@@ -94,7 +108,8 @@ def find_candidates(
     previous: dict | None = None,
 ) -> list[dict]:
     """Return one candidate per merger with no notification date that isn't
-    already recorded in known_dates.
+    already recorded in known_dates, skipping notifications the ACCC holds
+    materially incomplete (see the module docstring).
 
     ``previous`` is this detector's own output from its last run (see the module
     docstring). A candidate already recorded there carries that entry forward
@@ -107,6 +122,8 @@ def find_candidates(
         if not merger_id or merger_id in known_dates:
             continue
         if merger.get("effective_notification_datetime"):
+            continue
+        if is_materially_incomplete(merger):
             continue
         carried = _carried_entry(previous, merger_id)
         candidates.append({

@@ -1076,8 +1076,9 @@ jobs:
           commit-message: "fix: default missing notification date(s) to {date}"
           pr-title: "fix: default missing notification date(s) ({date})"
           close-comment: >-
-            All flagged mergers now have a notification date as of {date}.
-            Closing automatically.
+            No merger needs a default notification date as of {date}
+            (each flagged one now has a date, or is a notification the ACCC
+            holds materially incomplete). Closing automatically.
           github-token: ${{ github.token }}
           ntfy-topic: ${{ secrets.NTFY_TOPIC }}
           ntfy-token: ${{ secrets.NTFY_TOKEN }}
