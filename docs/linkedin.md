@@ -9,7 +9,8 @@ manage.
 
 The milestones are the same ones [`post_bluesky`](atproto.md#3-bluesky-posts)
 posts to Bluesky, chosen by the same `milestones()` function, so the two
-accounts always announce the same things: a matter **arriving**, being
+accounts always announce the same things: a matter **arriving** (or held
+**materially incomplete**, then its assessment **recommencing**), being
 **referred to phase 2**, being **decided**, a **public benefit** application
 and its determination, a **ceased** assessment, and a **Tribunal** or
 **Federal Court** review.
@@ -170,7 +171,7 @@ own post box with the post already written. Nothing goes out until you press
 - The preview's image is a **generic card for the matter's latest milestone**
   ("Cleared by the ACCC" in green, "Referred to Phase 2" in amber, and so on),
   not a per-matter picture; the preview prints the matter's name under it
-  anyway. There are 15 of them, one per headline the posters
+  anyway. There are 16 of them, one per headline the posters
   use (grey "Notification materially incomplete" only while a matter is
   waiting on an effective notification date), committed in `frontend/public/og/` and chosen per matter by
   `scripts/generate/og_cards.py`, which writes the choice into each
