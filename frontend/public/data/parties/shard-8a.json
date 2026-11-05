@@ -379,15 +379,18 @@
       "canonical_name": "Sims Limited",
       "members": [
         {
+          "name": "SIMS GROUP AUSTRALIA HOLDINGS LIMITED",
+          "identifier": "37 008 634 526",
+          "identifier_type": "ABN"
+        },
+        {
           "name": "SIMS LIMITED",
           "identifier": "69 114 838 630",
           "identifier_type": "ABN"
         }
       ],
       "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
+        "acquirer": [
           {
             "merger_id": "WA-40050",
             "merger_name": "Sims - business assets of Base Metal Recyclers, VIC",
@@ -399,7 +402,10 @@
             "phase": "Waiver",
             "notification_date": "2026-10-13T12:00:00Z",
             "determination_date": "2026-11-05T12:00:00Z"
-          },
+          }
+        ],
+        "target": [],
+        "other": [
           {
             "merger_id": "WA-80040",
             "merger_name": "Sims \u2013 business assets of OneStop Metal Recycling in TAS",
