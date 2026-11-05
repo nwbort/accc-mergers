@@ -1039,13 +1039,39 @@ class TestOpenCaseload:
         assert payload['labels'] == ['2026-01', '2026-02']
         assert payload['notifications'] == [1, 1]
 
-    def test_excludes_waivers(self):
-        # Every waiver on the register is already determined when published, so
-        # a waiver stock line would be an artefact of publication, not caseload.
-        payload = analysis.open_caseload(_enriched_fixture())
-        by_month = dict(zip(payload['labels'], payload['notifications']))
-        assert 'waivers' not in payload
-        assert all(count >= 0 for count in by_month.values())
+    def test_counts_decided_waivers_separately_from_notifications(self):
+        # A waiver open across the January month end, decided in February:
+        # counted in hindsight in its own series, never as a notification.
+        waiver = {
+            **self._notification('WA-1', '2026-01-20T12:00:00Z', closed='2026-02-06T12:00:00Z'),
+            'merger_id': 'WA-1',
+            'is_waiver': True,
+        }
+        mergers = [self._notification('MN-1', '2026-01-10T12:00:00Z'), waiver]
+        payload = analysis.open_caseload(mergers, as_at=date(2026, 2, 28))
+
+        assert payload['notifications'] == [1, 1]
+        assert payload['waivers'] == [1, 0]
+        assert len(payload['waivers_pending_estimate']) == len(payload['labels'])
+
+    def test_pending_waiver_estimate_accumulates_to_the_nowcast_total(self):
+        # The waivers still undecided at as_at were open at every earlier month
+        # end they had been filed by, so the final point carries the whole
+        # nowcast and earlier points only what had been filed by then.
+        as_at = date(2026, 6, 12)
+        waivers = TestPendingWaiversEstimate()._steady_stream(as_at)
+        mergers = [self._notification('MN-1', '2026-03-02T12:00:00Z'), *waivers]
+
+        payload = analysis.open_caseload(mergers, as_at=as_at)
+        by_month = dict(zip(payload['labels'], payload['waivers_pending_estimate']))
+        per_filing_month = analysis.pending_waivers_estimate(mergers, as_at=as_at)
+
+        assert by_month['2026-06'] == sum(per_filing_month.values()) == 10
+        assert by_month['2026-05'] == per_filing_month['2026-05']
+        assert by_month['2026-03'] == 0
+        # The counted series falls away at the present edge, which is exactly
+        # what the estimate is there to fill.
+        assert dict(zip(payload['labels'], payload['waivers']))['2026-06'] == 0
 
     def test_suspended_matter_falls_back_to_its_original_filing_date(self):
         # A suspended matter has no effective notification date, but it is still
@@ -1073,7 +1099,10 @@ class TestOpenCaseload:
 
     def test_empty_input(self):
         payload = analysis.open_caseload([], as_at=date(2026, 2, 28))
-        assert payload == {'labels': [], 'notifications': [], 'as_at': '2026-02-28'}
+        assert payload == {
+            'labels': [], 'notifications': [], 'waivers': [],
+            'waivers_pending_estimate': [], 'as_at': '2026-02-28',
+        }
 
 
 class TestPendingWaiversEstimate:

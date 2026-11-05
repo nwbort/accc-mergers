@@ -24,6 +24,10 @@ const PAGE_META = STATIC_PAGE_META['/analysis'];
 
 const PENDING_WAIVERS_LABEL = 'Waivers under assessment (estimated)';
 
+// The open-waiver band on the caseload chart, stronger than the shared light
+// tint so it separates from the notifications fill beneath it.
+const OPEN_WAIVERS_FILL = 'rgba(107, 143, 127, 0.4)';
+
 // Diagonal teal stripes for the estimated segment, so it reads as a
 // projection on top of the counted waivers rather than as more of them.
 // Built once; falls back to a flat tint where there is no 2D canvas (jsdom).
@@ -174,6 +178,9 @@ function Analysis() {
   let caseloadDeltaFrom = null;
   let caseloadAsAtLabel = null;
   let caseloadPartialLast = false;
+  let hasCaseloadWaivers = false;
+  let waiversOpenLatest = null;
+  let waiversPendingLatest = 0;
 
   if (hasCaseload) {
     const lastIndex = caseload.labels.length - 1;
@@ -192,6 +199,24 @@ function Analysis() {
       caseloadDeltaFrom = formatMonthLabel(caseload.labels[compareIndex]);
     }
 
+    // Waivers stack on top of the notifications: those counted in hindsight
+    // (decided since, so on the register), then the generator's estimate of
+    // those still being assessed, which the register can't show yet. Guarded
+    // on presence: a deployed payload can predate both series.
+    const caseloadWaivers = caseload.waivers;
+    const caseloadPending = caseload.waivers_pending_estimate
+      ?? caseload.labels.map(() => 0);
+    hasCaseloadWaivers = Array.isArray(caseloadWaivers) && caseloadWaivers.length === caseload.labels.length;
+    const hasCaseloadPending = hasCaseloadWaivers && caseloadPending.some((n) => n > 0);
+    if (hasCaseloadWaivers) {
+      waiversPendingLatest = caseloadPending[lastIndex] ?? 0;
+      waiversOpenLatest = caseloadWaivers[lastIndex] + waiversPendingLatest;
+    }
+
+    // Monotone rather than a free tension: a stacked band drawn with
+    // overshooting curves can dip below the series it sits on.
+    const waiverPoint = { pointRadius: 0, pointHoverRadius: 4, cubicInterpolationMode: 'monotone', borderWidth: 1.5 };
+
     caseloadData = {
       labels: caseload.labels.map(formatMonthLabel),
       datasets: [
@@ -200,8 +225,8 @@ function Analysis() {
           data: caseload.notifications,
           borderColor: COLORS.primary,
           backgroundColor: COLORS.primaryLight,
-          fill: true,
-          tension: 0.3,
+          fill: 'origin',
+          cubicInterpolationMode: 'monotone',
           borderWidth: 2,
           pointRadius: caseload.notifications.map((_, i) =>
             i === lastIndex && caseloadPartialLast ? 5 : 3),
@@ -211,6 +236,25 @@ function Analysis() {
           pointBorderWidth: 2,
           pointHoverRadius: 6,
         },
+        ...(hasCaseloadWaivers ? [{
+          label: 'Open waivers',
+          data: caseloadWaivers,
+          borderColor: COLORS.teal,
+          backgroundColor: OPEN_WAIVERS_FILL,
+          pointBackgroundColor: COLORS.teal,
+          fill: '-1',
+          ...waiverPoint,
+        }] : []),
+        ...(hasCaseloadPending ? [{
+          label: PENDING_WAIVERS_LABEL,
+          data: caseloadPending,
+          borderColor: COLORS.teal,
+          borderDash: [4, 3],
+          backgroundColor: pendingWaiversFill(),
+          pointBackgroundColor: COLORS.teal,
+          fill: '-1',
+          ...waiverPoint,
+        }] : []),
       ],
     };
 
@@ -222,7 +266,18 @@ function Analysis() {
       // with the pointer on a point.
       interaction: { mode: 'index', intersect: false },
       plugins: {
-        legend: { display: false },
+        legend: {
+          display: hasCaseloadWaivers,
+          position: 'bottom',
+          // Plain boxes, not point styles, so each swatch is the band's own
+          // fill and the estimate's stripes show in the key.
+          labels: {
+            boxWidth: 14,
+            boxHeight: 14,
+            padding: 16,
+            font: { size: 12, family: 'Inter, sans-serif' },
+          },
+        },
         tooltip: {
           callbacks: {
             title: (items) => {
@@ -231,8 +286,16 @@ function Analysis() {
                 ? `As at ${caseloadAsAtLabel}`
                 : `End of ${items[0].label}`;
             },
+            // The stacked y is a running total, so read the dataset's own
+            // value rather than parsed.y.
             label: (item) => {
-              const count = item.parsed.y;
+              const count = item.raw;
+              if (item.dataset.label === PENDING_WAIVERS_LABEL) {
+                return `~${count} waiver${count === 1 ? '' : 's'} under assessment (estimated)`;
+              }
+              if (item.dataset.label === 'Open waivers') {
+                return `${count} waiver${count === 1 ? '' : 's'} still open (decided since)`;
+              }
               return `${count} notification${count === 1 ? '' : 's'} still open`;
             },
           },
@@ -244,12 +307,13 @@ function Analysis() {
           ticks: { font: { size: 11 } },
         },
         y: {
+          stacked: true,
           beginAtZero: true,
           ticks: { precision: 0, font: { size: 11 } },
           grid: { color: 'rgba(0,0,0,0.04)' },
           title: {
             display: true,
-            text: 'Open notifications',
+            text: hasCaseloadWaivers ? 'Open matters' : 'Open notifications',
             font: { size: 12, family: 'Inter, sans-serif' },
             color: '#6b7280',
           },
@@ -482,16 +546,18 @@ function Analysis() {
             <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
                 <h2 id="chart-caseload-title" className="text-base font-semibold text-gray-900">
-                  Open caseload &ndash; notifications
+                  {hasCaseloadWaivers ? 'Open caseload' : <>Open caseload &ndash; notifications</>}
                 </h2>
                 <p className="text-sm text-gray-500 mt-0.5">
-                  Notifications still before the ACCC at each month end
+                  {hasCaseloadWaivers
+                    ? 'Notifications and waiver applications still before the ACCC at each month end'
+                    : 'Notifications still before the ACCC at each month end'}
                 </p>
               </div>
               <div className="p-6">
                 <div className="flex flex-wrap gap-x-10 gap-y-3 mb-5">
                   <div>
-                    <p className={SECTION_HEADING}>Open now</p>
+                    <p className={SECTION_HEADING}>{hasCaseloadWaivers ? 'Notifications open' : 'Open now'}</p>
                     <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
                       {caseloadLatest}
                     </p>
@@ -508,6 +574,17 @@ function Analysis() {
                       <p className="text-sm text-gray-500 mt-0.5">since {caseloadDeltaFrom}</p>
                     </div>
                   )}
+                  {hasCaseloadWaivers && (
+                    <div>
+                      <p className={SECTION_HEADING}>Waivers open</p>
+                      <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                        {waiversPendingLatest > 0 ? '~' : ''}{waiversOpenLatest}
+                      </p>
+                      {waiversPendingLatest > 0 && (
+                        <p className="text-sm text-gray-500 mt-0.5">estimated</p>
+                      )}
+                    </div>
+                  )}
                 </div>
                 <div
                   className="h-72"
@@ -519,18 +596,38 @@ function Analysis() {
                 </div>
                 <div className="sr-only">
                   <table id="chart-caseload-summary">
-                    <caption>Open notifications at each month end</caption>
-                    <thead><tr><th>Month</th><th>Open notifications</th></tr></thead>
+                    <caption>
+                      {hasCaseloadWaivers
+                        ? 'Open notifications and waiver applications at each month end'
+                        : 'Open notifications at each month end'}
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th>Month</th>
+                        <th>Open notifications</th>
+                        {hasCaseloadWaivers && <th>Open waivers</th>}
+                        {hasCaseloadWaivers && <th>{PENDING_WAIVERS_LABEL}</th>}
+                      </tr>
+                    </thead>
                     <tbody>
                       {caseload.labels.map((month, i) => (
                         <tr key={month}>
                           <td>{formatMonthLabel(month)}</td>
                           <td>{caseload.notifications[i]}</td>
+                          {hasCaseloadWaivers && <td>{caseload.waivers[i]}</td>}
+                          {hasCaseloadWaivers && (
+                            <td>{caseload.waivers_pending_estimate?.[i] ? `~${caseload.waivers_pending_estimate[i]}` : 0}</td>
+                          )}
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
+                {hasCaseloadWaivers && (
+                  <p className="text-xs text-gray-500 mt-3">
+                    Waivers only appear on the ACCC's register once decided, so the waivers open at recent month ends are mostly ones still being assessed. Those are estimated from recent filing rates and decision times, and shown striped.
+                  </p>
+                )}
               </div>
             </div>
           </section>

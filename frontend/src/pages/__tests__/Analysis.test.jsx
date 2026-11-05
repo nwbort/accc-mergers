@@ -242,6 +242,35 @@ describe('Analysis open caseload', () => {
     expect(within(change).getByText('since Jun 2026')).toBeInTheDocument();
   });
 
+  it('stacks counted and estimated open waivers on the notifications', async () => {
+    mockAnalysis({
+      ...analysisFixture,
+      open_caseload: {
+        ...caseloadFixture.open_caseload,
+        waivers: [34, 30, 4],
+        waivers_pending_estimate: [0, 12, 40],
+      },
+    });
+    renderAnalysis();
+
+    await waitFor(() => {
+      expect(screen.getByRole('heading', { name: 'Open caseload' })).toBeInTheDocument();
+    });
+
+    const notificationsOpen = screen.getByText('Notifications open').parentElement;
+    expect(within(notificationsOpen).getByText('52')).toBeInTheDocument();
+
+    // The latest waiver figure is mostly estimate, so it reads as approximate.
+    const waiversOpen = screen.getByText('Waivers open').parentElement;
+    expect(within(waiversOpen).getByText('~44')).toBeInTheDocument();
+    expect(within(waiversOpen).getByText('estimated')).toBeInTheDocument();
+
+    const table = screen.getByRole('table', { name: 'Open notifications and waiver applications at each month end' });
+    expect(within(table).getByRole('columnheader', { name: 'Open waivers' })).toBeInTheDocument();
+    expect(within(table).getByRole('columnheader', { name: 'Waivers under assessment (estimated)' })).toBeInTheDocument();
+    expect(within(table).getByText('~40')).toBeInTheDocument();
+  });
+
   it('renders the rest of the page when the payload predates the caseload series', async () => {
     // A deployed analysis.json generated before open_caseload existed.
     mockAnalysis(analysisFixture);

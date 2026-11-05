@@ -481,12 +481,19 @@ def open_caseload(mergers: list, as_at: date | None = None) -> dict:
     answer different questions, and only the stock shows whether determinations
     are keeping pace with filings.
 
-    Waivers are deliberately excluded. The register only publishes a waiver
-    application once it has been determined — every waiver it carries is
-    "Assessment completed" — so pending waivers are invisible to us and a
-    waiver stock line would collapse to zero at the present edge, reporting an
-    artefact of what the ACCC publishes as though it were a real emptying of
-    the queue.
+    Waivers are published as two series that a chart stacks on top of the
+    notifications. The register only publishes a waiver application once it
+    has been determined, so ``waivers`` (decided waivers that were still open
+    at the month end, counted in hindsight) collapses towards zero at the
+    present edge: the waivers open now are exactly the ones not yet on the
+    register. ``waivers_pending_estimate`` fills that gap from the same
+    nowcast as the monthly-volume chart (:func:`pending_waivers_estimate`):
+    a waiver filed on or before a month end and still undecided at ``as_at``
+    was necessarily open at that month end too, so each point is the
+    estimate summed over filing days up to its cutoff. It is published
+    separately so it is never mistaken for a count, and only reaches back as
+    far as the nowcast's filing window — older month ends are close enough to
+    complete that the counted series stands on its own.
 
     The final point is cut off at ``as_at`` rather than the end of the current
     month, so the series ends at a real observation instead of counting a
@@ -503,13 +510,27 @@ def open_caseload(mergers: list, as_at: date | None = None) -> dict:
             spans.append(span)
 
     if not spans:
-        return {"labels": [], "notifications": [], "as_at": as_at.isoformat()}
+        return {
+            "labels": [],
+            "notifications": [],
+            "waivers": [],
+            "waivers_pending_estimate": [],
+            "as_at": as_at.isoformat(),
+        }
+
+    waiver_spans = [
+        span for span in (_caseload_span(m) for m in filter_waivers(mergers))
+        if span is not None
+    ]
+    pending_by_day = _pending_waivers_by_day(mergers, as_at)
 
     first = min(opened for opened, _ in spans)
     year, month = int(first[:4]), int(first[5:7])
 
     labels: list[str] = []
     notifications: list[int] = []
+    waivers: list[int] = []
+    waivers_pending: list[int] = []
 
     while (year, month) <= (as_at.year, as_at.month):
         month_end = date(year, month, calendar.monthrange(year, month)[1])
@@ -523,12 +544,23 @@ def open_caseload(mergers: list, as_at: date | None = None) -> dict:
             1 for opened, closed in spans
             if opened <= cutoff and (closed is None or closed > cutoff)
         ))
+        waivers.append(sum(
+            1 for opened, closed in waiver_spans
+            if opened <= cutoff and (closed is None or closed > cutoff)
+        ))
+        # Summed unrounded and rounded once, so the point doesn't drift from
+        # the per-month figures by accumulated rounding.
+        waivers_pending.append(round(sum(
+            n for filed, n in pending_by_day.items() if filed <= cutoff
+        )))
 
         year, month = (year + 1, 1) if month == 12 else (year, month + 1)
 
     return {
         "labels": labels,
         "notifications": notifications,
+        "waivers": waivers,
+        "waivers_pending_estimate": waivers_pending,
         "as_at": as_at.isoformat(),
     }
 
@@ -718,7 +750,7 @@ def current_status(mergers: list, as_at: date | None = None) -> dict:
     30 days" count would be missing every application still in front of the
     ACCC — understated by roughly the length of a waiver review, and worst at
     exactly the recent edge the page is about. (This is the same publication
-    artefact that keeps waivers out of :func:`open_caseload`.)
+    artefact that makes :func:`open_caseload` estimate its recent waivers.)
 
     ``as_at`` defaults to today in Sydney (the ACCC's own timezone) rather than
     the build server's UTC date, for the same reason :func:`open_caseload`
@@ -924,6 +956,19 @@ def pending_waivers_estimate(mergers: list, as_at: date | None = None) -> dict[s
     Returns ``{month: estimate}`` for months with a non-zero rounded estimate;
     empty when there is no recent decision to learn durations from.
     """
+    by_month: dict[str, float] = defaultdict(float)
+    for filed, n in _pending_waivers_by_day(mergers, as_at).items():
+        by_month[filed[:7]] += n
+    return {month: round(n) for month, n in sorted(by_month.items()) if round(n)}
+
+
+def _pending_waivers_by_day(mergers: list, as_at: date | None = None) -> dict[str, float]:
+    """The unrounded nowcast behind :func:`pending_waivers_estimate`, per filing day.
+
+    Kept at day resolution so :func:`open_caseload` can sum it up to any
+    cutoff, not just whole filing months. Empty when there is no recent
+    decision to learn durations from.
+    """
     as_at = as_at or datetime.now(_SYDNEY_TZ).date()
     as_at_iso = as_at.isoformat()
     waivers = filter_waivers(mergers)
@@ -959,10 +1004,7 @@ def pending_waivers_estimate(mergers: list, as_at: date | None = None) -> dict[s
     )
     rate = visible / exposure
 
-    by_month: dict[str, float] = defaultdict(float)
-    for filed, share in shares.items():
-        by_month[filed[:7]] += rate * (1 - share)
-    return {month: round(n) for month, n in sorted(by_month.items()) if round(n)}
+    return {filed: rate * (1 - share) for filed, share in shares.items()}
 
 
 def referrals_by_quarter(notification_mergers: list) -> list[dict]:
