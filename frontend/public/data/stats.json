@@ -1,10 +1,10 @@
 {
-  "total_mergers": 319,
+  "total_mergers": 320,
   "total_waivers": 503,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 272,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-70049",
+      "merger_name": "Total Ventilation Hygiene - Alphacool",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-05T12:00:00Z",
+      "page_modified_datetime": "2026-11-06T10:54:38+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-55046",
       "merger_name": "USCO \u2013 ITM",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-28T12:00:00Z",
       "page_modified_datetime": "2026-10-29T10:01:25+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-45028",
-      "merger_name": "Endeavour Group \u2013 retail liquor site in Penrith, NSW",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-28T12:00:00Z",
-      "page_modified_datetime": "2026-10-29T09:27:37+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

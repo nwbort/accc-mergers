@@ -2,6 +2,42 @@
   "shard": 134,
   "shard_count": 256,
   "parties": {
+    "alphacool-cairns-pty-ltd": {
+      "id": "alphacool-cairns-pty-ltd",
+      "canonical_name": "Alphacool Cairns Pty Ltd",
+      "members": [
+        {
+          "name": "ALPHACOOL CAIRNS PTY LTD",
+          "identifier": "28 641 226 682",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70049",
+            "merger_name": "Total Ventilation Hygiene - Alphacool",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-05T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "aon-holdings-australia-pty-limited": {
       "id": "aon-holdings-australia-pty-limited",
       "canonical_name": "Aon Holdings Australia Pty Limited",
