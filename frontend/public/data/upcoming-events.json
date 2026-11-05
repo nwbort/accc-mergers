@@ -135,6 +135,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-11-12T12:00:00Z",
+      "merger_id": "MN-55024",
+      "merger_name": "PSP Investments - AAA Egg Company",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-09-10T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-11-12T12:00:00Z",
       "merger_id": "MN-55046",
       "merger_name": "USCO \u2013 ITM",
       "status": "Under assessment",
@@ -160,16 +170,6 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-09-30T12:00:00Z"
-    },
-    {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
-      "date": "2026-11-13T12:00:00Z",
-      "merger_id": "MN-55024",
-      "merger_name": "PSP Investments - AAA Egg Company",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-09-10T12:00:00Z"
     },
     {
       "type": "determination_due",
@@ -385,6 +385,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-12-04T12:00:00Z",
+      "merger_id": "MN-55024",
+      "merger_name": "PSP Investments - AAA Egg Company",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-09-10T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-12-04T12:00:00Z",
       "merger_id": "MN-55042",
       "merger_name": "AUB \u2013 One Underwriting",
       "status": "Under assessment",
@@ -573,6 +583,6 @@
       "tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026"
     }
   ],
-  "count": 57,
+  "count": 58,
   "days_ahead": 60
 }

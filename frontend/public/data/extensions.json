@@ -3,8 +3,8 @@
     "notifications_total": 319,
     "matters_extended": 24,
     "share_extended_pct": 7.5,
-    "extension_events_total": 38,
-    "total_extension_bd": 422,
+    "extension_events_total": 39,
+    "total_extension_bd": 437,
     "median_matter_extension_bd": 14,
     "longest_single_bd": 30,
     "phase_2_total": 9,
@@ -22,8 +22,8 @@
     },
     {
       "category": "Remedy under consideration",
-      "events": 6,
-      "business_days": 84
+      "events": 7,
+      "business_days": 99
     },
     {
       "category": "ACCC information request",
@@ -70,7 +70,7 @@
     },
     {
       "month": "2026-11",
-      "count": 2
+      "count": 3
     }
   ],
   "matters": [
@@ -179,6 +179,34 @@
         },
         {
           "date": "2026-10-29T12:00:00Z",
+          "business_days": 15,
+          "reason_category": "Remedy under consideration",
+          "reason_detail": "remedy offered by parties",
+          "title": "Timeline extended by 15 business days \u2013 following remedy offered by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55024",
+      "merger_name": "PSP Investments - AAA Egg Company",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 30,
+      "extension_count": 2,
+      "extensions": [
+        {
+          "date": "2026-10-19T12:00:00Z",
+          "business_days": 15,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 15 business days \u2013 following request by parties"
+        },
+        {
+          "date": "2026-11-04T12:00:00Z",
           "business_days": 15,
           "reason_category": "Remedy under consideration",
           "reason_detail": "remedy offered by parties",
@@ -323,27 +351,6 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 5 business days - following request by parties"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-55024",
-      "merger_name": "PSP Investments - AAA Egg Company",
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "notification_date": "2026-09-10T12:00:00Z",
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
-      "escalated_to_phase_2": false,
-      "total_extension_bd": 15,
-      "extension_count": 1,
-      "extensions": [
-        {
-          "date": "2026-10-19T12:00:00Z",
-          "business_days": 15,
-          "reason_category": "Requested by the merger parties",
-          "reason_detail": "request by parties",
-          "title": "Timeline extended by 15 business days \u2013 following request by parties"
         }
       ]
     },
