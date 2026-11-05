@@ -4067,6 +4067,90 @@ class TestScrapeEventsBlankRow:
         assert events[0]['title'] == 'AbbVie - Apogee - Phase 1 determination'
 
 
+REMEDY_TITLE = 'PSP Investments - AAA Egg Company - remedy offer - 4 November 2026'
+REMEDY_URL = ('https://www.accc.gov.au/system/files/moderated_files/'
+              'PSP%20Investments%20-%20AAA%20Egg%20Company%20-%20remedy%20offer'
+              '%20-%204%20November%202026{suffix}.pdf')
+
+
+def _repeated_row_table(second_title=REMEDY_TITLE, second_date='2026-11-04T12:00:00Z'):
+    def row(title, date, suffix):
+        return f'''
+      <tr>
+        <td class="acccgov-timeline__date"><time datetime="{date}">4 Nov 2026</time></td>
+        <td>{title}</td>
+        <td class="acccgov-timeline__file-link">
+          <a href="{REMEDY_URL.format(suffix=suffix)}">PDF</a>
+        </td>
+      </tr>'''
+    return f'''
+<div class="table-responsive"><table><tbody>
+{row(REMEDY_TITLE, '2026-11-04T12:00:00Z', '')}
+      <tr>
+        <td class="acccgov-timeline__date"><time datetime="2026-11-04T12:00:00Z">4 Nov 2026</time></td>
+        <td>Timeline extended by 15 business days – following remedy offered by parties</td>
+      </tr>
+{row(second_title, second_date, '_0')}
+</tbody></table></div>
+'''
+
+
+class TestScrapeEventsRepeatedRow:
+    """MN-55024's page listed its remedy offer twice: same title and date, the
+    second under a "_0" suffix, byte-identical. Scraping both made
+    detect_duplicates remove one and the next scrape add it back, every run."""
+
+    def _scrape(self, html, monkeypatch):
+        downloaded = []
+        monkeypatch.setattr(extract_mergers, 'download_attachment',
+                            lambda _mid, url, *a, **k: downloaded.append(url))
+        return _scrape_events(_soup(html), 'MN-55024'), downloaded
+
+    def test_the_repeated_row_is_kept_once(self, monkeypatch):
+        events, downloaded = self._scrape(_repeated_row_table(), monkeypatch)
+        remedy = [e for e in events if e['title'] == REMEDY_TITLE]
+        assert len(remedy) == 1
+        assert remedy[0]['url'] == REMEDY_URL.format(suffix='')
+        # The repeat is not even downloaded.
+        assert downloaded == [REMEDY_URL.format(suffix='')]
+        assert len(events) == 2
+
+    def test_a_different_title_is_kept(self, monkeypatch):
+        events, _ = self._scrape(
+            _repeated_row_table(second_title='PSP Investments - AAA Egg Company - '
+                                             'remedy offer - confidential annexure'),
+            monkeypatch)
+        assert len(events) == 3
+
+    def test_a_different_date_is_kept(self, monkeypatch):
+        events, _ = self._scrape(
+            _repeated_row_table(second_date='2026-11-20T12:00:00Z'), monkeypatch)
+        assert len(events) == 3
+
+    def test_stored_duplicate_is_retired_on_the_next_merge(self, monkeypatch):
+        # mergers.json already holds both copies; once the scrape yields one,
+        # the "_0" copy must leave the timeline (into previous_versions, so
+        # prune_superseded can retire its identical file), not linger 'removed'.
+        scraped, _ = self._scrape(_repeated_row_table(), monkeypatch)
+
+        def stored(suffix):
+            return {
+                'date': '2026-11-04T12:00:00Z', 'title': REMEDY_TITLE,
+                'display_title': REMEDY_TITLE, 'status': 'live',
+                'url': REMEDY_URL.format(suffix=suffix),
+                'url_gh': f'/mergers/MN-55024/{REMEDY_TITLE}{suffix}.pdf',
+            }
+        existing = {'events': [stored(''), stored('_0')]}
+
+        merged = _merge_events(scraped, existing, 'MN-55024', set())
+        remedy = [e for e in merged if e['title'] == REMEDY_TITLE]
+        assert len(remedy) == 1
+        assert remedy[0]['url'] == REMEDY_URL.format(suffix='')
+        assert remedy[0]['status'] == 'live'
+        assert [v['url'] for v in remedy[0]['previous_versions']] == [
+            REMEDY_URL.format(suffix='_0')]
+
+
 class TestMergeEventsRelocatedDocument:
     """A re-upload whose title no longer matches must re-bind to its event
     rather than be appended beside it as a duplicate.

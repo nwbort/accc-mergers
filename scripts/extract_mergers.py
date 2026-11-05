@@ -813,6 +813,10 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
                 'display_title': title,
             }
 
+            if url and _is_repeated_row(event, url, scraped_events):
+                # Not downloaded: the copy already scraped stands for both.
+                continue
+
             if url:
                 _attach_document(
                     event, merger_id, url,
@@ -827,6 +831,29 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
     ))
 
     return scraped_events
+
+
+def _is_repeated_row(event, url, scraped_events):
+    """True if the page already listed this document in an earlier row.
+
+    The ACCC sometimes publishes the same document twice on one page: the same
+    title and date, the second copy uploaded under a CMS "_N" suffix (MN-55024's
+    remedy offer, as "...4 November 2026.pdf" and "..._0.pdf", byte-identical).
+    Scraping both yields two events that detect_duplicates removes, only for the
+    next scrape to add the second one back, which the auto-merged duplicates PR
+    then removes again, every pipeline run. Keep the first row only.
+
+    Both the event's identity and its attachment's name must match, so two
+    distinct documents that happen to share a title and date are both kept.
+    """
+    name = _normalize_attachment_name(url)
+    if not name:
+        return False
+    return any(
+        _normalize_attachment_name(earlier.get('url')) == name
+        and _same_event_identity(earlier, event)
+        for earlier in scraped_events
+    )
 
 
 def _attach_document(event, merger_id, url, cached_determination_by_url,
