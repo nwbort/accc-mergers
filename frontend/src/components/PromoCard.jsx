@@ -14,8 +14,10 @@ import { FEATURE_EVENTS, pingFeatureEvent } from '../utils/trackEvent';
  *
  * `icon` is a component type (e.g. `FaGaugeHigh`), not an element, matching how
  * constants/outcomeIcons.js carries icons.
+ *
+ * `to` is a route inside the site; `href` an external URL, opened in a new tab.
  */
-function PromoCard({ to, icon: Icon, title, description, onDismiss }) {
+function PromoCard({ to, href, icon: Icon, title, description, onDismiss }) {
   const dismiss = useCallback(() => {
     pingFeatureEvent(FEATURE_EVENTS.PROMO_CARD_DISMISSED);
     onDismiss();
@@ -25,9 +27,12 @@ function PromoCard({ to, icon: Icon, title, description, onDismiss }) {
     pingFeatureEvent(FEATURE_EVENTS.PROMO_CARD_CLICKED);
   }, []);
 
+  const LinkTag = href ? 'a' : Link;
+  const linkProps = href ? { href, target: '_blank', rel: 'noopener noreferrer' } : { to };
+
   return (
     <div className="relative rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-200 group bg-primary hover:bg-primary-dark">
-      <Link to={to} onClick={clickThrough} className="flex items-center gap-4 p-6 pr-12 rounded-2xl">
+      <LinkTag {...linkProps} onClick={clickThrough} className="flex items-center gap-4 p-6 pr-12 rounded-2xl">
         {Icon && (
           <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center text-xl text-white group-hover:scale-105 transition-transform duration-200">
             <Icon />
@@ -37,7 +42,7 @@ function PromoCard({ to, icon: Icon, title, description, onDismiss }) {
           <h2 className="text-base font-semibold text-white">{title}</h2>
           {description && <p className="text-sm text-white/80 mt-0.5">{description}</p>}
         </div>
-      </Link>
+      </LinkTag>
       <button
         onClick={dismiss}
         aria-label={`Dismiss: ${title}`}
