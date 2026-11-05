@@ -168,3 +168,31 @@ def test_pr_body_flags_carried_dates_and_keeps_plain_wording_without_them():
     fresh = fmnd.find_candidates([_merger("MN-60001", "New One")], {}, LATER)
     fresh_body = fmnd.build_pr_body(fresh, "2026-07-09")
     assert "carried over" not in fresh_body
+
+
+S51ABZ = (
+    "In accordance with s 51ABZ of the CCA the ACCC decided that the "
+    "notification lodged on 26 October 2026 should be taken not to have an "
+    "effective notification date because it is materially incomplete."
+)
+
+
+def test_skips_notification_held_materially_incomplete():
+    # MN-55046: it had a date until the ACCC held it incomplete. A guessed
+    # date would invent one the ACCC has withheld and clear the flag.
+    m = _merger("MN-55046", "USCO – ITM")
+    m["original_notification_datetime"] = "2026-10-26T12:00:00Z"
+    m["events"] = [
+        {"date": "2026-10-26T12:00:00Z", "title": "Merger notified to ACCC"},
+        {"date": "2026-11-04T12:00:00Z", "title": S51ABZ},
+    ]
+    assert fmnd.find_candidates([m], {}, TODAY) == []
+    # A carried-over suggestion from before the notice doesn't revive it.
+    previous = {"MN-55046": {"date": "2026-11-04T12:00:00Z", "note": "x"}}
+    assert fmnd.find_candidates([m], {}, TODAY, previous) == []
+
+
+def test_still_flags_a_dateless_matter_without_the_notice():
+    m = _merger("MN-50030")
+    m["events"] = [{"date": "2026-10-26T12:00:00Z", "title": "Merger notified to ACCC"}]
+    assert [c["merger_id"] for c in fmnd.find_candidates([m], {}, TODAY)] == ["MN-50030"]
