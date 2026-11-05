@@ -15,15 +15,13 @@
  * campaign's own) or null to hide it; PromoStack re-reads it every minute.
  */
 
-import { FaGaugeHigh, FaYoutube } from 'react-icons/fa6';
+import { FaYoutube } from 'react-icons/fa6';
 import { hearingPromoTitle } from '../utils/hearingPromo';
 
 // Coles' Tribunal appeal over Kalgoorlie (MN-01068, ACT 1 of 2026). Sits
 // Monday to Thursday for two weeks; the banner counts down to the start,
 // follows each day, and disappears once the last scheduled day rises. If the
 // hearing finishes early, take it out of DASHBOARD_PROMOS.
-//
-// Not running yet: to turn it on, add it to the top of DASHBOARD_PROMOS.
 export const COLES_KALGOORLIE_HEARING = {
   subject: 'Coles Kalgoorlie tribunal appeal hearing',
   sittingDays: [
@@ -46,12 +44,4 @@ export const COLES_KALGOORLIE_HEARING_PROMO = {
   },
 };
 
-export const DASHBOARD_PROMOS = [
-  {
-    campaign: 'current-status-v1',
-    to: '/current-status',
-    icon: FaGaugeHigh,
-    title: 'How fast is the ACCC deciding mergers right now?',
-    description: 'See recent waiver and phase 1 decision times against the all-time baseline.',
-  },
-];
+export const DASHBOARD_PROMOS = [COLES_KALGOORLIE_HEARING_PROMO];
