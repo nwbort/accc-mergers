@@ -219,8 +219,9 @@ The records above are data: complete, addressable, and invisible unless
 somebody goes looking. `post_bluesky` is the other half — the same milestones
 as ordinary `app.bsky.feed.post` records.
 
-What gets posted is deliberately narrow: a matter **arriving**, being
-**referred to phase 2**, being **decided**, its parties **applying for a public
+What gets posted is deliberately narrow: a matter **arriving** (or being
+held **materially incomplete**, and its assessment **recommencing** once the
+parties supply what was missing), being **referred to phase 2**, being **decided**, its parties **applying for a public
 benefit determination** and that being **decided**, having its assessment
 **ceased**, or going to the **Tribunal** or the **Federal Court**. Questionnaires, timeline
 extensions and remedy offers are all on the site and in the records; posting

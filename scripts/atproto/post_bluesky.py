@@ -6,7 +6,8 @@ milestones as ordinary ``app.bsky.feed.post`` records, so the register shows
 up in a feed.
 
 What counts as worth posting is deliberately narrow: a matter arriving (or
-being held materially incomplete, so it has not yet arrived), being
+being held materially incomplete, so it has not yet arrived, and its
+assessment recommencing once the parties supply what was missing), being
 referred to phase 2, being decided, the parties applying for a public benefit
 determination and that being decided, having its assessment ceased, or going
 to the Tribunal or the Federal Court. Questionnaires, timeline extensions and
@@ -194,6 +195,19 @@ def milestones(matter: dict) -> list[Milestone]:
             "Notification materially incomplete",
             _detail(merger_id, matter.get("stage"), held),
         )
+
+    # The parties supplying what a materially incomplete notification lacked,
+    # so the assessment runs again from a new effective notification date.
+    # Only news for a matter already announced as notified before the hold:
+    # ``pending`` drops it otherwise, since a matter held before it was ever
+    # announced has only now arrived, and "Notified to the ACCC" says so.
+    recommenced = _date(matter.get("assessment_recommenced_date"))
+    add(
+        "recommenced",
+        recommenced,
+        "Assessment recommenced",
+        _detail(merger_id, matter.get("stage"), recommenced),
+    )
 
     if matter.get("phase_1_determination") == "Referred to phase 2":
         referred = _date(matter.get("phase_1_determination_date"))
@@ -514,10 +528,18 @@ def pending(matters: list[dict], state: dict) -> list[Milestone]:
     the fact (a determination published on one day and re-dated to the next),
     and matching on it would announce the same decision again each time.
     """
-    seen = {_milestone_event(key) for key in state.get("posted", {})}
+    posted = state.get("posted", {})
+    seen = {_milestone_event(key) for key in posted}
+    # When each matter's arrival was announced, to tell a recommencement worth
+    # posting from a notification that is only now arriving.
+    notified_on = {
+        key.split(":")[0]: key.rsplit(":", 1)[1]
+        for key in posted if key.split(":")[1:2] == ["notified"]
+    }
     found = [
         m for matter in matters for m in milestones(matter)
         if _milestone_event(m.key) not in seen
+        and not (_kind(m) == "recommenced" and not _announced_before(m, notified_on))
     ]
     found.sort(key=lambda m: (m.date, m.key))
     return found
@@ -639,6 +661,25 @@ def _determination_event_date(matter: dict, *, after: str | None = None) -> str 
         if (date := _date(event.get("date"))) and (after is None or date > after)
     ]
     return max(dates, default=None)
+
+
+def _kind(milestone: Milestone) -> str:
+    return milestone.key.split(":")[1]
+
+
+def _announced_before(milestone: Milestone, notified_on: dict[str, str]) -> bool:
+    """Was this matter announced as notified before the assessment recommenced?
+
+    Only then is "Assessment recommenced" news. A notification held materially
+    incomplete before it was ever announced has no notified post until its
+    effective date - the same day as the recommencement - so that post says
+    all there is to say. So do the matters that went through a hold before
+    this milestone existed (MN-30003, MN-95001): their notified key carries the
+    recommencement's date too, so turning the milestone on announces nothing
+    after the fact.
+    """
+    announced = notified_on.get(milestone.key.split(":")[0])
+    return announced is not None and announced != UNDATED and announced < milestone.date
 
 
 def _milestone_event(key: str) -> str:

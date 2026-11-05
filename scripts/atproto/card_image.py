@@ -77,6 +77,8 @@ def tone_for(key: str, headline: str) -> str:
         return "ceased"
     if kind == "incomplete":
         return "on-hold"
+    # "recommenced" falls through to "live": the matter is under assessment
+    # again, in the same colour as any other live matter.
     if kind == "phase-2":
         return "phase-2"
     if kind in ("tribunal", "judicial-review"):

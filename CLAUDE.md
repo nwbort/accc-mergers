@@ -56,7 +56,9 @@ secret means skip, not fail). See [`docs/atproto.md`](docs/atproto.md).
   midday-UTC storage form; `indexedAt` is the only datetime and only moves when
   the matter does, which is what makes the incremental publish possible.
 - **Bluesky posts.** Deliberately narrow (arrival, a notification held
-  materially incomplete — only while it still is — phase 2 referral,
+  materially incomplete — only while it still is — its assessment
+  recommencing once the parties supply what was missing — only for a matter
+  announced as notified before the hold — phase 2 referral,
   determination, public benefit application and determination, cessation,
   Tribunal/Federal Court review). Needs
   `ATPROTO_POST_ENABLED` on top of the credentials, and the first *enabled* run
@@ -76,7 +78,7 @@ state file (`data/processed/linkedin_posts.json`), only one acts (the webhook
 wins), and both are inert without their secrets. `text.py` holds the post's
 wording, including LinkedIn's "little" text-format escaping, which Make's
 LinkedIn module needs. Those links unfurl with a generic card
-for the matter's latest milestone — 15 committed PNGs in `frontend/public/og/`,
+for the matter's latest milestone — 16 committed PNGs in `frontend/public/og/`,
 drawn by `scripts/generate/og_cards.py`, which also writes each detail file's
 `og_card` for the Pages Function, prerenderer and SPA to read. The links are
 sent by `linkedin-share-links.yml` after the pipeline finishes, once the live

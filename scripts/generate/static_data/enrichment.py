@@ -426,6 +426,25 @@ def is_materially_incomplete(m: dict) -> bool:
     )
 
 
+def assessment_recommenced_date(m: dict) -> str | None:
+    """When a notification held materially incomplete got its effective date.
+
+    The other end of :func:`is_materially_incomplete`: once the parties supply
+    what was missing (s 51ABY), the ACCC publishes a new effective notification
+    date and the assessment runs again from there (MN-30003, MN-95001,
+    MN-55046). The effective date is the recommencement's date, so this is it,
+    provided it falls on or after the latest s 51ABZ notice - an effective date
+    older than the notice is the one the hold set aside, not a new one.
+    """
+    if m.get('is_waiver'):
+        return None
+    effective = m.get('effective_notification_datetime')
+    held = _materially_incomplete_notice_date(m)
+    if not effective or not held:
+        return None
+    return effective if effective[:10] >= held[:10] else None
+
+
 def enrich_merger(
     merger: dict,
     commentary: dict = None,
@@ -617,6 +636,10 @@ def enrich_merger(
         # notice's date dates the milestone the posters announce.
         m['materially_incomplete'] = True
         m['materially_incomplete_date'] = _materially_incomplete_notice_date(m)
+    else:
+        recommenced = assessment_recommenced_date(m)
+        if recommenced:
+            m['assessment_recommenced_date'] = recommenced
 
     # Ensure anzsic_codes exists
     if 'anzsic_codes' not in m:

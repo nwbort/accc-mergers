@@ -43,6 +43,7 @@ OG_DIR = REPO_ROOT / "frontend" / "public" / "og"
 CARDS: tuple[tuple[str, str], ...] = (
     ("notified", "Notified to the ACCC"),
     ("incomplete", "Notification materially incomplete"),
+    ("recommenced", "Assessment recommenced"),
     ("phase-2", "Referred to Phase 2"),
     ("determined", "Cleared by the ACCC"),
     ("determined", "Cleared with conditions by the ACCC"),
