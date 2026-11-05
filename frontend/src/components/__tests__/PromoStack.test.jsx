@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import PromoStack from '../PromoStack';
@@ -68,6 +68,36 @@ describe('PromoStack', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Dismiss: First banner' }));
     fireEvent.click(screen.getByRole('button', { name: 'Dismiss: Second banner' }));
     expect(container).toBeEmptyDOMElement();
+  });
+
+  it('links an external campaign out in a new tab', () => {
+    renderStack([{ campaign: 'ext', href: 'https://example.com/live', title: 'External' }]);
+    const link = screen.getByRole('link', { name: /External/ });
+    expect(link).toHaveAttribute('href', 'https://example.com/live');
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+  });
+
+  it('shows what resolve returns for now, and hides a campaign it returns null for', () => {
+    renderStack([
+      { campaign: 'timed', to: '/t', title: 'Fallback', resolve: () => ({ title: 'Right now' }) },
+      { campaign: 'over', to: '/o', title: 'Over', resolve: () => null },
+      ...PROMOS,
+    ]);
+    expect(bannerTitles()).toEqual(['Right now', 'First banner', 'Second banner']);
+  });
+
+  it('re-reads a timed campaign as the clock moves', () => {
+    vi.useFakeTimers();
+    try {
+      let calls = 0;
+      renderStack([{ campaign: 'timed', to: '/t', resolve: () => ({ title: `Tick ${calls++}` }) }]);
+      expect(bannerTitles()).toEqual(['Tick 0']);
+      act(() => vi.advanceTimersByTime(60_000));
+      expect(bannerTitles()).toEqual(['Tick 1']);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 
   it('renders nothing for an empty list', () => {
