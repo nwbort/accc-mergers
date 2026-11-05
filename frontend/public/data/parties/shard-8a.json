@@ -389,6 +389,18 @@
         "target": [],
         "other": [
           {
+            "merger_id": "WA-40050",
+            "merger_name": "Sims - business assets of Base Metal Recyclers, VIC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-13T12:00:00Z",
+            "determination_date": "2026-11-05T12:00:00Z"
+          },
+          {
             "merger_id": "WA-80040",
             "merger_name": "Sims \u2013 business assets of OneStop Metal Recycling in TAS",
             "is_waiver": true,
@@ -402,18 +414,18 @@
           }
         ]
       },
-      "merger_count": 1,
+      "merger_count": 2,
       "phase_1_count": 0,
       "phase_2_count": 0,
-      "waiver_count": 1,
+      "waiver_count": 2,
       "active_count": 0,
       "phase_duration": null,
       "waiver_duration": {
-        "average_days": 27.0,
-        "median_days": 27,
-        "average_business_days": 19.0,
-        "median_business_days": 19,
-        "completed_count": 1
+        "average_days": 25.0,
+        "median_days": 25.0,
+        "average_business_days": 18.0,
+        "median_business_days": 18.0,
+        "completed_count": 2
       }
     }
   }

@@ -1,6 +1,6 @@
 {
   "total_mergers": 319,
-  "total_waivers": 502,
+  "total_waivers": 503,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 271,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 477,
+    "Approved": 478,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.786852589641434,
-    "median_days": 21.0,
-    "average_business_days": 14.229083665338646,
-    "median_business_days": 14.0
+    "average_days": 20.791252485089462,
+    "median_days": 21,
+    "average_business_days": 14.234592445328031,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40050",
+      "merger_name": "Sims - business assets of Base Metal Recyclers, VIC",
+      "determination": "Approved",
+      "determination_date": "2026-11-05T12:00:00Z",
+      "page_modified_datetime": "2026-11-05T16:39:01+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-10032",
       "merger_name": "TurOSI - Cordina",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-02T12:00:00Z",
       "page_modified_datetime": "2026-11-02T10:41:30+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-25048",
-      "merger_name": "Colas \u2013 Quarry Products Harlaxton",
-      "determination": "Approved",
-      "determination_date": "2026-10-30T12:00:00Z",
-      "page_modified_datetime": "2026-10-30T17:43:03+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
