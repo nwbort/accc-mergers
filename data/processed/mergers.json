@@ -24417,7 +24417,7 @@
     "original_notification_datetime": "2026-09-10T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-12-04T12:00:00Z",
-    "page_modified_datetime": "2026-11-05T18:15:26+11:00",
+    "page_modified_datetime": "2026-11-05T18:28:56+11:00",
     "consultation_response_due_date": "2026-11-12T12:00:00Z",
     "acquirers": [
       {
@@ -24493,7 +24493,19 @@
         "display_title": "PSP Investments - AAA Egg Company - remedy offer - 4 November 2026",
         "url": "https://www.accc.gov.au/system/files/moderated_files/PSP%20Investments%20-%20AAA%20Egg%20Company%20-%20remedy%20offer%20-%204%20November%202026.pdf",
         "url_gh": "/mergers/MN-55024/PSP Investments - AAA Egg Company - remedy offer - 4 November 2026.pdf",
-        "status": "live"
+        "status": "live",
+        "previous_versions": [
+          {
+            "url": "https://www.accc.gov.au/system/files/moderated_files/PSP%20Investments%20-%20AAA%20Egg%20Company%20-%20remedy%20offer%20-%204%20November%202026_0.pdf",
+            "url_gh": "/mergers/MN-55024/PSP Investments - AAA Egg Company - remedy offer - 4 November 2026_0.pdf",
+            "title": "PSP Investments - AAA Egg Company - remedy offer - 4 November 2026",
+            "date": "2026-11-04T12:00:00Z",
+            "superseded_on": "2026-11-05",
+            "sha256": "c9c42e80fb4483c5b8e56b517d41f53370b9535463dcc1eb05377f9edf13e498",
+            "identical": true,
+            "retired": true
+          }
+        ]
       },
       {
         "date": "2026-11-04T12:00:00Z",
@@ -24507,14 +24519,6 @@
         "is_questionnaire_event": true,
         "url": "https://www.accc.gov.au/system/files/moderated_files/PSP%20Investments%20%E2%80%93%20AAA%20Egg%20Company%20%E2%80%93%20Questionnaire%20%E2%80%93%20Remedy%20Offer%20%E2%80%93%205%20November%202026.docx",
         "url_gh": "/mergers/MN-55024/PSP Investments \u2013 AAA Egg Company \u2013 Questionnaire \u2013 Remedy Offer \u2013 5 November 2026.pdf",
-        "status": "live"
-      },
-      {
-        "date": "2026-11-04T12:00:00Z",
-        "title": "PSP Investments - AAA Egg Company - remedy offer - 4 November 2026",
-        "display_title": "PSP Investments - AAA Egg Company - remedy offer - 4 November 2026",
-        "url": "https://www.accc.gov.au/system/files/moderated_files/PSP%20Investments%20-%20AAA%20Egg%20Company%20-%20remedy%20offer%20-%204%20November%202026_0.pdf",
-        "url_gh": "/mergers/MN-55024/PSP Investments - AAA Egg Company - remedy offer - 4 November 2026_0.pdf",
         "status": "live"
       }
     ],
