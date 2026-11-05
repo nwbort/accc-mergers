@@ -267,7 +267,7 @@ describe('Analysis open caseload', () => {
 
     const table = screen.getByRole('table', { name: 'Open notifications and waiver applications at each month end' });
     expect(within(table).getByRole('columnheader', { name: 'Open waivers' })).toBeInTheDocument();
-    expect(within(table).getByRole('columnheader', { name: 'Waivers under assessment (estimated)' })).toBeInTheDocument();
+    expect(within(table).getByRole('columnheader', { name: 'Open waivers (estimated)' })).toBeInTheDocument();
     expect(within(table).getByText('~40')).toBeInTheDocument();
   });
 

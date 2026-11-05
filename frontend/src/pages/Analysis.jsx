@@ -23,6 +23,8 @@ import { PHASE_1_DEADLINE_BD, WAIVER_DEADLINE_BD } from '../constants/statutoryD
 const PAGE_META = STATIC_PAGE_META['/analysis'];
 
 const PENDING_WAIVERS_LABEL = 'Waivers under assessment (estimated)';
+// The caseload chart's estimate, named to match its counted "Open waivers".
+const OPEN_WAIVERS_ESTIMATED_LABEL = 'Open waivers (estimated)';
 
 // The open-waiver band on the caseload chart, stronger than the shared light
 // tint so it separates from the notifications fill beneath it.
@@ -263,7 +265,7 @@ function Analysis() {
           ...(hasCaseloadPending ? { borderWidth: 0 } : {}),
         }] : []),
         ...(hasCaseloadPending ? [{
-          label: PENDING_WAIVERS_LABEL,
+          label: OPEN_WAIVERS_ESTIMATED_LABEL,
           data: caseloadPending,
           borderColor: COLORS.teal,
           borderDash: [4, 3],
@@ -321,7 +323,7 @@ function Analysis() {
           // into the counted one, and a month with no waivers open says
           // nothing about them.
           filter: (item) => {
-            if (item.dataset.label === PENDING_WAIVERS_LABEL) return false;
+            if (item.dataset.label === OPEN_WAIVERS_ESTIMATED_LABEL) return false;
             if (item.dataset.label === CASELOAD_WAIVER_OUTLINE) return false;
             if (item.dataset.label === 'Open waivers') {
               return item.raw + (caseloadPending[item.dataIndex] ?? 0) > 0;
@@ -656,7 +658,7 @@ function Analysis() {
                         <th>Month</th>
                         <th>Open notifications</th>
                         {hasCaseloadWaivers && <th>Open waivers</th>}
-                        {hasCaseloadWaivers && <th>{PENDING_WAIVERS_LABEL}</th>}
+                        {hasCaseloadWaivers && <th>{OPEN_WAIVERS_ESTIMATED_LABEL}</th>}
                       </tr>
                     </thead>
                     <tbody>
