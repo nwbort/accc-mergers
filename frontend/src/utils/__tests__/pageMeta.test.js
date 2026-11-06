@@ -7,6 +7,7 @@ import {
   SITE_URL,
   STATIC_PAGE_META,
   fullTitle,
+  frequentAcquirers,
   DEFAULT_OG_IMAGE,
   industryMeta,
   mergerMeta,
@@ -16,6 +17,7 @@ import {
 } from '../pageMeta.js';
 import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
+  INDUSTRY_SUMMARY,
   industryBody,
   mergerBody,
   partyBody,
@@ -103,19 +105,88 @@ describe('industryMeta', () => {
     ancestors: [{ code: 'K', name: 'Financial and Insurance Services', level: 'division' }],
   };
 
-  it('describes the node by ANZSIC level and count', () => {
-    const meta = industryMeta(industry, '6240');
-    expect(meta.description).toBe(
-      '2 mergers in the Financial Asset Investing industry (ANZSIC class 6240) reviewed by the ACCC.',
-    );
-    expect(meta.path).toBe('/industries/6240/financial-asset-investing');
+  // A realistic node: newest first, as the division file orders them.
+  const DENTAL = {
+    name: 'Dental Services',
+    level: 'class',
+    phase_2_count: 0,
+    phase_duration: { median_business_days: 16, completed_count: 3 },
+    waiver_duration: { median_business_days: 15, completed_count: 2 },
+    ancestors: [],
+    mergers: [
+      { merger_id: 'WA-3', merger_name: 'National Dental Care – Sunshine Dental, VIC', is_waiver: true, determination: 'Approved', notification_date: '2026-09-11T12:00:00Z' },
+      { merger_id: 'WA-2', merger_name: 'Impression Dental Group - Blackburn Dental Centre', is_waiver: true, determination: 'Approved', notification_date: '2026-08-14T12:00:00Z' },
+      { merger_id: 'MN-3', merger_name: 'Impression Dental Group - Coastal Dental Care', determination: 'Approved', notification_date: '2026-05-28T12:00:00Z' },
+      { merger_id: 'MN-2', merger_name: 'National Dental Care – Comfy Dental clinic', determination: 'Approved', notification_date: '2026-03-13T12:00:00Z' },
+      { merger_id: 'MN-1', merger_name: 'National Dental Care – DDTA Dental', determination: 'Approved', has_conditions: true, notification_date: '2026-02-27T12:00:00Z' },
+    ],
+  };
+
+  it('leads the title with the industry and what people search for', () => {
+    const meta = industryMeta(DENTAL, '8531');
+    expect(meta.title).toBe('Dental Services Mergers – ACCC Reviews');
+    expect(fullTitle(meta.title)).toBe('Dental Services Mergers – ACCC Reviews | Australian Merger Tracker');
+    // The h1 keeps the plain name.
+    expect(meta.name).toBe('Dental Services');
   });
 
-  it('handles an empty node without pluralising wrongly', () => {
+  it('writes a description specific to the node', () => {
+    expect(industryMeta(DENTAL, '8531').description).toBe(
+      '5 ACCC merger reviews in Dental Services (ANZSIC class 8531) since February 2026, all approved. ' +
+        'Frequent acquirers: National Dental Care, Impression Dental Group.',
+    );
+    expect(industryMeta(industry, '6240').path).toBe('/industries/6240/financial-asset-investing');
+  });
+
+  it('breaks down mixed outcomes in the description', () => {
+    const mixed = {
+      name: 'Retail',
+      level: 'division',
+      mergers: [
+        { merger_name: 'A - B', determination: 'Approved' },
+        { merger_name: 'C - D', determination: 'Not approved' },
+        { merger_name: 'E - F', status: 'Under assessment' },
+      ],
+    };
+    expect(industryMeta(mixed, 'G').description).toBe(
+      '3 ACCC merger reviews in Retail (ANZSIC division G): 1 approved, 1 not approved and 1 under assessment.',
+    );
+  });
+
+  it('describes an empty node without a count of zero', () => {
     const meta = industryMeta({ name: 'Empty', level: 'class', mergers: [] }, '9002');
     expect(meta.description).toBe(
-      '0 mergers in the Empty industry (ANZSIC class 9002) reviewed by the ACCC.',
+      'ACCC merger reviews in the Empty industry (ANZSIC class 9002). None have been recorded yet.',
     );
+    expect(meta.summary).toBeNull();
+  });
+
+  it('summarises volume, outcomes, acquirers, timing and the latest matter', () => {
+    expect(industryMeta(DENTAL, '8531').summary).toBe(
+      'Since February 2026, the ACCC has reviewed 5 acquisitions in the Dental Services industry ' +
+        '(ANZSIC class 8531): 3 notified mergers and 2 waiver applications. ' +
+        'All 5 were approved (1 with conditions). ' +
+        'The most frequent acquirers are National Dental Care (3) and Impression Dental Group (2). ' +
+        'Completed Phase 1 reviews took a median of 16 business days, and waivers a median of 15 business days. ' +
+        'The most recent, National Dental Care – Sunshine Dental, VIC, was lodged on 11 September 2026.',
+    );
+  });
+
+  it('mentions Phase 2 referrals and open matters', () => {
+    const summary = industryMeta(
+      {
+        name: 'Supermarkets',
+        level: 'class',
+        phase_2_count: 1,
+        mergers: [
+          { merger_name: 'X - Y', phase: 'Phase 2', status: 'Under assessment', notification_date: '2026-04-01T12:00:00Z' },
+          { merger_name: 'Z - W', determination: 'Approved', notification_date: '2026-03-01T12:00:00Z' },
+        ],
+      },
+      '4110',
+    ).summary;
+    expect(summary).toContain('Of these, 1 was referred to Phase 2.');
+    expect(summary).toContain('Outcomes so far: 1 approved and 1 still under assessment.');
   });
 
   it('falls back through detail name, index name, then code', () => {
@@ -131,6 +202,34 @@ describe('industryMeta', () => {
       'Financial and Insurance Services',
       'Financial Asset Investing',
     ]);
+  });
+
+  it('marks the page up as a collection of its mergers', () => {
+    const [, collection] = industryMeta(DENTAL, '8531').structuredData;
+    expect(collection['@type']).toBe('CollectionPage');
+    expect(collection.url).toBe('https://mergers.fyi/industries/8531/dental-services');
+    expect(collection.about).toMatchObject({ termCode: '8531', name: 'Dental Services' });
+    expect(collection.mainEntity.numberOfItems).toBe(5);
+    expect(collection.mainEntity.itemListElement[0]).toEqual({
+      '@type': 'ListItem',
+      position: 1,
+      name: 'National Dental Care – Sunshine Dental, VIC',
+      url: 'https://mergers.fyi/mergers/WA-3/national-dental-care-sunshine-dental-vic',
+    });
+  });
+});
+
+describe('frequentAcquirers', () => {
+  it('reads the acquirer off the name and needs two distinct deals', () => {
+    expect(
+      frequentAcquirers([
+        { merger_name: 'Airtree – HotDoc' },
+        { merger_name: 'Airtree – HotDoc' }, // same deal filed twice
+        { merger_name: 'Coca-Cola Europacific - Bottler A' },
+        { merger_name: 'Coca-Cola Europacific - Bottler B' },
+        { merger_name: 'No separator here' },
+      ]),
+    ).toEqual([{ name: 'Coca-Cola Europacific', count: 2 }]);
   });
 });
 
@@ -368,6 +467,12 @@ describe('prerendered bodies are styled', () => {
     expect(bodies.party).toContain('ABN: 11 004 089 936');
     expect(bodies.party).not.toContain('Retail Payment Solutions Pty Ltd');
     expect(bodies.party).toContain('Show 1 more');
+  });
+
+  it('carries the industry summary paragraph in the header card', () => {
+    const meta = industryMeta(INDUSTRY, '6240');
+    expect(meta.summary).toBeTruthy();
+    expect(bodies.industry).toContain(`<p class="${INDUSTRY_SUMMARY}">${meta.summary}</p></div>`);
   });
 
   it('links mergers by their canonical slugged path', () => {

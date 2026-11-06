@@ -191,11 +191,211 @@ export function partyMeta(party, id) {
   };
 }
 
+const MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
+// Register dates are stored as midday UTC (`2026-09-14T12:00:00Z`), so the
+// calendar day is read straight off the string rather than through Date, which
+// would shift it by the reader's (or the build machine's) timezone.
+function isoDay(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || '');
+  return m ? { y: m[1], m: Number(m[2]), d: Number(m[3]), key: m[0] } : null;
+}
+
+function monthYear(day) {
+  return `${MONTHS[day.m - 1]} ${day.y}`;
+}
+
+function longDate(day) {
+  return `${day.d} ${MONTHS[day.m - 1]} ${day.y}`;
+}
+
+/** "a", "a and b", "a, b and c". */
+function joinList(items) {
+  if (items.length <= 1) return items.join('');
+  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+}
+
+// The register names a matter "Acquirer – Target" (en dash, em dash or a
+// spaced hyphen). Summaries carry no party lists, so the acquirer is read off
+// the name; an unspaced hyphen (Coca-Cola) is part of a name, not the split.
+const MERGER_NAME_SPLIT_RE = /\s+[–—-]\s+/;
+
 /**
- * Meta for an industry detail page, from a `data/industries/{code}.json`
- * record. `code` is the route param; `indexName` is the fallback name from
- * `industries.json` used when the detail record carries none (mirroring
- * IndustryDetail.jsx).
+ * Acquirers named on more than one of an industry's matters, most frequent
+ * first (ties keep first-seen order, which is newest first). A matter filed
+ * twice under the same name (a waiver then a notification, say) counts once,
+ * so a single deal can't make its acquirer look "frequent".
+ *
+ * @returns {{name: string, count: number}[]}
+ */
+export function frequentAcquirers(mergers, limit = 3) {
+  const seenDeals = new Set();
+  const counts = new Map();
+  for (const m of mergers || []) {
+    const fullName = (m?.merger_name || '').trim();
+    if (!fullName || seenDeals.has(fullName.toLowerCase())) continue;
+    seenDeals.add(fullName.toLowerCase());
+    const parts = fullName.split(MERGER_NAME_SPLIT_RE);
+    if (parts.length < 2) continue;
+    const acquirer = parts[0].trim();
+    if (!acquirer) continue;
+    counts.set(acquirer, (counts.get(acquirer) || 0) + 1);
+  }
+  return [...counts.entries()]
+    .filter(([, count]) => count >= 2)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
+    .map(([name, count]) => ({ name, count }));
+}
+
+/** Outcome counts across an industry's merger summaries. */
+function outcomeTally(mergers) {
+  const tally = { approved: 0, conditions: 0, notApproved: 0, ceased: 0, open: 0 };
+  for (const m of mergers) {
+    if (m.determination === 'Approved') {
+      tally.approved++;
+      if (m.has_conditions) tally.conditions++;
+    } else if (m.determination === 'Not approved') {
+      tally.notApproved++;
+    } else if (m.status === 'Assessment ceased') {
+      tally.ceased++;
+    } else {
+      tally.open++;
+    }
+  }
+  return tally;
+}
+
+function anzsicLabel(levelLabel, code) {
+  return `ANZSIC ${levelLabel ? `${levelLabel.toLowerCase()} ` : ''}${code}`;
+}
+
+/**
+ * One crawlable paragraph describing an industry's merger activity, shown
+ * under the heading on both the prerendered and the hydrated page. Built only
+ * from the node's own summaries and stat blocks, so every industry page gets
+ * text of its own rather than the same template around a different number.
+ * Null for a node with no mergers.
+ */
+export function industrySummary(industry, code, name, levelLabel) {
+  const mergers = industry.mergers || [];
+  const n = mergers.length;
+  if (!n) return null;
+
+  const days = mergers.map((m) => isoDay(m.notification_date)).filter(Boolean);
+  days.sort((a, b) => a.key.localeCompare(b.key));
+  const earliest = days[0];
+
+  const waivers = mergers.filter((m) => m.is_waiver).length;
+  const notified = n - waivers;
+  const kinds = [];
+  if (notified) kinds.push(plural(notified, 'notified merger'));
+  if (waivers) kinds.push(plural(waivers, 'waiver application'));
+
+  const sentences = [];
+  sentences.push(
+    `${earliest ? `Since ${monthYear(earliest)}, the` : 'The'} ACCC has reviewed ` +
+      `${plural(n, 'acquisition')} in the ${name} industry (${anzsicLabel(levelLabel, code)})` +
+      `${kinds.length ? `: ${joinList(kinds)}` : ''}.`,
+  );
+
+  const phase2 = industry.phase_2_count ?? mergers.filter((m) => m.phase === 'Phase 2').length;
+  if (phase2) {
+    sentences.push(`Of these, ${phase2} ${phase2 === 1 ? 'was' : 'were'} referred to Phase 2.`);
+  }
+
+  const t = outcomeTally(mergers);
+  const cond = t.conditions ? ` (${t.conditions} with conditions)` : '';
+  if (t.approved === n) {
+    sentences.push(n === 1 ? `It was approved${cond}.` : `All ${n} were approved${cond}.`);
+  } else {
+    const parts = [];
+    if (t.approved) parts.push(`${t.approved} approved${cond}`);
+    if (t.notApproved) parts.push(`${t.notApproved} not approved`);
+    if (t.ceased) parts.push(`${t.ceased} ceased`);
+    if (t.open) parts.push(`${t.open} still under assessment`);
+    sentences.push(`Outcomes so far: ${joinList(parts)}.`);
+  }
+
+  const acquirers = frequentAcquirers(mergers);
+  if (acquirers.length) {
+    const listed = joinList(acquirers.map((a) => `${a.name} (${a.count})`));
+    sentences.push(
+      acquirers.length === 1
+        ? `The most frequent acquirer is ${listed}.`
+        : `The most frequent acquirers are ${listed}.`,
+    );
+  }
+
+  const p1 = industry.phase_duration?.completed_count ? industry.phase_duration.median_business_days : null;
+  const wv = industry.waiver_duration?.completed_count ? industry.waiver_duration.median_business_days : null;
+  if (p1 != null && wv != null) {
+    sentences.push(
+      `Completed Phase 1 reviews took a median of ${plural(p1, 'business day')}, ` +
+        `and waivers a median of ${plural(wv, 'business day')}.`,
+    );
+  } else if (p1 != null) {
+    sentences.push(`Completed Phase 1 reviews took a median of ${plural(p1, 'business day')}.`);
+  } else if (wv != null) {
+    sentences.push(`Waivers were decided in a median of ${plural(wv, 'business day')}.`);
+  }
+
+  const latestDay = days[days.length - 1];
+  if (latestDay && n > 1) {
+    const latest = mergers.find((m) => isoDay(m.notification_date)?.key === latestDay.key);
+    if (latest?.merger_name) {
+      sentences.push(`The most recent, ${latest.merger_name}, was lodged on ${longDate(latestDay)}.`);
+    }
+  }
+
+  return sentences.join(' ');
+}
+
+/** The search-result snippet: short enough not to be truncated, specific to the node. */
+function industryDescription(industry, code, name, levelLabel) {
+  const mergers = industry.mergers || [];
+  const n = mergers.length;
+  const label = anzsicLabel(levelLabel, code);
+  if (!n) {
+    return `ACCC merger reviews in the ${name} industry (${label}). None have been recorded yet.`;
+  }
+
+  const days = mergers.map((m) => isoDay(m.notification_date)).filter(Boolean);
+  days.sort((a, b) => a.key.localeCompare(b.key));
+  const since = days.length ? ` since ${monthYear(days[0])}` : '';
+
+  const t = outcomeTally(mergers);
+  let outcome = '';
+  if (t.approved === n) {
+    outcome = n === 1 ? ', approved' : ', all approved';
+  } else {
+    const parts = [];
+    if (t.approved) parts.push(`${t.approved} approved`);
+    if (t.notApproved) parts.push(`${t.notApproved} not approved`);
+    if (t.open) parts.push(`${t.open} under assessment`);
+    if (parts.length) outcome = `: ${joinList(parts)}`;
+  }
+
+  const acquirers = frequentAcquirers(mergers, 2);
+  const acq = acquirers.length
+    ? ` Frequent acquirers: ${acquirers.map((a) => a.name).join(', ')}.`
+    : '';
+
+  return `${plural(n, 'ACCC merger review')} in ${name} (${label})${since}${outcome}.${acq}`;
+}
+
+// How many matters the ItemList JSON-LD names. Matches prerender.js's cap on
+// body links: the list describes the links the page actually carries.
+const MAX_ITEM_LIST = 100;
+
+/**
+ * Meta for an industry detail page, from a node read out of
+ * `data/industries/{division}.json` (utils/industryNode.js). `code` is the
+ * route param; `indexName` is the fallback name from `industries.json` used
+ * when the node carries none (mirroring IndustryDetail.jsx).
  */
 export function industryMeta(industry, code, indexName) {
   const name = industry.name || indexName || code;
@@ -203,9 +403,11 @@ export function industryMeta(industry, code, indexName) {
   const mergers = industry.mergers || [];
   const levelLabel = industry.level ? LEVEL_LABELS[industry.level] : null;
 
-  const description =
-    `${plural(mergers.length, 'merger')} in the ${name} industry` +
-    `${levelLabel ? ` (ANZSIC ${levelLabel.toLowerCase()} ${code})` : ''} reviewed by the ACCC.`;
+  // Keyword-first: what people search is "<industry> mergers" / "ACCC", and
+  // the bare industry name said neither. The h1 stays the plain name.
+  const title = `${name} Mergers – ACCC Reviews`;
+  const description = industryDescription(industry, code, name, levelLabel);
+  const summary = industrySummary(industry, code, name, levelLabel);
 
   // The ANZSIC ancestors already describe the crumb trail the page renders.
   const trail = [
@@ -216,12 +418,42 @@ export function industryMeta(industry, code, indexName) {
     })),
   ];
 
-  return {
-    title: name,
+  const collection = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: title,
     description,
+    url: absolute(path),
+    inLanguage: 'en-AU',
+    isPartOf: { '@type': 'WebSite', name: SITE_TITLE, url: SITE_URL },
+    about: {
+      '@type': 'DefinedTerm',
+      name,
+      termCode: code,
+      inDefinedTermSet: 'ANZSIC 2006',
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: mergers.length,
+      itemListElement: mergers
+        .filter((m) => m?.merger_id)
+        .slice(0, MAX_ITEM_LIST)
+        .map((m, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: m.merger_name || m.merger_id,
+          url: absolute(mergerPath(m.merger_id, m.merger_name)),
+        })),
+    },
+  };
+
+  return {
+    title,
+    description,
+    summary,
     path,
     type: 'website',
-    structuredData: [breadcrumbSchema(trail, name, path)],
+    structuredData: [breadcrumbSchema(trail, name, path), collection],
     name,
     levelLabel,
     mergers,

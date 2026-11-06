@@ -53,6 +53,10 @@ const SHARD_FILE_RE = /^shard-[0-9a-f]{2}\.json$/i;
 // it exists to stop one outlier node inflating the HTML payload.
 const MAX_BODY_LINKS = 100;
 
+// The industry page's summary paragraph. IndustryDetail.jsx carries the same
+// classes, so the header card is the same height before and after hydration.
+export const INDUSTRY_SUMMARY = 'text-sm text-gray-600 mt-3 leading-relaxed max-w-3xl';
+
 function escapeHtml(str) {
   return String(str ?? '')
     .replace(/&/g, '&amp;')
@@ -322,7 +326,11 @@ export function industryBody(industry, code, meta) {
 
   return shell(
     breadcrumbHtml(trail, meta.name) +
-      headerCard(meta.name, subtitle) +
+      headerCard(
+        meta.name,
+        subtitle,
+        meta.summary ? `<p class="${INDUSTRY_SUMMARY}">${escapeHtml(meta.summary)}</p>` : '',
+      ) +
       statGrid(stats) +
       section('Sub-industries', children.length ? `<div class="${CARD} p-5">${list(children)}</div>` : '') +
       section('Mergers in this industry', mergerLinks(meta.mergers)),
