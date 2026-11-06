@@ -4,6 +4,7 @@ import { MERGER_STATUS } from '../constants/mergerStatus';
 import { JUDICIAL_REVIEW_STATUS } from '../constants/judicialReview';
 import { pingFeatureEvent, trackIndustryEvent, trackMergerEvent } from '../utils/trackEvent';
 import { fetchIndustryNode } from '../utils/industryNode';
+import { isDatePast } from '../utils/dates';
 
 const TrackingContext = createContext(null);
 
@@ -324,27 +325,35 @@ export function TrackingProvider({ children }) {
         mergers.forEach(merger => {
           if (!merger) return;
 
-          // Tribunal hearing start date for a matter under a *current* appeal.
+          // Tribunal hearing for a matter under a *current* appeal.
           // Handled before the "already determined" guards below because an
           // appealed matter is, by definition, ACCC-determined — the hearing is
           // a future event layered on top of that outcome. Not subject to any
           // look-ahead window (mirrors scripts/generate/static_data/outputs/upcoming_events.py).
-          if (merger.under_appeal && merger.appeal && merger.appeal.hearing_date) {
-            const hearingDate = new Date(merger.appeal.hearing_date);
-            if (hearingDate > now) {
+          // A hearing that sits over several days carries its last day as
+          // `end_date`, and stays (as ongoing) until that day has passed on
+          // the Australian calendar, rather than dropping off on day one.
+          const appeal = merger.appeal;
+          if (merger.under_appeal && appeal && appeal.hearing_date) {
+            const endDate =
+              appeal.hearing_end_date && appeal.hearing_end_date > appeal.hearing_date
+                ? appeal.hearing_end_date
+                : null;
+            if (!isDatePast(endDate || appeal.hearing_date)) {
               syntheticUpcomingEvents.push({
                 type: 'tribunal_hearing',
                 event_type_display: 'Tribunal hearing',
                 display_title: 'Tribunal hearing',
                 title: 'Tribunal hearing',
-                date: merger.appeal.hearing_date,
+                date: appeal.hearing_date,
+                ...(endDate && { end_date: endDate }),
                 merger_id: merger.merger_id,
                 merger_name: merger.merger_name,
                 status: merger.status,
                 stage: merger.stage,
                 effective_notification_datetime: merger.effective_notification_datetime,
                 is_waiver: merger.is_waiver,
-                tribunal_number: merger.appeal.tribunal_number,
+                tribunal_number: appeal.tribunal_number,
               });
             }
           }

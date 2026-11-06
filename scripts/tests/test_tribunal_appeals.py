@@ -107,6 +107,18 @@ class TestLinkTribunalAppeals:
         mergers = [enrich_merger(_phase2_not_approved())]
         link_tribunal_appeals(mergers, _appeal())
         assert mergers[0]['appeal']['hearing_date'] is None
+        assert mergers[0]['appeal']['hearing_end_date'] is None
+
+    def test_hearing_end_date_propagated(self):
+        # A hearing sitting over several days carries its last day through,
+        # on the summary and on the matter itself.
+        appeal = _appeal()
+        appeal['MN-0001']['hearing_date'] = '2026-11-09'
+        appeal['MN-0001']['hearing_end_date'] = '2026-11-19'
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, appeal)
+        assert mergers[0]['appeal']['hearing_end_date'] == '2026-11-19'
+        assert mergers[0]['appeals'][0]['hearing_end_date'] == '2026-11-19'
 
     def test_missing_status_defaults_to_current(self):
         # The fixture has no explicit status → treated as a live appeal.
@@ -523,6 +535,17 @@ class TestMultipleTribunalMatters:
             _matter('ACT 4 of 2026', 'RACWA', '2026-10-05', hearing_date='2027-02-01'),
         )
         assert m['appeal']['hearing_date'] == '2027-02-01'
+
+    def test_hearing_end_belongs_to_the_chosen_hearing(self):
+        # The end date comes from the hearing whose start was picked, not
+        # from some other matter's later run.
+        early = _matter('ACT 3 of 2026', 'IAG', '2026-10-01', hearing_date='2027-02-01')
+        early['hearing_end_date'] = '2027-02-05'
+        late = _matter('ACT 4 of 2026', 'RACWA', '2026-10-05', hearing_date='2027-03-01')
+        late['hearing_end_date'] = '2027-03-10'
+        m = self._link(early, late)
+        assert m['appeal']['hearing_date'] == '2027-02-01'
+        assert m['appeal']['hearing_end_date'] == '2027-02-05'
 
     def test_dashboard_card_dates_from_the_first_lodgement(self):
         first = _matter('ACT 3 of 2026', 'IAG', '2026-10-01')

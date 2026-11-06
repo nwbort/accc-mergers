@@ -4,7 +4,7 @@ import { mergerPath, industryPath } from '../utils/slug';
 import { FaBell, FaCheckCircle } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import { Spinner } from './LoadingSpinner';
-import { formatDate, getCalendarDaysUntil, isDatePast } from '../utils/dates';
+import { formatDate, getCalendarDaysUntil, isEventPast, isEventOngoing } from '../utils/dates';
 import { eventAnchorId, ASSESSMENT_TIMELINE_ANCHOR } from '../utils/eventAnchor';
 
 // Event types synthesised from a followed matter's upcoming deadlines (see
@@ -53,12 +53,21 @@ function eventHref(group, event) {
   return `${mergerPath(group.merger_id, group.merger_name)}#${anchor}`;
 }
 
+// An event's date line: one day, or the first and last day of an event that
+// runs over several (a multi-day Tribunal hearing).
+function eventDateLabel(event) {
+  return event.end_date
+    ? `${formatDate(event.date)} – ${formatDate(event.end_date)}`
+    : formatDate(event.date);
+}
+
 function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
   const [showPastEvents, setShowPastEvents] = useState(false);
 
-  // Separate past and future events
-  const pastEvents = group.events.filter((e) => isDatePast(e.date));
-  const futureEvents = group.events.filter((e) => !isDatePast(e.date));
+  // Separate past and future events. An event running over several days
+  // counts as future (ongoing) until its last day has passed.
+  const pastEvents = group.events.filter((e) => isEventPast(e));
+  const futureEvents = group.events.filter((e) => !isEventPast(e));
 
   // Past events that were unseen when the panel opened are always shown
   // so notified events can't hide behind the collapse.
@@ -90,6 +99,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
           // which counts day boundaries rather than full 24-hour periods.
           const daysRemaining = getCalendarDaysUntil(event.date);
           const isUpcoming = UPCOMING_EVENT_TYPES.has(event.type);
+          const isOngoing = isEventOngoing(event);
           const isNew = wasUnseenOnOpen(event);
 
           return (
@@ -115,8 +125,11 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                     )}
                   </p>
                   <p className="text-gray-500">
-                    {formatDate(event.date)}
-                    {isUpcoming && daysRemaining > 0 && (
+                    {eventDateLabel(event)}
+                    {isOngoing && (
+                      <span className="ml-1 text-amber-700 font-medium">(ongoing)</span>
+                    )}
+                    {isUpcoming && !isOngoing && daysRemaining > 0 && (
                       <span className="ml-1 text-amber-700 font-medium">
                         ({daysRemaining} day{daysRemaining !== 1 ? 's' : ''})
                       </span>
@@ -148,7 +161,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                   </span>
                 </p>
                 <p className="text-gray-500">
-                  {formatDate(event.date)}
+                  {eventDateLabel(event)}
                 </p>
               </div>
             </Link>
@@ -183,7 +196,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                       {event.display_title || event.event_type_display || event.title}
                     </p>
                     <p className="text-gray-500">
-                      {formatDate(event.date)}
+                      {eventDateLabel(event)}
                     </p>
                   </div>
                 </Link>
@@ -394,10 +407,9 @@ function NotificationPanel({ isOpen, onClose }) {
       return bMostRecent - aMostRecent; // Most recent first
     }
 
-    // Neither has unseen events - sort by soonest upcoming event
-    const now = new Date();
-    const aFutureEvents = a.events.filter((e) => new Date(e.date) >= now);
-    const bFutureEvents = b.events.filter((e) => new Date(e.date) >= now);
+    // Neither has unseen events - sort by soonest upcoming (or ongoing) event
+    const aFutureEvents = a.events.filter((e) => !isEventPast(e));
+    const bFutureEvents = b.events.filter((e) => !isEventPast(e));
 
     const aSoonest = aFutureEvents.length > 0
       ? Math.min(...aFutureEvents.map((e) => new Date(e.date).getTime()))

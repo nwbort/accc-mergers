@@ -8,6 +8,8 @@ import {
   getDaysRemaining,
   isBusinessDay,
   isDatePast,
+  isEventOngoing,
+  isEventPast,
 } from '../dates';
 
 // Build a local Date constructor for YYYY-MM-DD so that tests are not
@@ -307,5 +309,42 @@ describe('isDatePast', () => {
 
   it('returns false for an unparseable input', () => {
     expect(isDatePast('not a date')).toBe(false);
+  });
+});
+
+describe('multi-day events (isEventPast / isEventOngoing)', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    // Tuesday 10 Nov 2026 in Sydney.
+    vi.setSystemTime(new Date('2026-11-10T01:00:00Z'));
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  const hearing = { date: '2026-11-09', end_date: '2026-11-19' };
+
+  it('is not past, and is ongoing, between its first and last day', () => {
+    expect(isEventPast(hearing)).toBe(false);
+    expect(isEventOngoing(hearing)).toBe(true);
+  });
+
+  it('is ongoing on its last day, and past the day after', () => {
+    vi.setSystemTime(new Date('2026-11-19T05:00:00Z'));
+    expect(isEventOngoing(hearing)).toBe(true);
+    vi.setSystemTime(new Date('2026-11-20T05:00:00Z'));
+    expect(isEventPast(hearing)).toBe(true);
+    expect(isEventOngoing(hearing)).toBe(false);
+  });
+
+  it('is not ongoing before it begins', () => {
+    expect(isEventOngoing({ date: '2026-11-16', end_date: '2026-11-19' })).toBe(false);
+  });
+
+  it('reads a single-day event by its date alone', () => {
+    expect(isEventPast({ date: '2026-11-09' })).toBe(true);
+    expect(isEventPast({ date: '2026-11-10' })).toBe(false);
+    expect(isEventOngoing({ date: '2026-11-09' })).toBe(false);
   });
 });
