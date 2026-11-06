@@ -335,9 +335,20 @@ class TestPromo:
         html = swe.build_html_email(_digest(), promo=self.PROMO)
         assert f'href="{swe.LINKEDIN_URL}"' in html
 
+    def test_promo_can_link_off_site(self):
+        promo = {'href': 'https://example.com/live?a=1&b=2', 'title': 'Live now'}
+        html = swe.build_html_email(_digest(), promo=promo)
+        assert 'href="https://example.com/live?a=1&amp;b=2"' in html
+        assert swe.SITE_BASE + 'https://' not in html
+        text = swe.build_text_email(_digest(), promo=promo)
+        assert 'https://example.com/live?a=1&b=2' in text
+
     def test_default_promo_points_at_a_real_quarter(self):
         promo = swe.PROMO
         if promo is None:
+            return
+        if 'href' in promo:
+            assert promo['href'].startswith('https://')
             return
         assert promo['path'].startswith('/')
         if promo['path'].startswith('/quarterly/'):
