@@ -327,6 +327,27 @@ export const isDatePast = (dateString) => {
 };
 
 /**
+ * Whether an event is over. Most events are a single day; one that runs over
+ * several (a multi-day Tribunal hearing) carries an `end_date` and is only
+ * over once that last day has passed.
+ * @param {{date: string, end_date?: string}} event
+ * @returns {boolean}
+ */
+export const isEventPast = (event) => isDatePast(event.end_date || event.date);
+
+/**
+ * Whether a multi-day event is under way: it has started (its first day is
+ * today or earlier) and its last day has not yet passed.
+ * @param {{date: string, end_date?: string}} event
+ * @returns {boolean}
+ */
+export const isEventOngoing = (event) => {
+  if (!event.end_date || isDatePast(event.end_date)) return false;
+  const untilStart = getCalendarDaysUntil(event.date);
+  return untilStart !== null && untilStart <= 0;
+};
+
+/**
  * Format a "YYYY-MM" month key as a short label, e.g. "2026-08" -> "Aug 2026".
  *
  * Month keys are plain strings from the generated JSON, not dates, so they are

@@ -359,6 +359,70 @@ describe('TrackingContext synthetic upcoming events', () => {
   });
 });
 
+describe('TrackingContext multi-day tribunal hearings', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+    // Only Date is faked, so waitFor's own timers still run. "Today" is
+    // Tuesday 10 Nov 2026 in Sydney: day two of a hearing that began Monday.
+    vi.useFakeTimers({ toFake: ['Date'] });
+    vi.setSystemTime(new Date('2026-11-10T01:00:00Z'));
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+    globalThis.fetch = originalFetch;
+    vi.restoreAllMocks();
+  });
+
+  const appealed = (appeal) => ({
+    'MN-01068': {
+      merger_id: 'MN-01068',
+      merger_name: 'Coles – Kalgoorlie',
+      status: 'Assessment completed',
+      accc_determination: 'Not approved',
+      under_appeal: true,
+      events: [],
+      appeal: { tribunal_number: 'ACT 1 of 2026', status: 'current', ...appeal },
+    },
+  });
+
+  const hearingEvents = async (appeal) => {
+    mockFetchFromMergers(appealed(appeal));
+    const { result } = renderHook(() => useTracking(), { wrapper });
+    act(() => {
+      result.current.trackMerger('MN-01068');
+    });
+    await waitFor(() => {
+      expect(result.current.loading).toBe(false);
+    });
+    return result.current.trackedEvents.filter((e) => e.type === 'tribunal_hearing');
+  };
+
+  it('keeps a hearing that has started but not finished, carrying its end date', async () => {
+    const [hearing, ...rest] = await hearingEvents({
+      hearing_date: '2026-11-09',
+      hearing_end_date: '2026-11-19',
+    });
+    expect(rest).toHaveLength(0);
+    expect(hearing.date).toBe('2026-11-09');
+    expect(hearing.end_date).toBe('2026-11-19');
+  });
+
+  it('keeps a single-day hearing through its own day', async () => {
+    const events = await hearingEvents({ hearing_date: '2026-11-10' });
+    expect(events).toHaveLength(1);
+    expect(events[0].end_date).toBeUndefined();
+  });
+
+  it('drops a hearing once its last day has passed', async () => {
+    expect(
+      await hearingEvents({ hearing_date: '2026-11-02', hearing_end_date: '2026-11-09' })
+    ).toHaveLength(0);
+    expect(await hearingEvents({ hearing_date: '2026-11-09' })).toHaveLength(0);
+  });
+});
+
 describe('TrackingContext auto-tracking of Phase 2 matters', () => {
   beforeEach(() => {
     localStorage.clear();

@@ -839,6 +839,10 @@ def _appeal_record(appeal: dict) -> dict:
         # current — see static_data.outputs.upcoming_events and the frontend
         # TrackingContext.
         'hearing_date': appeal.get('hearing_date'),
+        # Last scheduled day of a hearing that runs over several days
+        # (optional). With it the hearing is one event spanning the range,
+        # still "upcoming" — in fact ongoing — until that day has passed.
+        'hearing_end_date': appeal.get('hearing_end_date'),
         'concluded_date': appeal.get('concluded_date'),
         'documents': appeal.get('documents', []),
     }
@@ -880,7 +884,8 @@ def summarise_appeals(records: list[dict]) -> dict:
         all have concluded does it take an outcome (see :func:`_deciding_appeal`)
         and the last ``concluded_date``;
       * ``filed_date`` is the first lodgement, ``hearing_date`` the earliest
-        hearing among the matters still current (or among all, once none is);
+        hearing among the matters still current (or among all, once none is),
+        and ``hearing_end_date`` the last day of that same hearing;
       * ``appellant`` and ``tribunal_number`` list every matter's, joined
         ("IAG and RACWA"); ``tribunal_url`` and ``appeal_type`` are the first
         matter's, since each names a single thing.
@@ -892,6 +897,12 @@ def summarise_appeals(records: list[dict]) -> dict:
 
     filed_dates = [a['filed_date'] for a in records if a.get('filed_date')]
     hearings = [a['hearing_date'] for a in (current or records) if a.get('hearing_date')]
+    hearing_date = min(hearings) if hearings else None
+    # Matters heard together share a start; their run ends with the longest.
+    hearing_ends = [
+        a['hearing_end_date'] for a in (current or records)
+        if a.get('hearing_date') == hearing_date and a.get('hearing_end_date')
+    ]
     concluded_dates = [a['concluded_date'] for a in concluded if a.get('concluded_date')]
 
     return {
@@ -907,7 +918,8 @@ def summarise_appeals(records: list[dict]) -> dict:
             deciding.get('effective_determination') if deciding else None
         ),
         'filed_date': min(filed_dates) if filed_dates else None,
-        'hearing_date': min(hearings) if hearings else None,
+        'hearing_date': hearing_date,
+        'hearing_end_date': max(hearing_ends) if hearing_date and hearing_ends else None,
         'concluded_date': (
             max(concluded_dates) if deciding and concluded_dates else None
         ),

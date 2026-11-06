@@ -2430,7 +2430,7 @@ class TestUpcomingEventsGenerate:
         ]
         assert len(nocc_events) == 1
 
-    def _appealed_merger(self, hearing_date, status='current'):
+    def _appealed_merger(self, hearing_date, status='current', hearing_end_date=None):
         # A Phase 2 refusal now under (or past) tribunal appeal, with a
         # scheduled hearing. Built through the real link step so under_appeal /
         # appeal.hearing_date are populated the way the pipeline sets them.
@@ -2464,6 +2464,7 @@ class TestUpcomingEventsGenerate:
                 'effective_determination': 'Not approved' if status == 'concluded' else None,
                 'filed_date': '2026-07-15',
                 'hearing_date': hearing_date,
+                'hearing_end_date': hearing_end_date,
                 'documents': [],
             }
         })
@@ -2497,6 +2498,46 @@ class TestUpcomingEventsGenerate:
         from datetime import datetime, timedelta, timezone
         past = (datetime.now(timezone.utc) - timedelta(days=5)).strftime('%Y-%m-%d')
         payload = upcoming_events.generate(self._appealed_merger(past), days_ahead=60)
+        assert not any(e['type'] == 'tribunal_hearing' for e in payload['events'])
+
+    def _sydney_day(self, offset):
+        from datetime import datetime, timedelta
+        from zoneinfo import ZoneInfo
+        today = datetime.now(ZoneInfo('Australia/Sydney')).date()
+        return (today + timedelta(days=offset)).isoformat()
+
+    def test_multi_day_hearing_carries_its_end_date(self):
+        start, end = self._sydney_day(30), self._sydney_day(40)
+        payload = upcoming_events.generate(
+            self._appealed_merger(start, hearing_end_date=end), days_ahead=60
+        )
+        [ev] = [e for e in payload['events'] if e['type'] == 'tribunal_hearing']
+        assert ev['date'] == f'{start}T12:00:00Z'
+        assert ev['end_date'] == f'{end}T12:00:00Z'
+
+    def test_multi_day_hearing_stays_while_ongoing(self):
+        # Started yesterday, sits until the end of the week: still in the feed.
+        payload = upcoming_events.generate(
+            self._appealed_merger(self._sydney_day(-1), hearing_end_date=self._sydney_day(3)),
+            days_ahead=60,
+        )
+        assert any(e['type'] == 'tribunal_hearing' for e in payload['events'])
+
+    def test_hearing_stays_through_its_last_day(self):
+        # The last (or only) day is today in Sydney: not yet past.
+        today = self._sydney_day(0)
+        for end in (today, None):
+            start = self._sydney_day(-3) if end else today
+            payload = upcoming_events.generate(
+                self._appealed_merger(start, hearing_end_date=end), days_ahead=60
+            )
+            assert any(e['type'] == 'tribunal_hearing' for e in payload['events'])
+
+    def test_multi_day_hearing_drops_once_finished(self):
+        payload = upcoming_events.generate(
+            self._appealed_merger(self._sydney_day(-10), hearing_end_date=self._sydney_day(-1)),
+            days_ahead=60,
+        )
         assert not any(e['type'] == 'tribunal_hearing' for e in payload['events'])
 
     def test_no_hearing_date_means_no_hearing_event(self):

@@ -11,7 +11,7 @@ import PromoStack from '../components/PromoStack';
 import { DASHBOARD_PROMOS } from '../constants/promo';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
-import { getCalendarDaysUntil, isDatePast } from '../utils/dates';
+import { getCalendarDaysUntil, isEventPast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
 import { formatMedian } from '../utils/formatMedian';
@@ -131,7 +131,8 @@ function Dashboard() {
           events. */}
       {upcomingEvents && (() => {
         const eventsWithin14Days = upcomingEvents.filter(event => {
-          if (isDatePast(event.date)) return false;
+          // A multi-day event (a Tribunal hearing) stays until its last day.
+          if (isEventPast(event)) return false;
           const daysRemaining = getCalendarDaysUntil(event.date);
           return daysRemaining !== null && daysRemaining <= 14;
         });

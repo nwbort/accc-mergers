@@ -207,6 +207,37 @@ describe('UpcomingEventsTimeline', () => {
     expect(names).toEqual(['Coles – Kalgoorlie', 'Zed – Determination']);
   });
 
+  it('lists a multi-day hearing already under way under today, as ongoing', () => {
+    // Today is 28 Jun; the hearing began on the 26th and sits until 3 Jul.
+    renderTimeline([
+      makeEvent({
+        date: '2026-06-26T12:00:00Z',
+        end_date: '2026-07-03T12:00:00Z',
+        merger_id: 'MN-H',
+        merger_name: 'Coles Kalgoorlie',
+        type: 'tribunal_hearing',
+      }),
+    ]);
+    const today = screen.getByRole('heading', { name: 'Today' }).closest('li');
+    const link = within(today).getByRole('link', { name: /Coles Kalgoorlie/ });
+    expect(within(link).getByText('Ongoing until 3 Jul')).toBeInTheDocument();
+  });
+
+  it('shows a multi-day hearing that has not begun on its first day, with its span', () => {
+    renderTimeline([
+      makeEvent({
+        date: '2026-06-30T12:00:00Z',
+        end_date: '2026-07-09T12:00:00Z',
+        merger_id: 'MN-H',
+        merger_name: 'Coles Kalgoorlie',
+        type: 'tribunal_hearing',
+      }),
+    ]);
+    const day = screen.getByRole('heading', { name: 'In 2 days' }).closest('li');
+    const link = within(day).getByRole('link', { name: /Coles Kalgoorlie/ });
+    expect(within(link).getByText('30 Jun – 9 Jul')).toBeInTheDocument();
+  });
+
   it('collapses 3+ same-type events on a day into a summary, expandable on click', () => {
     renderTimeline([
       makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – One' }),

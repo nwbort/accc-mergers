@@ -8,7 +8,14 @@ import {
   FaChevronDown,
 } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
-import { formatWeekday, formatDateRange, getCalendarDaysUntil } from '../utils/dates';
+import {
+  formatWeekday,
+  formatDateRange,
+  getCalendarDaysUntil,
+  isEventOngoing,
+  australianToday,
+  toDateString,
+} from '../utils/dates';
 import { PHASES, isPublicBenefitStage } from '../constants/mergerStatus';
 import { CARD } from '../utils/classNames';
 import EmptyStateCard from './EmptyStateCard';
@@ -153,9 +160,29 @@ function groupByType(events) {
   return groups;
 }
 
+// The calendar day (YYYY-MM-DD) an event is listed under. A multi-day event
+// already under way (a Tribunal hearing part-way through its run) is listed
+// under today, so it reads as happening now rather than slipping into the past
+// after its first day.
+function listedDay(event) {
+  if (isEventOngoing(event)) return toDateString(australianToday());
+  return event.date.slice(0, 10);
+}
+
+// How a multi-day event's span reads beside its chip: "Ongoing until 19 Nov"
+// once it has begun, "9 Nov – 19 Nov" before then.
+function spanLabel(event) {
+  if (!event.end_date) return null;
+  if (isEventOngoing(event)) {
+    return `Ongoing until ${formatDateRange(event.end_date, event.end_date)}`;
+  }
+  return formatDateRange(event.date, event.end_date);
+}
+
 function EventRow({ event }) {
   const eventType = getEventType(event.type);
   const { Icon } = eventType;
+  const span = spanLabel(event);
   return (
     <Link
       to={mergerPath(event.merger_id, event.merger_name)}
@@ -178,6 +205,7 @@ function EventRow({ event }) {
           >
             {eventType.label}
           </span>
+          {span && <span className="font-medium text-gray-700">{span}</span>}
           <span>{event.merger_id}</span>
           <span aria-hidden="true">·</span>
           <span className="truncate">{event.stage}</span>
@@ -240,26 +268,27 @@ function UpcomingEventsTimeline({ events }) {
     const byDay = new Map();
     [...events]
       .sort((a, b) => {
-        const dayDelta = a.date.slice(0, 10).localeCompare(b.date.slice(0, 10));
+        const dayDelta = listedDay(a).localeCompare(listedDay(b));
         return dayDelta !== 0 ? dayDelta : compareWithinDay(a, b);
       })
       .forEach((event) => {
-        const daysRemaining = getCalendarDaysUntil(event.date);
+        const day = listedDay(event);
+        const daysRemaining = getCalendarDaysUntil(day);
         const isLater = daysRemaining !== null && daysRemaining > 7;
-        const key = isLater ? LATER_KEY : event.date.slice(0, 10);
+        const key = isLater ? LATER_KEY : day;
         if (!byDay.has(key)) {
           byDay.set(
             key,
             isLater
-              ? { key, later: true, events: [], rangeStart: event.date, rangeEnd: event.date }
-              : { key, date: event.date, events: [] }
+              ? { key, later: true, events: [], rangeStart: day, rangeEnd: day }
+              : { key, date: day, events: [] }
           );
         }
         const bucket = byDay.get(key);
         bucket.events.push(event);
         // Events are still date-sorted at this point, so the running range
         // just tracks the first and most recent later event seen.
-        if (isLater) bucket.rangeEnd = event.date;
+        if (isLater) bucket.rangeEnd = day;
       });
     // The later bucket's events were sorted chronologically above; re-sort by
     // type/phase/name only, since it's presented as one combined entry rather

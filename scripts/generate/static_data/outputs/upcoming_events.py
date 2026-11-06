@@ -5,13 +5,28 @@ determination period ends within ``days_ahead`` days. Excludes waivers and
 suspended mergers using :func:`static_data.filters.exclude_for_public_output`.
 """
 
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 from scripts.constants import judicial_review, merger_status  # noqa: F401  (merger_status kept for parity)
 
 from ..business_days import add_business_days, subtract_business_days
 from ..filters import exclude_for_public_output
 from scripts.date_utils import parse_iso_datetime
+
+# The Tribunal sits in Australia, so whether a hearing day has passed is
+# judged on the Sydney calendar, not UTC's.
+_SYDNEY = ZoneInfo('Australia/Sydney')
+
+
+def _calendar_day(value) -> date | None:
+    """The calendar day an ISO date or datetime string names, or None."""
+    if not value:
+        return None
+    try:
+        return date.fromisoformat(str(value)[:10])
+    except ValueError:
+        return None
 
 
 def generate(mergers: list, days_ahead: int = 60) -> dict:
@@ -144,41 +159,45 @@ def generate(mergers: list, days_ahead: int = 60) -> dict:
             except (ValueError, AttributeError):
                 pass
 
-    # Tribunal hearing start dates. A matter under a *current* Australian
-    # Competition Tribunal appeal can have a scheduled hearing start date
-    # (data/processed/tribunal_appeals.json → appeal.hearing_date). These are
-    # surfaced regardless of the days_ahead window: a hearing is listed months
-    # in advance, is rare, and is worth flagging as soon as it is known. The
+    # Tribunal hearings. A matter under a *current* Australian Competition
+    # Tribunal appeal can have a scheduled hearing start date
+    # (data/processed/tribunal_appeals.json → appeal.hearing_date), and, for a
+    # hearing that sits over several days, the last scheduled day
+    # (appeal.hearing_end_date). These are surfaced regardless of the
+    # days_ahead window: a hearing is listed months in advance, is rare, and
+    # is worth flagging as soon as it is known. A multi-day hearing stays in
+    # the feed until its last day has passed (in Sydney, where it sits), so
+    # it reads as ongoing rather than dropping off on its first morning. The
     # matter is already ACCC-determined by this stage, so it is handled
-    # separately from the not-yet-determined candidate list above (waivers and
-    # suspended assessments are still excluded).
+    # separately from the not-yet-determined candidate list above (waivers
+    # and suspended assessments are still excluded).
+    sydney_today = datetime.now(_SYDNEY).date()
     for m in exclude_for_public_output(mergers):
         appeal = m.get('appeal')
         if not appeal or not m.get('under_appeal'):
             continue
-        hearing_date = appeal.get('hearing_date')
-        if not hearing_date:
+        start = _calendar_day(appeal.get('hearing_date'))
+        if start is None:
             continue
-        try:
-            parsed = parse_iso_datetime(hearing_date)
-            if parsed is None:
-                raise ValueError("unparseable date")
-            parsed = parsed.replace(tzinfo=None)
-        except (ValueError, AttributeError):
+        end = _calendar_day(appeal.get('hearing_end_date'))
+        if end is not None and end <= start:
+            end = None
+        if (end or start) < sydney_today:
             continue
-        if parsed < now:
-            continue
-        events.append({
+        event = {
             "type": "tribunal_hearing",
             "event_type_display": "Tribunal hearing",
-            "date": parsed.strftime('%Y-%m-%dT12:00:00Z'),
+            "date": f"{start.isoformat()}T12:00:00Z",
             "merger_id": m['merger_id'],
             "merger_name": m['merger_name'],
             "status": m.get('status'),
             "stage": m.get('stage'),
             "effective_notification_datetime": m.get('effective_notification_datetime'),
             "tribunal_number": appeal.get('tribunal_number'),
-        })
+        }
+        if end is not None:
+            event["end_date"] = f"{end.isoformat()}T12:00:00Z"
+        events.append(event)
 
     # Federal Court hearings on a live judicial review, read off the court's
     # own listings (data/processed/judicial_reviews.json, scraped from the
