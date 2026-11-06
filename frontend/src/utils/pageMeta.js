@@ -13,7 +13,6 @@
 // and the pages can call it with fetched data.
 
 import { industryPath, mergerPath, partyPath } from './slug.js';
-import { collapsePartyMembers, splitPartyName } from './partyMembers.js';
 
 export const SITE_URL = 'https://mergers.fyi';
 export const SITE_TITLE = 'Australian Merger Tracker';
@@ -205,22 +204,6 @@ function partyMergers(party) {
   return out;
 }
 
-/**
- * The group's other entities, as the Related parties block shows them: one
- * name per real entity (utils/partyMembers.js collapses spelling variants),
- * leaving out the group's own name.
- */
-function relatedEntityNames(party, name) {
-  const own = splitPartyName(name);
-  return collapsePartyMembers(party.members || [])
-    .map((row) => row.name)
-    .filter(Boolean)
-    .filter((n) => {
-      const split = splitPartyName(n);
-      return !(split.base === own.base && (split.form === own.form || !split.form || !own.form));
-    });
-}
-
 /** "as acquirer in 10 and as target in 2", or "all as acquirer" when only one role applies. */
 function rolePhrase(mergers) {
   const roles = PARTY_ROLES.map(([role, label]) => [label, mergers.filter((m) => m.role === role).length])
@@ -278,27 +261,17 @@ function partyDescription(party, name, mergers) {
 /**
  * The party page's crawlable paragraph. A one-merger party gets a single
  * sentence plus its filing date: anything longer would mostly repeat that
- * merger's own page. Null for a party with no mergers.
+ * merger's own page. Related entities are left out: the Related parties
+ * block directly below already lists them. Null for a party with no mergers.
  */
 export function partySummary(party, name) {
   const mergers = partyMergers(party);
   const n = mergers.length;
   if (!n) return null;
 
-  const related = relatedEntityNames(party, name);
-  const relatedSentence = related.length
-    ? `Filings name ${related.length} related ${related.length === 1 ? 'entity' : 'entities'} in the group, ` +
-      `including ${joinList(related.slice(0, 3))}.`
-    : null;
-
   if (n === 1) {
     const day = isoDay(mergers[0].notification_date);
-    return [
-      `${name} was ${singleMergerPhrase(mergers[0])}${day ? `, lodged on ${longDate(day)}` : ''}.`,
-      relatedSentence,
-    ]
-      .filter(Boolean)
-      .join(' ');
+    return `${name} was ${singleMergerPhrase(mergers[0])}${day ? `, lodged on ${longDate(day)}` : ''}.`;
   }
 
   const first = sortedDays(mergers)[0];
@@ -311,7 +284,6 @@ export function partySummary(party, name) {
     outcomeSentence(mergers),
     timingSentence(party),
     latestSentence(mergers),
-    relatedSentence,
   ]
     .filter(Boolean)
     .join(' ');

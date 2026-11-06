@@ -117,15 +117,14 @@ describe('partyMeta', () => {
     );
   });
 
-  it('summarises the record and names related entities, not the group itself', () => {
+  it('summarises the record without repeating the related parties block', () => {
     expect(partyMeta(party, 'vc').summary).toBe(
       'Since January 2026, Vets Central Holdings Pty Ltd has been a party to 3 ACCC merger reviews, ' +
         'as acquirer in 2 and as target in 1. They comprise 2 notified mergers and 1 waiver application. ' +
         'Of these, 1 was referred to Phase 2. ' +
         'Outcomes so far: 1 approved, 1 not approved and 1 still under assessment. ' +
         'Completed Phase 1 reviews took a median of 27 business days. ' +
-        'The most recent, Vets Central – Vital Vet, was lodged on 25 September 2026. ' +
-        'Filings name 2 related entities in the group, including DROVERS VET HOSPITAL PTY LTD and FACEBARK PTY LTD.',
+        'The most recent, Vets Central – Vital Vet, was lodged on 25 September 2026.',
     );
   });
 
@@ -544,9 +543,7 @@ describe('prerendered bodies are styled', () => {
     // PartyDetail previews 3 behind a "show more" toggle.
     expect(bodies.party).toContain('COLES GROUP LIMITED');
     expect(bodies.party).toContain('ABN: 11 004 089 936');
-    // Only the block itself: the summary paragraph may name hidden members.
-    const block = bodies.party.slice(bodies.party.indexOf('Related parties'));
-    expect(block).not.toContain('Retail Payment Solutions Pty Ltd');
+    expect(bodies.party).not.toContain('Retail Payment Solutions Pty Ltd');
     expect(bodies.party).toContain('Show 1 more');
   });
 
