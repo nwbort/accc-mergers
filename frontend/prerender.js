@@ -37,7 +37,7 @@ import {
   quarterlyMeta,
   serialiseJsonLd,
 } from './src/utils/pageMeta.js';
-import { industryPath, mergerPath } from './src/utils/slug.js';
+import { industryPath, mergerPath, partyPath } from './src/utils/slug.js';
 import { partyShardName } from './src/utils/shard.js';
 import { divisionFileName } from './src/utils/industryDivision.js';
 import { readIndustryNode } from './src/utils/industryNode.js';
@@ -52,6 +52,11 @@ const SHARD_FILE_RE = /^shard-[0-9a-f]{2}\.json$/i;
 // industry node carries ~66 mergers, so this only bites on pathological cases;
 // it exists to stop one outlier node inflating the HTML payload.
 const MAX_BODY_LINKS = 100;
+
+// The summary paragraph in an industry or party page's header card.
+// IndustryDetail.jsx and PartyDetail.jsx carry the same classes, so the card
+// is the same height before and after hydration.
+export const DETAIL_SUMMARY = 'text-sm text-gray-600 mt-3 leading-relaxed';
 
 function escapeHtml(str) {
   return String(str ?? '')
@@ -191,7 +196,7 @@ function headerCard(title, subtitle, extra = '') {
 // the navbar's height so content sits at the same offset before and after
 // React mounts. The bar carries the brand only — the real navbar's links are
 // interactive and stateful, and a static copy of them would go stale.
-function shell(inner) {
+function shell(inner, { wrap = true } = {}) {
   return (
     `<div class="min-h-screen gradient-mesh flex flex-col">` +
     `<div class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">` +
@@ -200,7 +205,7 @@ function shell(inner) {
     `<a href="/" class="text-lg font-bold tracking-tight text-gray-900">australian merger tracker</a>` +
     `</div></div></div>` +
     `<main id="main-content" class="flex-grow pt-16">` +
-    `<div class="${PAGE_WRAP}">${inner}</div>` +
+    (wrap ? `<div class="${PAGE_WRAP}">${inner}</div>` : inner) +
     `</main>` +
     `</div>`
   );
@@ -284,7 +289,8 @@ export function partyBody(party, meta) {
       headerCard(
         meta.name,
         `${meta.mergerCount} merger${meta.mergerCount !== 1 ? 's' : ''}`,
-        relatedEntities,
+        (meta.summary ? `<p class="${DETAIL_SUMMARY}">${escapeHtml(meta.summary)}</p>` : '') +
+          relatedEntities,
       ) +
       statGrid(stats) +
       roleSections,
@@ -322,7 +328,11 @@ export function industryBody(industry, code, meta) {
 
   return shell(
     breadcrumbHtml(trail, meta.name) +
-      headerCard(meta.name, subtitle) +
+      headerCard(
+        meta.name,
+        subtitle,
+        meta.summary ? `<p class="${DETAIL_SUMMARY}">${escapeHtml(meta.summary)}</p>` : '',
+      ) +
       statGrid(stats) +
       section('Sub-industries', children.length ? `<div class="${CARD} p-5">${list(children)}</div>` : '') +
       section('Mergers in this industry', mergerLinks(meta.mergers)),
@@ -350,6 +360,108 @@ export function staticBody(meta) {
       '',
       `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
     ),
+  );
+}
+
+// A page rendered from its real React component (src/prerender/renderStatic.jsx).
+// The component brings its own page wrapper, so only the app chrome is added.
+export function componentBody(html) {
+  return shell(html, { wrap: false });
+}
+
+// The hub pages (/mergers, /industries, /parties) draw their lists in the
+// browser — search boxes, treemaps, infinite scroll — so their raw HTML used
+// to link to nothing. These bodies give crawlers the links: every merger,
+// every tagged industry grouped by division, and every party on more than one
+// merger (the same cut the sitemap makes; the rest are linked from their
+// merger pages).
+
+function hubHeader(meta) {
+  return headerCard(meta.title, '', `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`);
+}
+
+function linkList(rows) {
+  if (!rows.length) return '';
+  return `<div class="${CARD} p-5"><ul class="space-y-2">${rows.map((r) => `<li>${r}</li>`).join('')}</ul></div>`;
+}
+
+function countSuffix(n, word) {
+  return n == null ? '' : `<span class="text-sm text-gray-500"> · ${n} ${word}${n !== 1 ? 's' : ''}</span>`;
+}
+
+/** /mergers: every merger, newest first, with its outcome. */
+export function mergersHubBody(list, meta) {
+  const rows = [...(list || [])]
+    .filter((m) => m?.merger_id)
+    .sort((a, b) =>
+      String(b.effective_notification_datetime || '').localeCompare(String(a.effective_notification_datetime || '')),
+    )
+    .map((m) => {
+      const outcome = m.accc_determination || m.status;
+      return (
+        `<a href="${escapeHtml(mergerPath(m.merger_id, m.merger_name))}" class="text-sm font-medium ${LINK}">` +
+        `${escapeHtml(m.merger_name || m.merger_id)}</a>` +
+        (outcome ? `<span class="text-sm text-gray-500"> · ${escapeHtml(outcome)}</span>` : '')
+      );
+    });
+  return shell(hubHeader(meta) + section(`All ${rows.length} mergers, newest first`, linkList(rows)));
+}
+
+/**
+ * /industries: each tagged industry, grouped under its ANZSIC division.
+ * `divisionNames` maps a division letter to its name; `divisionOf` is
+ * utils/industryDivision.js's rule (passed in so tests can stub it).
+ */
+export function industriesHubBody(industries, divisionNames, divisionOf, meta) {
+  const groups = new Map();
+  for (const ind of industries || []) {
+    if (!ind?.code) continue;
+    const file = divisionOf(ind.code);
+    const division = file && divisionNames[file] ? file : null;
+    if (!groups.has(division)) groups.set(division, []);
+    groups.get(division).push(ind);
+  }
+  const ordered = [...groups.keys()].sort((a, b) => (a === null) - (b === null) || String(a).localeCompare(String(b)));
+  const sections = ordered
+    .map((division) => {
+      const rows = groups
+        .get(division)
+        .sort((a, b) => (b.merger_count ?? 0) - (a.merger_count ?? 0) || String(a.name).localeCompare(String(b.name)))
+        .map(
+          (ind) =>
+            `<a href="${escapeHtml(industryPath(ind.code, ind.name))}" class="text-sm font-medium ${LINK}">` +
+            `${escapeHtml(ind.name || ind.code)}</a>` +
+            countSuffix(ind.merger_count, 'merger'),
+        );
+      if (division === null) return section('Other industries', linkList(rows));
+      const name = divisionNames[division];
+      return (
+        `<div class="mb-8">` +
+        `<h2 class="${SECTION_HEADING} mb-3"><a href="${escapeHtml(industryPath(division, name))}" class="${LINK}">` +
+        `${escapeHtml(name)}</a></h2>` +
+        linkList(rows) +
+        `</div>`
+      );
+    })
+    .join('');
+  return shell(hubHeader(meta) + sections);
+}
+
+/** /parties: every party on two or more mergers, busiest first. */
+export function partiesHubBody(parties, meta) {
+  const all = (parties || []).filter((p) => p?.id);
+  const rows = all
+    .filter((p) => (p.merger_count ?? 0) >= 2)
+    .sort((a, b) => (b.merger_count ?? 0) - (a.merger_count ?? 0) || String(a.name).localeCompare(String(b.name)))
+    .map(
+      (p) =>
+        `<a href="${escapeHtml(partyPath(p.id, p.name))}" class="text-sm font-medium ${LINK}">` +
+        `${escapeHtml(p.name || p.id)}</a>` +
+        countSuffix(p.merger_count, 'merger'),
+    );
+  return shell(
+    hubHeader(meta) +
+      section(`Parties to more than one merger (${rows.length} of ${all.length})`, linkList(rows)),
   );
 }
 
@@ -418,9 +530,43 @@ function writePage(outDir, path, html) {
   writeFileSync(outFile, html);
 }
 
+// Loads src/prerender/renderStatic.jsx through a throwaway Vite SSR server,
+// since this Node module can't import JSX itself. Returns null (and the pages
+// keep their plain bodies) if that fails, so a rendering problem degrades the
+// raw HTML rather than failing the deploy.
+async function loadComponentRenderer(root, warn) {
+  let server;
+  try {
+    const [{ createServer }, { default: react }] = await Promise.all([
+      import('vite'),
+      import('@vitejs/plugin-react'),
+    ]);
+    server = await createServer({
+      root,
+      configFile: false,
+      logLevel: 'error',
+      appType: 'custom',
+      plugins: [react()],
+      server: { middlewareMode: true, hmr: false, ws: false },
+      optimizeDeps: { noDiscovery: true, include: [] },
+      // CommonJS, so Node's own loader can't give the pages its named
+      // exports (Helmet, HelmetProvider); let Vite transform it instead.
+      ssr: { noExternal: ['react-helmet-async'] },
+    });
+    const mod = await server.ssrLoadModule('/src/prerender/renderStatic.jsx');
+    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute };
+  } catch (err) {
+    warn(`prerender: could not load component renderer (${err.message}); those pages keep plain bodies`);
+    return null;
+  } finally {
+    await server?.close();
+  }
+}
+
 export default function prerenderMergers() {
   let outDir;
   let publicDir;
+  let root;
 
   return {
     name: 'prerender-mergers',
@@ -428,9 +574,10 @@ export default function prerenderMergers() {
     enforce: 'post',
     configResolved(config) {
       outDir = config.build.outDir;
+      root = config.root;
       publicDir = config.publicDir;
     },
-    closeBundle() {
+    async closeBundle() {
       const template = readFileSync(join(outDir, 'index.html'), 'utf8');
       const dataDir = join(publicDir, 'data');
       // NOTE: scripts/check_deploy_assets.py derives this same count from the
@@ -625,6 +772,52 @@ export default function prerenderMergers() {
         this.warn(`prerender: skipping quarterly reports: ${err.message}`);
       }
 
+      // Pages rendered from their real components, and the hub pages' data.
+      const componentPages = await loadComponentRenderer(root, (msg) => this.warn(msg));
+      const hubData = (file, key) => {
+        try {
+          const json = readJson(join(dataDir, file));
+          return key ? json[key] : json;
+        } catch (err) {
+          this.warn(`prerender: ${file} unreadable (${err.message}), hub page keeps its plain body`);
+          return null;
+        }
+      };
+      const divisionNames = {};
+      for (const file of divisionFiles) {
+        try {
+          const payload = readJson(join(industriesDir, file));
+          const name = payload?.nodes?.[payload.division]?.name;
+          if (payload?.division && name) divisionNames[basename(file, '.json')] = name;
+        } catch {
+          // Already warned about when the industry pages were written.
+        }
+      }
+      const staticBodyFor = (path, meta) => {
+        if (componentPages?.routes.includes(path)) {
+          const data = path === '/commentary' ? { commentary: hubData('commentary.json') } : {};
+          try {
+            const html = componentPages.render(path, data);
+            if (html) return componentBody(html);
+          } catch (err) {
+            this.warn(`prerender: rendering ${path} from its component failed (${err.message}), using plain body`);
+          }
+        }
+        if (path === '/mergers') {
+          const list = hubData('mergers/list.json', 'mergers');
+          if (list) return mergersHubBody(list, meta);
+        }
+        if (path === '/industries') {
+          const industries = hubData('industries.json', 'industries');
+          if (industries) return industriesHubBody(industries, divisionNames, (code) => basename(divisionFileName(code), '.json'), meta);
+        }
+        if (path === '/parties') {
+          const parties = hubData('parties.json', 'parties');
+          if (parties) return partiesHubBody(parties, meta);
+        }
+        return staticBody(meta);
+      };
+
       for (const [path, base] of Object.entries(STATIC_PAGE_META)) {
         // The homepage is dist/index.html — the very template being stamped.
         if (path === '/') continue;
@@ -636,7 +829,7 @@ export default function prerenderMergers() {
           counts.static++;
           continue;
         }
-        writePage(outDir, path, renderPage(template, meta, staticBody(meta)));
+        writePage(outDir, path, renderPage(template, meta, staticBodyFor(path, meta)));
         counts.static++;
       }
 

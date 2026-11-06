@@ -7,6 +7,8 @@ import {
   SITE_URL,
   STATIC_PAGE_META,
   fullTitle,
+  frequentAcquirers,
+  partyTitleName,
   DEFAULT_OG_IMAGE,
   industryMeta,
   mergerMeta,
@@ -16,7 +18,12 @@ import {
 } from '../pageMeta.js';
 import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
+  DETAIL_SUMMARY,
+  componentBody,
+  industriesHubBody,
   industryBody,
+  mergersHubBody,
+  partiesHubBody,
   mergerBody,
   partyBody,
   renderPage,
@@ -74,24 +81,101 @@ describe('mergerMeta', () => {
 
 describe('partyMeta', () => {
   const party = {
-    canonical_name: 'Coles Group',
-    merger_count: 11,
+    canonical_name: 'Vets Central Holdings Pty Ltd',
+    merger_count: 3,
     phase_2_count: 1,
+    phase_duration: { median_business_days: 27, completed_count: 2 },
+    waiver_duration: null,
+    members: [
+      { name: 'VETS CENTRAL HOLDINGS PTY LTD', identifier: '11 111 111 111', identifier_type: 'ABN' },
+      { name: 'Vets Central Holdings Pty Ltd' },
+      { name: 'DROVERS VET HOSPITAL PTY LTD' },
+      { name: 'FACEBARK PTY LTD' },
+    ],
+    mergers: {
+      acquirer: [
+        { merger_id: 'MN-3', merger_name: 'Vets Central – Vital Vet', determination: 'Approved', notification_date: '2026-09-25T12:00:00Z' },
+        { merger_id: 'MN-2', merger_name: 'Vets Central – Drovers', phase: 'Phase 2', status: 'Under assessment', notification_date: '2026-04-01T12:00:00Z' },
+      ],
+      target: [
+        { merger_id: 'WA-1', merger_name: 'Bigger Co – Vets Central', is_waiver: true, determination: 'Not approved', notification_date: '2026-01-15T12:00:00Z' },
+      ],
+      other: [],
+    },
   };
 
-  it('pluralises the review counts', () => {
-    expect(partyMeta(party, 'coles').description).toBe(
-      'Coles Group has been involved in 11 ACCC merger reviews, including 1 Phase 2 review.',
-    );
-    expect(partyMeta({ ...party, merger_count: 1, phase_2_count: 0 }, 'coles').description).toBe(
-      'Coles Group has been involved in 1 ACCC merger review.',
+  it('drops the legal form from the title but keeps it as the name', () => {
+    const meta = partyMeta(party, 'vets-central-holdings-pty-ltd');
+    expect(meta.title).toBe('Vets Central Holdings – ACCC Merger Reviews');
+    expect(meta.name).toBe('Vets Central Holdings Pty Ltd');
+    expect(partyTitleName('Bain Capital Investors, LLC.')).toBe('Bain Capital Investors');
+    expect(partyTitleName('Siemens AG')).toBe('Siemens AG');
+    expect(partyTitleName('Limited')).toBe('Limited');
+  });
+
+  it('describes roles, Phase 2 and outcomes', () => {
+    expect(partyMeta(party, 'vc').description).toBe(
+      'Vets Central Holdings Pty Ltd has been involved in 3 ACCC merger reviews since January 2026, ' +
+        'as acquirer in 2 and as target in 1, including 1 Phase 2 review. ' +
+        '1 approved, 1 not approved and 1 under assessment.',
     );
   });
 
-  it('falls back to the route id when the record has no canonical name', () => {
+  it('summarises the record without repeating the related parties block', () => {
+    expect(partyMeta(party, 'vc').summary).toBe(
+      'Since January 2026, Vets Central Holdings Pty Ltd has been a party to 3 ACCC merger reviews, ' +
+        'as acquirer in 2 and as target in 1. They comprise 2 notified mergers and 1 waiver application. ' +
+        'Of these, 1 was referred to Phase 2. ' +
+        'Outcomes so far: 1 approved, 1 not approved and 1 still under assessment. ' +
+        'Completed Phase 1 reviews took a median of 27 business days. ' +
+        'The most recent, Vets Central – Vital Vet, was lodged on 25 September 2026.',
+    );
+  });
+
+  it('keeps a one-merger party to a single sentence', () => {
+    const single = {
+      canonical_name: 'ZIM Integrated Shipping Services Ltd',
+      merger_count: 1,
+      mergers: {
+        acquirer: [],
+        target: [{ merger_id: 'MN-9', merger_name: 'Hapag-Lloyd - ZIM', determination: 'Approved', notification_date: '2026-06-29T12:00:00Z' }],
+        other: [],
+      },
+    };
+    const meta = partyMeta(single, 'zim');
+    expect(meta.description).toBe(
+      'ZIM Integrated Shipping Services Ltd was the target in Hapag-Lloyd - ZIM, a merger notification approved by the ACCC.',
+    );
+    expect(meta.summary).toBe(
+      'ZIM Integrated Shipping Services Ltd was the target in Hapag-Lloyd - ZIM, ' +
+        'a merger notification approved by the ACCC, lodged on 29 June 2026.',
+    );
+  });
+
+  it('says "all as" when the party only ever played one role', () => {
+    const acquirerOnly = { ...party, phase_2_count: 0, mergers: { ...party.mergers, target: [] } };
+    expect(partyMeta(acquirerOnly, 'vc').description).toContain('since April 2026, all as acquirer.');
+  });
+
+  it('marks the page up as a collection about the organisation', () => {
+    const [breadcrumb, collection] = partyMeta(party, 'vc').structuredData;
+    expect(breadcrumb['@type']).toBe('BreadcrumbList');
+    expect(collection['@type']).toBe('CollectionPage');
+    expect(collection.about).toEqual({ '@type': 'Organization', name: 'Vets Central Holdings Pty Ltd' });
+    expect(collection.mainEntity.numberOfItems).toBe(3);
+    expect(collection.mainEntity.itemListElement.map((i) => i.url)).toEqual([
+      'https://mergers.fyi/mergers/MN-3/vets-central-vital-vet',
+      'https://mergers.fyi/mergers/MN-2/vets-central-drovers',
+      'https://mergers.fyi/mergers/WA-1/bigger-co-vets-central',
+    ]);
+  });
+
+  it('handles an empty record and falls back to the route id', () => {
     const meta = partyMeta({ merger_count: 0 }, 'some-party');
     expect(meta.name).toBe('some-party');
     expect(meta.path).toBe('/parties/some-party/some-party');
+    expect(meta.summary).toBeNull();
+    expect(meta.description).toBe('some-party on the ACCC merger register. No merger reviews have been recorded yet.');
   });
 });
 
@@ -103,19 +187,88 @@ describe('industryMeta', () => {
     ancestors: [{ code: 'K', name: 'Financial and Insurance Services', level: 'division' }],
   };
 
-  it('describes the node by ANZSIC level and count', () => {
-    const meta = industryMeta(industry, '6240');
-    expect(meta.description).toBe(
-      '2 mergers in the Financial Asset Investing industry (ANZSIC class 6240) reviewed by the ACCC.',
-    );
-    expect(meta.path).toBe('/industries/6240/financial-asset-investing');
+  // A realistic node: newest first, as the division file orders them.
+  const DENTAL = {
+    name: 'Dental Services',
+    level: 'class',
+    phase_2_count: 0,
+    phase_duration: { median_business_days: 16, completed_count: 3 },
+    waiver_duration: { median_business_days: 15, completed_count: 2 },
+    ancestors: [],
+    mergers: [
+      { merger_id: 'WA-3', merger_name: 'National Dental Care – Sunshine Dental, VIC', is_waiver: true, determination: 'Approved', notification_date: '2026-09-11T12:00:00Z' },
+      { merger_id: 'WA-2', merger_name: 'Impression Dental Group - Blackburn Dental Centre', is_waiver: true, determination: 'Approved', notification_date: '2026-08-14T12:00:00Z' },
+      { merger_id: 'MN-3', merger_name: 'Impression Dental Group - Coastal Dental Care', determination: 'Approved', notification_date: '2026-05-28T12:00:00Z' },
+      { merger_id: 'MN-2', merger_name: 'National Dental Care – Comfy Dental clinic', determination: 'Approved', notification_date: '2026-03-13T12:00:00Z' },
+      { merger_id: 'MN-1', merger_name: 'National Dental Care – DDTA Dental', determination: 'Approved', has_conditions: true, notification_date: '2026-02-27T12:00:00Z' },
+    ],
+  };
+
+  it('leads the title with the industry and what people search for', () => {
+    const meta = industryMeta(DENTAL, '8531');
+    expect(meta.title).toBe('Dental Services Mergers – ACCC Reviews');
+    expect(fullTitle(meta.title)).toBe('Dental Services Mergers – ACCC Reviews | Australian Merger Tracker');
+    // The h1 keeps the plain name.
+    expect(meta.name).toBe('Dental Services');
   });
 
-  it('handles an empty node without pluralising wrongly', () => {
+  it('writes a description specific to the node', () => {
+    expect(industryMeta(DENTAL, '8531').description).toBe(
+      '5 ACCC merger reviews in Dental Services (ANZSIC class 8531) since February 2026, all approved. ' +
+        'Frequent acquirers: National Dental Care, Impression Dental Group.',
+    );
+    expect(industryMeta(industry, '6240').path).toBe('/industries/6240/financial-asset-investing');
+  });
+
+  it('breaks down mixed outcomes in the description', () => {
+    const mixed = {
+      name: 'Retail',
+      level: 'division',
+      mergers: [
+        { merger_name: 'A - B', determination: 'Approved' },
+        { merger_name: 'C - D', determination: 'Not approved' },
+        { merger_name: 'E - F', status: 'Under assessment' },
+      ],
+    };
+    expect(industryMeta(mixed, 'G').description).toBe(
+      '3 ACCC merger reviews in Retail (ANZSIC division G): 1 approved, 1 not approved and 1 under assessment.',
+    );
+  });
+
+  it('describes an empty node without a count of zero', () => {
     const meta = industryMeta({ name: 'Empty', level: 'class', mergers: [] }, '9002');
     expect(meta.description).toBe(
-      '0 mergers in the Empty industry (ANZSIC class 9002) reviewed by the ACCC.',
+      'ACCC merger reviews in the Empty industry (ANZSIC class 9002). None have been recorded yet.',
     );
+    expect(meta.summary).toBeNull();
+  });
+
+  it('summarises volume, outcomes, acquirers, timing and the latest matter', () => {
+    expect(industryMeta(DENTAL, '8531').summary).toBe(
+      'Since February 2026, the ACCC has reviewed 5 acquisitions in the Dental Services industry ' +
+        '(ANZSIC class 8531): 3 notified mergers and 2 waiver applications. ' +
+        'All 5 were approved (1 with conditions). ' +
+        'The most frequent acquirers are National Dental Care (3) and Impression Dental Group (2). ' +
+        'Completed Phase 1 reviews took a median of 16 business days, and waivers a median of 15 business days. ' +
+        'The most recent, National Dental Care – Sunshine Dental, VIC, was lodged on 11 September 2026.',
+    );
+  });
+
+  it('mentions Phase 2 referrals and open matters', () => {
+    const summary = industryMeta(
+      {
+        name: 'Supermarkets',
+        level: 'class',
+        phase_2_count: 1,
+        mergers: [
+          { merger_name: 'X - Y', phase: 'Phase 2', status: 'Under assessment', notification_date: '2026-04-01T12:00:00Z' },
+          { merger_name: 'Z - W', determination: 'Approved', notification_date: '2026-03-01T12:00:00Z' },
+        ],
+      },
+      '4110',
+    ).summary;
+    expect(summary).toContain('Of these, 1 was referred to Phase 2.');
+    expect(summary).toContain('Outcomes so far: 1 approved and 1 still under assessment.');
   });
 
   it('falls back through detail name, index name, then code', () => {
@@ -131,6 +284,34 @@ describe('industryMeta', () => {
       'Financial and Insurance Services',
       'Financial Asset Investing',
     ]);
+  });
+
+  it('marks the page up as a collection of its mergers', () => {
+    const [, collection] = industryMeta(DENTAL, '8531').structuredData;
+    expect(collection['@type']).toBe('CollectionPage');
+    expect(collection.url).toBe('https://mergers.fyi/industries/8531/dental-services');
+    expect(collection.about).toMatchObject({ termCode: '8531', name: 'Dental Services' });
+    expect(collection.mainEntity.numberOfItems).toBe(5);
+    expect(collection.mainEntity.itemListElement[0]).toEqual({
+      '@type': 'ListItem',
+      position: 1,
+      name: 'National Dental Care – Sunshine Dental, VIC',
+      url: 'https://mergers.fyi/mergers/WA-3/national-dental-care-sunshine-dental-vic',
+    });
+  });
+});
+
+describe('frequentAcquirers', () => {
+  it('reads the acquirer off the name and needs two distinct deals', () => {
+    expect(
+      frequentAcquirers([
+        { merger_name: 'Airtree – HotDoc' },
+        { merger_name: 'Airtree – HotDoc' }, // same deal filed twice
+        { merger_name: 'Coca-Cola Europacific - Bottler A' },
+        { merger_name: 'Coca-Cola Europacific - Bottler B' },
+        { merger_name: 'No separator here' },
+      ]),
+    ).toEqual([{ name: 'Coca-Cola Europacific', count: 2 }]);
   });
 });
 
@@ -370,6 +551,17 @@ describe('prerendered bodies are styled', () => {
     expect(bodies.party).toContain('Show 1 more');
   });
 
+  it('carries the industry summary paragraph in the header card', () => {
+    const meta = industryMeta(INDUSTRY, '6240');
+    expect(meta.summary).toBeTruthy();
+    expect(bodies.industry).toContain(`<p class="${DETAIL_SUMMARY}">${meta.summary}</p></div>`);
+  });
+
+  it('carries the party summary paragraph before the related parties', () => {
+    const meta = partyMeta(PARTY, 'coles');
+    expect(bodies.party).toContain(`<p class="${DETAIL_SUMMARY}">${meta.summary}</p><div class="mt-4 pt-4`);
+  });
+
   it('links mergers by their canonical slugged path', () => {
     expect(bodies.party).toContain('href="/mergers/MN-1/coles-paydock"');
     expect(bodies.industry).toContain('href="/mergers/MN-2/some-deal"');
@@ -406,5 +598,66 @@ describe('quarterlyMeta', () => {
     const { description } = quarterlyMeta(quarter);
     expect(description).toContain('113 notifications filed. Phase 1 took 18 days.');
     expect(description).not.toContain('Third point.');
+  });
+});
+
+describe('hub page bodies', () => {
+  const meta = (path) => ({ ...STATIC_PAGE_META[path], path });
+
+  it('links every merger on /mergers, newest first', () => {
+    const body = mergersHubBody(
+      [
+        { merger_id: 'MN-1', merger_name: 'Old - Deal', accc_determination: 'Approved', effective_notification_datetime: '2025-01-01T12:00:00Z' },
+        { merger_id: 'WA-2', merger_name: 'New - Deal', status: 'Under assessment', effective_notification_datetime: '2026-01-01T12:00:00Z' },
+      ],
+      meta('/mergers'),
+    );
+    expect(body).toContain('All 2 mergers, newest first');
+    expect(body.indexOf('/mergers/WA-2/new-deal')).toBeLessThan(body.indexOf('/mergers/MN-1/old-deal'));
+    expect(body).toContain('Under assessment');
+  });
+
+  it('groups /industries under their division, with the unplaceable last', () => {
+    const body = industriesHubBody(
+      [
+        { code: '8531', name: 'Dental Services', merger_count: 18 },
+        { code: '4110', name: 'Supermarket and Grocery Stores', merger_count: 26 },
+        { code: '99/1', name: 'Mystery', merger_count: 1 },
+      ],
+      { G: 'Retail Trade', Q: 'Health Care and Social Assistance' },
+      (code) => ({ 8531: 'Q', 4110: 'G' })[code] || '_orphans',
+      meta('/industries'),
+    );
+    expect(body).toContain('href="/industries/G/retail-trade"');
+    expect(body).toContain('href="/industries/8531/dental-services"');
+    const order = ['Retail Trade', 'Health Care and Social Assistance', 'Other industries'].map((t) => body.indexOf(t));
+    expect(order).toEqual([...order].sort((a, b) => a - b));
+    expect(order[0]).toBeGreaterThan(-1);
+  });
+
+  it('links only parties on more than one merger from /parties', () => {
+    const body = partiesHubBody(
+      [
+        { id: 'coles', name: 'Coles Group', merger_count: 19 },
+        { id: 'solo', name: 'Solo Pty Ltd', merger_count: 1 },
+      ],
+      meta('/parties'),
+    );
+    expect(body).toContain('href="/parties/coles/coles-group"');
+    expect(body).not.toContain('Solo Pty Ltd');
+    expect(body).toContain('(1 of 2)');
+  });
+
+  it('wraps a component-rendered page in the chrome only', () => {
+    const body = componentBody('<div class="max-w-4xl">page</div>');
+    expect(body).toContain('class="flex-grow pt-16"><div class="max-w-4xl">page</div></main>');
+  });
+});
+
+describe('the author page', () => {
+  it('carries its Person JSON-LD in the shared meta, so the prerender emits it', () => {
+    const [person] = STATIC_PAGE_META['/nick-twort'].structuredData;
+    expect(person['@type']).toBe('Person');
+    expect(person.name).toBe('Nick Twort');
   });
 });

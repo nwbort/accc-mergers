@@ -313,6 +313,13 @@ frontend/src/
 │                         #   (reading helpers for quarterly.json), share.js (share-menu URLs),
 │                         #   trackEvent.js (the anonymous feature-usage ping to the signup
 │                         #   Worker's POST /event)
+├── prerender/            # renderStatic.jsx: pages rendered from their real components into the
+│                         #   build-time prerendered HTML (frontend/prerender.js loads it through a
+│                         #   throwaway Vite SSR server, since that plain Node module can't import
+│                         #   JSX). Only pages fully known at build time: /nick-twort, /privacy,
+│                         #   /copyright, and /commentary from commentary.json. The hub pages
+│                         #   (/mergers, /industries, /parties) get link-list bodies from their JSON
+│                         #   in prerender.js instead
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at

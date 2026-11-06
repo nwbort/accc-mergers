@@ -201,6 +201,12 @@ function IndustryDetail() {
               title="Get notified when a new merger is filed or a determination is published in this industry"
             />
           </div>
+          {/* Below the heading row rather than beside the Follow button, so it
+              spans the card. Same text and classes as prerender.js's
+              industryBody (DETAIL_SUMMARY). */}
+          {meta.summary && (
+            <p className="text-sm text-gray-600 mt-3 leading-relaxed">{meta.summary}</p>
+          )}
         </div>
 
         {mergers.length > 0 && <DetailStatGrid statCards={statCards} />}
