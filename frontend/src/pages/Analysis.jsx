@@ -23,6 +23,16 @@ import { PHASE_1_DEADLINE_BD, WAIVER_DEADLINE_BD } from '../constants/statutoryD
 const PAGE_META = STATIC_PAGE_META['/analysis'];
 
 const PENDING_WAIVERS_LABEL = 'Waivers under assessment (estimated)';
+// The caseload chart's estimate, named to match its counted "Open waivers".
+const OPEN_WAIVERS_ESTIMATED_LABEL = 'Open waivers (estimated)';
+
+// The open-waiver band on the caseload chart, stronger than the shared light
+// tint so it separates from the notifications fill beneath it.
+const OPEN_WAIVERS_FILL = 'rgba(107, 143, 127, 0.4)';
+
+// Internal label of the caseload chart's line-only waiver outline, which the
+// legend and tooltip both leave out.
+const CASELOAD_WAIVER_OUTLINE = 'Open waivers outline';
 
 // Diagonal teal stripes for the estimated segment, so it reads as a
 // projection on top of the counted waivers rather than as more of them.
@@ -54,6 +64,33 @@ function pendingWaiversFill() {
   return stripePattern;
 }
 
+// A movement with its sign, so a rise reads "+6" rather than "6".
+function signed(n) {
+  return `${n > 0 ? '+' : ''}${n}`;
+}
+
+function CaseloadStat({ label, value, note }) {
+  return (
+    <div>
+      <p className={SECTION_HEADING}>{label}</p>
+      <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">{value}</p>
+      {note && <p className="text-sm text-gray-500 mt-0.5">{note}</p>}
+    </div>
+  );
+}
+
+function CaseloadStatGroup({ title, swatch, className = '', children }) {
+  return (
+    <div role="group" aria-label={title} className={`w-full sm:w-auto ${className}`}>
+      <p className="flex items-center gap-2 text-sm font-semibold text-gray-900 mb-2">
+        <span aria-hidden="true" className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: swatch }} />
+        {title}
+      </p>
+      {/* Equal columns when stacked on a phone, so the two groups line up. */}
+      <div className="grid grid-cols-2 gap-x-6 sm:flex sm:gap-x-10">{children}</div>
+    </div>
+  );
+}
 
 function Analysis() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.analysis, {
@@ -174,6 +211,11 @@ function Analysis() {
   let caseloadDeltaFrom = null;
   let caseloadAsAtLabel = null;
   let caseloadPartialLast = false;
+  let hasCaseloadWaivers = false;
+  let waiversOpenLatest = null;
+  let waiversPendingLatest = 0;
+  let waiversDelta = null;
+  let waiversDeltaEstimated = false;
 
   if (hasCaseload) {
     const lastIndex = caseload.labels.length - 1;
@@ -187,10 +229,45 @@ function Analysis() {
     // grown, so a peak stat would just restate the latest figure. Falls back
     // to the start of the series while less than six months of it exists.
     const compareIndex = Math.max(0, lastIndex - 6);
-    if (compareIndex !== lastIndex) {
+    const hasDelta = compareIndex !== lastIndex;
+    if (hasDelta) {
       caseloadDelta = caseloadLatest - caseload.notifications[compareIndex];
       caseloadDeltaFrom = formatMonthLabel(caseload.labels[compareIndex]);
     }
+
+    // Waivers stack on top of the notifications: those counted in hindsight
+    // (decided since, so on the register), then the generator's estimate of
+    // those still being assessed, which the register can't show yet. Guarded
+    // on presence: a deployed payload can predate both series.
+    const caseloadWaivers = caseload.waivers;
+    const caseloadPending = caseload.waivers_pending_estimate
+      ?? caseload.labels.map(() => 0);
+    hasCaseloadWaivers = Array.isArray(caseloadWaivers) && caseloadWaivers.length === caseload.labels.length;
+    const hasCaseloadPending = hasCaseloadWaivers && caseloadPending.some((n) => n > 0);
+    if (hasCaseloadWaivers) {
+      waiversPendingLatest = caseloadPending[lastIndex] ?? 0;
+      waiversOpenLatest = caseloadWaivers[lastIndex] + waiversPendingLatest;
+      // Same six-month movement as the notifications, over counted plus
+      // estimated waivers, and approximate if either end leans on the estimate.
+      if (hasDelta) {
+        const comparePending = caseloadPending[compareIndex] ?? 0;
+        waiversDelta = waiversOpenLatest - (caseloadWaivers[compareIndex] + comparePending);
+        waiversDeltaEstimated = waiversPendingLatest > 0 || comparePending > 0;
+      }
+    }
+
+    // Monotone rather than a free tension: a stacked band drawn with
+    // overshooting curves can dip below the series it sits on.
+    const waiverPoint = { pointRadius: 0, cubicInterpolationMode: 'monotone', borderWidth: 1.5 };
+
+    // Where a month end carries an estimate, the counted and estimated waivers
+    // read as one region: the counted band loses its top line there, and the
+    // outline (and hover marker) moves to the top of the estimate. Where both
+    // ends of a segment are fully counted, the estimate draws nothing at all —
+    // not even its zero-height fill, which the curve interpolation would
+    // otherwise open into a sliver between two different curves.
+    const isEstimated = (i) => (caseloadPending[i] ?? 0) > 0;
+    const segmentEstimated = (ctx) => isEstimated(ctx.p0DataIndex) || isEstimated(ctx.p1DataIndex);
 
     caseloadData = {
       labels: caseload.labels.map(formatMonthLabel),
@@ -200,8 +277,8 @@ function Analysis() {
           data: caseload.notifications,
           borderColor: COLORS.primary,
           backgroundColor: COLORS.primaryLight,
-          fill: true,
-          tension: 0.3,
+          fill: 'origin',
+          cubicInterpolationMode: 'monotone',
           borderWidth: 2,
           pointRadius: caseload.notifications.map((_, i) =>
             i === lastIndex && caseloadPartialLast ? 5 : 3),
@@ -211,6 +288,48 @@ function Analysis() {
           pointBorderWidth: 2,
           pointHoverRadius: 6,
         },
+        ...(hasCaseloadWaivers ? [{
+          label: 'Open waivers',
+          data: caseloadWaivers,
+          borderColor: COLORS.teal,
+          backgroundColor: OPEN_WAIVERS_FILL,
+          pointBackgroundColor: COLORS.teal,
+          fill: '-1',
+          ...waiverPoint,
+          pointHoverRadius: caseloadWaivers.map((_, i) => (isEstimated(i) ? 0 : 4)),
+          // Outlined by its own line-only twin below instead: styling this
+          // band's segments would split its fill too, leaving a seam.
+          ...(hasCaseloadPending ? { borderWidth: 0 } : {}),
+        }] : []),
+        ...(hasCaseloadPending ? [{
+          label: OPEN_WAIVERS_ESTIMATED_LABEL,
+          data: caseloadPending,
+          borderColor: COLORS.teal,
+          borderDash: [4, 3],
+          backgroundColor: pendingWaiversFill(),
+          pointBackgroundColor: COLORS.teal,
+          fill: '-1',
+          ...waiverPoint,
+          pointHoverRadius: caseloadPending.map((_, i) => (isEstimated(i) ? 4 : 0)),
+          segment: {
+            borderColor: (ctx) => (segmentEstimated(ctx) ? undefined : 'transparent'),
+            backgroundColor: (ctx) => (segmentEstimated(ctx) ? undefined : 'transparent'),
+          },
+        }, {
+          // The counted band's top line, drawn only where it is the top of
+          // the waivers. Unfilled, so its segment styling splits nothing.
+          // A stack of its own, so it carries its running total itself.
+          label: CASELOAD_WAIVER_OUTLINE,
+          data: caseloadWaivers.map((n, i) => n + caseload.notifications[i]),
+          stack: 'outline',
+          borderColor: COLORS.teal,
+          fill: false,
+          ...waiverPoint,
+          pointHoverRadius: 0,
+          segment: {
+            borderColor: (ctx) => (segmentEstimated(ctx) ? 'transparent' : undefined),
+          },
+        }] : []),
       ],
     };
 
@@ -222,8 +341,32 @@ function Analysis() {
       // with the pointer on a point.
       interaction: { mode: 'index', intersect: false },
       plugins: {
-        legend: { display: false },
+        legend: {
+          display: hasCaseloadWaivers,
+          position: 'bottom',
+          // Plain boxes, not point styles, so each swatch is the band's own
+          // fill and the estimate's stripes show in the key.
+          labels: {
+            filter: (item) => item.text !== CASELOAD_WAIVER_OUTLINE,
+            boxWidth: 14,
+            boxHeight: 14,
+            padding: 16,
+            font: { size: 12, family: 'Inter, sans-serif' },
+          },
+        },
         tooltip: {
+          // The chart keeps counted and estimated waivers visually apart, but
+          // the tooltip gives one waiver figure: the estimate line is folded
+          // into the counted one, and a month with no waivers open says
+          // nothing about them.
+          filter: (item) => {
+            if (item.dataset.label === OPEN_WAIVERS_ESTIMATED_LABEL) return false;
+            if (item.dataset.label === CASELOAD_WAIVER_OUTLINE) return false;
+            if (item.dataset.label === 'Open waivers') {
+              return item.raw + (caseloadPending[item.dataIndex] ?? 0) > 0;
+            }
+            return true;
+          },
           callbacks: {
             title: (items) => {
               const i = items[0].dataIndex;
@@ -231,8 +374,17 @@ function Analysis() {
                 ? `As at ${caseloadAsAtLabel}`
                 : `End of ${items[0].label}`;
             },
+            // The stacked y is a running total, so read the dataset's own
+            // value rather than parsed.y.
             label: (item) => {
-              const count = item.parsed.y;
+              if (item.dataset.label === 'Open waivers') {
+                const estimated = isEstimated(item.dataIndex);
+                const total = item.raw + (caseloadPending[item.dataIndex] ?? 0);
+                return estimated
+                  ? `~${total} waiver${total === 1 ? '' : 's'} still open (estimated)`
+                  : `${total} waiver${total === 1 ? '' : 's'} still open`;
+              }
+              const count = item.raw;
               return `${count} notification${count === 1 ? '' : 's'} still open`;
             },
           },
@@ -244,12 +396,13 @@ function Analysis() {
           ticks: { font: { size: 11 } },
         },
         y: {
+          stacked: true,
           beginAtZero: true,
           ticks: { precision: 0, font: { size: 11 } },
           grid: { color: 'rgba(0,0,0,0.04)' },
           title: {
             display: true,
-            text: 'Open notifications',
+            text: hasCaseloadWaivers ? 'Open matters' : 'Open notifications',
             font: { size: 12, family: 'Inter, sans-serif' },
             color: '#6b7280',
           },
@@ -482,33 +635,56 @@ function Analysis() {
             <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
                 <h2 id="chart-caseload-title" className="text-base font-semibold text-gray-900">
-                  Open caseload &ndash; notifications
+                  {hasCaseloadWaivers ? 'Open caseload' : <>Open caseload &ndash; notifications</>}
                 </h2>
                 <p className="text-sm text-gray-500 mt-0.5">
-                  Notifications still before the ACCC at each month end
+                  {hasCaseloadWaivers
+                    ? 'Notifications and waiver applications still before the ACCC at each month end'
+                    : 'Notifications still before the ACCC at each month end'}
                 </p>
               </div>
               <div className="p-6">
-                <div className="flex flex-wrap gap-x-10 gap-y-3 mb-5">
-                  <div>
-                    <p className={SECTION_HEADING}>Open now</p>
-                    <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
-                      {caseloadLatest}
-                    </p>
-                    {caseloadAsAtLabel && (
-                      <p className="text-sm text-gray-500 mt-0.5">as at {caseloadAsAtLabel}</p>
+                {hasCaseloadWaivers ? (
+                  // Two labelled groups, each keyed to its band's colour, so
+                  // it's plain which pair of figures is about which matters.
+                  <div className="flex flex-wrap gap-y-5 mb-5">
+                    <CaseloadStatGroup
+                      title="Notifications"
+                      swatch={COLORS.primary}
+                      className="sm:pr-10"
+                    >
+                      <CaseloadStat label="Open now" value={caseloadLatest} note={caseloadAsAtLabel && `as at ${caseloadAsAtLabel}`} />
+                      {caseloadDelta !== null && (
+                        <CaseloadStat label="Change" value={signed(caseloadDelta)} note={`since ${caseloadDeltaFrom}`} />
+                      )}
+                    </CaseloadStatGroup>
+                    <CaseloadStatGroup
+                      title="Waivers"
+                      swatch={COLORS.teal}
+                      className="sm:pl-10 sm:border-l sm:border-gray-200"
+                    >
+                      <CaseloadStat
+                        label="Open now"
+                        value={`${waiversPendingLatest > 0 ? '~' : ''}${waiversOpenLatest}`}
+                        note={waiversPendingLatest > 0 ? 'estimated' : caseloadAsAtLabel && `as at ${caseloadAsAtLabel}`}
+                      />
+                      {waiversDelta !== null && (
+                        <CaseloadStat
+                          label="Change"
+                          value={`${waiversDeltaEstimated ? '~' : ''}${signed(waiversDelta)}`}
+                          note={`since ${caseloadDeltaFrom}`}
+                        />
+                      )}
+                    </CaseloadStatGroup>
+                  </div>
+                ) : (
+                  <div className="flex flex-wrap gap-x-10 gap-y-3 mb-5">
+                    <CaseloadStat label="Open now" value={caseloadLatest} note={caseloadAsAtLabel && `as at ${caseloadAsAtLabel}`} />
+                    {caseloadDelta !== null && (
+                      <CaseloadStat label="Change" value={signed(caseloadDelta)} note={`since ${caseloadDeltaFrom}`} />
                     )}
                   </div>
-                  {caseloadDelta !== null && (
-                    <div>
-                      <p className={SECTION_HEADING}>Change</p>
-                      <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
-                        {caseloadDelta > 0 ? '+' : ''}{caseloadDelta}
-                      </p>
-                      <p className="text-sm text-gray-500 mt-0.5">since {caseloadDeltaFrom}</p>
-                    </div>
-                  )}
-                </div>
+                )}
                 <div
                   className="h-72"
                   role="img"
@@ -519,13 +695,28 @@ function Analysis() {
                 </div>
                 <div className="sr-only">
                   <table id="chart-caseload-summary">
-                    <caption>Open notifications at each month end</caption>
-                    <thead><tr><th>Month</th><th>Open notifications</th></tr></thead>
+                    <caption>
+                      {hasCaseloadWaivers
+                        ? 'Open notifications and waiver applications at each month end'
+                        : 'Open notifications at each month end'}
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th>Month</th>
+                        <th>Open notifications</th>
+                        {hasCaseloadWaivers && <th>Open waivers</th>}
+                        {hasCaseloadWaivers && <th>{OPEN_WAIVERS_ESTIMATED_LABEL}</th>}
+                      </tr>
+                    </thead>
                     <tbody>
                       {caseload.labels.map((month, i) => (
                         <tr key={month}>
                           <td>{formatMonthLabel(month)}</td>
                           <td>{caseload.notifications[i]}</td>
+                          {hasCaseloadWaivers && <td>{caseload.waivers[i]}</td>}
+                          {hasCaseloadWaivers && (
+                            <td>{caseload.waivers_pending_estimate?.[i] ? `~${caseload.waivers_pending_estimate[i]}` : 0}</td>
+                          )}
                         </tr>
                       ))}
                     </tbody>

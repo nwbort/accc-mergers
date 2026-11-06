@@ -242,6 +242,44 @@ describe('Analysis open caseload', () => {
     expect(within(change).getByText('since Jun 2026')).toBeInTheDocument();
   });
 
+  it('stacks counted and estimated open waivers on the notifications', async () => {
+    mockAnalysis({
+      ...analysisFixture,
+      open_caseload: {
+        ...caseloadFixture.open_caseload,
+        waivers: [34, 30, 4],
+        waivers_pending_estimate: [0, 12, 40],
+      },
+    });
+    renderAnalysis();
+
+    await waitFor(() => {
+      expect(screen.getByRole('heading', { name: 'Open caseload' })).toBeInTheDocument();
+    });
+
+    // The figures come in two groups, one per kind of matter.
+    const notifications = screen.getByRole('group', { name: 'Notifications' });
+    expect(within(within(notifications).getByText('Open now').parentElement).getByText('52')).toBeInTheDocument();
+    const notificationsChange = within(notifications).getByText('Change').parentElement;
+    expect(within(notificationsChange).getByText('+11')).toBeInTheDocument();
+    expect(within(notificationsChange).getByText('since Jun 2026')).toBeInTheDocument();
+
+    // The latest waiver figure is mostly estimate, so it and its movement
+    // (44 now against 34 in June) read as approximate.
+    const waivers = screen.getByRole('group', { name: 'Waivers' });
+    const waiversOpen = within(waivers).getByText('Open now').parentElement;
+    expect(within(waiversOpen).getByText('~44')).toBeInTheDocument();
+    expect(within(waiversOpen).getByText('estimated')).toBeInTheDocument();
+    const waiversChange = within(waivers).getByText('Change').parentElement;
+    expect(within(waiversChange).getByText('~+10')).toBeInTheDocument();
+    expect(within(waiversChange).getByText('since Jun 2026')).toBeInTheDocument();
+
+    const table = screen.getByRole('table', { name: 'Open notifications and waiver applications at each month end' });
+    expect(within(table).getByRole('columnheader', { name: 'Open waivers' })).toBeInTheDocument();
+    expect(within(table).getByRole('columnheader', { name: 'Open waivers (estimated)' })).toBeInTheDocument();
+    expect(within(table).getByText('~40')).toBeInTheDocument();
+  });
+
   it('renders the rest of the page when the payload predates the caseload series', async () => {
     // A deployed analysis.json generated before open_caseload existed.
     mockAnalysis(analysisFixture);
