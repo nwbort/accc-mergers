@@ -62,12 +62,27 @@ def banner_choice() -> str:
 # The promo card under the scoreboard: the email's twin of the dashboard's
 # PromoStack banners (frontend/src/constants/promo.js). Nothing about a
 # particular campaign lives in build_promo; point it at something new by
-# editing this, or set it to None to run none. `path` is relative to SITE_BASE.
+# editing this, or set it to None to run none. A campaign links either inside
+# the site (`path`, relative to SITE_BASE) or out of it (`href`, absolute).
 # A campaign looks like:
 #   {"path": "/quarterly/26Q3", "title": "The Q3 2026 merger report is out",
 #    "description": "Volumes, clearance rates, timing and Tribunal reviews in our quarterly report.",
 #    "cta": "Read the report"}
-PROMO: dict | None = None
+# Coles' Tribunal appeal over Kalgoorlie (MN-01068), the email's twin of the
+# dashboard's COLES_KALGOORLIE_HEARING_PROMO. Its wording assumes the email
+# goes out on the first sitting day, Monday 9 November.
+PROMO: dict | None = {
+    "href": "https://www.youtube.com/watch?v=m_0-xU3uyyQ",
+    "title": "Coles Kalgoorlie Tribunal appeal hearing starts today",
+    "description": "Hearing continues until 19 November.",
+    "cta": "Watch the live stream from 10:15am",
+}
+
+
+def promo_url(promo: dict) -> str:
+    """Where a promo links: its `href` as given, else its `path` on the site."""
+    return promo.get("href") or f"{SITE_BASE}{promo['path']}"
+
 RESEND_API_BASE = "https://api.resend.com"
 SEND_FROM = os.environ.get("SEND_FROM", "Australian Merger Tracker <digest@mergers.fyi>")
 
@@ -336,7 +351,7 @@ def build_text_email(digest: dict, banner: str | None = None, promo: dict | None
     lines.append("")
 
     if promo:
-        lines += [promo["title"], promo.get("description", ""), f"{SITE_BASE}{promo['path']}", ""]
+        lines += [promo["title"], promo.get("description", ""), promo_url(promo), ""]
 
     new_rows = [
         [m.get("merger_name", m["merger_id"]), format_date(m.get("effective_notification_datetime"))]
@@ -1150,7 +1165,7 @@ def build_promo(promo: dict | None) -> str:
     """
     if not promo:
         return ""
-    href = esc(f"{SITE_BASE}{promo['path']}")
+    href = esc(promo_url(promo))
     title = esc(promo["title"])
     description = esc(promo.get("description", ""))
     cta = esc(promo.get("cta", "Read more"))
