@@ -722,11 +722,6 @@ function Analysis() {
                     </tbody>
                   </table>
                 </div>
-                {hasCaseloadWaivers && (
-                  <p className="text-xs text-gray-500 mt-3">
-                    Waivers only appear on the ACCC's register once decided, so the waivers open at recent month ends are mostly ones still being assessed. Those are estimated from recent filing rates and decision times, and shown striped.
-                  </p>
-                )}
               </div>
             </div>
           </section>
