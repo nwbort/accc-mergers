@@ -23246,6 +23246,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-11-06T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Autosports%20Group%20-%20Mercedes-Benz%20Parramatta%20and%20Castle%20Hill%2C%20Chery%20Castle%20Hill%20-%20third%20party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-20046/Autosports Group - Mercedes-Benz Parramatta and Castle Hill, Chery Castle Hill - third party questionnaire.pdf",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
@@ -23257,6 +23266,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "WA-75011",
@@ -23294,15 +23304,15 @@
         }
       ],
       "phase_1_estimate": {
-        "expected_business_days": 18,
+        "expected_business_days": 17,
         "range_business_days": [
-          16,
-          21
+          15,
+          19
         ],
-        "basis": "global",
-        "question_bucket": null,
-        "question_count": null,
-        "sample_size": 278,
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 196,
         "as_of": "2026-11-06",
         "estimated_at": "2026-11-06",
         "method_version": 2
