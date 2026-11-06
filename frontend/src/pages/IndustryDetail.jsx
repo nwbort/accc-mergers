@@ -190,7 +190,7 @@ function IndustryDetail() {
               <p className="text-sm text-gray-500 mt-1">
                 ANZSIC {levelLabel ? `${levelLabel.toLowerCase()} ` : 'code: '}{decodedCode} · {mergers.length} merger{mergers.length !== 1 ? 's' : ''}
               </p>
-              {/* Same text and classes as prerender.js's industryBody. */}
+              {/* Same text and classes as prerender.js's industryBody (DETAIL_SUMMARY). */}
               {meta.summary && (
                 <p className="text-sm text-gray-600 mt-3 leading-relaxed max-w-3xl">{meta.summary}</p>
               )}

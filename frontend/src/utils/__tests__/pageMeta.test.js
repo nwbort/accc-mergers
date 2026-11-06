@@ -8,6 +8,7 @@ import {
   STATIC_PAGE_META,
   fullTitle,
   frequentAcquirers,
+  partyTitleName,
   DEFAULT_OG_IMAGE,
   industryMeta,
   mergerMeta,
@@ -17,7 +18,7 @@ import {
 } from '../pageMeta.js';
 import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
-  INDUSTRY_SUMMARY,
+  DETAIL_SUMMARY,
   industryBody,
   mergerBody,
   partyBody,
@@ -76,24 +77,102 @@ describe('mergerMeta', () => {
 
 describe('partyMeta', () => {
   const party = {
-    canonical_name: 'Coles Group',
-    merger_count: 11,
+    canonical_name: 'Vets Central Holdings Pty Ltd',
+    merger_count: 3,
     phase_2_count: 1,
+    phase_duration: { median_business_days: 27, completed_count: 2 },
+    waiver_duration: null,
+    members: [
+      { name: 'VETS CENTRAL HOLDINGS PTY LTD', identifier: '11 111 111 111', identifier_type: 'ABN' },
+      { name: 'Vets Central Holdings Pty Ltd' },
+      { name: 'DROVERS VET HOSPITAL PTY LTD' },
+      { name: 'FACEBARK PTY LTD' },
+    ],
+    mergers: {
+      acquirer: [
+        { merger_id: 'MN-3', merger_name: 'Vets Central – Vital Vet', determination: 'Approved', notification_date: '2026-09-25T12:00:00Z' },
+        { merger_id: 'MN-2', merger_name: 'Vets Central – Drovers', phase: 'Phase 2', status: 'Under assessment', notification_date: '2026-04-01T12:00:00Z' },
+      ],
+      target: [
+        { merger_id: 'WA-1', merger_name: 'Bigger Co – Vets Central', is_waiver: true, determination: 'Not approved', notification_date: '2026-01-15T12:00:00Z' },
+      ],
+      other: [],
+    },
   };
 
-  it('pluralises the review counts', () => {
-    expect(partyMeta(party, 'coles').description).toBe(
-      'Coles Group has been involved in 11 ACCC merger reviews, including 1 Phase 2 review.',
-    );
-    expect(partyMeta({ ...party, merger_count: 1, phase_2_count: 0 }, 'coles').description).toBe(
-      'Coles Group has been involved in 1 ACCC merger review.',
+  it('drops the legal form from the title but keeps it as the name', () => {
+    const meta = partyMeta(party, 'vets-central-holdings-pty-ltd');
+    expect(meta.title).toBe('Vets Central Holdings – ACCC Merger Reviews');
+    expect(meta.name).toBe('Vets Central Holdings Pty Ltd');
+    expect(partyTitleName('Bain Capital Investors, LLC.')).toBe('Bain Capital Investors');
+    expect(partyTitleName('Siemens AG')).toBe('Siemens AG');
+    expect(partyTitleName('Limited')).toBe('Limited');
+  });
+
+  it('describes roles, Phase 2 and outcomes', () => {
+    expect(partyMeta(party, 'vc').description).toBe(
+      'Vets Central Holdings Pty Ltd has been involved in 3 ACCC merger reviews since January 2026, ' +
+        'as acquirer in 2 and as target in 1, including 1 Phase 2 review. ' +
+        '1 approved, 1 not approved and 1 under assessment.',
     );
   });
 
-  it('falls back to the route id when the record has no canonical name', () => {
+  it('summarises the record and names related entities, not the group itself', () => {
+    expect(partyMeta(party, 'vc').summary).toBe(
+      'Since January 2026, Vets Central Holdings Pty Ltd has been a party to 3 ACCC merger reviews, ' +
+        'as acquirer in 2 and as target in 1. They comprise 2 notified mergers and 1 waiver application. ' +
+        'Of these, 1 was referred to Phase 2. ' +
+        'Outcomes so far: 1 approved, 1 not approved and 1 still under assessment. ' +
+        'Completed Phase 1 reviews took a median of 27 business days. ' +
+        'The most recent, Vets Central – Vital Vet, was lodged on 25 September 2026. ' +
+        'Filings name 2 related entities in the group, including DROVERS VET HOSPITAL PTY LTD and FACEBARK PTY LTD.',
+    );
+  });
+
+  it('keeps a one-merger party to a single sentence', () => {
+    const single = {
+      canonical_name: 'ZIM Integrated Shipping Services Ltd',
+      merger_count: 1,
+      mergers: {
+        acquirer: [],
+        target: [{ merger_id: 'MN-9', merger_name: 'Hapag-Lloyd - ZIM', determination: 'Approved', notification_date: '2026-06-29T12:00:00Z' }],
+        other: [],
+      },
+    };
+    const meta = partyMeta(single, 'zim');
+    expect(meta.description).toBe(
+      'ZIM Integrated Shipping Services Ltd was the target in Hapag-Lloyd - ZIM, a merger notification approved by the ACCC.',
+    );
+    expect(meta.summary).toBe(
+      'ZIM Integrated Shipping Services Ltd was the target in Hapag-Lloyd - ZIM, ' +
+        'a merger notification approved by the ACCC, lodged on 29 June 2026.',
+    );
+  });
+
+  it('says "all as" when the party only ever played one role', () => {
+    const acquirerOnly = { ...party, phase_2_count: 0, mergers: { ...party.mergers, target: [] } };
+    expect(partyMeta(acquirerOnly, 'vc').description).toContain('since April 2026, all as acquirer.');
+  });
+
+  it('marks the page up as a collection about the organisation', () => {
+    const [breadcrumb, collection] = partyMeta(party, 'vc').structuredData;
+    expect(breadcrumb['@type']).toBe('BreadcrumbList');
+    expect(collection['@type']).toBe('CollectionPage');
+    expect(collection.about).toEqual({ '@type': 'Organization', name: 'Vets Central Holdings Pty Ltd' });
+    expect(collection.mainEntity.numberOfItems).toBe(3);
+    expect(collection.mainEntity.itemListElement.map((i) => i.url)).toEqual([
+      'https://mergers.fyi/mergers/MN-3/vets-central-vital-vet',
+      'https://mergers.fyi/mergers/MN-2/vets-central-drovers',
+      'https://mergers.fyi/mergers/WA-1/bigger-co-vets-central',
+    ]);
+  });
+
+  it('handles an empty record and falls back to the route id', () => {
     const meta = partyMeta({ merger_count: 0 }, 'some-party');
     expect(meta.name).toBe('some-party');
     expect(meta.path).toBe('/parties/some-party/some-party');
+    expect(meta.summary).toBeNull();
+    expect(meta.description).toBe('some-party on the ACCC merger register. No merger reviews have been recorded yet.');
   });
 });
 
@@ -465,14 +544,21 @@ describe('prerendered bodies are styled', () => {
     // PartyDetail previews 3 behind a "show more" toggle.
     expect(bodies.party).toContain('COLES GROUP LIMITED');
     expect(bodies.party).toContain('ABN: 11 004 089 936');
-    expect(bodies.party).not.toContain('Retail Payment Solutions Pty Ltd');
+    // Only the block itself: the summary paragraph may name hidden members.
+    const block = bodies.party.slice(bodies.party.indexOf('Related parties'));
+    expect(block).not.toContain('Retail Payment Solutions Pty Ltd');
     expect(bodies.party).toContain('Show 1 more');
   });
 
   it('carries the industry summary paragraph in the header card', () => {
     const meta = industryMeta(INDUSTRY, '6240');
     expect(meta.summary).toBeTruthy();
-    expect(bodies.industry).toContain(`<p class="${INDUSTRY_SUMMARY}">${meta.summary}</p></div>`);
+    expect(bodies.industry).toContain(`<p class="${DETAIL_SUMMARY}">${meta.summary}</p></div>`);
+  });
+
+  it('carries the party summary paragraph before the related parties', () => {
+    const meta = partyMeta(PARTY, 'coles');
+    expect(bodies.party).toContain(`<p class="${DETAIL_SUMMARY}">${meta.summary}</p><div class="mt-4 pt-4`);
   });
 
   it('links mergers by their canonical slugged path', () => {

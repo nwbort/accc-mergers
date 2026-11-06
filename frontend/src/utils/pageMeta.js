@@ -13,6 +13,7 @@
 // and the pages can call it with fetched data.
 
 import { industryPath, mergerPath, partyPath } from './slug.js';
+import { collapsePartyMembers, splitPartyName } from './partyMembers.js';
 
 export const SITE_URL = 'https://mergers.fyi';
 export const SITE_TITLE = 'Australian Merger Tracker';
@@ -163,28 +164,195 @@ export function mergerMeta(merger) {
   };
 }
 
+// Roles in the order the party page lists them, with how prose names each.
+const PARTY_ROLES = [
+  ['acquirer', 'acquirer'],
+  ['target', 'target'],
+  ['other', 'another party'],
+];
+
+// Legal-form suffixes dropped from a party's name in the <title> only: nobody
+// searches "Vets Central Holdings Pty Ltd", and the full legal name stays the
+// h1. Deliberately the common English-language forms, not every form
+// utils/partyMembers.js knows ("AG", "SA", "Co") — those read as part of the
+// name to most searchers.
+const TITLE_LEGAL_FORMS = new Set(['pty', 'ltd', 'limited', 'inc', 'llc', 'plc']);
+
+/** "Vets Central Holdings Pty Ltd" -> "Vets Central Holdings". */
+export function partyTitleName(name) {
+  const tokens = (name || '').trim().split(/\s+/);
+  while (
+    tokens.length > 1 &&
+    TITLE_LEGAL_FORMS.has(tokens[tokens.length - 1].toLowerCase().replace(/[.,()]/g, ''))
+  ) {
+    tokens.pop();
+  }
+  return tokens.join(' ').replace(/[,\s]+$/, '');
+}
+
+/** Each of a party's mergers once, with the role it played (first role wins). */
+function partyMergers(party) {
+  const seen = new Set();
+  const out = [];
+  for (const [role] of PARTY_ROLES) {
+    for (const m of party.mergers?.[role] || []) {
+      const key = m?.merger_id || m?.merger_name;
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      out.push({ ...m, role });
+    }
+  }
+  return out;
+}
+
 /**
- * Meta for a party detail page, from a `data/parties/{id}.json` record.
- * `id` is the route param, used as the display fallback when the record has
- * no canonical name (mirroring PartyDetail.jsx).
+ * The group's other entities, as the Related parties block shows them: one
+ * name per real entity (utils/partyMembers.js collapses spelling variants),
+ * leaving out the group's own name.
+ */
+function relatedEntityNames(party, name) {
+  const own = splitPartyName(name);
+  return collapsePartyMembers(party.members || [])
+    .map((row) => row.name)
+    .filter(Boolean)
+    .filter((n) => {
+      const split = splitPartyName(n);
+      return !(split.base === own.base && (split.form === own.form || !split.form || !own.form));
+    });
+}
+
+/** "as acquirer in 10 and as target in 2", or "all as acquirer" when only one role applies. */
+function rolePhrase(mergers) {
+  const roles = PARTY_ROLES.map(([role, label]) => [label, mergers.filter((m) => m.role === role).length])
+    .filter(([, count]) => count);
+  if (roles.length === 1) return `all as ${roles[0][0]}`;
+  return joinList(roles.map(([label, count]) => `as ${label} in ${count}`));
+}
+
+/**
+ * "the acquirer in Vets Central – Vital Vet Animal Hospital, a merger
+ * notification approved by the ACCC".
+ */
+function singleMergerPhrase(m) {
+  const role = m.role === 'other' ? 'a party' : `the ${m.role}`;
+  const kind = m.is_waiver ? 'waiver application' : 'merger notification';
+  let outcome;
+  if (m.determination === 'Approved') {
+    outcome = `${m.has_conditions ? 'approved with conditions' : 'approved'} by the ACCC`;
+  } else if (m.determination === 'Not approved') {
+    outcome = 'not approved by the ACCC';
+  } else if (m.status === 'Assessment ceased') {
+    outcome = 'whose ACCC assessment ceased';
+  } else {
+    outcome = 'under ACCC assessment';
+  }
+  return `${role} in ${m.merger_name}, a ${kind} ${outcome}`;
+}
+
+function partyDescription(party, name, mergers) {
+  const n = mergers.length;
+  if (!n) return `${name} on the ACCC merger register. No merger reviews have been recorded yet.`;
+  if (n === 1) return `${name} was ${singleMergerPhrase(mergers[0])}.`;
+
+  const first = sortedDays(mergers)[0];
+  const since = first ? ` since ${monthYear(first)}` : '';
+  const phase2 = party.phase_2_count ?? 0;
+  const t = outcomeTally(mergers);
+  let outcome;
+  if (t.approved === n) {
+    outcome = 'All approved.';
+  } else {
+    const parts = [];
+    if (t.approved) parts.push(`${t.approved} approved`);
+    if (t.notApproved) parts.push(`${t.notApproved} not approved`);
+    if (t.ceased) parts.push(`${t.ceased} ceased`);
+    if (t.open) parts.push(`${t.open} under assessment`);
+    outcome = `${joinList(parts)}.`;
+  }
+  return (
+    `${name} has been involved in ${plural(n, 'ACCC merger review')}${since}, ${rolePhrase(mergers)}` +
+    `${phase2 ? `, including ${plural(phase2, 'Phase 2 review')}` : ''}. ${outcome}`
+  );
+}
+
+/**
+ * The party page's crawlable paragraph. A one-merger party gets a single
+ * sentence plus its filing date: anything longer would mostly repeat that
+ * merger's own page. Null for a party with no mergers.
+ */
+export function partySummary(party, name) {
+  const mergers = partyMergers(party);
+  const n = mergers.length;
+  if (!n) return null;
+
+  const related = relatedEntityNames(party, name);
+  const relatedSentence = related.length
+    ? `Filings name ${related.length} related ${related.length === 1 ? 'entity' : 'entities'} in the group, ` +
+      `including ${joinList(related.slice(0, 3))}.`
+    : null;
+
+  if (n === 1) {
+    const day = isoDay(mergers[0].notification_date);
+    return [
+      `${name} was ${singleMergerPhrase(mergers[0])}${day ? `, lodged on ${longDate(day)}` : ''}.`,
+      relatedSentence,
+    ]
+      .filter(Boolean)
+      .join(' ');
+  }
+
+  const first = sortedDays(mergers)[0];
+  const kinds = kindsPhrase(mergers);
+  return [
+    `${first ? `Since ${monthYear(first)}, ` : ''}${name} has been a party to ` +
+      `${plural(n, 'ACCC merger review')}, ${rolePhrase(mergers)}.`,
+    kinds ? `They comprise ${kinds}.` : null,
+    phase2Sentence(party.phase_2_count ?? 0),
+    outcomeSentence(mergers),
+    timingSentence(party),
+    latestSentence(mergers),
+    relatedSentence,
+  ]
+    .filter(Boolean)
+    .join(' ');
+}
+
+/**
+ * Meta for a party detail page, from a record read out of its
+ * `data/parties/shard-{nn}.json` bucket. `id` is the route param, used as the
+ * display fallback when the record has no canonical name (mirroring
+ * PartyDetail.jsx).
  */
 export function partyMeta(party, id) {
   const name = party.canonical_name || id;
   const path = partyPath(id, name);
   const mergerCount = party.merger_count ?? 0;
-  const phase2 = party.phase_2_count ?? 0;
+  const mergers = partyMergers(party);
 
-  const description =
-    `${name} has been involved in ${plural(mergerCount, 'ACCC merger review')}` +
-    `${phase2 ? `, including ${plural(phase2, 'Phase 2 review')}` : ''}.`;
+  const title = `${partyTitleName(name)} – ACCC Merger Reviews`;
+  const description = partyDescription(party, name, mergers);
+
+  const collection = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: title,
+    description,
+    url: absolute(path),
+    inLanguage: 'en-AU',
+    isPartOf: { '@type': 'WebSite', name: SITE_TITLE, url: SITE_URL },
+    about: { '@type': 'Organization', name },
+    mainEntity: mergerItemList(mergers),
+  };
 
   return {
-    title: name,
+    title,
     description,
+    summary: partySummary(party, name),
     path,
     type: 'website',
     structuredData: [
       breadcrumbSchema([{ name: 'Parties', path: '/parties' }], name, path),
+      collection,
     ],
     name,
     mergerCount,
@@ -273,6 +441,78 @@ function anzsicLabel(levelLabel, code) {
   return `ANZSIC ${levelLabel ? `${levelLabel.toLowerCase()} ` : ''}${code}`;
 }
 
+/** The notification days of a merger list, oldest first. */
+function sortedDays(mergers) {
+  const days = mergers.map((m) => isoDay(m.notification_date)).filter(Boolean);
+  return days.sort((a, b) => a.key.localeCompare(b.key));
+}
+
+/** "3 notified mergers and 15 waiver applications". */
+function kindsPhrase(mergers) {
+  const waivers = mergers.filter((m) => m.is_waiver).length;
+  const notified = mergers.length - waivers;
+  const kinds = [];
+  if (notified) kinds.push(plural(notified, 'notified merger'));
+  if (waivers) kinds.push(plural(waivers, 'waiver application'));
+  return joinList(kinds);
+}
+
+function phase2Sentence(phase2) {
+  return phase2 ? `Of these, ${phase2} ${phase2 === 1 ? 'was' : 'were'} referred to Phase 2.` : null;
+}
+
+function outcomeSentence(mergers) {
+  const n = mergers.length;
+  const t = outcomeTally(mergers);
+  const cond = t.conditions ? ` (${t.conditions} with conditions)` : '';
+  if (t.approved === n) {
+    return n === 1 ? `It was approved${cond}.` : `All ${n} were approved${cond}.`;
+  }
+  const parts = [];
+  if (t.approved) parts.push(`${t.approved} approved${cond}`);
+  if (t.notApproved) parts.push(`${t.notApproved} not approved`);
+  if (t.ceased) parts.push(`${t.ceased} ceased`);
+  if (t.open) parts.push(`${t.open} still under assessment`);
+  return `Outcomes so far: ${joinList(parts)}.`;
+}
+
+/** The snippet's short outcome clause: ", all approved" or ": 9 approved and 1 not approved". */
+function outcomeClause(mergers) {
+  const n = mergers.length;
+  const t = outcomeTally(mergers);
+  if (t.approved === n) return n === 1 ? ', approved' : ', all approved';
+  const parts = [];
+  if (t.approved) parts.push(`${t.approved} approved`);
+  if (t.notApproved) parts.push(`${t.notApproved} not approved`);
+  if (t.open) parts.push(`${t.open} under assessment`);
+  return parts.length ? `: ${joinList(parts)}` : '';
+}
+
+/** Median Phase 1 and waiver times, from a record's duration blocks. */
+function timingSentence(record) {
+  const p1 = record.phase_duration?.completed_count ? record.phase_duration.median_business_days : null;
+  const wv = record.waiver_duration?.completed_count ? record.waiver_duration.median_business_days : null;
+  if (p1 != null && wv != null) {
+    return (
+      `Completed Phase 1 reviews took a median of ${plural(p1, 'business day')}, ` +
+      `and waivers a median of ${plural(wv, 'business day')}.`
+    );
+  }
+  if (p1 != null) return `Completed Phase 1 reviews took a median of ${plural(p1, 'business day')}.`;
+  if (wv != null) return `Waivers were decided in a median of ${plural(wv, 'business day')}.`;
+  return null;
+}
+
+function latestSentence(mergers) {
+  const days = sortedDays(mergers);
+  const latestDay = days[days.length - 1];
+  if (!latestDay || mergers.length < 2) return null;
+  const latest = mergers.find((m) => isoDay(m.notification_date)?.key === latestDay.key);
+  return latest?.merger_name
+    ? `The most recent, ${latest.merger_name}, was lodged on ${longDate(latestDay)}.`
+    : null;
+}
+
 /**
  * One crawlable paragraph describing an industry's merger activity, shown
  * under the heading on both the prerendered and the hydrated page. Built only
@@ -285,73 +525,31 @@ export function industrySummary(industry, code, name, levelLabel) {
   const n = mergers.length;
   if (!n) return null;
 
-  const days = mergers.map((m) => isoDay(m.notification_date)).filter(Boolean);
-  days.sort((a, b) => a.key.localeCompare(b.key));
-  const earliest = days[0];
-
-  const waivers = mergers.filter((m) => m.is_waiver).length;
-  const notified = n - waivers;
-  const kinds = [];
-  if (notified) kinds.push(plural(notified, 'notified merger'));
-  if (waivers) kinds.push(plural(waivers, 'waiver application'));
-
-  const sentences = [];
-  sentences.push(
-    `${earliest ? `Since ${monthYear(earliest)}, the` : 'The'} ACCC has reviewed ` +
-      `${plural(n, 'acquisition')} in the ${name} industry (${anzsicLabel(levelLabel, code)})` +
-      `${kinds.length ? `: ${joinList(kinds)}` : ''}.`,
-  );
-
-  const phase2 = industry.phase_2_count ?? mergers.filter((m) => m.phase === 'Phase 2').length;
-  if (phase2) {
-    sentences.push(`Of these, ${phase2} ${phase2 === 1 ? 'was' : 'were'} referred to Phase 2.`);
-  }
-
-  const t = outcomeTally(mergers);
-  const cond = t.conditions ? ` (${t.conditions} with conditions)` : '';
-  if (t.approved === n) {
-    sentences.push(n === 1 ? `It was approved${cond}.` : `All ${n} were approved${cond}.`);
-  } else {
-    const parts = [];
-    if (t.approved) parts.push(`${t.approved} approved${cond}`);
-    if (t.notApproved) parts.push(`${t.notApproved} not approved`);
-    if (t.ceased) parts.push(`${t.ceased} ceased`);
-    if (t.open) parts.push(`${t.open} still under assessment`);
-    sentences.push(`Outcomes so far: ${joinList(parts)}.`);
-  }
+  const earliest = sortedDays(mergers)[0];
+  const kinds = kindsPhrase(mergers);
 
   const acquirers = frequentAcquirers(mergers);
+  let acquirerSentence = null;
   if (acquirers.length) {
     const listed = joinList(acquirers.map((a) => `${a.name} (${a.count})`));
-    sentences.push(
+    acquirerSentence =
       acquirers.length === 1
         ? `The most frequent acquirer is ${listed}.`
-        : `The most frequent acquirers are ${listed}.`,
-    );
+        : `The most frequent acquirers are ${listed}.`;
   }
 
-  const p1 = industry.phase_duration?.completed_count ? industry.phase_duration.median_business_days : null;
-  const wv = industry.waiver_duration?.completed_count ? industry.waiver_duration.median_business_days : null;
-  if (p1 != null && wv != null) {
-    sentences.push(
-      `Completed Phase 1 reviews took a median of ${plural(p1, 'business day')}, ` +
-        `and waivers a median of ${plural(wv, 'business day')}.`,
-    );
-  } else if (p1 != null) {
-    sentences.push(`Completed Phase 1 reviews took a median of ${plural(p1, 'business day')}.`);
-  } else if (wv != null) {
-    sentences.push(`Waivers were decided in a median of ${plural(wv, 'business day')}.`);
-  }
-
-  const latestDay = days[days.length - 1];
-  if (latestDay && n > 1) {
-    const latest = mergers.find((m) => isoDay(m.notification_date)?.key === latestDay.key);
-    if (latest?.merger_name) {
-      sentences.push(`The most recent, ${latest.merger_name}, was lodged on ${longDate(latestDay)}.`);
-    }
-  }
-
-  return sentences.join(' ');
+  return [
+    `${earliest ? `Since ${monthYear(earliest)}, the` : 'The'} ACCC has reviewed ` +
+      `${plural(n, 'acquisition')} in the ${name} industry (${anzsicLabel(levelLabel, code)})` +
+      `${kinds ? `: ${kinds}` : ''}.`,
+    phase2Sentence(industry.phase_2_count ?? mergers.filter((m) => m.phase === 'Phase 2').length),
+    outcomeSentence(mergers),
+    acquirerSentence,
+    timingSentence(industry),
+    latestSentence(mergers),
+  ]
+    .filter(Boolean)
+    .join(' ');
 }
 
 /** The search-result snippet: short enough not to be truncated, specific to the node. */
@@ -363,33 +561,37 @@ function industryDescription(industry, code, name, levelLabel) {
     return `ACCC merger reviews in the ${name} industry (${label}). None have been recorded yet.`;
   }
 
-  const days = mergers.map((m) => isoDay(m.notification_date)).filter(Boolean);
-  days.sort((a, b) => a.key.localeCompare(b.key));
-  const since = days.length ? ` since ${monthYear(days[0])}` : '';
-
-  const t = outcomeTally(mergers);
-  let outcome = '';
-  if (t.approved === n) {
-    outcome = n === 1 ? ', approved' : ', all approved';
-  } else {
-    const parts = [];
-    if (t.approved) parts.push(`${t.approved} approved`);
-    if (t.notApproved) parts.push(`${t.notApproved} not approved`);
-    if (t.open) parts.push(`${t.open} under assessment`);
-    if (parts.length) outcome = `: ${joinList(parts)}`;
-  }
+  const first = sortedDays(mergers)[0];
+  const since = first ? ` since ${monthYear(first)}` : '';
 
   const acquirers = frequentAcquirers(mergers, 2);
   const acq = acquirers.length
     ? ` Frequent acquirers: ${acquirers.map((a) => a.name).join(', ')}.`
     : '';
 
-  return `${plural(n, 'ACCC merger review')} in ${name} (${label})${since}${outcome}.${acq}`;
+  return `${plural(n, 'ACCC merger review')} in ${name} (${label})${since}${outcomeClause(mergers)}.${acq}`;
 }
 
 // How many matters the ItemList JSON-LD names. Matches prerender.js's cap on
 // body links: the list describes the links the page actually carries.
 const MAX_ITEM_LIST = 100;
+
+/** schema.org ItemList of merger pages, for a CollectionPage's mainEntity. */
+function mergerItemList(mergers) {
+  return {
+    '@type': 'ItemList',
+    numberOfItems: mergers.length,
+    itemListElement: mergers
+      .filter((m) => m?.merger_id)
+      .slice(0, MAX_ITEM_LIST)
+      .map((m, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: m.merger_name || m.merger_id,
+        url: absolute(mergerPath(m.merger_id, m.merger_name)),
+      })),
+  };
+}
 
 /**
  * Meta for an industry detail page, from a node read out of
@@ -432,19 +634,7 @@ export function industryMeta(industry, code, indexName) {
       termCode: code,
       inDefinedTermSet: 'ANZSIC 2006',
     },
-    mainEntity: {
-      '@type': 'ItemList',
-      numberOfItems: mergers.length,
-      itemListElement: mergers
-        .filter((m) => m?.merger_id)
-        .slice(0, MAX_ITEM_LIST)
-        .map((m, i) => ({
-          '@type': 'ListItem',
-          position: i + 1,
-          name: m.merger_name || m.merger_id,
-          url: absolute(mergerPath(m.merger_id, m.merger_name)),
-        })),
-    },
+    mainEntity: mergerItemList(mergers),
   };
 
   return {
