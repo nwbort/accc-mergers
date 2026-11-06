@@ -19,7 +19,11 @@ import {
 import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
   DETAIL_SUMMARY,
+  componentBody,
+  industriesHubBody,
   industryBody,
+  mergersHubBody,
+  partiesHubBody,
   mergerBody,
   partyBody,
   renderPage,
@@ -594,5 +598,66 @@ describe('quarterlyMeta', () => {
     const { description } = quarterlyMeta(quarter);
     expect(description).toContain('113 notifications filed. Phase 1 took 18 days.');
     expect(description).not.toContain('Third point.');
+  });
+});
+
+describe('hub page bodies', () => {
+  const meta = (path) => ({ ...STATIC_PAGE_META[path], path });
+
+  it('links every merger on /mergers, newest first', () => {
+    const body = mergersHubBody(
+      [
+        { merger_id: 'MN-1', merger_name: 'Old - Deal', accc_determination: 'Approved', effective_notification_datetime: '2025-01-01T12:00:00Z' },
+        { merger_id: 'WA-2', merger_name: 'New - Deal', status: 'Under assessment', effective_notification_datetime: '2026-01-01T12:00:00Z' },
+      ],
+      meta('/mergers'),
+    );
+    expect(body).toContain('All 2 mergers, newest first');
+    expect(body.indexOf('/mergers/WA-2/new-deal')).toBeLessThan(body.indexOf('/mergers/MN-1/old-deal'));
+    expect(body).toContain('Under assessment');
+  });
+
+  it('groups /industries under their division, with the unplaceable last', () => {
+    const body = industriesHubBody(
+      [
+        { code: '8531', name: 'Dental Services', merger_count: 18 },
+        { code: '4110', name: 'Supermarket and Grocery Stores', merger_count: 26 },
+        { code: '99/1', name: 'Mystery', merger_count: 1 },
+      ],
+      { G: 'Retail Trade', Q: 'Health Care and Social Assistance' },
+      (code) => ({ 8531: 'Q', 4110: 'G' })[code] || '_orphans',
+      meta('/industries'),
+    );
+    expect(body).toContain('href="/industries/G/retail-trade"');
+    expect(body).toContain('href="/industries/8531/dental-services"');
+    const order = ['Retail Trade', 'Health Care and Social Assistance', 'Other industries'].map((t) => body.indexOf(t));
+    expect(order).toEqual([...order].sort((a, b) => a - b));
+    expect(order[0]).toBeGreaterThan(-1);
+  });
+
+  it('links only parties on more than one merger from /parties', () => {
+    const body = partiesHubBody(
+      [
+        { id: 'coles', name: 'Coles Group', merger_count: 19 },
+        { id: 'solo', name: 'Solo Pty Ltd', merger_count: 1 },
+      ],
+      meta('/parties'),
+    );
+    expect(body).toContain('href="/parties/coles/coles-group"');
+    expect(body).not.toContain('Solo Pty Ltd');
+    expect(body).toContain('(1 of 2)');
+  });
+
+  it('wraps a component-rendered page in the chrome only', () => {
+    const body = componentBody('<div class="max-w-4xl">page</div>');
+    expect(body).toContain('class="flex-grow pt-16"><div class="max-w-4xl">page</div></main>');
+  });
+});
+
+describe('the author page', () => {
+  it('carries its Person JSON-LD in the shared meta, so the prerender emits it', () => {
+    const [person] = STATIC_PAGE_META['/nick-twort'].structuredData;
+    expect(person['@type']).toBe('Person');
+    expect(person.name).toBe('Nick Twort');
   });
 });

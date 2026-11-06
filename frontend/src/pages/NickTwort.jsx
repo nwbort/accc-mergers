@@ -7,44 +7,6 @@ import { STATIC_PAGE_META } from '../utils/pageMeta';
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/nick-twort'];
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Nick Twort",
-  "jobTitle": "Competition Economist",
-  "description": "Australian competition economist with eight years of experience specialising in merger clearance, antitrust analysis, and regulatory economics across Australia and New Zealand.",
-  "url": "https://mergers.fyi/nick-twort",
-  "sameAs": [
-    "https://mergers.fyi"
-  ],
-  "knowsAbout": [
-    "Merger clearance",
-    "Antitrust economics",
-    "Competition policy",
-    "ACCC merger review",
-    "Market power analysis",
-    "Regulatory economics",
-    "Empirical industrial organisation",
-    "Australian Competition and Consumer Commission",
-    "New Zealand Commerce Commission",
-    "Misuse of market power",
-    "Cartel conduct",
-    "Exclusionary conduct",
-    "Access regulation",
-    "Public inquiries",
-    "Digital platforms regulation"
-  ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Competition Economist",
-    "occupationLocation": {
-      "@type": "Country",
-      "name": "Australia"
-    },
-    "skills": "Merger clearance analysis, competitive effects modelling, empirical industrial organisation, regulatory economics, antitrust advice"
-  }
-};
-
 export default function NickTwort() {
   return (
     <>
@@ -53,7 +15,7 @@ export default function NickTwort() {
         description={PAGE_META.description}
         url="/nick-twort"
         type="profile"
-        structuredData={structuredData}
+        structuredData={PAGE_META.structuredData}
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

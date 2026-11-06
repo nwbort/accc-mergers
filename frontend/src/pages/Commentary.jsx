@@ -37,6 +37,19 @@ function Commentary() {
         description={PAGE_META.description}
         url="/commentary"
       />
+      <CommentaryList items={items} />
+    </>
+  );
+}
+
+/**
+ * The page body, given commentary.json's items. Split from the fetching page
+ * so the build-time prerenderer (src/prerender/renderStatic.jsx) can render
+ * exactly this markup from the data file.
+ */
+export function CommentaryList({ items }) {
+  return (
+    <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* The page leads straight into content, so the document's h1 is
             visually hidden rather than dropped: it names the page for screen

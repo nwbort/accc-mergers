@@ -622,6 +622,46 @@ export function industryMeta(industry, code, indexName) {
   };
 }
 
+// Person JSON-LD for the author page. Lives here, not in NickTwort.jsx, so the
+// prerendered HTML carries it too rather than only the hydrated page.
+const NICK_TWORT_PERSON = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nick Twort",
+  "jobTitle": "Competition Economist",
+  "description": "Australian competition economist with eight years of experience specialising in merger clearance, antitrust analysis, and regulatory economics across Australia and New Zealand.",
+  "url": "https://mergers.fyi/nick-twort",
+  "sameAs": [
+    "https://mergers.fyi"
+  ],
+  "knowsAbout": [
+    "Merger clearance",
+    "Antitrust economics",
+    "Competition policy",
+    "ACCC merger review",
+    "Market power analysis",
+    "Regulatory economics",
+    "Empirical industrial organisation",
+    "Australian Competition and Consumer Commission",
+    "New Zealand Commerce Commission",
+    "Misuse of market power",
+    "Cartel conduct",
+    "Exclusionary conduct",
+    "Access regulation",
+    "Public inquiries",
+    "Digital platforms regulation"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Competition Economist",
+    "occupationLocation": {
+      "@type": "Country",
+      "name": "Australia"
+    },
+    "skills": "Merger clearance analysis, competitive effects modelling, empirical industrial organisation, regulatory economics, antitrust advice"
+  }
+};
+
 /**
  * Static (non-parameterised) routes worth prerendering, keyed by path.
  *
@@ -719,6 +759,7 @@ export const STATIC_PAGE_META = {
     description:
       'Nick Twort is an Australian competition economist with eight years of experience advising on merger clearance, antitrust matters, and regulatory issues for the ACCC and New Zealand Commerce Commission. Expert in empirical analysis across airlines, digital platforms, supermarkets, telecoms and more.',
     type: 'profile',
+    structuredData: [NICK_TWORT_PERSON],
   },
   '/privacy': {
     title: 'Privacy policy',
