@@ -257,13 +257,22 @@ describe('Analysis open caseload', () => {
       expect(screen.getByRole('heading', { name: 'Open caseload' })).toBeInTheDocument();
     });
 
-    const notificationsOpen = screen.getByText('Notifications open').parentElement;
-    expect(within(notificationsOpen).getByText('52')).toBeInTheDocument();
+    // The figures come in two groups, one per kind of matter.
+    const notifications = screen.getByRole('group', { name: 'Notifications' });
+    expect(within(within(notifications).getByText('Open now').parentElement).getByText('52')).toBeInTheDocument();
+    const notificationsChange = within(notifications).getByText('Change').parentElement;
+    expect(within(notificationsChange).getByText('+11')).toBeInTheDocument();
+    expect(within(notificationsChange).getByText('since Jun 2026')).toBeInTheDocument();
 
-    // The latest waiver figure is mostly estimate, so it reads as approximate.
-    const waiversOpen = screen.getByText('Waivers open').parentElement;
+    // The latest waiver figure is mostly estimate, so it and its movement
+    // (44 now against 34 in June) read as approximate.
+    const waivers = screen.getByRole('group', { name: 'Waivers' });
+    const waiversOpen = within(waivers).getByText('Open now').parentElement;
     expect(within(waiversOpen).getByText('~44')).toBeInTheDocument();
     expect(within(waiversOpen).getByText('estimated')).toBeInTheDocument();
+    const waiversChange = within(waivers).getByText('Change').parentElement;
+    expect(within(waiversChange).getByText('~+10')).toBeInTheDocument();
+    expect(within(waiversChange).getByText('since Jun 2026')).toBeInTheDocument();
 
     const table = screen.getByRole('table', { name: 'Open notifications and waiver applications at each month end' });
     expect(within(table).getByRole('columnheader', { name: 'Open waivers' })).toBeInTheDocument();

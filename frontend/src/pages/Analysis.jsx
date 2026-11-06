@@ -64,6 +64,33 @@ function pendingWaiversFill() {
   return stripePattern;
 }
 
+// A movement with its sign, so a rise reads "+6" rather than "6".
+function signed(n) {
+  return `${n > 0 ? '+' : ''}${n}`;
+}
+
+function CaseloadStat({ label, value, note }) {
+  return (
+    <div>
+      <p className={SECTION_HEADING}>{label}</p>
+      <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">{value}</p>
+      {note && <p className="text-sm text-gray-500 mt-0.5">{note}</p>}
+    </div>
+  );
+}
+
+function CaseloadStatGroup({ title, swatch, className = '', children }) {
+  return (
+    <div role="group" aria-label={title} className={`w-full sm:w-auto ${className}`}>
+      <p className="flex items-center gap-2 text-sm font-semibold text-gray-900 mb-2">
+        <span aria-hidden="true" className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: swatch }} />
+        {title}
+      </p>
+      {/* Equal columns when stacked on a phone, so the two groups line up. */}
+      <div className="grid grid-cols-2 gap-x-6 sm:flex sm:gap-x-10">{children}</div>
+    </div>
+  );
+}
 
 function Analysis() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.analysis, {
@@ -187,6 +214,8 @@ function Analysis() {
   let hasCaseloadWaivers = false;
   let waiversOpenLatest = null;
   let waiversPendingLatest = 0;
+  let waiversDelta = null;
+  let waiversDeltaEstimated = false;
 
   if (hasCaseload) {
     const lastIndex = caseload.labels.length - 1;
@@ -200,7 +229,8 @@ function Analysis() {
     // grown, so a peak stat would just restate the latest figure. Falls back
     // to the start of the series while less than six months of it exists.
     const compareIndex = Math.max(0, lastIndex - 6);
-    if (compareIndex !== lastIndex) {
+    const hasDelta = compareIndex !== lastIndex;
+    if (hasDelta) {
       caseloadDelta = caseloadLatest - caseload.notifications[compareIndex];
       caseloadDeltaFrom = formatMonthLabel(caseload.labels[compareIndex]);
     }
@@ -217,6 +247,13 @@ function Analysis() {
     if (hasCaseloadWaivers) {
       waiversPendingLatest = caseloadPending[lastIndex] ?? 0;
       waiversOpenLatest = caseloadWaivers[lastIndex] + waiversPendingLatest;
+      // Same six-month movement as the notifications, over counted plus
+      // estimated waivers, and approximate if either end leans on the estimate.
+      if (hasDelta) {
+        const comparePending = caseloadPending[compareIndex] ?? 0;
+        waiversDelta = waiversOpenLatest - (caseloadWaivers[compareIndex] + comparePending);
+        waiversDeltaEstimated = waiversPendingLatest > 0 || comparePending > 0;
+      }
     }
 
     // Monotone rather than a free tension: a stacked band drawn with
@@ -607,37 +644,47 @@ function Analysis() {
                 </p>
               </div>
               <div className="p-6">
-                <div className="flex flex-wrap gap-x-10 gap-y-3 mb-5">
-                  <div>
-                    <p className={SECTION_HEADING}>{hasCaseloadWaivers ? 'Notifications open' : 'Open now'}</p>
-                    <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
-                      {caseloadLatest}
-                    </p>
-                    {caseloadAsAtLabel && (
-                      <p className="text-sm text-gray-500 mt-0.5">as at {caseloadAsAtLabel}</p>
+                {hasCaseloadWaivers ? (
+                  // Two labelled groups, each keyed to its band's colour, so
+                  // it's plain which pair of figures is about which matters.
+                  <div className="flex flex-wrap gap-y-5 mb-5">
+                    <CaseloadStatGroup
+                      title="Notifications"
+                      swatch={COLORS.primary}
+                      className="sm:pr-10"
+                    >
+                      <CaseloadStat label="Open now" value={caseloadLatest} note={caseloadAsAtLabel && `as at ${caseloadAsAtLabel}`} />
+                      {caseloadDelta !== null && (
+                        <CaseloadStat label="Change" value={signed(caseloadDelta)} note={`since ${caseloadDeltaFrom}`} />
+                      )}
+                    </CaseloadStatGroup>
+                    <CaseloadStatGroup
+                      title="Waivers"
+                      swatch={COLORS.teal}
+                      className="sm:pl-10 sm:border-l sm:border-gray-200"
+                    >
+                      <CaseloadStat
+                        label="Open now"
+                        value={`${waiversPendingLatest > 0 ? '~' : ''}${waiversOpenLatest}`}
+                        note={waiversPendingLatest > 0 ? 'estimated' : caseloadAsAtLabel && `as at ${caseloadAsAtLabel}`}
+                      />
+                      {waiversDelta !== null && (
+                        <CaseloadStat
+                          label="Change"
+                          value={`${waiversDeltaEstimated ? '~' : ''}${signed(waiversDelta)}`}
+                          note={`since ${caseloadDeltaFrom}`}
+                        />
+                      )}
+                    </CaseloadStatGroup>
+                  </div>
+                ) : (
+                  <div className="flex flex-wrap gap-x-10 gap-y-3 mb-5">
+                    <CaseloadStat label="Open now" value={caseloadLatest} note={caseloadAsAtLabel && `as at ${caseloadAsAtLabel}`} />
+                    {caseloadDelta !== null && (
+                      <CaseloadStat label="Change" value={signed(caseloadDelta)} note={`since ${caseloadDeltaFrom}`} />
                     )}
                   </div>
-                  {caseloadDelta !== null && (
-                    <div>
-                      <p className={SECTION_HEADING}>Change</p>
-                      <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
-                        {caseloadDelta > 0 ? '+' : ''}{caseloadDelta}
-                      </p>
-                      <p className="text-sm text-gray-500 mt-0.5">since {caseloadDeltaFrom}</p>
-                    </div>
-                  )}
-                  {hasCaseloadWaivers && (
-                    <div>
-                      <p className={SECTION_HEADING}>Waivers open</p>
-                      <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
-                        {waiversPendingLatest > 0 ? '~' : ''}{waiversOpenLatest}
-                      </p>
-                      {waiversPendingLatest > 0 && (
-                        <p className="text-sm text-gray-500 mt-0.5">estimated</p>
-                      )}
-                    </div>
-                  )}
-                </div>
+                )}
                 <div
                   className="h-72"
                   role="img"
