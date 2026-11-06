@@ -190,10 +190,6 @@ function IndustryDetail() {
               <p className="text-sm text-gray-500 mt-1">
                 ANZSIC {levelLabel ? `${levelLabel.toLowerCase()} ` : 'code: '}{decodedCode} · {mergers.length} merger{mergers.length !== 1 ? 's' : ''}
               </p>
-              {/* Same text and classes as prerender.js's industryBody (DETAIL_SUMMARY). */}
-              {meta.summary && (
-                <p className="text-sm text-gray-600 mt-3 leading-relaxed max-w-3xl">{meta.summary}</p>
-              )}
             </div>
             <TrackButton
               active={following}
@@ -205,6 +201,12 @@ function IndustryDetail() {
               title="Get notified when a new merger is filed or a determination is published in this industry"
             />
           </div>
+          {/* Below the heading row rather than beside the Follow button, so it
+              spans the card. Same text and classes as prerender.js's
+              industryBody (DETAIL_SUMMARY). */}
+          {meta.summary && (
+            <p className="text-sm text-gray-600 mt-3 leading-relaxed">{meta.summary}</p>
+          )}
         </div>
 
         {mergers.length > 0 && <DetailStatGrid statCards={statCards} />}

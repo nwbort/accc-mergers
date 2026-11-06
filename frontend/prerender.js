@@ -56,7 +56,7 @@ const MAX_BODY_LINKS = 100;
 // The summary paragraph in an industry or party page's header card.
 // IndustryDetail.jsx and PartyDetail.jsx carry the same classes, so the card
 // is the same height before and after hydration.
-export const DETAIL_SUMMARY = 'text-sm text-gray-600 mt-3 leading-relaxed max-w-3xl';
+export const DETAIL_SUMMARY = 'text-sm text-gray-600 mt-3 leading-relaxed';
 
 function escapeHtml(str) {
   return String(str ?? '')

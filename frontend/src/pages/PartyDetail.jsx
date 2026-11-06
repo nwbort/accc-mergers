@@ -117,7 +117,7 @@ function PartyDetail() {
           </p>
           {/* Same text and classes as prerender.js's partyBody (DETAIL_SUMMARY). */}
           {meta.summary && (
-            <p className="text-sm text-gray-600 mt-3 leading-relaxed max-w-3xl">{meta.summary}</p>
+            <p className="text-sm text-gray-600 mt-3 leading-relaxed">{meta.summary}</p>
           )}
 
           <PartyMembers members={members} partyName={partyName} />
