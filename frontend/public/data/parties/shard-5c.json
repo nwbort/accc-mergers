@@ -385,6 +385,42 @@
         "completed_count": 1
       }
     },
+    "the-trustee-for-grand-motors-group-sydney-unit-trust": {
+      "id": "the-trustee-for-grand-motors-group-sydney-unit-trust",
+      "canonical_name": "The Trustee For Grand Motors Group - Sydney Unit Trust",
+      "members": [
+        {
+          "name": "THE TRUSTEE FOR GRAND MOTORS GROUP - SYDNEY UNIT TRUST",
+          "identifier": "28 172 394 097",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20046",
+            "merger_name": "Autosports Group - Mercedes-Benz Parramatta and Castle Hill, Chery Castle Hill",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "waterworks-childcare-investments-pty-ltd": {
       "id": "waterworks-childcare-investments-pty-ltd",
       "canonical_name": "Waterworks Childcare Investments Pty Ltd",

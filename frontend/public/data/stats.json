@@ -1,10 +1,10 @@
 {
-  "total_mergers": 320,
+  "total_mergers": 321,
   "total_waivers": 503,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 272,
-    "Under assessment": 43,
+    "Under assessment": 44,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-20046",
+      "merger_name": "Autosports Group - Mercedes-Benz Parramatta and Castle Hill, Chery Castle Hill",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-06T12:00:00Z",
+      "page_modified_datetime": "2026-11-06T16:44:31+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-70049",
       "merger_name": "Total Ventilation Hygiene - Alphacool",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-29T12:00:00Z",
       "page_modified_datetime": "2026-10-30T10:08:39+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-10044",
-      "merger_name": "OCTA \u2013 Woodside-EDL LNG JV",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-28T12:00:00Z",
-      "page_modified_datetime": "2026-10-29T10:01:25+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

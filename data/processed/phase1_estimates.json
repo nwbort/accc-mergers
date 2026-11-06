@@ -1176,6 +1176,20 @@
     "estimated_at": "2026-10-28",
     "method_version": 2
   },
+  "MN-20046": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      21
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": null,
+    "sample_size": 278,
+    "as_of": "2026-11-06",
+    "estimated_at": "2026-11-06",
+    "method_version": 2
+  },
   "MN-25002": {
     "expected_business_days": 17,
     "range_business_days": [

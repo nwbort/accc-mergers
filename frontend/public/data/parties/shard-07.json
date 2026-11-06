@@ -152,6 +152,42 @@
       },
       "waiver_duration": null
     },
+    "autosports-sutherland-pty-limited": {
+      "id": "autosports-sutherland-pty-limited",
+      "canonical_name": "Autosports Sutherland Pty Limited",
+      "members": [
+        {
+          "name": "Autosports Sutherland Pty Limited",
+          "identifier": "60 125 720 998",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20046",
+            "merger_name": "Autosports Group - Mercedes-Benz Parramatta and Castle Hill, Chery Castle Hill",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-06T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "ignite-group-holdings-limited": {
       "id": "ignite-group-holdings-limited",
       "canonical_name": "Ignite Group Holdings Limited",
