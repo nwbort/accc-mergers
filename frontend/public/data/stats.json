@@ -3,12 +3,12 @@
   "total_waivers": 503,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 272,
-    "Under assessment": 44,
+    "Assessment completed": 273,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 265,
+    "Approved": 266,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 270,
+    "cleared": 271,
     "not_cleared": 2,
-    "total": 272,
+    "total": 273,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.503597122302157,
-    "median_days": 26.0,
-    "average_business_days": 20.07913669064748,
-    "median_business_days": 18.0,
+    "average_days": 29.473118279569892,
+    "median_days": 26,
+    "average_business_days": 20.060931899641577,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
-        "count": 58,
-        "percentage": 20.9
+        "count": 59,
+        "percentage": 21.1
       },
       "day20": {
-        "count": 201,
-        "percentage": 72.3
+        "count": 202,
+        "percentage": 72.4
       },
       "day30": {
-        "count": 260,
+        "count": 261,
         "percentage": 93.5
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75061",
+      "merger_name": "ABB - Rotork",
+      "determination": "Approved",
+      "determination_date": "2026-11-07T12:00:00Z",
+      "page_modified_datetime": "2026-11-09T09:56:55+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-40050",
       "merger_name": "Sims - business assets of Base Metal Recyclers, VIC",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-02T12:00:00Z",
       "page_modified_datetime": "2026-11-02T16:36:09+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-80049",
-      "merger_name": "Samsung C&T - Powertech",
-      "determination": "Approved",
-      "determination_date": "2026-11-02T12:00:00Z",
-      "page_modified_datetime": "2026-11-02T16:31:10+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

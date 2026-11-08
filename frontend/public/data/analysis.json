@@ -2,7 +2,7 @@
   "phase1_duration": {
     "duration_histogram": {
       "15": {
-        "21": 31,
+        "21": 32,
         "22": 14,
         "23": 3,
         "24": 5,
@@ -137,17 +137,17 @@
     },
     "stats": {
       "average": 20.1,
-      "median": 18.0,
+      "median": 18,
       "min": 15,
       "max": 59,
-      "count": 278
+      "count": 279
     },
     "calendar_stats": {
       "average": 29.5,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 278
+      "count": 279
     }
   },
   "waiver_duration": {
@@ -382,8 +382,8 @@
       0,
       0,
       0,
-      33,
-      14
+      28,
+      16
     ]
   },
   "open_caseload": {
@@ -421,7 +421,7 @@
       37,
       32,
       41,
-      44
+      43
     ],
     "waivers": [
       0,
@@ -456,26 +456,26 @@
       0,
       0,
       0,
-      33,
-      47
+      28,
+      44
     ],
-    "as_at": "2026-11-08"
+    "as_at": "2026-11-09"
   },
   "current_status": {
-    "as_at": "2026-11-08",
+    "as_at": "2026-11-09",
     "windows": [
       {
         "days": 30,
         "notifications_filed": 35,
         "notifications": {
-          "median": 18.0,
-          "average": 19.5,
+          "median": 18,
+          "average": 19.3,
           "p90": 25,
           "min": 15,
           "max": 39,
-          "count": 24,
+          "count": 25,
           "duration_histogram": {
-            "15": 3,
+            "15": 4,
             "16": 3,
             "17": 4,
             "18": 4,
@@ -487,7 +487,7 @@
             "26": 1,
             "39": 1
           },
-          "median_delta": 0.0
+          "median_delta": 0
         },
         "waivers": {
           "median": 18,
@@ -517,21 +517,21 @@
         },
         "phase_1_speed": {
           "day15": {
-            "count": 3,
-            "percentage": 12.5
+            "count": 4,
+            "percentage": 16.0
           },
           "day20": {
-            "count": 18,
-            "percentage": 75.0
+            "count": 19,
+            "percentage": 76.0
           },
           "day30": {
-            "count": 23,
-            "percentage": 95.8
+            "count": 24,
+            "percentage": 96.0
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 24
+            "Approved": 25
           },
           "phase_2": {},
           "waivers": {
@@ -542,16 +542,16 @@
       },
       {
         "days": 90,
-        "notifications_filed": 103,
+        "notifications_filed": 102,
         "notifications": {
-          "median": 19,
-          "average": 20.7,
-          "p90": 26,
+          "median": 18.0,
+          "average": 20.3,
+          "p90": 25,
           "min": 15,
-          "max": 56,
-          "count": 113,
+          "max": 52,
+          "count": 112,
           "duration_histogram": {
-            "15": 19,
+            "15": 20,
             "16": 12,
             "17": 11,
             "18": 14,
@@ -560,7 +560,7 @@
             "21": 12,
             "22": 1,
             "23": 6,
-            "24": 4,
+            "24": 3,
             "25": 5,
             "26": 1,
             "27": 1,
@@ -571,10 +571,9 @@
             "39": 1,
             "41": 1,
             "49": 1,
-            "52": 1,
-            "56": 1
+            "52": 1
           },
-          "median_delta": 1.0
+          "median_delta": 0.0
         },
         "waivers": {
           "median": 18.0,
@@ -582,7 +581,7 @@
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 186,
+          "count": 184,
           "duration_histogram": {
             "3": 1,
             "5": 1,
@@ -597,43 +596,43 @@
             "14": 11,
             "15": 12,
             "16": 16,
-            "17": 14,
+            "17": 13,
             "18": 27,
             "19": 25,
             "20": 17,
             "21": 11,
             "22": 7,
-            "23": 5,
+            "23": 4,
             "24": 5
           },
           "median_delta": 4.0
         },
         "phase_1_speed": {
           "day15": {
-            "count": 19,
-            "percentage": 16.8
+            "count": 20,
+            "percentage": 17.9
           },
           "day20": {
-            "count": 73,
-            "percentage": 64.6
+            "count": 74,
+            "percentage": 66.1
           },
           "day30": {
             "count": 104,
-            "percentage": 92.0
+            "percentage": 92.9
           }
         },
         "determinations": {
           "phase_1": {
             "Approved": 109,
             "Referred to phase 2": 1,
-            "Approved with conditions": 3
+            "Approved with conditions": 2
           },
           "phase_2": {
             "Assessment ceased": 1,
             "Not approved": 1
           },
           "waivers": {
-            "Approved": 175,
+            "Approved": 173,
             "Not approved": 11
           }
         }
@@ -641,12 +640,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18.0,
+        "median": 18,
         "average": 20.1,
         "p90": 27,
         "min": 15,
         "max": 59,
-        "count": 278
+        "count": 279
       },
       "waivers": {
         "median": 14,
@@ -670,14 +669,14 @@
           "median_delta": 4.0
         },
         {
-          "median": 17,
-          "average": 19.6,
+          "median": 16.5,
+          "average": 19.5,
           "p90": 36,
           "min": 0,
           "max": 74,
-          "count": 103,
+          "count": 102,
           "days": 90,
-          "median_delta": 2.0
+          "median_delta": 1.5
         }
       ],
       "all_time": {
@@ -785,9 +784,9 @@
           "count": 34
         },
         {
-          "median": null,
-          "average": null,
-          "count": 4
+          "median": 19,
+          "average": 22.8,
+          "count": 5
         }
       ],
       "waivers": [
@@ -888,7 +887,7 @@
         37,
         32,
         41,
-        44
+        43
       ]
     }
   },
@@ -930,15 +929,6 @@
       "count": 13
     },
     {
-      "code": "B",
-      "name": "Mining",
-      "average_business_days": 22.6,
-      "median_business_days": 17,
-      "average_calendar_days": 32.2,
-      "median_calendar_days": 26,
-      "count": 15
-    },
-    {
       "code": "G",
       "name": "Retail Trade",
       "average_business_days": 22.5,
@@ -946,6 +936,15 @@
       "average_calendar_days": 33.6,
       "median_calendar_days": 27,
       "count": 37
+    },
+    {
+      "code": "B",
+      "name": "Mining",
+      "average_business_days": 22.1,
+      "median_business_days": 17.0,
+      "average_calendar_days": 31.5,
+      "median_calendar_days": 25.5,
+      "count": 16
     },
     {
       "code": "A",
@@ -968,20 +967,11 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "average_business_days": 21.5,
-      "median_business_days": 19,
-      "average_calendar_days": 32.5,
-      "median_calendar_days": 28,
-      "count": 45
-    },
-    {
-      "code": "D",
-      "name": "Electricity, Gas, Water and Waste Services",
-      "average_business_days": 21.1,
-      "median_business_days": 19,
-      "average_calendar_days": 30.2,
-      "median_calendar_days": 27,
-      "count": 9
+      "average_business_days": 21.3,
+      "median_business_days": 19.0,
+      "average_calendar_days": 32.2,
+      "median_calendar_days": 28.0,
+      "count": 46
     },
     {
       "code": "Q",
@@ -1002,6 +992,15 @@
       "count": 9
     },
     {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "average_business_days": 20.5,
+      "median_business_days": 18.5,
+      "average_calendar_days": 29.3,
+      "median_calendar_days": 26.5,
+      "count": 10
+    },
+    {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
       "average_business_days": 20.2,
@@ -1014,10 +1013,10 @@
       "code": "C",
       "name": "Manufacturing",
       "average_business_days": 20.0,
-      "median_business_days": 18,
-      "average_calendar_days": 29.4,
-      "median_calendar_days": 27,
-      "count": 85
+      "median_business_days": 18.0,
+      "average_calendar_days": 29.3,
+      "median_calendar_days": 27.0,
+      "count": 86
     },
     {
       "code": "O",
@@ -1076,9 +1075,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 41,
+      "count": 40,
       "outcome_mix": {
-        "Unknown": 41
+        "Unknown": 40
       },
       "median_business_days": null
     },
@@ -1092,11 +1091,11 @@
     },
     {
       "division": "Unknown",
-      "count": 1,
+      "count": 2,
       "outcome_mix": {
-        "Approved": 1
+        "Approved": 2
       },
-      "median_business_days": 21
+      "median_business_days": 18.0
     }
   ],
   "waiver_by_commission_division": [
@@ -1138,7 +1137,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 58,
+      "15": 59,
       "16": 43,
       "17": 31,
       "18": 31,
@@ -1162,9 +1161,9 @@
     },
     "stats": {
       "mean_used_bd": 18.3,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 2.7,
-      "count": 257
+      "count": 258
     },
     "extended_count": 12
   },
@@ -1239,11 +1238,11 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "approved": 43,
+      "approved": 44,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.044
+      "in_progress": 9,
+      "phase2_referral_rate": 0.043
     },
     {
       "code": "M",
@@ -1275,28 +1274,28 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 83,
+      "approved": 84,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.024
+      "in_progress": 9,
+      "phase2_referral_rate": 0.023
     },
     {
       "code": "D",
       "name": "Electricity, Gas, Water and Waste Services",
-      "approved": 9,
+      "approved": 10,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 2,
+      "in_progress": 1,
       "phase2_referral_rate": 0.0
     },
     {
       "code": "B",
       "name": "Mining",
-      "approved": 15,
+      "approved": 16,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 4,
+      "in_progress": 3,
       "phase2_referral_rate": 0.0
     },
     {
