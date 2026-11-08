@@ -83,7 +83,9 @@ PAGES_FILE_LIMIT = 20_000
 FILE_COUNT_WARN_RATIO = 0.8
 
 # Files in the deployment that come from neither source tree and can't be
-# counted without building: Vite's hashed JS/CSS chunks. Currently ~46; the
+# counted without building: Vite's hashed JS/CSS chunks, plus the couple that
+# scripts/build.sh writes (data/manifest.json, .well-known/atproto-did).
+# Currently ~48; the
 # allowance is rounded up because the exact number moves with code splitting and
 # being a few dozen out against a 20,000 budget changes nothing.
 VITE_BUILD_FILES = 60
