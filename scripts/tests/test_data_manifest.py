@@ -14,11 +14,14 @@ from scripts.generate.data_manifest import (
 )
 
 
-def _data_dir(tmp_path, files, phase2_current=()):
+def _data_dir(tmp_path, files, phase2_current=(), industries=None):
     mergers = tmp_path / "mergers"
     mergers.mkdir()
     for name, body in files.items():
         (mergers / name).write_bytes(body)
+    (tmp_path / "industries").mkdir()
+    for name, body in (industries or {}).items():
+        (tmp_path / "industries" / name).write_bytes(body)
     (tmp_path / "phase2.json").write_text(
         json.dumps({"current": [{"merger_id": m} for m in phase2_current], "completed": []})
     )
@@ -52,6 +55,17 @@ def test_hash_follows_the_bytes(tmp_path):
     before = build_manifest(data)["mergers"]["MN-01016"]
     (data / "mergers" / "MN-01016.json").write_bytes(b'{"a":2}')
     assert build_manifest(data)["mergers"]["MN-01016"] != before
+
+
+def test_hashes_every_industry_division_file(tmp_path):
+    data = _data_dir(
+        tmp_path, {"MN-01016.json": b"{}"},
+        industries={"G.json": b'{"division":"G"}', "_orphans.json": b"{}"},
+    )
+    assert build_manifest(data)["industries"] == {
+        "G": file_hash(b'{"division":"G"}'),
+        "_orphans": file_hash(b"{}"),
+    }
 
 
 def test_phase2_current_ids(tmp_path):
