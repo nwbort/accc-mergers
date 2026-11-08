@@ -33,7 +33,8 @@ high-priority messages don't end in a notification.
 ``--wait-for-deploy``: the manifest checked out here says what this commit will
 deploy; the script waits until the live one has caught up with it, so a phone
 told to check finds the new data. If it hasn't after the deadline, whatever is
-live is compared, and the rest is left for the next run.
+live is compared, and the rest is left for the next run. A run with no earlier
+manifest sends nothing, so it doesn't wait: it records what is live.
 
 Credentials: ``FCM_SERVICE_ACCOUNT``, a Firebase service account key (JSON),
 with which this signs its own OAuth token (no Google client library). Without
@@ -149,13 +150,17 @@ def wait_for_deploy(
     clock=time.monotonic,
 ) -> dict | None:
     """The live manifest once it has caught up with *expected*, or as it is at the deadline."""
-    deadline = clock() + timeout
+    start = clock()
+    deadline = start + timeout
     while True:
         live = fetch_live(fetch)
-        if caught_up(previous, expected, live) or clock() >= deadline:
-            if not caught_up(previous, expected, live):
-                print(f"Live manifest not caught up after {timeout:.0f}s; sending what is live")
+        if caught_up(previous, expected, live):
             return live
+        now = clock()
+        if now >= deadline:
+            print(f"Live manifest not caught up after {timeout:.0f}s; sending what is live", flush=True)
+            return live
+        print(f"  live manifest not caught up yet ({now - start:.0f}s of {timeout:.0f}s)", flush=True)
         sleep(poll)
 
 
@@ -266,7 +271,10 @@ def main(argv: list[str] | None = None, *, fetch=requests.get, post=requests.pos
 
     previous = load_state(args.state)
     expected = build_manifest(args.data_dir)
-    if args.wait_for_deploy > 0:
+    # With nothing recorded there is nothing to send, so nothing to wait for:
+    # record whatever is live. (Waiting would need the live manifest to match
+    # this checkout exactly, which a deploy that hasn't happened never does.)
+    if previous is not None and args.wait_for_deploy > 0:
         live = wait_for_deploy(previous, expected, timeout=args.wait_for_deploy, fetch=fetch, sleep=sleep)
     else:
         live = fetch_live(fetch)

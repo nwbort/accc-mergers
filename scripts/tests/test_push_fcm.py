@@ -259,3 +259,23 @@ def test_dry_run_needs_no_credentials_and_records_nothing(tmp_path, monkeypatch,
     assert code == 0
     assert "merger-MN-1" in capsys.readouterr().out
     assert json.loads(state.read_text()) == BASE
+
+
+def test_first_run_records_without_waiting_for_an_exact_match(tmp_path, monkeypatch, account):
+    # With no state, waiting would need live == this checkout exactly: a live
+    # site one deploy behind (here, an older manifest shape) would hold the
+    # run for the whole deadline only to send nothing.
+    account.pop("_public")
+    monkeypatch.setenv("FCM_SERVICE_ACCOUNT", json.dumps(account))
+    state = tmp_path / "state.json"
+    stale = {"format": 1, "mergers": {"MN-1": "a"}, "phase2_current": []}
+
+    def no_sleep(seconds):
+        raise AssertionError("waited on a first run")
+
+    code = fcm.main(
+        ["--state", str(state), "--data-dir", str(_data_dir(tmp_path, BASE)), "--wait-for-deploy", "900"],
+        fetch=lambda *a, **k: _Resp(stale), post=lambda *a, **k: None, sleep=no_sleep,
+    )
+    assert code == 0
+    assert json.loads(state.read_text()) == stale
