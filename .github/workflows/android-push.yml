@@ -1,0 +1,78 @@
+name: Android push
+
+# Tells the Android app (nwbort/accc-mergers-app) which followed files changed,
+# over Firebase Cloud Messaging topics, so it checks then rather than waiting
+# for its schedule. See docs/android-push.md and scripts/push/fcm.py.
+#
+# After every run that can change the data (the pipeline, and the tribunal and
+# Federal Court scrape, which commits without running the pipeline), plus a
+# three-hourly catch-all for a deploy those miss. workflow_run fires even
+# though those workflows push with GITHUB_TOKEN, which a push trigger would not.
+#
+# It compares the live data/manifest.json with the one it last saw, kept in the
+# Actions cache rather than committed: it changes on every data commit and no
+# reader of the repo wants it. An evicted cache (7 days unused) only means the
+# next run records instead of sending. Inert without FCM_SERVICE_ACCOUNT.
+
+on:
+  workflow_run:
+    workflows: [Merger Pipeline, Scrape Tribunal]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '41 */3 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: android-push
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
+    timeout-minutes: 25
+    env:
+      STATE: .push-state/manifest.json
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      # The newest cache under the prefix: the manifest the last run saw.
+      - name: Restore the last manifest seen
+        uses: actions/cache/restore@v6
+        with:
+          path: .push-state
+          key: android-push-${{ github.run_id }}
+          restore-keys: android-push-
+
+      # Waits for Cloudflare Pages to serve this checkout's data, so a phone
+      # told to check finds it (see --wait-for-deploy in the script).
+      - name: Message the changed topics
+        env:
+          FCM_SERVICE_ACCOUNT: ${{ secrets.FCM_SERVICE_ACCOUNT }}
+        run: python -m scripts.push.fcm --state "$STATE" --wait-for-deploy 900
+
+      # Even after a failed send: the script records what it compared.
+      - name: Keep the manifest for the next run
+        if: always() && hashFiles('.push-state/manifest.json') != ''
+        uses: actions/cache/save@v6
+        with:
+          path: .push-state
+          key: android-push-${{ github.run_id }}-${{ github.run_attempt }}

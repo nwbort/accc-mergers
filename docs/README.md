@@ -11,6 +11,7 @@ This directory contains all project documentation for the ACCC Mergers Tracker.
 - [atproto.md](atproto.md) - Publishing the register into the ATmosphere: the `mergers.fyi` handle, the `fyi.mergers.*` lexicons and records, and the Bluesky posts
 - [linkedin.md](linkedin.md) - Posting the same milestones to LinkedIn through a Make.com scenario, and the manual share-link fallback
 - [notifications.md](notifications.md) - ntfy push notifications for the workflows that open a PR or issue for review
+- [android-push.md](android-push.md) - Push notifications to the Android app over Firebase Cloud Messaging topics, and how to set them up
 - [adr-raw-data-storage.md](adr-raw-data-storage.md) - ADR: where the raw scraped data (`data/raw/`) should live
 
 ## Related Documentation
