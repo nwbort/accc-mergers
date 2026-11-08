@@ -67,6 +67,8 @@ jobs:
       - name: Message the changed topics
         env:
           FCM_SERVICE_ACCOUNT: ${{ secrets.FCM_SERVICE_ACCOUNT }}
+          # So the wait's progress reaches the log as it happens.
+          PYTHONUNBUFFERED: '1'
         run: python -m scripts.push.fcm --state "$STATE" --wait-for-deploy 900
 
       # Even after a failed send: the script records what it compared.

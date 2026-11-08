@@ -60,6 +60,7 @@ functions/*
 data/raw/matters/*
 atproto/identity.json
 scripts/build.sh
+scripts/generate/data_manifest.py
 wrangler.toml
 ```
 
@@ -68,8 +69,11 @@ and its committed JSON (`frontend/`), the Pages Function serving
 `/mergers/{matter}/*.pdf` and the link-preview page for bots (`functions/`), the PDFs `build.sh` copies into
 `dist/mergers/` (`data/raw/matters/`), the DID `build.sh` writes to
 `/.well-known/atproto-did` (`atproto/identity.json` — see
-[`atproto.md`](atproto.md)), and the two files that decide how the build
-itself runs.
+[`atproto.md`](atproto.md)), the generator of the `data/manifest.json`
+`build.sh` writes for the Android app (`scripts/generate/data_manifest.py` — a
+change to it that deploys nothing leaves the live manifest in its old shape,
+and `android-push.yml` waiting on it), and the two files that decide how the
+build itself runs.
 
 Two things to know before editing this list:
 
