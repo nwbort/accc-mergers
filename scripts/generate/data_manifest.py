@@ -1,4 +1,4 @@
-"""Write ``data/manifest.json``: a fingerprint of every merger detail file.
+"""Write ``data/manifest.json``: a fingerprint of every merger and industry file.
 
 The Android app's background check follows a handful of mergers and used to
 ask for each one's detail file every couple of hours, plus ``mergers/list.json``
@@ -9,6 +9,8 @@ request:
 * ``mergers`` maps each merger id to a short hash of its detail file's bytes,
   so a client holding a copy can tell whether it is current without asking.
   A new id is a new filing.
+* ``industries`` does the same for each ``industries/{division}.json`` file
+  (keyed by its stem, ``G`` or ``_orphans``), for followed industries.
 * ``phase2_current`` lists the matters currently in Phase 2, so the app's
   "follow every Phase 2 matter" option doesn't need ``phase2.json``.
 
@@ -60,12 +62,22 @@ def build_manifest(data_dir: Path) -> dict:
         if _DETAIL_FILE_RE.match(path.name)
     }
 
+    industries = {
+        path.stem: file_hash(path.read_bytes())
+        for path in sorted((data_dir / "industries").glob("*.json"))
+    }
+
     phase2 = json.loads((data_dir / "phase2.json").read_text(encoding="utf-8"))
     phase2_current = [
         m["merger_id"] for m in phase2.get("current", []) if m.get("merger_id")
     ]
 
-    return {"format": FORMAT, "mergers": mergers, "phase2_current": phase2_current}
+    return {
+        "format": FORMAT,
+        "mergers": mergers,
+        "industries": industries,
+        "phase2_current": phase2_current,
+    }
 
 
 def write_manifest(data_dir: Path) -> Path:
