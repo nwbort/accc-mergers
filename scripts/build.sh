@@ -46,7 +46,18 @@ else
   echo "No ATProto DID configured, skipping /.well-known/atproto-did"
 fi
 
-# 3. Copy PDF files from data/raw/matters into the build output
+# 3. Fingerprint the merger detail files for the Android app's background
+# check (see scripts/generate/data_manifest.py). Built from dist/ so it
+# describes exactly what is deployed, and never committed. Not fatal: without
+# it the app falls back to fetching each followed merger, as it always has.
+if (cd .. && python3 -m scripts.generate.data_manifest "$FRONTEND_DIR/dist/data"); then
+  :
+else
+  rm -f dist/data/manifest.json
+  echo "Warning: could not write dist/data/manifest.json; the app will fall back"
+fi
+
+# 4. Copy PDF files from data/raw/matters into the build output
 # so they're served at /mergers/<matter-path>/<file>.pdf
 #
 # The PDFs are ~140 MB across ~790 files, so this is done as one batched
