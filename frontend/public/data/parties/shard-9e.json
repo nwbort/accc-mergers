@@ -271,6 +271,48 @@
         "completed_count": 1
       }
     },
+    "strategy-one-human-resources-pty-ltd": {
+      "id": "strategy-one-human-resources-pty-ltd",
+      "canonical_name": "Strategy One Human Resources Pty Ltd",
+      "members": [
+        {
+          "name": "STRATEGY ONE HUMAN RESOURCES PTY LTD",
+          "identifier": "63 130 466 732",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25060",
+            "merger_name": "Talent Acquisition Group \u2013 Strategy1 HR",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-13T12:00:00Z",
+            "determination_date": "2026-11-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "tyre-and-auto-pty-ltd": {
       "id": "tyre-and-auto-pty-ltd",
       "canonical_name": "Tyre And Auto Pty Ltd",

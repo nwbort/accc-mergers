@@ -713,6 +713,48 @@
         "completed_count": 1
       }
     },
+    "trea-opco-pty-ltd": {
+      "id": "trea-opco-pty-ltd",
+      "canonical_name": "Trea Opco Pty Ltd",
+      "members": [
+        {
+          "name": "TREA OPCO PTY LTD",
+          "identifier": "22 695 700 808",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45036",
+            "merger_name": "Next Capital - data centre business of Fujitsu Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": "2026-11-09T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
     "volkswagen": {
       "id": "volkswagen",
       "canonical_name": "Volkswagen",
