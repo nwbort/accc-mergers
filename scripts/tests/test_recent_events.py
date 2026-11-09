@@ -14,6 +14,8 @@ from scripts.generate.static_data.outputs.recent_events import TYPES, classify, 
         ({"title": "Merger notified to ACCC", "phase": "Phase 1"}, "notified"),
         ({"title": "Phase 1 consultation", "is_questionnaire_event": True}, "questionnaire"),
         ({"title": "Coles - supermarket site in Kirkwood (QLD) - Questionnaire"}, "questionnaire"),
+        ({"title": "Phase 2 consultation", "is_questionnaire_event": True}, "phase_2_consultation"),
+        ({"title": "Coles - Kirkwood - Phase 2 questionnaire"}, "phase_2_consultation"),
         ({"title": "Acrow - Ausgroup Industrial Services - Phase 1 Quesionnaire"}, "questionnaire"),
         (
             {"title": "Phase 1 - initial assessment determination: Approved",

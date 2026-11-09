@@ -31,6 +31,7 @@ TYPES = (
     'materially_incomplete',
     'notification_completed',
     'questionnaire',
+    'phase_2_consultation',
     'timeline_extension',
     'phase_1_determination',
     'phase_2_referral',
@@ -97,6 +98,11 @@ def classify(event: dict) -> str:
     # 'quesionnaire': the ACCC's own typo, on MN-60025.
     if (event.get('is_questionnaire_event') or 'questionnaire' in title
             or 'quesionnaire' in title or 'consultation' in title):
+        # A second-round consultation (phase 2's own questionnaire) is kept
+        # apart from the routine phase 1 one every notification gets. Remedy
+        # and public benefit questionnaires are already caught above.
+        if 'phase 2' in title or phase == 'Phase 2':
+            return 'phase_2_consultation'
         return 'questionnaire'
     return 'other'
 
