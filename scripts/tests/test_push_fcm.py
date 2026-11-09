@@ -55,10 +55,22 @@ def test_changed_files_message_their_topics():
 
 def test_new_filing_or_phase2_change_messages_list():
     filed = _manifest({"MN-1": "a", "MN-2": "b", "MN-3": "c"}, BASE["industries"], ["MN-2"])
-    # A new merger is no one's follow yet: only the list hears of it.
-    assert fcm.changed_topics(BASE, filed) == ["list"]
+    # A new merger hears of itself (someone may have followed its id before it
+    # was on the register), and the list hears of it for new-filing alerts.
+    assert fcm.changed_topics(BASE, filed) == ["merger-MN-3", "list"]
     phase2 = _manifest(BASE["mergers"], BASE["industries"], ["MN-1", "MN-2"])
     assert fcm.changed_topics(BASE, phase2) == ["list"]
+
+
+def test_unchanged_merger_is_not_messaged_and_changed_one_is_alone():
+    assert fcm.changed_topics(BASE, _manifest(BASE["mergers"], BASE["industries"], ["MN-2"])) == []
+    changed = _manifest({"MN-1": "a2", "MN-2": "b"}, BASE["industries"], ["MN-2"])
+    assert fcm.changed_topics(BASE, changed) == ["merger-MN-1"]
+
+
+def test_new_ids_count_toward_the_cap():
+    many = {f"MN-{i}": "x" for i in range(fcm.MAX_TOPICS)}
+    assert fcm.changed_topics(_manifest({}), _manifest(many)) == ["all"]
 
 
 def test_a_removed_merger_is_not_messaged():
