@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 321,
-    "matters_extended": 24,
-    "share_extended_pct": 7.5,
-    "extension_events_total": 39,
-    "total_extension_bd": 437,
-    "median_matter_extension_bd": 14,
-    "longest_single_bd": 30,
+    "matters_extended": 25,
+    "share_extended_pct": 7.8,
+    "extension_events_total": 40,
+    "total_extension_bd": 470,
+    "median_matter_extension_bd": 14.5,
+    "longest_single_bd": 33,
     "phase_2_total": 9,
     "extended_escalated_to_phase_2": 8,
-    "escalation_rate_given_extension_pct": 33.3,
+    "escalation_rate_given_extension_pct": 32.0,
     "phase_2_preceded_by_extension_pct": 88.9,
     "base_phase_2_rate_pct": 2.8,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 26,
-      "business_days": 290
+      "events": 27,
+      "business_days": 323
     },
     {
       "category": "Remedy under consideration",
@@ -70,7 +70,7 @@
     },
     {
       "month": "2026-11",
-      "count": 3
+      "count": 4
     }
   ],
   "matters": [
@@ -183,6 +183,27 @@
           "reason_category": "Remedy under consideration",
           "reason_detail": "remedy offered by parties",
           "title": "Timeline extended by 15 business days \u2013 following remedy offered by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-75042",
+      "merger_name": "Coles - supermarket site in Angle Vale, SA",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-09-30T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 33,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-11-06T12:00:00Z",
+          "business_days": 33,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 33 business days \u2013 following request by parties"
         }
       ]
     },
