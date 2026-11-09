@@ -95,21 +95,39 @@ function jsonResponse(body, status, origin = "", env = {}) {
 // rejected with 429. KV is eventually consistent, so under concurrent bursts
 // the effective limit may be exceeded slightly — acceptable for abuse
 // prevention (this isn't a billing-critical limit).
+// KV rejects an expirationTtl under this many seconds.
+const KV_MIN_TTL_SECONDS = 60;
+
 async function checkRateLimit(env, key, limit, windowSeconds) {
-  const now = Date.now();
-  const raw = await env.RATE_LIMIT_KV.get(key);
-  let entry = raw ? JSON.parse(raw) : null;
+  try {
+    const now = Date.now();
+    const raw = await env.RATE_LIMIT_KV.get(key);
+    let entry = raw ? JSON.parse(raw) : null;
 
-  if (!entry || entry.resetAt <= now) {
-    entry = { count: 0, resetAt: now + windowSeconds * 1000 };
+    if (!entry || typeof entry.count !== "number" || !(entry.resetAt > now)) {
+      entry = { count: 0, resetAt: now + windowSeconds * 1000 };
+    }
+
+    // Already over the limit: reject without another write, so a client being
+    // refused can't keep spending the namespace's write quota.
+    if (entry.count >= limit) return false;
+
+    entry.count += 1;
+    // The TTL is only garbage collection (resetAt above is what ends the
+    // window), so clamping it to KV's minimum is harmless. Unclamped, a
+    // request in the last minute of a window made the put throw.
+    await env.RATE_LIMIT_KV.put(key, JSON.stringify(entry), {
+      expirationTtl: Math.max(KV_MIN_TTL_SECONDS, Math.ceil((entry.resetAt - now) / 1000) + 1),
+    });
+
+    return true;
+  } catch (err) {
+    // KV unavailable or its write quota spent. Fail open: the limiter is abuse
+    // prevention, and signup and feedback are still gated by Turnstile, so a
+    // KV outage shouldn't take the endpoints down with it.
+    console.error("Rate limit check failed, allowing request:", err);
+    return true;
   }
-
-  entry.count += 1;
-  await env.RATE_LIMIT_KV.put(key, JSON.stringify(entry), {
-    expirationTtl: Math.ceil((entry.resetAt - now) / 1000) + 1,
-  });
-
-  return entry.count <= limit;
 }
 
 // ---------------------------------------------------------------------------
