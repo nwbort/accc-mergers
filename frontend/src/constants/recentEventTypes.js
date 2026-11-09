@@ -141,8 +141,8 @@ export const RECENT_EVENT_TYPES = {
     shown: true,
   },
   notification_completed: {
-    label: 'Notification completed',
-    plural: 'notifications completed',
+    label: 'Notification re-completed',
+    plural: 'notifications re-completed',
     Icon: FaCircleCheck,
     tile: 'bg-primary/10 text-primary',
     chip: 'bg-primary/5 text-primary border-primary/20',
