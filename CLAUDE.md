@@ -187,7 +187,11 @@ frontend/src/
 │                         #     CardCollapseGrid, ShowMoreDivider, EmptyStateCard,
 │                         #     StatCard, DetailStatGrid, MergerCardBody
 │                         #   - Timelines: MergerTimeline, Phase2Timeline,
-│                         #     UpcomingEventsTimeline, BusinessDayProgress
+│                         #     UpcomingEventsTimeline, RecentEventsTimeline,
+│                         #     BusinessDayProgress. The dashboard's upcoming and
+│                         #     recent timelines both draw through EventDayTimeline
+│                         #     (day rail, rows, same-type collapsing), so a change
+│                         #     to either's look goes there
 │                         #   - Outcome: MergerOutcomeHeading — the status line
 │                         #     above every merger's title, stating the outcome
 │                         #     once decided and the live status until then
@@ -261,7 +265,10 @@ frontend/src/
 │                         #   chartColors.js, outcomeDotColors.js, outcomeHeader.js,
 │                         #   outcomeIcons.js, outcomeRail.js, statutoryDeadlines.js,
 │                         #   headerButton.js (the Track/Share header pill variants),
-│                         #   promo.js (the dashboard's promo banners, in priority order)
+│                         #   promo.js (the dashboard's promo banners, in priority order),
+│                         #   recentEventTypes.js (label/icon/colour per recent-events.json
+│                         #   type, and whether the dashboard's Recent events timeline shows it;
+│                         #   key order is significance within a day)
 ├── context/              # TrackingContext.jsx — global merger + industry follow state via localStorage
 │                         #   (industry follows flag only new filings/determinations)
 ├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js,
@@ -770,6 +777,7 @@ exists rather than 404ing into the SPA's `index.html`.
 | `parties.json` | Every party (canonical group or single entity) with merger counts |
 | `parties/shard-{nn}.json` | Mergers per party, grouped by role, packed into 256 buckets by party id — see *Party files are sharded* above |
 | `upcoming-events.json` | Future consultation/determination dates |
+| `recent-events.json` | Every register event dated in the last 14 days (Sydney), newest first, each tagged with a `type` by `outputs/recent_events.classify()` (title + event flags). Publishes every type; which ones the dashboard's "Recent events" timeline shows is the `shown` flag per type in `frontend/src/constants/recentEventTypes.js` |
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
 | `analysis.json` | Pre-computed analysis data. `current_status` (powering `/current-status`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window's `notifications`/`waivers` block carries its own flat `duration_histogram` (business days → matters decided in exactly that many), the recent-window twin of the all-time histograms below, so the same ECDF can be drawn over just what was decided lately. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, since that stage ends at filing rather than at a decision; the estimate is a calendar-day figure but is published here in business days, like every other duration on the page). Each window also carries `phase_1_speed` (the shape of `stats.json`'s `phase_duration.percentiles`) and `determinations` (`phase_1`/`phase_2`/`waivers` outcome counts for matters decided in the window), feeding the same cards as the dashboard. No waiver inflow is published, since a waiver only reaches the register once decided. `phase1_duration`/`waiver_duration` each carry a `duration_histogram`: a nested count map, business days → calendar days → number of completed reviews with that exact pair. It replaced a flat list holding one object per review — same distribution (the records are anonymous, so a multiset of pairs is exactly the list), a third of the file. Read business days by summing each inner map; read calendar days by folding the inner keys together (`frontend/src/utils/durationEcdf.js`) |

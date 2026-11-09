@@ -25,6 +25,7 @@ Output files:
   - parties/shard-{nn}.json     - Mergers per party, grouped by role, packed
                                   into fixed buckets (see scripts/shard.py)
   - upcoming-events.json        - Future consultation/determination dates
+  - recent-events.json          - Register events from the last two weeks
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
   - quarterly.json              - Quarter-by-quarter volume, outcomes, timing and milestones
@@ -87,6 +88,7 @@ from scripts.generate.static_data.outputs import (
     phase2,
     questionnaires,
     quarterly,
+    recent_events,
     refiled,
     serial_acquirers,
     stats,
@@ -208,6 +210,7 @@ def main():
         ("industries.json", industries.generate_index(enriched)),
         ("parties.json", parties.generate_index(party_groups)),
         ("upcoming-events.json", upcoming_events.generate(enriched)),
+        ("recent-events.json", recent_events.generate(enriched)),
         ("commentary.json", commentary_out.generate(enriched, commentary)),
         ("analysis.json", analysis.generate(enriched)),
         # Stamped with each quarter's report version (v1, v2, …), bumped when

@@ -5,6 +5,7 @@ import OutcomeSummaryCards from '../components/OutcomeSummaryCards';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import UpcomingEventsTimeline from '../components/UpcomingEventsTimeline';
+import RecentEventsTimeline from '../components/RecentEventsTimeline';
 import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
 import RecentMergersCards from '../components/RecentMergersCards';
 import PromoStack from '../components/PromoStack';
@@ -16,6 +17,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
 import { formatMedian } from '../utils/formatMedian';
 import { MERGER_STATUS } from '../constants/mergerStatus';
+import { isRecentEventShown } from '../constants/recentEventTypes';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 
 // Title and description live in the shared table so this page and the
@@ -32,6 +34,10 @@ function Dashboard() {
     cacheKey: 'dashboard-events',
   });
   const upcomingEvents = upcomingEventsData?.events ?? null;
+  // Likewise optional: without it the recent events table just isn't drawn.
+  const { data: recentEventsData } = useFetchData(API_ENDPOINTS.recentEvents, {
+    cacheKey: 'dashboard-recent-events',
+  });
 
   // Mark items as seen after user has viewed them for 2 seconds
   // This ensures the "New" badge persists across refreshes
@@ -142,6 +148,14 @@ function Dashboard() {
           </div>
         ) : null;
       })()}
+
+      {/* Recent Events: what happened on the register over the last two
+          weeks, newest first. */}
+      {recentEventsData?.events?.some(isRecentEventShown) && (
+        <div className="mb-8">
+          <RecentEventsTimeline events={recentEventsData.events} />
+        </div>
+      )}
 
       <OutcomeSummaryCards
         speed={stats.phase_duration.percentiles}
