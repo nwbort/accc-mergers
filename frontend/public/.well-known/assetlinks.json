@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fyi.mergers.app",
+      "sha256_cert_fingerprints": [
+        "C2:B7:7A:94:83:8E:1B:3D:EE:F9:77:74:38:8B:C7:ED:27:73:8B:61:A6:7A:10:4E:3F:A6:0D:4C:24:8B:AC:28"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fyi.mergers.app.debug",
+      "sha256_cert_fingerprints": [
+        "C2:B7:7A:94:83:8E:1B:3D:EE:F9:77:74:38:8B:C7:ED:27:73:8B:61:A6:7A:10:4E:3F:A6:0D:4C:24:8B:AC:28"
+      ]
+    }
+  }
+]
