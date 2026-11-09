@@ -45,5 +45,5 @@ npm test          # Vitest suite (npm run test:watch to iterate)
 ## See also
 
 - [`../README.md`](../README.md) — repository overview
-- [`../docs/deployment.md`](../docs/deployment.md) — how the site is built and deployed
+- [`../docs/deployment.md`](../docs/deployment.md) — how the site is built and deployed, including the build watch paths
 - [`../docs/accessibility.md`](../docs/accessibility.md) — WCAG 2.2 AA conventions and the axe audit
