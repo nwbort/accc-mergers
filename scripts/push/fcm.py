@@ -14,7 +14,9 @@ only records it.
 
 Topics (``Push.Topics`` in the app's ``notify/Push.kt``: change both or neither):
 
-* ``merger-{id}``: that merger's detail file changed.
+* ``merger-{id}``: that merger's detail file changed, or first appeared (the
+  app lets someone follow an id before it reaches the register: a waiver
+  application only appears once decided, but a party knows its number sooner).
 * ``industry-{stem}``: ``industries/{stem}.json`` changed (``G``, ``_orphans``),
   which is every followed industry under that division.
 * ``list``: new merger ids, or a change to which matters are in Phase 2, for
@@ -90,7 +92,7 @@ def changed_topics(previous: dict, current: dict) -> list[str]:
         return [ALL]
     topics: list[str] = []
     before, after = previous.get("mergers", {}), current.get("mergers", {})
-    topics += [merger_topic(mid) for mid in sorted(after) if mid in before and before[mid] != after[mid]]
+    topics += [merger_topic(mid) for mid in sorted(after) if before.get(mid) != after[mid]]
     before_ind, after_ind = previous.get("industries", {}), current.get("industries", {})
     topics += [industry_topic(stem) for stem in sorted(after_ind) if before_ind.get(stem) != after_ind[stem]]
     new_ids = set(after) - set(before)
