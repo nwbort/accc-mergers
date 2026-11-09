@@ -19,7 +19,9 @@ export default {
       return new Response(null, { headers: CORS });
     }
 
-    if (!timingSafeEqual(request.headers.get("x-secret") || "", env.SECRET || "")) {
+    // Fail closed when SECRET is not configured: two empty strings would
+    // otherwise compare equal and let a request with no header straight in.
+    if (!env.SECRET || !timingSafeEqual(request.headers.get("x-secret") || "", env.SECRET)) {
       return new Response("Forbidden", { status: 403, headers: CORS });
     }
 
