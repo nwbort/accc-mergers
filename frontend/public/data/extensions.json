@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 321,
-    "matters_extended": 25,
-    "share_extended_pct": 7.8,
-    "extension_events_total": 40,
-    "total_extension_bd": 470,
-    "median_matter_extension_bd": 14.5,
+    "matters_extended": 26,
+    "share_extended_pct": 8.1,
+    "extension_events_total": 41,
+    "total_extension_bd": 475,
+    "median_matter_extension_bd": 14,
     "longest_single_bd": 33,
     "phase_2_total": 9,
     "extended_escalated_to_phase_2": 8,
-    "escalation_rate_given_extension_pct": 32.0,
+    "escalation_rate_given_extension_pct": 30.8,
     "phase_2_preceded_by_extension_pct": 88.9,
     "base_phase_2_rate_pct": 2.8,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 27,
-      "business_days": 323
+      "events": 28,
+      "business_days": 328
     },
     {
       "category": "Remedy under consideration",
@@ -70,7 +70,7 @@
     },
     {
       "month": "2026-11",
-      "count": 4
+      "count": 5
     }
   ],
   "matters": [
@@ -596,6 +596,27 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 6 business days - following request by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20040",
+      "merger_name": "Tabcorp - BetMakers",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-10-15T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 5,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-11-09T12:00:00Z",
+          "business_days": 5,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 5 business days - following request by parties"
         }
       ]
     },
