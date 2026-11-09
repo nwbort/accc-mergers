@@ -19,11 +19,13 @@ import { FaYoutube } from 'react-icons/fa6';
 import { hearingPromoTitle } from '../utils/hearingPromo';
 
 // Coles' Tribunal appeal over Kalgoorlie (MN-01068, ACT 1 of 2026). Sits
-// Monday to Thursday for two weeks; the banner counts down to the start,
-// follows each day, and disappears once the last scheduled day rises. If the
-// hearing finishes early, take it out of DASHBOARD_PROMOS.
+// Monday to Thursday for two weeks. Tuesday 10 November sat in closed court,
+// so the public livestream skips it: the banner's headline stays on the
+// hearing as a whole, and its subline follows the livestream day by day,
+// until the last scheduled day rises. If the hearing finishes early, take it
+// out of DASHBOARD_PROMOS.
 export const COLES_KALGOORLIE_HEARING = {
-  subject: 'Coles Kalgoorlie tribunal appeal hearing',
+  title: 'Coles Kalgoorlie Tribunal appeal hearing continues this week',
   sittingDays: [
     '2026-11-09', '2026-11-10', '2026-11-11', '2026-11-12',
     '2026-11-16', '2026-11-17', '2026-11-18', '2026-11-19',
@@ -33,14 +35,25 @@ export const COLES_KALGOORLIE_HEARING = {
   timeZone: 'Australia/Sydney',
 };
 
+// The days the public can watch: every sitting day bar those in closed court.
+const CLOSED_COURT_DAYS = ['2026-11-10'];
+
+export const COLES_KALGOORLIE_LIVESTREAM = {
+  ...COLES_KALGOORLIE_HEARING,
+  subject: 'The public livestream',
+  sittingDays: COLES_KALGOORLIE_HEARING.sittingDays.filter(
+    (day) => !CLOSED_COURT_DAYS.includes(day),
+  ),
+};
+
 export const COLES_KALGOORLIE_HEARING_PROMO = {
-  campaign: 'coles-kalgoorlie-hearing-v1',
+  campaign: 'coles-kalgoorlie-hearing-v2',
   href: 'https://www.youtube.com/watch?v=m_0-xU3uyyQ',
   icon: FaYoutube,
-  description: 'Watch the livestream on YouTube.',
+  title: COLES_KALGOORLIE_HEARING.title,
   resolve: (now) => {
-    const title = hearingPromoTitle(COLES_KALGOORLIE_HEARING, now);
-    return title && { title };
+    const line = hearingPromoTitle(COLES_KALGOORLIE_LIVESTREAM, now);
+    return line && { description: `${line}.` };
   },
 };
 
