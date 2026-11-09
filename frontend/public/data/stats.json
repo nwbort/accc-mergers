@@ -1,6 +1,6 @@
 {
   "total_mergers": 321,
-  "total_waivers": 504,
+  "total_waivers": 505,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 275,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 479,
+    "Approved": 480,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.8015873015873,
-    "median_days": 21.0,
-    "average_business_days": 14.242063492063492,
-    "median_business_days": 14.0
+    "average_days": 20.821782178217823,
+    "median_days": 21,
+    "average_business_days": 14.255445544554455,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 98
+      "count": 99
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60053",
+      "merger_name": "Marubeni Corporation - Kitsch",
+      "determination": "Approved",
+      "determination_date": "2026-11-09T12:00:00Z",
+      "page_modified_datetime": "2026-11-09T17:42:36+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-10047",
       "merger_name": "Commonwealth Superannuation Corporation \u2013 50% interest in Watergardens Shopping Centre precinct, Taylors Lake, Vic",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-35051",
-      "merger_name": "Jaybro - Sewer Equipment Company Australia",
-      "determination": "Approved",
-      "determination_date": "2026-11-03T12:00:00Z",
-      "page_modified_datetime": "2026-11-03T16:41:35+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
