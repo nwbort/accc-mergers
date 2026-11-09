@@ -3,12 +3,12 @@
   "total_waivers": 503,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 274,
-    "Under assessment": 42,
+    "Assessment completed": 275,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 267,
+    "Approved": 268,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 272,
+    "cleared": 273,
     "not_cleared": 2,
-    "total": 274,
+    "total": 275,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.457142857142856,
-    "median_days": 26.0,
-    "average_business_days": 20.05,
-    "median_business_days": 18.0,
+    "average_days": 29.448398576512457,
+    "median_days": 26,
+    "average_business_days": 20.04626334519573,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 59,
-        "percentage": 21.1
+        "percentage": 21.0
       },
       "day20": {
-        "count": 203,
-        "percentage": 72.5
+        "count": 204,
+        "percentage": 72.6
       },
       "day30": {
-        "count": 262,
+        "count": 263,
         "percentage": 93.6
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-50040",
+      "merger_name": "FlightSafety International - Commercial Training Solutions",
+      "determination": "Approved",
+      "determination_date": "2026-11-09T12:00:00Z",
+      "page_modified_datetime": "2026-11-09T16:00:08+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-55040",
       "merger_name": "Kirin \u2013 Jamieson Wellness",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-02T12:00:00Z",
       "page_modified_datetime": "2026-11-02T16:39:04+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-20047",
-      "merger_name": "Macquarie Korea Asset Management \u2013 Hwasung Cosmetics and Nowcos",
-      "determination": "Approved",
-      "determination_date": "2026-11-02T12:00:00Z",
-      "page_modified_datetime": "2026-11-02T16:38:08+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
