@@ -79,4 +79,13 @@ describe('RecentEventsTimeline', () => {
     const links = screen.getAllByRole('link').map((l) => l.textContent);
     expect(links[0]).toMatch(/Matter 2/);
   });
+
+  it("links each row to the event's own row on the merger page", () => {
+    renderTimeline([
+      { ...event(1, 'remedy_offer', '2026-11-09'), title: 'Remedy offer - 4 November 2026' },
+    ]);
+    expect(screen.getByRole('link').getAttribute('href')).toBe(
+      '/mergers/MN-1/matter-1#event-2026-11-09-remedy-offer-4-november-2026'
+    );
+  });
 });

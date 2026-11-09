@@ -6,6 +6,8 @@ import {
   recentEventRank,
 } from '../constants/recentEventTypes';
 import EventDayTimeline from './EventDayTimeline';
+import { mergerPath } from '../utils/slug';
+import { eventAnchorId } from '../utils/eventAnchor';
 
 // The backward-looking twin of UpcomingEventsTimeline, drawn by the same
 // EventDayTimeline: what has happened on the register over the last two weeks
@@ -52,6 +54,12 @@ function renderDetail(event) {
 const eventKey = (event) => `${event.merger_id}-${event.date}-${event.type}-${event.title}`;
 
 const groupLabel = (group, eventType) => `${group.events.length} ${eventType.plural}`;
+
+// Straight to the event's row in the detail page's event list, which scrolls
+// to and highlights it. The feed's `title` is the event's display title, so it
+// derives the same anchor the detail page gives the row.
+const getHref = (event) =>
+  `${mergerPath(event.merger_id, event.merger_name)}#${eventAnchorId(event)}`;
 
 function RecentEventsTimeline({ events }) {
   const days = useMemo(() => {
@@ -114,6 +122,7 @@ function RecentEventsTimeline({ events }) {
       groupLabel={groupLabel}
       renderDetail={renderDetail}
       eventKey={eventKey}
+      getHref={getHref}
     />
   );
 }

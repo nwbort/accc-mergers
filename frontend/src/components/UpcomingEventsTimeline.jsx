@@ -16,6 +16,8 @@ import {
 import { PHASES, isPublicBenefitStage } from '../constants/mergerStatus';
 import EmptyStateCard from './EmptyStateCard';
 import EventDayTimeline from './EventDayTimeline';
+import { mergerPath } from '../utils/slug';
+import { ASSESSMENT_TIMELINE_ANCHOR } from '../utils/eventAnchor';
 
 // A day with this many or more events of the same type collapses into a
 // single "N Consultations due" summary row, expandable on click/tap, so a
@@ -175,6 +177,11 @@ function renderDetail(event) {
 
 const eventKey = (event) => `${event.merger_id}-${event.date}-${event.type}`;
 
+// A deadline isn't a row in the detail page's event list but a milestone on
+// its assessment timeline, so it links there (as NotificationPanel does).
+const getHref = (event) =>
+  `${mergerPath(event.merger_id, event.merger_name)}#${ASSESSMENT_TIMELINE_ANCHOR}`;
+
 const groupLabel = (group, eventType) =>
   `${group.events.length} ${eventType.label.toLowerCase()}s due`;
 
@@ -250,6 +257,7 @@ function UpcomingEventsTimeline({ events }) {
       groupLabel={groupLabel}
       renderDetail={renderDetail}
       eventKey={eventKey}
+      getHref={getHref}
     />
   );
 }

@@ -176,6 +176,8 @@ describe('UpcomingEventsTimeline', () => {
 
     const link = screen.getByRole('link', { name: /Acme – Globex/ });
     expect(link).toHaveAttribute('href', expect.stringContaining('MN-00001'));
+    // A deadline is a milestone on the detail page's assessment timeline.
+    expect(link).toHaveAttribute('href', expect.stringMatching(/#assessment-timeline$/));
     expect(within(link).getByText('Determination')).toBeInTheDocument();
   });
 

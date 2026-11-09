@@ -19,6 +19,7 @@ import { CARD } from '../utils/classNames';
 // `renderDetail(event)`: optional extra items for the row's meta line,
 //            after the chip.
 // `eventKey(event)`: a key unique within the timeline.
+// `getHref(event)`: where the row links; the merger's page when omitted.
 
 // Split a day's already-sorted events into runs of consecutive same-type
 // events. Callers sort by type within a day, so a type can appear in more
@@ -36,11 +37,11 @@ function groupByType(events) {
   return groups;
 }
 
-function EventRow({ event, eventType, detail }) {
+function EventRow({ event, eventType, detail, href }) {
   const { Icon } = eventType;
   return (
     <Link
-      to={mergerPath(event.merger_id, event.merger_name)}
+      to={href}
       className="group relative flex items-center gap-3 rounded-xl -mx-2 px-2 py-2 transition-colors hover:bg-gray-50"
       aria-label={`${eventType.label} for ${event.merger_name}`}
     >
@@ -100,6 +101,7 @@ function EventDayTimeline({
   groupLabel,
   renderDetail,
   eventKey,
+  getHref,
 }) {
   const [expandedGroups, setExpandedGroups] = useState(() => new Set());
 
@@ -121,6 +123,7 @@ function EventDayTimeline({
         event={event}
         eventType={getEventType(event.type)}
         detail={renderDetail ? renderDetail(event) : null}
+        href={getHref ? getHref(event) : mergerPath(event.merger_id, event.merger_name)}
       />
     </li>
   );
