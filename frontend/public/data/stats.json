@@ -1,6 +1,6 @@
 {
   "total_mergers": 321,
-  "total_waivers": 503,
+  "total_waivers": 504,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 275,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 478,
+    "Approved": 479,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.791252485089462,
-    "median_days": 21,
-    "average_business_days": 14.234592445328031,
-    "median_business_days": 14
+    "average_days": 20.8015873015873,
+    "median_days": 21.0,
+    "average_business_days": 14.242063492063492,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 205
+      "count": 206
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 48
+      "count": 49
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-10047",
+      "merger_name": "Commonwealth Superannuation Corporation \u2013 50% interest in Watergardens Shopping Centre precinct, Taylors Lake, Vic",
+      "determination": "Approved",
+      "determination_date": "2026-11-09T12:00:00Z",
+      "page_modified_datetime": "2026-11-09T17:41:35+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-50040",
       "merger_name": "FlightSafety International - Commercial Training Solutions",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-03T12:00:00Z",
       "page_modified_datetime": "2026-11-03T16:41:35+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-80050",
-      "merger_name": "Pearson plc \u2013 Workera Corp",
-      "determination": "Approved",
-      "determination_date": "2026-11-02T12:00:00Z",
-      "page_modified_datetime": "2026-11-02T16:39:04+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
