@@ -1,14 +1,27 @@
 import { describe, expect, it } from 'vitest';
 import { formatClock, hearingPromoTitle } from '../hearingPromo';
-import { COLES_KALGOORLIE_HEARING } from '../../constants/promo';
+import { COLES_KALGOORLIE_HEARING_PROMO } from '../../constants/promo';
 
 // Sydney is on AEDT (UTC+11) throughout November 2026.
 function sydney(isoLocal) {
   return new Date(`${isoLocal}+11:00`);
 }
 
-const title = (isoLocal) => hearingPromoTitle(COLES_KALGOORLIE_HEARING, sydney(isoLocal));
+// A fixture of its own, so these pin the function rather than whatever the
+// live campaign's schedule currently is.
 const S = 'Coles Kalgoorlie tribunal appeal hearing';
+const HEARING = {
+  subject: S,
+  sittingDays: [
+    '2026-11-09', '2026-11-10', '2026-11-11', '2026-11-12',
+    '2026-11-16', '2026-11-17', '2026-11-18', '2026-11-19',
+  ],
+  startTime: '10:15',
+  endTime: '16:15',
+  timeZone: 'Australia/Sydney',
+};
+
+const title = (isoLocal) => hearingPromoTitle(HEARING, sydney(isoLocal));
 
 describe('hearingPromoTitle', () => {
   it.each([
@@ -41,7 +54,7 @@ describe('hearingPromoTitle', () => {
 
   it('reads the clock in Sydney, whatever the instant is in UTC', () => {
     // 2026-11-08T23:30Z is 10:30am Monday in Sydney.
-    expect(hearingPromoTitle(COLES_KALGOORLIE_HEARING, new Date('2026-11-08T23:30:00Z'))).toBe(
+    expect(hearingPromoTitle(HEARING, new Date('2026-11-08T23:30:00Z'))).toBe(
       `${S} has commenced`,
     );
   });
@@ -56,5 +69,32 @@ describe('formatClock', () => {
     ['16:15', '4:15pm'],
   ])('%s reads %s', (hhmm, expected) => {
     expect(formatClock(hhmm)).toBe(expected);
+  });
+});
+
+describe('COLES_KALGOORLIE_HEARING_PROMO', () => {
+  const at = (isoLocal) => COLES_KALGOORLIE_HEARING_PROMO.resolve(sydney(isoLocal));
+  const L = 'The public livestream';
+
+  it('keeps one headline while its subline follows the livestream', () => {
+    expect(COLES_KALGOORLIE_HEARING_PROMO.title).toBe(
+      'Coles Kalgoorlie Tribunal appeal hearing continues this week',
+    );
+  });
+
+  it.each([
+    // Tuesday 10 November sat in closed court: no livestream that day.
+    ['2026-11-10T09:00', `${L} continues tomorrow at 10:15am.`],
+    ['2026-11-10T11:00', `${L} continues tomorrow at 10:15am.`],
+    ['2026-11-11T09:00', `${L} continues today at 10:15am.`],
+    ['2026-11-11T11:00', `${L} has resumed.`],
+    ['2026-11-12T17:00', `${L} continues on Monday at 10:15am.`],
+    ['2026-11-19T15:00', `${L} has resumed.`],
+  ])('at %s Sydney time', (when, expected) => {
+    expect(at(when)).toEqual({ description: expected });
+  });
+
+  it('is gone once the last scheduled day rises', () => {
+    expect(at('2026-11-19T16:15')).toBeNull();
   });
 });
