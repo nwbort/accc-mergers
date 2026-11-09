@@ -36,6 +36,7 @@ export const API_ENDPOINTS = {
   parties: '/data/parties.json',
   partyShard: (id) => `/data/parties/${partyShardName(id)}`,  // Bucket holding this party's record
   upcomingEvents: '/data/upcoming-events.json',
+  recentEvents: '/data/recent-events.json',  // Register events from the last two weeks
   commentary: '/data/commentary.json',  // Mergers with user commentary
   digest: '/data/digest.json',  // Weekly digest of merger activity
   analysis: '/data/analysis.json',  // Pre-computed analysis data
