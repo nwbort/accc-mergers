@@ -290,6 +290,48 @@
       "phase_duration": null,
       "waiver_duration": null
     },
+    "macquarie-dc-infrastructure-holdings-pty-limited": {
+      "id": "macquarie-dc-infrastructure-holdings-pty-limited",
+      "canonical_name": "Macquarie DC Infrastructure Holdings Pty Limited",
+      "members": [
+        {
+          "name": "Macquarie DC Infrastructure Holdings Pty Limited",
+          "identifier": "702 055 687",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85061",
+            "merger_name": "WDDP Consortium \u2013 Wambo Cattle Company",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-20T12:00:00Z",
+            "determination_date": "2026-11-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
     "mehta-atul": {
       "id": "mehta-atul",
       "canonical_name": "Mehta, Atul",

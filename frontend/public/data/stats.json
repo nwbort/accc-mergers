@@ -1,6 +1,6 @@
 {
   "total_mergers": 323,
-  "total_waivers": 515,
+  "total_waivers": 516,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 276,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 489,
+    "Approved": 490,
     "Not approved": 26
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.875728155339807,
-    "median_days": 21,
-    "average_business_days": 14.297087378640777,
-    "median_business_days": 15
+    "average_days": 20.875968992248062,
+    "median_days": 21.0,
+    "average_business_days": 14.2984496124031,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 212
+      "count": 213
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85061",
+      "merger_name": "WDDP Consortium \u2013 Wambo Cattle Company",
+      "determination": "Approved",
+      "determination_date": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-11-10T18:35:25+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-70044",
       "merger_name": "Australian Venue Co \u2013 assets of 318 Little Collins Street, Melbourne (also known as The Carson)",
       "determination": "Not approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-09T12:00:00Z",
       "page_modified_datetime": "2026-11-09T17:44:03+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60053",
-      "merger_name": "Marubeni Corporation - Kitsch",
-      "determination": "Approved",
-      "determination_date": "2026-11-09T12:00:00Z",
-      "page_modified_datetime": "2026-11-09T17:42:36+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

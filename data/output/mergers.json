@@ -68589,15 +68589,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 17,
-        "min_days": null,
+        "estimated_days": 8,
+        "min_days": 0,
         "max_days": 24,
-        "id_issued_estimated": "2026-10-02",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-10-11",
+        "id_issued_before": "2026-10-19",
         "id_issued_after": "2026-09-25",
-        "min_days_witness": null,
+        "min_days_witness": "WA-85061",
         "max_days_witness": "WA-85059",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -155283,6 +155283,196 @@
           "targets": [
             "IGO NOVA PTY LTD",
             "IGO NOVA HOLDINGS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/wddp-consortium-%E2%80%93-wambo-cattle-company",
+      "merger_name": "WDDP Consortium \u2013 Wambo Cattle Company",
+      "status": "Assessment completed",
+      "merger_id": "WA-85061",
+      "effective_notification_datetime": "2026-10-20T12:00:00Z",
+      "original_notification_datetime": "2026-10-20T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-10T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-10T18:35:25+11:00",
+      "acquirers": [
+        {
+          "name": "Macquarie DC Infrastructure Holdings Pty Limited",
+          "identifier_type": "ACN",
+          "identifier": "702 055 687",
+          "party_page": {
+            "id": "macquarie-dc-infrastructure-holdings-pty-limited",
+            "name": "Macquarie DC Infrastructure Holdings Pty Limited"
+          }
+        },
+        {
+          "name": "WAMBO BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "13 701 680 597",
+          "party_page": {
+            "id": "wambo-bidco-pty-ltd",
+            "name": "Wambo Bidco Pty Ltd"
+          }
+        },
+        {
+          "name": "Zerra WDDP HoldCo Pty Ltd as trustee for Zerra WDDP HoldCo Trust",
+          "identifier_type": "ACN",
+          "identifier": "701 254 239",
+          "party_page": {
+            "id": "zerra-wddp-holdco-pty-ltd-as-trustee-for-zerra-wddp-holdco-trust",
+            "name": "Zerra WDDP HoldCo Pty Ltd as trustee for Zerra WDDP HoldCo Trust"
+          }
+        },
+        {
+          "name": "Australian Data Centres - Mitchell Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "61 143 135 997",
+          "party_page": {
+            "id": "australian-data-centres-mitchell-pty-ltd",
+            "name": "Australian Data Centres - Mitchell Pty Ltd"
+          }
+        },
+        {
+          "name": "Zerra WDDP Investments Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN: 202535626E",
+          "party_page": {
+            "id": "zerra-wddp-investments-pte-ltd",
+            "name": "Zerra WDDP Investments Pte Ltd"
+          }
+        },
+        {
+          "name": "Macquarie DC Infrastructure Pty Limited atf Macquarie DC Infrastructure Trust",
+          "identifier_type": "ACN",
+          "identifier": "702 059 685",
+          "party_page": {
+            "id": "macquarie-dc-infrastructure-pty-limited-atf-macquarie-dc-infrastructure-trust",
+            "name": "Macquarie DC Infrastructure Pty Limited atf Macquarie DC Infrastructure Trust"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "WAMBO CATTLE COMPANY PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "92 058 718 326",
+          "party_page": {
+            "id": "wambo-cattle-company-pty-limited",
+            "name": "Wambo Cattle Company Pty Limited"
+          }
+        },
+        {
+          "name": "Artan Pty Ltd as trustee for the Max Winders Family Trust",
+          "identifier_type": "ACN",
+          "identifier": "060 087 621",
+          "party_page": {
+            "id": "artan-pty-ltd-as-trustee-for-the-max-winders-family-trust",
+            "name": "Artan Pty Ltd as trustee for the Max Winders Family Trust"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0143",
+          "name": "Beef Cattle Feedlots (Specialised)"
+        },
+        {
+          "code": "5921",
+          "name": "Data Processing and Web Hosting Services"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "A consortium comprising:\n\n* Zerra WDDP Investments Pte Ltd (**Zerra Singapore**) and Zerra WDDP HoldCo Pty Ltd as trustee for Zerra WDDP HoldCo Trust (**Zerra Australia**) (together, **Zerra**);\n* Australian Data Centres \u2013 Mitchell Pty Ltd (**ADC**); and\n* Macquarie DC Infrastructure Holdings Pty Limited (**Macquarie Company**) and Macquarie DC Infrastructure Pty Limited as trustee for Macquarie DC Infrastructure Trust (**Macquarie Trustee**) (together, **MacCap**)\n\nproposes to acquire 100% of the shares in Wambo Cattle Company Pty Ltd (**WamboCo**) and the land owned by WamboCo, being Lots 1, 3, 5-8 and 11 on RP840794, Lot 125 on CPDY316 and Lot 118 on CPDY237 (the **Site**) (the **Acquisition**).\n\nThe Acquisition will occur through a special purpose vehicle, Wambo BidCo Pty Ltd (**BidCo**), which is controlled by the consortium. Zerra indirectly holds 50% of BidCo, while MacCap and ADC each indirectly hold 25%.\n\nFollowing the Acquisition, the consortium intends to develop, finance, construct, own and operate a data centre campus on the Site.\n\nZerra Singapore is a Singapore-based investment vehicle of Zerra DC, and Zerra Australia is an Australian-based investment vehicle of Zerra DC. Zerra DC is a fully-integrated hyperscale data centre developer and operator serving leading cloud and AI businesses across Asia-Pacific.\n\nADC is an Australian private company that designs, builds and operates data centres and AI factories as digital infrastructure for government and critical infrastructure customers.\n\nMacquarie Company is an Australian private company and holding subsidiary of Macquarie Group Limited and Macquarie Trustee is a subsidiary of Macquarie Group Limited. Macquarie Group Limited (ASX:MQG) is a global financial services group, offering asset management, finance, banking, advisory & risk and capital solutions services.\n\nWamboCo is an Australian private company that owns and operates the Wambo feedlot, a beef cattle lot-feeding facility near Dalby, QLD.",
+      "events": [
+        {
+          "date": "2026-11-10T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/WDDP%20Consortium%20%E2%80%93%20Wambo%20Cattle%20Company%20%28WA-85061%29%20-%20Notification%20waiver%20determination%20-%2010%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "A consortium comprising:\n\u2022 Zerra WDDP Investments Pte Ltd (Zerra Singapore) and\nZerra WDDP HoldCo Pty Ltd as trustee for Zerra WDDP\nHoldCo Trust (Zerra Australia) (together, Zerra);\n\u2022 Australian Data Centres \u2013 Mitchell Pty Ltd (ADC); and\n\u2022 Macquarie DC Infrastructure Holdings Pty Limited\n(Macquarie Company) and Macquarie DC Infrastructure Pty\nLimited as trustee for Macquarie DC Infrastructure Trust\n(Macquarie Trustee) (together, MacCap)\nproposes to acquire 100% of the shares in Wambo Cattle Company\nPty Ltd (WamboCo) and the land owned by WamboCo, being Lots 1,\n3, 5-8 and 11 on RP840794, Lot 125 on CPDY316 and Lot 118 on\nCPDY237 (the Site), as described in the transaction documents\nprovided as part of the application (the Acquisition).\nThe Acquisition will occur through a special purpose vehicle, Wambo\nBidCo Pty Ltd (BidCo), which is controlled by the consortium. Zerra\nindirectly holds 50% of BidCo, while MacCap and ADC each indirectly\nhold 25%.\nFollowing the Acquisition, the consortium intends to develop,\nfinance, construct, own and operate a data centre campus on the\nSite.\nBidCo, Zerra Singapore, Zerra Australia, ADC, Macquarie Company,\nand Macquarie Trustee applied for a notification waiver in respect of\nthe Acquisition."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "10 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "Zerra Singapore is a Singapore-based investment vehicle of Zerra\nDC, and Zerra Australia is an Australian-based investment vehicle of\nZerra DC. Zerra DC is a fully-integrated hyperscale data centre\ndeveloper and operator serving leading cloud and AI businesses\nacross Asia-Pacific.\nADC is an Australian private company that designs, builds and\noperates data centres and AI factories as digital infrastructure for\ngovernment and critical infrastructure customers.\nMacquarie Company is an Australian private company and holding\nsubsidiary of Macquarie Group Limited and Macquarie Trustee is a\nsubsidiary of Macquarie Group Limited. Macquarie Group Limited\n(ASX:MQG) is a global financial services group, offering asset\nmanagement, finance, banking, advisory & risk and capital solutions\nservices.\nWamboCo is an Australian private company that owns and operates\nthe Wambo feedlot, a beef cattle lot-feeding facility near Dalby, QLD."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. while there is a very small horizontal overlap between the\nconsortium (and its connected entities) and WamboCo in the\nsupply of beef cattle feedlots in Australia, the parties\u2019\ncombined share is low and there are several alternative\nsuppliers of beef cattle feedlots in Southern Queensland\nb. the consortium (and its connected entities) does not\ncurrently have any interests in data centres in Queensland,\nthere are several alternative suppliers of data centres in\nQueensland (and Australia more broadly), and the\nAcquisition does not appear likely to otherwise limit or\nprevent competition from rivals\nc. the Acquisition involves the consortium developing a new\ndata centre campus, which will not result in the removal of\nan existing data centre.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-85061/WDDP Consortium \u2013 Wambo Cattle Company (WA-85061) - Notification waiver determination - 10 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-20T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-75040",
+          "merger_name": "Blackstone - DarkVision Technologies",
+          "acquirers": [
+            "Dynamo Bidco, Inc."
+          ],
+          "targets": [
+            "DarkVision Technologies Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-01097",
+          "merger_name": "Quadrant Private Equity - Stanley International College",
+          "acquirers": [
+            "Swan Bidco Pty Ltd"
+          ],
+          "targets": [
+            "Stanley International College Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-35018",
+          "merger_name": "Hewitt \u2013 Nolan Meats",
+          "acquirers": [
+            "SAPPHIRE CATTLE COMPANY PTY LTD",
+            "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust"
+          ],
+          "targets": [
+            "NOLAN MEATS PTY. LTD.",
+            "Tolobex Pty Ltd as trustee for Tolobex Unit Trust"
           ],
           "accc_determination": "Approved"
         }
