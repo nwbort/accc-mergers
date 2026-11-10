@@ -836,11 +836,22 @@ export function TrackingProvider({ children }) {
     return trackedEvents.filter((event) => !seenEventKeys.has(getEventKey(event)));
   }, [trackedEvents, seenEventKeys]);
 
-  // Industry-follow events, deduped and sorted most-recent-first.
+  // Industry-follow events, deduped and sorted most-recent-first. A merger the
+  // reader tracks individually is left out: its own timeline already carries
+  // the filing and the determination, and announcing them a second time under
+  // the industry is a double notification. The individual merger wins.
   const trackedIndustryEvents = useMemo(() => {
-    const unique = dedupeEvents(industryEvents);
+    const unique = dedupeEvents(industryEvents)
+      .filter((event) => !trackedMergerIdsSet.has(event.merger_id));
     return unique.sort((a, b) => new Date(b.date) - new Date(a.date));
-  }, [industryEvents]);
+  }, [industryEvents, trackedMergerIdsSet]);
+
+  // Mark the industry events left out above as seen, so untracking the merger
+  // later doesn't resurface news the reader already had through tracking it.
+  useEffect(() => {
+    const shadowed = industryEvents.filter((event) => trackedMergerIdsSet.has(event.merger_id));
+    if (shadowed.length > 0) markEventsAsSeen(shadowed);
+  }, [industryEvents, trackedMergerIdsSet, markEventsAsSeen]);
 
   const unseenIndustryEvents = useMemo(() => {
     return trackedIndustryEvents.filter((event) => !seenEventKeys.has(getEventKey(event)));

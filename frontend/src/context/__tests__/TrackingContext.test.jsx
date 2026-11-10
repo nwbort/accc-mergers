@@ -1,6 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { TrackingProvider, useTracking } from '../TrackingContext';
+import { dataCache } from '../../utils/dataCache';
 
 // Minimal Response stand-in (matches the style in useFetchData.test.js).
 function okResponse(json) {
@@ -616,5 +617,74 @@ describe('TrackingContext industry-follow usage ping', () => {
       result.current.trackIndustry('F', 'Wholesale Trade');
     });
     expect(eventPings()).toEqual(['track_industry_4520', 'track_industry_F']);
+  });
+});
+
+describe('TrackingContext: a tracked merger wins over a followed industry', () => {
+  // Manufacturing (division C) holds two mergers filed today: MN-1, which the
+  // reader also tracks individually, and MN-2, which they only hear about
+  // through the industry.
+  const division = {
+    division: 'C',
+    nodes: { C: { name: 'Manufacturing', level: 'division', children: [], mergers: ['MN-1', 'MN-2'], count: 2 } },
+    mergers: {
+      'MN-1': { merger_id: 'MN-1', merger_name: 'Tracked deal', notification_date: '2026-11-10T12:00:00Z' },
+      'MN-2': { merger_id: 'MN-2', merger_name: 'Industry-only deal', notification_date: '2026-11-10T12:00:00Z' },
+    },
+  };
+
+  beforeEach(() => {
+    localStorage.clear();
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+    localStorage.setItem('merger_tracker_tracked', JSON.stringify(['MN-1']));
+    localStorage.setItem(
+      'merger_tracker_tracked_industries',
+      JSON.stringify([{ code: 'C', name: 'Manufacturing' }])
+    );
+    globalThis.fetch = vi.fn((url) => {
+      if (/\/data\/industries\/C\.json$/.test(url)) return Promise.resolve(okResponse(division));
+      if (/\/data\/mergers\/MN-1\.json$/.test(url)) {
+        return Promise.resolve(okResponse({
+          merger_id: 'MN-1',
+          merger_name: 'Tracked deal',
+          events: [{ date: '2026-11-10T12:00:00Z', title: 'Merger notified' }],
+        }));
+      }
+      return Promise.resolve(notFoundResponse());
+    });
+  });
+
+  afterEach(() => {
+    globalThis.fetch = originalFetch;
+    dataCache.clear();
+    vi.restoreAllMocks();
+  });
+
+  it('leaves the tracked merger out of the industry, so it is announced once', async () => {
+    const { result } = renderHook(() => useTracking(), { wrapper });
+
+    await waitFor(() => {
+      expect(result.current.trackedIndustryEvents.map((e) => e.merger_id)).toEqual(['MN-2']);
+    });
+    await waitFor(() => expect(result.current.unseenEvents).toHaveLength(1));
+    // One for MN-1's own filing, one for MN-2 through the industry.
+    expect(result.current.unseenCount).toBe(2);
+  });
+
+  it('does not resurface the industry event once the merger is untracked', async () => {
+    const { result } = renderHook(() => useTracking(), { wrapper });
+    await waitFor(() => {
+      expect(result.current.trackedIndustryEvents.map((e) => e.merger_id)).toEqual(['MN-2']);
+    });
+
+    act(() => {
+      result.current.untrackMerger('MN-1');
+    });
+
+    await waitFor(() => {
+      expect(result.current.trackedIndustryEvents.map((e) => e.merger_id).sort()).toEqual(['MN-1', 'MN-2']);
+    });
+    expect(result.current.unseenIndustryEvents.map((e) => e.merger_id)).toEqual(['MN-2']);
   });
 });
