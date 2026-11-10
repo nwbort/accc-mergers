@@ -27463,6 +27463,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-11-10T12:00:00Z",
+          "title": "Notification Phase 1 Questionnaire",
+          "display_title": "Notification Phase 1 Questionnaire",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Coles%20-%20Rainbow%20Beach%20NSW%20-%20third%20party%20questionnaire_1.docx",
+          "url_gh": "/mergers/MN-25062/Coles - Rainbow Beach NSW - third party questionnaire_1.pdf",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
@@ -27474,6 +27483,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "MN-01068",
@@ -27510,15 +27520,15 @@
         }
       ],
       "phase_1_estimate": {
-        "expected_business_days": 18,
+        "expected_business_days": 17,
         "range_business_days": [
-          16,
-          21
+          15,
+          19
         ],
-        "basis": "global",
-        "question_bucket": null,
-        "question_count": null,
-        "sample_size": 281,
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 199,
         "as_of": "2026-11-10",
         "estimated_at": "2026-11-10",
         "method_version": 2
