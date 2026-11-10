@@ -428,6 +428,48 @@
       },
       "waiver_duration": null
     },
+    "rexel-usa-inc": {
+      "id": "rexel-usa-inc",
+      "canonical_name": "Rexel USA, Inc.",
+      "members": [
+        {
+          "name": "Rexel USA, Inc.",
+          "identifier": "Delaware company identifier number: 4170267",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70046",
+            "merger_name": "Rexel \u2013 Genuine Cable Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": "2026-11-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
     "southern-cross-operations-pty-ltd": {
       "id": "southern-cross-operations-pty-ltd",
       "canonical_name": "Southern Cross Operations Pty Ltd",

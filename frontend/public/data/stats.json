@@ -1,6 +1,6 @@
 {
   "total_mergers": 323,
-  "total_waivers": 507,
+  "total_waivers": 508,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 276,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 482,
+    "Approved": 483,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.840236686390533,
-    "median_days": 21,
-    "average_business_days": 14.268244575936883,
-    "median_business_days": 15
+    "average_days": 20.848425196850393,
+    "median_days": 21.0,
+    "average_business_days": 14.273622047244094,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 208
+      "count": 209
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70046",
+      "merger_name": "Rexel \u2013 Genuine Cable Group",
+      "determination": "Approved",
+      "determination_date": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-11-10T16:42:10+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-85053",
       "merger_name": "Funds managed by New Forests \u2013 Forestry plantations of AKD",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-70045",
-      "merger_name": "SVP \u2013 Marelli",
-      "determination": "Approved",
-      "determination_date": "2026-11-04T12:00:00Z",
-      "page_modified_datetime": "2026-11-04T17:57:21+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
