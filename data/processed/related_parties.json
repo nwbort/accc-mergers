@@ -3386,10 +3386,6 @@
         {
           "name": "HARVEST PUB OPERATIONS 2 PTY LTD",
           "identifier": "51 652 748 242"
-        },
-        {
-          "name": "AMAL TRUSTEES PTY LIMITED",
-          "identifier": "98 609 737 064"
         }
       ]
     },
@@ -4958,6 +4954,14 @@
         {
           "name": "HEALTHE CARE P OF WALES PTY LTD",
           "identifier": "41 693 134 360"
+        },
+        {
+          "name": "PACIFIC 2021 TOPCO G PTY LIMITED",
+          "identifier": "38 649 860 177"
+        },
+        {
+          "name": "PACIFIC 2021 MIDCO G PTY LIMITED",
+          "identifier": "77 649 860 720"
         }
       ]
     },
@@ -5100,6 +5104,10 @@
         {
           "name": "4K MOTORS PTY LTD",
           "identifier": "97 677 442 983"
+        },
+        {
+          "name": "CLINTONS MOTORS PTY LIMITED",
+          "identifier": "92 008 444 844"
         }
       ]
     },
@@ -5170,6 +5178,14 @@
         {
           "name": "Macquarie Agriculture Fund Crop Australia 2B",
           "identifier": "67 845 859 933"
+        },
+        {
+          "name": "Macquarie DC Infrastructure Holdings Pty Limited",
+          "identifier": "702 055 687"
+        },
+        {
+          "name": "Macquarie DC Infrastructure Pty Limited atf Macquarie DC Infrastructure Trust",
+          "identifier": "702 059 685"
         }
       ]
     },
@@ -5338,6 +5354,25 @@
         {
           "name": "HARRINGTON PENRITH PTY LTD ATF THE PENRITH UNIT TRUST",
           "identifier": "673 442 558"
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "canonical_name": "AMAL Trustees (corporate trustee for unrelated trusts)",
+      "members": [
+        {
+          "name": "AMAL TRUSTEES PTY LIMITED",
+          "identifier": "98 609 737 064"
+        },
+        {
+          "name": "AMAL Trustees Limited as trustee for AOP Investment Trust",
+          "identifier": "98 609 737 064"
+        },
+        {
+          "name": "AMAL Trustees Limited as trustee for APG Infrastructure Investments Holding Trust",
+          "identifier": "98 609 737 064"
         }
       ]
     }
