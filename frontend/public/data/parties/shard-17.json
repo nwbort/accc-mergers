@@ -128,6 +128,90 @@
         "completed_count": 1
       }
     },
+    "autosports-group": {
+      "id": "autosports-group",
+      "canonical_name": "Autosports Group",
+      "members": [
+        {
+          "name": "ASG MELBOURNE PTY LTD",
+          "identifier": "64 616 840 110",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AUTOSPORTS CASTLE HILL PTY LTD",
+          "identifier": "65 163 974 481",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AUTOSPORTS FIVE DOCK PTY LIMITED",
+          "identifier": "95 118 786 762",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AUTOSPORTS GROUP LIMITED",
+          "identifier": "54 614 505 261",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AUTOSPORTS LEICHHARDT PTY LTD",
+          "identifier": "38 161 160 765",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Autosports Sutherland Pty Limited",
+          "identifier": "60 125 720 998",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "NEW CENTENARY PTY LIMITED",
+          "identifier": "21 168 183 864",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20046",
+            "merger_name": "Autosports Group - Mercedes-Benz Parramatta and Castle Hill, Chery Castle Hill",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-06T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "WA-75011",
+            "merger_name": "Autosports Group - Solitaire Automotive Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-26T12:00:00Z",
+            "determination_date": "2026-03-11T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
     "cja-lee-property-partnership": {
       "id": "cja-lee-property-partnership",
       "canonical_name": "Cja Lee Property Partnership",

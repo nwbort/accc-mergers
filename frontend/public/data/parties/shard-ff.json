@@ -2,42 +2,6 @@
   "shard": 255,
   "shard_count": 256,
   "parties": {
-    "4k-prestige-pty-limited": {
-      "id": "4k-prestige-pty-limited",
-      "canonical_name": "4K Prestige Pty Limited",
-      "members": [
-        {
-          "name": "4K PRESTIGE PTY LIMITED",
-          "identifier": "20 663 657 636",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "MN-20044",
-            "merger_name": "4K Automotive Group \u2013 Peninsula Motor Group",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-27T12:00:00Z",
-            "determination_date": null
-          }
-        ]
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
-    },
     "620598745": {
       "id": "620598745",
       "canonical_name": "620598745",
@@ -296,42 +260,6 @@
         "median_business_days": 16,
         "completed_count": 1
       },
-      "waiver_duration": null
-    },
-    "energy-developments-pty-limited": {
-      "id": "energy-developments-pty-limited",
-      "canonical_name": "Energy Developments Pty Limited",
-      "members": [
-        {
-          "name": "ENERGY DEVELOPMENTS PTY LIMITED",
-          "identifier": "84 053 410 263",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "MN-10044",
-            "merger_name": "OCTA \u2013 Woodside-EDL LNG JV",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-28T12:00:00Z",
-            "determination_date": null
-          }
-        ]
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
       "waiver_duration": null
     },
     "helion-c-v": {
@@ -632,42 +560,6 @@
         "median_business_days": 18,
         "completed_count": 1
       }
-    },
-    "trevi-australia-pty-ltd": {
-      "id": "trevi-australia-pty-ltd",
-      "canonical_name": "Trevi Australia Pty Ltd",
-      "members": [
-        {
-          "name": "Trevi Australia Pty Ltd",
-          "identifier": "91 161 293 401",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "MN-20042",
-            "merger_name": "Webuild \u2013 Trevi Group",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-24T12:00:00Z",
-            "determination_date": null
-          }
-        ]
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
     },
     "upm-communication-papers-holding-oy-topco": {
       "id": "upm-communication-papers-holding-oy-topco",

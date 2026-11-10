@@ -152,42 +152,6 @@
       },
       "waiver_duration": null
     },
-    "autosports-sutherland-pty-limited": {
-      "id": "autosports-sutherland-pty-limited",
-      "canonical_name": "Autosports Sutherland Pty Limited",
-      "members": [
-        {
-          "name": "Autosports Sutherland Pty Limited",
-          "identifier": "60 125 720 998",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "MN-20046",
-            "merger_name": "Autosports Group - Mercedes-Benz Parramatta and Castle Hill, Chery Castle Hill",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-11-06T12:00:00Z",
-            "determination_date": null
-          }
-        ]
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
-    },
     "ignite-group-holdings-limited": {
       "id": "ignite-group-holdings-limited",
       "canonical_name": "Ignite Group Holdings Limited",
@@ -347,48 +311,6 @@
         "median_days": 20,
         "average_business_days": 14.0,
         "median_business_days": 14,
-        "completed_count": 1
-      }
-    },
-    "woodside-browse-pty-ltd": {
-      "id": "woodside-browse-pty-ltd",
-      "canonical_name": "Woodside Browse Pty. Ltd.",
-      "members": [
-        {
-          "name": "WOODSIDE BROWSE PTY. LTD.",
-          "identifier": "11 120 237 381",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [
-          {
-            "merger_id": "WA-55038",
-            "merger_name": "Woodside \u2013 PetroChina\u2019s interest in Browse unincorporated joint venture",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-09-18T12:00:00Z",
-            "determination_date": "2026-10-20T12:00:00Z"
-          }
-        ],
-        "target": [],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 0,
-      "phase_2_count": 0,
-      "waiver_count": 1,
-      "active_count": 0,
-      "phase_duration": null,
-      "waiver_duration": {
-        "average_days": 32.0,
-        "median_days": 32,
-        "average_business_days": 21.0,
-        "median_business_days": 21,
         "completed_count": 1
       }
     }

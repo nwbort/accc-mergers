@@ -374,6 +374,143 @@
         "completed_count": 1
       }
     },
+    "macquarie-group": {
+      "id": "macquarie-group",
+      "canonical_name": "Macquarie Group",
+      "members": [
+        {
+          "name": "MACQUARIE BANK LIMITED",
+          "identifier": "46 008 583 542",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "MACQUARIE LEASING PTY LTD",
+          "identifier": "38 002 674 982",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Macquarie Agriculture Fund Crop Australia 2A",
+          "identifier": "42 957 133 198",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Macquarie Agriculture Fund Crop Australia 2B",
+          "identifier": "67 845 859 933",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Macquarie DC Infrastructure Holdings Pty Limited",
+          "identifier": "702 055 687",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Macquarie DC Infrastructure Pty Limited atf Macquarie DC Infrastructure Trust",
+          "identifier": "702 059 685",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Macquarie Global Infrastructure Fund SCSp acting by its general partner MGIF Luxembourg GP S.\u00e0.r.l",
+          "identifier": "RCS Number  B 250.938",
+          "identifier_type": null
+        },
+        {
+          "name": "Macquarie Group Limited",
+          "identifier": "94 122 169 279",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Macquarie Korea Asset Management Co., Ltd.",
+          "identifier": "CRN 1101112633364",
+          "identifier_type": null
+        },
+        {
+          "name": "Macquarie Korea Opportunities Private Equity Limited Partnership No. 6",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75059",
+            "merger_name": "Macquarie Global Infrastructure Fund - SERV",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "WA-85061",
+            "merger_name": "WDDP Consortium \u2013 Wambo Cattle Company",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-20T12:00:00Z",
+            "determination_date": "2026-11-10T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "WA-01130",
+            "merger_name": "ABP - Macquarie Agriculture Fund Crop Australia 2",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-29T12:00:00Z",
+            "determination_date": "2026-10-29T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-35015",
+            "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "WA-20047",
+            "merger_name": "Macquarie Korea Asset Management \u2013 Hwasung Cosmetics and Nowcos",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": "2026-11-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 5,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 4,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.5,
+        "median_days": 23.5,
+        "average_business_days": 16.0,
+        "median_business_days": 16.5,
+        "completed_count": 4
+      }
+    },
     "motorone-autobody-pty-ltd": {
       "id": "motorone-autobody-pty-ltd",
       "canonical_name": "Motorone Autobody Pty Ltd",

@@ -269,6 +269,11 @@
       "canonical_name": "Lactalis",
       "members": [
         {
+          "name": "BSA International",
+          "identifier": "Enterprise number  0443.205.173",
+          "identifier_type": null
+        },
+        {
           "name": "BSA SAS",
           "identifier": "Registered under SIREN (R.C.S. Paris)  557 350 253",
           "identifier_type": null
@@ -281,6 +286,18 @@
       ],
       "mergers": {
         "acquirer": [
+          {
+            "merger_id": "MN-45041",
+            "merger_name": "Lactalis \u2013 Saputo Dairy UK",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-10T12:00:00Z",
+            "determination_date": null
+          },
           {
             "merger_id": "WA-60046",
             "merger_name": "Lactalis \u2013 Saputo Dairy UK",
@@ -295,20 +312,7 @@
           }
         ],
         "target": [],
-        "other": [
-          {
-            "merger_id": "MN-45041",
-            "merger_name": "Lactalis \u2013 Saputo Dairy UK",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-11-10T12:00:00Z",
-            "determination_date": null
-          }
-        ]
+        "other": []
       },
       "merger_count": 2,
       "phase_1_count": 1,
@@ -323,42 +327,6 @@
         "median_business_days": 24,
         "completed_count": 1
       }
-    },
-    "new-centenary-pty-limited": {
-      "id": "new-centenary-pty-limited",
-      "canonical_name": "New Centenary Pty Limited",
-      "members": [
-        {
-          "name": "NEW CENTENARY PTY LIMITED",
-          "identifier": "21 168 183 864",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [
-          {
-            "merger_id": "MN-20046",
-            "merger_name": "Autosports Group - Mercedes-Benz Parramatta and Castle Hill, Chery Castle Hill",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-11-06T12:00:00Z",
-            "determination_date": null
-          }
-        ],
-        "target": [],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
     },
     "tamarama-accounting-pty-ltd": {
       "id": "tamarama-accounting-pty-ltd",

@@ -254,14 +254,19 @@
       },
       "waiver_duration": null
     },
-    "strabag-australia-pty-ltd": {
-      "id": "strabag-australia-pty-ltd",
-      "canonical_name": "Strabag Australia Pty Ltd",
+    "strabag": {
+      "id": "strabag",
+      "canonical_name": "STRABAG",
       "members": [
         {
           "name": "STRABAG AUSTRALIA PTY LTD",
           "identifier": "14 159 507 043",
           "identifier_type": "ABN"
+        },
+        {
+          "name": "STRABAG SE",
+          "identifier": "Register Number  FN 88983 h",
+          "identifier_type": null
         }
       ],
       "mergers": {

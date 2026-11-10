@@ -385,6 +385,86 @@
         "completed_count": 1
       }
     },
+    "ta-associates": {
+      "id": "ta-associates",
+      "canonical_name": "TA Associates",
+      "members": [
+        {
+          "name": "Anchor Bidco B.V",
+          "identifier": "1044.046.335",
+          "identifier_type": null
+        },
+        {
+          "name": "TA Associates Cayman, LLC",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "TA Associates Management, L.P.",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "TA Associates Management, L.P.",
+          "identifier": "2344330",
+          "identifier_type": null
+        },
+        {
+          "name": "TA Associates XV EU GP, SARL",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "TA Associates XV GP, L.P",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-10048",
+            "merger_name": "TA Associates \u2013 MedEnvision",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-20T12:00:00Z",
+            "determination_date": "2026-11-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20.0,
+        "average_business_days": 14.5,
+        "median_business_days": 14.5,
+        "completed_count": 2
+      }
+    },
     "tamarama-advisory-pty-ltd": {
       "id": "tamarama-advisory-pty-ltd",
       "canonical_name": "Tamarama Advisory Pty Ltd",

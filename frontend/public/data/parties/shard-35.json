@@ -57,6 +57,11 @@
           "name": "AUSTAGENCIES PTY LTD",
           "identifier": "76 006 090 464",
           "identifier_type": "ABN"
+        },
+        {
+          "name": "AUSTBROKERS CORPORATE PTY LTD",
+          "identifier": "29 107 477 181",
+          "identifier_type": "ABN"
         }
       ],
       "mergers": {
@@ -84,10 +89,7 @@
             "phase": "Waiver",
             "notification_date": "2026-07-15T12:00:00Z",
             "determination_date": "2026-08-04T12:00:00Z"
-          }
-        ],
-        "target": [],
-        "other": [
+          },
           {
             "merger_id": "WA-40023",
             "merger_name": "AUB \u2013 further interest in KJ Risk",
@@ -100,7 +102,9 @@
             "notification_date": "2026-05-14T12:00:00Z",
             "determination_date": "2026-06-02T12:00:00Z"
           }
-        ]
+        ],
+        "target": [],
+        "other": []
       },
       "merger_count": 3,
       "phase_1_count": 1,

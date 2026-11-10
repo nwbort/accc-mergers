@@ -338,6 +338,66 @@
         "completed_count": 1
       }
     },
+    "next-capital": {
+      "id": "next-capital",
+      "canonical_name": "Next Capital",
+      "members": [
+        {
+          "name": "NEXT CAPITAL PTY LIMITED",
+          "identifier": "75 111 963 583",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "TREA OPCO PTY LTD",
+          "identifier": "22 695 700 808",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45036",
+            "merger_name": "Next Capital - data centre business of Fujitsu Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": "2026-11-09T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "WA-20033",
+            "merger_name": "ReDirect Holdings - Echo Solve",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26.0,
+        "average_business_days": 18.0,
+        "median_business_days": 18.0,
+        "completed_count": 2
+      }
+    },
     "rc-bite-bid-co-pty-ltd": {
       "id": "rc-bite-bid-co-pty-ltd",
       "canonical_name": "Rc Bite Bid Co Pty Ltd",

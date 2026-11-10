@@ -2,48 +2,6 @@
   "shard": 49,
   "shard_count": 256,
   "parties": {
-    "eagers-automotive-limited": {
-      "id": "eagers-automotive-limited",
-      "canonical_name": "Eagers Automotive Limited",
-      "members": [
-        {
-          "name": "EAGERS AUTOMOTIVE LIMITED",
-          "identifier": "87 009 680 013",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [
-          {
-            "merger_id": "MN-15030",
-            "merger_name": "Karmo - Simplr",
-            "is_waiver": false,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-08-03T12:00:00Z",
-            "determination_date": "2026-09-10T12:00:00Z"
-          }
-        ],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 0,
-      "phase_duration": {
-        "average_days": 38.0,
-        "median_days": 38,
-        "average_business_days": 28.0,
-        "median_business_days": 28,
-        "completed_count": 1
-      },
-      "waiver_duration": null
-    },
     "fluent-commerce-midco-inc": {
       "id": "fluent-commerce-midco-inc",
       "canonical_name": "Fluent Commerce MidCo Inc.",

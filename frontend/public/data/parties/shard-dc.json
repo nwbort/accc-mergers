@@ -175,41 +175,13 @@
       "canonical_name": "Harvest Pub",
       "members": [
         {
-          "name": "AMAL TRUSTEES PTY LIMITED",
-          "identifier": "98 609 737 064",
-          "identifier_type": "ABN"
-        },
-        {
-          "name": "AMAL Trustees Limited as trustee for AOP Investment Trust",
-          "identifier": "98 609 737 064",
-          "identifier_type": "ABN"
-        },
-        {
-          "name": "AMAL Trustees Limited as trustee for APG Infrastructure Investments Holding Trust",
-          "identifier": "98 609 737 064",
-          "identifier_type": "ABN"
-        },
-        {
           "name": "HARVEST PUB OPERATIONS 2 PTY LTD",
           "identifier": "51 652 748 242",
           "identifier_type": "ABN"
         }
       ],
       "mergers": {
-        "acquirer": [
-          {
-            "merger_id": "WA-70048",
-            "merger_name": "ABP \u2013 investments in Octopus Australia Sustainable Investments Fund",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-10-16T12:00:00Z",
-            "determination_date": "2026-11-10T12:00:00Z"
-          }
-        ],
+        "acquirer": [],
         "target": [
           {
             "merger_id": "MN-40029",
@@ -238,10 +210,10 @@
         ],
         "other": []
       },
-      "merger_count": 3,
+      "merger_count": 2,
       "phase_1_count": 1,
       "phase_2_count": 0,
-      "waiver_count": 2,
+      "waiver_count": 1,
       "active_count": 0,
       "phase_duration": {
         "average_days": 29.0,
@@ -251,11 +223,11 @@
         "completed_count": 1
       },
       "waiver_duration": {
-        "average_days": 20.5,
-        "median_days": 20.5,
-        "average_business_days": 14.0,
-        "median_business_days": 14.0,
-        "completed_count": 2
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
       }
     },
     "johns-lyng-steamatic-australia-pty-ltd": {
@@ -524,48 +496,6 @@
         "median_days": 20,
         "average_business_days": 14.0,
         "median_business_days": 14,
-        "completed_count": 1
-      }
-    },
-    "ta-associates-cayman-llc": {
-      "id": "ta-associates-cayman-llc",
-      "canonical_name": "TA Associates Cayman, LLC",
-      "members": [
-        {
-          "name": "TA Associates Cayman, LLC",
-          "identifier": null,
-          "identifier_type": null
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "WA-15033",
-            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-07-25T12:00:00Z",
-            "determination_date": "2026-08-19T12:00:00Z"
-          }
-        ]
-      },
-      "merger_count": 1,
-      "phase_1_count": 0,
-      "phase_2_count": 0,
-      "waiver_count": 1,
-      "active_count": 0,
-      "phase_duration": null,
-      "waiver_duration": {
-        "average_days": 25.0,
-        "median_days": 25,
-        "average_business_days": 18.0,
-        "median_business_days": 18,
         "completed_count": 1
       }
     }

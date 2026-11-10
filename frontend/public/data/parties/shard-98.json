@@ -2,6 +2,72 @@
   "shard": 152,
   "shard_count": 256,
   "parties": {
+    "4k-automotive-group": {
+      "id": "4k-automotive-group",
+      "canonical_name": "4K Automotive Group",
+      "members": [
+        {
+          "name": "4K AUTOMOTIVE GROUP PTY LTD",
+          "identifier": "18 062 618 964",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "4K CENTRAL PTY LTD",
+          "identifier": "37 676 924 708",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "4K COMMERCIAL GROUP PTY LTD",
+          "identifier": "71 701 798 745",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "4K GILBERTS PTY LTD",
+          "identifier": "89 676 928 171",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "4K MOTORS PTY LTD",
+          "identifier": "97 677 442 983",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "4K PRESTIGE PTY LIMITED",
+          "identifier": "20 663 657 636",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "CLINTONS MOTORS PTY LIMITED",
+          "identifier": "92 008 444 844",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20044",
+            "merger_name": "4K Automotive Group \u2013 Peninsula Motor Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-27T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "ames-hunter-holdings-corporation": {
       "id": "ames-hunter-holdings-corporation",
       "canonical_name": "Ames Hunter Holdings Corporation",

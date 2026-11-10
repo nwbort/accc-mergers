@@ -385,48 +385,6 @@
       },
       "waiver_duration": null
     },
-    "rexel-s-a": {
-      "id": "rexel-s-a",
-      "canonical_name": "Rexel S.A.",
-      "members": [
-        {
-          "name": "Rexel S.A.",
-          "identifier": "SIREN number: 479 973 513",
-          "identifier_type": null
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "WA-70046",
-            "merger_name": "Rexel \u2013 Genuine Cable Group",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-10-16T12:00:00Z",
-            "determination_date": "2026-11-10T12:00:00Z"
-          }
-        ]
-      },
-      "merger_count": 1,
-      "phase_1_count": 0,
-      "phase_2_count": 0,
-      "waiver_count": 1,
-      "active_count": 0,
-      "phase_duration": null,
-      "waiver_duration": {
-        "average_days": 25.0,
-        "median_days": 25,
-        "average_business_days": 17.0,
-        "median_business_days": 17,
-        "completed_count": 1
-      }
-    },
     "wpb-jvco-s-r-l": {
       "id": "wpb-jvco-s-r-l",
       "canonical_name": "WPB JVCo S.\u00e0.r.l",

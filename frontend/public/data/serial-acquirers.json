@@ -181,6 +181,25 @@
       "count": 5
     },
     {
+      "acquirer_name": "Calvary",
+      "canonical_id": "calvary",
+      "anzsic_code": "840",
+      "anzsic_name": "Hospitals",
+      "merger_ids": [
+        "MN-55010",
+        "MN-40013",
+        "MN-20039",
+        "MN-10040"
+      ],
+      "dates": [
+        "2026-03-27T12:00:00Z",
+        "2026-06-16T12:00:00Z",
+        "2026-09-22T12:00:00Z",
+        "2026-10-29T12:00:00Z"
+      ],
+      "count": 4
+    },
+    {
       "acquirer_name": "ENDEAVOUR GROUP LIMITED",
       "canonical_id": null,
       "anzsic_code": "412",
@@ -217,6 +236,23 @@
         "2026-08-12T12:00:00Z"
       ],
       "count": 4
+    },
+    {
+      "acquirer_name": "Calvary",
+      "canonical_id": "calvary",
+      "anzsic_code": "860",
+      "anzsic_name": "Residential Care Services",
+      "merger_ids": [
+        "MN-55010",
+        "MN-20039",
+        "MN-10040"
+      ],
+      "dates": [
+        "2026-03-27T12:00:00Z",
+        "2026-09-22T12:00:00Z",
+        "2026-10-29T12:00:00Z"
+      ],
+      "count": 3
     },
     {
       "acquirer_name": "CVS Group",
@@ -285,6 +321,51 @@
         "2026-07-28T12:00:00Z"
       ],
       "count": 3
+    },
+    {
+      "acquirer_name": "Thoma Bravo",
+      "canonical_id": "thoma-bravo",
+      "anzsic_code": "542",
+      "anzsic_name": "Software Publishing",
+      "merger_ids": [
+        "MN-80047",
+        "MN-65042"
+      ],
+      "dates": [
+        "2026-10-16T12:00:00Z",
+        "2026-11-04T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Thoma Bravo",
+      "canonical_id": "thoma-bravo",
+      "anzsic_code": "624",
+      "anzsic_name": "Financial Asset Investing",
+      "merger_ids": [
+        "MN-80047",
+        "MN-65042"
+      ],
+      "dates": [
+        "2026-10-16T12:00:00Z",
+        "2026-11-04T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Thoma Bravo",
+      "canonical_id": "thoma-bravo",
+      "anzsic_code": "641",
+      "anzsic_name": "Auxiliary Finance and Investment Services",
+      "merger_ids": [
+        "MN-80047",
+        "MN-65042"
+      ],
+      "dates": [
+        "2026-10-16T12:00:00Z",
+        "2026-11-04T12:00:00Z"
+      ],
+      "count": 2
     },
     {
       "acquirer_name": "Healthe Care Group",
@@ -887,21 +968,6 @@
       "count": 2
     },
     {
-      "acquirer_name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
-      "canonical_id": null,
-      "anzsic_code": "840",
-      "anzsic_name": "Hospitals",
-      "merger_ids": [
-        "MN-55010",
-        "MN-40013"
-      ],
-      "dates": [
-        "2026-03-27T12:00:00Z",
-        "2026-06-16T12:00:00Z"
-      ],
-      "count": 2
-    },
-    {
       "acquirer_name": "Zurich",
       "canonical_id": "zurich-assure-australia-pty-ltd",
       "anzsic_code": "631",
@@ -1007,5 +1073,5 @@
       "count": 2
     }
   ],
-  "count": 62
+  "count": 66
 }

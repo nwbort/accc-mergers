@@ -9483,9 +9483,14 @@
           "name": "EAGERS VIC PTY LTD",
           "identifier_type": "ABN",
           "identifier": "29 616 989 596",
+          "canonical": {
+            "id": "eagers-automotive",
+            "name": "Eagers Automotive"
+          },
           "party_page": {
-            "id": "eagers-vic-pty-ltd",
-            "name": "Eagers Vic Pty Ltd"
+            "id": "eagers-automotive",
+            "name": "Eagers Automotive",
+            "curated": true
           }
         }
       ],
@@ -16205,9 +16210,14 @@
           "name": "KAES Phosphate Holdings, LLC",
           "identifier_type": null,
           "identifier": "not applicable",
+          "canonical": {
+            "id": "koch-inc",
+            "name": "Koch, Inc."
+          },
           "party_page": {
-            "id": "kaes-phosphate-holdings-llc",
-            "name": "KAES Phosphate Holdings, LLC"
+            "id": "koch-inc",
+            "name": "Koch, Inc.",
+            "curated": true
           }
         }
       ],
@@ -16364,9 +16374,14 @@
           "name": "LCMHC 2 LIMITED",
           "identifier_type": "ABN",
           "identifier": "62 692 981 445",
+          "canonical": {
+            "id": "calvary",
+            "name": "Calvary"
+          },
           "party_page": {
-            "id": "lcmhc-2-limited",
-            "name": "Lcmhc 2 Limited"
+            "id": "calvary",
+            "name": "Calvary",
+            "curated": true
           }
         }
       ],
@@ -16419,9 +16434,14 @@
           "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
           "identifier_type": "ABN",
           "identifier": "11 079 815 697",
+          "canonical": {
+            "id": "calvary",
+            "name": "Calvary"
+          },
           "party_page": {
-            "id": "little-company-of-mary-health-care-limited",
-            "name": "Little Company Of Mary Health Care Limited"
+            "id": "calvary",
+            "name": "Calvary",
+            "curated": true
           }
         }
       ],
@@ -16736,27 +16756,42 @@
           "name": "EDL LNG FUEL TO POWER PTY LTD",
           "identifier_type": "ABN",
           "identifier": "64 054 545 069",
+          "canonical": {
+            "id": "edl",
+            "name": "EDL"
+          },
           "party_page": {
-            "id": "edl-lng-fuel-to-power-pty-ltd",
-            "name": "Edl Lng Fuel To Power Pty Ltd"
+            "id": "edl",
+            "name": "EDL",
+            "curated": true
           }
         },
         {
           "name": "WOODSIDE ENERGY (LNG FUELS AND POWER) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "75 626 310 727",
+          "canonical": {
+            "id": "woodside-energy",
+            "name": "Woodside Energy"
+          },
           "party_page": {
-            "id": "woodside-energy-lng-fuels-and-power-pty-ltd",
-            "name": "Woodside Energy (Lng Fuels And Power) Pty Ltd"
+            "id": "woodside-energy",
+            "name": "Woodside Energy",
+            "curated": true
           }
         },
         {
           "name": "EDL LNG FUEL TO POWER OPERATOR PTY LTD",
           "identifier_type": "ABN",
           "identifier": "82 062 262 382",
+          "canonical": {
+            "id": "edl",
+            "name": "EDL"
+          },
           "party_page": {
-            "id": "edl-lng-fuel-to-power-operator-pty-ltd",
-            "name": "Edl Lng Fuel To Power Operator Pty Ltd"
+            "id": "edl",
+            "name": "EDL",
+            "curated": true
           }
         }
       ],
@@ -16779,9 +16814,14 @@
           "name": "ENERGY DEVELOPMENTS PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "84 053 410 263",
+          "canonical": {
+            "id": "edl",
+            "name": "EDL"
+          },
           "party_page": {
-            "id": "energy-developments-pty-limited",
-            "name": "Energy Developments Pty Limited"
+            "id": "edl",
+            "name": "EDL",
+            "curated": true
           }
         },
         {
@@ -16797,9 +16837,14 @@
           "name": "I Squared Capital Advisors (US) LLC",
           "identifier_type": null,
           "identifier": "LEI: 549300EZN8DE86R1Z653",
+          "canonical": {
+            "id": "i-squared-capital",
+            "name": "I Squared Capital"
+          },
           "party_page": {
-            "id": "i-squared-capital-advisors-us-llc",
-            "name": "I Squared Capital Advisors (US) LLC"
+            "id": "i-squared-capital",
+            "name": "I Squared Capital",
+            "curated": true
           }
         }
       ],
@@ -19037,9 +19082,14 @@
           "name": "EAGERS AUTOMOTIVE LIMITED",
           "identifier_type": "ABN",
           "identifier": "87 009 680 013",
+          "canonical": {
+            "id": "eagers-automotive",
+            "name": "Eagers Automotive"
+          },
           "party_page": {
-            "id": "eagers-automotive-limited",
-            "name": "Eagers Automotive Limited"
+            "id": "eagers-automotive",
+            "name": "Eagers Automotive",
+            "curated": true
           }
         },
         {
@@ -22280,9 +22330,14 @@
           "name": "CALVARY AGED CARE LIMITED",
           "identifier_type": "ABN",
           "identifier": "54 168 631 052",
+          "canonical": {
+            "id": "calvary",
+            "name": "Calvary"
+          },
           "party_page": {
-            "id": "calvary-aged-care-limited",
-            "name": "Calvary Aged Care Limited"
+            "id": "calvary",
+            "name": "Calvary",
+            "curated": true
           }
         }
       ],
@@ -22302,18 +22357,28 @@
           "name": "CALVARY HOME CARE SERVICES LIMITED",
           "identifier_type": "ABN",
           "identifier": "44 118 225 559",
+          "canonical": {
+            "id": "calvary",
+            "name": "Calvary"
+          },
           "party_page": {
-            "id": "calvary-home-care-services-limited",
-            "name": "Calvary Home Care Services Limited"
+            "id": "calvary",
+            "name": "Calvary",
+            "curated": true
           }
         },
         {
           "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
           "identifier_type": "ABN",
           "identifier": "11 079 815 697",
+          "canonical": {
+            "id": "calvary",
+            "name": "Calvary"
+          },
           "party_page": {
-            "id": "little-company-of-mary-health-care-limited",
-            "name": "Little Company Of Mary Health Care Limited"
+            "id": "calvary",
+            "name": "Calvary",
+            "curated": true
           }
         }
       ],
@@ -22632,9 +22697,14 @@
           "name": "EAGERS VIC PTY LTD",
           "identifier_type": "ABN",
           "identifier": "29 616 989 596",
+          "canonical": {
+            "id": "eagers-automotive",
+            "name": "Eagers Automotive"
+          },
           "party_page": {
-            "id": "eagers-vic-pty-ltd",
-            "name": "Eagers Vic Pty Ltd"
+            "id": "eagers-automotive",
+            "name": "Eagers Automotive",
+            "curated": true
           }
         }
       ],
@@ -22784,9 +22854,14 @@
           "name": "Trevi \u2013 Finanziaria Industriale S.p.A.",
           "identifier_type": null,
           "identifier": "Companies Register of Forl\u00ecCesena 01547370401",
+          "canonical": {
+            "id": "trevi-group",
+            "name": "Trevi Group"
+          },
           "party_page": {
-            "id": "trevi-finanziaria-industriale-s-p-a",
-            "name": "Trevi \u2013 Finanziaria Industriale S.p.A."
+            "id": "trevi-group",
+            "name": "Trevi Group",
+            "curated": true
           }
         }
       ],
@@ -22795,27 +22870,42 @@
           "name": "Soilmec Australia Pty Limited",
           "identifier_type": "ABN",
           "identifier": "53 133 190 717",
+          "canonical": {
+            "id": "trevi-group",
+            "name": "Trevi Group"
+          },
           "party_page": {
-            "id": "soilmec-australia-pty-limited",
-            "name": "Soilmec Australia Pty Limited"
+            "id": "trevi-group",
+            "name": "Trevi Group",
+            "curated": true
           }
         },
         {
           "name": "Trevi Australia Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "91 161 293 401",
+          "canonical": {
+            "id": "trevi-group",
+            "name": "Trevi Group"
+          },
           "party_page": {
-            "id": "trevi-australia-pty-ltd",
-            "name": "Trevi Australia Pty Ltd"
+            "id": "trevi-group",
+            "name": "Trevi Group",
+            "curated": true
           }
         },
         {
           "name": "Soilmec Investments Pty Limited",
           "identifier_type": "ABN",
           "identifier": "36 133 190 646",
+          "canonical": {
+            "id": "trevi-group",
+            "name": "Trevi Group"
+          },
           "party_page": {
-            "id": "soilmec-investments-pty-limited",
-            "name": "Soilmec Investments Pty Limited"
+            "id": "trevi-group",
+            "name": "Trevi Group",
+            "curated": true
           }
         }
       ],
@@ -22940,18 +23030,28 @@
           "name": "4K COMMERCIAL GROUP PTY LTD",
           "identifier_type": "ABN",
           "identifier": "71 701 798 745",
+          "canonical": {
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group"
+          },
           "party_page": {
-            "id": "4k-commercial-group-pty-ltd",
-            "name": "4K Commercial Group Pty Ltd"
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group",
+            "curated": true
           }
         },
         {
           "name": "4K CENTRAL PTY LTD",
           "identifier_type": "ABN",
           "identifier": "37 676 924 708",
+          "canonical": {
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group"
+          },
           "party_page": {
-            "id": "4k-central-pty-ltd",
-            "name": "4K Central Pty Ltd"
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group",
+            "curated": true
           }
         }
       ],
@@ -22971,18 +23071,28 @@
           "name": "4K PRESTIGE PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "20 663 657 636",
+          "canonical": {
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group"
+          },
           "party_page": {
-            "id": "4k-prestige-pty-limited",
-            "name": "4K Prestige Pty Limited"
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group",
+            "curated": true
           }
         },
         {
           "name": "4K GILBERTS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "89 676 928 171",
+          "canonical": {
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group"
+          },
           "party_page": {
-            "id": "4k-gilberts-pty-ltd",
-            "name": "4K Gilberts Pty Ltd"
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group",
+            "curated": true
           }
         },
         {
@@ -22998,27 +23108,42 @@
           "name": "4K AUTOMOTIVE GROUP PTY LTD",
           "identifier_type": "ABN",
           "identifier": "18 062 618 964",
+          "canonical": {
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group"
+          },
           "party_page": {
-            "id": "4k-automotive-group-pty-ltd",
-            "name": "4K Automotive Group Pty Ltd"
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group",
+            "curated": true
           }
         },
         {
           "name": "CLINTONS MOTORS PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "92 008 444 844",
+          "canonical": {
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group"
+          },
           "party_page": {
-            "id": "clintons-motors-pty-limited",
-            "name": "Clintons Motors Pty Limited"
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group",
+            "curated": true
           }
         },
         {
           "name": "4K MOTORS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "97 677 442 983",
+          "canonical": {
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group"
+          },
           "party_page": {
-            "id": "4k-motors-pty-ltd",
-            "name": "4K Motors Pty Ltd"
+            "id": "4k-automotive-group",
+            "name": "4K Automotive Group",
+            "curated": true
           }
         }
       ],
@@ -23140,9 +23265,14 @@
           "name": "NEW CENTENARY PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "21 168 183 864",
+          "canonical": {
+            "id": "autosports-group",
+            "name": "Autosports Group"
+          },
           "party_page": {
-            "id": "new-centenary-pty-limited",
-            "name": "New Centenary Pty Limited"
+            "id": "autosports-group",
+            "name": "Autosports Group",
+            "curated": true
           }
         }
       ],
@@ -23162,9 +23292,14 @@
           "name": "ASG MELBOURNE PTY LTD",
           "identifier_type": "ABN",
           "identifier": "64 616 840 110",
+          "canonical": {
+            "id": "autosports-group",
+            "name": "Autosports Group"
+          },
           "party_page": {
-            "id": "asg-melbourne-pty-ltd",
-            "name": "Asg Melbourne Pty Ltd"
+            "id": "autosports-group",
+            "name": "Autosports Group",
+            "curated": true
           }
         },
         {
@@ -23180,27 +23315,42 @@
           "name": "Autosports Sutherland Pty Limited",
           "identifier_type": "ABN",
           "identifier": "60 125 720 998",
+          "canonical": {
+            "id": "autosports-group",
+            "name": "Autosports Group"
+          },
           "party_page": {
-            "id": "autosports-sutherland-pty-limited",
-            "name": "Autosports Sutherland Pty Limited"
+            "id": "autosports-group",
+            "name": "Autosports Group",
+            "curated": true
           }
         },
         {
           "name": "AUTOSPORTS GROUP LIMITED",
           "identifier_type": "ABN",
           "identifier": "54 614 505 261",
+          "canonical": {
+            "id": "autosports-group",
+            "name": "Autosports Group"
+          },
           "party_page": {
-            "id": "autosports-group-limited",
-            "name": "Autosports Group Limited"
+            "id": "autosports-group",
+            "name": "Autosports Group",
+            "curated": true
           }
         },
         {
           "name": "AUTOSPORTS CASTLE HILL PTY LTD",
           "identifier_type": "ABN",
           "identifier": "65 163 974 481",
+          "canonical": {
+            "id": "autosports-group",
+            "name": "Autosports Group"
+          },
           "party_page": {
-            "id": "autosports-castle-hill-pty-ltd",
-            "name": "Autosports Castle Hill Pty Ltd"
+            "id": "autosports-group",
+            "name": "Autosports Group",
+            "curated": true
           }
         },
         {
@@ -23216,18 +23366,28 @@
           "name": "AUTOSPORTS LEICHHARDT PTY LTD",
           "identifier_type": "ABN",
           "identifier": "38 161 160 765",
+          "canonical": {
+            "id": "autosports-group",
+            "name": "Autosports Group"
+          },
           "party_page": {
-            "id": "autosports-leichhardt-pty-ltd",
-            "name": "Autosports Leichhardt Pty Ltd"
+            "id": "autosports-group",
+            "name": "Autosports Group",
+            "curated": true
           }
         },
         {
           "name": "AUTOSPORTS FIVE DOCK PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "95 118 786 762",
+          "canonical": {
+            "id": "autosports-group",
+            "name": "Autosports Group"
+          },
           "party_page": {
-            "id": "autosports-five-dock-pty-limited",
-            "name": "Autosports Five Dock Pty Limited"
+            "id": "autosports-group",
+            "name": "Autosports Group",
+            "curated": true
           }
         }
       ],
@@ -27264,9 +27424,14 @@
           "name": "PACIFIC 2021 TOPCO G PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "38 649 860 177",
+          "canonical": {
+            "id": "healthe-care-group",
+            "name": "Healthe Care Group"
+          },
           "party_page": {
-            "id": "pacific-2021-topco-g-pty-limited",
-            "name": "Pacific 2021 Topco G Pty Limited"
+            "id": "healthe-care-group",
+            "name": "Healthe Care Group",
+            "curated": true
           }
         },
         {
@@ -27282,9 +27447,14 @@
           "name": "PACIFIC 2021 MIDCO G PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "77 649 860 720",
+          "canonical": {
+            "id": "healthe-care-group",
+            "name": "Healthe Care Group"
+          },
           "party_page": {
-            "id": "pacific-2021-midco-g-pty-limited",
-            "name": "Pacific 2021 Midco G Pty Limited"
+            "id": "healthe-care-group",
+            "name": "Healthe Care Group",
+            "curated": true
           }
         }
       ],
@@ -33263,9 +33433,14 @@
           "name": "Sun Pharma America, Inc.",
           "identifier_type": null,
           "identifier": "Delaware State File Number  10597043",
+          "canonical": {
+            "id": "sun-pharma",
+            "name": "Sun Pharma"
+          },
           "party_page": {
-            "id": "sun-pharma-america-inc",
-            "name": "Sun Pharma America, Inc."
+            "id": "sun-pharma",
+            "name": "Sun Pharma",
+            "curated": true
           }
         }
       ],
@@ -33285,9 +33460,14 @@
           "name": "Sun Pharmaceutical Industries Ltd.",
           "identifier_type": null,
           "identifier": "CIN  L24230GJ1993PLC019050",
+          "canonical": {
+            "id": "sun-pharma",
+            "name": "Sun Pharma"
+          },
           "party_page": {
-            "id": "sun-pharmaceutical-industries-ltd",
-            "name": "Sun Pharmaceutical Industries Ltd."
+            "id": "sun-pharma",
+            "name": "Sun Pharma",
+            "curated": true
           }
         }
       ],
@@ -34557,9 +34737,14 @@
           "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
           "identifier_type": "ABN",
           "identifier": "11 079 815 697",
+          "canonical": {
+            "id": "calvary",
+            "name": "Calvary"
+          },
           "party_page": {
-            "id": "little-company-of-mary-health-care-limited",
-            "name": "Little Company Of Mary Health Care Limited"
+            "id": "calvary",
+            "name": "Calvary",
+            "curated": true
           }
         }
       ],
@@ -36191,14 +36376,9 @@
           "name": "AMAL TRUSTEES PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "98 609 737 064",
-          "canonical": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub"
-          },
           "party_page": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub",
-            "curated": true
+            "id": "amal-trustees-pty-limited",
+            "name": "Amal Trustees Pty Limited"
           }
         }
       ],
@@ -38393,9 +38573,14 @@
           "name": "HARRINGTON PENRITH PTY LTD ATF THE PENRITH UNIT TRUST",
           "identifier_type": "ACN",
           "identifier": "673 442 558",
+          "canonical": {
+            "id": "harrington-investment-management",
+            "name": "Harrington Investment Management"
+          },
           "party_page": {
-            "id": "harrington-penrith-pty-ltd-atf-the-penrith-unit-trust",
-            "name": "Harrington Penrith Pty Ltd Atf The Penrith Unit Trust"
+            "id": "harrington-investment-management",
+            "name": "Harrington Investment Management",
+            "curated": true
           }
         }
       ],
@@ -38404,9 +38589,14 @@
           "name": "HARRINGTON INVESTMENT MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
           "identifier": "23 633 304 417",
+          "canonical": {
+            "id": "harrington-investment-management",
+            "name": "Harrington Investment Management"
+          },
           "party_page": {
-            "id": "harrington-investment-management-pty-ltd",
-            "name": "Harrington Investment Management Pty Ltd"
+            "id": "harrington-investment-management",
+            "name": "Harrington Investment Management",
+            "curated": true
           }
         }
       ],
@@ -39077,9 +39267,14 @@
           "name": "BSA International",
           "identifier_type": null,
           "identifier": "Enterprise number  0443.205.173",
+          "canonical": {
+            "id": "lactalis",
+            "name": "Lactalis"
+          },
           "party_page": {
-            "id": "bsa-international",
-            "name": "BSA International"
+            "id": "lactalis",
+            "name": "Lactalis",
+            "curated": true
           }
         }
       ],
@@ -43435,9 +43630,14 @@
           "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
           "identifier_type": "ABN",
           "identifier": "11 079 815 697",
+          "canonical": {
+            "id": "calvary",
+            "name": "Calvary"
+          },
           "party_page": {
-            "id": "little-company-of-mary-health-care-limited",
-            "name": "Little Company Of Mary Health Care Limited"
+            "id": "calvary",
+            "name": "Calvary",
+            "curated": true
           }
         }
       ],
@@ -45993,9 +46193,14 @@
           "name": "Italtractor ITM S.p.A.",
           "identifier_type": null,
           "identifier": "Italian Company Register (Bologna) \u2013 02929550362",
+          "canonical": {
+            "id": "itm",
+            "name": "ITM"
+          },
           "party_page": {
-            "id": "italtractor-itm-s-p-a",
-            "name": "Italtractor ITM S.p.A."
+            "id": "itm",
+            "name": "ITM",
+            "curated": true
           }
         }
       ],
@@ -46013,9 +46218,14 @@
           "name": "ITM MINING PTY LTD",
           "identifier_type": "ABN",
           "identifier": "29 633 147 752",
+          "canonical": {
+            "id": "itm",
+            "name": "ITM"
+          },
           "party_page": {
-            "id": "itm-mining-pty-ltd",
-            "name": "Itm Mining Pty Ltd"
+            "id": "itm",
+            "name": "ITM",
+            "curated": true
           }
         },
         {
@@ -49146,18 +49356,28 @@
           "name": "PACIFIC 2021 TOPCO G PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "38 649 860 177",
+          "canonical": {
+            "id": "healthe-care-group",
+            "name": "Healthe Care Group"
+          },
           "party_page": {
-            "id": "pacific-2021-topco-g-pty-limited",
-            "name": "Pacific 2021 Topco G Pty Limited"
+            "id": "healthe-care-group",
+            "name": "Healthe Care Group",
+            "curated": true
           }
         },
         {
           "name": "PACIFIC 2021 MIDCO G PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "77 649 860 720",
+          "canonical": {
+            "id": "healthe-care-group",
+            "name": "Healthe Care Group"
+          },
           "party_page": {
-            "id": "pacific-2021-midco-g-pty-limited",
-            "name": "Pacific 2021 Midco G Pty Limited"
+            "id": "healthe-care-group",
+            "name": "Healthe Care Group",
+            "curated": true
           }
         },
         {
@@ -49298,9 +49518,14 @@
           "name": "Merchant Wealth Partners HMB Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "701 675 961",
+          "canonical": {
+            "id": "merchant-wealth-partners-llc",
+            "name": "Merchant Wealth Partners, LLC"
+          },
           "party_page": {
-            "id": "merchant-wealth-partners-hmb-pty-ltd",
-            "name": "Merchant Wealth Partners HMB Pty Ltd"
+            "id": "merchant-wealth-partners-llc",
+            "name": "Merchant Wealth Partners, LLC",
+            "curated": true
           }
         }
       ],
@@ -49398,9 +49623,14 @@
           "name": "Merchant Wealth Partners HM Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "701 508 358",
+          "canonical": {
+            "id": "merchant-wealth-partners-llc",
+            "name": "Merchant Wealth Partners, LLC"
+          },
           "party_page": {
-            "id": "merchant-wealth-partners-hm-pty-ltd",
-            "name": "Merchant Wealth Partners HM Pty Ltd"
+            "id": "merchant-wealth-partners-llc",
+            "name": "Merchant Wealth Partners, LLC",
+            "curated": true
           }
         }
       ],
@@ -53614,18 +53844,28 @@
           "name": "Proofpoint, Inc",
           "identifier_type": null,
           "identifier": "3540718",
+          "canonical": {
+            "id": "thoma-bravo",
+            "name": "Thoma Bravo"
+          },
           "party_page": {
-            "id": "proofpoint-inc",
-            "name": "Proofpoint, Inc"
+            "id": "thoma-bravo",
+            "name": "Thoma Bravo",
+            "curated": true
           }
         },
         {
           "name": "Vail Merger Sub, Inc",
           "identifier_type": null,
           "identifier": "10795571",
+          "canonical": {
+            "id": "thoma-bravo",
+            "name": "Thoma Bravo"
+          },
           "party_page": {
-            "id": "vail-merger-sub-inc",
-            "name": "Vail Merger Sub, Inc"
+            "id": "thoma-bravo",
+            "name": "Thoma Bravo",
+            "curated": true
           }
         }
       ],
@@ -53645,9 +53885,14 @@
           "name": "Thoma Bravo, UGP LLC",
           "identifier_type": null,
           "identifier": "7725781",
+          "canonical": {
+            "id": "thoma-bravo",
+            "name": "Thoma Bravo"
+          },
           "party_page": {
-            "id": "thoma-bravo-ugp-llc",
-            "name": "Thoma Bravo, UGP LLC"
+            "id": "thoma-bravo",
+            "name": "Thoma Bravo",
+            "curated": true
           }
         }
       ],
@@ -60796,9 +61041,14 @@
           "name": "I Squared Capital, LLC",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "i-squared-capital",
+            "name": "I Squared Capital"
+          },
           "party_page": {
-            "id": "i-squared-capital-llc",
-            "name": "I Squared Capital, LLC"
+            "id": "i-squared-capital",
+            "name": "I Squared Capital",
+            "curated": true
           }
         }
       ],
@@ -61332,9 +61582,14 @@
           "name": "Macquarie Global Infrastructure Fund SCSp acting by its general partner MGIF Luxembourg GP S.\u00e0.r.l",
           "identifier_type": null,
           "identifier": "RCS Number  B 250.938",
+          "canonical": {
+            "id": "macquarie-group",
+            "name": "Macquarie Group"
+          },
           "party_page": {
-            "id": "macquarie-global-infrastructure-fund-scsp-acting-by-its-general-partner-mgif-lux",
-            "name": "Macquarie Global Infrastructure Fund SCSp acting by its general partner MGIF Luxembourg GP S.\u00e0.r.l"
+            "id": "macquarie-group",
+            "name": "Macquarie Group",
+            "curated": true
           }
         }
       ],
@@ -79557,18 +79812,28 @@
           "name": "Macquarie Agriculture Fund Crop Australia 2A",
           "identifier_type": "ABN",
           "identifier": "42 957 133 198",
+          "canonical": {
+            "id": "macquarie-group",
+            "name": "Macquarie Group"
+          },
           "party_page": {
-            "id": "macquarie-agriculture-fund-crop-australia-2a",
-            "name": "Macquarie Agriculture Fund Crop Australia 2A"
+            "id": "macquarie-group",
+            "name": "Macquarie Group",
+            "curated": true
           }
         },
         {
           "name": "Macquarie Agriculture Fund Crop Australia 2B",
           "identifier_type": "ABN",
           "identifier": "67 845 859 933",
+          "canonical": {
+            "id": "macquarie-group",
+            "name": "Macquarie Group"
+          },
           "party_page": {
-            "id": "macquarie-agriculture-fund-crop-australia-2b",
-            "name": "Macquarie Agriculture Fund Crop Australia 2B"
+            "id": "macquarie-group",
+            "name": "Macquarie Group",
+            "curated": true
           }
         }
       ],
@@ -87511,18 +87776,28 @@
           "name": "Anchor Bidco B.V",
           "identifier_type": null,
           "identifier": "1044.046.335",
+          "canonical": {
+            "id": "ta-associates",
+            "name": "TA Associates"
+          },
           "party_page": {
-            "id": "anchor-bidco-b-v",
-            "name": "Anchor Bidco B.V"
+            "id": "ta-associates",
+            "name": "TA Associates",
+            "curated": true
           }
         },
         {
           "name": "TA Associates Management, L.P.",
           "identifier_type": null,
           "identifier": "2344330",
+          "canonical": {
+            "id": "ta-associates",
+            "name": "TA Associates"
+          },
           "party_page": {
-            "id": "ta-associates-management-l-p",
-            "name": "TA Associates Management, L.P."
+            "id": "ta-associates",
+            "name": "TA Associates",
+            "curated": true
           }
         }
       ],
@@ -90394,9 +90669,14 @@
           "name": "TA Associates XV GP, L.P",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "ta-associates",
+            "name": "TA Associates"
+          },
           "party_page": {
-            "id": "ta-associates-xv-gp-l-p",
-            "name": "TA Associates XV GP, L.P"
+            "id": "ta-associates",
+            "name": "TA Associates",
+            "curated": true
           }
         },
         {
@@ -90412,9 +90692,14 @@
           "name": "TA Associates Management, L.P.",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "ta-associates",
+            "name": "TA Associates"
+          },
           "party_page": {
-            "id": "ta-associates-management-l-p-2",
-            "name": "TA Associates Management, L.P."
+            "id": "ta-associates",
+            "name": "TA Associates",
+            "curated": true
           }
         },
         {
@@ -90439,9 +90724,14 @@
           "name": "TA Associates XV EU GP, SARL",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "ta-associates",
+            "name": "TA Associates"
+          },
           "party_page": {
-            "id": "ta-associates-xv-eu-gp-sarl",
-            "name": "TA Associates XV EU GP, SARL"
+            "id": "ta-associates",
+            "name": "TA Associates",
+            "curated": true
           }
         },
         {
@@ -90493,9 +90783,14 @@
           "name": "TA Associates Cayman, LLC",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "ta-associates",
+            "name": "TA Associates"
+          },
           "party_page": {
-            "id": "ta-associates-cayman-llc",
-            "name": "TA Associates Cayman, LLC"
+            "id": "ta-associates",
+            "name": "TA Associates",
+            "curated": true
           }
         },
         {
@@ -95222,9 +95517,14 @@
           "name": "NEXT CAPITAL PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "75 111 963 583",
+          "canonical": {
+            "id": "next-capital",
+            "name": "Next Capital"
+          },
           "party_page": {
-            "id": "next-capital-pty-limited",
-            "name": "Next Capital Pty Limited"
+            "id": "next-capital",
+            "name": "Next Capital",
+            "curated": true
           }
         },
         {
@@ -95734,9 +96034,14 @@
           "name": "Sumitomo Mitsui Trust Group, Inc",
           "identifier_type": null,
           "identifier": "Corporate Number (Japan)  9010001139555",
+          "canonical": {
+            "id": "sumitomo-mitsui-trust-bank-limited",
+            "name": "Sumitomo Mitsui Trust Bank, Limited"
+          },
           "party_page": {
-            "id": "sumitomo-mitsui-trust-group-inc",
-            "name": "Sumitomo Mitsui Trust Group, Inc"
+            "id": "sumitomo-mitsui-trust-bank-limited",
+            "name": "Sumitomo Mitsui Trust Bank, Limited",
+            "curated": true
           }
         }
       ],
@@ -95884,27 +96189,42 @@
           "name": "Macquarie Korea Asset Management Co., Ltd.",
           "identifier_type": null,
           "identifier": "CRN 1101112633364",
+          "canonical": {
+            "id": "macquarie-group",
+            "name": "Macquarie Group"
+          },
           "party_page": {
-            "id": "macquarie-korea-asset-management-co-ltd",
-            "name": "Macquarie Korea Asset Management Co., Ltd."
+            "id": "macquarie-group",
+            "name": "Macquarie Group",
+            "curated": true
           }
         },
         {
           "name": "Macquarie Group Limited",
           "identifier_type": "ABN",
           "identifier": "94 122 169 279",
+          "canonical": {
+            "id": "macquarie-group",
+            "name": "Macquarie Group"
+          },
           "party_page": {
-            "id": "macquarie-group-limited",
-            "name": "Macquarie Group Limited"
+            "id": "macquarie-group",
+            "name": "Macquarie Group",
+            "curated": true
           }
         },
         {
           "name": "Macquarie Korea Opportunities Private Equity Limited Partnership No. 6",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "macquarie-group",
+            "name": "Macquarie Group"
+          },
           "party_page": {
-            "id": "macquarie-korea-opportunities-private-equity-limited-partnership-no-6",
-            "name": "Macquarie Korea Opportunities Private Equity Limited Partnership No. 6"
+            "id": "macquarie-group",
+            "name": "Macquarie Group",
+            "curated": true
           }
         }
       ],
@@ -98539,14 +98859,9 @@
           "name": "AMAL TRUSTEES PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "98 609 737 064",
-          "canonical": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub"
-          },
           "party_page": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub",
-            "curated": true
+            "id": "amal-trustees-pty-limited",
+            "name": "Amal Trustees Pty Limited"
           }
         }
       ],
@@ -106105,9 +106420,14 @@
           "name": "MACQUARIE LEASING PTY LTD",
           "identifier_type": "ABN",
           "identifier": "38 002 674 982",
+          "canonical": {
+            "id": "macquarie-group",
+            "name": "Macquarie Group"
+          },
           "party_page": {
-            "id": "macquarie-leasing-pty-ltd",
-            "name": "Macquarie Leasing Pty Ltd"
+            "id": "macquarie-group",
+            "name": "Macquarie Group",
+            "curated": true
           }
         },
         {
@@ -106123,9 +106443,14 @@
           "name": "MACQUARIE BANK LIMITED",
           "identifier_type": "ABN",
           "identifier": "46 008 583 542",
+          "canonical": {
+            "id": "macquarie-group",
+            "name": "Macquarie Group"
+          },
           "party_page": {
-            "id": "macquarie-bank-limited",
-            "name": "Macquarie Bank Limited"
+            "id": "macquarie-group",
+            "name": "Macquarie Group",
+            "curated": true
           }
         }
       ],
@@ -111372,9 +111697,14 @@
           "name": "AUSTBROKERS CORPORATE PTY LTD",
           "identifier_type": "ABN",
           "identifier": "29 107 477 181",
+          "canonical": {
+            "id": "aub-group",
+            "name": "AUB Group"
+          },
           "party_page": {
-            "id": "austbrokers-corporate-pty-ltd",
-            "name": "Austbrokers Corporate Pty Ltd"
+            "id": "aub-group",
+            "name": "AUB Group",
+            "curated": true
           }
         }
       ],
@@ -118651,9 +118981,14 @@
           "name": "TREA OPCO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "22 695 700 808",
+          "canonical": {
+            "id": "next-capital",
+            "name": "Next Capital"
+          },
           "party_page": {
-            "id": "trea-opco-pty-ltd",
-            "name": "Trea Opco Pty Ltd"
+            "id": "next-capital",
+            "name": "Next Capital",
+            "curated": true
           }
         }
       ],
@@ -118673,9 +119008,14 @@
           "name": "NEXT CAPITAL PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "75 111 963 583",
+          "canonical": {
+            "id": "next-capital",
+            "name": "Next Capital"
+          },
           "party_page": {
-            "id": "next-capital-pty-limited",
-            "name": "Next Capital Pty Limited"
+            "id": "next-capital",
+            "name": "Next Capital",
+            "curated": true
           }
         }
       ],
@@ -124832,9 +125172,14 @@
           "name": "WOODSIDE BROWSE PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "11 120 237 381",
+          "canonical": {
+            "id": "woodside-energy",
+            "name": "Woodside Energy"
+          },
           "party_page": {
-            "id": "woodside-browse-pty-ltd",
-            "name": "Woodside Browse Pty. Ltd."
+            "id": "woodside-energy",
+            "name": "Woodside Energy",
+            "curated": true
           }
         }
       ],
@@ -125191,9 +125536,14 @@
           "name": "Thoma Bravo, L.P.",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "thoma-bravo",
+            "name": "Thoma Bravo"
+          },
           "party_page": {
-            "id": "thoma-bravo-l-p",
-            "name": "Thoma Bravo, L.P."
+            "id": "thoma-bravo",
+            "name": "Thoma Bravo",
+            "curated": true
           }
         },
         {
@@ -138634,9 +138984,14 @@
           "name": "STRABAG AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "14 159 507 043",
+          "canonical": {
+            "id": "strabag",
+            "name": "STRABAG"
+          },
           "party_page": {
-            "id": "strabag-australia-pty-ltd",
-            "name": "Strabag Australia Pty Ltd"
+            "id": "strabag",
+            "name": "STRABAG",
+            "curated": true
           }
         }
       ],
@@ -138674,9 +139029,14 @@
           "name": "STRABAG SE",
           "identifier_type": null,
           "identifier": "Register Number  FN 88983 h",
+          "canonical": {
+            "id": "strabag",
+            "name": "STRABAG"
+          },
           "party_page": {
-            "id": "strabag-se",
-            "name": "Strabag Se"
+            "id": "strabag",
+            "name": "STRABAG",
+            "curated": true
           }
         }
       ],
@@ -139066,9 +139426,14 @@
           "name": "Rexel USA, Inc.",
           "identifier_type": null,
           "identifier": "Delaware company identifier number: 4170267",
+          "canonical": {
+            "id": "rexel",
+            "name": "Rexel"
+          },
           "party_page": {
-            "id": "rexel-usa-inc",
-            "name": "Rexel USA, Inc."
+            "id": "rexel",
+            "name": "Rexel",
+            "curated": true
           }
         }
       ],
@@ -139124,9 +139489,14 @@
           "name": "Rexel S.A.",
           "identifier_type": null,
           "identifier": "SIREN number: 479 973 513",
+          "canonical": {
+            "id": "rexel",
+            "name": "Rexel"
+          },
           "party_page": {
-            "id": "rexel-s-a",
-            "name": "Rexel S.A."
+            "id": "rexel",
+            "name": "Rexel",
+            "curated": true
           }
         }
       ],
@@ -139258,28 +139628,18 @@
           "name": "AMAL Trustees Limited as trustee for APG Infrastructure Investments Holding Trust",
           "identifier_type": "ABN",
           "identifier": "98 609 737 064",
-          "canonical": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub"
-          },
           "party_page": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub",
-            "curated": true
+            "id": "amal-trustees-pty-limited",
+            "name": "Amal Trustees Pty Limited"
           }
         },
         {
           "name": "AMAL Trustees Limited as trustee for AOP Investment Trust",
           "identifier_type": "ABN",
           "identifier": "98 609 737 064",
-          "canonical": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub"
-          },
           "party_page": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub",
-            "curated": true
+            "id": "amal-trustees-pty-limited",
+            "name": "Amal Trustees Pty Limited"
           }
         }
       ],
@@ -139288,9 +139648,14 @@
           "name": "Equity Trustees Limited atf the Octopus Australia Sustainable Investments Fund",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "octopus-australia",
+            "name": "Octopus Australia"
+          },
           "party_page": {
-            "id": "equity-trustees-limited-atf-the-octopus-australia-sustainable-investments-fund",
-            "name": "Equity Trustees Limited atf the Octopus Australia Sustainable Investments Fund"
+            "id": "octopus-australia",
+            "name": "Octopus Australia",
+            "curated": true
           }
         }
       ],
@@ -139299,9 +139664,14 @@
           "name": "OCTOPUS CAPITAL AUST PTY LTD",
           "identifier_type": "ABN",
           "identifier": "72 627 019 096",
+          "canonical": {
+            "id": "octopus-australia",
+            "name": "Octopus Australia"
+          },
           "party_page": {
-            "id": "octopus-capital-aust-pty-ltd",
-            "name": "Octopus Capital Aust Pty Ltd"
+            "id": "octopus-australia",
+            "name": "Octopus Australia",
+            "curated": true
           }
         },
         {
@@ -139317,9 +139687,14 @@
           "name": "OCTOPUS AUST OASIS MANAGER PTY LTD",
           "identifier_type": "ABN",
           "identifier": "52 660 429 087",
+          "canonical": {
+            "id": "octopus-australia",
+            "name": "Octopus Australia"
+          },
           "party_page": {
-            "id": "octopus-aust-oasis-manager-pty-ltd",
-            "name": "Octopus Aust Oasis Manager Pty Ltd"
+            "id": "octopus-australia",
+            "name": "Octopus Australia",
+            "curated": true
           }
         },
         {
@@ -139990,9 +140365,14 @@
           "name": "AUTOSPORTS GROUP LIMITED",
           "identifier_type": "ABN",
           "identifier": "54 614 505 261",
+          "canonical": {
+            "id": "autosports-group",
+            "name": "Autosports Group"
+          },
           "party_page": {
-            "id": "autosports-group-limited",
-            "name": "Autosports Group Limited"
+            "id": "autosports-group",
+            "name": "Autosports Group",
+            "curated": true
           }
         }
       ],
@@ -146056,9 +146436,14 @@
           "name": "I Squared Capital, LLC",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "i-squared-capital",
+            "name": "I Squared Capital"
+          },
           "party_page": {
-            "id": "i-squared-capital-llc",
-            "name": "I Squared Capital, LLC"
+            "id": "i-squared-capital",
+            "name": "I Squared Capital",
+            "curated": true
           }
         }
       ],
@@ -155305,9 +155690,14 @@
           "name": "Macquarie DC Infrastructure Holdings Pty Limited",
           "identifier_type": "ACN",
           "identifier": "702 055 687",
+          "canonical": {
+            "id": "macquarie-group",
+            "name": "Macquarie Group"
+          },
           "party_page": {
-            "id": "macquarie-dc-infrastructure-holdings-pty-limited",
-            "name": "Macquarie DC Infrastructure Holdings Pty Limited"
+            "id": "macquarie-group",
+            "name": "Macquarie Group",
+            "curated": true
           }
         },
         {
@@ -155323,9 +155713,14 @@
           "name": "Zerra WDDP HoldCo Pty Ltd as trustee for Zerra WDDP HoldCo Trust",
           "identifier_type": "ACN",
           "identifier": "701 254 239",
+          "canonical": {
+            "id": "zerra",
+            "name": "Zerra"
+          },
           "party_page": {
-            "id": "zerra-wddp-holdco-pty-ltd-as-trustee-for-zerra-wddp-holdco-trust",
-            "name": "Zerra WDDP HoldCo Pty Ltd as trustee for Zerra WDDP HoldCo Trust"
+            "id": "zerra",
+            "name": "Zerra",
+            "curated": true
           }
         },
         {
@@ -155341,18 +155736,28 @@
           "name": "Zerra WDDP Investments Pte Ltd",
           "identifier_type": null,
           "identifier": "UEN: 202535626E",
+          "canonical": {
+            "id": "zerra",
+            "name": "Zerra"
+          },
           "party_page": {
-            "id": "zerra-wddp-investments-pte-ltd",
-            "name": "Zerra WDDP Investments Pte Ltd"
+            "id": "zerra",
+            "name": "Zerra",
+            "curated": true
           }
         },
         {
           "name": "Macquarie DC Infrastructure Pty Limited atf Macquarie DC Infrastructure Trust",
           "identifier_type": "ACN",
           "identifier": "702 059 685",
+          "canonical": {
+            "id": "macquarie-group",
+            "name": "Macquarie Group"
+          },
           "party_page": {
-            "id": "macquarie-dc-infrastructure-pty-limited-atf-macquarie-dc-infrastructure-trust",
-            "name": "Macquarie DC Infrastructure Pty Limited atf Macquarie DC Infrastructure Trust"
+            "id": "macquarie-group",
+            "name": "Macquarie Group",
+            "curated": true
           }
         }
       ],

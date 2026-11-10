@@ -518,6 +518,57 @@
         "completed_count": 1
       }
     },
+    "trevi-group": {
+      "id": "trevi-group",
+      "canonical_name": "Trevi Group",
+      "members": [
+        {
+          "name": "Soilmec Australia Pty Limited",
+          "identifier": "53 133 190 717",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Soilmec Investments Pty Limited",
+          "identifier": "36 133 190 646",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Trevi Australia Pty Ltd",
+          "identifier": "91 161 293 401",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Trevi \u2013 Finanziaria Industriale S.p.A.",
+          "identifier": "Companies Register of Forl\u00ecCesena 01547370401",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20042",
+            "merger_name": "Webuild \u2013 Trevi Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-24T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "worldline-australia-pty-ltd": {
       "id": "worldline-australia-pty-ltd",
       "canonical_name": "Worldline Australia Pty Ltd",

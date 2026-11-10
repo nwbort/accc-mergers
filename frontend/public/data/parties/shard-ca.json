@@ -122,42 +122,6 @@
       "phase_duration": null,
       "waiver_duration": null
     },
-    "edl-lng-fuel-to-power-pty-ltd": {
-      "id": "edl-lng-fuel-to-power-pty-ltd",
-      "canonical_name": "Edl Lng Fuel To Power Pty Ltd",
-      "members": [
-        {
-          "name": "EDL LNG FUEL TO POWER PTY LTD",
-          "identifier": "64 054 545 069",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [
-          {
-            "merger_id": "MN-10044",
-            "merger_name": "OCTA \u2013 Woodside-EDL LNG JV",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-28T12:00:00Z",
-            "determination_date": null
-          }
-        ],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
-    },
     "financi-re-de-la-salicorne-s-a-s": {
       "id": "financi-re-de-la-salicorne-s-a-s",
       "canonical_name": "Financi\u00e8re de la Salicorne S.A.S.",
@@ -627,48 +591,6 @@
         "median_days": 25,
         "average_business_days": 19.0,
         "median_business_days": 19,
-        "completed_count": 1
-      }
-    },
-    "zerra-wddp-holdco-pty-ltd-as-trustee-for-zerra-wddp-holdco-trust": {
-      "id": "zerra-wddp-holdco-pty-ltd-as-trustee-for-zerra-wddp-holdco-trust",
-      "canonical_name": "Zerra WDDP HoldCo Pty Ltd as trustee for Zerra WDDP HoldCo Trust",
-      "members": [
-        {
-          "name": "Zerra WDDP HoldCo Pty Ltd as trustee for Zerra WDDP HoldCo Trust",
-          "identifier": "701 254 239",
-          "identifier_type": "ACN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [
-          {
-            "merger_id": "WA-85061",
-            "merger_name": "WDDP Consortium \u2013 Wambo Cattle Company",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-10-20T12:00:00Z",
-            "determination_date": "2026-11-10T12:00:00Z"
-          }
-        ],
-        "target": [],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 0,
-      "phase_2_count": 0,
-      "waiver_count": 1,
-      "active_count": 0,
-      "phase_duration": null,
-      "waiver_duration": {
-        "average_days": 21.0,
-        "median_days": 21,
-        "average_business_days": 15.0,
-        "median_business_days": 15,
         "completed_count": 1
       }
     }

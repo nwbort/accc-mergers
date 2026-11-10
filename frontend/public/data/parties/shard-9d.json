@@ -538,13 +538,45 @@
           "identifier_type": null
         },
         {
+          "name": "Proofpoint, Inc",
+          "identifier": "3540718",
+          "identifier_type": null
+        },
+        {
+          "name": "Thoma Bravo, L.P.",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
           "name": "Thoma Bravo, LP",
           "identifier": "SEC  80173780",
+          "identifier_type": null
+        },
+        {
+          "name": "Thoma Bravo, UGP LLC",
+          "identifier": "7725781",
+          "identifier_type": null
+        },
+        {
+          "name": "Vail Merger Sub, Inc",
+          "identifier": "10795571",
           "identifier_type": null
         }
       ],
       "mergers": {
         "acquirer": [
+          {
+            "merger_id": "MN-65042",
+            "merger_name": "Thoma Bravo - Varonis",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-04T12:00:00Z",
+            "determination_date": null
+          },
           {
             "merger_id": "MN-80047",
             "merger_name": "Thoma Bravo - Tanda",
@@ -556,18 +588,36 @@
             "phase": "Phase 1",
             "notification_date": "2026-10-16T12:00:00Z",
             "determination_date": null
+          },
+          {
+            "merger_id": "WA-55041",
+            "merger_name": "Thoma Bravo \u2013 Accelerant Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-28T12:00:00Z",
+            "determination_date": "2026-10-27T12:00:00Z"
           }
         ],
         "target": [],
         "other": []
       },
-      "merger_count": 1,
-      "phase_1_count": 1,
+      "merger_count": 3,
+      "phase_1_count": 2,
       "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
+      "waiver_count": 1,
+      "active_count": 2,
       "phase_duration": null,
-      "waiver_duration": null
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
     }
   }
 }

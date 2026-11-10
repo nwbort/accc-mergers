@@ -906,6 +906,16 @@
       "canonical_name": "Woodside Energy",
       "members": [
         {
+          "name": "WOODSIDE BROWSE PTY. LTD.",
+          "identifier": "11 120 237 381",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "WOODSIDE ENERGY (LNG FUELS AND POWER) PTY LTD",
+          "identifier": "75 626 310 727",
+          "identifier_type": "ABN"
+        },
+        {
           "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD",
           "identifier": "41 004 514 489",
           "identifier_type": "ABN"
@@ -929,6 +939,18 @@
       "mergers": {
         "acquirer": [
           {
+            "merger_id": "WA-55038",
+            "merger_name": "Woodside \u2013 PetroChina\u2019s interest in Browse unincorporated joint venture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-18T12:00:00Z",
+            "determination_date": "2026-10-20T12:00:00Z"
+          },
+          {
             "merger_id": "MN-20034",
             "merger_name": "Chevron - Woodside asset swap",
             "is_waiver": false,
@@ -941,8 +963,7 @@
             "determination_date": "2026-09-08T12:00:00Z"
           }
         ],
-        "target": [],
-        "other": [
+        "target": [
           {
             "merger_id": "MN-10044",
             "merger_name": "OCTA \u2013 Woodside-EDL LNG JV",
@@ -954,20 +975,9 @@
             "phase": "Phase 1",
             "notification_date": "2026-10-28T12:00:00Z",
             "determination_date": null
-          },
-          {
-            "merger_id": "WA-55038",
-            "merger_name": "Woodside \u2013 PetroChina\u2019s interest in Browse unincorporated joint venture",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-09-18T12:00:00Z",
-            "determination_date": "2026-10-20T12:00:00Z"
           }
-        ]
+        ],
+        "other": []
       },
       "merger_count": 3,
       "phase_1_count": 2,

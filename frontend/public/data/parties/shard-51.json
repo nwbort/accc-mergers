@@ -278,70 +278,15 @@
         "completed_count": 1
       }
     },
-    "i-squared-capital-llc": {
-      "id": "i-squared-capital-llc",
-      "canonical_name": "I Squared Capital, LLC",
-      "members": [
-        {
-          "name": "I Squared Capital, LLC",
-          "identifier": null,
-          "identifier_type": null
-        }
-      ],
-      "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
-          {
-            "merger_id": "MN-75054",
-            "merger_name": "I Squared Capital \u2013 oOh!media",
-            "is_waiver": false,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-09-02T12:00:00Z",
-            "determination_date": "2026-09-23T12:00:00Z"
-          },
-          {
-            "merger_id": "WA-80018",
-            "merger_name": "SOILCO - Go Grow",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Waiver",
-            "notification_date": "2026-05-18T12:00:00Z",
-            "determination_date": "2026-06-02T12:00:00Z"
-          }
-        ]
-      },
-      "merger_count": 2,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 1,
-      "active_count": 0,
-      "phase_duration": {
-        "average_days": 21.0,
-        "median_days": 21,
-        "average_business_days": 15.0,
-        "median_business_days": 15,
-        "completed_count": 1
-      },
-      "waiver_duration": {
-        "average_days": 15.0,
-        "median_days": 15,
-        "average_business_days": 10.0,
-        "median_business_days": 10,
-        "completed_count": 1
-      }
-    },
     "koch-inc": {
       "id": "koch-inc",
       "canonical_name": "Koch, Inc.",
       "members": [
+        {
+          "name": "KAES Phosphate Holdings, LLC",
+          "identifier": "not applicable",
+          "identifier_type": null
+        },
         {
           "name": "Koch Equity Development LLC",
           "identifier": "US Employer Identification Number: 371473024",
@@ -366,6 +311,18 @@
       "mergers": {
         "acquirer": [
           {
+            "merger_id": "MN-10039",
+            "merger_name": "Koch \u2013 50% interest in certain assets of OCP Nutricrops",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": null
+          },
+          {
             "merger_id": "WA-50033",
             "merger_name": "Koch \u2013 additional interest in Victoria PLC",
             "is_waiver": true,
@@ -380,18 +337,6 @@
         ],
         "target": [],
         "other": [
-          {
-            "merger_id": "MN-10039",
-            "merger_name": "Koch \u2013 50% interest in certain assets of OCP Nutricrops",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-10-16T12:00:00Z",
-            "determination_date": null
-          },
           {
             "merger_id": "MN-01061",
             "merger_name": "Molex \u2013 Smiths Interconnect",
