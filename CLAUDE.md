@@ -840,7 +840,10 @@ re-read two records that move perhaps once a year.
 - `auto-merge-detection/` — merge a detection PR whose suggestions are all
   high confidence (the detector's `--meta-json` says `all_certain`), open a
   `needs-verification` issue from its `--issue-markdown`, and push a priority-4
-  notification. Used after the related-mergers and related-parties detectors;
+  notification. Used after the related-mergers and related-parties detectors,
+  after which `pipeline.yml` dispatches a fresh run of itself (the merge is a
+  `GITHUB_TOKEN` push, which starts no workflow), so the merge reaches the site
+  without waiting for the next scheduled run;
   with `revertable` the issue also offers `/revert` (`revert-auto-merge.yml`),
   which only makes sense for a detector that keeps a rejection list
   (`related_parties.json`'s `rejected`), or the next run merges it straight back.

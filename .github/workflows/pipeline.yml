@@ -984,6 +984,7 @@ jobs:
       # are conservatively left for manual review in their entirety, since a
       # PR merge can't be split pair-by-pair.
       - name: Auto-merge exact-match waiver-refile PR
+        id: relm_merge
         if: steps.relm.outputs.found == 'true' && steps.relm.outputs.changed == 'true'
         uses: ./.github/actions/auto-merge-detection
         with:
@@ -1034,6 +1035,7 @@ jobs:
       # file names, not pr_meta.json / pr_issue_body.md: the related-mergers
       # step's copies are still in the working tree.
       - name: Auto-merge high-confidence related-parties PR
+        id: relp_merge
         if: steps.relp.outputs.found == 'true' && steps.relp.outputs.changed == 'true'
         uses: ./.github/actions/auto-merge-detection
         with:
@@ -1047,6 +1049,26 @@ jobs:
           ntfy-topic: ${{ secrets.NTFY_TOPIC }}
           ntfy-token: ${{ secrets.NTFY_TOKEN }}
           ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
+
+      # An auto-merge is made with GITHUB_TOKEN, and a GITHUB_TOKEN push does
+      # not start this workflow's push trigger, so without this the merged
+      # links would wait for the next scheduled run (overnight, or a whole
+      # weekend) to reach the site. Dispatch a run instead, as
+      # revert-auto-merge.yml does for the undo. It queues behind this one in
+      # the concurrency group. Don't use "[skip ci]" on detection PRs to save a
+      # deploy: their data files are outside the Pages build watch paths, so
+      # merging one builds nothing anyway, and the tag would stop the pipeline
+      # run that a hand-merged PR needs.
+      - name: Regenerate site data after an auto-merge
+        if: >-
+          github.ref == 'refs/heads/main'
+          && (steps.relm_merge.outputs.merged == 'true'
+              || steps.relp_merge.outputs.merged == 'true')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run pipeline.yml --ref main \
+            || echo "::warning::Could not dispatch pipeline.yml; the auto-merged data will appear on the next scheduled run"
 
       # -- Missing notification dates → fix/missing-notification-dates --
       #
