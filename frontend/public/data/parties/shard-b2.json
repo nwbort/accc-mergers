@@ -296,6 +296,48 @@
         "completed_count": 1
       }
     },
+    "h-u-pty-ltd": {
+      "id": "h-u-pty-ltd",
+      "canonical_name": "H-U Pty Ltd",
+      "members": [
+        {
+          "name": "H-U PTY LTD",
+          "identifier": "92 675 342 177",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40051",
+            "merger_name": "Built Living joint venture \u2013 Human Urban",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-14T12:00:00Z",
+            "determination_date": "2026-11-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "marelli-corporation": {
       "id": "marelli-corporation",
       "canonical_name": "Marelli Corporation",
