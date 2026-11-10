@@ -232,7 +232,7 @@
         "24": 1
       },
       "15": {
-        "21": 23,
+        "21": 24,
         "22": 6,
         "23": 2,
         "24": 3,
@@ -303,17 +303,17 @@
     },
     "stats": {
       "average": 14.3,
-      "median": 15.0,
+      "median": 15,
       "min": 2,
       "max": 24,
-      "count": 512
+      "count": 513
     },
     "calendar_stats": {
       "average": 20.8,
-      "median": 21.0,
+      "median": 21,
       "min": 2,
       "max": 39,
-      "count": 512
+      "count": 513
     }
   },
   "monthly_volume": {
@@ -365,7 +365,7 @@
       72,
       69,
       55,
-      34,
+      35,
       1
     ],
     "waivers_pending_estimate": [
@@ -382,8 +382,8 @@
       0,
       0,
       0,
-      28,
-      20
+      29,
+      21
     ]
   },
   "open_caseload": {
@@ -438,7 +438,7 @@
       54,
       52,
       47,
-      17,
+      18,
       0
     ],
     "waivers_pending_estimate": [
@@ -456,7 +456,7 @@
       0,
       0,
       0,
-      28,
+      29,
       49
     ],
     "as_at": "2026-11-10"
@@ -491,12 +491,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 18.0,
+          "median": 18,
           "average": 17.2,
           "p90": 22,
           "min": 4,
           "max": 24,
-          "count": 64,
+          "count": 65,
           "duration_histogram": {
             "4": 1,
             "8": 2,
@@ -504,7 +504,7 @@
             "11": 2,
             "12": 1,
             "14": 5,
-            "15": 4,
+            "15": 5,
             "16": 8,
             "17": 6,
             "18": 9,
@@ -515,7 +515,7 @@
             "23": 2,
             "24": 3
           },
-          "median_delta": 3.0
+          "median_delta": 3
         },
         "phase_1_speed": {
           "day15": {
@@ -537,7 +537,7 @@
           },
           "phase_2": {},
           "waivers": {
-            "Approved": 61,
+            "Approved": 62,
             "Not approved": 3
           }
         }
@@ -578,12 +578,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 18.0,
+          "median": 18,
           "average": 16.7,
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 190,
+          "count": 191,
           "duration_histogram": {
             "3": 1,
             "4": 1,
@@ -597,7 +597,7 @@
             "12": 6,
             "13": 3,
             "14": 11,
-            "15": 12,
+            "15": 13,
             "16": 17,
             "17": 15,
             "18": 28,
@@ -608,7 +608,7 @@
             "23": 4,
             "24": 5
           },
-          "median_delta": 3.0
+          "median_delta": 3
         },
         "phase_1_speed": {
           "day15": {
@@ -635,7 +635,7 @@
             "Not approved": 1
           },
           "waivers": {
-            "Approved": 179,
+            "Approved": 180,
             "Not approved": 11
           }
         }
@@ -651,12 +651,12 @@
         "count": 282
       },
       "waivers": {
-        "median": 15.0,
+        "median": 15,
         "average": 14.3,
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 512
+        "count": 513
       }
     },
     "pre_notification": {
@@ -673,7 +673,7 @@
         },
         {
           "median": 17,
-          "average": 19.5,
+          "average": 19.3,
           "p90": 36,
           "min": 0,
           "max": 74,
@@ -869,9 +869,9 @@
           "count": 64
         },
         {
-          "median": 18.0,
-          "average": 17.1,
-          "count": 18
+          "median": 18,
+          "average": 17.0,
+          "count": 19
         }
       ],
       "open_caseload": [
@@ -1122,12 +1122,12 @@
     },
     {
       "division": "Commissioner Woodward",
-      "count": 51,
+      "count": 52,
       "outcome_mix": {
-        "Approved": 50,
+        "Approved": 51,
         "Not approved": 1
       },
-      "median_business_days": 18
+      "median_business_days": 18.0
     },
     {
       "division": "A division of the Commission (s19 direction)",

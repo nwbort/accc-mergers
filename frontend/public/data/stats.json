@@ -1,6 +1,6 @@
 {
   "total_mergers": 323,
-  "total_waivers": 512,
+  "total_waivers": 513,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 276,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 487,
+    "Approved": 488,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.841796875,
-    "median_days": 21.0,
-    "average_business_days": 14.271484375,
-    "median_business_days": 15.0
+    "average_days": 20.842105263157894,
+    "median_days": 21,
+    "average_business_days": 14.2729044834308,
+    "median_business_days": 15
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 211
+      "count": 212
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 101
+      "count": 102
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01123",
+      "merger_name": "29 North \u2013 additional interest in Royal Foods",
+      "determination": "Approved",
+      "determination_date": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-11-10T17:31:21+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-70043",
       "merger_name": "STRABAG \u2013 KEE Surfacing",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-09T12:00:00Z",
       "page_modified_datetime": "2026-11-09T16:00:08+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-55040",
-      "merger_name": "Kirin \u2013 Jamieson Wellness",
-      "determination": "Approved",
-      "determination_date": "2026-11-09T12:00:00Z",
-      "page_modified_datetime": "2026-11-09T13:06:17+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
