@@ -3,12 +3,12 @@
   "total_waivers": 507,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 275,
-    "Under assessment": 42,
+    "Assessment completed": 276,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 268,
+    "Approved": 269,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 25
   },
   "clearance_rate": {
-    "cleared": 273,
+    "cleared": 274,
     "not_cleared": 2,
-    "total": 275,
+    "total": 276,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.448398576512457,
-    "median_days": 26,
-    "average_business_days": 20.04626334519573,
-    "median_business_days": 18,
+    "average_days": 29.4468085106383,
+    "median_days": 26.0,
+    "average_business_days": 20.04964539007092,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 59,
-        "percentage": 21.0
+        "percentage": 20.9
       },
       "day20": {
         "count": 204,
-        "percentage": 72.6
+        "percentage": 72.3
       },
       "day30": {
-        "count": 263,
+        "count": 264,
         "percentage": 93.6
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-85053",
+      "merger_name": "Funds managed by New Forests \u2013 Forestry plantations of AKD",
+      "determination": "Approved",
+      "determination_date": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-11-10T15:59:11+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-25060",
       "merger_name": "Talent Acquisition Group \u2013 Strategy1 HR",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-04T12:00:00Z",
       "page_modified_datetime": "2026-11-04T17:57:21+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85059",
-      "merger_name": "SMM Perth \u2013 mining tenements of Rio Tinto related to the Winu copper-gold project in Western Australia",
-      "determination": "Approved",
-      "determination_date": "2026-11-04T12:00:00Z",
-      "page_modified_datetime": "2026-11-04T17:50:36+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
