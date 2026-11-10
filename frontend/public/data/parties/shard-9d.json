@@ -87,6 +87,18 @@
       "mergers": {
         "acquirer": [
           {
+            "merger_id": "MN-25062",
+            "merger_name": "Coles \u2013 supermarket site in Rainbow Beach, NSW",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-10T12:00:00Z",
+            "determination_date": null
+          },
+          {
             "merger_id": "MN-40049",
             "merger_name": "Coles \u2013 supermarket site in Cannonvale Central (QLD)",
             "is_waiver": false,
@@ -318,11 +330,11 @@
         "target": [],
         "other": []
       },
-      "merger_count": 19,
-      "phase_1_count": 9,
+      "merger_count": 20,
+      "phase_1_count": 10,
       "phase_2_count": 1,
       "waiver_count": 9,
-      "active_count": 2,
+      "active_count": 3,
       "phase_duration": {
         "average_days": 29.0,
         "median_days": 24.5,

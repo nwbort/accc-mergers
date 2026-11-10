@@ -82,6 +82,15 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-11-10T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Lactalis%20-%20Saputo%20Dairy%20UK%20-%20Questionnaire_1.docx",
+      "url_gh": "/mergers/MN-45041/Lactalis - Saputo Dairy UK - Questionnaire_1.pdf",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
@@ -91,6 +100,7 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
+  "has_questionnaire": true,
   "related_merger": {
     "merger_id": "WA-60046",
     "relationship": "refiled_from",
@@ -122,15 +132,15 @@
     }
   ],
   "phase_1_estimate": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 281,
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 199,
     "as_of": "2026-11-10",
     "estimated_at": "2026-11-10",
     "method_version": 2

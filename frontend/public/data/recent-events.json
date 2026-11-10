@@ -4,10 +4,29 @@
       "type": "notified",
       "title": "Merger notified to ACCC",
       "date": "2026-11-10T12:00:00Z",
+      "merger_id": "MN-25062",
+      "merger_name": "Coles \u2013 supermarket site in Rainbow Beach, NSW",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false
+    },
+    {
+      "type": "notified",
+      "title": "Merger notified to ACCC",
+      "date": "2026-11-10T12:00:00Z",
       "merger_id": "MN-45041",
       "merger_name": "Lactalis \u2013 Saputo Dairy UK",
       "stage": "Phase 1 - initial assessment",
       "is_waiver": false
+    },
+    {
+      "type": "questionnaire",
+      "title": "Phase 1 consultation",
+      "date": "2026-11-10T12:00:00Z",
+      "merger_id": "MN-45041",
+      "merger_name": "Lactalis \u2013 Saputo Dairy UK",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false,
+      "url_gh": "/mergers/MN-45041/Lactalis - Saputo Dairy UK - Questionnaire_1.pdf"
     },
     {
       "type": "phase_1_determination",
@@ -895,6 +914,6 @@
       "url_gh": "/mergers/WA-85058/Redwood Services Group \u2013 Virtual IT Department (WA-85058) - Notification waiver determination - 27 October 2026.pdf"
     }
   ],
-  "count": 92,
+  "count": 94,
   "days_back": 14
 }

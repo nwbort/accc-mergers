@@ -1,10 +1,10 @@
 {
-  "total_mergers": 322,
+  "total_mergers": 323,
   "total_waivers": 507,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 276,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 49
+      "count": 50
     },
     {
       "name": "Software Publishing",
@@ -83,12 +83,12 @@
       "count": 28
     },
     {
-      "name": "Accommodation",
+      "name": "Supermarket and Grocery Stores",
       "count": 27
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 26
+      "name": "Accommodation",
+      "count": 27
     },
     {
       "name": "Cafes and Restaurants",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-25062",
+      "merger_name": "Coles \u2013 supermarket site in Rainbow Beach, NSW",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-11-10T16:30:26+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-45041",
       "merger_name": "Lactalis \u2013 Saputo Dairy UK",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-30T12:00:00Z",
       "page_modified_datetime": "2026-11-02T09:19:14+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-90044",
-      "merger_name": "Stellex and ONA \u2013 Score",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-29T12:00:00Z",
-      "page_modified_datetime": "2026-10-30T15:48:56+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
