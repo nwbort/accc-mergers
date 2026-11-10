@@ -254,6 +254,48 @@
       },
       "waiver_duration": null
     },
+    "strabag-australia-pty-ltd": {
+      "id": "strabag-australia-pty-ltd",
+      "canonical_name": "Strabag Australia Pty Ltd",
+      "members": [
+        {
+          "name": "STRABAG AUSTRALIA PTY LTD",
+          "identifier": "14 159 507 043",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70043",
+            "merger_name": "STRABAG \u2013 KEE Surfacing",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-19T12:00:00Z",
+            "determination_date": "2026-11-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
     "wave-merger-sub-inc": {
       "id": "wave-merger-sub-inc",
       "canonical_name": "Wave Merger Sub, Inc.",

@@ -1,6 +1,6 @@
 {
   "total_mergers": 323,
-  "total_waivers": 511,
+  "total_waivers": 512,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 276,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 486,
+    "Approved": 487,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.83953033268102,
-    "median_days": 21,
-    "average_business_days": 14.268101761252446,
-    "median_business_days": 15
+    "average_days": 20.841796875,
+    "median_days": 21.0,
+    "average_business_days": 14.271484375,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
@@ -91,7 +91,7 @@
       "count": 27
     },
     {
-      "name": "Cafes and Restaurants",
+      "name": "Other Heavy and Civil Engineering Construction",
       "count": 26
     }
   ],
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70043",
+      "merger_name": "STRABAG \u2013 KEE Surfacing",
+      "determination": "Approved",
+      "determination_date": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-11-10T17:30:07+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-45035",
       "merger_name": "SoftBank \u2013 ABB Robotics",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-09T12:00:00Z",
       "page_modified_datetime": "2026-11-09T13:06:17+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-75061",
-      "merger_name": "ABB - Rotork",
-      "determination": "Approved",
-      "determination_date": "2026-11-07T12:00:00Z",
-      "page_modified_datetime": "2026-11-09T09:56:55+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
