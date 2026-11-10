@@ -56261,7 +56261,7 @@
         "id_issued_estimated": "2026-10-16",
         "id_issued_before": "2026-10-16",
         "id_issued_after": "2026-10-09",
-        "min_days_witness": "MN-70049",
+        "min_days_witness": "WA-70048",
         "max_days_witness": "WA-70046",
         "basis": "bracketed",
         "method_version": 1
@@ -56402,7 +56402,7 @@
         "id_issued_before": null,
         "id_issued_after": "2026-10-09",
         "min_days_witness": null,
-        "max_days_witness": "WA-70046",
+        "max_days_witness": "WA-70048",
         "basis": "upper-bound-only",
         "method_version": 1
       }
@@ -138364,6 +138364,214 @@
           "targets": [
             "ENZ QUEALY PTY LIMITED",
             "Mark Quealy Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/abp-%E2%80%93-investments-in-octopus-australia-sustainable-investments-fund",
+      "merger_name": "ABP \u2013 investments in Octopus Australia Sustainable Investments Fund",
+      "status": "Assessment completed",
+      "merger_id": "WA-70048",
+      "effective_notification_datetime": "2026-10-16T12:00:00Z",
+      "original_notification_datetime": "2026-10-16T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-10T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-10T16:50:30+11:00",
+      "acquirers": [
+        {
+          "name": "AMAL Trustees Limited as trustee for APG Infrastructure Investments Holding Trust",
+          "identifier_type": "ABN",
+          "identifier": "98 609 737 064",
+          "canonical": {
+            "id": "harvest-pub",
+            "name": "Harvest Pub"
+          },
+          "party_page": {
+            "id": "harvest-pub",
+            "name": "Harvest Pub",
+            "curated": true
+          }
+        },
+        {
+          "name": "AMAL Trustees Limited as trustee for AOP Investment Trust",
+          "identifier_type": "ABN",
+          "identifier": "98 609 737 064",
+          "canonical": {
+            "id": "harvest-pub",
+            "name": "Harvest Pub"
+          },
+          "party_page": {
+            "id": "harvest-pub",
+            "name": "Harvest Pub",
+            "curated": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Equity Trustees Limited atf the Octopus Australia Sustainable Investments Fund",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "equity-trustees-limited-atf-the-octopus-australia-sustainable-investments-fund",
+            "name": "Equity Trustees Limited atf the Octopus Australia Sustainable Investments Fund"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "OCTOPUS CAPITAL AUST PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "72 627 019 096",
+          "party_page": {
+            "id": "octopus-capital-aust-pty-ltd",
+            "name": "Octopus Capital Aust Pty Ltd"
+          }
+        },
+        {
+          "name": "APG Asset Management NV",
+          "identifier_type": null,
+          "identifier": "Dutch commercial register number 58476369",
+          "party_page": {
+            "id": "apg-asset-management-nv",
+            "name": "APG Asset Management NV"
+          }
+        },
+        {
+          "name": "OCTOPUS AUST OASIS MANAGER PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "52 660 429 087",
+          "party_page": {
+            "id": "octopus-aust-oasis-manager-pty-ltd",
+            "name": "Octopus Aust Oasis Manager Pty Ltd"
+          }
+        },
+        {
+          "name": "Stichting Pensioenfonds ABP",
+          "identifier_type": null,
+          "identifier": "Netherlands Chamber of Commerce Business Register Number CCI 41074000",
+          "party_page": {
+            "id": "stichting-pensioenfonds-abp-2",
+            "name": "Stichting Pensioenfonds ABP"
+          }
+        },
+        {
+          "name": "TELOPEA REAL ESTATE PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "37 153 268 574",
+          "party_page": {
+            "id": "telopea-real-estate-partners-pty-ltd",
+            "name": "Telopea Real Estate Partners Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "AMAL Trustees Limited:\n\n1. acting as trustee for AOP Investment Trust, will acquire an interest of up to a maximum of approximately 12% in the Octopus Australia Sustainable Investments Fund (**OASIS**), and\n2. acting as trustee for APG Infra Investments Holding Trust, will increase its interest in OASIS from approximately 27.5% to a maximum of approximately 49%.\n\nEach of the AOP Investment Trust and APG Infra Investments Holding Trust are managed investment trusts, held by AMAL Trustees Ltd. The trusts are both managed by Telopea Real Estate Partners Pty Ltd, an Australian investment manager. The interests in the trusts are both managed by APG Asset Management NV (**APG**), an indirect wholly owned subsidiary of Stichting Pensioenfonds ABP, on behalf of various pension fund clients. APG is a pension fund asset manager based in the Netherlands. APG manages investments for pension fund clients both in the Netherlands and globally.\n\nOASIS is ultimately managed by Octopus Capital Aust Pty Limited (**OCA**). OCA and OASIS, together with their subsidiaries (collectively, **Octopus Australia**), is an Australian-based renewables developer, operator and investment manager. Octopus Australia manages approximately AUD 2 billion in renewable energy assets.",
+      "events": [
+        {
+          "date": "2026-11-10T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/ABP%20%E2%80%93%20investments%20in%20Octopus%20Australia%20Sustainable%20Investments%20Fund%20%28WA-70048%29%20-%20Notification%20waiver%20determination%20-%2010%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "AMAL Trustees Limited, as trustee for AOP Investment Trust and for\nAPG Infrastructure Investments Holding Trust, applied for a\nnotification waiver in respect of:\n\u2022 AOP Investment Trust\u2019s proposed acquisition of an interest\nof up to a maximum of approximately 12% in the Octopus\nAustralia Sustainable Investments Fund (OASIS), and\n\u2022 APG Infra Investments Holding Trust increasing its interest\nin OASIS from approximately 27.5% to a maximum of\napproximately 49%,\nas described in the transaction documents provided as part of the\napplication (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "10 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "Each of the AOP Investment Trust and APG Infra Investments\nHolding Trust are managed investment trusts, held by AMAL\nTrustees Ltd. The trusts are both managed by Telopea Real Estate\nPartners Pty Ltd, an Australian investment manager. The interests in\nthe trusts are both managed by APG Asset Management NV (APG),\nan indirect wholly owned subsidiary of Stichting Pensioenfonds ABP,\non behalf of various pension fund clients. APG is a pension fund\nasset manager based in the Netherlands. APG manages investments\nfor pension fund clients both in the Netherlands and globally.\nOASIS is ultimately managed by Octopus Capital Aust Pty Limited\n(OCA). OCA and OASIS, together with their subsidiaries (collectively,\nOctopus Australia), is an Australian-based renewables developer,\noperator and investment manager. Octopus Australia manages\napproximately AUD 2 billion in renewable energy assets."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. there is no horizontal overlap between the acquiring group\n(the trusts, APG and Stichting Pensioenfonds ABP) and\nOctopus Australia in the supply of electricity generation\nservices in Australia\nb. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-70048/ABP \u2013 investments in Octopus Australia Sustainable Investments Fund (WA-70048) - Notification waiver determination - 10 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-16T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-40029",
+          "merger_name": "Laundy \u2013 Woy Woy Hotel",
+          "acquirers": [
+            "LAUNDY WOY TRADING PTY LTD",
+            "LAUNDY WOY FREEHOLD PTY LTD"
+          ],
+          "targets": [
+            "HARVEST PUB OPERATIONS 2 PTY LTD",
+            "AMAL TRUSTEES PTY LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-25025",
+          "merger_name": "Laundy \u2013 Woy Woy Hotel",
+          "acquirers": [
+            "LAUNDY WOY FREEHOLD PTY LTD",
+            "LAUNDY WOY TRADING PTY LTD"
+          ],
+          "targets": [
+            "HARVEST PUB OPERATIONS 2 PTY LTD",
+            "AMAL TRUSTEES PTY LIMITED"
+          ],
+          "accc_determination": "Not approved"
+        },
+        {
+          "merger_id": "WA-01130",
+          "merger_name": "ABP - Macquarie Agriculture Fund Crop Australia 2",
+          "acquirers": [
+            "Labiosa Investments Holding B.V."
+          ],
+          "targets": [
+            "Macquarie Agriculture Fund Crop Australia 2A",
+            "Macquarie Agriculture Fund Crop Australia 2B"
           ],
           "accc_determination": "Approved"
         }
