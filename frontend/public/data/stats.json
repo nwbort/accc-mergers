@@ -1,6 +1,6 @@
 {
   "total_mergers": 323,
-  "total_waivers": 510,
+  "total_waivers": 511,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 276,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 485,
+    "Approved": 486,
     "Not approved": 25
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.827450980392157,
-    "median_days": 21.0,
-    "average_business_days": 14.258823529411766,
-    "median_business_days": 15.0
+    "average_days": 20.83953033268102,
+    "median_days": 21,
+    "average_business_days": 14.268101761252446,
+    "median_business_days": 15
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 210
+      "count": 211
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45035",
+      "merger_name": "SoftBank \u2013 ABB Robotics",
+      "determination": "Approved",
+      "determination_date": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-11-10T16:53:55+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-70048",
       "merger_name": "ABP \u2013 investments in Octopus Australia Sustainable Investments Fund",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-40050",
-      "merger_name": "Sims - business assets of Base Metal Recyclers, VIC",
-      "determination": "Approved",
-      "determination_date": "2026-11-05T12:00:00Z",
-      "page_modified_datetime": "2026-11-05T16:39:01+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
