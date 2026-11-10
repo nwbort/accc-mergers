@@ -9,6 +9,7 @@ import CommandPalette from './components/CommandPalette';
 import FeedbackPopup from './components/FeedbackPopup';
 import LoadingSpinner from './components/LoadingSpinner';
 import { TrackingProvider } from './context/TrackingContext';
+import { PushProvider } from './context/PushContext';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import { useBackgroundRefresh } from './hooks/useBackgroundRefresh';
 import ScrollToTop from './components/ScrollToTop';
@@ -100,9 +101,11 @@ function App() {
     <HelmetProvider>
       <Router>
         <TrackingProvider>
+        <PushProvider>
         <ErrorBoundary>
           <AppContent />
         </ErrorBoundary>
+        </PushProvider>
         </TrackingProvider>
       </Router>
     </HelmetProvider>

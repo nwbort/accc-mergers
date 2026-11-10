@@ -30,7 +30,7 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 
 One directory per Worker, each named after the Worker it deploys (the directory name matches `name` in its `wrangler.toml`). All are deployed separately via wrangler; `accc-register-watcher` and `mergers-digest-signup` also deploy from GitHub (`deploy-workers.yml`) — see [`workers/README.md`](workers/README.md).
 
-- `workers/mergers-digest-signup/` — public HTTP API: digest email signup (validates Cloudflare Turnstile tokens, adds to a Resend audience; the Android app's `POST /app-signup` instead emails a signed link to confirm, double opt-in, since the app can't show Turnstile) and `POST /feedback` writes to the `mergers-feedback` D1 database; `POST /event` bumps an aggregate, per-day feature-usage counter in the same database (`utils/trackEvent.js`)
+- `workers/mergers-digest-signup/` — public HTTP API: digest email signup (validates Cloudflare Turnstile tokens, adds to a Resend audience; the Android app's `POST /app-signup` instead emails a signed link to confirm, double opt-in, since the app can't show Turnstile) and `POST /feedback` writes to the `mergers-feedback` D1 database; `POST /event` bumps an aggregate, per-day feature-usage counter in the same database (`utils/trackEvent.js`); `POST /push/topics` subscribes a browser's FCM token to the topics for what it follows, for browser notifications, keeping nothing (`src/push.js`)
 - `workers/accc-register-watcher/` — Email Worker bound to a mailbox subscribed to the ACCC's register update mailing list; fires a `repository_dispatch` (`new_merger_detected`) to trigger `pipeline.yml` immediately on each email. See its README for the Cloudflare Email Routing setup
 - `workers/feedback-admin/` — private read-only viewer over the same feedback D1 database, gated behind an `x-secret` header
 
@@ -270,7 +270,20 @@ frontend/src/
 │                         #   type, and whether the dashboard's Recent events timeline shows it;
 │                         #   key order is significance within a day)
 ├── context/              # TrackingContext.jsx — global merger + industry follow state via localStorage
-│                         #   (industry follows flag only new filings/determinations)
+│                         #   (industry follows flag only new filings/determinations). What a follow
+│                         #   surfaces and each event's key are utils/trackedEvents.js, shared with
+│                         #   the notification service worker. PushContext.jsx — optional browser
+│                         #   notifications on top (the switch is PushToggle in the notification
+│                         #   panel); following never depends on them
+├── push/                 # Browser notifications over FCM, the same topics and "check now" message
+│                         #   as the Android app (see docs/android-push.md#browsers): topics.js (names
+│                         #   shared with scripts/push/fcm.py and the app), webPush.js (token, topic
+│                         #   sync through the signup Worker; the Firebase SDK is loaded only once
+│                         #   switched on), store.js (the IndexedDB copy of the follow state the
+│                         #   worker reads), news.js (the worker's follow check) and sw.js (the
+│                         #   service worker, built to /sw.js by vite.config.js: no fetch handler,
+│                         #   no caching). Inert until FIREBASE_WEB_CONFIG and FIREBASE_VAPID_KEY in
+│                         #   config.js are filled in
 ├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js,
 │                         #   useDecodedParam.js, useTurnstile.js (the Cloudflare
 │                         #   Turnstile widget lifecycle — script injection, explicit
@@ -428,9 +441,9 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   publish_lexicons.py / publish_matters.py / post_bluesky.py are
 │                         #   the entry points, each a no-op without ATPROTO_APP_PASSWORD.
 │                         #   State lives in data/processed/atproto_{records,posts}.json
-├── push/                 # fcm.py: Android push over Firebase Cloud Messaging topics, from
+├── push/                 # fcm.py: Android and browser push over Firebase Cloud Messaging topics, from
 │                         #   the live manifest.json's changes (see docs/android-push.md).
-│                         #   Topic names shared with the app's notify/Push.kt
+│                         #   Topic names shared with the app's notify/Push.kt and frontend/src/push/topics.js
 ├── linkedin/             # LinkedIn posting (see docs/linkedin.md), reusing
 │                         #   atproto/post_bluesky.py's milestones/state helpers: webhook.py
 │                         #   sends one JSON POST per milestone to a Make.com scenario that
@@ -799,7 +812,7 @@ exists rather than 404ing into the SPA's `index.html`.
 | `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere and post to Bluesky → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, or whose linked determination failed to download, `missing-waiver-determination`, and its notification twin `missing-determination`), then runs all four detectors. The ATmosphere steps are `continue-on-error` and skip without their credentials — an unreachable PDS must not cost the run its scrape |
 | `linkedin-share-links.yml` | `workflow_run` after `pipeline.yml` completes on `main`, manual | Hand each new milestone to the Make.com webhook (`webhook.py`, `LINKEDIN_WEBHOOK_URL`), or failing that send its LinkedIn share link over ntfy, once Cloudflare Pages serves the matter's data as pushed (`share_links.py --wait-for-deploy`; LinkedIn caches the first scrape for a week), then commit `linkedin_posts.json` with `[skip ci]`. A workflow of its own so the wait doesn't hold the pipeline's concurrency group. Inert without `LINKEDIN_WEBHOOK_URL`, or `LINKEDIN_SHARE_LINKS` and `NTFY_TOPIC` |
 | `quarterly-report.yml` | Dispatched by `pipeline.yml` when its commit changes `quarterly.json`, push to `main` touching `quarterly.json`, `quarterly_pdf.py`, `scripts/requirements.txt` or the workflow, manual | Draw the quarterly report PDFs from the committed `quarterly.json` (`python -m scripts.generate.quarterly_pdf`) and commit them if they changed. Its own workflow so typesetting stays out of the pipeline's run and concurrency group. Commits *without* `[skip ci]`, since the PDFs are deployed; the `GITHUB_TOKEN` push doesn't retrigger the pipeline |
-| `android-push.yml` | `workflow_run` after `pipeline.yml` or `scrape-tribunal.yml` completes on `main`, every 3 hours, manual | Push to the Android app over Firebase Cloud Messaging topics (`scripts/push/fcm.py`): once Pages serves the checkout's data, compare the live `manifest.json` with the one last seen (kept in the Actions cache, never committed) and message `merger-{id}` / `industry-{stem}` / `list` for each change, or one `all` message past 100. A message only says "check now"; the app's own check decides what's news. Inert without `FCM_SERVICE_ACCOUNT`. See [`docs/android-push.md`](docs/android-push.md) |
+| `android-push.yml` | `workflow_run` after `pipeline.yml` or `scrape-tribunal.yml` completes on `main`, every 3 hours, manual | Push to the Android app, and to browsers that switched notifications on, over Firebase Cloud Messaging topics (`scripts/push/fcm.py`): once Pages serves the checkout's data, compare the live `manifest.json` with the one last seen (kept in the Actions cache, never committed) and message `merger-{id}` / `industry-{stem}` / `list` for each change, or one `all` message past 100. A message only says "check now"; the app's own check decides what's news. Inert without `FCM_SERVICE_ACCOUNT`. See [`docs/android-push.md`](docs/android-push.md) |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `publish-lexicons.yml` | Push to `main` touching `atproto/lexicons/**` or the workflow itself, manual (with a `dry_run` input) | Publish the `fyi.mergers.*` schemas as `com.atproto.lexicon.schema` records. Its own workflow rather than a pipeline step: a lexicon changes only when a person edits one, so a path-filtered push fires exactly then, where `pipeline.yml` would re-read both records several times a day to learn nothing moved. A missing `ATPROTO_APP_PASSWORD` skips a push run and fails a manual one |
 | `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json`, then Federal Court files from the Commonwealth Courts Portal into `judicial_reviews.json`, and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge (and the Federal Court judgments site's), so it runs in CI; the portal itself is plain HTTP. Deps: `scripts/requirements-tribunal.txt` |

@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite'
+import { build, defineConfig } from 'vite'
+import { fileURLToPath } from 'node:url'
 import react from '@vitejs/plugin-react'
 import prerenderMergers from './prerender.js'
 
@@ -22,9 +23,41 @@ function inlineCss() {
   }
 }
 
+// Builds the browser-notification service worker (src/push/sw.js) to
+// dist/sw.js once the site is built. On its own and as one classic script,
+// not as an entry of the main build: a service worker needs a fixed URL, and
+// Firefox can't load one that imports chunks.
+function serviceWorker() {
+  let outDir
+  return {
+    name: 'service-worker',
+    apply: 'build',
+    configResolved(config) {
+      outDir = config.build.outDir
+    },
+    async closeBundle() {
+      await build({
+        configFile: false,
+        logLevel: 'warn',
+        publicDir: false,
+        build: {
+          outDir,
+          emptyOutDir: false,
+          lib: {
+            entry: fileURLToPath(new URL('./src/push/sw.js', import.meta.url)),
+            formats: ['iife'],
+            name: 'mergersFyiServiceWorker',
+            fileName: () => 'sw.js',
+          },
+        },
+      })
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), inlineCss(), prerenderMergers()],
+  plugins: [react(), inlineCss(), prerenderMergers(), serviceWorker()],
   build: {
     rollupOptions: {
       output: {

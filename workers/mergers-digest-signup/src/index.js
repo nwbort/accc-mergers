@@ -9,6 +9,7 @@
  *   POST /confirm   — that button: adds the contact to the Resend audience
  *   POST /feedback  — stores feedback in Cloudflare D1
  *   POST /event     — increments an aggregate, privacy-preserving feature-usage counter
+ *   POST /push/topics — subscribes a browser to the FCM topics for what it follows (src/push.js)
  *
  * Required Worker secrets (set via `wrangler secret put`):
  *   RESEND_API_KEY        — Resend API key
@@ -16,6 +17,9 @@
  *   TURNSTILE_SECRET_KEY  — Cloudflare Turnstile secret key
  *   CONFIRM_SECRET        — optional: signs the app's confirmation links;
  *                           without it, a key derived from RESEND_API_KEY
+ *   FCM_SERVICE_ACCOUNT   — Firebase service account key, JSON (push only; without
+ *                           it /push/topics answers 503 and the site leaves
+ *                           browser notifications off)
  *
  * Required D1 binding (wrangler.toml):
  *   DB  — mergers-feedback D1 database
@@ -26,6 +30,8 @@
  * To view feedback: Cloudflare Dashboard → D1 → mergers-feedback → Console
  *   SELECT * FROM feedback ORDER BY created_at DESC;
  */
+
+import { applyTopicChanges, parseTopicChanges, serviceAccount } from "./push.js";
 
 const RESEND_API_BASE = "https://api.resend.com";
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
@@ -612,6 +618,48 @@ async function handleEvent(request, env, origin) {
 }
 
 // ---------------------------------------------------------------------------
+// Handler: POST /push/topics — a browser's notification topics (see push.js)
+//
+// No Turnstile, as for /event: a browser does this unseen whenever its follow
+// list changes, and a topic subscription only ever brings a "check now". The
+// token and topics are passed to Google and not kept.
+// ---------------------------------------------------------------------------
+
+async function handlePushTopics(request, env, origin) {
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const withinLimit = await checkRateLimit(env, `push:${ip}`, 30, 600);
+  if (!withinLimit) {
+    return jsonResponse({ error: "Too many requests" }, 429, origin, env);
+  }
+
+  const account = serviceAccount(env);
+  if (!account) {
+    return jsonResponse({ error: "Notifications aren't set up" }, 503, origin, env);
+  }
+
+  const body = await readJsonObject(request);
+  if (!body) {
+    return jsonResponse({ error: "Invalid request body" }, 400, origin, env);
+  }
+  const changes = parseTopicChanges(body);
+  if (changes.error) {
+    return jsonResponse({ error: changes.error }, 400, origin, env);
+  }
+
+  try {
+    const result = await applyTopicChanges(changes, account);
+    if (result === "invalid-token") {
+      return jsonResponse({ error: "Unknown token" }, 410, origin, env);
+    }
+  } catch (err) {
+    console.error("FCM topic change failed:", err.message);
+    return jsonResponse({ error: "Couldn't update notifications. Please try again." }, 502, origin, env);
+  }
+
+  return jsonResponse({ success: true }, 200, origin, env);
+}
+
+// ---------------------------------------------------------------------------
 // Main handler
 // ---------------------------------------------------------------------------
 
@@ -647,6 +695,10 @@ export default {
 
     if (path === "/event") {
       return handleEvent(request, env, origin);
+    }
+
+    if (path === "/push/topics") {
+      return handlePushTopics(request, env, origin);
     }
 
     return handleSubscribe(request, env, origin);

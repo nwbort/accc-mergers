@@ -1,10 +1,17 @@
 import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { API_ENDPOINTS } from '../config';
-import { MERGER_STATUS } from '../constants/mergerStatus';
-import { JUDICIAL_REVIEW_STATUS } from '../constants/judicialReview';
 import { pingFeatureEvent, trackIndustryEvent, trackMergerEvent } from '../utils/trackEvent';
-import { fetchIndustryNode } from '../utils/industryNode';
-import { isDatePast } from '../utils/dates';
+import { fetchIndustryNode, industryDivisionCacheKey } from '../utils/industryNode';
+import { dataCache } from '../utils/dataCache';
+import {
+  dedupeEvents,
+  forwardRefileLink,
+  getEventKey,
+  getLegacyEventKeys,
+  industryEventsFromNode,
+  timelineEventsFromMerger,
+  upcomingEventsFromMerger,
+} from '../utils/trackedEvents';
 
 const TrackingContext = createContext(null);
 
@@ -22,61 +29,6 @@ const STORAGE_KEYS = {
   // once (a matter the user later untracks is not silently re-added). Mirrors
   // AUTO_TRACK_LINKS. See the Phase 2 auto-track effect.
   AUTO_TRACK_PHASE2_IDS: 'merger_tracker_auto_tracked_phase2_ids',
-};
-
-// Relationship values (from the data pipeline, see scripts/generate/static_data/loaders.py)
-// where the *tracked* merger is the earlier matter and its related merger is the
-// newer re-filed one. Tracking a merger auto-tracks its related merger only in
-// this forward direction: tracking a declined waiver / suspended matter also
-// tracks the notification it was re-filed as, but tracking the re-filed matter
-// must NOT pull in the historical one it superseded.
-const FORWARD_REFILE_RELATIONSHIPS = new Set([
-  'refiled_as',
-  'suspended_refiled_as',
-]);
-
-// Key an event by its merger, date and title.
-const titleKey = (event, title) => {
-  // Industry-follow events are scoped to the industry they were surfaced from,
-  // so the same merger filed under two followed industries stays distinct (and
-  // distinct from the merger's own tracked timeline events).
-  const prefix = event.industry_code ? `ind_${event.industry_code}_` : '';
-  return `${prefix}${event.merger_id}_${event.date}_${title}`;
-};
-
-// Generate a unique key for an event
-// Use a consistent order and normalize the title field for stability
-const getEventKey = (event) => {
-  // A tribunal appeal document is keyed by its document link, not its title:
-  // the title carries a comment added by hand, often after followers have
-  // already been notified, and a title-based key would announce the same
-  // document again.
-  const docUrl = event.is_appeal && (event.url || event.url_gh);
-  if (docUrl) return `${event.merger_id}_${event.date}_appeal_${docUrl}`;
-  // Normalize title: prefer display_title, then title, then event_type_display, finally type
-  const title = event.display_title || event.title || event.event_type_display || event.type || '';
-  return titleKey(event, title);
-};
-
-// Keys an appeal document may already have been marked seen under, from
-// before appeal documents were keyed by link: its title with the comment (seen
-// after the comment was added) and without it (seen before).
-const getLegacyEventKeys = (event) => {
-  if (!event.is_appeal) return [];
-  return [event.display_title, event.appeal_base_title]
-    .filter(Boolean)
-    .map((title) => titleKey(event, title));
-};
-
-// Deduplicate events by their event key
-const dedupeEvents = (events) => {
-  const seen = new Set();
-  return events.filter((event) => {
-    const key = getEventKey(event);
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
 };
 
 export function TrackingProvider({ children }) {
@@ -145,6 +97,10 @@ export function TrackingProvider({ children }) {
   const [timelineEvents, setTimelineEvents] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  // Bumped by refreshEvents() to fetch everything again: the browser
+  // notification service worker asks for that when a push arrives while the
+  // site is open, rather than showing a notification over it.
+  const [refreshCount, setRefreshCount] = useState(0);
   // Track newly added merger IDs so we can mark their events as seen
   const [newlyTrackedIds, setNewlyTrackedIds] = useState([]);
   const newlyTrackedIdsSet = useMemo(() => new Set(newlyTrackedIds), [newlyTrackedIds]);
@@ -239,15 +195,11 @@ export function TrackingProvider({ children }) {
         const linksToRecord = [];
         const idsToAutoTrack = [];
         mergers.forEach((merger) => {
-          const related = merger && merger.related_merger;
-          if (!related || !FORWARD_REFILE_RELATIONSHIPS.has(related.relationship)) return;
-          const relatedId = related.merger_id;
-          if (!relatedId) return;
-          const linkKey = `${merger.merger_id}->${relatedId}`;
-          if (autoTrackLinksRef.current.has(linkKey)) return;
-          linksToRecord.push(linkKey);
-          if (!trackedMergerIdsSet.has(relatedId)) {
-            idsToAutoTrack.push(relatedId);
+          const link = forwardRefileLink(merger);
+          if (!link || autoTrackLinksRef.current.has(link.key)) return;
+          linksToRecord.push(link.key);
+          if (!trackedMergerIdsSet.has(link.relatedId)) {
+            idsToAutoTrack.push(link.relatedId);
           }
         });
         if (linksToRecord.length > 0) {
@@ -276,27 +228,7 @@ export function TrackingProvider({ children }) {
         let allFetchedEvents = [];
 
         // Extract events from individual merger files
-        const timelineEventsFromMergers = [];
-        mergers.forEach(merger => {
-          if (!merger) return;
-          const events = merger.events || [];
-          events.forEach(event => {
-            timelineEventsFromMergers.push({
-              date: event.date,
-              title: event.title,
-              display_title: event.display_title,
-              url: event.url,
-              url_gh: event.url_gh,
-              status: event.status,
-              merger_id: merger.merger_id,
-              merger_name: merger.merger_name,
-              phase: event.phase,
-              is_waiver: merger.is_waiver,
-              is_appeal: event.is_appeal,
-              appeal_base_title: event.appeal_base_title
-            });
-          });
-        });
+        const timelineEventsFromMergers = mergers.flatMap(timelineEventsFromMerger);
 
         setTimelineEvents(timelineEventsFromMergers);
 
@@ -321,166 +253,7 @@ export function TrackingProvider({ children }) {
         // (TrackingProvider wraps the whole app) and is not subject to that feed's 60-day window,
         // so events whose deadline is months away (e.g. Phase 2 determinations) still surface.
         const now = new Date();
-        const syntheticUpcomingEvents = [];
-        mergers.forEach(merger => {
-          if (!merger) return;
-
-          // Tribunal hearing for a matter under a *current* appeal.
-          // Handled before the "already determined" guards below because an
-          // appealed matter is, by definition, ACCC-determined — the hearing is
-          // a future event layered on top of that outcome. Not subject to any
-          // look-ahead window (mirrors scripts/generate/static_data/outputs/upcoming_events.py).
-          // A hearing that sits over several days carries its last day as
-          // `end_date`, and stays (as ongoing) until that day has passed on
-          // the Australian calendar, rather than dropping off on day one.
-          const appeal = merger.appeal;
-          if (merger.under_appeal && appeal && appeal.hearing_date) {
-            const endDate =
-              appeal.hearing_end_date && appeal.hearing_end_date > appeal.hearing_date
-                ? appeal.hearing_end_date
-                : null;
-            if (!isDatePast(endDate || appeal.hearing_date)) {
-              syntheticUpcomingEvents.push({
-                type: 'tribunal_hearing',
-                event_type_display: 'Tribunal hearing',
-                display_title: 'Tribunal hearing',
-                title: 'Tribunal hearing',
-                date: appeal.hearing_date,
-                ...(endDate && { end_date: endDate }),
-                merger_id: merger.merger_id,
-                merger_name: merger.merger_name,
-                status: merger.status,
-                stage: merger.stage,
-                effective_notification_datetime: merger.effective_notification_datetime,
-                is_waiver: merger.is_waiver,
-                tribunal_number: appeal.tribunal_number,
-              });
-            }
-          }
-
-          // Federal Court hearings on a live judicial review, the same way and
-          // for the same reason: read off the court's listings, only those
-          // someone attends (`hearing`), with no look-ahead window (mirrors
-          // upcoming_events.py).
-          if (merger.under_judicial_review) {
-            (merger.judicial_reviews || []).forEach((review) => {
-              if (review.status === JUDICIAL_REVIEW_STATUS.CONCLUDED) return;
-              (review.listings || []).forEach((listing) => {
-                if (!listing.hearing || !listing.date) return;
-                if (new Date(listing.date) <= now) return;
-                syntheticUpcomingEvents.push({
-                  type: 'federal_court_hearing',
-                  event_type_display: 'Federal Court hearing',
-                  display_title: 'Federal Court hearing',
-                  title: 'Federal Court hearing',
-                  date: listing.date,
-                  merger_id: merger.merger_id,
-                  merger_name: merger.merger_name,
-                  status: merger.status,
-                  stage: merger.stage,
-                  effective_notification_datetime: merger.effective_notification_datetime,
-                  is_waiver: merger.is_waiver,
-                  case_number: review.case_number,
-                  hearing_reason: listing.reason,
-                });
-              });
-            });
-          }
-
-          // Skip if already determined, a waiver, or assessment is no longer active.
-          // Check accc_determination as well as the date: the register sometimes
-          // publishes the outcome before the publication-date field is scraped,
-          // and relying on the date alone leaves stale "due" events in the panel
-          // (mirrors the candidate filter in scripts/generate/static_data/outputs/upcoming_events.py).
-          if (merger.determination_publication_date) return;
-          if (merger.accc_determination) return;
-          if (merger.is_waiver) return;
-          if (merger.status === MERGER_STATUS.ASSESSMENT_SUSPENDED) return;
-          if (merger.status === MERGER_STATUS.ASSESSMENT_CEASED) return;
-
-          if (merger.end_of_determination_period) {
-            const dueDate = new Date(merger.end_of_determination_period);
-            if (dueDate > now) {
-              const label = merger.public_benefit_in_progress
-                ? 'Public benefit determination due'
-                : 'Determination due';
-              syntheticUpcomingEvents.push({
-                type: 'determination_due',
-                event_type_display: label,
-                display_title: label,
-                title: label,
-                date: merger.end_of_determination_period,
-                merger_id: merger.merger_id,
-                merger_name: merger.merger_name,
-                status: merger.status,
-                stage: merger.stage,
-                effective_notification_datetime: merger.effective_notification_datetime,
-                is_waiver: merger.is_waiver,
-              });
-            }
-          }
-
-          if (merger.consultation_response_due_date) {
-            const dueDate = new Date(merger.consultation_response_due_date);
-            if (dueDate > now) {
-              syntheticUpcomingEvents.push({
-                type: 'consultation_due',
-                event_type_display: 'Consultation responses due',
-                display_title: 'Consultation responses due',
-                title: 'Consultation responses due',
-                date: merger.consultation_response_due_date,
-                merger_id: merger.merger_id,
-                merger_name: merger.merger_name,
-                status: merger.status,
-                stage: merger.stage,
-                effective_notification_datetime: merger.effective_notification_datetime,
-                is_waiver: merger.is_waiver,
-              });
-            }
-          }
-
-          // Public benefit phase milestones (mirrors upcoming_events.py): the
-          // ACCC's public benefit assessment (BD 20) and the parties' last day
-          // to respond to it or offer a remedy (BD 35).
-          [
-            ['public_benefit_assessment_date', 'public_benefit_assessment', 'Public benefit assessment'],
-            ['public_benefit_response_date', 'public_benefit_response_due', 'Public benefit responses due'],
-          ].forEach(([field, type, label]) => {
-            if (!merger[field] || new Date(merger[field]) <= now) return;
-            syntheticUpcomingEvents.push({
-              type,
-              event_type_display: label,
-              display_title: label,
-              title: label,
-              date: merger[field],
-              merger_id: merger.merger_id,
-              merger_name: merger.merger_name,
-              status: merger.status,
-              stage: merger.stage,
-              effective_notification_datetime: merger.effective_notification_datetime,
-              is_waiver: merger.is_waiver,
-            });
-          });
-
-          if (merger.competition_concerns_notice_date) {
-            const dueDate = new Date(merger.competition_concerns_notice_date);
-            if (dueDate > now) {
-              syntheticUpcomingEvents.push({
-                type: 'notice_of_competition_concerns',
-                event_type_display: 'Notice of competition concerns',
-                display_title: 'Notice of competition concerns',
-                title: 'Notice of competition concerns',
-                date: merger.competition_concerns_notice_date,
-                merger_id: merger.merger_id,
-                merger_name: merger.merger_name,
-                status: merger.status,
-                stage: merger.stage,
-                effective_notification_datetime: merger.effective_notification_datetime,
-                is_waiver: merger.is_waiver,
-              });
-            }
-          }
-        });
+        const syntheticUpcomingEvents = mergers.flatMap((merger) => upcomingEventsFromMerger(merger, now));
 
         setUpcomingEvents(syntheticUpcomingEvents);
         allFetchedEvents = [...allFetchedEvents, ...syntheticUpcomingEvents];
@@ -514,7 +287,7 @@ export function TrackingProvider({ children }) {
     };
 
     fetchEvents();
-  }, [trackedMergerIds, trackedMergerIdsSet, newlyTrackedIds, newlyTrackedIdsSet]);
+  }, [trackedMergerIds, trackedMergerIdsSet, newlyTrackedIds, newlyTrackedIdsSet, refreshCount]);
 
   // Fetch industry-follow events whenever the set of followed industries changes.
   // Unlike merger tracking (which surfaces every timeline event), following an
@@ -542,41 +315,7 @@ export function TrackingProvider({ children }) {
 
         const results = await Promise.all(industryPromises);
 
-        const derived = [];
-        results.forEach(({ code, data }) => {
-          if (!data) return;
-          const industryName = data.name || code;
-          (data.mergers || []).forEach((m) => {
-            const base = {
-              industry_code: code,
-              industry_name: industryName,
-              merger_id: m.merger_id,
-              merger_name: m.merger_name,
-              is_waiver: m.is_waiver,
-              status: m.status,
-            };
-            if (m.notification_date) {
-              derived.push({
-                ...base,
-                type: 'industry_new_merger',
-                event_type_display: 'New merger filed',
-                display_title: 'New merger filed',
-                title: 'New merger filed',
-                date: m.notification_date,
-              });
-            }
-            if (m.determination_date) {
-              derived.push({
-                ...base,
-                type: 'industry_determination',
-                event_type_display: 'Determination published',
-                display_title: 'Determination published',
-                title: 'Determination published',
-                date: m.determination_date,
-              });
-            }
-          });
-        });
+        const derived = results.flatMap(({ code, data }) => industryEventsFromNode(code, data));
 
         setIndustryEvents(derived);
 
@@ -611,7 +350,7 @@ export function TrackingProvider({ children }) {
     // trackedIndustryCodesKey collapses the code list to a stable primitive so
     // renaming a stored industry doesn't trigger a refetch.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [trackedIndustryCodesKey, newlyTrackedIndustryCodes, newlyTrackedIndustryCodesSet]);
+  }, [trackedIndustryCodesKey, newlyTrackedIndustryCodes, newlyTrackedIndustryCodesSet, refreshCount]);
 
   // Auto-track matters that reach Phase 2 when the user has opted in. Fetches the
   // Phase 2 feed and tracks every current matter not yet acted on. Mirrors the
@@ -667,7 +406,7 @@ export function TrackingProvider({ children }) {
     return () => {
       cancelled = true;
     };
-  }, [autoTrackPhase2]);
+  }, [autoTrackPhase2, refreshCount]);
 
   // Persist the Phase 2 auto-track setting to localStorage.
   useEffect(() => {
@@ -819,6 +558,13 @@ export function TrackingProvider({ children }) {
     });
   }, []);
 
+  // Fetch every followed file again. Industry division files are held in
+  // dataCache for the life of the page, so theirs are dropped first.
+  const refreshEvents = useCallback(() => {
+    trackedIndustryCodes.forEach((code) => dataCache.clear(industryDivisionCacheKey(code)));
+    setRefreshCount((n) => n + 1);
+  }, [trackedIndustryCodes]);
+
   const isEventSeen = useCallback((event) => {
     const key = getEventKey(event);
     return seenEventKeys.has(key);
@@ -884,6 +630,12 @@ export function TrackingProvider({ children }) {
     trackedEvents,
     loading,
     getEventKey,
+    // For browser notifications (push/PushSync.jsx), which hands the service
+    // worker what it needs to tell news from what the panel already shows.
+    seenEventKeys,
+    autoTrackLinks,
+    autoTrackedPhase2Ids,
+    refreshEvents,
   }), [
     trackedMergerIds,
     trackMerger,
@@ -907,6 +659,10 @@ export function TrackingProvider({ children }) {
     unseenCount,
     trackedEvents,
     loading,
+    seenEventKeys,
+    autoTrackLinks,
+    autoTrackedPhase2Ids,
+    refreshEvents,
   ]);
 
   return (
