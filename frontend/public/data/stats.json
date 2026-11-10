@@ -1,10 +1,10 @@
 {
-  "total_mergers": 321,
+  "total_mergers": 322,
   "total_waivers": 507,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 275,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 207
+      "count": 208
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-45041",
+      "merger_name": "Lactalis \u2013 Saputo Dairy UK",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-11-10T15:47:05+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-20046",
       "merger_name": "Autosports Group - Mercedes-Benz Parramatta and Castle Hill, Chery Castle Hill",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-29T12:00:00Z",
       "page_modified_datetime": "2026-10-30T15:48:56+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-10040",
-      "merger_name": "Calvary \u2013 14 Healthscope hospitals and Healthscope Independence Services",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-29T12:00:00Z",
-      "page_modified_datetime": "2026-10-30T10:08:39+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

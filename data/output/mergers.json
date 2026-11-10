@@ -38915,6 +38915,178 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lactalis-%E2%80%93-saputo-dairy-uk-0",
+      "merger_name": "Lactalis \u2013 Saputo Dairy UK",
+      "status": "Under assessment",
+      "merger_id": "MN-45041",
+      "effective_notification_datetime": "2026-11-10T12:00:00Z",
+      "original_notification_datetime": "2026-11-10T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-12-22T12:00:00Z",
+      "page_modified_datetime": "2026-11-10T15:47:05+11:00",
+      "consultation_response_due_date": "2026-11-17T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "BSA International",
+          "identifier_type": null,
+          "identifier": "Enterprise number  0443.205.173",
+          "party_page": {
+            "id": "bsa-international",
+            "name": "BSA International"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Saputo Dairy UK Ltd",
+          "identifier_type": null,
+          "identifier": "Company number  11834952",
+          "canonical": {
+            "id": "saputo",
+            "name": "Saputo"
+          },
+          "party_page": {
+            "id": "saputo",
+            "name": "Saputo",
+            "curated": true
+          }
+        },
+        {
+          "name": "Saputo Foods Limited",
+          "identifier_type": null,
+          "identifier": "Canadian Corporation No.  4511166",
+          "canonical": {
+            "id": "saputo",
+            "name": "Saputo"
+          },
+          "party_page": {
+            "id": "saputo",
+            "name": "Saputo",
+            "curated": true
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "BSA\u200d SAS",
+          "identifier_type": null,
+          "identifier": "Registered under SIREN (R.C.S. Paris)  557 350 253",
+          "canonical": {
+            "id": "lactalis",
+            "name": "Lactalis"
+          },
+          "party_page": {
+            "id": "lactalis",
+            "name": "Lactalis",
+            "curated": true
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1113",
+          "name": "Cured Meat and Smallgoods Manufacturing"
+        },
+        {
+          "code": "1131",
+          "name": "Milk and Cream Processing"
+        },
+        {
+          "code": "1133",
+          "name": "Cheese and Other Dairy Product Manufacturing"
+        },
+        {
+          "code": "3603",
+          "name": "Dairy Produce Wholesaling"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "BSA SAS (together with its subsidiaries, **Lactalis**) proposes to acquire the entire issued share capital of Saputo Dairy UK Ltd (together with its subsidiaries, **Saputo Dairy UK)** from Saputo Foods Limited, which is solely controlled by Saputo Inc. (**Saputo**) (the **Acquisition**).\n\n**Lactalis:**\n\nLactalis is a privately held dairy group headquartered in Laval, France. Lactalis is active worldwide in the manufacture and supply of a wide range of dairy products in six main categories: cheese, drinking milk, chilled dairy products, chilled yellow spreads, cream and dairy ingredients. Lactalis also manufactures or supplies other products, namely drinks, charcuterie, frozen products, confectionery and desserts.\n\nIn Australia, Lactalis primarily markets dairy products, including drinking milk, flavoured milk, iced coffee beverages, yoghurt, chilled yellow spreads, cream and cheese. Its portfolio includes a number of Australian brands (including Pauls, OAK, Ice Break, Jalna, Vaalia, Tamar Valley, Lemnos, Jindi, Harvey Fresh, Western Star, Mainland and Perfect Italiano) and international brands (including Pr\u00e9sident and Galbani).\n\n**Saputo:**\n\nSaputo Dairy UK is currently wholly-owned by Saputo Inc., a Canadian dairy company listed on the Toronto Stock Exchange. Saputo Dairy UK is a manufacturer of branded cheese and dairy spreads in the UK. It has no manufacturing facilities in Australia.\n\nSaputo Dairy UK's connection to Australia is limited to the wholesale supply of three minor cheese products: (i) a plant-based cheese product (which is supplied as a finished consumer product on a wholesale basis); and (ii) Wensleydale cheese and Yorkshire Oak smoked cheddar (which are speciality cheeses).\n\nSaputo Dairy Australia Pty Ltd (**Saputo Dairy Australia**), which produces, markets and distributes dairy products (including under the consumer brands, Cheer, Cracker Barrel, and Mersey Valley), is a separate company within the Saputo corporate group, is not within the scope of the Acquisition and will remain part of Saputo.\n\nSaputo Dairy UK supplies a plant-based cheese product to Saputo Dairy Australia under its own Cheer brand.",
+      "events": [
+        {
+          "date": "2026-11-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-60046",
+          "merger_name": "Lactalis \u2013 Saputo Dairy UK",
+          "acquirers": [
+            "BSA SAS"
+          ],
+          "targets": [
+            "Saputo Foods Limited",
+            "Saputo Dairy UK Ltd"
+          ],
+          "accc_determination": "Not approved"
+        },
+        {
+          "merger_id": "MN-01069",
+          "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
+          "acquirers": [
+            "Danone Asia Pte Ltd"
+          ],
+          "targets": [
+            "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-55031",
+          "merger_name": "Danone \u2013 MADE",
+          "acquirers": [
+            "Minogue BidCo"
+          ],
+          "targets": [
+            "Made (MJV) Pte Ltd",
+            "TUCKER HOLDCO PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          21
+        ],
+        "basis": "global",
+        "question_bucket": null,
+        "question_count": null,
+        "sample_size": 281,
+        "as_of": "2026-11-10",
+        "estimated_at": "2026-11-10",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 25,
+        "min_days": null,
+        "max_days": 32,
+        "id_issued_estimated": "2026-10-16",
+        "id_issued_before": null,
+        "id_issued_after": "2026-10-09",
+        "min_days_witness": null,
+        "max_days_witness": "WA-45036",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/national-dental-care-%E2%80%93-business-assets-comprising-the-comfy-dental-clinic-mandurah-wa",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
       "status": "Assessment completed",

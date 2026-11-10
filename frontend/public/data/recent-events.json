@@ -1,6 +1,15 @@
 {
   "events": [
     {
+      "type": "notified",
+      "title": "Merger notified to ACCC",
+      "date": "2026-11-10T12:00:00Z",
+      "merger_id": "MN-45041",
+      "merger_name": "Lactalis \u2013 Saputo Dairy UK",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false
+    },
+    {
       "type": "timeline_extension",
       "title": "Timeline extended by 5 business days - following request by parties",
       "date": "2026-11-09T12:00:00Z",
@@ -876,6 +885,6 @@
       "url_gh": "/mergers/WA-85058/Redwood Services Group \u2013 Virtual IT Department (WA-85058) - Notification waiver determination - 27 October 2026.pdf"
     }
   ],
-  "count": 90,
+  "count": 91,
   "days_back": 14
 }

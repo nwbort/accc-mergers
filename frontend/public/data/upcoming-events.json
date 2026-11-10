@@ -103,6 +103,16 @@
       "effective_notification_datetime": "2026-11-05T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-11-17T12:00:00Z",
+      "merger_id": "MN-45041",
+      "merger_name": "Lactalis \u2013 Saputo Dairy UK",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-10T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-11-18T12:00:00Z",
@@ -493,6 +503,16 @@
       "effective_notification_datetime": "2026-04-27T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-12-22T12:00:00Z",
+      "merger_id": "MN-45041",
+      "merger_name": "Lactalis \u2013 Saputo Dairy UK",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-10T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2027-03-30T12:00:00Z",
@@ -505,6 +525,6 @@
       "end_date": "2027-04-15T12:00:00Z"
     }
   ],
-  "count": 50,
+  "count": 52,
   "days_ahead": 60
 }
