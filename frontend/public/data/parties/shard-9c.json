@@ -285,6 +285,48 @@
         "completed_count": 1
       }
     },
+    "datre-pty-ltd": {
+      "id": "datre-pty-ltd",
+      "canonical_name": "Datre Pty Ltd",
+      "members": [
+        {
+          "name": "DATRE PTY LTD",
+          "identifier": "004 768 512",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70044",
+            "merger_name": "Australian Venue Co \u2013 assets of 318 Little Collins Street, Melbourne (also known as The Carson)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-09T12:00:00Z",
+            "determination_date": "2026-11-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 32.0,
+        "median_days": 32,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
     "dolphin-bidco-pty-ltd": {
       "id": "dolphin-bidco-pty-ltd",
       "canonical_name": "Dolphin Bidco Pty Ltd",

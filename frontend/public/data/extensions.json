@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 323,
-    "matters_extended": 26,
-    "share_extended_pct": 8.0,
-    "extension_events_total": 41,
-    "total_extension_bd": 475,
-    "median_matter_extension_bd": 14,
+    "matters_extended": 27,
+    "share_extended_pct": 8.4,
+    "extension_events_total": 42,
+    "total_extension_bd": 488,
+    "median_matter_extension_bd": 13.5,
     "longest_single_bd": 33,
     "phase_2_total": 9,
     "extended_escalated_to_phase_2": 8,
-    "escalation_rate_given_extension_pct": 30.8,
+    "escalation_rate_given_extension_pct": 29.6,
     "phase_2_preceded_by_extension_pct": 88.9,
     "base_phase_2_rate_pct": 2.8,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 28,
-      "business_days": 328
+      "events": 29,
+      "business_days": 341
     },
     {
       "category": "Remedy under consideration",
@@ -70,7 +70,7 @@
     },
     {
       "month": "2026-11",
-      "count": 5
+      "count": 6
     }
   ],
   "matters": [
@@ -449,6 +449,27 @@
           "reason_category": "ACCC information request",
           "reason_detail": "request for further information",
           "title": "Timeline extended by 4 business days \u2013 following request for further information"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-75059",
+      "merger_name": "Macquarie Global Infrastructure Fund - SERV",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-10-07T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 13,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-11-10T12:00:00Z",
+          "business_days": 13,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 13 business days \u2013 following request by parties"
         }
       ]
     },
