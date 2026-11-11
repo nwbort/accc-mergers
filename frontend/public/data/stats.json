@@ -1,10 +1,10 @@
 {
-  "total_mergers": 324,
+  "total_mergers": 325,
   "total_waivers": 516,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 276,
-    "Under assessment": 43,
+    "Under assessment": 44,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 103
+      "count": 104
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-25056",
+      "merger_name": "Amwins / Dragoneer / KKR Consortium \u2013 Steadfast",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-11-11T17:46:26+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-01133",
       "merger_name": "Eagers - Zagame",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-11-02T12:00:00Z",
       "page_modified_datetime": "2026-11-02T17:43:08+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-40049",
-      "merger_name": "Coles \u2013 supermarket site in Cannonvale Central (QLD)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-30T12:00:00Z",
-      "page_modified_datetime": "2026-11-02T10:47:45+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

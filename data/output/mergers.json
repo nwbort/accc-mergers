@@ -27472,6 +27472,139 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/amwins-dragoneer-kkr-consortium-%E2%80%93-steadfast",
+      "merger_name": "Amwins / Dragoneer / KKR Consortium \u2013 Steadfast",
+      "status": "Under assessment",
+      "merger_id": "MN-25056",
+      "effective_notification_datetime": "2026-11-10T12:00:00Z",
+      "original_notification_datetime": "2026-11-10T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-12-22T12:00:00Z",
+      "page_modified_datetime": "2026-11-11T17:46:26+11:00",
+      "acquirers": [
+        {
+          "name": "Starboard BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "701 506 532",
+          "party_page": {
+            "id": "starboard-bidco-pty-ltd",
+            "name": "Starboard BidCo Pty Ltd"
+          }
+        },
+        {
+          "name": "Amwins Group, Inc",
+          "identifier_type": null,
+          "identifier": "CIK  0001177703",
+          "party_page": {
+            "id": "amwins-group-inc",
+            "name": "Amwins Group, Inc"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "STEADFAST GROUP LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 073 659 677",
+          "party_page": {
+            "id": "steadfast-group-ltd",
+            "name": "Steadfast Group Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6420",
+          "name": "Auxiliary Insurance Services"
+        }
+      ],
+      "merger_description": "Starboard BidCo Pty Ltd (**BidCo**), an entity indirectly owned by investment funds, vehicles and/or accounts managed by and/or affiliated with Dragoneer Investment Group, LLC (**Dragoneer**) and investment funds, vehicles and/or accounts advised and managed by Kohlberg Kravis Roberts & Co L.P. (together with its corporate affiliates (**KKR**)), and funded in part by Amwins Group, Inc (**Amwins**) (through certain of its affiliates), proposes to acquire 100% of the equity in Steadfast Group Limited (**Steadfast**) pursuant to a scheme of arrangement (the **Transaction**). Following completion of the Transaction, the Steadfast business will immediately separate such that Amwins will acquire the Steadfast underwriting business and certain wholesale broking businesses outside of Australia while BidCo will retain the remainder of Steadfast, including the balance of Steadfast's broking business and complementary businesses (the **Separation**).\n\nTogether, the Transaction and the Separation will be referred to as the Acquisition.\n\nSteadfast is an ASX-listed company that supplies insurance intermediary services, operating insurance broker and underwriting agency networks predominantly in Australia and New Zealand. Steadfast also provides market access, technology, risk solutions and operational support to support the broker and agency business in its network.\n\nAmwins is a global wholesale distributor of specialty insurance products and services headquartered in Charlotte, North Carolina, United States. Amwins provides distribution, underwriting, administrative and actuarial services by acting as a wholesale broker or managing general agent with delegated authority from insurance carriers, with international operations across 8 countries.\n\nDragoneer is a United States investment firm based in San Francisco, California. The firm focuses on technology investments in public and private markets globally. Dragoneer currently acts as investment adviser to a number of open and closed-end funds, co-investment vehicles and separately managed accounts.\u00a0In 2015, Dragoneer acquired a minority stake in Amwins.\n\nKKR is a global investment firm that offers alternative asset management as well as capital markets and insurance solutions.\u00a0KKR sponsors investment funds that invest in private equity, credit and real assets and has strategic partners that manage hedge funds.",
+      "events": [
+        {
+          "date": "2026-11-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-65015",
+          "merger_name": "Hillhouse - Barwon Investment Partners",
+          "acquirers": [
+            "BARWON BIDCO PTY LTD"
+          ],
+          "targets": [
+            "BARWON INVESTMENT PARTNERS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-25004",
+          "merger_name": "ServiceNow - Armis",
+          "acquirers": [
+            "ServiceNow, Inc."
+          ],
+          "targets": [
+            "Armis Security, Ltd.",
+            "Armis, Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-40023",
+          "merger_name": "AUB \u2013 further interest in KJ Risk",
+          "acquirers": [
+            "AUSTBROKERS CORPORATE PTY LTD"
+          ],
+          "targets": [
+            "KJ RISK GROUP PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          21
+        ],
+        "basis": "global",
+        "question_bucket": null,
+        "question_count": null,
+        "sample_size": 281,
+        "as_of": "2026-11-10",
+        "estimated_at": "2026-11-11",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 56,
+        "min_days": 39,
+        "max_days": 73,
+        "id_issued_estimated": "2026-09-15",
+        "id_issued_before": "2026-10-02",
+        "id_issued_after": "2026-08-29",
+        "min_days_witness": "WA-25059",
+        "max_days_witness": "WA-25054",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/healthe-care-%E2%80%93-knox-private-ringwood-private-northpark-private-victorian-rehabilitation-centre-and-geelong-clinic",
       "merger_name": "Healthe Care \u2013 Knox Private, Ringwood Private, Northpark Private, Victorian Rehabilitation Centre and Geelong Clinic",
       "status": "Under assessment",
