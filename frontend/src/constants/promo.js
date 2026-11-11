@@ -60,7 +60,7 @@ export function livestreamLink(links, now, timeZone) {
 }
 
 export const COLES_KALGOORLIE_HEARING_PROMO = {
-  campaign: 'coles-kalgoorlie-hearing-v3',
+  campaign: 'coles-kalgoorlie-hearing-v2',
   href: FEDERAL_COURT_YOUTUBE_CHANNEL,
   icon: FaYoutube,
   title: COLES_KALGOORLIE_HEARING.title,
