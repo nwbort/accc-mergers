@@ -16,7 +16,7 @@
  */
 
 import { FaYoutube } from 'react-icons/fa6';
-import { hearingPromoTitle } from '../utils/hearingPromo';
+import { hearingPromoTitle, localDate } from '../utils/hearingPromo';
 
 // Coles' Tribunal appeal over Kalgoorlie (MN-01068, ACT 1 of 2026). Sits
 // Monday to Thursday for two weeks. Tuesday 10 November sat in closed court,
@@ -46,14 +46,34 @@ export const COLES_KALGOORLIE_LIVESTREAM = {
   ),
 };
 
+// The Federal Court streams each day under a new YouTube link. Add the day's
+// link here (keyed by its Sydney date) once it's published; until then, and on
+// any day without one, the banner links to the court's channel instead.
+export const FEDERAL_COURT_YOUTUBE_CHANNEL = 'https://www.youtube.com/@FederalCourtAus';
+
+export const COLES_KALGOORLIE_LIVESTREAM_LINKS = {
+  '2026-11-11': 'https://www.youtube.com/watch?v=B8P6fMCkjTg',
+};
+
+export function livestreamLink(links, now, timeZone) {
+  return links[localDate(now, timeZone)] ?? FEDERAL_COURT_YOUTUBE_CHANNEL;
+}
+
 export const COLES_KALGOORLIE_HEARING_PROMO = {
   campaign: 'coles-kalgoorlie-hearing-v2',
-  href: 'https://www.youtube.com/watch?v=AFSvBZfLu7g',
+  href: FEDERAL_COURT_YOUTUBE_CHANNEL,
   icon: FaYoutube,
   title: COLES_KALGOORLIE_HEARING.title,
   resolve: (now) => {
     const line = hearingPromoTitle(COLES_KALGOORLIE_LIVESTREAM, now);
-    return line && { description: `${line}.` };
+    return line && {
+      description: `${line}.`,
+      href: livestreamLink(
+        COLES_KALGOORLIE_LIVESTREAM_LINKS,
+        now,
+        COLES_KALGOORLIE_HEARING.timeZone,
+      ),
+    };
   },
 };
 

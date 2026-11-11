@@ -47,6 +47,11 @@ function localParts(now, timeZone) {
   };
 }
 
+// `now`'s calendar date (YYYY-MM-DD) in `timeZone`.
+export function localDate(now, timeZone) {
+  return localParts(now, timeZone).date;
+}
+
 function toMinutes(hhmm) {
   const [h, m] = hhmm.split(':').map(Number);
   return h * 60 + m;
