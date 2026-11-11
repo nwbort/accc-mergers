@@ -93,6 +93,16 @@
       "effective_notification_datetime": "2026-11-10T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-11-18T12:00:00Z",
+      "merger_id": "MN-01133",
+      "merger_name": "Eagers - Zagame",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-10T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-11-20T12:00:00Z",
@@ -476,6 +486,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-12-22T12:00:00Z",
+      "merger_id": "MN-01133",
+      "merger_name": "Eagers - Zagame",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-10T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-12-22T12:00:00Z",
       "merger_id": "MN-25062",
       "merger_name": "Coles \u2013 supermarket site in Rainbow Beach, NSW",
       "status": "Under assessment",
@@ -505,6 +525,6 @@
       "end_date": "2027-04-15T12:00:00Z"
     }
   ],
-  "count": 50,
+  "count": 52,
   "days_ahead": 60
 }

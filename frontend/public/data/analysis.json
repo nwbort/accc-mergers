@@ -349,7 +349,7 @@
       38,
       31,
       43,
-      9
+      10
     ],
     "waivers": [
       0,
@@ -421,7 +421,7 @@
       37,
       32,
       41,
-      42
+      43
     ],
     "waivers": [
       0,
@@ -466,7 +466,7 @@
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 36,
+        "notifications_filed": 37,
         "notifications": {
           "median": 18.0,
           "average": 19.3,
@@ -544,7 +544,7 @@
       },
       {
         "days": 90,
-        "notifications_filed": 101,
+        "notifications_filed": 102,
         "notifications": {
           "median": 18,
           "average": 20.3,
@@ -662,33 +662,33 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 18.0,
-          "average": 20.1,
+          "median": 18,
+          "average": 20.2,
           "p90": 33,
           "min": 0,
           "max": 67,
-          "count": 36,
+          "count": 37,
           "days": 30,
-          "median_delta": 3.0
+          "median_delta": 3
         },
         {
-          "median": 17,
+          "median": 17.0,
           "average": 19.4,
           "p90": 36,
           "min": 0,
           "max": 74,
-          "count": 101,
+          "count": 102,
           "days": 90,
           "median_delta": 2.0
         }
       ],
       "all_time": {
-        "median": 15.0,
+        "median": 15,
         "average": 17.7,
         "p90": 34,
         "min": 0,
         "max": 112,
-        "count": 310
+        "count": 311
       }
     },
     "monthly": {
@@ -890,7 +890,7 @@
         37,
         32,
         41,
-        42
+        43
       ]
     }
   },
@@ -1087,9 +1087,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 39,
+      "count": 40,
       "outcome_mix": {
-        "Unknown": 39
+        "Unknown": 40
       },
       "median_business_days": null
     },
@@ -1209,7 +1209,7 @@
       "delta_calendar_days": 4
     }
   ],
-  "restart_rate": 0.0124,
+  "restart_rate": 0.0123,
   "outcomes_by_division": [
     {
       "code": "S",
@@ -1217,7 +1217,7 @@
       "approved": 14,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 3,
+      "in_progress": 4,
       "phase2_referral_rate": 0.176
     },
     {
@@ -1235,7 +1235,7 @@
       "approved": 34,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 8,
+      "in_progress": 9,
       "phase2_referral_rate": 0.081
     },
     {
@@ -1280,7 +1280,7 @@
       "approved": 61,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 19,
+      "in_progress": 20,
       "phase2_referral_rate": 0.032
     },
     {
@@ -1411,7 +1411,7 @@
     },
     {
       "quarter": "2026-Q4",
-      "notifications": 52,
+      "notifications": 53,
       "referred": 0
     }
   ]

@@ -1,0 +1,159 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/eagers-zagame",
+  "merger_name": "Eagers - Zagame",
+  "status": "Under assessment",
+  "merger_id": "MN-01133",
+  "effective_notification_datetime": "2026-11-10T12:00:00Z",
+  "original_notification_datetime": "2026-11-10T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-12-22T12:00:00Z",
+  "consultation_response_due_date": "2026-11-18T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "EAGERS AUTOMOTIVE LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "87 009 680 013",
+      "party_page": {
+        "id": "eagers-automotive",
+        "name": "Eagers Automotive",
+        "curated": true
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "ZAG AUTO PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "28 701 934 189",
+      "party_page": {
+        "id": "zag-auto-pty-ltd",
+        "name": "Zag Auto Pty Ltd"
+      }
+    },
+    {
+      "name": "Zagame Automotive Group Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "85 085 950 063",
+      "party_page": {
+        "id": "zagame-automotive-group-pty-ltd",
+        "name": "Zagame Automotive Group Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "3911",
+      "name": "Car Retailing"
+    },
+    {
+      "code": "3913",
+      "name": "Trailer and Other Motor Vehicle Retailing"
+    },
+    {
+      "code": "3921",
+      "name": "Motor Vehicle Parts Retailing"
+    },
+    {
+      "code": "6419",
+      "name": "Other Auxiliary Finance and Investment Services"
+    },
+    {
+      "code": "9412",
+      "name": "Automotive Body, Paint and Interior Repair"
+    },
+    {
+      "code": "9419",
+      "name": "Other Automotive Repair and Maintenance"
+    }
+  ],
+  "merger_description": "Eagers Automotive Limited (**Eagers**) proposes to acquire 50% of the share capital in ZAG Auto Pty Ltd (**ZAG**) (the **Acquisition**). Prior to the Acquisition, Zagame Automotive Group Pty Ltd (**Zagame**) proposes to effect a restructure such that all property, assets, rights, titles and interests (apart from certain excluded assets) owned by Zagame, and a related entity Zagame MCL Pty Ltd, will be transferred to ZAG.\n\nEagers is a publicly listed automotive retail group which owns and operates approximately 415 motor vehicle dealerships across Australia. Eagers sells new and used motor vehicles through its dealerships, representing around 50 automotive brands. Eagers also provides related goods and services including motor vehicle service, parts and allied consumer finance.\n\nZagame operates motor vehicle dealerships (franchises and agencies), selling new and used motor vehicles, focusing on sports, luxury and performance vehicles. It represents 13 OEM brands with 20 dealerships located in Victoria and South Australia. Zagame also operates related businesses including automotive repairs, wholesale automotive parts, and retail automotive finance.\n\nEagers and Zagame both supply Audi, Bentley, CUPRA and McLaren vehicles at various locations across Australia.",
+  "events": [
+    {
+      "date": "2026-11-11T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Eagers-Zagame%20-%20third-party%20questionnaire.docx",
+      "url_gh": "/mergers/MN-01133/Eagers-Zagame - third-party questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-11-10T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-05012",
+      "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
+      "acquirers": [
+        "EAGERS VIC PTY LTD"
+      ],
+      "targets": [
+        "Zagame Automotive Group Pty Ltd"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-15030",
+      "merger_name": "Karmo - Simplr",
+      "acquirers": [
+        "KARMO HOLDINGS PTY LTD"
+      ],
+      "targets": [
+        "EAGERS AUTOMOTIVE LIMITED",
+        "SUBMO PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-45030",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+      "acquirers": [
+        "JASNIC AUTOMOTIVE PTY LTD"
+      ],
+      "targets": [
+        "Goulburn Motor Group (Vic) Pty Ltd"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 199,
+    "as_of": "2026-11-10",
+    "estimated_at": "2026-11-11",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 32,
+    "min_days": null,
+    "max_days": 39,
+    "id_issued_estimated": "2026-10-09",
+    "id_issued_before": null,
+    "id_issued_after": "2026-10-02",
+    "min_days_witness": null,
+    "max_days_witness": "WA-01131",
+    "basis": "upper-bound-only",
+    "method_version": 1
+  },
+  "og_card": "notified-to-the-accc.png"
+}

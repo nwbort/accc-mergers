@@ -1,10 +1,10 @@
 {
-  "total_mergers": 323,
+  "total_mergers": 324,
   "total_waivers": 516,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 276,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 102
+      "count": 103
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-01133",
+      "merger_name": "Eagers - Zagame",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-11-11T16:47:22+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25062",
       "merger_name": "Coles \u2013 supermarket site in Rainbow Beach, NSW",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-10-30T12:00:00Z",
       "page_modified_datetime": "2026-11-02T10:47:45+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-10043",
-      "merger_name": "ACURIO - Nepean, Sydney Southwest, and Campbelltown Private Hospitals",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-10-30T12:00:00Z",
-      "page_modified_datetime": "2026-11-02T10:10:34+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

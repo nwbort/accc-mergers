@@ -1,6 +1,25 @@
 {
   "events": [
     {
+      "type": "questionnaire",
+      "title": "Phase 1 consultation",
+      "date": "2026-11-11T12:00:00Z",
+      "merger_id": "MN-01133",
+      "merger_name": "Eagers - Zagame",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false,
+      "url_gh": "/mergers/MN-01133/Eagers-Zagame - third-party questionnaire.pdf"
+    },
+    {
+      "type": "notified",
+      "title": "Merger notified to ACCC",
+      "date": "2026-11-10T12:00:00Z",
+      "merger_id": "MN-01133",
+      "merger_name": "Eagers - Zagame",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false
+    },
+    {
       "type": "notified",
       "title": "Merger notified to ACCC",
       "date": "2026-11-10T12:00:00Z",
@@ -944,6 +963,6 @@
       "url_gh": "/mergers/WA-75067/Alpin Investments \u2013 Best Sheds (WA-75067) - Notification waiver determination - 28 October 2026.pdf"
     }
   ],
-  "count": 97,
+  "count": 99,
   "days_back": 14
 }

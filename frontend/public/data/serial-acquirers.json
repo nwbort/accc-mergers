@@ -323,6 +323,36 @@
       "count": 3
     },
     {
+      "acquirer_name": "Eagers Automotive",
+      "canonical_id": "eagers-automotive",
+      "anzsic_code": "391",
+      "anzsic_name": "Motor Vehicle Retailing",
+      "merger_ids": [
+        "MN-05012",
+        "MN-01133"
+      ],
+      "dates": [
+        "2026-03-31T12:00:00Z",
+        "2026-11-10T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Eagers Automotive",
+      "canonical_id": "eagers-automotive",
+      "anzsic_code": "392",
+      "anzsic_name": "Motor Vehicle Parts and Tyre Retailing",
+      "merger_ids": [
+        "MN-05012",
+        "MN-01133"
+      ],
+      "dates": [
+        "2026-03-31T12:00:00Z",
+        "2026-11-10T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "Thoma Bravo",
       "canonical_id": "thoma-bravo",
       "anzsic_code": "542",
@@ -1073,5 +1103,5 @@
       "count": 2
     }
   ],
-  "count": 66
+  "count": 68
 }
