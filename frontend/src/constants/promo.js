@@ -47,8 +47,8 @@ export const COLES_KALGOORLIE_LIVESTREAM = {
 };
 
 export const COLES_KALGOORLIE_HEARING_PROMO = {
-  campaign: 'coles-kalgoorlie-hearing-v2',
-  href: 'https://www.youtube.com/watch?v=AFSvBZfLu7g',
+  campaign: 'coles-kalgoorlie-hearing-v3',
+  href: 'https://www.youtube.com/watch?v=B8P6fMCkjTg',
   icon: FaYoutube,
   title: COLES_KALGOORLIE_HEARING.title,
   resolve: (now) => {
