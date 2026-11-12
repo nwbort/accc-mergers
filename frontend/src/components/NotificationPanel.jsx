@@ -4,6 +4,7 @@ import { mergerPath, industryPath } from '../utils/slug';
 import { FaBell, FaCheckCircle } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import { Spinner } from './LoadingSpinner';
+import PushToggle from './PushToggle';
 import { formatDate, getCalendarDaysUntil, isEventPast, isEventOngoing } from '../utils/dates';
 import { eventAnchorId, ASSESSMENT_TIMELINE_ANCHOR } from '../utils/eventAnchor';
 
@@ -541,6 +542,7 @@ function NotificationPanel({ isOpen, onClose }) {
       {/* Footer */}
       {!nothingTracked && (
         <div className="px-5 py-3 border-t border-gray-100 bg-gray-50/80 flex-shrink-0">
+          <PushToggle />
           <div className="flex items-center gap-1.5 text-xs font-medium">
             <Link
               to="/mergers?tracked=true"

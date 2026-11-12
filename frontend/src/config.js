@@ -15,6 +15,26 @@ export const FEEDBACK_ENDPOINT = "https://signup.mergers.fyi/feedback";
 // Privacy-preserving feature-usage ping — see frontend/src/utils/trackEvent.js
 export const EVENT_ENDPOINT = "https://signup.mergers.fyi/event";
 
+// Browser notifications (src/push/): Firebase Cloud Messaging, in the same
+// Firebase project as the Android app. None of this is secret: a web app's
+// Firebase config is served to every browser that loads it. Without apiKey,
+// appId and the VAPID key the site offers no notifications and following
+// works as it always has. See docs/android-push.md.
+//   1. Firebase console → Project settings → General → Add app → Web.
+//      Copy apiKey and appId from the config it shows.
+//   2. Project settings → Cloud Messaging → Web Push certificates →
+//      Generate key pair. Copy the public key into FIREBASE_VAPID_KEY.
+export const FIREBASE_WEB_CONFIG = {
+  apiKey: "AIzaSyDNbONA3HIRZtUUEMrYgqQ6G3zlVzwFxaY",
+  projectId: "mergers-fyi-app",
+  messagingSenderId: "63662839835",
+  appId: "1:63662839835:web:6398780eaf2994e60ac0be",
+};
+export const FIREBASE_VAPID_KEY = "BKibDtSOJKthTTXzm87xM69mNI6D6wZFbjxHlQVr3Fh4u4zxZ-G1YGdbY5rDTH9eMN0-QDg3e5BMp5CKY7nDEw4";
+// The signup Worker's route that subscribes a browser to the topics for what
+// it follows (FCM's web SDK can't do that itself).
+export const PUSH_TOPICS_ENDPOINT = "https://signup.mergers.fyi/push/topics";
+
 // The site's Bluesky account (handle mergers.fyi, see atproto/identity.json).
 export const BLUESKY_PROFILE_URL = "https://bsky.app/profile/mergers.fyi";
 // The site's LinkedIn company page.

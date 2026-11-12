@@ -9,6 +9,7 @@
  *   POST /confirm   — that button: adds the contact to the Resend audience
  *   POST /feedback  — stores feedback in Cloudflare D1
  *   POST /event     — increments an aggregate, privacy-preserving feature-usage counter
+ *   POST /push/topics — subscribes a browser to the FCM topics for what it follows (src/push.js)
  *
  * Required Worker secrets (set via `wrangler secret put`):
  *   RESEND_API_KEY        — Resend API key
@@ -16,6 +17,9 @@
  *   TURNSTILE_SECRET_KEY  — Cloudflare Turnstile secret key
  *   CONFIRM_SECRET        — optional: signs the app's confirmation links;
  *                           without it, a key derived from RESEND_API_KEY
+ *   FCM_SERVICE_ACCOUNT   — Firebase service account key, JSON (push only; without
+ *                           it /push/topics answers 503 and the site leaves
+ *                           browser notifications off)
  *
  * Required D1 binding (wrangler.toml):
  *   DB  — mergers-feedback D1 database
@@ -26,6 +30,8 @@
  * To view feedback: Cloudflare Dashboard → D1 → mergers-feedback → Console
  *   SELECT * FROM feedback ORDER BY created_at DESC;
  */
+
+import { applyTopicChanges, parseTopicChanges, serviceAccount } from "./push.js";
 
 const RESEND_API_BASE = "https://api.resend.com";
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
@@ -81,6 +87,21 @@ function corsHeaders(origin, env = {}) {
     "Access-Control-Max-Age": "86400",
     "Vary": "Origin",
   };
+}
+
+// Cloudflare Pages preview deployments of the site: the bare pages.dev host,
+// and each preview, at <deployment hash> or <branch alias>.mergers-fyi.pages.dev.
+// Allowed on /push/topics only, so browser notifications can be tried on a
+// branch before it ships. Not on the other routes: a preview's usage pings
+// would count as the live site's, and a signup there would be a real one.
+const PREVIEW_ORIGIN_RE = /^https:\/\/([a-z0-9-]+\.)?mergers-fyi\.pages\.dev$/;
+
+/** *response* with its CORS origin set to a preview's, when *origin* is one. */
+function allowPreviewOrigin(response, origin) {
+  if (!PREVIEW_ORIGIN_RE.test(origin)) return response;
+  const allowed = new Response(response.body, response);
+  allowed.headers.set("Access-Control-Allow-Origin", origin);
+  return allowed;
 }
 
 function jsonResponse(body, status, origin = "", env = {}) {
@@ -612,21 +633,63 @@ async function handleEvent(request, env, origin) {
 }
 
 // ---------------------------------------------------------------------------
+// Handler: POST /push/topics — a browser's notification topics (see push.js)
+//
+// No Turnstile, as for /event: a browser does this unseen whenever its follow
+// list changes, and a topic subscription only ever brings a "check now". The
+// token and topics are passed to Google and not kept.
+// ---------------------------------------------------------------------------
+
+async function handlePushTopics(request, env, origin) {
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const withinLimit = await checkRateLimit(env, `push:${ip}`, 30, 600);
+  if (!withinLimit) {
+    return jsonResponse({ error: "Too many requests" }, 429, origin, env);
+  }
+
+  const account = serviceAccount(env);
+  if (!account) {
+    return jsonResponse({ error: "Notifications aren't set up" }, 503, origin, env);
+  }
+
+  const body = await readJsonObject(request);
+  if (!body) {
+    return jsonResponse({ error: "Invalid request body" }, 400, origin, env);
+  }
+  const changes = parseTopicChanges(body);
+  if (changes.error) {
+    return jsonResponse({ error: changes.error }, 400, origin, env);
+  }
+
+  try {
+    const result = await applyTopicChanges(changes, account);
+    if (result === "invalid-token") {
+      return jsonResponse({ error: "Unknown token" }, 410, origin, env);
+    }
+  } catch (err) {
+    console.error("FCM topic change failed:", err.message);
+    return jsonResponse({ error: "Couldn't update notifications. Please try again." }, 502, origin, env);
+  }
+
+  return jsonResponse({ success: true }, 200, origin, env);
+}
+
+// ---------------------------------------------------------------------------
 // Main handler
 // ---------------------------------------------------------------------------
 
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
+    const path = new URL(request.url).pathname;
 
     if (request.method === "OPTIONS") {
-      return new Response(null, {
+      const preflight = new Response(null, {
         status: 204,
         headers: corsHeaders(origin, env),
       });
+      return path === "/push/topics" ? allowPreviewOrigin(preflight, origin) : preflight;
     }
-
-    const path = new URL(request.url).pathname;
 
     if (path === "/confirm") {
       if (request.method === "GET") return handleConfirmPage(request, env);
@@ -647,6 +710,10 @@ export default {
 
     if (path === "/event") {
       return handleEvent(request, env, origin);
+    }
+
+    if (path === "/push/topics") {
+      return allowPreviewOrigin(await handlePushTopics(request, env, origin), origin);
     }
 
     return handleSubscribe(request, env, origin);

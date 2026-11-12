@@ -183,6 +183,13 @@ def test_messages_are_collapsible_wake_ups():
     assert fcm.message("industry-G")["message"]["android"]["priority"] == "NORMAL"
 
 
+def test_messages_reach_browsers_too():
+    """frontend/src/push/sw.js wakes on the same message; Topic must be a valid Web Push topic."""
+    headers = fcm.message("merger-MN-1")["message"]["webpush"]["headers"]
+    assert headers == {"Urgency": "high", "TTL": "86400", "Topic": "check"}
+    assert fcm.message("list")["message"]["webpush"]["headers"]["Urgency"] == "normal"
+
+
 def _data_dir(tmp_path, manifest):
     """A data directory whose build_manifest() gives *manifest*'s merger ids (hashes differ)."""
     (tmp_path / "data" / "mergers").mkdir(parents=True)

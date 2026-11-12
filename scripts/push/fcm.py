@@ -1,4 +1,4 @@
-"""Tell the Android app what changed in a deploy, over Firebase Cloud Messaging.
+"""Tell the Android app and browsers what changed in a deploy, over Firebase Cloud Messaging.
 
 The app (nwbort/accc-mergers-app) used to learn about changes to what it
 follows only by checking every couple of hours. Now each phone subscribes to
@@ -12,7 +12,12 @@ compared with the one this script last saw, kept between runs in the Actions
 cache (``--state``). The first run, and the first after the cache is evicted,
 only records it.
 
-Topics (``Push.Topics`` in the app's ``notify/Push.kt``: change both or neither):
+Browsers that turned on the site's notifications subscribe to the same
+topics (``frontend/src/push/topics.js``) and get the same message, which wakes
+the site's service worker (``frontend/src/push/sw.js``) to run the follow check.
+
+Topics (``Push.Topics`` in the app's ``notify/Push.kt`` and the site's
+``frontend/src/push/topics.js``: change all three or none):
 
 * ``merger-{id}``: that merger's detail file changed, or first appeared (the
   app lets someone follow an id before it reaches the register: a waiver
@@ -206,14 +211,25 @@ def access_token(account: dict, post=requests.post) -> str:
 
 
 def message(topic: str) -> dict:
+    urgent = topic.startswith("merger-")
     return {
         "message": {
             "topic": topic,
             "data": {"check": "1"},
             "android": {
-                "priority": "HIGH" if topic.startswith("merger-") else "NORMAL",
+                "priority": "HIGH" if urgent else "NORMAL",
                 "ttl": "86400s",
                 "collapse_key": "check",
+            },
+            # The same for a browser (the site's src/push/sw.js), in Web Push
+            # headers: a day to live, and ``Topic`` collapses undelivered
+            # messages into one, as collapse_key does on Android.
+            "webpush": {
+                "headers": {
+                    "Urgency": "high" if urgent else "normal",
+                    "TTL": "86400",
+                    "Topic": "check",
+                },
             },
         }
     }

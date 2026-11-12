@@ -1,6 +1,6 @@
 # Cloudflare Worker — `mergers-digest-signup`
 
-Handles three endpoints used by the [mergers.fyi](https://mergers.fyi)
+Handles four endpoints used by the [mergers.fyi](https://mergers.fyi)
 frontend:
 
 - `POST /` — weekly-digest email signup. Validates a Cloudflare
@@ -12,6 +12,15 @@ frontend:
   database.
 - `POST /event` — bumps a privacy-preserving, aggregate-only
   feature-usage counter in D1 (see below).
+- `POST /push/topics` — subscribes a browser's Firebase Cloud Messaging
+  token to the topics for what it follows, and unsubscribes it from the rest,
+  for the site's browser notifications (`src/push.js`; see
+  [`docs/android-push.md`](../../docs/android-push.md#browsers)). The token
+  and topics go to Google and are not kept. Needs the `FCM_SERVICE_ACCOUNT`
+  secret; without it the route answers 503. Unlike the other routes, it also
+  answers the site's Cloudflare Pages previews (`mergers-fyi.pages.dev` and
+  `*.mergers-fyi.pages.dev`), so notifications can be tried on a branch
+  before it ships.
 
 The corresponding admin viewer lives in [`../feedback-admin/`](../feedback-admin/),
 which reads from the same `mergers-feedback` D1 database.
