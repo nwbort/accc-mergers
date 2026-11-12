@@ -188,6 +188,86 @@ function MergerTimelineFallback({ merger, startStr }) {
   );
 }
 
+// The ACCC's public benefit assessment, as the register titles it ("Summary of
+// Public Benefit Assessment") — the same test the pipeline uses
+// (enrichment.is_public_benefit_assessment_event), which is what stops it
+// projecting a BD 20 date once the real one is published.
+const isPublicBenefitAssessmentEvent = (title) => {
+  const lower = (title || '').toLowerCase();
+  return lower.includes('public benefit') && lower.includes('assessment') && !lower.includes('application');
+};
+
+/**
+ * The public benefit phase's milestones, for a matter that reached it: the
+ * application, the ACCC's assessment (published, or due by business day 20)
+ * and the parties' last day to respond or offer a remedy (business day 35).
+ * Each is a small dot like the Phase 2 markers, in the phase 2 family since
+ * the phase follows on from it; one still ahead is drawn hollow, as the
+ * deadline's own end node is. Only those strictly inside the axis are kept.
+ */
+function getPublicBenefitMarkers(merger, start, end) {
+  if (!merger.public_benefit_in_progress && !merger.public_benefits_determination
+    && !merger.public_benefit_application_date) {
+    return [];
+  }
+  const today = australianToday();
+  const markers = [];
+  const add = (id, dateStr, { done, pending }) => {
+    if (!dateStr) return;
+    const date = parseDateOnly(dateStr);
+    if (!isValid(date) || date <= start || date >= end) return;
+    const ahead = date > today;
+    const text = ahead ? pending : done;
+    const when = formatDateMedium(dateStr);
+    markers.push({
+      id,
+      pct: axisPct(date, start, end),
+      ahead,
+      title: `${text.label} \u00b7 ${when}`,
+      label: `${text.label}, ${when}`,
+      hint: { title: text.label, body: text.body(when) },
+    });
+  };
+
+  const application = {
+    label: 'Applied for public benefit determination',
+    body: (when) => `The parties applied on ${when}, starting the 50 business day public benefit phase.`,
+  };
+  add('public-benefit-application', merger.public_benefit_application_date, {
+    done: application,
+    pending: application,
+  });
+
+  const assessmentEvent = (merger.events || [])
+    .filter((e) => e?.date && isPublicBenefitAssessmentEvent(e.title))
+    .sort((a, b) => a.date.localeCompare(b.date))[0];
+  add('public-benefit-assessment', assessmentEvent?.date || merger.public_benefit_assessment_date, {
+    done: {
+      label: assessmentEvent ? 'Public benefit assessment published' : 'Public benefit assessment due',
+      body: (when) => (assessmentEvent
+        ? `The ACCC published its public benefit assessment on ${when}.`
+        : `The ACCC's public benefit assessment was due by ${when}, business day 20 of the phase.`),
+    },
+    pending: {
+      label: 'Public benefit assessment due',
+      body: (when) => `The ACCC is due to publish its public benefit assessment by ${when}, business day 20 of the phase.`,
+    },
+  });
+
+  add('public-benefit-response', merger.public_benefit_response_date, {
+    done: {
+      label: 'Public benefit responses closed',
+      body: (when) => `The parties' last day to respond to the assessment or offer a remedy was ${when}, business day 35 of the phase.`,
+    },
+    pending: {
+      label: 'Public benefit responses due',
+      body: (when) => `The parties have until ${when}, business day 35 of the phase, to respond to the assessment or offer a remedy.`,
+    },
+  });
+
+  return markers;
+}
+
 /**
  * Horizontal timeline for the merger detail header. Plots the assessment from
  * its start (notification or waiver application) to its end (the published
@@ -338,6 +418,9 @@ function MergerTimeline({ merger }) {
   };
   const phase2Dot = phase2Pct === null ? null
     : getOutcomeDot({ determination: merger.phase_2_determination }).dot;
+
+  // The public benefit phase's own milestones, after that Phase 2 marker.
+  const publicBenefitMarkers = getPublicBenefitMarkers(merger, start, end);
 
   // Progress + "today" marker, only while the assessment is still running.
   // Overdue is judged on calendar days (ACCC's Australian "today") rather than
@@ -565,7 +648,9 @@ function MergerTimeline({ merger }) {
   const openHint = openHintId === 'expected' ? expectedHint
     : openHintId === 'phase-1' ? phase1Hint
       : openHintId === 'phase-2' ? phase2Hint
-        : extensions.find((ext) => ext.id === openHintId)?.hint ?? null;
+        : extensions.find((ext) => ext.id === openHintId)?.hint
+          ?? publicBenefitMarkers.find((m) => m.id === openHintId)?.hint
+          ?? null;
 
   return (
     // Wraps the row so an opened explanation can use the full width rather than
@@ -667,6 +752,22 @@ function MergerTimeline({ merger }) {
                 label={`${phase2Label}, made on ${formatDateMedium(merger.phase_2_determination_date)}`}
               />
             )}
+            {/* Public benefit phase milestones: filled once passed, hollow
+                while still ahead. */}
+            {publicBenefitMarkers.map((m) => (
+              <HintMarker
+                key={m.id}
+                hintId={m.id}
+                openHintId={openHintId}
+                onToggle={toggleHint}
+                className={`absolute top-1/2 h-2.5 w-2.5 rounded-full cursor-help ${
+                  m.ahead ? 'bg-white ring-2 ring-phase-2-light' : 'bg-phase-2-light ring-2 ring-white'
+                }`}
+                style={{ left: `${m.pct}%`, transform: 'translate(-50%, -50%)' }}
+                title={m.title}
+                label={m.label}
+              />
+            ))}
 
             {/* Expected-determination band — a forecast, so it's shaded rather
                 than marked with a dot, keeping actual events (which are dots)
