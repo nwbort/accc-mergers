@@ -246,7 +246,7 @@
         "26": 4
       },
       "17": {
-        "23": 8,
+        "23": 9,
         "24": 4,
         "25": 10,
         "26": 3,
@@ -303,17 +303,17 @@
     },
     "stats": {
       "average": 14.3,
-      "median": 15.0,
+      "median": 15,
       "min": 2,
       "max": 24,
-      "count": 516
+      "count": 517
     },
     "calendar_stats": {
       "average": 20.9,
-      "median": 21.0,
+      "median": 21,
       "min": 2,
       "max": 39,
-      "count": 516
+      "count": 517
     }
   },
   "monthly_volume": {
@@ -365,7 +365,7 @@
       72,
       69,
       55,
-      38,
+      39,
       1
     ],
     "waivers_pending_estimate": [
@@ -438,7 +438,7 @@
       54,
       52,
       47,
-      21,
+      22,
       0
     ],
     "waivers_pending_estimate": [
@@ -457,7 +457,7 @@
       0,
       0,
       23,
-      49
+      50
     ],
     "as_at": "2026-11-12"
   },
@@ -491,12 +491,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 18,
+          "median": 18.0,
           "average": 17.2,
           "p90": 22,
           "min": 4,
           "max": 24,
-          "count": 65,
+          "count": 66,
           "duration_histogram": {
             "4": 1,
             "8": 2,
@@ -506,7 +506,7 @@
             "14": 5,
             "15": 6,
             "16": 7,
-            "17": 6,
+            "17": 7,
             "18": 9,
             "19": 10,
             "20": 5,
@@ -538,7 +538,7 @@
           "phase_2": {},
           "waivers": {
             "Approved": 61,
-            "Not approved": 4
+            "Not approved": 5
           }
         }
       },
@@ -578,12 +578,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 18.0,
+          "median": 18,
           "average": 16.7,
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 192,
+          "count": 193,
           "duration_histogram": {
             "3": 1,
             "4": 1,
@@ -599,7 +599,7 @@
             "14": 11,
             "15": 14,
             "16": 17,
-            "17": 15,
+            "17": 16,
             "18": 28,
             "19": 28,
             "20": 16,
@@ -608,7 +608,7 @@
             "23": 4,
             "24": 5
           },
-          "median_delta": 3.0
+          "median_delta": 3
         },
         "phase_1_speed": {
           "day15": {
@@ -636,7 +636,7 @@
           },
           "waivers": {
             "Approved": 180,
-            "Not approved": 12
+            "Not approved": 13
           }
         }
       }
@@ -651,25 +651,25 @@
         "count": 285
       },
       "waivers": {
-        "median": 15.0,
+        "median": 15,
         "average": 14.3,
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 516
+        "count": 517
       }
     },
     "pre_notification": {
       "windows": [
         {
-          "median": 18,
+          "median": 19,
           "average": 22.2,
           "p90": 41,
           "min": 0,
           "max": 93,
           "count": 39,
           "days": 30,
-          "median_delta": 3.0
+          "median_delta": 4.0
         },
         {
           "median": 18.0,
@@ -869,9 +869,9 @@
           "count": 64
         },
         {
-          "median": 18.0,
+          "median": 18,
           "average": 17.2,
-          "count": 22
+          "count": 23
         }
       ],
       "open_caseload": [
@@ -1131,12 +1131,12 @@
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 42,
+      "count": 43,
       "outcome_mix": {
         "Approved": 18,
-        "Not approved": 24
+        "Not approved": 25
       },
-      "median_business_days": 15.0
+      "median_business_days": 15
     },
     {
       "division": "Chair Cass-Gottlieb",
