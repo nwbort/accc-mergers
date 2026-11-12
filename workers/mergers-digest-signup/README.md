@@ -115,6 +115,10 @@ npm run deploy:dry   # build without uploading
 npm run deploy       # production deploy
 ```
 
+Pushes to `main` that touch this directory deploy it automatically via
+`deploy-workers.yml` (see [`../README.md`](../README.md#deploying-from-github)),
+so `npm run deploy` is only needed for a deploy outside that.
+
 After deploying, attach a custom domain or route in the Cloudflare
 dashboard (see comments in `wrangler.toml`).
 

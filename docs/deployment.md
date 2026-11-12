@@ -101,7 +101,9 @@ layout convention.
 
 `workers/mergers-digest-signup/` handles digest email signup form
 submissions (validating Cloudflare Turnstile tokens) and stores feedback
-submissions in D1. It is deployed separately via wrangler:
+submissions in D1. It is deployed by
+[`deploy-workers.yml`](../.github/workflows/deploy-workers.yml) on a push to
+`main` touching its directory (or on demand), or by hand via wrangler:
 
 ```bash
 cd workers/mergers-digest-signup
@@ -117,7 +119,8 @@ feedback database.
 that watches a mailbox subscribed to the ACCC's register update mailing
 list. On each email it fires a `repository_dispatch` event
 (`new_merger_detected`) so `pipeline.yml` runs immediately rather than
-waiting for its next scheduled run. See
+waiting for its next scheduled run. Like the signup Worker it is deployed by
+`deploy-workers.yml`. See
 [`workers/accc-register-watcher/README.md`](../workers/accc-register-watcher/README.md)
 for setup (Cloudflare Email Routing configuration and the GitHub token
 secret).
@@ -219,6 +222,14 @@ Runs on pull requests touching `workers/**`, and on demand
 test suite today), then `npm run deploy:dry` to bundle the Worker and
 validate its `wrangler.toml` without deploying. Discovers Workers by
 globbing `workers/*/package.json`, so a new Worker is covered automatically.
+
+### `deploy-workers.yml` — Cloudflare Worker deploys
+
+Deploys `accc-register-watcher` and `mergers-digest-signup` with
+`wrangler deploy` on a push to `main` touching either directory (only the
+one that changed), and on demand. Needs the `CLOUDFLARE_API_TOKEN` and
+`CLOUDFLARE_ACCOUNT_ID` repository secrets — see
+[`workers/README.md`](../workers/README.md#deploying-from-github).
 
 ### `scrape-tribunal.yml` — Tribunal matter scraper (scheduled + manual)
 

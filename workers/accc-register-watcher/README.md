@@ -36,7 +36,9 @@ Cloudflare Email Routing rules aren't expressible in `wrangler.toml`.
    on (e.g. `mergers.fyi`): dashboard → your zone → Email → Email Routing →
    Enable.
 
-2. **Deploy the Worker**:
+2. **Deploy the Worker** (after this first deploy, pushes to `main` that
+   touch this directory redeploy it via `deploy-workers.yml` — see
+   [`../README.md`](../README.md#deploying-from-github)):
    ```bash
    cd workers/accc-register-watcher
    npm install

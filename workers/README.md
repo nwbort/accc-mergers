@@ -51,6 +51,31 @@ layout above is picked up with no change to the workflow. Only
 `accc-register-watcher` has a test suite today; the others are still
 covered by the `deploy:dry` bundle-and-validate step.
 
+## Deploying from GitHub
+
+[`deploy-workers.yml`](../.github/workflows/deploy-workers.yml) deploys
+`accc-register-watcher` and `mergers-digest-signup` with `wrangler deploy`:
+
+- **On push to `main`** touching a Worker's directory, it deploys just that
+  Worker (both, if the workflow file itself changed), after re-running its
+  `npm test`.
+- **By hand**: Actions → *Deploy Workers* → *Run workflow*, choosing one
+  Worker or both.
+
+`feedback-admin` is not included and is still deployed by hand.
+
+It needs two repository secrets (Settings → Secrets and variables →
+Actions):
+
+| Secret | Value |
+| --- | --- |
+| `CLOUDFLARE_API_TOKEN` | A Cloudflare API token from the **Edit Cloudflare Workers** template, scoped to this account. |
+| `CLOUDFLARE_ACCOUNT_ID` | The account ID (dashboard → Workers & Pages, right-hand sidebar). |
+
+Without them a push run skips with a notice and a manual run fails. A deploy
+replaces each Worker's code and `[vars]` from `wrangler.toml` but leaves its
+`wrangler secret put` secrets alone, so those are still set once, by hand.
+
 ## What is *not* here
 
 Two pieces of Cloudflare config have to stay at the repository root and
