@@ -108,6 +108,73 @@ describe('MergerTimeline', () => {
     ).toBeInTheDocument();
   });
 
+  it('marks the public benefit application, assessment and response deadline', () => {
+    vi.setSystemTime(new Date('2026-11-12T00:00:00Z'));
+    render(
+      <MergerTimeline
+        merger={{
+          effective_notification_datetime: '2026-03-03T12:00:00Z',
+          end_of_determination_period: '2027-02-01T12:00:00Z',
+          stage: 'Public benefit phase',
+          status: 'Under assessment',
+          public_benefit_in_progress: true,
+          phase_2_determination: 'Not approved',
+          phase_2_determination_date: '2026-09-23T12:00:00Z',
+          public_benefit_application_date: '2026-10-13T12:00:00Z',
+          public_benefit_response_date: '2026-12-01T12:00:00Z',
+          events: [
+            { date: '2026-11-10T12:00:00Z', title: 'Summary of Public Benefit Assessment', phase: 'Public benefit' },
+          ],
+        }}
+      />
+    );
+
+    expect(
+      screen.getByLabelText('Applied for public benefit determination, 13 Oct 2026')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('Public benefit assessment published, 10 Nov 2026')
+    ).toBeInTheDocument();
+    const response = screen.getByLabelText('Public benefit responses due, 01 Dec 2026');
+    fireEvent.click(response);
+    expect(screen.getByText(/have until 01 Dec 2026, business day 35/)).toBeInTheDocument();
+  });
+
+  it('projects the public benefit assessment until it is published', () => {
+    vi.setSystemTime(new Date('2026-10-20T00:00:00Z'));
+    render(
+      <MergerTimeline
+        merger={{
+          effective_notification_datetime: '2026-03-03T12:00:00Z',
+          end_of_determination_period: '2027-02-01T12:00:00Z',
+          status: 'Under assessment',
+          public_benefit_in_progress: true,
+          public_benefit_application_date: '2026-10-13T12:00:00Z',
+          public_benefit_assessment_date: '2026-11-10T12:00:00Z',
+          events: [],
+        }}
+      />
+    );
+
+    expect(
+      screen.getByLabelText('Public benefit assessment due, 10 Nov 2026')
+    ).toBeInTheDocument();
+  });
+
+  it('adds no public benefit markers to a matter that never reached the phase', () => {
+    render(
+      <MergerTimeline
+        merger={{
+          effective_notification_datetime: '2026-05-18T12:00:00Z',
+          end_of_determination_period: '2026-07-01T12:00:00Z',
+          status: 'Under assessment',
+        }}
+      />
+    );
+
+    expect(screen.queryByLabelText(/public benefit/i)).not.toBeInTheDocument();
+  });
+
   it('does not add a Phase 1 marker for a single-phase merger', () => {
     render(
       <MergerTimeline
