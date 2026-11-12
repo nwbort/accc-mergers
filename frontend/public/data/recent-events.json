@@ -1,6 +1,16 @@
 {
   "events": [
     {
+      "type": "questionnaire",
+      "title": "Phase 1 consultation",
+      "date": "2026-11-12T12:00:00Z",
+      "merger_id": "MN-65045",
+      "merger_name": "Too Lost \u2013 Xelon Entertainment",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false,
+      "url_gh": "/mergers/MN-65045/Too Lost - Xelon Entertainment (MN-65045) - Third-party questionnaire - 12 November 2026.pdf"
+    },
+    {
       "type": "phase_1_determination",
       "title": "Phase 1 - initial assessment determination: Approved",
       "date": "2026-11-12T12:00:00Z",
@@ -29,6 +39,15 @@
       "stage": "Phase 1 - initial assessment",
       "is_waiver": false,
       "url_gh": "/mergers/MN-01133/Eagers-Zagame - third-party questionnaire.pdf"
+    },
+    {
+      "type": "notified",
+      "title": "Merger notified to ACCC",
+      "date": "2026-11-11T12:00:00Z",
+      "merger_id": "MN-65045",
+      "merger_name": "Too Lost \u2013 Xelon Entertainment",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false
     },
     {
       "type": "notified",
@@ -904,6 +923,6 @@
       "url_gh": "/mergers/WA-90042/Blackstone \u2013 Discovery Education (WA-90042) - Notification waiver determination - 28 October 2026.pdf"
     }
   ],
-  "count": 93,
+  "count": 95,
   "days_back": 14
 }

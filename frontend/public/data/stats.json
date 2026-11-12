@@ -1,10 +1,10 @@
 {
-  "total_mergers": 325,
+  "total_mergers": 326,
   "total_waivers": 516,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 278,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-65045",
+      "merger_name": "Too Lost \u2013 Xelon Entertainment",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-11T12:00:00Z",
+      "page_modified_datetime": "2026-11-12T12:56:24+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25056",
       "merger_name": "Amwins / Dragoneer / KKR Consortium \u2013 Steadfast",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-11-02T12:00:00Z",
       "page_modified_datetime": "2026-11-03T10:52:54+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-60059",
-      "merger_name": "Merchant Wealth Partners - minority investment in Ironbark Financial Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-11-02T12:00:00Z",
-      "page_modified_datetime": "2026-11-02T17:43:08+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
