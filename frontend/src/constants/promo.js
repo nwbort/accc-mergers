@@ -53,6 +53,7 @@ export const FEDERAL_COURT_YOUTUBE_CHANNEL = 'https://www.youtube.com/@FederalCo
 
 export const COLES_KALGOORLIE_LIVESTREAM_LINKS = {
   '2026-11-11': 'https://www.youtube.com/watch?v=B8P6fMCkjTg',
+  '2026-11-16': 'https://www.youtube.com/watch?v=ehGRclQmSK4',
 };
 
 export function livestreamLink(links, now, timeZone) {
