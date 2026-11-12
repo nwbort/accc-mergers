@@ -1,6 +1,6 @@
 {
   "total_mergers": 327,
-  "total_waivers": 519,
+  "total_waivers": 520,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 279,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 492,
+    "Approved": 493,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.895953757225435,
-    "median_days": 21,
-    "average_business_days": 14.31791907514451,
-    "median_business_days": 15
+    "average_days": 20.9,
+    "median_days": 21.0,
+    "average_business_days": 14.323076923076924,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 214
+      "count": 215
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 86
+      "count": 87
     },
     {
       "name": "Non-Residential Property Operators",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05061",
+      "merger_name": "ctrl:cyber - Razilio",
+      "determination": "Approved",
+      "determination_date": "2026-11-12T12:00:00Z",
+      "page_modified_datetime": "2026-11-12T18:41:59+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-55043",
       "merger_name": "The Borg Group - Programmed Timber",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-10T12:00:00Z",
       "page_modified_datetime": "2026-11-10T17:30:07+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-45035",
-      "merger_name": "SoftBank \u2013 ABB Robotics",
-      "determination": "Approved",
-      "determination_date": "2026-11-10T12:00:00Z",
-      "page_modified_datetime": "2026-11-10T16:53:55+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

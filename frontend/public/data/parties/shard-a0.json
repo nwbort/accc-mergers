@@ -544,6 +544,48 @@
         "completed_count": 1
       }
     },
+    "razilio-pty-ltd": {
+      "id": "razilio-pty-ltd",
+      "canonical_name": "Razilio Pty Ltd",
+      "members": [
+        {
+          "name": "RAZILIO PTY LTD",
+          "identifier": "82 690 338 099",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05061",
+            "merger_name": "ctrl:cyber - Razilio",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-20T12:00:00Z",
+            "determination_date": "2026-11-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
     "south-food-group-pty-ltd": {
       "id": "south-food-group-pty-ltd",
       "canonical_name": "South Food Group Pty Ltd",
