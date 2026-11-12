@@ -22,10 +22,15 @@ The app isn't a browser, so it can't show Turnstile. `POST /app-signup` with
 `{ "email": "..." }` takes no CAPTCHA and adds nobody: it emails the address a
 link to confirm, so only someone who can read that inbox can subscribe it, and
 the open route can't sign up other people. The link
-(`/confirm?t=…&s=…`) opens a page with a **Confirm** button that posts back to
-`/confirm`, which adds the contact; confirming on the GET itself would let the
-link scanners in work mail (Outlook Safe Links and the like) subscribe the
-reader without them.
+(`/confirm?t=…&s=…`) opens a page whose form posts back to `/confirm`, which
+adds the contact. The page submits that form itself from script once it's
+showing, so the reader lands straight on "You're subscribed"; its **Confirm**
+button is the fallback without script. Confirming on the GET itself would let
+the link scanners in work mail (Outlook Safe Links and the like) subscribe the
+reader without them; a scanner that merely fetches the page runs no script and
+adds nobody. (One that renders pages with script could still confirm: an
+accepted trade for one tap fewer, since the subscriber can unsubscribe from the
+first email.)
 
 The link is an HMAC-signed `{email, expiry}` and lasts 7 days; nothing is stored
 until it is used. The key is `CONFIRM_SECRET` if that secret is set, otherwise
