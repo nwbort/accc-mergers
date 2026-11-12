@@ -1,0 +1,129 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/steadfast-axiom-insurance-brokers",
+  "merger_name": "Steadfast - Axiom Insurance Brokers",
+  "status": "Under assessment",
+  "merger_id": "MN-25024",
+  "effective_notification_datetime": "2026-11-12T12:00:00Z",
+  "original_notification_datetime": "2026-11-12T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2027-01-12T12:00:00Z",
+  "consultation_response_due_date": "2026-11-20T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "QIB GROUP HOLDINGS PTY LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "98 163 322 914",
+      "party_page": {
+        "id": "qib-group-holdings-pty-limited",
+        "name": "Qib Group Holdings Pty Limited"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "AXIOM INSURANCE BROKERS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "37 606 463 585",
+      "party_page": {
+        "id": "axiom-insurance-brokers-pty-ltd",
+        "name": "Axiom Insurance Brokers Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "STEADFAST GROUP LTD",
+      "identifier_type": "ABN",
+      "identifier": "98 073 659 677",
+      "party_page": {
+        "id": "steadfast-group-ltd",
+        "name": "Steadfast Group Ltd"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "6420",
+      "name": "Auxiliary Insurance Services"
+    }
+  ],
+  "merger_description": "Steadfast Group Limited (**Steadfast**), via subsidiary QIB Group Holdings Pty Ltd (**QIB Group**), proposes to acquire 100% of the issued share capital of Axiom Insurance Brokers Pty Ltd (**Axiom**) (the **Acquisition**).\n\nSteadfast is an ASX-listed company which owns interests in insurance brokers, insurance premium funders, life insurance brokers, insurance agencies and other risk services. Steadfast\u2019s general insurance brokers operate across Australia and across industries with the brokerages operating through offices, authorised representatives, referrers and digital channels.\n\nQIB Group is a Queensland-based insurance brokerage with core operations in general insurance broking. In addition to its core operations, the Group holds equity interests in a network of insurance broking businesses (**QIB Subsidiaries**) across more than 25 offices spanning Queensland, Victoria, New South Wales, Tasmania and the Northern Territory. QIB Subsidiaries operate under a range of trading names. In general insurance broking these brands include Austcover, Regional Insurance Brokers and Steadfast Taswide. In specialty general insurance broking these brands include T&G Insurance Brokers and Oceanic Marine Risks.\n\nAxiom is a Queensland-based insurance brokerage focusing on commercial, agricultural and domestic general insurance products. Axiom operates through regional offices located in Chinchilla, Toowoomba, Bell and Goondiwindi.\n\nBoth Axiom and QIB Group are broker network members of Steadfast.",
+  "events": [
+    {
+      "date": "2026-11-12T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-50020",
+      "merger_name": "Envest Group \u2013 MA Insurance Brokers",
+      "acquirers": [
+        "PSC TRANSPORT INSURANCE BROKERS PTY LTD"
+      ],
+      "targets": [
+        "MA INSURANCE BROKERS PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-25056",
+      "merger_name": "Amwins / Dragoneer / KKR Consortium \u2013 Steadfast",
+      "acquirers": [
+        "Starboard BidCo Pty Ltd",
+        "Amwins Group, Inc"
+      ],
+      "targets": [
+        "STEADFAST GROUP LTD"
+      ],
+      "status": "Under assessment"
+    },
+    {
+      "merger_id": "MN-60059",
+      "merger_name": "Merchant Wealth Partners - minority investment in Ironbark Financial Group",
+      "acquirers": [
+        "Merchant Wealth Partners HMB Pty Ltd"
+      ],
+      "targets": [
+        "IRONBARK INVESTMENT PARTNERS PTY LIMITED"
+      ],
+      "status": "Under assessment"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      21
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": null,
+    "sample_size": 282,
+    "as_of": "2026-11-12",
+    "estimated_at": "2026-11-12",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 183,
+    "min_days": 177,
+    "max_days": 196,
+    "id_issued_estimated": "2026-05-13",
+    "id_issued_before": "2026-05-19",
+    "id_issued_after": "2026-04-30",
+    "min_days_witness": "WA-25025",
+    "max_days_witness": "WA-25023",
+    "basis": "bracketed",
+    "method_version": 1
+  },
+  "og_card": "notified-to-the-accc.png"
+}

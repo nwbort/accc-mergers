@@ -182,6 +182,42 @@
         "completed_count": 1
       }
     },
+    "axiom-insurance-brokers-pty-ltd": {
+      "id": "axiom-insurance-brokers-pty-ltd",
+      "canonical_name": "Axiom Insurance Brokers Pty Ltd",
+      "members": [
+        {
+          "name": "AXIOM INSURANCE BROKERS PTY LTD",
+          "identifier": "37 606 463 585",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25024",
+            "merger_name": "Steadfast - Axiom Insurance Brokers",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-12T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "best-sheds-pty-ltd": {
       "id": "best-sheds-pty-ltd",
       "canonical_name": "Best Sheds Pty Ltd",
