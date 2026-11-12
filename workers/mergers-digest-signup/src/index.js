@@ -295,10 +295,12 @@ async function addContact(email, env) {
 // The app can't show Turnstile (it isn't a browser), so this route takes an
 // email with no CAPTCHA and, rather than adding it, sends it a link to
 // confirm. Only someone who can read that inbox can subscribe it, so the open
-// route can't be used to sign up other people. The link opens a page with a
-// button rather than confirming on GET: mail scanners (Outlook Safe Links and
-// the like) open links in incoming mail, and would otherwise confirm for the
-// reader. The link is signed (HMAC) and lasts CONFIRM_TTL_DAYS; nothing is
+// route can't be used to sign up other people. The link opens a page that
+// confirms with a POST rather than on GET: mail scanners (Outlook Safe Links
+// and the like) fetch links in incoming mail, and would otherwise confirm for
+// the reader. The page posts itself from script once it's on screen, so a
+// reader lands straight on "You're subscribed"; a fetch that runs no script
+// adds nobody, and without script the page's button does it. The link is signed (HMAC) and lasts CONFIRM_TTL_DAYS; nothing is
 // stored until it is used.
 // ---------------------------------------------------------------------------
 
@@ -452,7 +454,9 @@ const BAD_LINK_PAGE = () =>
     400
   );
 
-// GET /confirm: the emailed link. Shows a button; nothing happens until it's pressed.
+// GET /confirm: the emailed link. A page that posts its own form once it's
+// showing in a browser (a fetch that runs no script never does); its button is
+// the fallback without script.
 async function handleConfirmPage(request, env) {
   const url = new URL(request.url);
   const t = url.searchParams.get("t") || "";
@@ -463,9 +467,13 @@ async function handleConfirmPage(request, env) {
     "Confirm your subscription",
     `<h1>Confirm your subscription</h1>
 <p>Get the mergers.fyi weekly digest at <strong>${escapeHtml(email)}</strong> every Monday morning.</p>
-<form method="post" action="/confirm"><input type="hidden" name="t" value="${escapeHtml(t)}"><input type="hidden" name="s" value="${escapeHtml(s)}">
+<form id="confirm" method="post" action="/confirm"><input type="hidden" name="t" value="${escapeHtml(t)}"><input type="hidden" name="s" value="${escapeHtml(s)}">
 <button type="submit">Confirm</button></form>
-<p class="small">You can unsubscribe from any email. See our <a href="https://mergers.fyi/privacy">privacy policy</a>.</p>`
+<p class="small">You can unsubscribe from any email. See our <a href="https://mergers.fyi/privacy">privacy policy</a>.</p>
+<script>(function(){var f=document.getElementById("confirm"),done=false;
+function go(){if(done||document.visibilityState!=="visible")return;done=true;
+var b=f.querySelector("button");b.disabled=true;b.textContent="Confirming\u2026";f.submit();}
+go();document.addEventListener("visibilitychange",go);})();</script>`
   );
 }
 

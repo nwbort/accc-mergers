@@ -84,14 +84,16 @@ test("a failed send is reported, not claimed as sent", async () => {
   assert.equal((await appSignup("b@example.com")).status, 503);
 });
 
-test("the link's page asks to confirm; only its button subscribes", async () => {
+test("the link's page confirms by posting its form; fetching it subscribes nobody", async () => {
   await appSignup("c@example.com");
   const link = linkFrom(calls[0]);
   const pageResp = await call(link.pathname + link.search);
   assert.equal(pageResp.status, 200);
   const html = await pageResp.text();
   assert.match(html, /c@example\.com/);
-  assert.match(html, /<form method="post" action="\/confirm">/);
+  assert.match(html, /<form id="confirm" method="post" action="\/confirm">/);
+  // In a browser the page posts that form itself, so the reader isn't asked twice.
+  assert.match(html, /f\.submit\(\)/);
   // Opening the link (as a mail scanner would) added nobody.
   assert.ok(!calls.some((c) => c.url.includes("/contacts")));
 
