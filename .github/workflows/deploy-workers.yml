@@ -1,0 +1,171 @@
+name: Deploy Workers
+
+# Deploys the two Workers the live site depends on, accc-register-watcher and
+# mergers-digest-signup, with `wrangler deploy` — the same command as
+# `npm run deploy` in each directory, so a deploy from here and one from a
+# laptop are the same deploy.
+#
+# A push to main deploys only the Worker whose directory changed (both, if this
+# file did). A manual run deploys whichever one is picked, or both.
+#
+# feedback-admin is deliberately not here: it is a private tool, nothing on the
+# site breaks while it lags, and it is still deployed by hand.
+#
+# Wrangler leaves a Worker's secrets alone on deploy, so GITHUB_TOKEN,
+# RESEND_API_KEY and the rest stay as they were set with `wrangler secret put`.
+# Only [vars] are replaced, from wrangler.toml, which is what makes the
+# committed file the source of truth for them.
+#
+# Needs two repository secrets: CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID
+# (see workers/README.md). Without them a push run skips, as every other
+# credentialed step in this repo does; a manual run fails, since somebody asked
+# for a deploy and a green tick for nothing happening would be a lie.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'workers/accc-register-watcher/**'
+      - 'workers/mergers-digest-signup/**'
+      - '.github/workflows/deploy-workers.yml'
+  workflow_dispatch:
+    inputs:
+      worker:
+        description: 'Worker to deploy'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - both
+          - accc-register-watcher
+          - mergers-digest-signup
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    name: Pick Workers
+    runs-on: ubuntu-latest
+    outputs:
+      workers: ${{ steps.pick.outputs.workers }}
+    steps:
+      - name: Check out repository
+        if: github.event_name == 'push'
+        uses: actions/checkout@v7
+
+      # The push's path filter only says *something* matched. Diff the push
+      # itself to say which Worker. A first push of a branch, or a force push
+      # whose old head can't be fetched, has nothing to diff against — deploy
+      # both rather than guess.
+      - name: Work out which Workers to deploy
+        id: pick
+        env:
+          EVENT: ${{ github.event_name }}
+          CHOICE: ${{ inputs.worker }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          all='["accc-register-watcher","mergers-digest-signup"]'
+
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            if [ "$CHOICE" = "both" ]; then
+              echo "workers=$all" >> "$GITHUB_OUTPUT"
+            else
+              echo "workers=[\"$CHOICE\"]" >> "$GITHUB_OUTPUT"
+            fi
+            exit 0
+          fi
+
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ] \
+              || ! git fetch --depth=1 origin "$BEFORE" 2>/dev/null; then
+            echo "No previous commit to diff against; deploying both."
+            echo "workers=$all" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          changed="$(git diff --name-only "$BEFORE" "$AFTER")"
+          echo "$changed"
+          if grep -qx '.github/workflows/deploy-workers.yml' <<<"$changed"; then
+            echo "workers=$all" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          picked=()
+          for worker in accc-register-watcher mergers-digest-signup; do
+            if grep -q "^workers/${worker}/" <<<"$changed"; then
+              picked+=("\"$worker\"")
+            fi
+          done
+          echo "workers=[$(IFS=,; echo "${picked[*]}")]" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    name: ${{ matrix.worker }}
+    needs: plan
+    if: needs.plan.outputs.workers != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        worker: ${{ fromJSON(needs.plan.outputs.workers) }}
+    # One deploy per Worker at a time, and never cancel one halfway: a later
+    # push queues behind it and deploys the newer code.
+    concurrency:
+      group: deploy-worker-${{ matrix.worker }}
+      cancel-in-progress: false
+    env:
+      WRANGLER_SEND_METRICS: 'false'
+    defaults:
+      run:
+        working-directory: workers/${{ matrix.worker }}
+    steps:
+      - name: Check credentials
+        id: creds
+        working-directory: .
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          msg="CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID must both be set to deploy — see workers/README.md."
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            echo "::error::$msg"
+            exit 1
+          fi
+          echo "::notice::Skipping deploy: $msg"
+          echo "configured=false" >> "$GITHUB_OUTPUT"
+
+      - name: Check out repository
+        if: steps.creds.outputs.configured == 'true'
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        if: steps.creds.outputs.configured == 'true'
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: .node-version
+          cache: 'npm'
+          cache-dependency-path: workers/${{ matrix.worker }}/package-lock.json
+
+      - name: Install dependencies
+        if: steps.creds.outputs.configured == 'true'
+        run: npm ci
+
+      # The same gate workers-test.yml runs on the pull request, run again on
+      # what is actually about to ship.
+      - name: Test
+        if: steps.creds.outputs.configured == 'true'
+        run: npm test --if-present
+
+      - name: Deploy
+        if: steps.creds.outputs.configured == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler deploy

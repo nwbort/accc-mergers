@@ -28,7 +28,7 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 
 ### Cloudflare Workers (`workers/`)
 
-One directory per Worker, each named after the Worker it deploys (the directory name matches `name` in its `wrangler.toml`). All are deployed separately via wrangler — see [`workers/README.md`](workers/README.md).
+One directory per Worker, each named after the Worker it deploys (the directory name matches `name` in its `wrangler.toml`). All are deployed separately via wrangler; `accc-register-watcher` and `mergers-digest-signup` also deploy from GitHub (`deploy-workers.yml`) — see [`workers/README.md`](workers/README.md).
 
 - `workers/mergers-digest-signup/` — public HTTP API: digest email signup (validates Cloudflare Turnstile tokens, adds to a Resend audience; the Android app's `POST /app-signup` instead emails a signed link to confirm, double opt-in, since the app can't show Turnstile) and `POST /feedback` writes to the `mergers-feedback` D1 database; `POST /event` bumps an aggregate, per-day feature-usage counter in the same database (`utils/trackEvent.js`)
 - `workers/accc-register-watcher/` — Email Worker bound to a mailbox subscribed to the ACCC's register update mailing list; fires a `repository_dispatch` (`new_merger_detected`) to trigger `pipeline.yml` immediately on each email. See its README for the Cloudflare Email Routing setup
@@ -809,6 +809,7 @@ exists rather than 404ing into the SPA's `index.html`.
 | `frontend-test.yml` | Pull requests touching `frontend/**`, `functions/**` or `fixtures/*.json`, manual | Run the frontend test suite |
 | `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `frontend/public/**` or the check itself, manual | Guards both Cloudflare Pages limits that fail silently: opens a tracking issue for any asset over the 25 MiB per-file limit, and for the deployment approaching the 20,000-**file** cap (reports at 80%, fails the run once over). See `scripts/check_deploy_assets.py` |
 | `revert-auto-merge.yml` | `/revert` comment on an open `needs-verification` issue (owner/member/collaborator only) | Undo an auto-merged related-parties batch: move its groups into `related_parties.json`'s `rejected` list (so the detector never re-suggests them), push to `main`, dispatch `pipeline.yml`, close the issue. See `.github/actions/auto-merge-detection` |
+| `deploy-workers.yml` | Push to `main` touching `workers/accc-register-watcher/**`, `workers/mergers-digest-signup/**` or the workflow, manual (pick one Worker or both) | `npm test` then `wrangler deploy` for each changed Worker (both when the workflow changes). Needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`; without them a push skips, a manual run fails. `feedback-admin` is still deployed by hand. See [`workers/README.md`](workers/README.md#deploying-from-github) |
 | `workers-test.yml` | Pull requests touching `workers/**`, manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |
 
 There is no standalone workflow for any detector, or for the sitemap. All four
