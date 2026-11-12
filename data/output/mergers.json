@@ -83914,9 +83914,14 @@
           "name": "Pemba Capital Fund III, L.P.",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "pemba-capital-fund-iii-lp",
+            "name": "Pemba Capital Fund Iii Lp"
+          },
           "party_page": {
-            "id": "pemba-capital-fund-iii-l-p",
-            "name": "Pemba Capital Fund III, L.P."
+            "id": "pemba-capital-fund-iii-lp",
+            "name": "Pemba Capital Fund Iii Lp",
+            "curated": true
           }
         },
         {
@@ -84989,9 +84994,14 @@
           "name": "PEMBA CAPITAL FUND III LP",
           "identifier_type": "ABN",
           "identifier": "88 952 324 737",
-          "party_page": {
+          "canonical": {
             "id": "pemba-capital-fund-iii-lp",
             "name": "Pemba Capital Fund Iii Lp"
+          },
+          "party_page": {
+            "id": "pemba-capital-fund-iii-lp",
+            "name": "Pemba Capital Fund Iii Lp",
+            "curated": true
           }
         },
         {
