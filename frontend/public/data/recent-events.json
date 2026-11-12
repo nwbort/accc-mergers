@@ -1,6 +1,26 @@
 {
   "events": [
     {
+      "type": "questionnaire",
+      "title": "Phase 1 consultation",
+      "date": "2026-11-13T12:00:00Z",
+      "merger_id": "MN-25024",
+      "merger_name": "Steadfast - Axiom Insurance Brokers",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false,
+      "url_gh": "/mergers/MN-25024/Steadfast - Axiom Insurance Brokers - questionnaire.pdf"
+    },
+    {
+      "type": "phase_1_determination",
+      "title": "Phase 1 - initial assessment determination: Approved",
+      "date": "2026-11-13T12:00:00Z",
+      "merger_id": "MN-80047",
+      "merger_name": "Thoma Bravo - Tanda",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false,
+      "url_gh": "/mergers/MN-80047/Thoma Bravo - Tanda - Phase 1 Determination - 12 November 2026.pdf"
+    },
+    {
       "type": "phase_1_determination",
       "title": "Phase 1 - initial assessment determination: Approved",
       "date": "2026-11-12T12:00:00Z",
@@ -873,6 +893,6 @@
       "url_gh": "/mergers/WA-80052/SCEE Group \u2013 Entire Group (WA-80052) - Notification waiver determination - 30 October 2026.pdf"
     }
   ],
-  "count": 90,
+  "count": 92,
   "days_back": 14
 }

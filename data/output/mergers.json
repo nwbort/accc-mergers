@@ -25168,7 +25168,7 @@
       "original_notification_datetime": "2026-11-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2027-01-12T12:00:00Z",
-      "page_modified_datetime": "2026-11-13T08:46:12+11:00",
+      "page_modified_datetime": "2026-11-13T08:53:52+11:00",
       "consultation_response_due_date": "2026-11-20T12:00:00Z",
       "acquirers": [
         {
@@ -25216,6 +25216,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-11-13T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Steadfast%20-%20Axiom%20Insurance%20Brokers%20-%20questionnaire.docx",
+          "url_gh": "/mergers/MN-25024/Steadfast - Axiom Insurance Brokers - questionnaire.pdf",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
@@ -25227,6 +25236,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "WA-50020",
@@ -25264,15 +25274,15 @@
         }
       ],
       "phase_1_estimate": {
-        "expected_business_days": 18,
+        "expected_business_days": 17,
         "range_business_days": [
-          16,
-          21
+          15,
+          19
         ],
-        "basis": "global",
-        "question_bucket": null,
-        "question_count": null,
-        "sample_size": 282,
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 200,
         "as_of": "2026-11-12",
         "estimated_at": "2026-11-12",
         "method_version": 2
@@ -54592,7 +54602,7 @@
             "EPI CAPITAL PTY LTD",
             "TANDA HR SERVICES PTY LTD"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         },
         {
           "merger_id": "WA-55041",
@@ -65805,13 +65815,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/thoma-bravo-tanda",
       "merger_name": "Thoma Bravo - Tanda",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-80047",
       "effective_notification_datetime": "2026-10-16T12:00:00Z",
       "original_notification_datetime": "2026-10-16T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-11-27T12:00:00Z",
-      "page_modified_datetime": "2026-10-19T10:25:53+11:00",
+      "determination_publication_date": "2026-11-13T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-13T09:11:15+11:00",
       "consultation_response_due_date": "2026-10-26T12:00:00Z",
       "acquirers": [
         {
@@ -65937,13 +65950,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-11-13T12:00:00Z",
+          "title": "Phase 1 Determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Thoma%20Bravo%20-%20Tanda%20-%20Phase%201%20Determination%20-%2012%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1)",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Thoma Bravo, LP (Thoma Bravo), proposes to acquire, through\nentities it controls, EPI Capital Pty Ltd, Tanda HR Services Pty Ltd\nand other entities comprising the Tanda business (together, Tanda)\n(the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Thoma Bravo, is a US-based private equity investment\nfirm with a focus on software and technology-enabled services\nbusinesses. Thoma Bravo supplies human capital management\nsoftware in Australia through Dayforce Inc., a US-based global\ncompany it acquired early in 2026. Thoma Bravo\u2019 portfolio\ncompanies include other businesses supplying enterprise software\nto Australian customers.\nThe target, Tanda, is an Australia-based supplier of human capital\nmanagement software, with a focus on workforce management for\nshift and hourly workers. Tanda also supplies some products in the\nUK, US and Canada."
+            },
+            {
+              "item": "Overlap between the\nParties",
+              "details": "Dayforce and Tanda overlap in the supply of human capital\nmanagement software to Australian customers, including payroll\nsoftware, HR software, and work from home software."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third partes.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market.\nIn reaching its decision, and based on the material before it, the\nACCC finds that post acquisition there would continue to be\neffective alternative suppliers of human capital management\nsoftware in Australia to Thoma Bravo portfolio companies."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-80047/Thoma Bravo - Tanda - Phase 1 Determination - 12 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-11-13T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -120170,7 +120218,7 @@
             "EPI CAPITAL PTY LTD",
             "TANDA HR SERVICES PTY LTD"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         }
       ]
     },
@@ -126891,7 +126939,7 @@
             "EPI CAPITAL PTY LTD",
             "TANDA HR SERVICES PTY LTD"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         },
         {
           "merger_id": "WA-25013",

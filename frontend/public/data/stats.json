@@ -3,12 +3,12 @@
   "total_waivers": 520,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 279,
-    "Under assessment": 44,
+    "Assessment completed": 280,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 272,
+    "Approved": 273,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 277,
+    "cleared": 278,
     "not_cleared": 2,
-    "total": 279,
+    "total": 280,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.396491228070175,
-    "median_days": 26,
-    "average_business_days": 20.028070175438597,
-    "median_business_days": 18,
+    "average_days": 29.39160839160839,
+    "median_days": 26.0,
+    "average_business_days": 20.027972027972027,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 59,
-        "percentage": 20.7
+        "percentage": 20.6
       },
       "day20": {
-        "count": 207,
-        "percentage": 72.6
+        "count": 208,
+        "percentage": 72.7
       },
       "day30": {
-        "count": 267,
+        "count": 268,
         "percentage": 93.7
       }
     }
@@ -102,7 +102,7 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-11-12T12:00:00Z",
-      "page_modified_datetime": "2026-11-13T08:46:12+11:00",
+      "page_modified_datetime": "2026-11-13T08:53:52+11:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-80047",
+      "merger_name": "Thoma Bravo - Tanda",
+      "determination": "Approved",
+      "determination_date": "2026-11-13T12:00:00Z",
+      "page_modified_datetime": "2026-11-13T09:11:15+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-05061",
       "merger_name": "ctrl:cyber - Razilio",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-10T12:00:00Z",
       "page_modified_datetime": "2026-11-10T17:33:20+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-70043",
-      "merger_name": "STRABAG \u2013 KEE Surfacing",
-      "determination": "Approved",
-      "determination_date": "2026-11-10T12:00:00Z",
-      "page_modified_datetime": "2026-11-10T17:30:07+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
