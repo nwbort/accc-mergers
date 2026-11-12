@@ -33,7 +33,7 @@ const MAX_KNOWN = 5000;
 // Asking as little as possible: the browser's own permission prompt appears
 // once, on the next follow (OFFERED records that it has), and the panel's
 // "Enable browser notifications" button stays until its × is pressed
-// (DISMISSED). Turning notifications off counts as pressing it.
+// (DISMISSED). Once they're on, the panel says nothing about them.
 const OFFERED_KEY = 'merger_tracker_push_offered';
 const DISMISSED_KEY = 'merger_tracker_push_prompt_dismissed';
 
@@ -200,25 +200,18 @@ export function PushProvider({ children }) {
     setError(null);
   }, []);
 
-  const turnOff = useCallback(async () => {
-    setBusy(true);
-    setError(null);
-    try {
-      await disablePush();
-    } catch (err) {
-      console.error('Failed to turn off notifications:', err);
-    } finally {
-      setToken(null);
-      setStatus(pushPermission() === 'denied' ? 'blocked' : 'off');
-      setBusy(false);
-      setFlag(DISMISSED_KEY);
-      setDismissed(true);
-    }
+  // The site offers no "turn off": blocking notifications in the browser's
+  // settings is how. When a browser that had them on comes back blocked, its
+  // token is deleted, which ends its topic subscriptions with Google, rather
+  // than leaving them until the token lapses.
+  useEffect(() => {
+    if (!pushConfigured() || !pushSupported() || !pushEnabled() || pushPermission() !== 'denied') return;
+    disablePush().catch((err) => console.error('Failed to delete the notification token:', err));
   }, []);
 
   const value = useMemo(
-    () => ({ status, busy, error, dismissed, turnOn, turnOff, dismiss }),
-    [status, busy, error, dismissed, turnOn, turnOff, dismiss],
+    () => ({ status, busy, error, dismissed, turnOn, dismiss }),
+    [status, busy, error, dismissed, turnOn, dismiss],
   );
 
   return <PushContext.Provider value={value}>{children}</PushContext.Provider>;

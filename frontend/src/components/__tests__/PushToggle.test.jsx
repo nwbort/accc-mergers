@@ -13,7 +13,6 @@ const push = (status, extra = {}) => {
     error: null,
     dismissed: false,
     turnOn: vi.fn(),
-    turnOff: vi.fn(),
     dismiss: vi.fn(),
     ...extra,
   };
@@ -45,12 +44,10 @@ describe('PushToggle', () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it('says quietly when they are on, with a way to turn them off', async () => {
-    const { turnOff } = push('on', { dismissed: true });
-    render(<PushToggle />);
-    expect(screen.getByText('Browser notifications are on.')).toBeInTheDocument();
-    await userEvent.click(screen.getByRole('button', { name: 'Turn off' }));
-    expect(turnOff).toHaveBeenCalled();
+  it('shows nothing once they are on', () => {
+    push('on');
+    const { container } = render(<PushToggle />);
+    expect(container).toBeEmptyDOMElement();
   });
 
   it('shows nothing when blocked, unless the button was just refused', () => {

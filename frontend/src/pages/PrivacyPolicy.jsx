@@ -175,9 +175,8 @@ export default function PrivacyPolicy() {
           <p className="text-gray-700 leading-relaxed mb-3">To stop notifications:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1">
             <li>
-              on the website, turn off &ldquo;Browser notifications&rdquo; in the notification panel, which deletes
-              the token and with it every topic subscription (blocking notifications for mergers.fyi in your
-              browser&rsquo;s settings also stops them); or
+              on the website, block notifications for mergers.fyi in your browser&rsquo;s settings. The next time
+              you visit, the site deletes its token, and with it every topic subscription; or
             </li>
             <li>
               in the app, turn its notifications off in your phone&rsquo;s settings. The app keeps its token so it

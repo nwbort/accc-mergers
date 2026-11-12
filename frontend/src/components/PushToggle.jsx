@@ -15,28 +15,14 @@ const dismissButton = (onClick) => (
 
 // Browser notifications at the foot of the notification panel. Asks once and
 // gets out of the way: an "Enable browser notifications" button until its × is
-// pressed, a quiet line while they're on. Following never depends on it.
+// pressed, and nothing at all once they're on. Following never depends on it.
 function PushToggle() {
   const push = usePush();
   if (!push || push.status === 'unavailable') return null;
-  const { status, busy, error, dismissed, turnOn, turnOff, dismiss } = push;
+  const { status, error, dismissed, turnOn, dismiss } = push;
 
-  if (status === 'on') {
-    return (
-      <p className="flex items-center gap-1.5 text-xs text-gray-500 mb-2">
-        <FaBell className="w-3 h-3 text-primary" aria-hidden="true" />
-        <span>Browser notifications are on.</span>
-        <button
-          type="button"
-          onClick={turnOff}
-          disabled={busy}
-          className="font-medium text-primary hover:text-primary-dark hover:underline disabled:opacity-60"
-        >
-          Turn off
-        </button>
-      </p>
-    );
-  }
+  // On: nothing to say. Blocking them in the browser is how they're turned off.
+  if (status === 'on') return null;
 
   // Refused from the button just now: say where to change it, once.
   if (status === 'blocked') {
