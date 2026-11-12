@@ -1,10 +1,10 @@
 {
-  "total_mergers": 326,
+  "total_mergers": 327,
   "total_waivers": 516,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 279,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -64,7 +64,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 85
+      "count": 86
     },
     {
       "name": "Non-Residential Property Operators",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-60027",
+      "merger_name": "Amadeus - Idemia Public Security",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-11T12:00:00Z",
+      "page_modified_datetime": "2026-11-12T16:32:30+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-65045",
       "merger_name": "Too Lost \u2013 Xelon Entertainment",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-11-02T12:00:00Z",
       "page_modified_datetime": "2026-11-03T11:11:15+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-25058",
-      "merger_name": "Healthe Care \u2013 Knox Private, Ringwood Private, Northpark Private, Victorian Rehabilitation Centre and Geelong Clinic",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-11-02T12:00:00Z",
-      "page_modified_datetime": "2026-11-03T10:52:54+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

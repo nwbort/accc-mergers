@@ -96,6 +96,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-11-19T12:00:00Z",
+      "merger_id": "MN-60027",
+      "merger_name": "Amadeus - Idemia Public Security",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-11T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-11-19T12:00:00Z",
       "merger_id": "MN-65045",
       "merger_name": "Too Lost \u2013 Xelon Entertainment",
       "status": "Under assessment",
@@ -505,6 +515,6 @@
       "end_date": "2027-04-15T12:00:00Z"
     }
   ],
-  "count": 50,
+  "count": 51,
   "days_ahead": 60
 }

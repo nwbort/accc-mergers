@@ -2,6 +2,42 @@
   "shard": 129,
   "shard_count": 256,
   "parties": {
+    "amadeus-it-group-s-a": {
+      "id": "amadeus-it-group-s-a",
+      "canonical_name": "Amadeus IT Group, S.A.",
+      "members": [
+        {
+          "name": "Amadeus IT Group, S.A.",
+          "identifier": "A84236934",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60027",
+            "merger_name": "Amadeus - Idemia Public Security",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-11T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "aspect-engineering-solutions-pty-ltd": {
       "id": "aspect-engineering-solutions-pty-ltd",
       "canonical_name": "Aspect Engineering Solutions Pty Ltd",
