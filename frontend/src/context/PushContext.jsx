@@ -1,8 +1,9 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useTracking } from './TrackingContext';
 import { getEventKey } from '../utils/trackedEvents';
 import { pushTopics } from '../push/topics';
 import { updatePushState } from '../push/store';
+import { setFollowHandler } from '../push/followOffer';
 import {
   disablePush,
   enablePush,
@@ -28,6 +29,28 @@ const PushContext = createContext(null);
 
 // How many already-shown event keys the service worker is handed.
 const MAX_KNOWN = 5000;
+
+// Asking as little as possible: the browser's own permission prompt appears
+// once, on the next follow (OFFERED records that it has), and the panel's
+// "Enable browser notifications" button stays until its × is pressed
+// (DISMISSED). Turning notifications off counts as pressing it.
+const OFFERED_KEY = 'merger_tracker_push_offered';
+const DISMISSED_KEY = 'merger_tracker_push_prompt_dismissed';
+
+const readFlag = (key) => {
+  try {
+    return localStorage.getItem(key) === 'true';
+  } catch {
+    return false;
+  }
+};
+const setFlag = (key) => {
+  try {
+    localStorage.setItem(key, 'true');
+  } catch {
+    // Private mode and the like: it just won't be remembered.
+  }
+};
 
 /**
  * - unavailable: this build or this browser can't do it; nothing is shown
@@ -61,6 +84,7 @@ export function PushProvider({ children }) {
   const [token, setToken] = useState(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
+  const [dismissed, setDismissed] = useState(() => readFlag(DISMISSED_KEY));
 
   // Coming back with notifications on: renew the token if it's due.
   useEffect(() => {
@@ -130,7 +154,9 @@ export function PushProvider({ children }) {
     return () => navigator.serviceWorker.removeEventListener('message', onMessage);
   }, [status, refreshEvents]);
 
-  const turnOn = useCallback(async () => {
+  // *fromPanel*: pressed in the panel, so a refusal is worth explaining there.
+  // From the follow offer, the browser's own prompt was the whole exchange.
+  const turnOn = useCallback(async ({ fromPanel = false } = {}) => {
     setBusy(true);
     setError(null);
     try {
@@ -139,7 +165,11 @@ export function PushProvider({ children }) {
         setToken(t);
         setStatus('on');
       } else {
-        setStatus(pushPermission() === 'denied' ? 'blocked' : 'off');
+        const blocked = pushPermission() === 'denied';
+        setStatus(blocked ? 'blocked' : 'off');
+        if (blocked && fromPanel) {
+          setError('Notifications are blocked for mergers.fyi in this browser. You can allow them in the browser’s site settings.');
+        }
       }
     } catch (err) {
       console.error('Failed to turn on notifications:', err);
@@ -147,6 +177,27 @@ export function PushProvider({ children }) {
     } finally {
       setBusy(false);
     }
+  }, []);
+
+  // The next follow, once: the browser's permission prompt, from that click.
+  const statusRef = useRef(status);
+  useEffect(() => {
+    statusRef.current = status;
+  }, [status]);
+  useEffect(
+    () =>
+      setFollowHandler(() => {
+        if (statusRef.current !== 'off' || pushPermission() !== 'default' || readFlag(OFFERED_KEY)) return;
+        setFlag(OFFERED_KEY);
+        turnOn();
+      }),
+    [turnOn],
+  );
+
+  const dismiss = useCallback(() => {
+    setFlag(DISMISSED_KEY);
+    setDismissed(true);
+    setError(null);
   }, []);
 
   const turnOff = useCallback(async () => {
@@ -160,12 +211,14 @@ export function PushProvider({ children }) {
       setToken(null);
       setStatus(pushPermission() === 'denied' ? 'blocked' : 'off');
       setBusy(false);
+      setFlag(DISMISSED_KEY);
+      setDismissed(true);
     }
   }, []);
 
   const value = useMemo(
-    () => ({ status, busy, error, turnOn, turnOff }),
-    [status, busy, error, turnOn, turnOff],
+    () => ({ status, busy, error, dismissed, turnOn, turnOff, dismiss }),
+    [status, busy, error, dismissed, turnOn, turnOff, dismiss],
   );
 
   return <PushContext.Provider value={value}>{children}</PushContext.Provider>;

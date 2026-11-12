@@ -1,65 +1,85 @@
+import { FaBell, FaTimes } from 'react-icons/fa';
 import { usePush } from '../context/PushContext';
 
-// The browser-notifications switch at the foot of the notification panel.
-// Following doesn't depend on it: with notifications off or blocked, news
-// still shows in the panel on the next visit, and the copy says so.
+const dismissButton = (onClick) => (
+  <button
+    type="button"
+    onClick={onClick}
+    aria-label="Dismiss notifications offer"
+    title="Dismiss"
+    className="p-1.5 -m-1 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+  >
+    <FaTimes className="w-3 h-3" aria-hidden="true" />
+  </button>
+);
+
+// Browser notifications at the foot of the notification panel. Asks once and
+// gets out of the way: an "Enable browser notifications" button until its × is
+// pressed, a quiet line while they're on. Following never depends on it.
 function PushToggle() {
   const push = usePush();
   if (!push || push.status === 'unavailable') return null;
-  const { status, busy, error, turnOn, turnOff } = push;
+  const { status, busy, error, dismissed, turnOn, turnOff, dismiss } = push;
+
+  if (status === 'on') {
+    return (
+      <p className="flex items-center gap-1.5 text-xs text-gray-500 mb-2">
+        <FaBell className="w-3 h-3 text-primary" aria-hidden="true" />
+        <span>Browser notifications are on.</span>
+        <button
+          type="button"
+          onClick={turnOff}
+          disabled={busy}
+          className="font-medium text-primary hover:text-primary-dark hover:underline disabled:opacity-60"
+        >
+          Turn off
+        </button>
+      </p>
+    );
+  }
+
+  // Refused from the button just now: say where to change it, once.
+  if (status === 'blocked') {
+    if (!error || dismissed) return null;
+    return (
+      <div className="flex items-start justify-between gap-3 mb-2">
+        <p className="text-xs text-gray-500" role="alert">{error}</p>
+        {dismissButton(dismiss)}
+      </div>
+    );
+  }
+
+  if (dismissed) return null;
 
   if (status === 'home-screen') {
     return (
-      <p className="text-xs text-gray-500 mb-2">
-        To get notifications on an iPhone or iPad, add mergers.fyi to your Home Screen
-        (Share → Add to Home Screen) and open it from there.
-      </p>
+      <div className="flex items-start justify-between gap-3 mb-2">
+        <p className="text-xs text-gray-500">
+          To get notifications on an iPhone or iPad, add mergers.fyi to your Home Screen
+          (Share → Add to Home Screen) and open it from there.
+        </p>
+        {dismissButton(dismiss)}
+      </div>
     );
   }
 
-  if (status === 'blocked') {
-    return (
-      <p className="text-xs text-gray-500 mb-2">
-        Notifications are blocked for mergers.fyi in this browser. Following still works:
-        updates show here when you visit.
-      </p>
-    );
-  }
-
-  const on = status === 'on';
   return (
-    <div className="mb-2">
+    <div className="mb-2.5">
       <div className="flex items-center justify-between gap-3">
-        <span id="push-toggle-label" className="text-xs font-medium text-gray-700">
-          Browser notifications
-        </span>
         <button
           type="button"
-          role="switch"
-          aria-checked={on}
-          aria-labelledby="push-toggle-label"
-          aria-describedby="push-toggle-hint"
-          disabled={busy}
-          onClick={on ? turnOff : turnOn}
-          className={`relative inline-flex h-5 w-9 flex-shrink-0 items-center rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-60 ${
-            on ? 'bg-primary' : 'bg-gray-300'
-          }`}
+          // Never disabled while a request is out: one the person ignored never
+          // settles, and pressing again should simply ask again.
+          onClick={() => turnOn({ fromPanel: true })}
+          className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-white hover:bg-primary-dark transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-60"
         >
-          <span
-            aria-hidden="true"
-            className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
-              on ? 'translate-x-4' : 'translate-x-0.5'
-            }`}
-          />
+          <FaBell className="w-3 h-3" aria-hidden="true" />
+          Enable browser notifications
         </button>
+        {dismissButton(dismiss)}
       </div>
-      <p id="push-toggle-hint" className="mt-1 text-xs text-gray-500">
-        {on
-          ? 'This browser is notified when something you follow changes.'
-          : 'Get a notification when something you follow changes, even with the site closed.'}
-      </p>
       {error && (
-        <p className="mt-1 text-xs text-red-700" role="alert">
+        <p className="mt-1.5 text-xs text-red-700" role="alert">
           {error}
         </p>
       )}

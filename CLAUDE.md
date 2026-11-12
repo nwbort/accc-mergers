@@ -273,8 +273,10 @@ frontend/src/
 │                         #   (industry follows flag only new filings/determinations). What a follow
 │                         #   surfaces and each event's key are utils/trackedEvents.js, shared with
 │                         #   the notification service worker. PushContext.jsx — optional browser
-│                         #   notifications on top (the switch is PushToggle in the notification
-│                         #   panel); following never depends on them
+│                         #   notifications on top; following never depends on them. Asked once:
+│                         #   the browser prompt on the next follow (push/followOffer.js, called
+│                         #   from TrackingContext's follow actions), then PushToggle's "Enable
+│                         #   browser notifications" button in the panel until its × is pressed
 ├── push/                 # Browser notifications over FCM, the same topics and "check now" message
 │                         #   as the Android app (see docs/android-push.md#browsers): topics.js (names
 │                         #   shared with scripts/push/fcm.py and the app), webPush.js (token, topic

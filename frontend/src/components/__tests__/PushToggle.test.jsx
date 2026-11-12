@@ -6,8 +6,20 @@ import { usePush } from '../../context/PushContext';
 
 vi.mock('../../context/PushContext', () => ({ usePush: vi.fn() }));
 
-const push = (status, extra = {}) =>
-  usePush.mockReturnValue({ status, busy: false, error: null, turnOn: vi.fn(), turnOff: vi.fn(), ...extra });
+const push = (status, extra = {}) => {
+  const value = {
+    status,
+    busy: false,
+    error: null,
+    dismissed: false,
+    turnOn: vi.fn(),
+    turnOff: vi.fn(),
+    dismiss: vi.fn(),
+    ...extra,
+  };
+  usePush.mockReturnValue(value);
+  return value;
+};
 
 describe('PushToggle', () => {
   it('shows nothing where notifications are unavailable', () => {
@@ -16,34 +28,44 @@ describe('PushToggle', () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it('turns notifications on from the switch', async () => {
-    const turnOn = vi.fn();
-    push('off', { turnOn });
+  it('offers a button to enable them, from the panel', async () => {
+    const { turnOn } = push('off');
     render(<PushToggle />);
-    const toggle = screen.getByRole('switch', { name: 'Browser notifications' });
-    expect(toggle).toHaveAttribute('aria-checked', 'false');
-    await userEvent.click(toggle);
-    expect(turnOn).toHaveBeenCalled();
+    await userEvent.click(screen.getByRole('button', { name: 'Enable browser notifications' }));
+    expect(turnOn).toHaveBeenCalledWith({ fromPanel: true });
   });
 
-  it('turns them off again', async () => {
-    const turnOff = vi.fn();
-    push('on', { turnOff });
+  it('dismisses the offer with its ×, and stays away once dismissed', async () => {
+    const { dismiss } = push('off');
+    const { rerender, container } = render(<PushToggle />);
+    await userEvent.click(screen.getByRole('button', { name: 'Dismiss notifications offer' }));
+    expect(dismiss).toHaveBeenCalled();
+    push('off', { dismissed: true });
+    rerender(<PushToggle />);
+    expect(container).toBeEmptyDOMElement();
+  });
+
+  it('says quietly when they are on, with a way to turn them off', async () => {
+    const { turnOff } = push('on', { dismissed: true });
     render(<PushToggle />);
-    await userEvent.click(screen.getByRole('switch', { name: 'Browser notifications' }));
+    expect(screen.getByText('Browser notifications are on.')).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Turn off' }));
     expect(turnOff).toHaveBeenCalled();
   });
 
-  it('says following still works when the browser blocks notifications', () => {
+  it('shows nothing when blocked, unless the button was just refused', () => {
     push('blocked');
-    render(<PushToggle />);
-    expect(screen.queryByRole('switch')).toBeNull();
-    expect(screen.getByText(/Following still works/)).toBeInTheDocument();
+    const { container, rerender } = render(<PushToggle />);
+    expect(container).toBeEmptyDOMElement();
+    push('blocked', { error: 'Notifications are blocked for mergers.fyi in this browser.' });
+    rerender(<PushToggle />);
+    expect(screen.getByRole('alert')).toHaveTextContent('blocked');
   });
 
-  it('points iPhone and iPad users at the Home Screen', () => {
+  it('points iPhone and iPad users at the Home Screen, until dismissed', () => {
     push('home-screen');
     render(<PushToggle />);
     expect(screen.getByText(/add mergers.fyi to your Home Screen/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Dismiss notifications offer' })).toBeInTheDocument();
   });
 });

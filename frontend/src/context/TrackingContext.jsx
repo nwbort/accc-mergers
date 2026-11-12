@@ -12,6 +12,7 @@ import {
   timelineEventsFromMerger,
   upcomingEventsFromMerger,
 } from '../utils/trackedEvents';
+import { notifyFollowed } from '../push/followOffer';
 
 const TrackingContext = createContext(null);
 
@@ -83,6 +84,13 @@ export function TrackingProvider({ children }) {
     () => [...trackedIndustryCodes].sort().join(','),
     [trackedIndustryCodes]
   );
+
+  // Latest followed codes, for the follow callbacks (which have no dependencies)
+  // to tell a new follow from an unfollow at the moment of the click.
+  const trackedIndustryCodesRef = useRef(trackedIndustryCodesSet);
+  useEffect(() => {
+    trackedIndustryCodesRef.current = trackedIndustryCodesSet;
+  }, [trackedIndustryCodesSet]);
 
   // Industry-follow events (new filings + new determinations) for followed industries
   const [industryEvents, setIndustryEvents] = useState([]);
@@ -469,7 +477,10 @@ export function TrackingProvider({ children }) {
     }
   }, [autoTrackLinks]);
 
+  // Each follow action tells browser notifications (push/followOffer.js) about
+  // a new follow from inside the click, where a permission prompt is allowed.
   const trackMerger = useCallback((mergerId) => {
+    if (!trackedMergerIdsRef.current.includes(mergerId)) notifyFollowed();
     setTrackedMergerIds((prev) => {
       const prevSet = new Set(prev);
       if (prevSet.has(mergerId)) return prev;
@@ -489,6 +500,7 @@ export function TrackingProvider({ children }) {
   }, [trackedMergerIdsSet]);
 
   const toggleTracking = useCallback((mergerId) => {
+    if (!trackedMergerIdsRef.current.includes(mergerId)) notifyFollowed();
     setTrackedMergerIds((prev) => {
       const prevSet = new Set(prev);
       if (prevSet.has(mergerId)) {
@@ -506,6 +518,7 @@ export function TrackingProvider({ children }) {
   }, [trackedIndustryCodesSet]);
 
   const trackIndustry = useCallback((code, name) => {
+    if (!trackedIndustryCodesRef.current.has(code)) notifyFollowed();
     setTrackedIndustries((prev) => {
       if (prev.some((i) => i.code === code)) return prev;
       setNewlyTrackedIndustryCodes((codes) => [...codes, code]);
@@ -519,6 +532,7 @@ export function TrackingProvider({ children }) {
   }, []);
 
   const toggleIndustryTracking = useCallback((code, name) => {
+    if (!trackedIndustryCodesRef.current.has(code)) notifyFollowed();
     setTrackedIndustries((prev) => {
       if (prev.some((i) => i.code === code)) {
         return prev.filter((i) => i.code !== code);
@@ -530,8 +544,9 @@ export function TrackingProvider({ children }) {
   }, []);
 
   const toggleAutoTrackPhase2 = useCallback(() => {
+    if (!autoTrackPhase2) notifyFollowed();
     setAutoTrackPhase2((prev) => !prev);
-  }, []);
+  }, [autoTrackPhase2]);
 
   const markEventAsSeen = useCallback((event) => {
     const key = getEventKey(event);

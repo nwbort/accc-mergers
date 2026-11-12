@@ -34,8 +34,13 @@ test suites pin them: change all of them or none.
 
 ## Browsers
 
-The site offers the same thing to browsers, as an option on top of following:
-a switch at the foot of the notification panel. Following doesn't depend on
+The site offers the same thing to browsers, as an option on top of following,
+and asks as little as it can: the browser's own permission prompt appears once,
+on the next follow (from that click, since browsers only prompt in response to
+one), and the notification panel shows an "Enable browser notifications"
+button with an × until the × is pressed (remembered in localStorage; turning
+notifications off counts too). While they're on, the panel says so in one line,
+with "Turn off". Following doesn't depend on
 it. With it off, blocked by the browser, or not supported (Safari on an iPhone
 or iPad needs the site added to the Home Screen first), the follow list and
 the panel work exactly as they always have.
