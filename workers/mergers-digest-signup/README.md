@@ -5,6 +5,9 @@ frontend:
 
 - `POST /` — weekly-digest email signup. Validates a Cloudflare
   Turnstile token and adds the contact to a Resend audience.
+- `POST /app-signup`, `GET /confirm`, `POST /confirm` — the same signup from
+  the Android app (`nwbort/accc-mergers-app`), double opt-in instead of
+  Turnstile (see below).
 - `POST /feedback` — stores feedback submissions in a Cloudflare D1
   database.
 - `POST /event` — bumps a privacy-preserving, aggregate-only
@@ -12,6 +15,24 @@ frontend:
 
 The corresponding admin viewer lives in [`../feedback-admin/`](../feedback-admin/),
 which reads from the same `mergers-feedback` D1 database.
+
+## The Android app's signup (double opt-in)
+
+The app isn't a browser, so it can't show Turnstile. `POST /app-signup` with
+`{ "email": "..." }` takes no CAPTCHA and adds nobody: it emails the address a
+link to confirm, so only someone who can read that inbox can subscribe it, and
+the open route can't sign up other people. The link
+(`/confirm?t=…&s=…`) opens a page with a **Confirm** button that posts back to
+`/confirm`, which adds the contact; confirming on the GET itself would let the
+link scanners in work mail (Outlook Safe Links and the like) subscribe the
+reader without them.
+
+The link is an HMAC-signed `{email, expiry}` and lasts 7 days; nothing is stored
+until it is used. The key is `CONFIRM_SECRET` if that secret is set, otherwise
+one derived from `RESEND_API_KEY` (rotating either voids links not yet used).
+The email comes from `SEND_FROM` if set as a var, else the digest's own sender.
+
+`npm test` covers it (`test/`, Node's built-in runner, Resend and KV faked).
 
 ## Feature-usage events
 
@@ -71,6 +92,11 @@ All three endpoints enforce a per-IP fixed-window limit using the
 `RATE_LIMIT_KV` namespace (keyed on `CF-Connecting-IP`):
 
 - `POST /` (signup): 5 requests per 10 minutes per IP, plus Turnstile.
+- `POST /app-signup`: 5 requests per 10 minutes per IP; at most one
+  confirmation email per address per hour (a repeat is answered as sent, and
+  nothing goes out); and 50 confirmation emails a day in all, well under
+  Resend's free-plan limit of 100 transactional emails a day.
+- `POST /confirm`: 10 requests per 10 minutes per IP.
 - `POST /feedback`: 5 requests per 10 minutes per IP, plus a 20-per-day cap
   to bound D1 row growth from a single IP, plus Turnstile.
 - `POST /event`: 60 requests per 10 minutes per IP. No Turnstile — the

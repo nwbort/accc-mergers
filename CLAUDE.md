@@ -30,7 +30,7 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 
 One directory per Worker, each named after the Worker it deploys (the directory name matches `name` in its `wrangler.toml`). All are deployed separately via wrangler — see [`workers/README.md`](workers/README.md).
 
-- `workers/mergers-digest-signup/` — public HTTP API: digest email signup (validates Cloudflare Turnstile tokens, adds to a Resend audience) and `POST /feedback` writes to the `mergers-feedback` D1 database; `POST /event` bumps an aggregate, per-day feature-usage counter in the same database (`utils/trackEvent.js`)
+- `workers/mergers-digest-signup/` — public HTTP API: digest email signup (validates Cloudflare Turnstile tokens, adds to a Resend audience; the Android app's `POST /app-signup` instead emails a signed link to confirm, double opt-in, since the app can't show Turnstile) and `POST /feedback` writes to the `mergers-feedback` D1 database; `POST /event` bumps an aggregate, per-day feature-usage counter in the same database (`utils/trackEvent.js`)
 - `workers/accc-register-watcher/` — Email Worker bound to a mailbox subscribed to the ACCC's register update mailing list; fires a `repository_dispatch` (`new_merger_detected`) to trigger `pipeline.yml` immediately on each email. See its README for the Cloudflare Email Routing setup
 - `workers/feedback-admin/` — private read-only viewer over the same feedback D1 database, gated behind an `x-secret` header
 
