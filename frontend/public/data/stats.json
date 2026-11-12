@@ -3,12 +3,12 @@
   "total_waivers": 516,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 278,
-    "Under assessment": 43,
+    "Assessment completed": 279,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 271,
+    "Approved": 272,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 26
   },
   "clearance_rate": {
-    "cleared": 276,
+    "cleared": 277,
     "not_cleared": 2,
-    "total": 278,
+    "total": 279,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.419014084507044,
-    "median_days": 26.0,
-    "average_business_days": 20.038732394366196,
-    "median_business_days": 18.0,
+    "average_days": 29.396491228070175,
+    "median_days": 26,
+    "average_business_days": 20.028070175438597,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 59,
-        "percentage": 20.8
+        "percentage": 20.7
       },
       "day20": {
-        "count": 206,
-        "percentage": 72.5
+        "count": 207,
+        "percentage": 72.6
       },
       "day30": {
-        "count": 266,
+        "count": 267,
         "percentage": 93.7
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-15053",
+      "merger_name": "Fruitico \u2013 Lease and option to purchase Terra Farm and Sunsweet Farm",
+      "determination": "Approved",
+      "determination_date": "2026-11-12T12:00:00Z",
+      "page_modified_datetime": "2026-11-12T15:05:28+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-70047",
       "merger_name": "Australian Venue Co \u2013 Assets of Molly\u2019s Irish Pub Highgate and Molly\u2019s Irish Pub Victoria Park, Perth, WA",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-85053",
-      "merger_name": "Funds managed by New Forests \u2013 Forestry plantations of AKD",
-      "determination": "Approved",
-      "determination_date": "2026-11-10T12:00:00Z",
-      "page_modified_datetime": "2026-11-10T15:59:11+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

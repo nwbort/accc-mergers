@@ -1,6 +1,16 @@
 {
   "events": [
     {
+      "type": "phase_1_determination",
+      "title": "Phase 1 - initial assessment determination: Approved",
+      "date": "2026-11-12T12:00:00Z",
+      "merger_id": "MN-15053",
+      "merger_name": "Fruitico \u2013 Lease and option to purchase Terra Farm and Sunsweet Farm",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false,
+      "url_gh": "/mergers/MN-15053/Fruitico - Terra Farm and Sunsweet Farm - Phase 1 determination.pdf"
+    },
+    {
       "type": "questionnaire",
       "title": "Phase 1 consultation",
       "date": "2026-11-12T12:00:00Z",
@@ -923,6 +933,6 @@
       "url_gh": "/mergers/WA-90042/Blackstone \u2013 Discovery Education (WA-90042) - Notification waiver determination - 28 October 2026.pdf"
     }
   ],
-  "count": 95,
+  "count": 96,
   "days_back": 14
 }
