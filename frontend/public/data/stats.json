@@ -1,6 +1,6 @@
 {
   "total_mergers": 327,
-  "total_waivers": 517,
+  "total_waivers": 518,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 279,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 490,
+    "Approved": 491,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.88007736943907,
-    "median_days": 21,
-    "average_business_days": 14.303675048355899,
-    "median_business_days": 15
+    "average_days": 20.884169884169886,
+    "median_days": 21.0,
+    "average_business_days": 14.308880308880308,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 213
+      "count": 214
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -83,11 +83,11 @@
       "count": 28
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 27
+      "name": "Accommodation",
+      "count": 28
     },
     {
-      "name": "Accommodation",
+      "name": "Supermarket and Grocery Stores",
       "count": 27
     },
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45037",
+      "merger_name": "Royal Caribbean Cruises \u2013 Sandals Resorts International",
+      "determination": "Approved",
+      "determination_date": "2026-11-12T12:00:00Z",
+      "page_modified_datetime": "2026-11-12T16:44:58+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-65043",
       "merger_name": "New England Motor Group \u2013 Armidale Automotive Group",
       "determination": "Not approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-10T12:00:00Z",
       "page_modified_datetime": "2026-11-10T16:50:30+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60061",
-      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
-      "determination": "Approved",
-      "determination_date": "2026-11-10T12:00:00Z",
-      "page_modified_datetime": "2026-11-10T16:46:47+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
