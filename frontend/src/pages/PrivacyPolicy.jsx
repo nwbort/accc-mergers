@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
         {/* Header */}
         <header className="mb-6">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Privacy policy</h1>
-          <p className="mt-1 text-sm text-gray-500">Last updated: 2 October 2026</p>
+          <p className="mt-1 text-sm text-gray-500">Last updated: 12 November 2026</p>
         </header>
 
         {/* 1. Introduction */}
@@ -31,7 +31,8 @@ export default function PrivacyPolicy() {
             handling your personal information in a transparent and secure manner.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            This Privacy Policy explains how we collect, use, and store your information when you use our website.
+            This Privacy Policy explains how we collect, use, and store your information when you use our website
+            or our Android app.
           </p>
         </section>
 
@@ -43,10 +44,14 @@ export default function PrivacyPolicy() {
           </p>
           <p className="text-gray-700 leading-relaxed mb-3">Information you provide:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
-            <li>email address - when you sign up to receive our weekly email digest.</li>
+            <li>
+              email address - when you sign up to receive our weekly email digest, on the website or in the app.
+              When you sign up in the app, we first email you a link to confirm, and only add you once you use it.
+            </li>
           </ul>
           <p className="text-gray-700 leading-relaxed mt-4">
-            We do not collect any other personal information.
+            We do not collect any other personal information. Section 7 explains what is kept on your own device,
+            and section 8 what is involved in notifications.
           </p>
         </section>
 
@@ -69,7 +74,8 @@ export default function PrivacyPolicy() {
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">4. Email delivery and third-party services</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            We use Resend to store email addresses and deliver our email digest.
+            We use Resend to store email addresses and deliver our email digest, and to send the confirmation
+            email when you sign up in the app.
           </p>
           <p className="text-gray-700 leading-relaxed mb-3">This means:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
@@ -102,30 +108,94 @@ export default function PrivacyPolicy() {
           </p>
         </section>
 
-        {/* 7. Cookies and analytics */}
+        {/* 7. What stays on your device */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">7. Cookies and analytics</h2>
-          <p className="text-gray-700 leading-relaxed mb-3">We do not use cookies to track individual users. You browser
-            stores some limited information locally, ie:</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
-            <li>the specific mergers you have chosen to follow;</li>
-            <li>the list of mergers on the homepage that you have seen, so we can attach &lsquo;new&rsquo; tags; and</li>
-            <li>whether you have dismissed feedback popups, so we can stop bothering you.</li>
-          </ul>
-          <p className="text-gray-700 leading-relaxed">
-            We do not otherwise collect or transmit your personal information. We monitor how often certain
-            features of our website are used so we can understand where to focus our development efforts. This
-            information is collected and stored in an aggregated manner that does not allow for any
-            identification of individual users. For example, we do not collect any cookies, device IDs, IP
-            addresses, or any other identifiers. We do not use any third-party analytics or traffic tracking
-            scripts (e.g. Google Analytics).
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">7. What stays on your device</h2>
+          <p className="text-gray-700 leading-relaxed mb-3">
+            We do not use cookies to track you. To make following work, your browser (or, in the app, your
+            phone) keeps some information locally:
           </p>
-
+          <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
+            <li>the mergers and industries you follow, and whether you follow every Phase 2 matter;</li>
+            <li>which updates you have already seen, so we can mark new ones;</li>
+            <li>whether you have dismissed feedback popups and other banners; and</li>
+            <li>display preferences, such as how the merger list is laid out.</li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            This stays on your device. Your follow list is only shared beyond it if you use notifications, as
+            section 8 describes. You can clear it at any time by clearing this site&rsquo;s data in your browser,
+            or the app&rsquo;s storage on your phone.
+          </p>
+          <h3 className="text-base font-semibold text-gray-900 mb-2">Usage counts</h3>
+          <p className="text-gray-700 leading-relaxed">
+            We count how often certain features of the website are used, such as following a merger, so we can
+            understand where to focus our development efforts. These are daily totals only: nothing that could
+            identify you, such as a cookie, IP address or device identifier, is attached to them or stored with
+            them. We do not use any third-party analytics or traffic tracking scripts (e.g. Google Analytics).
+          </p>
         </section>
 
-        {/* 8. Access and correction */}
+        {/* 8. Notifications */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">8. Access and correction</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">8. Notifications</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Notifications about what you follow are delivered by Google&rsquo;s Firebase Cloud Messaging. On the
+            website they are off unless you turn them on. The Android app uses the same service to learn when to
+            check for updates, and sets it up when it starts.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-3">When notifications are in use:</p>
+          <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
+            <li>
+              Google issues your browser or app a push token: a random identifier for that browser or app
+              install, not linked to your name or email address;
+            </li>
+            <li>
+              that token is subscribed to a &ldquo;topic&rdquo; for each merger and industry you follow (and for
+              new Phase 2 matters, if you follow them all), and Google keeps the token and its topics so it can
+              deliver messages;
+            </li>
+            <li>
+              on the website, the request to subscribe passes through our server, which hands it to Google and
+              keeps nothing: not the token, not your topics, and no log of either; and
+            </li>
+            <li>
+              the messages themselves carry no news and nothing about you. They only tell your browser or phone
+              to check mergers.fyi, and it works out what is new and shows the notification itself.
+            </li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Google handles this under its own{' '}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
+            >
+              privacy policy
+            </a>
+            .
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-3">To stop notifications:</p>
+          <ul className="list-disc list-inside text-gray-700 space-y-1">
+            <li>
+              on the website, turn off &ldquo;Browser notifications&rdquo; in the notification panel, which deletes
+              the token and with it every topic subscription (blocking notifications for mergers.fyi in your
+              browser&rsquo;s settings also stops them); or
+            </li>
+            <li>
+              in the app, turn its notifications off in your phone&rsquo;s settings. The app keeps its token so it
+              still knows when to check for updates; uninstalling the app removes it.
+            </li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            On the website, following does not depend on notifications: without them, updates still show in the
+            notification panel when you visit.
+          </p>
+        </section>
+
+        {/* 9. Access and correction */}
+        <section className={`${CARD} p-8 mb-6`}>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">9. Access and correction</h2>
           <p className="text-gray-700 leading-relaxed">
             If you would like to access, update, or delete your email address, you can contact us at{' '}
             <a
@@ -136,20 +206,24 @@ export default function PrivacyPolicy() {
             </a>
             .
           </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            We do not hold push tokens or follow lists, so there is nothing of those for us to look up or delete:
+            turning notifications off on the website, or uninstalling the app, removes them.
+          </p>
         </section>
 
-        {/* 9. Changes to this policy */}
+        {/* 10. Changes to this policy */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">9. Changes to this policy</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">10. Changes to this policy</h2>
           <p className="text-gray-700 leading-relaxed">
             We may update this Privacy Policy from time to time. Any changes will be posted on this page
             with an updated effective date.
           </p>
         </section>
 
-        {/* 10. Contact */}
+        {/* 11. Contact */}
         <section className={`${CARD} p-8`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">10. Contact</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">11. Contact</h2>
           <p className="text-gray-700 leading-relaxed">
             If you have any questions about this Privacy Policy, you can contact us at{' '}
             <a

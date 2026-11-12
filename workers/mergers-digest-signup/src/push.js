@@ -122,7 +122,8 @@ export async function applyTopicChanges({ token, add, remove }, account, fetchIm
       },
       body: JSON.stringify({ to: `/topics/${topic}`, registration_tokens: [token] }),
     }).then(async (resp) => {
-      if (!resp.ok) throw new Error(`${op} ${topic}: HTTP ${resp.status}`);
+      // Neither the token nor the topic goes into an error: the route keeps no log of either.
+      if (!resp.ok) throw new Error(`${op}: HTTP ${resp.status}`);
       const data = await resp.json().catch(() => ({}));
       return data?.results?.[0]?.error || null;
     });
