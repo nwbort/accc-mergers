@@ -1,6 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { generateKeyPairSync, createVerify } from "node:crypto";
+import worker from "../src/index.js";
 import { applyTopicChanges, MAX_CHANGES, parseTopicChanges, serviceAccount, signedJwt } from "../src/push.js";
 
 const TOKEN = "dGVzdA:APA91b" + "x".repeat(100);
@@ -86,4 +87,48 @@ test("adds and removes one topic per call, keeping nothing", async () => {
 test("reports a token Google doesn't know", async () => {
   const { fetchImpl } = fakeGoogle({ error: "NOT_FOUND" });
   assert.equal(await applyTopicChanges({ token: TOKEN, add: ["all"], remove: [] }, account, fetchImpl), "invalid-token");
+});
+
+// CORS for Pages preview deployments, on /push/topics only.
+const preflight = (path, origin) =>
+  worker.fetch(
+    new Request(`https://signup.mergers.fyi${path}`, { method: "OPTIONS", headers: { Origin: origin } }),
+    { ENVIRONMENT: "production" }
+  );
+
+test("lets a Pages preview of the site reach /push/topics", async () => {
+  for (const origin of [
+    "https://mergers-fyi.pages.dev",
+    "https://3f2a91c0.mergers-fyi.pages.dev",
+    "https://claude-firebase-messaging.mergers-fyi.pages.dev",
+  ]) {
+    const resp = await preflight("/push/topics", origin);
+    assert.equal(resp.headers.get("Access-Control-Allow-Origin"), origin, origin);
+  }
+  const posted = await worker.fetch(
+    new Request("https://signup.mergers.fyi/push/topics", {
+      method: "POST",
+      headers: { Origin: "https://3f2a91c0.mergers-fyi.pages.dev", "Content-Type": "application/json" },
+      body: "{}",
+    }),
+    { ENVIRONMENT: "production", RATE_LIMIT_KV: { get: async () => null, put: async () => {} } }
+  );
+  assert.equal(posted.status, 503);
+  assert.equal(posted.headers.get("Access-Control-Allow-Origin"), "https://3f2a91c0.mergers-fyi.pages.dev");
+});
+
+test("keeps previews off the other routes, and lookalike hosts off all of them", async () => {
+  for (const path of ["/", "/feedback", "/event", "/app-signup"]) {
+    const resp = await preflight(path, "https://3f2a91c0.mergers-fyi.pages.dev");
+    assert.equal(resp.headers.get("Access-Control-Allow-Origin"), "https://mergers.fyi", path);
+  }
+  for (const origin of [
+    "https://mergers-fyi.pages.dev.evil.example",
+    "https://evilmergers-fyi.pages.dev",
+    "http://3f2a91c0.mergers-fyi.pages.dev",
+    "https://a.b.mergers-fyi.pages.dev",
+  ]) {
+    const resp = await preflight("/push/topics", origin);
+    assert.equal(resp.headers.get("Access-Control-Allow-Origin"), "https://mergers.fyi", origin);
+  }
 });

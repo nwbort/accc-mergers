@@ -17,7 +17,10 @@ frontend:
   for the site's browser notifications (`src/push.js`; see
   [`docs/android-push.md`](../../docs/android-push.md#browsers)). The token
   and topics go to Google and are not kept. Needs the `FCM_SERVICE_ACCOUNT`
-  secret; without it the route answers 503.
+  secret; without it the route answers 503. Unlike the other routes, it also
+  answers the site's Cloudflare Pages previews (`mergers-fyi.pages.dev` and
+  `*.mergers-fyi.pages.dev`), so notifications can be tried on a branch
+  before it ships.
 
 The corresponding admin viewer lives in [`../feedback-admin/`](../feedback-admin/),
 which reads from the same `mergers-feedback` D1 database.

@@ -89,6 +89,21 @@ function corsHeaders(origin, env = {}) {
   };
 }
 
+// Cloudflare Pages preview deployments of the site: the bare pages.dev host,
+// and each preview, at <deployment hash> or <branch alias>.mergers-fyi.pages.dev.
+// Allowed on /push/topics only, so browser notifications can be tried on a
+// branch before it ships. Not on the other routes: a preview's usage pings
+// would count as the live site's, and a signup there would be a real one.
+const PREVIEW_ORIGIN_RE = /^https:\/\/([a-z0-9-]+\.)?mergers-fyi\.pages\.dev$/;
+
+/** *response* with its CORS origin set to a preview's, when *origin* is one. */
+function allowPreviewOrigin(response, origin) {
+  if (!PREVIEW_ORIGIN_RE.test(origin)) return response;
+  const allowed = new Response(response.body, response);
+  allowed.headers.set("Access-Control-Allow-Origin", origin);
+  return allowed;
+}
+
 function jsonResponse(body, status, origin = "", env = {}) {
   return new Response(JSON.stringify(body), {
     status,
@@ -666,15 +681,15 @@ async function handlePushTopics(request, env, origin) {
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
+    const path = new URL(request.url).pathname;
 
     if (request.method === "OPTIONS") {
-      return new Response(null, {
+      const preflight = new Response(null, {
         status: 204,
         headers: corsHeaders(origin, env),
       });
+      return path === "/push/topics" ? allowPreviewOrigin(preflight, origin) : preflight;
     }
-
-    const path = new URL(request.url).pathname;
 
     if (path === "/confirm") {
       if (request.method === "GET") return handleConfirmPage(request, env);
@@ -698,7 +713,7 @@ export default {
     }
 
     if (path === "/push/topics") {
-      return handlePushTopics(request, env, origin);
+      return allowPreviewOrigin(await handlePushTopics(request, env, origin), origin);
     }
 
     return handleSubscribe(request, env, origin);
