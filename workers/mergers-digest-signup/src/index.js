@@ -308,8 +308,10 @@ const CONFIRM_TTL_DAYS = 7;
 // One confirmation email per address per hour, however often it's asked for,
 // so the route can't be used to flood someone's inbox.
 const CONFIRM_RESEND_SECONDS = 3600;
-// A ceiling on confirmation emails a day across everyone, against a spread-out flood.
-const CONFIRM_DAILY_CAP = 200;
+// A ceiling on confirmation emails a day across everyone, against a spread-out
+// flood. Kept well under Resend's free-plan limit of 100 transactional emails a
+// day, so a flood can't spend the whole allowance.
+const CONFIRM_DAILY_CAP = 50;
 
 const encoder = new TextEncoder();
 
@@ -644,4 +646,4 @@ export default {
 };
 
 // For the tests.
-export { signConfirmation, verifyConfirmation };
+export { signConfirmation, verifyConfirmation, CONFIRM_DAILY_CAP };

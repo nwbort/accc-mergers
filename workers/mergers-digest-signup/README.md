@@ -94,7 +94,8 @@ All three endpoints enforce a per-IP fixed-window limit using the
 - `POST /` (signup): 5 requests per 10 minutes per IP, plus Turnstile.
 - `POST /app-signup`: 5 requests per 10 minutes per IP; at most one
   confirmation email per address per hour (a repeat is answered as sent, and
-  nothing goes out); and 200 confirmation emails a day in all.
+  nothing goes out); and 50 confirmation emails a day in all, well under
+  Resend's free-plan limit of 100 transactional emails a day.
 - `POST /confirm`: 10 requests per 10 minutes per IP.
 - `POST /feedback`: 5 requests per 10 minutes per IP, plus a 20-per-day cap
   to bound D1 row growth from a single IP, plus Turnstile.

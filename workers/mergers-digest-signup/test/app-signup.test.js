@@ -2,7 +2,7 @@
 // run against the Worker's own fetch handler with Resend, Turnstile and KV faked.
 import { test, beforeEach } from "node:test";
 import assert from "node:assert/strict";
-import worker, { signConfirmation, verifyConfirmation } from "../src/index.js";
+import worker, { signConfirmation, verifyConfirmation, CONFIRM_DAILY_CAP } from "../src/index.js";
 
 const ENV_BASE = { RESEND_API_KEY: "re_test", RESEND_AUDIENCE_ID: "aud_1", ENVIRONMENT: "production" };
 
@@ -67,6 +67,16 @@ test("one confirmation per address per hour, however often it's asked for", asyn
 test("per-IP limit on the app route", async () => {
   for (let i = 0; i < 5; i++) assert.equal((await appSignup(`p${i}@example.com`)).status, 200);
   assert.equal((await appSignup("p5@example.com")).status, 429);
+});
+
+test("no more than the daily cap of confirmation emails across everyone", async () => {
+  assert.equal(CONFIRM_DAILY_CAP, 50);
+  // A new IP every few, so the per-IP limit isn't what stops it.
+  for (let i = 0; i < CONFIRM_DAILY_CAP; i++) {
+    assert.equal((await appSignup(`d${i}@example.com`, `10.0.0.${Math.floor(i / 5)}`)).status, 200);
+  }
+  assert.equal((await appSignup("over@example.com", "10.0.1.1")).status, 503);
+  assert.equal(calls.length, CONFIRM_DAILY_CAP);
 });
 
 test("a failed send is reported, not claimed as sent", async () => {
