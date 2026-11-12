@@ -3,12 +3,12 @@
   "total_waivers": 516,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 276,
-    "Under assessment": 44,
+    "Assessment completed": 278,
+    "Under assessment": 42,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 269,
+    "Approved": 271,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 26
   },
   "clearance_rate": {
-    "cleared": 274,
+    "cleared": 276,
     "not_cleared": 2,
-    "total": 276,
+    "total": 278,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.4468085106383,
+    "average_days": 29.419014084507044,
     "median_days": 26.0,
-    "average_business_days": 20.04964539007092,
+    "average_business_days": 20.038732394366196,
     "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 59,
-        "percentage": 20.9
+        "percentage": 20.8
       },
       "day20": {
-        "count": 204,
-        "percentage": 72.3
+        "count": 206,
+        "percentage": 72.5
       },
       "day30": {
-        "count": 264,
-        "percentage": 93.6
+        "count": 266,
+        "percentage": 93.7
       }
     }
   },
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-70047",
+      "merger_name": "Australian Venue Co \u2013 Assets of Molly\u2019s Irish Pub Highgate and Molly\u2019s Irish Pub Victoria Park, Perth, WA",
+      "determination": "Approved",
+      "determination_date": "2026-11-12T12:00:00Z",
+      "page_modified_datetime": "2026-11-12T11:20:29+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "MN-85060",
+      "merger_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
+      "determination": "Approved",
+      "determination_date": "2026-11-12T12:00:00Z",
+      "page_modified_datetime": "2026-11-12T11:15:33+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-01123",
       "merger_name": "29 North \u2013 additional interest in Royal Foods",
       "determination": "Approved",
@@ -326,28 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-25060",
-      "merger_name": "Talent Acquisition Group \u2013 Strategy1 HR",
-      "determination": "Approved",
-      "determination_date": "2026-11-09T12:00:00Z",
-      "page_modified_datetime": "2026-11-09T17:44:59+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-45036",
-      "merger_name": "Next Capital - data centre business of Fujitsu Australia",
-      "determination": "Approved",
-      "determination_date": "2026-11-09T12:00:00Z",
-      "page_modified_datetime": "2026-11-09T17:44:03+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

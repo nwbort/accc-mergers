@@ -29,7 +29,9 @@
       "notification_phase_1_determination": null,
       "notification_phase_1_end_date": null,
       "notification_end_of_determination_period": "2026-12-04T12:00:00Z"
-    },
+    }
+  ],
+  "completed": [
     {
       "waiver_id": "WA-70036",
       "waiver_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
@@ -38,15 +40,13 @@
       "notification_id": "MN-85060",
       "notification_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
       "notification_filed_date": "2026-10-19T12:00:00Z",
-      "notification_status": "Under assessment",
-      "notification_determination": null,
-      "notification_determination_date": null,
-      "notification_phase_1_determination": null,
-      "notification_phase_1_end_date": null,
+      "notification_status": "Assessment completed",
+      "notification_determination": "Approved",
+      "notification_determination_date": "2026-11-12T12:00:00Z",
+      "notification_phase_1_determination": "Approved",
+      "notification_phase_1_end_date": "2026-11-12T12:00:00Z",
       "notification_end_of_determination_period": "2026-11-30T12:00:00Z"
-    }
-  ],
-  "completed": [
+    },
     {
       "waiver_id": "WA-60042",
       "waiver_name": "Kirin \u2013 Jamieson Wellness",
@@ -324,34 +324,34 @@
     }
   ],
   "count": {
-    "current": 3,
-    "completed": 15,
+    "current": 2,
+    "completed": 16,
     "not_refiled": 8
   },
   "phase_1_clearance_rate": {
-    "cleared": 14,
+    "cleared": 15,
     "referred": 1,
-    "total": 15,
-    "rate": 0.933
+    "total": 16,
+    "rate": 0.938
   },
   "straight_phase_1_clearance_rate": {
-    "cleared": 259,
+    "cleared": 260,
     "referred": 8,
-    "total": 267,
+    "total": 268,
     "rate": 0.97
   },
   "phase_duration": {
-    "average_days": 28.4,
+    "average_days": 28.1,
     "median_days": 26,
-    "average_business_days": 19.5,
+    "average_business_days": 19.4,
     "median_business_days": 18,
-    "completed_count": 15
+    "completed_count": 16
   },
   "straight_phase_duration": {
     "average_days": 29.5,
     "median_days": 26,
     "average_business_days": 20.1,
     "median_business_days": 18,
-    "completed_count": 267
+    "completed_count": 268
   }
 }
