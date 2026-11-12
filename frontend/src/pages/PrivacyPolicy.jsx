@@ -44,10 +44,7 @@ export default function PrivacyPolicy() {
           </p>
           <p className="text-gray-700 leading-relaxed mb-3">Information you provide:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
-            <li>
-              email address - when you sign up to receive our weekly email digest, on the website or in the app.
-              When you sign up in the app, we first email you a link to confirm, and only add you once you use it.
-            </li>
+            <li>email address - when you sign up to receive our weekly email digest, on the website or in the app.</li>
           </ul>
           <p className="text-gray-700 leading-relaxed mt-4">
             We do not collect any other personal information. Section 7 explains what is kept on your own device,
@@ -205,10 +202,6 @@ export default function PrivacyPolicy() {
               help@mergers.fyi
             </a>
             .
-          </p>
-          <p className="text-gray-700 leading-relaxed mt-4">
-            We do not hold push tokens or follow lists, so there is nothing of those for us to look up or delete:
-            turning notifications off on the website, or uninstalling the app, removes them.
           </p>
         </section>
 
