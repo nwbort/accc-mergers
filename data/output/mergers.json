@@ -69771,6 +69771,160 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/william-adams-clennett-hire",
+      "merger_name": "William Adams - Clennett Hire",
+      "status": "Under assessment",
+      "merger_id": "MN-85063",
+      "effective_notification_datetime": "2026-11-12T12:00:00Z",
+      "original_notification_datetime": "2026-11-12T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2027-01-12T12:00:00Z",
+      "page_modified_datetime": "2026-11-13T16:20:57+11:00",
+      "consultation_response_due_date": "2026-11-20T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "WILLIAM ADAMS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "72 009 569 493",
+          "party_page": {
+            "id": "william-adams-pty-ltd",
+            "name": "William Adams Pty. Ltd."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLENNETT HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "81 633 372 782",
+          "party_page": {
+            "id": "clennett-hire-pty-ltd",
+            "name": "Clennett Hire Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ELPHINSTONE GROUP (AUST) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "40 009 563 615",
+          "party_page": {
+            "id": "elphinstone-group-aust-pty-ltd",
+            "name": "Elphinstone Group (Aust) Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3411",
+          "name": "Agricultural and Construction Machinery Wholesaling"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6631",
+          "name": "Heavy Machinery and Scaffolding Rental and Hiring"
+        },
+        {
+          "code": "6639",
+          "name": "Other Goods and Equipment Rental and Hiring n.e.c."
+        }
+      ],
+      "merger_description": "William Adams Pty Ltd (**William Adams**) proposes to acquire 65% of the share capital of Clennett Hire Pty Ltd (**Clennett Hire**), with the balance of the share capital to be retained by entities controlled by Mr Will Clennett.\n\nClennett Hire is a general and access equipment hire business with operations in Tasmania, Victoria and South Australia. It primarily supplies non-specialised access equipment (such as scissor lifts and boom lifts), alongside a range of general equipment (including compaction, earthmoving, material handling equipment such as forklifts, power equipment, lighting equipment and pumps), as well as site services equipment (generators, portable toilets, site buildings, temporary lighting structures, traffic management equipment) for use in residential, commercial and civil construction projects. Clennett Hire is majority owned and controlled by Clennett Group Pty Ltd, which in turn is controlled by the founder and CEO, Mr Will Clennett.\n\nWilliam Adams is an authorised Caterpillar dealer that sells and services new and used Caterpillar equipment in Victoria and Tasmania. William Adams also supplies equipment for rent consisting of specialised, heavy-duty earthmoving and compaction equipment (such as heavy excavators, wheel loaders, articulated trucks, graders and skid steer loaders) for use in large-scale construction projects and mining operations. Its rental fleet is comprised predominantly of Caterpillar equipment, and items of equipment are typically rented out to large customers for large scale projects.\n\nThe majority (96%) of shares in William Adams are held by Elphinstone Group (Aust) Pty Ltd (**EGA**). Another entity held by EGA is United Equipment Pty Ltd, which trades as United Forklift and Access Solutions (**United Forklift**). United Forklift sells and services new and used forklift and access equipment (such as scissor lifts, boom lifts and cherry pickers) nationally. It also offers such equipment for hire.",
+      "events": [
+        {
+          "date": "2026-11-13T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/William%20Adams%20-%20Clennett%20Hire%20-%20third%20party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-85063/William Adams - Clennett Hire - third party questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-11-12T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-65027",
+          "merger_name": "Kennards Hire - Skylift Hire & Rentals",
+          "acquirers": [
+            "KENNARDS HIRE PTY LIMITED"
+          ],
+          "targets": [
+            "SKYLIFT HIRE & RENTALS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-90025",
+          "merger_name": "KKR - Crowe",
+          "acquirers": [
+            "Forge Merger Sub LLC"
+          ],
+          "targets": [
+            "Crowe ParentCo LLC"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-50035",
+          "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
+          "acquirers": [
+            "OHCA PROPERTY HOLDINGS PTY LTD",
+            "DPG SERVICES PTY LTD"
+          ],
+          "targets": [
+            "Michael Mooney",
+            "CLENDON CARE PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 200,
+        "as_of": "2026-11-12",
+        "estimated_at": "2026-11-13",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 23,
+        "min_days": null,
+        "max_days": 30,
+        "id_issued_estimated": "2026-10-20",
+        "id_issued_before": null,
+        "id_issued_after": "2026-10-13",
+        "min_days_witness": null,
+        "max_days_witness": "WA-85061",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/care-%E2%80%93-motorone-autobody",
       "merger_name": "CARe \u2013 MotorOne Autobody",
       "status": "Assessment completed",

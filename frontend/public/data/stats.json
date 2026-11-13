@@ -1,10 +1,10 @@
 {
-  "total_mergers": 328,
+  "total_mergers": 329,
   "total_waivers": 520,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 281,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 215
+      "count": 216
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-85063",
+      "merger_name": "William Adams - Clennett Hire",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-12T12:00:00Z",
+      "page_modified_datetime": "2026-11-13T16:20:57+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25024",
       "merger_name": "Steadfast - Axiom Insurance Brokers",
@@ -204,16 +214,6 @@
       "effective_notification_datetime": "2026-11-04T12:00:00Z",
       "page_modified_datetime": "2026-11-10T16:46:47+11:00",
       "is_waiver": true,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65042",
-      "merger_name": "Thoma Bravo - Varonis",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-11-04T12:00:00Z",
-      "page_modified_datetime": "2026-11-05T12:11:45+11:00",
-      "is_waiver": false,
       "is_refiled": false
     }
   ],
