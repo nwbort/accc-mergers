@@ -98,7 +98,7 @@ function TimingTile({ label, value, previous, previousLabel }) {
 // hover, so a card heading goes somewhere without the page reading as a wall
 // of links.
 const QUIET_LINK = 'hover:text-primary hover:underline underline-offset-2';
-const INLINE_LINK = 'text-primary hover:underline underline-offset-2';
+const INLINE_LINK = 'text-primary underline underline-offset-2 decoration-primary/40 hover:decoration-primary';
 
 function CardHeader({ id, title, subtitle, to }) {
   return (

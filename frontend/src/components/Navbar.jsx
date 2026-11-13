@@ -236,7 +236,7 @@ function Navbar({ onOpenSearch }) {
       } ${
         // M3's top app bar: the page's own tone at rest, lifting to a
         // container tone (not a shadow) once content scrolls under it.
-        isScrolled ? 'bg-surface-container' : 'bg-surface'
+        isScrolled ? 'bg-surface-container' : 'bg-surface-container-low'
       }`}
     >
       <a
@@ -443,8 +443,8 @@ function Navbar({ onOpenSearch }) {
                   // M3's large badge: the error colour, a pill that grows
                   // with its count.
                   <span className="absolute top-1 right-0.5 flex h-4 min-w-4 items-center justify-center">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-600 opacity-30"></span>
-                    <span className="relative inline-flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-[#b3261e] text-[10px] font-bold text-white">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-error opacity-30"></span>
+                    <span className="relative inline-flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-error text-[10px] font-bold text-white">
                       {unseenCount > 9 ? '9+' : unseenCount}
                     </span>
                   </span>

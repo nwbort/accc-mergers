@@ -46,7 +46,7 @@ export const DEFAULT_CARD_STYLE = { bg: 'bg-gray-600 hover:bg-gray-700', sub: 't
 // (rather than a border) avoids shifting the card's layout. Full class string
 // required so Tailwind's scanner keeps it at build time. The offset sets the
 // ring a step off the card, as M3 marks a selected item.
-export const NEW_ITEM_BORDER = 'ring-2 ring-blue-600 ring-offset-2 ring-offset-surface';
+export const NEW_ITEM_BORDER = 'ring-2 ring-blue-600 ring-offset-2 ring-offset-surface-container-low';
 
 // The same fills, without the hover step, for surfaces that colour something
 // smaller than a card by outcome: the Phase 2 tracker's outcome split bar and

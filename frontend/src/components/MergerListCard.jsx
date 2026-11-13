@@ -47,7 +47,7 @@ function MergerListCard({ merger, index, selected, tracked, onToggleTracking }) 
         }
       }}
       className={`press-morph relative overflow-hidden bg-white rounded-2xl hover:rounded-3xl hover:shadow-card-hover cursor-pointer ${
-        selected ? 'ring-2 ring-primary ring-offset-2 ring-offset-surface' : ''
+        selected ? 'ring-2 ring-primary ring-offset-2 ring-offset-surface-container-low' : ''
       }`}
     >
       {/* Outcome rail. Decoration only: the status badge below states

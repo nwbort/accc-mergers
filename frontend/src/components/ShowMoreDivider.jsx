@@ -13,7 +13,7 @@ function ShowMoreDivider({ expanded, onToggle, className = '' }) {
           type="button"
           onClick={onToggle}
           aria-expanded={expanded}
-          className="press-morph inline-flex items-center gap-1.5 h-10 rounded-full bg-secondary-container px-5 text-sm font-semibold text-on-secondary-container ring-4 ring-surface hover:shadow-card-hover"
+          className="press-morph inline-flex items-center gap-1.5 h-10 rounded-full bg-secondary-container px-5 text-sm font-semibold text-on-secondary-container ring-4 ring-surface-container-low hover:shadow-card-hover"
         >
           {expanded ? 'Show less' : 'Show more'}
           <FaChevronDown

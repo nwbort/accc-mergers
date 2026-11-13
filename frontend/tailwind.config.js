@@ -1,3 +1,8 @@
+import { readFileSync } from 'node:fs';
+
+// Generated, never hand-edited: see src/theme/m3.js.
+const m3 = JSON.parse(readFileSync(new URL('./src/theme/m3-theme.json', import.meta.url), 'utf8'));
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -12,58 +17,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Material 3 Expressive colour roles, the same scheme as the Android
-        // app's `Light` (ui/theme/Theme.kt), seeded from the brand green.
-        primary: '#335145',
+        // Material 3 colour roles, built by Google's material-color-utilities
+        // from the brand green (src/theme/m3.js, written to m3-theme.json by
+        // `npm run theme`). Cards are `surface-container-lowest` (white) on a
+        // `surface-container-low` page: M3 tells surfaces apart by tone, not
+        // by shadow.
+        ...m3.colors,
         'primary-light': '#4a6d5e',
         'primary-dark': '#223a30',
-        'on-primary': '#ffffff',
-        'primary-container': '#d4e8dc',
-        'on-primary-container': '#0e2a1e',
-        'secondary-container': '#d1fae5',
-        'on-secondary-container': '#064e3b',
         accent: '#10b981',
         'accent-light': '#34d399',
         'accent-dark': '#059669',
-        // Surfaces step from the page (`surface`) up through the tonal
-        // containers, as M3 elevates by tone rather than by shadow: cards are
-        // `surface-container-lowest` (white) on the tinted page.
-        surface: {
-          DEFAULT: '#f3f6f4',
-          dim: '#e3e9e6',
-          'container-lowest': '#ffffff',
-          'container-low': '#f2f5f3',
-          container: '#ecf0ee',
-          'container-high': '#e6ebe8',
-          'container-highest': '#e0e6e3',
-          50: '#f8faf9',
-          100: '#eef2f0',
-          200: '#e0e6e3',
-          300: '#c9d1cd',
-        },
-        outline: {
-          DEFAULT: '#6f7a75',
-          variant: '#c3cbc7',
-        },
-        // Tailwind's grey, replaced by M3 neutral tones carrying a trace of
-        // the brand's green hue, so every `text-gray-*` and `bg-gray-*` in the
-        // codebase sits in the same tonal palette as the surfaces above. Each
-        // step keeps the lightness of the Tailwind grey it replaces, so text
-        // contrast is unchanged: gray-500 is 5.2:1 on white and 4.6:1 on
-        // surface-container, as the old gray-500 was.
-        gray: {
-          50: '#f6f8f7',
-          100: '#eef2f0',
-          200: '#e0e6e3',
-          300: '#c9d1cd',
-          400: '#8f9a95',
-          500: '#636f6a',
-          600: '#47524d',
-          700: '#333d39',
-          800: '#1f2925',
-          900: '#141b18',
-          950: '#0b100e',
-        },
+        // Tailwind's grey, replaced by tones of the scheme's neutral palette
+        // so every `text-gray-*` and `bg-gray-*` in the codebase sits in the
+        // same tonal family as the surfaces. Contrast pinned by
+        // src/theme/__tests__/m3Theme.test.js.
+        gray: m3.gray,
         // Custom theme colors for digest sections
         'new-merger': {
           DEFAULT: '#5B3758',

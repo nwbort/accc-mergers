@@ -28,7 +28,7 @@
  * (constants/mergerStatus.js), so a result reads as the same colour everywhere
  * on the site. They are kept separate from both because those tables serve
  * smaller surfaces, and because the header needs three things they don't: an
- * accent colour for the card's top rule, a link treatment, and a focus-ring
+ * accent colour for the card's leading-edge indicator, a link treatment, and a focus-ring
  * treatment for the controls that sit on the fill.
  *
  * The contrast rules from cardStyles carry over — every layer has to clear
@@ -42,10 +42,10 @@
  * white, which lands at 4.47:1 on the under-assessment tint.
  *
  * `accent` is a plain hex because it is fed to the `--card-accent` custom
- * property that repaints `.card-accent`'s top rule (see index.css); the values
+ * property that repaints `.card-accent`'s leading-edge indicator (see index.css); the values
  * are the Tailwind shades named alongside them. A pale fill keeps the saturated
  * shade here, so the card is still marked with its status colour in a form you
- * can actually see at 3px.
+ * can actually see in a 4px indicator.
  */
 
 import { MERGER_STATUS } from './mergerStatus';
@@ -205,7 +205,7 @@ export function getAppealFadeStyle(style) {
 }
 
 /**
- * The matching value for `--card-accent`, so the card's 3px top rule runs the
+ * The matching value for `--card-accent`, so the card's leading-edge indicator runs the
  * same fade instead of sitting as a solid bar above a graded block.
  */
 export function getAppealFadeAccent(style) {
