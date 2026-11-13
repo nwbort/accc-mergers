@@ -177,6 +177,7 @@ export default function NickTwort() {
               "Infrastructure",
               "Milk",
               "Pathology",
+              "Payment Networks",
               "Pet Supplies",
               "Ports",
               "Retail",
