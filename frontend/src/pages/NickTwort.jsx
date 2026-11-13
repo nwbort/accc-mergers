@@ -153,7 +153,7 @@ export default function NickTwort() {
             Nick has worked across a broad range of Australian industries and markets, bringing sector-specific
             economic knowledge to each engagement:
           </p>
-          <div className="flex flex-wrap gap-2 mb-4 justify-between">
+          <div className="flex flex-wrap gap-2 mb-4">
             {[
               "Advertising",
               "Airlines & Airports",
@@ -191,7 +191,7 @@ export default function NickTwort() {
             ].map((industry) => (
               <span
                 key={industry}
-                className="inline-block bg-emerald-50 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full border border-emerald-200"
+                className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm bg-gray-50 text-gray-600 border border-gray-100"
               >
                 {industry}
               </span>
