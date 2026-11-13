@@ -57,10 +57,14 @@
     <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
 
     <!-- Favicons and Icons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- The Android app's launcher icon (its ic_launcher_foreground.xml on
+         the brand green): favicon.svg is the source; the PNGs and .ico are
+         drawn from it for browsers that want a bitmap. -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <title>Australian Merger Tracker | ACCC Merger Reviews & M&A Data</title>

@@ -7,7 +7,6 @@ import NotificationPanel from './NotificationPanel';
 import BellIcon from './BellIcon';
 import { NAVBAR_SOCIAL_PROFILE } from '../constants/socialProfiles';
 import { NAV_PAGES } from '../constants/navPages';
-import MaterialShape from './MaterialShape';
 
 const SCROLL_HIDE_THRESHOLD_PX = 50;
 
@@ -254,7 +253,6 @@ function Navbar({ onOpenSearch }) {
             aria-hidden="true"
             className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
           >
-            <span className="w-8 h-8 mr-2.5" />
             <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
             <div className="ml-8 flex gap-1">
               {navLinks.map(({ label }) => (
@@ -274,7 +272,6 @@ function Navbar({ onOpenSearch }) {
             aria-hidden="true"
             className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
           >
-            <span className="w-8 h-8 mr-2.5" />
             <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
             <div className="ml-8 flex gap-1">
               <span className="px-4 text-sm font-semibold">Dashboard</span>
@@ -294,7 +291,6 @@ function Navbar({ onOpenSearch }) {
             aria-hidden="true"
             className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
           >
-            <span className="w-8 h-8 mr-2.5" />
             <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
             <div className="ml-2 flex items-center">
               <div className="w-10 h-10" />
@@ -308,7 +304,6 @@ function Navbar({ onOpenSearch }) {
             aria-hidden="true"
             className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
           >
-            <span className="w-8 h-8 mr-2.5" />
             <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
             <div className="ml-2 flex items-center">
               <div className="w-10 h-10" />
@@ -319,17 +314,7 @@ function Navbar({ onOpenSearch }) {
 
           {/* Left: brand + nav links */}
           <div className="flex items-center min-w-0">
-            <Link to="/" className="flex items-center gap-2.5 group rounded-full min-w-0">
-              {/* The brand mark: the app's nine-sided cookie, turning a
-                  little on hover. */}
-              <MaterialShape
-                shape="cookie9"
-                className={`flex-shrink-0 w-8 h-8 text-primary transition-transform duration-500 ease-spring group-hover:rotate-45 ${
-                  navMode === 'tiny' ? 'hidden' : ''
-                }`}
-              >
-                <path d="M30 64V38l20 18 20-18v26" fill="none" stroke="white" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" />
-              </MaterialShape>
+            <Link to="/" className="flex items-center rounded-full min-w-0">
               <span className="text-lg font-bold text-primary tracking-tight truncate">
                 australian merger tracker
               </span>
