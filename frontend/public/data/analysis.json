@@ -1095,19 +1095,19 @@
     },
     {
       "division": "Commissioner Woodward",
-      "count": 10,
+      "count": 11,
       "outcome_mix": {
-        "Approved": 10
+        "Approved": 11
       },
-      "median_business_days": 18.0
+      "median_business_days": 18
     },
     {
       "division": "Unknown",
-      "count": 3,
+      "count": 2,
       "outcome_mix": {
-        "Approved": 3
+        "Approved": 2
       },
-      "median_business_days": 21
+      "median_business_days": 21.0
     }
   ],
   "waiver_by_commission_division": [
@@ -1207,9 +1207,16 @@
       "original_date": "2026-06-19",
       "effective_date": "2026-06-23",
       "delta_calendar_days": 4
+    },
+    {
+      "merger_id": "MN-25056",
+      "merger_name": "Amwins / Dragoneer / KKR / Temasek Consortium \u2013 Steadfast",
+      "original_date": "2026-11-10",
+      "effective_date": "2026-11-12",
+      "delta_calendar_days": 2
     }
   ],
-  "restart_rate": 0.0122,
+  "restart_rate": 0.0152,
   "outcomes_by_division": [
     {
       "code": "S",
