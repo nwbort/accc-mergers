@@ -191,7 +191,7 @@ export default function NickTwort() {
             ].map((industry) => (
               <span
                 key={industry}
-                className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-primary/5 text-primary border border-primary/20"
+                className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-primary/5 text-primary border border-primary/20 transition-colors hover:bg-primary/10 hover:border-primary/40"
               >
                 {industry}
               </span>
