@@ -607,7 +607,9 @@ function Mergers() {
               />
             )
           ) : (
-            <div className="space-y-3">
+            // Two to a row once there's room, as the app lays out its
+            // cards on a wide window.
+            <div className="grid gap-3 lg:grid-cols-2">
               {visibleMergers.map((merger, idx) => (
                 <MergerListCard
                   key={merger.merger_id}

@@ -6,8 +6,9 @@ import JudicialReviewBadge from './JudicialReviewBadge';
 import { mergerPath } from '../utils/slug';
 import { groupMergersByPhase } from '../utils/industryGroups';
 import { getOutcomeRail } from '../constants/outcomeRail';
-import { formatDate } from '../utils/dates';
-import { CARD } from '../utils/classNames';
+import { formatDateMedium } from '../utils/dates';
+import MergerCardFace from './MergerCardFace';
+import { getOutcomeCardTint } from '../constants/outcomeCard';
 
 // Per-phase accent styling. Literal class strings so Tailwind picks them up.
 const GROUP_STYLES = {
@@ -22,7 +23,7 @@ const GROUP_STYLES = {
  * skipped.
  *
  * `variant`:
- *   - "full"    larger cards (industry detail page)
+ *   - "full"    the merger list's cards (industry and party detail pages)
  *   - "compact" smaller cards (expanded row on the industries list)
  */
 function IndustryMergerGroups({ mergers, variant = 'full' }) {
@@ -42,11 +43,11 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                 {group.mergers.length}
               </span>
             </div>
-            <div className={compact ? `space-y-2 pl-3 border-l-2 ${style.line}` : 'space-y-3'}>
+            <div className={compact ? `space-y-2 pl-3 border-l-2 ${style.line}` : 'grid gap-3 lg:grid-cols-2'}>
               {group.mergers.map((merger) => {
-                // Mirrors the merger list card (Mergers.jsx): a solid outcome
-                // badge leading the title, with a colour-matched rail down the
-                // left edge, rather than the tinted chip this page used to show.
+                // The compact rows (an expanded industry on /industries): a
+                // solid outcome badge under the name, with a colour-matched
+                // rail down the left edge.
                 const railColor = getOutcomeRail({
                   status: merger.status,
                   determination: merger.determination,
@@ -84,52 +85,35 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                   );
                 }
 
+                // The merger list's card (MergerCardFace), tinted the same
+                // way, without the Track button.
+                const statusInput = {
+                  status: merger.status,
+                  determination: merger.determination,
+                  hasConditions: merger.has_conditions,
+                };
                 return (
                   <Link
                     key={merger.merger_id}
                     to={mergerPath(merger.merger_id, merger.merger_name)}
-                    className={`relative overflow-hidden block ${CARD} hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 p-5 pl-6`}
+                    className={`group block rounded-2xl px-4 py-3.5 ${getOutcomeCardTint(statusInput)} transition-[transform,box-shadow] duration-300 ease-spring hover:shadow-card-hover active:scale-[0.97]`}
                     aria-label={`View merger details for ${merger.merger_name}`}
                   >
-                    <span
-                      className={`absolute inset-y-0 left-0 w-1.5 ${railColor}`}
-                      aria-hidden="true"
+                    <MergerCardFace
+                      {...statusInput}
+                      flags={{
+                        waiver: merger.is_waiver,
+                        underAppeal: merger.under_appeal,
+                        underJudicialReview: merger.under_judicial_review,
+                      }}
+                      name={merger.merger_name}
+                      Heading="h4"
+                      meta={[
+                        merger.merger_id,
+                        merger.notification_date && `${merger.is_waiver ? 'Applied' : 'Notified'} ${formatDateMedium(merger.notification_date)}`,
+                        merger.determination_date && `Determined ${formatDateMedium(merger.determination_date)}`,
+                      ]}
                     />
-                    <div className="flex flex-wrap items-center gap-1.5 mb-2">
-                      <StatusBadge
-                        status={merger.status}
-                        determination={merger.determination}
-                        hasConditions={merger.has_conditions}
-                        solid
-                      />
-                      {merger.is_waiver && <WaiverBadge solid />}
-                      {merger.under_appeal && <AppealBadge solid />}
-                      {merger.under_judicial_review && <JudicialReviewBadge solid />}
-                    </div>
-                    <h4 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
-                      {merger.merger_name}
-                    </h4>
-                    <p className="text-xs text-gray-500 mt-1">{merger.merger_id}</p>
-                    {(merger.notification_date || merger.determination_date) && (
-                      <div className="mt-3 grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-xs text-gray-500 mb-0.5">
-                            {merger.is_waiver ? 'Application date' : 'Notification date'}
-                          </p>
-                          <p className="text-sm font-medium text-gray-700">
-                            {formatDate(merger.notification_date)}
-                          </p>
-                        </div>
-                        {merger.determination_date && (
-                          <div>
-                            <p className="text-xs text-gray-500 mb-0.5">Determination date</p>
-                            <p className="text-sm font-medium text-gray-700">
-                              {formatDate(merger.determination_date)}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    )}
                   </Link>
                 );
               })}

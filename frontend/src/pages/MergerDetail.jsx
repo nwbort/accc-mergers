@@ -18,8 +18,6 @@ import Phase2NoticeMattersSection from '../components/Phase2NoticeMattersSection
 import MergerTimeline from '../components/MergerTimeline';
 import MergerOutcomeHeading from '../components/MergerOutcomeHeading';
 import JudicialReviewCard from '../components/JudicialReviewCard';
-import MaterialShape from '../components/MaterialShape';
-import { outcomeShape } from '../utils/materialShapes';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDateMedium, formatDateLong } from '../utils/dates';
@@ -414,17 +412,10 @@ function MergerDetail() {
               matter's colour, so where it stands is the first thing the page
               says; the card's own p-6 keeps the padding identical. */}
           <div
-            className={`relative overflow-hidden -mt-6 -mx-6 px-6 pt-6 pb-6 ${headerBlockStyle ? '' : headerStyle.bg} ${headerStyle.text}`}
+            className={`-mt-6 -mx-6 px-6 pt-6 pb-6 ${headerBlockStyle ? '' : headerStyle.bg} ${headerStyle.text}`}
             style={headerBlockStyle ?? undefined}
           >
-            {/* The outcome's Material shape, large and faint behind the
-                title, as the app draws it behind a merger's header: the same
-                outline marks the same outcome on the phone and here. */}
-            <MaterialShape
-              shape={outcomeShape(headerStatus?.label)}
-              className="pointer-events-none absolute -right-8 -bottom-28 h-60 w-60 opacity-[0.1] animate-pop-in"
-            />
-            <div className="relative flex items-start justify-between gap-4 pt-1">
+            <div className="flex items-start justify-between gap-4 pt-1">
               <div className="min-w-0">
                 <MergerOutcomeHeading merger={merger} />
                 <h1 className="mb-2 text-2xl sm:text-3xl type-emphasized">

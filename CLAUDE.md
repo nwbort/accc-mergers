@@ -181,8 +181,8 @@ frontend/src/
 │                         #     utils/materialShapes.js's M3 Expressive shapes
 │                         #     (decorative, aria-hidden). Each outcome has the
 │                         #     app's shape (outcomeShape: approved sunny,
-│                         #     refused cookie4, live cookie12, ceased gem), drawn
-│                         #     large and faint behind the merger header; event
+│                         #     refused cookie4, live cookie12, ceased gem), worn
+│                         #     by StatusGlyph at the head of each merger card; event
 │                         #     tiles are the cookie6 (shapeClipPath); the digest
 │                         #     gives each section the app's shape; LoadingSpinner
 │                         #     morphs through LOADING_SEQUENCE like the app's
@@ -236,11 +236,17 @@ frontend/src/
 │                         #     matter is under appeal. The merger list cannot
 │                         #     borrow that fill — nine in ten matters are
 │                         #     "Approved", so it would colour the whole page.
-│                         #     It leads each card with a solid StatusBadge
-│                         #     above the title instead, in the outcome's
-│                         #     reading position rather than the far corner,
-│                         #     beside a rail in the same outcome colour, inset on
-│                         #     the card's leading edge like M3's active indicator
+│                         #     Its cards follow the Android app's MergerCard
+│                         #     instead (MergerCardFace, shared with the industry
+│                         #     and party pages): tinted 10% with the outcome's
+│                         #     colour (constants/outcomeCard.js), led by the
+│                         #     outcome's shape and glyph (StatusGlyph) and its
+│                         #     words with the flag badges on the same line, then
+│                         #     the name and one meta line (id, dates, business
+│                         #     day). Two to a row from `lg`. StatusBadge and
+│                         #     StatusGlyph resolve the outcome through the same
+│                         #     utils/statusDisplay.js. The compact industry rows
+│                         #     and commentary keep the edge rail
 │                         #     (constants/outcomeRail.js).
 │                         #   - Tracking/notifications: TrackButton, NotificationPanel,
 │                         #     BellIcon
