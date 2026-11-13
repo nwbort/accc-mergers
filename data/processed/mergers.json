@@ -11137,13 +11137,16 @@
   {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/camp-australia-%E2%80%93-jabiru",
     "merger_name": "Camp Australia \u2013 Jabiru",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-15048",
     "effective_notification_datetime": "2026-10-15T12:00:00Z",
     "original_notification_datetime": "2026-10-15T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-11-26T12:00:00Z",
-    "page_modified_datetime": "2026-10-16T15:31:05+11:00",
+    "determination_publication_date": "2026-11-13T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-11-13T15:54:39+11:00",
     "consultation_response_due_date": "2026-10-23T12:00:00Z",
     "acquirers": [
       {
@@ -11211,6 +11214,17 @@
         "date": "2026-10-15T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-11-13T12:00:00Z",
+        "title": "Camp Australia - Jabiru - Phase 1 Determination",
+        "display_title": "Camp Australia - Jabiru - Phase 1 Determination"
+      },
+      {
+        "date": "2026-11-13T12:00:00Z",
+        "title": "Phase 1 - initial assessment determination: Approved",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "is_determination_event": true
       }
     ],
     "is_waiver": false
