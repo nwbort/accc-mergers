@@ -3,7 +3,7 @@ import { FaExclamationCircle } from 'react-icons/fa';
 import { CARD } from '../utils/classNames';
 
 const PRIMARY_BUTTON =
-  'inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl text-white bg-primary hover:bg-primary-dark transition-colors shadow-sm';
+  'press-morph inline-flex items-center px-6 h-10 text-sm font-semibold rounded-full text-white bg-primary hover:bg-primary-dark';
 const SECONDARY_BUTTON =
   'inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-colors';
 

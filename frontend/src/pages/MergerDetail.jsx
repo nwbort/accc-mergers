@@ -18,6 +18,8 @@ import Phase2NoticeMattersSection from '../components/Phase2NoticeMattersSection
 import MergerTimeline from '../components/MergerTimeline';
 import MergerOutcomeHeading from '../components/MergerOutcomeHeading';
 import JudicialReviewCard from '../components/JudicialReviewCard';
+import MaterialShape from '../components/MaterialShape';
+import { outcomeShape } from '../utils/materialShapes';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDateMedium, formatDateLong } from '../utils/dates';
@@ -396,7 +398,7 @@ function MergerDetail() {
         <Link
           to={backToMergers}
           state={RESTORE_LIST_POSITION_STATE}
-          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary mb-5 transition-colors"
+          className="press-morph inline-flex items-center gap-2 h-10 -ml-3 px-3 rounded-full text-sm font-semibold text-primary hover:bg-primary/[0.08] mb-4"
           aria-label="Return to all mergers list"
         >
           <FaChevronLeft className="w-4 h-4" aria-hidden="true" />
@@ -412,13 +414,20 @@ function MergerDetail() {
               matter's colour, so where it stands is the first thing the page
               says; the card's own p-6 keeps the padding identical. */}
           <div
-            className={`-mt-6 -mx-6 px-6 pt-6 pb-6 ${headerBlockStyle ? '' : headerStyle.bg} ${headerStyle.text}`}
+            className={`relative overflow-hidden -mt-6 -mx-6 px-6 pt-6 pb-6 ${headerBlockStyle ? '' : headerStyle.bg} ${headerStyle.text}`}
             style={headerBlockStyle ?? undefined}
           >
-            <div className="flex items-start justify-between gap-4 pt-1">
+            {/* The outcome's Material shape, large and faint behind the
+                title, as the app draws it behind a merger's header: the same
+                outline marks the same outcome on the phone and here. */}
+            <MaterialShape
+              shape={outcomeShape(headerStatus?.label)}
+              className="pointer-events-none absolute -right-8 -bottom-28 h-60 w-60 opacity-[0.1] animate-pop-in"
+            />
+            <div className="relative flex items-start justify-between gap-4 pt-1">
               <div className="min-w-0">
                 <MergerOutcomeHeading merger={merger} />
-                <h1 className="mb-2 text-2xl font-bold tracking-tight">
+                <h1 className="mb-2 text-2xl sm:text-3xl type-emphasized">
                   {merger.merger_name}
                 </h1>
                 <div className="flex items-center gap-4 flex-wrap">

@@ -620,7 +620,7 @@ function Quarterly() {
       <>
         <SEO title={PAGE_META.title} description={PAGE_META.description} url="/quarterly" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Quarterly report</h1>
+          <h1 className="text-3xl sm:text-4xl type-emphasized text-gray-900">Quarterly report</h1>
           <p className="mt-3 text-sm text-gray-600">This page is still being generated. Please check back shortly.</p>
         </div>
       </>
@@ -649,7 +649,7 @@ function Quarterly() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-6 flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+            <h1 className="text-3xl sm:text-4xl type-emphasized text-gray-900">
               Quarterly report
             </h1>
             <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-500">

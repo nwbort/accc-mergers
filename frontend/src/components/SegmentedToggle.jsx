@@ -1,6 +1,7 @@
 /**
- * Pill-shaped segmented control: a row of mutually exclusive options in a grey
- * track, the selected one lifted onto a white chip.
+ * A row of mutually exclusive options, as Material 3 Expressive's connected
+ * button group: pills set side by side with a small gap, their inner corners
+ * squared, and the selected one filled and morphing to a full pill.
  *
  * Analysis (business vs calendar days) and CurrentStatus (the rolling window)
  * each grew their own copy of this markup, and the two had already drifted on
@@ -8,24 +9,30 @@
  * appears.
  */
 function SegmentedToggle({ ariaLabel, options, value, onChange }) {
+  const last = options.length - 1;
   return (
     <div
-      className="inline-flex items-center bg-gray-100 rounded-full p-0.5 text-sm"
+      className="inline-flex items-center gap-0.5 text-sm"
       role="group"
       aria-label={ariaLabel}
     >
-      {options.map((option) => {
+      {options.map((option, index) => {
         const selected = option.value === value;
+        // Outer ends stay round; inner corners square off to join the group.
+        // The selected button rounds every corner.
+        const shape = selected
+          ? 'rounded-full'
+          : `${index === 0 ? 'rounded-l-full' : 'rounded-l-md'} ${index === last ? 'rounded-r-full' : 'rounded-r-md'}`;
         return (
           <button
             key={String(option.value)}
             type="button"
             onClick={() => onChange(option.value)}
             aria-pressed={selected}
-            className={`px-3 sm:px-3.5 py-1.5 rounded-full font-medium whitespace-nowrap transition-all duration-150 ${
+            className={`press-morph h-9 px-3.5 sm:px-4 font-semibold whitespace-nowrap ${shape} ${
               selected
-                ? 'bg-white text-gray-900 shadow-sm'
-                : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-primary text-white'
+                : 'bg-surface-container-high text-gray-700 hover:bg-surface-container-highest hover:text-gray-900'
             }`}
           >
             {option.label}

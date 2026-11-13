@@ -33,7 +33,7 @@ function Phase2() {
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-6 flex items-center justify-between gap-4">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-3xl sm:text-4xl type-emphasized text-gray-900">
             Phase 2 tracker
           </h1>
           <button
@@ -64,14 +64,14 @@ function Phase2() {
         <Phase2SummaryCards current={current} completed={completed} />
 
         <section aria-labelledby="phase2-current-heading" className="mb-8">
-          <h2 id="phase2-current-heading" className="text-lg font-semibold text-gray-900 mb-4">
+          <h2 id="phase2-current-heading" className="text-xl font-bold tracking-tight text-gray-900 mb-4">
             Current Phase 2 matters
           </h2>
           <Phase2Timeline matters={current} />
         </section>
 
         <section aria-labelledby="phase2-completed-heading">
-          <h2 id="phase2-completed-heading" className="text-lg font-semibold text-gray-900 mb-4">
+          <h2 id="phase2-completed-heading" className="text-xl font-bold tracking-tight text-gray-900 mb-4">
             Completed Phase 2 matters
           </h2>
           {completed.length === 0 ? (

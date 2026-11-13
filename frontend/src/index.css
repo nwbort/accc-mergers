@@ -21,12 +21,19 @@ html {
 }
 
 body {
-  @apply bg-surface-50 text-gray-900;
+  @apply bg-surface text-gray-900;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-feature-settings: 'cv11', 'ss01';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Material 3 Expressive's emphasized type: headlines a step heavier and
+   tighter than the body, as the app's `…Emphasized` styles. */
+h1, h2, h3 {
+  letter-spacing: -0.015em;
 }
 
 code {
@@ -34,32 +41,30 @@ code {
     monospace;
 }
 
-/* Modern gradient background for hero sections */
+/* The hero block's fill: the brand green, flat, as an M3 primary surface. */
 .gradient-hero {
-  background: linear-gradient(135deg, #223a30 0%, #335145 40%, #4a6d5e 100%);
+  background: #335145;
 }
 
-/* Subtle mesh gradient for page backgrounds */
+/* The page behind everything: M3's tinted `surface`. White cards
+   (surface-container-lowest) stand on it by tone, without borders or
+   shadows. The name is kept from the mesh gradient it replaced. */
 .gradient-mesh {
-  background-color: #f8fafc;
-  background-image:
-    radial-gradient(at 40% 20%, rgba(51, 81, 69, 0.04) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, rgba(16, 185, 129, 0.03) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, rgba(51, 81, 69, 0.03) 0px, transparent 50%);
+  background-color: #f3f6f4;
 }
 
-/* Glass card effect */
+/* A raised surface over content (menus, the scrolled app bar). */
 .glass-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Modern card with top accent border. `--card-accent` lets an individual card
-   repaint the rule: the merger detail header sets it to the matter's outcome
-   colour so the card's top edge matches the outcome banner inside it, instead
-   of showing the brand green above (say) a red "not approved" block. */
+/* A header card's outcome colour. `--card-accent` used to paint a 3px rule
+   across the card's top edge; under M3 the card is a tonal surface and the
+   colour runs instead as a short, rounded indicator on its leading edge,
+   like a navigation rail's active indicator. The merger detail header sets
+   it to the matter's outcome colour. */
 .card-accent {
   position: relative;
   overflow: hidden;
@@ -68,17 +73,35 @@ code {
 .card-accent::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: 1.5rem;
   left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--card-accent, linear-gradient(90deg, #335145, #10b981));
+  width: 4px;
+  height: 2.5rem;
+  border-radius: 0 4px 4px 0;
+  background: var(--card-accent, #335145);
 }
 
 /* Smooth transitions for interactive elements */
 @layer utilities {
   .transition-smooth {
-    @apply transition-all duration-200 ease-out;
+    @apply transition-all duration-200 ease-emphasized;
+  }
+
+  /* M3 Expressive's shape morph on press: a round button squares off a
+     little under the finger and springs back. */
+  .press-morph {
+    transition-property: border-radius, background-color, color, box-shadow, transform;
+    transition-duration: 350ms;
+    transition-timing-function: cubic-bezier(0.34, 1.45, 0.64, 1);
+  }
+  .press-morph:active {
+    border-radius: 0.75rem;
+  }
+
+  /* Display and headline numbers: M3's emphasized type, heavy and tight. */
+  .type-emphasized {
+    font-weight: 750;
+    letter-spacing: -0.025em;
   }
 }
 
@@ -113,12 +136,12 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #c9d1cd;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #8f9a95;
 }
 
 /* Print styles */
@@ -154,6 +177,11 @@ code {
   /* Ensure cards have visible borders when printed */
   .border-gray-100 {
     border-color: #d1d5db !important;
+  }
+
+  /* Cards are told from the page by tone on screen; paper has no tint. */
+  .bg-white.rounded-2xl {
+    border: 1px solid #d1d5db !important;
   }
 
   /* Prevent page breaks inside cards */

@@ -46,15 +46,16 @@ function MergerListCard({ merger, index, selected, tracked, onToggleTracking }) 
           navigate(path);
         }
       }}
-      className={`relative overflow-hidden bg-white rounded-2xl border shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 cursor-pointer ${
-        selected ? 'border-primary/40 ring-2 ring-primary/20' : 'border-gray-100'
+      className={`press-morph relative overflow-hidden bg-white rounded-2xl hover:rounded-3xl hover:shadow-card-hover cursor-pointer ${
+        selected ? 'ring-2 ring-primary ring-offset-2 ring-offset-surface' : ''
       }`}
     >
       {/* Outcome rail. Decoration only: the status badge below states
           the same outcome in words, so nothing is carried by colour
-          alone. Clipped to the card's radius by overflow-hidden. */}
+          alone. Inset from the card's corners with rounded ends, like
+          M3's active indicator. */}
       <span
-        className={`absolute inset-y-0 left-0 w-1.5 ${railColor}`}
+        className={`absolute inset-y-5 left-0 w-1.5 rounded-r-full ${railColor}`}
         aria-hidden="true"
       />
       <div className="p-5 pl-6">
@@ -167,7 +168,7 @@ function MergerListCard({ merger, index, selected, tracked, onToggleTracking }) 
             {merger.anzsic_codes.slice(0, MAX_VISIBLE_INDUSTRY_CHIPS).map((code) => (
               <span
                 key={`${merger.merger_id}-anzsic-${code.code || code.name}`}
-                className="inline-flex items-center px-2 py-1 rounded-md text-xs leading-none bg-gray-50 text-gray-500 border border-gray-100"
+                className="inline-flex items-center h-7 px-3 rounded-lg text-xs font-medium leading-none text-gray-600 border border-outline-variant"
               >
                 {code.name}
               </span>
@@ -177,7 +178,7 @@ function MergerListCard({ merger, index, selected, tracked, onToggleTracking }) 
                 than its neighbours in the list. */}
             {merger.anzsic_codes.length > MAX_VISIBLE_INDUSTRY_CHIPS && (
               <span
-                className="inline-flex items-center px-2 py-1 rounded-md text-xs leading-none bg-gray-50 text-gray-500 border border-gray-100"
+                className="inline-flex items-center h-7 px-3 rounded-lg text-xs font-medium leading-none text-gray-600 border border-outline-variant"
                 title={merger.anzsic_codes.slice(MAX_VISIBLE_INDUSTRY_CHIPS).map((code) => code.name).join(', ')}
               >
                 +{merger.anzsic_codes.length - MAX_VISIBLE_INDUSTRY_CHIPS} more

@@ -7,15 +7,16 @@
 // the 3:1 a focus indicator needs there (WCAG 1.4.11).
 export const HEADER_BUTTON_VARIANTS = {
   light: {
-    active: 'bg-primary text-white border-primary hover:bg-primary-dark shadow-sm',
-    inactive: 'bg-gray-100 text-gray-600 border-gray-200/60 hover:bg-gray-200',
+    active: 'bg-primary text-white border-primary hover:bg-primary-dark',
+    inactive: 'bg-surface-container-high text-gray-700 border-transparent hover:bg-surface-container-highest',
   },
   dark: {
-    active: 'bg-white text-gray-900 border-white hover:bg-white/90 shadow-sm',
+    active: 'bg-white text-gray-900 border-white hover:bg-white/90',
     inactive: 'bg-black/20 text-white border-white/30 hover:bg-black/30',
     focus: 'focus-visible:ring-white focus-visible:ring-offset-0',
   },
 };
 
+// M3 Expressive's small buttons: pills that square off a little when pressed.
 export const HEADER_BUTTON_BASE =
-  'inline-flex items-center justify-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg border transition-all duration-200 flex-shrink-0';
+  'press-morph inline-flex items-center justify-center gap-1.5 h-9 px-4 text-sm font-semibold rounded-full border flex-shrink-0';

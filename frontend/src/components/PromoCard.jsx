@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { Link } from 'react-router';
 import { FaXmark } from 'react-icons/fa6';
 import { FEATURE_EVENTS, pingFeatureEvent } from '../utils/trackEvent';
+import MaterialShape from './MaterialShape';
 
 /**
  * A banner promoting one page of the site.
@@ -31,10 +32,15 @@ function PromoCard({ to, href, icon: Icon, title, description, onDismiss }) {
   const linkProps = href ? { href, target: '_blank', rel: 'noopener noreferrer' } : { to };
 
   return (
-    <div className="relative rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-200 group bg-primary hover:bg-primary-dark">
-      <LinkTag {...linkProps} onClick={clickThrough} className="flex items-center gap-4 p-6 pr-12 rounded-2xl">
+    <div className="relative overflow-hidden rounded-3xl press-morph hover:rounded-[2.5rem] group bg-primary hover:bg-primary-dark">
+      {/* A large, faint Material shape behind the banner, turning on hover. */}
+      <MaterialShape
+        shape="softBurst"
+        className="pointer-events-none absolute right-10 -bottom-24 h-48 w-48 text-white/[0.07] transition-transform duration-700 ease-spring group-hover:rotate-45"
+      />
+      <LinkTag {...linkProps} onClick={clickThrough} className="relative flex items-center gap-4 p-6 pr-12 rounded-3xl">
         {Icon && (
-          <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center text-xl text-white group-hover:scale-105 transition-transform duration-200">
+          <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/15 flex items-center justify-center text-xl text-white transition-all duration-300 ease-spring group-hover:rounded-xl">
             <Icon />
           </div>
         )}
@@ -46,7 +52,7 @@ function PromoCard({ to, href, icon: Icon, title, description, onDismiss }) {
       <button
         onClick={dismiss}
         aria-label={`Dismiss: ${title}`}
-        className="absolute top-1/2 right-4 -translate-y-1/2 text-white/70 hover:text-white transition-colors p-1"
+        className="absolute top-1/2 right-3 -translate-y-1/2 inline-flex items-center justify-center h-10 w-10 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors"
       >
         <FaXmark className="h-3.5 w-3.5" aria-hidden="true" />
       </button>

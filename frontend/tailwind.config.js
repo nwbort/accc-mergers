@@ -12,17 +12,57 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Material 3 Expressive colour roles, the same scheme as the Android
+        // app's `Light` (ui/theme/Theme.kt), seeded from the brand green.
         primary: '#335145',
         'primary-light': '#4a6d5e',
         'primary-dark': '#223a30',
+        'on-primary': '#ffffff',
+        'primary-container': '#d4e8dc',
+        'on-primary-container': '#0e2a1e',
+        'secondary-container': '#d1fae5',
+        'on-secondary-container': '#064e3b',
         accent: '#10b981',
         'accent-light': '#34d399',
         'accent-dark': '#059669',
+        // Surfaces step from the page (`surface`) up through the tonal
+        // containers, as M3 elevates by tone rather than by shadow: cards are
+        // `surface-container-lowest` (white) on the tinted page.
         surface: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
+          DEFAULT: '#f3f6f4',
+          dim: '#e3e9e6',
+          'container-lowest': '#ffffff',
+          'container-low': '#f2f5f3',
+          container: '#ecf0ee',
+          'container-high': '#e6ebe8',
+          'container-highest': '#e0e6e3',
+          50: '#f8faf9',
+          100: '#eef2f0',
+          200: '#e0e6e3',
+          300: '#c9d1cd',
+        },
+        outline: {
+          DEFAULT: '#6f7a75',
+          variant: '#c3cbc7',
+        },
+        // Tailwind's grey, replaced by M3 neutral tones carrying a trace of
+        // the brand's green hue, so every `text-gray-*` and `bg-gray-*` in the
+        // codebase sits in the same tonal palette as the surfaces above. Each
+        // step keeps the lightness of the Tailwind grey it replaces, so text
+        // contrast is unchanged: gray-500 is 5.2:1 on white and 4.6:1 on
+        // surface-container, as the old gray-500 was.
+        gray: {
+          50: '#f6f8f7',
+          100: '#eef2f0',
+          200: '#e0e6e3',
+          300: '#c9d1cd',
+          400: '#8f9a95',
+          500: '#636f6a',
+          600: '#47524d',
+          700: '#333d39',
+          800: '#1f2925',
+          900: '#141b18',
+          950: '#0b100e',
         },
         // Custom theme colors for digest sections
         'new-merger': {
@@ -88,24 +128,43 @@ export default {
           pale: '#fffbeb',
         },
       },
+      // M3 elevation levels, tinted toward the neutral palette. Cards rest at
+      // level 0 (tone does the work) and rise to level 2 on hover; menus and
+      // dialogs sit at level 3.
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
-        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04)',
-        'card-hover': '0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04)',
-        'elevated': '0 20px 40px -12px rgba(0, 0, 0, 0.1)',
+        'glass': '0 1px 3px 1px rgba(20, 27, 24, 0.08), 0 1px 2px rgba(20, 27, 24, 0.12)',
+        'card': '0 0 0 0 rgba(0, 0, 0, 0)',
+        'card-hover': '0 2px 6px 2px rgba(20, 27, 24, 0.08), 0 1px 2px rgba(20, 27, 24, 0.12)',
+        'elevated': '0 4px 8px 3px rgba(20, 27, 24, 0.1), 0 1px 3px rgba(20, 27, 24, 0.14)',
       },
+      // Material 3 Expressive's rounder shape scale (the app's AppShapes):
+      // chips and badges 8, fields 12, small cards 16, cards 24, hero blocks
+      // and dialogs 32.
       borderRadius: {
-        'xl': '0.75rem',
-        '2xl': '1rem',
-        '3xl': '1.5rem',
+        'md': '0.5rem',
+        'lg': '0.75rem',
+        'xl': '1rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
+        '4xl': '2.5rem',
+      },
+      // M3 motion: the emphasized curve for things that move or fade, and an
+      // expressive spring (a little overshoot) for things that grow, press or
+      // change shape. The default curve is the emphasized one, so every
+      // `transition-*` utility moves the M3 way.
+      transitionTimingFunction: {
+        DEFAULT: 'cubic-bezier(0.2, 0, 0, 1)',
+        'emphasized': 'cubic-bezier(0.2, 0, 0, 1)',
+        'spring': 'cubic-bezier(0.34, 1.45, 0.64, 1)',
       },
       backdropBlur: {
         'xs': '2px',
       },
       animation: {
         'gradient': 'gradient 8s ease infinite',
-        'fade-in': 'fadeIn 0.15s ease-out',
-        'slide-up': 'slideUp 0.15s ease-out',
+        'fade-in': 'fadeIn 0.3s cubic-bezier(0.2, 0, 0, 1)',
+        'slide-up': 'slideUp 0.35s cubic-bezier(0.34, 1.45, 0.64, 1)',
+        'pop-in': 'popIn 0.4s cubic-bezier(0.34, 1.45, 0.64, 1)',
         'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
       },
       keyframes: {
@@ -120,6 +179,10 @@ export default {
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        popIn: {
+          '0%': { opacity: '0', transform: 'scale(0.92)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
         pulseSoft: {
           '0%, 100%': { opacity: '1' },

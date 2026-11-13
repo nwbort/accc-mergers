@@ -25,7 +25,7 @@ function RecentDeterminationsCards({ determinations }) {
     <section aria-labelledby="recent-determinations-heading">
       <h2
         id="recent-determinations-heading"
-        className="text-lg font-semibold text-gray-900 mb-4"
+        className="text-xl font-bold tracking-tight text-gray-900 mb-4"
       >
         Recent determinations
       </h2>
