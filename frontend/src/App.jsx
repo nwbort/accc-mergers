@@ -50,7 +50,7 @@ function AppContent() {
   return (
     <>
       <ScrollToTop />
-      <div className="min-h-screen gradient-mesh flex flex-col">
+      <div className="min-h-screen gradient-mesh flex flex-col pb-[var(--bottom-bar,0px)]">
         <Navbar onOpenSearch={openPalette} />
         <main id="main-content" className="flex-grow pt-16">
           <Suspense fallback={<LoadingSpinner />}>

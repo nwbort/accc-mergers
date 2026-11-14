@@ -396,7 +396,7 @@ function MergerDetail() {
         <Link
           to={backToMergers}
           state={RESTORE_LIST_POSITION_STATE}
-          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary mb-5 transition-colors"
+          className="press-morph inline-flex items-center gap-2 h-10 -ml-3 px-3 rounded-full text-sm font-semibold text-primary hover:bg-primary/[0.08] mb-4"
           aria-label="Return to all mergers list"
         >
           <FaChevronLeft className="w-4 h-4" aria-hidden="true" />
@@ -418,7 +418,7 @@ function MergerDetail() {
             <div className="flex items-start justify-between gap-4 pt-1">
               <div className="min-w-0">
                 <MergerOutcomeHeading merger={merger} />
-                <h1 className="mb-2 text-2xl font-bold tracking-tight">
+                <h1 className="mb-2 text-2xl sm:text-3xl type-emphasized">
                   {merger.merger_name}
                 </h1>
                 <div className="flex items-center gap-4 flex-wrap">

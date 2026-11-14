@@ -37,7 +37,9 @@ const NO_MERGERS = [];
 // Whether this document has shown the list before — see restoredPosition.
 let listShownThisDocument = false;
 
-const SELECT_CLASSES = 'w-full px-3 py-2.5 bg-gray-50 border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none';
+// An M3 outlined field: a 12px-cornered outline that thickens to the
+// primary colour while set or focused.
+const SELECT_CLASSES = 'w-full h-12 px-4 bg-white border rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all appearance-none';
 
 const withCount = (label, count) => `${label} (${count})`;
 
@@ -50,7 +52,7 @@ function FilterSelect({ id, label, value, allLabel, options, onChange }) {
       </label>
       <select
         id={id}
-        className={`${SELECT_CLASSES} ${value ? 'border-primary border-2' : 'border-gray-200'}`}
+        className={`${SELECT_CLASSES} ${value ? 'border-primary border-2' : 'border-outline'}`}
         value={value}
         onChange={(e) => onChange(e.target.value)}
       >
@@ -81,20 +83,21 @@ function FilterSwitch({ heading, label, checked, onToggle }) {
         role="switch"
         aria-checked={checked}
         onClick={onToggle}
-        className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm transition-all ${
+        className={`group flex items-center justify-between gap-3 w-full h-12 px-4 rounded-lg text-sm transition-all ${
           checked
-            ? 'bg-primary/5 border-2 border-primary text-primary'
-            : 'bg-gray-50 border border-gray-200 text-gray-500 hover:bg-gray-100'
+            ? 'bg-secondary-container border border-transparent text-on-secondary-container'
+            : 'bg-white border border-outline text-gray-700 hover:bg-gray-900/[0.04]'
         }`}
       >
+        {/* M3's switch: the handle grows when on, and springs across. */}
         <span
-          className={`relative inline-flex h-5 w-9 flex-shrink-0 items-center rounded-full transition-colors ${
-            checked ? 'bg-primary' : 'bg-gray-300'
+          className={`order-2 relative inline-flex h-7 w-12 flex-shrink-0 items-center rounded-full border-2 transition-colors ${
+            checked ? 'bg-primary border-primary' : 'bg-surface-container-highest border-outline'
           }`}
         >
           <span
-            className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transform transition-transform ${
-              checked ? 'translate-x-4' : 'translate-x-0.5'
+            className={`inline-block rounded-full transform transition-all duration-300 ease-spring ${
+              checked ? 'h-5 w-5 translate-x-[1.375rem] bg-white' : 'h-3.5 w-3.5 translate-x-1.5 bg-outline'
             }`}
           />
         </span>
@@ -393,11 +396,11 @@ function Mergers() {
           {/* Search row with filter toggle */}
           <div className="flex gap-3">
             <div className="flex-1 relative">
-              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" aria-hidden="true" />
+              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-600" aria-hidden="true" />
               <input
                 type="text"
                 id="search"
-                className={`w-full pl-10 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all ${
+                className={`w-full h-12 pl-11 bg-surface-container-high border border-transparent rounded-full text-sm placeholder:text-gray-500 hover:bg-surface-container-highest focus:ring-2 focus:ring-primary focus:bg-white transition-all ${
                   searchTerm ? 'pr-10' : 'pr-3'
                 }`}
                 placeholder="Search mergers, companies, or industries..."
@@ -416,7 +419,7 @@ function Mergers() {
                   }}
                   // right-2 + p-1 pads the 16px glyph out to a 24px hit area
                   // (WCAG 2.5.8) while leaving it where it was.
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded text-gray-500 hover:text-gray-700 transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-8 w-8 items-center justify-center rounded-full text-gray-600 hover:bg-gray-900/[0.08] transition-colors"
                   aria-label="Clear search"
                   type="button"
                 >
@@ -426,10 +429,10 @@ function Mergers() {
             </div>
             <button
               onClick={() => setFiltersOpen(!filtersOpen)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border transition-all ${
+              className={`press-morph flex items-center gap-2 h-12 px-5 rounded-full text-sm font-semibold ${
                 filtersOpen || activeFilterCount > 0
-                  ? 'bg-primary text-white border-primary shadow-sm'
-                  : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
+                  ? 'bg-primary text-white'
+                  : 'bg-secondary-container text-on-secondary-container hover:shadow-card-hover'
               }`}
               aria-label="Toggle filters"
               aria-expanded={filtersOpen}
@@ -529,7 +532,7 @@ function Mergers() {
             <span className="sr-only sm:not-sr-only"> mergers</span>
           </p>
           <div className="flex min-w-0 items-center gap-2 sm:gap-3">
-            <div role="group" aria-label="View" className="flex flex-shrink-0 rounded-lg border border-gray-200 bg-white p-0.5">
+            <div role="group" aria-label="View" className="flex flex-shrink-0 gap-0.5">
               {[
                 { value: 'cards', label: 'Cards', Icon: FaList },
                 { value: 'table', label: 'Table', Icon: FaTable },
@@ -546,8 +549,12 @@ function Mergers() {
                       setListView(value);
                       saveListView(value);
                     }}
-                    className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-sm transition-colors ${
-                      active ? 'bg-primary text-white' : 'text-gray-500 hover:text-gray-700'
+                    // A connected button group: the outer ends round, the
+                    // selected button a full pill.
+                    className={`press-morph flex items-center gap-1.5 h-9 px-3 text-sm font-semibold ${
+                      active
+                        ? 'rounded-full bg-primary text-white'
+                        : `${value === 'cards' ? 'rounded-l-full rounded-r-md' : 'rounded-r-full rounded-l-md'} bg-surface-container-high text-gray-700 hover:bg-surface-container-highest`
                     }`}
                   >
                     <Icon className="h-3.5 w-3.5" aria-hidden="true" />
@@ -560,7 +567,7 @@ function Mergers() {
               <label htmlFor="sort" className="text-sm text-gray-500 hidden sm:inline">Sort by</label>
               <select
                 id="sort"
-                className="min-w-0 truncate px-2 sm:px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
+                className="min-w-0 truncate h-9 px-3 sm:px-4 bg-white border border-outline rounded-full text-sm text-gray-700 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
                 value={sortField}
                 onChange={(e) => {
                   const field = e.target.value;
@@ -576,7 +583,7 @@ function Mergers() {
               </select>
               <button
                 onClick={() => setSort(sortField, sortDir === 'asc' ? 'desc' : 'asc')}
-                className="flex-shrink-0 p-1 text-gray-500 hover:text-gray-700 transition-all"
+                className="flex-shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-full text-gray-600 hover:bg-gray-900/[0.08] transition-all"
                 aria-label={`Change sort order to ${sortDir === 'asc' ? directionLabels.desc : directionLabels.asc}`}
                 title={`${sortDir === 'asc' ? directionLabels.asc : directionLabels.desc} — click for ${sortDir === 'asc' ? directionLabels.desc : directionLabels.asc}`}
               >
@@ -600,7 +607,9 @@ function Mergers() {
               />
             )
           ) : (
-            <div className="space-y-3">
+            // Two to a row once there's room, as the app lays out its
+            // cards on a wide window.
+            <div className="grid gap-3 lg:grid-cols-2">
               {visibleMergers.map((merger, idx) => (
                 <MergerListCard
                   key={merger.merger_id}
@@ -619,7 +628,7 @@ function Mergers() {
 
         {sortedMergers.length === 0 && (
           <div className="text-center py-16">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gray-100 flex items-center justify-center">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-3xl bg-primary-container flex items-center justify-center">
               <FaSearch className="w-8 h-8 text-gray-500" aria-hidden="true" />
             </div>
             <p className="text-gray-500 font-medium">

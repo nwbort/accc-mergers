@@ -1,3 +1,8 @@
+import { readFileSync } from 'node:fs';
+
+// Generated, never hand-edited: see src/theme/m3.js.
+const m3 = JSON.parse(readFileSync(new URL('./src/theme/m3-theme.json', import.meta.url), 'utf8'));
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -12,18 +17,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#335145',
+        // Material 3 colour roles, built by Google's material-color-utilities
+        // from the brand green (src/theme/m3.js, written to m3-theme.json by
+        // `npm run theme`). Cards are `surface-container-lowest` (white) on a
+        // `surface-container-low` page: M3 tells surfaces apart by tone, not
+        // by shadow.
+        ...m3.colors,
         'primary-light': '#4a6d5e',
         'primary-dark': '#223a30',
         accent: '#10b981',
         'accent-light': '#34d399',
         'accent-dark': '#059669',
-        surface: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-        },
+        // Tailwind's grey, replaced by tones of the scheme's neutral palette
+        // so every `text-gray-*` and `bg-gray-*` in the codebase sits in the
+        // same tonal family as the surfaces. Contrast pinned by
+        // src/theme/__tests__/m3Theme.test.js.
+        gray: m3.gray,
         // Custom theme colors for digest sections
         'new-merger': {
           DEFAULT: '#5B3758',
@@ -88,24 +97,43 @@ export default {
           pale: '#fffbeb',
         },
       },
+      // M3 elevation levels, tinted toward the neutral palette. Cards rest at
+      // level 0 (tone does the work) and rise to level 2 on hover; menus and
+      // dialogs sit at level 3.
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
-        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04)',
-        'card-hover': '0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04)',
-        'elevated': '0 20px 40px -12px rgba(0, 0, 0, 0.1)',
+        'glass': '0 1px 3px 1px rgba(20, 27, 24, 0.08), 0 1px 2px rgba(20, 27, 24, 0.12)',
+        'card': '0 0 0 0 rgba(0, 0, 0, 0)',
+        'card-hover': '0 2px 6px 2px rgba(20, 27, 24, 0.08), 0 1px 2px rgba(20, 27, 24, 0.12)',
+        'elevated': '0 4px 8px 3px rgba(20, 27, 24, 0.1), 0 1px 3px rgba(20, 27, 24, 0.14)',
       },
+      // Material 3 Expressive's rounder shape scale (the app's AppShapes):
+      // chips and badges 8, fields 12, small cards 16, cards 24, hero blocks
+      // and dialogs 32.
       borderRadius: {
-        'xl': '0.75rem',
-        '2xl': '1rem',
-        '3xl': '1.5rem',
+        'md': '0.5rem',
+        'lg': '0.75rem',
+        'xl': '1rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
+        '4xl': '2.5rem',
+      },
+      // M3 motion: the emphasized curve for things that move or fade, and an
+      // expressive spring (a little overshoot) for things that grow, press or
+      // change shape. The default curve is the emphasized one, so every
+      // `transition-*` utility moves the M3 way.
+      transitionTimingFunction: {
+        DEFAULT: 'cubic-bezier(0.2, 0, 0, 1)',
+        'emphasized': 'cubic-bezier(0.2, 0, 0, 1)',
+        'spring': 'cubic-bezier(0.34, 1.45, 0.64, 1)',
       },
       backdropBlur: {
         'xs': '2px',
       },
       animation: {
         'gradient': 'gradient 8s ease infinite',
-        'fade-in': 'fadeIn 0.15s ease-out',
-        'slide-up': 'slideUp 0.15s ease-out',
+        'fade-in': 'fadeIn 0.3s cubic-bezier(0.2, 0, 0, 1)',
+        'slide-up': 'slideUp 0.35s cubic-bezier(0.34, 1.45, 0.64, 1)',
+        'pop-in': 'popIn 0.4s cubic-bezier(0.34, 1.45, 0.64, 1)',
         'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
       },
       keyframes: {
@@ -120,6 +148,10 @@ export default {
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        popIn: {
+          '0%': { opacity: '0', transform: 'scale(0.92)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
         pulseSoft: {
           '0%, 100%': { opacity: '1' },

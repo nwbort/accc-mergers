@@ -23,7 +23,7 @@ export default function NickTwort() {
         {/* Header */}
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-1">
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Nick Twort</h1>
+            <h1 className="text-3xl sm:text-4xl type-emphasized text-gray-900">Nick Twort</h1>
             <a
               href="https://www.linkedin.com/in/nick-twort"
               target="_blank"

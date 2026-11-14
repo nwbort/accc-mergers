@@ -3,6 +3,11 @@ import { Link } from 'react-router';
 import { FaChevronDown } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
 import { CARD } from '../utils/classNames';
+import { shapeClipPath } from '../utils/materialShapes';
+
+// Each event's tile is the app's six-sided cookie (TileShape in its
+// DashboardScreen.kt, widget_tile.xml in its widget).
+const TILE_CLIP = { clipPath: shapeClipPath('cookie6', 36) };
 
 // The day-by-day event timeline the dashboard draws twice: forwards for
 // upcoming deadlines (UpcomingEventsTimeline) and backwards for what has
@@ -42,11 +47,12 @@ function EventRow({ event, eventType, detail, href }) {
   return (
     <Link
       to={href}
-      className="group relative flex items-center gap-3 rounded-xl -mx-2 px-2 py-2 transition-colors hover:bg-gray-50"
+      className="group relative flex items-center gap-3 rounded-2xl -mx-2 px-2 py-2 transition-colors hover:bg-surface-container-low"
       aria-label={`${eventType.label} for ${event.merger_name}`}
     >
       <span
-        className={`flex h-8 w-8 flex-none items-center justify-center rounded-lg ${eventType.tile}`}
+        className={`flex h-9 w-9 flex-none items-center justify-center ${eventType.tile}`}
+        style={TILE_CLIP}
         aria-hidden="true"
       >
         <Icon className="h-3.5 w-3.5" />
@@ -57,7 +63,7 @@ function EventRow({ event, eventType, detail, href }) {
         </div>
         <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-500">
           <span
-            className={`inline-flex items-center rounded-md border px-1.5 py-0.5 font-medium ${eventType.chip}`}
+            className={`inline-flex items-center rounded-full border px-2 py-0.5 font-medium ${eventType.chip}`}
           >
             {eventType.label}
           </span>
@@ -76,10 +82,11 @@ function EventGroupSummary({ label, eventType, expanded, onToggle, panelId }) {
       onClick={onToggle}
       aria-expanded={expanded}
       aria-controls={panelId}
-      className="flex w-full items-center gap-3 rounded-xl -mx-2 px-2 py-2 text-left transition-colors hover:bg-gray-50"
+      className="flex w-full items-center gap-3 rounded-2xl -mx-2 px-2 py-2 text-left transition-colors hover:bg-surface-container-low"
     >
       <span
-        className={`flex h-8 w-8 flex-none items-center justify-center rounded-lg ${eventType.tile}`}
+        className={`flex h-9 w-9 flex-none items-center justify-center ${eventType.tile}`}
+        style={TILE_CLIP}
         aria-hidden="true"
       >
         <Icon className="h-3.5 w-3.5" />
@@ -130,7 +137,7 @@ function EventDayTimeline({
 
   return (
     <section aria-labelledby={headingId}>
-      <h2 id={headingId} className="text-lg font-semibold text-gray-900 mb-4">
+      <h2 id={headingId} className="text-xl font-bold tracking-tight text-gray-900 mb-4">
         {heading}
       </h2>
       <div className={`${CARD} overflow-hidden`}>

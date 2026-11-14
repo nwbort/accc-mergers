@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { CARD } from '../utils/classNames';
+import MaterialShape from './MaterialShape';
 
 function StatCard({ title, value, subtitle, icon, href, reserveTitleLines = true }) {
   const Wrapper = href ? Link : 'div';
@@ -11,16 +12,22 @@ function StatCard({ title, value, subtitle, icon, href, reserveTitleLines = true
     <Wrapper
       {...wrapperProps}
       className={`block ${CARD} overflow-hidden group ${
-        href ? 'hover:shadow-card-hover transition-all duration-200' : ''
+        href ? 'press-morph hover:shadow-card-hover hover:rounded-3xl' : ''
       }`}
     >
       <div className="p-6">
         <div className="flex items-start gap-4">
           {icon && (
-            <div className={`flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-xl text-primary${
-              href ? ' group-hover:scale-105 transition-transform duration-200' : ''
-            }`}>
-              {icon}
+            // The icon sits in one of the app's Material shapes, which turns
+            // on hover.
+            <div className="relative flex-shrink-0 w-12 h-12 flex items-center justify-center text-xl text-on-primary-container">
+              <MaterialShape
+                shape="cookie9"
+                className={`absolute inset-0 w-12 h-12 text-primary-container${
+                  href ? ' transition-transform duration-500 ease-spring group-hover:rotate-[40deg] group-hover:scale-110' : ''
+                }`}
+              />
+              <span className="relative">{icon}</span>
             </div>
           )}
           <div className="flex-1 min-w-0">
@@ -41,7 +48,7 @@ function StatCard({ title, value, subtitle, icon, href, reserveTitleLines = true
                 {title}
               </dt>
               <dd>
-                <div className="text-xl font-bold text-gray-900 tracking-tight">
+                <div className="text-2xl type-emphasized text-gray-900">
                   {value}
                 </div>
               </dd>

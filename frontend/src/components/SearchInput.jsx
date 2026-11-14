@@ -2,7 +2,7 @@ function SearchInput({ id, value, onChange, placeholder, ariaLabel, autoComplete
   return (
     <div className={`relative ${className}`.trim()}>
       <svg
-        className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500"
+        className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-600"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth="2"
@@ -14,7 +14,7 @@ function SearchInput({ id, value, onChange, placeholder, ariaLabel, autoComplete
       <input
         type="text"
         id={id}
-        className="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all"
+        className="w-full h-12 pl-11 pr-4 bg-surface-container-high border border-transparent rounded-full text-sm placeholder:text-gray-500 hover:bg-surface-container-highest focus:ring-2 focus:ring-primary focus:bg-white transition-all"
         placeholder={placeholder}
         aria-label={ariaLabel}
         value={value}

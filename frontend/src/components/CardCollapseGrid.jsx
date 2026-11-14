@@ -24,13 +24,13 @@ function CardCollapseGrid({ items, getKey, getStyle, renderBody }) {
 
   return (
     <>
-      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) => {
           const style = getStyle(item);
           return (
             <li
               key={getKey(item, index)}
-              className={`relative ${visibilityClass(index)} min-h-[7rem] flex-col justify-between rounded-xl p-4 transition-colors ${style.bg} ${style.text} ${style.border || ''}`}
+              className={`relative ${visibilityClass(index)} min-h-[7.5rem] flex-col justify-between rounded-2xl p-5 press-morph hover:rounded-3xl ${style.bg} ${style.text} ${style.border || ''}`}
             >
               {renderBody(item, style)}
             </li>

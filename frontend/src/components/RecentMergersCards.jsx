@@ -61,7 +61,7 @@ function RecentMergersCards({ mergers }) {
     <section aria-labelledby="recent-mergers-heading">
       <h2
         id="recent-mergers-heading"
-        className="text-lg font-semibold text-gray-900 mb-4"
+        className="text-xl font-bold tracking-tight text-gray-900 mb-4"
       >
         Recently notified mergers
       </h2>

@@ -170,8 +170,24 @@ frontend/src/
 │                         #   Deliberately not enumerated here — `ls` is accurate and
 │                         #   this list was not. The ones worth knowing before you
 │                         #   add another:
-│                         #   - Layout/chrome: Navbar, Footer, Breadcrumb, SEO,
-│                         #     ScrollToTop, ErrorBoundary, ErrorCard, ErrorMessage
+│                         #   - Layout/chrome: Navbar (M3 top app bar; at phone
+│                         #     widths its links move to a bottom navigation bar,
+│                         #     as the Android app's tabs, with the rest under a
+│                         #     "More" sheet, and it publishes --bottom-bar so
+│                         #     App.jsx and FeedbackPopup leave room), Footer,
+│                         #     Breadcrumb, SEO, ScrollToTop, ErrorBoundary,
+│                         #     ErrorCard, ErrorMessage
+│                         #   - Material shapes: MaterialShape draws one of
+│                         #     utils/materialShapes.js's M3 Expressive shapes
+│                         #     (decorative, aria-hidden). Each outcome has the
+│                         #     app's shape (outcomeShape: approved sunny,
+│                         #     refused cookie4, live cookie12, ceased gem), worn
+│                         #     by StatusGlyph at the head of each merger card; event
+│                         #     tiles are the cookie6 (shapeClipPath); the digest
+│                         #     gives each section the app's shape; LoadingSpinner
+│                         #     morphs through LOADING_SEQUENCE like the app's
+│                         #     LoadingIndicator. Keep the mappings in step with
+│                         #     the app's outcomeShape / DigestSection.shape()
 │                         #   - Badges (all role="img", never role="status"):
 │                         #     StatusBadge, WaiverBadge, NewBadge, AppealBadge,
 │                         #     JudicialReviewBadge (its Federal Court twin, same
@@ -220,10 +236,17 @@ frontend/src/
 │                         #     matter is under appeal. The merger list cannot
 │                         #     borrow that fill — nine in ten matters are
 │                         #     "Approved", so it would colour the whole page.
-│                         #     It leads each card with a solid StatusBadge
-│                         #     above the title instead, in the outcome's
-│                         #     reading position rather than the far corner,
-│                         #     over a left-edge rail in the same outcome colour
+│                         #     Its cards follow the Android app's MergerCard
+│                         #     instead (MergerCardFace, shared with the industry
+│                         #     and party pages): tinted 10% with the outcome's
+│                         #     colour (constants/outcomeCard.js), led by the
+│                         #     outcome's shape and glyph (StatusGlyph) and its
+│                         #     words with the flag badges on the same line, then
+│                         #     the name and one meta line (id, dates, business
+│                         #     day). Two to a row from `lg`. StatusBadge and
+│                         #     StatusGlyph resolve the outcome through the same
+│                         #     utils/statusDisplay.js. The compact industry rows
+│                         #     and commentary keep the edge rail
 │                         #     (constants/outcomeRail.js).
 │                         #   - Tracking/notifications: TrackButton, NotificationPanel,
 │                         #     BellIcon
@@ -296,6 +319,13 @@ frontend/src/
 │                         #   visibility, plus a long fallback interval — via
 │                         #   dataCache.revalidate, so an open tab picks up freshly
 │                         #   published data without a full reload)
+├── theme/                # m3.js builds the Material 3 colour scheme from the brand green
+│                         #   with Google's material-color-utilities (TonalSpot, 2025 spec;
+│                         #   primary pinned to the brand) and the neutral-palette greys;
+│                         #   `npm run theme` writes m3-theme.json, which tailwind.config.js
+│                         #   reads. __tests__/m3Theme.test.js fails if the JSON drifts and
+│                         #   holds the scheme's text/outline pairs to WCAG. The library is a
+│                         #   devDependency only, never in the bundle
 ├── utils/                # chartSetup.js (the single Chart.js registration point — import it
 │                         #   from any module that draws a chart; registering per page instead
 │                         #   silently breaks a chart reused on a page that registered less,
@@ -573,7 +603,8 @@ npm run dev       # Vite dev server at localhost:5173
 npm run build     # Production build to dist/
 npm run lint      # ESLint
 npm run preview   # Preview production build
-npm test          # Vitest suite (~870 tests); npm run test:watch to iterate
+npm test          # Vitest suite (~1030 tests); npm run test:watch to iterate
+npm run theme     # Regenerate src/theme/m3-theme.json (the M3 colour scheme)
 
 # Data pipeline (from repo root)
 pip install -r scripts/requirements.txt
@@ -606,7 +637,7 @@ npm run tail         # stream live logs
 
 - **React**: Function components with hooks. PascalCase for components, camelCase for functions/utilities.
 - **State**: React Context (TrackingContext) for global tracking. localStorage for persistence. URL search params for filter state. Module-level in-memory cache (dataCache.js) to prevent refetch flicker.
-- **Styling**: Utility-first Tailwind. Custom colors: primary `#335145`, accent `#10b981`. Mobile-first responsive design with sm/md/lg breakpoints. No scoped CSS — all Tailwind utility classes.
+- **Styling**: Utility-first Tailwind, in Material 3 Expressive, after the Android app. Colours are M3 roles from `src/theme/m3-theme.json` (`primary` `#335145`, `primary-container`, `secondary-container`, `surface-container-*`, `outline`, `error`, …); Tailwind's `gray` is the scheme's neutral palette, so `text-gray-*` stays on-theme. Elevation is tonal: cards are white (`CARD` in `utils/classNames.js`, 24px corners, no border or shadow) on the `surface-container-low` page; menus and dialogs are surface containers at `shadow-elevated`. Shapes follow the Expressive scale (`rounded-md` 8 → `rounded-3xl` 32); buttons are pills (`BUTTON_FILLED`/`BUTTON_TONAL`) with `press-morph`, which squares them off on press; option rows are connected button groups (`SegmentedToggle`). Motion: the default easing is M3's emphasized curve, `ease-spring` overshoots for things that grow or change shape. Headlines use `type-emphasized`. Mobile-first responsive design with sm/md/lg breakpoints. No scoped CSS — all Tailwind utility classes.
 - **Python**: Type hints in function signatures. Docstrings for modules and functions. ProcessPoolExecutor for concurrent extraction in extract_mergers.py.
 - **ESLint**: Flat config (eslint.config.js). Unused vars ignore pattern `^[A-Z_]`.
 - **Accessibility**: WCAG 2.2 AA. Colour families in `tailwind.config.js` keep text on the `dark` shade (the `DEFAULT`s are fills and several fail as small text); badges are `role="img"`, never `role="status"`; charts pair a presentational canvas with a labelled wrapper and an `sr-only` data table; every route has an `h1`. See `docs/accessibility.md` for the conventions and how to re-run the axe audit.
