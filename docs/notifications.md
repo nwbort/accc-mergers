@@ -50,6 +50,7 @@ be reached.
 | A watchlisted merger changed | default (3) | `pipeline.yml` — see [Watchlist](#watchlist) below |
 | New `missing-questionnaire`, `missing-waiver-determination` or `missing-determination` tracking issue(s) | default (3) | `pipeline.yml`, via `.github/actions/tracking-issues` — only for newly created issues |
 | A milestone's LinkedIn share link, ready to post by hand | default (3) | `linkedin-share-links.yml` — see [linkedin.md](linkedin.md) |
+| The pipeline's chained retries ran out (rebase conflict or failed push to `main` on the last retry, or the retry run could not be dispatched) | 4 (bypasses batching) | `pipeline.yml` — the intermediate retries stay silent; this run's data waits for the next scheduled run |
 
 Tapping a notification opens the PR (or, for an auto-merge, its
 `needs-verification` issue; for a tracking issue, the open issues with that
