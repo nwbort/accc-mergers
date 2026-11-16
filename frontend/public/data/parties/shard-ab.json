@@ -25,10 +25,27 @@
           "name": "AMPOL RETAIL HOLDING PTY LTD",
           "identifier": "689 777 704",
           "identifier_type": "ACN"
+        },
+        {
+          "name": "Ampol Energy Pty Ltd",
+          "identifier": "75 650 208 530",
+          "identifier_type": "ABN"
         }
       ],
       "mergers": {
         "acquirer": [
+          {
+            "merger_id": "MN-30044",
+            "merger_name": "Ampol \u2013 Evie Networks",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-13T12:00:00Z",
+            "determination_date": null
+          },
           {
             "merger_id": "WA-40024",
             "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
@@ -70,11 +87,11 @@
         ],
         "other": []
       },
-      "merger_count": 3,
-      "phase_1_count": 0,
+      "merger_count": 4,
+      "phase_1_count": 1,
       "phase_2_count": 1,
       "waiver_count": 2,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": {
         "average_days": 103.0,
         "median_days": 103,
