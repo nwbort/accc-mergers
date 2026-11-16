@@ -1,0 +1,131 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/ampol-%E2%80%93-evie-networks",
+  "merger_name": "Ampol \u2013 Evie Networks",
+  "status": "Under assessment",
+  "merger_id": "MN-30044",
+  "effective_notification_datetime": "2026-11-13T12:00:00Z",
+  "original_notification_datetime": "2026-11-13T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2027-01-13T12:00:00Z",
+  "consultation_response_due_date": "2026-11-23T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Ampol Energy Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "75 650 208 530",
+      "party_page": {
+        "id": "ampol-energy-pty-ltd",
+        "name": "Ampol Energy Pty Ltd"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Fast Cities Australia Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "58 613 484 754",
+      "party_page": {
+        "id": "fast-cities-australia-pty-ltd",
+        "name": "Fast Cities Australia Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "2640",
+      "name": "On Selling Electricity and Electricity Market Operation"
+    }
+  ],
+  "merger_description": "Ampol Energy Pty Ltd, a wholly owned subsidiary of Ampol Limited, (**Ampol**) proposes to acquire 100% of the shares in Fast Cities Australia Pty Ltd trading as Evie Networks (**Evie Networks**) (the **Acquisition**).\n\nAmpol is a transport energy provider which engages in purchasing, refining, and distributing petroleum products in Australia and has a network of fuel and retail convenience sites. Ampol also has operations and interests across Singapore, New Zealand, Philippines and the United States of America. In addition, Ampol has an energy solutions business focused on electric vehicle charging and renewable fuels.\n\nAmpol has an electric vehicle (**EV**) charging network which operates under the AmpCharge brand with approximately 400 charging bays across 104 sites in all states and territories other than South Australia, Tasmania and the Northern Territory.\n\nEvie Networks is an EV charging infrastructure company with an EV charging network operating under the Evie brand with approximately 1,000 charging bays across 323 sites in all states and territories in Australia. Evie also operates 33 managed sites. Shares in Evie Networks are held by:\n\n* Fast Cities Nominees Pty Ltd as trustee for the bare trust in favour of LFSP Beneficiaries\n* St Baker Fund II Co-Invest Pty Ltd as trustee for the St Baker Fund II Co-Investment Trust\n* St Baker Energy Holdings Pty Ltd as trustee for the St Baker Energy Innovation Trust\n* One Managed Investment Funds Limited as custodian for One Fund Services Ltd as trustee for the StB Capital Partners Energy Transition Fund II, and\n* RACQ Operations Pty Ltd.",
+  "events": [
+    {
+      "date": "2026-11-16T12:00:00Z",
+      "title": "Questionnaire - Ampol - Evie Networks",
+      "display_title": "Questionnaire - Ampol - Evie Networks",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Ampol%20-%20Evie%20Networks.docx",
+      "url_gh": "/mergers/MN-30044/Questionnaire - Ampol - Evie Networks.pdf",
+      "phase": null
+    },
+    {
+      "date": "2026-11-13T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-85046",
+      "merger_name": "Morgan Stanley \u2013 Amber",
+      "acquirers": [
+        "1GT Europe (Lux) S.\u00e0 r.l."
+      ],
+      "targets": [
+        "Amber Energy Holdings Limited"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-01121",
+      "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
+      "acquirers": [
+        "OGOG (OTWAY) PTY LTD",
+        "COOPER ENERGY (CH) PTY. LTD."
+      ],
+      "targets": [
+        "BEACH ENERGY (OPERATIONS) LIMITED"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-70021",
+      "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
+      "acquirers": [
+        "BCWF 2 Holdings Pty Ltd",
+        "AULA ENERGY HOLDINGS PTY LIMITED"
+      ],
+      "targets": [
+        "C S ENERGY LIMITED",
+        "BCWF 2 PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 200,
+    "as_of": "2026-11-13",
+    "estimated_at": "2026-11-16",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 36,
+    "min_days": null,
+    "max_days": 43,
+    "id_issued_estimated": "2026-10-08",
+    "id_issued_before": null,
+    "id_issued_after": "2026-10-01",
+    "min_days_witness": null,
+    "max_days_witness": "WA-30042",
+    "basis": "upper-bound-only",
+    "method_version": 1
+  },
+  "og_card": "notified-to-the-accc.png"
+}

@@ -1,10 +1,10 @@
 {
-  "total_mergers": 329,
+  "total_mergers": 330,
   "total_waivers": 520,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 284,
-    "Under assessment": 40,
+    "Under assessment": 41,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-30044",
+      "merger_name": "Ampol \u2013 Evie Networks",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-13T12:00:00Z",
+      "page_modified_datetime": "2026-11-16T16:53:27+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25056",
       "merger_name": "Amwins / Dragoneer / KKR / Temasek Consortium \u2013 Steadfast",
@@ -204,16 +214,6 @@
       "effective_notification_datetime": "2026-11-05T12:00:00Z",
       "page_modified_datetime": "2026-11-05T16:45:29+11:00",
       "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "WA-60061",
-      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-11-04T12:00:00Z",
-      "page_modified_datetime": "2026-11-10T16:46:47+11:00",
-      "is_waiver": true,
       "is_refiled": false
     }
   ],
