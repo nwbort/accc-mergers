@@ -1041,6 +1041,70 @@ def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
     return linked
 
 
+def _foi_event(doc: dict, disclosure: dict, merger_id: str) -> dict:
+    """Turn one document released under FOI into a merger timeline event."""
+    reference = disclosure.get('reference')
+    title = doc.get('display_title') or doc.get('file') or 'FOI document'
+    file_name = doc.get('file')
+    return {
+        # Dated the day the ACCC published the release on its disclosure log,
+        # not the day the document was written, since that is when it became
+        # public and so when it is news on the timeline.
+        'date': _normalise_appeal_date(disclosure.get('published_date')),
+        'title': title,
+        'display_title': f"FOI release – {title}",
+        'url': doc.get('url'),
+        'url_gh': f"/mergers/{merger_id}/{file_name}" if file_name else None,
+        # Flags the event as released under FOI rather than published on the
+        # register, so the frontend can group a release's documents together.
+        'is_foi': True,
+        'foi_reference': reference,
+        'foi_url': disclosure.get('url'),
+        'foi_document_number': doc.get('document'),
+        'phase': None,
+    }
+
+
+def link_foi_disclosures(enriched_mergers: list, disclosures: dict) -> int:
+    """Fold documents released under FOI into each merger's timeline in-place.
+
+    ``disclosures`` is keyed by merger_id (``data/processed/foi_disclosures.json``),
+    each a list of FOI requests. Every released document becomes an event
+    (``is_foi``) dated the day its release was published on the ACCC's
+    disclosure log, and the merger gets ``foi_disclosures``: one entry per
+    request with its reference, log URL and published date. Returns the
+    number of mergers linked.
+    """
+    if not disclosures:
+        return 0
+
+    linked = 0
+    for merger in enriched_mergers:
+        mid = merger.get('merger_id', '')
+        records = disclosures.get(mid)
+        if not records:
+            continue
+        events = [
+            _foi_event(doc, record, mid)
+            for record in records
+            for doc in record.get('documents') or []
+        ]
+        merger['foi_disclosures'] = [
+            {
+                'reference': record.get('reference'),
+                'description': record.get('description'),
+                'url': record.get('url'),
+                'published_date': record.get('published_date'),
+                'document_count': len(record.get('documents') or []),
+            }
+            for record in records
+        ]
+        if events:
+            merger['events'] = list(merger.get('events') or []) + events
+        linked += 1
+    return linked
+
+
 # Federal Court review events are labelled with this prefix on the timeline,
 # as tribunal ones are with "Tribunal appeal –".
 JUDICIAL_REVIEW_EVENT_PREFIX = 'Federal Court'

@@ -1,6 +1,88 @@
 {
   "items": [
     {
+      "merger_id": "WA-80019",
+      "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": "2026-06-22T12:00:00Z",
+      "determination_url": "/mergers/WA-80019/Imagine Education \u2013 childcare centres ownership restructure (WA-80019) - Notification waiver determination - 22 June 2026_0.pdf",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Waterworks Education Group Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "678 086 210",
+          "party_page": {
+            "id": "waterworks-education-group-pty-ltd",
+            "name": "Waterworks Education Group Pty Ltd"
+          }
+        },
+        {
+          "name": "Imagine Education Investments Trust",
+          "identifier_type": "ABN",
+          "identifier": "54 637 909 142",
+          "canonical": {
+            "id": "imagine-education-investments",
+            "name": "Imagine Education Investments"
+          },
+          "party_page": {
+            "id": "imagine-education-investments",
+            "name": "Imagine Education Investments",
+            "curated": true
+          }
+        },
+        {
+          "name": "POLAR 993 PTY LTD as trustee of Imagine Education Investments Trust",
+          "identifier_type": "ABN",
+          "identifier": "77 642 129 226",
+          "canonical": {
+            "id": "imagine-education-investments",
+            "name": "Imagine Education Investments"
+          },
+          "party_page": {
+            "id": "imagine-education-investments",
+            "name": "Imagine Education Investments",
+            "curated": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Waterworks Childcare Investments Pty Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "waterworks-childcare-investments-pty-ltd",
+            "name": "Waterworks Childcare Investments Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "8010",
+          "name": "Preschool Education"
+        },
+        {
+          "code": "8710",
+          "name": "Child Care Services"
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "The ACCC has released documents from this waiver application under [FOI request 100473/2026-2027](https://www.accc.gov.au/about-us/freedom-of-information/freedom-of-information-disclosure-log/accc-foi-request-1004732026-2027), published on its disclosure log on 20 October 2026. The release includes the waiver application itself (the portal responses and the Part B submission), the additional parties template, a spreadsheet of the 35 centres and the Sub-Trust unitholdings, maps of the centres by region, the parties' declarations, and an email exchange in which the applicant's lawyers explained why they did not consider the section 51ABD exception for restructures within a group of related entities to apply: before the restructure, the Sub-Trusts and Head Trust were not related to each other as that section requires. The determination records that the ACCC proceeded on that basis. The documents are listed in the timeline below.",
+          "tags": [],
+          "date": "2026-11-16"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-01037",
       "merger_name": "Anglo American - Teck Resources",
       "status": "Assessment completed",
@@ -1308,5 +1390,5 @@
       ]
     }
   ],
-  "count": 21
+  "count": 22
 }

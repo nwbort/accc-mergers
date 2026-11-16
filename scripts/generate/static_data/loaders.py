@@ -15,6 +15,7 @@ RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
 RELATED_PARTIES_JSON = REPO_ROOT / "data" / "processed" / "related_parties.json"
 SIMILAR_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "similar_mergers.json"
 TRIBUNAL_APPEALS_JSON = REPO_ROOT / "data" / "processed" / "tribunal_appeals.json"
+FOI_DISCLOSURES_JSON = REPO_ROOT / "data" / "processed" / "foi_disclosures.json"
 JUDICIAL_REVIEWS_JSON = REPO_ROOT / "data" / "processed" / "judicial_reviews.json"
 
 
@@ -149,6 +150,30 @@ def load_tribunal_appeals() -> dict:
         }
     except (json.JSONDecodeError, IOError) as e:
         print(f"Warning: Could not load tribunal_appeals.json: {e}")
+        return {}
+
+
+def load_foi_disclosures() -> dict:
+    """Load FOI disclosure log releases from foi_disclosures.json.
+
+    Returns a dict keyed by merger_id mapping to the list of FOI requests whose
+    released documents concern that merger (reference, log URL, published date
+    and documents). Metadata keys (starting with ``_``) are stripped. Returns
+    an empty dict if the file is missing or malformed.
+    """
+    if not FOI_DISCLOSURES_JSON.exists():
+        return {}
+
+    try:
+        with open(FOI_DISCLOSURES_JSON, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return {
+            k: v if isinstance(v, list) else [v]
+            for k, v in data.items()
+            if not k.startswith('_')
+        }
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"Warning: Could not load foi_disclosures.json: {e}")
         return {}
 
 
