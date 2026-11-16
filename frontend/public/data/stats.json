@@ -1,6 +1,6 @@
 {
   "total_mergers": 330,
-  "total_waivers": 520,
+  "total_waivers": 521,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 284,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 493,
+    "Approved": 494,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.9,
-    "median_days": 21.0,
-    "average_business_days": 14.323076923076924,
-    "median_business_days": 15.0
+    "average_days": 20.919385796545107,
+    "median_days": 21,
+    "average_business_days": 14.335892514395393,
+    "median_business_days": 15
   },
   "top_industries": [
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 51
+      "count": 52
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05059",
+      "merger_name": "Plenary \u2013 Ground lease for delivery of the Gabba entertainment and housing precinct project in Brisbane, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-11-16T12:00:00Z",
+      "page_modified_datetime": "2026-11-16T17:24:45+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-10039",
       "merger_name": "Koch \u2013 50% interest in certain assets of OCP Nutricrops",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-12T12:00:00Z",
       "page_modified_datetime": "2026-11-12T11:20:29+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-85060",
-      "merger_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
-      "determination": "Approved",
-      "determination_date": "2026-11-12T12:00:00Z",
-      "page_modified_datetime": "2026-11-12T11:15:33+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
