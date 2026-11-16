@@ -355,6 +355,48 @@
       },
       "waiver_duration": null
     },
+    "taylor-square-fund-pty-ltd": {
+      "id": "taylor-square-fund-pty-ltd",
+      "canonical_name": "Taylor Square Fund Pty Ltd",
+      "members": [
+        {
+          "name": "TAYLOR SQUARE FUND PTY LTD",
+          "identifier": "84 646 594 069",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20049",
+            "merger_name": "Oscars Group - assets of Courthouse Hotel and Kinselas Hotel, Darlinghurst, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-22T12:00:00Z",
+            "determination_date": "2026-11-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
     "tc-skyward-aviation-u-s-inc": {
       "id": "tc-skyward-aviation-u-s-inc",
       "canonical_name": "TC Skyward Aviation U.S., Inc.",

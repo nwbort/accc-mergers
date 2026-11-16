@@ -1,6 +1,6 @@
 {
   "total_mergers": 330,
-  "total_waivers": 521,
+  "total_waivers": 523,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 284,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 494,
+    "Approved": 496,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.919385796545107,
+    "average_days": 20.933078393881452,
     "median_days": 21,
-    "average_business_days": 14.335892514395393,
+    "average_business_days": 14.344168260038241,
     "median_business_days": 15
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 216
+      "count": 217
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 52
+      "count": 53
     },
     {
       "name": "Software Publishing",
@@ -76,22 +76,22 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 42
+      "count": 43
+    },
+    {
+      "name": "Accommodation",
+      "count": 29
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
       "count": 28
     },
     {
-      "name": "Accommodation",
+      "name": "Cafes and Restaurants",
       "count": 28
     },
     {
       "name": "Supermarket and Grocery Stores",
-      "count": 27
-    },
-    {
-      "name": "Cafes and Restaurants",
       "count": 27
     }
   ],
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45039",
+      "merger_name": "PSP \u2013 interest in AMP Grapes Investments Limited",
+      "determination": "Approved",
+      "determination_date": "2026-11-16T12:00:00Z",
+      "page_modified_datetime": "2026-11-16T17:27:43+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-20049",
+      "merger_name": "Oscars Group - assets of Courthouse Hotel and Kinselas Hotel, Darlinghurst, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-11-16T12:00:00Z",
+      "page_modified_datetime": "2026-11-16T17:26:33+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-05059",
       "merger_name": "Plenary \u2013 Ground lease for delivery of the Gabba entertainment and housing precinct project in Brisbane, QLD",
       "determination": "Approved",
@@ -326,28 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-15053",
-      "merger_name": "Fruitico \u2013 Lease and option to purchase Terra Farm and Sunsweet Farm",
-      "determination": "Approved",
-      "determination_date": "2026-11-12T12:00:00Z",
-      "page_modified_datetime": "2026-11-12T15:05:28+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-70047",
-      "merger_name": "Australian Venue Co \u2013 Assets of Molly\u2019s Irish Pub Highgate and Molly\u2019s Irish Pub Victoria Park, Perth, WA",
-      "determination": "Approved",
-      "determination_date": "2026-11-12T12:00:00Z",
-      "page_modified_datetime": "2026-11-12T11:20:29+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

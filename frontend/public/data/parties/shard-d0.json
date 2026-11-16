@@ -2,6 +2,48 @@
   "shard": 208,
   "shard_count": 256,
   "parties": {
+    "amp-grapes-investments-limited": {
+      "id": "amp-grapes-investments-limited",
+      "canonical_name": "AMP Grapes Investments Limited",
+      "members": [
+        {
+          "name": "AMP Grapes Investments Limited",
+          "identifier": "UK Company Number 13937416",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45039",
+            "merger_name": "PSP \u2013 interest in AMP Grapes Investments Limited",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-23T12:00:00Z",
+            "determination_date": "2026-11-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
     "asphalt-operators-australia-pty-ltd": {
       "id": "asphalt-operators-australia-pty-ltd",
       "canonical_name": "Asphalt Operators Australia Pty Ltd",
