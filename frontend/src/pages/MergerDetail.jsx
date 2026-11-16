@@ -64,20 +64,28 @@ function appealDocumentUrl(appeal) {
 }
 
 // Tribunal appeal and Federal Court documents tend to arrive in a burst and
-// clutter the timeline. When more than two land back-to-back (most recent
-// first, since sortedEvents is date-descending), keep only the newest one
-// visible and collapse the rest behind a toggle. Both forums' documents count
+// clutter the timeline, as do documents released together under FOI. When more
+// than two of one kind land back-to-back (most recent first, since
+// sortedEvents is date-descending), keep only the newest one visible and
+// collapse the rest behind a toggle. Both review forums' documents count
 // towards one run, since they interleave by date when a decision is before
-// both at once. appealRunLength maps the run's start index to its size;
-// appealRunStart maps every other member of that run back to the start index
-// so it can be hidden until expanded.
+// both at once; an FOI release is a run of its own. appealRunLength maps the
+// run's start index to its size; appealRunStart maps every other member of
+// that run back to the start index so it can be hidden until expanded.
+const collapsibleGroup = (event) => {
+  if (event.is_appeal) return 'review';
+  if (event.is_foi) return `foi:${event.foi_reference ?? ''}`;
+  return null;
+};
+
 function findAppealRuns(sortedEvents) {
   const appealRunLength = new Map();
   const appealRunStart = new Map();
   for (let i = 0; i < sortedEvents.length; i++) {
-    if (!sortedEvents[i].is_appeal) continue;
+    const group = collapsibleGroup(sortedEvents[i]);
+    if (!group) continue;
     let j = i;
-    while (j < sortedEvents.length && sortedEvents[j].is_appeal) j++;
+    while (j < sortedEvents.length && collapsibleGroup(sortedEvents[j]) === group) j++;
     if (j - i > 2) {
       appealRunLength.set(i, j - i);
       for (let k = i + 1; k < j; k++) appealRunStart.set(k, i);
@@ -88,8 +96,9 @@ function findAppealRuns(sortedEvents) {
 }
 
 // What a collapsed run's toggle calls the documents it hides, by where they
-// were filed.
+// came from.
 function reviewDocumentsLabel(events) {
+  if (events.some((e) => e.is_foi)) return 'FOI documents';
   const federalCourt = events.some((e) => e.review_forum === REVIEW_FORUM_FEDERAL_COURT);
   const tribunal = events.some((e) => e.review_forum !== REVIEW_FORUM_FEDERAL_COURT);
   if (federalCourt && tribunal) return 'Tribunal and Federal Court documents';
@@ -859,6 +868,21 @@ function MergerDetail() {
                                   ? (severalReviews ? event.case_number : null)
                                   : (severalMatters ? event.tribunal_number : null),
                               ].filter(Boolean).join(' · ')}
+                            </p>
+                          )}
+                          {event.is_foi && event.foi_reference && (
+                            <p className="text-xs text-gray-500 mt-0.5">
+                              {event.foi_url ? (
+                                <a
+                                  href={event.foi_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-primary hover:text-primary-dark transition-colors"
+                                >
+                                  ACCC FOI request {event.foi_reference}
+                                </a>
+                              ) : `ACCC FOI request ${event.foi_reference}`}
+                              {event.foi_document_number != null && ` · Document ${event.foi_document_number}`}
                             </p>
                           )}
                           {event.url_gh && (

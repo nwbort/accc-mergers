@@ -58,6 +58,7 @@ from scripts.generate.static_data.enrichment import (
     link_related_parties,
     link_similar_mergers,
     link_tribunal_appeals,
+    link_foi_disclosures,
     strip_event_status,
 )
 from scripts.generate.static_data.phase1_estimate import attach_phase_1_estimates
@@ -74,6 +75,7 @@ from scripts.generate.static_data.loaders import (
     load_related_parties,
     load_similar_mergers,
     load_tribunal_appeals,
+    load_foi_disclosures,
 )
 from scripts.generate.static_data.durations import referral_probability_by_day
 from scripts.generate.static_data.outputs import (
@@ -148,6 +150,10 @@ def main():
     if tribunal_appeals:
         print(f"Loaded {len(tribunal_appeals)} tribunal appeal(s)")
 
+    foi_disclosures = load_foi_disclosures()
+    if foi_disclosures:
+        print(f"Loaded FOI disclosures for {len(foi_disclosures)} merger(s)")
+
     judicial_reviews = load_judicial_reviews()
     if judicial_reviews:
         print(f"Loaded {len(judicial_reviews)} judicial review(s)")
@@ -168,6 +174,9 @@ def main():
     appeal_linked = link_tribunal_appeals(enriched, tribunal_appeals)
     if appeal_linked:
         print(f"  Linked {appeal_linked} tribunal appeal(s)")
+    foi_linked = link_foi_disclosures(enriched, foi_disclosures)
+    if foi_linked:
+        print(f"  Linked FOI disclosures for {foi_linked} merger(s)")
     judicial_review_linked = link_judicial_reviews(enriched, judicial_reviews)
     if judicial_review_linked:
         print(f"  Linked {judicial_review_linked} judicial review(s)")
