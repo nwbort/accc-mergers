@@ -68,15 +68,7 @@ def banner_choice() -> str:
 #   {"path": "/quarterly/26Q3", "title": "The Q3 2026 merger report is out",
 #    "description": "Volumes, clearance rates, timing and Tribunal reviews in our quarterly report.",
 #    "cta": "Read the report"}
-# Coles' Tribunal appeal over Kalgoorlie (MN-01068), the email's twin of the
-# dashboard's COLES_KALGOORLIE_HEARING_PROMO. Its wording assumes the email
-# goes out on the first sitting day, Monday 9 November.
-PROMO: dict | None = {
-    "href": "https://www.youtube.com/watch?v=m_0-xU3uyyQ",
-    "title": "Coles Kalgoorlie Tribunal appeal hearing starts today",
-    "description": "Hearing continues until 19 November.",
-    "cta": "Watch the live stream from 10:15am",
-}
+PROMO: dict | None = None
 
 
 def promo_url(promo: dict) -> str:
