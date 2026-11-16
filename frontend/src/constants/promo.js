@@ -17,6 +17,8 @@
 
 import { FaFileLines, FaYoutube } from 'react-icons/fa6';
 import { hearingPromoTitle, localDate } from '../utils/hearingPromo';
+import { eventAnchorId } from '../utils/eventAnchor';
+import { mergerPath } from '../utils/slug';
 
 // Coles' Tribunal appeal over Kalgoorlie (MN-01068, ACT 1 of 2026). Sits
 // Monday to Thursday for two weeks. Tuesday 10 November sat in closed court,
@@ -80,15 +82,22 @@ export const COLES_KALGOORLIE_HEARING_PROMO = {
 };
 
 // The ACCC's FOI release on Imagine Education's childcare restructure waiver
-// (WA-80019, FOI request 100473/2026-2027): the first document in it, the
-// waiver application's parties and Part A responses. Links to the site's own
-// copy, which the PDF Pages Function wraps in its viewer.
+// (WA-80019, FOI request 100473/2026-2027). Links to the first of its
+// documents in the detail page's event list - the waiver application's
+// parties and Part A responses - whose anchor opens the collapsed FOI run and
+// scrolls to that row. Built from the event as the detail file carries it, so
+// the anchor matches the row's id.
+const IMAGINE_EDUCATION_FOI_EVENT = {
+  date: '2026-10-20T12:00:00Z',
+  display_title: 'FOI release \u2013 Waiver application \u2013 parties and Part A responses (acquisitions portal)',
+};
+
 export const IMAGINE_EDUCATION_FOI_PROMO = {
   campaign: 'imagine-education-foi-waiver-application',
-  href: '/mergers/WA-80019/ACCC%20FOI%20Request%20100473%20-%202026-2027%20-%20Document%207.pdf',
+  to: `${mergerPath('WA-80019', 'Imagine Education \u2013 childcare centres ownership restructure')}#${eventAnchorId(IMAGINE_EDUCATION_FOI_EVENT)}`,
   icon: FaFileLines,
   title: 'Released under FOI: Imagine Education\'s waiver application',
-  description: 'Read the parties and Part A responses to the ACCC for the childcare centres ownership restructure.',
+  description: 'Read the documents submitted to the ACCC',
 };
 
 export const DASHBOARD_PROMOS = [
