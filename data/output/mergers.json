@@ -31364,9 +31364,14 @@
           "name": "Ampol Energy Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "75 650 208 530",
+          "canonical": {
+            "id": "ampol-petroleum-pty-ltd",
+            "name": "Ampol"
+          },
           "party_page": {
-            "id": "ampol-energy-pty-ltd",
-            "name": "Ampol Energy Pty Ltd"
+            "id": "ampol-petroleum-pty-ltd",
+            "name": "Ampol",
+            "curated": true
           }
         }
       ],
