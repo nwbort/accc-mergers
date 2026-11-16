@@ -25,7 +25,7 @@ on:
         default: false
         type: boolean
       conflict_retry_count:
-        description: 'Internal: chained-retry counter after a rebase conflict against main. Leave as 0.'
+        description: 'Internal: chained-retry counter after a rebase conflict or failed push to main. Leave as 0.'
         required: false
         default: '0'
         type: string
@@ -564,62 +564,85 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update merger data: ${timestamp}"
-            # Scoped to main on purpose. A bare `git pull` uses the default
-            # refspec and fetches *every* branch into this depth-1 clone —
-            # including cli-dist, whose multi-MB cli.sqlite this same job
-            # force-pushes fresh each run, so it is never already present.
-            # Measured at 42s of a 105s run (run #1847) to fetch two branches
-            # this step does not read, only to report main hadn't moved.
-            if ! git pull --rebase --autostash origin main; then
-              git rebase --abort
 
-              # Only main retriggers itself. A branch run reaches this handler
-              # on every single dispatch (see the note above `on:`), and firing
+            # Give up on this run's commit and kick off a fresh run instead.
+            # It'll check out the now-current main and re-scrape/re-extract
+            # on top of it. Capped so a misbehaving concurrent writer (or a
+            # push that keeps failing) can't cause an infinite chain of
+            # retriggers. Always exits 1, so the run still shows as failed.
+            retrigger() {
+              # Only main retriggers itself. A branch run reaches this on
+              # every single dispatch (see the note above `on:`), and firing
               # a real pipeline run on main is a surprising thing for a test
               # dispatch of a branch to do.
               if [ "$GITHUB_REF" != "refs/heads/main" ]; then
-                echo "Rebase conflict on ${GITHUB_REF} - not main, so not triggering a run on main."
+                echo "$1 on ${GITHUB_REF} - not main, so not triggering a run on main."
                 exit 1
               fi
-
-              # A real conflict here means something else pushed to main while
-              # this run was scraping/extracting - hand-merging the JSON isn't
-              # safe, so give up on this run's commit and kick off a fresh run
-              # instead. It'll check out the now-current main and re-scrape/
-              # re-extract on top of it, so it won't hit the same conflict.
-              # Capped so a misbehaving concurrent writer can't cause an
-              # infinite chain of retriggers.
               next_retry=$((RETRY_COUNT + 1))
               if [ "$next_retry" -le 3 ]; then
-                echo "Rebase conflict against a concurrent push to main (retry ${next_retry}/3) - triggering a fresh pipeline run"
-                gh workflow run pipeline.yml --ref main -f "conflict_retry_count=${next_retry}"
+                echo "$1 (retry ${next_retry}/3) - triggering a fresh pipeline run"
+                gh workflow run pipeline.yml --ref main -f "conflict_retry_count=${next_retry}" \
+                  || echo "::error::Could not dispatch a fresh pipeline run"
               else
-                echo "Rebase conflict against a concurrent push to main - already retried ${RETRY_COUNT} times, giving up and leaving this to the next scheduled run"
+                echo "$1 - already retried ${RETRY_COUNT} times, giving up and leaving this to the next scheduled run"
               fi
               exit 1
-            fi
+            }
 
-            # After rebase, re-clean any HTML files that changed. A 3-way merge
-            # during rebase can reintroduce raw dynamic tokens if both the local
-            # commit and the pulled commits touched the same file.
-            rebase_html=$(git diff HEAD^..HEAD --name-only 2>/dev/null | grep '\.html$' || true)
-            if [ -n "$rebase_html" ]; then
-              echo "HTML files in rebased commit:"
-              echo "$rebase_html" | sed 's/^/  /'
-              while IFS= read -r f; do
-                if [ -f "$f" ]; then
-                  ./scripts/scrape/scrape.sh --clean-file "$f"
-                  git add "$f"
-                  echo "Re-cleaned: $f"
-                fi
-              done <<< "$rebase_html"
-              if ! git diff --staged --quiet; then
-                echo "WARNING: Rebase introduced uncleaned HTML — amending commit to fix"
-                git commit --amend --no-edit
+            sync_with_main() {
+              # Scoped to main on purpose. A bare `git pull` uses the default
+              # refspec and fetches *every* branch into this depth-1 clone —
+              # including cli-dist, whose multi-MB cli.sqlite this same job
+              # force-pushes fresh each run, so it is never already present.
+              # Measured at 42s of a 105s run (run #1847) to fetch two branches
+              # this step does not read, only to report main hadn't moved.
+              if ! git pull --rebase --autostash origin main; then
+                git rebase --abort
+                # A real conflict here means something else pushed to main
+                # while this run was scraping/extracting - hand-merging the
+                # JSON isn't safe, so start over from the current main.
+                retrigger "Rebase conflict against a concurrent push to main"
               fi
-            fi
 
-            git push
+              # After rebase, re-clean any HTML files that changed. A 3-way merge
+              # during rebase can reintroduce raw dynamic tokens if both the local
+              # commit and the pulled commits touched the same file.
+              rebase_html=$(git diff HEAD^..HEAD --name-only 2>/dev/null | grep '\.html$' || true)
+              if [ -n "$rebase_html" ]; then
+                echo "HTML files in rebased commit:"
+                echo "$rebase_html" | sed 's/^/  /'
+                while IFS= read -r f; do
+                  if [ -f "$f" ]; then
+                    ./scripts/scrape/scrape.sh --clean-file "$f"
+                    git add "$f"
+                    echo "Re-cleaned: $f"
+                  fi
+                done <<< "$rebase_html"
+                if ! git diff --staged --quiet; then
+                  echo "WARNING: Rebase introduced uncleaned HTML — amending commit to fix"
+                  git commit --amend --no-edit
+                fi
+              fi
+            }
+
+            # The push can fail even after a clean rebase: main moving in the
+            # gap since the pull, or a transient error from GitHub (run #2714
+            # was refused with a one-off 403 that the next run didn't see).
+            # Retry with backoff, re-syncing with main before each attempt,
+            # then fall back to a fresh run rather than losing this one's data.
+            sync_with_main
+            attempt=1
+            until git push; do
+              if [ "$attempt" -ge 4 ]; then
+                retrigger "git push to main failed ${attempt} times"
+              fi
+              delay=$((attempt * 15))
+              echo "::warning::git push failed (attempt ${attempt}/4) - retrying in ${delay}s"
+              sleep "$delay"
+              attempt=$((attempt + 1))
+              sync_with_main
+            done
             # Flag downstream cli-sqlite publish if cli-manifest.json is in
             # the pushed commit. The manifest is the tracked stand-in for the
             # bundle, which is gitignored — generate-cli-data.sh only rewrites
