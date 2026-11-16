@@ -15,7 +15,7 @@
  * campaign's own) or null to hide it; PromoStack re-reads it every minute.
  */
 
-import { FaYoutube } from 'react-icons/fa6';
+import { FaFileLines, FaYoutube } from 'react-icons/fa6';
 import { hearingPromoTitle, localDate } from '../utils/hearingPromo';
 
 // Coles' Tribunal appeal over Kalgoorlie (MN-01068, ACT 1 of 2026). Sits
@@ -54,6 +54,7 @@ export const FEDERAL_COURT_YOUTUBE_CHANNEL = 'https://www.youtube.com/@FederalCo
 export const COLES_KALGOORLIE_LIVESTREAM_LINKS = {
   '2026-11-11': 'https://www.youtube.com/watch?v=B8P6fMCkjTg',
   '2026-11-16': 'https://www.youtube.com/watch?v=ehGRclQmSK4',
+  '2026-11-17': 'https://www.youtube.com/watch?v=XIk6WUiT66A',
 };
 
 export function livestreamLink(links, now, timeZone) {
@@ -78,4 +79,19 @@ export const COLES_KALGOORLIE_HEARING_PROMO = {
   },
 };
 
-export const DASHBOARD_PROMOS = [COLES_KALGOORLIE_HEARING_PROMO];
+// The ACCC's FOI release on Imagine Education's childcare restructure waiver
+// (WA-80019, FOI request 100473/2026-2027): the first document in it, the
+// waiver application's parties and Part A responses. Links to the site's own
+// copy, which the PDF Pages Function wraps in its viewer.
+export const IMAGINE_EDUCATION_FOI_PROMO = {
+  campaign: 'imagine-education-foi-waiver-application',
+  href: '/mergers/WA-80019/ACCC%20FOI%20Request%20100473%20-%202026-2027%20-%20Document%207.pdf',
+  icon: FaFileLines,
+  title: 'Released under FOI: Imagine Education\'s waiver application',
+  description: 'Read the parties and Part A responses to the ACCC for the childcare centres ownership restructure.',
+};
+
+export const DASHBOARD_PROMOS = [
+  COLES_KALGOORLIE_HEARING_PROMO,
+  IMAGINE_EDUCATION_FOI_PROMO,
+];
