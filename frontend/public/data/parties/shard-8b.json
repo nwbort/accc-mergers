@@ -242,12 +242,29 @@
           "name": "Constellation Software Inc.",
           "identifier": "Canada Business Number 891148553",
           "identifier_type": null
+        },
+        {
+          "name": "Constellation Software Inc.",
+          "identifier": "LEI  549300B6PYHMCTDWQV29",
+          "identifier_type": null
         }
       ],
       "mergers": {
         "acquirer": [],
         "target": [],
         "other": [
+          {
+            "merger_id": "WA-25061",
+            "merger_name": "Volaris Group \u2013 SpinifexIT",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-20T12:00:00Z",
+            "determination_date": "2026-11-16T12:00:00Z"
+          },
           {
             "merger_id": "MN-25040",
             "merger_name": "Modaxo - Conduent",
@@ -274,10 +291,10 @@
           }
         ]
       },
-      "merger_count": 2,
+      "merger_count": 3,
       "phase_1_count": 1,
       "phase_2_count": 0,
-      "waiver_count": 1,
+      "waiver_count": 2,
       "active_count": 0,
       "phase_duration": {
         "average_days": 22.0,
@@ -287,11 +304,11 @@
         "completed_count": 1
       },
       "waiver_duration": {
-        "average_days": 16.0,
-        "median_days": 16,
-        "average_business_days": 12.0,
-        "median_business_days": 12,
-        "completed_count": 1
+        "average_days": 21.5,
+        "median_days": 21.5,
+        "average_business_days": 15.5,
+        "median_business_days": 15.5,
+        "completed_count": 2
       }
     },
     "cshc-co-investment-blocker-corp-llc": {
