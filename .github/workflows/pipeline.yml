@@ -582,10 +582,14 @@ jobs:
               next_retry=$((RETRY_COUNT + 1))
               if [ "$next_retry" -le 3 ]; then
                 echo "$1 (retry ${next_retry}/3) - triggering a fresh pipeline run"
-                gh workflow run pipeline.yml --ref main -f "conflict_retry_count=${next_retry}" \
-                  || echo "::error::Could not dispatch a fresh pipeline run"
+                if ! gh workflow run pipeline.yml --ref main -f "conflict_retry_count=${next_retry}"; then
+                  echo "::error::Could not dispatch a fresh pipeline run"
+                  # No next run means this is the end of the chain too.
+                  echo "chain_ended=$1, and the retry run could not be dispatched" >> "$GITHUB_OUTPUT"
+                fi
               else
                 echo "$1 - already retried ${RETRY_COUNT} times, giving up and leaving this to the next scheduled run"
+                echo "chain_ended=$1 - gave up after ${RETRY_COUNT} chained retries" >> "$GITHUB_OUTPUT"
               fi
               exit 1
             }
@@ -665,6 +669,26 @@ jobs:
                 || echo "::warning::Could not dispatch quarterly-report.yml"
             fi
           fi
+
+      # The commit step's retrigger() chains up to three fresh runs after a
+      # rebase conflict or a push that keeps failing. Each intermediate
+      # failure is expected and silent; only the last one, where this run's
+      # data is dropped until the next scheduled run, is worth a phone push.
+      # A step's outputs survive its failure, so `chain_ended` is readable.
+      - name: Notify chained retries exhausted
+        if: failure() && steps.commit.outputs.chain_ended != ''
+        uses: ./.github/actions/ntfy
+        with:
+          topic: ${{ secrets.NTFY_TOPIC }}
+          token: ${{ secrets.NTFY_TOKEN }}
+          server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
+          title: 'Merger pipeline gave up'
+          message: >-
+            ${{ steps.commit.outputs.chain_ended }}. This run's data was not
+            pushed; it will be picked up by the next scheduled run.
+          tags: 'warning'
+          priority: '4'
+          click: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       # LinkedIn posts (the Make.com webhook, or the share links) are not
       # sent from here: linkedin-share-links.yml runs once this workflow
