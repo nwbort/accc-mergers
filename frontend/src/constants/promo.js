@@ -15,8 +15,10 @@
  * campaign's own) or null to hide it; PromoStack re-reads it every minute.
  */
 
-import { FaYoutube } from 'react-icons/fa6';
+import { FaFileLines, FaYoutube } from 'react-icons/fa6';
 import { hearingPromoTitle, localDate } from '../utils/hearingPromo';
+import { eventAnchorId } from '../utils/eventAnchor';
+import { mergerPath } from '../utils/slug';
 
 // Coles' Tribunal appeal over Kalgoorlie (MN-01068, ACT 1 of 2026). Sits
 // Monday to Thursday for two weeks. Tuesday 10 November sat in closed court,
@@ -54,6 +56,7 @@ export const FEDERAL_COURT_YOUTUBE_CHANNEL = 'https://www.youtube.com/@FederalCo
 export const COLES_KALGOORLIE_LIVESTREAM_LINKS = {
   '2026-11-11': 'https://www.youtube.com/watch?v=B8P6fMCkjTg',
   '2026-11-16': 'https://www.youtube.com/watch?v=ehGRclQmSK4',
+  '2026-11-17': 'https://www.youtube.com/watch?v=XIk6WUiT66A',
 };
 
 export function livestreamLink(links, now, timeZone) {
@@ -78,4 +81,26 @@ export const COLES_KALGOORLIE_HEARING_PROMO = {
   },
 };
 
-export const DASHBOARD_PROMOS = [COLES_KALGOORLIE_HEARING_PROMO];
+// The ACCC's FOI release on Imagine Education's childcare restructure waiver
+// (WA-80019, FOI request 100473/2026-2027). Links to the first of its
+// documents in the detail page's event list - the waiver application's
+// parties and Part A responses - whose anchor opens the collapsed FOI run and
+// scrolls to that row. Built from the event as the detail file carries it, so
+// the anchor matches the row's id.
+const IMAGINE_EDUCATION_FOI_EVENT = {
+  date: '2026-10-20T12:00:00Z',
+  display_title: 'FOI release \u2013 Waiver application \u2013 parties and Part A responses (acquisitions portal)',
+};
+
+export const IMAGINE_EDUCATION_FOI_PROMO = {
+  campaign: 'imagine-education-foi-waiver-application',
+  to: `${mergerPath('WA-80019', 'Imagine Education \u2013 childcare centres ownership restructure')}#${eventAnchorId(IMAGINE_EDUCATION_FOI_EVENT)}`,
+  icon: FaFileLines,
+  title: 'Released under FOI: Imagine Education\'s waiver application',
+  description: 'Read the documents submitted to the ACCC',
+};
+
+export const DASHBOARD_PROMOS = [
+  COLES_KALGOORLIE_HEARING_PROMO,
+  IMAGINE_EDUCATION_FOI_PROMO,
+];
