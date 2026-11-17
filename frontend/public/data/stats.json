@@ -1,6 +1,6 @@
 {
   "total_mergers": 330,
-  "total_waivers": 528,
+  "total_waivers": 529,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 286,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 501,
+    "Approved": 502,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.99621212121212,
-    "median_days": 21.0,
-    "average_business_days": 14.390151515151516,
-    "median_business_days": 15.0
+    "average_days": 20.996219281663517,
+    "median_days": 21,
+    "average_business_days": 14.391304347826088,
+    "median_business_days": 15
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45040",
+      "merger_name": "ForHealth \u2013 Mackay Family Medical Practice, Qld",
+      "determination": "Approved",
+      "determination_date": "2026-11-17T12:00:00Z",
+      "page_modified_datetime": "2026-11-17T17:20:59+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-01126",
       "merger_name": "IPLiving - Springwood Living Group",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-16T12:00:00Z",
       "page_modified_datetime": "2026-11-16T14:16:05+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-55042",
-      "merger_name": "AUB \u2013 One Underwriting",
-      "determination": "Approved",
-      "determination_date": "2026-11-13T12:00:00Z",
-      "page_modified_datetime": "2026-11-13T17:06:29+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
