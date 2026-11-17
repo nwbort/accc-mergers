@@ -293,7 +293,7 @@
       "23": {
         "31": 1,
         "32": 2,
-        "33": 3
+        "33": 4
       },
       "24": {
         "34": 2,
@@ -304,17 +304,17 @@
     },
     "stats": {
       "average": 14.4,
-      "median": 15,
+      "median": 15.0,
       "min": 2,
       "max": 24,
-      "count": 529
+      "count": 530
     },
     "calendar_stats": {
       "average": 21.0,
-      "median": 21,
+      "median": 21.0,
       "min": 2,
       "max": 39,
-      "count": 529
+      "count": 530
     }
   },
   "monthly_volume": {
@@ -366,7 +366,7 @@
       72,
       69,
       55,
-      51,
+      52,
       1
     ],
     "waivers_pending_estimate": [
@@ -439,7 +439,7 @@
       54,
       52,
       47,
-      34,
+      35,
       0
     ],
     "waivers_pending_estimate": [
@@ -458,7 +458,7 @@
       0,
       0,
       17,
-      54
+      55
     ],
     "as_at": "2026-11-17"
   },
@@ -492,12 +492,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 17.0,
-          "average": 17.1,
-          "p90": 21,
+          "median": 17,
+          "average": 17.2,
+          "p90": 22,
           "min": 4,
           "max": 24,
-          "count": 72,
+          "count": 73,
           "duration_histogram": {
             "4": 1,
             "8": 2,
@@ -513,7 +513,7 @@
             "20": 5,
             "21": 4,
             "22": 4,
-            "23": 1,
+            "23": 2,
             "24": 2
           },
           "median_delta": 2.0
@@ -538,7 +538,7 @@
           },
           "phase_2": {},
           "waivers": {
-            "Approved": 67,
+            "Approved": 68,
             "Not approved": 5
           }
         }
@@ -577,12 +577,12 @@
           "median_delta": 1.0
         },
         "waivers": {
-          "median": 18.0,
+          "median": 18,
           "average": 16.9,
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 190,
+          "count": 191,
           "duration_histogram": {
             "3": 1,
             "4": 1,
@@ -604,7 +604,7 @@
             "20": 16,
             "21": 12,
             "22": 9,
-            "23": 3,
+            "23": 4,
             "24": 5
           },
           "median_delta": 3.0
@@ -633,7 +633,7 @@
             "Not approved": 1
           },
           "waivers": {
-            "Approved": 177,
+            "Approved": 178,
             "Not approved": 13
           }
         }
@@ -649,12 +649,12 @@
         "count": 292
       },
       "waivers": {
-        "median": 15,
+        "median": 15.0,
         "average": 14.4,
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 529
+        "count": 530
       }
     },
     "pre_notification": {
@@ -671,7 +671,7 @@
         },
         {
           "median": 18,
-          "average": 22.0,
+          "average": 21.9,
           "p90": 41,
           "min": 0,
           "max": 128,
@@ -867,9 +867,9 @@
           "count": 64
         },
         {
-          "median": 18,
-          "average": 17.5,
-          "count": 35
+          "median": 18.0,
+          "average": 17.7,
+          "count": 36
         }
       ],
       "open_caseload": [
@@ -1120,12 +1120,12 @@
     },
     {
       "division": "Commissioner Woodward",
-      "count": 66,
+      "count": 67,
       "outcome_mix": {
-        "Approved": 65,
+        "Approved": 66,
         "Not approved": 1
       },
-      "median_business_days": 18.0
+      "median_business_days": 18
     },
     {
       "division": "A division of the Commission (s19 direction)",

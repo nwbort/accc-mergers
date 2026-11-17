@@ -1,6 +1,6 @@
 {
   "total_mergers": 330,
-  "total_waivers": 529,
+  "total_waivers": 530,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 286,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 502,
+    "Approved": 503,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.996219281663517,
-    "median_days": 21,
-    "average_business_days": 14.391304347826088,
-    "median_business_days": 15
+    "average_days": 21.0188679245283,
+    "median_days": 21.0,
+    "average_business_days": 14.407547169811322,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80048",
+      "merger_name": "Waveconn - acquisition of certain Optus towers and sites",
+      "determination": "Approved",
+      "determination_date": "2026-11-17T12:00:00Z",
+      "page_modified_datetime": "2026-11-17T17:22:25+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-45040",
       "merger_name": "ForHealth \u2013 Mackay Family Medical Practice, Qld",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-10039",
-      "merger_name": "Koch \u2013 50% interest in certain assets of OCP Nutricrops",
-      "determination": "Approved",
-      "determination_date": "2026-11-16T12:00:00Z",
-      "page_modified_datetime": "2026-11-16T14:16:05+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
