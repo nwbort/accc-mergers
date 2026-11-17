@@ -117693,18 +117693,28 @@
           "name": "ATCO AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "74 091 033 546",
+          "canonical": {
+            "id": "atco-ltd",
+            "name": "ATCO Ltd."
+          },
           "party_page": {
-            "id": "atco-australia-pty-ltd",
-            "name": "Atco Australia Pty Ltd"
+            "id": "atco-ltd",
+            "name": "ATCO Ltd.",
+            "curated": true
           }
         },
         {
           "name": "ATCO Ltd.",
           "identifier_type": null,
           "identifier": "Alberta Corporate Registry  206362386",
-          "party_page": {
+          "canonical": {
             "id": "atco-ltd",
             "name": "ATCO Ltd."
+          },
+          "party_page": {
+            "id": "atco-ltd",
+            "name": "ATCO Ltd.",
+            "curated": true
           }
         },
         {
