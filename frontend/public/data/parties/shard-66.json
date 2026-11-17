@@ -416,6 +416,48 @@
       },
       "waiver_duration": null
     },
+    "pitt-sherry-operations-pty-ltd": {
+      "id": "pitt-sherry-operations-pty-ltd",
+      "canonical_name": "Pitt & Sherry (Operations) Pty. Ltd.",
+      "members": [
+        {
+          "name": "PITT & SHERRY (OPERATIONS) PTY. LTD.",
+          "identifier": "67 140 184 309",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20051",
+            "merger_name": "Tetra Tech - Pitt & Sherry",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-23T12:00:00Z",
+            "determination_date": "2026-11-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
     "rasier-pacific-pty-ltd": {
       "id": "rasier-pacific-pty-ltd",
       "canonical_name": "Rasier Pacific Pty Ltd",

@@ -1,6 +1,6 @@
 {
   "total_mergers": 330,
-  "total_waivers": 534,
+  "total_waivers": 535,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 287,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 507,
+    "Approved": 508,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.05056179775281,
-    "median_days": 21.0,
-    "average_business_days": 14.432584269662922,
-    "median_business_days": 15.0
+    "average_days": 21.057943925233644,
+    "median_days": 21,
+    "average_business_days": 14.437383177570094,
+    "median_business_days": 15
   },
   "top_industries": [
     {
@@ -79,12 +79,12 @@
       "count": 43
     },
     {
-      "name": "Accommodation",
+      "name": "Engineering Design and Engineering Consulting Services",
       "count": 29
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
-      "count": 28
+      "name": "Accommodation",
+      "count": 29
     },
     {
       "name": "Cafes and Restaurants",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20051",
+      "merger_name": "Tetra Tech - Pitt & Sherry",
+      "determination": "Approved",
+      "determination_date": "2026-11-17T12:00:00Z",
+      "page_modified_datetime": "2026-11-17T17:32:56+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85066",
       "merger_name": "Pemba \u2013 Bio101",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-16T12:00:00Z",
       "page_modified_datetime": "2026-11-16T17:33:00+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-05057",
-      "merger_name": "Gold Fields \u2013 BHP Nickel West (Kambalda exploration assets)",
-      "determination": "Approved",
-      "determination_date": "2026-11-16T12:00:00Z",
-      "page_modified_datetime": "2026-11-16T17:31:17+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

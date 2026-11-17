@@ -1,0 +1,108 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/tetra-tech-pitt-sherry",
+  "merger_name": "Tetra Tech - Pitt & Sherry",
+  "status": "Assessment completed",
+  "merger_id": "WA-20051",
+  "effective_notification_datetime": "2026-10-23T12:00:00Z",
+  "original_notification_datetime": "2026-10-23T12:00:00Z",
+  "stage": "Waiver application",
+  "determination_publication_date": "2026-11-17T12:00:00Z",
+  "accc_determination": "Approved",
+  "acquirers": [
+    {
+      "name": "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "74 676 488 716",
+      "party_page": {
+        "id": "tetra-tech-inc",
+        "name": "Tetra Tech, Inc.",
+        "curated": true
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "PITT & SHERRY (OPERATIONS) PTY. LTD.",
+      "identifier_type": "ABN",
+      "identifier": "67 140 184 309",
+      "party_page": {
+        "id": "pitt-sherry-operations-pty-ltd",
+        "name": "Pitt & Sherry (Operations) Pty. Ltd."
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "6923",
+      "name": "Engineering Design and Engineering Consulting Services"
+    }
+  ],
+  "merger_description": "Tetra Tech Australia Group Holdings Pty Ltd (**Tetra Tech**) proposes to acquire 100% of the shares in Pitt & Sherry (Operations) Pty Ltd and its subsidiaries (**Pitt & Sherry**) through a Share Sale and Purchase Agreement (the **Acquisiti****on**).\n\nTetra Tech is a wholly owned subsidiary of Tetra Tech, Inc., a global public corporation listed on the NASDAQ, and the holding company for various subsidiaries. It is headquartered in Pasadena, California. Tetra Tech\u2019s subsidiaries are involved in a variety of industries, in particular, water, energy, infrastructure, mining and resources, defence and development, and provide high-end consulting, technical and advisory services in Australia to a variety of customers, both public and private. Tetra Tech also has operations and interests across the Asia-Pacific region.\n\nPitt & Sherry is an Australian-based consultancy firm offering engineering, environmental and building surveying services Australia-wide, with a strong presence in Tasmania.",
+  "events": [
+    {
+      "date": "2026-11-17T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Tetra%20Tech%20-%20Pitt%20and%20Sherry%20%28WA-20051%29%20-%20Notification%20waiver%20determination%20-%2017%20November%202026.pdf",
+      "determination_table_content": [
+        {
+          "item": "Explanation for\ndetermination",
+          "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the parties\u2019 combined share in the supply of engineering\nconsulting services to customers is low, both on a national\nand state basis\nb. there are alternative suppliers of engineering consulting\nservices to customers across Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+        }
+      ],
+      "url_gh": "/mergers/WA-20051/Tetra Tech - Pitt and Sherry (WA-20051) - Notification waiver determination - 17 November 2026.pdf",
+      "is_determination_event": true,
+      "phase": "Waiver"
+    },
+    {
+      "date": "2026-10-23T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": true,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-70008",
+      "merger_name": "Tetra Tech \u2013 Providence Consulting",
+      "acquirers": [
+        "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD"
+      ],
+      "targets": [
+        "Providence Consulting Group Pty Ltd"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-05007",
+      "merger_name": "Eiffel and Eurazeo \u2013 Segula",
+      "acquirers": [
+        "Eiffel Investment Group SAS",
+        "Eurazeo SE"
+      ],
+      "targets": [
+        "Segula Holding SAS"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-20019",
+      "merger_name": "IK Partners - Selatek",
+      "acquirers": [
+        "Goldcup 39483 AB (u.n.c.t. Prometheus BidCo AB)"
+      ],
+      "targets": [
+        "SELATEK Holding AB"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "og_card": "notification-waiver-granted.png"
+}

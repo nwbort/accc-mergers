@@ -439,6 +439,18 @@
       "mergers": {
         "acquirer": [
           {
+            "merger_id": "WA-20051",
+            "merger_name": "Tetra Tech - Pitt & Sherry",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-23T12:00:00Z",
+            "determination_date": "2026-11-17T12:00:00Z"
+          },
+          {
             "merger_id": "WA-70008",
             "merger_name": "Tetra Tech \u2013 Providence Consulting",
             "is_waiver": true,
@@ -454,18 +466,18 @@
         "target": [],
         "other": []
       },
-      "merger_count": 1,
+      "merger_count": 2,
       "phase_1_count": 0,
       "phase_2_count": 0,
-      "waiver_count": 1,
+      "waiver_count": 2,
       "active_count": 0,
       "phase_duration": null,
       "waiver_duration": {
-        "average_days": 33.0,
-        "median_days": 33,
-        "average_business_days": 22.0,
-        "median_business_days": 22,
-        "completed_count": 1
+        "average_days": 29.0,
+        "median_days": 29.0,
+        "average_business_days": 19.5,
+        "median_business_days": 19.5,
+        "completed_count": 2
       }
     },
     "thomas-wener-keller": {
