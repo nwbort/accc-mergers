@@ -15,71 +15,9 @@
  * campaign's own) or null to hide it; PromoStack re-reads it every minute.
  */
 
-import { FaFileLines, FaYoutube } from 'react-icons/fa6';
-import { hearingPromoTitle, localDate } from '../utils/hearingPromo';
+import { FaFileLines } from 'react-icons/fa6';
 import { eventAnchorId } from '../utils/eventAnchor';
 import { mergerPath } from '../utils/slug';
-
-// Coles' Tribunal appeal over Kalgoorlie (MN-01068, ACT 1 of 2026). Sits
-// Monday to Thursday for two weeks. Tuesday 10 November sat in closed court,
-// so the public livestream skips it: the banner's headline stays on the
-// hearing as a whole, and its subline follows the livestream day by day,
-// until the last scheduled day rises. If the hearing finishes early, take it
-// out of DASHBOARD_PROMOS.
-export const COLES_KALGOORLIE_HEARING = {
-  title: 'Coles Kalgoorlie Tribunal appeal hearing continues this week',
-  sittingDays: [
-    '2026-11-09', '2026-11-10', '2026-11-11', '2026-11-12',
-    '2026-11-16', '2026-11-17', '2026-11-18', '2026-11-19',
-  ],
-  startTime: '10:15',
-  endTime: '16:15',
-  timeZone: 'Australia/Sydney',
-};
-
-// The days the public can watch: every sitting day bar those in closed court.
-const CLOSED_COURT_DAYS = ['2026-11-10'];
-
-export const COLES_KALGOORLIE_LIVESTREAM = {
-  ...COLES_KALGOORLIE_HEARING,
-  subject: 'The public livestream',
-  sittingDays: COLES_KALGOORLIE_HEARING.sittingDays.filter(
-    (day) => !CLOSED_COURT_DAYS.includes(day),
-  ),
-};
-
-// The Federal Court streams each day under a new YouTube link. Add the day's
-// link here (keyed by its Sydney date) once it's published; until then, and on
-// any day without one, the banner links to the court's channel instead.
-export const FEDERAL_COURT_YOUTUBE_CHANNEL = 'https://www.youtube.com/@FederalCourtAus';
-
-export const COLES_KALGOORLIE_LIVESTREAM_LINKS = {
-  '2026-11-11': 'https://www.youtube.com/watch?v=B8P6fMCkjTg',
-  '2026-11-16': 'https://www.youtube.com/watch?v=ehGRclQmSK4',
-  '2026-11-17': 'https://www.youtube.com/watch?v=XIk6WUiT66A',
-};
-
-export function livestreamLink(links, now, timeZone) {
-  return links[localDate(now, timeZone)] ?? FEDERAL_COURT_YOUTUBE_CHANNEL;
-}
-
-export const COLES_KALGOORLIE_HEARING_PROMO = {
-  campaign: 'coles-kalgoorlie-hearing-v2',
-  href: FEDERAL_COURT_YOUTUBE_CHANNEL,
-  icon: FaYoutube,
-  title: COLES_KALGOORLIE_HEARING.title,
-  resolve: (now) => {
-    const line = hearingPromoTitle(COLES_KALGOORLIE_LIVESTREAM, now);
-    return line && {
-      description: `${line}.`,
-      href: livestreamLink(
-        COLES_KALGOORLIE_LIVESTREAM_LINKS,
-        now,
-        COLES_KALGOORLIE_HEARING.timeZone,
-      ),
-    };
-  },
-};
 
 // The ACCC's FOI release on Imagine Education's childcare restructure waiver
 // (WA-80019, FOI request 100473/2026-2027). Links to the first of its
@@ -101,6 +39,5 @@ export const IMAGINE_EDUCATION_FOI_PROMO = {
 };
 
 export const DASHBOARD_PROMOS = [
-  COLES_KALGOORLIE_HEARING_PROMO,
   IMAGINE_EDUCATION_FOI_PROMO,
 ];
