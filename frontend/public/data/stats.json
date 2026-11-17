@@ -3,12 +3,12 @@
   "total_waivers": 535,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 287,
-    "Under assessment": 38,
+    "Assessment completed": 288,
+    "Under assessment": 37,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 280,
+    "Approved": 281,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 285,
+    "cleared": 286,
     "not_cleared": 2,
-    "total": 287,
+    "total": 288,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.341296928327644,
-    "median_days": 26,
-    "average_business_days": 20.01023890784983,
-    "median_business_days": 18,
+    "average_days": 29.35374149659864,
+    "median_days": 26.0,
+    "average_business_days": 20.020408163265305,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 61,
-        "percentage": 20.8
+        "percentage": 20.7
       },
       "day20": {
         "count": 211,
-        "percentage": 72.0
+        "percentage": 71.8
       },
       "day30": {
-        "count": 275,
+        "count": 276,
         "percentage": 93.9
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-01127",
+      "merger_name": "CVS Group \u2013 Karrinyup Small Animal Hospital",
+      "determination": "Approved",
+      "determination_date": "2026-11-17T12:00:00Z",
+      "page_modified_datetime": "2026-11-17T18:01:34+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-20051",
       "merger_name": "Tetra Tech - Pitt & Sherry",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-16T12:00:00Z",
       "page_modified_datetime": "2026-11-16T17:34:10+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-95047",
-      "merger_name": "Gold Fields - BHP Nickel West (Kambalda nickel concentrator)",
-      "determination": "Approved",
-      "determination_date": "2026-11-16T12:00:00Z",
-      "page_modified_datetime": "2026-11-16T17:33:00+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
