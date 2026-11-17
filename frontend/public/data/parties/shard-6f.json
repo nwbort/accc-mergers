@@ -86,6 +86,48 @@
       },
       "waiver_duration": null
     },
+    "equans-horizon-topco-pty-ltd": {
+      "id": "equans-horizon-topco-pty-ltd",
+      "canonical_name": "Equans Horizon Topco Pty Ltd",
+      "members": [
+        {
+          "name": "EQUANS HORIZON TOPCO PTY LTD",
+          "identifier": "90 699 195 518",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80054",
+            "merger_name": "Equans \u2013 Credible Audio Visual Solutions",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-22T12:00:00Z",
+            "determination_date": "2026-11-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "hilton-manufacturing-pty-ltd": {
       "id": "hilton-manufacturing-pty-ltd",
       "canonical_name": "Hilton Manufacturing Pty Ltd",

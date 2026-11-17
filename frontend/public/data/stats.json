@@ -1,6 +1,6 @@
 {
   "total_mergers": 330,
-  "total_waivers": 530,
+  "total_waivers": 531,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 286,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 503,
+    "Approved": 504,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.0188679245283,
-    "median_days": 21.0,
-    "average_business_days": 14.407547169811322,
-    "median_business_days": 15.0
+    "average_days": 21.028248587570623,
+    "median_days": 21,
+    "average_business_days": 14.414312617702448,
+    "median_business_days": 15
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 219
+      "count": 220
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80054",
+      "merger_name": "Equans \u2013 Credible Audio Visual Solutions",
+      "determination": "Approved",
+      "determination_date": "2026-11-17T12:00:00Z",
+      "page_modified_datetime": "2026-11-17T17:24:05+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80048",
       "merger_name": "Waveconn - acquisition of certain Optus towers and sites",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-16T12:00:00Z",
       "page_modified_datetime": "2026-11-16T17:26:33+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-05059",
-      "merger_name": "Plenary \u2013 Ground lease for delivery of the Gabba entertainment and housing precinct project in Brisbane, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-11-16T12:00:00Z",
-      "page_modified_datetime": "2026-11-16T17:24:45+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
