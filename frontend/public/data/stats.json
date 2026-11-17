@@ -3,12 +3,12 @@
   "total_waivers": 528,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 285,
-    "Under assessment": 40,
+    "Assessment completed": 286,
+    "Under assessment": 39,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 278,
+    "Approved": 279,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 283,
+    "cleared": 284,
     "not_cleared": 2,
-    "total": 285,
+    "total": 286,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.3573883161512,
-    "median_days": 26,
-    "average_business_days": 20.017182130584192,
-    "median_business_days": 18,
+    "average_days": 29.356164383561644,
+    "median_days": 26.0,
+    "average_business_days": 20.02054794520548,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 61,
-        "percentage": 21.0
+        "percentage": 20.9
       },
       "day20": {
         "count": 210,
-        "percentage": 72.2
+        "percentage": 71.9
       },
       "day30": {
-        "count": 273,
+        "count": 274,
         "percentage": 93.8
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-01126",
+      "merger_name": "IPLiving - Springwood Living Group",
+      "determination": "Approved",
+      "determination_date": "2026-11-17T12:00:00Z",
+      "page_modified_datetime": "2026-11-17T15:53:06+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-15043",
       "merger_name": "NYK - NS United",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-13T12:00:00Z",
       "page_modified_datetime": "2026-11-13T17:06:29+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-60048",
-      "merger_name": "Ingenia - Peet - Flagstone JV",
-      "determination": "Approved",
-      "determination_date": "2026-11-13T12:00:00Z",
-      "page_modified_datetime": "2026-11-13T16:45:19+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
