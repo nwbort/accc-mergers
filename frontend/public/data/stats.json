@@ -3,12 +3,12 @@
   "total_waivers": 528,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 284,
-    "Under assessment": 41,
+    "Assessment completed": 285,
+    "Under assessment": 40,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 277,
+    "Approved": 278,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 282,
+    "cleared": 283,
     "not_cleared": 2,
-    "total": 284,
+    "total": 285,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.386206896551723,
-    "median_days": 26.0,
-    "average_business_days": 20.03448275862069,
-    "median_business_days": 18.0,
+    "average_days": 29.3573883161512,
+    "median_days": 26,
+    "average_business_days": 20.017182130584192,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
-        "count": 60,
-        "percentage": 20.7
+        "count": 61,
+        "percentage": 21.0
       },
       "day20": {
-        "count": 209,
-        "percentage": 72.1
+        "count": 210,
+        "percentage": 72.2
       },
       "day30": {
-        "count": 272,
+        "count": 273,
         "percentage": 93.8
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-15043",
+      "merger_name": "NYK - NS United",
+      "determination": "Approved",
+      "determination_date": "2026-11-17T12:00:00Z",
+      "page_modified_datetime": "2026-11-17T12:59:40+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-40052",
       "merger_name": "Russell Investment Group \u2013 Flag Index Plus Fund V",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-13T12:00:00Z",
       "page_modified_datetime": "2026-11-13T16:45:19+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-15048",
-      "merger_name": "Camp Australia \u2013 Jabiru",
-      "determination": "Approved",
-      "determination_date": "2026-11-13T12:00:00Z",
-      "page_modified_datetime": "2026-11-13T15:54:39+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

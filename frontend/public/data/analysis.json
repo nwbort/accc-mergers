@@ -2,7 +2,7 @@
   "phase1_duration": {
     "duration_histogram": {
       "15": {
-        "21": 33,
+        "21": 34,
         "22": 14,
         "23": 3,
         "24": 5,
@@ -138,17 +138,17 @@
     },
     "stats": {
       "average": 20.0,
-      "median": 18.0,
+      "median": 18,
       "min": 15,
       "max": 59,
-      "count": 290
+      "count": 291
     },
     "calendar_stats": {
       "average": 29.4,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 290
+      "count": 291
     }
   },
   "waiver_duration": {
@@ -422,7 +422,7 @@
       37,
       32,
       41,
-      41
+      40
     ],
     "waivers": [
       0,
@@ -469,14 +469,14 @@
         "days": 30,
         "notifications_filed": 34,
         "notifications": {
-          "median": 18,
-          "average": 19.5,
+          "median": 18.0,
+          "average": 19.3,
           "p90": 25,
           "min": 15,
           "max": 39,
-          "count": 35,
+          "count": 36,
           "duration_histogram": {
-            "15": 4,
+            "15": 5,
             "16": 3,
             "17": 6,
             "18": 5,
@@ -520,21 +520,21 @@
         },
         "phase_1_speed": {
           "day15": {
-            "count": 4,
-            "percentage": 11.4
+            "count": 5,
+            "percentage": 13.9
           },
           "day20": {
-            "count": 25,
-            "percentage": 71.4
+            "count": 26,
+            "percentage": 72.2
           },
           "day30": {
-            "count": 34,
-            "percentage": 97.1
+            "count": 35,
+            "percentage": 97.2
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 35
+            "Approved": 36
           },
           "phase_2": {},
           "waivers": {
@@ -547,14 +547,14 @@
         "days": 90,
         "notifications_filed": 99,
         "notifications": {
-          "median": 19,
+          "median": 18.5,
           "average": 20.2,
           "p90": 25,
           "min": 15,
           "max": 52,
-          "count": 109,
+          "count": 110,
           "duration_histogram": {
-            "15": 20,
+            "15": 21,
             "16": 10,
             "17": 10,
             "18": 14,
@@ -574,7 +574,7 @@
             "49": 1,
             "52": 1
           },
-          "median_delta": 1.0
+          "median_delta": 0.5
         },
         "waivers": {
           "median": 18,
@@ -611,21 +611,21 @@
         },
         "phase_1_speed": {
           "day15": {
-            "count": 20,
-            "percentage": 18.3
+            "count": 21,
+            "percentage": 19.1
           },
           "day20": {
-            "count": 72,
-            "percentage": 66.1
+            "count": 73,
+            "percentage": 66.4
           },
           "day30": {
-            "count": 102,
+            "count": 103,
             "percentage": 93.6
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 107,
+            "Approved": 108,
             "Approved with conditions": 2
           },
           "phase_2": {
@@ -641,12 +641,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18.0,
+        "median": 18,
         "average": 20.0,
         "p90": 27,
         "min": 15,
         "max": 59,
-        "count": 290
+        "count": 291
       },
       "waivers": {
         "median": 15.0,
@@ -785,9 +785,9 @@
           "count": 34
         },
         {
-          "median": 19.0,
-          "average": 20.4,
-          "count": 16
+          "median": 19,
+          "average": 20.1,
+          "count": 17
         }
       ],
       "waivers": [
@@ -888,7 +888,7 @@
         37,
         32,
         41,
-        41
+        40
       ]
     }
   },
@@ -914,11 +914,11 @@
     {
       "code": "I",
       "name": "Transport, Postal and Warehousing",
-      "average_business_days": 23.1,
-      "median_business_days": 19,
-      "average_calendar_days": 33.8,
-      "median_calendar_days": 28,
-      "count": 15
+      "average_business_days": 22.6,
+      "median_business_days": 19.0,
+      "average_calendar_days": 33.0,
+      "median_calendar_days": 27.5,
+      "count": 16
     },
     {
       "code": "H",
@@ -1085,19 +1085,19 @@
     },
     {
       "division": "Not yet determined",
-      "count": 38,
+      "count": 37,
       "outcome_mix": {
-        "Unknown": 38
+        "Unknown": 37
       },
       "median_business_days": null
     },
     {
       "division": "Commissioner Woodward",
-      "count": 13,
+      "count": 14,
       "outcome_mix": {
-        "Approved": 13
+        "Approved": 14
       },
-      "median_business_days": 18
+      "median_business_days": 18.0
     },
     {
       "division": "Unknown",
@@ -1147,7 +1147,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 60,
+      "15": 61,
       "16": 43,
       "17": 33,
       "18": 32,
@@ -1171,9 +1171,9 @@
     },
     "stats": {
       "mean_used_bd": 18.3,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 2.6,
-      "count": 269
+      "count": 270
     },
     "extended_count": 12
   },
@@ -1345,10 +1345,10 @@
     {
       "code": "I",
       "name": "Transport, Postal and Warehousing",
-      "approved": 15,
+      "approved": 16,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 4,
+      "in_progress": 3,
       "phase2_referral_rate": 0.0
     },
     {
