@@ -145,6 +145,48 @@
         "completed_count": 1
       }
     },
+    "infrastructure-capital-services-pty-limited-as-trustee-for-the-icg-kinetic-trust": {
+      "id": "infrastructure-capital-services-pty-limited-as-trustee-for-the-icg-kinetic-trust",
+      "canonical_name": "INFRASTRUCTURE CAPITAL SERVICES PTY LIMITED as trustee for the ICG KINETIC TRUST",
+      "members": [
+        {
+          "name": "INFRASTRUCTURE CAPITAL SERVICES PTY LIMITED as trustee for the ICG KINETIC TRUST",
+          "identifier": "88 608 017 303",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55044",
+            "merger_name": "Foresight Group \u2013 Kinetic",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-16T12:00:00Z",
+            "determination_date": "2026-11-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 32.0,
+        "median_days": 32,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
     "mccarroll-s-automotive-group": {
       "id": "mccarroll-s-automotive-group",
       "canonical_name": "McCarroll's Automotive Group",

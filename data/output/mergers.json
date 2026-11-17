@@ -47186,7 +47186,7 @@
         "id_issued_before": null,
         "id_issued_after": "2026-10-09",
         "min_days_witness": null,
-        "max_days_witness": "WA-55043",
+        "max_days_witness": "WA-55044",
         "basis": "upper-bound-only",
         "method_version": 1
       }
@@ -70312,15 +70312,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 23,
-        "min_days": null,
+        "estimated_days": 21,
+        "min_days": 16,
         "max_days": 30,
-        "id_issued_estimated": "2026-10-20",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-10-22",
+        "id_issued_before": "2026-10-27",
         "id_issued_after": "2026-10-13",
-        "min_days_witness": null,
+        "min_days_witness": "WA-85066",
         "max_days_witness": "WA-85061",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -129265,6 +129265,195 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/foresight-group-%E2%80%93-kinetic",
+      "merger_name": "Foresight Group \u2013 Kinetic",
+      "status": "Assessment completed",
+      "merger_id": "WA-55044",
+      "effective_notification_datetime": "2026-10-16T12:00:00Z",
+      "original_notification_datetime": "2026-10-16T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-17T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-17T17:30:19+11:00",
+      "acquirers": [
+        {
+          "name": "Foresight Kinetic CV UK HoldCo Limited",
+          "identifier_type": null,
+          "identifier": "England and Wales company number  17461761",
+          "party_page": {
+            "id": "foresight-kinetic-cv-uk-holdco-limited",
+            "name": "Foresight Kinetic CV UK HoldCo Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "INFRASTRUCTURE CAPITAL SERVICES PTY LIMITED as trustee for the ICG KINETIC TRUST",
+          "identifier_type": "ABN",
+          "identifier": "88 608 017 303",
+          "party_page": {
+            "id": "infrastructure-capital-services-pty-limited-as-trustee-for-the-icg-kinetic-trust",
+            "name": "INFRASTRUCTURE CAPITAL SERVICES PTY LIMITED as trustee for the ICG KINETIC TRUST"
+          }
+        },
+        {
+          "name": "Kinetic UK HoldCo, Limited",
+          "identifier_type": null,
+          "identifier": "England and Wales company number  16774544",
+          "party_page": {
+            "id": "kinetic-uk-holdco-limited",
+            "name": "Kinetic UK HoldCo, Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Foresight Group Holdings Limited",
+          "identifier_type": null,
+          "identifier": "England and Wales company number  FC038787",
+          "party_page": {
+            "id": "foresight-group-holdings-limited",
+            "name": "Foresight Group Holdings Limited"
+          }
+        },
+        {
+          "name": "Foresight Kinetic CV SCSp",
+          "identifier_type": null,
+          "identifier": "RCS Luxembourg  B311246",
+          "party_page": {
+            "id": "foresight-kinetic-cv-scsp",
+            "name": "Foresight Kinetic CV SCSp"
+          }
+        },
+        {
+          "name": "Foresight Kinetic GP S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "foresight-kinetic-gp-s-r-l",
+            "name": "Foresight Kinetic GP S.\u00e0 r.l."
+          }
+        },
+        {
+          "name": "TPG Lux 2025 SC XI, S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "tpg-lux-2025-sc-xi-s-r-l",
+            "name": "TPG Lux 2025 SC XI, S.\u00e0 r.l."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4621",
+          "name": "Interurban and Rural Bus Transport"
+        },
+        {
+          "code": "4622",
+          "name": "Urban Bus Transport (Including Tramway)"
+        },
+        {
+          "code": "4720",
+          "name": "Rail Passenger Transport"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "Foresight Kinetic CV UK HoldCo Limited (the **Buyer**) will:\n\n* acquire Infrastructure Capital Services Pty Limited as trustee for the ICG Kinetic Trust\u2019s (the **Seller**\u2019s) entire shareholding (of approximately 24.4%) in Kinetic UK Holdco, Limited (the **Target**), and\n* as the Seller\u2019s nominee, subscribe for additional shares to restore the Seller\u2019s proportionate holding to around 29.9% following an earlier equity subscription by TPG Lux 2025 SC XI, S.\u00e0 r.l. (**TPG**)\n\n(the **Acquisition**).\n\nThe Buyer is an investment holding vehicle for Foresight Kinetic CV SCSp's (**CV**\u2019s) investment in the Target. CV is a Luxembourg special limited partnership established as a continuation fund.\n\nForesight Group Holdings Limited (**Foresight Group**) is a London Stock Exchange-listed investment manager. It invests in renewable energy, battery storage, grid infrastructure, natural capital, and social, transport and digital infrastructure. The Seller and Buyer are and will remain ultimately controlled by Foresight Group.\n\nThe Target is the holding company of the Kinetic group and the Go-Ahead Group, which provide bus and rail passenger transport services in Australia, New Zealand, the UK, Ireland, Norway, Sweden and Singapore. Its rail operations are conducted outside Australia through Go-Ahead. The Target is incorporated in England and Wales.\n\nTPG currently holds approximately 75.5% of the shares in the Target and controls the Target. Post-Acquisition, TPG will hold approximately 70.1% of the shares in the Target and will continue to control the Target.\n\nForesight Group will retain exclusive management and control of CV through Foresight Kinetic GP S.\u00e0 r.l.",
+      "events": [
+        {
+          "date": "2026-11-17T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Foresight%20Group%20-%20Kinetic%20%28WA-55044%29%20-%20Notification%20waiver%20determination%20-%2017%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Foresight Kinetic CV UK HoldCo Limited (the Buyer) applied for a\nnotification waiver in respect of its proposed acquisition of:\n\u2022 Infrastructure Capital Services Pty Limited\u2019s as trustee for\nthe ICG Kinetic Trust (the Seller) entire shareholding\n(approximately 24.4%) in Kinetic UK Holdco, Limited (the\nTarget)\n\u2022 as the Seller\u2019s nominee, subscription to additional shares to\nrestore the Seller\u2019s proportionate hold to around 29.9%\nfollowing an earlier equity subscription by TPG Lux 2025 SC\nXI, S.\u00e0 r.l. (TPG)\nas described in the transaction documents provided as part of the\napplication (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "17 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The Buyer is an investment holding vehicle for Foresight Kinetic CV\nSCSp\u2019s (CV\u2019s) investment in the Target. The Buyer is ultimately\ncontrolled by Foresight Group Holdings Limited (Foresight Group).\nCV is a Luxembourg special limited partnership established as a\ncontinuation fund.\nForesight Group is a London Stock Exchange-listed investment\nmanager. It invests in renewable energy, battery storage, grid\ninfrastructure, natural capital, and social, transport and digital\ninfrastructure. Foresight Group will retain exclusive management\nand control of the CV through Foresight Kinetic GP S.\u00e0 r.l.\nThe Target is the holding company of the Kinetic group and the Go-\nAhead Group, which provide bus and rail passenger transport\nservices in Australia, New Zealand, the UK, Ireland, Norway, Sweden\nand Singapore. Its rail operations are conducted outside Australia\nthrough Go-Ahead. The Target is incorporated in England and Wales.\nTPG currently holds approximately 75.5% of the shares in the Target\nand controls the Target. Post-Acquisition, TPG will hold\napproximately 70.1% of the shares in the Target and will continue to\ncontrol the Target.\nPre-Acquisition, Seller holds approximately 24.4% of the shares in\nthe Target. Post-Acquisition, the Buyer will hold approximately 29.9%\nof the share capital in the Target. It is ultimately controlled by\nForesight Group and does not supply goods or services. The Seller\nand Buyer are and will remain ultimately controlled by Foresight\nGroup."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. aside from their existing interest in the Target, there are no\nhorizontal overlaps or vertical relationships between the\nForesight Group and the Target\nb. the increment to their existing interest in the Target is small\nc. the Acquisition will not result in any substantive change in\nthe control or day-to-day operation of the Target, which\nremains under the control of TPG.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nThe ACCC also considered the potential application of section\n51ABD of the Act. However, the applicant submitted that it was\nuncertain whether that provision applied. Having regard to the\nparticular circumstances, including the consequences of non-\nnotification in reliance on section 51ABD if it was found not to apply,\nthe ACCC considered it appropriate to make a determination on the\nbasis that the acquisition provisions in the Act apply to the\nAcquisition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-55044/Foresight Group - Kinetic (WA-55044) - Notification waiver determination - 17 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-16T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-75058",
+          "merger_name": "Kinetic - Tassielink",
+          "acquirers": [
+            "KINETIC HOLDING COMPANY PTY LTD"
+          ],
+          "targets": [
+            "Tassielink Group Pty Ltd",
+            "TASMANIAN TOURS & TRAVEL PTY. LTD."
+          ],
+          "status": "Under assessment"
+        },
+        {
+          "merger_id": "MN-35017",
+          "merger_name": "KINETIC - DYSONS BUS SERVICES",
+          "acquirers": [
+            "KINETIC HOLDING COMPANY PTY LTD"
+          ],
+          "targets": [
+            "L.C. DYSON'S BUS SERVICES PROPRIETARY LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-30033",
+          "merger_name": "Brown & Hurley - Schmitz Cargobull and Freighter Group",
+          "acquirers": [
+            "B&H TRAILERS PTY LTD"
+          ],
+          "targets": [
+            "SCHMITZ CARGOBULL VICTORIA HOLDING PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/regroup-%E2%80%93-scouts-queensland-recycling-centre-site",
       "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
       "status": "Assessment completed",
@@ -160147,6 +160336,187 @@
           "targets": [
             "NOLAN MEATS PTY. LTD.",
             "Tolobex Pty Ltd as trustee for Tolobex Unit Trust"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/pemba-%E2%80%93-bio101",
+      "merger_name": "Pemba \u2013 Bio101",
+      "status": "Assessment completed",
+      "merger_id": "WA-85066",
+      "effective_notification_datetime": "2026-10-27T12:00:00Z",
+      "original_notification_datetime": "2026-10-27T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-17T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-17T17:31:51+11:00",
+      "acquirers": [
+        {
+          "name": "Roma BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "679 846 514",
+          "party_page": {
+            "id": "roma-bidco-pty-ltd",
+            "name": "Roma BidCo Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "BIO101 FINANCIAL ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "81 605 915 839",
+          "party_page": {
+            "id": "bio101-financial-advisory-pty-ltd",
+            "name": "Bio101 Financial Advisory Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Pemba Capital Fund III, L.P.",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "pemba-capital-fund-iii-lp",
+            "name": "Pemba Capital Fund Iii Lp"
+          },
+          "party_page": {
+            "id": "pemba-capital-fund-iii-lp",
+            "name": "Pemba Capital Fund Iii Lp",
+            "curated": true
+          }
+        },
+        {
+          "name": "Roma Holdco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "679 845 946",
+          "party_page": {
+            "id": "roma-holdco-pty-ltd",
+            "name": "Roma Holdco Pty Ltd"
+          }
+        },
+        {
+          "name": "PEMBA CAPITAL PARTNERS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "24 121 906 045",
+          "party_page": {
+            "id": "pemba-capital-partners-pty-limited",
+            "name": "Pemba Capital Partners Pty Limited"
+          }
+        },
+        {
+          "name": "STANNARDS ACCOUNTANTS & ADVISORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 006 857 441",
+          "party_page": {
+            "id": "stannards-accountants-advisors-pty-ltd",
+            "name": "Stannards Accountants & Advisors Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6932",
+          "name": "Accounting Services"
+        },
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        }
+      ],
+      "merger_description": "Roma BidCo Pty Ltd (**Roma Bidco**) proposes to acquire 100% of the issued share capital of Bio101 Financial Advisory Pty Ltd (**Bio101**) by way of a share sale agreement (the **Acquisition**).\n\nRoma BidCo is a special purpose acquisition vehicle which is majority owned by Pemba Capital Fund III, L.P. (**Pemba Fund III**), a private equity fund managed by Pemba Capital Partners Pty Ltd (**Pemba**).\n\nPemba is an investor in high-growth and entrepreneurial businesses, with over AUD 2 billion in assets under management. Pemba has interests across various sectors, including business services, education & training, financial services, healthcare, and technology. One of Pemba\u2019s portfolio companies (also within the Pemba Fund III) is Stannards Accountants & Advisors Pty Ltd (**Stannards**), an accounting and business advisory services provider, headquartered in Melbourne.\n\nBio101 is a Melbourne-based accounting and advisory firm that services clients in the healthcare, biotech and life sciences sector. Bio101\u2019s services include company secretarial services, transaction advisory, bookkeeping services, and outsourced CFO and finance-function support.",
+      "events": [
+        {
+          "date": "2026-11-17T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Pemba%20%E2%80%93%20Bio101%20%28WA-85066%29%20-%20Notification%20waiver%20determination%20-%2017%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Roma BidCo Pty Ltd (Roma Bidco) applied for a notification waiver in\nrespect of its proposed acquisition of 100% of the issued share\ncapital in Bio101 Financial Advisory Pty Ltd (Bio101), as described in\nthe transaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "17 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Roma Bidco, is a special purpose vehicle which is\nmajority owned by Pemba Capital Fund III, L.P. (Pemba Fund III), a\nprivate equity fund managed by Pemba Capital Partners Pty Ltd\n(Pemba).\nPemba is an investor in high-growth and entrepreneurial businesses\nacross various sectors, with over AUD 2 billion in assets under\nmanagement. One of Pemba\u2019s portfolio companies is Stannards\nAccountants & Advisors Pty Ltd (Stannards Accountants &\nAdvisors), which is an accounting and business advisory services\nprovider headquartered in Melbourne.\nThe target, Bio101, is a Melbourne-based accounting and advisory\nfirm that services clients in the healthcare, biotech and life sciences\nsector. Bio101\u2019s services include company secretarial services,\ntransaction advisory, bookkeeping services, and outsourced CFO and\nfinance-function support."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. there is limited horizontal overlap between Pemba and\nBio101 in the supply of accounting and business advisory\nservices in Australia, with the parties focussing on different\ncustomers and market segments\nb. the parties\u2019 combined share of supply of accounting and\nbusiness advisory services in Victoria and nationally is\nestimated to be low and the increment arising from the\nAcquisition is expected to be small\nc. there are alternative providers of accounting and business\nadvisory services available to customers in Victoria and\nnationally, including with a focus on the healthcare, biotech\nand life sciences sector.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-85066/Pemba \u2013 Bio101 (WA-85066) - Notification waiver determination - 17 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-27T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-05041",
+          "merger_name": "Pemba - Hewison Private Wealth",
+          "acquirers": [
+            "Elevate BidCo Pty Ltd"
+          ],
+          "targets": [
+            "Hewison & Associates Pty. Ltd."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-05061",
+          "merger_name": "ctrl:cyber - Razilio",
+          "acquirers": [
+            "CTRL BIDCO PTY LTD"
+          ],
+          "targets": [
+            "The Trustee for Horatio Investment Holdings",
+            "RAZILIO PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-90025",
+          "merger_name": "KKR - Crowe",
+          "acquirers": [
+            "Forge Merger Sub LLC"
+          ],
+          "targets": [
+            "Crowe ParentCo LLC"
           ],
           "accc_determination": "Approved"
         }

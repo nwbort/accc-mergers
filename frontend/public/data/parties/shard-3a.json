@@ -363,6 +363,18 @@
         "target": [],
         "other": [
           {
+            "merger_id": "WA-85066",
+            "merger_name": "Pemba \u2013 Bio101",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-27T12:00:00Z",
+            "determination_date": "2026-11-17T12:00:00Z"
+          },
+          {
             "merger_id": "WA-05061",
             "merger_name": "ctrl:cyber - Razilio",
             "is_waiver": true,
@@ -388,18 +400,18 @@
           }
         ]
       },
-      "merger_count": 2,
+      "merger_count": 3,
       "phase_1_count": 0,
       "phase_2_count": 0,
-      "waiver_count": 2,
+      "waiver_count": 3,
       "active_count": 0,
       "phase_duration": null,
       "waiver_duration": {
-        "average_days": 26.0,
-        "median_days": 26.0,
-        "average_business_days": 19.0,
-        "median_business_days": 19.0,
-        "completed_count": 2
+        "average_days": 24.333333333333332,
+        "median_days": 23,
+        "average_business_days": 17.666666666666668,
+        "median_business_days": 17,
+        "completed_count": 3
       }
     },
     "queensland-pacific-pty-ltd": {
