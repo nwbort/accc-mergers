@@ -63167,13 +63167,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/monadelphous-tyden-power-0",
       "merger_name": "Monadelphous - Tyden Power",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-75065",
       "effective_notification_datetime": "2026-10-23T12:00:00Z",
       "original_notification_datetime": "2026-10-23T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-12-04T12:00:00Z",
-      "page_modified_datetime": "2026-10-26T16:51:42+11:00",
+      "determination_publication_date": "2026-11-17T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-17T17:14:54+11:00",
       "consultation_response_due_date": "2026-11-02T12:00:00Z",
       "acquirers": [
         {
@@ -63224,13 +63227,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-11-17T12:00:00Z",
+          "title": "Monadelphous - Tyden Power - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Monadelphous%20-%20Tyden%20Power%20Phase%201%20determination%20without%20conditions.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Monadelphous Group Limited\u2019s (Monadelphous) proposed\nacquisition of 100% of the issued share capital in Tyden Power Pty\nLtd (Tyden Power) (the Acquisition)"
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Monadelphous, is an ASX-listed Australian engineering\ngroup providing construction, maintenance and industrial services to\nthe resources, energy and infrastructure sectors, including high\nvoltage (HV) electrical services. It provides HV electrical services\nprincipally in Western Australia, South Australia, Victoria and\nQueensland.\nThe target, Tyden Power, is a provider of HV engineering, testing,\ncommissioning, maintenance and construction services to\ncustomers in the energy, utilities and infrastructure sectors,\nprincipally in New South Wales."
+            },
+            {
+              "item": "Relevant areas of\ncompetition",
+              "details": "Monadelphous and Tyden Power both provide HV electrical services\nin Australia, including HV construction, HV testing and\ncommissioning, HV maintenance and cable jointing services.\nMonadelphous principally provides HV electrical services in Western\nAustralia, South Australia, Victoria and Queensland. Tyden Power\nprovides its services principally in New South Wales."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, publicly available information and submissions\nfrom third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 there is minimal horizontal geographic overlap between\nMonadelphous and Tyden Power\n\u2022 the merged firm would likely continue to face competition from\nseveral significant alternative suppliers of HV electrical services\nin Western Australia, South Australia, Victoria, Queensland and\nNew South Wales."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-75065/Monadelphous - Tyden Power Phase 1 determination without conditions.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-11-17T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -117604,6 +117642,185 @@
           ],
           "targets": [
             "DR2 HOLDINGS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/emera-%E2%80%93-atco-and-canadian-utilities",
+      "merger_name": "Emera \u2013 ATCO and Canadian Utilities",
+      "status": "Assessment completed",
+      "merger_id": "WA-40053",
+      "effective_notification_datetime": "2026-10-26T12:00:00Z",
+      "original_notification_datetime": "2026-10-26T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-17T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-17T17:25:19+11:00",
+      "acquirers": [
+        {
+          "name": "Emera Incorporated",
+          "identifier_type": null,
+          "identifier": "Nova Scotia Registry of Joint Stock Companies  3021211",
+          "party_page": {
+            "id": "emera-incorporated",
+            "name": "Emera Incorporated"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Canadian Utilities Limited",
+          "identifier_type": null,
+          "identifier": "Canada Federal Corporate Registry  0105775",
+          "party_page": {
+            "id": "canadian-utilities-limited",
+            "name": "Canadian Utilities Limited"
+          }
+        },
+        {
+          "name": "ATCO Power (Energy) Holdings Ltd.",
+          "identifier_type": null,
+          "identifier": "Canada Federal Corporate Registry \u2013 7020601",
+          "party_page": {
+            "id": "atco-power-energy-holdings-ltd",
+            "name": "ATCO Power (Energy) Holdings Ltd."
+          }
+        },
+        {
+          "name": "ATCO AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 091 033 546",
+          "party_page": {
+            "id": "atco-australia-pty-ltd",
+            "name": "Atco Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "ATCO Ltd.",
+          "identifier_type": null,
+          "identifier": "Alberta Corporate Registry  206362386",
+          "party_page": {
+            "id": "atco-ltd",
+            "name": "ATCO Ltd."
+          }
+        },
+        {
+          "name": "ATCO GAS AUSTRALIA NETWORKS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "24 659 123 636",
+          "party_page": {
+            "id": "atco-gas-australia-networks-pty-ltd",
+            "name": "Atco Gas Australia Networks Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2611",
+          "name": "Fossil Fuel Electricity Generation"
+        },
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "2630",
+          "name": "Electricity Distribution"
+        },
+        {
+          "code": "2700",
+          "name": "Gas Supply"
+        }
+      ],
+      "merger_description": "Emera Incorporated (**Emera**) proposes to acquire all of the outstanding Class II voting and Class I non-voting shares of ATCO Ltd. (**ATCO**) and the Class B common and Class A non-voting shares of Canadian Utilities Limited (**Canadian Utilities**) not already held by ATCO, in exchange for Emera shares, by way of a court-approved plan of arrangement under section 192 of the Canada Business Corporations Act (the **Acquisition**).  \n\n  \n\nBefore completion, ATCO\u2019s businesses other than Canadian Utilities will be transferred to a new corporation, SpinCo, and SpinCo shares will be distributed to current ATCO shareholders. SpinCo will not be acquired by Emera as part of the Acquisition.  \n\n  \n\nEmera is a provider of energy services headquartered in Halifax, Nova Scotia, Canada, owning and operating a portfolio of electric and natural gas utilities serving approximately 2.1 million customers, with its largest operations in Florida, U.S.A. and additional operations in Atlantic Canada and the Caribbean. Emera is listed on the Toronto and New York Stock Exchanges and has no Australian operations.  \n\n  \n\nCanadian Utilities and ATCO own and operate Western Australia\u2019s largest gas distribution network through its Australian subsidiaries, including the Mid-West and South-West Gas Distribution Systems (Perth metropolitan area, Geraldton, Bunbury, Busselton and regional hubs), the Kalgoorlie system and the Albany LPG network. ATCO also owns and operates two power plants in Australia, being the 86MW gas fired Karratha Power Station in the Pilbara and the 180MW Osborne Cogeneration Power Station in South Australia, which is owned by an incorporated joint venture in which ATCO holds 50% with Origin Energy.",
+      "events": [
+        {
+          "date": "2026-11-17T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Emera%20%E2%80%93%20ATCO%20and%20Canadian%20Utilities%20%28WA-40053%29%20-%20Notification%20waiver%20determination%20-%2017%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Emera Incorporated (Emera) applied for a notification waiver in\nrespect of its proposed acquisition of all of the outstanding Class II\nvoting and Class I non-voting shares of ATCO Ltd. (ATCO) and the\nClass B common and Class A non-voting shares of Canadian Utilities\nLimited (Canadian Utilities) not already held by ATCO, as described\nin the transaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "17 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Emera, is a provider of energy services headquartered\nin Halifax, Nova Scotia, Canada, owning and operating a portfolio of\ncost-of-service, rate-regulated electric and natural gas utilities\nserving approximately 2.1 million customers, with its largest\noperations in Florida, U.S.A. and additional operations in Atlantic\nCanada and the Caribbean. Emera is listed on the Toronto and New\nYork Stock Exchanges and has no Australian operations.\nThe targets, Canadian Utilities and ATCO, own and operate Western\nAustralia\u2019s largest gas distribution network through its Australian\nsubsidiaries, including the Mid-West and South-West Gas\nDistribution Systems (Perth metropolitan area, Geraldton, Bunbury,\nBusselton and regional hubs), the Kalgoorlie system and the Albany\nLPG network. ATCO also owns and operates two power plants in\nAustralia, being the 86MW gas fired Karratha Power Station in the\nPilbara and the 180MW Osborne Cogeneration Power Station in\nSouth Australia, which is owned by an incorporated joint venture in\nwhich ATCO holds 50% with Origin Energy.\nBefore completion, ATCO\u2019s businesses other than Canadian Utilities\nwill be transferred to a new corporation, SpinCo, and SpinCo shares\nwill be distributed to current ATCO shareholders. SpinCo will not be\nacquired by Emera as part of the Acquisition."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given there is no horizontal overlap or\nvertical relationships between Emera and ATCO and Canadian\nUtilities in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-40053/Emera \u2013 ATCO and Canadian Utilities (WA-40053) - Notification waiver determination - 17 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-26T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-50015",
+          "merger_name": "Mastercard - BVNK",
+          "acquirers": [
+            "Mastercard Incorporated",
+            "Ares UK Holdco 2 Limited"
+          ],
+          "targets": [
+            "B Corporation S.A.M",
+            "BVNK Holdings Limited"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-60055",
+          "merger_name": "TD SYNNEX - BlueStar",
+          "acquirers": [
+            "Sky Meets River, Inc."
+          ],
+          "targets": [
+            "United Radio Incorporated",
+            "BlueStar, Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-70021",
+          "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
+          "acquirers": [
+            "BCWF 2 Holdings Pty Ltd",
+            "AULA ENERGY HOLDINGS PTY LIMITED"
+          ],
+          "targets": [
+            "C S ENERGY LIMITED",
+            "BCWF 2 PTY LIMITED"
           ],
           "accc_determination": "Approved"
         }

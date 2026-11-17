@@ -1,14 +1,14 @@
 {
   "total_mergers": 330,
-  "total_waivers": 531,
+  "total_waivers": 532,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 286,
-    "Under assessment": 39,
+    "Assessment completed": 287,
+    "Under assessment": 38,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 279,
+    "Approved": 280,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -18,40 +18,40 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 504,
+    "Approved": 505,
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 284,
+    "cleared": 285,
     "not_cleared": 2,
-    "total": 286,
+    "total": 287,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.356164383561644,
-    "median_days": 26.0,
-    "average_business_days": 20.02054794520548,
-    "median_business_days": 18.0,
+    "average_days": 29.341296928327644,
+    "median_days": 26,
+    "average_business_days": 20.01023890784983,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 61,
-        "percentage": 20.9
+        "percentage": 20.8
       },
       "day20": {
-        "count": 210,
-        "percentage": 71.9
+        "count": 211,
+        "percentage": 72.0
       },
       "day30": {
-        "count": 274,
-        "percentage": 93.8
+        "count": 275,
+        "percentage": 93.9
       }
     }
   },
   "waiver_duration": {
-    "average_days": 21.028248587570623,
-    "median_days": 21,
-    "average_business_days": 14.414312617702448,
-    "median_business_days": 15
+    "average_days": 21.030075187969924,
+    "median_days": 21.0,
+    "average_business_days": 14.417293233082706,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40053",
+      "merger_name": "Emera \u2013 ATCO and Canadian Utilities",
+      "determination": "Approved",
+      "determination_date": "2026-11-17T12:00:00Z",
+      "page_modified_datetime": "2026-11-17T17:25:19+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80054",
       "merger_name": "Equans \u2013 Credible Audio Visual Solutions",
       "determination": "Approved",
@@ -249,6 +260,17 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "MN-75065",
+      "merger_name": "Monadelphous - Tyden Power",
+      "determination": "Approved",
+      "determination_date": "2026-11-17T12:00:00Z",
+      "page_modified_datetime": "2026-11-17T17:14:54+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     },
     {
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-16T12:00:00Z",
       "page_modified_datetime": "2026-11-16T17:28:51+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-45039",
-      "merger_name": "PSP \u2013 interest in AMP Grapes Investments Limited",
-      "determination": "Approved",
-      "determination_date": "2026-11-16T12:00:00Z",
-      "page_modified_datetime": "2026-11-16T17:27:43+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-20049",
-      "merger_name": "Oscars Group - assets of Courthouse Hotel and Kinselas Hotel, Darlinghurst, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-11-16T12:00:00Z",
-      "page_modified_datetime": "2026-11-16T17:26:33+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

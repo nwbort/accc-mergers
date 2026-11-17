@@ -19,7 +19,7 @@
       "17": {
         "23": 7,
         "24": 2,
-        "25": 12,
+        "25": 13,
         "26": 9,
         "27": 3
       },
@@ -138,17 +138,17 @@
     },
     "stats": {
       "average": 20.0,
-      "median": 18.0,
+      "median": 18,
       "min": 15,
       "max": 59,
-      "count": 292
+      "count": 293
     },
     "calendar_stats": {
-      "average": 29.4,
-      "median": 26.0,
+      "average": 29.3,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 292
+      "count": 293
     }
   },
   "waiver_duration": {
@@ -240,7 +240,7 @@
         "25": 1
       },
       "16": {
-        "22": 13,
+        "22": 14,
         "23": 8,
         "24": 7,
         "25": 5,
@@ -304,17 +304,17 @@
     },
     "stats": {
       "average": 14.4,
-      "median": 15,
+      "median": 15.0,
       "min": 2,
       "max": 24,
-      "count": 531
+      "count": 532
     },
     "calendar_stats": {
       "average": 21.0,
-      "median": 21,
+      "median": 21.0,
       "min": 2,
       "max": 39,
-      "count": 531
+      "count": 532
     }
   },
   "monthly_volume": {
@@ -366,7 +366,7 @@
       72,
       69,
       55,
-      53,
+      54,
       1
     ],
     "waivers_pending_estimate": [
@@ -422,7 +422,7 @@
       37,
       32,
       41,
-      39
+      38
     ],
     "waivers": [
       0,
@@ -439,7 +439,7 @@
       54,
       52,
       47,
-      36,
+      37,
       0
     ],
     "waivers_pending_estimate": [
@@ -458,7 +458,7 @@
       0,
       0,
       18,
-      55
+      56
     ],
     "as_at": "2026-11-17"
   },
@@ -469,16 +469,16 @@
         "days": 30,
         "notifications_filed": 34,
         "notifications": {
-          "median": 18,
-          "average": 19.4,
+          "median": 18.0,
+          "average": 19.3,
           "p90": 25,
           "min": 15,
           "max": 39,
-          "count": 37,
+          "count": 38,
           "duration_histogram": {
             "15": 5,
             "16": 3,
-            "17": 6,
+            "17": 7,
             "18": 5,
             "19": 5,
             "20": 2,
@@ -492,12 +492,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 17.5,
+          "median": 17,
           "average": 17.2,
           "p90": 22,
           "min": 4,
           "max": 24,
-          "count": 74,
+          "count": 75,
           "duration_histogram": {
             "4": 1,
             "8": 2,
@@ -506,7 +506,7 @@
             "12": 1,
             "14": 5,
             "15": 7,
-            "16": 8,
+            "16": 9,
             "17": 10,
             "18": 9,
             "19": 11,
@@ -516,29 +516,29 @@
             "23": 2,
             "24": 2
           },
-          "median_delta": 2.5
+          "median_delta": 2.0
         },
         "phase_1_speed": {
           "day15": {
             "count": 5,
-            "percentage": 13.5
+            "percentage": 13.2
           },
           "day20": {
-            "count": 26,
-            "percentage": 70.3
+            "count": 27,
+            "percentage": 71.1
           },
           "day30": {
-            "count": 36,
-            "percentage": 97.3
+            "count": 37,
+            "percentage": 97.4
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 37
+            "Approved": 38
           },
           "phase_2": {},
           "waivers": {
-            "Approved": 69,
+            "Approved": 70,
             "Not approved": 5
           }
         }
@@ -547,16 +547,16 @@
         "days": 90,
         "notifications_filed": 99,
         "notifications": {
-          "median": 19,
+          "median": 18.5,
           "average": 20.2,
           "p90": 25,
           "min": 15,
           "max": 52,
-          "count": 111,
+          "count": 112,
           "duration_histogram": {
             "15": 21,
             "16": 10,
-            "17": 10,
+            "17": 11,
             "18": 14,
             "19": 12,
             "20": 6,
@@ -574,15 +574,15 @@
             "49": 1,
             "52": 1
           },
-          "median_delta": 1.0
+          "median_delta": 0.5
         },
         "waivers": {
-          "median": 18.0,
+          "median": 18,
           "average": 16.9,
           "p90": 21,
           "min": 3,
           "max": 24,
-          "count": 192,
+          "count": 193,
           "duration_histogram": {
             "3": 1,
             "4": 1,
@@ -597,7 +597,7 @@
             "13": 3,
             "14": 10,
             "15": 14,
-            "16": 17,
+            "16": 18,
             "17": 18,
             "18": 26,
             "19": 30,
@@ -612,20 +612,20 @@
         "phase_1_speed": {
           "day15": {
             "count": 21,
-            "percentage": 18.9
+            "percentage": 18.8
           },
           "day20": {
-            "count": 73,
-            "percentage": 65.8
+            "count": 74,
+            "percentage": 66.1
           },
           "day30": {
-            "count": 104,
-            "percentage": 93.7
+            "count": 105,
+            "percentage": 93.8
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 109,
+            "Approved": 110,
             "Approved with conditions": 2
           },
           "phase_2": {
@@ -633,7 +633,7 @@
             "Not approved": 1
           },
           "waivers": {
-            "Approved": 179,
+            "Approved": 180,
             "Not approved": 13
           }
         }
@@ -641,20 +641,20 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18.0,
+        "median": 18,
         "average": 20.0,
         "p90": 27,
         "min": 15,
         "max": 59,
-        "count": 292
+        "count": 293
       },
       "waivers": {
-        "median": 15,
+        "median": 15.0,
         "average": 14.4,
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 531
+        "count": 532
       }
     },
     "pre_notification": {
@@ -785,9 +785,9 @@
           "count": 34
         },
         {
-          "median": 19.0,
-          "average": 20.2,
-          "count": 18
+          "median": 19,
+          "average": 20.0,
+          "count": 19
         }
       ],
       "waivers": [
@@ -867,9 +867,9 @@
           "count": 64
         },
         {
-          "median": 18,
+          "median": 18.0,
           "average": 17.7,
-          "count": 37
+          "count": 38
         }
       ],
       "open_caseload": [
@@ -888,7 +888,7 @@
         37,
         32,
         41,
-        39
+        38
       ]
     }
   },
@@ -1031,11 +1031,11 @@
     {
       "code": "E",
       "name": "Construction",
-      "average_business_days": 19.6,
-      "median_business_days": 18,
-      "average_calendar_days": 28.0,
-      "median_calendar_days": 27,
-      "count": 27
+      "average_business_days": 19.5,
+      "median_business_days": 18.0,
+      "average_calendar_days": 27.9,
+      "median_calendar_days": 26.5,
+      "count": 28
     },
     {
       "code": "P",
@@ -1085,19 +1085,19 @@
     },
     {
       "division": "Not yet determined",
-      "count": 36,
+      "count": 35,
       "outcome_mix": {
-        "Unknown": 36
+        "Unknown": 35
       },
       "median_business_days": null
     },
     {
       "division": "Commissioner Woodward",
-      "count": 15,
+      "count": 16,
       "outcome_mix": {
-        "Approved": 15
+        "Approved": 16
       },
-      "median_business_days": 18
+      "median_business_days": 18.0
     },
     {
       "division": "Unknown",
@@ -1120,12 +1120,12 @@
     },
     {
       "division": "Commissioner Woodward",
-      "count": 68,
+      "count": 69,
       "outcome_mix": {
-        "Approved": 67,
+        "Approved": 68,
         "Not approved": 1
       },
-      "median_business_days": 18.0
+      "median_business_days": 18
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -1149,7 +1149,7 @@
     "histogram": {
       "15": 61,
       "16": 43,
-      "17": 33,
+      "17": 34,
       "18": 32,
       "19": 27,
       "20": 14,
@@ -1171,9 +1171,9 @@
     },
     "stats": {
       "mean_used_bd": 18.3,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 2.6,
-      "count": 271
+      "count": 272
     },
     "extended_count": 12
   },
@@ -1273,11 +1273,11 @@
     {
       "code": "E",
       "name": "Construction",
-      "approved": 26,
+      "approved": 27,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 4,
-      "phase2_referral_rate": 0.037
+      "in_progress": 3,
+      "phase2_referral_rate": 0.036
     },
     {
       "code": "K",
