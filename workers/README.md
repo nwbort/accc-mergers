@@ -12,7 +12,7 @@ lives.
 | --- | --- | --- |
 | [`mergers-digest-signup/`](mergers-digest-signup/) | HTTP | Public API for the site: `POST /` (weekly-digest signup via Resend + Turnstile) and `POST /feedback` (writes to the `mergers-feedback` D1 database). |
 | [`accc-register-watcher/`](accc-register-watcher/) | Email | Bound to a Cloudflare Email Routing address subscribed to the ACCC register update mailing list. Fires a `repository_dispatch` (`new_merger_detected`) so [`pipeline.yml`](../.github/workflows/pipeline.yml) runs immediately. |
-| [`feedback-admin/`](feedback-admin/) | HTTP | Private read-only viewer over the same `mergers-feedback` D1 database, gated behind an `x-secret` header. Ships a standalone static UI in `ui/`. |
+| [`feedback-admin/`](feedback-admin/) | HTTP | Private read-only viewer over the same `mergers-feedback` D1 database, gated behind an `x-secret` header. Ships a standalone static UI in `ui/`, and the key-admin script for the key-gated API ([`docs/api.md`](../docs/api.md)). |
 
 ## Layout convention
 

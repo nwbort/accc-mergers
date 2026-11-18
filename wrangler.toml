@@ -11,3 +11,13 @@ name = "merger-tracker"
 pages_build_output_dir = "frontend/dist"
 compatibility_date = "2024-09-23"
 # Build system version 3 (latest)
+
+# The key-gated API (functions/data/api/[[path]].js, docs/api.md) checks keys
+# against, and counts requests in, the D1 database the signup Worker and
+# feedback-admin already share. Keep database_id in sync with
+# workers/mergers-digest-signup/wrangler.toml. Without this binding the API
+# answers 503 to everyone rather than serving the data ungated.
+[[d1_databases]]
+binding = "API_DB"
+database_name = "mergers-feedback"
+database_id = "e3eac500-d498-4be3-b0da-d80f0fa173cd"

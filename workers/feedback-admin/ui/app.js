@@ -123,12 +123,83 @@ async function loadEvents() {
   }
 }
 
+async function loadApiUsage() {
+  const base = $('url').value.trim().replace(/\/$/, '');
+  const secret = $('secret').value.trim();
+  if (!base || !secret) return;
+
+  $('api-err').style.display = 'none';
+  $('api-content').innerHTML = '';
+
+  try {
+    const res = await fetch(base + '/api-usage', {
+      headers: { 'x-secret': secret }
+    });
+    if (res.status === 403) throw new Error('Forbidden — check your secret');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const { keys, usage } = await res.json();
+
+    // Totals and last-seen day per client over the 90 days returned.
+    const totals = {};
+    for (const r of usage) {
+      const t = totals[r.label] || (totals[r.label] = { count: 0, last: '' });
+      t.count += r.count;
+      if (r.day > t.last) t.last = r.day;
+    }
+
+    const keyRows = keys.length ? `
+      <table>
+        <thead><tr>
+          <th>Client</th>
+          <th style="width:170px">Key</th>
+          <th style="width:150px">Created</th>
+          <th style="width:150px">Revoked</th>
+          <th style="width:110px;text-align:right">Requests (90d)</th>
+          <th style="width:110px">Last used</th>
+        </tr></thead>
+        <tbody>${keys.map(k => `
+          <tr>
+            <td>${escapeHtml(k.label)}</td>
+            <td class="muted mono">${escapeHtml(k.key_hint)}…</td>
+            <td class="muted mono">${escapeHtml(fmt(k.created_at))}</td>
+            <td class="muted mono">${k.revoked_at ? escapeHtml(fmt(k.revoked_at)) : '—'}</td>
+            <td class="mono" style="text-align:right">${escapeHtml((totals[k.label] || {}).count || 0)}</td>
+            <td class="muted mono">${escapeHtml((totals[k.label] || {}).last || '—')}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>` : '<p class="msg">No API keys issued yet.</p>';
+
+    const usageRows = usage.length ? `
+      <table style="margin-top:1rem">
+        <thead><tr>
+          <th>Client</th>
+          <th style="width:120px">Day</th>
+          <th style="width:90px;text-align:right">Requests</th>
+        </tr></thead>
+        <tbody>${usage.map(r => `
+          <tr>
+            <td>${escapeHtml(r.label)}</td>
+            <td class="muted mono">${escapeHtml(r.day)}</td>
+            <td class="mono" style="text-align:right">${escapeHtml(r.count)}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>` : '<p class="msg">No API requests in the last 90 days.</p>';
+
+    $('api-content').innerHTML = keyRows + usageRows;
+  } catch (e) {
+    $('api-err').textContent = 'Error: ' + e.message;
+    $('api-err').style.display = '';
+  }
+}
+
 $('btn-load').addEventListener('click', () => {
   load();
   loadEvents();
+  loadApiUsage();
 });
 
 if (savedUrl && savedSecret) {
   load();
   loadEvents();
+  loadApiUsage();
 }

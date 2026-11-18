@@ -41,6 +41,20 @@ export default {
       return Response.json(results, { headers: CORS });
     }
 
+    // The key-gated API's clients and their per-day request counts (see
+    // docs/api.md). Never the key hashes: the hint is enough to tell keys apart.
+    if (url.pathname === "/api-usage" && request.method === "GET") {
+      const [keys, usage] = await env.DB.batch([
+        env.DB.prepare(
+          "SELECT label, key_hint, created_at, revoked_at FROM api_keys ORDER BY label, created_at"
+        ),
+        env.DB.prepare(
+          "SELECT label, day, count FROM api_usage WHERE day >= date('now', '-90 days') ORDER BY day DESC, label ASC"
+        ),
+      ]);
+      return Response.json({ keys: keys.results, usage: usage.results }, { headers: CORS });
+    }
+
     return new Response("Not found", { status: 404, headers: CORS });
   },
 };

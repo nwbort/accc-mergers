@@ -1,3 +1,6 @@
+/* global process */
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   getPreNotificationConfidence,
@@ -7,6 +10,8 @@ import {
   MEDIUM_CONFIDENCE_WINDOW_DAYS,
   PRE_NOTIFICATION_CONFIDENCE,
 } from '../preNotification';
+
+const repoRoot = resolve(process.cwd(), '..');
 
 const bracketed = (minDays, maxDays) => ({
   estimated_days: minDays,
@@ -73,5 +78,25 @@ describe('getPreNotificationEstimate', () => {
         confidence: PRE_NOTIFICATION_CONFIDENCE.HIGH,
         windowDays: 4,
       });
+  });
+});
+
+// fixtures/pre-notification-summary-cases.json pins this rule to its Python
+// copy in scripts/generate/static_data/outputs/api.py, which publishes the
+// same condensed estimate through the key-gated API (docs/api.md).
+describe('getPreNotificationEstimate against the shared fixture', () => {
+  const fixture = JSON.parse(
+    readFileSync(resolve(repoRoot, 'fixtures', 'pre-notification-summary-cases.json'), 'utf8'),
+  );
+
+  it('has cases', () => {
+    expect(fixture.cases.length).toBeGreaterThan(0);
+  });
+
+  it.each(fixture.cases.map((c) => [c.name, c]))('%s', (_name, { merger, expected }) => {
+    const result = getPreNotificationEstimate(merger);
+    expect(
+      result && { kind: result.kind, start_date: result.startDate, confidence: result.confidence },
+    ).toEqual(expected);
   });
 });

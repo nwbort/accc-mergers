@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
         {/* Header */}
         <header className="mb-6">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Privacy policy</h1>
-          <p className="mt-1 text-sm text-gray-500">Last updated: 12 November 2026</p>
+          <p className="mt-1 text-sm text-gray-500">Last updated: 18 November 2026</p>
         </header>
 
         {/* 1. Introduction */}
@@ -49,6 +49,10 @@ export default function PrivacyPolicy() {
           <p className="text-gray-700 leading-relaxed mt-4">
             We do not collect any other personal information. Section 7 explains what is kept on your own device,
             and section 8 what is involved in notifications.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            If we have issued your organisation an API key, we count how many requests are made with it each day.
+            We keep only that daily count against the key, not your IP address or a record of each request.
           </p>
         </section>
 
