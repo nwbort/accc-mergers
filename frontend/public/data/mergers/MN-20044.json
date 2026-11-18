@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/4k-automotive-group-%E2%80%93-peninsula-motor-group",
   "merger_name": "4K Automotive Group \u2013 Peninsula Motor Group",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-20044",
   "effective_notification_datetime": "2026-10-27T12:00:00Z",
   "original_notification_datetime": "2026-10-27T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-12-08T12:00:00Z",
+  "determination_publication_date": "2026-11-18T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-11-03T12:00:00Z",
   "acquirers": [
     {
@@ -112,7 +114,7 @@
       "name": "Financial Asset Investing"
     }
   ],
-  "merger_description": "Subsidiaries of 4K Automotive Group Pty Ltd (**4K Automotive Group**), via a business sale and purchase agreement, propose to acquire the following from Kumar Motors (Bankstown) Pty Limited (part of the wider Peninsula Motor Group):\n\n* 4K Central Pty Ltd proposes to acquire substantially all of the assets of the GAC, Suzuki, Isuzu UTE, MG, Hyundai, Kia and Holden motor vehicle dealerships located in Condell Park, NSW (together, the **Target dealerships**).\n* 4K Commercial Group Pty Ltd proposes to acquire the Hyundai Trucks Australia and Peninsula Hyundai Trucks businesses.\n\n4K Automotive Group is an Australian automotive retail group operating 10 motor vehicle dealerships across seven different locations in NSW\u00a0(the **4K Dealerships**). The 4K Dealerships are authorised dealers of Toyota, BMW, Hyundai, Kia, Geely, Volkswagen and Lexus and supply new and used vehicles, vehicle servicing, repairs and spare parts.\n\nThe Target dealerships supply new and used vehicles, vehicle servicing, repairs and spare parts. Hyundai Trucks Australia imports and wholesale supplies new Hyundai internal combustion engine (ICE) trucks. The Peninsula Hyundai Trucks business supplies new Hyundai ICE trucks on a retail basis, as well as vehicle servicing, repairs and spare parts.\n\nBoth 4K Automotive Group and the Target dealerships overlap in the supply of new and used vehicles, vehicle servicing, repairs and spare parts, in southwest Sydney, NSW.",
+  "merger_description": "Subsidiaries of 4K Automotive Group Pty Ltd (4K Automotive Group), via a business sale and purchase agreement, propose to acquire the following from Kumar Motors (Bankstown) Pty Limited (part of the wider Peninsula Motor Group):\n\n* 4K Central Pty Ltd proposes to acquire substantially all of the assets of the GAC, Suzuki, Isuzu UTE, MG, Hyundai, Kia and Holden motor vehicle dealerships located in Condell Park, NSW (together, the Target dealerships).\n* 4K Commercial Group Pty Ltd proposes to acquire the Hyundai Trucks Australia and Peninsula Hyundai Trucks businesses.\n\n4K Automotive Group is an Australian automotive retail group operating 10 motor vehicle dealerships across seven different locations in NSW\u00a0(the 4K Dealerships). The 4K Dealerships are authorised dealers of Toyota, BMW, Hyundai, Kia, Geely, Volkswagen and Lexus and supply new and used vehicles, vehicle servicing, repairs and spare parts.\n\nThe Target dealerships supply new and used vehicles, vehicle servicing, repairs and spare parts. Hyundai Trucks Australia imports and wholesale supplies new Hyundai internal combustion engine (ICE) trucks. The Peninsula Hyundai Trucks business supplies new Hyundai ICE trucks on a retail basis, as well as vehicle servicing, repairs and spare parts.\n\nBoth 4K Automotive Group and the Target dealerships overlap in the supply of new and used vehicles, vehicle servicing, repairs and spare parts, in southwest Sydney, NSW.",
   "events": [
     {
       "date": "2026-10-28T12:00:00Z",
@@ -128,13 +130,27 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-11-18T12:00:00Z",
+      "title": "4K Automotive Group - Peninsula Motor Group - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/4K%20Automotive%20Group%20-%20Peninsula%20Motor%20Group%20-%20Phase%201%20determination.pdf",
+      "determination_table_content": [
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Act. In doing so,\nthe ACCC must have regard to the object of the Act and all relevant\nmatters, including the interests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and third-party feedback.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 4K Automotive Group would continue to face competition from\nmultiple alternative suppliers of new cars on an inter-brand and\nintra-brand basis in south-west Sydney.\n\u2022 4K Automotive Group would continue to face competition from\nmultiple alternative suppliers of used cars in south-west Sydney.\n\u2022 4K Automotive Group would continue to face competition from\nmultiple alternative suppliers of Hyundai and Kia vehicle\nservicing, repairs and spare parts in south-west Sydney."
+        }
+      ],
+      "url_gh": "/mergers/MN-20044/4K Automotive Group - Peninsula Motor Group - Phase 1 determination.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-11-18T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "has_questionnaire": true,
@@ -201,5 +217,5 @@
     "basis": "bracketed",
     "method_version": 1
   },
-  "og_card": "notified-to-the-accc.png"
+  "og_card": "cleared-by-the-accc.png"
 }

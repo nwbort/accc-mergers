@@ -3,12 +3,12 @@
   "total_waivers": 535,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 288,
-    "Under assessment": 37,
+    "Assessment completed": 289,
+    "Under assessment": 36,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 281,
+    "Approved": 282,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 286,
+    "cleared": 287,
     "not_cleared": 2,
-    "total": 288,
+    "total": 289,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.35374149659864,
-    "median_days": 26.0,
-    "average_business_days": 20.020408163265305,
-    "median_business_days": 18.0,
+    "average_days": 29.328813559322032,
+    "median_days": 26,
+    "average_business_days": 20.00677966101695,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 61,
         "percentage": 20.7
       },
       "day20": {
-        "count": 211,
-        "percentage": 71.8
+        "count": 212,
+        "percentage": 71.9
       },
       "day30": {
-        "count": 276,
+        "count": 277,
         "percentage": 93.9
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-20044",
+      "merger_name": "4K Automotive Group \u2013 Peninsula Motor Group",
+      "determination": "Approved",
+      "determination_date": "2026-11-18T12:00:00Z",
+      "page_modified_datetime": "2026-11-18T10:53:16+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-01127",
       "merger_name": "CVS Group \u2013 Karrinyup Small Animal Hospital",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-40052",
-      "merger_name": "Russell Investment Group \u2013 Flag Index Plus Fund V",
-      "determination": "Approved",
-      "determination_date": "2026-11-16T12:00:00Z",
-      "page_modified_datetime": "2026-11-16T17:34:10+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
