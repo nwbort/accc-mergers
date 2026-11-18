@@ -1,12 +1,12 @@
-"""The key-gated API's merger list: ``list.json`` plus a condensed pre-notification estimate.
+"""The API's merger list: ``list.json`` plus a condensed pre-notification estimate.
 
 Writes:
   <output_dir>/api/v1/mergers.json
 
-Served at https://mergers.fyi/data/api/v1/mergers.json, but only to a request
-carrying a valid API key: ``functions/data/api/[[path]].js`` sits in front of
-the file, checks the key against the ``api_keys`` table in D1 and counts the
-request. See docs/api.md.
+Served at https://mergers.fyi/data/api/v1/mergers (no extension) by
+``functions/data/api/[[path]].js``, which sits in front of the file, checks the
+key against the ``api_keys`` table in D1 when ``API_REQUIRE_KEY`` asks for one,
+and counts the request. See docs/api.md.
 
 Each entry is the merger list's own entry (:func:`.list._lightweight`) plus
 ``pre_notification``: when the matter's pre-notification period is estimated to

@@ -1,17 +1,22 @@
-# The key-gated API
+# The API
 
 A single endpoint for clients who want the register as data rather than as a
 website: every merger, as the site's own list carries it, plus a condensed
 pre-notification estimate.
 
 ```
-GET https://mergers.fyi/data/api/v1/mergers.json
+GET https://mergers.fyi/data/api/v1/mergers
 Authorization: Bearer mfyi_live_…
 ```
 
+**For now it is open:** `API_REQUIRE_KEY = "false"` in the root
+`wrangler.toml`, so no key is needed. See [Requiring a key](#requiring-a-key)
+to switch the gate on.
+
 Nothing new is deployed to serve it. The data is a static file the pipeline
 already commits, and one Pages Function (`functions/data/api/[[path]].js`)
-sits in front of it, checks the key and counts the request. Keys and counts
+sits in front of it, checks the key (when one is required) and counts the
+request. Keys and counts
 live in the `mergers-feedback` D1 database the signup Worker and
 `feedback-admin` already share.
 
@@ -21,23 +26,23 @@ live in the `mergers-feedback` D1 database the signup Worker and
 
 | | |
 |---|---|
-| URL | `https://mergers.fyi/data/api/v1/mergers.json` |
+| URL | `https://mergers.fyi/data/api/v1/mergers` (no extension; the `.json` name is a `404`) |
 | Method | `GET` (or `HEAD`) |
-| Auth | `Authorization: Bearer <key>` |
+| Auth | `Authorization: Bearer <key>` — not needed while the API is open, but worth sending: it is accepted then too, and it keeps working once a key is required |
 | Freshness | The file changes when the pipeline runs (several times a weekday). Send the previous response's `ETag` back as `If-None-Match` and an unchanged file comes back as a bodiless `304`. |
 
 ```bash
 curl -H "Authorization: Bearer $MERGERS_FYI_KEY" \
-  https://mergers.fyi/data/api/v1/mergers.json
+  https://mergers.fyi/data/api/v1/mergers
 ```
 
 | Status | Meaning |
 |---|---|
-| `200` | The file |
+| `200` | The data |
 | `304` | Unchanged since the `ETag` you sent |
-| `401` | Missing, unknown or revoked key |
-| `404` | No such file under `/data/api/` |
-| `503` | The key check couldn't be made; retry later |
+| `401` | Missing, unknown or revoked key (only while a key is required) |
+| `404` | No such endpoint under `/data/api/` |
+| `503` | The key check couldn't be made; retry later (only while a key is required) |
 
 ### Response
 
@@ -118,11 +123,29 @@ npm run api-usage -- --days 90
 - **Usage** is also on the `feedback-admin` UI (`ui/index.html`), under *API
   usage*: each key, and per-client daily counts for the last 90 days.
 
+## Requiring a key
+
+`API_REQUIRE_KEY` in the root `wrangler.toml` is the switch. It is `"false"`
+for now, which opens the API to anyone. Anything else, including deleting the
+line, requires a key, so the gate can't be dropped by a typo. To switch it on,
+set it to `"true"`, merge, and the next Pages deploy enforces it. Hand clients
+their keys first: anyone without one starts getting `401`s.
+
+While it is open:
+
+- a valid key is still credited to its client in the usage counts, so clients
+  who already send one show up by name;
+- a request with no key, or an invalid or revoked one, is served and counted
+  as `(open)`;
+- it works without the D1 tables or binding: counting is skipped or fails
+  quietly, and the data is served regardless.
+
 ## What is tracked
 
-One row per client per Sydney day: `api_usage(label, day, count)`. Every
-request that passes the key check adds one, `304`s included. Requests with a
-missing, unknown or revoked key are counted together under `(rejected)`. No IP
+One row per label per Sydney day: `api_usage(label, day, count)`. Every
+request served adds one, `304`s included, under the client's label when it sent
+a valid key and `(open)` when the API is open and it didn't. While a key is
+required, refused requests are counted together under `(rejected)`. No IP
 address, user agent, URL or per-request record is kept. Totals across all clients, with errors, are also in the Cloudflare
 dashboard under the Pages project's Functions metrics.
 
@@ -140,25 +163,28 @@ abuse and revoking ends it; a Cloudflare rate-limiting rule on
    ```
 
 2. Merge. The Pages project picks up the `API_DB` binding from the root
-   `wrangler.toml` on its next deploy. Until both steps are done the endpoint
-   answers `503` — it fails closed and never serves the file ungated.
+   `wrangler.toml` on its next deploy. While the API is open it serves either
+   way; once a key is required, it answers `503` until both steps are done —
+   it fails closed and never serves the data ungated.
 3. Redeploy `feedback-admin` (`npm run deploy` in its directory) for the usage
    view.
-4. `npm run api-key:create -- <client>`.
+4. `npm run api-key:create -- <client>`, then, when you want the gate, set
+   `API_REQUIRE_KEY = "true"` (above).
 
 ## How it fits together
 
 - `scripts/generate/static_data/outputs/api.py` writes
-  `frontend/public/data/api/v1/mergers.json` on every `generate_static_data`
+  `frontend/public/data/api/v1/mergers.json` (served as `/data/api/v1/mergers`) on every `generate_static_data`
   run, from the same entries as `mergers/list.json`. The pre-notification
   summary is the site's own reading (`getPreNotificationEstimate` in
   `frontend/src/utils/preNotification.js`), hand-copied to Python and pinned to
   it by `fixtures/pre-notification-summary-cases.json`, which both test suites
   read.
-- `functions/data/api/[[path]].js` answers every path under `/data/api/`. Pages
-  runs a Function before a static file at the same path, so the file is never
-  reachable without it; `env.ASSETS.fetch` then serves the file without
-  re-entering the Function. Tested in
+- `functions/data/api/[[path]].js` answers every path under `/data/api/`,
+  serving an extensionless endpoint from the `.json` file of the same name.
+  Pages runs a Function before a static file at the same path, so the file is
+  never reachable without it (its own `.json` URL is a `404`);
+  `env.ASSETS.fetch` then serves the file without re-entering the Function. Tested in
   `frontend/src/utils/__tests__/apiFunction.test.js`.
 - The raw `pre_notification` block (its bounds and the matters that witness
   them) is still in each public `mergers/{id}.json`, because the site's detail

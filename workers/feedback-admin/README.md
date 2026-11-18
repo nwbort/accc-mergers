@@ -8,7 +8,7 @@ counters captured by the public
 Two pieces:
 
 - `src/index.js` — Cloudflare Worker that exposes `GET /feedback`,
-  `GET /events` and `GET /api-usage` (the key-gated API's keys and daily
+  `GET /events` and `GET /api-usage` (the API's keys and daily
   request counts — see [`docs/api.md`](../../docs/api.md)), all gated behind an `x-secret` header, returning rows
   from the shared `mergers-feedback` D1 database.
 - `ui/index.html` + `ui/app.js` — standalone single-page UI that prompts
@@ -31,7 +31,7 @@ URL plus the secret to view feedback.
 
 ## API keys
 
-`scripts/api-keys.mjs` issues, revokes and lists keys for the key-gated API
+`scripts/api-keys.mjs` issues, revokes and lists keys for the API
 and prints its usage, via `wrangler d1 execute` against the same database:
 
 ```bash

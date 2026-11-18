@@ -105,7 +105,7 @@ function main(argv) {
       d1(createSql(label, key), { local });
       console.log(`\nAPI key for ${label} (shown once; only its hash is stored):\n\n  ${key}\n`);
       console.log('Send it to the client over a secure channel. They use it as:');
-      console.log(`  curl -H "Authorization: Bearer ${key}" https://mergers.fyi/data/api/v1/mergers.json\n`);
+      console.log(`  curl -H "Authorization: Bearer ${key}" https://mergers.fyi/data/api/v1/mergers\n`);
       return;
     }
     case 'revoke': {

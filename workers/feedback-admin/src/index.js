@@ -41,7 +41,7 @@ export default {
       return Response.json(results, { headers: CORS });
     }
 
-    // The key-gated API's clients and their per-day request counts (see
+    // The API's clients and their per-day request counts (see
     // docs/api.md). Never the key hashes: the hint is enough to tell keys apart.
     if (url.pathname === "/api-usage" && request.method === "GET") {
       const [keys, usage] = await env.DB.batch([

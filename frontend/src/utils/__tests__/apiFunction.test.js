@@ -1,15 +1,18 @@
 import { describe, it, expect } from 'vitest';
 
-// The Pages Function gating /data/api/ (docs/api.md). Cloudflare only invokes
+// The Pages Function serving /data/api/ (docs/api.md). Cloudflare only invokes
 // onRequest, so these fake the pieces of the runtime it touches: the ASSETS
 // binding, the API_DB D1 binding and context.waitUntil.
 import {
+  assetPath,
+  keyRequired,
   onRequest,
+  OPEN_LABEL,
   REJECTED_LABEL,
   sha256Hex,
 } from '../../../../functions/data/api/[[path]].js';
 
-const URL_ = 'https://mergers.fyi/data/api/v1/mergers.json';
+const URL_ = 'https://mergers.fyi/data/api/v1/mergers';
 const GOOD_KEY = 'mfyi_live_good';
 const REVOKED_KEY = 'mfyi_live_revoked';
 const BODY = '{"version":"v1","mergers":[]}\n';
@@ -63,8 +66,12 @@ function makeAssets() {
   };
 }
 
-async function call({ url = URL_, key, method = 'GET', headers = {}, db, assets } = {}) {
-  const env = { API_DB: db === undefined ? await makeDb() : db, ASSETS: assets || makeAssets() };
+async function call({ url = URL_, key, method = 'GET', headers = {}, db, assets, requireKey = 'true' } = {}) {
+  const env = {
+    API_DB: db === undefined ? await makeDb() : db,
+    ASSETS: assets || makeAssets(),
+    API_REQUIRE_KEY: requireKey,
+  };
   const waits = [];
   const h = new Headers(headers);
   if (key) h.set('Authorization', `Bearer ${key}`);
@@ -77,7 +84,7 @@ async function call({ url = URL_, key, method = 'GET', headers = {}, db, assets 
   return { response, env };
 }
 
-describe('API gate', () => {
+describe('API with keys required', () => {
   it('serves the file to a valid key and counts it against that key', async () => {
     const { response, env } = await call({ key: GOOD_KEY });
     expect(response.status).toBe(200);
@@ -121,8 +128,24 @@ describe('API gate', () => {
     expect(env.API_DB.usage.map((u) => u.label)).toEqual(['smith-legal']);
   });
 
+  it('serves the endpoint from its .json file', async () => {
+    const { env } = await call({ key: GOOD_KEY });
+    expect(new URL(env.ASSETS.seen[0].url).pathname).toBe('/data/api/v1/mergers.json');
+  });
+
+  it('tolerates a trailing slash', async () => {
+    const { response } = await call({ key: GOOD_KEY, url: `${URL_}/` });
+    expect(response.status).toBe(200);
+  });
+
+  it('does not serve the .json file under its own name', async () => {
+    const { response, env } = await call({ key: GOOD_KEY, url: `${URL_}.json` });
+    expect(response.status).toBe(404);
+    expect(env.ASSETS.seen).toHaveLength(0);
+  });
+
   it('turns the SPA fallback for a missing file into a JSON 404', async () => {
-    const { response } = await call({ key: GOOD_KEY, url: 'https://mergers.fyi/data/api/v2/nope.json' });
+    const { response } = await call({ key: GOOD_KEY, url: 'https://mergers.fyi/data/api/v2/nope' });
     expect(response.status).toBe(404);
     expect(await response.json()).toEqual({ error: 'Not found' });
   });
@@ -153,5 +176,60 @@ describe('API gate', () => {
     };
     const { response } = await call({ key: GOOD_KEY, db });
     expect(response.status).toBe(200);
+  });
+});
+
+describe('API open (API_REQUIRE_KEY = "false")', () => {
+  it('serves without a key, counted as open', async () => {
+    const { response, env } = await call({ requireKey: 'false' });
+    expect(response.status).toBe(200);
+    expect(await response.text()).toBe(BODY);
+    expect(env.API_DB.usage.map((u) => u.label)).toEqual([OPEN_LABEL]);
+  });
+
+  it('still credits a valid key to its client', async () => {
+    const { env } = await call({ requireKey: 'false', key: GOOD_KEY });
+    expect(env.API_DB.usage.map((u) => u.label)).toEqual(['smith-legal']);
+  });
+
+  it('serves an invalid or revoked key as open rather than refusing it', async () => {
+    const { response, env } = await call({ requireKey: 'false', key: REVOKED_KEY });
+    expect(response.status).toBe(200);
+    expect(env.API_DB.usage.map((u) => u.label)).toEqual([OPEN_LABEL]);
+  });
+
+  it('serves without the database bound', async () => {
+    const { response } = await call({ requireKey: 'false', db: null });
+    expect(response.status).toBe(200);
+  });
+
+  it('serves when the key lookup fails', async () => {
+    const db = await makeDb();
+    db.prepare = () => ({ bind: () => ({ first: () => Promise.reject(new Error('no such table')), run: () => Promise.reject(new Error('no such table')) }) });
+    const { response } = await call({ requireKey: 'false', key: GOOD_KEY, db });
+    expect(response.status).toBe(200);
+  });
+});
+
+describe('keyRequired', () => {
+  it('is open only for an explicit "false"', () => {
+    expect(keyRequired({ API_REQUIRE_KEY: 'false' })).toBe(false);
+    expect(keyRequired({ API_REQUIRE_KEY: ' FALSE ' })).toBe(false);
+    expect(keyRequired({ API_REQUIRE_KEY: 'true' })).toBe(true);
+    expect(keyRequired({ API_REQUIRE_KEY: '' })).toBe(true);
+    expect(keyRequired({ API_REQUIRE_KEY: 'no' })).toBe(true);
+    expect(keyRequired({})).toBe(true);
+  });
+});
+
+describe('assetPath', () => {
+  it('maps an extensionless endpoint to its .json file', () => {
+    expect(assetPath('/data/api/v1/mergers')).toBe('/data/api/v1/mergers.json');
+    expect(assetPath('/data/api/v1/mergers/')).toBe('/data/api/v1/mergers.json');
+  });
+
+  it('refuses paths with an extension', () => {
+    expect(assetPath('/data/api/v1/mergers.json')).toBeNull();
+    expect(assetPath('/data/api/v1/mergers.xml')).toBeNull();
   });
 });
