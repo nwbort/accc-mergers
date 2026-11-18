@@ -83,6 +83,16 @@
       "effective_notification_datetime": "2026-11-13T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-11-25T12:00:00Z",
+      "merger_id": "MN-15054",
+      "merger_name": "Endeavour Group \u2013 retail liquor store and adjacent property on Russell Island (QLD)",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-18T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-11-25T12:00:00Z",
@@ -445,6 +455,6 @@
       "end_date": "2027-04-15T12:00:00Z"
     }
   ],
-  "count": 44,
+  "count": 45,
   "days_ahead": 60
 }

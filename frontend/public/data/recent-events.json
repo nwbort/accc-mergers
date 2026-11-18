@@ -1,6 +1,25 @@
 {
   "events": [
     {
+      "type": "notified",
+      "title": "Merger notified to ACCC",
+      "date": "2026-11-18T12:00:00Z",
+      "merger_id": "MN-15054",
+      "merger_name": "Endeavour Group \u2013 retail liquor store and adjacent property on Russell Island (QLD)",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false
+    },
+    {
+      "type": "questionnaire",
+      "title": "Phase 1 consultation",
+      "date": "2026-11-18T12:00:00Z",
+      "merger_id": "MN-15054",
+      "merger_name": "Endeavour Group \u2013 retail liquor store and adjacent property on Russell Island (QLD)",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false,
+      "url_gh": "/mergers/MN-15054/Endeavour Group \u2013 retail liquor store and adjacent property on Russell Island (QLD) - Questionnaire.pdf"
+    },
+    {
       "type": "phase_1_determination",
       "title": "Phase 1 - initial assessment determination: Approved",
       "date": "2026-11-18T12:00:00Z",
@@ -919,6 +938,6 @@
       "url_gh": "/mergers/WA-85059/SMM Perth \u2013 mining tenements of Rio Tinto related to the Winu copper-gold project in Western Australia (WA-85059) - Notification waiver determination - 4 November 2026.pdf"
     }
   ],
-  "count": 94,
+  "count": 96,
   "days_back": 14
 }
