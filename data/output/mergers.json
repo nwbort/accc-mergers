@@ -99001,9 +99001,14 @@
           "name": "Kinetic UK Holdco, Limited",
           "identifier_type": null,
           "identifier": "UK Registered Number: 16774544",
+          "canonical": {
+            "id": "kinetic-uk-holdco-limited",
+            "name": "Kinetic UK HoldCo, Limited"
+          },
           "party_page": {
-            "id": "kinetic-uk-holdco-limited-2",
-            "name": "Kinetic UK Holdco, Limited"
+            "id": "kinetic-uk-holdco-limited",
+            "name": "Kinetic UK HoldCo, Limited",
+            "curated": true
           }
         },
         {
@@ -129844,9 +129849,14 @@
           "name": "Kinetic UK HoldCo, Limited",
           "identifier_type": null,
           "identifier": "England and Wales company number  16774544",
-          "party_page": {
+          "canonical": {
             "id": "kinetic-uk-holdco-limited",
             "name": "Kinetic UK HoldCo, Limited"
+          },
+          "party_page": {
+            "id": "kinetic-uk-holdco-limited",
+            "name": "Kinetic UK HoldCo, Limited",
+            "curated": true
           }
         }
       ],
