@@ -9262,15 +9262,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 32,
-        "min_days": null,
+        "estimated_days": 18,
+        "min_days": 11,
         "max_days": 39,
-        "id_issued_estimated": "2026-10-09",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-10-23",
+        "id_issued_before": "2026-10-30",
         "id_issued_after": "2026-10-02",
-        "min_days_witness": null,
+        "min_days_witness": "WA-01134",
         "max_days_witness": "WA-01131",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -81887,6 +81887,143 @@
           ],
           "targets": [
             "Alsimas Pty Limited"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/australian-venue-co-%E2%80%93-assets-of-the-king-o%E2%80%99malley%E2%80%99s-venue-canberra-act",
+      "merger_name": "Australian Venue Co \u2013 assets of the King O\u2019Malley\u2019s venue (Canberra, ACT)",
+      "status": "Assessment completed",
+      "merger_id": "WA-01134",
+      "effective_notification_datetime": "2026-10-30T12:00:00Z",
+      "original_notification_datetime": "2026-10-30T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-18T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-18T17:18:30+11:00",
+      "acquirers": [
+        {
+          "name": "AVC OPERATIONS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299",
+          "canonical": {
+            "id": "australian-venue-co",
+            "name": "Australian Venue Co"
+          },
+          "party_page": {
+            "id": "australian-venue-co",
+            "name": "Australian Venue Co",
+            "curated": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "KING O'MALLEY'S PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 062 270 553",
+          "party_page": {
+            "id": "king-o-malley-s-pty-ltd",
+            "name": "King O'Malley'S Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        }
+      ],
+      "merger_description": "AVC Operations Pty Ltd (**AVC**) proposes to acquire substantially all of the assets of the licensed hotel business trading as King O\u2019Malley\u2019s (**King O\u2019Malley\u2019s**) from King O\u2019Malley\u2019s Pty Ltd, including the exclusive right to carry on the business in succession of the Vendor, under an Asset Sale Agreement (**the Acquisition**).\n\nKing O\u2019Malley\u2019s is a licensed hotel venue located at 131 City Walk, Canberra ACT 2601. It is a typical Australian pub/hotel offering with a public bar, bistro, and function rooms.\n\nAVC is a subsidiary of Australian Venue Co. Holdings Limited which operates over 200 licensed venues throughout Australia and New Zealand, primarily pubs, as well as some bars, clubs and licensed restaurants, and hotel/motels with accommodation services. AVC\u2019s venues are individually branded and are mostly located in inner-city and metro areas, offering a range of products and services including food, alcoholic and non-alcoholic beverages, function rooms, live entertainment and gaming facilities.",
+      "events": [
+        {
+          "date": "2026-11-18T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Australian%20Venue%20Co%20%E2%80%93%20assets%20of%20the%20King%20O%E2%80%99Malley%E2%80%99s%20venue%20%28Canberra%20ACT%29%20-%20Notification%20waiver%20determination%20-%2017%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "AVC Operations Pty Limited (AVC) applied for a notification waiver in\nrespect of its proposed acquisition of substantially all of the assets\nof the licensed hotel venue trading as King O\u2019Malley\u2019s (King\nO\u2019Malley\u2019s) (including the exclusive right to carry on the business in\nsuccession to the vendor) from King O\u2019Malley\u2019s Pty Ltd as described\nin the transaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "17 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, AVC, is a subsidiary of Australian Venue Co. Holdings\nLimited, which operates over 200 licensed venues throughout\nAustralia and New Zealand, primarily pubs, as well as some bars,\nclubs and licensed restaurants, and hotel/motels with\naccommodation services. AVC\u2019s venues are individually branded and\nare mostly located in inner-city and metro areas, offering a range of\nproducts and services including food, alcoholic and non-alcoholic\nbeverages, function rooms, live entertainment and gaming facilities.\nThe target, King O\u2019Malley\u2019s, is a licensed hotel venue located at 131\nCity Walk, Canberra ACT 2601. It is a typical Australian pub/hotel\nwith a public bar, bistro, and function rooms."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given there is no horizontal overlap\nbetween AVC and King O\u2019Malley\u2019s in Canberra or the surrounding\nareas.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-01134/Australian Venue Co \u2013 assets of the King O\u2019Malley\u2019s venue (Canberra ACT) - Notification waiver determination - 17 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-30T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-10006",
+          "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+          "acquirers": [
+            "AVC Operations Pty Limited"
+          ],
+          "targets": [
+            "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+            "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-15034",
+          "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
+          "acquirers": [
+            "AVC OPERATIONS PTY LIMITED"
+          ],
+          "targets": [
+            "Central Hospitality Services Pty Ltd",
+            "ATHENA HOSPITALITY GROUP PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-65007",
+          "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
+          "acquirers": [
+            "AVC OPERATIONS PTY LIMITED"
+          ],
+          "targets": [
+            "ASH PROMOTIONS PTY LTD"
           ],
           "accc_determination": "Approved"
         }

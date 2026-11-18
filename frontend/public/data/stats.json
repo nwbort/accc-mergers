@@ -1,6 +1,6 @@
 {
   "total_mergers": 331,
-  "total_waivers": 536,
+  "total_waivers": 537,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 289,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 509,
+    "Approved": 510,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.06902985074627,
-    "median_days": 21.0,
-    "average_business_days": 14.44589552238806,
-    "median_business_days": 15.0
+    "average_days": 21.065176908752328,
+    "median_days": 21,
+    "average_business_days": 14.443202979515828,
+    "median_business_days": 15
   },
   "top_industries": [
     {
@@ -76,7 +76,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 44
+      "count": 45
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -88,7 +88,7 @@
     },
     {
       "name": "Cafes and Restaurants",
-      "count": 28
+      "count": 29
     },
     {
       "name": "Supermarket and Grocery Stores",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01134",
+      "merger_name": "Australian Venue Co \u2013 assets of the King O\u2019Malley\u2019s venue (Canberra, ACT)",
+      "determination": "Approved",
+      "determination_date": "2026-11-18T12:00:00Z",
+      "page_modified_datetime": "2026-11-18T17:18:30+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-20050",
       "merger_name": "Aware Super \u2013 Interest in Foresight Kinetic CV",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-17T12:00:00Z",
       "page_modified_datetime": "2026-11-17T17:14:54+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-01126",
-      "merger_name": "IPLiving - Springwood Living Group",
-      "determination": "Approved",
-      "determination_date": "2026-11-17T12:00:00Z",
-      "page_modified_datetime": "2026-11-17T15:53:06+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
