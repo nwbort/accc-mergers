@@ -123,8 +123,7 @@ npm run api-usage -- --days 90
 One row per client per Sydney day: `api_usage(label, day, count)`. Every
 request that passes the key check adds one, `304`s included. Requests with a
 missing, unknown or revoked key are counted together under `(rejected)`. No IP
-address, user agent, URL or per-request record is kept, and the privacy policy
-says so. Totals across all clients, with errors, are also in the Cloudflare
+address, user agent, URL or per-request record is kept. Totals across all clients, with errors, are also in the Cloudflare
 dashboard under the Pages project's Functions metrics.
 
 There is no rate limit. With a handful of known clients the daily count shows
