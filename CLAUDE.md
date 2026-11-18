@@ -32,7 +32,7 @@ One directory per Worker, each named after the Worker it deploys (the directory 
 
 - `workers/mergers-digest-signup/` — public HTTP API: digest email signup (validates Cloudflare Turnstile tokens, adds to a Resend audience; the Android app's `POST /app-signup` instead emails a signed link to confirm, double opt-in, since the app can't show Turnstile) and `POST /feedback` writes to the `mergers-feedback` D1 database; `POST /event` bumps an aggregate, per-day feature-usage counter in the same database (`utils/trackEvent.js`); `POST /push/topics` subscribes a browser's FCM token to the topics for what it follows, for browser notifications, keeping nothing (`src/push.js`)
 - `workers/accc-register-watcher/` — Email Worker bound to a mailbox subscribed to the ACCC's register update mailing list; fires a `repository_dispatch` (`new_merger_detected`) to trigger `pipeline.yml` immediately on each email. See its README for the Cloudflare Email Routing setup
-- `workers/feedback-admin/` — private read-only viewer over the same feedback D1 database, gated behind an `x-secret` header
+- `workers/feedback-admin/` — private read-only viewer over the same feedback D1 database, gated behind an `x-secret` header; also shows the API's usage and holds its key-admin script (`scripts/api-keys.mjs`, `npm run api-key:create`)
 
 ### ATmosphere publishing (`atproto/`, `scripts/atproto/`)
 
@@ -86,7 +86,27 @@ site serves that run's data, because LinkedIn caches whatever it scrapes first. 
 
 ### Cloudflare Pages Functions (`functions/`)
 
-Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently the PDF viewer wrapper for `/mergers/{matter}/*.pdf` (which also redirects a retired duplicate's old path to the copy that replaced it; see `scripts/document_versions.py`), and the Open Graph page served to link-preview bots on merger detail URLs.
+Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently the PDF viewer wrapper for `/mergers/{matter}/*.pdf` (which also redirects a retired duplicate's old path to the copy that replaced it; see `scripts/document_versions.py`), the Open Graph page served to link-preview bots on merger detail URLs, and the Function serving the API.
+
+### API (`functions/data/api/`)
+
+One endpoint for clients who want the register as data:
+`/data/api/v1/mergers` (no extension; served from `mergers.json`, whose own URL
+404s), the merger list's entries plus a condensed
+pre-notification estimate (`{kind, start_date, confidence}`, never the raw
+bounds or witnesses). The file is static, written by
+`scripts/generate/static_data/outputs/api.py`; the Pages Function checks
+`Authorization: Bearer <key>` against `api_keys` in the `mergers-feedback` D1
+database (bound as `API_DB` in the root `wrangler.toml`) and counts each request
+per client per day in `api_usage` — a count only, no IP or per-request record.
+Whether a key is required is `API_REQUIRE_KEY` in the root `wrangler.toml`:
+currently `"false"` (open; keyless requests count as `(open)`), and anything
+else, including leaving it out, requires one. While required it fails closed
+(`503`) without the binding. `v1` only grows: `API_ENTRY_KEYS`
+pins its fields, so a new `list.json` field fails a test until someone decides
+whether the API should carry it. The confidence rule is a Python copy of
+`getPreNotificationEstimate`, pinned by
+`fixtures/pre-notification-summary-cases.json`. See [`docs/api.md`](docs/api.md).
 
 ## Project Structure
 
@@ -105,14 +125,17 @@ Top level:
 ├── LICENSE-DATA              # CC BY 4.0: this project's own data (generated + curated, and
 │                             #   the ATProto records). data/raw/ is third-party material
 │                             #   outside both licences — see data/raw/NOTICE.md
-├── docs/                     # Deployment, walkthrough, ADRs, accessibility, atproto
+├── docs/                     # Deployment, walkthrough, ADRs, accessibility, atproto, api
 └── fixtures/                 # Cross-language test fixtures
     ├── slug-cases.json       # Golden fixture pinning slugify() across all 3 impls
     ├── shard-cases.json      # Golden fixture pinning the party shard hash across both impls
     ├── industry-division-cases.json  # Golden fixture pinning which industries/ file
     │                         #   an ANZSIC code is packed into, across both impls
-    └── extension-title-cases.json  # Golden fixture pinning how an event title reads as a
-                              #   timeline extension (days, reason), across both impls
+    ├── extension-title-cases.json  # Golden fixture pinning how an event title reads as a
+    │                         #   timeline extension (days, reason), across both impls
+    └── pre-notification-summary-cases.json  # Golden fixture pinning the condensed
+                              #   pre-notification estimate (kind, date, confidence)
+                              #   the site shows and the API publishes, across both impls
 ```
 
 Frontend:
@@ -783,6 +806,7 @@ exists rather than 404ing into the SPA's `index.html`.
 | File | Description |
 |------|-------------|
 | `mergers/{id}.json` | Individual merger detail files |
+| `api/v1/mergers.json` | The API, served as `/data/api/v1/mergers` (`outputs/api.py`, served by `functions/data/api/[[path]].js`, key-gated when `API_REQUIRE_KEY` says so): `list.json`'s entries plus `pre_notification: {kind, start_date, confidence}` (or `null`), under a `{version, licence, attribution}` header. Most recently updated first (the site's "Last updated" order: `latest_event_date`, then `page_modified_datetime` within a day — `api.recency_key`), one merger per line, no timestamp. See [`docs/api.md`](docs/api.md) |
 | `mergers/list.json` | Lightweight list of every merger, one per line so a pipeline commit diffs per matter. One file, not pages: the /mergers page searches, filters and sorts the whole list in the browser, and it is ~110 KB gzipped. Shared with the command palette under one `dataCache` key (`utils/mergerList.js`) |
 | `manifest.json` | Written by `scripts/build.sh` at deploy time (`scripts/generate/data_manifest.py`), never committed: a 12-hex-digit SHA-256 of each `mergers/{id}.json` and `industries/{division}.json`, plus the current Phase 2 ids. The Android app's background check reads this one file (a 304 when nothing changed) instead of every followed merger, followed industry's file and `list.json`, and recomputes the hash from its cached copy, so the hash rule is shared with that repo. `android-push.yml` diffs it between deploys to push to the app. One file of the 20,000 |
 | `/.well-known/assetlinks.json` | Not data: committed in `frontend/public/.well-known/`. Digital Asset Links for the Android app (`fyi.mergers.app`), naming its release signing key's SHA-256, so mergers.fyi links open in the app without asking. A new signing key needs adding here before the APK it signs ships; `scripts/tests/test_assetlinks.py` pins it |

@@ -4,12 +4,17 @@
   "private": true,
   "license": "MIT",
   "type": "module",
-  "description": "Cloudflare Worker — private read-only viewer for feedback captured by mergers-digest-signup",
+  "description": "Cloudflare Worker \u2014 private read-only viewer for feedback, feature usage and API usage in the mergers-feedback D1 database; also holds the API key admin script",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "deploy:dry": "wrangler deploy --dry-run",
-    "tail": "wrangler tail"
+    "tail": "wrangler tail",
+    "test": "node --test test/*.test.mjs",
+    "api-key:create": "node scripts/api-keys.mjs create",
+    "api-key:revoke": "node scripts/api-keys.mjs revoke",
+    "api-key:list": "node scripts/api-keys.mjs list",
+    "api-usage": "node scripts/api-keys.mjs usage"
   },
   "devDependencies": {
     "wrangler": "^4.67.0"

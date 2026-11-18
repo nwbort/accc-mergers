@@ -17,6 +17,8 @@ Output files:
   frontend/public/data/ (deployed to Cloudflare Pages):
   - mergers/{id}.json           - Individual merger files (one per merger)
   - mergers/list.json           - Lightweight list of every merger (search/filter/sort)
+  - api/v1/mergers.json         - The same list plus a condensed pre-notification
+                                  estimate, served only with an API key (docs/api.md)
   - stats.json                  - Aggregated statistics
   - industries.json             - ANZSIC codes with merger counts
   - industries/{division}.json  - Every ANZSIC node in that division, with
@@ -80,6 +82,7 @@ from scripts.generate.static_data.loaders import (
 from scripts.generate.static_data.durations import referral_probability_by_day
 from scripts.generate.static_data.outputs import (
     analysis,
+    api as api_out,
     commentary as commentary_out,
     extensions,
     individual,
@@ -249,6 +252,10 @@ def main():
     print("\nGenerating merger list file...")
     n = list_out.generate(enriched, OUTPUT_DIR)
     print(f"✓ Generated {OUTPUT_DIR / 'mergers' / 'list.json'} ({n} mergers)")
+
+    print("\nGenerating API merger list...")
+    n = api_out.generate(enriched, OUTPUT_DIR)
+    print(f"✓ Generated {OUTPUT_DIR / api_out.API_DIR / api_out.API_FILE} ({n} mergers)")
 
     print("\nGenerating industry division files...")
     n = industries.generate_detail_files(enriched, OUTPUT_DIR)

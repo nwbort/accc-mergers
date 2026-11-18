@@ -1,0 +1,99 @@
+{
+  "description": "Golden fixture pinning how a merger's raw pre_notification block is condensed to a start date, kind and confidence. Two copies of the rule read it: frontend/src/utils/preNotification.js (getPreNotificationEstimate, what the site shows) and scripts/generate/static_data/outputs/api.py (pre_notification_summary, what the API publishes). Each case's expected is null when there is nothing to say, else {kind, start_date, confidence}.",
+  "cases": [
+    {
+      "name": "bracketed, narrow window: high",
+      "merger": {
+        "effective_notification_datetime": "2026-10-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 17, "min_days": 10, "max_days": 20, "id_issued_estimated": "2026-09-14", "basis": "bracketed"}
+      },
+      "expected": {"kind": "around", "start_date": "2026-09-14", "confidence": "high"}
+    },
+    {
+      "name": "bracketed, window exactly 14 days: high",
+      "merger": {
+        "effective_notification_datetime": "2026-10-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 17, "min_days": 10, "max_days": 24, "id_issued_estimated": "2026-09-14", "basis": "bracketed"}
+      },
+      "expected": {"kind": "around", "start_date": "2026-09-14", "confidence": "high"}
+    },
+    {
+      "name": "bracketed, window 15 days: medium",
+      "merger": {
+        "effective_notification_datetime": "2026-10-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 17, "min_days": 10, "max_days": 25, "id_issued_estimated": "2026-09-14", "basis": "bracketed"}
+      },
+      "expected": {"kind": "around", "start_date": "2026-09-14", "confidence": "medium"}
+    },
+    {
+      "name": "bracketed, window exactly 42 days: medium",
+      "merger": {
+        "effective_notification_datetime": "2026-10-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 30, "min_days": 10, "max_days": 52, "id_issued_estimated": "2026-09-01", "basis": "bracketed"}
+      },
+      "expected": {"kind": "around", "start_date": "2026-09-01", "confidence": "medium"}
+    },
+    {
+      "name": "bracketed, wide window: low",
+      "merger": {
+        "effective_notification_datetime": "2026-10-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 30, "min_days": 5, "max_days": 90, "id_issued_estimated": "2026-09-01", "basis": "bracketed"}
+      },
+      "expected": {"kind": "around", "start_date": "2026-09-01", "confidence": "low"}
+    },
+    {
+      "name": "upper bound only: a floor on the start, always low",
+      "merger": {
+        "effective_notification_datetime": "2026-10-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 20, "min_days": 15, "max_days": 20, "id_issued_estimated": "2026-09-11", "basis": "upper-bound-only"}
+      },
+      "expected": {"kind": "after", "start_date": "2026-09-11", "confidence": "low"}
+    },
+    {
+      "name": "lower bound only: a ceiling on the start, always low",
+      "merger": {
+        "effective_notification_datetime": "2026-10-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 12, "min_days": 12, "id_issued_estimated": "2026-09-19", "basis": "lower-bound-only"}
+      },
+      "expected": {"kind": "before", "start_date": "2026-09-19", "confidence": "low"}
+    },
+    {
+      "name": "zero days: no pre-notification period, no date",
+      "merger": {
+        "effective_notification_datetime": "2026-10-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 0, "min_days": 0, "max_days": 3, "id_issued_estimated": "2026-10-01", "basis": "bracketed"}
+      },
+      "expected": {"kind": "none", "start_date": null, "confidence": "high"}
+    },
+    {
+      "name": "voluntary-period notification: nothing",
+      "merger": {
+        "effective_notification_datetime": "2025-11-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 17, "min_days": 10, "max_days": 20, "id_issued_estimated": "2025-10-15", "basis": "bracketed"}
+      },
+      "expected": null
+    },
+    {
+      "name": "voluntary period judged by the original notification date",
+      "merger": {
+        "original_notification_datetime": "2025-12-20T12:00:00Z",
+        "effective_notification_datetime": "2026-02-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 17, "min_days": 10, "max_days": 20, "id_issued_estimated": "2025-12-03", "basis": "bracketed"}
+      },
+      "expected": null
+    },
+    {
+      "name": "no estimate at all",
+      "merger": {"effective_notification_datetime": "2026-10-01T12:00:00Z"},
+      "expected": null
+    },
+    {
+      "name": "estimate without a date",
+      "merger": {
+        "effective_notification_datetime": "2026-10-01T12:00:00Z",
+        "pre_notification": {"estimated_days": 17, "basis": "bracketed"}
+      },
+      "expected": null
+    }
+  ]
+}
