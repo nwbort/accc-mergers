@@ -21,6 +21,7 @@ API without someone deciding it should.
 """
 
 import json
+from datetime import datetime
 from pathlib import Path
 
 from scripts.constants.regime import is_voluntary_period_notification
@@ -105,19 +106,48 @@ def _entry(merger: dict) -> dict:
     return entry
 
 
+def _modified_ts(entry: dict) -> float:
+    """The register page's modified time as a timestamp, 0 when missing or unparseable.
+
+    Parsed rather than string-compared: it carries a +10:00/+11:00 offset that
+    changes across daylight saving.
+    """
+    try:
+        return datetime.fromisoformat(entry.get("page_modified_datetime") or "").timestamp()
+    except ValueError:
+        return 0.0
+
+
+def recency_key(entry: dict) -> tuple:
+    """Sort key for most recently updated first (use with ``reverse=True``).
+
+    The same order as the site's "Last updated" sort (``modified-desc`` in
+    frontend/src/utils/mergerSort.js): newest ``latest_event_date`` first, which
+    is when the matter itself last changed, with the page's modified time only
+    breaking ties within a day, since every event is stamped at a nominal
+    midday. The modified time is never the primary key: the ACCC rewriting an
+    old page (as its consultation-section rollout does) would float a dormant
+    matter to the top. Matters with no events sort last; the merger id settles
+    anything left, so the file is the same on every run.
+    """
+    latest = entry.get("latest_event_date")
+    return (latest is not None, latest or "", _modified_ts(entry), entry.get("merger_id") or "")
+
+
 def generate(mergers: list, output_dir: Path) -> int:
     """Write the API's merger list. Returns the merger count.
 
-    Ordered and laid out like list.json (one merger per line, by notification
-    date) so a pipeline commit diffs per matter. Deliberately no generation
-    timestamp: it would make every run a diff. Clients wanting freshness have
-    each entry's ``page_modified_datetime`` and the response's ETag.
+    Most recently updated first (:func:`recency_key`), one merger per line, so
+    a pipeline commit diffs per matter: a matter that changes moves to the top,
+    which is a two-line diff. Deliberately no generation timestamp: it would
+    make every run a diff. Clients wanting freshness have each entry's
+    ``latest_event_date``/``page_modified_datetime`` and the response's ETag.
     """
     out_dir = Path(output_dir) / API_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
 
     entries = [_entry(m) for m in mergers]
-    entries.sort(key=lambda e: e.get("effective_notification_datetime") or "")
+    entries.sort(key=recency_key, reverse=True)
 
     header = json.dumps(
         {"version": "v1", "licence": LICENCE, "attribution": ATTRIBUTION},

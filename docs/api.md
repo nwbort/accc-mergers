@@ -53,6 +53,12 @@ curl -H "Authorization: Bearer $MERGERS_FYI_KEY" \
 ]}
 ```
 
+Matters are ordered most recently updated first, as the site's "Last updated"
+sort orders them: by `latest_event_date` (when the matter itself last changed),
+newest first, with `page_modified_datetime` ordering matters updated on the
+same day. The page's modified time never outranks a newer event, so an old
+matter whose page the ACCC merely reformatted stays where it was.
+
 Each entry is exactly what the site's merger list (`mergers/list.json`)
 carries, plus `pre_notification`:
 

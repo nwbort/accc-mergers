@@ -75,8 +75,8 @@ def test_entry_keys_are_pinned():
 
 def test_generate_writes_one_merger_per_line(tmp_path):
     mergers = [
-        _merger(merger_id="MN-2", effective_notification_datetime="2026-10-02T12:00:00Z"),
         _merger(merger_id="MN-1"),
+        _merger(merger_id="MN-2", events=[{"date": "2026-10-02T12:00:00Z"}]),
     ]
     assert api.generate(mergers, tmp_path) == 2
     path = tmp_path / "api" / "v1" / "mergers.json"
@@ -84,5 +84,45 @@ def test_generate_writes_one_merger_per_line(tmp_path):
     payload = json.loads(text)
     assert payload["version"] == "v1"
     assert payload["licence"].startswith("CC BY 4.0")
-    assert [m["merger_id"] for m in payload["mergers"]] == ["MN-1", "MN-2"]
+    assert [m["merger_id"] for m in payload["mergers"]] == ["MN-2", "MN-1"]
     assert len(text.splitlines()) == 4  # header line, two mergers, closing line
+
+
+def _ordered(*entries):
+    return [e["merger_id"] for e in sorted(entries, key=api.recency_key, reverse=True)]
+
+
+def test_most_recent_event_first():
+    assert _ordered(
+        {"merger_id": "MN-OLD", "latest_event_date": "2026-09-01T12:00:00Z"},
+        {"merger_id": "MN-NEW", "latest_event_date": "2026-11-01T12:00:00Z"},
+    ) == ["MN-NEW", "MN-OLD"]
+
+
+def test_page_modified_time_breaks_same_day_ties_across_offsets():
+    # 09:00+11:00 is 22:00 UTC the day before, so it is *earlier* than
+    # 08:30+10:00 even though it reads as later as a string.
+    assert _ordered(
+        {"merger_id": "MN-A", "latest_event_date": "2026-11-01T12:00:00Z",
+         "page_modified_datetime": "2026-11-02T09:00:00+11:00"},
+        {"merger_id": "MN-B", "latest_event_date": "2026-11-01T12:00:00Z",
+         "page_modified_datetime": "2026-11-02T08:30:00+10:00"},
+    ) == ["MN-B", "MN-A"]
+
+
+def test_page_modified_time_never_outranks_a_newer_event():
+    assert _ordered(
+        {"merger_id": "MN-REWRITTEN", "latest_event_date": "2026-01-01T12:00:00Z",
+         "page_modified_datetime": "2026-11-18T09:00:00+11:00"},
+        {"merger_id": "MN-ACTIVE", "latest_event_date": "2026-11-10T12:00:00Z",
+         "page_modified_datetime": "2026-11-10T09:00:00+11:00"},
+    ) == ["MN-ACTIVE", "MN-REWRITTEN"]
+
+
+def test_matters_without_events_or_modified_times_sort_last():
+    assert _ordered(
+        {"merger_id": "MN-NONE"},
+        {"merger_id": "MN-NOMOD", "latest_event_date": "2026-11-01T12:00:00Z"},
+        {"merger_id": "MN-BOTH", "latest_event_date": "2026-11-01T12:00:00Z",
+         "page_modified_datetime": "2026-11-01T10:00:00+11:00"},
+    ) == ["MN-BOTH", "MN-NOMOD", "MN-NONE"]
