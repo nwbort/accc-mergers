@@ -1,6 +1,6 @@
 {
   "total_mergers": 331,
-  "total_waivers": 545,
+  "total_waivers": 546,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 518,
+    "Approved": 519,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.025688073394495,
-    "median_days": 21,
-    "average_business_days": 14.427522935779816,
-    "median_business_days": 15
+    "average_days": 21.02930402930403,
+    "median_days": 21.0,
+    "average_business_days": 14.432234432234432,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20052",
+      "merger_name": "Home Timber & Hardware - Mitre 10, Picton NSW",
+      "determination": "Approved",
+      "determination_date": "2026-11-19T12:00:00Z",
+      "page_modified_datetime": "2026-11-19T18:32:32+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-45043",
       "merger_name": "Pemba \u2013 Accelagen",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-01134",
-      "merger_name": "Australian Venue Co \u2013 assets of the King O\u2019Malley\u2019s venue (Canberra, ACT)",
-      "determination": "Approved",
-      "determination_date": "2026-11-18T12:00:00Z",
-      "page_modified_datetime": "2026-11-18T17:18:30+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
