@@ -61,6 +61,16 @@
       "effective_notification_datetime": "2026-09-29T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-11-27T12:00:00Z",
+      "merger_id": "MN-20048",
+      "merger_name": "Endeavour Group - retail liquor site in Darch, WA",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-19T12:00:00Z"
+    },
+    {
       "type": "public_benefit_response_due",
       "event_type_display": "Public benefit responses due",
       "date": "2026-12-01T12:00:00Z",
@@ -393,6 +403,6 @@
       "end_date": "2027-04-15T12:00:00Z"
     }
   ],
-  "count": 39,
+  "count": 40,
   "days_ahead": 60
 }

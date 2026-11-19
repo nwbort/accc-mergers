@@ -1,6 +1,16 @@
 {
   "events": [
     {
+      "type": "questionnaire",
+      "title": "Phase 1 consultation",
+      "date": "2026-11-20T12:00:00Z",
+      "merger_id": "MN-20048",
+      "merger_name": "Endeavour Group - retail liquor site in Darch, WA",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false,
+      "url_gh": "/mergers/MN-20048/Endeavour Group - retail liquor site in Darch, WA - Questionnaire.pdf"
+    },
+    {
       "type": "phase_1_determination",
       "title": "Phase 1 - initial assessment determination: Approved",
       "date": "2026-11-19T12:00:00Z",
@@ -9,6 +19,15 @@
       "stage": "Phase 1 - initial assessment",
       "is_waiver": false,
       "url_gh": "/mergers/MN-20042/Webuild - Trevi Group - Phase 1 determination.pdf"
+    },
+    {
+      "type": "notified",
+      "title": "Merger notified to ACCC",
+      "date": "2026-11-19T12:00:00Z",
+      "merger_id": "MN-20048",
+      "merger_name": "Endeavour Group - retail liquor site in Darch, WA",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false
     },
     {
       "type": "phase_1_determination",
@@ -905,6 +924,6 @@
       "is_waiver": false
     }
   ],
-  "count": 92,
+  "count": 94,
   "days_back": 14
 }

@@ -170,6 +170,42 @@
         "completed_count": 1
       }
     },
+    "furniss-link-pty-ltd-as-trustee-for-furniss-unit-trust": {
+      "id": "furniss-link-pty-ltd-as-trustee-for-furniss-unit-trust",
+      "canonical_name": "Furniss Link Pty Ltd as trustee for Furniss Unit Trust",
+      "members": [
+        {
+          "name": "Furniss Link Pty Ltd as trustee for Furniss Unit Trust",
+          "identifier": "681 620 584",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20048",
+            "merger_name": "Endeavour Group - retail liquor site in Darch, WA",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-19T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "imagine-education-holdings-pty-ltd": {
       "id": "imagine-education-holdings-pty-ltd",
       "canonical_name": "Imagine Education Holdings Pty Ltd",

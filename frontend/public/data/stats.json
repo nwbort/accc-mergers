@@ -1,10 +1,10 @@
 {
-  "total_mergers": 331,
+  "total_mergers": 332,
   "total_waivers": 546,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
-    "Under assessment": 34,
+    "Under assessment": 35,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 56
+      "count": 57
     },
     {
       "name": "Software Publishing",
@@ -76,7 +76,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 47
+      "count": 48
     },
     {
       "name": "Cafes and Restaurants",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-20048",
+      "merger_name": "Endeavour Group - retail liquor site in Darch, WA",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-19T12:00:00Z",
+      "page_modified_datetime": "2026-11-20T10:39:47+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-15054",
       "merger_name": "Endeavour Group \u2013 retail liquor store and adjacent property on Russell Island (QLD)",
@@ -204,16 +214,6 @@
       "effective_notification_datetime": "2026-11-09T12:00:00Z",
       "page_modified_datetime": "2026-11-19T17:30:16+11:00",
       "is_waiver": true,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-20046",
-      "merger_name": "Autosports Group - Mercedes-Benz Parramatta and Castle Hill, Chery Castle Hill",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-11-06T12:00:00Z",
-      "page_modified_datetime": "2026-11-06T16:44:31+11:00",
-      "is_waiver": false,
       "is_refiled": false
     }
   ],
