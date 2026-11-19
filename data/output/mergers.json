@@ -20547,7 +20547,7 @@
         "id_issued_estimated": "2026-10-13",
         "id_issued_before": "2026-10-20",
         "id_issued_after": "2026-09-23",
-        "min_days_witness": "WA-15056",
+        "min_days_witness": "WA-15055",
         "max_days_witness": "WA-15050",
         "basis": "bracketed",
         "method_version": 1
@@ -20699,12 +20699,12 @@
       },
       "pre_notification": {
         "estimated_days": 32,
-        "min_days": 23,
+        "min_days": 27,
         "max_days": 56,
         "id_issued_estimated": "2026-10-17",
-        "id_issued_before": "2026-10-26",
+        "id_issued_before": "2026-10-22",
         "id_issued_after": "2026-09-23",
-        "min_days_witness": "WA-15056",
+        "min_days_witness": "WA-15055",
         "max_days_witness": "WA-15050",
         "basis": "bracketed",
         "method_version": 1
@@ -40544,15 +40544,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 14,
-        "min_days": null,
+        "estimated_days": 13,
+        "min_days": 11,
         "max_days": 21,
-        "id_issued_estimated": "2026-10-27",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-10-28",
+        "id_issued_before": "2026-10-30",
         "id_issued_after": "2026-10-20",
-        "min_days_witness": null,
+        "min_days_witness": "WA-45043",
         "max_days_witness": "WA-45040",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -95108,6 +95108,182 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/pemba-%E2%80%93-superguardian",
+      "merger_name": "Pemba \u2013 SuperGuardian",
+      "status": "Assessment completed",
+      "merger_id": "WA-15055",
+      "effective_notification_datetime": "2026-10-22T12:00:00Z",
+      "original_notification_datetime": "2026-10-22T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-19T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-19T17:31:31+11:00",
+      "acquirers": [
+        {
+          "name": "Maui BidCo Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "24 668 283 127",
+          "party_page": {
+            "id": "maui-bidco-pty-ltd",
+            "name": "Maui BidCo Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "SuperGuardian Corporation",
+          "identifier_type": null,
+          "identifier": "Identifying number: SEC Registration No. CS200800567), a company incorporated in the Philippines",
+          "party_page": {
+            "id": "superguardian-corporation",
+            "name": "SuperGuardian Corporation"
+          }
+        },
+        {
+          "name": "SuperGuardian Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "57 113 986 968",
+          "party_page": {
+            "id": "superguardian-pty-ltd",
+            "name": "SuperGuardian Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "SuperGuardian Administration Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "639 488 181",
+          "party_page": {
+            "id": "superguardian-administration-pty-ltd",
+            "name": "SuperGuardian Administration Pty Ltd"
+          }
+        },
+        {
+          "name": "Pemba Capital Fund II, L.P.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "pemba-capital-fund-ii-l-p",
+            "name": "Pemba Capital Fund II, L.P."
+          }
+        },
+        {
+          "name": "PEMBA CAPITAL PARTNERS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "24 121 906 045",
+          "party_page": {
+            "id": "pemba-capital-partners-pty-limited",
+            "name": "Pemba Capital Partners Pty Limited"
+          }
+        },
+        {
+          "name": "Fairway HoldCo Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "99 657 067 868",
+          "party_page": {
+            "id": "fairway-holdco-pty-ltd",
+            "name": "Fairway HoldCo Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "Maui BidCo Pty Ltd (**BidCo**) proposes to acquire 100% of the issued shares in SuperGuardian Pty Ltd and SuperGuardian Corporation (together, **SuperGuardian**) from SuperGuardian\u2019s selling shareholders (the **Acquisition**). BidCo is a wholly owned subsidiary of Fairway HoldCo Pty Ltd, which is wholly owned by Pemba Capital Fund II, L.P. (**Pemba Fund II**), a private equity fund managed by Pemba Capital Partners Pty Ltd (**Pemba**), based in Sydney.\n\nThe Acquisition will be implemented by way of a Share Sale and Purchase Agreement. Following completion, Pemba will exercise control of SuperGuardian, with SuperGuardian continuing to operate as part of the broader Pemba portfolio.\n\nPemba is an investor in high-growth and entrepreneurial businesses, with over AUD 2 billion in assets under management. Pemba has interests across various sectors, including business services, education & training, financial services, healthcare, and technology. Pemba\u2019s existing self-managed super fund-related operations provide self-managed super fund administration services and software to participants in the financial advice and accounting industries.\n\nSuperGuardian is an Adelaide-based\u00a0self-managed super fund administration services provider to financial advisers, accountants and trustees.",
+      "events": [
+        {
+          "date": "2026-11-19T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Pemba%20%E2%80%93%20SuperGuardian%20%28WA-15055%29%20-%20Notification%20waiver%20determination%20-%2019%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Maui BidCo Pty Ltd (BidCo), which is indirectly wholly owned by\nPemba Capital Fund II, L.P. (Pemba Fund II), applied for a\nnotification waiver in respect of its proposed acquisition of 100% of\nthe issued shares in SuperGuardian Pty Ltd and SuperGuardian\nCorporation (together, SuperGuardian), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "19 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "BidCo is a wholly owned subsidiary of Fairway HoldCo Pty Ltd, which\nis wholly owned by Pemba Fund II, a private equity fund managed by\nPemba Capital Partners Pty Ltd (Pemba), based in Sydney.\nPemba is an investor in high-growth and entrepreneurial businesses\nacross various sectors, with over AUD 2 billion in assets under\nmanagement. This includes interests in SuperConcepts Pty Ltd,\nwhich supplies self-managed super fund administration services and\nsoftware to participants in the financial advice and accounting\nindustries, and Hewison & Associates Pty Ltd, a Melbourne-based\nwealth management firm that provides some self-managed super\nfund administration services to its clients in-house.\nThe target, SuperGuardian, is an Adelaide-based self-managed super\nfund administration services provider to financial advisers,\naccountants and trustees."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided by the applicant and certain publicly\navailable information, and had regard to the factors in section\n51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (the\nAct).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. the parties\u2019 combined share in the supply of self-managed\nsuper fund administration services in Australia is low and\nthe increase in share of supply arising from the Acquisition\nwould be small\nb. there is limited horizontal overlap between Pemba (and its\nconnected entities) and SuperGuardian in the supply of self-\nmanaged super fund software services in Australia\nc. there are alternative suppliers of self-managed super fund\nadministration and software services in Australia\nd. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-15055/Pemba \u2013 SuperGuardian (WA-15055) - Notification waiver determination - 19 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-22T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-05041",
+          "merger_name": "Pemba - Hewison Private Wealth",
+          "acquirers": [
+            "Elevate BidCo Pty Ltd"
+          ],
+          "targets": [
+            "Hewison & Associates Pty. Ltd."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-45043",
+          "merger_name": "Pemba \u2013 Accelagen",
+          "acquirers": [
+            "Curis BidCo Pty Ltd"
+          ],
+          "targets": [
+            "Accelagen Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-85066",
+          "merger_name": "Pemba \u2013 Bio101",
+          "acquirers": [
+            "Roma BidCo Pty Ltd"
+          ],
+          "targets": [
+            "BIO101 FINANCIAL ADVISORY PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/inpex-%E2%80%93-further-interest-in-bonaparte-ccs-jv",
       "merger_name": "INPEX \u2013 further interest in Bonaparte CCS JV",
       "status": "Assessment completed",
@@ -123449,6 +123625,165 @@
           "targets": [
             "NEW LAMBTON FAMILY PRACTICE PTY LTD",
             "Business and assets comprising New Lambton Family Practice"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/pemba-%E2%80%93-accelagen",
+      "merger_name": "Pemba \u2013 Accelagen",
+      "status": "Assessment completed",
+      "merger_id": "WA-45043",
+      "effective_notification_datetime": "2026-10-30T12:00:00Z",
+      "original_notification_datetime": "2026-10-30T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-19T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-19T17:33:22+11:00",
+      "acquirers": [
+        {
+          "name": "Curis BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "703 731 140",
+          "party_page": {
+            "id": "curis-bidco-pty-ltd",
+            "name": "Curis BidCo Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Accelagen Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "11 142 888 766",
+          "party_page": {
+            "id": "accelagen-pty-ltd",
+            "name": "Accelagen Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Curis HoldCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "703 729 864",
+          "party_page": {
+            "id": "curis-holdco-pty-ltd",
+            "name": "Curis HoldCo Pty Ltd"
+          }
+        },
+        {
+          "name": "PEMBA CAPITAL PARTNERS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "24 121 906 045",
+          "party_page": {
+            "id": "pemba-capital-partners-pty-limited",
+            "name": "Pemba Capital Partners Pty Limited"
+          }
+        },
+        {
+          "name": "Pemba Capital Fund IV, L.P.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "pemba-capital-fund-iv-l-p",
+            "name": "Pemba Capital Fund IV, L.P."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ],
+      "merger_description": "Curis BidCo Pty Ltd (**BidCo**) proposes to acquire 100% of the issued shares in Accelagen Pty Ltd (**Accelagen**) from Accelagen\u2019s existing founding shareholders (the **Acquisition**). BidCo is a special purpose vehicle and is an indirect wholly owned subsidiary of Curis HoldCo Pty Ltd (**HoldCo**). HoldCo is currently wholly owned by Pemba Capital Fund IV, L.P., a private equity fund managed by Pemba Capital Partners Pty Ltd (**Pemba**), based in Sydney.\n\nThe Acquisition will be implemented by way of a Share Purchase Deed. Following completion, BidCo will exercise control of Accelagen.\n\nPemba is an investor in high-growth and entrepreneurial businesses, with over AUD 2 billion in assets under management. Pemba has interests across various sectors, including business services, education & training, financial services, healthcare, and technology.\n\nAccelagen is an Australian-based, full-service contract research organisation (**CRO**), with a focus on clinical development and regulatory affairs, providing guidance and support throughout all stages of product development to biotechnology, pharmaceutical and medical device companies, including the development, initiation and management of Phase I-IV clinical trials.",
+      "events": [
+        {
+          "date": "2026-11-19T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Pemba%20%E2%80%93%20Accelagen%20%28WA-45043%29%20-%20Notification%20waiver%20determination%20-%2019%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Curis BidCo Pty Ltd (BidCo), which is indirectly wholly owned by\nPemba Capital Fund IV, L.P. (Pemba Fund IV), applied for a\nnotification waiver in respect of its proposed acquisition of 100% of\nthe issued shares in Accelagen Pty Ltd (Accelagen) from\nAccelagen\u2019s existing founding shareholders, as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "19 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "BidCo is a special purpose vehicle and is an indirect wholly owned\nsubsidiary of Curis HoldCo Pty Ltd (HoldCo). HoldCo is currently\nwholly owned by Pemba Fund IV, a private equity fund managed by\nPemba Capital Partners Pty Ltd (Pemba), based in Sydney.\nPemba is an investor in high-growth and entrepreneurial businesses,\nwith over AUD 2 billion in assets under management. Pemba has\ninterests across various sectors, including business services,\neducation & training, financial services, healthcare, and technology.\nThis includes an interest in RxPx, a healthcare software and patient\nsupport business that is focused on supporting the launch and\ncommercialisation of specialty therapies for the pharmaceutical and\nbiotechnology industry.\nThe vendors will receive shares in HoldCo, resulting in the vendors\nholding a 40% economic interest in HoldCo post-completion, with\nPemba holding the remaining 60%.\nThe target, Accelagen, is an Australian-based, full-service contract\nresearch organisation (CRO), with a focus on clinical development\nand regulatory affairs, providing guidance and support throughout all\nstages of product development to biotechnology, pharmaceutical\nand medical device companies, including the development, initiation\nand management of Phase I-IV clinical trials."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is no horizontal overlap between Pemba (and its\nconnected entities) and Accelagen in the supply of CRO\nservices in Australia, and limited horizontal overlap between\nthe parties in the supply of research commercialisation\nsupport services, with the parties focused on different\nproduct research stages\nb. there are alternative suppliers of CRO and research\ncommercialisation support services in Australia\nc. there is a low risk of foreclosure or other concerning vertical\nor conglomerate effects resulting from exclusionary\nconduct, bundling or tying of products or services post-\nacquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-45043/Pemba \u2013 Accelagen (WA-45043) - Notification waiver determination - 19 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-30T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-15055",
+          "merger_name": "Pemba \u2013 SuperGuardian",
+          "acquirers": [
+            "Maui BidCo Pty Ltd"
+          ],
+          "targets": [
+            "SuperGuardian Corporation",
+            "SuperGuardian Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-85066",
+          "merger_name": "Pemba \u2013 Bio101",
+          "acquirers": [
+            "Roma BidCo Pty Ltd"
+          ],
+          "targets": [
+            "BIO101 FINANCIAL ADVISORY PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-05041",
+          "merger_name": "Pemba - Hewison Private Wealth",
+          "acquirers": [
+            "Elevate BidCo Pty Ltd"
+          ],
+          "targets": [
+            "Hewison & Associates Pty. Ltd."
           ],
           "accc_determination": "Approved"
         }
