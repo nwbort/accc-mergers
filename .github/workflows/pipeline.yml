@@ -337,11 +337,24 @@ jobs:
         uses: actions/cache@v6
         with:
           path: ${{ runner.temp }}/apt-libreoffice
-          key: ${{ runner.os }}-apt-libreoffice-writer-${{ steps.libreoffice-version.outputs.version }}
+          # "-roboto" marks the package set that includes fonts-roboto, so the
+          # first run after it was added misses the exact key and saves its
+          # .debs too, instead of hitting a writer-only entry and never saving.
+          key: ${{ runner.os }}-apt-libreoffice-writer-${{ steps.libreoffice-version.outputs.version }}-roboto
           restore-keys: |
             ${{ runner.os }}-apt-libreoffice-writer-
 
+      # fonts-roboto: the ACCC's questionnaire template sets its body text in
+      # Roboto. Without it LibreOffice substitutes, and the substitute is
+      # whatever that release's fallback happens to be — DejaVu Sans under
+      # LibreOffice 24.2 (Ubuntu 24.04), DejaVu Serif under 26.2 (26.04), so
+      # the runner image moving under `ubuntu-latest` silently turned every
+      # questionnaire converted from 12 Nov 2026 serif. Installing the real
+      # font makes the PDF match the ACCC's document whatever the release.
+      # (Headings use Bitter, which Ubuntu doesn't package; those still fall
+      # back.)
       - name: Install LibreOffice
+        id: install-libreoffice
         if: steps.find-docx.outputs.has_unconverted == 'true'
         env:
           APT_CACHE_DIR: ${{ runner.temp }}/apt-libreoffice
@@ -362,7 +375,7 @@ jobs:
             echo "No cached .deb files — installing from the mirror"
           fi
 
-          sudo apt-get install -y libreoffice-writer --no-install-recommends
+          sudo apt-get install -y libreoffice-writer fonts-roboto --no-install-recommends
 
           # Drop any .deb the archive holds that can no longer be downloaded —
           # i.e. a version the mirror has moved past. This is what keeps the
@@ -390,8 +403,24 @@ jobs:
           sudo chown -R "$(id -u):$(id -g)" "$APT_CACHE_DIR"
           echo "Cache directory now holds $(ls -1 "$APT_CACHE_DIR"/*.deb 2>/dev/null | wc -l) .deb file(s)"
 
+          # A PDF is converted once and never redone, so one made with a
+          # substitute font stays that way. If fontconfig can't resolve Roboto
+          # (the package renamed, its files moved), hold the conversion back
+          # rather than produce more of them: the DOCX stays unconverted and is
+          # retried next run. Not a step failure, which would cost the run its
+          # scrape — an error annotation on the run instead.
+          resolved=$(fc-match -f '%{family[0]}' Roboto)
+          if [ "$resolved" = "Roboto" ]; then
+            echo "fonts_ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::error title=Roboto font missing::fontconfig resolves Roboto to '${resolved}'; DOCX conversion skipped this run so questionnaires aren't rendered in a substitute font"
+            echo "fonts_ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Convert DOCX to PDF
-        if: steps.find-docx.outputs.has_unconverted == 'true'
+        if: >-
+          steps.find-docx.outputs.has_unconverted == 'true'
+          && steps.install-libreoffice.outputs.fonts_ok == 'true'
         run: |
           while IFS= read -r docx; do
             if [ -n "$docx" ]; then
