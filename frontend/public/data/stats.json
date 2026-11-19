@@ -1,6 +1,6 @@
 {
   "total_mergers": 331,
-  "total_waivers": 540,
+  "total_waivers": 542,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 513,
+    "Approved": 515,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,9 +48,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.057407407407407,
+    "average_days": 21.035055350553506,
     "median_days": 21.0,
-    "average_business_days": 14.442592592592593,
+    "average_business_days": 14.42988929889299,
     "median_business_days": 15.0
   },
   "top_industries": [
@@ -76,18 +76,18 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 45
-    },
-    {
-      "name": "Engineering Design and Engineering Consulting Services",
-      "count": 29
-    },
-    {
-      "name": "Accommodation",
-      "count": 29
+      "count": 47
     },
     {
       "name": "Cafes and Restaurants",
+      "count": 31
+    },
+    {
+      "name": "Accommodation",
+      "count": 30
+    },
+    {
+      "name": "Engineering Design and Engineering Consulting Services",
       "count": 29
     },
     {
@@ -207,17 +207,39 @@
       "is_refiled": false
     },
     {
-      "merger_id": "MN-70049",
-      "merger_name": "Total Ventilation Hygiene - Alphacool",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "merger_id": "WA-70053",
+      "merger_name": "Australian Venue Co \u2013 Assets of Central Hotel, Beaconsfield VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "effective_notification_datetime": "2026-11-05T12:00:00Z",
-      "page_modified_datetime": "2026-11-06T10:54:38+11:00",
-      "is_waiver": false,
+      "page_modified_datetime": "2026-11-19T17:26:18+11:00",
+      "is_waiver": true,
       "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-95050",
+      "merger_name": "MA Financial (Redcape Fund) \u2013 Hotel Canobolas",
+      "determination": "Approved",
+      "determination_date": "2026-11-19T12:00:00Z",
+      "page_modified_datetime": "2026-11-19T17:27:22+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-70053",
+      "merger_name": "Australian Venue Co \u2013 Assets of Central Hotel, Beaconsfield VIC",
+      "determination": "Approved",
+      "determination_date": "2026-11-19T12:00:00Z",
+      "page_modified_datetime": "2026-11-19T17:26:18+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
     {
       "merger_id": "WA-85065",
       "merger_name": "Dexus \u2013 LDK Healthcare Unit Trust",
@@ -326,28 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-20051",
-      "merger_name": "Tetra Tech - Pitt & Sherry",
-      "determination": "Approved",
-      "determination_date": "2026-11-17T12:00:00Z",
-      "page_modified_datetime": "2026-11-17T17:32:56+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85066",
-      "merger_name": "Pemba \u2013 Bio101",
-      "determination": "Approved",
-      "determination_date": "2026-11-17T12:00:00Z",
-      "page_modified_datetime": "2026-11-17T17:31:51+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

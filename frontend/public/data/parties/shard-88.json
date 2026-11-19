@@ -44,6 +44,48 @@
         "completed_count": 1
       }
     },
+    "canobolas-pub-pty-limited": {
+      "id": "canobolas-pub-pty-limited",
+      "canonical_name": "Canobolas Pub Pty Limited",
+      "members": [
+        {
+          "name": "Canobolas Pub Pty Limited",
+          "identifier": "66 651 819 671",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95050",
+            "merger_name": "MA Financial (Redcape Fund) \u2013 Hotel Canobolas",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-11-03T12:00:00Z",
+            "determination_date": "2026-11-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
     "cvc-capital-partners": {
       "id": "cvc-capital-partners",
       "canonical_name": "CVC Capital Partners",
