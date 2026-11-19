@@ -1,6 +1,6 @@
 {
   "total_mergers": 331,
-  "total_waivers": 537,
+  "total_waivers": 538,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 510,
+    "Approved": 511,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.065176908752328,
-    "median_days": 21,
-    "average_business_days": 14.443202979515828,
-    "median_business_days": 15
+    "average_days": 21.063197026022305,
+    "median_days": 21.0,
+    "average_business_days": 14.442379182156134,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 223
+      "count": 224
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40055",
+      "merger_name": "Sheffield Group \u2013 Champion Fasteners",
+      "determination": "Approved",
+      "determination_date": "2026-11-19T12:00:00Z",
+      "page_modified_datetime": "2026-11-19T17:21:36+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-20042",
       "merger_name": "Webuild \u2013 Trevi Group",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-17T12:00:00Z",
       "page_modified_datetime": "2026-11-17T17:25:19+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-80054",
-      "merger_name": "Equans \u2013 Credible Audio Visual Solutions",
-      "determination": "Approved",
-      "determination_date": "2026-11-17T12:00:00Z",
-      "page_modified_datetime": "2026-11-17T17:24:05+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

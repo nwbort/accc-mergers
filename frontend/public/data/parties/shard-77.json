@@ -128,6 +128,48 @@
         "completed_count": 1
       }
     },
+    "champion-fasteners-pty-ltd": {
+      "id": "champion-fasteners-pty-ltd",
+      "canonical_name": "Champion Fasteners Pty Ltd",
+      "members": [
+        {
+          "name": "Champion Fasteners Pty Ltd",
+          "identifier": "627 830 513",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40055",
+            "merger_name": "Sheffield Group \u2013 Champion Fasteners",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-30T12:00:00Z",
+            "determination_date": "2026-11-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
     "colevale-estates-pty-ltd-m-t-populin-pty-ltd-twin-rock-pty-ltd": {
       "id": "colevale-estates-pty-ltd-m-t-populin-pty-ltd-twin-rock-pty-ltd",
       "canonical_name": "Colevale Estates Pty Ltd & M & T Populin Pty Ltd & Twin Rock Pty Ltd",

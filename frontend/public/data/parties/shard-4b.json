@@ -338,6 +338,48 @@
       },
       "waiver_duration": null
     },
+    "stone-finco-pty-ltd": {
+      "id": "stone-finco-pty-ltd",
+      "canonical_name": "Stone FinCo Pty Ltd",
+      "members": [
+        {
+          "name": "Stone FinCo Pty Ltd",
+          "identifier": "692 647 402",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40055",
+            "merger_name": "Sheffield Group \u2013 Champion Fasteners",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-30T12:00:00Z",
+            "determination_date": "2026-11-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
     "united-initiators-opco-llc": {
       "id": "united-initiators-opco-llc",
       "canonical_name": "United Initiators OpCo LLC",
