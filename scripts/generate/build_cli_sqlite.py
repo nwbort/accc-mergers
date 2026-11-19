@@ -27,8 +27,19 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from scripts.constants.tribunal import APPEAL_STATUS_CONCLUDED
+from scripts.generate.static_data.outputs.api import pre_notification_summary
 
-SCHEMA_VERSION = 2
+
+# v3: ``determination`` reads as the site's outcome (ceased, conditional,
+# appeal-substituted, cleared while a public benefit application runs), and
+# ``under_judicial_review`` / ``has_conditions`` columns were added.
+SCHEMA_VERSION = 3
+
+STATUS_COMPLETED = "Assessment completed"
+STATUS_CEASED = "Assessment ceased"
+APPROVED = "Approved"
+APPROVED_WITH_CONDITIONS = "Approved with conditions"
 
 
 SCHEMA = """
@@ -50,6 +61,8 @@ CREATE TABLE mergers (
     related_merger_name TEXT,
     under_appeal INTEGER,
     has_judicial_review INTEGER,
+    under_judicial_review INTEGER,
+    has_conditions INTEGER,
     phase_1_estimate_days INTEGER,
     raw_json TEXT
 );
@@ -137,14 +150,49 @@ def _join_names(items: Any, key: str = "name") -> str:
 
 
 def _compute_determination(m: dict[str, Any]) -> str | None:
-    if m.get("accc_determination"):
-        return m["accc_determination"]
-    if m.get("phase_2_determination"):
-        return m["phase_2_determination"]
-    stage = (m.get("stage") or "").lower()
-    if "phase 2" in stage:
+    """The outcome the site's header states for a matter, or None while live.
+
+    Mirrors ``getHeaderStatus`` / ``getOutcomeText`` in
+    frontend/src/utils/mergerOutcome.js, so ``mergers list --outcome`` and the
+    site agree:
+
+    * a matter whose public benefit application is running is live again, even
+      though its Phase 2 determination stands (``public_benefit_in_progress``);
+    * a concluded Tribunal appeal's ``effective_determination`` replaces the
+      ACCC's own;
+    * a ceased assessment reads as "Assessment ceased" — it never gets a
+      determination;
+    * "Approved" with ``has_conditions`` reads as "Approved with conditions".
+
+    Older records (no status, or a status other than completed/ceased) keep
+    the original fallbacks through the phase determinations.
+    """
+    if m.get("public_benefit_in_progress"):
         return None
-    return m.get("phase_1_determination")
+    determination = m.get("accc_determination")
+    appeal = m.get("appeal")
+    if (
+        isinstance(appeal, dict)
+        and appeal.get("status") == APPEAL_STATUS_CONCLUDED
+        and appeal.get("effective_determination")
+    ):
+        determination = appeal["effective_determination"]
+    if not determination:
+        if m.get("status") == STATUS_CEASED:
+            return STATUS_CEASED
+        if m.get("phase_2_determination"):
+            determination = m["phase_2_determination"]
+        elif "phase 2" in (m.get("stage") or "").lower():
+            return None
+        else:
+            determination = m.get("phase_1_determination")
+    if determination == APPROVED and m.get("has_conditions"):
+        return APPROVED_WITH_CONDITIONS
+    return determination or None
+
+
+def _has_judicial_review(m: dict[str, Any]) -> bool:
+    return bool(m.get("judicial_reviews") or m.get("judicial_review"))
 
 
 def _compute_phase(m: dict[str, Any]) -> int | None:
@@ -199,6 +247,12 @@ def _insert_merger(conn: sqlite3.Connection, m: dict[str, Any]) -> None:
     industries_text = _join_names(m.get("anzsic_codes"))
     related = m.get("related_merger") or {}
     phase_1_estimate = m.get("phase_1_estimate") or {}
+    # The condensed pre-notification reading the site and API show, computed
+    # here by the one Python copy of that rule so the CLI never re-derives it.
+    raw = dict(m)
+    summary = pre_notification_summary(m)
+    if summary is not None:
+        raw["pre_notification_summary"] = summary
 
     conn.execute(
         """
@@ -207,9 +261,9 @@ def _insert_merger(conn: sqlite3.Connection, m: dict[str, Any]) -> None:
             acquirers_text, targets_text, industries_text,
             determination, phase, notification_date, determination_date,
             related_merger_id, related_relationship, related_merger_name,
-            under_appeal, has_judicial_review, phase_1_estimate_days,
-            raw_json
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            under_appeal, has_judicial_review, under_judicial_review,
+            has_conditions, phase_1_estimate_days, raw_json
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             m["merger_id"],
@@ -228,9 +282,11 @@ def _insert_merger(conn: sqlite3.Connection, m: dict[str, Any]) -> None:
             related.get("relationship") if related else None,
             related.get("merger_name") if related else None,
             1 if m.get("under_appeal") else 0,
-            1 if m.get("judicial_review") else 0,
+            1 if _has_judicial_review(m) else 0,
+            1 if m.get("under_judicial_review") else 0,
+            1 if m.get("has_conditions") else 0,
             phase_1_estimate.get("expected_business_days"),
-            json.dumps(m),
+            json.dumps(raw),
         ),
     )
 
