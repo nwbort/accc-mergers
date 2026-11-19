@@ -2,6 +2,48 @@
   "shard": 252,
   "shard_count": 256,
   "parties": {
+    "dwml-subsidiary-pty-limited-as-trustee-for-the-drep2-ldk-jv-trust": {
+      "id": "dwml-subsidiary-pty-limited-as-trustee-for-the-drep2-ldk-jv-trust",
+      "canonical_name": "DWML Subsidiary Pty Limited as trustee for the DREP2 LDK JV Trust",
+      "members": [
+        {
+          "name": "DWML Subsidiary Pty Limited as trustee for the DREP2 LDK JV Trust",
+          "identifier": "45 648 022 664",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85065",
+            "merger_name": "Dexus \u2013 LDK Healthcare Unit Trust",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-28T12:00:00Z",
+            "determination_date": "2026-11-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
     "lake-beaut-s-a-s": {
       "id": "lake-beaut-s-a-s",
       "canonical_name": "Lake Beaut\u00e9 S.A.S.",

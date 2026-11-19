@@ -70669,10 +70669,10 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 21,
+        "estimated_days": 19,
         "min_days": 16,
         "max_days": 30,
-        "id_issued_estimated": "2026-10-22",
+        "id_issued_estimated": "2026-10-24",
         "id_issued_before": "2026-10-27",
         "id_issued_after": "2026-10-13",
         "min_days_witness": "WA-85066",
@@ -161319,6 +161319,147 @@
           "targets": [
             "NOLAN MEATS PTY. LTD.",
             "Tolobex Pty Ltd as trustee for Tolobex Unit Trust"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/dexus-%E2%80%93-ldk-healthcare-unit-trust",
+      "merger_name": "Dexus \u2013 LDK Healthcare Unit Trust",
+      "status": "Assessment completed",
+      "merger_id": "WA-85065",
+      "effective_notification_datetime": "2026-10-28T12:00:00Z",
+      "original_notification_datetime": "2026-10-28T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-19T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-19T17:25:07+11:00",
+      "acquirers": [
+        {
+          "name": "DWML Subsidiary Pty Limited as trustee for the DREP2 LDK JV Trust",
+          "identifier_type": "ABN",
+          "identifier": "45 648 022 664",
+          "party_page": {
+            "id": "dwml-subsidiary-pty-limited-as-trustee-for-the-drep2-ldk-jv-trust",
+            "name": "DWML Subsidiary Pty Limited as trustee for the DREP2 LDK JV Trust"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Anglican Community Services Investment Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "68 662 330 154",
+          "party_page": {
+            "id": "anglican-community-services-investment-holdings-pty-ltd",
+            "name": "Anglican Community Services Investment Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "The Trustee for LDK Healthcare Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "47 504 919 730",
+          "party_page": {
+            "id": "the-trustee-for-ldk-healthcare-unit-trust",
+            "name": "The Trustee for LDK Healthcare Unit Trust"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        }
+      ],
+      "merger_description": "DWML Subsidiary Pty Ltd as trustee for the DREP2 LDK JV Trust (**DREP2**) has entered into a Unit Sale Deed to acquire 50% of the units in the LDK Healthcare Unit Trust (**LDK Healthcare**) from Anglican Community Services Investment Holdings Pty Ltd (**Anglicare**) (the **Acquisition**).\n\nCurrently, 50% of the units in LDK Healthcare are held by Aspire LDK Pty Ltd (**Aspire**) as trustee for the Aspire LDK Unit Trust and 50% of the units are held by Anglicare. Following the Proposed Acquisition, Aspire and DREP2 will each hold 50% of the units in LDK Healthcare.\n\nLDK Healthcare is a retirement and aged care provider in Australia. It operates three retirement villages:\n\n1. The Landings at North Turramurra, NSW\n2. Greenway Views at Tuggeranong, ACT\n3. Amberfield at Weston Creek, ACT.\n\nA fourth retirement village, The Baybrook at Brighton, QLD, is under development.\n\nDREP2 is a trust managed by Dexus Real Estate Partnership 2 (**DREP2 Fund**), a fund managed by Dexus Group (**Dexus**).\n\nDexus (or Dexus affiliated entities) own ~64% of the units in DREP2. Golden Active Co-Investment Trust (**Golden Active**) owns ~36% of the units in DREP2. Golden Active is a Dexus managed trust with Dexus Wholesale Management Ltd as trustee. The sole unitholder of Golden Active is the National Pension Service of the Republic of Korea (**NPS**), a South Korean public pension fund.\n\nDexus owns and manages office property, industrial properties, shopping centres and healthcare properties in Australia. Dexus does not operate any retirement village accommodation in Australia. For completeness, Dexus (through the DREP2 Fund) has an equity interest in \u2018The Merewether\u2019, a luxury retirement community being constructed in Newcastle, NSW, which is expected to complete in mid to late 2027. The Merewether is being developed and managed by a third party (Third.i).\n\nNPS is a state-run public pension fund based in Seoul, South Korea. NPS provides financial support and retirement benefits for Korean citizens. An NPS-owned fund owns the retirement villages operated by the Aveo Group in QLD, NSW, VIC and Tasmania.",
+      "events": [
+        {
+          "date": "2026-11-19T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Dexus%20%E2%80%93%20LDK%20Healthcare%20Unit%20Trust%20%28WA-85065%29%20-%20Notification%20waiver%20determination%20-%2018%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "DWML Subsidiary Pty Limited as trustee for the DREP2 LDK JV Trust\n(DREP2) applied for a notification waiver in respect of its proposed\nacquisition of 50% of the units in the LDK Healthcare Unit Trust (LDK\nHealthcare) from Anglican Community Services Investment Holdings\nPty Ltd (Anglicare), as described in the transaction documents\nprovided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "18 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, DREP2 is a trust managed by Dexus Real Estate\nPartnership 2 (DREP2 Fund), a fund managed by Dexus Group\n(Dexus). Dexus (or Dexus affiliated entities) own ~64% of the units in\nDREP2. Golden Active Co-Investment Trust (Golden Active) owns\n~36% of the units in DREP2. Golden Active is a Dexus managed trust\nwith Dexus Wholesale Management Ltd as trustee. The sole\nunitholder of Golden Active is the National Pension Service of the\nRepublic of Korea (NPS), a South Korean public pension fund.\nDexus owns and manages office property, industrial properties,\nshopping centres and healthcare properties in Australia. Dexus does\nnot operate any retirement village accommodation in Australia.\nDexus (through the DREP2 Fund) has an equity interest in \u2018The\nMerewether\u2019, a luxury retirement community being constructed in\nNewcastle, NSW, which is expected to complete in mid to late 2027.\nThe Merewether is being developed and managed by a third party\n(Third.i).\nNPS is a state-run public pension fund based in Seoul, South Korea.\nNPS provides financial support and retirement benefits for Korean\ncitizens. An NPS-owned fund owns the retirement villages operated\nby Aveo Group (Aveo) in QLD, NSW, VIC and Tasmania.\nThe target, LDK Healthcare is a retirement and aged care provider in\nAustralia. It operates three retirement villages:\n1. The Landings at North Turramurra, NSW\n2. Greenway Views at Tuggeranong, ACT\n3. Amberfield at Weston Creek, ACT.\nA fourth retirement village, The Baybrook at Brighton, QLD, is under\ndevelopment."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the parties\u2019 combined share in the supply of retirement\nvillages in NSW and Qld is low, and the increase in share of\nsupply arising from the Acquisition would be small\nb. while NPS has existing interests in the supply of retirement\nvillages in the local areas surrounding LDK Healthcare\u2019s \u2018The\nLanding\u2019 and \u2018The Baybrook\u2019, it will only hold an indirect\nminority interest in LDK Healthcare\nc. there are alternative suppliers of retirement villages in the\nlocal areas surrounding \u2018The Landing\u2019 and \u2018The Baybrook\u2019.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-85065/Dexus \u2013 LDK Healthcare Unit Trust (WA-85065) - Notification waiver determination - 18 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-28T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-85038",
+          "merger_name": "Hammondcare - Anglican Community Services' Support at Home business",
+          "acquirers": [
+            "HAMMONDCARE"
+          ],
+          "targets": [
+            "ANGLICAN COMMUNITY SERVICES"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-10047",
+          "merger_name": "Commonwealth Superannuation Corporation \u2013 50% interest in Watergardens Shopping Centre precinct, Taylors Lake, Vic",
+          "acquirers": [
+            "Commonwealth Superannuation Corporation as the trustee for ARIA PROPERTY FUND"
+          ],
+          "targets": [
+            "The Watergardens Trust",
+            "QIC Retail Pty Ltd as the trustee for QIC TOWN CENTRE FUND"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-60037",
+          "merger_name": "Aware Real Estate \u2013 100 Market Street",
+          "acquirers": [
+            "The Trustee for ALTIS ARET SUB TRUST 34"
+          ],
+          "targets": [
+            "The Trustee for Market Mid Trust",
+            "The Trustee for Market Sub Trust"
           ],
           "accc_determination": "Approved"
         }

@@ -1,6 +1,6 @@
 {
   "total_mergers": 331,
-  "total_waivers": 539,
+  "total_waivers": 540,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 512,
+    "Approved": 513,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.055658627087197,
-    "median_days": 21,
-    "average_business_days": 14.439703153988868,
-    "median_business_days": 15
+    "average_days": 21.057407407407407,
+    "median_days": 21.0,
+    "average_business_days": 14.442592592592593,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 54
+      "count": 55
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85065",
+      "merger_name": "Dexus \u2013 LDK Healthcare Unit Trust",
+      "determination": "Approved",
+      "determination_date": "2026-11-19T12:00:00Z",
+      "page_modified_datetime": "2026-11-19T17:25:07+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85067",
       "merger_name": "Respect Group \u2013 Clifton Co-op Hospital aged care, support at home care and community housing, Clifton QLD",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-17T12:00:00Z",
       "page_modified_datetime": "2026-11-17T17:31:51+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-55044",
-      "merger_name": "Foresight Group \u2013 Kinetic",
-      "determination": "Approved",
-      "determination_date": "2026-11-17T12:00:00Z",
-      "page_modified_datetime": "2026-11-17T17:30:19+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
