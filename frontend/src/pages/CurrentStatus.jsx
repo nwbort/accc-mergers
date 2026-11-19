@@ -218,6 +218,7 @@ function CurrentStatus() {
         {entry.determinations && (
           <OutcomeSummaryCards
             idPrefix="chart-window"
+            titleSuffix={` \u2013 last ${entry.days} days`}
             className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6"
             speed={entry.phase_1_speed}
             phase1Counts={entry.determinations.phase_1}

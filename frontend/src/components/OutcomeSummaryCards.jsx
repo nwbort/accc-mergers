@@ -108,7 +108,8 @@ function DoughnutCard({ id, title, labels, counts, fallbackColor, caption, label
  * `phase_1_speed`); the three count maps are `{outcome: count}`.
  * `idPrefix` keeps the chart ids unique on the page; `emptyMessages`
  * (`{speed, phase1, phase2, waivers}`) shows a card with nothing to chart
- * instead of hiding it.
+ * instead of hiding it. `titleSuffix` is appended to every card's title
+ * (e.g. " – last 30 days" on a windowed page).
  */
 function OutcomeSummaryCards({
   speed,
@@ -117,6 +118,7 @@ function OutcomeSummaryCards({
   waiverCounts,
   idPrefix = 'chart',
   emptyMessages = {},
+  titleSuffix = '',
   className = 'grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6',
 }) {
   const phase1 = phase1Counts || {};
@@ -140,7 +142,7 @@ function OutcomeSummaryCards({
       {speed ? (
         <div className={`${CARD} p-6 flex flex-col`}>
           <h2 className="text-base font-semibold text-gray-900 mb-5">
-            Phase 1 speed
+            Phase 1 speed{titleSuffix}
           </h2>
           <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 flex-1 content-around">
             {[
@@ -164,7 +166,7 @@ function OutcomeSummaryCards({
         </div>
       ) : emptyMessages.speed ? (
         <div className={`${CARD} p-6 flex flex-col`}>
-          <h2 className="text-base font-semibold text-gray-900 mb-5">Phase 1 speed</h2>
+          <h2 className="text-base font-semibold text-gray-900 mb-5">Phase 1 speed{titleSuffix}</h2>
           <p className="text-sm text-gray-500 flex-1 flex items-center justify-center text-center">
             {emptyMessages.speed}
           </p>
@@ -173,7 +175,7 @@ function OutcomeSummaryCards({
 
       <DoughnutCard
         id={`${idPrefix}-phase1`}
-        title="Phase 1 determinations"
+        title={`Phase 1 determinations${titleSuffix}`}
         labels={phase1Labels}
         counts={phase1}
         fallbackColor={paletteColor}
@@ -184,7 +186,7 @@ function OutcomeSummaryCards({
 
       <DoughnutCard
         id={`${idPrefix}-phase2`}
-        title="Phase 2 determinations"
+        title={`Phase 2 determinations${titleSuffix}`}
         labels={phase2Labels}
         counts={phase2}
         fallbackColor={paletteColor}
@@ -195,7 +197,7 @@ function OutcomeSummaryCards({
 
       <DoughnutCard
         id={`${idPrefix}-waiver`}
-        title="Waiver determinations"
+        title={`Waiver determinations${titleSuffix}`}
         labels={waiverLabels}
         counts={waivers}
         fallbackColor={() => CHART_PALETTE.accent}
