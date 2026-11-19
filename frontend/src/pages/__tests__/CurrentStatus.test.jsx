@@ -393,14 +393,14 @@ describe('Current status', () => {
   it('carries the dashboard\'s summary cards, cut to the window', async () => {
     await renderPage();
 
-    expect(screen.getByRole('heading', { name: 'Phase 1 speed' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Phase 1 speed \u2013 last 30 days' })).toBeInTheDocument();
     expect(screen.getByText((_, el) => el?.tagName === 'SPAN' && el.textContent === '95.7%(44)')).toBeInTheDocument();
 
     const waivers = screen.getByRole('table', { name: 'Waiver determination breakdown' });
     expect(within(waivers).getByRole('row', { name: /Not approved/ })).toHaveTextContent('4');
 
     // No phase 2 review concluded in the last 30 days: the card stays, saying so.
-    expect(screen.getByRole('heading', { name: 'Phase 2 determinations' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Phase 2 determinations \u2013 last 30 days' })).toBeInTheDocument();
     expect(screen.getByText('No phase 2 reviews concluded in this window.')).toBeInTheDocument();
   });
 
@@ -409,6 +409,7 @@ describe('Current status', () => {
     await renderPage();
 
     await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
+    expect(screen.getByRole('heading', { name: 'Phase 1 speed \u2013 last 90 days' })).toBeInTheDocument();
 
     expect(screen.getByText((_, el) => el?.tagName === 'SPAN' && el.textContent === '96.6%(112)')).toBeInTheDocument();
     const phase2 = screen.getByRole('table', { name: /Phase 2 determination breakdown/ });
