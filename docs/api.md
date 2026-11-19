@@ -29,7 +29,7 @@ live in the `mergers-feedback` D1 database the signup Worker and
 | URL | `https://mergers.fyi/data/api/v1/mergers` (no extension; the `.json` name is a `404`) |
 | Method | `GET` (or `HEAD`) |
 | Auth | `Authorization: Bearer <key>` — not needed while the API is open, but worth sending: it is accepted then too, and it keeps working once a key is required |
-| Freshness | The file changes when the pipeline runs (several times a weekday). Send the previous response's `ETag` back as `If-None-Match` and an unchanged file comes back as a bodiless `304`. |
+| Freshness | The file can change whenever the pipeline runs (several times a weekday). `updated_at` in the body says when its content last changed. Send the previous response's `ETag` back as `If-None-Match` and an unchanged file comes back as a bodiless `304`. |
 
 ```bash
 curl -H "Authorization: Bearer $MERGERS_FYI_KEY" \
@@ -47,11 +47,16 @@ curl -H "Authorization: Bearer $MERGERS_FYI_KEY" \
 ### Response
 
 ```json
-{"version":"v1","licence":"CC BY 4.0 (…)","attribution":"mergers.fyi (…)","mergers":[
+{"version":"v1","updated_at":"2026-11-19T03:12:45Z","licence":"CC BY 4.0 (…)","attribution":"mergers.fyi (…)","mergers":[
 {"merger_id":"MN-40039", "merger_name":"…", "status":"…", "pre_notification":{"kind":"around","start_date":"2026-09-14","confidence":"high"}, …},
 …
 ]}
 ```
+
+`updated_at` (UTC) is when anything in the response last changed: a matter on
+the register, or one of mergers.fyi's own readings of it, such as a refined
+pre-notification estimate. It is not when the file was last regenerated; a run
+that changes nothing leaves it, and the whole file, as it was.
 
 Matters are ordered most recently updated first, as the site's "Last updated"
 sort orders them: by `latest_event_date` (when the matter itself last changed),
@@ -186,6 +191,10 @@ abuse and revoking ends it; a Cloudflare rate-limiting rule on
   `frontend/src/utils/preNotification.js`), hand-copied to Python and pinned to
   it by `fixtures/pre-notification-summary-cases.json`, which both test suites
   read.
+- `updated_at` comes from `data/processed/api_updated.json`: a hash of the
+  rest of the response and the time it was first seen. The generator restamps
+  only when the hash changes, and the pipeline commits the file with the rest
+  of `data/processed/`. Deleting it restamps the API with the next run's time.
 - `functions/data/api/[[path]].js` answers every path under `/data/api/`,
   serving an extensionless endpoint from the `.json` file of the same name.
   Pages runs a Function before a static file at the same path, so the file is
