@@ -78,11 +78,12 @@ def test_generate_writes_one_merger_per_line(tmp_path):
         _merger(merger_id="MN-1"),
         _merger(merger_id="MN-2", events=[{"date": "2026-10-02T12:00:00Z"}]),
     ]
-    assert api.generate(mergers, tmp_path) == 2
+    assert api.generate(mergers, tmp_path, now="2026-11-19T01:00:00Z") == 2
     path = tmp_path / "api" / "v1" / "mergers.json"
     text = path.read_text(encoding="utf-8")
     payload = json.loads(text)
     assert payload["version"] == "v1"
+    assert payload["updated_at"] == "2026-11-19T01:00:00Z"
     assert payload["licence"].startswith("CC BY 4.0")
     assert [m["merger_id"] for m in payload["mergers"]] == ["MN-2", "MN-1"]
     assert len(text.splitlines()) == 4  # header line, two mergers, closing line
@@ -126,3 +127,48 @@ def test_matters_without_events_or_modified_times_sort_last():
         {"merger_id": "MN-BOTH", "latest_event_date": "2026-11-01T12:00:00Z",
          "page_modified_datetime": "2026-11-01T10:00:00+11:00"},
     ) == ["MN-BOTH", "MN-NOMOD", "MN-NONE"]
+
+
+def _payload(tmp_path):
+    return json.loads((tmp_path / "api" / "v1" / "mergers.json").read_text(encoding="utf-8"))
+
+
+def test_updated_at_holds_while_the_content_is_unchanged(tmp_path):
+    store = tmp_path / "api_updated.json"
+    mergers = [_merger(merger_id="MN-1")]
+    api.generate(mergers, tmp_path, store_path=store, now="2026-11-19T01:00:00Z")
+    first = (tmp_path / "api" / "v1" / "mergers.json").read_bytes()
+    stored = store.read_text(encoding="utf-8")
+
+    api.generate(mergers, tmp_path, store_path=store, now="2026-11-20T05:00:00Z")
+    assert (tmp_path / "api" / "v1" / "mergers.json").read_bytes() == first
+    assert store.read_text(encoding="utf-8") == stored
+    assert _payload(tmp_path)["updated_at"] == "2026-11-19T01:00:00Z"
+
+
+def test_updated_at_moves_when_any_content_changes(tmp_path):
+    store = tmp_path / "api_updated.json"
+    api.generate([_merger()], tmp_path, store_path=store, now="2026-11-19T01:00:00Z")
+    # A derived field only (no ACCC date moves): still a change.
+    refined = _merger(pre_notification={
+        "estimated_days": 17, "min_days": 10, "max_days": 40,
+        "id_issued_estimated": "2026-09-14", "basis": "bracketed",
+    })
+    api.generate([refined], tmp_path, store_path=store, now="2026-11-20T05:00:00Z")
+    assert _payload(tmp_path)["updated_at"] == "2026-11-20T05:00:00Z"
+    assert json.loads(store.read_text(encoding="utf-8"))["updated_at"] == "2026-11-20T05:00:00Z"
+
+
+def test_unreadable_store_restamps(tmp_path):
+    store = tmp_path / "api_updated.json"
+    store.write_text("not json", encoding="utf-8")
+    api.generate([_merger()], tmp_path, store_path=store, now="2026-11-19T01:00:00Z")
+    assert _payload(tmp_path)["updated_at"] == "2026-11-19T01:00:00Z"
+
+
+def test_stamp_updated_is_pure():
+    store = {"digest": "abc", "updated_at": "2026-01-01T00:00:00Z"}
+    assert api.stamp_updated("abc", store, "2026-02-02T00:00:00Z")["updated_at"] == "2026-01-01T00:00:00Z"
+    assert api.stamp_updated("def", store, "2026-02-02T00:00:00Z") == {
+        "digest": "def", "updated_at": "2026-02-02T00:00:00Z"}
+    assert store == {"digest": "abc", "updated_at": "2026-01-01T00:00:00Z"}

@@ -69,6 +69,10 @@ Intermediate JSON written by the extraction pipeline (mainly
   histograms moved, major (`v3`) otherwise (written by
   `scripts/generate/static_data/quarterly_versions.py`; delete a quarter to
   restart it at v1)
+- `api_updated.json` — the API's `updated_at`: a hash of the API response
+  and the time that hash was first seen, so the stamp moves only when the
+  content does (written by `scripts/generate/static_data/outputs/api.py`;
+  delete it to restamp with the next run's time)
 - `advisors.json.enc` — encrypted advisor data, backend-only and created by
   the first save in `scripts/tools/advisors.py` (see
   [`scripts/tools/README.md`](../scripts/tools/README.md)); the cleartext

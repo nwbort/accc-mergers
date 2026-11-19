@@ -254,7 +254,7 @@ def main():
     print(f"✓ Generated {OUTPUT_DIR / 'mergers' / 'list.json'} ({n} mergers)")
 
     print("\nGenerating API merger list...")
-    n = api_out.generate(enriched, OUTPUT_DIR)
+    n = api_out.generate(enriched, OUTPUT_DIR, store_path=api_out.UPDATED_STORE_PATH)
     print(f"✓ Generated {OUTPUT_DIR / api_out.API_DIR / api_out.API_FILE} ({n} mergers)")
 
     print("\nGenerating industry division files...")
