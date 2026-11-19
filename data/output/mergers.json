@@ -95135,18 +95135,28 @@
           "name": "SuperGuardian Corporation",
           "identifier_type": null,
           "identifier": "Identifying number: SEC Registration No. CS200800567), a company incorporated in the Philippines",
+          "canonical": {
+            "id": "superguardian-pty-ltd",
+            "name": "SuperGuardian Pty Ltd"
+          },
           "party_page": {
-            "id": "superguardian-corporation",
-            "name": "SuperGuardian Corporation"
+            "id": "superguardian-pty-ltd",
+            "name": "SuperGuardian Pty Ltd",
+            "curated": true
           }
         },
         {
           "name": "SuperGuardian Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "57 113 986 968",
-          "party_page": {
+          "canonical": {
             "id": "superguardian-pty-ltd",
             "name": "SuperGuardian Pty Ltd"
+          },
+          "party_page": {
+            "id": "superguardian-pty-ltd",
+            "name": "SuperGuardian Pty Ltd",
+            "curated": true
           }
         }
       ],
