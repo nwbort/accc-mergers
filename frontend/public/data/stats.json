@@ -1,6 +1,6 @@
 {
   "total_mergers": 331,
-  "total_waivers": 542,
+  "total_waivers": 543,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 515,
+    "Approved": 516,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.035055350553506,
-    "median_days": 21.0,
-    "average_business_days": 14.42988929889299,
-    "median_business_days": 15.0
+    "average_days": 21.01473296500921,
+    "median_days": 21,
+    "average_business_days": 14.41804788213628,
+    "median_business_days": 15
   },
   "top_industries": [
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 55
+      "count": 56
     },
     {
       "name": "Software Publishing",
@@ -92,7 +92,7 @@
     },
     {
       "name": "Supermarket and Grocery Stores",
-      "count": 27
+      "count": 28
     }
   ],
   "recent_mergers": [
@@ -197,6 +197,16 @@
       "is_refiled": true
     },
     {
+      "merger_id": "WA-60062",
+      "merger_name": "Coles \u2013 supermarket site in Broulee, NSW",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-11-09T12:00:00Z",
+      "page_modified_datetime": "2026-11-19T17:30:16+11:00",
+      "is_waiver": true,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-20046",
       "merger_name": "Autosports Group - Mercedes-Benz Parramatta and Castle Hill, Chery Castle Hill",
       "status": "Under assessment",
@@ -205,19 +215,20 @@
       "page_modified_datetime": "2026-11-06T16:44:31+11:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "WA-70053",
-      "merger_name": "Australian Venue Co \u2013 Assets of Central Hotel, Beaconsfield VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-11-05T12:00:00Z",
-      "page_modified_datetime": "2026-11-19T17:26:18+11:00",
-      "is_waiver": true,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-60062",
+      "merger_name": "Coles \u2013 supermarket site in Broulee, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-11-19T12:00:00Z",
+      "page_modified_datetime": "2026-11-19T17:30:16+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
     {
       "merger_id": "WA-95050",
       "merger_name": "MA Financial (Redcape Fund) \u2013 Hotel Canobolas",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-18T12:00:00Z",
       "page_modified_datetime": "2026-11-18T10:53:16+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-01127",
-      "merger_name": "CVS Group \u2013 Karrinyup Small Animal Hospital",
-      "determination": "Approved",
-      "determination_date": "2026-11-17T12:00:00Z",
-      "page_modified_datetime": "2026-11-17T18:01:34+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
