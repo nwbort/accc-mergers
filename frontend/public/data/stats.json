@@ -1,6 +1,6 @@
 {
   "total_mergers": 331,
-  "total_waivers": 538,
+  "total_waivers": 539,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 511,
+    "Approved": 512,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.063197026022305,
-    "median_days": 21.0,
-    "average_business_days": 14.442379182156134,
-    "median_business_days": 15.0
+    "average_days": 21.055658627087197,
+    "median_days": 21,
+    "average_business_days": 14.439703153988868,
+    "median_business_days": 15
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85067",
+      "merger_name": "Respect Group \u2013 Clifton Co-op Hospital aged care, support at home care and community housing, Clifton QLD",
+      "determination": "Approved",
+      "determination_date": "2026-11-19T12:00:00Z",
+      "page_modified_datetime": "2026-11-19T17:22:42+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-40055",
       "merger_name": "Sheffield Group \u2013 Champion Fasteners",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-17T12:00:00Z",
       "page_modified_datetime": "2026-11-17T17:30:19+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-40053",
-      "merger_name": "Emera \u2013 ATCO and Canadian Utilities",
-      "determination": "Approved",
-      "determination_date": "2026-11-17T12:00:00Z",
-      "page_modified_datetime": "2026-11-17T17:25:19+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
