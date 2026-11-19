@@ -1,6 +1,16 @@
 {
   "events": [
     {
+      "type": "phase_1_determination",
+      "title": "Phase 1 - initial assessment determination: Approved",
+      "date": "2026-11-19T12:00:00Z",
+      "merger_id": "MN-20042",
+      "merger_name": "Webuild \u2013 Trevi Group",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false,
+      "url_gh": "/mergers/MN-20042/Webuild - Trevi Group - Phase 1 determination.pdf"
+    },
+    {
       "type": "notified",
       "title": "Merger notified to ACCC",
       "date": "2026-11-18T12:00:00Z",
@@ -863,6 +873,6 @@
       "url_gh": "/mergers/WA-40050/Sims - business assets of Base Metal Recyclers, VIC (WA-40050) - Notification waiver determination - 4 November 2026.pdf"
     }
   ],
-  "count": 88,
+  "count": 89,
   "days_back": 14
 }
