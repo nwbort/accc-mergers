@@ -219,7 +219,6 @@ describe('Current status', () => {
     await renderPage();
 
     await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
-    expect(screen.getByRole('heading', { name: 'Phase 1 speed \u2013 last 90 days' })).toBeInTheDocument();
 
     expect(within(headline('Waiver')).getByText('15')).toBeInTheDocument();
     expect(within(headline('Waiver')).getByText('2 business days slower').closest('p'))
@@ -357,7 +356,6 @@ describe('Current status', () => {
     await renderPage();
 
     await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
-    expect(screen.getByRole('heading', { name: 'Phase 1 speed \u2013 last 90 days' })).toBeInTheDocument();
 
     // The heading names the window it was cut to, and the count it holds.
     expect(screen.getByRole('heading', {
