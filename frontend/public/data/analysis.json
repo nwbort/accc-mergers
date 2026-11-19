@@ -384,8 +384,8 @@
       0,
       0,
       0,
-      13,
-      49
+      10,
+      51
     ]
   },
   "open_caseload": {
@@ -458,27 +458,27 @@
       0,
       0,
       0,
-      13,
-      61
+      10,
+      60
     ],
-    "as_at": "2026-11-19"
+    "as_at": "2026-11-20"
   },
   "current_status": {
-    "as_at": "2026-11-19",
+    "as_at": "2026-11-20",
     "windows": [
       {
         "days": 30,
         "notifications_filed": 31,
         "notifications": {
           "median": 18.5,
-          "average": 19.3,
+          "average": 19.2,
           "p90": 23,
           "min": 15,
           "max": 39,
-          "count": 42,
+          "count": 40,
           "duration_histogram": {
             "15": 5,
-            "16": 5,
+            "16": 4,
             "17": 6,
             "18": 5,
             "19": 6,
@@ -487,18 +487,17 @@
             "22": 1,
             "23": 3,
             "25": 2,
-            "26": 1,
             "39": 1
           },
           "median_delta": 0.5
         },
         "waivers": {
-          "median": 17.0,
+          "median": 17,
           "average": 16.7,
           "p90": 21,
           "min": 4,
           "max": 23,
-          "count": 82,
+          "count": 79,
           "duration_histogram": {
             "4": 1,
             "8": 2,
@@ -508,10 +507,10 @@
             "13": 2,
             "14": 7,
             "15": 8,
-            "16": 10,
-            "17": 12,
+            "16": 9,
+            "17": 11,
             "18": 9,
-            "19": 11,
+            "19": 10,
             "20": 5,
             "21": 3,
             "22": 5,
@@ -522,24 +521,24 @@
         "phase_1_speed": {
           "day15": {
             "count": 5,
-            "percentage": 11.9
+            "percentage": 12.5
           },
           "day20": {
-            "count": 29,
-            "percentage": 69.0
+            "count": 28,
+            "percentage": 70.0
           },
           "day30": {
-            "count": 41,
-            "percentage": 97.6
+            "count": 39,
+            "percentage": 97.5
           }
         },
         "determinations": {
           "phase_1": {
-            "Approved": 42
+            "Approved": 40
           },
           "phase_2": {},
           "waivers": {
-            "Approved": 79,
+            "Approved": 76,
             "Not approved": 3
           }
         }

@@ -1,38 +1,6 @@
 {
   "events": [
     {
-      "type": "tribunal_hearing",
-      "event_type_display": "Tribunal hearing",
-      "date": "2026-11-09T12:00:00Z",
-      "merger_id": "MN-01068",
-      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
-      "status": "Assessment completed",
-      "stage": "Phase 2 - detailed assessment",
-      "effective_notification_datetime": "2025-11-27T12:00:00Z",
-      "tribunal_number": "ACT 1 of 2026",
-      "end_date": "2026-11-19T12:00:00Z"
-    },
-    {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
-      "date": "2026-11-19T12:00:00Z",
-      "merger_id": "MN-60027",
-      "merger_name": "Amadeus - Idemia Public Security",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-11-11T12:00:00Z"
-    },
-    {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
-      "date": "2026-11-19T12:00:00Z",
-      "merger_id": "MN-65045",
-      "merger_name": "Too Lost \u2013 Xelon Entertainment",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-11-11T12:00:00Z"
-    },
-    {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-11-20T12:00:00Z",
@@ -403,6 +371,16 @@
       "effective_notification_datetime": "2026-09-30T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2027-01-18T12:00:00Z",
+      "merger_id": "MN-15054",
+      "merger_name": "Endeavour Group \u2013 retail liquor store and adjacent property on Russell Island (QLD)",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-18T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2027-03-30T12:00:00Z",
@@ -415,6 +393,6 @@
       "end_date": "2027-04-15T12:00:00Z"
     }
   ],
-  "count": 41,
+  "count": 39,
   "days_ahead": 60
 }
