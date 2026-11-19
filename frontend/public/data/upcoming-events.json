@@ -93,16 +93,6 @@
       "effective_notification_datetime": "2026-09-29T12:00:00Z"
     },
     {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
-      "date": "2026-12-01T12:00:00Z",
-      "merger_id": "MN-45032",
-      "merger_name": "Novotech - Agilex",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-10-20T12:00:00Z"
-    },
-    {
       "type": "public_benefit_response_due",
       "event_type_display": "Public benefit responses due",
       "date": "2026-12-01T12:00:00Z",
@@ -425,6 +415,6 @@
       "end_date": "2027-04-15T12:00:00Z"
     }
   ],
-  "count": 42,
+  "count": 41,
   "days_ahead": 60
 }

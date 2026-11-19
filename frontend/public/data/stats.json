@@ -3,12 +3,12 @@
   "total_waivers": 537,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 291,
-    "Under assessment": 35,
+    "Assessment completed": 292,
+    "Under assessment": 34,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 284,
+    "Approved": 285,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,16 +22,16 @@
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 289,
+    "cleared": 290,
     "not_cleared": 2,
-    "total": 291,
+    "total": 292,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.292929292929294,
-    "median_days": 26,
-    "average_business_days": 19.98989898989899,
-    "median_business_days": 18,
+    "average_days": 29.29194630872483,
+    "median_days": 26.0,
+    "average_business_days": 19.993288590604028,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 61,
@@ -39,11 +39,11 @@
       },
       "day20": {
         "count": 214,
-        "percentage": 72.1
+        "percentage": 71.8
       },
       "day30": {
-        "count": 279,
-        "percentage": 93.9
+        "count": 280,
+        "percentage": 94.0
       }
     }
   },
@@ -241,6 +241,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-45032",
+      "merger_name": "Novotech - Agilex",
+      "determination": "Approved",
+      "determination_date": "2026-11-18T12:00:00Z",
+      "page_modified_datetime": "2026-11-19T15:15:52+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-01134",
       "merger_name": "Australian Venue Co \u2013 assets of the King O\u2019Malley\u2019s venue (Canberra, ACT)",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-17T12:00:00Z",
       "page_modified_datetime": "2026-11-17T17:24:05+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-80048",
-      "merger_name": "Waveconn - acquisition of certain Optus towers and sites",
-      "determination": "Approved",
-      "determination_date": "2026-11-17T12:00:00Z",
-      "page_modified_datetime": "2026-11-17T17:22:25+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
