@@ -14,6 +14,8 @@ Label normalisation for ``by_commission_division`` (see that function):
   and the trailing Act-reference wording difference (a Phase 2 Notice cites
   "the Competition and Consumer Act 2010 (Cth)" in full; a determination just
   says "of the Act") — both describe the same kind of body.
+- A bare "Determination made by the Commission" (the full Commission, with
+  no division or delegate) is canonicalised to "The Commission".
 - Grouping is case-insensitive (via ``str.casefold``), with the first-seen
   spelling for a group used as its display label.
 - A merger with no parsed ``determination_commission_division`` on any
@@ -85,6 +87,14 @@ _DELEGATE_PATTERN = re.compile(
 _DIVISION_PATTERN = re.compile(
     r'^(?:Determination|Decision) made by a division of the Commission '
     r'constituted by a direction issued pursuant to (?:a )?section (?P<section>\d+)\b',
+    re.IGNORECASE,
+)
+
+# Matches the bare "Determination/Decision made by the Commission" a
+# determination of the full Commission carries (no division, no delegate),
+# canonicalised to "The Commission" to read like the other labels.
+_FULL_COMMISSION_PATTERN = re.compile(
+    r'^(?:Determination|Decision) made by the Commission$',
     re.IGNORECASE,
 )
 
@@ -172,6 +182,9 @@ def _normalise_division(raw: str | None) -> str | None:
     match = _DIVISION_PATTERN.match(label)
     if match:
         return f"A division of the Commission (s{match.group('section')} direction)"
+
+    if _FULL_COMMISSION_PATTERN.match(label.rstrip('.')):
+        return 'The Commission'
 
     return label
 

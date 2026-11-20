@@ -18,6 +18,8 @@ def extract_commission_division(text: str) -> Optional[str]:
     Examples:
     - "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act"
     - "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act"
+    - "Determination made by the Commission" (the full Commission, on a line
+      of its own, with no Act reference)
     - "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)"
       (the equivalent sentence on a Phase 2 Notice, which decides a referral
       rather than a final determination)
@@ -40,6 +42,16 @@ def extract_commission_division(text: str) -> Optional[str]:
         r'|of the Competition and Consumer Act \d{4}\s*\(Cth\))'
     )
     matches = re.findall(pattern, text, re.IGNORECASE | re.DOTALL)
+
+    if not matches:
+        # A determination made by the full Commission (no division, no
+        # delegate) carries a bare attribution line with no Act reference to
+        # end on: "Determination made by the Commission" (MN-15048). Only
+        # accept it as a whole line, so it can't swallow a longer sentence.
+        matches = re.findall(
+            r'^[ \t]*(?:Determination|Decision) made by the Commission[ \t]*\.?[ \t]*$',
+            text, re.IGNORECASE | re.MULTILINE,
+        )
 
     if matches:
         # Return the last match (should be at the end of the document)
