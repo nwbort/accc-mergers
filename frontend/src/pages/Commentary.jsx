@@ -113,7 +113,7 @@ export function CommentaryList({ items }) {
                             href={item.determination_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
+                            className="inline-flex items-center gap-1 text-primary underline underline-offset-2 decoration-primary/40 hover:decoration-primary hover:text-primary-dark transition-colors"
                             aria-label="View determination document"
                           >
                             Determined: {formatDate(item.determination_publication_date)}

@@ -57,7 +57,7 @@ function PushToggle() {
           // Never disabled while a request is out: one the person ignored never
           // settles, and pressing again should simply ask again.
           onClick={() => turnOn({ fromPanel: true })}
-          className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-white hover:bg-primary-dark transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-60"
+          className="press-morph inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-60"
         >
           <FaBell className="w-3 h-3" aria-hidden="true" />
           Enable browser notifications

@@ -39,6 +39,18 @@ returning focus, and that the visible focus ring is actually painted.
 
 ## Conventions this codebase follows
 
+**Theme colours.** The Material 3 roles and the greys come from
+`src/theme/m3-theme.json`, generated from the brand green by
+material-color-utilities (`npm run theme`). `src/theme/__tests__/m3Theme.test.js`
+holds its pairs to WCAG: each `on-*-container` text on its container and
+`gray-500` (the muted text), `primary` and `on-surface-variant` on every
+surface at 4.5:1, and `outline` (field borders) at 3:1 (1.4.11). A
+regenerated scheme that breaks one fails the suite.
+
+**Material shapes** (`components/MaterialShape.jsx`) are decoration:
+`aria-hidden`, never the only carrier of meaning. Where a shape stands for an
+outcome or digest section, the words sit beside it.
+
 **Colour.** Every colour family in `tailwind.config.js` carries a `dark` shade
 that clears 4.5:1 on white and on the family's `pale` fill; that's the shade
 used whenever the colour carries *text*. The `DEFAULT` shades are fills — bars,

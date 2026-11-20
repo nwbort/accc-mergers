@@ -45,14 +45,14 @@ function FeedbackPopup() {
     <div
       role="dialog"
       aria-label="Share feedback"
-      className="fixed bottom-4 right-4 z-50 w-72 rounded-2xl bg-white shadow-elevated border border-gray-200 overflow-hidden animate-slide-up"
+      className="fixed bottom-[calc(var(--bottom-bar,0px)+1rem)] right-4 z-50 w-72 rounded-3xl bg-surface-container-low shadow-elevated overflow-hidden animate-slide-up"
     >
-      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 border-b border-gray-100">
+      <div className="flex items-center justify-between px-5 pt-4 pb-1">
         <h3 className="text-sm font-semibold text-gray-800">Got feedback?</h3>
         <button
           onClick={dismiss}
           aria-label="Dismiss"
-          className="text-gray-500 hover:text-gray-700 transition-colors"
+          className="inline-flex h-8 w-8 -mr-2 items-center justify-center rounded-full text-gray-600 hover:bg-gray-900/[0.08] transition-colors"
         >
           <FaTimes className="h-4 w-4" aria-hidden="true" />
         </button>
@@ -65,7 +65,7 @@ function FeedbackPopup() {
         <Link
           to="/feedback"
           onClick={clickThrough}
-          className="inline-block w-full text-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
+          className="press-morph inline-block w-full text-center rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
         >
           Share feedback
         </Link>

@@ -145,13 +145,13 @@ export const DEFAULT_SOLID_STATUS_STYLE = 'bg-gray-600 text-white border-gray-60
 // the merger list, e.g. "NOT APPROVED · UNDER APPEAL") so a solid badge
 // can't drift into a different size or weight in just one of them. Colour is
 // each badge's own concern and stays out of this constant.
-export const SOLID_BADGE_SHAPE_CLASSES = 'px-2 py-1 rounded-md text-[11px] font-bold uppercase tracking-widest';
+export const SOLID_BADGE_SHAPE_CLASSES = 'px-2.5 py-1 rounded-full text-xs font-semibold leading-none';
 
 // Shape of every badge's `glyph` form: the solid colours squeezed into a
 // symbol-only square, for the merger table at phone width where the worded
 // chips don't fit. 24px, so it also clears WCAG 2.5.8's target size should a
 // glyph ever become interactive. Shared for the same reason as the shape above.
-export const GLYPH_BADGE_SHAPE_CLASSES = 'w-6 h-6 rounded-md justify-center text-xs font-bold leading-none';
+export const GLYPH_BADGE_SHAPE_CLASSES = 'w-6 h-6 rounded-full justify-center text-xs font-bold leading-none';
 
 // The outcomes that take the solid treatment even on the tinted badge. A
 // refused or ceased matter is the one a reader is scanning a mixed list for,

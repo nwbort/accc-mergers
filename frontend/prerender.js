@@ -100,8 +100,8 @@ function formatDate(value) {
 // does nothing.
 // ---------------------------------------------------------------------------
 
-const CARD = 'bg-white rounded-2xl border border-gray-100 shadow-card';
-const SECTION_HEADING = 'text-xs font-medium text-gray-500 uppercase tracking-wider';
+const CARD = 'bg-white rounded-2xl';
+const SECTION_HEADING = 'text-xs font-semibold text-gray-500 tracking-wide';
 const PAGE_WRAP = 'max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8';
 const LINK = 'text-gray-900 hover:text-primary transition-colors';
 
@@ -185,7 +185,7 @@ function breadcrumbHtml(trail, current) {
 function headerCard(title, subtitle, extra = '') {
   return (
     `<div class="${CARD} p-6 mb-6 card-accent">` +
-    `<h1 class="text-2xl font-bold text-gray-900 tracking-tight">${escapeHtml(title)}</h1>` +
+    `<h1 class="text-2xl sm:text-3xl type-emphasized text-gray-900">${escapeHtml(title)}</h1>` +
     (subtitle ? `<p class="text-sm text-gray-500 mt-1">${escapeHtml(subtitle)}</p>` : '') +
     extra +
     `</div>`

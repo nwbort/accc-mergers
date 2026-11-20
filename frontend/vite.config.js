@@ -78,5 +78,9 @@ export default defineConfig({
     // --localstorage-file is undefined and shadows jsdom's. Turn it off so
     // the tests see jsdom's storage, as the browser would.
     execArgv: ['--no-experimental-webstorage'],
+    // material-color-utilities 0.4.0 ships one extensionless relative import,
+    // which Node's ESM loader refuses; bundling it through Vite resolves it.
+    // Only the theme test reads it (src/theme/), never the app.
+    server: { deps: { inline: ['@material/material-color-utilities'] } },
   },
 })

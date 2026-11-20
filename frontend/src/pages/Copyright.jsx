@@ -38,7 +38,7 @@ export default function Copyright() {
 
         {/* Header */}
         <header className="mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Copyright and licensing</h1>
+          <h1 className="text-3xl sm:text-4xl type-emphasized text-gray-900">Copyright and licensing</h1>
           <p className="mt-1 text-sm text-gray-500">Last updated: 14 October 2026</p>
         </header>
 

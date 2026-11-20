@@ -126,7 +126,7 @@ function Industries() {
       {/* Header: title + compact summary stats */}
       <header className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-3xl sm:text-4xl type-emphasized text-gray-900">
             Mergers by industry
           </h1>
           <p className="mt-1 text-sm text-gray-500 max-w-xl">
@@ -178,7 +178,7 @@ function Industries() {
       </div>
 
       {/* Industries Table */}
-      <div className="bg-white border border-gray-100 shadow-card rounded-2xl overflow-hidden">
+      <div className="bg-white rounded-2xl overflow-hidden">
         <table className="min-w-full divide-y divide-gray-100">
           <caption className="sr-only">
             Industry breakdown of Australian merger reviews by ANZSIC code, showing merger counts and each industry's share of all reviews

@@ -10,7 +10,7 @@
  * result to symbolise, and a made-up glyph for it would read as one.
  */
 
-import { FaBan, FaCheck, FaTimes } from 'react-icons/fa';
+import { FaBan, FaCheck, FaTimes, FaPause, FaRegClock } from 'react-icons/fa';
 import { MERGER_STATUS } from './mergerStatus';
 
 export const OUTCOME_ICONS = {
@@ -19,4 +19,15 @@ export const OUTCOME_ICONS = {
   [MERGER_STATUS.NOT_APPROVED]: FaTimes,
   [MERGER_STATUS.DECLINED]: FaTimes,
   [MERGER_STATUS.ASSESSMENT_CEASED]: FaBan,
+};
+
+// Symbols for the live states OUTCOME_ICONS deliberately leaves without one,
+// used only where there is no text beside the colour to fall back on:
+// StatusBadge's `glyph` form and the merger list's StatusGlyph. A Phase 2
+// referral is still under assessment, so it shares the clock; its amber fill
+// is what tells the two apart.
+export const LIVE_GLYPHS = {
+  [MERGER_STATUS.UNDER_ASSESSMENT]: FaRegClock,
+  [MERGER_STATUS.ASSESSMENT_SUSPENDED]: FaPause,
+  [MERGER_STATUS.REFERRED_TO_PHASE_2]: FaRegClock,
 };

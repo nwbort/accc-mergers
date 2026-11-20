@@ -2,10 +2,11 @@ import { Link } from 'react-router';
 
 function Footer() {
   return (
-    <footer className="border-t border-gray-200/60 mt-auto bg-white/50 backdrop-blur-sm">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="text-center text-xs text-gray-500 leading-relaxed">
-          <span className="font-semibold text-gray-600">Disclaimer:</span> This is an unofficial website created by{' '}
+    // An M3 surface container, its top corners rounded into the page.
+    <footer className="mt-auto pt-12">
+      <div className="mx-auto max-w-7xl rounded-t-3xl bg-surface-container px-6 sm:px-10 py-6">
+        <div className="text-center text-xs text-gray-600 leading-relaxed">
+          <span className="font-semibold text-gray-700">Disclaimer:</span> This is an unofficial website created by{' '}
           <Link
             to="/nick-twort"
             className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"

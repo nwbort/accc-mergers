@@ -460,13 +460,13 @@ function NotificationPanel({ isOpen, onClose }) {
   return (
     <div
       ref={panelRef}
-      className="fixed left-1/2 -translate-x-1/2 top-16 sm:absolute sm:left-auto sm:translate-x-0 sm:right-0 sm:top-full sm:mt-2 w-[calc(100vw-1rem)] sm:w-96 bg-white/95 backdrop-blur-lg rounded-2xl shadow-elevated border border-gray-100 z-50 max-h-[70vh] sm:max-h-[80vh] overflow-hidden flex flex-col"
+      className="fixed left-1/2 -translate-x-1/2 top-16 sm:absolute sm:left-auto sm:translate-x-0 sm:right-0 sm:top-full sm:mt-2 w-[calc(100vw-1rem)] sm:w-96 bg-surface-container-low rounded-3xl shadow-elevated z-50 animate-pop-in origin-top-right max-h-[70vh] sm:max-h-[80vh] overflow-hidden flex flex-col"
       role="dialog"
       aria-label="Notifications panel"
     >
       {/* Header */}
-      <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/80 flex-shrink-0">
-        <h2 className="text-sm font-semibold text-gray-900">
+      <div className="px-5 pt-4 pb-2 flex-shrink-0">
+        <h2 className="text-lg font-semibold tracking-tight text-gray-900">
           Notifications
         </h2>
       </div>

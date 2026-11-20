@@ -18,6 +18,26 @@ import {
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL } from '../constants/appeal';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import MaterialShape from '../components/MaterialShape';
+
+// Each section's own Material shape, on its count card and its heading, as
+// the app's Catch me up screen (DigestSection.shape() in DigestScreen.kt). A
+// decision takes its outcome's shape: cleared's sunny seal, refused's
+// four-sided cookie, ceased's gem; whatever is still running, the twelve-sided
+// cookie the app gives a live matter.
+const SECTION_SHAPES = {
+  'new-mergers': 'cookie9',
+  'mergers-approved': 'sunny',
+  'mergers-declined': 'cookie4',
+  'mergers-ceased': 'gem',
+  'mergers-to-public-benefit': 'clover4',
+  'mergers-appealed': 'pentagon',
+  'ongoing-tribunal-appeals': 'pentagon',
+  'mergers-referred': 'cookie12',
+  'ongoing-phase-1': 'cookie12',
+  'ongoing-phase-2': 'cookie12',
+  'ongoing-public-benefit': 'cookie12',
+};
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -69,10 +89,13 @@ function ScrollToTopButton() {
 function DigestSectionCard({ id, title, colorKey, columns, children }) {
   const c = COLOR_CLASSES[colorKey];
   return (
-    <div id={id} className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
-      <div className={`px-5 sm:px-6 py-4 border-b ${c.borderLight} bg-gradient-to-r ${c.headerBg} to-transparent`}>
+    <div id={id} className="bg-white rounded-2xl overflow-hidden scroll-mt-20">
+      <div className={`px-5 sm:px-6 py-4 bg-gradient-to-r ${c.headerBg} to-transparent`}>
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
+          <h2 className="flex items-center gap-3 text-lg font-semibold tracking-tight text-gray-900">
+            <MaterialShape shape={SECTION_SHAPES[id]} className={`h-6 w-6 flex-shrink-0 ${c.text}`} />
+            {title}
+          </h2>
           <ScrollToTopButton />
         </div>
       </div>
@@ -285,13 +308,13 @@ function DigestSignup() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={status === 'loading'}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
+              className="w-full rounded-lg border border-outline px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
             />
           </div>
           <button
             type="submit"
             disabled={status === 'loading' || !email.trim() || !turnstileToken}
-            className="shrink-0 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-dark disabled:opacity-50"
+            className="press-morph shrink-0 rounded-full bg-primary px-6 h-12 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
           >
             {status === 'loading' ? 'Subscribing…' : 'Subscribe'}
           </button>
@@ -424,7 +447,7 @@ function Digest() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-3xl sm:text-4xl type-emphasized text-gray-900">
             Catch me up
           </h1>
           <p className="mt-1 text-sm text-gray-500 max-w-xl">
@@ -444,10 +467,16 @@ function Digest() {
                 <button
                   key={id}
                   onClick={() => scrollToSection(id)}
-                  className={`bg-gradient-to-br ${c.cardFrom} ${c.cardTo} rounded-2xl shadow-card border ${c.cardBorder} p-4 hover:shadow-card-hover transition-all duration-200 cursor-pointer text-left group`}
+                  className={`press-morph relative overflow-hidden bg-gradient-to-br ${c.cardFrom} ${c.cardTo} rounded-3xl p-4 hover:rounded-2xl hover:shadow-card-hover cursor-pointer text-left group`}
                 >
-                  <div className={`text-2xl font-bold ${c.text} ${c.groupHoverText} transition-colors`}>
-                    {count}
+                  <div className="flex items-start justify-between gap-2">
+                    <div className={`text-3xl type-emphasized ${c.text} ${c.groupHoverText} transition-colors`}>
+                      {count}
+                    </div>
+                    <MaterialShape
+                      shape={SECTION_SHAPES[id]}
+                      className={`h-7 w-7 flex-shrink-0 ${c.text} transition-transform duration-500 ease-spring group-hover:rotate-45`}
+                    />
                   </div>
                   <div className={`text-sm ${c.labelText} font-medium`}>{label}</div>
                 </button>

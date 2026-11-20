@@ -109,7 +109,7 @@ function ResultGroup({ group, first, selectedKey, onHover, onSelect }) {
   return (
     <>
       <li
-        className={`px-4 ${first ? 'pt-1' : 'pt-3'} pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide`}
+        className={`px-6 ${first ? 'pt-1' : 'pt-3'} pb-1 text-xs font-semibold text-gray-500 tracking-wide`}
         role="presentation"
       >
         {group.heading}
@@ -346,17 +346,17 @@ export default function CommandPalette({ isOpen, onClose }) {
       className="fixed inset-0 z-[100] flex items-start justify-center pt-[12vh] p-4"
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-gray-950/40" />
       <div
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-label="Command palette"
-        className="relative bg-white rounded-2xl shadow-xl border border-gray-100 max-w-lg w-full overflow-hidden animate-slide-up"
+        className="relative bg-surface-container-low rounded-3xl shadow-elevated max-w-lg w-full overflow-hidden animate-pop-in"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-100">
-          <FaSearch className="w-4 h-4 text-gray-400 shrink-0" aria-hidden="true" />
+        <div className="flex items-center gap-3 mx-3 mt-3 mb-1 px-4 h-12 rounded-full bg-surface-container-high">
+          <FaSearch className="w-4 h-4 text-gray-600 shrink-0" aria-hidden="true" />
           <input
             ref={inputRef}
             type="text"
@@ -371,7 +371,7 @@ export default function CommandPalette({ isOpen, onClose }) {
             aria-activedescendant={selectedKey}
             autoComplete="off"
           />
-          <kbd className="hidden sm:inline-flex items-center justify-center px-1.5 h-5 rounded bg-gray-100 border border-gray-200 text-[10px] font-mono font-medium text-gray-600">
+          <kbd className="hidden sm:inline-flex items-center justify-center px-2 h-6 rounded-md bg-white text-[10px] font-mono font-medium text-gray-600">
             Esc
           </kbd>
         </div>

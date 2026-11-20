@@ -297,7 +297,7 @@ function RefiledNotifications() {
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-3xl sm:text-4xl type-emphasized text-gray-900">
             Waivers re-filed as notifications
           </h1>
         </header>
@@ -346,7 +346,7 @@ function RefiledNotifications() {
         )}
 
         <section aria-labelledby="refiled-current-heading" className="mb-8">
-          <h2 id="refiled-current-heading" className="text-lg font-semibold text-gray-900 mb-4">
+          <h2 id="refiled-current-heading" className="text-xl font-bold tracking-tight text-gray-900 mb-4">
             Awaiting a determination
           </h2>
           <RefiledList
@@ -357,7 +357,7 @@ function RefiledNotifications() {
         </section>
 
         <section aria-labelledby="refiled-completed-heading" className="mb-8">
-          <h2 id="refiled-completed-heading" className="text-lg font-semibold text-gray-900 mb-4">
+          <h2 id="refiled-completed-heading" className="text-xl font-bold tracking-tight text-gray-900 mb-4">
             Completed
           </h2>
           <RefiledList
@@ -368,7 +368,7 @@ function RefiledNotifications() {
         </section>
 
         <section aria-labelledby="not-refiled-heading">
-          <h2 id="not-refiled-heading" className="text-lg font-semibold text-gray-900 mb-4">
+          <h2 id="not-refiled-heading" className="text-xl font-bold tracking-tight text-gray-900 mb-4">
             Declined waivers not re-filed
           </h2>
           <div className={`${CARD} p-5 sm:p-6`}>
