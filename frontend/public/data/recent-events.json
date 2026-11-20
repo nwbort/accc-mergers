@@ -1,6 +1,15 @@
 {
   "events": [
     {
+      "type": "timeline_extension",
+      "title": "Timeline extended by 5 business days \u2013 following request by parties",
+      "date": "2026-11-20T12:00:00Z",
+      "merger_id": "MN-10044",
+      "merger_name": "OCTA \u2013 Woodside-EDL LNG JV",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false
+    },
+    {
       "type": "questionnaire",
       "title": "Phase 1 consultation",
       "date": "2026-11-20T12:00:00Z",
@@ -9,6 +18,15 @@
       "stage": "Phase 1 - initial assessment",
       "is_waiver": false,
       "url_gh": "/mergers/MN-20048/Endeavour Group - retail liquor site in Darch, WA - Questionnaire.pdf"
+    },
+    {
+      "type": "timeline_extension",
+      "title": "Timeline extended by 5 business days - following request by parties",
+      "date": "2026-11-20T12:00:00Z",
+      "merger_id": "MN-75058",
+      "merger_name": "Kinetic - Tassielink",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false
     },
     {
       "type": "phase_1_determination",
@@ -924,6 +942,6 @@
       "is_waiver": false
     }
   ],
-  "count": 94,
+  "count": 96,
   "days_back": 14
 }

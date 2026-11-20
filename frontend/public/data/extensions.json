@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 332,
-    "matters_extended": 27,
-    "share_extended_pct": 8.1,
-    "extension_events_total": 43,
-    "total_extension_bd": 490,
-    "median_matter_extension_bd": 13.5,
+    "matters_extended": 28,
+    "share_extended_pct": 8.4,
+    "extension_events_total": 45,
+    "total_extension_bd": 500,
+    "median_matter_extension_bd": 14,
     "longest_single_bd": 33,
     "phase_2_total": 9,
     "extended_escalated_to_phase_2": 8,
-    "escalation_rate_given_extension_pct": 29.6,
+    "escalation_rate_given_extension_pct": 28.6,
     "phase_2_preceded_by_extension_pct": 88.9,
     "base_phase_2_rate_pct": 2.7,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 30,
-      "business_days": 343
+      "events": 32,
+      "business_days": 353
     },
     {
       "category": "Remedy under consideration",
@@ -70,7 +70,7 @@
     },
     {
       "month": "2026-11",
-      "count": 7
+      "count": 9
     }
   ],
   "matters": [
@@ -376,6 +376,34 @@
       ]
     },
     {
+      "merger_id": "MN-75058",
+      "merger_name": "Kinetic - Tassielink",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-09-29T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 15,
+      "extension_count": 2,
+      "extensions": [
+        {
+          "date": "2026-10-29T12:00:00Z",
+          "business_days": 10,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 10 business days - following request by parties"
+        },
+        {
+          "date": "2026-11-20T12:00:00Z",
+          "business_days": 5,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 5 business days - following request by parties"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-50011",
       "merger_name": "Journey Beyond - SeaLink Rottnest",
       "stage": "Phase 1 - initial assessment",
@@ -491,27 +519,6 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 12 business days \u2013 following request by parties"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-75058",
-      "merger_name": "Kinetic - Tassielink",
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "notification_date": "2026-09-29T12:00:00Z",
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
-      "escalated_to_phase_2": false,
-      "total_extension_bd": 10,
-      "extension_count": 1,
-      "extensions": [
-        {
-          "date": "2026-10-29T12:00:00Z",
-          "business_days": 10,
-          "reason_category": "Requested by the merger parties",
-          "reason_detail": "request by parties",
-          "title": "Timeline extended by 10 business days - following request by parties"
         }
       ]
     },
@@ -645,6 +652,27 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 6 business days - following request by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-10044",
+      "merger_name": "OCTA \u2013 Woodside-EDL LNG JV",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-10-28T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 5,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-11-20T12:00:00Z",
+          "business_days": 5,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 5 business days \u2013 following request by parties"
         }
       ]
     },
