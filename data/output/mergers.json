@@ -28768,15 +28768,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 21,
-        "min_days": null,
+        "estimated_days": 16,
+        "min_days": 4,
         "max_days": 28,
-        "id_issued_estimated": "2026-10-20",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-10-25",
+        "id_issued_before": "2026-11-06",
         "id_issued_after": "2026-10-13",
-        "min_days_witness": null,
+        "min_days_witness": "WA-25064",
         "max_days_witness": "WA-25061",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -82481,6 +82481,179 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vista-equity-partners-%E2%80%93-enterprise-trust-business-of-hid-global-corporation",
+      "merger_name": "Vista Equity Partners \u2013 Enterprise Trust Business of HID Global Corporation",
+      "status": "Assessment completed",
+      "merger_id": "WA-01135",
+      "effective_notification_datetime": "2026-11-05T12:00:00Z",
+      "original_notification_datetime": "2026-11-05T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-20T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-20T17:27:57+11:00",
+      "acquirers": [
+        {
+          "name": "Vault Buyer, Inc.",
+          "identifier_type": null,
+          "identifier": "10780833",
+          "party_page": {
+            "id": "vault-buyer-inc",
+            "name": "Vault Buyer, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "IdenTrust, Inc.",
+          "identifier_type": null,
+          "identifier": "2981526",
+          "party_page": {
+            "id": "identrust-inc",
+            "name": "IdenTrust, Inc."
+          }
+        },
+        {
+          "name": "ZeroSSL GmbH",
+          "identifier_type": null,
+          "identifier": "Registration number FN 570246 y",
+          "party_page": {
+            "id": "zerossl-gmbh",
+            "name": "ZeroSSL GmbH"
+          }
+        },
+        {
+          "name": "ASSA ABLOY Access AB",
+          "identifier_type": null,
+          "identifier": "Company registration number 5595931725",
+          "party_page": {
+            "id": "assa-abloy-access-ab",
+            "name": "ASSA ABLOY Access AB"
+          }
+        },
+        {
+          "name": "Nomad CM LLC",
+          "identifier_type": null,
+          "identifier": "10671203",
+          "party_page": {
+            "id": "nomad-cm-llc",
+            "name": "Nomad CM LLC"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Vista Equity Partners Management, LLC",
+          "identifier_type": null,
+          "identifier": "3164065",
+          "canonical": {
+            "id": "vista-equity-partners-management-llc",
+            "name": "Vista Equity Partners Management, LLC"
+          },
+          "party_page": {
+            "id": "vista-equity-partners-management-llc",
+            "name": "Vista Equity Partners Management, LLC",
+            "curated": true
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Vault Buyer, Inc., which is controlled by funds managed and/or controlled by Vista Equity Partners Management, LLC (together with its affiliates, **Vista**), will acquire, pursuant to an equity purchase agreement, 100% of the equity interests in Nomad CM LLC, IdenTrust, Inc., ASSA ABLOY Access AB and ZeroSSL GmbH (together, the **Target Group**) from HID Global Corporation, ASSA ABLOY AB and ASSA ABLOY Holding AB (the **Acquisition**).  \n\n  \n\nVista is a US-based investment firm specialising in investing in and growing enterprise software, data and technology-enabled businesses, investing through private equity, permanent capital, credit and public equity investment strategies through its fund vehicles.  \n\n  \n\nThe Target Group is a provider of digital trust software, including enterprise public key infrastructure (**PKI**), public trust, Secure Sockets Layer/Transport Layer Security (**SSL/TLS**) and credential management services, supplied through four business lines: IdenTrust (public trust certificate authority), HydrantID (PKI-as-a-Service), ZeroSSL (self-service SSL/TLS certificates) and ActivID (credential management). The Target Group is currently ultimately owned by ASSA ABLOY AB.  \n\n  \n\nThe Target Group\u2019s primary business is concentrated in the United States. It does not have any subsidiaries, employees or premises in Australia. On completion, the Target Group will be solely controlled by funds managed and/or controlled by Vista.",
+      "events": [
+        {
+          "date": "2026-11-20T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Vista%20Equity%20-%20Enterprise%20Trust%20Business%20of%20HID%20Global%20Corporation%20%28WA-01135%29%20-%20Notification%20waiver%20determination%20-%2019%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Vault Buyer, Inc. applied for a notification waiver in respect of its\nproposed acquisition of 100% of the equity interests in Nomad CM\nLLC, IdenTrust, Inc., ASSA ABLOY Access AB and ZeroSSL GmbH\n(Enterprise Trust Business of HID Global Corporation) from HID\nGlobal Corporation, ASSA ABLOY AB and ASSA ABLOY Holding AB\nas described in the transaction documents provided as part of the\napplication (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "19 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Vault Buyer Inc., is controlled by funds managed and/or\ncontrolled by Vista Equity Partners Management, LLC (Vista). Vista\nis a US-based investment firm specialising in enterprise software,\ndata and technology-enabled businesses, investing through private\nequity, permanent capital, credit and public equity investment\nstrategies through its fund vehicles.\nThe target, the Enterprise Trust Business of HID Global Corporation,\nis a provider of digital trust software, including enterprise public key\ninfrastructure (PKI), public trust, Secure Sockets Layer/Transport\nLayer Security (SSL/TLS) and credential management services,\nsupplied through four business lines: IdenTrust (public trust\ncertificate authority), HydrantID (PKI-as-a-Service), ZeroSSL (self-\nservice SSL/TLS certificates) and ActivID (credential management)."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given there is no horizontal overlap or\nvertical relationship between Vista (or its connected entities) and the\nEnterprise Trust Business of HID Global Corporation in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-01135/Vista Equity - Enterprise Trust Business of HID Global Corporation (WA-01135) - Notification waiver determination - 19 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-11-05T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-70034",
+          "merger_name": "Vista \u2013 Quantios",
+          "acquirers": [
+            "Queso Bidco Limited"
+          ],
+          "targets": [
+            "Tanqueray Topco Limited"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-10023",
+          "merger_name": "Infoblox \u2013 Kentik Technologies",
+          "acquirers": [
+            "Infoblox Inc."
+          ],
+          "targets": [
+            "Kentik Technologies, Inc"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-75006",
+          "merger_name": "Playlist \u2013 EGYM",
+          "acquirers": [
+            "Saturn NewCo, Inc",
+            "ClassPass Aggregator, LLC"
+          ],
+          "targets": [
+            "EGYM SE"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/kkr-led-consortium-%E2%80%93-saviynt",
       "merger_name": "KKR led consortium \u2013 Saviynt",
       "status": "Assessment completed",
@@ -106143,6 +106316,142 @@
           "targets": [
             "Poolparty Software Ltd",
             "Ontotext AD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/adcome-%E2%80%93-iga-allora-qld",
+      "merger_name": "Adcome \u2013 IGA Allora, QLD",
+      "status": "Assessment completed",
+      "merger_id": "WA-25064",
+      "effective_notification_datetime": "2026-11-06T12:00:00Z",
+      "original_notification_datetime": "2026-11-06T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-20T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-20T17:29:56+11:00",
+      "acquirers": [
+        {
+          "name": "ALL-LORA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "39 701 751 546",
+          "party_page": {
+            "id": "all-lora-pty-ltd",
+            "name": "All-Lora Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "HYMAC AISLES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 604 088 619",
+          "party_page": {
+            "id": "hymac-aisles-pty-ltd",
+            "name": "Hymac Aisles Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Adcome Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "99 110 315 681",
+          "party_page": {
+            "id": "adcome-pty-ltd",
+            "name": "Adcome Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        }
+      ],
+      "merger_description": "All-Lora Pty Ltd (**All-Lora**), a wholly owned subsidiary of Adcome Pty Ltd (together with its subsidiaries, **Adcome**), proposes to acquire the business and assets of the IGA Allora supermarket (the **Target**) from Hymac Aisles Pty Ltd as trustee for the Hymac Aisles Unit Trust (the **Vendor**).\n\nAdcome operates a network of 35 supermarkets predominantly across regional Queensland, including under the IGA, Cornetts and Everfresh banners. Adcome is owned and controlled by Gray Trading Pty Ltd. Metcash Limited also has a non\u2011controlling shareholding in Adcome.\n\nThe Target is an independently owned IGA supermarket at 41-43 Warwick Street, Allora, a rural township in the Southern Downs Region of Queensland, approximately 25 kilometres north of Warwick and 60 kilometres south of Toowoomba. It is the only supermarket in the Allora township.\n\nThe acquisition will occur by way of an asset purchase. All-Lora will acquire the goodwill, plant and equipment, stock and other assets of the business and take an assignment of the existing lease of the supermarket premises. Following completion, All-Lora will continue to operate the store as an IGA supermarket. Adcome does not operate any supermarket in Allora or in the nearby towns of Clifton or Warwick.",
+      "events": [
+        {
+          "date": "2026-11-20T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Adcome%20-%20IGA%20Allora%2C%20QLD%20%28WA-25064%29%20-%20Notification%20waiver%20determination%20-%2019%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1)",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "All-Lora Pty Ltd applied for a notification waiver in respect of its\nproposed acquisition of the business and assets of the IGA Allora\nsupermarket (IGA Allora) from Hymac Aisles Pty Ltd as trustee for\nthe Hymac Aisles Unit Trust (the Vendor), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "19 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer is a wholly owned subsidiary of Adcome Pty Ltd\n(together with its subsidiaries, Adcome) which operates a network of\n35 supermarkets predominantly across regional Queensland,\nincluding under the IGA, Cornetts and Everfresh banners. Adcome is\nowned and controlled by Gray Trading Pty Ltd. Metcash Limited has\na non-controlling shareholding in Adcome.\nThe target, IGA Allora supermarket, is an independently owned IGA\nsupermarket at 41-43 Warwick Street, Allora, a rural township in the\nSouthern Downs Region of Queensland, approximately 25 kilometres\nnorth of Warwick and 60 kilometres south of Toowoomba. It is the\nonly supermarket in the Allora township.\nAdcome\u2019s closest supermarket to IGA Allora is in Oakey,\napproximately 80km away."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given there is no horizontal overlap\nbetween Adcome and IGA Allora in the local area surrounding IGA\nAllora.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-25064/Adcome - IGA Allora, QLD (WA-25064) - Notification waiver determination - 19 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-11-06T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-75030",
+          "merger_name": "Coles - supermarket site in Palmwoods, QLD",
+          "acquirers": [
+            "COLES GROUP PROPERTY DEVELOPMENTS LTD"
+          ],
+          "targets": [
+            "Neubau Holdings No 22 Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-30028",
+          "merger_name": "Adobe - Topaz Labs",
+          "acquirers": [
+            "Adobe Inc."
+          ],
+          "targets": [
+            "Topaz Labs Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-35023",
+          "merger_name": "Metcash - Foodland Flagstaff Hill, South Australia",
+          "acquirers": [
+            "ACTION SUPERMARKETS PTY LTD"
+          ],
+          "targets": [
+            "ZH SUPERMARKET PTY LTD"
           ],
           "accc_determination": "Approved"
         }

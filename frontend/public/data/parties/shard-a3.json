@@ -385,6 +385,48 @@
         "completed_count": 1
       }
     },
+    "nomad-cm-llc": {
+      "id": "nomad-cm-llc",
+      "canonical_name": "Nomad CM LLC",
+      "members": [
+        {
+          "name": "Nomad CM LLC",
+          "identifier": "10671203",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01135",
+            "merger_name": "Vista Equity Partners \u2013 Enterprise Trust Business of HID Global Corporation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-11-05T12:00:00Z",
+            "determination_date": "2026-11-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
     "phoenix-distribution-nsw-pty-ltd": {
       "id": "phoenix-distribution-nsw-pty-ltd",
       "canonical_name": "Phoenix Distribution (Nsw) Pty Ltd",
