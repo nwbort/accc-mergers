@@ -346,6 +346,48 @@
         "completed_count": 1
       }
     },
+    "uk-rt-transaction-holdco-ltd": {
+      "id": "uk-rt-transaction-holdco-ltd",
+      "canonical_name": "UK RT Transaction Holdco Ltd",
+      "members": [
+        {
+          "name": "UK RT Transaction Holdco Ltd",
+          "identifier": "UK CRN  17032932",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20054",
+            "merger_name": "Exponent Group \u2013 Crane Building Services and Utilities",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-28T12:00:00Z",
+            "determination_date": "2026-11-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
     "zurich-assure-australia-pty-ltd": {
       "id": "zurich-assure-australia-pty-ltd",
       "canonical_name": "Zurich",

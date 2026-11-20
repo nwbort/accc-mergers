@@ -1,6 +1,6 @@
 {
   "total_mergers": 333,
-  "total_waivers": 550,
+  "total_waivers": 551,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 523,
+    "Approved": 524,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.98909090909091,
-    "median_days": 21.0,
-    "average_business_days": 14.41090909090909,
-    "median_business_days": 15.0
+    "average_days": 20.99274047186933,
+    "median_days": 21,
+    "average_business_days": 14.415607985480944,
+    "median_business_days": 15
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 228
+      "count": 229
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20054",
+      "merger_name": "Exponent Group \u2013 Crane Building Services and Utilities",
+      "determination": "Approved",
+      "determination_date": "2026-11-20T12:00:00Z",
+      "page_modified_datetime": "2026-11-20T17:39:13+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-25064",
       "merger_name": "Adcome \u2013 IGA Allora, QLD",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-19T12:00:00Z",
       "page_modified_datetime": "2026-11-19T17:25:07+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85067",
-      "merger_name": "Respect Group \u2013 Clifton Co-op Hospital aged care, support at home care and community housing, Clifton QLD",
-      "determination": "Approved",
-      "determination_date": "2026-11-19T12:00:00Z",
-      "page_modified_datetime": "2026-11-19T17:22:42+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
