@@ -1099,12 +1099,20 @@
       "median_business_days": 18.5
     },
     {
-      "division": "Unknown",
-      "count": 2,
+      "division": "The Commission",
+      "count": 1,
       "outcome_mix": {
-        "Approved": 2
+        "Approved": 1
       },
-      "median_business_days": 21.0
+      "median_business_days": 21
+    },
+    {
+      "division": "Unknown",
+      "count": 1,
+      "outcome_mix": {
+        "Approved": 1
+      },
+      "median_business_days": 21
     }
   ],
   "waiver_by_commission_division": [
