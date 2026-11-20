@@ -1,6 +1,6 @@
 {
   "total_mergers": 333,
-  "total_waivers": 551,
+  "total_waivers": 553,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 524,
+    "Approved": 526,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,9 +48,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.99274047186933,
+    "average_days": 21.01084990958409,
     "median_days": 21,
-    "average_business_days": 14.415607985480944,
+    "average_business_days": 14.432188065099458,
     "median_business_days": 15
   },
   "top_industries": [
@@ -60,11 +60,11 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 108
+      "count": 109
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 89
+      "count": 90
     },
     {
       "name": "Non-Residential Property Operators",
@@ -72,7 +72,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 50
+      "count": 51
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85064",
+      "merger_name": "Infosys \u2013 Versent Group (Telstra Purple)",
+      "determination": "Approved",
+      "determination_date": "2026-11-20T12:00:00Z",
+      "page_modified_datetime": "2026-11-20T17:41:38+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-70051",
+      "merger_name": "Advent Partners \u2013 investment in Procare Group",
+      "determination": "Approved",
+      "determination_date": "2026-11-20T12:00:00Z",
+      "page_modified_datetime": "2026-11-20T17:40:19+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-20054",
       "merger_name": "Exponent Group \u2013 Crane Building Services and Utilities",
       "determination": "Approved",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-19T12:00:00Z",
       "page_modified_datetime": "2026-11-19T17:27:22+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-70053",
-      "merger_name": "Australian Venue Co \u2013 Assets of Central Hotel, Beaconsfield VIC",
-      "determination": "Approved",
-      "determination_date": "2026-11-19T12:00:00Z",
-      "page_modified_datetime": "2026-11-19T17:26:18+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85065",
-      "merger_name": "Dexus \u2013 LDK Healthcare Unit Trust",
-      "determination": "Approved",
-      "determination_date": "2026-11-19T12:00:00Z",
-      "page_modified_datetime": "2026-11-19T17:25:07+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

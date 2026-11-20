@@ -2,6 +2,48 @@
   "shard": 163,
   "shard_count": 256,
   "parties": {
+    "advent-partners-4-fund-lp": {
+      "id": "advent-partners-4-fund-lp",
+      "canonical_name": "Advent Partners 4 Fund, Lp",
+      "members": [
+        {
+          "name": "ADVENT PARTNERS 4 FUND, LP",
+          "identifier": "66 279 887 278",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70051",
+            "merger_name": "Advent Partners \u2013 investment in Procare Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-27T12:00:00Z",
+            "determination_date": "2026-11-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "airtree-ventures-opportunity-fund-v-partnership-lp": {
       "id": "airtree-ventures-opportunity-fund-v-partnership-lp",
       "canonical_name": "Airtree Ventures Opportunity Fund V Partnership, LP",

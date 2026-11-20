@@ -565,6 +565,48 @@
       },
       "waiver_duration": null
     },
+    "the-procare-group-pty-ltd": {
+      "id": "the-procare-group-pty-ltd",
+      "canonical_name": "The Procare Group Pty Ltd",
+      "members": [
+        {
+          "name": "THE PROCARE GROUP PTY LTD",
+          "identifier": "60 088 819 872",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70051",
+            "merger_name": "Advent Partners \u2013 investment in Procare Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-27T12:00:00Z",
+            "determination_date": "2026-11-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "thomson-reuters-holdco-llc": {
       "id": "thomson-reuters-holdco-llc",
       "canonical_name": "Thomson Reuters Holdco LLC",
