@@ -771,6 +771,31 @@ class TestExtractCommissionDivision:
         assert result is not None
         assert not result.endswith(".")
 
+    def test_full_commission_bare_line(self):
+        # A determination of the full Commission ends on a bare line with no
+        # Act reference (MN-15048's Phase 1 determination).
+        text = (
+            "Tribunal.\n"
+            "Determination made by the Commission\n"
+            "2"
+        )
+        assert extract_commission_division(text) == "Determination made by the Commission"
+
+    def test_full_commission_must_be_whole_line(self):
+        # The bare form is only accepted as a line of its own, so prose that
+        # merely mentions a determination made by the Commission isn't read
+        # as the attribution.
+        text = "A Determination made by the Commission under clause 4 applies."
+        assert extract_commission_division(text) is None
+
+    def test_full_commission_does_not_shadow_division(self):
+        text = (
+            "Determination made by the Commission\n"
+            "Determination made by a division of the Commission constituted by "
+            "a direction issued pursuant to section 19 of the Act"
+        )
+        assert "division" in extract_commission_division(text)
+
     def test_no_match(self):
         text = "This document has no commission division information."
         assert extract_commission_division(text) is None

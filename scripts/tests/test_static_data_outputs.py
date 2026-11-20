@@ -3434,6 +3434,13 @@ class TestExtensionsGenerate:
         assert escalated['escalated_to_phase_2'] is True
 
 
+def test_normalise_division_full_commission():
+    from scripts.generate.static_data.outputs.analysis import _normalise_division
+
+    assert _normalise_division('Determination made by the Commission') == 'The Commission'
+    assert _normalise_division('Decision made by the Commission.') == 'The Commission'
+
+
 def test_normalise_division_folds_variants():
     from scripts.generate.static_data.outputs.analysis import _normalise_division
 
