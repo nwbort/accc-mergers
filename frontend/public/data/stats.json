@@ -1,6 +1,6 @@
 {
   "total_mergers": 333,
-  "total_waivers": 546,
+  "total_waivers": 547,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 519,
+    "Approved": 520,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.02930402930403,
-    "median_days": 21.0,
-    "average_business_days": 14.432234432234432,
-    "median_business_days": 15.0
+    "average_days": 21.018281535648995,
+    "median_days": 21,
+    "average_business_days": 14.425959780621572,
+    "median_business_days": 15
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 226
+      "count": 227
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65047",
+      "merger_name": "Emapta \u2013 TOA Global",
+      "determination": "Approved",
+      "determination_date": "2026-11-20T12:00:00Z",
+      "page_modified_datetime": "2026-11-20T17:20:54+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-20052",
       "merger_name": "Home Timber & Hardware - Mitre 10, Picton NSW",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-19T12:00:00Z",
       "page_modified_datetime": "2026-11-19T10:36:12+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-45032",
-      "merger_name": "Novotech - Agilex",
-      "determination": "Approved",
-      "determination_date": "2026-11-18T12:00:00Z",
-      "page_modified_datetime": "2026-11-19T15:15:52+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
