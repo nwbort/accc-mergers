@@ -2,6 +2,42 @@
   "shard": 59,
   "shard_count": 256,
   "parties": {
+    "137-thompson-ave-cowes-pty-ltd": {
+      "id": "137-thompson-ave-cowes-pty-ltd",
+      "canonical_name": "137 Thompson Ave Cowes Pty Ltd",
+      "members": [
+        {
+          "name": "137 THOMPSON AVE COWES PTY LTD",
+          "identifier": "90 652 140 442",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85069",
+            "merger_name": "Endeavour Group \u2013 retail liquor site in Cowes, VIC",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-20T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "a-t-b-morton-pty-limited": {
       "id": "a-t-b-morton-pty-limited",
       "canonical_name": "A.T.B. Morton Pty Limited",

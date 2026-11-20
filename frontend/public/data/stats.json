@@ -1,10 +1,10 @@
 {
-  "total_mergers": 332,
+  "total_mergers": 333,
   "total_waivers": 546,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
-    "Under assessment": 35,
+    "Under assessment": 36,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 57
+      "count": 58
     },
     {
       "name": "Software Publishing",
@@ -76,26 +76,36 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 48
+      "count": 49
+    },
+    {
+      "name": "Accommodation",
+      "count": 31
     },
     {
       "name": "Cafes and Restaurants",
       "count": 31
     },
     {
-      "name": "Accommodation",
-      "count": 30
+      "name": "Liquor Retailing",
+      "count": 29
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
       "count": 29
-    },
-    {
-      "name": "Supermarket and Grocery Stores",
-      "count": 28
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-85069",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Cowes, VIC",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-20T12:00:00Z",
+      "page_modified_datetime": "2026-11-20T14:00:00+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-20048",
       "merger_name": "Endeavour Group - retail liquor site in Darch, WA",
@@ -205,16 +215,6 @@
       "page_modified_datetime": "2026-11-10T15:47:05+11:00",
       "is_waiver": false,
       "is_refiled": true
-    },
-    {
-      "merger_id": "WA-60062",
-      "merger_name": "Coles \u2013 supermarket site in Broulee, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-11-09T12:00:00Z",
-      "page_modified_datetime": "2026-11-19T17:30:16+11:00",
-      "is_waiver": true,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [

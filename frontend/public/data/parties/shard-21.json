@@ -99,6 +99,18 @@
       "mergers": {
         "acquirer": [
           {
+            "merger_id": "MN-85069",
+            "merger_name": "Endeavour Group \u2013 retail liquor site in Cowes, VIC",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-20T12:00:00Z",
+            "determination_date": null
+          },
+          {
             "merger_id": "MN-20048",
             "merger_name": "Endeavour Group - retail liquor site in Darch, WA",
             "is_waiver": false,
@@ -175,11 +187,11 @@
           }
         ]
       },
-      "merger_count": 6,
-      "phase_1_count": 6,
+      "merger_count": 7,
+      "phase_1_count": 7,
       "phase_2_count": 0,
       "waiver_count": 0,
-      "active_count": 2,
+      "active_count": 3,
       "phase_duration": {
         "average_days": 23.75,
         "median_days": 23.5,
