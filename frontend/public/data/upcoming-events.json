@@ -3,36 +3,6 @@
     {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
-      "date": "2026-11-20T12:00:00Z",
-      "merger_id": "MN-25024",
-      "merger_name": "Steadfast - Axiom Insurance Brokers",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-11-12T12:00:00Z"
-    },
-    {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
-      "date": "2026-11-20T12:00:00Z",
-      "merger_id": "MN-25056",
-      "merger_name": "Amwins / Dragoneer / KKR / Temasek Consortium \u2013 Steadfast",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-11-12T12:00:00Z"
-    },
-    {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
-      "date": "2026-11-20T12:00:00Z",
-      "merger_id": "MN-85063",
-      "merger_name": "William Adams - Clennett Hire",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-11-12T12:00:00Z"
-    },
-    {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
       "date": "2026-11-23T12:00:00Z",
       "merger_id": "MN-30044",
       "merger_name": "Ampol \u2013 Evie Networks",
@@ -401,6 +371,26 @@
       "effective_notification_datetime": "2026-11-18T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2027-01-19T12:00:00Z",
+      "merger_id": "MN-20048",
+      "merger_name": "Endeavour Group - retail liquor site in Darch, WA",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-19T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2027-01-20T12:00:00Z",
+      "merger_id": "MN-85069",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Cowes, VIC",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-20T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2027-03-30T12:00:00Z",
@@ -413,6 +403,6 @@
       "end_date": "2027-04-15T12:00:00Z"
     }
   ],
-  "count": 41,
+  "count": 40,
   "days_ahead": 60
 }
