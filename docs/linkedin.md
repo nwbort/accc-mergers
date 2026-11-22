@@ -175,7 +175,7 @@ remain on foot – 33 in phase 1, 2 in phase 2 and 1 in the public benefit phase
 ```
 
 The headline (`headline()`) leads with the larger of the week's clearances
-and new notifications. A week with a deal not approved or referred to phase 2
+and new notifications. A week with a deal blocked or referred to phase 2
 leads with that instead ("One deal sent to phase 2, 42 cleared and 4 new ones
 notified: …"), and an empty week is "A quiet week in Australian mergers".
 The email's own subject line is unchanged.

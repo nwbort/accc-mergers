@@ -109,7 +109,7 @@ def test_a_refused_post_fails_the_step(monkeypatch):
      "One deal sent to phase 2, 42 cleared and 4 new ones notified"),
     ({"deals_cleared": 42, "new_deals_notified": 4, "deals_referred_to_phase_2": 2,
       "deals_declined": 1},
-     "One deal not approved, two sent to phase 2, 42 cleared and 4 new ones notified"),
+     "One deal blocked, two sent to phase 2, 42 cleared and 4 new ones notified"),
     ({"deals_cleared": 0, "new_deals_notified": 0, "deals_referred_to_phase_2": 1},
      "One deal sent to phase 2"),
 ])

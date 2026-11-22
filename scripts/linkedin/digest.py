@@ -53,16 +53,16 @@ def headline(digest: dict) -> str:
     your week in Australian mergers".
 
     The larger of the week's clearances and new notifications leads (cleared
-    on a tie). A week with a deal not approved or referred to phase 2 leads
+    on a tie). A week with a deal blocked or referred to phase 2 leads
     with that instead, since those are the rare outcomes worth stopping a
     scroll for: "One deal sent to phase 2, 42 cleared and 4 new ones notified:
-    …" ("One deal not approved, two sent to phase 2, …" when both). A week
+    …" ("One deal blocked, two sent to phase 2, …" when both). A week
     with nothing at all is "A quiet week in Australian mergers".
     """
     c = swe._counts(digest)
     # Only the opening item says "deal(s)": "One deal sent to phase 2,
     # 42 cleared and 4 new ones notified".
-    callouts = [(c["declined"], "not approved"), (c["referred"], "sent to phase 2")]
+    callouts = [(c["declined"], "blocked"), (c["referred"], "sent to phase 2")]
     counts = sorted([(c["cleared"], "cleared"), (c["new"], "new")],
                     key=lambda pair: pair[0], reverse=True)  # stable: cleared wins a tie
     has_callout = any(n for n, _ in callouts)
