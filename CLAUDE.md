@@ -75,7 +75,10 @@ webhook only spends Make credits when called). Failing that,
 `share_links.py` (`LINKEDIN_SHARE_LINKS`) pushes each milestone to a phone
 over ntfy as a LinkedIn composer link to post by hand. Both share a seeded
 state file (`data/processed/linkedin_posts.json`), only one acts (the webhook
-wins), and both are inert without their secrets. `text.py` holds the post's
+wins), and both are inert without their secrets. `digest.py` posts the
+weekly digest (its own headline over the email's lede, linking to /digest) through the
+same webhook, from `send-weekly-email.yml` after a production send only —
+never a test send or dry run. `text.py` holds the post's
 wording, including LinkedIn's "little" text-format escaping, which Make's
 LinkedIn module needs. Those links unfurl with a generic card
 for the matter's latest milestone — 16 committed PNGs in `frontend/public/og/`,
@@ -843,7 +846,7 @@ exists rather than 404ing into the SPA's `index.html`.
 | `publish-lexicons.yml` | Push to `main` touching `atproto/lexicons/**` or the workflow itself, manual (with a `dry_run` input) | Publish the `fyi.mergers.*` schemas as `com.atproto.lexicon.schema` records. Its own workflow rather than a pipeline step: a lexicon changes only when a person edits one, so a path-filtered push fires exactly then, where `pipeline.yml` would re-read both records several times a day to learn nothing moved. A missing `ATPROTO_APP_PASSWORD` skips a push run and fails a manual one |
 | `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json`, then Federal Court files from the Commonwealth Courts Portal into `judicial_reviews.json`, and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge (and the Federal Court judgments site's), so it runs in CI; the portal itself is plain HTTP. Deps: `scripts/requirements-tribunal.txt` |
 | `weekly-digest.yml` | Weekly (Sunday, Sydney time), manual | Generate `digest.json` |
-| `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
+| `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker, then, on a production send only, post it to LinkedIn through the Make.com webhook (`scripts/linkedin/digest.py`) |
 | `test.yml` | Pull requests touching `scripts/**`, `atproto/**` or `fixtures/*.json`, manual | Run the Python test suite |
 | `frontend-test.yml` | Pull requests touching `frontend/**`, `functions/**` or `fixtures/*.json`, manual | Run the frontend test suite |
 | `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `frontend/public/**` or the check itself, manual | Guards both Cloudflare Pages limits that fail silently: opens a tracking issue for any asset over the 25 MiB per-file limit, and for the deployment approaching the 20,000-**file** cap (reports at 80%, fails the run once over). See `scripts/check_deploy_assets.py` |

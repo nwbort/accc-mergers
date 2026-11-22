@@ -28,6 +28,11 @@ on:
         options:
           - social
           - signup
+      post_to_linkedin:
+        description: 'Also post the digest to LinkedIn (production sends only)'
+        required: false
+        default: true
+        type: boolean
 
 jobs:
   send-email:
@@ -50,7 +55,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests
+          # The full set: the LinkedIn step imports the ATProto posting code
+          pip install -r scripts/requirements.txt
 
       - name: Send weekly digest email
         env:
@@ -63,6 +69,23 @@ jobs:
           # social: follow us on LinkedIn/Bluesky; signup: "were you forwarded this?"
           BANNER: ${{ inputs.banner || 'social' }}
         run: python -m scripts.send_weekly_email
+
+      # Production sends only: never after a test send or a dry run.
+      # scripts/linkedin/digest.py re-checks AUDIENCE as well. Runs only once
+      # the email has gone, so a red run here means the email is already out:
+      # re-running the job would send it again, so post by hand instead.
+      - name: Post the digest to LinkedIn
+        # Scheduled runs have no inputs, so they post (the checkbox's default).
+        # Spelled out because a missing input compares equal to false.
+        if: >-
+          ${{ (github.event_name == 'schedule' || inputs.post_to_linkedin)
+              && !inputs.dry_run
+              && (inputs.audience || 'production') == 'production' }}
+        env:
+          AUDIENCE: ${{ inputs.audience || 'production' }}
+          LINKEDIN_WEBHOOK_URL: ${{ secrets.LINKEDIN_WEBHOOK_URL }}
+          LINKEDIN_WEBHOOK_API_KEY: ${{ secrets.LINKEDIN_WEBHOOK_API_KEY }}
+        run: python -m scripts.linkedin.digest
 
       - name: Upload rendered HTML preview
         if: ${{ inputs.dry_run == true }}
