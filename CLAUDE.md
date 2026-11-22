@@ -76,7 +76,7 @@ webhook only spends Make credits when called). Failing that,
 over ntfy as a LinkedIn composer link to post by hand. Both share a seeded
 state file (`data/processed/linkedin_posts.json`), only one acts (the webhook
 wins), and both are inert without their secrets. `digest.py` posts the
-weekly digest (the email's subject and lede, linking to /digest) through the
+weekly digest (its own headline over the email's lede, linking to /digest) through the
 same webhook, from `send-weekly-email.yml` after a production send only —
 never a test send or dry run. `text.py` holds the post's
 wording, including LinkedIn's "little" text-format escaping, which Make's

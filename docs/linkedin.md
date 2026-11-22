@@ -161,18 +161,24 @@ workflow step is gated on both, and the script refuses anything but
 **Also post the digest to LinkedIn** (`post_to_linkedin`, ticked by default;
 scheduled runs always post).
 
-The post is the email's subject line and its summary paragraph (the lede),
-with the link card pointing at [/digest](https://mergers.fyi/digest) and the
+The post is a headline and the email's summary paragraph (the lede), with
+the link card pointing at [/digest](https://mergers.fyi/digest) and the
 site-wide `og-image.png`:
 
 ```
-Weekly merger digest: 4 new deals, 42 cleared
+42 deals cleared, 4 new ones notified: your week in Australian mergers
 
 The ACCC was notified of 4 new deals this week and cleared 42. 36 assessments
 remain on foot – 33 in phase 1, 2 in phase 2 and 1 in the public benefit phase.
 
 #accc
 ```
+
+The headline (`headline()`) leads with the larger of the week's clearances
+and new notifications. A week with a deal not approved or referred to phase 2
+leads with that instead ("One deal sent to phase 2, 42 cleared and 4 new ones
+notified: …"), and an empty week is "A quiet week in Australian mergers".
+The email's own subject line is unchanged.
 
 The payload has the same keys as a milestone's, so the scenario above posts it
 unchanged; it adds `"kind": "digest"` (and an empty `matter_id`) for a

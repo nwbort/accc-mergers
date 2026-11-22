@@ -12,8 +12,8 @@ from scripts.linkedin import digest as li_digest
 URL = "https://hook.eu1.make.com/secret-token"
 
 
-def _digest():
-    return {
+def _digest(**counts):
+    digest = {
         "period_start": "2026-03-02T00:00:00+11:00",
         "period_end": "2026-03-08T23:59:59+11:00",
         "new_deals_notified": [{"merger_id": "MN-1"}, {"merger_id": "MN-2"}],
@@ -26,6 +26,9 @@ def _digest():
         "ongoing_phase_2": [],
         "ongoing_tribunal_appeals": [],
     }
+    for key, n in counts.items():
+        digest[key] = [{"merger_id": f"MN-{i}"} for i in range(n)]
+    return digest
 
 
 @pytest.fixture
@@ -53,7 +56,7 @@ def test_payload_links_to_the_digest_and_keeps_the_milestone_keys():
     assert body["kind"] == "digest"
     assert body["url"] == "https://mergers.fyi/digest"
     assert body["key"] == "digest:2026-03-08"
-    assert body["commentary"].startswith("Weekly merger digest: 2 new deals, 1 cleared\n\nThe ACCC")
+    assert body["commentary"].startswith("2 new deals notified, 1 cleared: your week in Australian mergers\n\nThe ACCC")
     assert "https://mergers.fyi/digest" in body["text"]
     assert "https://mergers.fyi/digest" not in body["commentary"]
     assert "{hashtag|\\#|accc}" in body["commentary_little"]
@@ -92,3 +95,29 @@ def test_a_refused_post_fails_the_step(monkeypatch):
     monkeypatch.setenv("LINKEDIN_WEBHOOK_URL", URL)
     monkeypatch.setenv("AUDIENCE", "production")
     assert li_digest.main([]) == 1
+
+
+@pytest.mark.parametrize("counts, expected", [
+    ({"deals_cleared": 42, "new_deals_notified": 4},
+     "42 deals cleared, 4 new ones notified"),
+    ({"deals_cleared": 3, "new_deals_notified": 12},
+     "12 new deals notified, 3 cleared"),
+    ({"deals_cleared": 1, "new_deals_notified": 1},
+     "1 deal cleared, 1 new one notified"),
+    ({"deals_cleared": 5, "new_deals_notified": 0}, "5 deals cleared"),
+    ({"deals_cleared": 42, "new_deals_notified": 4, "deals_referred_to_phase_2": 1},
+     "One deal sent to phase 2, 42 cleared and 4 new ones notified"),
+    ({"deals_cleared": 42, "new_deals_notified": 4, "deals_referred_to_phase_2": 2,
+      "deals_declined": 1},
+     "One deal not approved, two sent to phase 2, 42 cleared and 4 new ones notified"),
+    ({"deals_cleared": 0, "new_deals_notified": 0, "deals_referred_to_phase_2": 1},
+     "One deal sent to phase 2"),
+])
+def test_headline(counts, expected):
+    assert li_digest.headline(_digest(**counts)) == f"{expected}: your week in Australian mergers"
+
+
+def test_a_quiet_week():
+    assert li_digest.headline(_digest(deals_cleared=0, new_deals_notified=0)) == (
+        "A quiet week in Australian mergers"
+    )

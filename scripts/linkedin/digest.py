@@ -5,8 +5,9 @@ never after a test send or a dry run: the workflow step is gated on both, and
 this refuses to send unless ``AUDIENCE`` says production as well, so a test run
 can't reach the page even if the gate is edited away.
 
-The post is the email's subject line and its opening summary paragraph (the
-lede, ``send_weekly_email.build_lede``, as plain text), linking to /digest.
+The post is a headline (:func:`headline`) and the email's opening summary
+paragraph (the lede, ``send_weekly_email.build_lede``, as plain text),
+linking to /digest.
 It goes to ``LINKEDIN_WEBHOOK_URL`` in the same shape as a milestone
 (``webhook.payload``), so the scenario that posts milestones posts this too,
 with no change in Make. ``kind`` is ``"digest"`` for a scenario that wants to
@@ -39,6 +40,56 @@ DIGEST_URL = f"{atproto_config.SITE_URL}/digest"
 HEADLINE = "Weekly merger digest"
 
 
+TAGLINE = "your week in Australian mergers"
+
+
+def _count(n: int) -> str:
+    """A callout's count opening the headline: spelled out and capitalised."""
+    return swe._NUMBER_WORDS.get(n, str(n)).capitalize()
+
+
+def headline(digest: dict) -> str:
+    """The post's opening line, e.g. "42 deals cleared, 4 new ones notified:
+    your week in Australian mergers".
+
+    The larger of the week's clearances and new notifications leads (cleared
+    on a tie). A week with a deal not approved or referred to phase 2 leads
+    with that instead, since those are the rare outcomes worth stopping a
+    scroll for: "One deal sent to phase 2, 42 cleared and 4 new ones notified:
+    …" ("One deal not approved, two sent to phase 2, …" when both). A week
+    with nothing at all is "A quiet week in Australian mergers".
+    """
+    c = swe._counts(digest)
+    # Only the opening item says "deal(s)": "One deal sent to phase 2,
+    # 42 cleared and 4 new ones notified".
+    callouts = [(c["declined"], "not approved"), (c["referred"], "sent to phase 2")]
+    counts = sorted([(c["cleared"], "cleared"), (c["new"], "new")],
+                    key=lambda pair: pair[0], reverse=True)  # stable: cleared wins a tie
+    has_callout = any(n for n, _ in callouts)
+
+    phrases = []
+    for n, what in callouts + counts:
+        if not n:
+            continue
+        first = not phrases
+        if what == "new":
+            noun = swe.pluralise(n, "deal" if first else "one")
+            phrases.append(f"{n} new {noun} notified")
+            continue
+        # Counts stay digits, as in the email; a callout's are spelled out.
+        if what == "cleared":
+            number = str(n)
+        else:
+            number = _count(n) if first else swe._NUMBER_WORDS.get(n, str(n))
+        noun = f" {swe.pluralise(n, 'deal')}" if first else ""
+        phrases.append(f"{number}{noun} {what}")
+
+    if not phrases:
+        return "A quiet week in Australian mergers"
+    lead = swe.join_and(phrases) if has_callout else ", ".join(phrases)
+    return f"{lead}: {TAGLINE}"
+
+
 def summary(digest: dict) -> str:
     """The email's lede as plain text."""
     lede = swe.build_lede(swe._counts(digest))
@@ -47,7 +98,7 @@ def summary(digest: dict) -> str:
 
 def commentary(digest: dict) -> str:
     """The post without the link, in LinkedIn's little format."""
-    parts = [escape(swe.build_subject(digest)), escape(summary(digest))]
+    parts = [escape(headline(digest)), escape(summary(digest))]
     tags = hashtag_templates()
     if tags:
         parts.append(tags)
@@ -62,7 +113,7 @@ def payload(digest: dict) -> dict:
     lede = summary(digest)
     date_range = swe.format_date_range(digest["period_start"], digest["period_end"])
     tags = preview(hashtag_templates())
-    text = "\n\n".join(p for p in (swe.build_subject(digest), lede, DIGEST_URL, tags) if p)
+    text = "\n\n".join(p for p in (headline(digest), lede, DIGEST_URL, tags) if p)
     return {
         "kind": "digest",
         "key": f"digest:{digest['period_end'][:10]}",
