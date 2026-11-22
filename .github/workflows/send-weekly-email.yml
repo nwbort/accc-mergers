@@ -28,6 +28,11 @@ on:
         options:
           - social
           - signup
+      post_to_linkedin:
+        description: 'Also post the digest to LinkedIn (production sends only)'
+        required: false
+        default: true
+        type: boolean
 
 jobs:
   send-email:
@@ -70,7 +75,12 @@ jobs:
       # the email has gone, so a red run here means the email is already out:
       # re-running the job would send it again, so post by hand instead.
       - name: Post the digest to LinkedIn
-        if: ${{ !inputs.dry_run && (inputs.audience || 'production') == 'production' }}
+        # Scheduled runs have no inputs, so they post (the checkbox's default).
+        # Spelled out because a missing input compares equal to false.
+        if: >-
+          ${{ (github.event_name == 'schedule' || inputs.post_to_linkedin)
+              && !inputs.dry_run
+              && (inputs.audience || 'production') == 'production' }}
         env:
           AUDIENCE: ${{ inputs.audience || 'production' }}
           LINKEDIN_WEBHOOK_URL: ${{ secrets.LINKEDIN_WEBHOOK_URL }}

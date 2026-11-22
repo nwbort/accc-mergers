@@ -157,7 +157,9 @@ python -m scripts.linkedin.webhook --dry-run    # print the payloads that are du
 same webhook, straight after a **production** send
 (`scripts/linkedin/digest.py`). A test send or a dry run never posts: the
 workflow step is gated on both, and the script refuses anything but
-`AUDIENCE=production` too.
+`AUDIENCE=production` too. A manual run can also skip it by unticking
+**Also post the digest to LinkedIn** (`post_to_linkedin`, ticked by default;
+scheduled runs always post).
 
 The post is the email's subject line and its summary paragraph (the lede),
 with the link card pointing at [/digest](https://mergers.fyi/digest) and the
