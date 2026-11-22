@@ -151,6 +151,35 @@ Scenarios map these keys by name, so add new keys rather than renaming existing 
 python -m scripts.linkedin.webhook --dry-run    # print the payloads that are due
 ```
 
+## The weekly digest
+
+`send-weekly-email.yml` also posts the weekly digest to the page, through the
+same webhook, straight after a **production** send
+(`scripts/linkedin/digest.py`). A test send or a dry run never posts: the
+workflow step is gated on both, and the script refuses anything but
+`AUDIENCE=production` too.
+
+The post is the email's subject line and its summary paragraph (the lede),
+with the link card pointing at [/digest](https://mergers.fyi/digest) and the
+site-wide `og-image.png`:
+
+```
+Weekly merger digest: 4 new deals, 42 cleared
+
+The ACCC was notified of 4 new deals this week and cleared 42. 36 assessments
+remain on foot – 33 in phase 1, 2 in phase 2 and 1 in the public benefit phase.
+
+#accc
+```
+
+The payload has the same keys as a milestone's, so the scenario above posts it
+unchanged; it adds `"kind": "digest"` (and an empty `matter_id`) for a
+scenario that wants to tell them apart. Nothing is recorded in
+`linkedin_posts.json`. The step runs only once the email has gone, so if it
+fails, the email is already out: re-running the job would email everyone
+again, so post that week's digest by hand instead. Preview it with
+`python -m scripts.linkedin.digest --dry-run`.
+
 ## Fallback: share links
 
 `scripts/linkedin/share_links.py` gets the posts out by hand when the Make.com
