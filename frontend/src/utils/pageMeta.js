@@ -657,7 +657,7 @@ const NICK_TWORT_PROFILE = {
     url: AUTHOR_URL,
     jobTitle: 'Principal, Competition Economist',
     description:
-      'Competition economist in Sydney advising on merger clearance, antitrust and regulatory matters in Australia and New Zealand since 2017, and creator of mergers.fyi.',
+      'Competition economist in Sydney advising on merger clearance, antitrust and regulatory matters in Australia and New Zealand since 2018, and creator of mergers.fyi.',
     worksFor: {
       '@type': 'Organization',
       name: 'Econic Partners',
@@ -797,7 +797,7 @@ export const STATIC_PAGE_META = {
     // and where, and the site's brand suffix would push "Sydney" off the end.
     documentTitle: 'Nick Twort – Competition Economist, Sydney | mergers.fyi',
     description:
-      'Nick Twort is a Sydney competition economist and Principal at Econic Partners, advising on merger clearance, antitrust and regulatory matters before the ACCC and New Zealand Commerce Commission since 2017. Creator of mergers.fyi.',
+      'Nick Twort is a Sydney competition economist and Principal at Econic Partners, advising on merger clearance, antitrust and regulatory matters before the ACCC and New Zealand Commerce Commission since 2018. Creator of mergers.fyi.',
     type: 'profile',
     image: `${SITE_URL}/og/nick-twort.png`,
     imageAlt: 'Nick Twort, competition economist',

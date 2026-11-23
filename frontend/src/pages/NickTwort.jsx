@@ -59,7 +59,7 @@ export default function NickTwort() {
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Nick Twort is a competition economist who has applied microeconomic principles to competition and
-            regulatory matters since 2017. He specialises in providing clear, focused, and commercially credible economic advice
+            regulatory matters since 2018. He specialises in providing clear, focused, and commercially credible economic advice
             on high-stakes decisions – from contested merger clearances before the ACCC to market inquiries and regulatory proceedings
             across Australia and New Zealand.
           </p>
