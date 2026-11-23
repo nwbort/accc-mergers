@@ -1,6 +1,6 @@
 {
   "total_mergers": 337,
-  "total_waivers": 553,
+  "total_waivers": 554,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 293,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 526,
+    "Approved": 527,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.01084990958409,
-    "median_days": 21,
-    "average_business_days": 14.432188065099458,
-    "median_business_days": 15
+    "average_days": 20.998194945848375,
+    "median_days": 21.0,
+    "average_business_days": 14.42418772563177,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25065",
+      "merger_name": "Carlisle Health \u2013 Altus Medical Imaging",
+      "determination": "Approved",
+      "determination_date": "2026-11-23T12:00:00Z",
+      "page_modified_datetime": "2026-11-23T16:40:12+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-20041",
       "merger_name": "Hopper Motor Group \u2013 Essendon Kia",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-19T12:00:00Z",
       "page_modified_datetime": "2026-11-19T17:31:31+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60062",
-      "merger_name": "Coles \u2013 supermarket site in Broulee, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-11-19T12:00:00Z",
-      "page_modified_datetime": "2026-11-19T17:30:16+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

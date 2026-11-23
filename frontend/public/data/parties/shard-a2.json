@@ -44,6 +44,48 @@
       },
       "waiver_duration": null
     },
+    "altus-medical-imaging-pty-ltd": {
+      "id": "altus-medical-imaging-pty-ltd",
+      "canonical_name": "Altus Medical Imaging Pty Ltd",
+      "members": [
+        {
+          "name": "ALTUS MEDICAL IMAGING PTY LTD",
+          "identifier": "38 643 367 131",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25065",
+            "merger_name": "Carlisle Health \u2013 Altus Medical Imaging",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-11-09T12:00:00Z",
+            "determination_date": "2026-11-23T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
     "apollo-callco-inc": {
       "id": "apollo-callco-inc",
       "canonical_name": "Apollo CallCo, Inc.",
