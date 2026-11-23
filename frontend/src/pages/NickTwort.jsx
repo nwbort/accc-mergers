@@ -11,7 +11,6 @@ export default function NickTwort() {
   return (
     <>
       <SEO
-        title={PAGE_META.title}
         documentTitle={PAGE_META.documentTitle}
         description={PAGE_META.description}
         url="/nick-twort"

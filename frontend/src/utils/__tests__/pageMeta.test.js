@@ -329,7 +329,9 @@ describe('STATIC_PAGE_META', () => {
   it('gives every route a title and description', () => {
     for (const [path, meta] of Object.entries(STATIC_PAGE_META)) {
       expect(path.startsWith('/'), `${path} should be a root-relative path`).toBe(true);
-      expect(meta.title, `${path} title`).toBeTruthy();
+      // A whole documentTitle stands instead of a title for the site suffix.
+      expect(meta.title || meta.documentTitle, `${path} title`).toBeTruthy();
+      expect(meta.title && meta.documentTitle, `${path} has both`).toBeFalsy();
       expect(meta.description, `${path} description`).toBeTruthy();
     }
   });
@@ -364,7 +366,7 @@ describe('STATIC_PAGE_META', () => {
     // <SEO> appends " | Australian Merger Tracker"; a title carrying the brand
     // already would render it twice.
     for (const [path, meta] of Object.entries(STATIC_PAGE_META)) {
-      expect(meta.title, `${path} title duplicates the site name`).not.toContain(
+      expect(meta.title ?? '', `${path} title duplicates the site name`).not.toContain(
         'Australian Merger Tracker',
       );
     }
@@ -394,8 +396,9 @@ describe('STATIC_PAGE_META', () => {
       expect(src, `${file} should read STATIC_PAGE_META['${route}']`).toContain(
         `STATIC_PAGE_META['${route}']`,
       );
+      const meta = STATIC_PAGE_META[route];
       expect(src, `${file} should pass the shared title to <SEO>`).toContain(
-        'title={PAGE_META.title}',
+        meta.documentTitle ? 'documentTitle={PAGE_META.documentTitle}' : 'title={PAGE_META.title}',
       );
     }
   });

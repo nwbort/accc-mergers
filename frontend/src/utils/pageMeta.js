@@ -43,7 +43,8 @@ export function fullTitle(title) {
 
 /**
  * A page's <title>: its `documentTitle` verbatim when the meta sets one (a
- * page whose title is written for search results whole), else fullTitle.
+ * page whose title is written whole, which then has no `title`), else the
+ * page's `title` with the site suffix (fullTitle).
  */
 export function documentTitle(meta) {
   return meta.documentTitle || fullTitle(meta.title);
@@ -737,10 +738,10 @@ export function quarterlyMeta(quarter) {
 
 export const STATIC_PAGE_META = {
   '/': {
-    title: 'ACCC Merger Reviews & M&A Data',
-    // Brand first on the homepage. index.html (the fallback shell every page
-    // is stamped from) carries this same title and description; a test keeps
-    // the two in step.
+    // Brand first on the homepage, so the whole <title> rather than a `title`
+    // for the site suffix. index.html (the fallback shell every page is
+    // stamped from) carries this same title and description; a test keeps the
+    // two in step.
     documentTitle: 'Australian Merger Tracker | ACCC Merger Reviews & M&A Data',
     description:
       'Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents.',
@@ -808,7 +809,6 @@ export const STATIC_PAGE_META = {
     imageAlt: 'Catch me up: your week in Australian mergers',
   },
   '/nick-twort': {
-    title: 'Nick Twort – Competition Economist',
     // Written whole for search results: a name search should read who, what
     // and where, and the site's brand suffix would push "Sydney" off the end.
     documentTitle: 'Nick Twort – Competition Economist, Sydney | mergers.fyi',

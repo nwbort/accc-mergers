@@ -375,7 +375,17 @@ frontend/src/
 │                         #   JSX). Only pages fully known at build time: /nick-twort, /privacy,
 │                         #   /copyright, and /commentary from commentary.json. The hub pages
 │                         #   (/mergers, /industries, /parties) get link-list bodies from their JSON
-│                         #   in prerender.js instead
+│                         #   in prerender.js instead. Also renderFooter (the real Footer, in every
+│                         #   prerendered page's chrome, beside the navbar's links from NAV_PAGES)
+│                         #   and renderHome (components/DashboardTop from stats.json, the top of
+│                         #   the dashboard). The homepage can't be dist/index.html, which Pages also
+│                         #   serves for every URL without a file of its own, so prerender.js writes
+│                         #   it to /prerendered/home and `/  /prerendered/home  200` in
+│                         #   public/_redirects serves it at /. If that rewrite breaks, / silently
+│                         #   falls back to the bare shell: no canonical, JSON-LD or body
+│                         #   (pageMeta.test.js pins the rule). Every prerendered head tag that
+│                         #   <SEO> also writes is marked data-rh, so Helmet replaces rather than
+│                         #   duplicates it on mount (prerender/__tests__/headTags.test.jsx)
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at
