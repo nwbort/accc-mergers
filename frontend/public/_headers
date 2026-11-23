@@ -67,3 +67,10 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+# - /prerendered/* holds the stamped homepage, which functions/index.js serves
+#   at `/` (dist/index.html can't be it: it is also the SPA fallback for every
+#   URL without a file of its own). Its own URL must never be indexed as a
+#   second homepage; the Function drops this header from what `/` returns.
+/prerendered/*
+  X-Robots-Tag: noindex

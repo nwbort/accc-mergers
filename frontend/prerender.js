@@ -40,6 +40,7 @@ import {
 import { industryPath, mergerPath, partyPath } from './src/utils/slug.js';
 import { partyShardName } from './src/utils/shard.js';
 import { divisionFileName } from './src/utils/industryDivision.js';
+import { HOME_PAGE_PATH } from '../functions/index.js';
 import { readIndustryNode } from './src/utils/industryNode.js';
 
 // Per-merger data files are named by matter id, e.g. MN-01016.json / WA-70017.json.
@@ -376,6 +377,55 @@ export function staticBody(meta) {
   );
 }
 
+// The homepage's raw-HTML body. The dashboard itself is all live data and
+// charts, so this is its gist instead: what the site is, the register's size,
+// the latest decisions and filings (from stats.json, the dashboard's own
+// source), and a link to each section with what it holds. Served at `/` by
+// functions/index.js; see there for why it isn't dist/index.html.
+const HOME_SECTIONS = [
+  '/mergers',
+  '/current-status',
+  '/phase-2',
+  '/quarterly',
+  '/analysis',
+  '/digest',
+  '/commentary',
+  '/industries',
+  '/parties',
+  '/refiled-notifications',
+];
+
+export function homeBody(meta, stats, pages) {
+  const toLinkable = (m) => ({
+    merger_id: m.merger_id,
+    merger_name: m.merger_name,
+    determination: m.determination || m.accc_determination,
+    status: m.status,
+  });
+  const sections = HOME_SECTIONS.filter((path) => pages[path]).map(
+    (path) =>
+      `<a href="${escapeHtml(path)}" class="text-base font-semibold ${LINK}">${escapeHtml(pages[path].title)}</a>` +
+      `<span class="block text-sm text-gray-500 mt-0.5">${escapeHtml(pages[path].description)}</span>`,
+  );
+  return shell(
+    headerCard(
+      'Australian Merger Tracker',
+      '',
+      `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
+    ) +
+      statGrid([
+        ['Merger notifications', stats?.total_mergers],
+        ['Waiver applications', stats?.total_waivers],
+      ]) +
+      section('Latest determinations', mergerLinks((stats?.recent_determinations || []).map(toLinkable))) +
+      section('Recently notified', mergerLinks((stats?.recent_mergers || []).map(toLinkable))) +
+      section(
+        'Explore',
+        `<div class="${CARD} p-5"><ul class="space-y-3">${sections.map((r) => `<li>${r}</li>`).join('')}</ul></div>`,
+      ),
+  );
+}
+
 // A page rendered from its real React component (src/prerender/renderStatic.jsx).
 // The component brings its own page wrapper, so only the app chrome is added.
 export function componentBody(html) {
@@ -537,9 +587,10 @@ function readJson(path) {
 // a redirect — and Google, seeing the redirect win, overrode the declared
 // canonical with the slashed URL ("Page with redirect" in Search Console).
 //
-// The root is skipped by the caller: overwriting dist/index.html would replace
-// the template every other page is stamped from, and the SPA fallback already
-// serves it.
+// The root is never written here: dist/index.html is the template every other
+// page is stamped from, and the SPA fallback for every URL without a file of
+// its own. The stamped homepage goes to HOME_PAGE_PATH instead, and
+// functions/index.js serves it at `/`.
 function writePage(outDir, path, html) {
   const outFile = join(outDir, `${path.replace(/^\//, '')}.html`);
   mkdirSync(dirname(outFile), { recursive: true });
@@ -837,8 +888,18 @@ export default function prerenderMergers() {
       };
 
       for (const [path, base] of Object.entries(STATIC_PAGE_META)) {
-        // The homepage is dist/index.html — the very template being stamped.
-        if (path === '/') continue;
+        if (path === '/') {
+          let stats = null;
+          try {
+            stats = readJson(join(dataDir, 'stats.json'));
+          } catch (err) {
+            this.warn(`prerender: stats.json unreadable (${err.message}), homepage body keeps only its links`);
+          }
+          const meta = { ...base, path };
+          writePage(outDir, HOME_PAGE_PATH, renderPage(template, meta, homeBody(meta, stats, STATIC_PAGE_META)));
+          counts.static++;
+          continue;
+        }
         let meta = { ...base, path };
         if (path === '/quarterly' && latestQuarter) {
           const latest = quarterlyMeta(latestQuarter);

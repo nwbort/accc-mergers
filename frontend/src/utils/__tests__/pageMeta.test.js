@@ -23,6 +23,7 @@ import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/
 import {
   DETAIL_SUMMARY,
   componentBody,
+  homeBody,
   industriesHubBody,
   industryBody,
   mergersHubBody,
@@ -681,6 +682,29 @@ describe('hub page bodies', () => {
   it('wraps a component-rendered page in the chrome only', () => {
     const body = componentBody('<div class="max-w-4xl">page</div>');
     expect(body).toContain('class="flex-grow pt-16"><div class="max-w-4xl">page</div></main>');
+  });
+
+  it('gives the homepage its gist: counts, latest decisions and filings, and every section', () => {
+    const meta = { ...STATIC_PAGE_META['/'], path: '/' };
+    const body = homeBody(
+      meta,
+      {
+        total_mergers: 337,
+        total_waivers: 555,
+        recent_determinations: [{ merger_id: 'MN-01037', merger_name: 'Anglo American - Teck Resources', determination: 'Approved' }],
+        recent_mergers: [{ merger_id: 'WA-10010', merger_name: 'Enverus - Spatial', status: 'Under assessment' }],
+      },
+      STATIC_PAGE_META,
+    );
+    expect(body).toMatch(/<h1[^>]*>Australian Merger Tracker<\/h1>/);
+    expect(body).toContain('>337<');
+    expect(body).toContain('href="/mergers/MN-01037/anglo-american-teck-resources"');
+    expect(body).toContain('href="/mergers/WA-10010/enverus-spatial"');
+    for (const path of ['/mergers', '/phase-2', '/analysis', '/current-status', '/quarterly']) {
+      expect(body).toContain(`href="${path}"`);
+    }
+    // No stats.json: the section links still stand.
+    expect(homeBody(meta, null, STATIC_PAGE_META)).toContain('href="/mergers"');
   });
 
   it('closes every page with the footer once one is set', () => {

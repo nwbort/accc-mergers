@@ -93,7 +93,7 @@ site serves that run's data, because LinkedIn caches whatever it scrapes first. 
 
 ### Cloudflare Pages Functions (`functions/`)
 
-Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently the PDF viewer wrapper for `/mergers/{matter}/*.pdf` (which also redirects a retired duplicate's old path to the copy that replaced it; see `scripts/document_versions.py`), the Open Graph page served to link-preview bots on merger detail URLs, and the Function serving the API.
+Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently the homepage (`functions/index.js`, serving the copy `prerender.js` stamps at `/prerendered/home`, since `dist/index.html` doubles as the SPA fallback for every other URL), the PDF viewer wrapper for `/mergers/{matter}/*.pdf` (which also redirects a retired duplicate's old path to the copy that replaced it; see `scripts/document_versions.py`), the Open Graph page served to link-preview bots on merger detail URLs, and the Function serving the API.
 
 ### API (`functions/data/api/`)
 
