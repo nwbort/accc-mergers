@@ -1,12 +1,16 @@
-import { StrictMode } from 'react';
+import { StrictMode, useEffect } from 'react';
 import { act, render } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter, useNavigate } from 'react-router';
 import ScrollToTop from '../ScrollToTop';
 
-let navigate;
+// Hands the router's navigate function out to the test.
+const router = {};
 function Nav() {
-  navigate = useNavigate();
+  const go = useNavigate();
+  useEffect(() => {
+    router.navigate = go;
+  });
   return null;
 }
 
@@ -34,13 +38,13 @@ describe('ScrollToTop', () => {
 
   it('scrolls to the top on navigating to another page', () => {
     const scroll = mount('/mergers');
-    act(() => navigate('/phase-2'));
+    act(() => router.navigate('/phase-2'));
     expect(scroll).toHaveBeenCalledWith(0, 0);
   });
 
   it('leaves a link to a point on a page to the page', () => {
     const scroll = mount('/mergers');
-    act(() => navigate('/mergers/MN-01016#event-x'));
+    act(() => router.navigate('/mergers/MN-01016#event-x'));
     expect(scroll).not.toHaveBeenCalled();
   });
 });
