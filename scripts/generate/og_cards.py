@@ -36,6 +36,8 @@ from scripts.paths import REPO_ROOT
 from scripts.slug import slugify
 
 OG_DIR = REPO_ROOT / "frontend" / "public" / "og"
+#: Source images drawn into page cards; not deployed themselves.
+ASSET_DIR = Path(__file__).parent / "og_assets"
 
 #: Every headline ``milestones()`` emits, with the milestone kind that picks
 #: its colour. A headline missing here (an outcome the register has never
@@ -70,7 +72,7 @@ _FILES = {headline: f"{slugify(headline)}.png" for _, headline in CARDS}
 #: (``STATIC_PAGE_META``), whose test checks each is committed; the LinkedIn
 #: digest post in ``scripts/linkedin/digest.py``.
 DIGEST_CARD = "weekly-digest.png"
-PAGE_CARDS: dict[str, dict[str, str]] = {
+PAGE_CARDS: dict[str, dict[str, str | Path]] = {
     DIGEST_CARD: {
         "kind": "notified",
         "kicker": "Catch me up",
@@ -94,6 +96,13 @@ PAGE_CARDS: dict[str, dict[str, str]] = {
         "kicker": "Analysis",
         "headline": "How the ACCC reviews mergers, in numbers",
         "detail": "Decision times, clearance rates and trends",
+    },
+    "nick-twort.png": {
+        "kind": "notified",
+        "kicker": "About the author",
+        "headline": "Nick Twort",
+        "detail": "Competition economist",
+        "portrait": ASSET_DIR / "nick-twort.jpg",
     },
 }
 

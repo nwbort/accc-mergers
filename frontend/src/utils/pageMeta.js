@@ -777,6 +777,8 @@ export const STATIC_PAGE_META = {
     description:
       'Nick Twort is an Australian competition economist with eight years of experience advising on merger clearance, antitrust matters, and regulatory issues for the ACCC and New Zealand Commerce Commission. Expert in empirical analysis across airlines, digital platforms, supermarkets, telecoms and more.',
     type: 'profile',
+    image: `${SITE_URL}/og/nick-twort.png`,
+    imageAlt: 'Nick Twort, competition economist',
     structuredData: [NICK_TWORT_PERSON],
   },
   '/privacy': {

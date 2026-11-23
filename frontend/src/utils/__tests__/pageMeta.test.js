@@ -330,7 +330,7 @@ describe('STATIC_PAGE_META', () => {
   it('points every page card at a committed file under public/og/', () => {
     // Drawn by scripts/generate/og_cards.py (PAGE_CARDS); a renamed or
     // undrawn card would unfurl as a broken image.
-    for (const path of ['/digest', '/current-status', '/phase-2', '/analysis']) {
+    for (const path of ['/digest', '/current-status', '/phase-2', '/analysis', '/nick-twort']) {
       expect(STATIC_PAGE_META[path].image, `${path} image`).toBeTruthy();
       expect(STATIC_PAGE_META[path].imageAlt, `${path} imageAlt`).toBeTruthy();
     }

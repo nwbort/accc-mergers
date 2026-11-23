@@ -102,6 +102,7 @@ def render_status_card(
     *, kind: str, headline: str,
     kicker: str = "ACCC merger register",
     detail: str = "Every ACCC merger review, tracked",
+    portrait: Path | None = None,
 ) -> bytes | None:
     """A matter-agnostic card for one kind of milestone, or ``None``.
 
@@ -111,7 +112,8 @@ def render_status_card(
     per-post card, with the headline in the title's place, drawn at
     :data:`STATUS_CARD_SCALE` times the size. ``kicker`` and ``detail`` are
     the small lines above and below it; a page card (the weekly digest's)
-    overrides them.
+    overrides them. ``portrait`` is a square photo drawn in a ringed circle
+    on the right, with the text narrowed to clear it (the author page's card).
     """
     bold = _find(_BOLD_FONTS)
     regular = _find(_REGULAR_FONTS)
@@ -120,14 +122,14 @@ def render_status_card(
     try:
         tone = tone_for(f"_:{kind}:_", headline)
         return _draw(bold, regular, TONES[tone], kicker, headline, detail,
-                     centre=True, scale=STATUS_CARD_SCALE)
+                     centre=True, scale=STATUS_CARD_SCALE, portrait=portrait)
     except (OSError, ValueError):
         return None
 
 
 def _draw(
     bold: str, regular: str, fill: str, headline: str, title: str, detail: str,
-    *, centre: bool = False, scale: int = 1,
+    *, centre: bool = False, scale: int = 1, portrait: Path | None = None,
 ) -> bytes:
     # The layout is written at 1x; every length goes through px() so a larger
     # card is the same card with more pixels, not a different layout.
@@ -138,6 +140,8 @@ def _draw(
     image = Image.new("RGB", (width, height), fill)
     draw = ImageDraw.Draw(image)
     text_width = width - 2 * margin
+    if portrait is not None:
+        text_width -= _paste_portrait(image, portrait, px)
 
     # Full-opacity tints rather than faded white: contrast has to hold.
     white, soft = "#ffffff", "#f3f4f6"
@@ -181,6 +185,34 @@ def _draw(
     out = io.BytesIO()
     image.save(out, format="PNG", optimize=True)
     return out.getvalue()
+
+
+#: The portrait's diameter and the white ring round it, at 1x.
+_PORTRAIT_SIZE = 380
+_PORTRAIT_RING = 10
+
+
+def _paste_portrait(image: Image.Image, path: Path, px) -> int:
+    """Draw ``path`` as a ringed circle at the card's right, centred vertically.
+
+    Returns the width it takes from the text column, gap included. The mask
+    is drawn oversized and scaled down, so the circle's edge is antialiased.
+    """
+    diameter, ring = px(_PORTRAIT_SIZE), px(_PORTRAIT_RING)
+    outer = diameter + 2 * ring
+    left = image.width - px(_MARGIN) - outer
+    top = (image.height - outer) // 2
+
+    def circle(size: int) -> Image.Image:
+        mask = Image.new("L", (size * 4, size * 4), 0)
+        ImageDraw.Draw(mask).ellipse((0, 0, size * 4 - 1, size * 4 - 1), fill=255)
+        return mask.resize((size, size), Image.LANCZOS)
+
+    image.paste(Image.new("RGB", (outer, outer), "#ffffff"), (left, top), circle(outer))
+    with Image.open(path) as photo:
+        photo = photo.convert("RGB").resize((diameter, diameter), Image.LANCZOS)
+    image.paste(photo, (left + ring, top + ring), circle(diameter))
+    return outer + px(64)
 
 
 def _find(candidates: tuple[str, ...]) -> str | None:
