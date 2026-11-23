@@ -2,42 +2,6 @@
   "shard": 3,
   "shard_count": 256,
   "parties": {
-    "australian-leisure-and-hospitality-group-pty-limited": {
-      "id": "australian-leisure-and-hospitality-group-pty-limited",
-      "canonical_name": "Australian Leisure And Hospitality Group Pty Limited",
-      "members": [
-        {
-          "name": "AUSTRALIAN LEISURE AND HOSPITALITY GROUP PTY LIMITED",
-          "identifier": "37 067 391 511",
-          "identifier_type": "ABN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [
-          {
-            "merger_id": "MN-15054",
-            "merger_name": "Endeavour Group \u2013 retail liquor store and adjacent property on Russell Island (QLD)",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "under_appeal": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-11-18T12:00:00Z",
-            "determination_date": null
-          }
-        ],
-        "target": [],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 1,
-      "phase_2_count": 0,
-      "waiver_count": 0,
-      "active_count": 1,
-      "phase_duration": null,
-      "waiver_duration": null
-    },
     "bljx-acquisition-llc": {
       "id": "bljx-acquisition-llc",
       "canonical_name": "BLJX Acquisition, LLC",

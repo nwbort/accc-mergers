@@ -32,8 +32,8 @@
       "count": 10
     },
     {
-      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
-      "canonical_id": null,
+      "acquirer_name": "Endeavour Group",
+      "canonical_id": "endeavour",
       "anzsic_code": "412",
       "anzsic_name": "Specialised Food Retailing",
       "merger_ids": [
@@ -41,6 +41,7 @@
         "MN-50027",
         "MN-10027",
         "MN-45028",
+        "MN-15054",
         "MN-20048",
         "MN-10042",
         "MN-85069"
@@ -50,11 +51,104 @@
         "2026-06-22T12:00:00Z",
         "2026-08-14T12:00:00Z",
         "2026-10-28T12:00:00Z",
+        "2026-11-18T12:00:00Z",
         "2026-11-19T12:00:00Z",
         "2026-11-20T12:00:00Z",
         "2026-11-20T12:00:00Z"
       ],
-      "count": 7
+      "count": 8
+    },
+    {
+      "acquirer_name": "Endeavour Group",
+      "canonical_id": "endeavour",
+      "anzsic_code": "121",
+      "anzsic_name": "Beverage Manufacturing",
+      "merger_ids": [
+        "MN-10027",
+        "MN-45028",
+        "MN-15054",
+        "MN-20048",
+        "MN-10042",
+        "MN-85069"
+      ],
+      "dates": [
+        "2026-08-14T12:00:00Z",
+        "2026-10-28T12:00:00Z",
+        "2026-11-18T12:00:00Z",
+        "2026-11-19T12:00:00Z",
+        "2026-11-20T12:00:00Z",
+        "2026-11-20T12:00:00Z"
+      ],
+      "count": 6
+    },
+    {
+      "acquirer_name": "Endeavour Group",
+      "canonical_id": "endeavour",
+      "anzsic_code": "360",
+      "anzsic_name": "Grocery, Liquor and Tobacco Product Wholesaling",
+      "merger_ids": [
+        "MN-10027",
+        "MN-45028",
+        "MN-15054",
+        "MN-20048",
+        "MN-10042",
+        "MN-85069"
+      ],
+      "dates": [
+        "2026-08-14T12:00:00Z",
+        "2026-10-28T12:00:00Z",
+        "2026-11-18T12:00:00Z",
+        "2026-11-19T12:00:00Z",
+        "2026-11-20T12:00:00Z",
+        "2026-11-20T12:00:00Z"
+      ],
+      "count": 6
+    },
+    {
+      "acquirer_name": "Endeavour Group",
+      "canonical_id": "endeavour",
+      "anzsic_code": "452",
+      "anzsic_name": "Pubs, Taverns and Bars",
+      "merger_ids": [
+        "MN-10027",
+        "MN-45028",
+        "MN-15054",
+        "MN-20048",
+        "MN-10042",
+        "MN-85069"
+      ],
+      "dates": [
+        "2026-08-14T12:00:00Z",
+        "2026-10-28T12:00:00Z",
+        "2026-11-18T12:00:00Z",
+        "2026-11-19T12:00:00Z",
+        "2026-11-20T12:00:00Z",
+        "2026-11-20T12:00:00Z"
+      ],
+      "count": 6
+    },
+    {
+      "acquirer_name": "Endeavour Group",
+      "canonical_id": "endeavour",
+      "anzsic_code": "671",
+      "anzsic_name": "Property Operators",
+      "merger_ids": [
+        "MN-10027",
+        "MN-45028",
+        "MN-15054",
+        "MN-20048",
+        "MN-10042",
+        "MN-85069"
+      ],
+      "dates": [
+        "2026-08-14T12:00:00Z",
+        "2026-10-28T12:00:00Z",
+        "2026-11-18T12:00:00Z",
+        "2026-11-19T12:00:00Z",
+        "2026-11-20T12:00:00Z",
+        "2026-11-20T12:00:00Z"
+      ],
+      "count": 6
     },
     {
       "acquirer_name": "Coles Group",
@@ -78,90 +172,6 @@
         "2026-11-10T12:00:00Z"
       ],
       "count": 6
-    },
-    {
-      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
-      "canonical_id": null,
-      "anzsic_code": "121",
-      "anzsic_name": "Beverage Manufacturing",
-      "merger_ids": [
-        "MN-10027",
-        "MN-45028",
-        "MN-20048",
-        "MN-10042",
-        "MN-85069"
-      ],
-      "dates": [
-        "2026-08-14T12:00:00Z",
-        "2026-10-28T12:00:00Z",
-        "2026-11-19T12:00:00Z",
-        "2026-11-20T12:00:00Z",
-        "2026-11-20T12:00:00Z"
-      ],
-      "count": 5
-    },
-    {
-      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
-      "canonical_id": null,
-      "anzsic_code": "360",
-      "anzsic_name": "Grocery, Liquor and Tobacco Product Wholesaling",
-      "merger_ids": [
-        "MN-10027",
-        "MN-45028",
-        "MN-20048",
-        "MN-10042",
-        "MN-85069"
-      ],
-      "dates": [
-        "2026-08-14T12:00:00Z",
-        "2026-10-28T12:00:00Z",
-        "2026-11-19T12:00:00Z",
-        "2026-11-20T12:00:00Z",
-        "2026-11-20T12:00:00Z"
-      ],
-      "count": 5
-    },
-    {
-      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
-      "canonical_id": null,
-      "anzsic_code": "452",
-      "anzsic_name": "Pubs, Taverns and Bars",
-      "merger_ids": [
-        "MN-10027",
-        "MN-45028",
-        "MN-20048",
-        "MN-10042",
-        "MN-85069"
-      ],
-      "dates": [
-        "2026-08-14T12:00:00Z",
-        "2026-10-28T12:00:00Z",
-        "2026-11-19T12:00:00Z",
-        "2026-11-20T12:00:00Z",
-        "2026-11-20T12:00:00Z"
-      ],
-      "count": 5
-    },
-    {
-      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
-      "canonical_id": null,
-      "anzsic_code": "671",
-      "anzsic_name": "Property Operators",
-      "merger_ids": [
-        "MN-10027",
-        "MN-45028",
-        "MN-20048",
-        "MN-10042",
-        "MN-85069"
-      ],
-      "dates": [
-        "2026-08-14T12:00:00Z",
-        "2026-10-28T12:00:00Z",
-        "2026-11-19T12:00:00Z",
-        "2026-11-20T12:00:00Z",
-        "2026-11-20T12:00:00Z"
-      ],
-      "count": 5
     },
     {
       "acquirer_name": "Coles Group",
