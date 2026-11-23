@@ -5,20 +5,28 @@ import ShowMoreDivider from './ShowMoreDivider';
 // on mobile (single-column, where the list is a tall scroll) than from `sm` up.
 // Every card is rendered and the overflow is gated with CSS so the visible
 // count can differ per breakpoint; the divider only appears when there is
-// something to toggle at the current breakpoint.
+// something to toggle at the current breakpoint. Callers can raise either
+// count (the Phase 2 page shows nine completed matters from `sm` up).
 const DEFAULT_VISIBLE_MOBILE = 3;
 const DEFAULT_VISIBLE_DESKTOP = 6;
 
-function CardCollapseGrid({ items, getKey, getStyle, renderBody }) {
+function CardCollapseGrid({
+  items,
+  getKey,
+  getStyle,
+  renderBody,
+  visibleMobile = DEFAULT_VISIBLE_MOBILE,
+  visibleDesktop = DEFAULT_VISIBLE_DESKTOP,
+}) {
   const [expanded, setExpanded] = useState(false);
 
-  const moreOnMobile = items.length > DEFAULT_VISIBLE_MOBILE;
-  const moreOnDesktop = items.length > DEFAULT_VISIBLE_DESKTOP;
+  const moreOnMobile = items.length > visibleMobile;
+  const moreOnDesktop = items.length > visibleDesktop;
 
   const visibilityClass = (index) => {
     if (expanded) return 'flex';
-    if (index < DEFAULT_VISIBLE_MOBILE) return 'flex';
-    if (index < DEFAULT_VISIBLE_DESKTOP) return 'hidden sm:flex';
+    if (index < visibleMobile) return 'flex';
+    if (index < visibleDesktop) return 'hidden sm:flex';
     return 'hidden';
   };
 
