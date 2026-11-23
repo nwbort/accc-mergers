@@ -141,3 +141,36 @@ describe('Dashboard first render', () => {
     expect(screen.getByText('2 under assessment')).toBeInTheDocument();
   });
 });
+
+describe('Dashboard fade-in', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  // Last in this file: marking the app settled is one-way, as in the app.
+  it('fades in when navigated to, not when replacing the prerendered homepage', async () => {
+    const { routeData } = await import('../../routes');
+    const { markAppSettled } = await import('../../utils/appMount');
+    const [[cacheKey]] = routeData('/');
+    dataCache.set(cacheKey, statsFixture());
+    vi.spyOn(globalThis, 'fetch').mockRejectedValue(new Error('offline'));
+    const wrapper = () => screen.getByText('2 under assessment').closest('.max-w-7xl');
+    const mount = () =>
+      render(
+        <HelmetProvider>
+          <MemoryRouter>
+            <Dashboard />
+          </MemoryRouter>
+        </HelmetProvider>,
+      );
+
+    const first = mount();
+    expect(wrapper()).not.toHaveClass('animate-fade-in');
+    first.unmount();
+
+    markAppSettled();
+    mount();
+    expect(wrapper()).toHaveClass('animate-fade-in');
+  });
+});

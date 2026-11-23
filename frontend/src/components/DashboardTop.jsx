@@ -5,10 +5,11 @@ import RecentMergersCards from './RecentMergersCards';
 import { DASHBOARD_PROMOS } from '../constants/promo';
 
 /**
- * The dashboard's page wrapper. No fade-in: the build prerenders the top of
- * the dashboard into the homepage's HTML (src/prerender/renderStatic.jsx), so
- * React mounts over content that is already on screen, and fading that in
- * from transparent would only blink it.
+ * The dashboard's page wrapper, without the usual fade-in: the build
+ * prerenders the top of the dashboard into the homepage's HTML
+ * (src/prerender/renderStatic.jsx), and on first load React mounts over that
+ * same content, which a fade from transparent would only blink. Dashboard.jsx
+ * adds the fade for in-app navigation (utils/appMount.js).
  */
 export const DASHBOARD_WRAP = 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8';
 

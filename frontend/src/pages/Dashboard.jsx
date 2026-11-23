@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import DashboardTop, { DASHBOARD_WRAP } from '../components/DashboardTop';
 import OutcomeSummaryCards from '../components/OutcomeSummaryCards';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -13,12 +13,16 @@ import { markItemsAsSeen } from '../utils/lastVisit';
 import { isRecentEventShown } from '../constants/recentEventTypes';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { dashboardStatsFetch } from '../utils/pageData';
+import { hasAppSettled } from '../utils/appMount';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/'];
 
 function Dashboard() {
+  // Fade in when navigated to, but not when replacing the prerendered
+  // homepage on first load (utils/appMount.js).
+  const [fadeIn] = useState(hasAppSettled);
   const [statsKey, statsUrl] = dashboardStatsFetch();
   const { data: stats, loading, error } = useFetchData(statsUrl, { cacheKey: statsKey });
   // A failed upcoming-events fetch shouldn't block the page — we just omit the
@@ -63,7 +67,7 @@ function Dashboard() {
         url="/"
         structuredData={PAGE_META.structuredData}
       />
-      <div className={DASHBOARD_WRAP}>
+      <div className={fadeIn ? `${DASHBOARD_WRAP} animate-fade-in` : DASHBOARD_WRAP}>
       <DashboardTop stats={stats} />
 
       {/* Upcoming Events: the next 7 days broken out day by day, plus the

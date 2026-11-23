@@ -1,4 +1,4 @@
-import { useState, useCallback, Suspense } from 'react';
+import { useState, useCallback, useEffect, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
@@ -14,6 +14,7 @@ import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import { useBackgroundRefresh } from './hooks/useBackgroundRefresh';
 import ScrollToTop from './components/ScrollToTop';
 import { ROUTES } from './routes';
+import { markAppSettled } from './utils/appMount';
 
 
 function AppContent() {
@@ -24,6 +25,7 @@ function AppContent() {
   const openPalette = useCallback(() => setShowCommandPalette(true), []);
 
   useKeyboardShortcuts({ onToggleHelp: toggleShortcuts, onTogglePalette: togglePalette });
+  useEffect(markAppSettled, []);
   useBackgroundRefresh();
 
   return (
