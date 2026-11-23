@@ -15,29 +15,18 @@
  * campaign's own) or null to hide it; PromoStack re-reads it every minute.
  */
 
-import { FaFileLines } from 'react-icons/fa6';
-import { eventAnchorId } from '../utils/eventAnchor';
-import { mergerPath } from '../utils/slug';
+import { FaArrowRightArrowLeft } from 'react-icons/fa6';
 
-// The ACCC's FOI release on Imagine Education's childcare restructure waiver
-// (WA-80019, FOI request 100473/2026-2027). Links to the first of its
-// documents in the detail page's event list - the waiver application's
-// parties and Part A responses - whose anchor opens the collapsed FOI run and
-// scrolls to that row. Built from the event as the detail file carries it, so
-// the anchor matches the row's id.
-const IMAGINE_EDUCATION_FOI_EVENT = {
-  date: '2026-10-20T12:00:00Z',
-  display_title: 'FOI release \u2013 Waiver application \u2013 parties and Part A responses (acquisitions portal)',
-};
-
-export const IMAGINE_EDUCATION_FOI_PROMO = {
-  campaign: 'imagine-education-foi-waiver-application',
-  to: `${mergerPath('WA-80019', 'Imagine Education \u2013 childcare centres ownership restructure')}#${eventAnchorId(IMAGINE_EDUCATION_FOI_EVENT)}`,
-  icon: FaFileLines,
-  title: 'Released under FOI: Imagine Education\'s waiver application',
-  description: 'Read the documents submitted to the ACCC',
+// Waivers the ACCC declined that came back as formal notifications. Links to
+// the /refiled-notifications page (nav label "Refiled waivers").
+export const REFILED_WAIVERS_PROMO = {
+  campaign: 'refiled-waivers',
+  to: '/refiled-notifications',
+  icon: FaArrowRightArrowLeft,
+  title: 'Declined waiver? Often not the end of the road',
+  description: 'See which waivers were re-filed as notifications, and how they fared',
 };
 
 export const DASHBOARD_PROMOS = [
-  IMAGINE_EDUCATION_FOI_PROMO,
+  REFILED_WAIVERS_PROMO,
 ];
