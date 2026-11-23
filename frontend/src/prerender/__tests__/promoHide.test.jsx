@@ -1,7 +1,11 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { renderHome } from '../renderStatic.jsx';
 import { promoHideScript } from '../../../prerender.js';
-import { promoDismissedKey } from '../../utils/promoDismissal';
+import { PROMO_HIDE_STYLE_ID, promoDismissedKey } from '../../utils/promoDismissal';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
+import PromoStack from '../../components/PromoStack';
+import { DASHBOARD_PROMOS } from '../../constants/promo';
 import realStats from '../../../public/data/stats.json';
 
 // The prerendered homepage's head script, run against the dashboard top the
@@ -38,6 +42,21 @@ describe('promoHideScript', () => {
     load();
     for (const el of document.querySelectorAll('[data-promo-campaign]')) expect(shown(el)).toBe(false);
     expect(shown(document.querySelector('[data-promo-stack]'))).toBe(false);
+  });
+
+  // Left in place, a rule hiding the whole stack would also hide a campaign
+  // that went live after the build, so PromoStack removes it once mounted.
+  it('is lifted once PromoStack mounts and takes over', () => {
+    const campaigns = [...built.matchAll(/data-promo-campaign="([^"]+)"/g)].map((m) => m[1]);
+    for (const c of campaigns) localStorage.setItem(promoDismissedKey(c), '1');
+    load();
+    expect(document.getElementById(PROMO_HIDE_STYLE_ID)).toBeTruthy();
+    render(
+      <MemoryRouter>
+        <PromoStack promos={DASHBOARD_PROMOS} />
+      </MemoryRouter>,
+    );
+    expect(document.getElementById(PROMO_HIDE_STYLE_ID)).toBeNull();
   });
 
   it('writes nothing when the page was built without promos', () => {

@@ -42,7 +42,7 @@ import { partyShardName } from './src/utils/shard.js';
 import { divisionFileName } from './src/utils/industryDivision.js';
 import { readIndustryNode } from './src/utils/industryNode.js';
 import { NAV_PAGES } from './src/constants/navPages.js';
-import { PROMO_DISMISSED_PREFIX } from './src/utils/promoDismissal.js';
+import { PROMO_DISMISSED_PREFIX, PROMO_HIDE_STYLE_ID } from './src/utils/promoDismissal.js';
 
 // Per-merger data files are named by matter id, e.g. MN-01016.json / WA-70017.json.
 const MATTER_FILE_RE = /^(MN|WA)-\d+\.json$/i;
@@ -405,8 +405,9 @@ export const HOME_PAGE_PATH = '/prerendered/home';
 // until React mounts, then vanish and shift everything below it up. It reads
 // the keys PromoStack writes (utils/promoDismissal.js) for the campaigns the
 // page was built with, and hides the whole stack if all were dismissed (its
-// margin would otherwise remain). Inert, and harmless, once React has mounted:
-// PromoStack then leaves dismissed promos out itself.
+// margin would otherwise remain). PromoStack removes the style once mounted
+// (PROMO_HIDE_STYLE_ID), since from then on it leaves dismissed promos out
+// itself.
 export function promoHideScript(campaigns) {
   if (!campaigns.length) return '';
   const code =
@@ -414,7 +415,7 @@ export function promoHideScript(campaigns) {
     `return localStorage.getItem(${JSON.stringify(PROMO_DISMISSED_PREFIX)}+x)});if(!d.length)return;` +
     `var css=d.map(function(x){return '[data-promo-campaign="'+x+'"]'}).join(',')+'{display:none}';` +
     `if(d.length===c.length)css+='[data-promo-stack]{display:none}';` +
-    `var s=document.createElement('style');s.textContent=css;document.head.appendChild(s)}catch(e){}})();`;
+    `var s=document.createElement('style');s.id=${JSON.stringify(PROMO_HIDE_STYLE_ID)};s.textContent=css;document.head.appendChild(s)}catch(e){}})();`;
   return `<script>${code.replace(/</g, '\\u003c')}</script>`;
 }
 

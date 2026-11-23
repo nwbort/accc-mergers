@@ -25,12 +25,23 @@ const mount = () =>
 // Suspense fallback for a lazy page even when its chunk has already arrived,
 // where a transition sees the chunk is there (routes.js tags its promise
 // fulfilled) and renders the page outright.
+// Nothing on the static page is interactive until then, so a reader who
+// reaches for it (a tap, a click, a key: search, the menu, a shortcut) ends
+// the wait at once, taking the brief spinner over a page that ignores them.
 // With nothing prerendered (the SPA fallback shell) there is nothing to keep,
 // so the spinner shows at once.
+const firstInteraction = () =>
+  new Promise((resolve) => {
+    for (const type of ['pointerdown', 'keydown']) {
+      window.addEventListener(type, resolve, { once: true, capture: true, passive: true })
+    }
+  })
+
 if (root.hasChildNodes()) {
   Promise.race([
     preloadRoute(window.location.pathname),
     new Promise((resolve) => setTimeout(resolve, MAX_PRELOAD_WAIT_MS)),
+    firstInteraction(),
   ]).then(() => startTransition(mount))
 } else {
   mount()

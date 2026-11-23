@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import PromoCard from './PromoCard';
-import { promoDismissedKey } from '../utils/promoDismissal';
+import { PROMO_HIDE_STYLE_ID, promoDismissedKey } from '../utils/promoDismissal';
 
 // The localStorage flag recording that a reader dismissed a campaign. The key
 // predates PromoStack, so changing its shape would resurface every campaign
@@ -52,6 +52,12 @@ function atTime({ resolve, ...promo }, now) {
 function PromoStack({ promos }) {
   const [dismissed, setDismissed] = useState(() => readDismissed(promos));
   const now = useMinuteClock(promos.some((promo) => promo.resolve));
+
+  // The prerendered homepage hid dismissed promos with a style of its own
+  // until now; this component decides from here on (see promoHideScript).
+  useEffect(() => {
+    document.getElementById(PROMO_HIDE_STYLE_ID)?.remove();
+  }, []);
 
   const live = promos
     .filter(({ campaign }) => !dismissed.has(campaign))

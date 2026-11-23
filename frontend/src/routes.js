@@ -78,8 +78,10 @@ const NotFound = page(() => import('./pages/NotFound'));
 
 // `data(params)` lists what the page's first render waits on, as the
 // [cacheKey, url] pairs its useFetchData calls use (utils/pageData.js, shared
-// with the pages); preloadRoute puts them in dataCache beforehand. Params
-// arrive decoded as useDecodedParam decodes them.
+// with the pages); preloadRoute puts them in dataCache beforehand. matchPath
+// hands params over raw, so routeData decodes them once; the page gets them
+// already decoded by React Router and useDecodedParam decodes again. The two
+// agree for any id without an encoded '%' in it, which none of the ids has.
 const merger = ({ id }) => [mergerDetailFetch(id)];
 const industry = ({ code }) => [industryDivisionFetch(code)];
 const party = ({ id }) => [partyShardFetch(id)];
