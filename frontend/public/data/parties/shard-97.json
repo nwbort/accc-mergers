@@ -290,6 +290,42 @@
         "completed_count": 1
       }
     },
+    "oat-midco-sarl": {
+      "id": "oat-midco-sarl",
+      "canonical_name": "Oat MidCo SARL",
+      "members": [
+        {
+          "name": "Oat MidCo SARL",
+          "identifier": "Luxembourg Business Register  B265218",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65044",
+            "merger_name": "TDR Capital - OCU Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-20T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "primary-wave-kb-holdings-lp": {
       "id": "primary-wave-kb-holdings-lp",
       "canonical_name": "Primary Wave KB Holdings, LP",

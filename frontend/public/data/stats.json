@@ -1,10 +1,10 @@
 {
-  "total_mergers": 335,
+  "total_mergers": 336,
   "total_waivers": 553,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 293,
-    "Under assessment": 37,
+    "Under assessment": 38,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 229
+      "count": 230
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -91,11 +91,21 @@
       "count": 30
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 29
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 30
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-65044",
+      "merger_name": "TDR Capital - OCU Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-20T12:00:00Z",
+      "page_modified_datetime": "2026-11-23T13:52:55+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-80056",
       "merger_name": "Cognizant \u2013 DyFlex",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-11-11T12:00:00Z",
       "page_modified_datetime": "2026-11-12T12:56:24+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-01133",
-      "merger_name": "Eagers - Zagame",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-11-10T12:00:00Z",
-      "page_modified_datetime": "2026-11-11T16:47:22+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

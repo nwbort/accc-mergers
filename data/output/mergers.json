@@ -55872,6 +55872,154 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/tdr-capital-ocu-group",
+      "merger_name": "TDR Capital - OCU Group",
+      "status": "Under assessment",
+      "merger_id": "MN-65044",
+      "effective_notification_datetime": "2026-11-20T12:00:00Z",
+      "original_notification_datetime": "2026-11-20T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2027-01-20T12:00:00Z",
+      "page_modified_datetime": "2026-11-23T13:52:55+11:00",
+      "consultation_response_due_date": "2026-11-30T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Nova Bidco Limited",
+          "identifier_type": null,
+          "identifier": "UK Company Number  17419318",
+          "party_page": {
+            "id": "nova-bidco-limited",
+            "name": "Nova Bidco Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Oat MidCo SARL",
+          "identifier_type": null,
+          "identifier": "Luxembourg Business Register  B265218",
+          "party_page": {
+            "id": "oat-midco-sarl",
+            "name": "Oat MidCo SARL"
+          }
+        },
+        {
+          "name": "Oat TopCo Limited",
+          "identifier_type": null,
+          "identifier": "UK Company Number  14175008",
+          "party_page": {
+            "id": "oat-topco-limited",
+            "name": "Oat TopCo Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "merger_description": "TDR Capital LLP, through entities it controls, specifically Nova Bidco Limited, proposes to acquire Oat Topco Limited (**OCU Group**)\n\nTDR Capital LLP is a global private equity firm that invests in a variety of sectors including motor fuels, retail, gyms and health clubs, pubs and restaurants, and debt purchasing. Aggreko, one of TDR\u2019s portfolio companies,\u00a0supplies temporary and longer-term power and energy solutions.\n\nOCU Group is a UK-based infrastructure services and engineering group operating principally across power transmission and distribution, energy transformation, digital infrastructure and water and environmental solutions. In Australia, OCU Group provides integrated energy transition and power infrastructure solutions, combining advisory, engineering, construction and maintenance capabilities across electrical, mechanical and civil works.",
+      "events": [
+        {
+          "date": "2026-11-23T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/TDR%20Capital%20-%20OCU%20Group%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-65044/TDR Capital - OCU Group - Questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-11-20T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-65040",
+          "merger_name": "Crescent Capital Partners \u2013 Hall Contracting",
+          "acquirers": [
+            "Hamilton Bidco Pty Ltd"
+          ],
+          "targets": [
+            "HALL HOLDCO PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-30036",
+          "merger_name": "Veritas Capital Fund Management \u2013 BGIS Group",
+          "acquirers": [
+            "Naples Bidco Limited"
+          ],
+          "targets": [
+            "BIFM Jersey Topco Limited"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-70035",
+          "merger_name": "Triton \u2013 United Initiators",
+          "acquirers": [
+            "Unna BidCo GmbH"
+          ],
+          "targets": [
+            "United Initiators GmbH",
+            "Bayern Acquisition LLC"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 212,
+        "as_of": "2026-11-20",
+        "estimated_at": "2026-11-23",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 27,
+        "min_days": 15,
+        "max_days": 38,
+        "id_issued_estimated": "2026-10-24",
+        "id_issued_before": "2026-11-05",
+        "id_issued_after": "2026-10-13",
+        "min_days_witness": "WA-65047",
+        "max_days_witness": "WA-65043",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/too-lost-%E2%80%93-xelon-entertainment",
       "merger_name": "Too Lost \u2013 Xelon Entertainment",
       "status": "Under assessment",
