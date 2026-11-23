@@ -2,12 +2,15 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import { CARD } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { useFadeIn } from '../hooks/useFadeIn';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/nick-twort'];
 
 export default function NickTwort() {
+  // No fade over this page's own prerendered HTML on first load (useFadeIn).
+  const fadeIn = useFadeIn();
   return (
     <>
       <SEO
@@ -18,7 +21,7 @@ export default function NickTwort() {
         structuredData={PAGE_META.structuredData}
       />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+      <div className={`max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8${fadeIn}`}>
 
         {/* Header */}
         <header className="mb-8">

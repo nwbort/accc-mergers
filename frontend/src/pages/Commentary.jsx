@@ -16,6 +16,7 @@ import { getOutcomeRail } from '../constants/outcomeRail';
 import { PROSE_MARKDOWN, CARD } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { commentaryFetch } from '../utils/pageData';
+import { useFadeIn } from '../hooks/useFadeIn';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -47,9 +48,11 @@ function Commentary() {
  * exactly this markup from the data file.
  */
 export function CommentaryList({ items }) {
+  // No fade over its own prerendered HTML on first load (useFadeIn).
+  const fadeIn = useFadeIn();
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8${fadeIn}`}>
         {/* The page leads straight into content, so the document's h1 is
             visually hidden rather than dropped: it names the page for screen
             readers and keeps the heading outline starting at level 1. */}
