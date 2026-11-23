@@ -91,13 +91,31 @@
       "canonical_name": "Cognizant Technology Solutions",
       "members": [
         {
+          "name": "COGNIZANT TECHNOLOGY SOLUTIONS AUSTRALIA PTY LTD",
+          "identifier": "74 100 749 997",
+          "identifier_type": "ABN"
+        },
+        {
           "name": "Cognizant Technology Solutions",
           "identifier": null,
           "identifier_type": null
         }
       ],
       "mergers": {
-        "acquirer": [],
+        "acquirer": [
+          {
+            "merger_id": "MN-80056",
+            "merger_name": "Cognizant \u2013 DyFlex",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-20T12:00:00Z",
+            "determination_date": null
+          }
+        ],
         "target": [],
         "other": [
           {
@@ -114,11 +132,11 @@
           }
         ]
       },
-      "merger_count": 1,
-      "phase_1_count": 0,
+      "merger_count": 2,
+      "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 1,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": null,
       "waiver_duration": {
         "average_days": 14.0,

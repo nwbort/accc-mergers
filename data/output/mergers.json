@@ -67338,9 +67338,14 @@
           "name": "COGNIZANT TECHNOLOGY SOLUTIONS AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "74 100 749 997",
+          "canonical": {
+            "id": "cognizant-technology-solutions",
+            "name": "Cognizant Technology Solutions"
+          },
           "party_page": {
-            "id": "cognizant-technology-solutions-australia-pty-ltd",
-            "name": "Cognizant Technology Solutions Australia Pty Ltd"
+            "id": "cognizant-technology-solutions",
+            "name": "Cognizant Technology Solutions",
+            "curated": true
           }
         }
       ],
@@ -143232,9 +143237,14 @@
           "name": "Cognizant Technology Solutions",
           "identifier_type": null,
           "identifier": "",
-          "party_page": {
+          "canonical": {
             "id": "cognizant-technology-solutions",
             "name": "Cognizant Technology Solutions"
+          },
+          "party_page": {
+            "id": "cognizant-technology-solutions",
+            "name": "Cognizant Technology Solutions",
+            "curated": true
           }
         }
       ],
