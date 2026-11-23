@@ -2,10 +2,6 @@ import { useState, useCallback, useEffect } from 'react';
 import PromoCard from './PromoCard';
 import { PROMO_HIDE_STYLE_ID, promoDismissedKey } from '../utils/promoDismissal';
 
-// The localStorage flag recording that a reader dismissed a campaign. The key
-// predates PromoStack, so changing its shape would resurface every campaign
-// for everyone who has already dismissed one.
-
 function readDismissed(promos) {
   const dismissed = new Set();
   for (const { campaign } of promos) {
