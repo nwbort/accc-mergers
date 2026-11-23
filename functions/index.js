@@ -14,9 +14,10 @@
 
 export const HOME_PAGE_PATH = '/prerendered/home';
 
-// Only the stamped homepage carries this. A miss on HOME_PAGE_PATH comes back
-// as the SPA shell with a 200, which doesn't, so it identifies a real copy.
-export const HOME_CANONICAL_TAG = '<link rel="canonical" href="https://mergers.fyi/" />';
+// Only the stamped homepage carries this (inside its canonical <link>). A miss
+// on HOME_PAGE_PATH comes back as the SPA shell with a 200, which doesn't, so
+// it identifies a real copy.
+export const HOME_CANONICAL_TAG = 'rel="canonical" href="https://mergers.fyi/"';
 
 function servedHeaders(source) {
   const headers = new Headers(source);

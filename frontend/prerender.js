@@ -528,6 +528,12 @@ export function partiesHubBody(parties, meta) {
   );
 }
 
+// Marks a head tag as one <SEO> also writes. react-helmet-async owns every tag
+// carrying it: on mount it keeps an identical one and replaces the rest, where
+// an unmarked copy would sit beside Helmet's for good (two canonicals, the
+// JSON-LD twice). index.html marks its own the same way.
+const RH = 'data-rh="true"';
+
 // Produce the page HTML by stamping page-specific values into the shared built
 // template. Tag-targeted regexes keep this resilient to unrelated changes in
 // index.html (inlined CSS, hashed script names, etc.).
@@ -538,22 +544,22 @@ export function renderPage(template, meta, body) {
   const type = meta.type || 'website';
 
   const headExtras = [
-    `<link rel="canonical" href="${escapeHtml(canonicalUrl)}" />`,
-    '<meta property="og:locale" content="en_AU" />',
+    `<link ${RH} rel="canonical" href="${escapeHtml(canonicalUrl)}" />`,
+    `<meta ${RH} property="og:locale" content="en_AU" />`,
     meta.image && meta.imageAlt
-      ? `<meta property="og:image:alt" content="${escapeHtml(meta.imageAlt)}" />`
+      ? `<meta ${RH} property="og:image:alt" content="${escapeHtml(meta.imageAlt)}" />`
       : '',
     type === 'article' && meta.publishedTime
-      ? `<meta property="article:published_time" content="${escapeHtml(meta.publishedTime)}" />`
+      ? `<meta ${RH} property="article:published_time" content="${escapeHtml(meta.publishedTime)}" />`
       : '',
     type === 'article' && meta.modifiedTime
-      ? `<meta property="article:modified_time" content="${escapeHtml(meta.modifiedTime)}" />`
+      ? `<meta ${RH} property="article:modified_time" content="${escapeHtml(meta.modifiedTime)}" />`
       : '',
     type === 'article' && meta.section
-      ? `<meta property="article:section" content="${escapeHtml(meta.section)}" />`
+      ? `<meta ${RH} property="article:section" content="${escapeHtml(meta.section)}" />`
       : '',
     meta.structuredData?.length
-      ? `<script type="application/ld+json">${serialiseJsonLd(meta.structuredData)}</script>`
+      ? `<script ${RH} type="application/ld+json">${serialiseJsonLd(meta.structuredData)}</script>`
       : '',
   ]
     .filter(Boolean)
@@ -561,15 +567,15 @@ export function renderPage(template, meta, body) {
 
   return template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
-    .replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${description}" />`)
-    .replace(/<meta property="og:type"[^>]*>/, `<meta property="og:type" content="${type}" />`)
-    .replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${title}" />`)
-    .replace(/<meta property="og:description"[^>]*>/, `<meta property="og:description" content="${description}" />`)
-    .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${escapeHtml(canonicalUrl)}" />`)
-    .replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${title}" />`)
-    .replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${description}" />`)
-    .replace(/<meta property="og:image" [^>]*>/, (tag) => (meta.image ? `<meta property="og:image" content="${escapeHtml(meta.image)}" />` : tag))
-    .replace(/<meta name="twitter:image"[^>]*>/, (tag) => (meta.image ? `<meta name="twitter:image" content="${escapeHtml(meta.image)}" />` : tag))
+    .replace(/<meta[^>]* name="description"[^>]*>/, `<meta ${RH} name="description" content="${description}" />`)
+    .replace(/<meta[^>]* property="og:type"[^>]*>/, `<meta ${RH} property="og:type" content="${type}" />`)
+    .replace(/<meta[^>]* property="og:title"[^>]*>/, `<meta ${RH} property="og:title" content="${title}" />`)
+    .replace(/<meta[^>]* property="og:description"[^>]*>/, `<meta ${RH} property="og:description" content="${description}" />`)
+    .replace(/<meta[^>]* property="og:url"[^>]*>/, `<meta ${RH} property="og:url" content="${escapeHtml(canonicalUrl)}" />`)
+    .replace(/<meta[^>]* name="twitter:title"[^>]*>/, `<meta ${RH} name="twitter:title" content="${title}" />`)
+    .replace(/<meta[^>]* name="twitter:description"[^>]*>/, `<meta ${RH} name="twitter:description" content="${description}" />`)
+    .replace(/<meta[^>]* property="og:image" [^>]*>/, (tag) => (meta.image ? `<meta ${RH} property="og:image" content="${escapeHtml(meta.image)}" />` : tag))
+    .replace(/<meta[^>]* name="twitter:image"[^>]*>/, (tag) => (meta.image ? `<meta ${RH} name="twitter:image" content="${escapeHtml(meta.image)}" />` : tag))
     .replace(/<\/head>/, `    ${headExtras}\n  </head>`)
     .replace(/<div id="root"><\/div>/, `<div id="root">${body}</div>`);
 }

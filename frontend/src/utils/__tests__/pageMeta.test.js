@@ -438,31 +438,31 @@ describe('renderPage stamping against the real index.html', () => {
 
   it('replaces the title, description and canonical', () => {
     expect(html).toContain('<title>Industries | Australian Merger Tracker</title>');
-    expect(html).toContain(`<meta name="description" content="${meta.description}" />`);
-    expect(html).toContain(`<link rel="canonical" href="${SITE_URL}/industries" />`);
+    expect(html).toContain(`<meta data-rh="true" name="description" content="${meta.description}" />`);
+    expect(html).toContain(`<link data-rh="true" rel="canonical" href="${SITE_URL}/industries" />`);
   });
 
   it('replaces every Open Graph and Twitter tag', () => {
-    expect(html).toContain('<meta property="og:type" content="website" />');
+    expect(html).toContain('<meta data-rh="true" property="og:type" content="website" />');
     expect(html).toContain(
-      '<meta property="og:title" content="Industries | Australian Merger Tracker" />',
+      '<meta data-rh="true" property="og:title" content="Industries | Australian Merger Tracker" />',
     );
-    expect(html).toContain(`<meta property="og:url" content="${SITE_URL}/industries" />`);
+    expect(html).toContain(`<meta data-rh="true" property="og:url" content="${SITE_URL}/industries" />`);
     expect(html).toContain(
-      '<meta name="twitter:title" content="Industries | Australian Merger Tracker" />',
+      '<meta data-rh="true" name="twitter:title" content="Industries | Australian Merger Tracker" />',
     );
     // No generic copy left behind for a crawler to read instead.
-    expect(html).not.toContain('<meta property="og:url" content="https://mergers.fyi" />');
+    expect(html).not.toContain('<meta data-rh="true" property="og:url" content="https://mergers.fyi" />');
   });
 
   it('keeps the shared image unless the page names its own', () => {
-    expect(html).toContain(`<meta property="og:image" content="${DEFAULT_OG_IMAGE}" />`);
+    expect(html).toContain(`<meta data-rh="true" property="og:image" content="${DEFAULT_OG_IMAGE}" />`);
     const card = renderPage(template, { ...meta, image: `${SITE_URL}/og/assessment-ceased.png` }, '');
-    expect(card).toContain(`<meta property="og:image" content="${SITE_URL}/og/assessment-ceased.png" />`);
-    expect(card).toContain(`<meta name="twitter:image" content="${SITE_URL}/og/assessment-ceased.png" />`);
+    expect(card).toContain(`<meta data-rh="true" property="og:image" content="${SITE_URL}/og/assessment-ceased.png" />`);
+    expect(card).toContain(`<meta data-rh="true" name="twitter:image" content="${SITE_URL}/og/assessment-ceased.png" />`);
     expect(card).not.toContain(DEFAULT_OG_IMAGE);
     // The width/height tags are siblings, not replaced.
-    expect(card).toContain('<meta property="og:image:width" content="1200" />');
+    expect(card).toContain('<meta data-rh="true" property="og:image:width" content="1200" />');
   });
 
   it('keeps the SPA bootable and fills #root with real content', () => {
@@ -474,12 +474,12 @@ describe('renderPage stamping against the real index.html', () => {
   it('only emits article tags for article pages', () => {
     expect(html).not.toContain('article:published_time');
     const articleHtml = renderPage(template, mergerMeta(MERGER), '');
-    expect(articleHtml).toContain('<meta property="og:type" content="article" />');
+    expect(articleHtml).toContain('<meta data-rh="true" property="og:type" content="article" />');
     expect(articleHtml).toContain(
-      '<meta property="article:published_time" content="2025-08-15T00:00:00Z" />',
+      '<meta data-rh="true" property="article:published_time" content="2025-08-15T00:00:00Z" />',
     );
     expect(articleHtml).toContain(
-      '<meta property="article:section" content="Financial Asset Investing" />',
+      '<meta data-rh="true" property="article:section" content="Financial Asset Investing" />',
     );
   });
 
@@ -502,7 +502,7 @@ describe('renderPage stamping against the real index.html', () => {
       merger_description: '</script><img src=x onerror=alert(1)>',
     });
     const out = renderPage(template, hostile, '');
-    const ldBlocks = out.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g);
+    const ldBlocks = out.match(/<script [^>]*type="application\/ld\+json">[\s\S]*?<\/script>/g);
     // Two blocks: index.html's site-wide WebSite schema and this page's.
     expect(ldBlocks).toHaveLength(2);
     expect(out).not.toContain('<img src=x onerror=alert(1)>');
@@ -707,6 +707,34 @@ describe('hub page bodies', () => {
     expect(homeBody(meta, null, STATIC_PAGE_META)).toContain('href="/mergers"');
   });
 
+  it('hands every head tag <SEO> also writes to Helmet, and only those', () => {
+    // react-helmet-async replaces tags carrying data-rh on mount; an unmarked
+    // copy would sit beside Helmet's for good. The real built template, so a
+    // new unmarked tag in index.html is caught too.
+    const template = readFixture('index.html');
+    const html = renderPage(template, mergerMeta(MERGER), '');
+    const head = html.slice(0, html.indexOf('</head>'));
+    const managed = [
+      /<link [^>]*rel="canonical"/,
+      /<script [^>]*type="application\/ld\+json"[^>]*>(?=\[)/, // the page's own JSON-LD (an array)
+      ...['description', 'twitter:card', 'twitter:title', 'twitter:description', 'twitter:image'].map(
+        (n) => new RegExp(`<meta [^>]*name="${n}"`),
+      ),
+      ...['og:type', 'og:title', 'og:description', 'og:url', 'og:site_name', 'og:image', 'og:image:width',
+        'og:image:height', 'og:locale', 'article:published_time'].map((p) => new RegExp(`<meta [^>]*property="${p}"`)),
+    ];
+    for (const re of managed) {
+      const tags = head.match(new RegExp(re.source, 'g')) || [];
+      expect(tags.length, re.source).toBe(1);
+      expect(tags[0], re.source).toContain('data-rh="true"');
+    }
+    // The site-wide WebSite JSON-LD and the tags <SEO> never writes stay put.
+    expect(head).toMatch(/<script type="application\/ld\+json">\s*\{\s*"@context"/);
+    for (const n of ['author', 'keywords', 'theme-color']) {
+      expect(head).toMatch(new RegExp(`<meta name="${n}"`));
+    }
+  });
+
   it('closes every page with the footer once one is set', () => {
     setStaticFooter('<footer>foot</footer>');
     try {
@@ -753,7 +781,7 @@ describe('the author page', () => {
       '',
     );
     expect(html).toContain(`<title>${meta.documentTitle}</title>`);
-    expect(html).toContain(`<meta property="og:title" content="${meta.documentTitle}" />`);
+    expect(html).toContain(`<meta data-rh="true" property="og:title" content="${meta.documentTitle}" />`);
     expect(readFixture('src/pages/NickTwort.jsx')).toContain('documentTitle={PAGE_META.documentTitle}');
   });
 

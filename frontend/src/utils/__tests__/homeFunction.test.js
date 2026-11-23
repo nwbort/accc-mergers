@@ -7,7 +7,7 @@ import { HOME_CANONICAL_TAG, HOME_PAGE_PATH, onRequest } from '../../../../funct
 import { STATIC_PAGE_META, documentTitle } from '../pageMeta.js';
 import { renderPage } from '../../../prerender.js';
 
-const HOME_HTML = `<!doctype html><html><head>${HOME_CANONICAL_TAG}</head><body><div id="root"><h1>Australian Merger Tracker</h1></div></body></html>`;
+const HOME_HTML = `<!doctype html><html><head><link ${HOME_CANONICAL_TAG} /></head><body><div id="root"><h1>Australian Merger Tracker</h1></div></body></html>`;
 const SHELL_HTML = '<!doctype html><html><head><title>x</title></head><body><div id="root"></div></body></html>';
 
 // `homeCopy` is what the deployment holds at HOME_PAGE_PATH: a Response
