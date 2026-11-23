@@ -529,6 +529,42 @@
       },
       "waiver_duration": null
     },
+    "repurpose-it-holdings-pty-ltd": {
+      "id": "repurpose-it-holdings-pty-ltd",
+      "canonical_name": "Repurpose It Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "REPURPOSE IT HOLDINGS PTY LTD",
+          "identifier": "46 631 435 099",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-40047",
+            "merger_name": "Repurpose It - Delta Skipz",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-23T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "rotork-plc": {
       "id": "rotork-plc",
       "canonical_name": "Rotork plc",

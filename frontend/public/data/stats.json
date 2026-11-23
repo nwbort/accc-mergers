@@ -1,10 +1,10 @@
 {
-  "total_mergers": 336,
+  "total_mergers": 337,
   "total_waivers": 553,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 293,
-    "Under assessment": 38,
+    "Under assessment": 39,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40047",
+      "merger_name": "Repurpose It - Delta Skipz",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-23T12:00:00Z",
+      "page_modified_datetime": "2026-11-23T15:34:44+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-65044",
       "merger_name": "TDR Capital - OCU Group",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-11-11T12:00:00Z",
       "page_modified_datetime": "2026-11-12T16:32:30+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65045",
-      "merger_name": "Too Lost \u2013 Xelon Entertainment",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-11-11T12:00:00Z",
-      "page_modified_datetime": "2026-11-12T12:56:24+11:00",
       "is_waiver": false,
       "is_refiled": false
     }
