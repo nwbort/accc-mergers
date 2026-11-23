@@ -15,4 +15,12 @@ describe('isAppKey', () => {
       expect(isAppKey(key(k)), JSON.stringify(k)).toBe(false);
     }
   });
+
+  it('leaves it up for Ctrl/Cmd combinations other than the palette', () => {
+    for (const k of ['c', 'a', 'f', 'p', '+', '0']) {
+      expect(isAppKey(key(k, { ctrlKey: true })), `Ctrl+${k}`).toBe(false);
+      expect(isAppKey(key(k, { metaKey: true })), `Cmd+${k}`).toBe(false);
+    }
+    expect(isAppKey(key('K', { ctrlKey: true, shiftKey: true })), 'Ctrl+Shift+K').toBe(true);
+  });
 });
