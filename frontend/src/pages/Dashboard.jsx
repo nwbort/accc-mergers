@@ -1,14 +1,10 @@
 import { useEffect } from 'react';
-import DashboardStats from '../components/DashboardStats';
+import DashboardTop, { DASHBOARD_WRAP } from '../components/DashboardTop';
 import OutcomeSummaryCards from '../components/OutcomeSummaryCards';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import UpcomingEventsTimeline from '../components/UpcomingEventsTimeline';
 import RecentEventsTimeline from '../components/RecentEventsTimeline';
-import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
-import RecentMergersCards from '../components/RecentMergersCards';
-import PromoStack from '../components/PromoStack';
-import { DASHBOARD_PROMOS } from '../constants/promo';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { getCalendarDaysUntil, isEventPast } from '../utils/dates';
@@ -68,27 +64,8 @@ function Dashboard() {
         url="/"
         structuredData={PAGE_META.structuredData}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-      <h1 className="sr-only">Australian merger tracker dashboard</h1>
-      <DashboardStats stats={stats} />
-
-      <PromoStack promos={DASHBOARD_PROMOS} />
-
-      {/* Recent Determinations */}
-      {stats.recent_determinations && (
-        <div className="mb-8">
-          <RecentDeterminationsCards
-            determinations={stats.recent_determinations}
-          />
-        </div>
-      )}
-
-      {/* Recently Notified Mergers */}
-      {stats.recent_mergers && (
-        <div className="mb-8">
-          <RecentMergersCards mergers={stats.recent_mergers} />
-        </div>
-      )}
+      <div className={DASHBOARD_WRAP}>
+      <DashboardTop stats={stats} />
 
       {/* Upcoming Events: the next 7 days broken out day by day, plus the
           week after bundled into a single trailing "Later" entry (handled

@@ -41,6 +41,7 @@ import { industryPath, mergerPath, partyPath } from './src/utils/slug.js';
 import { partyShardName } from './src/utils/shard.js';
 import { divisionFileName } from './src/utils/industryDivision.js';
 import { readIndustryNode } from './src/utils/industryNode.js';
+import { NAV_PAGES } from './src/constants/navPages.js';
 
 // Per-merger data files are named by matter id, e.g. MN-01016.json / WA-70017.json.
 const MATTER_FILE_RE = /^(MN|WA)-\d+\.json$/i;
@@ -202,10 +203,25 @@ export function setStaticFooter(html) {
   staticFooter = html || '';
 }
 
+// The navbar's own links, from the table the real Navbar reads (so they can't
+// go stale), styled as its unhighlighted desktop links. Shown from `lg` up
+// only: the Navbar measures its width and collapses into a "More" menu or a
+// hamburger when they don't fit, which a static bar can't, and every link
+// fits at `lg`. Nothing is highlighted, since the bar doesn't know the page.
+const STATIC_NAV =
+  `<nav aria-label="Main" class="ml-10 hidden lg:flex space-x-1">` +
+  NAV_PAGES.filter((p) => p.inNavbar)
+    .sort((a, b) => a.navOrder - b.navOrder)
+    .map(
+      ({ path, label, navbarLabel }) =>
+        `<a href="${escapeHtml(path)}" class="relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium text-gray-500">${escapeHtml(navbarLabel || label)}</a>`,
+    )
+    .join('') +
+  `</nav>`;
+
 // Mirrors App.jsx's shell: the gradient background, and a fixed bar matching
-// the navbar's height so content sits at the same offset before and after
-// React mounts. The bar carries the brand only — the real navbar's links are
-// interactive and stateful, and a static copy of them would go stale. The
+// the navbar's height, brand and links (STATIC_NAV) so content sits at the
+// same offset and the bar reads the same before and after React mounts. The
 // footer is the real component (setStaticFooter): its links are plain ones,
 // so the pages they lead to (the author page among them) are linked from the
 // raw HTML of every page.
@@ -215,7 +231,8 @@ function shell(inner, { wrap = true } = {}) {
     `<div class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">` +
     `<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">` +
     `<div class="flex items-center h-16">` +
-    `<a href="/" class="text-lg font-bold tracking-tight text-gray-900">australian merger tracker</a>` +
+    `<a href="/" class="text-lg font-bold text-primary tracking-tight">australian merger tracker</a>` +
+    STATIC_NAV +
     `</div></div></div>` +
     `<main id="main-content" class="flex-grow pt-16">` +
     (wrap ? `<div class="${PAGE_WRAP}">${inner}</div>` : inner) +
@@ -381,47 +398,23 @@ export function staticBody(meta) {
 // (see there for why it can't be dist/index.html); a test pins the two.
 export const HOME_PAGE_PATH = '/prerendered/home';
 
-// The homepage's raw-HTML body: the top of the dashboard itself, rendered by
-// its own components (renderHome in src/prerender/renderStatic.jsx, passed in
-// as `top`), so what shows before React mounts is what stays once it has.
-// Below it, a link to each section with what it holds — the navbar's links
-// aren't in the static chrome — in the dashboard's own width. Without `top`
-// (no stats.json, or the renderer failed) a plain header stands in. Served at
-// `/` by the rewrite in public/_redirects.
-const HOME_SECTIONS = [
-  '/mergers',
-  '/current-status',
-  '/phase-2',
-  '/quarterly',
-  '/analysis',
-  '/digest',
-  '/commentary',
-  '/industries',
-  '/parties',
-  '/refiled-notifications',
-];
-const HOME_WRAP = 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8';
-
-export function homeBody(meta, top, pages) {
-  const sections = HOME_SECTIONS.filter((path) => pages[path]).map(
-    (path) =>
-      `<a href="${escapeHtml(path)}" class="text-base font-semibold ${LINK}">${escapeHtml(pages[path].title)}</a>` +
-      `<span class="block text-sm text-gray-500 mt-0.5">${escapeHtml(pages[path].description)}</span>`,
-  );
-  const explore = section(
-    'Explore',
-    `<div class="${CARD} p-5"><ul class="space-y-3">${sections.map((r) => `<li>${r}</li>`).join('')}</ul></div>`,
-  );
-  const head =
+// The homepage's raw-HTML body: the top of the dashboard itself (renderHome in
+// src/prerender/renderStatic.jsx, passed in as `top`), so what shows before
+// React mounts is that part of the real page. Without it (no stats.json, or
+// the renderer failed) a plain header stands in. Served at `/` by the rewrite
+// in public/_redirects.
+export function homeBody(meta, top) {
+  return shell(
     top ||
-    `<div class="${HOME_WRAP} pt-8">` +
-      headerCard(
-        'Australian Merger Tracker',
-        '',
-        `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
-      ) +
-      `</div>`;
-  return shell(head + `<div class="${HOME_WRAP} pb-8">${explore}</div>`, { wrap: false });
+      `<div class="${PAGE_WRAP}">` +
+        headerCard(
+          'Australian Merger Tracker',
+          '',
+          `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
+        ) +
+        `</div>`,
+    { wrap: false },
+  );
 }
 
 // A page rendered from its real React component (src/prerender/renderStatic.jsx).
@@ -911,7 +904,7 @@ export default function prerenderMergers() {
             this.warn(`prerender: homepage dashboard not rendered (${err.message}); it keeps only its links`);
           }
           const meta = { ...base, path };
-          writePage(outDir, HOME_PAGE_PATH, renderPage(template, meta, homeBody(meta, top, STATIC_PAGE_META)));
+          writePage(outDir, HOME_PAGE_PATH, renderPage(template, meta, homeBody(meta, top)));
           counts.static++;
           continue;
         }

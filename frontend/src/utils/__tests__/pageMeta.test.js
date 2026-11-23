@@ -19,6 +19,7 @@ import {
   quarterlyMeta,
   serialiseJsonLd,
 } from '../pageMeta.js';
+import { NAV_PAGES } from '../../constants/navPages.js';
 import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
   DETAIL_SUMMARY,
@@ -716,19 +717,23 @@ describe('hub page bodies', () => {
     }
   });
 
-  it('opens the homepage with the dashboard top it is handed, then links every section', () => {
+  it('opens the homepage with the dashboard top it is handed', () => {
     const meta = { ...STATIC_PAGE_META['/'], path: '/' };
     const top = '<div class="max-w-7xl"><h1 class="sr-only">dashboard</h1></div>';
-    const body = homeBody(meta, top, STATIC_PAGE_META);
-    expect(body).toContain(`<main id="main-content" class="flex-grow pt-16">${top}`);
-    for (const path of ['/mergers', '/phase-2', '/analysis', '/current-status', '/quarterly']) {
-      expect(body).toContain(`href="${path}"`);
-    }
-    // Without the dashboard (no stats.json, or no renderer) a plain header
-    // stands in, and the section links still do.
-    const plain = homeBody(meta, '', STATIC_PAGE_META);
-    expect(plain).toMatch(/<h1[^>]*>Australian Merger Tracker<\/h1>/);
-    expect(plain).toContain('href="/mergers"');
+    expect(homeBody(meta, top)).toContain(`<main id="main-content" class="flex-grow pt-16">${top}</main>`);
+    // Without the dashboard (no stats.json, or no renderer) a plain header stands in.
+    expect(homeBody(meta, '')).toMatch(/<h1[^>]*>Australian Merger Tracker<\/h1>/);
+  });
+
+  it("puts the navbar's own links in every page's static bar", () => {
+    const body = staticBody({ title: 'T', description: 'D' });
+    const nav = body.match(/<nav aria-label="Main"[^>]*>([\s\S]*?)<\/nav>/);
+    expect(nav).toBeTruthy();
+    const hrefs = [...nav[1].matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
+    const expected = NAV_PAGES.filter((p) => p.inNavbar)
+      .sort((x, y) => x.navOrder - y.navOrder)
+      .map((p) => p.path);
+    expect(hrefs).toEqual(expected);
   });
 
   it('hands every head tag <SEO> also writes to Helmet, and only those', () => {
