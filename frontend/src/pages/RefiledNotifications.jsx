@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
 import { FaArrowRightArrowLeft, FaHourglassHalf, FaCalendarDays, FaCircleCheck } from 'react-icons/fa6';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -6,6 +7,7 @@ import StatusBadge from '../components/StatusBadge';
 import StatCard from '../components/StatCard';
 import PhaseDurationComparison from '../components/PhaseDurationComparison';
 import SEO from '../components/SEO';
+import ShowMoreDivider from '../components/ShowMoreDivider';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { mergerPath } from '../utils/slug';
@@ -32,6 +34,31 @@ function median(values) {
 // the track is centred on its own leg the same way.
 const GAP_HALF = '1.75rem';
 const PHASE_2_HALF = '1.5rem';
+
+// The completed and not-re-filed lists only grow, so they open on the first
+// few rows behind the dashboard's show more/less divider. The current list
+// stays whole: it is short by nature and is the page's reason for being.
+const COLLAPSED_ROWS = 6;
+
+// A card holding a divided list, cut to `limit` rows until expanded. Unlike
+// CardCollapseGrid this is one column at every breakpoint, so a single count
+// does.
+function CollapsibleListCard({ items, renderItem, limit }) {
+  const [expanded, setExpanded] = useState(false);
+  const collapsible = limit != null && items.length > limit;
+  const shown = collapsible && !expanded ? items.slice(0, limit) : items;
+
+  return (
+    <>
+      <div className={`${CARD} p-5 sm:p-6`}>
+        <ul className="divide-y divide-gray-100">{shown.map(renderItem)}</ul>
+      </div>
+      {collapsible && (
+        <ShowMoreDivider expanded={expanded} onToggle={() => setExpanded((prev) => !prev)} />
+      )}
+    </>
+  );
+}
 
 function RefiledCard({ pair, showOutcome }) {
   // A re-filed notification can itself be referred to Phase 2 (MN-40017 was),
@@ -206,7 +233,7 @@ function RefiledCard({ pair, showOutcome }) {
   );
 }
 
-function RefiledList({ pairs, showOutcome, emptyMessage }) {
+function RefiledList({ pairs, showOutcome, emptyMessage, limit }) {
   if (pairs.length === 0) {
     return (
       <div className={`${CARD} p-6`}>
@@ -216,13 +243,13 @@ function RefiledList({ pairs, showOutcome, emptyMessage }) {
   }
 
   return (
-    <div className={`${CARD} p-5 sm:p-6`}>
-      <ul className="divide-y divide-gray-100">
-        {pairs.map((pair) => (
-          <RefiledCard key={pair.notification_id} pair={pair} showOutcome={showOutcome} />
-        ))}
-      </ul>
-    </div>
+    <CollapsibleListCard
+      items={pairs}
+      limit={limit}
+      renderItem={(pair) => (
+        <RefiledCard key={pair.notification_id} pair={pair} showOutcome={showOutcome} />
+      )}
+    />
   );
 }
 
@@ -363,6 +390,7 @@ function RefiledNotifications() {
           <RefiledList
             pairs={completed}
             showOutcome
+            limit={COLLAPSED_ROWS}
             emptyMessage="No re-filed notifications have been determined yet."
           />
         </section>
@@ -371,17 +399,17 @@ function RefiledNotifications() {
           <h2 id="not-refiled-heading" className="text-lg font-semibold text-gray-900 mb-4">
             Declined waivers not re-filed
           </h2>
-          <div className={`${CARD} p-5 sm:p-6`}>
-            {notRefiled.length === 0 ? (
+          {notRefiled.length === 0 ? (
+            <div className={`${CARD} p-5 sm:p-6`}>
               <p className="text-gray-500 text-sm">Every declined waiver has been re-filed as a notification.</p>
-            ) : (
-              <ul className="divide-y divide-gray-100">
-                {notRefiled.map((waiver) => (
-                  <NotRefiledCard key={waiver.waiver_id} waiver={waiver} />
-                ))}
-              </ul>
-            )}
-          </div>
+            </div>
+          ) : (
+            <CollapsibleListCard
+              items={notRefiled}
+              limit={COLLAPSED_ROWS}
+              renderItem={(waiver) => <NotRefiledCard key={waiver.waiver_id} waiver={waiver} />}
+            />
+          )}
         </section>
       </div>
     </>

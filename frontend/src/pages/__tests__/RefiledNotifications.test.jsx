@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
@@ -161,5 +161,51 @@ describe('RefiledNotifications', () => {
     const section = (await screen.findByRole('heading', { name: 'Declined waivers not re-filed' }))
       .closest('section');
     expect(within(section).getByText(/Every declined waiver has been re-filed/)).toBeInTheDocument();
+  });
+
+  it('shows six declined waivers until expanded, then all of them', async () => {
+    const notRefiled = Array.from({ length: 8 }, (_, i) => ({
+      waiver_id: `WA-9000${i}`,
+      waiver_name: `Declined waiver ${i}`,
+      waiver_filed_date: '2026-09-24T12:00:00Z',
+      waiver_declined_date: '2026-10-22T12:00:00Z',
+    }));
+    renderPage(payload({ not_refiled: notRefiled }));
+
+    const section = (await screen.findByRole('heading', { name: 'Declined waivers not re-filed' }))
+      .closest('section');
+    expect(within(section).getAllByRole('listitem')).toHaveLength(6);
+
+    const toggle = within(section).getByRole('button', { name: /Show more/ });
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    fireEvent.click(toggle);
+    expect(within(section).getAllByRole('listitem')).toHaveLength(8);
+
+    fireEvent.click(within(section).getByRole('button', { name: /Show less/ }));
+    expect(within(section).getAllByRole('listitem')).toHaveLength(6);
+  });
+
+  it('collapses the completed list past six, with no toggle at six or fewer', async () => {
+    const completedPair = (i) => ({
+      ...PHASE_1_PAIR,
+      notification_id: `MN-7000${i}`,
+      notification_name: `Completed matter ${i}`,
+      notification_status: 'Assessment completed',
+      notification_determination: 'Approved',
+      notification_determination_date: '2026-09-01T12:00:00Z',
+    });
+    const { unmount } = renderPage(payload({ current: [], completed: Array.from({ length: 7 }, (_, i) => completedPair(i)) }));
+
+    let section = (await screen.findByRole('heading', { name: 'Completed' })).closest('section');
+    expect(within(section).getAllByRole('listitem')).toHaveLength(6);
+    expect(within(section).getByRole('button', { name: /Show more/ })).toBeInTheDocument();
+    unmount();
+    vi.restoreAllMocks();
+    dataCache.clear();
+
+    renderPage(payload({ current: [], completed: Array.from({ length: 6 }, (_, i) => completedPair(i)) }));
+    section = (await screen.findByRole('heading', { name: 'Completed' })).closest('section');
+    expect(within(section).getAllByRole('listitem')).toHaveLength(6);
+    expect(within(section).queryByRole('button')).not.toBeInTheDocument();
   });
 });
