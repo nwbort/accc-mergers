@@ -385,10 +385,16 @@ export function quarterlyBody(quarter, meta) {
   );
 }
 
+// A page's visible heading: its title, or for a page with only a whole
+// documentTitle (the author page), that title without its ' | site' suffix.
+export function pageHeading(meta) {
+  return meta.title ?? (meta.documentTitle || '').replace(/\s+\|[^|]*$/, '');
+}
+
 export function staticBody(meta) {
   return shell(
     headerCard(
-      meta.title,
+      pageHeading(meta),
       '',
       `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
     ),

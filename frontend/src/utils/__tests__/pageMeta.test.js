@@ -26,6 +26,7 @@ import {
   HOME_PAGE_PATH,
   componentBody,
   homeBody,
+  pageHeading,
   industriesHubBody,
   industryBody,
   mergersHubBody,
@@ -711,6 +712,14 @@ describe('hub page bodies', () => {
     const covering = headerRules.filter((rule) => /^\/(\*|prerendered)?(\s|\/|$)/.test(rule));
     expect(covering.length).toBeGreaterThan(0); // the site-wide /* rule, at least
     for (const rule of covering) expect(rule).not.toMatch(/x-robots-tag/i);
+  });
+
+  it("heads a fallback page with its title, or a documentTitle without its suffix", () => {
+    const author = STATIC_PAGE_META['/nick-twort'];
+    expect(pageHeading(author)).toBe('Nick Twort – Competition Economist, Sydney');
+    // The plain body the author page falls back to if its component render fails.
+    expect(staticBody(author)).toContain('>Nick Twort – Competition Economist, Sydney</h1>');
+    expect(pageHeading({ title: 'Analysis' })).toBe('Analysis');
   });
 
   it('opens the homepage with the dashboard top it is handed', () => {
