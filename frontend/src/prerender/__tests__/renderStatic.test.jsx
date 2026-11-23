@@ -1,3 +1,5 @@
+// @vitest-environment node
+// Rendered as the build renders it: in Node, with no window or storage.
 import { describe, expect, it } from 'vitest';
 import { COMPONENT_ROUTES, renderFooter, renderHome, renderStaticRoute } from '../renderStatic.jsx';
 import { STATIC_PAGE_META } from '../../utils/pageMeta.js';
@@ -57,6 +59,8 @@ describe('renderStaticRoute', () => {
     expect(html).toMatch(/aria-label="Merger type: Waiver application"/);
     expect(html).toContain('Under appeal');
     expect(html).toContain('Notified 01/06/2026');
+    // A build has no visitor, so nothing on it is "new".
+    expect(html).not.toContain('New item since last visit');
   });
 
   it('renders the real stats.json without throwing, linking every recent matter', () => {

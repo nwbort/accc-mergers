@@ -8,8 +8,6 @@ const MAX_SEEN_ITEMS = 100; // Limit to prevent unbounded growth
 export function getSeenItems() {
   // Guarded like TrackingContext's localStorage reads: a corrupted value or
   // blocked storage must degrade to "nothing seen", not throw during render.
-  // No storage at all (the build-time prerender) is a first visit, not an error.
-  if (typeof window === 'undefined') return new Set();
   try {
     const seenItems = localStorage.getItem(SEEN_ITEMS_KEY);
     return seenItems ? new Set(JSON.parse(seenItems)) : new Set();
@@ -63,6 +61,10 @@ export function markItemsAsSeen(itemIds) {
  */
 export function isNewItem(itemId) {
   if (!itemId) return false;
+  // Outside a browser (the build-time prerender of the homepage) there is no
+  // visitor, so nothing is new to anyone: a snapshot marking every card "New"
+  // would flash the badges at returning visitors until React mounts.
+  if (typeof window === 'undefined') return false;
 
   const seenItems = getSeenItems();
   return !seenItems.has(itemId);
