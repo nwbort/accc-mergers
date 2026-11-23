@@ -23,7 +23,8 @@ const mount = () =>
 // sooner swaps it for a spinner, then the page. And mount in a transition: a
 // plain first render is synchronous, and a synchronous render paints the
 // Suspense fallback for a lazy page even when its chunk has already arrived,
-// where a transition sees the chunk is there and renders the page outright.
+// where a transition sees the chunk is there (routes.js tags its promise
+// fulfilled) and renders the page outright.
 // With nothing prerendered (the SPA fallback shell) there is nothing to keep,
 // so the spinner shows at once.
 if (root.hasChildNodes()) {

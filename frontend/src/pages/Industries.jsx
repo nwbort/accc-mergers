@@ -5,13 +5,13 @@ import IndustryMergerGroups from '../components/IndustryMergerGroups';
 import Treemap from '../components/Treemap';
 import SearchInput from '../components/SearchInput';
 import SEO from '../components/SEO';
-import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 import { fetchIndustryNode } from '../utils/industryNode';
 import { useFetchData } from '../hooks/useFetchData';
 import { industryPath } from '../utils/slug';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { industriesListFetch } from '../utils/pageData';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -20,10 +20,8 @@ const PAGE_META = STATIC_PAGE_META['/industries'];
 const SCROLL_THRESHOLD = 6; // Show scrollable container when industry has more than this many mergers
 
 function Industries() {
-  const { data: industriesData, loading, error } = useFetchData(
-    API_ENDPOINTS.industries,
-    { cacheKey: 'industries-list' }
-  );
+  const [industriesListKey, industriesListUrl] = industriesListFetch();
+  const { data: industriesData, loading, error } = useFetchData(industriesListUrl, { cacheKey: industriesListKey });
   const industries = industriesData?.industries || [];
 
   // Sum of per-industry counts. Used only as the denominator for each

@@ -50,15 +50,20 @@ export function useFetchData(url, { cacheKey } = {}) {
 
     const controller = new AbortController();
 
-    fetch(url, { signal: controller.signal })
-      .then((res) => {
+    const fetchOwn = () =>
+      fetch(url, { signal: controller.signal }).then((res) => {
         if (!res.ok) {
           const err = new Error(`HTTP ${res.status}`);
           err.status = res.status;
           throw err;
         }
         return res.json();
-      })
+      });
+    // A preload still in flight for this key (routes.js, via dataCache.load):
+    // wait on it rather than download the file twice, and fetch afresh only
+    // if it fails, so its error is never mistaken for this page's.
+    const pending = cacheKey && dataCache.pending(cacheKey);
+    (pending ? pending.catch(fetchOwn) : fetchOwn())
       .then((json) => {
         if (controller.signal.aborted) return;
         if (cacheKey) dataCache.set(cacheKey, json);

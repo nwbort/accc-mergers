@@ -19,7 +19,7 @@ import { readIndustryNode } from '../utils/industryNode';
 import { industryMeta } from '../utils/pageMeta';
 import { MERGER_STATUS, PHASES } from '../constants/mergerStatus';
 import { CARD, SECTION_HEADING, CARD_TITLE } from '../utils/classNames';
-import { DASHBOARD_STATS_KEY, industryDivisionFetch } from '../utils/pageData';
+import { DASHBOARD_STATS_KEY, industryDivisionFetch, industriesListFetch } from '../utils/pageData';
 
 function IndustryDetail() {
   const decodedCode = useDecodedParam('code');
@@ -38,9 +38,8 @@ function IndustryDetail() {
   // The industries list is only a fallback for the display name on older
   // payloads — the detail file now carries its own name. A failure here
   // shouldn't block the page.
-  const { data: industriesData } = useFetchData(API_ENDPOINTS.industries, {
-    cacheKey: 'industries-list',
-  });
+  const [industriesListKey, industriesListUrl] = industriesListFetch();
+  const { data: industriesData } = useFetchData(industriesListUrl, { cacheKey: industriesListKey });
   const industries = industriesData?.industries || null;
 
   // Parent industry, for comparing Phase 1 durations against the next level

@@ -6,6 +6,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ROUTES, preloadRoute, routeData, routeFor } from '../routes';
 import { dataCache } from '../utils/dataCache';
 import { DASHBOARD_STATS_KEY } from '../utils/pageData';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+import sources from './pageSources.js';
 
 describe('routeFor', () => {
   it('picks the route <Routes> would, slugged or not, and the 404 otherwise', () => {
@@ -37,6 +39,19 @@ describe('routeData', () => {
     expect(routeData('/parties/coles group')).toEqual(routeData('/parties/coles%20group'));
   });
 
+  // Every prerendered page whose first render waits on a fetch must say so,
+  // or main.jsx mounts it straight into its spinner. Only a page that fetches
+  // nothing at all may leave `data` out.
+  it('is declared by every prerendered page that fetches', () => {
+    for (const path of Object.keys(STATIC_PAGE_META)) {
+      const route = routeFor(path);
+      if (route.data) continue;
+      const file = sources[path];
+      expect(file, `${path}: add data to its route in routes.js`).toBeDefined();
+      expect(file, `${path} fetches, so its route needs data`).not.toContain('useFetchData(');
+    }
+  });
+
   it('is empty for a page whose first render waits on nothing', () => {
     expect(routeData('/nick-twort')).toEqual([]);
     expect(routeData('/no/such/page')).toEqual([]);
@@ -62,6 +77,18 @@ describe('preloadRoute', () => {
     vi.spyOn(routeFor('/').page, 'load').mockRejectedValue(new Error('chunk'));
     await expect(preloadRoute('/')).resolves.toBeDefined();
     expect(dataCache.has(DASHBOARD_STATS_KEY)).toBe(false);
+  });
+});
+
+describe('a page chunk', () => {
+  // React reads this tag to render an already-loaded page without first
+  // painting the Suspense fallback; without it Chromium shows the spinner
+  // for a frame or two after mount, which jsdom's renders below don't show.
+  it('is tagged fulfilled once loaded, as React reads it', async () => {
+    const promise = routeFor('/copyright').page.load();
+    const mod = await promise;
+    expect(promise.status).toBe('fulfilled');
+    expect(promise.value).toBe(mod);
   });
 });
 

@@ -23,6 +23,7 @@ import {
   previousQuarter,
   versionLabel,
 } from '../utils/quarterlyReport';
+import { quarterlyFetch } from '../utils/pageData';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -600,7 +601,8 @@ function MilestonesCard({ quarter }) {
  * quarter. The sitemap lists only the dated pages (see generate_sitemap.py).
  */
 function Quarterly() {
-  const { data, loading, error } = useFetchData(API_ENDPOINTS.quarterly, { cacheKey: 'quarterly-data' });
+  const [quarterlyKey, quarterlyUrl] = quarterlyFetch();
+  const { data, loading, error } = useFetchData(quarterlyUrl, { cacheKey: quarterlyKey });
   const { quarter: quarterParam } = useParams();
   const navigate = useNavigate();
 

@@ -13,18 +13,28 @@ import { lazy } from 'react';
 import { matchPath } from 'react-router';
 import { dataCache } from './utils/dataCache';
 import {
+  analysisFetch,
+  commentaryFetch,
   dashboardStatsFetch,
+  digestFetch,
+  industriesListFetch,
   industryDivisionFetch,
   mergerDetailFetch,
   mergersListFetch,
+  partiesListFetch,
   partyShardFetch,
+  phase2Fetch,
+  quarterlyFetch,
+  refiledNotificationsFetch,
 } from './utils/pageData';
 
 // A page's chunk, loaded once whether main.jsx or React asks first. The
-// promise is tagged fulfilled, as React tags the promises it tracks, so that
-// when main.jsx mounts (in a transition) React sees the chunk has already
-// arrived and renders the page on the first pass, rather than suspending and
-// painting the spinner first.
+// promise is tagged fulfilled as it settles, the way React tags the promises
+// it tracks: React reads that tag when main.jsx mounts (in a transition), so a
+// page whose chunk has already arrived renders on the first pass. Untagged,
+// React only learns of it a tick later and, in a real browser, paints the
+// Suspense fallback in between (a jsdom test doesn't show this; the tag's own
+// test in routes.test.jsx guards it, and it was checked in Chromium).
 function page(load) {
   let promise = null;
   const loadOnce = () => {
@@ -79,20 +89,20 @@ export const ROUTES = [
   { path: '/mergers', page: Mergers, data: () => [mergersListFetch()] },
   { path: '/mergers/:id', page: MergerDetail, data: merger },
   { path: '/mergers/:id/:slug', page: MergerDetail, data: merger },
-  { path: '/industries', page: Industries },
+  { path: '/industries', page: Industries, data: () => [industriesListFetch()] },
   { path: '/industries/:code', page: IndustryDetail, data: industry },
   { path: '/industries/:code/:slug', page: IndustryDetail, data: industry },
-  { path: '/parties', page: Parties },
+  { path: '/parties', page: Parties, data: () => [partiesListFetch()] },
   { path: '/parties/:id', page: PartyDetail, data: party },
   { path: '/parties/:id/:slug', page: PartyDetail, data: party },
-  { path: '/commentary', page: Commentary },
-  { path: '/digest', page: Digest },
-  { path: '/analysis', page: Analysis },
-  { path: '/phase-2', page: Phase2 },
-  { path: '/refiled-notifications', page: RefiledNotifications },
-  { path: '/current-status', page: CurrentStatus },
-  { path: '/quarterly', page: Quarterly },
-  { path: '/quarterly/:quarter', page: Quarterly },
+  { path: '/commentary', page: Commentary, data: () => [commentaryFetch()] },
+  { path: '/digest', page: Digest, data: () => [digestFetch()] },
+  { path: '/analysis', page: Analysis, data: () => [analysisFetch()] },
+  { path: '/phase-2', page: Phase2, data: () => [phase2Fetch()] },
+  { path: '/refiled-notifications', page: RefiledNotifications, data: () => [refiledNotificationsFetch()] },
+  { path: '/current-status', page: CurrentStatus, data: () => [analysisFetch()] },
+  { path: '/quarterly', page: Quarterly, data: () => [quarterlyFetch()] },
+  { path: '/quarterly/:quarter', page: Quarterly, data: () => [quarterlyFetch()] },
   { path: '/nick-twort', page: NickTwort },
   { path: '/privacy', page: PrivacyPolicy },
   { path: '/copyright', page: Copyright },
@@ -124,11 +134,6 @@ export function routeData(pathname) {
   return route.data(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, decode(v)])));
 }
 
-async function preloadData(cacheKey, url) {
-  if (dataCache.has(cacheKey)) return;
-  const res = await fetch(url);
-  if (res.ok) dataCache.set(cacheKey, await res.json());
-}
 
 /**
  * Load the chunk and first-render data of the page at `pathname`. Never
@@ -137,6 +142,8 @@ async function preloadData(cacheKey, url) {
 export function preloadRoute(pathname) {
   return Promise.allSettled([
     routeFor(pathname).page.load(),
-    ...routeData(pathname).map(([cacheKey, url]) => preloadData(cacheKey, url)),
+    ...routeData(pathname)
+      .filter(([cacheKey]) => !dataCache.has(cacheKey))
+      .map(([cacheKey, url]) => dataCache.load(cacheKey, url)),
   ]);
 }

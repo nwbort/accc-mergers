@@ -4,18 +4,19 @@ import Phase2Timeline from '../components/Phase2Timeline';
 import Phase2CompletedCards from '../components/Phase2CompletedCards';
 import Phase2SummaryCards from '../components/Phase2SummaryCards';
 import SEO from '../components/SEO';
-import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { useTracking } from '../context/TrackingContext';
 import { CARD } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { phase2Fetch } from '../utils/pageData';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/phase-2'];
 
 function Phase2() {
-  const { data, loading, error } = useFetchData(API_ENDPOINTS.phase2, { cacheKey: 'phase2' });
+  const [phase2Key, phase2Url] = phase2Fetch();
+  const { data, loading, error } = useFetchData(phase2Url, { cacheKey: phase2Key });
   const { autoTrackPhase2, toggleAutoTrackPhase2 } = useTracking();
 
   if (loading) return <LoadingSpinner />;

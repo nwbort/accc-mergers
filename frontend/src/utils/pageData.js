@@ -33,3 +33,15 @@ export function partyShardFetch(id) {
   const url = API_ENDPOINTS.partyShard(id);
   return [`party-shard-${url}`, url];
 }
+
+// Pages whose first render waits on one fixed file.
+const fixed = (cacheKey, url) => () => [cacheKey, url];
+export const industriesListFetch = fixed('industries-list', API_ENDPOINTS.industries);
+export const partiesListFetch = fixed('parties-list', API_ENDPOINTS.parties);
+export const commentaryFetch = fixed('commentary-items', API_ENDPOINTS.commentary);
+/** analysis.json, read by both /analysis and /current-status under one key. */
+export const analysisFetch = fixed('analysis-data', API_ENDPOINTS.analysis);
+export const phase2Fetch = fixed('phase2', API_ENDPOINTS.phase2);
+export const quarterlyFetch = fixed('quarterly-data', API_ENDPOINTS.quarterly);
+export const digestFetch = fixed('digest', API_ENDPOINTS.digest);
+export const refiledNotificationsFetch = fixed('refiled-notifications', API_ENDPOINTS.refiledNotifications);

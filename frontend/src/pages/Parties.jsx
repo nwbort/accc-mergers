@@ -6,12 +6,12 @@ import ErrorMessage from '../components/ErrorMessage';
 import Treemap from '../components/Treemap';
 import SearchInput from '../components/SearchInput';
 import SEO from '../components/SEO';
-import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { useDebounce } from '../hooks/useDebounce';
 import { partyPath } from '../utils/slug';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { partiesListFetch } from '../utils/pageData';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -24,10 +24,8 @@ const PAGE_META = STATIC_PAGE_META['/parties'];
 const MAX_RESULTS = 60;
 
 function Parties() {
-  const { data: partiesData, loading, error } = useFetchData(
-    API_ENDPOINTS.parties,
-    { cacheKey: 'parties-list' }
-  );
+  const [partiesListKey, partiesListUrl] = partiesListFetch();
+  const { data: partiesData, loading, error } = useFetchData(partiesListUrl, { cacheKey: partiesListKey });
   const parties = useMemo(() => partiesData?.parties || [], [partiesData]);
   const totalParties = partiesData?.total_parties ?? parties.length;
 

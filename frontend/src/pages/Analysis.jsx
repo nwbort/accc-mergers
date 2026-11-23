@@ -6,7 +6,6 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import SegmentedToggle from '../components/SegmentedToggle';
 import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
-import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDateMedium, formatMonthLabel } from '../utils/dates';
 import { industryPath } from '../utils/slug';
@@ -17,6 +16,7 @@ import { computeEcdf } from '../utils/durationEcdf';
 import DurationEcdfChart from '../components/DurationEcdfChart';
 import DecisionMakerChart from '../components/DecisionMakerChart';
 import { PHASE_1_DEADLINE_BD, WAIVER_DEADLINE_BD } from '../constants/statutoryDeadlines';
+import { analysisFetch } from '../utils/pageData';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -93,9 +93,8 @@ function CaseloadStatGroup({ title, swatch, className = '', children }) {
 }
 
 function Analysis() {
-  const { data, loading, error } = useFetchData(API_ENDPOINTS.analysis, {
-    cacheKey: 'analysis-data',
-  });
+  const [analysisKey, analysisUrl] = analysisFetch();
+  const { data, loading, error } = useFetchData(analysisUrl, { cacheKey: analysisKey });
   const navigate = useNavigate();
   const [calendarDays, setCalendarDays] = useState(false);
 
