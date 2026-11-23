@@ -79,11 +79,22 @@ const NotFound = page(() => import('./pages/NotFound'));
 // `data(params)` lists what the page's first render waits on, as the
 // [cacheKey, url] pairs its useFetchData calls use (utils/pageData.js, shared
 // with the pages); preloadRoute puts them in dataCache beforehand. Params
-// reach `data` as they reach the page: decoded once by React Router's
-// matching, then once more as useDecodedParam decodes its param.
+// reach `data` as useParams hands them to the page (decoded once by React
+// Router's matching), and each function treats its param as its page does:
+// MergerDetail uses it as is, while the industry and party pages decode it
+// once more (useDecodedParam), and so do theirs.
+/** useDecodedParam's decoding, for the data functions of pages that use it. */
+function decode(value) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 const merger = ({ id }) => [mergerDetailFetch(id)];
-const industry = ({ code }) => [industryDivisionFetch(code)];
-const party = ({ id }) => [partyShardFetch(id)];
+const industry = ({ code }) => [industryDivisionFetch(decode(code))];
+const party = ({ id }) => [partyShardFetch(decode(id))];
 
 export const ROUTES = [
   { path: '/', page: Dashboard, data: () => [dashboardStatsFetch()] },
@@ -130,19 +141,11 @@ export function routeFor(pathname) {
   return matchRoute(ROUTES, pathname).route;
 }
 
-function decode(value) {
-  try {
-    return decodeURIComponent(value);
-  } catch {
-    return value;
-  }
-}
 
 /** The [cacheKey, url] pairs `pathname`'s page waits on for its first render. */
 export function routeData(pathname) {
   const { route, params } = matchRoute(ROUTES, pathname);
-  if (!route.data) return [];
-  return route.data(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, decode(v)])));
+  return route.data ? route.data(params) : [];
 }
 
 /**

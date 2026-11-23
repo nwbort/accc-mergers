@@ -41,12 +41,14 @@ describe('routeData', () => {
     const [[industryKey, industryUrl]] = routeData('/industries/4110/supermarkets');
     expect(industryKey).toMatch(/^industry-division-/);
     expect(industryUrl).toMatch(/^\/data\/industries\/[A-Z_a-z]+\.json$/);
-    // Decoded as the page decodes its own param: by React Router, then by
-    // useDecodedParam — so twice, even for an id with an encoded '%' in it.
+    // Decoded as each page decodes its own param: the party page by React
+    // Router, then by useDecodedParam (so twice); the merger page by React
+    // Router alone. Only an id with an encoded '%' in it tells the two apart.
     const [[partyKey, partyUrl]] = routeData('/parties/coles%20group');
     expect(partyKey).toBe(`party-shard-${partyUrl}`);
     expect(routeData('/parties/coles group')).toEqual(routeData('/parties/coles%20group'));
     expect(routeData('/parties/a%2525b')).toEqual(routeData('/parties/a%b'));
+    expect(routeData('/mergers/mn-a%2525b')).toEqual([['merger-MN-A%25B', '/data/mergers/MN-A%25B.json']]);
   });
 
   // Every prerendered page whose first render waits on a fetch must say so,
