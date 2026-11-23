@@ -117,3 +117,27 @@ describe('Dashboard head', () => {
     });
   });
 });
+
+describe('Dashboard first render', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  // main.jsx preloads stats.json into dataCache before mounting (routes.js);
+  // the dashboard must read that same entry, or the spinner comes back.
+  it('renders from the entry routes.js preloads, with no spinner', async () => {
+    const { routeData } = await import('../../routes');
+    const [[cacheKey]] = routeData('/');
+    dataCache.set(cacheKey, statsFixture());
+    vi.spyOn(globalThis, 'fetch').mockRejectedValue(new Error('offline'));
+    render(
+      <HelmetProvider>
+        <MemoryRouter>
+          <Dashboard />
+        </MemoryRouter>
+      </HelmetProvider>
+    );
+    expect(screen.getByText('2 under assessment')).toBeInTheDocument();
+  });
+});

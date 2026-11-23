@@ -11,7 +11,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { useDecodedParam } from '../hooks/useDecodedParam';
 import { partyMeta } from '../utils/pageMeta';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
-import { DASHBOARD_STATS_KEY } from '../utils/dashboardStats';
+import { DASHBOARD_STATS_KEY, partyShardFetch } from '../utils/pageData';
 
 const ROLE_LABELS = {
   acquirer: 'As acquirer',
@@ -27,11 +27,8 @@ function PartyDetail() {
   // computed from the id alone (no index lookup), so a party page is still one
   // request. Caching on the bucket rather than the party is a small bonus:
   // browsing several parties often reuses an already-fetched bucket.
-  const shardUrl = decodedId ? API_ENDPOINTS.partyShard(decodedId) : null;
-  const { data: shard, loading, error } = useFetchData(
-    shardUrl,
-    { cacheKey: `party-shard-${shardUrl}` }
-  );
+  const [shardKey, shardUrl] = decodedId ? partyShardFetch(decodedId) : [undefined, null];
+  const { data: shard, loading, error } = useFetchData(shardUrl, { cacheKey: shardKey });
 
   const data = shard?.parties?.[decodedId] ?? null;
 

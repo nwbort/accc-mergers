@@ -15,11 +15,11 @@ import { useFetchData } from '../hooks/useFetchData';
 import { useDecodedParam } from '../hooks/useDecodedParam';
 import { useTracking } from '../context/TrackingContext';
 import { industryPath } from '../utils/slug';
-import { readIndustryNode, industryDivisionCacheKey } from '../utils/industryNode';
+import { readIndustryNode } from '../utils/industryNode';
 import { industryMeta } from '../utils/pageMeta';
 import { MERGER_STATUS, PHASES } from '../constants/mergerStatus';
 import { CARD, SECTION_HEADING, CARD_TITLE } from '../utils/classNames';
-import { DASHBOARD_STATS_KEY } from '../utils/dashboardStats';
+import { DASHBOARD_STATS_KEY, industryDivisionFetch } from '../utils/pageData';
 
 function IndustryDetail() {
   const decodedCode = useDecodedParam('code');
@@ -28,10 +28,8 @@ function IndustryDetail() {
   // every node under that division, so the parent comparison below costs no
   // second request. See utils/industryDivision.js for why the files are cut
   // that way, and utils/industryNode.js for the unpacking.
-  const { data: division, loading, error } = useFetchData(
-    API_ENDPOINTS.industryDivision(decodedCode),
-    { cacheKey: industryDivisionCacheKey(decodedCode) }
-  );
+  const [divisionKey, divisionUrl] = industryDivisionFetch(decodedCode);
+  const { data: division, loading, error } = useFetchData(divisionUrl, { cacheKey: divisionKey });
   const data = useMemo(
     () => readIndustryNode(division, decodedCode),
     [division, decodedCode]

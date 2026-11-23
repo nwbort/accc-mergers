@@ -4,13 +4,21 @@
 // bundle carries only the app shell. That chunk is also why a prerendered page
 // used to flash: createRoot replaces the static HTML on mount, Suspense shows
 // a spinner while the page's chunk loads, then the page shows a spinner of its
-// own while its data loads. preloadRoute fetches both first, so main.jsx can
-// keep the prerendered HTML on screen until the page can render in full.
+// own while its data loads. preloadRoute fetches both first — the chunk for
+// every route, and the data for each route that declares the fetch its first
+// render waits on (`data`) — so main.jsx can keep the prerendered HTML on
+// screen until the page can render in full. A route without `data` still
+// shows its own loading state once mounted.
 import { lazy } from 'react';
 import { matchPath } from 'react-router';
-import { API_ENDPOINTS } from './config';
 import { dataCache } from './utils/dataCache';
-import { DASHBOARD_STATS_KEY } from './utils/dashboardStats';
+import {
+  dashboardStatsFetch,
+  industryDivisionFetch,
+  mergerDetailFetch,
+  mergersListFetch,
+  partyShardFetch,
+} from './utils/pageData';
 
 // A page's chunk, loaded once whether main.jsx or React asks first. The
 // promise is tagged fulfilled, as React tags the promises it tracks, so that
@@ -58,19 +66,25 @@ const Copyright = page(() => import('./pages/Copyright'));
 const Feedback = page(() => import('./pages/Feedback'));
 const NotFound = page(() => import('./pages/NotFound'));
 
-// `data` is what the page's first render waits on, as [cacheKey, url] pairs
-// in its useFetchData calls; preloadRoute puts it in dataCache beforehand.
+// `data(params)` lists what the page's first render waits on, as the
+// [cacheKey, url] pairs its useFetchData calls use (utils/pageData.js, shared
+// with the pages); preloadRoute puts them in dataCache beforehand. Params
+// arrive decoded as useDecodedParam decodes them.
+const merger = ({ id }) => [mergerDetailFetch(id)];
+const industry = ({ code }) => [industryDivisionFetch(code)];
+const party = ({ id }) => [partyShardFetch(id)];
+
 export const ROUTES = [
-  { path: '/', page: Dashboard, data: [[DASHBOARD_STATS_KEY, API_ENDPOINTS.stats]] },
-  { path: '/mergers', page: Mergers },
-  { path: '/mergers/:id', page: MergerDetail },
-  { path: '/mergers/:id/:slug', page: MergerDetail },
+  { path: '/', page: Dashboard, data: () => [dashboardStatsFetch()] },
+  { path: '/mergers', page: Mergers, data: () => [mergersListFetch()] },
+  { path: '/mergers/:id', page: MergerDetail, data: merger },
+  { path: '/mergers/:id/:slug', page: MergerDetail, data: merger },
   { path: '/industries', page: Industries },
-  { path: '/industries/:code', page: IndustryDetail },
-  { path: '/industries/:code/:slug', page: IndustryDetail },
+  { path: '/industries/:code', page: IndustryDetail, data: industry },
+  { path: '/industries/:code/:slug', page: IndustryDetail, data: industry },
   { path: '/parties', page: Parties },
-  { path: '/parties/:id', page: PartyDetail },
-  { path: '/parties/:id/:slug', page: PartyDetail },
+  { path: '/parties/:id', page: PartyDetail, data: party },
+  { path: '/parties/:id/:slug', page: PartyDetail, data: party },
   { path: '/commentary', page: Commentary },
   { path: '/digest', page: Digest },
   { path: '/analysis', page: Analysis },
@@ -94,6 +108,22 @@ export function routeFor(pathname) {
   );
 }
 
+function decode(value) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
+/** The [cacheKey, url] pairs `pathname`'s page waits on for its first render. */
+export function routeData(pathname) {
+  const route = routeFor(pathname);
+  if (!route.data) return [];
+  const params = matchPath(route.path, pathname)?.params ?? {};
+  return route.data(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, decode(v)])));
+}
+
 async function preloadData(cacheKey, url) {
   if (dataCache.has(cacheKey)) return;
   const res = await fetch(url);
@@ -105,9 +135,8 @@ async function preloadData(cacheKey, url) {
  * rejects: whatever fails to load here, the page loads (and reports) itself.
  */
 export function preloadRoute(pathname) {
-  const route = routeFor(pathname);
   return Promise.allSettled([
-    route.page.load(),
-    ...(route.data ?? []).map(([cacheKey, url]) => preloadData(cacheKey, url)),
+    routeFor(pathname).page.load(),
+    ...routeData(pathname).map(([cacheKey, url]) => preloadData(cacheKey, url)),
   ]);
 }

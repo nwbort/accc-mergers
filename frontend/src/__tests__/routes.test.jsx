@@ -3,9 +3,9 @@ import { Suspense, startTransition } from 'react';
 import { createRoot } from 'react-dom/client';
 import { MemoryRouter } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
-import { ROUTES, preloadRoute, routeFor } from '../routes';
+import { ROUTES, preloadRoute, routeData, routeFor } from '../routes';
 import { dataCache } from '../utils/dataCache';
-import { DASHBOARD_STATS_KEY } from '../utils/dashboardStats';
+import { DASHBOARD_STATS_KEY } from '../utils/pageData';
 
 describe('routeFor', () => {
   it('picks the route <Routes> would, slugged or not, and the 404 otherwise', () => {
@@ -21,6 +21,25 @@ describe('routeFor', () => {
     const paths = ROUTES.map((r) => r.path);
     expect(new Set(paths).size).toBe(paths.length);
     expect(paths.at(-1)).toBe('*');
+  });
+});
+
+describe('routeData', () => {
+  it("gives each detail page's fetch from its URL, as the page itself builds it", () => {
+    expect(routeData('/mergers/mn-01016/a-b')).toEqual([['merger-MN-01016', '/data/mergers/MN-01016.json']]);
+    expect(routeData('/mergers')[0][0]).toBe('mergers-list');
+    const [[industryKey, industryUrl]] = routeData('/industries/4110/supermarkets');
+    expect(industryKey).toMatch(/^industry-division-/);
+    expect(industryUrl).toMatch(/^\/data\/industries\/[A-Z_a-z]+\.json$/);
+    // Decoded as useDecodedParam decodes the page's own param.
+    const [[partyKey, partyUrl]] = routeData('/parties/coles%20group');
+    expect(partyKey).toBe(`party-shard-${partyUrl}`);
+    expect(routeData('/parties/coles group')).toEqual(routeData('/parties/coles%20group'));
+  });
+
+  it('is empty for a page whose first render waits on nothing', () => {
+    expect(routeData('/nick-twort')).toEqual([]);
+    expect(routeData('/no/such/page')).toEqual([]);
   });
 });
 

@@ -23,7 +23,6 @@ import { useFetchData } from '../hooks/useFetchData';
 import { formatDateMedium, formatDateLong } from '../utils/dates';
 import { sortEventsNewestFirst } from '../utils/eventOrder';
 import { eventAnchorId, ASSESSMENT_TIMELINE_ANCHOR } from '../utils/eventAnchor';
-import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, CARD_TITLE, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { mergerMeta } from '../utils/pageMeta';
@@ -38,6 +37,7 @@ import {
   getAppealFadeStyle,
   getOutcomeHeaderStyle,
 } from '../constants/outcomeHeader';
+import { mergerDetailFetch } from '../utils/pageData';
 
 // Display text for each related-merger relationship. Keys match the
 // `relationship` values produced by the data pipeline (see
@@ -116,10 +116,8 @@ function MergerDetail() {
   // so a lowercase/mixed-case URL would otherwise 404. Fetch by the
   // normalised ID and let the effect below fix up the visible URL.
   const normalizedId = id ? id.toUpperCase() : id;
-  const { data: merger, loading, error } = useFetchData(
-    API_ENDPOINTS.mergerDetail(normalizedId),
-    { cacheKey: `merger-${normalizedId}` }
-  );
+  const [mergerKey, mergerUrl] = mergerDetailFetch(id);
+  const { data: merger, loading, error } = useFetchData(mergerUrl, { cacheKey: mergerKey });
   const isNotFound = error === 'HTTP 404';
 
   // Keep the address bar on the canonical `/mergers/{id}/{slug}` form. When the

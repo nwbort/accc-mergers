@@ -291,3 +291,34 @@ describe('MergerDetail party links', () => {
     expect(plain).not.toHaveClass('text-primary');
   });
 });
+
+// main.jsx preloads a prerendered page's data into dataCache before mounting
+// (routes.js); that only helps if the page reads the very entry it fills.
+describe('MergerDetail first render', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  it('renders from the entry routes.js preloads, with no fetch and no spinner', async () => {
+    const { routeData } = await import('../../routes');
+    const path = '/mergers/mn-65005/insurance-australia-group-rac-insurance';
+    const [[cacheKey]] = routeData(path);
+    dataCache.set(cacheKey, merger([matter('ACT 3 of 2026', 'IAG', '2026-10-01', 'https://example.test/iag.pdf')]));
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockRejectedValue(new Error('offline'));
+    render(
+      <HelmetProvider>
+        <TrackingProvider>
+          <MemoryRouter initialEntries={[path]}>
+            <Routes>
+              <Route path="/mergers/:id/:slug" element={<MergerDetail />} />
+            </Routes>
+          </MemoryRouter>
+        </TrackingProvider>
+      </HelmetProvider>
+    );
+    // Synchronously: on the first render, not after a load.
+    expect(screen.getByRole('heading', { level: 1, name: /Insurance Australia Group/ })).toBeInTheDocument();
+    expect(fetchSpy.mock.calls.map(([url]) => String(url))).not.toContain('/data/mergers/MN-65005.json');
+  });
+});
