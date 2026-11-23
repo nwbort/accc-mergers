@@ -19,8 +19,8 @@ export const SITE_TITLE = 'Australian Merger Tracker';
 export const AUTHOR_NAME = 'Nick Twort';
 
 // The author, as one schema.org entity. `@id` is what ties the site together
-// for search engines: the homepage's WebSite JSON-LD (index.html) names this
-// Person as author and creator by the same id, and each merger article's
+// for search engines: the homepage's WebSite JSON-LD names this Person as
+// author by the same id, and each merger article's
 // author points here, so all of them resolve to the profile on /nick-twort.
 export const AUTHOR_URL = `${SITE_URL}/nick-twort`;
 export const AUTHOR_ID = `${AUTHOR_URL}#person`;
@@ -640,6 +640,28 @@ export function industryMeta(industry, code, indexName) {
   };
 }
 
+// WebSite JSON-LD, on the homepage only (STATIC_PAGE_META['/']): Google reads
+// it there, and the prerendered homepage carries it in its raw HTML. The
+// author is the same Person the profile page describes, by @id.
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+const WEBSITE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': WEBSITE_ID,
+  name: SITE_TITLE,
+  alternateName: 'mergers.fyi',
+  url: SITE_URL,
+  description:
+    'Real-time database of Australian mergers reviewed by the ACCC. Search merger decisions, track review timelines, analyze industry trends, and explore public consultation documents.',
+  inLanguage: 'en-AU',
+  author: AUTHOR_REF,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: { '@type': 'EntryPoint', urlTemplate: `${SITE_URL}/mergers?q={search_term_string}` },
+    'query-input': 'required name=search_term_string',
+  },
+};
+
 // ProfilePage JSON-LD for the author page. Lives here, not in NickTwort.jsx,
 // so the prerendered HTML carries it too rather than only the hydrated page.
 // Keep it to what the page itself says.
@@ -649,7 +671,7 @@ const NICK_TWORT_PROFILE = {
   '@id': AUTHOR_URL,
   url: AUTHOR_URL,
   name: 'Nick Twort – Competition Economist',
-  isPartOf: { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, name: SITE_TITLE, url: SITE_URL },
+  isPartOf: { '@type': 'WebSite', '@id': WEBSITE_ID, name: SITE_TITLE, url: SITE_URL },
   mainEntity: {
     '@type': 'Person',
     '@id': AUTHOR_ID,
@@ -732,6 +754,7 @@ export const STATIC_PAGE_META = {
     documentTitle: 'Australian Merger Tracker | ACCC Merger Reviews & M&A Data',
     description:
       'Live stats on every ACCC merger review — recent clearances, upcoming deadlines, phase durations, and determination trends across Australian industries.',
+    structuredData: [WEBSITE_SCHEMA],
   },
   '/mergers': {
     title: 'All Mergers',

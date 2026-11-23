@@ -26,7 +26,8 @@
          (react-helmet-async) also writes: the mark hands them to Helmet, which
          replaces them on mount instead of adding a second copy beside each.
          prerender.js stamps its own (canonical, JSON-LD, ...) the same way.
-         Unmarked tags (keywords, author, the WebSite JSON-LD) are left alone. -->
+         Unmarked tags (keywords, author) are left alone. The WebSite JSON-LD
+         is the homepage's alone: STATIC_PAGE_META['/'] in utils/pageMeta.js. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta data-rh="true" name="description" content="Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents." />
     <meta name="keywords" content="ACCC, mergers, acquisitions, Australia, competition, antitrust, merger review, corporate mergers" />
@@ -69,39 +70,6 @@
 
     <title>Australian Merger Tracker | ACCC Merger Reviews & M&A Data</title>
 
-    <!-- Structured Data (Schema.org) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://mergers.fyi/#website",
-      "name": "Australian Merger Tracker",
-      "alternateName": "mergers.fyi",
-      "url": "https://mergers.fyi",
-      "description": "Real-time database of Australian mergers reviewed by the ACCC. Search merger decisions, track review timelines, analyze industry trends, and explore public consultation documents.",
-      "inLanguage": "en-AU",
-      "author": {
-        "@type": "Person",
-        "@id": "https://mergers.fyi/nick-twort#person",
-        "name": "Nick Twort",
-        "url": "https://mergers.fyi/nick-twort"
-      },
-      "creator": {
-        "@type": "Person",
-        "@id": "https://mergers.fyi/nick-twort#person",
-        "name": "Nick Twort",
-        "url": "https://mergers.fyi/nick-twort"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://mergers.fyi/mergers?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
   </head>
   <body>
     <div id="root"></div>

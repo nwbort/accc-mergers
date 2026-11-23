@@ -69,6 +69,7 @@ function Dashboard() {
         documentTitle={PAGE_META.documentTitle}
         description={PAGE_META.description}
         url="/"
+        structuredData={PAGE_META.structuredData}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
       <h1 className="sr-only">Australian merger tracker dashboard</h1>

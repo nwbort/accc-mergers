@@ -504,12 +504,12 @@ describe('renderPage stamping against the real index.html', () => {
     });
     const out = renderPage(template, hostile, '');
     const ldBlocks = out.match(/<script [^>]*type="application\/ld\+json">[\s\S]*?<\/script>/g);
-    // Two blocks: index.html's site-wide WebSite schema and this page's.
-    expect(ldBlocks).toHaveLength(2);
+    // One block: this page's (the WebSite schema is the homepage's alone).
+    expect(ldBlocks).toHaveLength(1);
     expect(out).not.toContain('<img src=x onerror=alert(1)>');
-    expect(ldBlocks[1]).toContain('\\u003c/script>');
+    expect(ldBlocks[0]).toContain('\\u003c/script>');
     // Still valid JSON, and the escape decodes back to the original text.
-    const parsed = JSON.parse(ldBlocks[1].replace(/^<script[^>]*>|<\/script>$/g, ''));
+    const parsed = JSON.parse(ldBlocks[0].replace(/^<script[^>]*>|<\/script>$/g, ''));
     expect(parsed[0].description).toBe('</script><img src=x onerror=alert(1)>');
   });
 });
@@ -732,7 +732,7 @@ describe('hub page bodies', () => {
     const head = html.slice(0, html.indexOf('</head>'));
     const managed = [
       /<link [^>]*rel="canonical"/,
-      /<script [^>]*type="application\/ld\+json"[^>]*>(?=\[)/, // the page's own JSON-LD (an array)
+      /<script [^>]*type="application\/ld\+json"/,
       ...['description', 'twitter:card', 'twitter:title', 'twitter:description', 'twitter:image'].map(
         (n) => new RegExp(`<meta [^>]*name="${n}"`),
       ),
@@ -744,8 +744,7 @@ describe('hub page bodies', () => {
       expect(tags.length, re.source).toBe(1);
       expect(tags[0], re.source).toContain('data-rh="true"');
     }
-    // The site-wide WebSite JSON-LD and the tags <SEO> never writes stay put.
-    expect(head).toMatch(/<script type="application\/ld\+json">\s*\{\s*"@context"/);
+    // The tags <SEO> never writes stay put, unmarked.
     for (const n of ['author', 'keywords', 'theme-color']) {
       expect(head).toMatch(new RegExp(`<meta name="${n}"`));
     }
@@ -778,27 +777,26 @@ describe('the author page', () => {
     expect(JSON.parse(serialiseJsonLd(profile))).toEqual(profile);
   });
 
-  it('is who the homepage WebSite JSON-LD names as author and creator', () => {
-    // index.html is hand-written, so pin its JSON-LD to the shared Person.
-    const html = readFixture('index.html');
-    const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
-    const site = blocks.map(([, json]) => JSON.parse(json)).find((d) => d['@type'] === 'WebSite');
-    expect(site).toBeTruthy();
+  it('is who the homepage WebSite JSON-LD names as author', () => {
+    const [site] = STATIC_PAGE_META['/'].structuredData;
+    expect(site['@type']).toBe('WebSite');
     expect(site.author).toEqual(AUTHOR_REF);
-    expect(site.creator).toEqual(AUTHOR_REF);
+    expect(site).not.toHaveProperty('creator');
+    // The profile says it belongs to that same WebSite.
+    const [profile] = STATIC_PAGE_META['/nick-twort'].structuredData;
+    expect(profile.isPartOf['@id']).toBe(site['@id']);
   });
 
-  it('uses its own whole <title> in both the SPA and the prerendered head', () => {
-    const meta = { ...STATIC_PAGE_META['/nick-twort'], path: '/nick-twort' };
-    expect(meta.documentTitle).toBe('Nick Twort – Competition Economist, Sydney | mergers.fyi');
-    const html = renderPage(
-      '<html><head><title>x</title><meta property="og:title" content="x"></head><body><div id="root"></div></body></html>',
-      meta,
-      '',
-    );
-    expect(html).toContain(`<title>${meta.documentTitle}</title>`);
-    expect(html).toContain(`<meta data-rh="true" property="og:title" content="${meta.documentTitle}" />`);
-    expect(readFixture('src/pages/NickTwort.jsx')).toContain('documentTitle={PAGE_META.documentTitle}');
+  it('keeps the WebSite JSON-LD to the homepage', () => {
+    // index.html is the template every page is stamped from (and the fallback
+    // shell), so a block there would be on every page.
+    expect(readFixture('index.html')).not.toContain('application/ld+json');
+    for (const [path, meta] of Object.entries(STATIC_PAGE_META)) {
+      if (path === '/') continue;
+      const types = (meta.structuredData || []).map((d) => d['@type']);
+      expect(types, path).not.toContain('WebSite');
+    }
+    expect(readFixture('src/pages/Dashboard.jsx')).toContain('structuredData={PAGE_META.structuredData}');
   });
 
   it('is the author of every merger article', () => {

@@ -3,8 +3,8 @@
 #
 # CSP notes
 # ─────────
-# - script-src allows 'unsafe-inline' so the JSON-LD structured-data block in
-#   index.html and the Cloudflare Turnstile script continue to work. The SPA
+# - script-src allows 'unsafe-inline' so the JSON-LD structured-data blocks in
+#   the page HTML and the Cloudflare Turnstile script continue to work. The SPA
 #   contains no dangerouslySetInnerHTML and uses react-markdown (which strips
 #   raw HTML), so the weakened script-src still leaves the XSS surface narrow.
 # - style-src 'unsafe-inline' is required for Tailwind/React inline style

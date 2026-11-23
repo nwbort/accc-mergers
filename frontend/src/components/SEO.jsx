@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { serialiseJsonLd } from '../utils/pageMeta';
+import { documentTitle as pageTitle, serialiseJsonLd } from '../utils/pageMeta';
 
 /**
  * SEO component for managing meta tags, Open Graph, Twitter Cards, and structured data
@@ -34,7 +34,7 @@ export default function SEO({
   structuredData
 }) {
   const siteTitle = 'Australian Merger Tracker';
-  const fullTitle = documentTitle || (title ? `${title} | ${siteTitle}` : siteTitle);
+  const fullTitle = pageTitle({ title, documentTitle });
   const siteUrl = 'https://mergers.fyi';
   const canonicalUrl = url ? `${siteUrl}${url}` : siteUrl;
   const ogImage = image || `${siteUrl}/og-image.png`;
