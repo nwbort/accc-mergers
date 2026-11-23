@@ -3,12 +3,12 @@
   "total_waivers": 553,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 292,
-    "Under assessment": 37,
+    "Assessment completed": 293,
+    "Under assessment": 36,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 285,
+    "Approved": 286,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 290,
+    "cleared": 291,
     "not_cleared": 2,
-    "total": 292,
+    "total": 293,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.29194630872483,
-    "median_days": 26.0,
-    "average_business_days": 19.993288590604028,
-    "median_business_days": 18.0,
+    "average_days": 29.2809364548495,
+    "median_days": 26,
+    "average_business_days": 19.989966555183948,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 61,
-        "percentage": 20.5
+        "percentage": 20.4
       },
       "day20": {
-        "count": 214,
-        "percentage": 71.8
+        "count": 215,
+        "percentage": 71.9
       },
       "day30": {
-        "count": 280,
+        "count": 281,
         "percentage": 94.0
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-20041",
+      "merger_name": "Hopper Motor Group \u2013 Essendon Kia",
+      "determination": "Approved",
+      "determination_date": "2026-11-21T12:00:00Z",
+      "page_modified_datetime": "2026-11-23T11:07:26+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85064",
       "merger_name": "Infosys \u2013 Versent Group (Telstra Purple)",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-19T12:00:00Z",
       "page_modified_datetime": "2026-11-19T17:30:16+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-95050",
-      "merger_name": "MA Financial (Redcape Fund) \u2013 Hotel Canobolas",
-      "determination": "Approved",
-      "determination_date": "2026-11-19T12:00:00Z",
-      "page_modified_datetime": "2026-11-19T17:27:22+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
