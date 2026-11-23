@@ -5,8 +5,10 @@
 
     <!-- Warm the data fetches the Dashboard needs, but only on the homepage.
          These files aren't used by other routes, so loading them site-wide
-         would waste bandwidth. The subsequent fetch() in Dashboard.jsx matches
-         the preload (same URL, same-origin, no extra headers) and reuses it. -->
+         would waste bandwidth. The fetch() that then asks for stats.json
+         (preloadRoute in routes.js, before the app mounts) and the dashboard's
+         for upcoming-events.json match the preload (same URL, CORS mode, same
+         credentials) and reuse it. -->
     <script>
       (function () {
         var p = location.pathname;

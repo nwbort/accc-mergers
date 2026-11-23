@@ -4,8 +4,10 @@
 # CSP notes
 # ─────────
 # - script-src allows 'unsafe-inline' so the inline data-preload script in
-#   index.html and the Cloudflare Turnstile script continue to work (JSON-LD
-#   blocks are data, never executed, so CSP doesn't apply to them). The SPA
+#   index.html, the prerendered homepage's promo-hiding head script
+#   (promoHideScript in frontend/prerender.js) and the Cloudflare Turnstile
+#   script continue to work (JSON-LD blocks are data, never executed, so CSP
+#   doesn't apply to them). The SPA
 #   contains no dangerouslySetInnerHTML and uses react-markdown (which strips
 #   raw HTML), so the weakened script-src still leaves the XSS surface narrow.
 # - style-src 'unsafe-inline' is required for Tailwind/React inline style
