@@ -188,7 +188,13 @@ def _find(candidates: tuple[str, ...]) -> str | None:
 
 
 def _wrap(draw: ImageDraw.ImageDraw, text: str, font, width: int) -> list[str]:
-    """Greedy word wrap by rendered width. A word wider than the line is split."""
+    """Greedy word wrap by rendered width. A word wider than the line is split.
+
+    A ``\n`` in ``text`` forces a break, so a caller can choose where a
+    phrase splits ("Australian mergers\nin Q3 2026").
+    """
+    if "\n" in text:
+        return [line for part in text.split("\n") for line in _wrap(draw, part, font, width)]
     lines: list[str] = []
     current = ""
     for word in text.split():

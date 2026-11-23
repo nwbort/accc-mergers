@@ -187,9 +187,9 @@ def write_quarter_cards(payload: dict, out_dir: Path = QUARTER_DIR) -> list[str]
         png = render_status_card(
             kind="notified",
             kicker="Quarterly merger report",
-            # The quarter alone, so "Q3 2026" is never split across lines.
-            headline=quarter["label"],
-            detail="Australian mergers: volumes, outcomes and decision times",
+            # Broken by hand, so the quarter ("in Q3 2026") is never split.
+            headline=f"Australian mergers\nin {quarter['label']}",
+            detail="Volumes, outcomes and ACCC decision times",
         )
         if png is None:
             raise RuntimeError("no usable font found; cannot draw the cards")
