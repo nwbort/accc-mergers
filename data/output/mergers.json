@@ -107381,9 +107381,14 @@
           "name": "CARLISLE HEALTH SYDNEY PTY LTD",
           "identifier_type": "ABN",
           "identifier": "91 679 606 029",
+          "canonical": {
+            "id": "carlisle-health",
+            "name": "Carlisle Health"
+          },
           "party_page": {
-            "id": "carlisle-health-sydney-pty-ltd",
-            "name": "Carlisle Health Sydney Pty Ltd"
+            "id": "carlisle-health",
+            "name": "Carlisle Health",
+            "curated": true
           }
         }
       ],
@@ -107448,9 +107453,14 @@
           "name": "CARLISLE HEALTH PTY LTD",
           "identifier_type": "ABN",
           "identifier": "55 168 006 157",
+          "canonical": {
+            "id": "carlisle-health",
+            "name": "Carlisle Health"
+          },
           "party_page": {
-            "id": "carlisle-health-pty-ltd",
-            "name": "Carlisle Health Pty Ltd"
+            "id": "carlisle-health",
+            "name": "Carlisle Health",
+            "curated": true
           }
         }
       ],
