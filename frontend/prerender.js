@@ -42,6 +42,7 @@ import { partyShardName } from './src/utils/shard.js';
 import { divisionFileName } from './src/utils/industryDivision.js';
 import { readIndustryNode } from './src/utils/industryNode.js';
 import { NAV_PAGES } from './src/constants/navPages.js';
+import { PROMO_DISMISSED_PREFIX } from './src/utils/promoDismissal.js';
 
 // Per-merger data files are named by matter id, e.g. MN-01016.json / WA-70017.json.
 const MATTER_FILE_RE = /^(MN|WA)-\d+\.json$/i;
@@ -398,6 +399,25 @@ export function staticBody(meta) {
 // (see there for why it can't be dist/index.html); a test pins the two.
 export const HOME_PAGE_PATH = '/prerendered/home';
 
+// A head script for the prerendered homepage: hides the promos this visitor
+// has dismissed before anything is painted. The static page shows promos as a
+// first-time visitor sees them, so without it a dismissed banner would show
+// until React mounts, then vanish and shift everything below it up. It reads
+// the keys PromoStack writes (utils/promoDismissal.js) for the campaigns the
+// page was built with, and hides the whole stack if all were dismissed (its
+// margin would otherwise remain). Inert, and harmless, once React has mounted:
+// PromoStack then leaves dismissed promos out itself.
+export function promoHideScript(campaigns) {
+  if (!campaigns.length) return '';
+  const code =
+    `(function(){try{var c=${JSON.stringify(campaigns)},d=c.filter(function(x){` +
+    `return localStorage.getItem(${JSON.stringify(PROMO_DISMISSED_PREFIX)}+x)});if(!d.length)return;` +
+    `var css=d.map(function(x){return '[data-promo-campaign="'+x+'"]'}).join(',')+'{display:none}';` +
+    `if(d.length===c.length)css+='[data-promo-stack]{display:none}';` +
+    `var s=document.createElement('style');s.textContent=css;document.head.appendChild(s)}catch(e){}})();`;
+  return `<script>${code.replace(/</g, '\\u003c')}</script>`;
+}
+
 // The homepage's raw-HTML body: the top of the dashboard itself (renderHome in
 // src/prerender/renderStatic.jsx, passed in as `top`), so what shows before
 // React mounts is that part of the real page. Without it (no stats.json, or
@@ -556,6 +576,8 @@ export function renderPage(template, meta, body) {
     meta.structuredData?.length
       ? `<script ${RH} type="application/ld+json">${serialiseJsonLd(meta.structuredData)}</script>`
       : '',
+    // Anything else one page needs in its head (the homepage's promoHideScript).
+    meta.headHtml || '',
   ]
     .filter(Boolean)
     .join('\n    ');
@@ -903,7 +925,8 @@ export default function prerenderMergers() {
           } catch (err) {
             this.warn(`prerender: homepage dashboard not rendered (${err.message}); it keeps only its links`);
           }
-          const meta = { ...base, path };
+          const campaigns = [...top.matchAll(/data-promo-campaign="([^"]+)"/g)].map((m) => m[1]);
+          const meta = { ...base, path, headHtml: promoHideScript(campaigns) };
           writePage(outDir, HOME_PAGE_PATH, renderPage(template, meta, homeBody(meta, top)));
           counts.static++;
           continue;
