@@ -10,7 +10,7 @@
 // screen until the page can render in full. A route without `data` still
 // shows its own loading state once mounted.
 import { lazy } from 'react';
-import { matchPath } from 'react-router';
+import { matchRoutes } from 'react-router';
 import { dataCache } from './utils/dataCache';
 import {
   analysisFetch,
@@ -78,10 +78,9 @@ const NotFound = page(() => import('./pages/NotFound'));
 
 // `data(params)` lists what the page's first render waits on, as the
 // [cacheKey, url] pairs its useFetchData calls use (utils/pageData.js, shared
-// with the pages); preloadRoute puts them in dataCache beforehand. matchPath
-// hands params over raw, so routeData decodes them once; the page gets them
-// already decoded by React Router and useDecodedParam decodes again. The two
-// agree for any id without an encoded '%' in it, which none of the ids has.
+// with the pages); preloadRoute puts them in dataCache beforehand. Params
+// reach `data` as they reach the page: decoded once by React Router's
+// matching, then once more as useDecodedParam decodes its param.
 const merger = ({ id }) => [mergerDetailFetch(id)];
 const industry = ({ code }) => [industryDivisionFetch(code)];
 const party = ({ id }) => [partyShardFetch(id)];
@@ -112,12 +111,23 @@ export const ROUTES = [
   { path: '*', page: NotFound },
 ];
 
+/**
+ * The best match for `pathname` in `routes`, ranked as <Routes> ranks them
+ * (React Router's own matchRoutes): a static path beats a parameter one
+ * wherever each is listed. Returns `{ route, params }`, params decoded as
+ * useParams has them.
+ */
+export function matchRoute(routes, pathname) {
+  const match = matchRoutes(
+    routes.map((route) => ({ path: route.path, entry: route })),
+    pathname,
+  )?.at(-1);
+  return match && { route: match.route.entry, params: match.params };
+}
+
 /** The route that renders `pathname`, as <Routes> would pick it. */
 export function routeFor(pathname) {
-  return (
-    ROUTES.find(({ path }) => path !== '*' && matchPath(path, pathname)) ??
-    ROUTES.find(({ path }) => path === '*')
-  );
+  return matchRoute(ROUTES, pathname).route;
 }
 
 function decode(value) {
@@ -130,12 +140,10 @@ function decode(value) {
 
 /** The [cacheKey, url] pairs `pathname`'s page waits on for its first render. */
 export function routeData(pathname) {
-  const route = routeFor(pathname);
+  const { route, params } = matchRoute(ROUTES, pathname);
   if (!route.data) return [];
-  const params = matchPath(route.path, pathname)?.params ?? {};
   return route.data(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, decode(v)])));
 }
-
 
 /**
  * Load the chunk and first-render data of the page at `pathname`. Never

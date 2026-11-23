@@ -3,7 +3,7 @@ import { Suspense, startTransition } from 'react';
 import { createRoot } from 'react-dom/client';
 import { MemoryRouter } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
-import { ROUTES, preloadRoute, routeData, routeFor } from '../routes';
+import { ROUTES, matchRoute, preloadRoute, routeData, routeFor } from '../routes';
 import { dataCache } from '../utils/dataCache';
 import { DASHBOARD_STATS_KEY } from '../utils/pageData';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
@@ -17,6 +17,14 @@ describe('routeFor', () => {
     expect(routeFor('/mergers/MN-01016/a-b').path).toBe('/mergers/:id/:slug');
     expect(routeFor('/quarterly/26Q3').path).toBe('/quarterly/:quarter');
     expect(routeFor('/no/such/page').path).toBe('*');
+  });
+
+  it('ranks matches as <Routes> does, not by listing order', () => {
+    // A static path listed after a parameter path it overlaps still wins.
+    const table = [{ path: '/mergers/:id' }, { path: '/mergers/new' }, { path: '*' }];
+    expect(matchRoute(table, '/mergers/new').route.path).toBe('/mergers/new');
+    expect(matchRoute(table, '/mergers/MN-01016').route.path).toBe('/mergers/:id');
+    expect(matchRoute(table, '/elsewhere').route.path).toBe('*');
   });
 
   it('lists each path once, with the 404 last', () => {
@@ -33,10 +41,12 @@ describe('routeData', () => {
     const [[industryKey, industryUrl]] = routeData('/industries/4110/supermarkets');
     expect(industryKey).toMatch(/^industry-division-/);
     expect(industryUrl).toMatch(/^\/data\/industries\/[A-Z_a-z]+\.json$/);
-    // Decoded as useDecodedParam decodes the page's own param.
+    // Decoded as the page decodes its own param: by React Router, then by
+    // useDecodedParam — so twice, even for an id with an encoded '%' in it.
     const [[partyKey, partyUrl]] = routeData('/parties/coles%20group');
     expect(partyKey).toBe(`party-shard-${partyUrl}`);
     expect(routeData('/parties/coles group')).toEqual(routeData('/parties/coles%20group'));
+    expect(routeData('/parties/a%2525b')).toEqual(routeData('/parties/a%b'));
   });
 
   // Every prerendered page whose first render waits on a fetch must say so,
