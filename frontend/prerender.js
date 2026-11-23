@@ -30,7 +30,7 @@ import { join, dirname, basename } from 'node:path';
 import {
   SITE_URL,
   STATIC_PAGE_META,
-  fullTitle,
+  documentTitle,
   industryMeta,
   mergerMeta,
   partyMeta,
@@ -483,7 +483,7 @@ export function partiesHubBody(parties, meta) {
 // index.html (inlined CSS, hashed script names, etc.).
 export function renderPage(template, meta, body) {
   const canonicalUrl = `${SITE_URL}${meta.canonicalPath || meta.path}`;
-  const title = escapeHtml(fullTitle(meta.title));
+  const title = escapeHtml(documentTitle(meta));
   const description = escapeHtml(meta.description);
   const type = meta.type || 'website';
 

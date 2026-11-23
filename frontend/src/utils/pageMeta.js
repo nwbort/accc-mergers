@@ -42,6 +42,14 @@ export function fullTitle(title) {
 }
 
 /**
+ * A page's <title>: its `documentTitle` verbatim when the meta sets one (a
+ * page whose title is written for search results whole), else fullTitle.
+ */
+export function documentTitle(meta) {
+  return meta.documentTitle || fullTitle(meta.title);
+}
+
+/**
  * Serialise JSON-LD for embedding in a `<script type="application/ld+json">`.
  *
  * HTML parsers end a script block at the first literal `</script>`, wherever it
@@ -784,9 +792,12 @@ export const STATIC_PAGE_META = {
     imageAlt: 'Catch me up: your week in Australian mergers',
   },
   '/nick-twort': {
-    title: 'Nick Twort – Competition Economist | Australian Merger & Antitrust Expert',
+    title: 'Nick Twort – Competition Economist',
+    // Written whole for search results: a name search should read who, what
+    // and where, and the site's brand suffix would push "Sydney" off the end.
+    documentTitle: 'Nick Twort – Competition Economist, Sydney | mergers.fyi',
     description:
-      'Nick Twort is an Australian competition economist with eight years of experience advising on merger clearance, antitrust matters, and regulatory issues for the ACCC and New Zealand Commerce Commission. Expert in empirical analysis across airlines, digital platforms, supermarkets, telecoms and more.',
+      'Nick Twort is a Sydney competition economist and Principal at Econic Partners, advising on merger clearance, antitrust and regulatory matters before the ACCC and New Zealand Commerce Commission since 2017. Creator of mergers.fyi.',
     type: 'profile',
     image: `${SITE_URL}/og/nick-twort.png`,
     imageAlt: 'Nick Twort, competition economist',

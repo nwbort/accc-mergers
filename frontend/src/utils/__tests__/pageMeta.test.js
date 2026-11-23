@@ -712,12 +712,25 @@ describe('the author page', () => {
 
   it('is who the homepage WebSite JSON-LD names as author and creator', () => {
     // index.html is hand-written, so pin its JSON-LD to the shared Person.
-    const html = readFileSync(resolve(__dirname, '../../../index.html'), 'utf8');
+    const html = readFixture('index.html');
     const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
     const site = blocks.map(([, json]) => JSON.parse(json)).find((d) => d['@type'] === 'WebSite');
     expect(site).toBeTruthy();
     expect(site.author).toEqual(AUTHOR_REF);
     expect(site.creator).toEqual(AUTHOR_REF);
+  });
+
+  it('uses its own whole <title> in both the SPA and the prerendered head', () => {
+    const meta = { ...STATIC_PAGE_META['/nick-twort'], path: '/nick-twort' };
+    expect(meta.documentTitle).toBe('Nick Twort – Competition Economist, Sydney | mergers.fyi');
+    const html = renderPage(
+      '<html><head><title>x</title><meta property="og:title" content="x"></head><body><div id="root"></div></body></html>',
+      meta,
+      '',
+    );
+    expect(html).toContain(`<title>${meta.documentTitle}</title>`);
+    expect(html).toContain(`<meta property="og:title" content="${meta.documentTitle}" />`);
+    expect(readFixture('src/pages/NickTwort.jsx')).toContain('documentTitle={PAGE_META.documentTitle}');
   });
 
   it('is the author of every merger article', () => {

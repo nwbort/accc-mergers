@@ -6,6 +6,8 @@ import { serialiseJsonLd } from '../utils/pageMeta';
  *
  * @param {Object} props
  * @param {string} props.title - Page title
+ * @param {string} [props.documentTitle] - The whole <title>, used as is in
+ *   place of "{title} | Australian Merger Tracker"
  * @param {string} props.description - Page description
  * @param {string} [props.url] - Canonical URL
  * @param {string} [props.image] - Open Graph image URL
@@ -19,6 +21,7 @@ import { serialiseJsonLd } from '../utils/pageMeta';
  */
 export default function SEO({
   title,
+  documentTitle,
   description,
   url,
   image,
@@ -31,7 +34,7 @@ export default function SEO({
   structuredData
 }) {
   const siteTitle = 'Australian Merger Tracker';
-  const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+  const fullTitle = documentTitle || (title ? `${title} | ${siteTitle}` : siteTitle);
   const siteUrl = 'https://mergers.fyi';
   const canonicalUrl = url ? `${siteUrl}${url}` : siteUrl;
   const ogImage = image || `${siteUrl}/og-image.png`;
