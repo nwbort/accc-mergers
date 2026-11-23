@@ -420,6 +420,8 @@ function Digest() {
         title={PAGE_META.title}
         description={PAGE_META.description}
         url="/digest"
+        image={PAGE_META.image}
+        imageAlt={PAGE_META.imageAlt}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

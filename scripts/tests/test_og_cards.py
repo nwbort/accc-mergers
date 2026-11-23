@@ -41,12 +41,17 @@ def decided(**overrides):
 
 
 def test_every_card_is_committed():
-    missing = [name for name in og_cards._FILES.values() if not (OG_DIR / name).is_file()]
+    missing = [name for name in og_cards.ALL_FILES if not (OG_DIR / name).is_file()]
     assert not missing, f"run `python -m scripts.generate.og_cards` to draw {missing}"
 
 
 def test_no_stray_cards_are_deployed():
-    assert {p.name for p in OG_DIR.glob("*.png")} == set(og_cards._FILES.values())
+    assert {p.name for p in OG_DIR.glob("*.png")} == set(og_cards.ALL_FILES)
+
+
+def test_the_digest_has_its_own_card():
+    assert og_cards.DIGEST_CARD in og_cards.PAGE_CARDS
+    assert og_cards.DIGEST_CARD not in og_cards._FILES.values()
 
 
 def test_every_outcome_headline_has_a_card():

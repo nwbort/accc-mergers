@@ -98,14 +98,20 @@ def render_card(*, key: str, headline: str, title: str, detail: str) -> bytes | 
         return None
 
 
-def render_status_card(*, kind: str, headline: str) -> bytes | None:
+def render_status_card(
+    *, kind: str, headline: str,
+    kicker: str = "ACCC merger register",
+    detail: str = "Every ACCC merger review, tracked",
+) -> bytes | None:
     """A matter-agnostic card for one kind of milestone, or ``None``.
 
     The site's pages share these as their Open Graph image (see
     ``scripts/generate/og_cards.py``), so it carries no matter name: the
     unfurl prints the page title under it. Same layout and colours as the
     per-post card, with the headline in the title's place, drawn at
-    :data:`STATUS_CARD_SCALE` times the size.
+    :data:`STATUS_CARD_SCALE` times the size. ``kicker`` and ``detail`` are
+    the small lines above and below it; a page card (the weekly digest's)
+    overrides them.
     """
     bold = _find(_BOLD_FONTS)
     regular = _find(_REGULAR_FONTS)
@@ -113,8 +119,8 @@ def render_status_card(*, kind: str, headline: str) -> bytes | None:
         return None
     try:
         tone = tone_for(f"_:{kind}:_", headline)
-        return _draw(bold, regular, TONES[tone], "ACCC merger register", headline,
-                     "Every ACCC merger review, tracked", centre=True, scale=STATUS_CARD_SCALE)
+        return _draw(bold, regular, TONES[tone], kicker, headline, detail,
+                     centre=True, scale=STATUS_CARD_SCALE)
     except (OSError, ValueError):
         return None
 

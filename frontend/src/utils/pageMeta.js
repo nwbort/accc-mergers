@@ -753,6 +753,10 @@ export const STATIC_PAGE_META = {
     title: 'Catch me up - ACCC Merger Tracker',
     description:
       'Weekly roundup of Australian merger activity: new ACCC notifications, Phase 1 clearances, Phase 2 launches, and upcoming consultation deadlines — all in one digest.',
+    // Drawn by scripts/generate/og_cards.py (PAGE_CARDS), which a test pins
+    // to the committed file; the LinkedIn digest post links the same card.
+    image: `${SITE_URL}/og/weekly-digest.png`,
+    imageAlt: 'Catch me up: your week in Australian mergers',
   },
   '/nick-twort': {
     title: 'Nick Twort – Competition Economist | Australian Merger & Antitrust Expert',

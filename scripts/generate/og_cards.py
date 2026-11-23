@@ -61,6 +61,26 @@ CARDS: tuple[tuple[str, str], ...] = (
 
 _FILES = {headline: f"{slugify(headline)}.png" for _, headline in CARDS}
 
+#: Cards for whole pages rather than milestones, keyed by file name: the
+#: weekly digest is shared on its own (LinkedIn, the email), and the shared
+#: image says nothing about it being a weekly roundup. Each is drawn with the
+#: milestone cards' layout, in the site's primary colour ("notified" is the
+#: kind that maps to it). The SPA and prerenderer name the file in
+#: ``frontend/src/utils/pageMeta.js``; the LinkedIn digest post in
+#: ``scripts/linkedin/digest.py``.
+DIGEST_CARD = "weekly-digest.png"
+PAGE_CARDS: dict[str, dict[str, str]] = {
+    DIGEST_CARD: {
+        "kind": "notified",
+        "kicker": "Catch me up",
+        "headline": "Your week in Australian mergers",
+        "detail": "New deals, decisions and deadlines, weekly",
+    },
+}
+
+#: Every file this module draws, milestone and page cards alike.
+ALL_FILES = (*_FILES.values(), *PAGE_CARDS)
+
 
 def card_for(milestone: Milestone) -> str | None:
     """The card file name (``cleared-by-the-accc.png``) for one milestone."""
@@ -100,7 +120,8 @@ def _kind(milestone: Milestone) -> str:
 
 
 def write_cards(out_dir: Path = OG_DIR) -> list[str]:
-    """Draw every card into ``out_dir``, pruning any no longer in :data:`CARDS`."""
+    """Draw every card into ``out_dir``, pruning any no longer in :data:`CARDS`
+    or :data:`PAGE_CARDS`."""
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
     for kind, headline in CARDS:
@@ -109,6 +130,12 @@ def write_cards(out_dir: Path = OG_DIR) -> list[str]:
             raise RuntimeError("no usable font found; cannot draw the cards")
         (out_dir / _FILES[headline]).write_bytes(png)
         written.append(_FILES[headline])
+    for name, spec in PAGE_CARDS.items():
+        png = render_status_card(**spec)
+        if png is None:
+            raise RuntimeError("no usable font found; cannot draw the cards")
+        (out_dir / name).write_bytes(png)
+        written.append(name)
     prune_stale_files(out_dir, set(written), pattern="*.png", label="og cards")
     return written
 

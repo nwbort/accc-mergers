@@ -163,7 +163,8 @@ scheduled runs always post).
 
 The post is a headline and the email's summary paragraph (the lede), with
 the link card pointing at [/digest](https://mergers.fyi/digest) and the
-site-wide `og-image.png`:
+digest's own card, `og/weekly-digest.png` (drawn by `og_cards.py` with the
+milestone cards, from its `PAGE_CARDS`):
 
 ```
 42 deals cleared, 4 new ones notified: your week in Australian mergers

@@ -327,6 +327,18 @@ describe('STATIC_PAGE_META', () => {
     }
   });
 
+  it('points every page card at a committed file under public/og/', () => {
+    // Drawn by scripts/generate/og_cards.py (PAGE_CARDS); a renamed or
+    // undrawn card would unfurl as a broken image.
+    expect(STATIC_PAGE_META['/digest'].image).toBe(`${SITE_URL}/og/weekly-digest.png`);
+    for (const [path, meta] of Object.entries(STATIC_PAGE_META)) {
+      if (!meta.image) continue;
+      const prefix = `${SITE_URL}/og/`;
+      expect(meta.image.startsWith(prefix), `${path} image`).toBe(true);
+      expect(() => readFixture(`public/og/${meta.image.slice(prefix.length)}`), `${path} card`).not.toThrow();
+    }
+  });
+
   it('never repeats the site name in a title', () => {
     // <SEO> appends " | Australian Merger Tracker"; a title carrying the brand
     // already would render it twice.
