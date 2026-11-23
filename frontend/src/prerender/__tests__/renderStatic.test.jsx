@@ -21,7 +21,7 @@ describe('renderStaticRoute', () => {
     const html = renderFooter();
     expect(html).toMatch(/<footer[\s>]/);
     expect(html).toContain('<a class="');
-    expect(html).toMatch(/<a [^>]*href="\/nick-twort"[^>]*>About the author – Nick Twort<\/a>/);
+    expect(html).toMatch(/<a [^>]*href="\/nick-twort"[^>]*>Nick Twort<\/a>/);
   });
 
   it('renders the privacy and copyright pages', () => {

@@ -36,8 +36,7 @@ export const COMPONENT_ROUTES = Object.keys(ROUTES);
 /**
  * The site footer as static HTML, for the prerendered chrome around every
  * page. It is the real component, so its links (privacy, copyright, the author
- * page) are in the raw HTML exactly as they are once React mounts — the author
- * page is otherwise linked from nothing a crawler reads before JavaScript.
+ * page) are in the raw HTML exactly as they are once React mounts.
  *
  * @returns {string}
  */

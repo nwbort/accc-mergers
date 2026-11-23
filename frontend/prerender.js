@@ -207,7 +207,8 @@ export function setStaticFooter(html) {
 // React mounts. The bar carries the brand only — the real navbar's links are
 // interactive and stateful, and a static copy of them would go stale. The
 // footer is the real component (setStaticFooter): its links are plain ones,
-// and the author page in particular has no other link in the raw HTML.
+// so the pages they lead to (the author page among them) are linked from the
+// raw HTML of every page.
 function shell(inner, { wrap = true } = {}) {
   return (
     `<div class="min-h-screen gradient-mesh flex flex-col">` +
@@ -630,7 +631,14 @@ async function loadComponentRenderer(root, warn) {
       ssr: { noExternal: ['react-helmet-async'] },
     });
     const mod = await server.ssrLoadModule('/src/prerender/renderStatic.jsx');
-    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute, footer: mod.renderFooter() };
+    // Separately, so a footer that fails to render costs only the footer.
+    let footer = '';
+    try {
+      footer = mod.renderFooter();
+    } catch (err) {
+      warn(`prerender: could not render the footer (${err.message}); pages go without it`);
+    }
+    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute, footer };
   } catch (err) {
     warn(`prerender: could not load component renderer (${err.message}); those pages keep plain bodies`);
     return null;

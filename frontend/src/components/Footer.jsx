@@ -49,13 +49,6 @@ function Footer() {
           >
             Copyright
           </Link>
-          .{' '}
-          <Link
-            to="/nick-twort"
-            className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
-          >
-            About the author – Nick Twort
-          </Link>
           .
         </div>
       </div>
