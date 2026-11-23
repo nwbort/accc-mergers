@@ -685,10 +685,6 @@ const NICK_TWORT_PROFILE = {
       '@type': 'Place',
       address: { '@type': 'PostalAddress', addressLocality: 'Sydney', addressCountry: 'AU' },
     },
-    alumniOf: {
-      '@type': 'CollegeOrUniversity',
-      name: 'University of Auckland',
-    },
     sameAs: [
       'https://www.linkedin.com/in/nick-twort',
       'https://github.com/nwbort',

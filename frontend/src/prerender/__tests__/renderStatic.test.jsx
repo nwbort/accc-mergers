@@ -26,7 +26,6 @@ describe('renderStaticRoute', () => {
       person.name,
       person.worksFor.name,
       person.workLocation.address.addressLocality,
-      person.alumniOf.name,
       'Principal',
     ]) {
       expect(text, fact).toContain(fact);
