@@ -18,6 +18,16 @@ export const SITE_URL = 'https://mergers.fyi';
 export const SITE_TITLE = 'Australian Merger Tracker';
 export const AUTHOR_NAME = 'Nick Twort';
 
+// The author, as one schema.org entity. `@id` is what ties the site together
+// for search engines: the homepage's WebSite JSON-LD (index.html) names this
+// Person as author and creator by the same id, and each merger article's
+// author points here, so all of them resolve to the profile on /nick-twort.
+export const AUTHOR_URL = `${SITE_URL}/nick-twort`;
+export const AUTHOR_ID = `${AUTHOR_URL}#person`;
+
+/** A reference to the author, for an `author`/`creator` field elsewhere. */
+export const AUTHOR_REF = { '@type': 'Person', '@id': AUTHOR_ID, name: AUTHOR_NAME, url: AUTHOR_URL };
+
 // ANZSIC level → human label for the page subtitle, breadcrumb and description.
 export const LEVEL_LABELS = {
   division: 'Division',
@@ -132,7 +142,7 @@ export function mergerMeta(merger) {
     datePublished: merger.effective_notification_datetime,
     dateModified: modifiedTime,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    author: { '@type': 'Person', name: AUTHOR_NAME, url: SITE_URL },
+    author: AUTHOR_REF,
     publisher: {
       '@type': 'Organization',
       name: SITE_TITLE,
@@ -622,44 +632,45 @@ export function industryMeta(industry, code, indexName) {
   };
 }
 
-// Person JSON-LD for the author page. Lives here, not in NickTwort.jsx, so the
-// prerendered HTML carries it too rather than only the hydrated page.
-const NICK_TWORT_PERSON = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Nick Twort",
-  "jobTitle": "Competition Economist",
-  "description": "Australian competition economist with eight years of experience specialising in merger clearance, antitrust analysis, and regulatory economics across Australia and New Zealand.",
-  "url": "https://mergers.fyi/nick-twort",
-  "sameAs": [
-    "https://mergers.fyi"
-  ],
-  "knowsAbout": [
-    "Merger clearance",
-    "Antitrust economics",
-    "Competition policy",
-    "ACCC merger review",
-    "Market power analysis",
-    "Regulatory economics",
-    "Empirical industrial organisation",
-    "Australian Competition and Consumer Commission",
-    "New Zealand Commerce Commission",
-    "Misuse of market power",
-    "Cartel conduct",
-    "Exclusionary conduct",
-    "Access regulation",
-    "Public inquiries",
-    "Digital platforms regulation"
-  ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Competition Economist",
-    "occupationLocation": {
-      "@type": "Country",
-      "name": "Australia"
+// ProfilePage JSON-LD for the author page. Lives here, not in NickTwort.jsx,
+// so the prerendered HTML carries it too rather than only the hydrated page.
+// Keep it to what the page itself says.
+const NICK_TWORT_PROFILE = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': AUTHOR_URL,
+  url: AUTHOR_URL,
+  name: 'Nick Twort – Competition Economist',
+  isPartOf: { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, name: SITE_TITLE, url: SITE_URL },
+  mainEntity: {
+    '@type': 'Person',
+    '@id': AUTHOR_ID,
+    name: AUTHOR_NAME,
+    url: AUTHOR_URL,
+    jobTitle: 'Principal, Competition Economist',
+    description:
+      'Competition economist in Sydney advising on merger clearance, antitrust and regulatory matters in Australia and New Zealand since 2017, and creator of mergers.fyi.',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Econic Partners',
+      url: 'https://econicpartners.com',
     },
-    "skills": "Merger clearance analysis, competitive effects modelling, empirical industrial organisation, regulatory economics, antitrust advice"
-  }
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Sydney',
+      addressCountry: 'AU',
+    },
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'University of Auckland',
+    },
+    sameAs: [
+      'https://www.linkedin.com/in/nick-twort',
+      'https://github.com/nwbort',
+      'https://econicpartners.com/people/nick-twort',
+    ],
+    knowsAbout: ['Competition economics', 'Merger control', 'ACCC', 'Antitrust'],
+  },
 };
 
 /**
@@ -779,7 +790,7 @@ export const STATIC_PAGE_META = {
     type: 'profile',
     image: `${SITE_URL}/og/nick-twort.png`,
     imageAlt: 'Nick Twort, competition economist',
-    structuredData: [NICK_TWORT_PERSON],
+    structuredData: [NICK_TWORT_PROFILE],
   },
   '/privacy': {
     title: 'Privacy policy',

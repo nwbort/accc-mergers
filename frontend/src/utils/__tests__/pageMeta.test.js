@@ -4,6 +4,8 @@ import { resolve } from 'node:path';
 import { describe, it, expect } from 'vitest';
 
 import {
+  AUTHOR_ID,
+  AUTHOR_REF,
   SITE_URL,
   STATIC_PAGE_META,
   fullTitle,
@@ -15,6 +17,7 @@ import {
   mergerOgImage,
   partyMeta,
   quarterlyMeta,
+  serialiseJsonLd,
 } from '../pageMeta.js';
 import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
@@ -692,9 +695,33 @@ describe('hub page bodies', () => {
 });
 
 describe('the author page', () => {
-  it('carries its Person JSON-LD in the shared meta, so the prerender emits it', () => {
-    const [person] = STATIC_PAGE_META['/nick-twort'].structuredData;
+  it('carries its ProfilePage JSON-LD in the shared meta, so the prerender emits it', () => {
+    const [profile] = STATIC_PAGE_META['/nick-twort'].structuredData;
+    expect(profile['@type']).toBe('ProfilePage');
+    expect(profile.url).toBe('https://mergers.fyi/nick-twort');
+    const person = profile.mainEntity;
     expect(person['@type']).toBe('Person');
+    expect(person['@id']).toBe(AUTHOR_ID);
     expect(person.name).toBe('Nick Twort');
+    expect(person.url).toBe(profile.url);
+    expect(person.worksFor).toMatchObject({ '@type': 'Organization', name: 'Econic Partners' });
+    expect(person.sameAs).toContain('https://www.linkedin.com/in/nick-twort');
+    // Round-trips as JSON (no functions, cycles or undefined values).
+    expect(JSON.parse(serialiseJsonLd(profile))).toEqual(profile);
+  });
+
+  it('is who the homepage WebSite JSON-LD names as author and creator', () => {
+    // index.html is hand-written, so pin its JSON-LD to the shared Person.
+    const html = readFileSync(resolve(__dirname, '../../../index.html'), 'utf8');
+    const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+    const site = blocks.map(([, json]) => JSON.parse(json)).find((d) => d['@type'] === 'WebSite');
+    expect(site).toBeTruthy();
+    expect(site.author).toEqual(AUTHOR_REF);
+    expect(site.creator).toEqual(AUTHOR_REF);
+  });
+
+  it('is the author of every merger article', () => {
+    const [article] = mergerMeta({ merger_id: 'MN-1', merger_name: 'A - B' }).structuredData;
+    expect(article.author).toEqual(AUTHOR_REF);
   });
 });
