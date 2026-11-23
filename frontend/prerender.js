@@ -192,10 +192,22 @@ function headerCard(title, subtitle, extra = '') {
   );
 }
 
+// The real <Footer>, rendered once per build by src/prerender/renderStatic.jsx
+// (see setStaticFooter). Empty until then, and if that renderer fails to load,
+// so a rendering problem drops the footer rather than failing the deploy.
+let staticFooter = '';
+
+/** Set the footer HTML every prerendered page's chrome carries. */
+export function setStaticFooter(html) {
+  staticFooter = html || '';
+}
+
 // Mirrors App.jsx's shell: the gradient background, and a fixed bar matching
 // the navbar's height so content sits at the same offset before and after
 // React mounts. The bar carries the brand only — the real navbar's links are
-// interactive and stateful, and a static copy of them would go stale.
+// interactive and stateful, and a static copy of them would go stale. The
+// footer is the real component (setStaticFooter): its links are plain ones,
+// and the author page in particular has no other link in the raw HTML.
 function shell(inner, { wrap = true } = {}) {
   return (
     `<div class="min-h-screen gradient-mesh flex flex-col">` +
@@ -207,6 +219,7 @@ function shell(inner, { wrap = true } = {}) {
     `<main id="main-content" class="flex-grow pt-16">` +
     (wrap ? `<div class="${PAGE_WRAP}">${inner}</div>` : inner) +
     `</main>` +
+    staticFooter +
     `</div>`
   );
 }
@@ -557,7 +570,7 @@ async function loadComponentRenderer(root, warn) {
       ssr: { noExternal: ['react-helmet-async'] },
     });
     const mod = await server.ssrLoadModule('/src/prerender/renderStatic.jsx');
-    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute };
+    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute, footer: mod.renderFooter() };
   } catch (err) {
     warn(`prerender: could not load component renderer (${err.message}); those pages keep plain bodies`);
     return null;
@@ -582,6 +595,9 @@ export default function prerenderMergers() {
     },
     async closeBundle() {
       const template = readFileSync(join(outDir, 'index.html'), 'utf8');
+      // Loaded first: every page's chrome carries the rendered footer.
+      const componentPages = await loadComponentRenderer(root, (msg) => this.warn(msg));
+      setStaticFooter(componentPages?.footer);
       const dataDir = join(publicDir, 'data');
       // NOTE: scripts/check_deploy_assets.py derives this same count from the
       // data files, without running a build, to check the deployment against
@@ -775,8 +791,7 @@ export default function prerenderMergers() {
         this.warn(`prerender: skipping quarterly reports: ${err.message}`);
       }
 
-      // Pages rendered from their real components, and the hub pages' data.
-      const componentPages = await loadComponentRenderer(root, (msg) => this.warn(msg));
+      // The hub pages' data.
       const hubData = (file, key) => {
         try {
           const json = readJson(join(dataDir, file));

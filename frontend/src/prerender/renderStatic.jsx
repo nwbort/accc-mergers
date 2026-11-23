@@ -13,6 +13,7 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
+import Footer from '../components/Footer';
 import NickTwort from '../pages/NickTwort';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import Copyright from '../pages/Copyright';
@@ -31,6 +32,22 @@ const ROUTES = {
 
 /** The routes this module can render. */
 export const COMPONENT_ROUTES = Object.keys(ROUTES);
+
+/**
+ * The site footer as static HTML, for the prerendered chrome around every
+ * page. It is the real component, so its links (privacy, copyright, the author
+ * page) are in the raw HTML exactly as they are once React mounts — the author
+ * page is otherwise linked from nothing a crawler reads before JavaScript.
+ *
+ * @returns {string}
+ */
+export function renderFooter() {
+  return renderToStaticMarkup(
+    <MemoryRouter>
+      <Footer />
+    </MemoryRouter>,
+  );
+}
 
 /**
  * Render one route's page body to HTML, or null if the route isn't one of

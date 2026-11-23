@@ -27,6 +27,7 @@ import {
   mergerBody,
   partyBody,
   renderPage,
+  setStaticFooter,
   staticBody,
 } from '../../../prerender.js';
 
@@ -677,6 +678,16 @@ describe('hub page bodies', () => {
   it('wraps a component-rendered page in the chrome only', () => {
     const body = componentBody('<div class="max-w-4xl">page</div>');
     expect(body).toContain('class="flex-grow pt-16"><div class="max-w-4xl">page</div></main>');
+  });
+
+  it('closes every page with the footer once one is set', () => {
+    setStaticFooter('<footer>foot</footer>');
+    try {
+      expect(staticBody({ title: 'T', description: 'D' })).toContain('</main><footer>foot</footer></div>');
+      expect(componentBody('page')).toContain('</main><footer>foot</footer></div>');
+    } finally {
+      setStaticFooter('');
+    }
   });
 });
 

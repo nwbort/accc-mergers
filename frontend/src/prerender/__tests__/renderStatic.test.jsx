@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { COMPONENT_ROUTES, renderStaticRoute } from '../renderStatic.jsx';
+import { COMPONENT_ROUTES, renderFooter, renderStaticRoute } from '../renderStatic.jsx';
 import { STATIC_PAGE_META } from '../../utils/pageMeta.js';
 
 describe('renderStaticRoute', () => {
@@ -15,6 +15,13 @@ describe('renderStaticRoute', () => {
     expect(html).toContain('Overview');
     // <SEO> writes to Helmet's context, never into the body markup.
     expect(html).not.toContain('application/ld+json');
+  });
+
+  it('renders the footer with a plain link to the author page', () => {
+    const html = renderFooter();
+    expect(html).toMatch(/<footer[\s>]/);
+    expect(html).toContain('<a class="');
+    expect(html).toMatch(/<a [^>]*href="\/nick-twort"[^>]*>About the author – Nick Twort<\/a>/);
   });
 
   it('renders the privacy and copyright pages', () => {
