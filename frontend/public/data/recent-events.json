@@ -1,6 +1,25 @@
 {
   "events": [
     {
+      "type": "questionnaire",
+      "title": "Phase 1 consultation",
+      "date": "2026-11-23T12:00:00Z",
+      "merger_id": "MN-10042",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Forster, NSW",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false,
+      "url_gh": "/mergers/MN-10042/Endeavour Group - retail liquor site in Forster, NSW - Questionnaire.pdf"
+    },
+    {
+      "type": "notified",
+      "title": "Merger notified to ACCC",
+      "date": "2026-11-20T12:00:00Z",
+      "merger_id": "MN-10042",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Forster, NSW",
+      "stage": "Phase 1 - initial assessment",
+      "is_waiver": false
+    },
+    {
       "type": "timeline_extension",
       "title": "Timeline extended by 5 business days \u2013 following request by parties",
       "date": "2026-11-20T12:00:00Z",
@@ -993,6 +1012,6 @@
       "is_waiver": true
     }
   ],
-  "count": 101,
+  "count": 103,
   "days_back": 14
 }

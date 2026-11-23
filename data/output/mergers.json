@@ -16893,6 +16893,152 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-site-in-forster-nsw",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Forster, NSW",
+      "status": "Under assessment",
+      "merger_id": "MN-10042",
+      "effective_notification_datetime": "2026-11-20T12:00:00Z",
+      "original_notification_datetime": "2026-11-20T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2027-01-20T12:00:00Z",
+      "page_modified_datetime": "2026-11-23T10:59:32+11:00",
+      "consultation_response_due_date": "2026-11-30T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "ENDEAVOUR GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "77 159 767 843",
+          "party_page": {
+            "id": "endeavour-group-limited",
+            "name": "Endeavour Group Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "MOJO CATERING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "81 145 610 573",
+          "party_page": {
+            "id": "mojo-catering-pty-ltd",
+            "name": "Mojo Catering Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1214",
+          "name": "Wine and Other Alcoholic Beverage Manufacturing"
+        },
+        {
+          "code": "3606",
+          "name": "Liquor and Tobacco Product Wholesaling"
+        },
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "merger_description": "Endeavour Group Limited (**Endeavour**) proposes to acquire a leasehold interest for retail space at 4-12 Breese Parade Forster, NSW 2428 (the **Proposed Site**) from Mojo Catering Pty Ltd (the **Lessor**) (the **Acquisition**).\n\nEndeavour proposes to operate a Dan Murphy's liquor store on the Proposed Site, with a trading area of approximately 814 square metres.\n\nEndeavour operates three stores in the Forster area: BWS Forster, BWS Forster Keys, BWS Tuncurry. Endeavour intends to close BWS Forster Keys and relocate the liquor licence for the proposed Dan Murphy\u2019s store.\n\nEndeavour is an Australian public company that primarily operates:\n\n* retail liquor stores nationwide under the BWS and Dan Murphy\u2019s brands\n* licensed hotel venues under the ALH Hotels banner in all state and territories. These venues are individually branded venues offering on-premises food and drinks, entertainment, gaming services and, in some cases, accommodation\n* Pinnacle Drinks,\u00a0a manufacturer and distributor of liquor products, which it distributes exclusively to the Endeavour retail and hotel network in Australia.\n\nThe Lessor is an Australian private property development company. Its main operations are located on the Mid North Coast of New South Wales. The Lessor does not have any subsidiaries and is not owned by a holding company. The Lessor does not supply wholesale or retail takeaway packaged liquor in Australia.",
+      "events": [
+        {
+          "date": "2026-11-23T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Endeavour%20Group%20-%20retail%20liquor%20site%20in%20Forster%2C%20NSW%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-10042/Endeavour Group - retail liquor site in Forster, NSW - Questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-11-20T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-10027",
+          "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
+          "acquirers": [
+            "ENDEAVOUR GROUP LIMITED"
+          ],
+          "targets": [
+            "COLAB (AUS) PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-15054",
+          "merger_name": "Endeavour Group \u2013 retail liquor store and adjacent property on Russell Island (QLD)",
+          "acquirers": [
+            "AUSTRALIAN LEISURE AND HOSPITALITY GROUP PTY LIMITED"
+          ],
+          "targets": [
+            "The trustee for Primeland Holdings Unit Trust"
+          ],
+          "status": "Under assessment"
+        },
+        {
+          "merger_id": "MN-20048",
+          "merger_name": "Endeavour Group - retail liquor site in Darch, WA",
+          "acquirers": [
+            "ENDEAVOUR GROUP LIMITED"
+          ],
+          "targets": [
+            "Furniss Link Pty Ltd as trustee for Furniss Unit Trust"
+          ],
+          "status": "Under assessment"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 212,
+        "as_of": "2026-11-20",
+        "estimated_at": "2026-11-23",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 50,
+        "min_days": 42,
+        "max_days": 59,
+        "id_issued_estimated": "2026-10-01",
+        "id_issued_before": "2026-10-09",
+        "id_issued_after": "2026-09-22",
+        "min_days_witness": "WA-10046",
+        "max_days_witness": "WA-10041",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/acurio-nepean-sydney-southwest-and-campbelltown-private-hospitals",
       "merger_name": "ACURIO - Nepean, Sydney Southwest, and Campbelltown Private Hospitals",
       "status": "Under assessment",

@@ -1,10 +1,10 @@
 {
-  "total_mergers": 333,
+  "total_mergers": 334,
   "total_waivers": 553,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 292,
-    "Under assessment": 36,
+    "Under assessment": 37,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 58
+      "count": 59
     },
     {
       "name": "Software Publishing",
@@ -76,7 +76,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 49
+      "count": 50
     },
     {
       "name": "Accommodation",
@@ -87,15 +87,25 @@
       "count": 31
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 29
+      "name": "Liquor Retailing",
+      "count": 30
     },
     {
-      "name": "Liquor Retailing",
+      "name": "Supermarket and Grocery Stores",
       "count": 29
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10042",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Forster, NSW",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-20T12:00:00Z",
+      "page_modified_datetime": "2026-11-23T10:59:32+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-85069",
       "merger_name": "Endeavour Group \u2013 retail liquor site in Cowes, VIC",
@@ -205,16 +215,6 @@
       "page_modified_datetime": "2026-11-10T16:30:26+11:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-45041",
-      "merger_name": "Lactalis \u2013 Saputo Dairy UK",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-11-10T12:00:00Z",
-      "page_modified_datetime": "2026-11-10T15:47:05+11:00",
-      "is_waiver": false,
-      "is_refiled": true
     }
   ],
   "recent_determinations": [
