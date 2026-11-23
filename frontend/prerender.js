@@ -477,6 +477,9 @@ export function renderPage(template, meta, body) {
   const headExtras = [
     `<link rel="canonical" href="${escapeHtml(canonicalUrl)}" />`,
     '<meta property="og:locale" content="en_AU" />',
+    meta.image && meta.imageAlt
+      ? `<meta property="og:image:alt" content="${escapeHtml(meta.imageAlt)}" />`
+      : '',
     type === 'article' && meta.publishedTime
       ? `<meta property="article:published_time" content="${escapeHtml(meta.publishedTime)}" />`
       : '',

@@ -16,7 +16,8 @@ names the report's version (``v2 · 2 Nov 2026``, see
 ``static_data/quarterly_versions.py``), so a saved copy says which it is.
 
 Drawn by quarterly-report.yml whenever quarterly.json or this code changes;
-``python -m scripts.generate.quarterly_pdf`` redraws from the committed JSON.
+``python -m scripts.generate.quarterly_pdf`` redraws from the committed JSON,
+along with each quarter's link-preview card (``og_cards.write_quarter_cards``).
 """
 
 import json
@@ -44,6 +45,7 @@ from reportlab.platypus import (
 )
 from xml.sax.saxutils import escape
 
+from scripts.generate import og_cards
 from scripts.generate.static_data.outputs.quarterly import format_rate, percent_change
 from scripts.generate.static_data.prune import prune_stale_files
 from scripts.paths import REPO_ROOT
@@ -775,6 +777,10 @@ def main() -> None:
     payload = json.loads((DATA_DIR / "quarterly.json").read_text(encoding="utf-8"))
     names = generate(payload, DATA_DIR / REPORTS_DIRNAME)
     print(f"✓ Drew {len(names)} quarterly report PDF(s): {', '.join(names)}")
+    # Each quarter's link-preview card follows the same data, so it is drawn
+    # here too: one entry point for everything quarterly-report.yml commits.
+    cards = og_cards.write_quarter_cards(payload)
+    print(f"✓ Drew {len(cards)} quarterly link card(s): {', '.join(cards)}")
 
 
 if __name__ == "__main__":

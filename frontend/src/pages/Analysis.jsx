@@ -506,6 +506,8 @@ function Analysis() {
         title={PAGE_META.title}
         description={PAGE_META.description}
         url="/analysis"
+        image={PAGE_META.image}
+        imageAlt={PAGE_META.imageAlt}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* The page leads straight into content, so the document's h1 is

@@ -34,7 +34,8 @@ from scripts.atproto import config as atproto_config
 from scripts.atproto.post_bluesky import CARD_DESCRIPTION_CHARS, first_sentence
 from scripts.linkedin import config
 from scripts.linkedin.text import MAX_POST_CHARS, escape, hashtag_templates, preview
-from scripts.linkedin.webhook import FALLBACK_IMAGE, deliver
+from scripts.generate.og_cards import DIGEST_CARD
+from scripts.linkedin.webhook import deliver
 
 DIGEST_URL = f"{atproto_config.SITE_URL}/digest"
 HEADLINE = "Weekly merger digest"
@@ -127,7 +128,7 @@ def payload(digest: dict) -> dict:
         "commentary_little": little,
         "url": DIGEST_URL,
         "description": first_sentence(lede, CARD_DESCRIPTION_CHARS),
-        "image_url": f"{atproto_config.SITE_URL}/{FALLBACK_IMAGE}",
+        "image_url": f"{atproto_config.SITE_URL}/og/{DIGEST_CARD}",
     }
 
 

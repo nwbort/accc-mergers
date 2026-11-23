@@ -681,6 +681,11 @@ export function quarterlyPath(quarter) {
  */
 export function quarterlyMeta(quarter) {
   const title = `Quarterly merger report \u2013 ${quarter.label}`;
+  // Its own link card, drawn by scripts/generate/og_cards.py
+  // (write_quarter_cards) under the same lower-cased url_key.
+  const image = /^[0-9]{2}Q[1-4]$/.test(quarter.url_key ?? '')
+    ? `${SITE_URL}/og/quarterly/${quarter.url_key.toLowerCase()}.png`
+    : undefined;
   const lead = (quarter.findings || []).slice(0, 2).join(' ');
   const path = quarterlyPath(quarter);
   return {
@@ -690,6 +695,8 @@ export function quarterlyMeta(quarter) {
       `Phase 2 and Tribunal reviews.${lead ? ` ${lead}` : ''}`,
     path,
     type: 'website',
+    image,
+    imageAlt: image ? `Quarterly merger report: ${quarter.label}` : undefined,
     structuredData: [
       breadcrumbSchema([{ name: 'Quarterly report', path: '/quarterly' }], quarter.label, path),
     ],
@@ -723,11 +730,15 @@ export const STATIC_PAGE_META = {
     title: 'Analysis',
     description:
       'Data-driven analysis of ACCC merger reviews: Phase 1 and Phase 2 durations, waiver processing times, clearance rates, and year-on-year determination trends.',
+    image: `${SITE_URL}/og/analysis.png`,
+    imageAlt: 'Analysis: how the ACCC reviews mergers, in numbers',
   },
   '/phase-2': {
     title: 'Phase 2 tracker',
     description:
       'Track Australian mergers under ACCC Phase 2 (detailed) assessment, with referral dates, notice-of-competition-concerns milestones and determination deadlines.',
+    image: `${SITE_URL}/og/phase-2-tracker.png`,
+    imageAlt: 'Phase 2 tracker: every ACCC Phase 2 merger review',
   },
   '/refiled-notifications': {
     title: 'Refiled notifications',
@@ -738,6 +749,8 @@ export const STATIC_PAGE_META = {
     title: 'Current status',
     description:
       'How fast the ACCC is deciding Australian merger notifications and waivers right now — recent decision times against the all-time baseline, and how they track the open caseload.',
+    image: `${SITE_URL}/og/current-status.png`,
+    imageAlt: 'Current status: how fast is the ACCC deciding right now?',
   },
   '/quarterly': {
     title: 'Quarterly report',
@@ -753,6 +766,11 @@ export const STATIC_PAGE_META = {
     title: 'Catch me up - ACCC Merger Tracker',
     description:
       'Weekly roundup of Australian merger activity: new ACCC notifications, Phase 1 clearances, Phase 2 launches, and upcoming consultation deadlines — all in one digest.',
+    // Each page's `image` is drawn by scripts/generate/og_cards.py
+    // (PAGE_CARDS); a test checks the file is committed. The LinkedIn digest
+    // post links this same card.
+    image: `${SITE_URL}/og/weekly-digest.png`,
+    imageAlt: 'Catch me up: your week in Australian mergers',
   },
   '/nick-twort': {
     title: 'Nick Twort – Competition Economist | Australian Merger & Antitrust Expert',

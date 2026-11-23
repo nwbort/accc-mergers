@@ -41,12 +41,17 @@ def decided(**overrides):
 
 
 def test_every_card_is_committed():
-    missing = [name for name in og_cards._FILES.values() if not (OG_DIR / name).is_file()]
+    missing = [name for name in og_cards.ALL_FILES if not (OG_DIR / name).is_file()]
     assert not missing, f"run `python -m scripts.generate.og_cards` to draw {missing}"
 
 
 def test_no_stray_cards_are_deployed():
-    assert {p.name for p in OG_DIR.glob("*.png")} == set(og_cards._FILES.values())
+    assert {p.name for p in OG_DIR.glob("*.png")} == set(og_cards.ALL_FILES)
+
+
+def test_the_digest_has_its_own_card():
+    assert og_cards.DIGEST_CARD in og_cards.PAGE_CARDS
+    assert og_cards.DIGEST_CARD not in og_cards._FILES.values()
 
 
 def test_every_outcome_headline_has_a_card():
@@ -129,3 +134,25 @@ def test_status_cards_render_as_open_graph_pngs(kind, headline):
     # Function's tags declare for a card.
     assert int.from_bytes(png[16:20], "big") == 2400
     assert int.from_bytes(png[20:24], "big") == 1260
+
+
+def test_every_published_quarter_has_a_committed_card():
+    payload = json.loads((og_cards.REPO_ROOT / "frontend/public/data/quarterly.json").read_text())
+    expected = {og_cards.quarter_card(q) for q in payload["quarters"]}
+    assert expected, "quarterly.json has no quarters"
+    committed = {p.name for p in og_cards.QUARTER_DIR.glob("*.png")}
+    assert committed == expected, "run `python -m scripts.generate.quarterly_pdf` to redraw them"
+
+
+def test_quarter_cards_are_named_like_the_page_path():
+    assert og_cards.quarter_card({"url_key": "26Q3", "label": "Q3 2026"}) == "26q3.png"
+
+
+def test_writing_quarter_cards_prunes_and_leaves_unchanged_files_alone(tmp_path):
+    payload = {"quarters": [{"url_key": "26Q1", "label": "Q1 2026"}]}
+    (tmp_path / "25q4.png").write_bytes(b"stale")
+    assert og_cards.write_quarter_cards(payload, tmp_path) == ["26q1.png"]
+    assert not (tmp_path / "25q4.png").exists()
+    mtime = (tmp_path / "26q1.png").stat().st_mtime_ns
+    og_cards.write_quarter_cards(payload, tmp_path)
+    assert (tmp_path / "26q1.png").stat().st_mtime_ns == mtime

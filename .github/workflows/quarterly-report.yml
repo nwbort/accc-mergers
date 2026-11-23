@@ -2,7 +2,9 @@ name: Quarterly report PDFs
 
 # Draw frontend/public/data/reports/quarterly-report-{YYYY}-Q{n}.pdf, one per
 # complete quarter, from the quarterly.json the pipeline commits (see
-# scripts/generate/quarterly_pdf.py). The /quarterly page links to them.
+# scripts/generate/quarterly_pdf.py). The /quarterly page links to them. The
+# same run draws each quarter's link-preview card into
+# frontend/public/og/quarterly/ (scripts/generate/og_cards.py).
 #
 # A workflow of its own rather than a pipeline step: the PDFs are a rendering
 # of data the pipeline has already committed, and nothing the pipeline does
@@ -24,6 +26,8 @@ on:
     paths:
       - frontend/public/data/quarterly.json
       - scripts/generate/quarterly_pdf.py
+      - scripts/generate/og_cards.py
+      - scripts/atproto/card_image.py
       - scripts/requirements.txt
       - .github/workflows/quarterly-report.yml
   workflow_dispatch:
@@ -56,25 +60,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Draw quarterly report PDFs
+      - name: Draw quarterly report PDFs and link cards
         run: python -m scripts.generate.quarterly_pdf
 
       # No "[skip ci]", unlike linkedin-share-links.yml: these files are
       # deployed, and Cloudflare Pages skips building a commit that carries it.
       # The push is made with GITHUB_TOKEN, so it does not start the pipeline
       # (or this workflow) again.
-      - name: Commit PDFs
+      - name: Commit PDFs and cards
         run: |
-          git add -A frontend/public/data/reports
+          git add -A frontend/public/data/reports frontend/public/og/quarterly
           if git diff --staged --quiet; then
             echo "Quarterly report PDFs unchanged"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update quarterly report PDFs"
+          git commit -m "Update quarterly report PDFs and link cards"
           # The pipeline may have pushed meanwhile. Its commits never touch
-          # reports/, so a rebase is always clean; retry the push if it races.
+          # reports/ or og/quarterly/, so a rebase is always clean; retry the push if it races.
           for attempt in 1 2 3; do
             git pull --rebase origin main && git push && exit 0
             sleep $((attempt * 10))

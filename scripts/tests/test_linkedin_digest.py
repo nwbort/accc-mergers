@@ -121,3 +121,11 @@ def test_a_quiet_week():
     assert li_digest.headline(_digest(deals_cleared=0, new_deals_notified=0)) == (
         "A quiet week in Australian mergers"
     )
+
+
+
+def test_the_post_shows_the_digests_own_card():
+    from scripts.generate.og_cards import DIGEST_CARD, OG_DIR
+    body = li_digest.payload(_digest())
+    assert body["image_url"] == f"https://mergers.fyi/og/{DIGEST_CARD}"
+    assert (OG_DIR / DIGEST_CARD).is_file()

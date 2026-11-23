@@ -30,6 +30,8 @@ function Phase2() {
         title={PAGE_META.title}
         description={PAGE_META.description}
         url="/phase-2"
+        image={PAGE_META.image}
+        imageAlt={PAGE_META.imageAlt}
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-6 flex items-center justify-between gap-4">
