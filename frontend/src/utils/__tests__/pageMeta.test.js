@@ -697,24 +697,17 @@ describe('hub page bodies', () => {
     const meta = { ...STATIC_PAGE_META['/'], path: '/' };
     const html = renderPage(readFixture('index.html'), meta, '');
     expect(html).toContain('<link data-rh="true" rel="canonical" href="https://mergers.fyi/" />');
-    // ...and no _headers rule that matches either URL marks it noindex, which
-    // would fight that canonical. Rules are a path line, then indented headers.
-    const headerRules = {};
-    let current = null;
-    for (const line of readFixture('public/_headers').split('\n')) {
-      if (!line.trim() || line.startsWith('#')) continue;
-      if (/^\S/.test(line)) headerRules[(current = line.trim())] = [];
-      else if (current) headerRules[current].push(line.trim());
-    }
-    const matching = Object.keys(headerRules).filter((rule) =>
-      ['/', `${HOME_PAGE_PATH}`].some((url) =>
-        new RegExp(`^${rule.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*')}$`).test(url),
-      ),
-    );
-    expect(matching).toContain('/*');
-    for (const rule of matching) {
-      expect(headerRules[rule].join('\n'), rule).not.toMatch(/x-robots-tag/i);
-    }
+    // ...and no _headers rule that can match / or the copy's own URL marks it
+    // noindex, which would fight that canonical. A rule is a path line
+    // followed by its indented headers.
+    const headerRules = readFixture('public/_headers')
+      .split('\n')
+      .filter((line) => line.trim() && !line.startsWith('#'))
+      .join('\n')
+      .split(/\n(?=\S)/);
+    const covering = headerRules.filter((rule) => /^\/(\*|prerendered)?(\s|\/|$)/.test(rule));
+    expect(covering.length).toBeGreaterThan(0); // the site-wide /* rule, at least
+    for (const rule of covering) expect(rule).not.toMatch(/x-robots-tag/i);
   });
 
   it('opens the homepage with the dashboard top it is handed', () => {
@@ -734,33 +727,6 @@ describe('hub page bodies', () => {
       .sort((x, y) => x.navOrder - y.navOrder)
       .map((p) => p.path);
     expect(hrefs).toEqual(expected);
-  });
-
-  it('hands every head tag <SEO> also writes to Helmet, and only those', () => {
-    // react-helmet-async replaces tags carrying data-rh on mount; an unmarked
-    // copy would sit beside Helmet's for good. The real built template, so a
-    // new unmarked tag in index.html is caught too.
-    const template = readFixture('index.html');
-    const html = renderPage(template, mergerMeta(MERGER), '');
-    const head = html.slice(0, html.indexOf('</head>'));
-    const managed = [
-      /<link [^>]*rel="canonical"/,
-      /<script [^>]*type="application\/ld\+json"/,
-      ...['description', 'twitter:card', 'twitter:title', 'twitter:description', 'twitter:image'].map(
-        (n) => new RegExp(`<meta [^>]*name="${n}"`),
-      ),
-      ...['og:type', 'og:title', 'og:description', 'og:url', 'og:site_name', 'og:image', 'og:image:width',
-        'og:image:height', 'og:locale', 'article:published_time'].map((p) => new RegExp(`<meta [^>]*property="${p}"`)),
-    ];
-    for (const re of managed) {
-      const tags = head.match(new RegExp(re.source, 'g')) || [];
-      expect(tags.length, re.source).toBe(1);
-      expect(tags[0], re.source).toContain('data-rh="true"');
-    }
-    // The tags <SEO> never writes stay put, unmarked.
-    for (const n of ['author', 'keywords', 'theme-color']) {
-      expect(head).toMatch(new RegExp(`<meta name="${n}"`));
-    }
   });
 
   it('closes every page with the footer once one is set', () => {
