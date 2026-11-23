@@ -84,7 +84,7 @@ export default function NickTwort() {
             >
               Econic Partners
             </a>{' '}
-            in Sydney.
+            in Sydney. He studied at the University of Auckland.
           </p>
         </section>
 

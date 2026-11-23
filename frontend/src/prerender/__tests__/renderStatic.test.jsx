@@ -17,6 +17,24 @@ describe('renderStaticRoute', () => {
     expect(html).not.toContain('application/ld+json');
   });
 
+  it('states every fact its ProfilePage JSON-LD claims', () => {
+    // Structured data should describe what the page shows, not add to it.
+    const text = renderStaticRoute('/nick-twort').replace(/<[^>]+>/g, '').replace(/&#x27;|&#39;/g, "'");
+    const person = STATIC_PAGE_META['/nick-twort'].structuredData[0].mainEntity;
+    for (const fact of [
+      person.name,
+      person.worksFor.name,
+      person.address.addressLocality,
+      person.alumniOf.name,
+      'Principal',
+    ]) {
+      expect(text, fact).toContain(fact);
+    }
+    for (const url of person.sameAs) {
+      expect(renderStaticRoute('/nick-twort'), url).toContain(`href="${url}"`);
+    }
+  });
+
   it('renders the footer with a plain link to the author page', () => {
     const html = renderFooter();
     expect(html).toMatch(/<footer[\s>]/);
