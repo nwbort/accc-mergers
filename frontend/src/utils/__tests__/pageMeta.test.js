@@ -22,6 +22,7 @@ import {
 import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
   DETAIL_SUMMARY,
+  HOME_PAGE_PATH,
   componentBody,
   homeBody,
   industriesHubBody,
@@ -682,6 +683,21 @@ describe('hub page bodies', () => {
   it('wraps a component-rendered page in the chrome only', () => {
     const body = componentBody('<div class="max-w-4xl">page</div>');
     expect(body).toContain('class="flex-grow pt-16"><div class="max-w-4xl">page</div></main>');
+  });
+
+  it('serves the stamped homepage at / through the rewrite in _redirects', () => {
+    // prerender.js writes the copy to HOME_PAGE_PATH; Pages only serves it at /
+    // because _redirects rewrites to the same path.
+    const rules = readFixture('public/_redirects')
+      .split('\n')
+      .map((line) => line.trim().split(/\s+/))
+      .filter(([from]) => from === '/');
+    expect(rules).toEqual([['/', HOME_PAGE_PATH, '200']]);
+    const meta = { ...STATIC_PAGE_META['/'], path: '/' };
+    const html = renderPage(readFixture('index.html'), meta, '');
+    expect(html).toContain('<link data-rh="true" rel="canonical" href="https://mergers.fyi/" />');
+    // ...and nothing marks it noindex, which would fight that canonical.
+    expect(readFixture('public/_headers')).not.toMatch(/prerendered|noindex/i);
   });
 
   it('gives the homepage its gist: counts, latest decisions and filings, and every section', () => {

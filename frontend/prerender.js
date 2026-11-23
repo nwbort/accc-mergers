@@ -40,7 +40,6 @@ import {
 import { industryPath, mergerPath, partyPath } from './src/utils/slug.js';
 import { partyShardName } from './src/utils/shard.js';
 import { divisionFileName } from './src/utils/industryDivision.js';
-import { HOME_PAGE_PATH } from '../functions/index.js';
 import { readIndustryNode } from './src/utils/industryNode.js';
 
 // Per-merger data files are named by matter id, e.g. MN-01016.json / WA-70017.json.
@@ -377,11 +376,15 @@ export function staticBody(meta) {
   );
 }
 
+// Where the stamped homepage is written. public/_redirects rewrites / to it
+// (see there for why it can't be dist/index.html); a test pins the two.
+export const HOME_PAGE_PATH = '/prerendered/home';
+
 // The homepage's raw-HTML body. The dashboard itself is all live data and
 // charts, so this is its gist instead: what the site is, the register's size,
 // the latest decisions and filings (from stats.json, the dashboard's own
-// source), and a link to each section with what it holds. Served at `/` by
-// functions/index.js; see there for why it isn't dist/index.html.
+// source), and a link to each section with what it holds. Served at `/` by the
+// rewrite in public/_redirects.
 const HOME_SECTIONS = [
   '/mergers',
   '/current-status',
@@ -595,8 +598,8 @@ function readJson(path) {
 //
 // The root is never written here: dist/index.html is the template every other
 // page is stamped from, and the SPA fallback for every URL without a file of
-// its own. The stamped homepage goes to HOME_PAGE_PATH instead, and
-// functions/index.js serves it at `/`.
+// its own. The stamped homepage goes to HOME_PAGE_PATH instead, which
+// public/_redirects rewrites `/` to.
 function writePage(outDir, path, html) {
   const outFile = join(outDir, `${path.replace(/^\//, '')}.html`);
   mkdirSync(dirname(outFile), { recursive: true });

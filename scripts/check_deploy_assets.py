@@ -92,7 +92,7 @@ VITE_BUILD_FILES = 60
 
 # Prerendered pages that aren't one-per-record: frontend/prerender.js walks
 # STATIC_PAGE_META (currently 14 routes, the root among them, written to
-# prerendered/home.html for functions/index.js) and Vite emits the root
+# prerendered/home.html, which public/_redirects rewrites / to) and Vite emits the root
 # index.html itself. Same tolerance argument as above — this is a dozen files,
 # not a thousand, so it is a constant rather than a JS parse.
 PRERENDERED_STATIC_PAGES = 15

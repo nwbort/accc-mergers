@@ -16,7 +16,6 @@ relative path into this directory.
 
 | Path | File | Behaviour |
 | --- | --- | --- |
-| `/` | `index.js` | The homepage, served from the copy `frontend/prerender.js` stamps at `/prerendered/home` (canonical, title, JSON-LD and a body in the raw HTML). `dist/index.html` can't carry those itself: it is also the SPA fallback for every URL without a file of its own, so it would say them for all of those too. Drops the copy's `X-Robots-Tag: noindex` (set in `public/_headers` so its own URL isn't indexed) and keeps its `ETag`, forwarding the client's `If-None-Match` for `304`s. Falls back to the plain shell if the copy is missing or anything fails. |
 | `/mergers/{mn,wa}-NNNNN[/...]` (lower-case ID) | `mergers/[matter]/[[path]].js` | `301` to the same URL with the matter ID upper-cased (the rest of the path untouched), before any other handling. |
 | `/mergers/{MN,WA}-NNNNN[/<slug>]` (link-preview bots only) | `mergers/[matter]/[[path]].js` | A minimal page of Open Graph tags for the matter, with `og:image` pointing at its generic milestone card in `/og/` (the detail file's `og_card`, else the shared `og-image.png`). Everyone else falls through to the SPA. |
 | `/mergers/{MN,WA}-NNNNN/<file>.pdf` | `mergers/[matter]/[[path]].js` | Wraps the underlying PDF in a custom viewer (`_lib/pdf-viewer.js`) on desktop browsers. Mobile UAs and `?raw=1` requests get the raw PDF straight from `env.ASSETS`; if that doesn't come back as a PDF (documents over Pages' 25 MiB limit are left out of the deployment by `scripts/build.sh`), it `302`s to the document's source URL from the matter's event data. Every form checks the file first: a byte-identical duplicate the pipeline deleted (listed in its event's `retired_url_gh`; see `scripts/document_versions.py`) `302`s to the copy that replaced it, keeping `?raw`; an undeployed document with a source URL `302`s there, and a path matching neither gets a `404` "Document not found" page in the viewer's chrome, linking back to the matter (or to `/mergers` if the matter doesn't exist) — rather than the SPA shell, which would read the filename as a slug and silently land on the matter page. |
@@ -24,8 +23,6 @@ relative path into this directory.
 
 ## Files
 
-- `index.js` — serves the prerendered homepage at `/`. Tested in
-  `frontend/src/utils/__tests__/homeFunction.test.js`.
 - `_lib/pdf-viewer.js` — Shared HTML/CSS for the PDF viewer banner
   (back link, document name, download button).
 - `data/api/[[path]].js` — serves (and, when switched on, gates) the API. Tested in
