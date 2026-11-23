@@ -652,14 +652,9 @@ const WEBSITE_SCHEMA = {
   alternateName: 'mergers.fyi',
   url: SITE_URL,
   description:
-    'Real-time database of Australian mergers reviewed by the ACCC. Search merger decisions, track review timelines, analyze industry trends, and explore public consultation documents.',
+    'A database of Australian mergers reviewed by the ACCC, updated several times a day. Search merger decisions, track review timelines, analyse industry trends, and explore public consultation documents.',
   inLanguage: 'en-AU',
   author: AUTHOR_REF,
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: { '@type': 'EntryPoint', urlTemplate: `${SITE_URL}/mergers?q={search_term_string}` },
-    'query-input': 'required name=search_term_string',
-  },
 };
 
 // ProfilePage JSON-LD for the author page. Lives here, not in NickTwort.jsx,
@@ -746,11 +741,13 @@ export function quarterlyMeta(quarter) {
 
 export const STATIC_PAGE_META = {
   '/': {
-    // Note the bare title: <SEO> appends " | Australian Merger Tracker", so a
-    // title that already carries the brand would render it twice.
     title: 'ACCC Merger Reviews & M&A Data',
+    // Brand first on the homepage. index.html (the fallback shell every page
+    // is stamped from) carries this same title and description; a test keeps
+    // the two in step.
+    documentTitle: 'Australian Merger Tracker | ACCC Merger Reviews & M&A Data',
     description:
-      'Live stats on every ACCC merger review — recent clearances, upcoming deadlines, phase durations, and determination trends across Australian industries.',
+      'Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents.',
     structuredData: [WEBSITE_SCHEMA],
   },
   '/mergers': {

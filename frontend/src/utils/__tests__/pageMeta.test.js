@@ -795,6 +795,24 @@ describe('the author page', () => {
     expect(profile.isPartOf['@id']).toBe(site['@id']);
   });
 
+  it("gives the fallback shell the homepage's own title and description", () => {
+    // index.html is what Pages serves for any URL without a file, and what
+    // bots that run no JavaScript see there, so it reads as the homepage.
+    const html = readFixture('index.html');
+    const home = STATIC_PAGE_META['/'];
+    const attr = (s) => s.replace(/&/g, '&amp;');
+    expect(html).toContain(`<title>${home.documentTitle}</title>`);
+    for (const tag of ['name="description"', 'property="og:description"', 'name="twitter:description"']) {
+      expect(html, tag).toContain(`${tag} content="${home.description}"`);
+    }
+    for (const tag of ['property="og:title"', 'name="twitter:title"']) {
+      expect(html, tag).toContain(`${tag} content="${home.documentTitle}"`);
+    }
+    // ...and the prerendered homepage says the same, escaped for HTML.
+    const page = renderPage(html, { ...home, path: '/' }, '');
+    expect(page).toContain(`<title>${attr(home.documentTitle)}</title>`);
+  });
+
   it('keeps the WebSite JSON-LD to the homepage', () => {
     // index.html is the template every page is stamped from (and the fallback
     // shell), so a block there would be on every page.

@@ -63,6 +63,7 @@ function Dashboard() {
     <>
       <SEO
         title={PAGE_META.title}
+        documentTitle={PAGE_META.documentTitle}
         description={PAGE_META.description}
         url="/"
         structuredData={PAGE_META.structuredData}
