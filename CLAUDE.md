@@ -151,7 +151,13 @@ Frontend:
 frontend/src/
 ├── main.jsx              # React root. On a prerendered page it mounts only once
 │                         #   preloadRoute has the page's chunk and first-render data, in a
-│                         #   transition, so the static HTML gives way to the page, not a spinner
+│                         #   transition, so the static HTML gives way to the page, not a spinner.
+│                         #   That first render going straight to the page leans on a React
+│                         #   internal: routes.js tags each chunk's promise fulfilled, as React
+│                         #   tags the promises it tracks, and React reads the tag. jsdom can't
+│                         #   show the difference, so after upgrading React, load a prerendered
+│                         #   page on a throttled connection in Chromium and check no spinner
+│                         #   flashes between the static page and the app
 ├── App.jsx               # Router + layout (Navbar, Footer, KeyboardShortcutsHelp)
 ├── routes.js             # Every route and its code-split page (+ any data its first render
 │                         #   waits on), read by App.jsx's <Routes> and by preloadRoute
