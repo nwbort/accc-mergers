@@ -1,6 +1,6 @@
 {
   "total_mergers": 337,
-  "total_waivers": 554,
+  "total_waivers": 555,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 293,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 527,
+    "Approved": 528,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.998194945848375,
-    "median_days": 21.0,
-    "average_business_days": 14.42418772563177,
-    "median_business_days": 15.0
+    "average_days": 20.99099099099099,
+    "median_days": 21,
+    "average_business_days": 14.418018018018017,
+    "median_business_days": 15
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 230
+      "count": 231
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75072",
+      "merger_name": "Wittington Investments & Fairfax Financial \u2013 Boots Group",
+      "determination": "Approved",
+      "determination_date": "2026-11-23T12:00:00Z",
+      "page_modified_datetime": "2026-11-23T16:41:59+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-25065",
       "merger_name": "Carlisle Health \u2013 Altus Medical Imaging",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-19T12:00:00Z",
       "page_modified_datetime": "2026-11-19T17:33:22+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15055",
-      "merger_name": "Pemba \u2013 SuperGuardian",
-      "determination": "Approved",
-      "determination_date": "2026-11-19T12:00:00Z",
-      "page_modified_datetime": "2026-11-19T17:31:31+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

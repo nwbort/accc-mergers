@@ -701,6 +701,48 @@
         "median_business_days": 18,
         "completed_count": 1
       }
+    },
+    "wittington-investments-limited": {
+      "id": "wittington-investments-limited",
+      "canonical_name": "Wittington Investments, Limited",
+      "members": [
+        {
+          "name": "Wittington Investments, Limited",
+          "identifier": "1601045",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-75072",
+            "merger_name": "Wittington Investments & Fairfax Financial \u2013 Boots Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-11-06T12:00:00Z",
+            "determination_date": "2026-11-23T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
     }
   }
 }
