@@ -35,22 +35,29 @@ const mount = () =>
 // swallow it.
 // With nothing prerendered (the SPA fallback shell) there is nothing to keep,
 // so the spinner shows at once.
-const firstAppKey = () =>
-  new Promise((resolve) => {
-    const onKey = (event) => {
-      if (!isAppKey(event)) return
-      window.removeEventListener('keydown', onKey, true)
-      resolve()
+// Resolves on the first app key; stop() removes the listener once the wait
+// has ended some other way, so it doesn't outlive its purpose.
+function firstAppKey() {
+  let onKey
+  const promise = new Promise((resolve) => {
+    onKey = (event) => {
+      if (isAppKey(event)) resolve()
     }
     window.addEventListener('keydown', onKey, true)
   })
+  return { promise, stop: () => window.removeEventListener('keydown', onKey, true) }
+}
 
 if (root.hasChildNodes()) {
+  const appKey = firstAppKey()
   Promise.race([
     preloadRoute(window.location.pathname),
     new Promise((resolve) => setTimeout(resolve, MAX_PRELOAD_WAIT_MS)),
-    firstAppKey(),
-  ]).then(() => startTransition(mount))
+    appKey.promise,
+  ]).then(() => {
+    appKey.stop()
+    startTransition(mount)
+  })
 } else {
   mount()
 }
