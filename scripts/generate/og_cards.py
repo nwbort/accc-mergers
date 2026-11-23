@@ -61,13 +61,14 @@ CARDS: tuple[tuple[str, str], ...] = (
 
 _FILES = {headline: f"{slugify(headline)}.png" for _, headline in CARDS}
 
-#: Cards for whole pages rather than milestones, keyed by file name: the
-#: weekly digest is shared on its own (LinkedIn, the email), and the shared
-#: image says nothing about it being a weekly roundup. Each is drawn with the
-#: milestone cards' layout, in the site's primary colour ("notified" is the
-#: kind that maps to it). The SPA and prerenderer name the file in
-#: ``frontend/src/utils/pageMeta.js``; the LinkedIn digest post in
-#: ``scripts/linkedin/digest.py``.
+#: Cards for whole pages rather than milestones, keyed by file name: pages
+#: people share on their own (the weekly digest on LinkedIn, the trackers in
+#: a chat), where the shared image says nothing about what the page is. Drawn
+#: with the milestone cards' layout; ``kind`` picks the colour as it does for
+#: a milestone ("notified" is the site's primary, "phase-2" amber). The SPA and
+#: prerenderer name the files in ``frontend/src/utils/pageMeta.js``
+#: (``STATIC_PAGE_META``), whose test checks each is committed; the LinkedIn
+#: digest post in ``scripts/linkedin/digest.py``.
 DIGEST_CARD = "weekly-digest.png"
 PAGE_CARDS: dict[str, dict[str, str]] = {
     DIGEST_CARD: {
@@ -76,7 +77,41 @@ PAGE_CARDS: dict[str, dict[str, str]] = {
         "headline": "Your week in Australian mergers",
         "detail": "New deals, decisions and deadlines, weekly",
     },
+    "current-status.png": {
+        "kind": "notified",
+        "kicker": "Current status",
+        "headline": "How fast is the ACCC deciding right now?",
+        "detail": "Recent decision times against the all-time baseline",
+    },
+    "phase-2-tracker.png": {
+        "kind": "phase-2",
+        "kicker": "Phase 2 tracker",
+        "headline": "Every ACCC Phase 2 merger review",
+        "detail": "Referrals, competition concerns and deadlines",
+    },
+    "analysis.png": {
+        "kind": "notified",
+        "kicker": "Analysis",
+        "headline": "How the ACCC reviews mergers, in numbers",
+        "detail": "Decision times, clearance rates and trends",
+    },
 }
+
+#: One card per quarterly report, in their own directory so the milestone and
+#: page cards' pruning never touches them (and theirs never touches those).
+#: Named by the quarter's ``url_key`` (``26Q3`` -> ``26q3.png``), which the
+#: SPA derives the same way (``quarterlyMeta`` in pageMeta.js). Unlike the
+#: rest these follow the data: quarterly.json gains a quarter once it ends, so
+#: :func:`write_quarter_cards` runs with the quarterly PDFs
+#: (``quarterly_pdf.main``, in quarterly-report.yml), which the pipeline
+#: dispatches when quarterly.json changes.
+QUARTER_DIR = OG_DIR / "quarterly"
+
+
+def quarter_card(quarter: dict) -> str:
+    """The card file name for one quarterly.json block (``26q3.png``)."""
+    return f"{quarter['url_key'].lower()}.png"
+
 
 #: Every file this module draws, milestone and page cards alike.
 ALL_FILES = (*_FILES.values(), *PAGE_CARDS)
@@ -137,6 +172,33 @@ def write_cards(out_dir: Path = OG_DIR) -> list[str]:
         (out_dir / name).write_bytes(png)
         written.append(name)
     prune_stale_files(out_dir, set(written), pattern="*.png", label="og cards")
+    return written
+
+
+def write_quarter_cards(payload: dict, out_dir: Path = QUARTER_DIR) -> list[str]:
+    """Draw a card for every quarter in quarterly.json; prune the rest.
+
+    A card is only rewritten when its bytes change, as with the PDFs, so a
+    redraw with nothing new is not a diff.
+    """
+    out_dir.mkdir(parents=True, exist_ok=True)
+    written = []
+    for quarter in payload.get("quarters", []):
+        png = render_status_card(
+            kind="notified",
+            kicker="Quarterly merger report",
+            # The quarter alone, so "Q3 2026" is never split across lines.
+            headline=quarter["label"],
+            detail="Australian mergers: volumes, outcomes and decision times",
+        )
+        if png is None:
+            raise RuntimeError("no usable font found; cannot draw the cards")
+        name = quarter_card(quarter)
+        target = out_dir / name
+        if not target.exists() or target.read_bytes() != png:
+            target.write_bytes(png)
+        written.append(name)
+    prune_stale_files(out_dir, set(written), pattern="*.png", label="quarterly og cards")
     return written
 
 

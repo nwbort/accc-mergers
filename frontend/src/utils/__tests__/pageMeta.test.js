@@ -330,13 +330,27 @@ describe('STATIC_PAGE_META', () => {
   it('points every page card at a committed file under public/og/', () => {
     // Drawn by scripts/generate/og_cards.py (PAGE_CARDS); a renamed or
     // undrawn card would unfurl as a broken image.
-    expect(STATIC_PAGE_META['/digest'].image).toBe(`${SITE_URL}/og/weekly-digest.png`);
+    for (const path of ['/digest', '/current-status', '/phase-2', '/analysis']) {
+      expect(STATIC_PAGE_META[path].image, `${path} image`).toBeTruthy();
+      expect(STATIC_PAGE_META[path].imageAlt, `${path} imageAlt`).toBeTruthy();
+    }
     for (const [path, meta] of Object.entries(STATIC_PAGE_META)) {
       if (!meta.image) continue;
       const prefix = `${SITE_URL}/og/`;
       expect(meta.image.startsWith(prefix), `${path} image`).toBe(true);
       expect(() => readFixture(`public/og/${meta.image.slice(prefix.length)}`), `${path} card`).not.toThrow();
     }
+  });
+
+  it("gives each committed quarter's page its own committed card", () => {
+    const { quarters } = JSON.parse(readFixture('public/data/quarterly.json'));
+    expect(quarters.length).toBeGreaterThan(0);
+    for (const quarter of quarters) {
+      const { image } = quarterlyMeta(quarter);
+      expect(image).toBe(`${SITE_URL}/og/quarterly/${quarter.url_key.toLowerCase()}.png`);
+      expect(() => readFixture(`public/og/quarterly/${quarter.url_key.toLowerCase()}.png`)).not.toThrow();
+    }
+    expect(quarterlyMeta({ url_key: '../x', label: 'Q1 2026' }).image).toBeUndefined();
   });
 
   it('never repeats the site name in a title', () => {

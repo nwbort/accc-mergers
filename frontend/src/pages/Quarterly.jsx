@@ -645,7 +645,14 @@ function Quarterly() {
 
   return (
     <>
-      <SEO title={meta.title} description={meta.description} url={meta.path} structuredData={meta.structuredData} />
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        url={meta.path}
+        image={meta.image}
+        imageAlt={meta.imageAlt}
+        structuredData={meta.structuredData}
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-6 flex flex-wrap items-end justify-between gap-3">
           <div>
