@@ -11,6 +11,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { useDecodedParam } from '../hooks/useDecodedParam';
 import { partyMeta } from '../utils/pageMeta';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
+import { DASHBOARD_STATS_KEY } from '../utils/dashboardStats';
 
 const ROLE_LABELS = {
   acquirer: 'As acquirer',
@@ -38,7 +39,7 @@ function PartyDetail() {
   // against the market as a whole. Non-fatal if it fails to load.
   const { data: statsData } = useFetchData(
     data ? API_ENDPOINTS.stats : null,
-    data ? { cacheKey: 'dashboard-stats' } : {}
+    data ? { cacheKey: DASHBOARD_STATS_KEY } : {}
   );
 
   // Two ways a party can be missing now: its bucket doesn't exist (nothing has

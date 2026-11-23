@@ -19,6 +19,7 @@ import { readIndustryNode, industryDivisionCacheKey } from '../utils/industryNod
 import { industryMeta } from '../utils/pageMeta';
 import { MERGER_STATUS, PHASES } from '../constants/mergerStatus';
 import { CARD, SECTION_HEADING, CARD_TITLE } from '../utils/classNames';
+import { DASHBOARD_STATS_KEY } from '../utils/dashboardStats';
 
 function IndustryDetail() {
   const decodedCode = useDecodedParam('code');
@@ -58,7 +59,7 @@ function IndustryDetail() {
   // whole, not just against its immediate parent.
   const { data: statsData } = useFetchData(
     data ? API_ENDPOINTS.stats : null,
-    data ? { cacheKey: 'dashboard-stats' } : {}
+    data ? { cacheKey: DASHBOARD_STATS_KEY } : {}
   );
 
   const { isIndustryTracked, toggleIndustryTracking } = useTracking();

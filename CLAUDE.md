@@ -149,8 +149,12 @@ Frontend:
 
 ```
 frontend/src/
-├── main.jsx              # React root
+├── main.jsx              # React root. On a prerendered page it mounts only once
+│                         #   preloadRoute has the page's chunk and first-render data, in a
+│                         #   transition, so the static HTML gives way to the page, not a spinner
 ├── App.jsx               # Router + layout (Navbar, Footer, KeyboardShortcutsHelp)
+├── routes.js             # Every route and its code-split page (+ any data its first render
+│                         #   waits on), read by App.jsx's <Routes> and by preloadRoute
 ├── config.js             # API endpoint constants, SUBSCRIBE_ENDPOINT, TURNSTILE_SITE_KEY
 ├── pages/                # Route components
 │   ├── Dashboard.jsx     # /
@@ -289,7 +293,7 @@ frontend/src/
 │                         #   other two surfaces sort by navOrder/paletteOrder.
 │                         #   constants/__tests__/navPages.test.js pins the invariants:
 │                         #   unique paths and chord keys, and every path a real route
-│                         #   in App.jsx),
+│                         #   in routes.js),
 │                         #   mergerStatus.js, appeal.js, judicialReview.js (mirrors
 │                         #   scripts/constants/judicial_review.py), regime.js, cardStyles.js,
 │                         #   chartColors.js, outcomeDotColors.js, outcomeHeader.js,

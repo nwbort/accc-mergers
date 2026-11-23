@@ -12,6 +12,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
 import { isRecentEventShown } from '../constants/recentEventTypes';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { DASHBOARD_STATS_KEY } from '../utils/dashboardStats';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -19,7 +20,7 @@ const PAGE_META = STATIC_PAGE_META['/'];
 
 function Dashboard() {
   const { data: stats, loading, error } = useFetchData(API_ENDPOINTS.stats, {
-    cacheKey: 'dashboard-stats',
+    cacheKey: DASHBOARD_STATS_KEY,
   });
   // A failed upcoming-events fetch shouldn't block the page — we just omit the
   // section. Errors are logged by the hook.
