@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { preloadRoute } from './routes'
+import { isAppKey } from './utils/appKeys'
 
 // How long a prerendered page may wait for its own page before mounting
 // anyway. The static HTML is readable meanwhile, but nothing on it is
@@ -25,23 +26,30 @@ const mount = () =>
 // Suspense fallback for a lazy page even when its chunk has already arrived,
 // where a transition sees the chunk is there (routes.js tags its promise
 // fulfilled) and renders the page outright.
-// Nothing on the static page is interactive until then, so a reader who
-// reaches for it (a tap, a click, a key: search, the menu, a shortcut) ends
-// the wait at once, taking the brief spinner over a page that ignores them.
+// The static page's links work without React, but its keyboard shortcuts
+// and anything typed need the app, so the first key that means "use the app"
+// (utils/appKeys.js) ends the wait at once, taking a brief spinner over keys
+// that do nothing. Pointer events don't: a touch scroll starts with one, and
+// ending the wait there would flash the spinner mid-scroll; a tap on a link
+// needs no app, and a mount landing between its pointerdown and click could
+// swallow it.
 // With nothing prerendered (the SPA fallback shell) there is nothing to keep,
 // so the spinner shows at once.
-const firstInteraction = () =>
+const firstAppKey = () =>
   new Promise((resolve) => {
-    for (const type of ['pointerdown', 'keydown']) {
-      window.addEventListener(type, resolve, { once: true, capture: true, passive: true })
+    const onKey = (event) => {
+      if (!isAppKey(event)) return
+      window.removeEventListener('keydown', onKey, true)
+      resolve()
     }
+    window.addEventListener('keydown', onKey, true)
   })
 
 if (root.hasChildNodes()) {
   Promise.race([
     preloadRoute(window.location.pathname),
     new Promise((resolve) => setTimeout(resolve, MAX_PRELOAD_WAIT_MS)),
-    firstInteraction(),
+    firstAppKey(),
   ]).then(() => startTransition(mount))
 } else {
   mount()
