@@ -49,3 +49,27 @@ describe('Phase2CompletedCards', () => {
     expect(screen.getByText('Under appeal')).toBeInTheDocument();
   });
 });
+
+describe('Phase2CompletedCards collapse', () => {
+  const many = (n) =>
+    Array.from({ length: n }, (_, i) => ({
+      ...matter,
+      merger_id: `MN-${String(i).padStart(4, '0')}`,
+      merger_name: `Matter ${i}`,
+    }));
+
+  it('shows nine cards from sm up before the toggle', () => {
+    const { container } = renderCards(many(12));
+    const items = [...container.querySelectorAll('li')];
+    expect(items.slice(0, 9).every((li) => li.className.includes('sm:flex') || / flex /.test(li.className))).toBe(true);
+    expect(items.slice(9).every((li) => /(^| )hidden( |$)/.test(li.className) && !li.className.includes('sm:flex'))).toBe(true);
+    expect(screen.getByRole('button', { name: /show more/i })).toBeInTheDocument();
+  });
+
+  it('hides the toggle from sm up when there are nine or fewer', () => {
+    renderCards(many(9));
+    // Still present for mobile (three cards), but hidden from sm up.
+    const toggle = screen.getByRole('button', { name: /show more/i });
+    expect(toggle.closest('div.relative.my-5').className).toContain('sm:hidden');
+  });
+});

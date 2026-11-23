@@ -7,11 +7,15 @@ import MergerCardBody, { CHIP_BASE_CLASS } from './MergerCardBody';
 
 // Solid, determination-coloured cards for completed Phase 2 matters — echoing
 // the dashboard card grids. Each card surfaces just the outcome and the time
-// the review took, laid over a colour that reflects the determination.
+// the review took, laid over a colour that reflects the determination. Nine
+// show before the toggle (three full rows on the three-column grid).
+const VISIBLE_DESKTOP = 9;
+
 function Phase2CompletedCards({ matters }) {
   return (
     <CardCollapseGrid
       items={matters}
+      visibleDesktop={VISIBLE_DESKTOP}
       getKey={(item) => item.merger_id}
       getStyle={(item) => getCardStyle({ determination: item.determination })}
       renderBody={(item, style) => {
