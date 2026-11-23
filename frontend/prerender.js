@@ -381,11 +381,13 @@ export function staticBody(meta) {
 // (see there for why it can't be dist/index.html); a test pins the two.
 export const HOME_PAGE_PATH = '/prerendered/home';
 
-// The homepage's raw-HTML body. The dashboard itself is all live data and
-// charts, so this is its gist instead: what the site is, the register's size,
-// the latest decisions and filings (from stats.json, the dashboard's own
-// source), and a link to each section with what it holds. Served at `/` by the
-// rewrite in public/_redirects.
+// The homepage's raw-HTML body: the top of the dashboard itself, rendered by
+// its own components (renderHome in src/prerender/renderStatic.jsx, passed in
+// as `top`), so what shows before React mounts is what stays once it has.
+// Below it, a link to each section with what it holds — the navbar's links
+// aren't in the static chrome — in the dashboard's own width. Without `top`
+// (no stats.json, or the renderer failed) a plain header stands in. Served at
+// `/` by the rewrite in public/_redirects.
 const HOME_SECTIONS = [
   '/mergers',
   '/current-status',
@@ -398,36 +400,28 @@ const HOME_SECTIONS = [
   '/parties',
   '/refiled-notifications',
 ];
+const HOME_WRAP = 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8';
 
-export function homeBody(meta, stats, pages) {
-  const toLinkable = (m) => ({
-    merger_id: m.merger_id,
-    merger_name: m.merger_name,
-    determination: m.determination || m.accc_determination,
-    status: m.status,
-  });
+export function homeBody(meta, top, pages) {
   const sections = HOME_SECTIONS.filter((path) => pages[path]).map(
     (path) =>
       `<a href="${escapeHtml(path)}" class="text-base font-semibold ${LINK}">${escapeHtml(pages[path].title)}</a>` +
       `<span class="block text-sm text-gray-500 mt-0.5">${escapeHtml(pages[path].description)}</span>`,
   );
-  return shell(
-    headerCard(
-      'Australian Merger Tracker',
-      '',
-      `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
-    ) +
-      statGrid([
-        ['Merger notifications', stats?.total_mergers],
-        ['Waiver applications', stats?.total_waivers],
-      ]) +
-      section('Latest determinations', mergerLinks((stats?.recent_determinations || []).map(toLinkable))) +
-      section('Recently notified', mergerLinks((stats?.recent_mergers || []).map(toLinkable))) +
-      section(
-        'Explore',
-        `<div class="${CARD} p-5"><ul class="space-y-3">${sections.map((r) => `<li>${r}</li>`).join('')}</ul></div>`,
-      ),
+  const explore = section(
+    'Explore',
+    `<div class="${CARD} p-5"><ul class="space-y-3">${sections.map((r) => `<li>${r}</li>`).join('')}</ul></div>`,
   );
+  const head =
+    top ||
+    `<div class="${HOME_WRAP} pt-8">` +
+      headerCard(
+        'Australian Merger Tracker',
+        '',
+        `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
+      ) +
+      `</div>`;
+  return shell(head + `<div class="${HOME_WRAP} pb-8">${explore}</div>`, { wrap: false });
 }
 
 // A page rendered from its real React component (src/prerender/renderStatic.jsx).
@@ -535,7 +529,11 @@ export function partiesHubBody(parties, meta) {
 // Marks a head tag as one <SEO> also writes. react-helmet-async owns every tag
 // carrying it: on mount it keeps an identical one and replaces the rest, where
 // an unmarked copy would sit beside Helmet's for good (two canonicals, the
-// JSON-LD twice). index.html marks its own the same way.
+// JSON-LD twice). index.html marks its own the same way, and only those: a
+// marked tag <SEO> doesn't write (keywords, author) would be removed on mount.
+// pageMeta.test.js checks both. JSON-LD lives in STATIC_PAGE_META, never in
+// index.html, which every page is stamped from (the WebSite block is the
+// homepage's alone).
 const RH = 'data-rh="true"';
 
 // Produce the page HTML by stamping page-specific values into the shared built
@@ -638,7 +636,7 @@ async function loadComponentRenderer(root, warn) {
     } catch (err) {
       warn(`prerender: could not render the footer (${err.message}); pages go without it`);
     }
-    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute, footer };
+    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute, home: mod.renderHome, footer };
   } catch (err) {
     warn(`prerender: could not load component renderer (${err.message}); those pages keep plain bodies`);
     return null;
@@ -906,14 +904,14 @@ export default function prerenderMergers() {
 
       for (const [path, base] of Object.entries(STATIC_PAGE_META)) {
         if (path === '/') {
-          let stats = null;
+          let top = '';
           try {
-            stats = readJson(join(dataDir, 'stats.json'));
+            if (componentPages?.home) top = componentPages.home(readJson(join(dataDir, 'stats.json')));
           } catch (err) {
-            this.warn(`prerender: stats.json unreadable (${err.message}), homepage body keeps only its links`);
+            this.warn(`prerender: homepage dashboard not rendered (${err.message}); it keeps only its links`);
           }
           const meta = { ...base, path };
-          writePage(outDir, HOME_PAGE_PATH, renderPage(template, meta, homeBody(meta, stats, STATIC_PAGE_META)));
+          writePage(outDir, HOME_PAGE_PATH, renderPage(template, meta, homeBody(meta, top, STATIC_PAGE_META)));
           counts.static++;
           continue;
         }

@@ -93,3 +93,27 @@ describe('Dashboard phase 2 determination chart', () => {
     expect(screen.queryByText('Phase 2 determinations')).not.toBeInTheDocument();
   });
 });
+
+describe('Dashboard head', () => {
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  // The prerendered homepage carries the WebSite JSON-LD marked for Helmet
+  // (data-rh), so Helmet drops it on mount unless <SEO> writes it again.
+  it('keeps the WebSite JSON-LD in the head once mounted', async () => {
+    renderDashboard(statsFixture());
+    await waitFor(() => {
+      const types = [...document.head.querySelectorAll('script[type="application/ld+json"]')]
+        .flatMap((s) => [].concat(JSON.parse(s.textContent)))
+        .map((d) => d['@type']);
+      expect(types).toContain('WebSite');
+    });
+  });
+});

@@ -685,10 +685,10 @@ const NICK_TWORT_PROFILE = {
       name: 'Econic Partners',
       url: 'https://econicpartners.com',
     },
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Sydney',
-      addressCountry: 'AU',
+    // Where he works, not where he lives: `address` on a Person reads as home.
+    workLocation: {
+      '@type': 'Place',
+      address: { '@type': 'PostalAddress', addressLocality: 'Sydney', addressCountry: 'AU' },
     },
     alumniOf: {
       '@type': 'CollegeOrUniversity',
@@ -749,9 +749,6 @@ export const STATIC_PAGE_META = {
     // Note the bare title: <SEO> appends " | Australian Merger Tracker", so a
     // title that already carries the brand would render it twice.
     title: 'ACCC Merger Reviews & M&A Data',
-    // Brand first on the homepage, as its <title> has always read in the raw
-    // HTML (and so in search results).
-    documentTitle: 'Australian Merger Tracker | ACCC Merger Reviews & M&A Data',
     description:
       'Live stats on every ACCC merger review — recent clearances, upcoming deadlines, phase durations, and determination trends across Australian industries.',
     structuredData: [WEBSITE_SCHEMA],

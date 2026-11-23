@@ -8,6 +8,8 @@ const MAX_SEEN_ITEMS = 100; // Limit to prevent unbounded growth
 export function getSeenItems() {
   // Guarded like TrackingContext's localStorage reads: a corrupted value or
   // blocked storage must degrade to "nothing seen", not throw during render.
+  // No storage at all (the build-time prerender) is a first visit, not an error.
+  if (typeof window === 'undefined') return new Set();
   try {
     const seenItems = localStorage.getItem(SEEN_ITEMS_KEY);
     return seenItems ? new Set(JSON.parse(seenItems)) : new Set();

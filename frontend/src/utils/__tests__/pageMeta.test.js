@@ -696,31 +696,39 @@ describe('hub page bodies', () => {
     const meta = { ...STATIC_PAGE_META['/'], path: '/' };
     const html = renderPage(readFixture('index.html'), meta, '');
     expect(html).toContain('<link data-rh="true" rel="canonical" href="https://mergers.fyi/" />');
-    // ...and nothing marks it noindex, which would fight that canonical.
-    expect(readFixture('public/_headers')).not.toMatch(/prerendered|noindex/i);
+    // ...and no _headers rule that matches either URL marks it noindex, which
+    // would fight that canonical. Rules are a path line, then indented headers.
+    const headerRules = {};
+    let current = null;
+    for (const line of readFixture('public/_headers').split('\n')) {
+      if (!line.trim() || line.startsWith('#')) continue;
+      if (/^\S/.test(line)) headerRules[(current = line.trim())] = [];
+      else if (current) headerRules[current].push(line.trim());
+    }
+    const matching = Object.keys(headerRules).filter((rule) =>
+      ['/', `${HOME_PAGE_PATH}`].some((url) =>
+        new RegExp(`^${rule.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*')}$`).test(url),
+      ),
+    );
+    expect(matching).toContain('/*');
+    for (const rule of matching) {
+      expect(headerRules[rule].join('\n'), rule).not.toMatch(/x-robots-tag/i);
+    }
   });
 
-  it('gives the homepage its gist: counts, latest decisions and filings, and every section', () => {
+  it('opens the homepage with the dashboard top it is handed, then links every section', () => {
     const meta = { ...STATIC_PAGE_META['/'], path: '/' };
-    const body = homeBody(
-      meta,
-      {
-        total_mergers: 337,
-        total_waivers: 555,
-        recent_determinations: [{ merger_id: 'MN-01037', merger_name: 'Anglo American - Teck Resources', determination: 'Approved' }],
-        recent_mergers: [{ merger_id: 'WA-10010', merger_name: 'Enverus - Spatial', status: 'Under assessment' }],
-      },
-      STATIC_PAGE_META,
-    );
-    expect(body).toMatch(/<h1[^>]*>Australian Merger Tracker<\/h1>/);
-    expect(body).toContain('>337<');
-    expect(body).toContain('href="/mergers/MN-01037/anglo-american-teck-resources"');
-    expect(body).toContain('href="/mergers/WA-10010/enverus-spatial"');
+    const top = '<div class="max-w-7xl"><h1 class="sr-only">dashboard</h1></div>';
+    const body = homeBody(meta, top, STATIC_PAGE_META);
+    expect(body).toContain(`<main id="main-content" class="flex-grow pt-16">${top}`);
     for (const path of ['/mergers', '/phase-2', '/analysis', '/current-status', '/quarterly']) {
       expect(body).toContain(`href="${path}"`);
     }
-    // No stats.json: the section links still stand.
-    expect(homeBody(meta, null, STATIC_PAGE_META)).toContain('href="/mergers"');
+    // Without the dashboard (no stats.json, or no renderer) a plain header
+    // stands in, and the section links still do.
+    const plain = homeBody(meta, '', STATIC_PAGE_META);
+    expect(plain).toMatch(/<h1[^>]*>Australian Merger Tracker<\/h1>/);
+    expect(plain).toContain('href="/mergers"');
   });
 
   it('hands every head tag <SEO> also writes to Helmet, and only those', () => {
@@ -796,7 +804,6 @@ describe('the author page', () => {
       const types = (meta.structuredData || []).map((d) => d['@type']);
       expect(types, path).not.toContain('WebSite');
     }
-    expect(readFixture('src/pages/Dashboard.jsx')).toContain('structuredData={PAGE_META.structuredData}');
   });
 
   it('is the author of every merger article', () => {

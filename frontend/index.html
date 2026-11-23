@@ -22,12 +22,7 @@
       })();
     </script>
 
-    <!-- SEO Meta Tags. The tags marked data-rh="true" are the ones <SEO>
-         (react-helmet-async) also writes: the mark hands them to Helmet, which
-         replaces them on mount instead of adding a second copy beside each.
-         prerender.js stamps its own (canonical, JSON-LD, ...) the same way.
-         Unmarked tags (keywords, author) are left alone. The WebSite JSON-LD
-         is the homepage's alone: STATIC_PAGE_META['/'] in utils/pageMeta.js. -->
+    <!-- SEO Meta Tags (data-rh: see RH in prerender.js) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta data-rh="true" name="description" content="Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents." />
     <meta name="keywords" content="ACCC, mergers, acquisitions, Australia, competition, antitrust, merger review, corporate mergers" />

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { FaMagnifyingGlass, FaStopwatch, FaChartLine } from 'react-icons/fa6';
-import StatCard from '../components/StatCard';
+import DashboardStats from '../components/DashboardStats';
 import OutcomeSummaryCards from '../components/OutcomeSummaryCards';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
@@ -15,8 +14,6 @@ import { API_ENDPOINTS } from '../config';
 import { getCalendarDaysUntil, isEventPast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
-import { formatMedian } from '../utils/formatMedian';
-import { MERGER_STATUS } from '../constants/mergerStatus';
 import { isRecentEventShown } from '../constants/recentEventTypes';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 
@@ -66,53 +63,13 @@ function Dashboard() {
     <>
       <SEO
         title={PAGE_META.title}
-        documentTitle={PAGE_META.documentTitle}
         description={PAGE_META.description}
         url="/"
         structuredData={PAGE_META.structuredData}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
       <h1 className="sr-only">Australian merger tracker dashboard</h1>
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-        <StatCard
-          title="Mergers"
-          value={`${stats.by_status[MERGER_STATUS.UNDER_ASSESSMENT] || 0} under assessment`}
-          subtitle={`${stats.total_mergers} notified${stats.total_waivers ? ` and ${stats.total_waivers} waiver${stats.total_waivers !== 1 ? 's' : ''}` : ''}`}
-          icon={<FaMagnifyingGlass />}
-          href={`/mergers?status=${MERGER_STATUS.UNDER_ASSESSMENT}`}
-        />
-        <StatCard
-          title="Average phase 1 duration"
-          value={
-            stats.phase_duration.average_business_days
-              ? `${Math.round(stats.phase_duration.average_business_days)} business days`
-              : 'N/A'
-          }
-          subtitle={
-            stats.phase_duration.average_days
-              ? `${Math.round(stats.phase_duration.average_days)} calendar days`
-              : null
-          }
-          icon={<FaStopwatch />}
-          href="/analysis"
-        />
-        <StatCard
-          title="Median phase 1 duration"
-          value={
-            stats.phase_duration.median_business_days
-              ? `${formatMedian(stats.phase_duration.median_business_days)} business days`
-              : 'N/A'
-          }
-          subtitle={
-            stats.phase_duration.median_days
-              ? `${formatMedian(stats.phase_duration.median_days)} calendar days`
-              : null
-          }
-          icon={<FaChartLine />}
-          href="/analysis"
-        />
-      </div>
+      <DashboardStats stats={stats} />
 
       <PromoStack promos={DASHBOARD_PROMOS} />
 

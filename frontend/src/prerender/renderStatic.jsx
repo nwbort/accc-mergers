@@ -13,7 +13,12 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
+import DashboardStats from '../components/DashboardStats';
 import Footer from '../components/Footer';
+import PromoStack from '../components/PromoStack';
+import { DASHBOARD_PROMOS } from '../constants/promo';
+import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
+import RecentMergersCards from '../components/RecentMergersCards';
 import NickTwort from '../pages/NickTwort';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import Copyright from '../pages/Copyright';
@@ -44,6 +49,41 @@ export function renderFooter() {
   return renderToStaticMarkup(
     <MemoryRouter>
       <Footer />
+    </MemoryRouter>,
+  );
+}
+
+/**
+ * The top of the dashboard as static HTML, for the prerendered homepage: its
+ * heading, stat cards, promos and the recent determination and notification cards,
+ * drawn by the dashboard's own components from stats.json — the file the
+ * dashboard itself loads. What a visitor sees before React mounts is then the
+ * page they get, not a stand-in for it, and the cards label waivers and
+ * Tribunal appeals exactly as the dashboard does. The rest of the dashboard
+ * (charts, timelines) is left to the SPA. Promos render as a first-time
+ * visitor sees them: nothing dismissed, any timed wording as of the build.
+ *
+ * @param {object} stats - parsed stats.json
+ * @returns {string}
+ */
+export function renderHome(stats) {
+  return renderToStaticMarkup(
+    <MemoryRouter initialEntries={['/']}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 className="sr-only">Australian merger tracker dashboard</h1>
+        <DashboardStats stats={stats} />
+        <PromoStack promos={DASHBOARD_PROMOS} />
+        {stats.recent_determinations && (
+          <div className="mb-8">
+            <RecentDeterminationsCards determinations={stats.recent_determinations} />
+          </div>
+        )}
+        {stats.recent_mergers && (
+          <div className="mb-8">
+            <RecentMergersCards mergers={stats.recent_mergers} />
+          </div>
+        )}
+      </div>
     </MemoryRouter>,
   );
 }
