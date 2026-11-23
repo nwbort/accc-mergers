@@ -16,6 +16,9 @@
           var link = document.createElement('link');
           link.rel = 'preload';
           link.as = 'fetch';
+          // fetch() requests in CORS mode, even same-origin; a fetch preload
+          // only matches it with crossorigin set, or the file downloads twice.
+          link.crossOrigin = 'anonymous';
           link.href = paths[i];
           document.head.appendChild(link);
         }
