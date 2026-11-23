@@ -85,7 +85,8 @@ for the matter's latest milestone — 16 committed PNGs in `frontend/public/og/`
 drawn by `scripts/generate/og_cards.py`, which also writes each detail file's
 `og_card` for the Pages Function, prerenderer and SPA to read. The same module
 draws whole-page cards (`PAGE_CARDS`: /digest, /current-status, /phase-2,
-/analysis, named in `STATIC_PAGE_META`) and one per quarterly report
+/analysis, and /nick-twort with its portrait from `scripts/generate/og_assets/`,
+named in `STATIC_PAGE_META`) and one per quarterly report
 (`og/quarterly/26q3.png`, drawn with the PDFs by `quarterly-report.yml`). The links are
 sent by `linkedin-share-links.yml` after the pipeline finishes, once the live
 site serves that run's data, because LinkedIn caches whatever it scrapes first. See [`docs/linkedin.md`](docs/linkedin.md).
