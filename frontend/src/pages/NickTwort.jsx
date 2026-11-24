@@ -123,7 +123,7 @@ export default function NickTwort() {
             {[
               { matter: 'Foodstuffs North Island / Foodstuffs South Island', forum: 'New Zealand Commerce Commission' },
               { matter: 'Coles / Saputo', forum: 'ACCC' },
-              { matter: 'Woolworths / Petstock', forum: 'ACCC' },
+              { matter: 'Woolworths / Petstock', forum: 'ACCC and New Zealand Commerce Commission' },
             ].map(({ matter, forum }) => (
               <li key={matter} className="text-gray-700 leading-relaxed">
                 <span className="font-semibold text-gray-900">{matter}</span>
