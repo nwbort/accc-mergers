@@ -4,25 +4,6 @@ import { fileURLToPath } from 'node:url'
 import react from '@vitejs/plugin-react'
 import prerenderMergers from './prerender.js'
 
-// Inlines the build CSS into index.html so first paint isn't blocked on a
-// separate stylesheet round-trip. The SPA only ships one CSS chunk and it's
-// small (~10 KiB gzipped), so the size cost in HTML is acceptable.
-function inlineCss() {
-  return {
-    name: 'inline-css',
-    enforce: 'post',
-    apply: 'build',
-    transformIndexHtml(html, ctx) {
-      const linkRe = /<link rel="stylesheet"[^>]*href="\/([^"]+\.css)"[^>]*>/
-      const match = html.match(linkRe)
-      if (!match) return html
-      const asset = ctx.bundle?.[match[1]]
-      if (!asset || asset.type !== 'asset') return html
-      return html.replace(match[0], `<style>${asset.source.toString()}</style>`)
-    },
-  }
-}
-
 // Builds the browser-notification service worker (src/push/sw.js) to
 // dist/sw.js once the site is built. On its own and as one classic script,
 // not as an entry of the main build: a service worker needs a fixed URL, and
@@ -57,7 +38,7 @@ function serviceWorker() {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), inlineCss(), prerenderMergers(), serviceWorker()],
+  plugins: [react(), prerenderMergers(), serviceWorker()],
   build: {
     rollupOptions: {
       output: {

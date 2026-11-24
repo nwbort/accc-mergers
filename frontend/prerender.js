@@ -578,7 +578,7 @@ const RH = 'data-rh="true"';
 
 // Produce the page HTML by stamping page-specific values into the shared built
 // template. Tag-targeted regexes keep this resilient to unrelated changes in
-// index.html (inlined CSS, hashed script names, etc.).
+// index.html (hashed script and stylesheet names, etc.).
 export function renderPage(template, meta, body) {
   const canonicalUrl = `${SITE_URL}${meta.canonicalPath || meta.path}`;
   const title = escapeHtml(documentTitle(meta));
@@ -622,6 +622,31 @@ export function renderPage(template, meta, body) {
     .replace(/<meta[^>]* name="twitter:image"[^>]*>/, (tag) => (meta.image ? `<meta ${RH} name="twitter:image" content="${escapeHtml(meta.image)}" />` : tag))
     .replace(/<\/head>/, `    ${headExtras}\n  </head>`)
     .replace(/<div id="root"><\/div>/, `<div id="root">${body}</div>`);
+}
+
+// Swap the template's stylesheet <link> for the stylesheet itself, inline.
+//
+// Only the homepage gets this. Every other page links /assets/index-*.css,
+// which _headers serves immutable, so one download covers a whole visit and
+// every later landing; inlined, the ~66 kB stylesheet was 78% of a typical
+// party page and was re-sent on every one of ~4,900 pages (issue #1172). The
+// homepage is where first paint matters most and where most visits start, so
+// it keeps the saved round-trip. `readAsset` takes the href's path (no leading
+// slash) and returns the CSS; if the link or the file can't be found the
+// template is returned unchanged, still linking the stylesheet.
+const STYLESHEET_LINK_RE = /<link rel="stylesheet"[^>]*href="\/([^"]+\.css)"[^>]*>/;
+
+export function inlineStylesheet(template, readAsset) {
+  const match = template.match(STYLESHEET_LINK_RE);
+  if (!match) return template;
+  let css;
+  try {
+    css = readAsset(match[1]);
+  } catch {
+    return template;
+  }
+  // A function replacement, so a `$` in the CSS isn't read as a pattern.
+  return template.replace(match[0], () => `<style>${css}</style>`);
 }
 
 function readJson(path) {
@@ -961,7 +986,9 @@ export default function prerenderMergers() {
           }
           const campaigns = [...top.matchAll(/data-promo-campaign="([^"]+)"/g)].map((m) => m[1]);
           const meta = { ...base, path, headHtml: promoHideScript(campaigns) };
-          writePage(outDir, HOME_PAGE_PATH, renderPage(template, meta, homeBody(meta, top)));
+          const homeTemplate = inlineStylesheet(template, (file) => readFileSync(join(outDir, file), 'utf8'));
+          if (homeTemplate === template) this.warn('prerender: stylesheet not inlined into the homepage; it links it instead');
+          writePage(outDir, HOME_PAGE_PATH, renderPage(homeTemplate, meta, homeBody(meta, top)));
           counts.static++;
           continue;
         }
