@@ -426,9 +426,6 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   are kept. The detail file publishes only retired_url_gh, which the
 │                         #   PDF Pages Function 301s to the surviving copy. `python -m
 │                         #   scripts.document_versions [--apply]` backfills leftovers on disk
-├── deploy_skip.py        # Does a pipeline commit only move date-windowed outputs (analysis.json,
-│                         #   recent/upcoming events, sitemap.xml)? Then pipeline.yml commits it
-│                         #   with [skip ci] so Pages doesn't rebuild. Copies the build watch paths
 ├── check_deploy_assets.py # CI check: no deploy asset exceeds Cloudflare Pages' 25 MiB limit
 ├── check_watchlist.py    # CI check: has a watchlisted merger changed this run? (see docs/notifications.md)
 ├── unfreeze_mergers.py   # Unfreeze entries in data/frozen_events_mergers.json (whole merger or single events)

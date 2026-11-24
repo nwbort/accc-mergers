@@ -606,17 +606,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            # A commit whose only deployable changes are outputs cut against
-            # today's date (analysis.json's as_at, the recent/upcoming events
-            # windows) carries [skip ci], so Cloudflare Pages doesn't rebuild
-            # for them; they deploy with the next real data commit. See
-            # scripts/deploy_skip.py. workflow_run followers ignore the marker.
-            message="Update merger data: ${timestamp}"
-            if [ "$(git diff --staged --name-only | python -m scripts.deploy_skip)" = "true" ]; then
-              echo "Only date-windowed outputs changed - committing with [skip ci] so Pages doesn't deploy"
-              message="${message} [skip ci]"
-            fi
-            git commit -m "$message"
+            git commit -m "Update merger data: ${timestamp}"
 
             # Give up on this run's commit and kick off a fresh run instead.
             # It'll check out the now-current main and re-scrape/re-extract
