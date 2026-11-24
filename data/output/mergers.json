@@ -32250,15 +32250,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 36,
-        "min_days": null,
+        "estimated_days": 23,
+        "min_days": 16,
         "max_days": 43,
-        "id_issued_estimated": "2026-10-08",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-10-21",
+        "id_issued_before": "2026-10-28",
         "id_issued_after": "2026-10-01",
-        "min_days_witness": null,
+        "min_days_witness": "WA-30045",
         "max_days_witness": "WA-30042",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -110795,6 +110795,158 @@
           ],
           "targets": [
             "Revima Holding SAS"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/platinum-equity-group-%E2%80%93-trime",
+      "merger_name": "Platinum Equity Group \u2013 Trime",
+      "status": "Assessment completed",
+      "merger_id": "WA-30045",
+      "effective_notification_datetime": "2026-10-28T12:00:00Z",
+      "original_notification_datetime": "2026-10-28T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-24T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-24T17:04:10+11:00",
+      "acquirers": [
+        {
+          "name": "PE\u200d Lumen\u200d Holding\u200d IV\u200d Limited",
+          "identifier_type": null,
+          "identifier": "UK Companies House 17372925",
+          "party_page": {
+            "id": "pe-lumen-holding-iv-limited",
+            "name": "PE\u200d Lumen\u200d Holding\u200d IV\u200d Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Light Holding S.p.A.",
+          "identifier_type": null,
+          "identifier": "REA MI2675853",
+          "party_page": {
+            "id": "light-holding-s-p-a",
+            "name": "Light Holding S.p.A."
+          }
+        },
+        {
+          "name": "Trime S.r.l.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "trime-s-r-l",
+            "name": "Trime S.r.l."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Platinum Equity, LLC",
+          "identifier_type": null,
+          "identifier": "199735210052",
+          "party_page": {
+            "id": "platinum-equity-llc",
+            "name": "Platinum Equity, LLC"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2439",
+          "name": "Other Electrical Equipment Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "On 15 October 2026, PE Lumen Holding IV Limited (**PE Lumen**), a company owned and controlled by investment entities that are directly or indirectly managed and/or advised (including through intermediaries and funds) by Platinum Equity Advisors, LLC and ultimately controlled by Platinum Equity, LLC (**Platinum Equity Group**), entered into a sale and purchase agreement with the shareholders of Light Holding S.p.A. (**Light Holding** and, together with its subsidiary, Trime S.r.l.\u00a0(**Trime**)). At completion, a new Italian company to be incorporated and controlled by PE Lumen will acquire 100% of the issued share capital and voting rights in Light Holding.  \n\n  \n\nPlatinum Equity Group is a US-headquartered global private equity and investment strategies firm. It acquires and operates companies in a broad range of sectors including, for example, business services, information technology, telecommunications, logistics, metal services, manufacturing and distribution.  \n\n  \n\nPlatinum Equity Group\u2019s portfolio includes Rehlko, which manufactures and supplies mobile generators (or **gensets**) and diesel engines.\n\nTrime, a company headquartered in Italy, designs and manufactures professional machines for construction sites and rental companies worldwide. Its product portfolio includes lighting towers, gensets, security towers, hydraulic tools, as well as spare parts and services. In Australia, Trime's activities are conducted through its majority interest in PR Power, an Australian distributor of lighting towers and gensets.",
+      "events": [
+        {
+          "date": "2026-11-24T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Platinum%20Equity%20Group%20-%20Trime%20%28WA-30045%29%20-%20Notification%20waiver%20determination%20-%2024%20November%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "PE Lumen Holding IV Limited (PE Lumen) applied for a notification\nwaiver in respect of its proposed acquisition of Light Holding S.p.A\n(Light Holding and, together with its subsidiary, Trime S.r.l. (Trime)),\nas described in the transaction documents provided as part of the\napplication (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "24 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, PE Lumen, is owned and controlled by investment\nentities that are directly or indirectly managed and/or advised\n(including through intermediaries and funds) by Platinum Equity\nAdvisors, LLC and ultimately controlled by Platinum Equity, LLC\n(Platinum Equity Group). At completion, a new Italian company\n(BidCo) to be incorporated and controlled by PE Lumen will acquire\n100% of the issued share capital and voting rights in Light Holding.\nPlatinum Equity Group is a US-headquartered global private equity\nand investment strategies firm. It acquires and operates companies\nin a broad range of sectors including, for example, business services,\ninformation technology, telecommunications, logistics, metal\nservices, manufacturing and distribution.\nPlatinum Equity Group\u2019s portfolio includes Rehlko, which\nmanufactures and supplies mobile generators (or gensets) and\ndiesel engines.\nThe target, Trime, is a company headquartered in Italy that designs\nand manufactures professional machines for construction sites and\nrental companies worldwide. Its product portfolio includes lighting\ntowers, gensets, security towers, hydraulic tools, as well as spare\nparts and services.\nIn Australia, Trime\u2019s activities are conducted through its majority\ninterest in PR Power, an Australian distributor of lighting towers and\ngensets."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the parties\u2019 combined share in the supply of diesel gensets\nto customers in Australia is low and the increase in share of\nsupply arising from the Acquisition would be small\nb. there is a low risk of foreclosure or other concerning vertical\neffects given the presence of alternative suppliers of diesel\ngensets and diesel engines.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-30045/Platinum Equity Group - Trime (WA-30045) - Notification waiver determination - 24 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-10-28T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-75048",
+          "merger_name": "Platinum Equity Group \u2013 Nestl\u00e9 Waters",
+          "acquirers": [
+            "Platinum Equity, LLC",
+            "Forward I S.\u00e0 r.l."
+          ],
+          "targets": [
+            "Nestl\u00e9 S.A.",
+            "WPB JVCo S.\u00e0.r.l"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-10041",
+          "merger_name": "Platinum Equity - SuperStroke",
+          "acquirers": [
+            "Platinum Equity, LLC"
+          ],
+          "targets": [
+            "SuperStroke International, LLC",
+            "Technique Golf Investment Company, LLC"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-80020",
+          "merger_name": "Platinum Equity Group - LMPG",
+          "acquirers": [
+            "Fos Acquisition Corporation"
+          ],
+          "targets": [
+            "LMPG Inc."
           ],
           "accc_determination": "Approved"
         }
