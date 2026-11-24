@@ -131,6 +131,13 @@ jobs:
       - name: Run scraper
         env:
           SCRAPE_REPORT_DIR: ${{ runner.temp }}/scrape-report
+          # The matter IDs an ACCC register email named. The scraper re-crawls
+          # the listing until each one is served, since its unstable sort can
+          # drop a brand-new matter that nothing else would recover. Passed
+          # through env (never interpolated): it is inbound-email content, and
+          # scripts/scrape/expected_matters.py drops anything not shaped like a
+          # case number.
+          SCRAPE_EXPECT_IDS: ${{ github.event.client_payload.matter_ids }}
         run: |
           chmod +x ./scripts/scrape/scrape.sh
           if [ "${{ inputs.all_mergers }}" = "true" ]; then

@@ -446,6 +446,11 @@ scripts/                  # A Python package — entry points run as `python -m 
 ├── scrape/
 │   ├── scrape.sh         # Bash wrapper using pup to scrape ACCC register
 │   ├── scrape_targets.py # Decide which matters need re-scraping
+│   ├── expected_matters.py # Which matter IDs the triggering email named that the
+│                         #   listing hasn't served (case numbers read off the cards);
+│                         #   scrape.sh re-crawls the listing until none are missing,
+│                         #   since a new matter its unstable sort drops has no stored
+│                         #   URL for scrape_targets to recover
 │   ├── scrape_summary.py # Human-readable summary of a scrape run for the Actions log
 │   ├── scrape_tribunal.py # Scrape Australian Competition Tribunal matter pages (drives a
 │                         #   real Chrome via nodriver; deps in requirements-tribunal.txt)
