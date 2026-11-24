@@ -133,9 +133,10 @@ jobs:
           SCRAPE_REPORT_DIR: ${{ runner.temp }}/scrape-report
           # The matter IDs an ACCC register email named. The scraper re-crawls
           # the listing until each one is served, since its unstable sort can
-          # drop a brand-new matter that nothing else would recover. Passed
+          # drop a brand-new matter that nothing else would recover, and
+          # fetches each even past cutoff, since the email says it changed. Passed
           # through env (never interpolated): it is inbound-email content, and
-          # scripts/scrape/expected_matters.py drops anything not shaped like a
+          # scripts.cutoff.parse_matter_ids drops anything not shaped like a
           # case number.
           SCRAPE_EXPECT_IDS: ${{ github.event.client_payload.matter_ids }}
         run: |
@@ -252,11 +253,16 @@ jobs:
 
       - name: Run extraction (download phase)
         if: steps.scrape-changes.outputs.changed == 'true' || github.event_name != 'schedule'
+        env:
+          # The matters the triggering email named, re-extracted even past
+          # cutoff (the scraper fetched them on the same grounds). Env, never
+          # interpolated: inbound-email content, validated by parse_matter_ids.
+          EXPECT_IDS: ${{ github.event.client_payload.matter_ids }}
         run: |
           if [ "${{ inputs.all_mergers }}" = "true" ]; then
             python -m scripts.extract_mergers --all --skip-pdf-enrich
           else
-            python -m scripts.extract_mergers --skip-pdf-enrich
+            python -m scripts.extract_mergers --skip-pdf-enrich --include-ids "$EXPECT_IDS"
           fi
 
       # --- Convert DOCX to PDF ---

@@ -26,7 +26,7 @@ from scripts.parse.parse_questionnaire import (
 )
 from scripts.normalization import normalize_determination, normalize_dashes
 from scripts.constants.site import REPO, mergers_fyi_url
-from scripts.cutoff import get_skipped_merger_ids, is_waiver_merger
+from scripts.cutoff import get_skipped_merger_ids, is_waiver_merger, parse_matter_ids
 from scripts import document_versions
 from scripts.merger_filters import save_mergers
 from scripts.date_utils import parse_text_to_iso, parse_iso_datetime
@@ -2482,6 +2482,16 @@ def main():
              'and attachment download. Used by the pipeline ahead of DOCX→PDF '
              'conversion; pair with scripts/enrich_pdfs.py for the second phase.'
     )
+    # An ACCC register email names the matters it says have changed. Cutoff
+    # assumes a decided matter has gone quiet; the email is direct evidence
+    # that this one hasn't, so it is re-extracted even past cutoff (the
+    # scraper fetched it on the same grounds; see scrape_targets.py).
+    parser.add_argument(
+        '--include-ids',
+        default='',
+        help='Merger IDs (comma/space separated) to process even if past '
+             'cutoff, e.g. the matters named in an ACCC register email'
+    )
     args = parser.parse_args()
 
     if not os.path.isdir(MATTERS_DIR):
@@ -2519,6 +2529,11 @@ def main():
     skipped_merger_ids = set()
     if not args.all:
         skipped_merger_ids = get_skipped_merger_ids(mergers_json_path)
+        included = sorted(skipped_merger_ids & set(parse_matter_ids(args.include_ids)))
+        if included:
+            skipped_merger_ids -= set(included)
+            print(f"Processing {len(included)} emailed merger(s) despite cutoff: "
+                  f"{', '.join(included)}", file=sys.stderr)
         if skipped_merger_ids:
             print(f"Skipping {len(skipped_merger_ids)} merger(s) past cutoff date "
                   "(use --all to process all mergers)", file=sys.stderr)

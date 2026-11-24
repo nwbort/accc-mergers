@@ -205,6 +205,28 @@ class TestSelectTargetsStats:
             {'merger_id': 'MN-3', 'path': f'{REGISTER}/dropped-deal'}
         ]
 
+    def test_emailed_matter_past_cutoff_is_fetched_from_the_listing(self):
+        # An ACCC email says the matter changed, so cutoff doesn't apply.
+        mergers = [_completed('MN-1', 'old-deal'), _completed('MN-2', 'other')]
+        listing = [f'{REGISTER}/old-deal', f'{REGISTER}/other']
+
+        paths, stats = select_targets(listing, mergers, include_ids=['MN-1'])
+
+        assert paths == [f'{REGISTER}/old-deal']
+        assert stats['skipped'] == 1
+        assert stats['included_mergers'] == [
+            {'merger_id': 'MN-1', 'path': f'{REGISTER}/old-deal'}
+        ]
+
+    def test_emailed_matter_past_cutoff_is_fetched_when_unlisted(self):
+        mergers = [_completed('MN-1', 'old-deal')]
+
+        paths, stats = select_targets([], mergers, include_ids=['MN-1'])
+
+        assert paths == [f'{REGISTER}/old-deal']
+        assert stats['included'] == 1
+        assert stats['skipped_unlisted'] == 0
+
     def test_counts_the_targets_returned(self):
         mergers = [_active('MN-3', 'dropped-deal')]
 

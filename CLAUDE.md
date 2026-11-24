@@ -450,7 +450,10 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   listing hasn't served (case numbers read off the cards);
 │                         #   scrape.sh re-crawls the listing until none are missing,
 │                         #   since a new matter its unstable sort drops has no stored
-│                         #   URL for scrape_targets to recover
+│                         #   URL for scrape_targets to recover. Emailed matters are
+│                         #   also scraped and extracted past cutoff (--include-ids on
+│                         #   scrape_targets and extract_mergers), since the email says
+│                         #   they changed
 │   ├── scrape_summary.py # Human-readable summary of a scrape run for the Actions log
 │   ├── scrape_tribunal.py # Scrape Australian Competition Tribunal matter pages (drives a
 │                         #   real Chrome via nodriver; deps in requirements-tribunal.txt)

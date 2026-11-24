@@ -25,23 +25,8 @@ import sys
 
 from bs4 import BeautifulSoup
 
+from scripts.cutoff import CASE_NUMBER, parse_matter_ids as parse_expected_ids
 from scripts.scrape.scrape_targets import load_mergers
-
-CASE_NUMBER = re.compile(r'^(?:MN|WA)-\d{4,6}$')
-
-
-def parse_expected_ids(raw: str) -> list[str]:
-    """Split an email's matter IDs into unique, well-formed case numbers.
-
-    Accepts any mix of commas and whitespace as separators and keeps first-seen
-    order. Anything not shaped like ``MN-12345`` or ``WA-12345`` is dropped.
-    """
-    ids = []
-    for token in re.split(r'[\s,]+', raw or ''):
-        token = token.strip().upper()
-        if CASE_NUMBER.match(token) and token not in ids:
-            ids.append(token)
-    return ids
 
 
 def listing_case_numbers(html: str) -> dict[str, str]:

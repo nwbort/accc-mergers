@@ -122,6 +122,7 @@ def render(stats: dict, fetched, failed, changed_ids) -> str:
     skipped_ids = _ids(stats.get('skipped_mergers', []))
     unlisted_ids = _ids(stats.get('skipped_unlisted_mergers', []))
     recovered_ids = _ids(stats.get('recovered_mergers', []))
+    included_ids = _ids(stats.get('included_mergers', []))
     # Only count pages we fetched this run: a page can also show as changed
     # because an earlier run left it dirty.
     changed_fetched = [i for i in fetched_ids if i in changed_ids]
@@ -134,6 +135,7 @@ def render(stats: dict, fetched, failed, changed_ids) -> str:
         f"| Skipped (past cutoff) | {stats.get('skipped', 0)} |",
         f"| Past cutoff, missing from listing | {stats.get('skipped_unlisted', 0)} |",
         f"| Recovered (missing from listing) | {stats.get('recovered', 0)} |",
+        f"| Past cutoff, fetched because emailed | {stats.get('included', 0)} |",
         f'| Pages fetched | {len(fetched)} |',
         f'| Pages changed | {len(changed_fetched)} |',
         f'| Fetch failures | {len(failed)} |',
@@ -146,6 +148,8 @@ def render(stats: dict, fetched, failed, changed_ids) -> str:
                     empty='No matter pages were fetched.')
     if recovered_ids:
         lines += _block('Recovered from outside the listing', recovered_ids)
+    if included_ids:
+        lines += _block('Past cutoff, fetched because the email named them', included_ids)
     if skipped_ids:
         lines += _block('Skipped — past cutoff, not scraped', skipped_ids)
     if unlisted_ids:

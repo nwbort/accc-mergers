@@ -23,7 +23,9 @@
 #                      space separated). The listing is re-crawled, up to
 #                      EXPECT_RECRAWLS (default 3) more times, until each is
 #                      either already in mergers.json or on a listing page.
-#                      See scripts/scrape/expected_matters.py.
+#                      See scripts/scrape/expected_matters.py. They are also
+#                      fetched even if past cutoff, since the email says they
+#                      changed.
 
 # Exit immediately if a command exits with a non-zero status.
 set -e
@@ -425,6 +427,11 @@ if [ "$SCRAPE_ALL" = true ]; then
   select_args=(--all)
 else
   select_args=()
+fi
+
+# Emailed matters are fetched even past cutoff: the email says they changed.
+if [ -n "$SCRAPE_EXPECT_IDS" ]; then
+  select_args+=(--include-ids "$SCRAPE_EXPECT_IDS")
 fi
 
 if [ -n "$SCRAPE_REPORT_DIR" ]; then
