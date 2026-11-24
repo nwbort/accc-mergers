@@ -134,7 +134,7 @@ The main ones are below. `quarterly-report.yml`, `linkedin-share-links.yml`,
 
 ### `pipeline.yml` — Main pipeline (scheduled + on push to main)
 
-The primary automated workflow. Runs end-to-end on a schedule and on every push to `main`:
+The primary automated workflow. Runs end-to-end on a schedule and on every push to `main` that touches something it reads (`scripts/`, `data/`, `atproto/`, the ACT holiday calendar, the workflow or its composite actions; the list is the `paths` filter in `pipeline.yml`). A frontend-, Functions-, Workers- or docs-only merge doesn't start it:
 
 1. **Scrape** — runs `scripts/scrape/scrape.sh` to fetch new/updated ACCC merger pages into `data/raw/matters/`
 2. **Extract** — runs `extract_mergers.py --skip-pdf-enrich` to parse new/changed matters into `data/processed/mergers.json` and download their attachments
