@@ -292,6 +292,46 @@ describe('MergerDetail party links', () => {
   });
 });
 
+describe('MergerDetail related-merger link', () => {
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  const base = () => merger([matter('ACT 3 of 2026', 'IAG', '2026-10-01', 'https://example.test/iag.pdf')]);
+
+  it("says what a pair's hand-written label says, over the generic wording", async () => {
+    renderMerger({
+      ...base(),
+      related_merger: {
+        merger_id: 'WA-10054',
+        merger_name: 'Kiwa - CSA Group',
+        relationship: 'resubmitted_as',
+        label: 'Resubmitted with a different Kiwa subsidiary as acquirer',
+      },
+    });
+
+    const link = await screen.findByRole('link', { name: /Resubmitted with a different Kiwa subsidiary/ });
+    expect(link).toHaveAttribute('href', expect.stringContaining('/mergers/WA-10054'));
+    expect(screen.queryByText('Subsequently resubmitted as a separate matter')).not.toBeInTheDocument();
+  });
+
+  it('falls back to the relationship wording without a label', async () => {
+    renderMerger({
+      ...base(),
+      related_merger: { merger_id: 'WA-35048', merger_name: 'Kiwa - CSA Group', relationship: 'resubmitted_from' },
+    });
+
+    expect(await screen.findByRole('link', { name: /Resubmission of an earlier application/ }))
+      .toHaveAttribute('href', expect.stringContaining('/mergers/WA-35048'));
+  });
+});
+
 // main.jsx preloads a prerendered page's data into dataCache before mounting
 // (routes.js); that only helps if the page reads the very entry it fills.
 describe('MergerDetail first render', () => {

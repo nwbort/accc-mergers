@@ -17,11 +17,13 @@ import { isDatePast } from './dates.js';
 // where the *tracked* merger is the earlier matter and its related merger is the
 // newer re-filed one. Tracking a merger auto-tracks its related merger only in
 // this forward direction: tracking a declined waiver / suspended matter also
-// tracks the notification it was re-filed as, but tracking the re-filed matter
+// tracks the notification it was re-filed as (and a resubmitted matter tracks
+// its resubmission), but tracking the re-filed matter
 // must NOT pull in the historical one it superseded.
 export const FORWARD_REFILE_RELATIONSHIPS = new Set([
   'refiled_as',
   'suspended_refiled_as',
+  'resubmitted_as',
 ]);
 
 // Key an event by its merger, date and title.

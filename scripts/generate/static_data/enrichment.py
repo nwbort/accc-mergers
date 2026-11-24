@@ -1327,5 +1327,10 @@ def link_related_mergers(enriched_mergers: list, related_mergers: dict) -> int:
                 'relationship': related['relationship'],
                 'merger_name': name_lookup.get(related['merger_id'], ''),
             }
+            # Hand-written link text for this side (the pair's from_label /
+            # to_label), shown on the detail page in place of the generic
+            # wording for the relationship.
+            if related.get('label'):
+                m['related_merger']['label'] = related['label']
             linked += 1
     return linked

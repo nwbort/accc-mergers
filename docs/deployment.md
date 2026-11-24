@@ -158,7 +158,7 @@ never collide with each other or with the pipeline's own commit.
 | Detector | Fix branch | Data file |
 |---|---|---|
 | `detect_duplicates.py` — duplicate event entries within a merger record | `fix/duplicate-events` | `data/processed/mergers.json` |
-| `detect_related_mergers.py` — re-filed merger pairs (declined waiver→notification, or suspended→re-filed) | `fix/related-mergers` | `data/processed/related_mergers.json` |
+| `detect_related_mergers.py` — re-filed merger pairs (declined waiver→notification, suspended→re-filed, or a same-kind resubmission) | `fix/related-mergers` | `data/processed/related_mergers.json` |
 | `detect_related_parties.py` — parties that are the same real-world entity under different names/ABNs | `fix/related-parties` | `data/processed/related_parties.json` |
 | `fix_missing_notification_dates.py` — mergers whose ACCC page never published a notification date | `fix/missing-notification-dates` | `data/known_notification_dates.json` |
 
