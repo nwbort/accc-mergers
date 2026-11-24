@@ -1,6 +1,6 @@
 {
   "total_mergers": 337,
-  "total_waivers": 558,
+  "total_waivers": 560,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 294,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 531,
+    "Approved": 533,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,9 +48,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.973118279569892,
+    "average_days": 20.980357142857144,
     "median_days": 21.0,
-    "average_business_days": 14.406810035842295,
+    "average_business_days": 14.4125,
     "median_business_days": 15.0
   },
   "top_industries": [
@@ -60,7 +60,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 110
+      "count": 111
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30046",
+      "merger_name": "OMERS \u2013 La Trobe Financial",
+      "determination": "Approved",
+      "determination_date": "2026-11-24T12:00:00Z",
+      "page_modified_datetime": "2026-11-24T17:16:59+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-75070",
+      "merger_name": "Lighthouse \u2013 Proven Air Conditioning",
+      "determination": "Approved",
+      "determination_date": "2026-11-24T12:00:00Z",
+      "page_modified_datetime": "2026-11-24T17:15:03+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-05063",
       "merger_name": "Waterfront Logistics - Monson Logistics",
       "determination": "Approved",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-20T12:00:00Z",
       "page_modified_datetime": "2026-11-20T17:39:13+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-25064",
-      "merger_name": "Adcome \u2013 IGA Allora, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-11-20T12:00:00Z",
-      "page_modified_datetime": "2026-11-20T17:29:56+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-01135",
-      "merger_name": "Vista Equity Partners \u2013 Enterprise Trust Business of HID Global Corporation",
-      "determination": "Approved",
-      "determination_date": "2026-11-20T12:00:00Z",
-      "page_modified_datetime": "2026-11-20T17:27:57+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
