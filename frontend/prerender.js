@@ -226,7 +226,15 @@ const STATIC_NAV =
 // footer is the real component (setStaticFooter): its links are plain ones,
 // so the pages they lead to (the author page among them) are linked from the
 // raw HTML of every page.
-function shell(inner, { wrap = true } = {}) {
+//
+// `page` says whether the body is the page itself, drawn by its own
+// components (componentBody, the homepage's dashboard top), or a summary for
+// crawlers that looks nothing like the live page (every other body). main.jsx
+// holds a real page on screen until the app can replace it in full; a summary
+// is hidden from visitors who run JavaScript (the js-app rule in index.css,
+// switched on by index.html's head script) and the app mounts at once, so no
+// visitor watches one layout swap for another.
+function shell(inner, { wrap = true, page = false } = {}) {
   return (
     `<div class="min-h-screen gradient-mesh flex flex-col">` +
     `<div class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">` +
@@ -235,7 +243,7 @@ function shell(inner, { wrap = true } = {}) {
     `<a href="/" class="text-lg font-bold text-primary tracking-tight">australian merger tracker</a>` +
     STATIC_NAV +
     `</div></div></div>` +
-    `<main id="main-content" class="flex-grow pt-16">` +
+    `<main id="main-content" class="flex-grow pt-16" data-prerendered="${page ? 'page' : 'summary'}">` +
     (wrap ? `<div class="${PAGE_WRAP}">${inner}</div>` : inner) +
     `</main>` +
     staticFooter +
@@ -440,14 +448,14 @@ export function homeBody(meta, top) {
           `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
         ) +
         `</div>`,
-    { wrap: false },
+    { wrap: false, page: Boolean(top) },
   );
 }
 
 // A page rendered from its real React component (src/prerender/renderStatic.jsx).
 // The component brings its own page wrapper, so only the app chrome is added.
 export function componentBody(html) {
-  return shell(html, { wrap: false });
+  return shell(html, { wrap: false, page: true });
 }
 
 // The hub pages (/mergers, /industries, /parties) draw their lists in the

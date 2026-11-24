@@ -687,7 +687,7 @@ describe('hub page bodies', () => {
 
   it('wraps a component-rendered page in the chrome only', () => {
     const body = componentBody('<div class="max-w-4xl">page</div>');
-    expect(body).toContain('class="flex-grow pt-16"><div class="max-w-4xl">page</div></main>');
+    expect(body).toContain('class="flex-grow pt-16" data-prerendered="page"><div class="max-w-4xl">page</div></main>');
   });
 
   it('serves the stamped homepage at / through the rewrite in _redirects', () => {
@@ -722,10 +722,26 @@ describe('hub page bodies', () => {
     expect(pageHeading({ title: 'Analysis' })).toBe('Analysis');
   });
 
+  // A body that is the page itself is held on screen until the app can
+  // replace it; any other is only a summary for crawlers, hidden from visitors
+  // who run JavaScript (index.css) while the app mounts at once (main.jsx).
+  it('marks which prerendered bodies are the page itself and which a summary', () => {
+    const kind = (html) => html.match(/<main [^>]*data-prerendered="(\w+)"/)?.[1];
+    expect(kind(componentBody('<p>x</p>'))).toBe('page');
+    expect(kind(homeBody({ ...STATIC_PAGE_META['/'], path: '/' }, '<p>top</p>'))).toBe('page');
+    expect(kind(homeBody({ ...STATIC_PAGE_META['/'], path: '/' }, ''))).toBe('summary');
+    expect(kind(staticBody({ title: 'T', description: 'D' }))).toBe('summary');
+    expect(kind(mergerBody(MERGER, mergerMeta(MERGER)))).toBe('summary');
+    // The pieces that act on the mark, in the files every page is built from.
+    expect(readFixture('index.html')).toMatch(/classList\.add\('js-app'\)[\s\S]*classList\.remove\('js-app'\)/);
+    expect(readFixture('src/index.css')).toMatch(/\.js-app main\[data-prerendered="summary"\] > \*\s*\{\s*display: none;/);
+    expect(readFixture('src/main.jsx')).toContain(`main[data-prerendered="page"]`);
+  });
+
   it('opens the homepage with the dashboard top it is handed', () => {
     const meta = { ...STATIC_PAGE_META['/'], path: '/' };
     const top = '<div class="max-w-7xl"><h1 class="sr-only">dashboard</h1></div>';
-    expect(homeBody(meta, top)).toContain(`<main id="main-content" class="flex-grow pt-16">${top}</main>`);
+    expect(homeBody(meta, top)).toContain(`<main id="main-content" class="flex-grow pt-16" data-prerendered="page">${top}</main>`);
     // Without the dashboard (no stats.json, or no renderer) a plain header stands in.
     expect(homeBody(meta, '')).toMatch(/<h1[^>]*>Australian Merger Tracker<\/h1>/);
   });

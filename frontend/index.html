@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
 
+    <!-- Before anything is painted: mark that this visitor runs JavaScript, so
+         index.css hides a prerendered page body that is only a summary for
+         crawlers (main[data-prerendered="summary"], see shell() in
+         prerender.js) while the app, which mounts at once on such a page,
+         draws the real one. If the app never mounts (its code failed to
+         load), the summary comes back after a few seconds. -->
+    <script>
+      document.documentElement.classList.add('js-app');
+      setTimeout(function () {
+        document.documentElement.classList.remove('js-app');
+      }, 8000);
+    </script>
+
     <!-- Warm the data fetches the Dashboard needs, but only on the homepage.
          These files aren't used by other routes, so loading them site-wide
          would waste bandwidth. The fetch() that then asks for stats.json

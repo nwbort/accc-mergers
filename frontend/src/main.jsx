@@ -33,8 +33,6 @@ const mount = () =>
 // ending the wait there would flash the spinner mid-scroll; a tap on a link
 // needs no app, and a mount landing between its pointerdown and click could
 // swallow it.
-// With nothing prerendered (the SPA fallback shell) there is nothing to keep,
-// so the spinner shows at once.
 // Resolves on the first app key; stop() removes the listener once the wait
 // has ended some other way, so it doesn't outlive its purpose.
 function firstAppKey() {
@@ -48,7 +46,13 @@ function firstAppKey() {
   return { promise, stop: () => window.removeEventListener('keydown', onKey, true) }
 }
 
-if (root.hasChildNodes()) {
+// Only a prerendered body that is the page itself is worth holding on to; a
+// summary for crawlers is hidden from visitors (index.css, js-app) and would
+// only swap for a different layout, so its page mounts at once, its code and
+// data already on their way.
+const prerenderedPage = root.querySelector('main[data-prerendered="page"]')
+
+if (prerenderedPage) {
   const appKey = firstAppKey()
   Promise.race([
     preloadRoute(window.location.pathname),
@@ -59,5 +63,6 @@ if (root.hasChildNodes()) {
     startTransition(mount)
   })
 } else {
+  if (root.hasChildNodes()) preloadRoute(window.location.pathname)
   mount()
 }
