@@ -204,6 +204,15 @@ export function setStaticFooter(html) {
   staticFooter = html || '';
 }
 
+// The navbar's right-hand controls (renderNavActions in renderStatic.jsx),
+// set the same way as the footer; empty if that render fails.
+let staticNavActions = '';
+
+/** Set the navbar controls HTML every prerendered page's top bar carries. */
+export function setStaticNavActions(html) {
+  staticNavActions = html || '';
+}
+
 // The navbar's own links, from the table the real Navbar reads (so they can't
 // go stale), styled as its unhighlighted desktop links. Shown from `lg` up
 // only: the Navbar measures its width and collapses into a "More" menu or a
@@ -239,9 +248,12 @@ function shell(inner, { wrap = true, page = false } = {}) {
     `<div class="min-h-screen gradient-mesh flex flex-col">` +
     `<div class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">` +
     `<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">` +
-    `<div class="flex items-center h-16">` +
-    `<a href="/" class="text-lg font-bold text-primary tracking-tight">australian merger tracker</a>` +
+    `<div class="flex justify-between h-16">` +
+    `<div class="flex items-center">` +
+    `<a href="/" class="flex items-center gap-2.5 group"><span class="text-lg font-bold text-primary tracking-tight">australian merger tracker</span></a>` +
     STATIC_NAV +
+    `</div>` +
+    staticNavActions +
     `</div></div></div>` +
     `<main id="main-content" class="flex-grow pt-16" data-prerendered="${page ? 'page' : 'summary'}">` +
     (wrap ? `<div class="${PAGE_WRAP}">${inner}</div>` : inner) +
@@ -666,7 +678,13 @@ async function loadComponentRenderer(root, warn) {
     } catch (err) {
       warn(`prerender: could not render the footer (${err.message}); pages go without it`);
     }
-    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute, home: mod.renderHome, footer };
+    let navActions = '';
+    try {
+      navActions = mod.renderNavActions();
+    } catch (err) {
+      warn(`prerender: could not render the navbar controls (${err.message}); pages go without them`);
+    }
+    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute, home: mod.renderHome, footer, navActions };
   } catch (err) {
     warn(`prerender: could not load component renderer (${err.message}); those pages keep plain bodies`);
     return null;
@@ -694,6 +712,7 @@ export default function prerenderMergers() {
       // Loaded first: every page's chrome carries the rendered footer.
       const componentPages = await loadComponentRenderer(root, (msg) => this.warn(msg));
       setStaticFooter(componentPages?.footer);
+      setStaticNavActions(componentPages?.navActions);
       const dataDir = join(publicDir, 'data');
       // NOTE: scripts/check_deploy_assets.py derives this same count from the
       // data files, without running a build, to check the deployment against

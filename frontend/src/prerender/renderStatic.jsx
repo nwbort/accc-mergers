@@ -15,6 +15,7 @@ import { MemoryRouter } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
 import DashboardTop, { DASHBOARD_WRAP } from '../components/DashboardTop';
 import Footer from '../components/Footer';
+import StaticNavbarActions from './StaticNavbarActions';
 import NickTwort from '../pages/NickTwort';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import Copyright from '../pages/Copyright';
@@ -46,6 +47,26 @@ export function renderFooter() {
     <MemoryRouter>
       <Footer />
     </MemoryRouter>,
+  );
+}
+
+/**
+ * The navbar's right-hand controls as static HTML, for the prerendered top
+ * bar: the full layout from lg up, the phone layout below (see
+ * StaticNavbarActions).
+ *
+ * @returns {string}
+ */
+export function renderNavActions() {
+  return renderToStaticMarkup(
+    <>
+      <div className="hidden lg:flex items-center gap-1">
+        <StaticNavbarActions compact={false} menu={false} />
+      </div>
+      <div className="flex lg:hidden items-center">
+        <StaticNavbarActions compact menu />
+      </div>
+    </>,
   );
 }
 

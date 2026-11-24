@@ -1,7 +1,8 @@
 // @vitest-environment node
 // Rendered as the build renders it: in Node, with no window or storage.
 import { describe, expect, it } from 'vitest';
-import { COMPONENT_ROUTES, renderFooter, renderHome, renderStaticRoute } from '../renderStatic.jsx';
+import { COMPONENT_ROUTES, renderFooter, renderHome, renderNavActions, renderStaticRoute } from '../renderStatic.jsx';
+import { NAVBAR_SOCIAL_PROFILE } from '../../constants/socialProfiles';
 import { STATIC_PAGE_META } from '../../utils/pageMeta.js';
 import realStats from '../../../public/data/stats.json';
 
@@ -68,6 +69,22 @@ describe('renderStaticRoute', () => {
     for (const m of [...realStats.recent_determinations, ...realStats.recent_mergers]) {
       expect(html, m.merger_id).toContain(`href="/mergers/${m.merger_id}/`);
     }
+  });
+
+  // The navbar's right-hand controls, so they don't pop in on mount: the full
+  // layout from lg up, the phone layout (with the menu button) below.
+  it("renders the navbar's controls for both its layouts", () => {
+    const html = renderNavActions();
+    const [desktop, phone] = html.split('</div><div');
+    expect(desktop).toContain('hidden lg:flex');
+    expect(phone).toContain('lg:hidden');
+    for (const layout of [desktop, phone]) {
+      expect(layout).toContain(`href="${NAVBAR_SOCIAL_PROFILE.href}"`);
+      expect(layout).toContain('aria-label="Search"');
+      expect(layout).toContain('aria-label="Notifications"');
+    }
+    expect(desktop).not.toContain('Open main menu');
+    expect(phone).toContain('aria-label="Open main menu"');
   });
 
   it('renders the footer with a plain link to the author page', () => {
