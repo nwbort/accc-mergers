@@ -18,6 +18,7 @@ import {
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL } from '../constants/appeal';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { digestFetch } from '../utils/pageData';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -306,9 +307,8 @@ function DigestSignup() {
 }
 
 function Digest() {
-  const { data: digest, loading, error } = useFetchData(API_ENDPOINTS.digest, {
-    cacheKey: 'digest',
-  });
+  const [digestKey, digestUrl] = digestFetch();
+  const { data: digest, loading, error } = useFetchData(digestUrl, { cacheKey: digestKey });
   const { hash } = useLocation();
 
   // Section anchors (e.g. /digest#mergers-referred, linked from the weekly

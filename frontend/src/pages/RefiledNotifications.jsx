@@ -8,7 +8,6 @@ import StatCard from '../components/StatCard';
 import PhaseDurationComparison from '../components/PhaseDurationComparison';
 import SEO from '../components/SEO';
 import ShowMoreDivider from '../components/ShowMoreDivider';
-import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { mergerPath } from '../utils/slug';
 import { formatDateMedium, calculateDuration } from '../utils/dates';
@@ -16,6 +15,7 @@ import { MERGER_STATUS } from '../constants/mergerStatus';
 import { CARD } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { ABOVE_LINE, BELOW_LINE, clampedLabelStyle, percentAlong } from '../utils/timelineAxis';
+import { refiledNotificationsFetch } from '../utils/pageData';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -286,7 +286,8 @@ function NotRefiledCard({ waiver }) {
 }
 
 function RefiledNotifications() {
-  const { data, loading, error } = useFetchData(API_ENDPOINTS.refiledNotifications, { cacheKey: 'refiled-notifications' });
+  const [refiledNotificationsKey, refiledNotificationsUrl] = refiledNotificationsFetch();
+  const { data, loading, error } = useFetchData(refiledNotificationsUrl, { cacheKey: refiledNotificationsKey });
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage error={error} />;

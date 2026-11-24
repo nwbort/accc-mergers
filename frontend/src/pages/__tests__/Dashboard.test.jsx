@@ -93,3 +93,109 @@ describe('Dashboard phase 2 determination chart', () => {
     expect(screen.queryByText('Phase 2 determinations')).not.toBeInTheDocument();
   });
 });
+
+describe('Dashboard head', () => {
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  // The prerendered homepage carries the WebSite JSON-LD marked for Helmet
+  // (data-rh), so Helmet drops it on mount unless <SEO> writes it again.
+  it('keeps the WebSite JSON-LD in the head once mounted', async () => {
+    renderDashboard(statsFixture());
+    await waitFor(() => {
+      const types = [...document.head.querySelectorAll('script[type="application/ld+json"]')]
+        .flatMap((s) => [].concat(JSON.parse(s.textContent)))
+        .map((d) => d['@type']);
+      expect(types).toContain('WebSite');
+    });
+  });
+});
+
+describe('Dashboard first render', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  // main.jsx preloads stats.json into dataCache before mounting (routes.js);
+  // the dashboard must read that same entry, or the spinner comes back.
+  it('renders from the entry routes.js preloads, with no spinner', async () => {
+    const { routeData } = await import('../../routes');
+    const [[cacheKey]] = routeData('/');
+    dataCache.set(cacheKey, statsFixture());
+    vi.spyOn(globalThis, 'fetch').mockRejectedValue(new Error('offline'));
+    render(
+      <HelmetProvider>
+        <MemoryRouter>
+          <Dashboard />
+        </MemoryRouter>
+      </HelmetProvider>
+    );
+    expect(screen.getByText('2 under assessment')).toBeInTheDocument();
+  });
+
+  // The event timelines sit above the charts: had either arrived after the
+  // first render, it would have pushed the charts down. The preload carries
+  // all three files, so with them in the cache the dashboard fetches nothing.
+  it('preloads the event timelines too, so nothing loads in above the charts', async () => {
+    const { routeData } = await import('../../routes');
+    const entries = routeData('/');
+    expect(entries.map(([, url]) => url)).toEqual(
+      expect.arrayContaining(['/data/stats.json', '/data/upcoming-events.json', '/data/recent-events.json']),
+    );
+    for (const [cacheKey, url] of entries) {
+      dataCache.set(cacheKey, url.endsWith('stats.json') ? statsFixture() : { events: [] });
+    }
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockRejectedValue(new Error('offline'));
+    render(
+      <HelmetProvider>
+        <MemoryRouter>
+          <Dashboard />
+        </MemoryRouter>
+      </HelmetProvider>
+    );
+    expect(screen.getByText('2 under assessment')).toBeInTheDocument();
+    const fetched = fetchSpy.mock.calls.map(([url]) => String(url));
+    for (const [, url] of entries) expect(fetched, url).not.toContain(url);
+  });
+});
+
+describe('Dashboard fade-in', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  // Last in this file: marking the app settled is one-way, as in the app.
+  it('fades in when navigated to, not when replacing the prerendered homepage', async () => {
+    const { routeData } = await import('../../routes');
+    const { markAppSettled } = await import('../../utils/appMount');
+    const [[cacheKey]] = routeData('/');
+    dataCache.set(cacheKey, statsFixture());
+    vi.spyOn(globalThis, 'fetch').mockRejectedValue(new Error('offline'));
+    const wrapper = () => screen.getByText('2 under assessment').closest('.max-w-7xl');
+    const mount = () =>
+      render(
+        <HelmetProvider>
+          <MemoryRouter>
+            <Dashboard />
+          </MemoryRouter>
+        </HelmetProvider>,
+      );
+
+    const first = mount();
+    expect(wrapper()).not.toHaveClass('animate-fade-in');
+    first.unmount();
+
+    markAppSettled();
+    mount();
+    expect(wrapper()).toHaveClass('animate-fade-in');
+  });
+});

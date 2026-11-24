@@ -15,10 +15,11 @@ import { useFetchData } from '../hooks/useFetchData';
 import { useDecodedParam } from '../hooks/useDecodedParam';
 import { useTracking } from '../context/TrackingContext';
 import { industryPath } from '../utils/slug';
-import { readIndustryNode, industryDivisionCacheKey } from '../utils/industryNode';
+import { readIndustryNode } from '../utils/industryNode';
 import { industryMeta } from '../utils/pageMeta';
 import { MERGER_STATUS, PHASES } from '../constants/mergerStatus';
 import { CARD, SECTION_HEADING, CARD_TITLE } from '../utils/classNames';
+import { DASHBOARD_STATS_KEY, industryDivisionFetch, industriesListFetch } from '../utils/pageData';
 
 function IndustryDetail() {
   const decodedCode = useDecodedParam('code');
@@ -27,10 +28,8 @@ function IndustryDetail() {
   // every node under that division, so the parent comparison below costs no
   // second request. See utils/industryDivision.js for why the files are cut
   // that way, and utils/industryNode.js for the unpacking.
-  const { data: division, loading, error } = useFetchData(
-    API_ENDPOINTS.industryDivision(decodedCode),
-    { cacheKey: industryDivisionCacheKey(decodedCode) }
-  );
+  const [divisionKey, divisionUrl] = industryDivisionFetch(decodedCode);
+  const { data: division, loading, error } = useFetchData(divisionUrl, { cacheKey: divisionKey });
   const data = useMemo(
     () => readIndustryNode(division, decodedCode),
     [division, decodedCode]
@@ -39,9 +38,8 @@ function IndustryDetail() {
   // The industries list is only a fallback for the display name on older
   // payloads — the detail file now carries its own name. A failure here
   // shouldn't block the page.
-  const { data: industriesData } = useFetchData(API_ENDPOINTS.industries, {
-    cacheKey: 'industries-list',
-  });
+  const [industriesListKey, industriesListUrl] = industriesListFetch();
+  const { data: industriesData } = useFetchData(industriesListUrl, { cacheKey: industriesListKey });
   const industries = industriesData?.industries || null;
 
   // Parent industry, for comparing Phase 1 durations against the next level
@@ -58,7 +56,7 @@ function IndustryDetail() {
   // whole, not just against its immediate parent.
   const { data: statsData } = useFetchData(
     data ? API_ENDPOINTS.stats : null,
-    data ? { cacheKey: 'dashboard-stats' } : {}
+    data ? { cacheKey: DASHBOARD_STATS_KEY } : {}
   );
 
   const { isIndustryTracked, toggleIndustryTracking } = useTracking();

@@ -7,6 +7,7 @@ const cache = new Map(); // key -> { data, fetchedAt }
 const listeners = new Map(); // key -> Set<(data) => void>
 const activeUrls = new Map(); // key -> url, for cacheKeys currently on screen
 const activeRefCounts = new Map(); // key -> number of mounted consumers
+const pendingLoads = new Map(); // key -> Promise of the data, while a preload is in flight
 
 export const dataCache = {
   get(key) {
@@ -19,6 +20,35 @@ export const dataCache = {
 
   has(key) {
     return cache.has(key);
+  },
+
+  /**
+   * Fetch `url` as JSON into `key`, sharing the request while it is in flight:
+   * routes.js preloads a page's data with it before the app mounts, and if the
+   * page mounts first (main.jsx stops waiting after a few seconds), its
+   * useFetchData waits on the same request (pending) rather than downloading
+   * the file again. Rejects as fetch does, or with the HTTP status.
+   */
+  load(key, url) {
+    if (!pendingLoads.has(key)) {
+      const request = fetch(url)
+        .then((res) => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.json();
+        })
+        .then((data) => {
+          cache.set(key, { data, fetchedAt: Date.now() });
+          return data;
+        })
+        .finally(() => pendingLoads.delete(key));
+      pendingLoads.set(key, request);
+    }
+    return pendingLoads.get(key);
+  },
+
+  /** The in-flight load() for `key`, if there is one. */
+  pending(key) {
+    return pendingLoads.get(key);
   },
 
   clear(key) {

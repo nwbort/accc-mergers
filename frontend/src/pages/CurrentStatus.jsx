@@ -6,7 +6,6 @@ import SEO from '../components/SEO';
 import TurnaroundTrendChart from '../components/TurnaroundTrendChart';
 import DurationEcdfChart from '../components/DurationEcdfChart';
 import OutcomeSummaryCards from '../components/OutcomeSummaryCards';
-import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatMedian } from '../utils/formatMedian';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
@@ -14,6 +13,7 @@ import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { computeEcdfFromCounts } from '../utils/durationEcdf';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import { PHASE_1_DEADLINE_BD, WAIVER_DEADLINE_BD } from '../constants/statutoryDeadlines';
+import { analysisFetch } from '../utils/pageData';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -119,9 +119,8 @@ function EcdfCard({ title, stats, deadline, color, seriesLabel, caption, countHe
 }
 
 function CurrentStatus() {
-  const { data, loading, error } = useFetchData(API_ENDPOINTS.analysis, {
-    cacheKey: 'analysis-data',
-  });
+  const [analysisKey, analysisUrl] = analysisFetch();
+  const { data, loading, error } = useFetchData(analysisUrl, { cacheKey: analysisKey });
   const [windowDays, setWindowDays] = useState(30);
 
   if (loading) return <LoadingSpinner />;

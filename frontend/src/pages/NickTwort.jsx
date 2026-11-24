@@ -2,23 +2,26 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import { CARD } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { useFadeIn } from '../hooks/useFadeIn';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/nick-twort'];
 
 export default function NickTwort() {
+  // No fade over this page's own prerendered HTML on first load (useFadeIn).
+  const fadeIn = useFadeIn();
   return (
     <>
       <SEO
-        title={PAGE_META.title}
+        documentTitle={PAGE_META.documentTitle}
         description={PAGE_META.description}
         url="/nick-twort"
         type="profile"
         structuredData={PAGE_META.structuredData}
       />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+      <div className={`max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8${fadeIn}`}>
 
         {/* Header */}
         <header className="mb-8">
@@ -57,8 +60,8 @@ export default function NickTwort() {
         <section className={`${CARD} p-8 mb-8`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Nick Twort is a competition economist with eight years of experience applying microeconomic principles to
-            competition and regulatory matters. He specialises in providing clear, focused, and commercially credible economic advice
+            Nick Twort is a competition economist who has applied microeconomic principles to competition and
+            regulatory matters since 2018. He specialises in providing clear, focused, and commercially credible economic advice
             on high-stakes decisions – from contested merger clearances before the ACCC to market inquiries and regulatory proceedings
             across Australia and New Zealand.
           </p>
@@ -113,6 +116,23 @@ export default function NickTwort() {
           </p>
         </section>
 
+        {/* Selected matters */}
+        <section className={`${CARD} p-8 mb-8`}>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Selected matters</h2>
+          <ul className="space-y-3">
+            {[
+              { matter: 'Foodstuffs North Island / Foodstuffs South Island', forum: 'New Zealand Commerce Commission' },
+              { matter: 'Coles / Saputo', forum: 'ACCC' },
+              { matter: 'Woolworths / Petstock', forum: 'ACCC and New Zealand Commerce Commission' },
+            ].map(({ matter, forum }) => (
+              <li key={matter} className="text-gray-700 leading-relaxed">
+                <span className="font-semibold text-gray-900">{matter}</span>
+                <span className="text-gray-600"> – {forum}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Antitrust practice areas */}
         <section className={`${CARD} p-8 mb-8`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Antitrust practice areas</h2>
@@ -151,43 +171,18 @@ export default function NickTwort() {
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Industry experience</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Nick has worked across a broad range of Australian industries and markets, bringing sector-specific
-            economic knowledge to each engagement:
+            economic knowledge to each engagement. Core sectors include:
           </p>
-          <div className="flex flex-wrap gap-2 mb-4 justify-between">
+          <div className="flex flex-wrap gap-2 mb-4">
             {[
-              "Advertising",
-              "Airlines & Airports",
-              "Alcohol Retailing",
-              "App Stores",
-              "Banking & Financial Services",
-              "Car Parking",
-              "Carpet",
-              "Cash-in-Transit",
-              "Cement",
-              "Coal",
-              "Cruise",
-              "Digital Platforms",
-              "Electricity Generation",
-              "Electricity Transmission",
-              "Estate Maintenance",
-              "General Hardware",
-              "Groceries",
-              "Health",
-              "Hydroelectric Generation",
-              "Infrastructure",
+              "Supermarkets & Groceries",
               "Milk",
-              "Pathology",
-              "Payment Networks",
               "Pet Supplies",
-              "Ports",
-              "Retail",
-              "Retail Fuel",
-              "Streaming Video",
-              "Supermarkets",
+              "Digital Platforms",
+              "Airlines & Airports",
+              "Electricity",
               "Telecommunications",
-              "Water",
-              "Wholesale Fuel",
-              "Wholesale Internet Services"
+              "Retail Fuel",
             ].map((industry) => (
               <span
                 key={industry}

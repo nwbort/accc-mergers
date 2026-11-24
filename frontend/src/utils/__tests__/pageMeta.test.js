@@ -4,6 +4,8 @@ import { resolve } from 'node:path';
 import { describe, it, expect } from 'vitest';
 
 import {
+  AUTHOR_ID,
+  AUTHOR_REF,
   SITE_URL,
   STATIC_PAGE_META,
   fullTitle,
@@ -15,11 +17,16 @@ import {
   mergerOgImage,
   partyMeta,
   quarterlyMeta,
+  serialiseJsonLd,
 } from '../pageMeta.js';
+import { NAV_PAGES } from '../../constants/navPages.js';
 import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
   DETAIL_SUMMARY,
+  HOME_PAGE_PATH,
   componentBody,
+  homeBody,
+  pageHeading,
   industriesHubBody,
   industryBody,
   mergersHubBody,
@@ -27,6 +34,7 @@ import {
   mergerBody,
   partyBody,
   renderPage,
+  setStaticFooter,
   staticBody,
 } from '../../../prerender.js';
 
@@ -322,7 +330,9 @@ describe('STATIC_PAGE_META', () => {
   it('gives every route a title and description', () => {
     for (const [path, meta] of Object.entries(STATIC_PAGE_META)) {
       expect(path.startsWith('/'), `${path} should be a root-relative path`).toBe(true);
-      expect(meta.title, `${path} title`).toBeTruthy();
+      // A whole documentTitle stands instead of a title for the site suffix.
+      expect(meta.title || meta.documentTitle, `${path} title`).toBeTruthy();
+      expect(meta.title && meta.documentTitle, `${path} has both`).toBeFalsy();
       expect(meta.description, `${path} description`).toBeTruthy();
     }
   });
@@ -357,7 +367,7 @@ describe('STATIC_PAGE_META', () => {
     // <SEO> appends " | Australian Merger Tracker"; a title carrying the brand
     // already would render it twice.
     for (const [path, meta] of Object.entries(STATIC_PAGE_META)) {
-      expect(meta.title, `${path} title duplicates the site name`).not.toContain(
+      expect(meta.title ?? '', `${path} title duplicates the site name`).not.toContain(
         'Australian Merger Tracker',
       );
     }
@@ -387,8 +397,9 @@ describe('STATIC_PAGE_META', () => {
       expect(src, `${file} should read STATIC_PAGE_META['${route}']`).toContain(
         `STATIC_PAGE_META['${route}']`,
       );
+      const meta = STATIC_PAGE_META[route];
       expect(src, `${file} should pass the shared title to <SEO>`).toContain(
-        'title={PAGE_META.title}',
+        meta.documentTitle ? 'documentTitle={PAGE_META.documentTitle}' : 'title={PAGE_META.title}',
       );
     }
   });
@@ -433,31 +444,31 @@ describe('renderPage stamping against the real index.html', () => {
 
   it('replaces the title, description and canonical', () => {
     expect(html).toContain('<title>Industries | Australian Merger Tracker</title>');
-    expect(html).toContain(`<meta name="description" content="${meta.description}" />`);
-    expect(html).toContain(`<link rel="canonical" href="${SITE_URL}/industries" />`);
+    expect(html).toContain(`<meta data-rh="true" name="description" content="${meta.description}" />`);
+    expect(html).toContain(`<link data-rh="true" rel="canonical" href="${SITE_URL}/industries" />`);
   });
 
   it('replaces every Open Graph and Twitter tag', () => {
-    expect(html).toContain('<meta property="og:type" content="website" />');
+    expect(html).toContain('<meta data-rh="true" property="og:type" content="website" />');
     expect(html).toContain(
-      '<meta property="og:title" content="Industries | Australian Merger Tracker" />',
+      '<meta data-rh="true" property="og:title" content="Industries | Australian Merger Tracker" />',
     );
-    expect(html).toContain(`<meta property="og:url" content="${SITE_URL}/industries" />`);
+    expect(html).toContain(`<meta data-rh="true" property="og:url" content="${SITE_URL}/industries" />`);
     expect(html).toContain(
-      '<meta name="twitter:title" content="Industries | Australian Merger Tracker" />',
+      '<meta data-rh="true" name="twitter:title" content="Industries | Australian Merger Tracker" />',
     );
     // No generic copy left behind for a crawler to read instead.
-    expect(html).not.toContain('<meta property="og:url" content="https://mergers.fyi" />');
+    expect(html).not.toContain('<meta data-rh="true" property="og:url" content="https://mergers.fyi" />');
   });
 
   it('keeps the shared image unless the page names its own', () => {
-    expect(html).toContain(`<meta property="og:image" content="${DEFAULT_OG_IMAGE}" />`);
+    expect(html).toContain(`<meta data-rh="true" property="og:image" content="${DEFAULT_OG_IMAGE}" />`);
     const card = renderPage(template, { ...meta, image: `${SITE_URL}/og/assessment-ceased.png` }, '');
-    expect(card).toContain(`<meta property="og:image" content="${SITE_URL}/og/assessment-ceased.png" />`);
-    expect(card).toContain(`<meta name="twitter:image" content="${SITE_URL}/og/assessment-ceased.png" />`);
+    expect(card).toContain(`<meta data-rh="true" property="og:image" content="${SITE_URL}/og/assessment-ceased.png" />`);
+    expect(card).toContain(`<meta data-rh="true" name="twitter:image" content="${SITE_URL}/og/assessment-ceased.png" />`);
     expect(card).not.toContain(DEFAULT_OG_IMAGE);
     // The width/height tags are siblings, not replaced.
-    expect(card).toContain('<meta property="og:image:width" content="1200" />');
+    expect(card).toContain('<meta data-rh="true" property="og:image:width" content="1200" />');
   });
 
   it('keeps the SPA bootable and fills #root with real content', () => {
@@ -469,12 +480,12 @@ describe('renderPage stamping against the real index.html', () => {
   it('only emits article tags for article pages', () => {
     expect(html).not.toContain('article:published_time');
     const articleHtml = renderPage(template, mergerMeta(MERGER), '');
-    expect(articleHtml).toContain('<meta property="og:type" content="article" />');
+    expect(articleHtml).toContain('<meta data-rh="true" property="og:type" content="article" />');
     expect(articleHtml).toContain(
-      '<meta property="article:published_time" content="2025-08-15T00:00:00Z" />',
+      '<meta data-rh="true" property="article:published_time" content="2025-08-15T00:00:00Z" />',
     );
     expect(articleHtml).toContain(
-      '<meta property="article:section" content="Financial Asset Investing" />',
+      '<meta data-rh="true" property="article:section" content="Financial Asset Investing" />',
     );
   });
 
@@ -497,13 +508,13 @@ describe('renderPage stamping against the real index.html', () => {
       merger_description: '</script><img src=x onerror=alert(1)>',
     });
     const out = renderPage(template, hostile, '');
-    const ldBlocks = out.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g);
-    // Two blocks: index.html's site-wide WebSite schema and this page's.
-    expect(ldBlocks).toHaveLength(2);
+    const ldBlocks = out.match(/<script [^>]*type="application\/ld\+json">[\s\S]*?<\/script>/g);
+    // One block: this page's (the WebSite schema is the homepage's alone).
+    expect(ldBlocks).toHaveLength(1);
     expect(out).not.toContain('<img src=x onerror=alert(1)>');
-    expect(ldBlocks[1]).toContain('\\u003c/script>');
+    expect(ldBlocks[0]).toContain('\\u003c/script>');
     // Still valid JSON, and the escape decodes back to the original text.
-    const parsed = JSON.parse(ldBlocks[1].replace(/^<script[^>]*>|<\/script>$/g, ''));
+    const parsed = JSON.parse(ldBlocks[0].replace(/^<script[^>]*>|<\/script>$/g, ''));
     expect(parsed[0].description).toBe('</script><img src=x onerror=alert(1)>');
   });
 });
@@ -676,14 +687,144 @@ describe('hub page bodies', () => {
 
   it('wraps a component-rendered page in the chrome only', () => {
     const body = componentBody('<div class="max-w-4xl">page</div>');
-    expect(body).toContain('class="flex-grow pt-16"><div class="max-w-4xl">page</div></main>');
+    expect(body).toContain('class="flex-grow pt-16" data-prerendered="page"><div class="max-w-4xl">page</div></main>');
+  });
+
+  it('serves the stamped homepage at / through the rewrite in _redirects', () => {
+    // prerender.js writes the copy to HOME_PAGE_PATH; Pages only serves it at /
+    // because _redirects rewrites to the same path.
+    const rules = readFixture('public/_redirects')
+      .split('\n')
+      .map((line) => line.trim().split(/\s+/))
+      .filter(([from]) => from === '/');
+    expect(rules).toEqual([['/', HOME_PAGE_PATH, '200']]);
+    const meta = { ...STATIC_PAGE_META['/'], path: '/' };
+    const html = renderPage(readFixture('index.html'), meta, '');
+    expect(html).toContain('<link data-rh="true" rel="canonical" href="https://mergers.fyi/" />');
+    // ...and no _headers rule that can match / or the copy's own URL marks it
+    // noindex, which would fight that canonical. A rule is a path line
+    // followed by its indented headers.
+    const headerRules = readFixture('public/_headers')
+      .split('\n')
+      .filter((line) => line.trim() && !line.startsWith('#'))
+      .join('\n')
+      .split(/\n(?=\S)/);
+    const covering = headerRules.filter((rule) => /^\/(\*|prerendered)?(\s|\/|$)/.test(rule));
+    expect(covering.length).toBeGreaterThan(0); // the site-wide /* rule, at least
+    for (const rule of covering) expect(rule).not.toMatch(/x-robots-tag/i);
+  });
+
+  it("heads a fallback page with its title, or a documentTitle without its suffix", () => {
+    const author = STATIC_PAGE_META['/nick-twort'];
+    expect(pageHeading(author)).toBe('Nick Twort – Competition Economist, Sydney');
+    // The plain body the author page falls back to if its component render fails.
+    expect(staticBody(author)).toContain('>Nick Twort – Competition Economist, Sydney</h1>');
+    expect(pageHeading({ title: 'Analysis' })).toBe('Analysis');
+  });
+
+  // A body that is the page itself is held on screen until the app can
+  // replace it; any other is only a summary for crawlers, hidden from visitors
+  // who run JavaScript (index.css) while the app mounts at once (main.jsx).
+  it('marks which prerendered bodies are the page itself and which a summary', () => {
+    const kind = (html) => html.match(/<main [^>]*data-prerendered="(\w+)"/)?.[1];
+    expect(kind(componentBody('<p>x</p>'))).toBe('page');
+    expect(kind(homeBody({ ...STATIC_PAGE_META['/'], path: '/' }, '<p>top</p>'))).toBe('page');
+    expect(kind(homeBody({ ...STATIC_PAGE_META['/'], path: '/' }, ''))).toBe('summary');
+    expect(kind(staticBody({ title: 'T', description: 'D' }))).toBe('summary');
+    expect(kind(mergerBody(MERGER, mergerMeta(MERGER)))).toBe('summary');
+    // The pieces that act on the mark, in the files every page is built from.
+    expect(readFixture('index.html')).toMatch(/classList\.add\('js-app'\)[\s\S]*classList\.remove\('js-app'\)/);
+    expect(readFixture('src/index.css')).toMatch(/\.js-app main\[data-prerendered="summary"\] > \*\s*\{\s*display: none;/);
+    expect(readFixture('src/main.jsx')).toContain(`main[data-prerendered="page"]`);
+  });
+
+  it('opens the homepage with the dashboard top it is handed', () => {
+    const meta = { ...STATIC_PAGE_META['/'], path: '/' };
+    const top = '<div class="max-w-7xl"><h1 class="sr-only">dashboard</h1></div>';
+    expect(homeBody(meta, top)).toContain(`<main id="main-content" class="flex-grow pt-16" data-prerendered="page">${top}</main>`);
+    // Without the dashboard (no stats.json, or no renderer) a plain header stands in.
+    expect(homeBody(meta, '')).toMatch(/<h1[^>]*>Australian Merger Tracker<\/h1>/);
+  });
+
+  it("puts the navbar's own links in every page's static bar", () => {
+    const body = staticBody({ title: 'T', description: 'D' });
+    const nav = body.match(/<nav aria-label="Main"[^>]*>([\s\S]*?)<\/nav>/);
+    expect(nav).toBeTruthy();
+    const hrefs = [...nav[1].matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
+    const expected = NAV_PAGES.filter((p) => p.inNavbar)
+      .sort((x, y) => x.navOrder - y.navOrder)
+      .map((p) => p.path);
+    expect(hrefs).toEqual(expected);
+  });
+
+  it('closes every page with the footer once one is set', () => {
+    setStaticFooter('<footer>foot</footer>');
+    try {
+      expect(staticBody({ title: 'T', description: 'D' })).toContain('</main><footer>foot</footer></div>');
+      expect(componentBody('page')).toContain('</main><footer>foot</footer></div>');
+    } finally {
+      setStaticFooter('');
+    }
   });
 });
 
 describe('the author page', () => {
-  it('carries its Person JSON-LD in the shared meta, so the prerender emits it', () => {
-    const [person] = STATIC_PAGE_META['/nick-twort'].structuredData;
+  it('carries its ProfilePage JSON-LD in the shared meta, so the prerender emits it', () => {
+    const [profile] = STATIC_PAGE_META['/nick-twort'].structuredData;
+    expect(profile['@type']).toBe('ProfilePage');
+    expect(profile.url).toBe('https://mergers.fyi/nick-twort');
+    const person = profile.mainEntity;
     expect(person['@type']).toBe('Person');
+    expect(person['@id']).toBe(AUTHOR_ID);
     expect(person.name).toBe('Nick Twort');
+    expect(person.url).toBe(profile.url);
+    expect(person.worksFor).toMatchObject({ '@type': 'Organization', name: 'Econic Partners' });
+    expect(person.sameAs).toContain('https://www.linkedin.com/in/nick-twort');
+    // Round-trips as JSON (no functions, cycles or undefined values).
+    expect(JSON.parse(serialiseJsonLd(profile))).toEqual(profile);
+  });
+
+  it('is who the homepage WebSite JSON-LD names as author', () => {
+    const [site] = STATIC_PAGE_META['/'].structuredData;
+    expect(site['@type']).toBe('WebSite');
+    expect(site.author).toEqual(AUTHOR_REF);
+    expect(site).not.toHaveProperty('creator');
+    // The profile says it belongs to that same WebSite.
+    const [profile] = STATIC_PAGE_META['/nick-twort'].structuredData;
+    expect(profile.isPartOf['@id']).toBe(site['@id']);
+  });
+
+  it("gives the fallback shell the homepage's own title and description", () => {
+    // index.html is what Pages serves for any URL without a file, and what
+    // bots that run no JavaScript see there, so it reads as the homepage.
+    const html = readFixture('index.html');
+    const home = STATIC_PAGE_META['/'];
+    const attr = (s) => s.replace(/&/g, '&amp;');
+    expect(html).toContain(`<title>${home.documentTitle}</title>`);
+    for (const tag of ['name="description"', 'property="og:description"', 'name="twitter:description"']) {
+      expect(html, tag).toContain(`${tag} content="${home.description}"`);
+    }
+    for (const tag of ['property="og:title"', 'name="twitter:title"']) {
+      expect(html, tag).toContain(`${tag} content="${home.documentTitle}"`);
+    }
+    // ...and the prerendered homepage says the same, escaped for HTML.
+    const page = renderPage(html, { ...home, path: '/' }, '');
+    expect(page).toContain(`<title>${attr(home.documentTitle)}</title>`);
+  });
+
+  it('keeps the WebSite JSON-LD to the homepage', () => {
+    // index.html is the template every page is stamped from (and the fallback
+    // shell), so a block there would be on every page.
+    expect(readFixture('index.html')).not.toContain('application/ld+json');
+    for (const [path, meta] of Object.entries(STATIC_PAGE_META)) {
+      if (path === '/') continue;
+      const types = (meta.structuredData || []).map((d) => d['@type']);
+      expect(types, path).not.toContain('WebSite');
+    }
+  });
+
+  it('is the author of every merger article', () => {
+    const [article] = mergerMeta({ merger_id: 'MN-1', merger_name: 'A - B' }).structuredData;
+    expect(article.author).toEqual(AUTHOR_REF);
   });
 });

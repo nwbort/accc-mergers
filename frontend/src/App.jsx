@@ -1,4 +1,4 @@
-import { useState, useCallback, lazy, Suspense } from 'react';
+import { useState, useCallback, useEffect, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
@@ -13,29 +13,9 @@ import { PushProvider } from './context/PushContext';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import { useBackgroundRefresh } from './hooks/useBackgroundRefresh';
 import ScrollToTop from './components/ScrollToTop';
+import { ROUTES } from './routes';
+import { markAppSettled } from './utils/appMount';
 
-// Route components are code-split so the initial bundle only carries the app
-// shell. Heavy, page-specific dependencies (charts, react-markdown) then load
-// on demand with the route that needs them instead of on first paint.
-const Dashboard = lazy(() => import('./pages/Dashboard'));
-const Mergers = lazy(() => import('./pages/Mergers'));
-const MergerDetail = lazy(() => import('./pages/MergerDetail'));
-const Industries = lazy(() => import('./pages/Industries'));
-const IndustryDetail = lazy(() => import('./pages/IndustryDetail'));
-const Parties = lazy(() => import('./pages/Parties'));
-const PartyDetail = lazy(() => import('./pages/PartyDetail'));
-const Commentary = lazy(() => import('./pages/Commentary'));
-const Digest = lazy(() => import('./pages/Digest'));
-const NickTwort = lazy(() => import('./pages/NickTwort'));
-const Analysis = lazy(() => import('./pages/Analysis'));
-const Phase2 = lazy(() => import('./pages/Phase2'));
-const RefiledNotifications = lazy(() => import('./pages/RefiledNotifications'));
-const CurrentStatus = lazy(() => import('./pages/CurrentStatus'));
-const Quarterly = lazy(() => import('./pages/Quarterly'));
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const Copyright = lazy(() => import('./pages/Copyright'));
-const Feedback = lazy(() => import('./pages/Feedback'));
-const NotFound = lazy(() => import('./pages/NotFound'));
 
 function AppContent() {
   const [showShortcuts, setShowShortcuts] = useState(false);
@@ -45,6 +25,7 @@ function AppContent() {
   const openPalette = useCallback(() => setShowCommandPalette(true), []);
 
   useKeyboardShortcuts({ onToggleHelp: toggleShortcuts, onTogglePalette: togglePalette });
+  useEffect(markAppSettled, []);
   useBackgroundRefresh();
 
   return (
@@ -55,29 +36,10 @@ function AppContent() {
         <main id="main-content" className="flex-grow pt-16">
           <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/mergers" element={<Mergers />} />
-            <Route path="/mergers/:id" element={<MergerDetail />} />
-            <Route path="/mergers/:id/:slug" element={<MergerDetail />} />
-            <Route path="/industries" element={<Industries />} />
-            <Route path="/industries/:code" element={<IndustryDetail />} />
-            <Route path="/industries/:code/:slug" element={<IndustryDetail />} />
-            <Route path="/parties" element={<Parties />} />
-            <Route path="/parties/:id" element={<PartyDetail />} />
-            <Route path="/parties/:id/:slug" element={<PartyDetail />} />
-            <Route path="/commentary" element={<Commentary />} />
-            <Route path="/digest" element={<Digest />} />
-            <Route path="/analysis" element={<Analysis />} />
-            <Route path="/phase-2" element={<Phase2 />} />
-            <Route path="/refiled-notifications" element={<RefiledNotifications />} />
-            <Route path="/current-status" element={<CurrentStatus />} />
-            <Route path="/quarterly" element={<Quarterly />} />
-            <Route path="/quarterly/:quarter" element={<Quarterly />} />
-            <Route path="/nick-twort" element={<NickTwort />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/copyright" element={<Copyright />} />
-            <Route path="/feedback" element={<Feedback />} />
-            <Route path="*" element={<NotFound />} />
+            {/* Each page loads its own chunk on demand: see routes.js. */}
+            {ROUTES.map(({ path, page: { Component } }) => (
+              <Route key={path} path={path} element={<Component />} />
+            ))}
           </Routes>
           </Suspense>
         </main>

@@ -18,6 +18,16 @@ export const SITE_URL = 'https://mergers.fyi';
 export const SITE_TITLE = 'Australian Merger Tracker';
 export const AUTHOR_NAME = 'Nick Twort';
 
+// The author, as one schema.org entity. `@id` is what ties the site together
+// for search engines: the homepage's WebSite JSON-LD names this Person as
+// author by the same id, and each merger article's
+// author points here, so all of them resolve to the profile on /nick-twort.
+export const AUTHOR_URL = `${SITE_URL}/nick-twort`;
+export const AUTHOR_ID = `${AUTHOR_URL}#person`;
+
+/** A reference to the author, for an `author`/`creator` field elsewhere. */
+export const AUTHOR_REF = { '@type': 'Person', '@id': AUTHOR_ID, name: AUTHOR_NAME, url: AUTHOR_URL };
+
 // ANZSIC level → human label for the page subtitle, breadcrumb and description.
 export const LEVEL_LABELS = {
   division: 'Division',
@@ -29,6 +39,15 @@ export const LEVEL_LABELS = {
 /** The full <title>, matching how <SEO> composes it. */
 export function fullTitle(title) {
   return title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
+}
+
+/**
+ * A page's <title>: its `documentTitle` verbatim when the meta sets one (a
+ * page whose title is written whole, which then has no `title`), else the
+ * page's `title` with the site suffix (fullTitle).
+ */
+export function documentTitle(meta) {
+  return meta.documentTitle || fullTitle(meta.title);
 }
 
 /**
@@ -132,7 +151,7 @@ export function mergerMeta(merger) {
     datePublished: merger.effective_notification_datetime,
     dateModified: modifiedTime,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    author: { '@type': 'Person', name: AUTHOR_NAME, url: SITE_URL },
+    author: AUTHOR_REF,
     publisher: {
       '@type': 'Organization',
       name: SITE_TITLE,
@@ -622,44 +641,58 @@ export function industryMeta(industry, code, indexName) {
   };
 }
 
-// Person JSON-LD for the author page. Lives here, not in NickTwort.jsx, so the
-// prerendered HTML carries it too rather than only the hydrated page.
-const NICK_TWORT_PERSON = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Nick Twort",
-  "jobTitle": "Competition Economist",
-  "description": "Australian competition economist with eight years of experience specialising in merger clearance, antitrust analysis, and regulatory economics across Australia and New Zealand.",
-  "url": "https://mergers.fyi/nick-twort",
-  "sameAs": [
-    "https://mergers.fyi"
-  ],
-  "knowsAbout": [
-    "Merger clearance",
-    "Antitrust economics",
-    "Competition policy",
-    "ACCC merger review",
-    "Market power analysis",
-    "Regulatory economics",
-    "Empirical industrial organisation",
-    "Australian Competition and Consumer Commission",
-    "New Zealand Commerce Commission",
-    "Misuse of market power",
-    "Cartel conduct",
-    "Exclusionary conduct",
-    "Access regulation",
-    "Public inquiries",
-    "Digital platforms regulation"
-  ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Competition Economist",
-    "occupationLocation": {
-      "@type": "Country",
-      "name": "Australia"
+// WebSite JSON-LD, on the homepage only (STATIC_PAGE_META['/']): Google reads
+// it there, and the prerendered homepage carries it in its raw HTML. The
+// author is the same Person the profile page describes, by @id.
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+const WEBSITE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': WEBSITE_ID,
+  name: SITE_TITLE,
+  alternateName: 'mergers.fyi',
+  url: SITE_URL,
+  description:
+    'A database of Australian mergers reviewed by the ACCC, updated several times a day. Search merger decisions, track review timelines, analyse industry trends, and explore public consultation documents.',
+  inLanguage: 'en-AU',
+  author: AUTHOR_REF,
+};
+
+// ProfilePage JSON-LD for the author page. Lives here, not in NickTwort.jsx,
+// so the prerendered HTML carries it too rather than only the hydrated page.
+// Keep it to what the page itself says.
+const NICK_TWORT_PROFILE = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': AUTHOR_URL,
+  url: AUTHOR_URL,
+  name: 'Nick Twort – Competition Economist',
+  isPartOf: { '@type': 'WebSite', '@id': WEBSITE_ID, name: SITE_TITLE, url: SITE_URL },
+  mainEntity: {
+    '@type': 'Person',
+    '@id': AUTHOR_ID,
+    name: AUTHOR_NAME,
+    url: AUTHOR_URL,
+    jobTitle: 'Principal, Competition Economist',
+    description:
+      'Competition economist in Sydney advising on merger clearance, antitrust and regulatory matters in Australia and New Zealand since 2018, and creator of mergers.fyi.',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Econic Partners',
+      url: 'https://econicpartners.com',
     },
-    "skills": "Merger clearance analysis, competitive effects modelling, empirical industrial organisation, regulatory economics, antitrust advice"
-  }
+    // Where he works, not where he lives: `address` on a Person reads as home.
+    workLocation: {
+      '@type': 'Place',
+      address: { '@type': 'PostalAddress', addressLocality: 'Sydney', addressCountry: 'AU' },
+    },
+    sameAs: [
+      'https://www.linkedin.com/in/nick-twort',
+      'https://github.com/nwbort',
+      'https://econicpartners.com/people/nick-twort',
+    ],
+    knowsAbout: ['Competition economics', 'Merger control', 'ACCC', 'Antitrust'],
+  },
 };
 
 /**
@@ -705,11 +738,14 @@ export function quarterlyMeta(quarter) {
 
 export const STATIC_PAGE_META = {
   '/': {
-    // Note the bare title: <SEO> appends " | Australian Merger Tracker", so a
-    // title that already carries the brand would render it twice.
-    title: 'ACCC Merger Reviews & M&A Data',
+    // Brand first on the homepage, so the whole <title> rather than a `title`
+    // for the site suffix. index.html (the fallback shell every page is
+    // stamped from) carries this same title and description; a test keeps the
+    // two in step.
+    documentTitle: 'Australian Merger Tracker | ACCC Merger Reviews & M&A Data',
     description:
-      'Live stats on every ACCC merger review — recent clearances, upcoming deadlines, phase durations, and determination trends across Australian industries.',
+      'Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents.',
+    structuredData: [WEBSITE_SCHEMA],
   },
   '/mergers': {
     title: 'All Mergers',
@@ -773,13 +809,15 @@ export const STATIC_PAGE_META = {
     imageAlt: 'Catch me up: your week in Australian mergers',
   },
   '/nick-twort': {
-    title: 'Nick Twort – Competition Economist | Australian Merger & Antitrust Expert',
+    // Written whole for search results: a name search should read who, what
+    // and where, and the site's brand suffix would push "Sydney" off the end.
+    documentTitle: 'Nick Twort – Competition Economist, Sydney | mergers.fyi',
     description:
-      'Nick Twort is an Australian competition economist with eight years of experience advising on merger clearance, antitrust matters, and regulatory issues for the ACCC and New Zealand Commerce Commission. Expert in empirical analysis across airlines, digital platforms, supermarkets, telecoms and more.',
+      'Nick Twort is a Sydney competition economist and Principal at Econic Partners, advising on merger clearance, antitrust and regulatory matters before the ACCC and New Zealand Commerce Commission since 2018. Creator of mergers.fyi.',
     type: 'profile',
     image: `${SITE_URL}/og/nick-twort.png`,
     imageAlt: 'Nick Twort, competition economist',
-    structuredData: [NICK_TWORT_PERSON],
+    structuredData: [NICK_TWORT_PROFILE],
   },
   '/privacy': {
     title: 'Privacy policy',

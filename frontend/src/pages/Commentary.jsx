@@ -11,20 +11,20 @@ import JudicialReviewBadge from '../components/JudicialReviewBadge';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
-import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { getOutcomeRail } from '../constants/outcomeRail';
 import { PROSE_MARKDOWN, CARD } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { commentaryFetch } from '../utils/pageData';
+import { useFadeIn } from '../hooks/useFadeIn';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/commentary'];
 
 function Commentary() {
-  const { data, loading, error } = useFetchData(API_ENDPOINTS.commentary, {
-    cacheKey: 'commentary-items',
-  });
+  const [commentaryKey, commentaryUrl] = commentaryFetch();
+  const { data, loading, error } = useFetchData(commentaryUrl, { cacheKey: commentaryKey });
   const items = data?.items || [];
 
   if (loading) return <LoadingSpinner />;
@@ -48,9 +48,11 @@ function Commentary() {
  * exactly this markup from the data file.
  */
 export function CommentaryList({ items }) {
+  // No fade over its own prerendered HTML on first load (useFadeIn).
+  const fadeIn = useFadeIn();
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8${fadeIn}`}>
         {/* The page leads straight into content, so the document's h1 is
             visually hidden rather than dropped: it names the page for screen
             readers and keeps the heading outline starting at level 1. */}

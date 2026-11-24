@@ -61,6 +61,10 @@ export function markItemsAsSeen(itemIds) {
  */
 export function isNewItem(itemId) {
   if (!itemId) return false;
+  // Outside a browser (the build-time prerender of the homepage) there is no
+  // visitor, so nothing is new to anyone: a snapshot marking every card "New"
+  // would flash the badges at returning visitors until React mounts.
+  if (typeof window === 'undefined') return false;
 
   const seenItems = getSeenItems();
   return !seenItems.has(itemId);

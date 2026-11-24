@@ -8,12 +8,10 @@ import MergerListCard from '../components/MergerListCard';
 import MergerListTable from '../components/MergerListTable';
 import DateRangeFilter from '../components/DateRangeFilter';
 import SEO from '../components/SEO';
-import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { useTracking } from '../context/TrackingContext';
 import { useDebounce } from '../hooks/useDebounce';
 import { buildSearchIndex } from '../utils/searchIndex';
-import { MERGERS_LIST_KEY } from '../utils/mergerList';
 import {
   FILTER_PARAMS, activeFilterTests, applyFilters, dateRangeFrom, filterOptions,
 } from '../utils/mergerFilters';
@@ -24,6 +22,7 @@ import { loadListView, saveListView } from '../utils/mergerListView';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { DEFAULT_SORT, SORT_FIELDS, SORT_FIELDS_BY_VALUE, normaliseSort, splitSort, sortMergers } from '../utils/mergerSort';
+import { mergersListFetch } from '../utils/pageData';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -114,7 +113,8 @@ function Mergers() {
   // The whole list is one file (~110 KB gzipped). useFetchData shares it with
   // the command palette through dataCache and keeps it fresh in the
   // background.
-  const { data, loading, error } = useFetchData(API_ENDPOINTS.mergersList, { cacheKey: MERGERS_LIST_KEY });
+  const [listCacheKey, listUrl] = mergersListFetch();
+  const { data, loading, error } = useFetchData(listUrl, { cacheKey: listCacheKey });
   const mergers = data?.mergers ?? NO_MERGERS;
   const searchIndex = useMemo(() => buildSearchIndex(mergers), [mergers]);
 

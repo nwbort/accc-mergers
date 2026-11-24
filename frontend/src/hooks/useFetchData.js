@@ -45,20 +45,41 @@ export function useFetchData(url, { cacheKey } = {}) {
 
   useEffect(() => {
     if (!url) return undefined;
-    // Cache hit: nothing to fetch; the derived return handles display.
-    if (cacheKey && dataCache.has(cacheKey)) return undefined;
+    // Cache hit: nothing to fetch; the derived return handles display. But
+    // the cache may have filled only after this render, which then showed
+    // loading (a preload landing between render and effect: routes.js), and
+    // nothing re-renders on a cache write. So take the data into state (a
+    // microtask later, as a fetch would land), which re-renders; when it was
+    // already there, prev is returned and React skips the render.
+    if (cacheKey && dataCache.has(cacheKey)) {
+      let live = true;
+      Promise.resolve().then(() => {
+        if (!live) return;
+        setResult((prev) =>
+          prev.url === url ? prev : { data: dataCache.get(cacheKey), error: null, url },
+        );
+      });
+      return () => {
+        live = false;
+      };
+    }
 
     const controller = new AbortController();
 
-    fetch(url, { signal: controller.signal })
-      .then((res) => {
+    const fetchOwn = () =>
+      fetch(url, { signal: controller.signal }).then((res) => {
         if (!res.ok) {
           const err = new Error(`HTTP ${res.status}`);
           err.status = res.status;
           throw err;
         }
         return res.json();
-      })
+      });
+    // A preload still in flight for this key (routes.js, via dataCache.load):
+    // wait on it rather than download the file twice, and fetch afresh only
+    // if it fails, so its error is never mistaken for this page's.
+    const pending = cacheKey && dataCache.pending(cacheKey);
+    (pending ? pending.catch(fetchOwn) : fetchOwn())
       .then((json) => {
         if (controller.signal.aborted) return;
         if (cacheKey) dataCache.set(cacheKey, json);

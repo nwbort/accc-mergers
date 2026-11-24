@@ -30,7 +30,7 @@ import { join, dirname, basename } from 'node:path';
 import {
   SITE_URL,
   STATIC_PAGE_META,
-  fullTitle,
+  documentTitle,
   industryMeta,
   mergerMeta,
   partyMeta,
@@ -41,6 +41,8 @@ import { industryPath, mergerPath, partyPath } from './src/utils/slug.js';
 import { partyShardName } from './src/utils/shard.js';
 import { divisionFileName } from './src/utils/industryDivision.js';
 import { readIndustryNode } from './src/utils/industryNode.js';
+import { NAV_PAGES } from './src/constants/navPages.js';
+import { PROMO_DISMISSED_PREFIX, PROMO_HIDE_STYLE_ID } from './src/utils/promoDismissal.js';
 
 // Per-merger data files are named by matter id, e.g. MN-01016.json / WA-70017.json.
 const MATTER_FILE_RE = /^(MN|WA)-\d+\.json$/i;
@@ -192,21 +194,71 @@ function headerCard(title, subtitle, extra = '') {
   );
 }
 
+// The real <Footer>, rendered once per build by src/prerender/renderStatic.jsx
+// (see setStaticFooter). Empty until then, and if that renderer fails to load,
+// so a rendering problem drops the footer rather than failing the deploy.
+let staticFooter = '';
+
+/** Set the footer HTML every prerendered page's chrome carries. */
+export function setStaticFooter(html) {
+  staticFooter = html || '';
+}
+
+// The navbar's right-hand controls (renderNavActions in renderStatic.jsx),
+// set the same way as the footer; empty if that render fails.
+let staticNavActions = '';
+
+/** Set the navbar controls HTML every prerendered page's top bar carries. */
+export function setStaticNavActions(html) {
+  staticNavActions = html || '';
+}
+
+// The navbar's own links, from the table the real Navbar reads (so they can't
+// go stale), styled as its unhighlighted desktop links. Shown from `lg` up
+// only: the Navbar measures its width and collapses into a "More" menu or a
+// hamburger when they don't fit, which a static bar can't, and every link
+// fits at `lg`. Nothing is highlighted, since the bar doesn't know the page.
+const STATIC_NAV =
+  `<nav aria-label="Main" class="ml-10 hidden lg:flex space-x-1">` +
+  NAV_PAGES.filter((p) => p.inNavbar)
+    .sort((a, b) => a.navOrder - b.navOrder)
+    .map(
+      ({ path, label, navbarLabel }) =>
+        `<a href="${escapeHtml(path)}" class="relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium text-gray-500">${escapeHtml(navbarLabel || label)}</a>`,
+    )
+    .join('') +
+  `</nav>`;
+
 // Mirrors App.jsx's shell: the gradient background, and a fixed bar matching
-// the navbar's height so content sits at the same offset before and after
-// React mounts. The bar carries the brand only — the real navbar's links are
-// interactive and stateful, and a static copy of them would go stale.
-function shell(inner, { wrap = true } = {}) {
+// the navbar's height, brand and links (STATIC_NAV) so content sits at the
+// same offset and the bar reads the same before and after React mounts. The
+// footer is the real component (setStaticFooter): its links are plain ones,
+// so the pages they lead to (the author page among them) are linked from the
+// raw HTML of every page.
+//
+// `page` says whether the body is the page itself, drawn by its own
+// components (componentBody, the homepage's dashboard top), or a summary for
+// crawlers that looks nothing like the live page (every other body). main.jsx
+// holds a real page on screen until the app can replace it in full; a summary
+// is hidden from visitors who run JavaScript (the js-app rule in index.css,
+// switched on by index.html's head script) and the app mounts at once, so no
+// visitor watches one layout swap for another.
+function shell(inner, { wrap = true, page = false } = {}) {
   return (
     `<div class="min-h-screen gradient-mesh flex flex-col">` +
     `<div class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">` +
     `<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">` +
-    `<div class="flex items-center h-16">` +
-    `<a href="/" class="text-lg font-bold tracking-tight text-gray-900">australian merger tracker</a>` +
+    `<div class="flex justify-between h-16">` +
+    `<div class="flex items-center">` +
+    `<a href="/" class="flex items-center gap-2.5 group"><span class="text-lg font-bold text-primary tracking-tight">australian merger tracker</span></a>` +
+    STATIC_NAV +
+    `</div>` +
+    staticNavActions +
     `</div></div></div>` +
-    `<main id="main-content" class="flex-grow pt-16">` +
+    `<main id="main-content" class="flex-grow pt-16" data-prerendered="${page ? 'page' : 'summary'}">` +
     (wrap ? `<div class="${PAGE_WRAP}">${inner}</div>` : inner) +
     `</main>` +
+    staticFooter +
     `</div>`
   );
 }
@@ -353,20 +405,69 @@ export function quarterlyBody(quarter, meta) {
   );
 }
 
+// A page's visible heading: its title, or for a page with only a whole
+// documentTitle (the author page), that title without its ' | site' suffix.
+export function pageHeading(meta) {
+  return meta.title ?? (meta.documentTitle || '').replace(/\s+\|[^|]*$/, '');
+}
+
 export function staticBody(meta) {
   return shell(
     headerCard(
-      meta.title,
+      pageHeading(meta),
       '',
       `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
     ),
   );
 }
 
+// Where the stamped homepage is written. public/_redirects rewrites / to it
+// (see there for why it can't be dist/index.html); a test pins the two.
+export const HOME_PAGE_PATH = '/prerendered/home';
+
+// A head script for the prerendered homepage: hides the promos this visitor
+// has dismissed before anything is painted. The static page shows promos as a
+// first-time visitor sees them, so without it a dismissed banner would show
+// until React mounts, then vanish and shift everything below it up. It reads
+// the keys PromoStack writes (utils/promoDismissal.js) for the campaigns the
+// page was built with, and hides the whole stack if all were dismissed (its
+// margin would otherwise remain). PromoStack removes the style once mounted
+// (PROMO_HIDE_STYLE_ID), since from then on it leaves dismissed promos out
+// itself.
+export function promoHideScript(campaigns) {
+  if (!campaigns.length) return '';
+  const code =
+    `(function(){try{var c=${JSON.stringify(campaigns)},d=c.filter(function(x){` +
+    `return localStorage.getItem(${JSON.stringify(PROMO_DISMISSED_PREFIX)}+x)});if(!d.length)return;` +
+    `var css=d.map(function(x){return '[data-promo-campaign="'+x+'"]'}).join(',')+'{display:none}';` +
+    `if(d.length===c.length)css+='[data-promo-stack]{display:none}';` +
+    `var s=document.createElement('style');s.id=${JSON.stringify(PROMO_HIDE_STYLE_ID)};s.textContent=css;document.head.appendChild(s)}catch(e){}})();`;
+  return `<script>${code.replace(/</g, '\\u003c')}</script>`;
+}
+
+// The homepage's raw-HTML body: the top of the dashboard itself (renderHome in
+// src/prerender/renderStatic.jsx, passed in as `top`), so what shows before
+// React mounts is that part of the real page. Without it (no stats.json, or
+// the renderer failed) a plain header stands in. Served at `/` by the rewrite
+// in public/_redirects.
+export function homeBody(meta, top) {
+  return shell(
+    top ||
+      `<div class="${PAGE_WRAP}">` +
+        headerCard(
+          'Australian Merger Tracker',
+          '',
+          `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
+        ) +
+        `</div>`,
+    { wrap: false, page: Boolean(top) },
+  );
+}
+
 // A page rendered from its real React component (src/prerender/renderStatic.jsx).
 // The component brings its own page wrapper, so only the app chrome is added.
 export function componentBody(html) {
-  return shell(html, { wrap: false });
+  return shell(html, { wrap: false, page: true });
 }
 
 // The hub pages (/mergers, /industries, /parties) draw their lists in the
@@ -465,48 +566,60 @@ export function partiesHubBody(parties, meta) {
   );
 }
 
+// Marks a head tag as one <SEO> also writes. react-helmet-async owns every tag
+// carrying it: on mount it keeps an identical one and replaces the rest, where
+// an unmarked copy would sit beside Helmet's for good (two canonicals, the
+// JSON-LD twice). index.html marks its own the same way, and only those: a
+// marked tag <SEO> doesn't write (keywords, author) would be removed on mount.
+// pageMeta.test.js checks both. JSON-LD lives in STATIC_PAGE_META, never in
+// index.html, which every page is stamped from (the WebSite block is the
+// homepage's alone).
+const RH = 'data-rh="true"';
+
 // Produce the page HTML by stamping page-specific values into the shared built
 // template. Tag-targeted regexes keep this resilient to unrelated changes in
 // index.html (inlined CSS, hashed script names, etc.).
 export function renderPage(template, meta, body) {
   const canonicalUrl = `${SITE_URL}${meta.canonicalPath || meta.path}`;
-  const title = escapeHtml(fullTitle(meta.title));
+  const title = escapeHtml(documentTitle(meta));
   const description = escapeHtml(meta.description);
   const type = meta.type || 'website';
 
   const headExtras = [
-    `<link rel="canonical" href="${escapeHtml(canonicalUrl)}" />`,
-    '<meta property="og:locale" content="en_AU" />',
+    `<link ${RH} rel="canonical" href="${escapeHtml(canonicalUrl)}" />`,
+    `<meta ${RH} property="og:locale" content="en_AU" />`,
     meta.image && meta.imageAlt
-      ? `<meta property="og:image:alt" content="${escapeHtml(meta.imageAlt)}" />`
+      ? `<meta ${RH} property="og:image:alt" content="${escapeHtml(meta.imageAlt)}" />`
       : '',
     type === 'article' && meta.publishedTime
-      ? `<meta property="article:published_time" content="${escapeHtml(meta.publishedTime)}" />`
+      ? `<meta ${RH} property="article:published_time" content="${escapeHtml(meta.publishedTime)}" />`
       : '',
     type === 'article' && meta.modifiedTime
-      ? `<meta property="article:modified_time" content="${escapeHtml(meta.modifiedTime)}" />`
+      ? `<meta ${RH} property="article:modified_time" content="${escapeHtml(meta.modifiedTime)}" />`
       : '',
     type === 'article' && meta.section
-      ? `<meta property="article:section" content="${escapeHtml(meta.section)}" />`
+      ? `<meta ${RH} property="article:section" content="${escapeHtml(meta.section)}" />`
       : '',
     meta.structuredData?.length
-      ? `<script type="application/ld+json">${serialiseJsonLd(meta.structuredData)}</script>`
+      ? `<script ${RH} type="application/ld+json">${serialiseJsonLd(meta.structuredData)}</script>`
       : '',
+    // Anything else one page needs in its head (the homepage's promoHideScript).
+    meta.headHtml || '',
   ]
     .filter(Boolean)
     .join('\n    ');
 
   return template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
-    .replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${description}" />`)
-    .replace(/<meta property="og:type"[^>]*>/, `<meta property="og:type" content="${type}" />`)
-    .replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${title}" />`)
-    .replace(/<meta property="og:description"[^>]*>/, `<meta property="og:description" content="${description}" />`)
-    .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${escapeHtml(canonicalUrl)}" />`)
-    .replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${title}" />`)
-    .replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${description}" />`)
-    .replace(/<meta property="og:image" [^>]*>/, (tag) => (meta.image ? `<meta property="og:image" content="${escapeHtml(meta.image)}" />` : tag))
-    .replace(/<meta name="twitter:image"[^>]*>/, (tag) => (meta.image ? `<meta name="twitter:image" content="${escapeHtml(meta.image)}" />` : tag))
+    .replace(/<meta[^>]* name="description"[^>]*>/, `<meta ${RH} name="description" content="${description}" />`)
+    .replace(/<meta[^>]* property="og:type"[^>]*>/, `<meta ${RH} property="og:type" content="${type}" />`)
+    .replace(/<meta[^>]* property="og:title"[^>]*>/, `<meta ${RH} property="og:title" content="${title}" />`)
+    .replace(/<meta[^>]* property="og:description"[^>]*>/, `<meta ${RH} property="og:description" content="${description}" />`)
+    .replace(/<meta[^>]* property="og:url"[^>]*>/, `<meta ${RH} property="og:url" content="${escapeHtml(canonicalUrl)}" />`)
+    .replace(/<meta[^>]* name="twitter:title"[^>]*>/, `<meta ${RH} name="twitter:title" content="${title}" />`)
+    .replace(/<meta[^>]* name="twitter:description"[^>]*>/, `<meta ${RH} name="twitter:description" content="${description}" />`)
+    .replace(/<meta[^>]* property="og:image" [^>]*>/, (tag) => (meta.image ? `<meta ${RH} property="og:image" content="${escapeHtml(meta.image)}" />` : tag))
+    .replace(/<meta[^>]* name="twitter:image"[^>]*>/, (tag) => (meta.image ? `<meta ${RH} name="twitter:image" content="${escapeHtml(meta.image)}" />` : tag))
     .replace(/<\/head>/, `    ${headExtras}\n  </head>`)
     .replace(/<div id="root"><\/div>/, `<div id="root">${body}</div>`);
 }
@@ -524,9 +637,10 @@ function readJson(path) {
 // a redirect — and Google, seeing the redirect win, overrode the declared
 // canonical with the slashed URL ("Page with redirect" in Search Console).
 //
-// The root is skipped by the caller: overwriting dist/index.html would replace
-// the template every other page is stamped from, and the SPA fallback already
-// serves it.
+// The root is never written here: dist/index.html is the template every other
+// page is stamped from, and the SPA fallback for every URL without a file of
+// its own. The stamped homepage goes to HOME_PAGE_PATH instead, which
+// public/_redirects rewrites `/` to.
 function writePage(outDir, path, html) {
   const outFile = join(outDir, `${path.replace(/^\//, '')}.html`);
   mkdirSync(dirname(outFile), { recursive: true });
@@ -557,7 +671,20 @@ async function loadComponentRenderer(root, warn) {
       ssr: { noExternal: ['react-helmet-async'] },
     });
     const mod = await server.ssrLoadModule('/src/prerender/renderStatic.jsx');
-    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute };
+    // Separately, so a footer that fails to render costs only the footer.
+    let footer = '';
+    try {
+      footer = mod.renderFooter();
+    } catch (err) {
+      warn(`prerender: could not render the footer (${err.message}); pages go without it`);
+    }
+    let navActions = '';
+    try {
+      navActions = mod.renderNavActions();
+    } catch (err) {
+      warn(`prerender: could not render the navbar controls (${err.message}); pages go without them`);
+    }
+    return { routes: mod.COMPONENT_ROUTES, render: mod.renderStaticRoute, home: mod.renderHome, footer, navActions };
   } catch (err) {
     warn(`prerender: could not load component renderer (${err.message}); those pages keep plain bodies`);
     return null;
@@ -582,6 +709,10 @@ export default function prerenderMergers() {
     },
     async closeBundle() {
       const template = readFileSync(join(outDir, 'index.html'), 'utf8');
+      // Loaded first: every page's chrome carries the rendered footer.
+      const componentPages = await loadComponentRenderer(root, (msg) => this.warn(msg));
+      setStaticFooter(componentPages?.footer);
+      setStaticNavActions(componentPages?.navActions);
       const dataDir = join(publicDir, 'data');
       // NOTE: scripts/check_deploy_assets.py derives this same count from the
       // data files, without running a build, to check the deployment against
@@ -775,8 +906,7 @@ export default function prerenderMergers() {
         this.warn(`prerender: skipping quarterly reports: ${err.message}`);
       }
 
-      // Pages rendered from their real components, and the hub pages' data.
-      const componentPages = await loadComponentRenderer(root, (msg) => this.warn(msg));
+      // The hub pages' data.
       const hubData = (file, key) => {
         try {
           const json = readJson(join(dataDir, file));
@@ -822,8 +952,19 @@ export default function prerenderMergers() {
       };
 
       for (const [path, base] of Object.entries(STATIC_PAGE_META)) {
-        // The homepage is dist/index.html — the very template being stamped.
-        if (path === '/') continue;
+        if (path === '/') {
+          let top = '';
+          try {
+            if (componentPages?.home) top = componentPages.home(readJson(join(dataDir, 'stats.json')));
+          } catch (err) {
+            this.warn(`prerender: homepage dashboard not rendered (${err.message}); it keeps only its links`);
+          }
+          const campaigns = [...top.matchAll(/data-promo-campaign="([^"]+)"/g)].map((m) => m[1]);
+          const meta = { ...base, path, headHtml: promoHideScript(campaigns) };
+          writePage(outDir, HOME_PAGE_PATH, renderPage(template, meta, homeBody(meta, top)));
+          counts.static++;
+          continue;
+        }
         let meta = { ...base, path };
         if (path === '/quarterly' && latestQuarter) {
           const latest = quarterlyMeta(latestQuarter);

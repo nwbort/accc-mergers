@@ -1,8 +1,6 @@
-/* global process */
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { NAV_PAGES, SHORTCUT_PAGES, SHORTCUT_ROUTES } from '../navPages';
+import { ROUTES } from '../../routes';
 
 // The point of this table is that the navbar, the command palette, the `g`
 // chords and the help overlay all read it instead of keeping their own copies.
@@ -16,12 +14,10 @@ describe('NAV_PAGES', () => {
   });
 
   it('points every page at a route the app actually renders', () => {
-    // vitest runs from the frontend root, as utils/__tests__/slug.test.js does.
-    const app = readFileSync(resolve(process.cwd(), 'src/App.jsx'), 'utf8');
-    const routed = new Set([...app.matchAll(/<Route path="([^"]+)"/g)].map((m) => m[1]));
+    const routed = new Set(ROUTES.map((route) => route.path));
 
     for (const { label, path } of NAV_PAGES) {
-      expect(routed, `${label} (${path}) has no route in App.jsx`).toContain(path);
+      expect(routed, `${label} (${path}) has no route in routes.js`).toContain(path);
     }
   });
 });

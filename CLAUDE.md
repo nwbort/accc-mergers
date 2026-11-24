@@ -149,8 +149,24 @@ Frontend:
 
 ```
 frontend/src/
-├── main.jsx              # React root
+├── main.jsx              # React root. A prerendered body that is the page itself
+│                         #   (<main data-prerendered="page">: the homepage's dashboard top and the
+│                         #   pages rendered from their own components) is held until preloadRoute
+│                         #   has the page's chunk and first-render data, then the app mounts in a
+│                         #   transition, so the static HTML gives way to the page, not a spinner.
+│                         #   Any other prerendered body is only a summary for crawlers: index.css
+│                         #   hides it from visitors running JavaScript (the js-app class index.html
+│                         #   sets before first paint) and the app mounts at once, so no reader
+│                         #   watches one layout swap for another.
+│                         #   That first render going straight to the page leans on a React
+│                         #   internal: routes.js tags each chunk's promise fulfilled, as React
+│                         #   tags the promises it tracks, and React reads the tag. jsdom can't
+│                         #   show the difference, so after upgrading React, load a prerendered
+│                         #   page on a throttled connection in Chromium and check no spinner
+│                         #   flashes between the static page and the app
 ├── App.jsx               # Router + layout (Navbar, Footer, KeyboardShortcutsHelp)
+├── routes.js             # Every route and its code-split page (+ any data its first render
+│                         #   waits on), read by App.jsx's <Routes> and by preloadRoute
 ├── config.js             # API endpoint constants, SUBSCRIBE_ENDPOINT, TURNSTILE_SITE_KEY
 ├── pages/                # Route components
 │   ├── Dashboard.jsx     # /
@@ -289,7 +305,7 @@ frontend/src/
 │                         #   other two surfaces sort by navOrder/paletteOrder.
 │                         #   constants/__tests__/navPages.test.js pins the invariants:
 │                         #   unique paths and chord keys, and every path a real route
-│                         #   in App.jsx),
+│                         #   in routes.js),
 │                         #   mergerStatus.js, appeal.js, judicialReview.js (mirrors
 │                         #   scripts/constants/judicial_review.py), regime.js, cardStyles.js,
 │                         #   chartColors.js, outcomeDotColors.js, outcomeHeader.js,
@@ -371,7 +387,17 @@ frontend/src/
 │                         #   JSX). Only pages fully known at build time: /nick-twort, /privacy,
 │                         #   /copyright, and /commentary from commentary.json. The hub pages
 │                         #   (/mergers, /industries, /parties) get link-list bodies from their JSON
-│                         #   in prerender.js instead
+│                         #   in prerender.js instead. Also renderFooter (the real Footer, in every
+│                         #   prerendered page's chrome, beside the navbar's links from NAV_PAGES)
+│                         #   and renderHome (components/DashboardTop from stats.json, the top of
+│                         #   the dashboard). The homepage can't be dist/index.html, which Pages also
+│                         #   serves for every URL without a file of its own, so prerender.js writes
+│                         #   it to /prerendered/home and `/  /prerendered/home  200` in
+│                         #   public/_redirects serves it at /. If that rewrite breaks, / silently
+│                         #   falls back to the bare shell: no canonical, JSON-LD or body
+│                         #   (pageMeta.test.js pins the rule). Every prerendered head tag that
+│                         #   <SEO> also writes is marked data-rh, so Helmet replaces rather than
+│                         #   duplicates it on mount (prerender/__tests__/headTags.test.jsx)
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at

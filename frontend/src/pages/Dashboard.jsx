@@ -1,43 +1,37 @@
 import { useEffect } from 'react';
-import { FaMagnifyingGlass, FaStopwatch, FaChartLine } from 'react-icons/fa6';
-import StatCard from '../components/StatCard';
+import DashboardTop, { DASHBOARD_WRAP } from '../components/DashboardTop';
 import OutcomeSummaryCards from '../components/OutcomeSummaryCards';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import UpcomingEventsTimeline from '../components/UpcomingEventsTimeline';
 import RecentEventsTimeline from '../components/RecentEventsTimeline';
-import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
-import RecentMergersCards from '../components/RecentMergersCards';
-import PromoStack from '../components/PromoStack';
-import { DASHBOARD_PROMOS } from '../constants/promo';
 import SEO from '../components/SEO';
-import { API_ENDPOINTS } from '../config';
 import { getCalendarDaysUntil, isEventPast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
-import { formatMedian } from '../utils/formatMedian';
-import { MERGER_STATUS } from '../constants/mergerStatus';
 import { isRecentEventShown } from '../constants/recentEventTypes';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { dashboardStatsFetch, recentEventsFetch, upcomingEventsFetch } from '../utils/pageData';
+import { useFadeIn } from '../hooks/useFadeIn';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/'];
 
 function Dashboard() {
-  const { data: stats, loading, error } = useFetchData(API_ENDPOINTS.stats, {
-    cacheKey: 'dashboard-stats',
-  });
+  // Fade in when navigated to, but not when replacing the prerendered
+  // homepage on first load.
+  const fadeIn = useFadeIn();
+  const [statsKey, statsUrl] = dashboardStatsFetch();
+  const { data: stats, loading, error } = useFetchData(statsUrl, { cacheKey: statsKey });
   // A failed upcoming-events fetch shouldn't block the page — we just omit the
   // section. Errors are logged by the hook.
-  const { data: upcomingEventsData } = useFetchData(API_ENDPOINTS.upcomingEvents, {
-    cacheKey: 'dashboard-events',
-  });
+  const [upcomingKey, upcomingUrl] = upcomingEventsFetch();
+  const { data: upcomingEventsData } = useFetchData(upcomingUrl, { cacheKey: upcomingKey });
   const upcomingEvents = upcomingEventsData?.events ?? null;
   // Likewise optional: without it the recent events table just isn't drawn.
-  const { data: recentEventsData } = useFetchData(API_ENDPOINTS.recentEvents, {
-    cacheKey: 'dashboard-recent-events',
-  });
+  const [recentKey, recentUrl] = recentEventsFetch();
+  const { data: recentEventsData } = useFetchData(recentUrl, { cacheKey: recentKey });
 
   // Mark items as seen after user has viewed them for 2 seconds
   // This ensures the "New" badge persists across refreshes
@@ -65,70 +59,13 @@ function Dashboard() {
   return (
     <>
       <SEO
-        title={PAGE_META.title}
+        documentTitle={PAGE_META.documentTitle}
         description={PAGE_META.description}
         url="/"
+        structuredData={PAGE_META.structuredData}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-      <h1 className="sr-only">Australian merger tracker dashboard</h1>
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-        <StatCard
-          title="Mergers"
-          value={`${stats.by_status[MERGER_STATUS.UNDER_ASSESSMENT] || 0} under assessment`}
-          subtitle={`${stats.total_mergers} notified${stats.total_waivers ? ` and ${stats.total_waivers} waiver${stats.total_waivers !== 1 ? 's' : ''}` : ''}`}
-          icon={<FaMagnifyingGlass />}
-          href={`/mergers?status=${MERGER_STATUS.UNDER_ASSESSMENT}`}
-        />
-        <StatCard
-          title="Average phase 1 duration"
-          value={
-            stats.phase_duration.average_business_days
-              ? `${Math.round(stats.phase_duration.average_business_days)} business days`
-              : 'N/A'
-          }
-          subtitle={
-            stats.phase_duration.average_days
-              ? `${Math.round(stats.phase_duration.average_days)} calendar days`
-              : null
-          }
-          icon={<FaStopwatch />}
-          href="/analysis"
-        />
-        <StatCard
-          title="Median phase 1 duration"
-          value={
-            stats.phase_duration.median_business_days
-              ? `${formatMedian(stats.phase_duration.median_business_days)} business days`
-              : 'N/A'
-          }
-          subtitle={
-            stats.phase_duration.median_days
-              ? `${formatMedian(stats.phase_duration.median_days)} calendar days`
-              : null
-          }
-          icon={<FaChartLine />}
-          href="/analysis"
-        />
-      </div>
-
-      <PromoStack promos={DASHBOARD_PROMOS} />
-
-      {/* Recent Determinations */}
-      {stats.recent_determinations && (
-        <div className="mb-8">
-          <RecentDeterminationsCards
-            determinations={stats.recent_determinations}
-          />
-        </div>
-      )}
-
-      {/* Recently Notified Mergers */}
-      {stats.recent_mergers && (
-        <div className="mb-8">
-          <RecentMergersCards mergers={stats.recent_mergers} />
-        </div>
-      )}
+      <div className={`${DASHBOARD_WRAP}${fadeIn}`}>
+      <DashboardTop stats={stats} />
 
       {/* Upcoming Events: the next 7 days broken out day by day, plus the
           week after bundled into a single trailing "Later" entry (handled

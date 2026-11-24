@@ -1,6 +1,18 @@
 # Redirect old /matters/ document paths to /mergers/
 /matters/*  /mergers/:splat  301
 
+# The homepage, from the copy frontend/prerender.js stamps at /prerendered/home
+# (canonical, title, JSON-LD and a body in the raw HTML). dist/index.html can't
+# carry those itself: Pages also serves it for every URL without a file of its
+# own, so it would claim to be the homepage on all of them. A rewrite (200),
+# not a redirect: the URL stays /. Should the copy ever be missing, Pages
+# answers with that same fallback shell, which is what / served before.
+/  /prerendered/home  200
+
+# /about is a common guess for the author page, which lives at /nick-twort
+/about   /nick-twort  301
+/about/  /nick-twort  301
+
 # Short links to the social profiles
 /bluesky   https://bsky.app/profile/mergers.fyi                301
 /linkedin  https://www.linkedin.com/company/mergers-fyi       301

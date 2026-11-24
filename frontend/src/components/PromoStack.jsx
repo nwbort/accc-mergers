@@ -1,18 +1,12 @@
 import { useState, useCallback, useEffect } from 'react';
 import PromoCard from './PromoCard';
-
-// The localStorage flag recording that a reader dismissed a campaign. The key
-// predates PromoStack, so changing its shape would resurface every campaign
-// for everyone who has already dismissed one.
-function storageKey(campaign) {
-  return `promo_dismissed_${campaign}`;
-}
+import { PROMO_HIDE_STYLE_ID, promoDismissedKey } from '../utils/promoDismissal';
 
 function readDismissed(promos) {
   const dismissed = new Set();
   for (const { campaign } of promos) {
     try {
-      if (localStorage.getItem(storageKey(campaign))) dismissed.add(campaign);
+      if (localStorage.getItem(promoDismissedKey(campaign))) dismissed.add(campaign);
     } catch {
       // Unreadable storage (private browsing): treat as not dismissed.
     }
@@ -55,6 +49,12 @@ function PromoStack({ promos }) {
   const [dismissed, setDismissed] = useState(() => readDismissed(promos));
   const now = useMinuteClock(promos.some((promo) => promo.resolve));
 
+  // The prerendered homepage hid dismissed promos with a style of its own
+  // until now; this component decides from here on (see promoHideScript).
+  useEffect(() => {
+    document.getElementById(PROMO_HIDE_STYLE_ID)?.remove();
+  }, []);
+
   const live = promos
     .filter(({ campaign }) => !dismissed.has(campaign))
     .map((promo) => atTime(promo, now))
@@ -62,7 +62,7 @@ function PromoStack({ promos }) {
 
   const dismiss = useCallback((campaign) => {
     try {
-      localStorage.setItem(storageKey(campaign), '1');
+      localStorage.setItem(promoDismissedKey(campaign), '1');
     } catch {
       // Ignore storage failures (private browsing, quota) - the card just
       // reappears next visit.
@@ -73,9 +73,13 @@ function PromoStack({ promos }) {
   if (live.length === 0) return null;
 
   return (
-    <div className="mb-8 space-y-3">
+    // The data attributes let the prerendered homepage hide a dismissed promo
+    // before first paint (see promoHideScript in frontend/prerender.js).
+    <div className="mb-8 space-y-3" data-promo-stack="">
       {live.map(({ campaign, ...card }) => (
-        <PromoCard key={campaign} {...card} onDismiss={() => dismiss(campaign)} />
+        <div key={campaign} data-promo-campaign={campaign}>
+          <PromoCard {...card} onDismiss={() => dismiss(campaign)} />
+        </div>
       ))}
     </div>
   );

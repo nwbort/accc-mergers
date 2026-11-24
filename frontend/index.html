@@ -1,50 +1,67 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
   <head>
     <meta charset="UTF-8" />
 
+    <!-- Before anything is painted: mark that this visitor runs JavaScript, so
+         index.css hides a prerendered page body that is only a summary for
+         crawlers (main[data-prerendered="summary"], see shell() in
+         prerender.js) while the app, which mounts at once on such a page,
+         draws the real one. If the app never mounts (its code failed to
+         load), the summary comes back after a few seconds. -->
+    <script>
+      document.documentElement.classList.add('js-app');
+      setTimeout(function () {
+        document.documentElement.classList.remove('js-app');
+      }, 8000);
+    </script>
+
     <!-- Warm the data fetches the Dashboard needs, but only on the homepage.
          These files aren't used by other routes, so loading them site-wide
-         would waste bandwidth. The subsequent fetch() in Dashboard.jsx matches
-         the preload (same URL, same-origin, no extra headers) and reuses it. -->
+         would waste bandwidth. The fetch() that then asks for each of them
+         (preloadRoute in routes.js, before the app mounts) matches the preload
+         (same URL, CORS mode, same credentials) and reuses it. -->
     <script>
       (function () {
         var p = location.pathname;
         if (p !== '/' && p !== '/index.html') return;
-        var paths = ['/data/stats.json', '/data/upcoming-events.json'];
+        var paths = ['/data/stats.json', '/data/upcoming-events.json', '/data/recent-events.json'];
         for (var i = 0; i < paths.length; i++) {
           var link = document.createElement('link');
           link.rel = 'preload';
           link.as = 'fetch';
+          // fetch() requests in CORS mode, even same-origin; a fetch preload
+          // only matches it with crossorigin set, or the file downloads twice.
+          link.crossOrigin = 'anonymous';
           link.href = paths[i];
           document.head.appendChild(link);
         }
       })();
     </script>
 
-    <!-- SEO Meta Tags -->
+    <!-- SEO Meta Tags (data-rh: see RH in prerender.js) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents." />
+    <meta data-rh="true" name="description" content="Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents." />
     <meta name="keywords" content="ACCC, mergers, acquisitions, Australia, competition, antitrust, merger review, corporate mergers" />
     <meta name="author" content="Nick Twort" />
     <meta name="theme-color" content="#335145" />
     <meta name="msvalidate.01" content="55FE5385DD2794F88A353F21FE08BB2E" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Australian Merger Tracker | ACCC Merger Reviews & M&A Data" />
-    <meta property="og:description" content="Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents." />
-    <meta property="og:url" content="https://mergers.fyi" />
-    <meta property="og:site_name" content="Australian Merger Tracker" />
-    <meta property="og:image" content="https://mergers.fyi/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta data-rh="true" property="og:type" content="website" />
+    <meta data-rh="true" property="og:title" content="Australian Merger Tracker | ACCC Merger Reviews & M&A Data" />
+    <meta data-rh="true" property="og:description" content="Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents." />
+    <meta data-rh="true" property="og:url" content="https://mergers.fyi" />
+    <meta data-rh="true" property="og:site_name" content="Australian Merger Tracker" />
+    <meta data-rh="true" property="og:image" content="https://mergers.fyi/og-image.png" />
+    <meta data-rh="true" property="og:image:width" content="1200" />
+    <meta data-rh="true" property="og:image:height" content="630" />
 
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Australian Merger Tracker | ACCC Merger Reviews & M&A Data" />
-    <meta name="twitter:description" content="Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents." />
-    <meta name="twitter:image" content="https://mergers.fyi/og-image.png" />
+    <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+    <meta data-rh="true" name="twitter:title" content="Australian Merger Tracker | ACCC Merger Reviews & M&A Data" />
+    <meta data-rh="true" name="twitter:description" content="Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents." />
+    <meta data-rh="true" name="twitter:image" content="https://mergers.fyi/og-image.png" />
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/atom+xml" title="Australian Merger Tracker Feed" href="/feed.xml" />
@@ -65,28 +82,6 @@
 
     <title>Australian Merger Tracker | ACCC Merger Reviews & M&A Data</title>
 
-    <!-- Structured Data (Schema.org) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Australian Merger Tracker",
-      "url": "https://mergers.fyi",
-      "description": "Real-time database of Australian mergers reviewed by the ACCC. Search merger decisions, track review timelines, analyze industry trends, and explore public consultation documents.",
-      "author": {
-        "@type": "Person",
-        "name": "Nick Twort"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://mergers.fyi/mergers?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
   </head>
   <body>
     <div id="root"></div>
