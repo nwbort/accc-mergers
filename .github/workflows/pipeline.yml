@@ -29,32 +29,9 @@ on:
         required: false
         default: '0'
         type: string
-  # Only pushes that touch something the pipeline reads or is defined by.
-  # A frontend-, Functions-, Workers- or docs-only merge has nothing to
-  # regenerate, and running anyway forces the enrich/generate phase (see
-  # "Decide whether to run the enrich phase"), whose commit costs a second
-  # Pages build for no new data. Adding a script that reads another path
-  # outside these? Add that path here, or a push changing it won't regenerate
-  # until the next scheduled run.
-  #   - data/**: hand-edited overlays (commentary, related_*, tribunal_appeals,
-  #     judicial_reviews, quarterly_commentary, …), known_notification_dates,
-  #     frozen_events_mergers, and merged detection PRs
-  #   - atproto/**: identity.json and the lexicons (scripts/atproto/config.py)
-  #   - act-public-holidays.json: business-day maths
-  #     (scripts/generate/static_data/business_days.py)
-  # fixtures/ (test-only) and frontend/public/og/ (og_cards picks each
-  # detail file's card by headline, from code, not from the files on disk)
-  # are deliberately left out.
   push:
     branches:
       - main
-    paths:
-      - 'scripts/**'
-      - 'data/**'
-      - 'atproto/**'
-      - 'frontend/src/data/act-public-holidays.json'
-      - '.github/workflows/pipeline.yml'
-      - '.github/actions/**'
   schedule:
     - cron: '8 7,11,15,19 * * 1-5'
       timezone: 'Australia/Sydney'

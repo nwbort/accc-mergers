@@ -86,7 +86,7 @@ git commit -m "Add commentary for MN-01016"
 git push
 ```
 
-Cloudflare Pages deploys the push automatically. Skipping the regenerate step also works: a push to `main` touching `data/` runs `pipeline.yml`, which regenerates the static files and commits them.
+Cloudflare Pages deploys the push automatically. Skipping the regenerate step also works: every push to `main` runs `pipeline.yml`, which regenerates the static files and commits them.
 
 ## Display
 
