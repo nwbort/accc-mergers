@@ -26,7 +26,7 @@
 
 export const REJECTED_LABEL = '(rejected)';
 export const OPEN_LABEL = '(open)';
-export const KEY_CONTACT = 'contact@mergers.fyi';
+export const KEY_CONTACT = 'nick@mergers.fyi';
 export const KEY_QUERY_PARAM = 'key';
 
 const BASE_HEADERS = {
