@@ -12,8 +12,21 @@ name: Publish CLI SQLite
 # main history. Each run replaces the branch with a fresh single commit.
 #
 # Routine publishes happen inline at the end of pipeline.yml whenever a
-# pipeline run pushes a change to cli-bundle.json. This workflow exists for
+# pipeline run pushes a change to cli-manifest.json. This workflow exists for
 # manual republishes (e.g. after a schema change in build_cli_sqlite.py).
+#
+# Nothing the bundle is built from is committed as such: the bundle is made
+# from generate_static_data's in-memory records, so this workflow regenerates
+# everything from the committed sources first. It publishes at the version
+# main's cli-manifest.json records and never bumps it (`--cli-bundle
+# republish`). Regenerating on a later day can legitimately give a slightly
+# different bundle than the one that version was stamped on (date-relative
+# fields, such as a Federal Court listing date passing), so a mismatch is a
+# warning on the run, not a failure: the content is still built from main's
+# sources, and the next pipeline run notices the difference and publishes the
+# next version. Bumping here instead would mint a version main never records,
+# which that pipeline run would then stamp on different content. Files the
+# regeneration rewrites are discarded with the runner; nothing is pushed to main.
 
 on:
   workflow_dispatch:
@@ -37,13 +50,14 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install Python dependencies
+        run: pip install -r scripts/requirements.txt
+
       # cli-bundle.json is gitignored, so a fresh checkout of main doesn't have
-      # one. Rebuild it from the committed data (data/output/mergers.json plus
-      # the frontend questionnaire/NOCC/stats files). --rebuild fails if the
-      # result doesn't match the checksum in the tracked cli-manifest.json,
-      # which keeps this republish pinned to the version already on main.
-      - name: Rebuild CLI bundle
-        run: ./scripts/generate/generate-cli-data.sh --rebuild
+      # one. Regenerate it, pinned to the version main already records (see
+      # the note at the top of this file).
+      - name: Regenerate data and CLI bundle
+        run: python -m scripts.generate.generate_static_data --cli-bundle republish
 
       - name: Build SQLite database
         run: |

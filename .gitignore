@@ -65,17 +65,21 @@ node_modules/
 # tracked (see scripts/tools/advisors_crypto.py).
 data/processed/advisors.json
 
-# CLI build intermediates. The bundle (~7 MB) is regenerated from the frontend
-# data on every pipeline run and consumed in-process by build_cli_sqlite.py to
-# produce the cli.sqlite that ships on the orphan `cli-dist` branch — nothing
-# reads the committed copy, so tracking it just added ~7 MB of blob per data
-# commit. cli-merger-manifest.json backs a not-yet-implemented per-record sync
-# path and has no reader either.
+# The full enriched dataset (~11 MB), written by generate_static_data.py for
+# offline analysis only. Nothing in the pipeline reads it — the CLI bundle is
+# built from the same run's in-memory records — and committing it on every data
+# run was most of the repository's growth. Run the generator locally for a copy.
+data/output/mergers.json
+
+# CLI build intermediates. The bundle is rebuilt by generate_static_data.py
+# (scripts/generate/cli_bundle.py) on every run and fed to build_cli_sqlite.py
+# in the same job to produce the cli.sqlite that ships on the orphan `cli-dist`
+# branch. Nothing reads a committed copy. cli-merger-manifest.json backs a
+# not-yet-implemented per-record sync path and has no reader either.
 #
-# cli-manifest.json IS still tracked: generate-cli-data.sh reads its
-# `version` and `bundle_sha256` to decide whether the data changed and what
-# version to stamp next. Without it every run would look changed and reset to
-# v1. Regenerate the bundle locally with `./scripts/generate/generate-cli-data.sh`.
+# cli-manifest.json IS still tracked: cli_bundle.py reads its `version` and
+# `bundle_sha256` to decide whether the bundle changed and what version to
+# stamp next. Without it every run would look changed and reset to v1.
 data/output/cli/cli-bundle.json
 data/output/cli/cli-merger-manifest.json
 

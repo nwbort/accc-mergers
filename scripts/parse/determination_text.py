@@ -1,6 +1,8 @@
 """
 Clean PDF-extracted determination text for the CLI bundle.
 
+Used by ``scripts/generate/cli_bundle.py`` on every merger record it bundles.
+
 PDFs are extracted with pdfplumber in parse_determination.py, which preserves
 the raw layout newlines from the source document. The frontend strips those
 newlines at render time in DeterminationExplanationSection.jsx, but the CLI
@@ -26,9 +28,7 @@ and are collapsed to single-spaced strings.
 
 from __future__ import annotations
 
-import json
 import re
-import sys
 from typing import Any
 
 _LETTER_LIST = re.compile(r"^[a-z]\.")
@@ -84,43 +84,3 @@ def clean_merger(merger: dict[str, Any]) -> dict[str, Any]:
             if "details" in row:
                 row["details"] = clean_explanation(row["details"])
     return merger
-
-
-def load_records(paths: list[str]) -> list[dict]:
-    """Load merger records from either source shape.
-
-    ``--mergers-json <path>`` reads the combined ``data/output/mergers.json``
-    (a ``{"mergers": [...]}`` object) and returns its records ordered by
-    merger_id. Otherwise every path is read as one merger file, in the order
-    given. The combined file is what ``generate-cli-data.sh`` uses: it holds
-    the full enriched records, so the deployed per-merger files stay free to
-    carry only what the site renders.
-    """
-    if paths[:1] == ["--mergers-json"]:
-        if len(paths) != 2:
-            raise SystemExit("--mergers-json takes exactly one path")
-        with open(paths[1]) as f:
-            data = json.load(f)
-        return sorted(data["mergers"], key=lambda m: m.get("merger_id") or "")
-    records = []
-    for path in paths:
-        with open(path) as f:
-            records.append(json.load(f))
-    return records
-
-
-def _main(paths: list[str]) -> None:
-    """Aggregate merger records into a single cleaned array on stdout.
-
-    Used by ``generate-cli-data.sh`` as a drop-in replacement for
-    ``jq -s '.' <files>``.
-    """
-    result = []
-    for merger in load_records(paths):
-        clean_merger(merger)
-        result.append(merger)
-    json.dump(result, sys.stdout, separators=(",", ":"), ensure_ascii=False)
-
-
-if __name__ == "__main__":
-    _main(sys.argv[1:])

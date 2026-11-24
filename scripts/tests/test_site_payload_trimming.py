@@ -1,9 +1,9 @@
 """Tests for the trimming that separates deployed payloads from the full record.
 
-Each generated output carries only what its consumer reads. The complete
-enriched record survives in ``data/output/mergers.json``, which is what the CLI
-bundle (``scripts/generate/generate-cli-data.sh``) indexes, so trimming a
-deployed file never costs the CLI anything.
+Each generated output carries only what its consumer reads. The CLI bundle
+(``scripts/generate/cli_bundle.py``) is built from the complete enriched records
+in memory, not from the deployed files, so trimming a deployed file never costs
+the CLI anything.
 """
 
 import json
@@ -17,7 +17,7 @@ sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
 from scripts.generate.static_data.enrichment import slim_for_site
 from scripts.generate.static_data.outputs import individual, list as list_output
-from scripts.parse.determination_text import load_records
+from scripts.generate import cli_bundle
 
 
 def _party(name, canonical=None):
@@ -99,7 +99,7 @@ def test_slim_for_site_drops_the_canonical_link_party_page_duplicates():
     assert 'canonical' not in buyer
     assert buyer['party_page'] == {'id': 'slug', 'name': 'Buyer One'}
     assert buyer['identifier'] == '12 345 678 901'
-    # The full record (and so data/output/mergers.json) keeps it.
+    # The full record (and so the CLI bundle) keeps it.
     assert merger['acquirers'][0]['canonical']['name'] == 'Buyer Group'
 
 
@@ -170,22 +170,14 @@ def test_list_parties_are_names_and_canonical_names(tmp_path):
 
 # --- CLI bundle source ------------------------------------------------------
 
-def test_cli_bundle_reads_the_full_records_from_mergers_json(tmp_path):
-    """The CLI's source keeps everything the deployed files drop."""
-    path = tmp_path / 'mergers.json'
-    path.write_text(json.dumps({'mergers': [_merger('MN-0002'), _merger('MN-0001')]}))
+def test_cli_bundle_carries_the_full_records():
+    """The CLI's records keep everything the deployed files drop."""
+    bundle = cli_bundle.build_bundle(
+        [_merger('MN-0002'), _merger('MN-0001')], {}, {}, None, None,
+    )
 
-    records = load_records(['--mergers-json', str(path)])
-
+    records = bundle['mergers']
     assert [r['merger_id'] for r in records] == ['MN-0001', 'MN-0002']
     assert records[0]['accc_determination_raw'] == 'Approved  '
+    assert records[0]['acquirers'][0]['canonical']['name'] == 'Buyer Group'
     assert len(records[0]['events'][0]['determination_table_content']) == 2
-
-
-def test_load_records_still_reads_individual_files(tmp_path):
-    path = tmp_path / 'MN-0001.json'
-    path.write_text(json.dumps(_merger()))
-
-    records = load_records([str(path)])
-
-    assert [r['merger_id'] for r in records] == ['MN-0001']

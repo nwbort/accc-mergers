@@ -2052,7 +2052,7 @@ from scripts.generate.static_data.enrichment import (
 from scripts.generate.static_data.outputs.commentary import generate as generate_commentary_json
 from scripts.generate.static_data.outputs.industries import generate_index as generate_industries_json
 from scripts.generate.static_data.outputs.questionnaires import generate as generate_questionnaire_files
-from scripts.generate.static_data.outputs.noccs import generate as generate_nocc_files
+from scripts.generate.cli_bundle import nocc_records
 from scripts.parse.parse_nocc import (
     _parse_blocks,
     _group_blocks_into_sections,
@@ -3620,11 +3620,11 @@ class TestEnrichMergerNocc:
 
 
 # ---------------------------------------------------------------------------
-# generate_static_data: NOCC files
+# cli_bundle: NOCC records (the CLI bundle is their only consumer)
 # ---------------------------------------------------------------------------
 
-class TestGenerateNoccFiles:
-    def test_generates_files(self, tmp_path):
+class TestNoccRecords:
+    def test_builds_records(self):
         nocc_data = {
             'MN-01068': {
                 'title': 'Coles – Kalgoorlie',
@@ -3641,48 +3641,33 @@ class TestGenerateNoccFiles:
                 ],
             },
         }
-        count = generate_nocc_files(nocc_data, tmp_path)
-        assert count == 1
-        nocc_path = tmp_path / 'noccs' / 'MN-01068.json'
-        assert nocc_path.exists()
-
-        import json
-        with open(nocc_path) as f:
-            data = json.load(f)
+        records = nocc_records(nocc_data)
+        assert list(records) == ['MN-01068']
+        data = records['MN-01068']
         assert data['title'] == 'Coles – Kalgoorlie'
         assert data['date_iso'] == '2026-03-05'
         assert len(data['sections']) == 1
         assert data['sections'][0]['number'] == '1'
+        assert 'all_noccs' not in data
 
-    def test_skips_entries_without_sections(self, tmp_path):
+    def test_skips_entries_without_sections(self):
         nocc_data = {
             'MN-01068': {'sections': [{'number': '1', 'title': 'X', 'blocks': []}]},
             'MN-01069': {'sections': []},
             'MN-01070': {'error': 'parse failed', 'file_path': 'matters/MN-01070/x.pdf'},
         }
-        count = generate_nocc_files(nocc_data, tmp_path)
-        assert count == 1
-        assert (tmp_path / 'noccs' / 'MN-01068.json').exists()
-        assert not (tmp_path / 'noccs' / 'MN-01069.json').exists()
-        assert not (tmp_path / 'noccs' / 'MN-01070.json').exists()
+        assert list(nocc_records(nocc_data)) == ['MN-01068']
 
-    def test_prunes_file_for_a_matter_with_no_nocc_left(self, tmp_path):
-        (tmp_path / 'noccs').mkdir(parents=True)
-        (tmp_path / 'noccs' / 'MN-09999.json').write_text('{}')
-        nocc_data = {
-            'MN-01068': {'sections': [{'number': '1', 'title': 'X', 'blocks': []}]},
-        }
-        generate_nocc_files(nocc_data, tmp_path)
-        assert not (tmp_path / 'noccs' / 'MN-09999.json').exists()
-        assert (tmp_path / 'noccs' / 'MN-01068.json').exists()
+    def test_lists_every_version_of_a_reissued_summary(self):
+        first = {'title': 'v2', 'sections': [{'number': '1', 'blocks': []}]}
+        second = {'title': 'v1', 'sections': [{'number': '1', 'blocks': []}]}
+        broken = {'title': 'unparsed', 'sections': []}
+        nocc_data = {'MN-01068': {**first, 'all_noccs': [first, second, broken]}}
+        record = nocc_records(nocc_data)['MN-01068']
+        assert [n['title'] for n in record['all_noccs']] == ['v2', 'v1']
 
-    def test_empty_data(self, tmp_path):
-        # Nothing written means nothing pruned — an empty load must not wipe
-        # the directory.
-        (tmp_path / 'noccs').mkdir(parents=True)
-        (tmp_path / 'noccs' / 'MN-01068.json').write_text('{}')
-        assert generate_nocc_files({}, tmp_path) == 0
-        assert (tmp_path / 'noccs' / 'MN-01068.json').exists()
+    def test_empty_data(self):
+        assert nocc_records({}) == {}
 
 
 # ---------------------------------------------------------------------------

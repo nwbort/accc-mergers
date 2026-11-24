@@ -364,15 +364,23 @@ sed -n '204,255p' scripts/generate/generate_static_data.py
     print(f"✓ Generated {n} party records in {OUTPUT_DIR / 'parties'} "
           f"({SHARD_COUNT} shard buckets)")
 
+    questionnaire_records = questionnaires.build(questionnaire_data, mergers=enriched)
     if questionnaire_data:
         print("\nGenerating questionnaire files...")
-        q_count = questionnaires.generate(questionnaire_data, OUTPUT_DIR, mergers=enriched)
+        q_count = questionnaires.write(questionnaire_records, OUTPUT_DIR)
         print(f"✓ Generated {q_count} questionnaire files in {OUTPUT_DIR / 'questionnaires'}")
 
-    if nocc_data:
-        print("\nGenerating NOCC files...")
-        n_count = noccs.generate(nocc_data, OUTPUT_DIR)
-        print(f"✓ Generated {n_count} NOCC files in {OUTPUT_DIR / 'noccs'}")
+    # The CLI bundle, from what this run already holds in memory. NOCC
+    # summaries go only here: the site never fetched them.
+    print(f"\nBuilding CLI bundle ({args.cli_bundle})...")
+    result = cli_bundle.write(
+        full_records,
+        questionnaire_records,
+        cli_bundle.nocc_records(nocc_data),
+        payloads["stats.json"],
+        payloads["industries.json"],
+        mode=args.cli_bundle,
+    )
 
     print("\nDone!")
 ```

@@ -62,6 +62,7 @@ tests run without network or PDF tooling installed.
 | `test_generate_sitemap.py` | The sitemap's party and industry inclusion rules. |
 | `test_rss_feed.py` | `generate/generate_rss_feed.py`'s entry ids. |
 | `test_build_cli_sqlite.py` | `generate/build_cli_sqlite.py`'s derived columns. |
+| `test_cli_bundle.py` | `generate/cli_bundle.py`: bundle shape, cleaning, and that the manifest's version moves only when the bundle's content does. |
 | `test_send_weekly_email.py` | The weekly digest email (`send_weekly_email.py`). |
 | `test_slug.py` | `slug.py`, pinned to `fixtures/slug-cases.json`. |
 | `test_shard.py` | `shard.py`, pinned to `fixtures/shard-cases.json`. |

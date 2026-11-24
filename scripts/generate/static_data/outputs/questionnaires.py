@@ -78,11 +78,11 @@ def _active_questionnaire_filenames(merger: dict) -> set:
     }
 
 
-def generate(questionnaire_data: dict, output_dir: Path, mergers: list | None = None) -> int:
-    """Write individual questionnaire files. Returns count written.
+def build(questionnaire_data: dict, mergers: list | None = None) -> dict[str, dict]:
+    """The questionnaire payload for each merger that has one, keyed by merger id.
 
-    Files for matters whose questionnaires are no longer parsed (or no longer
-    have any questions) are pruned.
+    Shared by the per-merger files below and the CLI bundle
+    (``scripts/generate/cli_bundle.py``), so the two carry the same record.
     """
     active_by_merger = {}
     if mergers:
@@ -91,11 +91,7 @@ def generate(questionnaire_data: dict, output_dir: Path, mergers: list | None = 
             if merger_id:
                 active_by_merger[merger_id] = _active_questionnaire_filenames(merger)
 
-    questionnaires_dir = Path(output_dir) / "questionnaires"
-    questionnaires_dir.mkdir(parents=True, exist_ok=True)
-
-    count = 0
-    written: set[str] = set()
+    records = {}
     for merger_id, q_data in questionnaire_data.items():
         # All distinct versions parsed for this matter (the primary entry is
         # also the first element of all_questionnaires when it exists).
@@ -121,13 +117,32 @@ def generate(questionnaire_data: dict, output_dir: Path, mergers: list | None = 
         output = _questionnaire_record(versions[0])
         if len(versions) > 1:
             output['all_questionnaires'] = [_questionnaire_record(v) for v in versions]
+        records[merger_id] = output
 
+    return records
+
+
+def write(records: dict[str, dict], output_dir: Path) -> int:
+    """Write one file per record from :func:`build`. Returns count written.
+
+    Files for matters whose questionnaires are no longer parsed (or no longer
+    have any questions) are pruned.
+    """
+    questionnaires_dir = Path(output_dir) / "questionnaires"
+    questionnaires_dir.mkdir(parents=True, exist_ok=True)
+
+    written: set[str] = set()
+    for merger_id, output in records.items():
         out_path = questionnaires_dir / f"{merger_id}.json"
         with open(out_path, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2)
         written.add(out_path.name)
-        count += 1
 
     prune_stale_files(questionnaires_dir, written)
 
-    return count
+    return len(written)
+
+
+def generate(questionnaire_data: dict, output_dir: Path, mergers: list | None = None) -> int:
+    """Build and write the questionnaire files. Returns count written."""
+    return write(build(questionnaire_data, mergers), output_dir)

@@ -20,7 +20,7 @@ Extracts → data/processed/mergers.json
     ↓
 Generates static data files:
   - frontend/public/data/
-  - data/output/ (CLI bundle)
+  - data/output/cli/ (CLI bundle; only its manifest is committed)
   - frontend/public/feed.xml (RSS), frontend/public/sitemap.xml
     ↓
 Commits to main branch
@@ -139,7 +139,7 @@ The primary automated workflow. Runs end-to-end on a schedule and on every push 
 1. **Scrape** — runs `scripts/scrape/scrape.sh` to fetch new/updated ACCC merger pages into `data/raw/matters/`
 2. **Extract** — runs `extract_mergers.py --skip-pdf-enrich` to parse new/changed matters into `data/processed/mergers.json` and download their attachments
 3. **Convert** — detects unconverted DOCX attachments, installs LibreOffice, converts to PDF
-4. **Enrich and generate** — runs `enrich_pdfs.py`, `generate_similar_mergers.py`, `generate_static_data.py`, `generate-cli-data.sh`, `generate_rss_feed.py`, `generate_sitemap.py`, then compresses oversized PDFs
+4. **Enrich and generate** — runs `enrich_pdfs.py`, `generate_similar_mergers.py`, `generate_static_data.py` (which also builds the CLI bundle), `generate_rss_feed.py`, `generate_sitemap.py`, then compresses oversized PDFs
 5. **Publish** — publishes matters to the ATmosphere and posts new milestones to Bluesky (see [`atproto.md`](atproto.md); LinkedIn posts go out afterwards from `linkedin-share-links.yml`, see [`linkedin.md`](linkedin.md)); each step is `continue-on-error` and skips without its credentials
 6. **Commit** — commits all staged changes in a single commit, rebases, and pushes
 7. **Detect** — runs all four detectors, each opening, refreshing or auto-closing its own review PR (see below)
@@ -261,17 +261,18 @@ Additional output:
 - `frontend/public/feed.xml` — RSS (Atom) feed
 - `frontend/public/sitemap.xml` — sitemap
 - `data/processed/similar_mergers.json` — similarity pairs between mergers (an input to `generate_static_data.py`)
-- `data/output/cli/` — CLI build inputs. Only `cli-manifest.json` is tracked
-  (version counter + bundle checksum); `cli-bundle.json` and
-  `cli-merger-manifest.json` are gitignored and regenerated on demand.
+- `data/output/cli/` — CLI build inputs, written by `generate_static_data.py`.
+  Only `cli-manifest.json` is tracked (version counter + bundle checksum);
+  `cli-bundle.json` and `cli-merger-manifest.json` are gitignored.
+- `data/output/mergers.json` — the full enriched dataset for offline
+  analysis. Gitignored: each local run of `generate_static_data.py` writes it.
 
 ### Regenerating data locally
 
 ```bash
 python -m scripts.extract_mergers
 python -m scripts.generate.generate_similar_mergers
-python -m scripts.generate.generate_static_data
-./scripts/generate/generate-cli-data.sh
+python -m scripts.generate.generate_static_data   # also the CLI bundle and data/output/mergers.json
 python -m scripts.generate.generate_rss_feed
 ```
 
