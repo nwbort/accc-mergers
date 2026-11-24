@@ -109,16 +109,15 @@ export async function fetchIndustryNode(code) {
   const key = industryDivisionCacheKey(code);
   let payload = dataCache.get(key);
   if (!payload) {
-    const response = await fetch(industryDivisionUrl(code));
-    if (!response.ok) return null;
     try {
-      payload = await response.json();
+      // load() shares a request already in flight, so followed industries
+      // read at once under one division still cost one fetch.
+      payload = await dataCache.load(key, industryDivisionUrl(code));
     } catch {
       // A missing file is served as the SPA's index.html with HTTP 200 on
       // Cloudflare Pages, so a parse failure here is a 404 in disguise.
       return null;
     }
-    dataCache.set(key, payload);
   }
   return readIndustryNode(payload, code);
 }

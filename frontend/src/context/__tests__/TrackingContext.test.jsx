@@ -39,6 +39,12 @@ function mockFetchFromMergers(mergers) {
 
 const wrapper = ({ children }) => <TrackingProvider>{children}</TrackingProvider>;
 
+// The provider reads followed files through the module-level dataCache, which
+// a real visit starts empty. Tests reuse merger ids with different data.
+beforeEach(() => {
+  dataCache.clear();
+});
+
 describe('TrackingContext auto-tracking of related mergers', () => {
   beforeEach(() => {
     localStorage.clear();
@@ -282,6 +288,7 @@ describe('TrackingContext auto-tracking of related mergers', () => {
     });
     expect(first.result.current.trackedMergerIds).toEqual(['WA-1']);
     first.unmount();
+    dataCache.clear(); // a new visit starts with an empty cache
 
     // Later visit: the waiver was declined and re-filed, the pair is now recorded,
     // and WA-1's detail carries the forward link. (localStorage still holds the
@@ -532,6 +539,7 @@ describe('TrackingContext auto-tracking of Phase 2 matters', () => {
       expect(first.result.current.trackedMergerIds).toContain('MN-1');
     });
     first.unmount();
+    dataCache.clear(); // a new visit starts with an empty cache
 
     // Later visit: a new matter has entered Phase 2. The setting persists via
     // localStorage, so the new matter is auto-tracked too.
@@ -713,5 +721,116 @@ describe('TrackingContext: a tracked merger wins over a followed industry', () =
       expect(result.current.trackedIndustryEvents.map((e) => e.merger_id).sort()).toEqual(['MN-1', 'MN-2']);
     });
     expect(result.current.unseenIndustryEvents.map((e) => e.merger_id)).toEqual(['MN-2']);
+  });
+});
+
+describe('TrackingContext reads followed files through dataCache', () => {
+  const merger = (id, events = []) => ({ merger_id: id, merger_name: `Deal ${id}`, events });
+  const detailRequests = () =>
+    globalThis.fetch.mock.calls
+      .map(([url]) => /\/data\/mergers\/([^/]+)\.json$/.exec(url)?.[1])
+      .filter(Boolean);
+
+  beforeEach(() => {
+    localStorage.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    globalThis.fetch = originalFetch;
+    dataCache.clear();
+    vi.restoreAllMocks();
+  });
+
+  it('downloads only the newly followed merger, not every followed one', async () => {
+    const ids = ['MN-1', 'MN-2', 'MN-3', 'MN-4', 'MN-5'];
+    localStorage.setItem('merger_tracker_tracked', JSON.stringify(ids));
+    mockFetchFromMergers(Object.fromEntries([...ids, 'MN-6'].map((id) => [id, merger(id)])));
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(detailRequests().sort()).toEqual(ids);
+    globalThis.fetch.mockClear();
+
+    act(() => {
+      result.current.trackMerger('MN-6');
+    });
+    await waitFor(() => expect(result.current.trackedMergerIds).toContain('MN-6'));
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(detailRequests()).toEqual(['MN-6']);
+  });
+
+  it('shares the detail file with the merger page under the same cache key', async () => {
+    localStorage.setItem('merger_tracker_tracked', JSON.stringify(['MN-1']));
+    const page = merger('MN-1', [{ date: '2026-11-10T12:00:00Z', title: 'Merger notified' }]);
+    dataCache.set('merger-MN-1', page);
+    mockFetchFromMergers({});
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+
+    await waitFor(() => expect(result.current.trackedEvents).toHaveLength(1));
+    expect(detailRequests()).toEqual([]);
+  });
+
+  it('joins a load already in flight rather than starting another', async () => {
+    localStorage.setItem('merger_tracker_tracked', JSON.stringify(['MN-1']));
+    mockFetchFromMergers({ 'MN-1': merger('MN-1') });
+    // The route preload for /mergers/MN-1 (routes.js) got there first.
+    const preload = dataCache.load('merger-MN-1', '/data/mergers/MN-1.json');
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+    await preload;
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(detailRequests()).toEqual(['MN-1']);
+  });
+
+  it('revalidates followed files on refreshEvents, and shows what changed', async () => {
+    localStorage.setItem('merger_tracker_tracked', JSON.stringify(['MN-1']));
+    mockFetchFromMergers({ 'MN-1': merger('MN-1') });
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.trackedEvents).toHaveLength(0);
+
+    // A push arrives while the site is open (PushContext calls refreshEvents).
+    mockFetchFromMergers({
+      'MN-1': merger('MN-1', [{ date: '2026-11-20T12:00:00Z', title: 'Determination published' }]),
+    });
+    act(() => {
+      result.current.refreshEvents();
+    });
+
+    await waitFor(() => expect(result.current.trackedEvents).toHaveLength(1));
+    expect(globalThis.fetch).toHaveBeenCalledWith('/data/mergers/MN-1.json', { cache: 'no-cache' });
+  });
+
+  it('registers followed files for background refresh and picks up a change', async () => {
+    localStorage.setItem('merger_tracker_tracked', JSON.stringify(['MN-1']));
+    localStorage.setItem(
+      'merger_tracker_tracked_industries',
+      JSON.stringify([{ code: 'C', name: 'Manufacturing' }, { code: '11', name: 'Food' }])
+    );
+    mockFetchFromMergers({ 'MN-1': merger('MN-1') });
+
+    const { result, unmount } = renderHook(() => useTracking(), { wrapper });
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    // Without browser notifications, useBackgroundRefresh is what keeps them
+    // fresh. Both industries are in division C: one file between them.
+    expect(dataCache.activeEntries()).toEqual([
+      ['merger-MN-1', '/data/mergers/MN-1.json'],
+      ['industry-division-C.json', '/data/industries/C.json'],
+    ]);
+
+    mockFetchFromMergers({
+      'MN-1': merger('MN-1', [{ date: '2026-11-20T12:00:00Z', title: 'Determination published' }]),
+    });
+    await act(() => dataCache.revalidate('merger-MN-1', '/data/mergers/MN-1.json'));
+    await waitFor(() => expect(result.current.trackedEvents).toHaveLength(1));
+
+    unmount();
+    expect(dataCache.activeEntries()).toEqual([]);
   });
 });

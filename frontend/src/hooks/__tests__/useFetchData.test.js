@@ -59,6 +59,22 @@ describe('useFetchData', () => {
     expect(fetchSpy).not.toHaveBeenCalled();
   });
 
+  it('keeps the response validator, so a revalidation can skip an unchanged file', async () => {
+    const json = vi.fn(() => Promise.resolve({ n: 1 }));
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      ok: true,
+      status: 200,
+      headers: { get: (name) => (name === 'ETag' ? '"v1"' : null) },
+      json,
+    });
+
+    renderHook(() => useFetchData('/data/v.json', { cacheKey: 'v-key' }));
+    await waitFor(() => expect(dataCache.has('v-key')).toBe(true));
+
+    await dataCache.revalidate('v-key', '/data/v.json');
+    expect(json).toHaveBeenCalledTimes(1);
+  });
+
   it('fetches on cache miss, populates cache, and returns the data', async () => {
     const payload = { items: [1, 2, 3] };
     const fetchSpy = vi

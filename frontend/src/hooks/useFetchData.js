@@ -1,5 +1,5 @@
 import { useState, useEffect, useReducer } from 'react';
-import { dataCache } from '../utils/dataCache';
+import { dataCache, validatorOf } from '../utils/dataCache';
 
 /**
  * Fetches JSON from a URL with shared caching and the usual loading/error state.
@@ -66,6 +66,10 @@ export function useFetchData(url, { cacheKey } = {}) {
 
     const controller = new AbortController();
 
+    // Set when this hook downloads the file itself, so the cache entry keeps
+    // the response's validator for dataCache.revalidate. A preload that lands
+    // instead has already cached the file, validator included.
+    let ownValidator;
     const fetchOwn = () =>
       fetch(url, { signal: controller.signal }).then((res) => {
         if (!res.ok) {
@@ -73,6 +77,7 @@ export function useFetchData(url, { cacheKey } = {}) {
           err.status = res.status;
           throw err;
         }
+        ownValidator = validatorOf(res);
         return res.json();
       });
     // A preload still in flight for this key (routes.js, via dataCache.load):
@@ -82,7 +87,7 @@ export function useFetchData(url, { cacheKey } = {}) {
     (pending ? pending.catch(fetchOwn) : fetchOwn())
       .then((json) => {
         if (controller.signal.aborted) return;
-        if (cacheKey) dataCache.set(cacheKey, json);
+        if (cacheKey && ownValidator !== undefined) dataCache.set(cacheKey, json, ownValidator);
         setResult({ data: json, error: null, url });
       })
       .catch((err) => {

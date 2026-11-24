@@ -1,8 +1,9 @@
 import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { API_ENDPOINTS } from '../config';
 import { pingFeatureEvent, trackIndustryEvent, trackMergerEvent } from '../utils/trackEvent';
-import { fetchIndustryNode, industryDivisionCacheKey } from '../utils/industryNode';
+import { fetchIndustryNode } from '../utils/industryNode';
 import { dataCache } from '../utils/dataCache';
+import { industryDivisionFetch, mergerDetailFetch } from '../utils/pageData';
 import {
   dedupeEvents,
   forwardRefileLink,
@@ -105,10 +106,18 @@ export function TrackingProvider({ children }) {
   const [timelineEvents, setTimelineEvents] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [loading, setLoading] = useState(true);
-  // Bumped by refreshEvents() to fetch everything again: the browser
+  // Bumped by refreshEvents() to check every followed file again: the browser
   // notification service worker asks for that when a push arrives while the
-  // site is open, rather than showing a notification over it.
+  // site is open, rather than showing a notification over it. Each fetch
+  // effect remembers the count it last acted on, so only a bump (not a follow)
+  // revalidates what's already cached.
   const [refreshCount, setRefreshCount] = useState(0);
+  const mergerRefreshRef = useRef(refreshCount);
+  const industryRefreshRef = useRef(refreshCount);
+  // Bumped when a background revalidation (useBackgroundRefresh, or a page
+  // showing the same file) finds a followed file changed, so the events are
+  // derived again from the fresh copy. See the followed-files effect below.
+  const [followedDataVersion, setFollowedDataVersion] = useState(0);
   // Track newly added merger IDs so we can mark their events as seen
   const [newlyTrackedIds, setNewlyTrackedIds] = useState([]);
   const newlyTrackedIdsSet = useMemo(() => new Set(newlyTrackedIds), [newlyTrackedIds]);
@@ -170,8 +179,53 @@ export function TrackingProvider({ children }) {
     trackedMergerIdsRef.current = trackedMergerIds;
   }, [trackedMergerIds]);
 
-  // Fetch events on mount and when tracked mergers change
+  // The [cacheKey, url] of every followed file: each tracked merger's detail
+  // file, and the division file of each followed industry (one per division).
+  const followedFiles = useMemo(() => {
+    const pairs = new Map();
+    trackedMergerIds.forEach((id) => {
+      const [key, url] = mergerDetailFetch(id);
+      pairs.set(key, url);
+    });
+    trackedIndustryCodesKey.split(',').filter(Boolean).forEach((code) => {
+      const [key, url] = industryDivisionFetch(code);
+      pairs.set(key, url);
+    });
+    return [...pairs];
+  }, [trackedMergerIds, trackedIndustryCodesKey]);
+
+  // Keep followed files fresh without browser notifications. They're on
+  // screen in the sense that matters (the bell's count is), so register them
+  // with useBackgroundRefresh like any page's data: on regaining focus, and
+  // every so often while visible, each is revalidated (a 304 when unchanged),
+  // and a change is derived into the panel here. With notifications on, a
+  // push also asks for a check straight away (refreshEvents).
   useEffect(() => {
+    const bump = () => setFollowedDataVersion((n) => n + 1);
+    const cleanups = followedFiles.flatMap(([key, url]) => [
+      dataCache.registerActive(key, url),
+      dataCache.subscribe(key, bump),
+    ]);
+    return () => cleanups.forEach((cleanup) => cleanup());
+  }, [followedFiles]);
+
+  // Derive the followed mergers' events, on mount, when the follow list
+  // changes, when a followed file changes, and on refreshEvents(). Detail
+  // files are read through dataCache, under the same keys as the merger page
+  // (mergerDetailFetch), so following one more merger downloads only that
+  // merger's file, and a followed merger's page and the panel share one copy.
+  useEffect(() => {
+    let cancelled = false;
+    const forceFresh = mergerRefreshRef.current !== refreshCount;
+    mergerRefreshRef.current = refreshCount;
+
+    const readMerger = async (id) => {
+      const [key, url] = mergerDetailFetch(id);
+      if (!dataCache.has(key)) return dataCache.load(key, url).catch(() => null);
+      if (forceFresh) await dataCache.revalidate(key, url);
+      return dataCache.get(key) ?? null;
+    };
+
     const fetchEvents = async () => {
       if (trackedMergerIds.length === 0) {
         setTimelineEvents([]);
@@ -180,17 +234,14 @@ export function TrackingProvider({ children }) {
         return;
       }
 
-      setLoading(true);
+      // Only a download is worth a loading state: deriving from cached
+      // copies, or revalidating them, keeps the panel's list in place.
+      if (trackedMergerIds.some((id) => !dataCache.has(mergerDetailFetch(id)[0]))) {
+        setLoading(true);
+      }
       try {
-        // Fetch individual merger files instead of full timeline for better performance
-        // This is more efficient when tracking only a few mergers
-        const mergerPromises = trackedMergerIds.map(id =>
-          fetch(API_ENDPOINTS.mergerDetail(id))
-            .then(res => res.ok ? res.json() : null)
-            .catch(() => null)
-        );
-
-        const mergers = await Promise.all(mergerPromises);
+        const mergers = await Promise.all(trackedMergerIds.map(readMerger));
+        if (cancelled) return;
 
         // Auto-track re-filed matters. If a tracked merger points forward to a
         // newer re-filed matter (a declined waiver → its notification, or a
@@ -290,12 +341,22 @@ export function TrackingProvider({ children }) {
       } catch (err) {
         console.error('Failed to fetch events:', err);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     };
 
     fetchEvents();
-  }, [trackedMergerIds, trackedMergerIdsSet, newlyTrackedIds, newlyTrackedIdsSet, refreshCount]);
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    trackedMergerIds,
+    trackedMergerIdsSet,
+    newlyTrackedIds,
+    newlyTrackedIdsSet,
+    refreshCount,
+    followedDataVersion,
+  ]);
 
   // Fetch industry-follow events whenever the set of followed industries changes.
   // Unlike merger tracking (which surfaces every timeline event), following an
@@ -305,6 +366,10 @@ export function TrackingProvider({ children }) {
   // (notification_date / determination_date on each), so no per-merger fetch
   // is needed.
   useEffect(() => {
+    let cancelled = false;
+    const forceFresh = industryRefreshRef.current !== refreshCount;
+    industryRefreshRef.current = refreshCount;
+
     const fetchIndustryEvents = async () => {
       if (trackedIndustryCodes.length === 0) {
         setIndustryEvents([]);
@@ -312,6 +377,18 @@ export function TrackingProvider({ children }) {
       }
 
       try {
+        // On refreshEvents(), check each cached division file once, however
+        // many followed codes share it.
+        if (forceFresh) {
+          const divisions = new Map(trackedIndustryCodes.map(industryDivisionFetch));
+          await Promise.all(
+            [...divisions]
+              .filter(([key]) => dataCache.has(key))
+              .map(([key, url]) => dataCache.revalidate(key, url))
+          );
+          if (cancelled) return;
+        }
+
         // fetchIndustryNode reads through dataCache, so several followed
         // industries under the same ANZSIC division cost one request between
         // them rather than one each.
@@ -322,6 +399,7 @@ export function TrackingProvider({ children }) {
         );
 
         const results = await Promise.all(industryPromises);
+        if (cancelled) return;
 
         const derived = results.flatMap(({ code, data }) => industryEventsFromNode(code, data));
 
@@ -355,10 +433,19 @@ export function TrackingProvider({ children }) {
     };
 
     fetchIndustryEvents();
+    return () => {
+      cancelled = true;
+    };
     // trackedIndustryCodesKey collapses the code list to a stable primitive so
     // renaming a stored industry doesn't trigger a refetch.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [trackedIndustryCodesKey, newlyTrackedIndustryCodes, newlyTrackedIndustryCodesSet, refreshCount]);
+  }, [
+    trackedIndustryCodesKey,
+    newlyTrackedIndustryCodes,
+    newlyTrackedIndustryCodesSet,
+    refreshCount,
+    followedDataVersion,
+  ]);
 
   // Auto-track matters that reach Phase 2 when the user has opted in. Fetches the
   // Phase 2 feed and tracks every current matter not yet acted on. Mirrors the
@@ -573,12 +660,12 @@ export function TrackingProvider({ children }) {
     });
   }, []);
 
-  // Fetch every followed file again. Industry division files are held in
-  // dataCache for the life of the page, so theirs are dropped first.
+  // Check every followed file again: each cached copy is revalidated (a 304
+  // when unchanged) rather than downloaded afresh, and any page showing one
+  // of them re-renders with what changed.
   const refreshEvents = useCallback(() => {
-    trackedIndustryCodes.forEach((code) => dataCache.clear(industryDivisionCacheKey(code)));
     setRefreshCount((n) => n + 1);
-  }, [trackedIndustryCodes]);
+  }, []);
 
   const isEventSeen = useCallback((event) => {
     const key = getEventKey(event);
