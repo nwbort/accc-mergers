@@ -26117,7 +26117,7 @@
           "targets": [
             "IRONBARK INVESTMENT PARTNERS PTY LIMITED"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         }
       ],
       "phase_1_estimate": {
@@ -51462,13 +51462,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/merchant-wealth-partners-minority-investment-in-ironbark-financial-group",
       "merger_name": "Merchant Wealth Partners - minority investment in Ironbark Financial Group",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-60059",
       "effective_notification_datetime": "2026-11-02T12:00:00Z",
       "original_notification_datetime": "2026-11-02T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-12-14T12:00:00Z",
-      "page_modified_datetime": "2026-11-02T17:43:08+11:00",
+      "determination_publication_date": "2026-11-24T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-24T11:34:50+11:00",
       "consultation_response_due_date": "2026-11-09T12:00:00Z",
       "acquirers": [
         {
@@ -51625,13 +51628,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-11-24T12:00:00Z",
+          "title": "Merchant Wealth Partners - minority investment in Ironbark Financial Group - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Phase%201%20determination%20Merchant%20Wealth%20Partners%20-%20minority%20investment%20in%20Ironbark%20Financial%20Group.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Merchant Wealth Partners, LLC (together with its subsidiaries,\nMerchant) proposes to acquire an equity interest in Ironbark\nInvestment Partners Pty Limited (Ironbark) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "Merchant is a New York-based investor established in 2016 as a\ncapital investor for financial planning firms. Merchant has interests\nin a number of Australian-based financial planning firms that\nprimarily provide financial planning services and fund management\nand corporate trustee services to customers across Australia.\nIronbark is an Australian financial services group founded in 2009\nthat primarily provides financial planning services (through its\nIronbark Advice and Ironbark Private Wealth brands), fund\nmanagement and corporate trustee services (through its Ironbark\nInvestment Solutions brand) to customers across Australia."
+            },
+            {
+              "item": "Overlap between the\nParties",
+              "details": "The parties overlap in relation to the supply of financial planning\nservices, accounting and taxation services and mortgage broking\nservices across Australia."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information regarding\nMerchant and Ironbark.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nfinds that Merchant would continue to face competition from\nmultiple alternative suppliers of financial planning services,\naccounting and taxation services and mortgage broking services in\nrelevant regions."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-60059/Phase 1 determination Merchant Wealth Partners - minority investment in Ironbark Financial Group.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-11-24T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
