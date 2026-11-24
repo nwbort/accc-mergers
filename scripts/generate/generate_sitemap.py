@@ -31,8 +31,14 @@ pages and served normally — they are simply not advertised for crawling.
 They are deliberately NOT ``noindex``: each is a factually distinct record
 and can still answer a long-tail "was <company> acquired" query.
 
-Sitemap policy — static pages: the data-driven routes are dated today, since
-the pipeline regenerates what they show on every run. Hand-edited pages
+Sitemap policy — static pages: the data-driven routes are dated by the data,
+not the wall clock: the newest ``page_modified_datetime`` across every merger
+(:func:`data_lastmod`). What they show can drift day to day on unchanged data
+(a 14-day window sliding, an ``as_at`` moving), but that is not new content,
+and dating them today made every run rewrite ``sitemap.xml`` — and so deploy
+the site — even when nothing on the register had moved. The same date stands
+in for any page or merger without a timestamp of its own, so the sitemap is
+byte-identical across runs on unchanged data. Hand-edited pages
 (commentary, author, privacy, copyright) instead carry a pinned date from
 ``sitemap_lastmod.json``, moved by the git pre-commit hook when one of their
 source files changes — see ``scripts/generate/sitemap_lastmod.py``.
@@ -100,18 +106,45 @@ STATIC_COMMENTS = {
 }
 
 
-def lastmod_for(merger):
-    return _format_lastmod(merger.get("page_modified_datetime", ""))
+def lastmod_for(merger, fallback=TODAY):
+    return _format_lastmod(merger.get("page_modified_datetime", ""), fallback)
 
 
-def _format_lastmod(raw):
-    if not raw:
-        return TODAY
+def _parse_datetime(raw):
     try:
-        dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        return datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except (AttributeError, ValueError):
+        return None
+
+
+def _format_lastmod(raw, fallback=TODAY):
+    if not raw:
+        return fallback
+    dt = _parse_datetime(raw)
+    if dt is not None:
         return dt.strftime("%Y-%m-%d")
-    except ValueError:
-        return raw[:10] if len(raw) >= 10 else TODAY
+    return raw[:10] if len(raw) >= 10 else fallback
+
+
+def data_lastmod(mergers):
+    """The date of the newest ``page_modified_datetime`` across ``mergers``.
+
+    Dates the data-driven static routes and stands in for any page without a
+    timestamp of its own, so the sitemap only changes when the data does. The
+    newest timestamp is chosen by instant, not string order (the register mixes
+    offsets), and formatted in its own offset as :func:`_format_lastmod` does.
+    Falls back to today only when no merger carries a parseable timestamp.
+    """
+    newest = None
+    for merger in mergers:
+        dt = _parse_datetime(merger.get("page_modified_datetime") or "")
+        if dt is None:
+            continue
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        if newest is None or dt > newest:
+            newest = dt
+    return newest.strftime("%Y-%m-%d") if newest else TODAY
 
 
 def industry_lastmods(mergers):
@@ -120,7 +153,8 @@ def industry_lastmods(mergers):
     A page exists for every ANZSIC node (division → class). A merger's modified
     time rolls up to its node *and* that node's ancestors, so a parent page's
     lastmod reflects the most recent activity anywhere in its subtree. Nodes
-    with no merger activity are omitted here and fall back to ``TODAY``.
+    with no merger activity are omitted here and fall back to
+    :func:`data_lastmod`.
     """
     latest = {}
 
@@ -239,7 +273,8 @@ def generate_sitemap(mergers, party_groups, related_parties, quarters=None):
     ]
 
     # Hand-edited pages keep the date they were last edited (bumped by the
-    # pre-commit hook); data-driven pages change every run.
+    # pre-commit hook); data-driven pages are dated by the newest data.
+    data_date = data_lastmod(mergers)
     pinned = pinned_lastmods()
     for page in STATIC_PAGES:
         comment = STATIC_COMMENTS.get(page["path"])
@@ -247,7 +282,7 @@ def generate_sitemap(mergers, party_groups, related_parties, quarters=None):
             lines.append(f"  <!-- {comment} -->")
         lines.append(url_entry(
             loc=escape(f"{BASE_URL}{page['path']}"),
-            lastmod=pinned.get(page["path"], TODAY),
+            lastmod=pinned.get(page["path"], data_date),
             changefreq=page["changefreq"],
             priority=page["priority"],
         ))
@@ -273,7 +308,7 @@ def generate_sitemap(mergers, party_groups, related_parties, quarters=None):
         path = industry_path(code, node.name if node else "")
         lines.append(url_entry(
             loc=escape(f"{BASE_URL}{path}"),
-            lastmod=_format_lastmod(raw) if raw else TODAY,
+            lastmod=_format_lastmod(raw, data_date) if raw else data_date,
             changefreq="weekly",
             priority="0.5",
         ))
@@ -286,7 +321,7 @@ def generate_sitemap(mergers, party_groups, related_parties, quarters=None):
         raw = party_latest.get(group["id"])
         lines.append(url_entry(
             loc=escape(f"{BASE_URL}{path}"),
-            lastmod=_format_lastmod(raw) if raw else TODAY,
+            lastmod=_format_lastmod(raw, data_date) if raw else data_date,
             changefreq="weekly",
             priority="0.5",
         ))
@@ -300,7 +335,7 @@ def generate_sitemap(mergers, party_groups, related_parties, quarters=None):
         path = merger_path(merger_id, merger.get("merger_name", ""))
         lines.append(url_entry(
             loc=escape(f"{BASE_URL}{path}"),
-            lastmod=lastmod_for(merger),
+            lastmod=lastmod_for(merger, data_date),
             changefreq="weekly",
             priority="0.6",
         ))
