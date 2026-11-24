@@ -160,3 +160,43 @@ class TestQuarterlyReports:
     def test_missing_quarterly_json_lists_no_quarters(self, tmp_path):
         from scripts.generate.generate_sitemap import load_quarters
         assert load_quarters(tmp_path / "absent.json") == []
+
+
+class TestDataDrivenLastmod:
+    """Hub pages are dated by the data, so unchanged data is an unchanged sitemap."""
+
+    MERGERS = [
+        {"merger_id": "MN-1", "merger_name": "A", "page_modified_datetime": "2026-11-03T09:00:00+11:00"},
+        # Later as a string, earlier as an instant: compared by instant.
+        {"merger_id": "MN-2", "merger_name": "B", "page_modified_datetime": "2026-11-03T08:00:00+00:00"},
+        {"merger_id": "MN-3", "merger_name": "C", "page_modified_datetime": "2026-10-01T09:00:00+10:00"},
+        {"merger_id": "MN-4", "merger_name": "D"},
+    ]
+
+    def test_data_lastmod_is_the_newest_timestamp(self):
+        from scripts.generate.generate_sitemap import data_lastmod
+        assert data_lastmod(self.MERGERS) == "2026-11-03"
+        assert data_lastmod(self.MERGERS[2:]) == "2026-10-01"
+
+    def test_data_lastmod_falls_back_to_today_without_timestamps(self):
+        from scripts.generate import generate_sitemap as gs
+        assert gs.data_lastmod([{"merger_id": "MN-4"}]) == gs.TODAY
+        assert gs.data_lastmod([{"page_modified_datetime": "garbage"}]) == gs.TODAY
+
+    def test_static_pages_and_untimed_mergers_use_the_data_date(self, monkeypatch):
+        from scripts.generate import generate_sitemap as gs
+        monkeypatch.setattr(gs, "pinned_lastmods", lambda: {})
+        xml = gs.generate_sitemap(self.MERGERS, [], [])
+        assert "<lastmod>2026-11-03</lastmod>" in xml
+        home = xml.split("<loc>https://mergers.fyi/</loc>")[1].split("</url>")[0]
+        assert "<lastmod>2026-11-03</lastmod>" in home
+        untimed = xml.split("/mergers/MN-4")[1].split("</url>")[0]
+        assert "<lastmod>2026-11-03</lastmod>" in untimed
+
+    def test_identical_output_on_different_days(self, monkeypatch):
+        from scripts.generate import generate_sitemap as gs
+        monkeypatch.setattr(gs, "pinned_lastmods", lambda: {})
+        monkeypatch.setattr(gs, "TODAY", "2026-11-24")
+        first = gs.generate_sitemap(self.MERGERS, [], [])
+        monkeypatch.setattr(gs, "TODAY", "2026-11-25")
+        assert gs.generate_sitemap(self.MERGERS, [], []) == first

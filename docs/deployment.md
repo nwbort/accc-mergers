@@ -87,6 +87,11 @@ Two things to know before editing this list:
   `frontend/src/App.jsx` and `frontend/public/data/stats.json`. There is no
   need for the `dir`, `dir/*`, `dir/**` triples that accumulate if you assume
   otherwise, and `**` is not documented as supported.
+- `scripts/deploy_skip.py` keeps a copy (`WATCH_PATHS`). The pipeline uses it
+  to commit with `[skip ci]` — which Pages honours — when the only deployable
+  files a run changed are outputs cut against today's date (`analysis.json`,
+  `recent-events.json`, `upcoming-events.json`, `sitemap.xml`), so a run that
+  found nothing new doesn't spend a build. Edit both together.
 
 ### Custom domain
 
