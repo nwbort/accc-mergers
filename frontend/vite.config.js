@@ -61,11 +61,18 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router'],
-          'chart': ['chart.js', 'react-chartjs-2'],
-          'date': ['date-fns'],
-        }
+        // Function form, matching on node_modules paths. The object form
+        // names only each package's entry, so shared dependencies (the JSX
+        // runtime, react-dom/client, scheduler) landed wherever Rollup first
+        // met them: the JSX runtime in the chart chunk, which every page then
+        // preloaded, and react-dom/client in the per-deploy main chunk.
+        manualChunks(id) {
+          if (!id.includes('/node_modules/')) return undefined
+          if (/\/node_modules\/(react|react-dom|scheduler|react-router)\//.test(id)) return 'react-vendor'
+          if (/\/node_modules\/(chart\.js|react-chartjs-2|@kurkle)\//.test(id)) return 'chart'
+          if (/\/node_modules\/date-fns\//.test(id)) return 'date'
+          return undefined
+        },
       }
     }
   },
