@@ -8,8 +8,14 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-function okResponse(json) {
-  return { ok: true, status: 200, json: () => Promise.resolve(json) };
+function okResponse(json, headers = {}) {
+  const lower = Object.fromEntries(Object.entries(headers).map(([k, v]) => [k.toLowerCase(), v]));
+  return {
+    ok: true,
+    status: 200,
+    headers: { get: (name) => lower[name.toLowerCase()] ?? null },
+    json: vi.fn(() => Promise.resolve(json)),
+  };
 }
 
 describe('dataCache', () => {
@@ -145,7 +151,9 @@ describe('dataCache', () => {
 
       expect(dataCache.get('k')).toEqual({ a: 2 });
       expect(cb).toHaveBeenCalledWith({ a: 2 });
-      expect(globalThis.fetch).toHaveBeenCalledWith('/data/k.json', { cache: 'no-store' });
+      // no-cache, not no-store: the browser revalidates its copy with the
+      // server, so an unchanged file comes back as a 304.
+      expect(globalThis.fetch).toHaveBeenCalledWith('/data/k.json', { cache: 'no-cache' });
     });
 
     it('does not notify subscribers when the data is unchanged', async () => {
@@ -180,6 +188,76 @@ describe('dataCache', () => {
 
       expect(dataCache.get('k')).toEqual({ a: 1 });
       expect(cb).not.toHaveBeenCalled();
+    });
+
+    it('skips the body when the validator is unchanged', async () => {
+      dataCache.set('k', { a: 1 }, '"v1"');
+      const firstFetchedAt = dataCache.fetchedAt('k');
+      const cb = vi.fn();
+      dataCache.subscribe('k', cb);
+      const res = okResponse({ a: 2 }, { ETag: '"v1"' });
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue(res);
+
+      await new Promise((r) => setTimeout(r, 5));
+      await dataCache.revalidate('k', '/data/k.json');
+
+      expect(res.json).not.toHaveBeenCalled();
+      expect(cb).not.toHaveBeenCalled();
+      expect(dataCache.get('k')).toEqual({ a: 1 });
+      expect(dataCache.fetchedAt('k')).toBeGreaterThan(firstFetchedAt);
+    });
+
+    it('stores the new validator and notifies when the validator changed', async () => {
+      dataCache.set('k', { a: 1 }, '"v1"');
+      const cb = vi.fn();
+      dataCache.subscribe('k', cb);
+      vi.spyOn(globalThis, 'fetch')
+        .mockResolvedValueOnce(okResponse({ a: 2 }, { ETag: '"v2"' }))
+        .mockResolvedValueOnce(okResponse({ a: 3 }, { ETag: '"v2"' }));
+
+      await dataCache.revalidate('k', '/data/k.json');
+      expect(cb).toHaveBeenCalledWith({ a: 2 });
+
+      // The next check sends the same validator back: nothing to read.
+      await dataCache.revalidate('k', '/data/k.json');
+      expect(dataCache.get('k')).toEqual({ a: 2 });
+      expect(cb).toHaveBeenCalledTimes(1);
+    });
+
+    it('falls back to Last-Modified when there is no ETag', async () => {
+      dataCache.set('k', { a: 1 }, 'Tue, 24 Nov 2026 00:00:00 GMT');
+      const res = okResponse({ a: 2 }, { 'Last-Modified': 'Tue, 24 Nov 2026 00:00:00 GMT' });
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue(res);
+
+      await dataCache.revalidate('k', '/data/k.json');
+
+      expect(res.json).not.toHaveBeenCalled();
+      expect(dataCache.get('k')).toEqual({ a: 1 });
+    });
+
+    it('keeps the cached object when a new validator carries the same data', async () => {
+      const original = { a: 1 };
+      dataCache.set('k', original, '"v1"');
+      const cb = vi.fn();
+      dataCache.subscribe('k', cb);
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue(okResponse({ a: 1 }, { ETag: '"v2"' }));
+
+      await dataCache.revalidate('k', '/data/k.json');
+
+      expect(cb).not.toHaveBeenCalled();
+      expect(dataCache.get('k')).toBe(original);
+    });
+
+    it('uses the validator load() stored', async () => {
+      vi.spyOn(globalThis, 'fetch')
+        .mockResolvedValueOnce(okResponse({ a: 1 }, { ETag: '"v1"' }))
+        .mockResolvedValueOnce(okResponse({ a: 1 }, { ETag: '"v1"' }));
+
+      await dataCache.load('k', '/data/k.json');
+      await dataCache.revalidate('k', '/data/k.json');
+
+      const revalidation = await globalThis.fetch.mock.results[1].value;
+      expect(revalidation.json).not.toHaveBeenCalled();
     });
 
     it('leaves the cache untouched on a non-ok response', async () => {
