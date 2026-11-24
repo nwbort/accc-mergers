@@ -1,6 +1,6 @@
 {
   "total_mergers": 337,
-  "total_waivers": 561,
+  "total_waivers": 562,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 294,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 534,
+    "Approved": 535,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.98752228163993,
-    "median_days": 21,
-    "average_business_days": 14.417112299465241,
-    "median_business_days": 15
+    "average_days": 20.98576512455516,
+    "median_days": 21.0,
+    "average_business_days": 14.416370106761565,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 60
+      "count": 61
     },
     {
       "name": "Software Publishing",
@@ -87,11 +87,11 @@
       "count": 31
     },
     {
-      "name": "Liquor Retailing",
+      "name": "Supermarket and Grocery Stores",
       "count": 30
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
+      "name": "Liquor Retailing",
       "count": 30
     }
   ],
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55049",
+      "merger_name": "Woolworths - supermarket e-commerce hub in Muswellbrook, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-11-24T12:00:00Z",
+      "page_modified_datetime": "2026-11-24T19:36:11+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-35057",
       "merger_name": "Apiam \u2013 South West Equine Veterinary Group",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-20T12:00:00Z",
       "page_modified_datetime": "2026-11-20T17:41:38+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-70051",
-      "merger_name": "Advent Partners \u2013 investment in Procare Group",
-      "determination": "Approved",
-      "determination_date": "2026-11-20T12:00:00Z",
-      "page_modified_datetime": "2026-11-20T17:40:19+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

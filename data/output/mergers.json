@@ -48101,15 +48101,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 10,
-        "min_days": null,
+        "estimated_days": 3,
+        "min_days": 0,
         "max_days": 17,
-        "id_issued_estimated": "2026-10-16",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-10-23",
+        "id_issued_before": "2026-10-26",
         "id_issued_after": "2026-10-09",
-        "min_days_witness": null,
+        "min_days_witness": "WA-55049",
         "max_days_witness": "WA-55044",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -133648,6 +133648,143 @@
           ],
           "targets": [
             "SCHMITZ CARGOBULL VICTORIA HOLDING PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/woolworths-supermarket-e-commerce-hub-in-muswellbrook-nsw",
+      "merger_name": "Woolworths - supermarket e-commerce hub in Muswellbrook, NSW",
+      "status": "Assessment completed",
+      "merger_id": "WA-55049",
+      "effective_notification_datetime": "2026-11-04T12:00:00Z",
+      "original_notification_datetime": "2026-11-04T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-11-24T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-11-24T19:36:11+11:00",
+      "acquirers": [
+        {
+          "name": "WOOLWORTHS GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "88 000 014 675",
+          "party_page": {
+            "id": "woolworths-group-limited",
+            "name": "Woolworths Group Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "MUSWELLBROOK SHIRE COUNCIL",
+          "identifier_type": "ABN",
+          "identifier": "86 864 180 944",
+          "party_page": {
+            "id": "muswellbrook-shire-council",
+            "name": "Muswellbrook Shire Council"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "7530",
+          "name": "Local Government Administration"
+        }
+      ],
+      "merger_description": "Woolworths Group Limited (**Woolworths**) proposes to acquire a leasehold interest in respect of a parcel of land located at 76 Brook St, Muswellbrook, NSW (the **Target Site**) from Muswellbrook Shire Council.\n\nWoolworths is an ASX-listed retailer operating a national supermarket network across Australia and New Zealand, which includes full-line stores, Woolworths Metro outlets, and customer fulfilment centres. Its broader operations encompass discount department stores, specialty retail, wholesale food supply, and data analytics.\n\nWoolworths has an operational supermarket in Muswellbrook (**Woolworths Muswellbrook**), which is located adjacent to the Target Site.\n\nMuswellbrook Shire Council is the local government authority overseeing the Muswellbrook Shire area in the Upper Hunter region of NSW, 127km north-west of Newcastle. Muswellbrook Shire Council owns a number of freehold sites in Muswellbrook, including the Woolworths Muswellbrook site and the Target Site.",
+      "events": [
+        {
+          "date": "2026-11-24T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Woolworths%20-%20supermarket%20e-commerce%20hub%20in%20Muswellbrook%2C%20NSW%20%28WA-55049%29%20-%20Notification%20waiver%20determination%20-%2024%20November%202026.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Woolworths Group Limited (Woolworths) applied for a notification\nwaiver in respect of its proposed acquisition of a leasehold interest\nin a parcel of land located at 76 Brook St adjacent to the Woolworths\nsupermarket in Muswellbrook, New South Wales (the Target Site)\nfrom Muswellbrook Shire Council, as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "24 November 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Woolworths, is an ASX-listed retailer operating a\nnational supermarket network across Australia and New Zealand,\nwhich includes full-line stores, Woolworths Metro outlets, and\ncustomer fulfilment centres. Its broader operations encompass\ndiscount department stores, specialty retail, wholesale food supply,\nand data analytics.\nWoolworths has an operational supermarket in Muswellbrook\n(Woolworths Muswellbrook), which is located adjacent to the Target\nSite.\nThe lessor, Muswellbrook Shire Council, is the local government\nauthority overseeing the Muswellbrook Shire area in the Upper\nHunter Valley region of NSW. Muswellbrook Shire Council owns a\nnumber of freehold sites in Muswellbrook, including the site which is\ncurrently leased to Woolworths for its Woolworths Muswellbrook\nsupermarket and the Target Site.\nThe leasehold interest would be an input to Woolworths\u2019 existing\nsupermarket retailing operations at the adjacent location."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the Target Site is unlikely to be able to accommodate a new\nsupermarket\nb. the expansion of Woolworths\u2019 existing supermarket site in\nMuswellbrook is for the purposes of improving the quality of\nthe offering of Woolworths\u2019 existing supermarket and its\ne-commerce capabilities\nc. there are alternative grocery retailers, including Coles and\nALDI, in the local area surrounding the Target Site.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds determined under section 51ABP(1) being met. The ACCC\ndoes however observe that the targeted notification requirements for\nsupermarkets determined under section 51ABQ(1) are likely to apply.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-55049/Woolworths - supermarket e-commerce hub in Muswellbrook, NSW (WA-55049) - Notification waiver determination - 24 November 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-11-04T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-40034",
+          "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
+          "acquirers": [
+            "WOOLWORTHS GROUP LIMITED"
+          ],
+          "targets": [
+            "Name of landholders withheld under section 5-3 of the Competition and Consumer (Notification of Acquisitions) Determination 2025 (Cth).",
+            "Freehold interest in 158-162 Homestead Road, Orchard Hills, NSW."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-40020",
+          "merger_name": "Premier Fresh \u2013 Domenico Group",
+          "acquirers": [
+            "PREMIER FRESH AUSTRALIA PTY LTD"
+          ],
+          "targets": [
+            "DOUBLE D PRODUCE PTY LTD",
+            "De Domenico Carmelo"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-05063",
+          "merger_name": "Waterfront Logistics - Monson Logistics",
+          "acquirers": [
+            "WATERFRONT LOGISTICS HOLDCO PTY LTD"
+          ],
+          "targets": [
+            "MONSON SHIPPING PTY. LTD.",
+            "MONQUIP PTY LTD"
           ],
           "accc_determination": "Approved"
         }
