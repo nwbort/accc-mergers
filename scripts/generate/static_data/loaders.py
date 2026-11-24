@@ -29,11 +29,18 @@ def load_mergers() -> list:
 
 
 # Relationship labels emitted for each pair type, as (source_label,
-# target_label). The source is the earlier matter (waiver / suspended); the
-# target is what it was re-filed as. The frontend maps these to display text.
+# target_label). The source is the earlier matter (waiver / suspended /
+# resubmitted); the target is what it was re-filed as. The frontend maps these
+# to display text, unless the pair carries its own (``from_label`` /
+# ``to_label``, see ``build_relationship_map``).
 _RELATIONSHIP_LABELS = {
     'waiver_refiled': ('refiled_as', 'refiled_from'),
     'suspended_refiled': ('suspended_refiled_as', 'suspended_refiled_from'),
+    # The same transaction filed again as the same kind of matter (a waiver
+    # as a waiver, say) after its acquiring entity or scope changed — e.g.
+    # WA-35048 -> WA-10054, Kiwa's bid for CSA Group re-filed by another Kiwa
+    # subsidiary. The earlier matter was decided, not declined or suspended.
+    'resubmitted': ('resubmitted_as', 'resubmitted_from'),
 }
 
 
@@ -53,6 +60,11 @@ def build_relationship_map(data: dict) -> dict:
     Each pair has the shape ``{"from", "to", "type"}`` where ``from`` is the
     earlier matter and ``to`` is what it was re-filed as. Returns a dict keyed
     by merger_id mapping to ``{'merger_id': ..., 'relationship': ...}``.
+
+    A pair may also carry ``from_label`` and/or ``to_label``: hand-written
+    text for the related-merger link on that side's detail page, used in
+    place of the relationship's generic wording. Each lands on its own side
+    as ``label`` (and is omitted when absent or blank).
     """
     result = {}
     for pair in data.get('pairs', []):
@@ -64,9 +76,17 @@ def build_relationship_map(data: dict) -> dict:
         source_rel, target_rel = _RELATIONSHIP_LABELS.get(
             pair_type, _RELATIONSHIP_LABELS['waiver_refiled']
         )
-        result[source] = {'merger_id': target, 'relationship': source_rel}
-        result[target] = {'merger_id': source, 'relationship': target_rel}
+        result[source] = _relationship(target, source_rel, pair.get('from_label'))
+        result[target] = _relationship(source, target_rel, pair.get('to_label'))
     return result
+
+
+def _relationship(merger_id: str, relationship: str, label) -> dict:
+    """One side's entry in the relationship map, with its label if it has one."""
+    entry = {'merger_id': merger_id, 'relationship': relationship}
+    if isinstance(label, str) and label.strip():
+        entry['label'] = label.strip()
+    return entry
 
 
 def load_related_mergers() -> dict:

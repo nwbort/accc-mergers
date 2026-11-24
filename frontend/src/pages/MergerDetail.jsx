@@ -41,13 +41,23 @@ import { mergerDetailFetch } from '../utils/pageData';
 
 // Display text for each related-merger relationship. Keys match the
 // `relationship` values produced by the data pipeline (see
-// scripts/generate/static_data/loaders.py).
+// scripts/generate/static_data/loaders.py). A pair can override its side's
+// text with a hand-written `label` (from_label / to_label in
+// data/processed/related_mergers.json), which wins over these.
 const RELATED_MERGER_LABELS = {
   refiled_as: 'Waiver declined – subsequently notified',
   refiled_from: 'Originally filed as a waiver application',
   suspended_refiled_as: 'Assessment suspended – subsequently refiled',
   suspended_refiled_from: 'Refiled after an earlier assessment was suspended',
+  resubmitted_as: 'Subsequently resubmitted as a separate matter',
+  resubmitted_from: 'Resubmission of an earlier application',
 };
+
+function relatedMergerLabel(related) {
+  return related.label
+    || RELATED_MERGER_LABELS[related.relationship]
+    || RELATED_MERGER_LABELS.refiled_from;
+}
 
 // The document an appeal card links to: the application that started the
 // tribunal matter, rather than the matter page itself. Tribunal document lists
@@ -622,8 +632,7 @@ function MergerDetail() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900">
-                {RELATED_MERGER_LABELS[merger.related_merger.relationship]
-                  ?? RELATED_MERGER_LABELS.refiled_from}
+                {relatedMergerLabel(merger.related_merger)}
               </p>
             </div>
           </Link>

@@ -6,12 +6,16 @@ re-filed as a separate matter.
 Background
 ----------
 `data/processed/related_mergers.json` records pairs of merger IDs where one
-matter was effectively re-filed as another. Two patterns are covered:
+matter was effectively re-filed as another. Three patterns are covered:
 
   * ``waiver_refiled`` — a `WA-*` waiver application was declined, then
-    re-filed as an `MN-*` notification; and
+    re-filed as an `MN-*` notification;
   * ``suspended_refiled`` — a matter whose assessment was suspended is
-    re-filed later (often, but not necessarily, under a fresh `MN-*` ID).
+    re-filed later (often, but not necessarily, under a fresh `MN-*` ID); and
+  * ``resubmitted`` — the same transaction filed again as the same kind of
+    matter (`WA-*` → `WA-*`, `MN-*` → `MN-*`), after its acquiring entity or
+    scope changed (WA-35048 → WA-10054: Kiwa's bid for CSA Group re-filed by
+    a different Kiwa subsidiary).
 
 This script looks through the processed merger data for likely new pairs and
 reports any that aren't already recorded.
@@ -27,6 +31,13 @@ source (soft check — missing dates don't disqualify a pair).
     approved"`; target is any `MN-*`.
   * Suspended pass — source is any merger with
     `status == "Assessment suspended"`; target is any other merger.
+  * Resubmission pass — source and target share an ID prefix and the source
+    was not suspended. Party overlap alone is useless here, since a serial
+    acquirer's unrelated deals share it, so this pass also requires a shared
+    *target* identifier and a near-identical target name. That still catches
+    a venture fund's successive rounds in one company, which is what the
+    `rejected` list is for. Its pairs are never treated as certain, so a
+    batch carrying one always waits for review (see `is_certain_match`).
 
 Each candidate gets a confidence score; only pairs above `--threshold`
 (default 0.70) are reported. Existing pairs listed in `related_mergers.json`
@@ -67,6 +78,11 @@ NAME_SIMILARITY_THRESHOLD = 0.75
 # Pair types recorded in related_mergers.json (see its `_README`).
 WAIVER_REFILED = "waiver_refiled"
 SUSPENDED_REFILED = "suspended_refiled"
+RESUBMITTED = "resubmitted"
+
+# The resubmission pass's extra bar on top of score_pair: the two matters must
+# share a target identifier and name the target near-identically.
+RESUBMISSION_TARGET_NAME_SIM = 0.90
 
 _RELATED_PATH = "data/processed/related_mergers.json"
 
@@ -325,6 +341,84 @@ def find_suspended_candidates(
     return candidates
 
 
+def _id_prefix(merger_id: str) -> str:
+    """The register's ID prefix (``WA`` / ``MN``): which kind of matter it is."""
+    return merger_id.split("-", 1)[0]
+
+
+def find_resubmission_candidates(
+    mergers: list[dict],
+    known_pairs: set[tuple[str, str]],
+    threshold: float,
+) -> list[dict]:
+    """A matter → a later matter of the same kind for the same transaction.
+
+    Pairs only matters with the same ID prefix, so a waiver resubmitted as a
+    waiver or a notification as a notification (a waiver re-filed as a
+    notification is the waiver pass's). A suspended source is left to the
+    suspended pass. A merger can carry only one related-merger link, so
+    anything already in a recorded pair, on either side, is skipped.
+    """
+    recorded = {mid for pair in known_pairs for mid in pair}
+    eligible = [
+        m
+        for m in mergers
+        if m.get("merger_id") and m.get("merger_id") not in recorded
+    ]
+
+    candidates: list[dict] = []
+    for src in eligible:
+        if src.get("status") == merger_status.ASSESSMENT_SUSPENDED:
+            continue
+        src_id = src["merger_id"]
+        src_date = parse_date(src.get("effective_notification_datetime"))
+        for tgt in eligible:
+            tgt_id = tgt["merger_id"]
+            if tgt_id == src_id or _id_prefix(tgt_id) != _id_prefix(src_id):
+                continue
+            tgt_date = parse_date(tgt.get("effective_notification_datetime"))
+            # Hard ordering check, unlike the other passes: with both sides
+            # the same kind, a pair filed the wrong way round is otherwise
+            # indistinguishable from the right one. Strictly later, too: two
+            # matters filed the same day are parallel filings (Gold Fields'
+            # two Kambalda waivers), or one replacing another outright
+            # (Journey Beyond's SeaLink Rottnest notification, abandoned for
+            # the wider Kelsian portfolio), never a resubmission.
+            if not (src_date and tgt_date) or tgt_date <= src_date:
+                continue
+            score, diag = score_pair(src, tgt)
+            if (
+                score >= threshold
+                and diag["tgt_id_overlap"]
+                and diag["tgt_name_sim"] >= RESUBMISSION_TARGET_NAME_SIM
+            ):
+                candidates.append(
+                    _build_candidate(src, tgt, RESUBMITTED, score, diag)
+                )
+    return candidates
+
+
+def _dedupe(
+    candidates: list[dict],
+    claimed: set[str] | None = None,
+) -> list[dict]:
+    """Keep only the best-scored candidate per merger, on either side.
+
+    A merger can carry only one related-merger link, so once a merger is in a
+    kept candidate (or in ``claimed``) it can't appear in another. Secondary
+    sort keys keep the output stable across runs.
+    """
+    claimed = set(claimed or ())
+    candidates = sorted(candidates, key=lambda c: (-c["score"], c["source"], c["target"]))
+    deduped: list[dict] = []
+    for c in candidates:
+        if c["source"] in claimed or c["target"] in claimed:
+            continue
+        claimed.update((c["source"], c["target"]))
+        deduped.append(c)
+    return deduped
+
+
 def find_candidates(
     mergers: list[dict],
     known_pairs: set[tuple[str, str]],
@@ -332,28 +426,42 @@ def find_candidates(
     rejected_pairs: set[tuple[str, str]] | None = None,
 ) -> list[dict]:
     """Return candidate pair dicts from every detection pass, best-scored first."""
-    candidates = find_waiver_candidates(mergers, known_pairs, threshold)
-    candidates += find_suspended_candidates(mergers, known_pairs, threshold)
-    # Drop rejected pairs before deduping, so a rejected match can't crowd out
-    # a genuine partner for either matter.
     rejected_pairs = rejected_pairs or set()
-    candidates = [
-        c for c in candidates if (c["source"], c["target"]) not in rejected_pairs
-    ]
 
+    def unrejected(cands: list[dict]) -> list[dict]:
+        # Drop rejected pairs before deduping, so a rejected match can't crowd
+        # out a genuine partner for either matter.
+        return [c for c in cands if (c["source"], c["target"]) not in rejected_pairs]
+
+    refiles = find_waiver_candidates(mergers, known_pairs, threshold)
+    refiles += find_suspended_candidates(mergers, known_pairs, threshold)
     # If one merger matches several partners, keep only the best per side.
-    # Secondary keys keep the output stable across runs.
-    candidates.sort(key=lambda c: (-c["score"], c["source"], c["target"]))
+    # Only within these two passes, as before: a target may be suggested for
+    # two sources, which is for the reviewer to settle.
+    refiles.sort(key=lambda c: (-c["score"], c["source"], c["target"]))
     seen_sources: set[str] = set()
     seen_targets: set[str] = set()
     deduped: list[dict] = []
-    for c in candidates:
+    for c in unrejected(refiles):
         if c["source"] in seen_sources or c["target"] in seen_targets:
             continue
         seen_sources.add(c["source"])
         seen_targets.add(c["target"])
         deduped.append(c)
-    return deduped
+
+    # The resubmission pass is the loosest, so it only gets the matters the
+    # other two passes left unclaimed: a declined waiver's notification must
+    # never lose out to a same-kind lookalike.
+    claimed = {mid for c in deduped for mid in (c["source"], c["target"])}
+    resubmissions = _dedupe(
+        unrejected(find_resubmission_candidates(mergers, known_pairs, threshold)),
+        claimed,
+    )
+
+    return sorted(
+        deduped + resubmissions,
+        key=lambda c: (-c["score"], c["source"], c["target"]),
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -384,7 +492,9 @@ def is_certain_match(candidate: dict) -> bool:
     no room for a false positive, so these are safe to merge without a human
     reviewing the PR first (a follow-up issue still asks for a sanity check).
     Suspended-refile pairs are excluded — that pattern is looser (any
-    ID/prefix), so it always waits for manual review.
+    ID/prefix), so it always waits for manual review — and so are
+    resubmissions: a fund's successive rounds in one company match exactly
+    on every name too, so only a person can tell a resubmission apart.
     """
     if candidate["type"] != WAIVER_REFILED:
         return False
@@ -403,6 +513,14 @@ def _relationship_blurb(candidate: dict) -> str:
             "A matter whose assessment was **suspended** and which appears to "
             "have been **re-filed** as a separate matter."
         )
+    if candidate["type"] == RESUBMITTED:
+        return (
+            "The same transaction apparently **resubmitted** as the same kind "
+            "of matter (a changed acquiring entity or scope?). Check it isn't "
+            "a separate deal in the same target, such as a later funding round. "
+            "If it's right, consider adding `from_label` / `to_label` saying "
+            "what changed; if not, move it to `rejected`."
+        )
     return (
         "A matter initially filed as a **waiver** application, declined, then "
         "re-filed as a formal **notification**."
@@ -414,12 +532,26 @@ def _relationship_blurb(candidate: dict) -> str:
 # ---------------------------------------------------------------------------
 
 def _pair_from_candidate(candidate: dict) -> dict:
-    """Render a candidate as a pair entry for related_mergers.json."""
+    """Render a candidate as a pair entry for related_mergers.json.
+
+    Never carries ``from_label`` / ``to_label``: those are written by hand.
+    """
     return {
         "from": candidate["source"],
         "to": candidate["target"],
         "type": candidate["type"],
     }
+
+
+def _pair_line(pair: dict) -> str:
+    """One pair as a single line: from, to, type first, then any other field
+    (a hand-written ``from_label`` / ``to_label``) in the order it was given."""
+    fields = {"from": pair["from"], "to": pair["to"], "type": pair.get("type", WAIVER_REFILED)}
+    fields.update((k, v) for k, v in pair.items() if k not in fields)
+    body = ", ".join(
+        f"{json.dumps(k)}: {json.dumps(v, ensure_ascii=False)}" for k, v in fields.items()
+    )
+    return f"{{ {body} }}"
 
 
 def write_related_mergers(path: Path, data: dict) -> None:
@@ -431,10 +563,7 @@ def write_related_mergers(path: Path, data: dict) -> None:
     lines.append('  "pairs": [')
     for i, p in enumerate(pairs):
         trailing = "," if i < len(pairs) - 1 else ""
-        lines.append(
-            f'    {{ "from": "{p["from"]}", "to": "{p["to"]}", '
-            f'"type": "{p.get("type", WAIVER_REFILED)}" }}{trailing}'
-        )
+        lines.append(f"    {_pair_line(p)}{trailing}")
     if "rejected" in data:
         lines.append("  ],")
         lines.append('  "rejected": [')
@@ -500,6 +629,11 @@ def build_pr_body(candidates: list[dict], date: str, auto_merge: bool = False) -
             source_label = "Suspended matter"
             source_detail = f"status: {c['source_status'] or 'unknown'}"
             target_label = "Re-filed as"
+            target_detail = f"status: {c['target_status'] or 'unknown'}"
+        elif c["type"] == RESUBMITTED:
+            source_label = "Earlier matter"
+            source_detail = f"determination: {c['source_determination'] or c['source_status'] or 'unknown'}"
+            target_label = "Resubmitted as"
             target_detail = f"status: {c['target_status'] or 'unknown'}"
         else:
             source_label = "Waiver"

@@ -44,8 +44,12 @@ Intermediate JSON written by the extraction pipeline (mainly
   `scripts/generate/static_data/phase1_estimate.py`)
 - `commentary.json` — hand-authored commentary keyed by `merger_id`
   (edited via `scripts/tools/commentary.py`)
-- `related_mergers.json` — manual `WA-*` → `MN-*` pairs for waivers that
-  were re-filed as formal notifications, plus a `rejected` list of
+- `related_mergers.json` — pairs of matters where one was re-filed as
+  another: a declined waiver re-filed as a notification (`waiver_refiled`),
+  a suspended matter re-filed (`suspended_refiled`), or the same transaction
+  resubmitted as the same kind of matter after its acquirer or scope changed
+  (`resubmitted`, e.g. WA-35048 → WA-10054). A pair may carry hand-written
+  `from_label` / `to_label` text for each side's detail-page link. Plus a `rejected` list of
   suggested pairs reviewed and found not to be refiles (the detector never
   suggests those again)
 - `related_parties.json` — canonical party groups (same real-world entity),

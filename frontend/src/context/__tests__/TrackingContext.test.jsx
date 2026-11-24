@@ -134,6 +134,33 @@ describe('TrackingContext auto-tracking of related mergers', () => {
     });
   });
 
+  it('auto-tracks the resubmission for a resubmitted pair', async () => {
+    mockFetchFromMergers({
+      'WA-35048': {
+        merger_id: 'WA-35048',
+        merger_name: 'Kiwa - CSA Group',
+        events: [],
+        related_merger: { merger_id: 'WA-10054', relationship: 'resubmitted_as', merger_name: 'Kiwa - CSA Group' },
+      },
+      'WA-10054': {
+        merger_id: 'WA-10054',
+        merger_name: 'Kiwa - CSA Group',
+        events: [],
+        related_merger: { merger_id: 'WA-35048', relationship: 'resubmitted_from', merger_name: 'Kiwa - CSA Group' },
+      },
+    });
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+
+    act(() => {
+      result.current.toggleTracking('WA-35048');
+    });
+
+    await waitFor(() => {
+      expect(result.current.trackedMergerIds).toContain('WA-10054');
+    });
+  });
+
   it('does not re-add a related matter that was untracked while the source stays tracked', async () => {
     mockFetchFromMergers({
       'WA-1': {

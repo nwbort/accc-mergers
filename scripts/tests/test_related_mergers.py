@@ -387,3 +387,205 @@ def test_main_skips_issue_markdown_when_not_all_certain(tmp_path, monkeypatch):
     meta = json.loads(meta_path.read_text())
     assert meta["all_certain"] is False
     assert not issue_path.exists()
+
+
+# ---------------------------------------------------------------------------
+# resubmitted pairs: same transaction, same kind of matter
+# ---------------------------------------------------------------------------
+
+def test_resubmitted_pair_maps_to_resubmitted_relationships():
+    data = {"pairs": [{"from": "WA-1", "to": "WA-2", "type": "resubmitted"}]}
+    result = build_relationship_map(data)
+    assert result["WA-1"] == {"merger_id": "WA-2", "relationship": "resubmitted_as"}
+    assert result["WA-2"] == {"merger_id": "WA-1", "relationship": "resubmitted_from"}
+
+
+def test_pair_labels_land_on_their_own_side():
+    data = {"pairs": [{
+        "from": "WA-1", "to": "WA-2", "type": "resubmitted",
+        "from_label": " Resubmitted by another subsidiary ",
+        "to_label": "Resubmission of an earlier application",
+    }]}
+    result = build_relationship_map(data)
+    assert result["WA-1"]["label"] == "Resubmitted by another subsidiary"
+    assert result["WA-2"]["label"] == "Resubmission of an earlier application"
+
+
+def test_blank_or_missing_label_is_omitted():
+    data = {"pairs": [{"from": "WA-1", "to": "MN-2", "type": "waiver_refiled", "from_label": "  "}]}
+    result = build_relationship_map(data)
+    assert "label" not in result["WA-1"]
+    assert "label" not in result["MN-2"]
+
+
+def test_link_related_mergers_carries_the_label():
+    from scripts.generate.static_data.enrichment import link_related_mergers
+
+    mergers = [
+        {"merger_id": "WA-1", "merger_name": "Kiwa - CSA Group"},
+        {"merger_id": "WA-2", "merger_name": "Kiwa - CSA Group"},
+    ]
+    related = build_relationship_map({"pairs": [{
+        "from": "WA-1", "to": "WA-2", "type": "resubmitted", "from_label": "Resubmitted",
+    }]})
+    assert link_related_mergers(mergers, related) == 2
+    assert mergers[0]["related_merger"]["label"] == "Resubmitted"
+    assert "label" not in mergers[1]["related_merger"]
+
+
+def test_resubmitted_relationships_count_as_refiles():
+    from scripts.generate.static_data.loaders import (
+        BACKWARD_REFILE_RELATIONSHIPS,
+        FORWARD_REFILE_RELATIONSHIPS,
+    )
+    assert "resubmitted_as" in FORWARD_REFILE_RELATIONSHIPS
+    assert "resubmitted_from" in BACKWARD_REFILE_RELATIONSHIPS
+
+
+def _waiver(mid, filed, acquirer, acquirer_id, target="CSA Group Testing & Certification Inc.",
+            target_id="CBN-1", name="Kiwa - CSA Group", **extra):
+    return {
+        "merger_id": mid,
+        "merger_name": name,
+        "accc_determination": "Approved",
+        "status": merger_status.ASSESSMENT_COMPLETED,
+        "effective_notification_datetime": f"{filed}T12:00:00Z",
+        "acquirers": [_entity(acquirer, acquirer_id)],
+        "targets": [_entity(target, target_id)],
+        **extra,
+    }
+
+
+def _kiwa():
+    return [
+        _waiver("WA-35048", "2026-09-10", "Kiwa Holding Canada Inc.", ""),
+        _waiver("WA-10054", "2026-11-23", "Intega Canada Holdings Ltd.", "BC-A0096813"),
+    ]
+
+
+def test_detects_waiver_resubmitted_as_waiver():
+    cands = drm.find_candidates(_kiwa(), known_pairs=set(), threshold=0.70)
+    assert [(c["source"], c["target"], c["type"]) for c in cands] == [
+        ("WA-35048", "WA-10054", drm.RESUBMITTED),
+    ]
+
+
+def test_resubmission_needs_a_shared_target_identifier():
+    # A serial acquirer's next deal: same acquirer, different target.
+    mergers = [
+        _waiver("WA-1", "2026-01-01", "Coles", "ABN-C", target="Site A", target_id="ABN-A",
+                name="Coles - supermarket site"),
+        _waiver("WA-2", "2026-03-01", "Coles", "ABN-C", target="Site B", target_id="ABN-B",
+                name="Coles - supermarket site"),
+    ]
+    assert drm.find_candidates(mergers, known_pairs=set(), threshold=0.70) == []
+
+
+def test_resubmission_needs_a_near_identical_target_name():
+    mergers = _kiwa()
+    mergers[1]["targets"] = [_entity("Some Other Business Pty Ltd", "CBN-1")]
+    assert drm.find_candidates(mergers, known_pairs=set(), threshold=0.70) == []
+
+
+def test_resubmission_is_never_across_kinds():
+    mergers = _kiwa()
+    mergers[1]["merger_id"] = "MN-10054"
+    assert all(c["type"] != drm.RESUBMITTED
+               for c in drm.find_candidates(mergers, known_pairs=set(), threshold=0.70))
+
+
+def test_same_day_filings_are_not_resubmissions():
+    mergers = _kiwa()
+    mergers[1]["effective_notification_datetime"] = mergers[0]["effective_notification_datetime"]
+    assert drm.find_candidates(mergers, known_pairs=set(), threshold=0.70) == []
+
+
+def test_resubmission_skips_a_suspended_source():
+    mergers = _kiwa()
+    mergers[0]["status"] = merger_status.ASSESSMENT_SUSPENDED
+    assert all(c["type"] != drm.RESUBMITTED
+               for c in drm.find_candidates(mergers, known_pairs=set(), threshold=0.70))
+
+
+def test_resubmission_skips_mergers_already_in_a_pair():
+    # A merger carries one related-merger link, so a recorded pair on either
+    # side rules it out.
+    known = {("WA-10054", "MN-9")}
+    assert drm.find_candidates(_kiwa(), known_pairs=known, threshold=0.70) == []
+
+
+def test_rejected_resubmission_is_not_suggested():
+    rejected = {("WA-35048", "WA-10054")}
+    assert drm.find_candidates(_kiwa(), set(), 0.70, rejected) == []
+
+
+def test_resubmission_never_takes_a_declined_waivers_notification():
+    # WA-1 was declined and re-filed as MN-2, which looks like a resubmission
+    # of nothing but is itself "resubmitted" as MN-3 by party overlap. The
+    # waiver pass keeps its pair, and the resubmission pass may not reuse
+    # either of its matters.
+    mergers = [
+        _waiver("WA-1", "2026-01-01", "Kiwa", "K", accc_determination="Not approved"),
+        _waiver("MN-2", "2026-02-01", "Kiwa", "K"),
+        _waiver("MN-3", "2026-03-01", "Kiwa", "K"),
+    ]
+    cands = drm.find_candidates(mergers, known_pairs=set(), threshold=0.70)
+    (waiver,) = [c for c in cands if c["type"] == drm.WAIVER_REFILED]
+    assert waiver["source"] == "WA-1"
+    claimed = {waiver["source"], waiver["target"]}
+    for c in cands:
+        if c["type"] == drm.RESUBMITTED:
+            assert not claimed & {c["source"], c["target"]}
+
+
+def test_is_certain_match_rejects_resubmitted_type():
+    # Exact names everywhere still isn't enough: a fund's successive rounds in
+    # one company look exactly like this.
+    cand = _waiver_candidate(type=drm.RESUBMITTED)
+    assert not drm.is_certain_match(cand)
+
+
+def test_main_never_marks_a_resubmission_batch_certain(tmp_path, monkeypatch):
+    mergers_path = tmp_path / "mergers.json"
+    mergers_path.write_text(json.dumps(_kiwa()))
+    related = tmp_path / "related_mergers.json"
+    related.write_text(json.dumps({"pairs": []}))
+    meta = tmp_path / "meta.json"
+    issue = tmp_path / "issue.md"
+    monkeypatch.setattr(sys, "argv", [
+        "detect_related_mergers", "--mergers", str(mergers_path), "--related", str(related),
+        "--meta-json", str(meta), "--issue-markdown", str(issue),
+    ])
+    assert drm.main() == 1
+    assert json.loads(meta.read_text()) == {"count": 1, "certain_count": 0, "all_certain": False}
+    assert not issue.exists()
+
+
+def test_pr_body_describes_resubmission():
+    cand = drm.find_candidates(_kiwa(), known_pairs=set(), threshold=0.70)[0]
+    body = drm.build_pr_body([cand], "2026-11-24")
+    assert "resubmitted" in body
+    assert "Earlier matter" in body and "Resubmitted as" in body
+    assert "from_label" in body
+
+
+def test_write_related_mergers_keeps_hand_written_labels(tmp_path):
+    path = tmp_path / "related_mergers.json"
+    pair = {"from": "WA-1", "to": "WA-2", "type": "resubmitted",
+            "from_label": "Resubmitted – new acquirer", "to_label": "Resubmission"}
+    drm.write_related_mergers(path, {"pairs": [pair]})
+    text = path.read_text()
+    assert ('    { "from": "WA-1", "to": "WA-2", "type": "resubmitted", '
+            '"from_label": "Resubmitted – new acquirer", "to_label": "Resubmission" }') in text
+    assert json.loads(text)["pairs"] == [pair]
+
+
+def test_apply_suggestions_keeps_existing_labels(tmp_path):
+    path = tmp_path / "related_mergers.json"
+    labelled = {"from": "WA-1", "to": "WA-2", "type": "resubmitted", "from_label": "Resubmitted"}
+    path.write_text(json.dumps({"pairs": [labelled]}))
+    cand = drm.find_candidates(_kiwa(), known_pairs=set(), threshold=0.70)[0]
+    drm.apply_suggestions(path, [cand])
+    pairs = json.loads(path.read_text())["pairs"]
+    assert pairs[0] == labelled
+    assert pairs[1] == {"from": "WA-35048", "to": "WA-10054", "type": "resubmitted"}
