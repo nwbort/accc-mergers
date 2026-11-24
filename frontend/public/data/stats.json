@@ -1,6 +1,6 @@
 {
   "total_mergers": 337,
-  "total_waivers": 560,
+  "total_waivers": 561,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 294,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 533,
+    "Approved": 534,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.980357142857144,
-    "median_days": 21.0,
-    "average_business_days": 14.4125,
-    "median_business_days": 15.0
+    "average_days": 20.98752228163993,
+    "median_days": 21,
+    "average_business_days": 14.417112299465241,
+    "median_business_days": 15
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 232
+      "count": 233
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35057",
+      "merger_name": "Apiam \u2013 South West Equine Veterinary Group",
+      "determination": "Approved",
+      "determination_date": "2026-11-24T12:00:00Z",
+      "page_modified_datetime": "2026-11-24T17:40:51+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-30046",
       "merger_name": "OMERS \u2013 La Trobe Financial",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-20T12:00:00Z",
       "page_modified_datetime": "2026-11-20T17:40:19+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-20054",
-      "merger_name": "Exponent Group \u2013 Crane Building Services and Utilities",
-      "determination": "Approved",
-      "determination_date": "2026-11-20T12:00:00Z",
-      "page_modified_datetime": "2026-11-20T17:39:13+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

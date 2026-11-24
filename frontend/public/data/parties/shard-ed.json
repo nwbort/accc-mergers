@@ -101,6 +101,11 @@
           "identifier_type": "ABN"
         },
         {
+          "name": "APIAM ANIMAL HEALTH PTY LIMITED",
+          "identifier": "50 604 961 024",
+          "identifier_type": "ABN"
+        },
+        {
           "name": "Apiam Animal Health Pty Ltd",
           "identifier": "50 604 961 024",
           "identifier_type": "ABN"
@@ -108,6 +113,18 @@
       ],
       "mergers": {
         "acquirer": [
+          {
+            "merger_id": "WA-35057",
+            "merger_name": "Apiam \u2013 South West Equine Veterinary Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-30T12:00:00Z",
+            "determination_date": "2026-11-24T12:00:00Z"
+          },
           {
             "merger_id": "WA-20056",
             "merger_name": "Apiam - Caroline Springs Veterinary Centre & Animal Hospital",
@@ -148,10 +165,10 @@
         "target": [],
         "other": []
       },
-      "merger_count": 3,
+      "merger_count": 4,
       "phase_1_count": 2,
       "phase_2_count": 0,
-      "waiver_count": 1,
+      "waiver_count": 2,
       "active_count": 0,
       "phase_duration": {
         "average_days": 28.5,
@@ -161,11 +178,11 @@
         "completed_count": 2
       },
       "waiver_duration": {
-        "average_days": 18.0,
-        "median_days": 18,
-        "average_business_days": 14.0,
-        "median_business_days": 14,
-        "completed_count": 1
+        "average_days": 21.5,
+        "median_days": 21.5,
+        "average_business_days": 15.5,
+        "median_business_days": 15.5,
+        "completed_count": 2
       }
     },
     "atmos-renewables-pty-ltd": {
