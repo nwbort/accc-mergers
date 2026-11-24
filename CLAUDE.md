@@ -149,9 +149,15 @@ Frontend:
 
 ```
 frontend/src/
-├── main.jsx              # React root. On a prerendered page it mounts only once
-│                         #   preloadRoute has the page's chunk and first-render data, in a
+├── main.jsx              # React root. A prerendered body that is the page itself
+│                         #   (<main data-prerendered="page">: the homepage's dashboard top and the
+│                         #   pages rendered from their own components) is held until preloadRoute
+│                         #   has the page's chunk and first-render data, then the app mounts in a
 │                         #   transition, so the static HTML gives way to the page, not a spinner.
+│                         #   Any other prerendered body is only a summary for crawlers: index.css
+│                         #   hides it from visitors running JavaScript (the js-app class index.html
+│                         #   sets before first paint) and the app mounts at once, so no reader
+│                         #   watches one layout swap for another.
 │                         #   That first render going straight to the page leans on a React
 │                         #   internal: routes.js tags each chunk's promise fulfilled, as React
 │                         #   tags the promises it tracks, and React reads the tag. jsdom can't
