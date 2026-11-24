@@ -12,6 +12,7 @@ This module can be used by:
 
 import json
 import os
+import re
 from datetime import datetime, timedelta
 from scripts.date_utils import parse_iso_datetime
 from scripts.constants import merger_status
@@ -25,6 +26,27 @@ CUTOFF_WEEKS = 3
 # later — which a three-week cutoff would only just miss. (A refusal is never
 # cut off at all, so it needs no floor.)
 CONDITIONAL_CUTOFF_WEEKS = 5
+
+
+# A register case number, e.g. MN-01016 or WA-30046.
+CASE_NUMBER = re.compile(r'^(?:MN|WA)-\d{4,6}$')
+
+
+def parse_matter_ids(raw) -> list:
+    """Split a list of matter IDs into unique, well-formed case numbers.
+
+    For IDs taken from an ACCC register email (regex-extracted by the
+    accc-register-watcher Worker), which name the matters to process even
+    past cutoff. They are inbound-email content, so anything not shaped like
+    ``MN-12345`` or ``WA-12345`` is dropped. Accepts any mix of commas and
+    whitespace as separators and keeps first-seen order.
+    """
+    ids = []
+    for token in re.split(r'[\s,]+', raw or ''):
+        token = token.strip().upper()
+        if CASE_NUMBER.match(token) and token not in ids:
+            ids.append(token)
+    return ids
 
 
 def is_waiver_merger(merger: dict) -> bool:

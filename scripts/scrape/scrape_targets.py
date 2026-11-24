@@ -33,7 +33,7 @@ import os
 import sys
 from urllib.parse import unquote, urlparse
 
-from scripts.cutoff import CUTOFF_WEEKS, should_skip_merger
+from scripts.cutoff import CUTOFF_WEEKS, parse_matter_ids, should_skip_merger
 
 
 def normalize_target(path: str) -> str:
@@ -50,7 +50,7 @@ def normalize_target(path: str) -> str:
 
 
 def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
-                   scrape_all: bool = False):
+                   scrape_all: bool = False, include_ids=()):
     """Choose the matter paths to fetch.
 
     Args:
@@ -58,6 +58,9 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         mergers: Records already in mergers.json.
         cutoff_weeks: Weeks after determination at which a matter goes cold.
         scrape_all: Ignore cutoff dates — fetch every matter we know of.
+        include_ids: Merger IDs to fetch even if past cutoff: the matters an
+            ACCC register email says have changed. Cutoff assumes a decided
+            matter has gone quiet, and the email is direct evidence it hasn't.
 
     Returns:
         (paths, stats) where paths preserves listing order (listing links
@@ -68,6 +71,8 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
     ids_by_key = {}
     skip_keys = {}
     known_paths = []
+    include_ids = set(include_ids)
+    included = []
     for merger in mergers:
         url = merger.get('url', '')
         if not url:
@@ -80,7 +85,11 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         if merger_id:
             ids_by_key[key] = merger_id
         if not scrape_all and should_skip_merger(merger, cutoff_weeks=cutoff_weeks):
-            skip_keys[key] = path
+            if merger_id in include_ids:
+                included.append({'merger_id': merger_id, 'path': path})
+                known_paths.append(path)
+            else:
+                skip_keys[key] = path
         else:
             known_paths.append(path)
 
@@ -99,6 +108,8 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         'recovered': 0,
         'recovered_paths': [],
         'recovered_mergers': [],
+        'included': len(included),
+        'included_mergers': included,
     }
 
     for path in listing_paths:
@@ -199,6 +210,12 @@ def main():
         help=f'Weeks after determination to cut off (default: {CUTOFF_WEEKS})'
     )
     parser.add_argument(
+        '--include-ids',
+        default='',
+        help='Merger IDs (comma/space separated) to fetch even if past cutoff, '
+             'e.g. the matters named in an ACCC register email'
+    )
+    parser.add_argument(
         '--stats-json',
         help='Write the selection stats to this path as JSON (for run summaries)'
     )
@@ -211,6 +228,7 @@ def main():
         mergers,
         cutoff_weeks=args.cutoff_weeks,
         scrape_all=args.all,
+        include_ids=parse_matter_ids(args.include_ids),
     )
 
     if args.stats_json:
@@ -223,6 +241,10 @@ def main():
         print(f"    Skipping {stats['skipped']} merger(s) past cutoff", file=sys.stderr)
     if stats['skipped_unlisted']:
         print(f"    {stats['skipped_unlisted']} more past cutoff were missing from the listing", file=sys.stderr)
+    if stats['included']:
+        names = ', '.join(m['merger_id'] for m in stats['included_mergers'])
+        print(f"    Fetching {stats['included']} emailed merger(s) despite cutoff: {names}",
+              file=sys.stderr)
     if stats['recovered']:
         print(f"    Recovered {stats['recovered']} merger(s) missing from the listing:", file=sys.stderr)
         for path in stats['recovered_paths']:

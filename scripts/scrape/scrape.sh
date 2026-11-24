@@ -19,6 +19,13 @@
 #                      and fetched.tsv (status, merger ID and path per fetch).
 #                      scripts/scrape/scrape_summary.py renders these for the run's
 #                      GitHub step summary.
+#   SCRAPE_EXPECT_IDS  Matter IDs the triggering ACCC email named (comma or
+#                      space separated). The listing is re-crawled, up to
+#                      EXPECT_RECRAWLS (default 3) more times, until each is
+#                      either already in mergers.json or on a listing page.
+#                      See scripts/scrape/expected_matters.py. They are also
+#                      fetched even if past cutoff, since the email says they
+#                      changed.
 
 # Exit immediately if a command exits with a non-zero status.
 set -e
@@ -235,7 +242,7 @@ export -f fetch_matter_page
 fetch_register_page() {
   local page="$1"
   local status
-  status=$(accc_curl -w '%{http_code}' "${REGISTER_URL}&page=${page}" -o "${PAGE_TEMP_DIR}/page_${page}.html")
+  status=$(accc_curl -w '%{http_code}' "${REGISTER_URL}&page=${page}" -o "${PAGE_TEMP_DIR}/${PAGE_PREFIX:-}page_${page}.html")
   if [ "$status" != "200" ]; then
     echo "    Warning: register page ${page} returned HTTP ${status}" >&2
   fi
@@ -276,37 +283,109 @@ mkdir -p "$SUBFOLDER"
 # 3. Handle pagination and extract relative links from all pages
 echo "Extracting links from register pages..."
 
-# Extract links from the first page
-relative_links=$(pup '.accc-collapsed-card__header a attr{href}' < "$MAIN_PAGE_FILE" | grep -v '#card-' | tr -d '\r')
+# Every listing page this run fetched is kept in LISTING_DIR until the script
+# exits, so the expected-matters check below can read the case numbers off
+# the cards of every crawl, not just the links.
+LISTING_DIR=$(mktemp -d)
+export LISTING_DIR
+trap 'rm -rf "$LISTING_DIR"' EXIT
+cp "$MAIN_PAGE_FILE" "${LISTING_DIR}/crawl0_page_0.html"
+
+# Pull matter links out of one saved listing page.
+links_from_page() {
+  pup '.accc-collapsed-card__header a attr{href}' < "$1" | grep -v '#card-' | tr -d '\r' || true
+}
+
+# Append every link on the given listing pages to relative_links.
+add_links_from_pages() {
+  local page_file page_links
+  for page_file in "$@"; do
+    [ -f "$page_file" ] || continue
+    page_links=$(links_from_page "$page_file")
+    if [ -n "$page_links" ]; then
+      relative_links=$(printf '%s\n%s' "$relative_links" "$page_links")
+    fi
+  done
+}
+
+# Fetch listing pages $2..$3 of crawl $1 into LISTING_DIR, in parallel.
+crawl_register_pages() {
+  export PAGE_TEMP_DIR="$LISTING_DIR" PAGE_PREFIX="crawl${1}_"
+  seq "$2" "$3" | xargs -P "$PARALLEL_JOBS" -I {} bash -c 'fetch_register_page "$@"' _ {}
+}
+
+relative_links=$(links_from_page "$MAIN_PAGE_FILE")
 
 # Check if there are additional pages by looking for the "Go to last page" link.
 # pup does not decode HTML entities in attributes, so we decode &amp; to & with sed.
 last_page_href=$(pup 'a[title="Go to last page"] attr{href}' < "$MAIN_PAGE_FILE" | sed 's/&amp;/\&/g' | tr -d '\r')
 
+last_page=0
 if [ -n "$last_page_href" ]; then
   # Extract the page number from the href (e.g. "?init=1&items_per_page=20&page=2" -> "2")
   last_page=$(echo "$last_page_href" | grep -oP '[?&]page=\K[0-9]+' | tail -1 || true)
+  last_page=${last_page:-0}
 
-  if [ -n "$last_page" ] && [ "$last_page" -gt 0 ]; then
+  if [ "$last_page" -gt 0 ]; then
     echo "Register has $(( last_page + 1 )) pages. Fetching additional pages in parallel..."
-
-    PAGE_TEMP_DIR=$(mktemp -d)
-    export PAGE_TEMP_DIR
-
-    seq 1 "$last_page" | xargs -P "$PARALLEL_JOBS" -I {} bash -c 'fetch_register_page "$@"' _ {}
-
+    crawl_register_pages 0 1 "$last_page"
+    pages=()
     for (( page=1; page<=last_page; page++ )); do
-      page_file="${PAGE_TEMP_DIR}/page_${page}.html"
-      if [ -f "$page_file" ]; then
-        page_links=$(pup '.accc-collapsed-card__header a attr{href}' < "$page_file" | grep -v '#card-' | tr -d '\r')
-        if [ -n "$page_links" ]; then
-          relative_links=$(printf '%s\n%s' "$relative_links" "$page_links")
-        fi
-      fi
+      pages+=("${LISTING_DIR}/crawl0_page_${page}.html")
     done
-
-    rm -rf "$PAGE_TEMP_DIR"
+    add_links_from_pages "${pages[@]}"
   fi
+fi
+
+# 3b. Make sure the listing served every matter the triggering email named.
+#
+# The listing's unstable sort can drop any row. A matter we already know is
+# recovered by scrape_targets.py from its stored URL, but a brand-new matter
+# has nothing to recover from: if the crawl drops it, an email-triggered run
+# misses the very matter it was triggered for. So crawl again, up to
+# EXPECT_RECRAWLS more times, until every emailed ID is either known or on a
+# listing page. Each extra crawl's links are unioned in, which also helps any
+# other matter the first crawl happened to drop. A matter still missing after
+# that (the email can arrive before the register shows it) is a warning, not
+# a failure: the next run will pick it up.
+SCRAPE_EXPECT_IDS="${SCRAPE_EXPECT_IDS:-}"
+EXPECT_RECRAWLS="${EXPECT_RECRAWLS:-3}"
+EXPECT_RECRAWL_DELAY="${EXPECT_RECRAWL_DELAY:-10}"
+if [ -n "$SCRAPE_EXPECT_IDS" ] && [ -n "$relative_links" ]; then
+  crawl=0
+  while :; do
+    missing=$(python3 -m scripts.scrape.expected_matters \
+      --ids "$SCRAPE_EXPECT_IDS" --mergers-json "$MERGERS_JSON" \
+      "$LISTING_DIR"/*.html | tr '\n' ' ' | sed 's/ *$//')
+    if [ -z "$missing" ]; then
+      if [ "$crawl" -gt 0 ]; then
+        echo "    Every emailed matter found after ${crawl} extra listing crawl(s)."
+      fi
+      break
+    fi
+    if [ "$crawl" -ge "$EXPECT_RECRAWLS" ]; then
+      echo "::warning::Emailed matter(s) not on the register listing after $(( crawl + 1 )) crawl(s): ${missing}"
+      break
+    fi
+    crawl=$(( crawl + 1 ))
+    echo "    Emailed matter(s) missing from the listing: ${missing}. Crawling it again (${crawl}/${EXPECT_RECRAWLS})..."
+    sleep "$EXPECT_RECRAWL_DELAY"
+    crawl_register_pages "$crawl" 0 "$last_page"
+    # Only links the earlier crawls didn't serve are added, so the run
+    # summary's listing and duplicate counts still describe one crawl rather
+    # than counting every re-crawled row as a duplicate.
+    recrawl_links=""
+    for (( page=0; page<=last_page; page++ )); do
+      page_links=$(links_from_page "${LISTING_DIR}/crawl${crawl}_page_${page}.html" 2>/dev/null || true)
+      [ -n "$page_links" ] && recrawl_links=$(printf '%s\n%s' "$recrawl_links" "$page_links")
+    done
+    new_links=$(printf '%s\n' "$recrawl_links" | grep . | sort -u \
+      | grep -vxF -f <(printf '%s\n' "$relative_links") || true)
+    if [ -n "$new_links" ]; then
+      echo "    Crawl ${crawl} served $(echo "$new_links" | grep -c .) matter(s) the earlier crawl(s) missed."
+      relative_links=$(printf '%s\n%s' "$relative_links" "$new_links")
+    fi
+  done
 fi
 
 if [ -z "$relative_links" ]; then
@@ -350,6 +429,11 @@ else
   select_args=()
 fi
 
+# Emailed matters are fetched even past cutoff: the email says they changed.
+if [ -n "$SCRAPE_EXPECT_IDS" ]; then
+  select_args+=(--include-ids "$SCRAPE_EXPECT_IDS")
+fi
+
 if [ -n "$SCRAPE_REPORT_DIR" ]; then
   select_args+=(--stats-json "${SCRAPE_REPORT_DIR}/targets.json")
 fi
@@ -369,7 +453,7 @@ echo "Fetching $link_count merger page(s)..."
 # 5. Fetch the individual matter pages in parallel
 # Capture any failures from stderr
 failed_urls_file=$(mktemp)
-trap 'rm -f "$failed_urls_file"' EXIT
+trap 'rm -f "$failed_urls_file"; rm -rf "$LISTING_DIR"' EXIT
 
 if echo "$links_to_fetch" | xargs -P "$PARALLEL_JOBS" -I {} bash -c 'fetch_matter_page "$@"' _ {} 2>"$failed_urls_file"; then
   # All succeeded
