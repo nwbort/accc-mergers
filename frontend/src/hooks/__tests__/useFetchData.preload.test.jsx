@@ -49,3 +49,30 @@ describe('useFetchData with a preload in flight', () => {
     expect(fetchSpy).toHaveBeenCalledTimes(2);
   });
 });
+
+// The race that left merger pages stuck on their spinner: a preload (or any
+// other writer) fills the cache after the hook's first render, which showed
+// loading, but before its effect runs. The effect then finds the data cached
+// and fetches nothing, so unless it re-renders, nothing ever does.
+describe('useFetchData when the cache fills between render and effect', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  it('re-renders with the data rather than staying on loading', async () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch');
+    let filled = false;
+    const { result } = renderHook(() => {
+      const state = useFetchData('/data/x.json', { cacheKey: 'raced' });
+      if (!filled) {
+        filled = true; // after the hook read the (empty) cache, before its effect
+        dataCache.set('raced', { n: 4 });
+      }
+      return state;
+    });
+    await waitFor(() => expect(result.current.data).toEqual({ n: 4 }));
+    expect(result.current.loading).toBe(false);
+    expect(fetchSpy).not.toHaveBeenCalled();
+  });
+});
