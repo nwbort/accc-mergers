@@ -15,6 +15,13 @@ export const DASHBOARD_STATS_KEY = 'dashboard-stats';
 
 export const dashboardStatsFetch = () => [DASHBOARD_STATS_KEY, API_ENDPOINTS.stats];
 
+// The dashboard's two event timelines. Optional to the page (it draws without
+// them), but they sit above its charts, so arriving after the first render
+// they pushed the charts down twice; preloading them too lets the dashboard
+// draw everything in place at once.
+export const upcomingEventsFetch = () => ['dashboard-events', API_ENDPOINTS.upcomingEvents];
+export const recentEventsFetch = () => ['dashboard-recent-events', API_ENDPOINTS.recentEvents];
+
 export const mergersListFetch = () => [MERGERS_LIST_KEY, API_ENDPOINTS.mergersList];
 
 /** A merger's detail file. Ids are upper-case in the data, whatever the URL says. */

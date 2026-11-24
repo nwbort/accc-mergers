@@ -6,13 +6,12 @@ import ErrorMessage from '../components/ErrorMessage';
 import UpcomingEventsTimeline from '../components/UpcomingEventsTimeline';
 import RecentEventsTimeline from '../components/RecentEventsTimeline';
 import SEO from '../components/SEO';
-import { API_ENDPOINTS } from '../config';
 import { getCalendarDaysUntil, isEventPast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
 import { isRecentEventShown } from '../constants/recentEventTypes';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
-import { dashboardStatsFetch } from '../utils/pageData';
+import { dashboardStatsFetch, recentEventsFetch, upcomingEventsFetch } from '../utils/pageData';
 import { useFadeIn } from '../hooks/useFadeIn';
 
 // Title and description live in the shared table so this page and the
@@ -27,14 +26,12 @@ function Dashboard() {
   const { data: stats, loading, error } = useFetchData(statsUrl, { cacheKey: statsKey });
   // A failed upcoming-events fetch shouldn't block the page — we just omit the
   // section. Errors are logged by the hook.
-  const { data: upcomingEventsData } = useFetchData(API_ENDPOINTS.upcomingEvents, {
-    cacheKey: 'dashboard-events',
-  });
+  const [upcomingKey, upcomingUrl] = upcomingEventsFetch();
+  const { data: upcomingEventsData } = useFetchData(upcomingUrl, { cacheKey: upcomingKey });
   const upcomingEvents = upcomingEventsData?.events ?? null;
   // Likewise optional: without it the recent events table just isn't drawn.
-  const { data: recentEventsData } = useFetchData(API_ENDPOINTS.recentEvents, {
-    cacheKey: 'dashboard-recent-events',
-  });
+  const [recentKey, recentUrl] = recentEventsFetch();
+  const { data: recentEventsData } = useFetchData(recentUrl, { cacheKey: recentKey });
 
   // Mark items as seen after user has viewed them for 2 seconds
   // This ensures the "New" badge persists across refreshes

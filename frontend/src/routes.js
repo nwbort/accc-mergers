@@ -16,6 +16,8 @@ import {
   analysisFetch,
   commentaryFetch,
   dashboardStatsFetch,
+  recentEventsFetch,
+  upcomingEventsFetch,
   digestFetch,
   industriesListFetch,
   industryDivisionFetch,
@@ -97,7 +99,7 @@ const industry = ({ code }) => [industryDivisionFetch(decode(code))];
 const party = ({ id }) => [partyShardFetch(decode(id))];
 
 export const ROUTES = [
-  { path: '/', page: Dashboard, data: () => [dashboardStatsFetch()] },
+  { path: '/', page: Dashboard, data: () => [dashboardStatsFetch(), upcomingEventsFetch(), recentEventsFetch()] },
   { path: '/mergers', page: Mergers, data: () => [mergersListFetch()] },
   { path: '/mergers/:id', page: MergerDetail, data: merger },
   { path: '/mergers/:id/:slug', page: MergerDetail, data: merger },

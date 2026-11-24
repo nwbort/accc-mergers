@@ -140,6 +140,31 @@ describe('Dashboard first render', () => {
     );
     expect(screen.getByText('2 under assessment')).toBeInTheDocument();
   });
+
+  // The event timelines sit above the charts: had either arrived after the
+  // first render, it would have pushed the charts down. The preload carries
+  // all three files, so with them in the cache the dashboard fetches nothing.
+  it('preloads the event timelines too, so nothing loads in above the charts', async () => {
+    const { routeData } = await import('../../routes');
+    const entries = routeData('/');
+    expect(entries.map(([, url]) => url)).toEqual(
+      expect.arrayContaining(['/data/stats.json', '/data/upcoming-events.json', '/data/recent-events.json']),
+    );
+    for (const [cacheKey, url] of entries) {
+      dataCache.set(cacheKey, url.endsWith('stats.json') ? statsFixture() : { events: [] });
+    }
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockRejectedValue(new Error('offline'));
+    render(
+      <HelmetProvider>
+        <MemoryRouter>
+          <Dashboard />
+        </MemoryRouter>
+      </HelmetProvider>
+    );
+    expect(screen.getByText('2 under assessment')).toBeInTheDocument();
+    const fetched = fetchSpy.mock.calls.map(([url]) => String(url));
+    for (const [, url] of entries) expect(fetched, url).not.toContain(url);
+  });
 });
 
 describe('Dashboard fade-in', () => {
