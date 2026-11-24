@@ -5,6 +5,7 @@ import { describe, it, expect } from 'vitest';
 // binding, the API_DB D1 binding and context.waitUntil.
 import {
   assetPath,
+  KEY_CONTACT,
   keyRequired,
   onRequest,
   OPEN_LABEL,
@@ -103,6 +104,45 @@ describe('API with keys required', () => {
     expect(env.ASSETS.seen).toHaveLength(0);
   });
 
+  it('tells a keyless client who to email for a key, and how to send it', async () => {
+    const { response } = await call();
+    const body = await response.json();
+    expect(body.error).toContain(KEY_CONTACT);
+    expect(body.error).toContain('?key=');
+    expect(body.error).toContain('Authorization: Bearer');
+    expect(body.request_a_key).toBe(`mailto:${KEY_CONTACT}`);
+  });
+
+  it('accepts the key as a ?key= query parameter', async () => {
+    const { response, env } = await call({ url: `${URL_}?key=${GOOD_KEY}` });
+    expect(response.status).toBe(200);
+    expect(await response.text()).toBe(BODY);
+    expect(env.API_DB.usage.map((u) => u.label)).toEqual(['smith-legal']);
+  });
+
+  it('never forwards a ?key= to the asset fetch', async () => {
+    const { env } = await call({ url: `${URL_}?key=${GOOD_KEY}` });
+    expect(new URL(env.ASSETS.seen[0].url).search).toBe('');
+  });
+
+  it('rejects an unknown ?key=, still naming the contact', async () => {
+    const { response, env } = await call({ url: `${URL_}?key=mfyi_live_guess` });
+    expect(response.status).toBe(401);
+    expect((await response.json()).error).toMatch(/Invalid or revoked/);
+    expect(env.ASSETS.seen).toHaveLength(0);
+  });
+
+  it('treats an empty ?key= as no key', async () => {
+    const { response } = await call({ url: `${URL_}?key=` });
+    expect(response.status).toBe(401);
+    expect((await response.json()).error).toMatch(/is required/);
+  });
+
+  it('prefers the header when both are sent', async () => {
+    const { response } = await call({ key: GOOD_KEY, url: `${URL_}?key=mfyi_live_guess` });
+    expect(response.status).toBe(200);
+  });
+
   it('rejects an unknown key', async () => {
     const { response, env } = await call({ key: 'mfyi_live_guess' });
     expect(response.status).toBe(401);
@@ -196,6 +236,11 @@ describe('API open (API_REQUIRE_KEY = "false")', () => {
     const { response, env } = await call({ requireKey: 'false', key: REVOKED_KEY });
     expect(response.status).toBe(200);
     expect(env.API_DB.usage.map((u) => u.label)).toEqual([OPEN_LABEL]);
+  });
+
+  it('credits a valid ?key= to its client', async () => {
+    const { env } = await call({ requireKey: 'false', url: `${URL_}?key=${GOOD_KEY}` });
+    expect(env.API_DB.usage.map((u) => u.label)).toEqual(['smith-legal']);
   });
 
   it('serves without the database bound', async () => {

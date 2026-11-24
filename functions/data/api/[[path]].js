@@ -14,6 +14,11 @@
 // database (bound as API_DB), and issued and revoked with
 // workers/feedback-admin/scripts/api-keys.mjs.
 //
+// A key is sent as "Authorization: Bearer <key>" or, for clients that can only
+// set a URL (a spreadsheet's web import, a browser address bar), as ?key=<key>.
+// The header wins when both are present. A refusal names KEY_CONTACT, the
+// address to ask for a key.
+//
 // Every request served adds one to a per-label, per-day counter in api_usage:
 // the key's label when a valid key was sent, OPEN_LABEL when the API is open
 // and none was. Requests refused for want of a valid key count under
@@ -21,6 +26,8 @@
 
 export const REJECTED_LABEL = '(rejected)';
 export const OPEN_LABEL = '(open)';
+export const KEY_CONTACT = 'contact@mergers.fyi';
+export const KEY_QUERY_PARAM = 'key';
 
 const BASE_HEADERS = {
   'Content-Type': 'application/json; charset=utf-8',
@@ -28,15 +35,33 @@ const BASE_HEADERS = {
   'Cache-Control': 'private, no-cache',
 };
 
-function jsonError(status, error, extraHeaders = {}) {
-  return new Response(JSON.stringify({ error }) + '\n', {
+function jsonResponse(status, body, extraHeaders = {}) {
+  return new Response(JSON.stringify(body) + '\n', {
     status,
     headers: { ...BASE_HEADERS, ...extraHeaders },
   });
 }
 
-function unauthorised(message) {
-  return jsonError(401, message, { 'WWW-Authenticate': 'Bearer realm="mergers.fyi"' });
+function jsonError(status, error, extraHeaders = {}) {
+  return jsonResponse(status, { error }, extraHeaders);
+}
+
+const HOW_TO_SEND = `send it as "Authorization: Bearer <key>" or append ?${KEY_QUERY_PARAM}=<key> to the URL`;
+
+/** The 401 body: what went wrong, and who to email for a key. */
+export function unauthorisedBody(hadKey) {
+  return {
+    error: hadKey
+      ? `Invalid or revoked API key. Email ${KEY_CONTACT} if you need a new one.`
+      : `An API key is required. Email ${KEY_CONTACT} to request one, then ${HOW_TO_SEND}.`,
+    request_a_key: `mailto:${KEY_CONTACT}`,
+  };
+}
+
+function unauthorised(hadKey) {
+  return jsonResponse(401, unauthorisedBody(hadKey), {
+    'WWW-Authenticate': 'Bearer realm="mergers.fyi"',
+  });
 }
 
 export function keyRequired(env) {
@@ -58,6 +83,14 @@ export function bearerToken(request) {
   const header = request.headers.get('Authorization') || '';
   const match = /^Bearer\s+(\S+)\s*$/i.exec(header);
   return match ? match[1] : null;
+}
+
+/** The key a request carries: the Bearer header, else the ?key= parameter. */
+export function requestKey(request, url = new URL(request.url)) {
+  const fromHeader = bearerToken(request);
+  if (fromHeader) return fromHeader;
+  const fromQuery = (url.searchParams.get(KEY_QUERY_PARAM) || '').trim();
+  return fromQuery || null;
 }
 
 /** The .json file an extensionless endpoint is served from, or null for anything else. */
@@ -102,7 +135,7 @@ export async function onRequest(context) {
   // a good key from a bad one, so nothing is served.
   if (required && !env.API_DB) return jsonError(503, 'API not configured');
 
-  const token = bearerToken(request);
+  const token = requestKey(request, url);
   let label = null;
   if (token && env.API_DB) {
     try {
@@ -120,13 +153,12 @@ export async function onRequest(context) {
 
   if (required && !label) {
     countRequest(context, REJECTED_LABEL);
-    return unauthorised(
-      token ? 'Invalid or revoked API key' : 'Missing API key: send it as "Authorization: Bearer <key>"',
-    );
+    return unauthorised(Boolean(token));
   }
 
   // Pass the conditional header through so an unchanged file comes back as a
-  // bodiless 304 against the client's ETag. Never the Authorization header.
+  // bodiless 304 against the client's ETag. Never the Authorization header,
+  // and never the query string, so a ?key= goes no further than this check.
   const assetHeaders = new Headers();
   const ifNoneMatch = request.headers.get('If-None-Match');
   if (ifNoneMatch) assetHeaders.set('If-None-Match', ifNoneMatch);

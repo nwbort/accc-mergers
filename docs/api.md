@@ -28,13 +28,30 @@ live in the `mergers-feedback` D1 database the signup Worker and
 |---|---|
 | URL | `https://mergers.fyi/data/api/v1/mergers` (no extension; the `.json` name is a `404`) |
 | Method | `GET` (or `HEAD`) |
-| Auth | `Authorization: Bearer <key>` — not needed while the API is open, but worth sending: it is accepted then too, and it keeps working once a key is required |
+| Auth | `Authorization: Bearer <key>`, or `?key=<key>` on the URL for clients that can only set a URL (a spreadsheet's web import, say). The header wins if both are sent. Not needed while the API is open, but worth sending: it is accepted then too, and it keeps working once a key is required. Email contact@mergers.fyi for a key |
 | Freshness | The file can change whenever the pipeline runs (several times a weekday). `updated_at` in the body says when its content last changed. Send the previous response's `ETag` back as `If-None-Match` and an unchanged file comes back as a bodiless `304`. |
 
 ```bash
 curl -H "Authorization: Bearer $MERGERS_FYI_KEY" \
   https://mergers.fyi/data/api/v1/mergers
+
+# or, where only a URL can be set
+curl "https://mergers.fyi/data/api/v1/mergers?key=$MERGERS_FYI_KEY"
 ```
+
+Prefer the header where you can: a key in a URL tends to end up in proxy
+logs, shell history and browser history. The key never travels past the key
+check — the static file is fetched without the query string.
+
+A refused request (`401`) says what to do next:
+
+```json
+{"error":"An API key is required. Email contact@mergers.fyi to request one, then send it as \"Authorization: Bearer <key>\" or append ?key=<key> to the URL.","request_a_key":"mailto:contact@mergers.fyi"}
+```
+
+An unknown or revoked key gets `"Invalid or revoked API key. Email
+contact@mergers.fyi if you need a new one."` with the same `request_a_key`.
+The address is `KEY_CONTACT` in `functions/data/api/[[path]].js`.
 
 | Status | Meaning |
 |---|---|
