@@ -18,8 +18,9 @@ def generate(mergers: list, output_dir: Path) -> int:
     """Write individual merger detail JSON files. Returns count written.
 
     Each file is the merger detail page's payload, slimmed to what that page
-    renders (:func:`slim_for_site`) — the complete record lives on in
-    ``data/output/mergers.json``. Each also names its link-preview card
+    renders (:func:`slim_for_site`) — the complete record lives on in the
+    CLI bundle (``scripts/generate/cli_bundle.py``) and in the gitignored
+    ``data/output/mergers.json`` a local run writes. Each also names its link-preview card
     (``og_card``, see :mod:`scripts.generate.og_cards`), worked out from the
     same record the page and the posters read.
 

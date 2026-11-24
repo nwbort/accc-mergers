@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Build the pre-indexed SQLite database the accc-mergers-cli downloads.
 
-Reads ``data/output/cli/cli-bundle.json`` (produced upstream by
-``scripts/generate/generate-cli-data.sh``) and writes two files into the chosen
-output directory:
+Reads ``data/output/cli/cli-bundle.json`` (written by
+``scripts/generate/generate_static_data.py``, via ``cli_bundle.py``) and writes
+two files into the chosen output directory:
 
 * ``cli.sqlite`` -- the indexed database. Schema is defined verbatim by
   ``SCHEMA`` below; the CLI checks the ``schema_version`` row in ``meta``

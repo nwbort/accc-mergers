@@ -5,7 +5,8 @@ business days, from the history of *completed* phase-1 reviews. The estimate is
 computed once, frozen in a persisted store keyed by merger_id
 (``data/processed/phase1_estimates.json``) and attached to every enriched
 merger as ``phase_1_estimate`` so it flows into the individual
-``mergers/{id}.json`` files and the master ``data/output/mergers.json``.
+``mergers/{id}.json`` files, the CLI bundle and the full
+``data/output/mergers.json`` a local run writes (gitignored).
 
 Method (v2): pool on questionnaire size
 ---------------------------------------

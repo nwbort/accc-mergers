@@ -11,8 +11,14 @@ Every merger is also given two derived fields before any file is written:
 from where its merger ID sits on the ACCC's per-group ID counter).
 
 Output files:
-  data/output/ (for offline analysis, not deployed):
-  - mergers.json      - All mergers wrapped in {mergers: [...]} (full enriched data)
+  data/output/ (not deployed):
+  - mergers.json      - All mergers wrapped in {mergers: [...]} (full enriched data),
+                        for offline analysis. Gitignored: run this generator
+                        locally to get one. Nothing in the pipeline reads it.
+  - cli/cli-bundle.json, cli/cli-manifest.json, cli/cli-merger-manifest.json
+                      - The accc-mergers-cli bundle, built from this run's
+                        in-memory data (generate/cli_bundle.py). Only the
+                        manifest is tracked; --cli-bundle picks its mode.
 
   frontend/public/data/ (deployed to Cloudflare Pages):
   - mergers/{id}.json           - Individual merger files (one per merger)
@@ -38,7 +44,6 @@ Output files:
   - phase2.json                 - Current + completed Phase 2 matters with statutory milestones
   - refiled-notifications.json  - Waivers declined then re-filed as notifications
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
-  - noccs/{id}.json             - NOCC summary files (consumed by the CLI bundle, not the frontend)
   - referral-probability-by-day.json - P(Phase 2 referral | still undecided at
                         business day N); not consumed by the frontend yet
 
@@ -48,10 +53,12 @@ a party folded into a canonical group, a deduped matter, a shrinking paginated
 list — stop being served instead of lingering.
 """
 
+import argparse
 import json
 import os
 import sys
 
+from scripts.generate import cli_bundle
 from scripts.generate.static_data.business_days import check_holiday_horizon
 from scripts.generate.static_data.enrichment import (
     enrich_merger,
@@ -88,7 +95,6 @@ from scripts.generate.static_data.outputs import (
     individual,
     industries,
     list as list_out,
-    noccs,
     parties,
     phase2,
     questionnaires,
@@ -107,8 +113,24 @@ OUTPUT_DIR = REPO_ROOT / "frontend" / "public" / "data"
 DATA_OUTPUT_DIR = REPO_ROOT / "data" / "output"
 
 
-def main():
+def _parse_args(argv: list[str] | None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    parser.add_argument(
+        "--cli-bundle",
+        choices=cli_bundle.MODES,
+        default="update",
+        help=(
+            "How the CLI bundle's version moves: 'update' bumps it when the "
+            "bundle changed, 'force' bumps it regardless, 'republish' never "
+            "touches the manifest (publish-cli-sqlite.yml). Default: %(default)s"
+        ),
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None):
     """Generate all static data files."""
+    args = _parse_args(argv)
     horizon_warning = check_holiday_horizon()
     if horizon_warning:
         print(f"WARNING: {horizon_warning}", file=sys.stderr)
@@ -208,12 +230,18 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     DATA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Full enriched mergers.json (offline analysis, not deployed). Event-level
-    # 'live'/'removed' status is stripped here too — like the deployed UI files,
-    # this artifact is generated, and only the backend source keeps the flag.
+    # The full enriched records, as the CLI bundle and data/output/mergers.json
+    # carry them. Event-level 'live'/'removed' status is stripped here too —
+    # like the deployed UI files, these are generated, and only the backend
+    # source keeps the flag.
+    full_records = [strip_event_status(m) for m in enriched]
+
+    # Full enriched mergers.json, for offline analysis (not deployed, and
+    # gitignored: nothing in the pipeline reads it, and committing 10 MB on
+    # every data run was most of the repository's growth).
     mergers_json_path = DATA_OUTPUT_DIR / "mergers.json"
     with open(mergers_json_path, 'w', encoding='utf-8') as f:
-        json.dump({"mergers": [strip_event_status(m) for m in enriched]}, f, indent=2)
+        json.dump({"mergers": full_records}, f, indent=2)
     print(f"✓ Generated {mergers_json_path}")
 
     # Small single-file outputs: call generator → write result
@@ -239,6 +267,7 @@ def main():
         # by the frontend yet — a building block for a future per-merger risk feature.
         ("referral-probability-by-day.json", referral_probability_by_day(enriched)),
     ]
+    payloads = dict(single_file_outputs)
     for filename, payload in single_file_outputs:
         out_path = OUTPUT_DIR / filename
         with open(out_path, 'w', encoding='utf-8') as f:
@@ -266,15 +295,31 @@ def main():
     print(f"✓ Generated {n} party records in {OUTPUT_DIR / 'parties'} "
           f"({SHARD_COUNT} shard buckets)")
 
+    questionnaire_records = questionnaires.build(questionnaire_data, mergers=enriched)
     if questionnaire_data:
         print("\nGenerating questionnaire files...")
-        q_count = questionnaires.generate(questionnaire_data, OUTPUT_DIR, mergers=enriched)
+        q_count = questionnaires.write(questionnaire_records, OUTPUT_DIR)
         print(f"✓ Generated {q_count} questionnaire files in {OUTPUT_DIR / 'questionnaires'}")
 
-    if nocc_data:
-        print("\nGenerating NOCC files...")
-        n_count = noccs.generate(nocc_data, OUTPUT_DIR)
-        print(f"✓ Generated {n_count} NOCC files in {OUTPUT_DIR / 'noccs'}")
+    # The CLI bundle, from what this run already holds in memory. NOCC
+    # summaries go only here: the site never fetched them.
+    print(f"\nBuilding CLI bundle ({args.cli_bundle})...")
+    result = cli_bundle.write(
+        full_records,
+        questionnaire_records,
+        cli_bundle.nocc_records(nocc_data),
+        payloads["stats.json"],
+        payloads["industries.json"],
+        mode=args.cli_bundle,
+    )
+    if result.bumped:
+        print(f"✓ CLI bundle updated: v{result.version - 1} -> v{result.version} "
+              f"({result.merger_count} mergers, sha256 {result.bundle_sha256[:12]})")
+    elif result.changed:
+        print(f"✓ CLI bundle rewritten for v{result.version}; it differs from the "
+              f"bundle that version was stamped on (manifest left as is)")
+    else:
+        print(f"✓ CLI bundle unchanged (matches v{result.version})")
 
     print("\nDone!")
 

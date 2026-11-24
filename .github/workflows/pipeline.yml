@@ -473,8 +473,10 @@ jobs:
         run: |
           python -m scripts.enrich_pdfs
           python -m scripts.generate.generate_similar_mergers
+          # Also rebuilds the CLI bundle from the records it holds in memory,
+          # bumping data/output/cli/cli-manifest.json only when the bundle's
+          # content changed (scripts/generate/cli_bundle.py).
           python -m scripts.generate.generate_static_data
-          ./scripts/generate/generate-cli-data.sh
           python -m scripts.generate.generate_rss_feed
           # Both feed.xml and sitemap.xml are derived from the data files
           # generate_static_data just wrote, so they belong on this run rather
@@ -582,7 +584,8 @@ jobs:
             data/processed/phase1_estimates.json data/processed/quarterly_versions.json \
             data/processed/api_updated.json \
             data/raw/matters/ frontend/public/data/ \
-            frontend/public/feed.xml frontend/public/sitemap.xml data/output/ \
+            frontend/public/feed.xml frontend/public/sitemap.xml \
+            data/output/cli/cli-manifest.json \
             data/frozen_events_mergers.json
           # The ATmosphere state files exist only once publishing is
           # configured, and `git add` on a missing path is an error.
@@ -692,8 +695,8 @@ jobs:
             done
             # Flag downstream cli-sqlite publish if cli-manifest.json is in
             # the pushed commit. The manifest is the tracked stand-in for the
-            # bundle, which is gitignored — generate-cli-data.sh only rewrites
-            # the manifest when the bundle content actually changed, so it is
+            # bundle, which is gitignored — cli_bundle.py only rewrites the
+            # manifest when the bundle content actually changed, so it is
             # an exact signal. Pushes from GITHUB_TOKEN don't fire other
             # workflows, so we publish inline rather than relying on a
             # paths-filtered push trigger on publish-cli-sqlite.yml.

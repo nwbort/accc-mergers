@@ -18,18 +18,18 @@ python -m scripts.generate.generate_static_data
 Modules import each other absolutely (`from scripts.slug import slugify`), so
 the repository root has to be on `sys.path`. `python -m` puts it there; a path
 invocation puts the script's own directory there instead and the imports fail.
-The two Bash entry points export `PYTHONPATH` themselves, so they can be run
-from anywhere.
+The Bash entry point (`scrape/scrape.sh`) exports `PYTHONPATH` itself, so it
+can be run from anywhere.
 
 ## Pipeline stages
 
 ```
 scrape/scrape.sh ──► extract_mergers.py ──► generate/generate_static_data.py ──► frontend
+                                         │      └─► generate/cli_bundle.py (in-process) ──► generate/build_cli_sqlite.py
                                          └─► generate/generate_weekly_digest.py
                                          └─► generate/generate_rss_feed.py
                                          └─► generate/generate_sitemap.py
                                          └─► generate/generate_similar_mergers.py
-                                         └─► generate/generate-cli-data.sh
 ```
 
 ### `scrape/` — fetching
@@ -70,7 +70,7 @@ scrape/scrape.sh ──► extract_mergers.py ──► generate/generate_static
 | `generate/generate_similar_mergers.py` | Per-merger suggestions of related mergers (party + ANZSIC overlap). |
 | `generate/generate_rss_feed.py` | Atom feed of recent merger events. |
 | `generate/generate_sitemap.py` | `sitemap.xml` for search-engine crawlers. |
-| `generate/generate-cli-data.sh` | Bundles processed data for the `accc-mergers-cli` consumer. |
+| `generate/cli_bundle.py` | Bundles the full enriched records, questionnaires, NOCC summaries, stats and industries for the `accc-mergers-cli` consumer, and bumps the tracked `cli-manifest.json` only when the bundle changed. Called by `generate_static_data.py` with the data it holds in memory (`--cli-bundle update\|force\|republish`). |
 | `generate/build_cli_sqlite.py` | Builds the SQLite database the CLI ships. |
 | `generate/quarterly_pdf.py` | The quarterly report PDFs, drawn from the committed `quarterly.json` by `quarterly-report.yml` (not by the pipeline). |
 | `generate/og_cards.py` | Draws the generic link-preview cards in `frontend/public/og/` and picks each merger page's `og_card`. Run by hand to redraw. |

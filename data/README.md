@@ -38,7 +38,7 @@ Intermediate JSON written by the extraction pipeline (mainly
   2's (see `scripts/stage_determinations.py`)
 - `questionnaire_data.json` — parsed questionnaire metadata
 - `nocc_data.json` — parsed Notice of Competition Concerns summaries, keyed
-  by `merger_id` (source of the generated `noccs/{id}.json`)
+  by `merger_id` (carried into the CLI bundle; the site has no NOCC files)
 - `phase1_estimates.json` — frozen filing-time Phase 1 duration estimates,
   keyed by `merger_id` (written by
   `scripts/generate/static_data/phase1_estimate.py`)
@@ -99,19 +99,23 @@ Intermediate JSON written by the extraction pipeline (mainly
 
 ### `output/`
 
-Generated artefacts that are **not** deployed to the frontend. Used for
-offline analysis and external consumers.
+Generated artefacts that are **not** deployed to the frontend, all written by
+`python -m scripts.generate.generate_static_data`. Only one file here is
+tracked.
 
-- `mergers.json` — full enriched merger data (the same shape served to
-  the frontend, but as one file)
+- `mergers.json` — full enriched merger data (every field, including the ones
+  the deployed per-merger files drop), as one file, for offline analysis.
+  **Gitignored, not committed**: run the generator locally to get a copy.
+  Nothing in the pipeline reads it.
 - `cli/` — build inputs for the
-  [`accc-mergers-cli`](https://github.com/nwbort/accc-mergers-cli) tool.
-  Only `cli-manifest.json` is tracked; it holds the version counter and
-  bundle checksum that `generate-cli-data.sh` uses to detect change between
-  runs. `cli-bundle.json` and `cli-merger-manifest.json` are gitignored —
-  regenerate them with `./scripts/generate/generate-cli-data.sh`. The CLI itself
-  downloads `cli.sqlite` from the orphan `cli-dist` branch, built from the
-  bundle during the pipeline run; nothing consumes these files from `main`.
+  [`accc-mergers-cli`](https://github.com/nwbort/accc-mergers-cli) tool,
+  written by `scripts/generate/cli_bundle.py` from the generator's in-memory
+  records. Only `cli-manifest.json` is tracked; it holds the version counter
+  and bundle checksum used to detect change between runs, and changes only when
+  the bundle's content does. `cli-bundle.json` and `cli-merger-manifest.json`
+  are gitignored. The CLI itself downloads `cli.sqlite` from the orphan
+  `cli-dist` branch, built from the bundle during the pipeline run; nothing
+  consumes these files from `main`.
 
 ### `digest-archive/`
 
@@ -142,7 +146,7 @@ data/raw/
 data/processed/
     │  python -m scripts.generate.generate_static_data
     ├──────────────► frontend/public/data/                  (deployed)
-    └──────────────► data/output/                           (offline analysis)
+    └──────────────► data/output/        (CLI bundle; offline analysis, gitignored)
 ```
 
 1. **Scrape**: ACCC register and matter pages → `raw/`

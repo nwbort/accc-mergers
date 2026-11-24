@@ -167,9 +167,9 @@ def strip_event_status(merger: dict) -> dict:
 
 
 # Fields carried by an enriched merger that no page on the site reads. They
-# stay in data/output/mergers.json (the offline artifact, and the CLI bundle's
-# source) and are dropped from the deployed per-merger files by
-# :func:`slim_for_site`.
+# stay in the full record (the CLI bundle, and the gitignored
+# data/output/mergers.json a local run writes for offline analysis) and are
+# dropped from the deployed per-merger files by :func:`slim_for_site`.
 SITE_UNUSED_MERGER_FIELDS = frozenset({
     'accc_determination_raw',        # normalised into accc_determination
     'page_modified_datetime',        # register bookkeeping
@@ -188,8 +188,8 @@ SITE_SPARSE_MERGER_FIELDS = frozenset({
 # related-party group, attached by :func:`link_related_parties`) always equals
 # the party's ``party_page`` link whenever both are present, so the deployed
 # file keeps only ``party_page``, whose ``curated`` flag carries the one fact
-# ``canonical`` added. It stays in data/output/mergers.json, and the list
-# payload keeps its name for search (outputs/list.py).
+# ``canonical`` added. It stays in the full record (the CLI bundle), and the
+# list payload keeps its name for search (outputs/list.py).
 SITE_PARTY_FIELDS = ('acquirers', 'targets', 'other_parties')
 SITE_UNUSED_PARTY_FIELDS = frozenset({'canonical'})
 
@@ -225,9 +225,10 @@ def slim_for_site(merger: dict) -> dict:
     """Return a copy of ``merger`` carrying only what the site renders.
 
     The deployed per-merger file is the merger detail page's payload and
-    nothing else — ``data/output/mergers.json`` keeps the complete record for
-    offline analysis and for the CLI bundle (generate-cli-data.sh), which
-    indexes every determination row into its full-text search. So the deployed
+    nothing else — the complete record goes to the CLI bundle
+    (``scripts/generate/cli_bundle.py``), which indexes every determination row
+    into its full-text search, and to the gitignored ``data/output/mergers.json``
+    a local run writes for offline analysis. So the deployed
     copy drops the fields no page reads and, from each event, the
     determination-table rows the page never renders, and from each party its
     ``canonical`` link (duplicated by ``party_page``). Each event's internal
