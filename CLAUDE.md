@@ -444,11 +444,17 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   builds the frontend, then copies data/raw/matters PDFs into dist/
 ├── scrape/
 │   ├── scrape.py         # Scrape the ACCC register into data/raw/ (curl_cffi via
-│                         #   accc_http, a session per thread, lxml, 24 threads) and clean each page's
+│                         #   accc_http, a session per thread, lxml, 24 threads), clean each page's
 │                         #   per-request churn (clean_html_bytes, ported byte-for-byte
-│                         #   from scrape.sh's perl: every stored page is its fixed point).
+│                         #   from scrape.sh's perl) and drop the site chrome (trim_chrome:
+│                         #   a denylist of skip links, header/megamenu, breadcrumb, footer,
+│                         #   scripts, stylesheets and the subscribe modal; every <meta>,
+│                         #   <link> and <title> and anything it doesn't name are kept, and a
+│                         #   page whose chrome holds matter content is stored whole with a
+│                         #   ::warning::). Every stored page is a fixed point of both.
 │                         #   --clean-file PATH re-cleans one file (pipeline.yml, after
-│                         #   a rebase); --all ignores cutoff
+│                         #   a rebase); --clean-stored re-cleans every stored page without
+│                         #   scraping (run it after changing either); --all ignores cutoff
 │   ├── scrape_targets.py # Decide which matters need re-scraping
 │   ├── expected_matters.py # Which matter IDs the triggering email named that the
 │                         #   listing hasn't served (case numbers read off the cards);

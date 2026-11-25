@@ -42,13 +42,23 @@ def test_cleaner_is_idempotent(merger_id):
 
 
 def test_stored_matter_pages_are_already_clean():
-    """Every stored page is a fixed point, so a re-clean (--all, or the
-    pipeline's post-rebase pass) can't rewrite unchanged matters."""
+    """Every stored page is a fixed point of cleaning and trimming, so a
+    re-clean (--all, --clean-stored, or the pipeline's post-rebase pass)
+    can't rewrite unchanged matters."""
     pages = sorted(STORED_MATTERS.glob('*.html'))
     if not pages:
         pytest.skip('no stored matter pages in this checkout')
-    dirty = [p.name for p in pages if scrape.clean_html_bytes(p.read_bytes()) != p.read_bytes()]
+    dirty = [p.name for p in pages if scrape.prepare_page(p.read_bytes())[0] != p.read_bytes()]
     assert dirty == []
+
+
+def test_stored_matter_pages_are_trimmed():
+    """No stored page fell back to being kept whole."""
+    pages = sorted(STORED_MATTERS.glob('*.html'))
+    if not pages:
+        pytest.skip('no stored matter pages in this checkout')
+    untrimmed = [p.name for p in pages if b'role="contentinfo"' in p.read_bytes()]
+    assert untrimmed == []
 
 
 # Inputs and the perl's output for each, run through scrape.sh's clean_file.
@@ -128,6 +138,136 @@ def test_clean_file_cli(tmp_path):
     assert scrape.main(['--clean-file', str(path)]) == 0
     assert path.read_bytes() == expected
     assert scrape.main(['--clean-file', str(tmp_path / 'missing.html')]) == 1
+
+
+# --- trim_chrome -----------------------------------------------------------
+
+# Untrimmed pages as cleaned, covering the shapes a matter page comes in: the
+# old consultation format (MN-01064), a waiver (WA-75008), Phase 2 with a
+# Tribunal review (MN-65005) and the new structured consultation (MN-10042).
+UNTRIMMED = {
+    'MN-01064': 'MN-01064.cleaned.html.gz',
+    'WA-75008': 'WA-75008.cleaned.html.gz',
+    'MN-65005': 'MN-65005.cleaned.html.gz',
+    'MN-10042': 'MN-10042.cleaned.html.gz',
+}
+
+
+def _parse(page: bytes, tmp_path, monkeypatch, name: str) -> dict:
+    """What extract_mergers reads from ``page``, without downloading anything."""
+    from scripts import extract_mergers
+    monkeypatch.setattr(extract_mergers, 'download_attachment', lambda *a, **k: None)
+    path = tmp_path / name
+    path.write_bytes(page)
+    return extract_mergers.parse_merger_file(str(path), None, set(), {})
+
+
+@pytest.mark.parametrize('merger_id', UNTRIMMED)
+def test_trimmed_page_extracts_identically(merger_id, tmp_path, monkeypatch):
+    """Every selector extract_mergers uses survives the trim."""
+    from scripts import extract_mergers
+    page = _fixture(UNTRIMMED[merger_id])
+    trimmed, was_trimmed = scrape.prepare_page(page)
+    assert was_trimmed and len(trimmed) < len(page)
+    before = _parse(page, tmp_path, monkeypatch, 'before.html')
+    after = _parse(trimmed, tmp_path, monkeypatch, 'after.html')
+    assert before is not None and before['merger_id'] == merger_id
+    assert after == before
+    assert extract_mergers.get_merger_id_from_file(str(tmp_path / 'after.html')) == merger_id
+
+
+@pytest.mark.parametrize('merger_id', ['MN-01064', 'WA-75008'])
+def test_raw_page_trims_to_the_same_as_its_cleaned_copy(merger_id):
+    raw = _fixture(f'{merger_id}.raw.html.gz')
+    cleaned = _fixture(f'{merger_id}.cleaned.html.gz')
+    assert scrape.prepare_page(raw) == scrape.prepare_page(cleaned)
+
+
+@pytest.mark.parametrize('merger_id', UNTRIMMED)
+def test_trim_is_idempotent(merger_id):
+    once, _ = scrape.prepare_page(_fixture(UNTRIMMED[merger_id]))
+    assert scrape.prepare_page(once) == (once, True)
+    assert scrape.clean_html_bytes(once) == once
+
+
+def test_trim_drops_the_chrome_and_keeps_the_head():
+    from lxml import html as lxml_html
+    page = _fixture(UNTRIMMED['MN-65005'])
+    trimmed, _ = scrape.prepare_page(page)
+    before = lxml_html.document_fromstring(page)
+    after = lxml_html.document_fromstring(trimmed)
+
+    for xpath in ('//footer', '//*[@id="skip-links"]', '//nav',
+                  '//*[contains(@class, "breadcrumb-wrapper")]',
+                  '//*[contains(@class, "acquisitions-subscribe")]',
+                  '//form[@id="acquisition-subscribe-form"]',
+                  '//script', '//link[@rel="stylesheet"]'):
+        assert before.xpath(xpath), xpath  # the fixture has it to drop
+        assert not after.xpath(xpath), xpath
+
+    def head(document):
+        return [(e.tag, dict(e.attrib), e.text_content()) for e in document.find('head')
+                if e.tag in ('meta', 'title') or (e.tag == 'link' and e.get('rel') != 'stylesheet')]
+    assert head(after) == head(before)
+    assert after.xpath('//meta[@name="dcterms.modified"]')
+    assert after.xpath('//link[@rel="canonical"]')
+
+    # Everything in the hero and <main> is kept, bar the subscribe widget.
+    def text(document, xpath):
+        for element in document.xpath('//*[contains(@class, "acquisitions-subscribe")]'):
+            element.drop_tree()
+        return [' '.join(e.text_content().split()) for e in document.xpath(xpath)]
+    for xpath in ('//main', '//h1'):
+        assert text(after, xpath) == text(before, xpath)
+
+
+def _page(body: str, head: str = '') -> bytes:
+    return (
+        '<!DOCTYPE html>\n<html><head>\n<meta name="dcterms.modified" content="x">\n'
+        f'<link rel="stylesheet" href="/a.css">\n{head}</head>\n<body>\n'
+        '<div id="skip-links"><a href="#m">Skip</a></div>\n'
+        '<div class="nav-container"><nav>menu</nav></div>\n'
+        '<div class="content-wrapper">\n'
+        '<main><article><div class="field--name-dynamic-token-fieldnode-acccgov-merger-id">'
+        '<div class="field__item"><p>MN-12345</p></div></div></article></main>\n'
+        f'{body}</div>\n'
+        '<footer role="contentinfo"><div class="field--name-body">Copyright</div></footer>\n'
+        '<script src="/a.js"></script>\n</body></html>\n'
+    ).encode()
+
+
+def test_trim_keeps_what_it_does_not_name():
+    """A section the ACCC adds outside <main>, an unknown head tag and
+    structured data are all kept: the trim is a denylist of chrome."""
+    page = _page(
+        '<section class="tribunal-decision"><h2>Tribunal decision</h2><p>Set aside</p></section>\n',
+        head='<meta name="something.new" content="y">\n'
+             '<script type="application/ld+json">{"@type": "GovernmentService"}</script>\n',
+    )
+    trimmed = scrape.trim_chrome(page)
+    assert trimmed is not None
+    for kept in (b'Tribunal decision', b'Set aside', b'something.new', b'GovernmentService',
+                 b'dcterms.modified', b'MN-12345'):
+        assert kept in trimmed
+    for dropped in (b'Skip', b'menu', b'Copyright', b'/a.js', b'/a.css'):
+        assert dropped not in trimmed
+
+
+def test_trim_refuses_to_drop_matter_content():
+    """If matter content ever turns up inside the chrome, keep the page whole."""
+    page = _page('').replace(
+        b'<nav>menu</nav>',
+        b'<nav><div class="field--name-field-acccgov-merger-status">Approved</div></nav>')
+    assert scrape.trim_chrome(page) is None
+    assert scrape.prepare_page(page) == (scrape.clean_html_bytes(page), False)
+
+
+@pytest.mark.parametrize('page', [b'', b'  \n', (
+    b'<html><body><div class="accc-collapsed-card__header"><a href="/x">X</a></div>'
+    b'<footer>f</footer></body></html>')])
+def test_trim_leaves_pages_that_are_not_matters(page):
+    """The register listing page is cleaned but never trimmed."""
+    assert scrape.trim_chrome(page) is None
 
 
 # --- Parsing ---------------------------------------------------------------
@@ -218,13 +358,34 @@ def _run_fetch(tmp_path, link, result):
     return error, rows, matters
 
 
-def test_fetch_saves_the_cleaned_page_under_its_number(tmp_path):
-    raw, expected = PERL_CASES['asset and form tokens']
-    error, rows, matters = _run_fetch(tmp_path, '/r/a-b', _matter(b'MN-12345') + raw)
+def test_fetch_saves_the_cleaned_page_under_its_number(tmp_path, capsys):
+    page = _fixture(UNTRIMMED['MN-01064'])
+    error, rows, matters = _run_fetch(tmp_path, '/r/a-b', page)
     assert error is None
-    assert rows == 'ok\tMN-12345\t/r/a-b\n'
-    assert (matters / 'MN-12345.html').read_bytes() == \
-        scrape.clean_html_bytes(_matter(b'MN-12345') + raw)
+    assert rows == 'ok\tMN-01064\t/r/a-b\n'
+    assert (matters / 'MN-01064.html').read_bytes() == scrape.prepare_page(page)[0]
+    assert '::warning::' not in capsys.readouterr().out
+
+
+def test_fetch_stores_an_untrimmable_page_whole(tmp_path, capsys):
+    page = _page('').replace(
+        b'<nav>menu</nav>',
+        b'<nav><div class="field--name-field-acccgov-merger-status">Approved</div></nav>')
+    error, rows, matters = _run_fetch(tmp_path, '/r/a-b', page)
+    assert error is None
+    assert (matters / 'MN-12345.html').read_bytes() == scrape.clean_html_bytes(page)
+    assert '::warning::Stored MN-12345.html whole' in capsys.readouterr().out
+
+
+def test_clean_stored_cli(tmp_path, monkeypatch):
+    matters = tmp_path / 'matters'
+    matters.mkdir()
+    page = _fixture(UNTRIMMED['WA-75008'])
+    (matters / 'WA-75008.html').write_bytes(page)
+    monkeypatch.setattr(scrape, 'RAW_DIR', tmp_path)
+    monkeypatch.setattr(scrape, 'MATTERS_DIR', matters)
+    assert scrape.main(['--clean-stored']) == 0
+    assert (matters / 'WA-75008.html').read_bytes() == scrape.prepare_page(page)[0]
 
 
 def test_fetch_rejects_an_unsafe_number_for_the_fallback(tmp_path, capsys):

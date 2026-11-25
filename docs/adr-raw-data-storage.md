@@ -39,6 +39,12 @@ The on-disk breakdown today: 103 MB of PDFs (622 files), 18 MB of DOCX (170),
 15 MB of HTML (421). The DOCX files are the originals of converted PDFs; the
 HTML files are re-scraped in place and churn on every pipeline run.
 
+*Update (Nov 2026, #1177):* the scraper now stores each matter page without
+the ACCC site chrome (`trim_chrome` in `scripts/scrape/scrape.py`), which took
+the matter HTML from 34 MB (899 pages) to 14 MB and removed most of what
+churned. That complements rather than replaces the options below, which are
+about the PDFs and the history's growth.
+
 Of the full-history pack (~119 MB of packed blobs), `data/raw` accounts for
 51.5 MB — the single largest contributor, though not the only one
 (`data/output` 35.5 MB and `data/processed` 15.7 MB churn on every pipeline
