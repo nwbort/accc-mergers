@@ -1,6 +1,6 @@
 {
   "total_mergers": 338,
-  "total_waivers": 562,
+  "total_waivers": 563,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 300,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 535,
+    "Approved": 536,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.98576512455516,
-    "median_days": 21.0,
-    "average_business_days": 14.416370106761565,
-    "median_business_days": 15.0
+    "average_days": 20.991119005328596,
+    "median_days": 21,
+    "average_business_days": 14.422735346358792,
+    "median_business_days": 15
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 234
+      "count": 235
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 91
+      "count": 92
     },
     {
       "name": "Non-Residential Property Operators",
@@ -87,11 +87,11 @@
       "count": 32
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 30
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 31
     },
     {
-      "name": "Liquor Retailing",
+      "name": "Supermarket and Grocery Stores",
       "count": 30
     }
   ],
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75063",
+      "merger_name": "SLB (Schlumberger) - Kelvion",
+      "determination": "Approved",
+      "determination_date": "2026-11-25T12:00:00Z",
+      "page_modified_datetime": "2026-11-25T17:07:52+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-40049",
       "merger_name": "Coles \u2013 supermarket site in Cannonvale Central (QLD)",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-24T12:00:00Z",
       "page_modified_datetime": "2026-11-24T17:10:57+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-10054",
-      "merger_name": "Kiwa - CSA Group",
-      "determination": "Approved",
-      "determination_date": "2026-11-24T12:00:00Z",
-      "page_modified_datetime": "2026-11-24T17:07:28+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
