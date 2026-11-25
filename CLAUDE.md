@@ -107,8 +107,8 @@ bounds or witnesses). The file is static, written by
 database (bound as `API_DB` in the root `wrangler.toml`) and counts each request
 per client per day in `api_usage` — a count only, no IP or per-request record.
 Whether a key is required is `API_REQUIRE_KEY` in the root `wrangler.toml`:
-currently `"false"` (open; keyless requests count as `(open)`), and anything
-else, including leaving it out, requires one. While required it fails closed
+currently `"true"` (a key is required; `"false"` opens it, and keyless requests
+then count as `(open)`), and anything else, including leaving it out, requires one. While required it fails closed
 (`503`) without the binding. `v1` only grows: `API_ENTRY_KEYS`
 pins its fields, so a new `list.json` field fails a test until someone decides
 whether the API should carry it. The confidence rule is a Python copy of

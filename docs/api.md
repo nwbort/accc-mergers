@@ -9,9 +9,8 @@ GET https://mergers.fyi/data/api/v1/mergers
 Authorization: Bearer mfyi_live_…
 ```
 
-**For now it is open:** `API_REQUIRE_KEY = "false"` in the root
-`wrangler.toml`, so no key is needed. See [Requiring a key](#requiring-a-key)
-to switch the gate on.
+**A key is required:** `API_REQUIRE_KEY = "true"` in the root
+`wrangler.toml`. See [Requiring a key](#requiring-a-key) for the switch.
 
 Nothing new is deployed to serve it. The data is a static file the pipeline
 already commits, and one Pages Function (`functions/data/api/[[path]].js`)
@@ -28,7 +27,7 @@ live in the `mergers-feedback` D1 database the signup Worker and
 |---|---|
 | URL | `https://mergers.fyi/data/api/v1/mergers` (no extension; the `.json` name is a `404`) |
 | Method | `GET` (or `HEAD`) |
-| Auth | `Authorization: Bearer <key>`, or `?key=<key>` on the URL for clients that can only set a URL (a spreadsheet's web import, say). The header wins if both are sent. Not needed while the API is open, but worth sending: it is accepted then too, and it keeps working once a key is required. Email nick@mergers.fyi for a key |
+| Auth | `Authorization: Bearer <key>`, or `?key=<key>` on the URL for clients that can only set a URL (a spreadsheet's web import, say). The header wins if both are sent. Required (a request without a valid key gets a `401`). Email nick@mergers.fyi for a key |
 | Freshness | The file can change whenever the pipeline runs (several times a weekday). `updated_at` in the body says when its content last changed. Send the previous response's `ETag` back as `If-None-Match` and an unchanged file comes back as a bodiless `304`. |
 
 ```bash
@@ -153,13 +152,13 @@ npm run api-usage -- --days 90
 
 ## Requiring a key
 
-`API_REQUIRE_KEY` in the root `wrangler.toml` is the switch. It is `"false"`
-for now, which opens the API to anyone. Anything else, including deleting the
-line, requires a key, so the gate can't be dropped by a typo. To switch it on,
-set it to `"true"`, merge, and the next Pages deploy enforces it. Hand clients
-their keys first: anyone without one starts getting `401`s.
+`API_REQUIRE_KEY` in the root `wrangler.toml` is the switch. It is `"true"`
+now, so every request needs a valid key and anyone without one gets a `401`.
+Only `"false"` opens the API to anyone; anything else, including deleting the
+line, requires a key, so the gate can't be dropped by a typo. To open it again,
+set it to `"false"`, merge, and the next Pages deploy applies it.
 
-While it is open:
+While it is open (`"false"`):
 
 - a valid key is still credited to its client in the usage counts, so clients
   who already send one show up by name;
