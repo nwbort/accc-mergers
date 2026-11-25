@@ -252,7 +252,9 @@ class TestDetermination:
 
 
 class TestPreNotificationSummary:
-    def test_summary_added_to_raw_json(self, tmp_path):
+    def test_summary_carried_in_raw_json(self, tmp_path):
+        # Attached during generation (static_data/prenotification.py); the CLI
+        # carries it through rather than re-deriving it.
         estimate = {
             "estimated_days": 23,
             "min_days": 8,
@@ -260,23 +262,21 @@ class TestPreNotificationSummary:
             "id_issued_estimated": "2026-02-08",
             "basis": "bracketed",
         }
+        summary = {"kind": "around", "start_date": "2026-02-08", "confidence": "high"}
         bundle = {
             "mergers": [
                 _merger(
                     "MN-1",
                     effective_notification_datetime="2026-03-03T12:00:00Z",
                     pre_notification=estimate,
+                    pre_notification_summary=summary,
                 ),
                 _merger("MN-2"),
             ]
         }
         rows = _rows(tmp_path, bundle, "raw_json")
         raw = json.loads(rows["MN-1"][0])
-        assert raw["pre_notification_summary"] == {
-            "kind": "around",
-            "start_date": "2026-02-08",
-            "confidence": "high",
-        }
+        assert raw["pre_notification_summary"] == summary
         # The raw estimate is kept alongside it.
         assert raw["pre_notification"] == estimate
         assert "pre_notification_summary" not in json.loads(rows["MN-2"][0])

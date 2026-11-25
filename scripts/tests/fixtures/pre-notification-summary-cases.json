@@ -1,5 +1,5 @@
 {
-  "description": "Golden fixture pinning how a merger's raw pre_notification block is condensed to a start date, kind and confidence. Two copies of the rule read it: frontend/src/utils/preNotification.js (getPreNotificationEstimate, what the site shows) and scripts/generate/static_data/outputs/api.py (pre_notification_summary, what the API publishes). Each case's expected is null when there is nothing to say, else {kind, start_date, confidence}.",
+  "description": "Pins how a merger's raw pre_notification block is condensed to a start date, kind and confidence: scripts/generate/static_data/prenotification.py's pre_notification_summary, the only copy of the rule. Generation attaches its result to each notification as pre_notification_summary, which the detail page, the API and the CLI all read. Read by scripts/tests/test_prenotification.py. Each case's expected is null when there is nothing to say, else {kind, start_date, confidence}.",
   "cases": [
     {
       "name": "bracketed, narrow window: high",

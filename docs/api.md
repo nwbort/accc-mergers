@@ -203,10 +203,11 @@ abuse and revoking ends it; a Cloudflare rate-limiting rule on
 - `scripts/generate/static_data/outputs/api.py` writes
   `frontend/public/data/api/v1/mergers.json` (served as `/data/api/v1/mergers`) on every `generate_static_data`
   run, from the same entries as `mergers/list.json`. The pre-notification
-  summary is the site's own reading (`getPreNotificationEstimate` in
-  `frontend/src/utils/preNotification.js`), hand-copied to Python and pinned to
-  it by `fixtures/pre-notification-summary-cases.json`, which both test suites
-  read.
+  summary is the site's own reading: `pre_notification_summary` in
+  `scripts/generate/static_data/prenotification.py` attaches it to each
+  notification during generation, and the API publishes that same object, the
+  one the detail page renders. Its cases are pinned by
+  `scripts/tests/fixtures/pre-notification-summary-cases.json`.
 - `updated_at` comes from `data/processed/api_updated.json`: a hash of the
   rest of the response and the time it was first seen. The generator restamps
   only when the hash changes, and the pipeline commits the file with the rest
@@ -218,6 +219,6 @@ abuse and revoking ends it; a Cloudflare rate-limiting rule on
   `env.ASSETS.fetch` then serves the file without re-entering the Function. Tested in
   `frontend/src/utils/__tests__/apiFunction.test.js`.
 - The raw `pre_notification` block (its bounds and the matters that witness
-  them) is still in each public `mergers/{id}.json`, because the site's detail
-  page reads it. The API doesn't hide that; it gives clients a documented,
-  stable reading of it instead.
+  them) is still in each public `mergers/{id}.json`, beside the
+  `pre_notification_summary` the detail page reads. The API doesn't hide that;
+  it gives clients a documented, stable reading of it instead.

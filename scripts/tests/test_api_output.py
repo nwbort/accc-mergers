@@ -1,33 +1,13 @@
 """The key-gated API's merger list (scripts/generate/static_data/outputs/api.py).
 
-The pre-notification summary rule is hand-copied from the site's
-``getPreNotificationEstimate`` (frontend/src/utils/preNotification.js);
-``fixtures/pre-notification-summary-cases.json`` binds the two, and the JS side
-asserts against it in ``frontend/src/utils/__tests__/preNotification.test.js``.
+The API publishes each merger's ``pre_notification_summary`` as its
+``pre_notification``; the rule that writes it lives in
+static_data/prenotification.py and is tested in test_prenotification.py.
 """
 
 import json
-from pathlib import Path
-
-import pytest
 
 from scripts.generate.static_data.outputs import api, list as list_out
-
-REPO_ROOT = Path(__file__).resolve().parents[2]
-CASES = json.loads(
-    (REPO_ROOT / "fixtures" / "pre-notification-summary-cases.json").read_text(encoding="utf-8")
-)["cases"]
-
-
-@pytest.mark.parametrize("case", CASES, ids=[c["name"] for c in CASES])
-def test_summary_matches_fixture(case):
-    assert api.pre_notification_summary(case["merger"]) == case["expected"]
-
-
-def test_thresholds_match_the_frontend():
-    source = (REPO_ROOT / "frontend" / "src" / "utils" / "preNotification.js").read_text()
-    assert f"HIGH_CONFIDENCE_WINDOW_DAYS = {api.HIGH_CONFIDENCE_WINDOW_DAYS};" in source
-    assert f"MEDIUM_CONFIDENCE_WINDOW_DAYS = {api.MEDIUM_CONFIDENCE_WINDOW_DAYS};" in source
 
 
 def _merger(**extra):
@@ -40,6 +20,7 @@ def _merger(**extra):
             "id_issued_estimated": "2026-09-14", "basis": "bracketed",
             "min_days_witness": "WA-1", "max_days_witness": "WA-2", "method_version": 1,
         },
+        "pre_notification_summary": {"kind": "around", "start_date": "2026-09-14", "confidence": "high"},
         "phase_1_estimate": {"expected_business_days": 17},
         "events": [{"date": "2026-10-01T12:00:00Z", "title": "Notified"}],
         **extra,
@@ -52,6 +33,12 @@ def test_entry_is_the_list_entry_plus_the_summary():
     expected = list_out._lightweight(m)
     expected["pre_notification"] = {"kind": "around", "start_date": "2026-09-14", "confidence": "high"}
     assert entry == expected
+
+
+def test_entry_publishes_null_without_a_summary():
+    m = _merger()
+    del m["pre_notification_summary"]
+    assert api._entry(m)["pre_notification"] is None
 
 
 def test_entry_never_carries_the_raw_workings():
@@ -150,9 +137,8 @@ def test_updated_at_moves_when_any_content_changes(tmp_path):
     store = tmp_path / "api_updated.json"
     api.generate([_merger()], tmp_path, store_path=store, now="2026-11-19T01:00:00Z")
     # A derived field only (no ACCC date moves): still a change.
-    refined = _merger(pre_notification={
-        "estimated_days": 17, "min_days": 10, "max_days": 40,
-        "id_issued_estimated": "2026-09-14", "basis": "bracketed",
+    refined = _merger(pre_notification_summary={
+        "kind": "around", "start_date": "2026-09-14", "confidence": "medium",
     })
     api.generate([refined], tmp_path, store_path=store, now="2026-11-20T05:00:00Z")
     assert _payload(tmp_path)["updated_at"] == "2026-11-20T05:00:00Z"

@@ -123,7 +123,9 @@ scrape/scrape.sh ──► extract_mergers.py ──► generate/generate_static
   `prenotification.py` (`pre_notification`, recomputed each run — how long a
   notification sat in pre-notification, read off the ACCC's merger ID counter,
   as a proven floor, a best estimate and a generous ceiling, each in days and
-  as the date pre-notification started).
+  as the date pre-notification started; plus `pre_notification_summary`, the
+  condensed `{kind, start_date, confidence}` reading the detail page, the API
+  and the CLI show).
 
 ## Requirements
 

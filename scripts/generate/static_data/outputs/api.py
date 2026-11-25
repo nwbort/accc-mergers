@@ -10,8 +10,10 @@ and counts the request. See docs/api.md.
 
 Each entry is the merger list's own entry (:func:`.list._lightweight`) plus
 ``pre_notification``: when the matter's pre-notification period is estimated to
-have started, and how much weight that estimate carries. Only that summary is
-published here, not the raw block in the detail files (its bounds, witness
+have started, and how much weight that estimate carries — the merger's
+``pre_notification_summary``, attached during generation by
+:func:`..prenotification.pre_notification_summary`, the same reading the
+detail page shows. Only that summary is published here, not the raw block in the detail files (its bounds, witness
 matters, method version) — the API promises the reading, not the workings.
 
 ``v1`` is a promise to the API's clients: fields are added, never renamed or
@@ -34,17 +36,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from scripts.paths import REPO_ROOT
-from scripts.constants.regime import is_voluntary_period_notification
 
 from . import list as list_out
 
 API_DIR = Path("api") / "v1"
 API_FILE = "mergers.json"
-
-# Mirror frontend/src/utils/preNotification.js; fixtures/pre-notification-summary-cases.json
-# pins the two copies together.
-HIGH_CONFIDENCE_WINDOW_DAYS = 14
-MEDIUM_CONFIDENCE_WINDOW_DAYS = 42
 
 VERSION = "v1"
 LICENCE = "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)"
@@ -73,57 +69,11 @@ API_ENTRY_KEYS = frozenset({
 })
 
 
-def _window_days(estimate: dict) -> int | None:
-    """Width of the window the period could have started in, or None with one bound."""
-    min_days, max_days = estimate.get("min_days"), estimate.get("max_days")
-    if not isinstance(min_days, (int, float)) or not isinstance(max_days, (int, float)):
-        return None
-    return max(max_days - min_days, 0)
-
-
-def _confidence(estimate: dict) -> str:
-    """low/medium/high, from the basis and how far apart the bounds are."""
-    window = _window_days(estimate)
-    if estimate.get("basis") != "bracketed" or window is None:
-        return "low"
-    if window <= HIGH_CONFIDENCE_WINDOW_DAYS:
-        return "high"
-    if window <= MEDIUM_CONFIDENCE_WINDOW_DAYS:
-        return "medium"
-    return "low"
-
-
-def pre_notification_summary(merger: dict) -> dict | None:
-    """The condensed estimate the API publishes, or None when there's nothing to say.
-
-    ``kind`` says how to read ``start_date``: ``around`` (bracketed, a point),
-    ``after`` (only the earliest possible start is known), ``before`` (only the
-    latest), or ``none`` (no pre-notification period detectable; no date).
-    Same rule as ``getPreNotificationEstimate`` in the frontend.
-    """
-    estimate = merger.get("pre_notification")
-    if not estimate or not estimate.get("id_issued_estimated"):
-        return None
-    if estimate.get("estimated_days") is None:
-        return None
-    if is_voluntary_period_notification(merger):
-        return None
-
-    confidence = _confidence(estimate)
-    if estimate["estimated_days"] <= 0:
-        return {"kind": "none", "start_date": None, "confidence": confidence}
-
-    kind = "around"
-    if estimate.get("basis") == "upper-bound-only":
-        kind = "after"
-    elif estimate.get("basis") == "lower-bound-only":
-        kind = "before"
-    return {"kind": kind, "start_date": estimate["id_issued_estimated"], "confidence": confidence}
-
-
 def _entry(merger: dict) -> dict:
     entry = list_out._lightweight(merger)
-    entry["pre_notification"] = pre_notification_summary(merger)
+    # Read, never computed here: the summary is attached during generation
+    # (static_data/prenotification.py), and the detail page shows the same one.
+    entry["pre_notification"] = merger.get("pre_notification_summary")
     return entry
 
 

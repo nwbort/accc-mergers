@@ -111,9 +111,11 @@ currently `"true"` (a key is required; `"false"` opens it, and keyless requests
 then count as `(open)`), and anything else, including leaving it out, requires one. While required it fails closed
 (`503`) without the binding. `v1` only grows: `API_ENTRY_KEYS`
 pins its fields, so a new `list.json` field fails a test until someone decides
-whether the API should carry it. The confidence rule is a Python copy of
-`getPreNotificationEstimate`, pinned by
-`fixtures/pre-notification-summary-cases.json`. See [`docs/api.md`](docs/api.md).
+whether the API should carry it. The condensed estimate has one implementation,
+`pre_notification_summary` in `scripts/generate/static_data/prenotification.py`:
+generation attaches it to each notification as `pre_notification_summary`, and
+the API, the detail page (`PreNotificationEstimate`) and the CLI bundle all read
+that field rather than computing it. See [`docs/api.md`](docs/api.md).
 
 ## Project Structure
 
@@ -138,11 +140,8 @@ Top level:
     ├── shard-cases.json      # Golden fixture pinning the party shard hash across both impls
     ├── industry-division-cases.json  # Golden fixture pinning which industries/ file
     │                         #   an ANZSIC code is packed into, across both impls
-    ├── extension-title-cases.json  # Golden fixture pinning how an event title reads as a
-    │                         #   timeline extension (days, reason), across both impls
-    └── pre-notification-summary-cases.json  # Golden fixture pinning the condensed
-                              #   pre-notification estimate (kind, date, confidence)
-                              #   the site shows and the API publishes, across both impls
+    └── extension-title-cases.json  # Golden fixture pinning how an event title reads as a
+                              #   timeline extension (days, reason), across both impls
 ```
 
 Frontend:
@@ -850,7 +849,7 @@ exists rather than 404ing into the SPA's `index.html`.
 
 | File | Description |
 |------|-------------|
-| `mergers/{id}.json` | Individual merger detail files |
+| `mergers/{id}.json` | Individual merger detail files. A notification with a pre-notification estimate carries both the raw `pre_notification` block and `pre_notification_summary` (`{kind, start_date, confidence}`, the reading the detail page shows and the API publishes; see `static_data/prenotification.py`) |
 | `api/v1/mergers.json` | The API, served as `/data/api/v1/mergers` (`outputs/api.py`, served by `functions/data/api/[[path]].js`, key-gated when `API_REQUIRE_KEY` says so): `list.json`'s entries plus `pre_notification: {kind, start_date, confidence}` (or `null`), under a `{version, updated_at, licence, attribution}` header. Most recently updated first (the site's "Last updated" order: `latest_event_date`, then `page_modified_datetime` within a day — `api.recency_key`), one merger per line. `updated_at` is when the content last changed, not when the generator ran: a content hash and its first-seen time are kept in `data/processed/api_updated.json` (committed by the pipeline), so an unchanged run is still a byte-identical file. See [`docs/api.md`](docs/api.md) |
 | `mergers/list.json` | Lightweight list of every merger, one per line so a pipeline commit diffs per matter. One file, not pages: the /mergers page searches, filters and sorts the whole list in the browser, and it is ~110 KB gzipped. Shared with the command palette under one `dataCache` key (`utils/mergerList.js`) |
 | `manifest.json` | Written by `scripts/build.sh` at deploy time (`scripts/generate/data_manifest.py`), never committed: a 12-hex-digit SHA-256 of each `mergers/{id}.json` and `industries/{division}.json`, plus the current Phase 2 ids. The Android app's background check reads this one file (a 304 when nothing changed) instead of every followed merger, followed industry's file and `list.json`, and recomputes the hash from its cached copy, so the hash rule is shared with that repo. `android-push.yml` diffs it between deploys to push to the app. One file of the 20,000 |
