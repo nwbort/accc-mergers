@@ -34,6 +34,7 @@ import sys
 from urllib.parse import unquote, urlparse
 
 from scripts.cutoff import CUTOFF_WEEKS, parse_matter_ids, should_skip_merger
+from scripts.merger_filters import load_mergers_or_empty
 
 
 def normalize_target(path: str) -> str:
@@ -167,18 +168,6 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
     return paths, stats
 
 
-def load_mergers(mergers_json_path: str):
-    """Read mergers.json, treating a missing or unreadable file as empty."""
-    if not os.path.exists(mergers_json_path):
-        return []
-    try:
-        with open(mergers_json_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-    except (json.JSONDecodeError, IOError):
-        return []
-    return data if isinstance(data, list) else []
-
-
 def main():
     """Read listing paths on stdin, write the paths to fetch on stdout.
 
@@ -222,7 +211,7 @@ def main():
     args = parser.parse_args()
 
     listing_paths = [line.strip() for line in sys.stdin if line.strip()]
-    mergers = load_mergers(args.mergers_json)
+    mergers = load_mergers_or_empty(args.mergers_json)
     paths, stats = select_targets(
         listing_paths,
         mergers,

@@ -6,20 +6,13 @@ Lets the pipeline workflow install Tesseract only on the runs that actually
 need it, rather than unconditionally on every run.
 """
 
-import json
-
 from scripts.extract_mergers import find_pending_phase2_notice_events
+from scripts.merger_filters import load_mergers
 from scripts.parse.parse_phase2_notice import phase2_notice_needs_ocr
-
-MERGERS_JSON = 'data/processed/mergers.json'
 
 
 def main():
-    try:
-        with open(MERGERS_JSON, encoding='utf-8') as f:
-            mergers = json.load(f)
-    except FileNotFoundError:
-        mergers = []
+    mergers = load_mergers(missing_ok=True)
 
     pending = find_pending_phase2_notice_events(mergers)
     needs_ocr = any(phase2_notice_needs_ocr(path) for _, _, path in pending)

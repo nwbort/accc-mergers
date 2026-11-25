@@ -26,7 +26,7 @@ import sys
 from bs4 import BeautifulSoup
 
 from scripts.cutoff import CASE_NUMBER, parse_matter_ids as parse_expected_ids
-from scripts.scrape.scrape_targets import load_mergers
+from scripts.merger_filters import load_mergers_or_empty
 
 
 def listing_case_numbers(html: str) -> dict[str, str]:
@@ -66,7 +66,7 @@ def main() -> None:
     args = parser.parse_args()
 
     expected = parse_expected_ids(args.ids)
-    known = {m.get('merger_id') for m in load_mergers(args.mergers_json)}
+    known = {m.get('merger_id') for m in load_mergers_or_empty(args.mergers_json)}
     pages = []
     for path in args.pages:
         try:

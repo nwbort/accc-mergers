@@ -45,7 +45,8 @@ Output files:
   - refiled-notifications.json  - Waivers declined then re-filed as notifications
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
   - referral-probability-by-day.json - P(Phase 2 referral | still undecided at
-                        business day N); not consumed by the frontend yet
+                        business day N); read by the detail page's hidden
+                        press-and-hold odds (components/Phase2OddsReveal.jsx)
 
 Each per-item directory is self-pruning: a generator removes the files it no
 longer writes (see static_data/prune.py), so pages retired by a data change —
@@ -263,8 +264,8 @@ def main(argv: list[str] | None = None):
         ("phase2.json", phase2.generate(enriched)),
         ("refiled-notifications.json", refiled.generate(enriched)),
         ("extensions.json", extensions.generate(enriched)),
-        # P(Phase 2 referral | still undecided at business day N); not consumed
-        # by the frontend yet — a building block for a future per-merger risk feature.
+        # P(Phase 2 referral | still undecided at business day N), read by the
+        # detail page's press-and-hold odds (frontend Phase2OddsReveal.jsx).
         ("referral-probability-by-day.json", referral_probability_by_day(enriched)),
     ]
     payloads = dict(single_file_outputs)

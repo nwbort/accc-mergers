@@ -14,6 +14,7 @@ Public API
 ----------
 Loaders / writers:
     :func:`load_mergers`
+    :func:`load_mergers_or_empty`
     :func:`save_mergers`
 
 Predicates (single-merger):
@@ -39,6 +40,7 @@ backwards compatibility.
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 from typing import Iterable, List, Optional, Union
 
@@ -50,7 +52,28 @@ REPO_ROOT = SCRIPT_DIR.parent
 DEFAULT_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 
 
-def load_mergers(path: Optional[Union[str, Path]] = None) -> List[dict]:
+def _report_json_error(path: Path, error: json.JSONDecodeError) -> None:
+    """Print where ``path`` stopped parsing, and the line it stopped on, to stderr.
+
+    A hand edit or a botched merge is the usual way this file breaks, and
+    ``json.JSONDecodeError`` alone only gives a line and column into a
+    multi-megabyte file; quoting the line saves opening it to look.
+    """
+    print(f"Error decoding JSON from {path}:", file=sys.stderr)
+    print(f"  - Error: {error.msg}", file=sys.stderr)
+    print(f"  - At line {error.lineno}, column {error.colno}", file=sys.stderr)
+    lines = error.doc.splitlines()
+    if 0 < error.lineno <= len(lines):
+        prefix = f"Problematic line ({error.lineno}): "
+        print(f"{prefix}{lines[error.lineno - 1]}", file=sys.stderr)
+        print(f"{' ' * (len(prefix) + error.colno - 1)}^", file=sys.stderr)
+
+
+def load_mergers(
+    path: Optional[Union[str, Path]] = None,
+    *,
+    missing_ok: bool = False,
+) -> List[dict]:
     """Load merger records from the processed JSON file.
 
     This is the single canonical loader for
@@ -65,18 +88,34 @@ def load_mergers(path: Optional[Union[str, Path]] = None) -> List[dict]:
     Args:
         path: Optional path to a mergers JSON file. Defaults to
             ``data/processed/mergers.json`` at the repo root.
+        missing_ok: Treat a missing or zero-byte file as holding no mergers
+            (with a warning for the zero-byte case) instead of raising —
+            for callers that build the file from scratch on a first run.
 
     Returns:
         A list of merger dicts in whatever order they appear on disk.
 
     Raises:
         ValueError: if the file exists but is not in a recognised shape.
-        FileNotFoundError / json.JSONDecodeError: propagated unchanged so
-            callers can decide how to handle missing / malformed data.
+        FileNotFoundError: if the file is missing and ``missing_ok`` is false.
+        json.JSONDecodeError: if the file is malformed, after printing where
+            to stderr (see :func:`_report_json_error`), so callers can decide
+            whether that stops the run.
     """
     target = Path(path) if path is not None else DEFAULT_MERGERS_JSON
+    if missing_ok:
+        if not target.exists():
+            return []
+        if target.stat().st_size == 0:
+            print(f"Warning: {target} exists but is empty. Starting fresh.", file=sys.stderr)
+            return []
+
     with open(target, "r", encoding="utf-8") as f:
-        data = json.load(f)
+        try:
+            data = json.load(f)
+        except json.JSONDecodeError as e:
+            _report_json_error(target, e)
+            raise
 
     if isinstance(data, list):
         return data
@@ -86,6 +125,21 @@ def load_mergers(path: Optional[Union[str, Path]] = None) -> List[dict]:
         f"Unexpected mergers.json format at {target!s}: "
         "expected a list or a dict with a 'mergers' key"
     )
+
+
+def load_mergers_or_empty(path: Optional[Union[str, Path]] = None) -> List[dict]:
+    """Like :func:`load_mergers`, but any file it can't read counts as no mergers.
+
+    Missing, empty, malformed (reported to stderr all the same), unreadable or
+    unrecognised in shape: each gives ``[]``. For the scraper's
+    target selection and the cutoff CLI, which must still do something useful
+    on a first run or with a broken file — with no records, nothing is past
+    cutoff, so everything is fetched and extraction then reports the error.
+    """
+    try:
+        return load_mergers(path, missing_ok=True)
+    except (json.JSONDecodeError, OSError, ValueError):
+        return []
 
 
 def save_mergers(document, path: Optional[Union[str, Path]] = None) -> None:
@@ -263,6 +317,8 @@ exclude_for_public_output = filter_public
 __all__ = [
     "DEFAULT_MERGERS_JSON",
     "load_mergers",
+    "load_mergers_or_empty",
+    "save_mergers",
     "is_waiver",
     "is_suspended",
     "is_ceased",

@@ -6,16 +6,15 @@ Mergers are cut off (no longer actively scraped/processed) 3 weeks after:
 2. A waiver decision (merger_id starts with "WA-" or stage contains "Waiver") - regardless of outcome
 
 This module can be used by:
-- extract_mergers.py (imported as a module)
-- scrape.sh (called as a standalone script to output merger IDs to skip)
+- extract_mergers.py and scrape/scrape_targets.py (imported as a module)
+- the command line (``python -m scripts.cutoff``), to list IDs or paths
 """
 
-import json
-import os
 import re
 from datetime import datetime, timedelta
 from scripts.date_utils import parse_iso_datetime
 from scripts.constants import merger_status
+from scripts.merger_filters import load_mergers_or_empty
 
 # Default cutoff period after determination/waiver decision
 CUTOFF_WEEKS = 3
@@ -115,99 +114,60 @@ def should_skip_merger(merger: dict, reference_date: datetime = None, cutoff_wee
     return reference_date > cutoff_date
 
 
-def get_active_merger_ids(mergers_json_path: str, cutoff_weeks: int = CUTOFF_WEEKS) -> set:
-    """
-    Get the set of merger IDs that should still be actively processed.
-
-    Args:
-        mergers_json_path: Path to the mergers.json file
-        cutoff_weeks: Number of weeks after determination to cut off (default: 3)
-
-    Returns:
-        Set of merger IDs that should be processed
-    """
-    if not os.path.exists(mergers_json_path):
-        return set()
-
-    try:
-        with open(mergers_json_path, 'r', encoding='utf-8') as f:
-            mergers = json.load(f)
-    except (json.JSONDecodeError, IOError):
-        return set()
-
-    active_ids = set()
-    for merger in mergers:
-        merger_id = merger.get('merger_id')
-        if merger_id and not should_skip_merger(merger, cutoff_weeks=cutoff_weeks):
-            active_ids.add(merger_id)
-
-    return active_ids
+def active_merger_ids(mergers: list, cutoff_weeks: int = CUTOFF_WEEKS) -> set:
+    """Return the IDs of the ``mergers`` that should still be actively processed."""
+    return {
+        merger['merger_id']
+        for merger in mergers
+        if merger.get('merger_id') and not should_skip_merger(merger, cutoff_weeks=cutoff_weeks)
+    }
 
 
-def get_skipped_merger_ids(mergers_json_path: str, cutoff_weeks: int = CUTOFF_WEEKS) -> set:
-    """
-    Get the set of merger IDs that should be skipped (past cutoff).
-
-    Args:
-        mergers_json_path: Path to the mergers.json file
-        cutoff_weeks: Number of weeks after determination to cut off (default: 3)
-
-    Returns:
-        Set of merger IDs that should be skipped
-    """
-    if not os.path.exists(mergers_json_path):
-        return set()
-
-    try:
-        with open(mergers_json_path, 'r', encoding='utf-8') as f:
-            mergers = json.load(f)
-    except (json.JSONDecodeError, IOError):
-        return set()
-
-    skipped_ids = set()
-    for merger in mergers:
-        merger_id = merger.get('merger_id')
-        if merger_id and should_skip_merger(merger, cutoff_weeks=cutoff_weeks):
-            skipped_ids.add(merger_id)
-
-    return skipped_ids
+def skipped_merger_ids(mergers: list, cutoff_weeks: int = CUTOFF_WEEKS) -> set:
+    """Return the IDs of the ``mergers`` that should be skipped (past cutoff)."""
+    return {
+        merger['merger_id']
+        for merger in mergers
+        if merger.get('merger_id') and should_skip_merger(merger, cutoff_weeks=cutoff_weeks)
+    }
 
 
-def get_skipped_url_paths(mergers_json_path: str, cutoff_weeks: int = CUTOFF_WEEKS) -> set:
-    """
-    Get the set of URL paths for mergers that should be skipped.
+def skipped_url_paths(mergers: list, cutoff_weeks: int = CUTOFF_WEEKS) -> set:
+    """Return the register URL paths of the ``mergers`` that should be skipped.
 
     The paths are relative (e.g., '/public-registers/.../merger-name').
-
-    Args:
-        mergers_json_path: Path to the mergers.json file
-        cutoff_weeks: Number of weeks after determination to cut off (default: 3)
-
-    Returns:
-        Set of URL paths for mergers that should be skipped
     """
     from urllib.parse import urlparse
-
-    if not os.path.exists(mergers_json_path):
-        return set()
-
-    try:
-        with open(mergers_json_path, 'r', encoding='utf-8') as f:
-            mergers = json.load(f)
-    except (json.JSONDecodeError, IOError):
-        return set()
 
     skipped_paths = set()
     for merger in mergers:
         if should_skip_merger(merger, cutoff_weeks=cutoff_weeks):
             url = merger.get('url', '')
             if url:
-                # Extract path from full URL
                 parsed = urlparse(url)
                 if parsed.path:
                     skipped_paths.add(parsed.path)
-
     return skipped_paths
+
+
+# Path-taking wrappers for the CLI below. A missing or unreadable file counts
+# as no mergers (load_mergers_or_empty), so nothing is past cutoff. Code that
+# already holds the list should call the functions above instead of having
+# the file parsed again.
+
+def get_active_merger_ids(mergers_json_path: str, cutoff_weeks: int = CUTOFF_WEEKS) -> set:
+    """:func:`active_merger_ids` of the mergers in ``mergers_json_path``."""
+    return active_merger_ids(load_mergers_or_empty(mergers_json_path), cutoff_weeks)
+
+
+def get_skipped_merger_ids(mergers_json_path: str, cutoff_weeks: int = CUTOFF_WEEKS) -> set:
+    """:func:`skipped_merger_ids` of the mergers in ``mergers_json_path``."""
+    return skipped_merger_ids(load_mergers_or_empty(mergers_json_path), cutoff_weeks)
+
+
+def get_skipped_url_paths(mergers_json_path: str, cutoff_weeks: int = CUTOFF_WEEKS) -> set:
+    """:func:`skipped_url_paths` of the mergers in ``mergers_json_path``."""
+    return skipped_url_paths(load_mergers_or_empty(mergers_json_path), cutoff_weeks)
 
 
 def main():
@@ -215,7 +175,7 @@ def main():
     Command-line interface for the cutoff module.
 
     Usage:
-        python cutoff.py [--active|--skipped|--paths] [mergers.json path]
+        python -m scripts.cutoff [--active|--skipped|--paths] [mergers.json path]
 
     Options:
         --active   Output merger IDs that should still be processed (default)

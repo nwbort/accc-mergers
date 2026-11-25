@@ -15,7 +15,7 @@ sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from scripts.scrape.scrape_targets import load_mergers, normalize_target, select_targets
+from scripts.scrape.scrape_targets import normalize_target, select_targets
 
 REGISTER = '/public-registers/acquisitions-and-mergers-registers/acquisitions-register'
 OLD_REGISTER = '/public-registers/mergers-and-acquisitions-registers/acquisitions-register'
@@ -233,23 +233,3 @@ class TestSelectTargetsStats:
         paths, stats = select_targets([f'{REGISTER}/new-deal'], mergers)
 
         assert stats['targets'] == len(paths) == 2
-
-
-class TestLoadMergers:
-    def test_missing_file(self, tmp_path):
-        assert load_mergers(str(tmp_path / 'nope.json')) == []
-
-    def test_malformed_json(self, tmp_path):
-        path = tmp_path / 'mergers.json'
-        path.write_text('{not json')
-        assert load_mergers(str(path)) == []
-
-    def test_non_list_payload(self, tmp_path):
-        path = tmp_path / 'mergers.json'
-        path.write_text(json.dumps({'merger_id': 'MN-1'}))
-        assert load_mergers(str(path)) == []
-
-    def test_reads_records(self, tmp_path):
-        path = tmp_path / 'mergers.json'
-        path.write_text(json.dumps([_active('MN-1', 'acme-widgets')]))
-        assert len(load_mergers(str(path))) == 1
