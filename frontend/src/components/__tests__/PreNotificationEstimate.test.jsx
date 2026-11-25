@@ -4,21 +4,16 @@ import { MemoryRouter, Route, Routes } from 'react-router';
 import { describe, expect, it } from 'vitest';
 import PreNotificationEstimate from '../PreNotificationEstimate';
 
+// The summary is read, never derived, here: which kind and confidence a raw
+// estimate earns is pinned in scripts/tests/test_prenotification.py.
 const merger = (overrides = {}) => ({
   merger_id: 'MN-01050',
-  original_notification_datetime: '2026-05-27T12:00:00Z',
-  effective_notification_datetime: '2026-05-27T12:00:00Z',
-  pre_notification: {
-    estimated_days: 20,
-    min_days: 12,
-    max_days: 34,
-    id_issued_estimated: '2026-05-07',
-    id_issued_before: '2026-05-15',
-    id_issued_after: '2026-04-23',
-    basis: 'bracketed',
-    method_version: 1,
-  },
+  pre_notification_summary: { kind: 'around', start_date: '2026-05-07', confidence: 'medium' },
   ...overrides,
+});
+
+const summary = (kind, startDate, confidence = 'low') => ({
+  pre_notification_summary: { kind, start_date: startDate, confidence },
 });
 
 /** The whole claim, reassembled from the paragraph the mark is embedded in. */
@@ -31,7 +26,7 @@ const renderCallout = (merger) => render(
 );
 
 describe('PreNotificationEstimate', () => {
-  it('dates the start of pre-notification for a bracketed estimate', () => {
+  it('dates the start of pre-notification for an "around" estimate', () => {
     renderCallout(merger());
 
     expect(claim()).toMatch(
@@ -39,57 +34,27 @@ describe('PreNotificationEstimate', () => {
     );
   });
 
-  it('gives the date as a ceiling when only a lower bound is proven', () => {
-    renderCallout(merger({
-      pre_notification: {
-        estimated_days: 7,
-        min_days: 7,
-        max_days: null,
-        id_issued_estimated: '2026-05-20',
-        basis: 'lower-bound-only',
-      },
-    }));
+  it('gives the date as a ceiling for a "before" estimate', () => {
+    renderCallout(merger(summary('before', '2026-05-20')));
 
     expect(claim()).toMatch(/entered pre-notification sometime before 20 May 2026/);
     expect(claim()).not.toMatch(/around/);
   });
 
-  it('gives the date as a floor when only an upper bound is known', () => {
-    renderCallout(merger({
-      pre_notification: {
-        estimated_days: 40,
-        min_days: null,
-        max_days: 40,
-        id_issued_estimated: '2026-04-17',
-        basis: 'upper-bound-only',
-      },
-    }));
+  it('gives the date as a floor for an "after" estimate', () => {
+    renderCallout(merger(summary('after', '2026-04-17')));
 
     expect(claim()).toMatch(/entered pre-notification sometime after 17 April 2026/);
     expect(claim()).not.toMatch(/around/);
   });
 
-  it('reports little or no pre-notification for a nought-day estimate', () => {
-    renderCallout(merger({
-      pre_notification: {
-        estimated_days: 0,
-        min_days: 0,
-        max_days: null,
-        id_issued_estimated: '2026-05-27',
-        basis: 'lower-bound-only',
-      },
-    }));
+  it('reports little or no pre-notification for a "none" estimate', () => {
+    renderCallout(merger(summary('none', null, 'high')));
 
     expect(claim()).toMatch(/this merger had little or no pre-notification period/);
-  });
-
-  it('renders nothing for a merger notified in the voluntary period', () => {
-    const { container } = renderCallout(merger({
-      original_notification_datetime: '2025-11-03T12:00:00Z',
-      effective_notification_datetime: '2025-11-03T12:00:00Z',
-    }));
-
-    expect(container).toBeEmptyDOMElement();
+    expect(
+      screen.getByRole('button', { name: 'little or no pre-notification period, high confidence' }),
+    ).toBeInTheDocument();
   });
 
   it('offers a quiet link to the feedback page, naming the matter', () => {
@@ -153,9 +118,7 @@ describe('PreNotificationEstimate', () => {
     expect(screen.getByText('feedback page')).toBeInTheDocument();
   });
 
-  it('rates a bracketed estimate by how tightly its bounds close in', () => {
-    // 12 to 34 days is a 22-day window — wider than a fortnight, narrower than
-    // six weeks. The width itself stays off the page; only the rating shows.
+  it('names the published rating on the marked date', () => {
     renderCallout(merger());
 
     expect(screen.getByRole('button', { name: '7 May 2026, medium confidence' })).toBeInTheDocument();
@@ -195,50 +158,20 @@ describe('PreNotificationEstimate', () => {
     expect(mark.className).not.toMatch(/text-/);
   });
 
-  it('rates a tightly bracketed estimate high', () => {
-    renderCallout(merger({
-      pre_notification: {
-        estimated_days: 16,
-        min_days: 12,
-        max_days: 20,
-        id_issued_estimated: '2026-05-11',
-        basis: 'bracketed',
-      },
-    }));
+  it.each([
+    ['high', 'decoration-emerald-700'],
+    ['medium', 'decoration-amber-700'],
+    ['low', 'decoration-gray-500'],
+  ])('rules a %s-confidence date in its colour', (confidence, colour) => {
+    renderCallout(merger(summary('around', '2026-05-11', confidence)));
 
-    expect(screen.getByRole('button', { name: '11 May 2026, high confidence' })).toBeInTheDocument();
-  });
-
-  it('rates a loosely bracketed estimate low', () => {
-    renderCallout(merger({
-      pre_notification: {
-        estimated_days: 30,
-        min_days: 5,
-        max_days: 60,
-        id_issued_estimated: '2026-04-27',
-        basis: 'bracketed',
-      },
-    }));
-
-    expect(screen.getByRole('button', { name: '27 April 2026, low confidence' })).toBeInTheDocument();
-  });
-
-  it('rates a single-bound estimate low whatever the date it gives', () => {
-    renderCallout(merger({
-      pre_notification: {
-        estimated_days: 7,
-        min_days: 7,
-        max_days: null,
-        id_issued_estimated: '2026-05-20',
-        basis: 'lower-bound-only',
-      },
-    }));
-
-    expect(screen.getByRole('button', { name: '20 May 2026, low confidence' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: `11 May 2026, ${confidence} confidence` }),
+    ).toHaveClass(colour);
   });
 
   it('renders nothing when the merger has no estimate', () => {
-    const { container } = renderCallout(merger({ pre_notification: undefined }));
+    const { container } = renderCallout(merger({ pre_notification_summary: undefined }));
 
     expect(container).toBeEmptyDOMElement();
   });

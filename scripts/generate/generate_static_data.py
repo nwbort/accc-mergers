@@ -8,7 +8,9 @@ generators in :mod:`static_data.outputs`. All heavy lifting lives in the
 Every merger is also given two derived fields before any file is written:
 ``phase_1_estimate`` (predicted review length, frozen at filing time) and
 ``pre_notification`` (bounds on how long it spent in pre-notification, inferred
-from where its merger ID sits on the ACCC's per-group ID counter).
+from where its merger ID sits on the ACCC's per-group ID counter), with
+``pre_notification_summary`` beside it (the condensed reading the detail page,
+the API and the CLI show).
 
 Output files:
   data/output/ (not deployed):

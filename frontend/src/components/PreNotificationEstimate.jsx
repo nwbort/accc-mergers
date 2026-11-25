@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import { FaRegQuestionCircle } from 'react-icons/fa';
 import { formatDateLong } from '../utils/dates';
 import {
-  getPreNotificationEstimate,
   PRE_NOTIFICATION_AFTER,
   PRE_NOTIFICATION_BEFORE,
   PRE_NOTIFICATION_CONFIDENCE,
@@ -91,7 +90,7 @@ function ConfidenceMark({ confidence, children }) {
  * The claim, split at the part the confidence rating is about: everything up to
  * it, then the span the dotted rule goes under.
  */
-const describe = ({ kind, startDate }) => {
+const describe = ({ kind, start_date: startDate }) => {
   if (kind === PRE_NOTIFICATION_NONE) {
     return { lead: 'this merger had ', marked: 'little or no pre-notification period' };
   }
@@ -146,15 +145,17 @@ function CorrectionLink({ mergerId, className, onClick }) {
 /**
  * Callout on the merger detail page giving the estimated start of a matter's
  * pre-notification — the stretch of ACCC engagement that precedes filing and
- * never appears on the public register. Renders nothing when the matter has no
- * usable estimate (see getPreNotificationEstimate).
+ * never appears on the public register. Reads the summary the pipeline
+ * publishes (`pre_notification_summary`, see utils/preNotification.js) and
+ * renders nothing when the matter has none: a waiver, a voluntary-period
+ * notification, or no usable estimate.
  */
 function PreNotificationEstimate({ merger }) {
   // Touch has no hover, so a tooltip never shows: on a narrow screen the first
   // tap spells out what the question mark is offering and the second acts on
   // it. Desktop keeps the tooltip and goes on the first click.
   const [promptShown, setPromptShown] = useState(false);
-  const estimate = getPreNotificationEstimate(merger);
+  const estimate = merger?.pre_notification_summary;
   if (!estimate) return null;
   const claim = describe(estimate);
 

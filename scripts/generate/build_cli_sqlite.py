@@ -28,7 +28,6 @@ from pathlib import Path
 from typing import Any
 
 from scripts.constants.tribunal import APPEAL_STATUS_CONCLUDED
-from scripts.generate.static_data.outputs.api import pre_notification_summary
 
 
 # v3: ``determination`` reads as the site's outcome (ceased, conditional,
@@ -247,12 +246,6 @@ def _insert_merger(conn: sqlite3.Connection, m: dict[str, Any]) -> None:
     industries_text = _join_names(m.get("anzsic_codes"))
     related = m.get("related_merger") or {}
     phase_1_estimate = m.get("phase_1_estimate") or {}
-    # The condensed pre-notification reading the site and API show, computed
-    # here by the one Python copy of that rule so the CLI never re-derives it.
-    raw = dict(m)
-    summary = pre_notification_summary(m)
-    if summary is not None:
-        raw["pre_notification_summary"] = summary
 
     conn.execute(
         """
@@ -286,7 +279,10 @@ def _insert_merger(conn: sqlite3.Connection, m: dict[str, Any]) -> None:
             1 if m.get("under_judicial_review") else 0,
             1 if m.get("has_conditions") else 0,
             phase_1_estimate.get("expected_business_days"),
-            json.dumps(raw),
+            # Carries pre_notification_summary, the condensed pre-notification
+            # reading the site and API show, attached during generation
+            # (static_data/prenotification.py), so the CLI never re-derives it.
+            json.dumps(m),
         ),
     )
 

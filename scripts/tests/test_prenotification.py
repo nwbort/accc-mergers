@@ -1,19 +1,33 @@
 """Tests for scripts/generate/static_data/prenotification.py.
 
 Cover ID parsing, the filing-date choice, the lower bound from any later ID,
-the waiver-anchored upper bound and interpolation, and the rules about which
-mergers get an estimate at all.
+the waiver-anchored upper bound and interpolation, the rules about which
+mergers get an estimate at all, and the summary the site, API and CLI show.
 """
+
+import json
+from pathlib import Path
+
+import pytest
 
 
 from scripts.generate.static_data.prenotification import (
+    HIGH_CONFIDENCE_WINDOW_DAYS,
+    MEDIUM_CONFIDENCE_WINDOW_DAYS,
     METHOD_VERSION,
     WAIVER_LODGEMENT_LAG_DAYS,
     WAIVER_LODGEMENT_LAG_MAX_DAYS,
     attach_prenotification_estimates,
     filing_date,
     parse_merger_id,
+    pre_notification_summary,
+    summary_confidence,
 )
+
+SUMMARY_CASES = json.loads(
+    (Path(__file__).parent / 'fixtures' / 'pre-notification-summary-cases.json')
+    .read_text(encoding='utf-8')
+)['cases']
 
 
 def _merger(merger_id, notified, original=None):
@@ -387,3 +401,62 @@ class TestCounterOrder:
         estimates = _estimates(mergers, lag=0, lag_max=7)
         assert estimates['MN-05010']['id_issued_estimated'] == '2026-01-01'
         assert estimates['MN-01010']['id_issued_estimated'] == '2026-06-01'
+
+
+# ---------------------------------------------------------------------------
+# pre_notification_summary: what the detail page, the API and the CLI show
+# ---------------------------------------------------------------------------
+
+@pytest.mark.parametrize('case', SUMMARY_CASES, ids=[c['name'] for c in SUMMARY_CASES])
+def test_summary_matches_fixture(case):
+    assert pre_notification_summary(case['merger']) == case['expected']
+
+
+def _bracketed(min_days, max_days):
+    return {'min_days': min_days, 'max_days': max_days, 'basis': 'bracketed'}
+
+
+class TestSummaryConfidence:
+    def test_rates_a_bracket_by_its_width_inclusive_of_each_threshold(self):
+        assert summary_confidence(_bracketed(0, HIGH_CONFIDENCE_WINDOW_DAYS)) == 'high'
+        assert summary_confidence(_bracketed(0, HIGH_CONFIDENCE_WINDOW_DAYS + 1)) == 'medium'
+        assert summary_confidence(_bracketed(0, MEDIUM_CONFIDENCE_WINDOW_DAYS)) == 'medium'
+        assert summary_confidence(_bracketed(0, MEDIUM_CONFIDENCE_WINDOW_DAYS + 1)) == 'low'
+
+    def test_never_rates_a_single_bound_above_low_however_narrow(self):
+        assert summary_confidence(
+            {'min_days': 2, 'max_days': None, 'basis': 'lower-bound-only'}) == 'low'
+        assert summary_confidence(
+            {'min_days': None, 'max_days': 2, 'basis': 'upper-bound-only'}) == 'low'
+
+
+class TestSummaryAttachment:
+    def test_attached_from_the_reconciled_estimate(self):
+        mergers = [
+            _merger('WA-01005', '2026-01-01'),
+            _merger('MN-01010', '2026-04-01'),
+            _merger('WA-01011', '2026-03-01'),
+        ]
+        attach_prenotification_estimates(mergers)
+        notification = mergers[1]
+        assert notification['pre_notification_summary'] == pre_notification_summary(notification)
+        assert notification['pre_notification_summary']['start_date'] == (
+            notification['pre_notification']['id_issued_estimated'])
+
+    def test_waivers_and_unestimated_matters_get_none(self):
+        mergers = [_merger('MN-01010', '2026-04-01'), _merger('WA-01011', '2026-03-01')]
+        attach_prenotification_estimates(mergers)
+        assert 'pre_notification_summary' not in mergers[1]
+        top = [_merger('MN-01010', '2026-04-01')]
+        attach_prenotification_estimates(top)
+        assert 'pre_notification_summary' not in top[0]
+
+    def test_voluntary_period_notifications_keep_the_estimate_but_no_summary(self):
+        mergers = [
+            _merger('WA-01005', '2025-09-01'),
+            _merger('MN-01010', '2025-12-01'),
+            _merger('WA-01011', '2025-11-01'),
+        ]
+        attach_prenotification_estimates(mergers)
+        assert mergers[1]['pre_notification'] is not None
+        assert 'pre_notification_summary' not in mergers[1]

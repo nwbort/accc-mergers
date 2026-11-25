@@ -682,8 +682,8 @@ def _pre_notification_durations(notification_mergers: list) -> list[tuple[str, i
     Pre-notification — the stretch of ACCC engagement before a notification is
     formally filed — never appears on the register; the pipeline infers it from
     the order case numbers were issued in (see
-    :mod:`static_data.prenotification`). The population mirrors the frontend's
-    ``getPreNotificationEstimate``, so the aggregate here and the per-merger
+    :mod:`static_data.prenotification`). The population mirrors that module's
+    ``pre_notification_summary``, so the aggregate here and the per-merger
     figure on a detail page are drawn from the same records: notifications
     only (a waiver has no drafting stage — the case is opened by lodging it),
     excluding voluntary-period matters, which predate the waiver applications

@@ -87,6 +87,7 @@ is the point.
 import re
 from datetime import date, timedelta
 
+from scripts.constants.regime import is_voluntary_period_notification
 from scripts.date_utils import parse_iso_datetime
 
 # Days a waiver is assumed to sit between having its ID issued and being lodged
@@ -107,6 +108,13 @@ WAIVER_LODGEMENT_LAG_MAX_DAYS = 7
 
 # Bump when the method changes so stored values are recognisable.
 METHOD_VERSION = 1
+
+# How firmly a bracketed estimate pins its start, from the width of the window
+# between its proven floor and generous ceiling (see :func:`summary_confidence`).
+# Within a fortnight is as tight as this method gets; past six weeks the bracket
+# is little better than a single bound.
+HIGH_CONFIDENCE_WINDOW_DAYS = 14
+MEDIUM_CONFIDENCE_WINDOW_DAYS = 42
 
 # MN-01016 -> kind "MN", group "01", sequence 16.
 _ID_PATTERN = re.compile(r"^(?P<kind>[A-Z]{2})-(?P<group>\d{2})(?P<seq>\d{3})$")
@@ -375,6 +383,9 @@ def attach_prenotification_estimates(
 ) -> int:
     """Attach ``pre_notification`` to each notification in-place; return the count.
 
+    Each one with something to show also gets ``pre_notification_summary``
+    (:func:`pre_notification_summary`), read from the reconciled estimate.
+
     Waiver applications get no estimate of their own — they are the anchors the
     notifications are measured against, so measuring one against the others
     would only restate the assumption that they're filed on issue.
@@ -400,4 +411,80 @@ def attach_prenotification_estimates(
     # a group and never across them.
     for group_estimates in attached.values():
         _enforce_counter_order(group_estimates)
+
+    # Read each reconciled estimate once, here, for everything that shows it.
+    for group_estimates in attached.values():
+        for position, _estimate in group_estimates:
+            merger = position["merger"]
+            summary = pre_notification_summary(merger)
+            if summary is not None:
+                merger["pre_notification_summary"] = summary
     return sum(len(group_estimates) for group_estimates in attached.values())
+
+
+def _window_days(estimate: dict) -> int | None:
+    """Width of the window the period could have started in, or None with one bound.
+
+    ``min_days`` is the floor the counter proves and ``max_days`` the generous
+    ceiling, so their difference is the estimate's error bar.
+    """
+    min_days, max_days = estimate.get("min_days"), estimate.get("max_days")
+    if not isinstance(min_days, (int, float)) or not isinstance(max_days, (int, float)):
+        return None
+    return max(max_days - min_days, 0)
+
+
+def summary_confidence(estimate: dict) -> str:
+    """How much weight an estimate carries: ``low``, ``medium`` or ``high``.
+
+    Only a bracketed estimate has evidence on both sides, and how good it is
+    depends on how far apart those two witnesses are. An estimate resting on a
+    single bound is a floor or a ceiling being read as a point, so it is always
+    low.
+    """
+    window = _window_days(estimate)
+    if estimate.get("basis") != "bracketed" or window is None:
+        return "low"
+    if window <= HIGH_CONFIDENCE_WINDOW_DAYS:
+        return "high"
+    if window <= MEDIUM_CONFIDENCE_WINDOW_DAYS:
+        return "medium"
+    return "low"
+
+
+def pre_notification_summary(merger: dict) -> dict | None:
+    """The estimate as it is shown, or None when there's nothing to say.
+
+    ``{kind, start_date, confidence}``, where ``kind`` says how to read
+    ``start_date``: ``around`` (bracketed, a point), ``after`` (only the
+    earliest possible start is known: an upper bound alone says the case number
+    can't have been issued before its anchor), ``before`` (only the latest), or
+    ``none`` (no pre-notification period detectable, so no date).
+
+    Attached to each notification as ``pre_notification_summary`` by
+    :func:`attach_prenotification_estimates`, and read from there by the
+    detail page (frontend/src/components/PreNotificationEstimate.jsx), the API
+    (outputs/api.py) and the CLI bundle — this is the only copy of the rule.
+    Skipped for voluntary-period notifications, which predate the waiver
+    applications that date the counter.
+    """
+    estimate = merger.get("pre_notification")
+    if not estimate or not estimate.get("id_issued_estimated"):
+        return None
+    if estimate.get("estimated_days") is None:
+        return None
+    if is_voluntary_period_notification(merger):
+        return None
+
+    confidence = summary_confidence(estimate)
+    # A nought-day estimate dates the case number to the filing day itself:
+    # the absence of a pre-notification period, not a measurement of one.
+    if estimate["estimated_days"] <= 0:
+        return {"kind": "none", "start_date": None, "confidence": confidence}
+
+    kind = "around"
+    if estimate.get("basis") == "upper-bound-only":
+        kind = "after"
+    elif estimate.get("basis") == "lower-bound-only":
+        kind = "before"
+    return {"kind": kind, "start_date": estimate["id_issued_estimated"], "confidence": confidence}
