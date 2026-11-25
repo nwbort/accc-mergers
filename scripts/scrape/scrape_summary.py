@@ -6,7 +6,7 @@ scraper fetched, flags which of those pages actually changed on disk, and —
 just as usefully when a change goes missing — names the matters the run
 never fetched because they are past the cutoff.
 
-Inputs are the report files ``scrape.sh`` writes when ``SCRAPE_REPORT_DIR``
+Inputs are the report files ``scrape.py`` writes when ``SCRAPE_REPORT_DIR``
 is set:
 
 * ``targets.json``  — selection stats from ``scrape_targets.py``
@@ -168,7 +168,7 @@ def main():
     parser.add_argument(
         '--report-dir',
         required=True,
-        help='Directory scrape.sh wrote its run report into (SCRAPE_REPORT_DIR)'
+        help='Directory scrape.py wrote its run report into (SCRAPE_REPORT_DIR)'
     )
     parser.add_argument(
         '--changed-paths',

@@ -103,7 +103,7 @@ unaffected by any option here.)
 
 | Consumer | Access |
 |---|---|
-| `scripts/scrape/scrape.sh` | writes/re-cleans matter HTML |
+| `scripts/scrape/scrape.py` | writes/re-cleans matter HTML |
 | `scripts/extract_mergers.py` | reads **all** matter HTML each run; downloads attachments |
 | `scripts/parse/parse_questionnaire.py`, `scripts/parse/parse_nocc.py` | read PDFs during extraction |
 | `pipeline.yml` | shallow-checkouts the repo, reads/writes/commits `data/raw/matters/` |

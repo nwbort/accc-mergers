@@ -19,7 +19,7 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 - **Python 3.11/3.12** scripts for scraping, extracting, and generating data
   (most workflows, `pipeline.yml` and `test.yml` among them, pin 3.11;
   `check-deploy-assets.yml` and `scrape-tribunal.yml` pin 3.12)
-- `scrape/scrape.sh` → `extract_mergers.py` → `generate/generate_static_data.py`
+- `scrape/scrape.py` → `extract_mergers.py` → `generate/generate_static_data.py`
 - `scripts/` is a package: entry points run as `python -m scripts.…` from the
   repo root, never by file path (the modules import each other absolutely)
 - Dependencies (`scripts/requirements.txt`): beautifulsoup4, lxml, requests,
@@ -443,11 +443,16 @@ scripts/                  # A Python package — entry points run as `python -m 
 ├── build.sh              # Cloudflare Pages build entry point (`bash scripts/build.sh`):
 │                         #   builds the frontend, then copies data/raw/matters PDFs into dist/
 ├── scrape/
-│   ├── scrape.sh         # Bash wrapper using pup to scrape ACCC register
+│   ├── scrape.py         # Scrape the ACCC register into data/raw/ (curl_cffi via
+│                         #   accc_http, BeautifulSoup, 24 threads) and clean each page's
+│                         #   per-request churn (clean_html_bytes, ported byte-for-byte
+│                         #   from scrape.sh's perl: every stored page is its fixed point).
+│                         #   --clean-file PATH re-cleans one file (pipeline.yml, after
+│                         #   a rebase); --all ignores cutoff
 │   ├── scrape_targets.py # Decide which matters need re-scraping
 │   ├── expected_matters.py # Which matter IDs the triggering email named that the
 │                         #   listing hasn't served (case numbers read off the cards);
-│                         #   scrape.sh re-crawls the listing until none are missing,
+│                         #   scrape.py re-crawls the listing until none are missing,
 │                         #   since a new matter its unstable sort drops has no stored
 │                         #   URL for scrape_targets to recover. Emailed matters are
 │                         #   also scraped and extracted past cutoff (--include-ids on
@@ -644,7 +649,7 @@ npm test          # Vitest suite (~870 tests); npm run test:watch to iterate
 
 # Data pipeline (from repo root)
 pip install -r scripts/requirements.txt
-./scripts/scrape/scrape.sh
+python -m scripts.scrape.scrape
 python -m scripts.extract_mergers
 python -m scripts.generate.generate_static_data
 

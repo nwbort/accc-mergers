@@ -18,13 +18,11 @@ python -m scripts.generate.generate_static_data
 Modules import each other absolutely (`from scripts.slug import slugify`), so
 the repository root has to be on `sys.path`. `python -m` puts it there; a path
 invocation puts the script's own directory there instead and the imports fail.
-The Bash entry point (`scrape/scrape.sh`) exports `PYTHONPATH` itself, so it
-can be run from anywhere.
 
 ## Pipeline stages
 
 ```
-scrape/scrape.sh ──► extract_mergers.py ──► generate/generate_static_data.py ──► frontend
+scrape/scrape.py ──► extract_mergers.py ──► generate/generate_static_data.py ──► frontend
                                          │      └─► generate/cli_bundle.py (in-process) ──► generate/build_cli_sqlite.py
                                          └─► generate/generate_weekly_digest.py
                                          └─► generate/generate_rss_feed.py
@@ -36,9 +34,9 @@ scrape/scrape.sh ──► extract_mergers.py ──► generate/generate_static
 
 | File | Purpose |
 | --- | --- |
-| `scrape/scrape.sh` | Bash wrapper using `pup`/`curl` to fetch the ACCC acquisitions register and individual matter pages into `data/raw/`. |
-| `scrape/scrape_targets.py` | Chooses which matter pages `scrape.sh` fetches: applies `cutoff.py`, de-duplicates the listing, and recovers matters the register listing dropped (its pagination sort is unstable). |
-| `scrape/scrape_summary.py` | Renders the Markdown run summary for a scrape (merger IDs fetched, which pages changed, what was skipped past cutoff) from the report `scrape.sh` writes when `SCRAPE_REPORT_DIR` is set. |
+| `scrape/scrape.py` | Fetches the ACCC acquisitions register and individual matter pages into `data/raw/` (curl_cffi via `accc_http.py`, BeautifulSoup), and cleans the per-request churn out of each saved page. `--clean-file PATH` cleans one file; `--all` ignores cutoff. |
+| `scrape/scrape_targets.py` | Chooses which matter pages `scrape.py` fetches: applies `cutoff.py`, de-duplicates the listing, and recovers matters the register listing dropped (its pagination sort is unstable). |
+| `scrape/scrape_summary.py` | Renders the Markdown run summary for a scrape (merger IDs fetched, which pages changed, what was skipped past cutoff) from the report `scrape.py` writes when `SCRAPE_REPORT_DIR` is set. |
 | `scrape/scrape_tribunal.py` | Scrapes Australian Competition Tribunal matter pages into `tribunal_appeals.json`, driving a real Chrome via nodriver to get past the site's Cloudflare challenge. |
 
 ### `parse/` — reading the documents
@@ -136,7 +134,7 @@ scrape/scrape.sh ──► extract_mergers.py ──► generate/generate_static
 
 ```bash
 pip install -r scripts/requirements.txt
-./scripts/scrape/scrape.sh                          # → data/raw/
+python -m scripts.scrape.scrape                     # → data/raw/
 python -m scripts.extract_mergers                   # → data/processed/mergers.json
 python -m scripts.generate.generate_static_data     # → frontend public/data/
 python -m pytest scripts/tests/                     # tests
@@ -147,7 +145,7 @@ writes to its GitHub Actions run summary — point the scraper at a report
 directory:
 
 ```bash
-SCRAPE_REPORT_DIR=/tmp/scrape-report ./scripts/scrape/scrape.sh
+SCRAPE_REPORT_DIR=/tmp/scrape-report python -m scripts.scrape.scrape
 git status --porcelain -- data/raw/matters/ | awk '{print $NF}' > /tmp/changed.txt
 python -m scripts.scrape.scrape_summary --report-dir /tmp/scrape-report \
   --changed-paths /tmp/changed.txt
