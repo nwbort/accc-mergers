@@ -1,14 +1,14 @@
 {
-  "total_mergers": 337,
+  "total_mergers": 338,
   "total_waivers": 562,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 299,
+    "Assessment completed": 300,
     "Under assessment": 33,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 292,
+    "Approved": 293,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 297,
+    "cleared": 298,
     "not_cleared": 2,
-    "total": 299,
+    "total": 300,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.19016393442623,
-    "median_days": 26,
-    "average_business_days": 19.944262295081966,
-    "median_business_days": 18,
+    "average_days": 29.179738562091504,
+    "median_days": 26.0,
+    "average_business_days": 19.937908496732025,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 61,
-        "percentage": 20.0
+        "percentage": 19.9
       },
       "day20": {
-        "count": 221,
+        "count": 222,
         "percentage": 72.5
       },
       "day30": {
-        "count": 287,
+        "count": 288,
         "percentage": 94.1
       }
     }
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 233
+      "count": 234
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 61
+      "count": 62
     },
     {
       "name": "Software Publishing",
@@ -76,15 +76,15 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 50
+      "count": 51
     },
     {
       "name": "Accommodation",
-      "count": 31
+      "count": 32
     },
     {
       "name": "Cafes and Restaurants",
-      "count": 31
+      "count": 32
     },
     {
       "name": "Supermarket and Grocery Stores",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75068",
+      "merger_name": "The Star - increased interest in Destination Gold Coast Consortium; Far East Consortium International Limited and Chow Tai Fook Enterprises Limited - Treasury Hotel and two car parks",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-24T12:00:00Z",
+      "page_modified_datetime": "2026-11-25T16:42:34+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "WA-10054",
       "merger_name": "Kiwa - CSA Group",
@@ -205,19 +215,20 @@
       "page_modified_datetime": "2026-11-13T16:20:57+11:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-25024",
-      "merger_name": "Steadfast - Axiom Insurance Brokers",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-11-12T12:00:00Z",
-      "page_modified_datetime": "2026-11-13T08:53:52+11:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-40049",
+      "merger_name": "Coles \u2013 supermarket site in Cannonvale Central (QLD)",
+      "determination": "Approved",
+      "determination_date": "2026-11-25T12:00:00Z",
+      "page_modified_datetime": "2026-11-25T16:49:56+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
     {
       "merger_id": "MN-90044",
       "merger_name": "Stellex and ONA \u2013 Score",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-24T12:00:00Z",
       "page_modified_datetime": "2026-11-24T17:07:28+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-30045",
-      "merger_name": "Platinum Equity Group \u2013 Trime",
-      "determination": "Approved",
-      "determination_date": "2026-11-24T12:00:00Z",
-      "page_modified_datetime": "2026-11-24T17:04:10+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
