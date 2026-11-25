@@ -2,22 +2,27 @@
 
 Fetches the register listing (every page of it), works out which matter pages
 to fetch (``scrape_targets.select_targets``), fetches those in parallel into
-``data/raw/matters/{MATTER_NUMBER}.html`` and strips the per-request churn out
-of each page (:func:`clean_html_bytes`) so an unchanged matter is an unchanged
-file.
+``data/raw/matters/{MATTER_NUMBER}.html``, strips the per-request churn out
+of each page (:func:`clean_html_bytes`) and drops the ACCC site chrome around
+the matter (:func:`trim_chrome`), so an unchanged matter is an unchanged file.
 
 Usage (from the repo root)::
 
     python -m scripts.scrape.scrape [--all]
     python -m scripts.scrape.scrape --clean-file PATH
+    python -m scripts.scrape.scrape --clean-stored
 
 Options:
     --all               Scrape all mergers, ignoring cutoff dates (by default,
                         mergers are skipped 3 weeks after an approved
                         notification or waiver decision), then re-clean every
                         saved HTML file.
-    --clean-file PATH   Clean one file in place and exit. Used by pipeline.yml
-                        to re-clean files after a git rebase.
+    --clean-file PATH   Clean (and trim, if a matter page) one file in place
+                        and exit. Used by pipeline.yml to re-clean files after
+                        a git rebase.
+    --clean-stored      Clean and trim every saved HTML file in place, without
+                        scraping. Run after changing either, so the stored
+                        pages follow.
 
 Environment:
     SCRAPE_REPORT_DIR   If set, write a report of the run into this directory:
@@ -34,9 +39,12 @@ Environment:
                         fetched even if past cutoff, since the email says they
                         changed.
 
-This replaced ``scrape.sh`` (bash, curl, pup and a perl one-liner). The saved
-pages are byte-for-byte what that script wrote: the cleaner's substitutions are
-the perl ones, in the same order, run over bytes as perl's slurp mode did.
+This replaced ``scrape.sh`` (bash, curl, pup and a perl one-liner). The
+cleaner's substitutions are the perl ones, in the same order, run over bytes as
+perl's slurp mode did. Most of them now only match inside chrome that
+trim_chrome() removes; they stay because the register listing page is cleaned
+but never trimmed, and because a matter page that can't be trimmed safely is
+stored whole.
 """
 
 from __future__ import annotations
@@ -165,11 +173,100 @@ def clean_html_bytes(content: bytes) -> bytes:
     return content
 
 
+# --- Trimming the site chrome ----------------------------------------------
+#
+# Most of a register page is the ACCC site around the matter: skip links, the
+# header and megamenu, the breadcrumb and ReadSpeaker button, the footer,
+# scripts, stylesheets and the "subscribe to this acquisition" modal. None of
+# it is about the matter, and it is what churns. trim_chrome() drops exactly
+# those parts and keeps everything else, so the stored page is the matter
+# itself plus every <meta>, <link> and <title> in <head>.
+#
+# It is a denylist on purpose. An allowlist ("keep <main>") would silently
+# drop anything the ACCC adds outside it: a new section of the page, a
+# Tribunal or court notice in the hero, a structured-data block. A denylist
+# can only lose what it names, and every name below is site furniture.
+
+# Removed wherever they appear. The element's tail text is kept.
+_CHROME_XPATH = etree.XPath(' | '.join([
+    # Every <script> but structured data (JSON-LD), which describes the page.
+    "//script[not(@type) or translate(@type, 'LDJSON', 'ldjson') != 'application/ld+json']",
+    '//noscript',
+    '//style',
+    "//head/link[translate(@rel, 'STYLESHET', 'stylesheet') = 'stylesheet']",
+    "//body//*[@id='skip-links']",
+    f"//body//*[{_has_class('region-site-notification-bar')}]",
+    f"//body//*[{_has_class('nav-container')}]",
+    f"//body//*[{_has_class('breadcrumb-wrapper')}]",
+    "//body//footer",
+    # The subscribe button and its modal form, inside the article.
+    f"//body//*[{_has_class('field--name-dynamic-block-fieldnode-acquisitions-subscribe')}]",
+]))
+
+# What a removed region must never contain. If one ever does (the ACCC moves
+# a field into the hero's breadcrumb, say), the page is stored whole instead.
+_CONTENT_XPATH = etree.XPath(
+    "descendant-or-self::*[self::main or self::article or self::h1 or self::table"
+    " or self::time or contains(@class, 'field--name-field-')"
+    " or contains(@class, 'field--name-dynamic-token-')]")
+
+# Every matter page has these; without them this isn't a page to trim.
+_MATTER_PAGE_XPATH = etree.XPath(
+    f"//body//*[{_has_class('field--name-dynamic-token-fieldnode-acccgov-merger-id')}]")
+
+_BLANK_LINES = re.compile(rb'\n[ \t]*(?:\n[ \t]*)+\n')
+
+
+def trim_chrome(content: bytes) -> Optional[bytes]:
+    """``content`` without the site chrome, or None if it can't be trimmed safely.
+
+    None means: not a matter page (no merger-ID field), unparseable, or a
+    region to remove holds matter content. The caller stores the page whole.
+    Whitespace-only lines left where elements were removed are collapsed, so
+    trimming an already-trimmed page changes nothing.
+    """
+    if not content or not content.strip():
+        return None
+    try:
+        document = lxml_html.document_fromstring(
+            content, parser=lxml_html.HTMLParser(encoding='utf-8'))
+    except (etree.ParserError, ValueError):
+        return None
+    if not _MATTER_PAGE_XPATH(document):
+        return None
+    chrome = _CHROME_XPATH(document)
+    if any(_CONTENT_XPATH(element) for element in chrome):
+        return None
+    for element in chrome:
+        # A match nested inside another match is already detached.
+        if element.getparent() is not None:
+            element.drop_tree()
+    trimmed = etree.tostring(document.getroottree(), method='html', encoding='utf-8')
+    if not trimmed.endswith(b'\n'):
+        trimmed += b'\n'
+    return _BLANK_LINES.sub(b'\n\n', trimmed)
+
+
+def prepare_page(content: bytes) -> tuple[bytes, bool]:
+    """What is stored for a fetched page, and whether it was trimmed.
+
+    Cleaned, then trimmed if it is a matter page. Cleaning runs first, on the
+    markup as the ACCC served it, which is what its rules were written
+    against, and again after, so the stored page is a fixed point of both. A
+    page trim_chrome() can't trim is stored cleaned but whole.
+    """
+    cleaned = clean_html_bytes(content)
+    trimmed = trim_chrome(cleaned)
+    if trimmed is None:
+        return cleaned, False
+    return clean_html_bytes(trimmed), True
+
+
 def clean_file(path: Path | str) -> bool:
-    """Clean one HTML file in place. Returns whether it changed."""
+    """Clean (and trim, if a matter page) one HTML file in place. Returns whether it changed."""
     path = Path(path)
     original = path.read_bytes()
-    cleaned = clean_html_bytes(original)
+    cleaned, _ = prepare_page(original)
     if cleaned == original:
         return False
     path.write_bytes(cleaned)
@@ -384,7 +481,12 @@ def fetch_matter_page(link: str, manifest: Manifest,
         print(f'    Warning: Could not find matter number for {full_url}. '
               f'Used fallback name: {stem}')
 
-    (matters_dir / f'{stem}.html').write_bytes(clean_html_bytes(content))
+    stored, trimmed = prepare_page(content)
+    if not trimmed:
+        # Losing a section of the page would be worse than storing chrome.
+        print(f'::warning::Stored {stem}.html whole: its site chrome could not be '
+              f'trimmed safely (see trim_chrome in scrape.py). {full_url}')
+    (matters_dir / f'{stem}.html').write_bytes(stored)
     manifest.record('ok', number, link)
     return None
 
@@ -604,7 +706,9 @@ def main(argv: Optional[list[str]] = None) -> int:
     group.add_argument('--all', action='store_true',
                        help='Ignore cutoff dates and fetch every known matter')
     group.add_argument('--clean-file', metavar='PATH',
-                       help='Clean one HTML file in place and exit')
+                       help='Clean (and trim, if a matter page) one HTML file in place and exit')
+    group.add_argument('--clean-stored', action='store_true',
+                       help='Clean and trim every stored HTML file in place, without scraping')
     args = parser.parse_args(argv)
 
     # Progress lines interleave with stderr warnings in the Actions log.
@@ -616,6 +720,10 @@ def main(argv: Optional[list[str]] = None) -> int:
         except OSError as exc:
             print(f'Error: could not clean {args.clean_file}: {exc}', file=sys.stderr)
             return 1
+        return 0
+
+    if args.clean_stored:
+        clean_all_html()
         return 0
 
     report_dir = os.environ.get('SCRAPE_REPORT_DIR') or None

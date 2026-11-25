@@ -11,7 +11,7 @@ This project's own data is licensed under CC BY 4.0 (see
 
 ### `raw/`
 
-Raw data scraped from the ACCC website by `scripts/scrape/scrape.sh`:
+Raw data scraped from the ACCC website by `scripts/scrape/scrape.py`:
 
 - `acquisitions-register.html` — main acquisitions register listing page.
   This is a transient working artifact: it is re-fetched fresh at the start
@@ -19,7 +19,12 @@ Raw data scraped from the ACCC website by `scripts/scrape/scrape.sh`:
   so it is **git-ignored** rather than committed (it changes on every fetch
   even when no merger data has).
 - `matters/MN-*.html`, `matters/WA-*.html` — individual merger detail pages
-  (one HTML file per matter)
+  (one HTML file per matter), stored without the ACCC site chrome: the
+  scraper drops the skip links, header and megamenu, breadcrumb, footer,
+  scripts, stylesheets and the subscribe modal (`trim_chrome` in
+  `scripts/scrape/scrape.py`), keeping every `<meta>`, `<link>` and `<title>`
+  in `<head>` and everything else on the page. Not a byte-for-byte copy of
+  what the ACCC served: the markup is reserialised by lxml
 - `matters/MN-*/`, `matters/WA-*/` — subdirectories containing supporting
   documents (determinations, questionnaires, submissions) as PDFs and DOCX
   files
