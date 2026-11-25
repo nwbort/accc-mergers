@@ -28,6 +28,7 @@ tests run without network or PDF tooling installed.
 | `test_utils.py` | `date_utils.py` and `normalization.py`. |
 | `test_atproto_lexicons.py` | The `fyi.mergers.*` schemas in `atproto/lexicons/`: filename/id agreement, the NSID authority, and that every `ref` resolves. |
 | `test_atproto_records.py` | `atproto/records.py` — the merger → `fyi.mergers.matter` mapping, including the date-not-timestamp rule and the content digest. |
+| `test_eval_theory_of_harm.py` | The hand-run theory-of-harm eval in `eval/theory_of_harm/`: the committed gold set validates against the production taxonomy, plus metrics, answer parsing, quote verification and the command provider. No network. |
 | `test_atproto_client.py` | `atproto/client.py` — the XRPC client's session, retries and rate-limit handling, against a fake transport. |
 | `test_atproto_publish.py` | Incremental publishing in `atproto/publish_matters.py`, and the credential gate in `atproto/connect.py`. |
 | `test_atproto_posts.py` | `atproto/post_bluesky.py` — which milestones are posted, the 300-character budget, and the seeding rule that stops a backfill. |

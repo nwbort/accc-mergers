@@ -534,6 +534,12 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   judicial_review.py,
 │                         #   regime.py — mirrors frontend/src/constants/regime.js; keep in step)
 ├── tools/                # Interactive admin web UIs (resolver, commentary, advisors, related_parties)
+├── eval/                 # Hand-run model evals, never run by the pipeline. theory_of_harm/ scores
+│                         #   classifiers for theories_of_harm.json (the keyword baseline, LLMs from
+│                         #   any provider, decision models via a JSONL command) against a labelled
+│                         #   gold set (gold.jsonl; labels start as model drafts until reviewed with
+│                         #   its `review` command). Cache and reports go to data/output/eval/
+│                         #   (gitignored). See scripts/eval/theory_of_harm/README.md
 └── tests/                # Pytest suite covering the pipeline, generators, and CI checks
 
 data/
