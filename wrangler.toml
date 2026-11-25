@@ -25,6 +25,7 @@ database_id = "e3eac500-d498-4be3-b0da-d80f0fa173cd"
 # Whether the API needs a key. Anything but "false" (or leaving this out)
 # requires one. While "false", anyone can read it; a valid key is still
 # credited to its client in api_usage, and everything else counts as "(open)".
-# Set to "true" and redeploy to gate it. See docs/api.md.
+# Currently "true": a valid key is required. Set to "false" and redeploy to
+# open it. See docs/api.md.
 [vars]
-API_REQUIRE_KEY = "false"
+API_REQUIRE_KEY = "true"
