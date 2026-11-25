@@ -1,10 +1,10 @@
 {
-  "total_mergers": 337,
+  "total_mergers": 338,
   "total_waivers": 562,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 299,
-    "Under assessment": 33,
+    "Under assessment": 34,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 233
+      "count": 234
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 61
+      "count": 62
     },
     {
       "name": "Software Publishing",
@@ -76,15 +76,15 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 50
+      "count": 51
     },
     {
       "name": "Accommodation",
-      "count": 31
+      "count": 32
     },
     {
       "name": "Cafes and Restaurants",
-      "count": 31
+      "count": 32
     },
     {
       "name": "Supermarket and Grocery Stores",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75068",
+      "merger_name": "The Star - increased interest in Destination Gold Coast Consortium; Far East Consortium International Limited and Chow Tai Fook Enterprises Limited - Treasury Hotel and two car parks",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-24T12:00:00Z",
+      "page_modified_datetime": "2026-11-25T16:42:34+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "WA-10054",
       "merger_name": "Kiwa - CSA Group",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-11-12T12:00:00Z",
       "page_modified_datetime": "2026-11-13T16:20:57+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-25024",
-      "merger_name": "Steadfast - Axiom Insurance Brokers",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-11-12T12:00:00Z",
-      "page_modified_datetime": "2026-11-13T08:53:52+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

@@ -128,6 +128,42 @@
       },
       "waiver_duration": null
     },
+    "elita-holdings-limited": {
+      "id": "elita-holdings-limited",
+      "canonical_name": "Elita Holdings Limited",
+      "members": [
+        {
+          "name": "Elita Holdings Limited",
+          "identifier": "BVI Company Number 1785744",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75068",
+            "merger_name": "The Star - increased interest in Destination Gold Coast Consortium; Far East Consortium International Limited and Chow Tai Fook Enterprises Limited - Treasury Hotel and two car parks",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-24T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "indeco-ind-s-p-a": {
       "id": "indeco-ind-s-p-a",
       "canonical_name": "Indeco Ind S.p.A.",
