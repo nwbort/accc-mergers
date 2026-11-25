@@ -343,6 +343,42 @@
         "completed_count": 1
       }
     },
+    "orion-laboratories-pty-ltd": {
+      "id": "orion-laboratories-pty-ltd",
+      "canonical_name": "Orion Laboratories Pty. Ltd.",
+      "members": [
+        {
+          "name": "ORION LABORATORIES PTY. LTD.",
+          "identifier": "56 009 293 136",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-50043",
+            "merger_name": "General Pharma - Mayne Pharma",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-25T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "progility-pty-ltd": {
       "id": "progility-pty-ltd",
       "canonical_name": "Progility Pty Ltd",

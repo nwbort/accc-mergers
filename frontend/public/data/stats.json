@@ -1,10 +1,10 @@
 {
-  "total_mergers": 338,
+  "total_mergers": 339,
   "total_waivers": 563,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 300,
-    "Under assessment": 33,
+    "Under assessment": 34,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,11 +56,11 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 235
+      "count": 236
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 111
+      "count": 112
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-50043",
+      "merger_name": "General Pharma - Mayne Pharma",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-11-25T12:00:00Z",
+      "page_modified_datetime": "2026-11-25T17:12:15+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-75068",
       "merger_name": "The Star - increased interest in Destination Gold Coast Consortium; Far East Consortium International Limited and Chow Tai Fook Enterprises Limited - Treasury Hotel and two car parks",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-11-12T12:00:00Z",
       "page_modified_datetime": "2026-11-13T16:46:33+11:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-85063",
-      "merger_name": "William Adams - Clennett Hire",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-11-12T12:00:00Z",
-      "page_modified_datetime": "2026-11-13T16:20:57+11:00",
       "is_waiver": false,
       "is_refiled": false
     }

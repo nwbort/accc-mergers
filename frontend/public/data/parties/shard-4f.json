@@ -146,6 +146,42 @@
         "completed_count": 1
       }
     },
+    "general-pharma-holdings-pty-limited": {
+      "id": "general-pharma-holdings-pty-limited",
+      "canonical_name": "General Pharma Holdings Pty Limited",
+      "members": [
+        {
+          "name": "GENERAL PHARMA HOLDINGS PTY LIMITED",
+          "identifier": "98 680 446 888",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-50043",
+            "merger_name": "General Pharma - Mayne Pharma",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-25T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "health-and-care-pty-ltd-as-trustee-of-the-health-and-care-unit-trust": {
       "id": "health-and-care-pty-ltd-as-trustee-of-the-health-and-care-unit-trust",
       "canonical_name": "Health and Care Pty Ltd as trustee of the Health and Care Unit Trust",
