@@ -23,7 +23,7 @@ The scraper's job is purely about fetching and storing raw HTML. All interpretat
 
 **Key design decisions:**
 
-- Fetches through `scripts/accc_http.py` (curl_cffi impersonating Chrome, the same client the attachment downloads use) and reads the register listing with BeautifulSoup, collecting each card's matter link and following the "Go to last page" link for the page count.
+- Fetches through `scripts/accc_http.py` (curl_cffi impersonating Chrome, the same client the attachment downloads use; one session per worker thread, so connections are reused) and reads the register listing with lxml, collecting each card's matter link and following the "Go to last page" link for the page count.
 - Fetches 24 pages at a time (`ThreadPoolExecutor(max_workers=24)`) to keep the scrape fast. A matter page that fails is retried twice, whatever the error, since the failures seen are transient (an Akamai 403 among them).
 - Before saving each matter page it runs `clean_html_bytes()`, a fixed list of regex substitutions that strips out dynamic tokens (cache-busted asset URLs, random DOM IDs, form build IDs, the Drupal settings blob, analytics snippets) so that git diffs only contain meaningful content changes.
 - Passes the register's links, together with `data/processed/mergers.json` (output of the previous run), to `scripts/scrape/scrape_targets.py`, which drops matters past the cutoff (approved mergers more than 3 weeks old no longer need re-scraping) and adds back any still-active matter the listing failed to mention.
@@ -31,7 +31,7 @@ The scraper's job is purely about fetching and storing raw HTML. All interpretat
 - Fails the run, with a diagnostics block (page title, selector counts, response headers), when the register yields no links at all: that means a block page or a markup change, and passing green there once hid three runs that did nothing.
 
 ```bash
-sed -n '64,73p' scripts/scrape/scrape.py
+sed -n '65,74p' scripts/scrape/scrape.py
 ```
 
 ```output
@@ -52,7 +52,7 @@ PARALLEL_JOBS = 24
 The cleaner is the most important detail of the scraper. Without it every run would produce huge, noisy git diffs full of auto-generated asset fingerprints that have nothing to do with the actual merger data.
 
 ```bash
-sed -n '101,149p' scripts/scrape/scrape.py
+sed -n '117,165p' scripts/scrape/scrape.py
 ```
 
 ```output
@@ -112,7 +112,7 @@ The rules run over the whole file as bytes, so the Drupal settings blob, the BOO
 The target selection runs before fetching to save bandwidth. `scrape_targets.py` reads the previous run's `mergers.json` and drops the link of any merger past its cutoff (see [the cutoff module](#the-cutoff-module-scriptscutoffpy) below), de-duplicates the listing, and unions it with the still-active matters already recorded — the register paginates over an unstable sort, so a matter can silently drop out of one crawl's listing. Comparisons use a normalised key, since the ACCC serves each matter under two spellings of the register path.
 
 ```bash
-sed -n '520,533p' scripts/scrape/scrape.py
+sed -n '557,570p' scripts/scrape/scrape.py
 ```
 
 ```output
@@ -672,7 +672,7 @@ Putting it all together, here is the full path from ACCC website to browser:
 ```
 ACCC website
   └─ scripts/scrape/scrape.py (pipeline.yml: weekdays 4×/day, Sundays, on push, on register email)
-       ├─ BeautifulSoup extracts matter page links from register index
+       ├─ lxml extracts matter page links from register index
        ├─ 24 worker threads fetch each matter page in parallel
        ├─ clean_html_bytes() strips dynamic tokens
        └─ data/raw/matters/{MN,WA}-*.html (committed to git)

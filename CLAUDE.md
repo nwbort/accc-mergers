@@ -444,7 +444,7 @@ scripts/                  # A Python package — entry points run as `python -m 
 │                         #   builds the frontend, then copies data/raw/matters PDFs into dist/
 ├── scrape/
 │   ├── scrape.py         # Scrape the ACCC register into data/raw/ (curl_cffi via
-│                         #   accc_http, BeautifulSoup, 24 threads) and clean each page's
+│                         #   accc_http, a session per thread, lxml, 24 threads) and clean each page's
 │                         #   per-request churn (clean_html_bytes, ported byte-for-byte
 │                         #   from scrape.sh's perl: every stored page is its fixed point).
 │                         #   --clean-file PATH re-cleans one file (pipeline.yml, after

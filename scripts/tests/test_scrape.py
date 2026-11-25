@@ -157,6 +157,14 @@ def test_last_page_number_takes_the_last_match():
     assert scrape.last_page_number(b'<p>no pager</p>') == 0
 
 
+def test_parsers_tolerate_an_empty_body():
+    """A listing page whose fetch failed arrives as b'' and has no links."""
+    for body in (b'', b'   \n', b'<!-- -->'):
+        assert scrape.listing_links(body) == []
+        assert scrape.last_page_number(body) == 0
+        assert scrape.matter_number(body) == ''
+
+
 def _matter(number: bytes) -> bytes:
     return (b'<div class="field--name-dynamic-token-fieldnode-acccgov-merger-id">'
             b'<p>' + number + b'</p></div>')

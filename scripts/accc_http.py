@@ -13,6 +13,15 @@ def get(url: str, **kwargs) -> _cffi.Response:
     return _cffi.get(url, impersonate='chrome', **kwargs)
 
 
+def session() -> _cffi.Session:
+    """A Chrome-impersonating session, reusing its connections across requests.
+
+    For many requests in a row (the register scrape). Not thread-safe: give
+    each thread its own.
+    """
+    return _cffi.Session(impersonate='chrome')
+
+
 def head(url: str, **kwargs) -> _cffi.Response:
     """Status and headers for ``url``, via a streamed GET closed before the body."""
     response = get(url, stream=True, **kwargs)

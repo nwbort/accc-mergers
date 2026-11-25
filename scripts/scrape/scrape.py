@@ -53,6 +53,7 @@ from pathlib import Path
 from typing import Callable, Iterable, Optional
 
 from bs4 import BeautifulSoup
+from lxml import etree, html as lxml_html
 
 from scripts import accc_http
 from scripts.cutoff import parse_matter_ids
@@ -80,9 +81,24 @@ HEADERS = {'Accept-Language': 'en-AU,en;q=0.9'}
 # The HTTP statuses curl's --retry treats as transient.
 TRANSIENT_STATUSES = frozenset({408, 429, 500, 502, 503, 504})
 
-MATTER_NUMBER_SELECTOR = '.field--name-dynamic-token-fieldnode-acccgov-merger-id p'
-LISTING_LINK_SELECTOR = '.accc-collapsed-card__header a[href]'
-LAST_PAGE_SELECTOR = 'a[title="Go to last page"][href]'
+
+
+def _has_class(name: str) -> str:
+    """XPath test for an element carrying CSS class ``name``."""
+    return f"contains(concat(' ', normalize-space(@class), ' '), ' {name} ')"
+
+
+# The CSS selectors scrape.sh gave pup, as XPath over lxml. lxml is the parser
+# BeautifulSoup used underneath, without its Python-side tree: it parses a
+# matter page ten times faster, and releases the GIL while it does, so the 24
+# fetch threads aren't queued behind each other's parsing.
+#   .field--name-dynamic-token-fieldnode-acccgov-merger-id p
+MATTER_NUMBER_XPATH = etree.XPath(
+    f"//*[{_has_class('field--name-dynamic-token-fieldnode-acccgov-merger-id')}]//p")
+#   .accc-collapsed-card__header a[href]
+LISTING_LINK_XPATH = etree.XPath(f"//*[{_has_class('accc-collapsed-card__header')}]//a[@href]")
+#   a[title="Go to last page"][href]
+LAST_PAGE_XPATH = etree.XPath('//a[@title="Go to last page"][@href]')
 
 # A matter number becomes a filename, so it is whitelisted to prevent path
 # traversal if the upstream site ever returns unexpected content. Expected
@@ -192,8 +208,18 @@ class FetchError(Exception):
         super().__init__(f'{url} (HTTP {status:03d}){": " + reason if reason else ""}')
 
 
+_thread_state = threading.local()
+
+
 def _get(url: str, timeout: float):
-    return accc_http.get(url, headers=HEADERS, timeout=timeout)
+    """GET through this thread's session, so each worker reuses its connection.
+
+    A fresh TLS handshake per page was most of a page's fetch time.
+    """
+    session = getattr(_thread_state, 'session', None)
+    if session is None:
+        session = _thread_state.session = accc_http.session()
+    return session.get(url, headers=HEADERS, timeout=timeout)
 
 
 def fetch_register_index(url: str = REGISTER_URL, *, attempts: int = 2,
@@ -257,11 +283,22 @@ def _soup(html: bytes | str) -> BeautifulSoup:
     return BeautifulSoup(html, 'lxml')
 
 
+def _select(html: bytes | str, xpath: etree.XPath) -> list:
+    """The elements ``xpath`` matches in ``html`` (none for an empty body)."""
+    if not html or not html.strip():
+        return []
+    try:
+        document = lxml_html.document_fromstring(html)
+    except (etree.ParserError, ValueError):
+        return []
+    return xpath(document)
+
+
 def listing_links(html: bytes | str) -> list[str]:
     """The matter links on one register listing page, in page order."""
     links = []
-    for anchor in _soup(html).select(LISTING_LINK_SELECTOR):
-        href = anchor['href'].replace('\r', '').strip()
+    for anchor in _select(html, LISTING_LINK_XPATH):
+        href = anchor.get('href').replace('\r', '').strip()
         if href and '#card-' not in href:
             links.append(href)
     return links
@@ -270,14 +307,14 @@ def listing_links(html: bytes | str) -> list[str]:
 def last_page_number(html: bytes | str) -> int:
     """The listing's last page index (0-based) from its "Go to last page" link."""
     numbers = []
-    for anchor in _soup(html).select(LAST_PAGE_SELECTOR):
-        numbers.extend(re.findall(r'[?&]page=([0-9]+)', anchor['href']))
+    for anchor in _select(html, LAST_PAGE_XPATH):
+        numbers.extend(re.findall(r'[?&]page=([0-9]+)', anchor.get('href')))
     return int(numbers[-1]) if numbers else 0
 
 
 def matter_number(html: bytes | str) -> str:
     """The case number a matter page states, with all whitespace removed."""
-    text = ''.join(p.get_text() for p in _soup(html).select(MATTER_NUMBER_SELECTOR))
+    text = ''.join(p.text_content() for p in _select(html, MATTER_NUMBER_XPATH))
     return ASCII_SPACE.sub('', text)
 
 

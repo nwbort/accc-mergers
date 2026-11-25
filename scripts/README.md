@@ -34,7 +34,7 @@ scrape/scrape.py ──► extract_mergers.py ──► generate/generate_static
 
 | File | Purpose |
 | --- | --- |
-| `scrape/scrape.py` | Fetches the ACCC acquisitions register and individual matter pages into `data/raw/` (curl_cffi via `accc_http.py`, BeautifulSoup), and cleans the per-request churn out of each saved page. `--clean-file PATH` cleans one file; `--all` ignores cutoff. |
+| `scrape/scrape.py` | Fetches the ACCC acquisitions register and individual matter pages into `data/raw/` (curl_cffi via `accc_http.py`, lxml), and cleans the per-request churn out of each saved page. `--clean-file PATH` cleans one file; `--all` ignores cutoff. |
 | `scrape/scrape_targets.py` | Chooses which matter pages `scrape.py` fetches: applies `cutoff.py`, de-duplicates the listing, and recovers matters the register listing dropped (its pagination sort is unstable). |
 | `scrape/scrape_summary.py` | Renders the Markdown run summary for a scrape (merger IDs fetched, which pages changed, what was skipped past cutoff) from the report `scrape.py` writes when `SCRAPE_REPORT_DIR` is set. |
 | `scrape/scrape_tribunal.py` | Scrapes Australian Competition Tribunal matter pages into `tribunal_appeals.json`, driving a real Chrome via nodriver to get past the site's Cloudflare challenge. |
