@@ -136,7 +136,7 @@ The main ones are below. `quarterly-report.yml`, `linkedin-share-links.yml`,
 
 The primary automated workflow. Runs end-to-end on a schedule and on every push to `main`:
 
-1. **Scrape** — runs `scripts/scrape/scrape.sh` to fetch new/updated ACCC merger pages into `data/raw/matters/`
+1. **Scrape** — runs `python -m scripts.scrape.scrape` to fetch new/updated ACCC merger pages into `data/raw/matters/`
 2. **Extract** — runs `extract_mergers.py --skip-pdf-enrich` to parse new/changed matters into `data/processed/mergers.json` and download their attachments
 3. **Convert** — detects unconverted DOCX attachments, installs LibreOffice, converts to PDF
 4. **Enrich and generate** — runs `enrich_pdfs.py`, `generate_similar_mergers.py`, `generate_static_data.py` (which also builds the CLI bundle), `generate_rss_feed.py`, `generate_sitemap.py`, then compresses oversized PDFs
@@ -321,7 +321,7 @@ The dev server serves static JSON from `public/data/`.
 
 ```bash
 # 1. Scrape (or use existing matters/ data)
-./scripts/scrape/scrape.sh
+python -m scripts.scrape.scrape
 
 # 2. Extract merger data
 python -m scripts.extract_mergers

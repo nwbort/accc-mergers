@@ -11,7 +11,7 @@ and WA-30046 this way, each the very matter its email announced).
 Each listing card carries the matter's case number beside its link, so the
 listing pages say which matters a crawl actually served. This module reads
 them and reports the emailed IDs that are neither already known nor served,
-which scrape.sh answers by crawling the listing again: the sort reshuffles on
+which scrape.py answers by crawling the listing again: the sort reshuffles on
 every request, so a dropped row usually turns up on the next pass.
 
 The matter IDs come from an inbound email (regex-extracted by the
@@ -57,7 +57,7 @@ def missing_ids(expected: list[str], listing_pages: list[str],
 
 
 def main() -> None:
-    """Print the emailed IDs still missing, one per line, for scrape.sh."""
+    """Print the emailed IDs still missing, one per line."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument('--ids', required=True,
                         help='Matter IDs from the email (comma/space separated)')

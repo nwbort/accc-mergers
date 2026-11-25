@@ -15,103 +15,121 @@ The three major layers are:
 
 ## The Data Pipeline
 
-### Step 1 — Scraping (`scripts/scrape/scrape.sh`)
+### Step 1 — Scraping (`scripts/scrape/scrape.py`)
 
-The scraper is a Bash script that fetches every merger page from the ACCC public register. It is the first stage in a three-step pipeline: **scrape → extract → generate**.
+The scraper fetches every merger page from the ACCC public register (`python -m scripts.scrape.scrape`). It is the first stage in a three-step pipeline: **scrape → extract → generate**.
 
-The scraper's job is purely about fetching and storing raw HTML. All interpretation is left to the Python extraction step.
+The scraper's job is purely about fetching and storing raw HTML. All interpretation is left to the extraction step.
 
 **Key design decisions:**
 
-- Uses `pup` (a command-line HTML parser written in Go) to extract links from the register index page — no Python parsing needed at this stage.
-- Fetches 24 pages in parallel using `xargs -P 24` to keep the scrape fast.
-- After downloading each matter page it immediately runs `clean_file()`, a single-pass Perl rewrite that strips out dynamic tokens (cache-busted asset URLs, random DOM IDs, form build IDs, the Drupal settings blob, analytics snippets) so that git diffs only contain meaningful content changes.
-- Pipes the register's links, together with `data/processed/mergers.json` (output of the previous run), through `scripts/scrape/scrape_targets.py`, which drops matters past the cutoff (approved mergers more than 3 weeks old no longer need re-scraping) and adds back any still-active matter the listing failed to mention.
-- Saves each page as `data/raw/matters/{MATTER_NUMBER}.html`, where the matter number (e.g. `MN-12345` or `WA-67890`) is extracted via `pup` from the page itself.
+- Fetches through `scripts/accc_http.py` (curl_cffi impersonating Chrome, the same client the attachment downloads use; one session per worker thread, so connections are reused) and reads the register listing with lxml, collecting each card's matter link and following the "Go to last page" link for the page count.
+- Fetches 24 pages at a time (`ThreadPoolExecutor(max_workers=24)`) to keep the scrape fast. A matter page that fails is retried twice, whatever the error, since the failures seen are transient (an Akamai 403 among them).
+- Before saving each matter page it runs `clean_html_bytes()`, a fixed list of regex substitutions that strips out dynamic tokens (cache-busted asset URLs, random DOM IDs, form build IDs, the Drupal settings blob, analytics snippets) so that git diffs only contain meaningful content changes.
+- Passes the register's links, together with `data/processed/mergers.json` (output of the previous run), to `scripts/scrape/scrape_targets.py`, which drops matters past the cutoff (approved mergers more than 3 weeks old no longer need re-scraping) and adds back any still-active matter the listing failed to mention.
+- Saves each page as `data/raw/matters/{MATTER_NUMBER}.html`, where the matter number (e.g. `MN-12345` or `WA-67890`) is read from the page itself and whitelisted to `[A-Za-z0-9_-]` before it becomes a filename.
+- Fails the run, with a diagnostics block (page title, selector counts, response headers), when the register yields no links at all: that means a block page or a markup change, and passing green there once hid three runs that did nothing.
 
 ```bash
-sed -n '53,63p' scripts/scrape/scrape.sh
+sed -n '65,74p' scripts/scrape/scrape.py
 ```
 
 ```output
-# Export variables so they are available to subshells spawned by xargs.
-export BASE_URL="https://www.accc.gov.au"
-export REGISTER_URL="${BASE_URL}/public-registers/acquisitions-and-mergers-registers/acquisitions-register?init=1&items_per_page=50"
-export MAIN_PAGE_FILE="data/raw/acquisitions-register.html"
-export SUBFOLDER="data/raw/matters"
-export USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
-export MERGERS_JSON="data/processed/mergers.json"
-export REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-# The Python helpers are package modules (python -m scripts.…), so the repo
-# root has to be importable no matter where this script is invoked from.
-export PYTHONPATH="${REPO_ROOT}${PYTHONPATH:+:$PYTHONPATH}"
+BASE_URL = 'https://www.accc.gov.au'
+REGISTER_URL = (
+    f'{BASE_URL}/public-registers/acquisitions-and-mergers-registers/'
+    'acquisitions-register?init=1&items_per_page=50'
+)
+RAW_DIR = REPO_ROOT / 'data' / 'raw'
+MAIN_PAGE_FILE = RAW_DIR / 'acquisitions-register.html'
+MATTERS_DIR = RAW_DIR / 'matters'
+MERGERS_JSON = REPO_ROOT / 'data' / 'processed' / 'mergers.json'
+PARALLEL_JOBS = 24
 ```
 
-Variables are exported (not just set) because the parallel `xargs` workers each run in a child subshell that would not otherwise inherit them. `PARALLEL_JOBS=24` drives both the matter-page fetches and the register pagination fetches.
+`PARALLEL_JOBS=24` drives both the matter-page fetches and the register pagination fetches.
 
-The `clean_file` function is the most important detail of the scraper. Without it every run would produce huge, noisy git diffs full of auto-generated asset fingerprints that have nothing to do with the actual merger data.
+The cleaner is the most important detail of the scraper. Without it every run would produce huge, noisy git diffs full of auto-generated asset fingerprints that have nothing to do with the actual merger data.
 
 ```bash
-sed -n '101,125p' scripts/scrape/scrape.sh
+sed -n '117,165p' scripts/scrape/scrape.py
 ```
 
 ```output
-  perl -i -0777 -pe '
+# (pattern, replacement, count) — count 1 where the perl had no /g. Run over
+# the whole file as bytes, in this order, exactly as `perl -0777 -pe` did:
+# `.` stops at \n unless the pattern has re.S (perl's /s), and the line-scoped
+# negated classes exclude \n so they can't span lines in a slurped file. The
+# order matters: the `?t` rule runs over what the icons.svg rule left.
+_CLEAN_RULES: list[tuple[re.Pattern[bytes], bytes, int]] = [
     # Collapse the entire Drupal settings JSON blob to a static placeholder.
-    # It is machine config full of per-request churn (session/build tokens such
-    # as libraries, permissionsHash, css_js_query_string, view_dom_id, ct,
-    # _bhlid, brid, ...) that nothing in the pipeline consumes. Replacing it
-    # wholesale beats stripping each field individually, so new tokens the
+    # It is machine config full of per-request churn (session/build tokens
+    # such as libraries, permissionsHash, css_js_query_string, view_dom_id,
+    # ct, _bhlid, brid, ...) that nothing in the pipeline consumes. Replacing
+    # it wholesale beats stripping each field individually, so new tokens the
     # upstream site adds inside it never produce diff noise again.
-    s{(<script type="application/json" data-drupal-selector="drupal-settings-json">).*?(</script>)}{${1}STATIC_DRUPAL_SETTINGS${2}}s;
-    s/js-view-dom-id-[a-f0-9]{64}/js-view-dom-id-STATIC/g;
-    s/(id="edit-submit-accc-search-site--)[^"\n]+"/${1}STATIC"/g;
-    s/(id="edit-actions)--[0-9]+"/${1}"/g;
-    s/(data-drupal-selector="form-)[^"\n]+(" type="hidden" name="form_build_id")/${1}STATIC${2}/g;
-    s/(name="form_build_id" value="form-)[^"\n]+"/${1}STATIC"/g;
-    s/(css\/css_)[^.\n]+\.css/${1}STATIC.css/g;
-    s/(js\/js_)[^.\n]+\.js/${1}STATIC.js/g;
-    s/include=[^"&>\n]+/include=STATIC/g;
-    s/href="https:\/\/app\.readspeaker\.com\/[^"\n]+"/href="STATIC_READSPEAKER_URL"/g;
-    s/(icons\.svg\?t)[^#\n]+#/${1}STATIC#/g;
-    s/(\?t)[^">\n]+/${1}STATIC/g;
-    s/[ \t]*\n[ \t]*<script>!function\(e\)\{var n="https:\/\/s\.go-mpulse\.net\/boomerang\/".*?\(window\);<\/script><\/head>/\n  <\/head>/s;
-    s{(<meta name="dcterms\.modified"[^\n]*/>\n)(<meta name="dcterms\.created"[^\n]*/>\n)}{$2$1}g;
-    s{(<link rel="canonical"[^\n]*/>\n)(<link rel="shortlink"[^\n]*/>\n)}{$2$1}g;
-    s{(<nav class="accc-entity-hierarchy-megamenu"[^>]*>).*?</nav>}{${1}STATIC_MEGAMENU</nav>}s;
-    s/\n{3,}/\n\n/g;
-  ' "$file"
+    (re.compile(rb'(<script type="application/json" data-drupal-selector="drupal-settings-json">)'
+                rb'.*?(</script>)', re.S),
+     rb'\g<1>STATIC_DRUPAL_SETTINGS\g<2>', 1),
+    (re.compile(rb'js-view-dom-id-[a-f0-9]{64}'), b'js-view-dom-id-STATIC', 0),
+    (re.compile(rb'(id="edit-submit-accc-search-site--)[^"\n]+"'), rb'\g<1>STATIC"', 0),
+    (re.compile(rb'(id="edit-actions)--[0-9]+"'), rb'\g<1>"', 0),
+    (re.compile(rb'(data-drupal-selector="form-)[^"\n]+(" type="hidden" name="form_build_id")'),
+     rb'\g<1>STATIC\g<2>', 0),
+    (re.compile(rb'(name="form_build_id" value="form-)[^"\n]+"'), rb'\g<1>STATIC"', 0),
+    (re.compile(rb'(css/css_)[^.\n]+\.css'), rb'\g<1>STATIC.css', 0),
+    (re.compile(rb'(js/js_)[^.\n]+\.js'), rb'\g<1>STATIC.js', 0),
+    (re.compile(rb'include=[^"&>\n]+'), b'include=STATIC', 0),
+    (re.compile(rb'href="https://app\.readspeaker\.com/[^"\n]+"'),
+     b'href="STATIC_READSPEAKER_URL"', 0),
+    (re.compile(rb'(icons\.svg\?t)[^#\n]+#'), rb'\g<1>STATIC#', 0),
+    (re.compile(rb'(\?t)[^">\n]+'), rb'\g<1>STATIC', 0),
+    # Akamai mPulse's inline BOOMR loader, injected per request before </head>.
+    (re.compile(rb'[ \t]*\n[ \t]*<script>!function\(e\)\{var n="https://s\.go-mpulse\.net/boomerang/"'
+                rb'.*?\(window\);</script></head>', re.S),
+     b'\n  </head>', 1),
+    # The upstream site emits these two pairs in either order from one
+    # request to the next; fix the order.
+    (re.compile(rb'(<meta name="dcterms\.modified"[^\n]*/>\n)(<meta name="dcterms\.created"[^\n]*/>\n)'),
+     rb'\g<2>\g<1>', 0),
+    (re.compile(rb'(<link rel="canonical"[^\n]*/>\n)(<link rel="shortlink"[^\n]*/>\n)'),
+     rb'\g<2>\g<1>', 0),
+    (re.compile(rb'(<nav class="accc-entity-hierarchy-megamenu"[^>]*>).*?</nav>', re.S),
+     rb'\g<1>STATIC_MEGAMENU</nav>', 1),
+    (re.compile(rb'\n{3,}'), b'\n\n', 0),
+]
+
+
+def clean_html_bytes(content: bytes) -> bytes:
+    """Strip the per-request dynamic content out of one saved ACCC page."""
+    for pattern, replacement, count in _CLEAN_RULES:
+        content = pattern.sub(replacement, content, count=count)
+    return content
 ```
 
-The `-0777` flag puts Perl into "slurp mode" — the entire file is read as a single string — which allows the Drupal settings blob, the BOOMR analytics script and the megamenu patterns to match across multiple lines. Without it, multi-line patterns would silently fail while single-line patterns would still work. Each substitution targets a specific source of noise: fingerprinted CSS/JS filenames, 64-character DOM IDs, form build IDs, Readspeaker analytics URLs, and so on.
+The rules run over the whole file as bytes, so the Drupal settings blob, the BOOMR analytics script and the megamenu patterns can match across lines (`re.S`), while the line-scoped patterns exclude `\n` from their negated classes so they can't. They began as a perl one-liner in `scrape.sh` (perl's slurp mode, `-0777`) and were ported rule for rule, in the same order: every stored page was written by the perl, so the port has to agree to the byte, or the first run after a change would rewrite every matter page. `scripts/tests/test_scrape.py` pins it with real pages the perl cleaned, and checks every stored page is already a fixed point.
 
 The target selection runs before fetching to save bandwidth. `scrape_targets.py` reads the previous run's `mergers.json` and drops the link of any merger past its cutoff (see [the cutoff module](#the-cutoff-module-scriptscutoffpy) below), de-duplicates the listing, and unions it with the still-active matters already recorded — the register paginates over an unstable sort, so a matter can silently drop out of one crawl's listing. Comparisons use a normalised key, since the ACCC serves each matter under two spellings of the register path.
 
 ```bash
-sed -n '339,358p' scripts/scrape/scrape.sh
+sed -n '557,570p' scripts/scrape/scrape.py
 ```
 
 ```output
-# 4. Work out which matters to fetch.
-#
-# scrape_targets.py drops matters past cutoff (unless --all), de-duplicates the
-# listing, and — importantly — adds back any matter we already know about that
-# this crawl's listing failed to mention. The register paginates over an
-# unstable sort, so a matter can silently drop out of the listing and then
-# never be re-scraped again; see scripts/scrape/scrape_targets.py for detail.
-if [ "$SCRAPE_ALL" = true ]; then
-  echo "Scraping all mergers (--all flag specified)"
-  select_args=(--all)
-else
-  select_args=()
-fi
-
-if [ -n "$SCRAPE_REPORT_DIR" ]; then
-  select_args+=(--stats-json "${SCRAPE_REPORT_DIR}/targets.json")
-fi
-
-links_to_fetch=$(printf '%s\n' "$relative_links" \
-  | python3 -m scripts.scrape.scrape_targets "${select_args[@]}" "$MERGERS_JSON")
+        # 4. Which matters to fetch. select_targets drops matters past cutoff
+        #    (unless --all), de-duplicates the listing, and adds back any
+        #    matter we already know about that this crawl's listing failed to
+        #    mention; see scrape_targets.py.
+        if scrape_all:
+            print('Scraping all mergers (--all flag specified)')
+        links_to_fetch, stats = select_targets(
+            relative_links,
+            load_mergers_or_empty(MERGERS_JSON),
+            scrape_all=scrape_all,
+            # Emailed matters are fetched even past cutoff: the email says
+            # they changed.
+            include_ids=parse_matter_ids(expect_ids),
+        )
 ```
 
 ### Step 2 — Extraction (`scripts/extract_mergers.py`)
@@ -265,7 +283,7 @@ The ±1 day tolerance in `_dates_within_one_day` is a real-world edge case: the 
 
 #### The cutoff module (`scripts/cutoff.py`)
 
-Both `scrape.sh` (via `scrape_targets.py`) and `extract_mergers.py` use this module to decide which mergers still need active attention. The rules are:
+Both the scraper (via `scrape_targets.py`) and `extract_mergers.py` use this module to decide which mergers still need active attention. The rules are:
 
 - **Waivers** (merger ID starts with `WA-` or stage contains "Waiver"): skip 3 weeks after *any* determination, regardless of outcome.
 - **Notifications** (merger ID starts with `MN-`): skip 3 weeks after an *Approved* determination only — 5 weeks when it was approved with conditions. Declined or contested mergers remain in scope indefinitely.
@@ -617,7 +635,7 @@ The "check for scrape changes" step is a key optimisation. On scheduled runs, ex
 
 Pipeline runs are serialised by a `concurrency` group, but other things still push to `main` while a run is scraping (the tribunal scraper, the quarterly report, a person), so the commit step uses `git pull --rebase` to incorporate those commits before pushing. This avoids rejected pushes. A genuine rebase conflict is not hand-merged: the run gives up its commit and dispatches a fresh pipeline run on the new `main` (at most three times in a chain).
 
-A subtle problem arises from the rebase: after a merge, HTML files that both runs touched are reconstructed from the merge base plus patches from each side. This can reintroduce the raw dynamic tokens that `clean_file` already stripped, because git's three-way merge applies text patches without understanding Perl regex semantics. The pipeline detects this: after rebasing it checks which HTML files were in the rebased commit and re-runs `scrape.sh --clean-file` on each one, then amends the commit if anything changed.
+A subtle problem arises from the rebase: after a merge, HTML files that both runs touched are reconstructed from the merge base plus patches from each side. This can reintroduce the raw dynamic tokens that `clean_file` already stripped, because git's three-way merge applies text patches without knowing what the cleaner does. The pipeline detects this: after rebasing it checks which HTML files were in the rebased commit and re-runs `python -m scripts.scrape.scrape --clean-file` on each one, then amends the commit if anything changed.
 
 ```bash
 sed -n '618,638p' .github/workflows/pipeline.yml
@@ -633,7 +651,7 @@ sed -n '618,638p' .github/workflows/pipeline.yml
               echo "$rebase_html" | sed 's/^/  /'
               while IFS= read -r f; do
                 if [ -f "$f" ]; then
-                  ./scripts/scrape/scrape.sh --clean-file "$f"
+                  python -m scripts.scrape.scrape --clean-file "$f"
                   git add "$f"
                   echo "Re-cleaned: $f"
                 fi
@@ -653,10 +671,10 @@ Putting it all together, here is the full path from ACCC website to browser:
 
 ```
 ACCC website
-  └─ scrape.sh (pipeline.yml: weekdays 4×/day, Sundays, on push, on register email)
-       ├─ pup extracts matter page links from register index
-       ├─ xargs -P24 fetches each matter page in parallel
-       ├─ clean_file() strips dynamic tokens via Perl
+  └─ scripts/scrape/scrape.py (pipeline.yml: weekdays 4×/day, Sundays, on push, on register email)
+       ├─ lxml extracts matter page links from register index
+       ├─ 24 worker threads fetch each matter page in parallel
+       ├─ clean_html_bytes() strips dynamic tokens
        └─ data/raw/matters/{MN,WA}-*.html (committed to git)
             └─ extract_mergers.py + enrich_pdfs.py (on scrape changes, or any non-scheduled run)
                  ├─ ProcessPoolExecutor parses all HTML in parallel
@@ -681,6 +699,6 @@ ACCC website
 
 **git is the database.** Raw HTML and generated JSON are both committed. This gives a complete audit history of every status change on every merger, and means any team member can reproduce the full dataset from the git history.
 
-**Incremental by default, full rebuild on demand.** The cutoff logic and existing-data merging mean normal runs only touch active mergers. The `--all` flag on both `scrape.sh` and `extract_mergers.py` forces a full rebuild — used rarely, for fixing historical data or recovering from bugs.
+**Incremental by default, full rebuild on demand.** The cutoff logic and existing-data merging mean normal runs only touch active mergers. The `--all` flag on both the scraper and `extract_mergers.py` forces a full rebuild — used rarely, for fixing historical data or recovering from bugs.
 
 **Frozen events.** `data/frozen_events_mergers.json` is the escape hatch for cases where the ACCC's website has incorrect or missing data. Any merger listed there has its events array preserved exactly as last scraped, with only genuinely new events (matched by URL) appended — or, if it lists specific event titles, just those events are frozen. Field overrides in the same file can correct any other field.

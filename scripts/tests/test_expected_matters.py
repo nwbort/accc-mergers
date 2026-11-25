@@ -2,7 +2,7 @@
 
 An email-triggered run must not silently miss a brand-new matter the register
 listing's unstable sort happened to drop: the IDs reported missing here are
-what makes scrape.sh crawl the listing again.
+what makes scrape.py crawl the listing again.
 """
 
 from scripts.scrape.expected_matters import (

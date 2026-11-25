@@ -366,17 +366,37 @@ def find_resubmission_candidates(
         if m.get("merger_id") and m.get("merger_id") not in recorded
     ]
 
+    # A shared target identifier is required below, so only pairs that share
+    # one are worth scoring. Indexing by it first keeps this pass from running
+    # score_pair (its SequenceMatcher calls) over every same-kind pair in the
+    # register: ~400k pairs, which took the detector from about a second to
+    # 30-60s per pipeline run. Nothing it could match is skipped.
+    position = {m["merger_id"]: i for i, m in enumerate(eligible)}
+    dates = {
+        m["merger_id"]: parse_date(m.get("effective_notification_datetime"))
+        for m in eligible
+    }
+    target_ids = {
+        m["merger_id"]: extract_identifiers(m.get("targets", [])) for m in eligible
+    }
+    by_target_id: dict[str, set[str]] = {}
+    for merger_id, identifiers in target_ids.items():
+        for identifier in identifiers:
+            by_target_id.setdefault(identifier, set()).add(merger_id)
+
     candidates: list[dict] = []
     for src in eligible:
         if src.get("status") == merger_status.ASSESSMENT_SUSPENDED:
             continue
         src_id = src["merger_id"]
-        src_date = parse_date(src.get("effective_notification_datetime"))
-        for tgt in eligible:
-            tgt_id = tgt["merger_id"]
+        src_date = dates[src_id]
+        partners = set().union(*(by_target_id[i] for i in target_ids[src_id]))
+        # In register order, as a scan of every pair would meet them.
+        for tgt_id in sorted(partners, key=position.__getitem__):
+            tgt = eligible[position[tgt_id]]
             if tgt_id == src_id or _id_prefix(tgt_id) != _id_prefix(src_id):
                 continue
-            tgt_date = parse_date(tgt.get("effective_notification_datetime"))
+            tgt_date = dates[tgt_id]
             # Hard ordering check, unlike the other passes: with both sides
             # the same kind, a pair filed the wrong way round is otherwise
             # indistinguishable from the right one. Strictly later, too: two

@@ -1,7 +1,7 @@
 """Decide which register matter pages the scraper should fetch.
 
 The ACCC register listing is paginated at 50 rows per page over a sort that
-is not stable across requests: scrape.sh fetches each page as its own HTTP
+is not stable across requests: the scraper fetches each page as its own HTTP
 request, and rows that tie on the sort key can move between those requests.
 The result is that one crawl serves the same matter on two adjacent pages
 and silently drops another. Observed live on a 12-page crawl: 554 rows
@@ -168,11 +168,30 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
     return paths, stats
 
 
+def print_selection_report(stats: dict, file=None) -> None:
+    """Describe a selection to stderr (or ``file``), as the scraper logs it."""
+    file = file if file is not None else sys.stderr
+    if stats['duplicates']:
+        print(f"    Listing served {stats['duplicates']} duplicate link(s)", file=file)
+    if stats['skipped']:
+        print(f"    Skipping {stats['skipped']} merger(s) past cutoff", file=file)
+    if stats['skipped_unlisted']:
+        print(f"    {stats['skipped_unlisted']} more past cutoff were missing from the listing", file=file)
+    if stats['included']:
+        names = ', '.join(m['merger_id'] for m in stats['included_mergers'])
+        print(f"    Fetching {stats['included']} emailed merger(s) despite cutoff: {names}",
+              file=file)
+    if stats['recovered']:
+        print(f"    Recovered {stats['recovered']} merger(s) missing from the listing:", file=file)
+        for path in stats['recovered_paths']:
+            print(f"    - {path}", file=file)
+
+
 def main():
     """Read listing paths on stdin, write the paths to fetch on stdout.
 
     Usage:
-        pup ... | python3 scrape_targets.py [--all] [mergers.json]
+        python -m scripts.scrape.scrape_targets [--all] [mergers.json] < links.txt
 
     Progress detail goes to stderr so stdout stays a clean path list.
     """
@@ -224,20 +243,7 @@ def main():
         with open(args.stats_json, 'w', encoding='utf-8') as f:
             json.dump(stats, f, indent=2)
 
-    if stats['duplicates']:
-        print(f"    Listing served {stats['duplicates']} duplicate link(s)", file=sys.stderr)
-    if stats['skipped']:
-        print(f"    Skipping {stats['skipped']} merger(s) past cutoff", file=sys.stderr)
-    if stats['skipped_unlisted']:
-        print(f"    {stats['skipped_unlisted']} more past cutoff were missing from the listing", file=sys.stderr)
-    if stats['included']:
-        names = ', '.join(m['merger_id'] for m in stats['included_mergers'])
-        print(f"    Fetching {stats['included']} emailed merger(s) despite cutoff: {names}",
-              file=sys.stderr)
-    if stats['recovered']:
-        print(f"    Recovered {stats['recovered']} merger(s) missing from the listing:", file=sys.stderr)
-        for path in stats['recovered_paths']:
-            print(f"    - {path}", file=sys.stderr)
+    print_selection_report(stats)
 
     for path in paths:
         print(path)
