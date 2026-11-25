@@ -26,9 +26,10 @@ from scripts.parse.parse_questionnaire import (
 )
 from scripts.normalization import normalize_determination, normalize_dashes
 from scripts.constants.site import REPO, mergers_fyi_url
-from scripts.cutoff import get_skipped_merger_ids, is_waiver_merger, parse_matter_ids
+# Aliased: main() keeps the result in a local of the bare name.
+from scripts.cutoff import is_waiver_merger, parse_matter_ids, skipped_merger_ids as cutoff_skipped_merger_ids
 from scripts import document_versions
-from scripts.merger_filters import save_mergers
+from scripts.merger_filters import load_mergers, save_mergers
 from scripts.date_utils import parse_text_to_iso, parse_iso_datetime
 from scripts.generate.static_data.enrichment import is_phase_2_referral_event
 from scripts.constants import merger_status
@@ -2498,37 +2499,24 @@ def main():
         print(f"Error: Directory '{MATTERS_DIR}' not found.", file=sys.stderr)
         sys.exit(1)
 
-    # 1. Load existing data if mergers.json exists
-    existing_mergers = {}
+    # 1. Load existing data if mergers.json exists. A malformed file stops the
+    # run (load_mergers has already printed where), rather than starting fresh
+    # and overwriting every stored record.
     mergers_json_path = 'data/processed/mergers.json'
-    if os.path.exists(mergers_json_path) and os.path.getsize(mergers_json_path) > 0:
-        try:
-            with open(mergers_json_path, 'r', encoding='utf-8') as f:
-                existing_data = json.load(f)
-                for merger in existing_data:
-                    if 'merger_id' in merger:
-                        existing_mergers[merger['merger_id']] = merger
-        except json.JSONDecodeError as e:
-            print(f"Error decoding JSON from {mergers_json_path}:", file=sys.stderr)
-            print(f"  - Error: {e.msg}", file=sys.stderr)
-            print(f"  - At line {e.lineno}, column {e.colno}", file=sys.stderr)
-            
-            # Go back and read the problematic line to show the user
-            with open(mergers_json_path, 'r', encoding='utf-8') as f_debug:
-                for i, line in enumerate(f_debug, 1):
-                    if i == e.lineno:
-                        print(f"Problematic line ({i}): {line.strip()}", file=sys.stderr)
-                        print(f"{' ' * (e.colno + 21)}--->^", file=sys.stderr)
-                        break
-            sys.exit(1) # Exit if the existing data can't be parsed
-    elif os.path.exists(mergers_json_path):
-         print("Warning: mergers.json exists but is empty. Starting fresh.", file=sys.stderr)
-
+    try:
+        existing_list = load_mergers(mergers_json_path, missing_ok=True)
+    except json.JSONDecodeError:
+        sys.exit(1)
+    existing_mergers = {
+        merger['merger_id']: merger
+        for merger in existing_list
+        if 'merger_id' in merger
+    }
 
     # 2. Determine which mergers to skip based on cutoff (unless --all is passed)
     skipped_merger_ids = set()
     if not args.all:
-        skipped_merger_ids = get_skipped_merger_ids(mergers_json_path)
+        skipped_merger_ids = cutoff_skipped_merger_ids(existing_list)
         included = sorted(skipped_merger_ids & set(parse_matter_ids(args.include_ids)))
         if included:
             skipped_merger_ids -= set(included)

@@ -1,5 +1,6 @@
-"""Tests for cutoff.py helpers that read mergers.json from disk:
-get_active_merger_ids, get_skipped_merger_ids, get_skipped_url_paths.
+"""Tests for cutoff.py's list helpers (active_merger_ids, skipped_merger_ids,
+skipped_url_paths) and the wrappers that read mergers.json from disk first
+(get_active_merger_ids, get_skipped_merger_ids, get_skipped_url_paths).
 
 The "skip old merger" predicate (should_skip_merger) and its underlying
 helpers are already exercised in test_pipeline.py — these tests focus on
@@ -18,9 +19,12 @@ sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
 from scripts.cutoff import (
+    active_merger_ids,
     get_active_merger_ids,
     get_skipped_merger_ids,
     get_skipped_url_paths,
+    skipped_merger_ids,
+    skipped_url_paths,
 )
 
 
@@ -205,3 +209,27 @@ class TestGetSkippedUrlPaths:
         path = tmp_path / 'bad.json'
         path.write_text('{not json')
         assert get_skipped_url_paths(str(path)) == set()
+
+
+class TestListHelpers:
+    """The list-taking functions the path wrappers delegate to, which
+    extract_mergers calls with the records it has already loaded."""
+
+    def test_agree_with_the_path_wrappers(self, tmp_path):
+        reference = datetime(2026, 6, 1)
+        mergers = _make_mergers(reference)
+        path = tmp_path / 'mergers.json'
+        _write_mergers(path, mergers)
+
+        with unittest.mock.patch('scripts.cutoff.datetime') as mock_dt:
+            mock_dt.now.return_value = reference
+            mock_dt.side_effect = lambda *args, **kw: datetime(*args, **kw)
+            assert active_merger_ids(mergers) == get_active_merger_ids(str(path))
+            assert skipped_merger_ids(mergers) == get_skipped_merger_ids(str(path))
+            assert skipped_url_paths(mergers) == get_skipped_url_paths(str(path))
+            assert skipped_merger_ids(mergers) == {'MN-SKIP-1', 'WA-SKIP-1'}
+
+    def test_empty_list(self):
+        assert active_merger_ids([]) == set()
+        assert skipped_merger_ids([]) == set()
+        assert skipped_url_paths([]) == set()

@@ -31,6 +31,7 @@ from scripts.merger_filters import (
     is_suspended,
     is_waiver,
     load_mergers,
+    load_mergers_or_empty,
     notification_sort_key,
     save_mergers,
     sort_by_notification_date,
@@ -356,12 +357,74 @@ class TestLoadMergers:
         with pytest.raises(json.JSONDecodeError):
             load_mergers(path)
 
+    def test_reports_the_line_it_stopped_on(self, tmp_path: Path, capsys):
+        # Every caller gets the diagnostic, not just extract_mergers, which
+        # used to print it itself.
+        path = tmp_path / "mergers.json"
+        path.write_text('[\n  {"merger_id": "MN-1"},\n  {"merger_id" "MN-2"}\n]\n', encoding="utf-8")
+        with pytest.raises(json.JSONDecodeError):
+            load_mergers(path)
+        err = capsys.readouterr().err
+        assert f"Error decoding JSON from {path}" in err
+        assert "At line 3, column 16" in err
+        prefix = "Problematic line (3): "
+        lines = err.splitlines()
+        quoted = lines.index(prefix + '  {"merger_id" "MN-2"}')
+        # The caret sits under the character the parser stopped at.
+        caret = lines[quoted + 1].index("^")
+        assert lines[quoted][caret] == '"' and caret == len(prefix) + 15
+
+    def test_missing_ok_returns_empty_for_a_missing_file(self, tmp_path: Path):
+        assert load_mergers(tmp_path / "nope.json", missing_ok=True) == []
+
+    def test_missing_ok_returns_empty_for_an_empty_file(self, tmp_path: Path, capsys):
+        path = tmp_path / "mergers.json"
+        path.write_text("", encoding="utf-8")
+        assert load_mergers(path, missing_ok=True) == []
+        assert "exists but is empty" in capsys.readouterr().err
+
+    def test_missing_ok_still_raises_on_invalid_json(self, tmp_path: Path):
+        # A malformed file is not a missing one: starting fresh would
+        # overwrite every stored record.
+        path = tmp_path / "mergers.json"
+        path.write_text("{not json", encoding="utf-8")
+        with pytest.raises(json.JSONDecodeError):
+            load_mergers(path, missing_ok=True)
+
     def test_default_path_points_at_processed_mergers_json(self):
         # The default should resolve to data/processed/mergers.json under the
         # repo root — i.e. co-located with scripts/.
         assert DEFAULT_MERGERS_JSON.name == "mergers.json"
         assert DEFAULT_MERGERS_JSON.parent.name == "processed"
         assert DEFAULT_MERGERS_JSON.parent.parent.name == "data"
+
+
+class TestLoadMergersOrEmpty:
+    """The tolerant loader shared by scrape target selection and the cutoff
+    CLI, where a bad file must not stop the run."""
+
+    def test_missing_file(self, tmp_path: Path):
+        assert load_mergers_or_empty(tmp_path / "nope.json") == []
+
+    def test_empty_file(self, tmp_path: Path):
+        path = tmp_path / "mergers.json"
+        path.write_text("", encoding="utf-8")
+        assert load_mergers_or_empty(path) == []
+
+    def test_malformed_json(self, tmp_path: Path):
+        path = tmp_path / "mergers.json"
+        path.write_text("{not json", encoding="utf-8")
+        assert load_mergers_or_empty(str(path)) == []
+
+    def test_unrecognised_shape(self, tmp_path: Path):
+        path = tmp_path / "mergers.json"
+        path.write_text(json.dumps({'merger_id': 'MN-1'}), encoding="utf-8")
+        assert load_mergers_or_empty(path) == []
+
+    def test_reads_records(self, tmp_path: Path):
+        path = tmp_path / "mergers.json"
+        path.write_text(json.dumps(_fixture()), encoding="utf-8")
+        assert load_mergers_or_empty(path) == _fixture()
 
 
 class TestSaveMergers:
