@@ -38,6 +38,7 @@ def test_a_changed_quarter_moves_to_the_next_version():
     q2, q3 = payload['quarters']
     assert (q2['version'], q2['version_date']) == ('1', '2026-11-02')
     assert (q3['version'], q3['version_date']) == ('2', '2026-11-20')
+    assert q3['first_published'] == '2026-11-02'
     assert [v['version'] for v in store['26Q3']] == ['1', '2']
 
 
@@ -91,6 +92,8 @@ def test_numbering_continues_from_a_backfilled_history():
     store = qv.stamp_versions(payload, backfilled, '2026-11-02')
     assert (payload['quarters'][1]['version'], payload['quarters'][1]['version_date']) == ('3', '2026-11-02')
     assert store['26Q3'][:2] == backfilled['26Q3']
+    # First published is still the backfilled v1, not the version just added.
+    assert payload['quarters'][1]['first_published'] == '2026-10-23'
 
 
 def _with_histograms(pre=(2, 33, 43), p1=(0, 76, 23), filed=113):

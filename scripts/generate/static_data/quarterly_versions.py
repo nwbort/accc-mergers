@@ -43,7 +43,7 @@ VERSIONS_STORE_PATH = REPO_ROOT / "data" / "processed" / "quarterly_versions.jso
 
 #: Fields stamped onto each block by :func:`stamp_versions`, and therefore left
 #: out of the digest that decides them.
-VERSION_FIELDS = ("version", "version_date")
+VERSION_FIELDS = ("version", "version_date", "first_published")
 
 _SYDNEY = ZoneInfo("Australia/Sydney")
 
@@ -101,7 +101,11 @@ def format_version(major: int, minor: int) -> str:
 
 
 def stamp_versions(payload: dict, store: dict, today: str) -> dict:
-    """Stamp ``version`` and ``version_date`` on every quarter in ``payload``.
+    """Stamp ``version``, ``version_date`` and ``first_published`` on every quarter.
+
+    ``first_published`` is the date of the quarter's v1, which the report
+    page's JSON-LD gives as ``datePublished`` (``version_date`` being its
+    ``dateModified``).
 
     ``store`` is the history as loaded. A quarter whose block no longer matches
     its latest recorded digest (or that has none) gets a new version dated
@@ -129,6 +133,7 @@ def stamp_versions(payload: dict, store: dict, today: str) -> dict:
             history.append({"version": version, "date": today, "digest": digest, "major_digest": major})
         block["version"] = history[-1]["version"]
         block["version_date"] = history[-1]["date"]
+        block["first_published"] = history[0]["date"]
         updated[key] = history
     return updated
 

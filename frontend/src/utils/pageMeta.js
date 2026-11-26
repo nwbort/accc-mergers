@@ -28,6 +28,36 @@ export const AUTHOR_ID = `${AUTHOR_URL}#person`;
 /** A reference to the author, for an `author`/`creator` field elsewhere. */
 export const AUTHOR_REF = { '@type': 'Person', '@id': AUTHOR_ID, name: AUTHOR_NAME, url: AUTHOR_URL };
 
+// The site as an Organization, for the logo Google shows beside its results
+// and in a knowledge panel. Google wants a square-ish logo of at least 112px,
+// which the 1200x630 og-image.png is not, so this is the 512px app icon. The
+// profiles are the site's own accounts (config.js BLUESKY_PROFILE_URL and
+// LINKEDIN_PROFILE_URL, which pageMeta.test.js pins these to; config.js is not
+// imported because the prerenderer loads this module in plain Node).
+export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+export const SITE_LOGO = {
+  '@type': 'ImageObject',
+  url: `${SITE_URL}/android-chrome-512x512.png`,
+  width: 512,
+  height: 512,
+};
+export const ORGANIZATION_PROFILES = [
+  'https://bsky.app/profile/mergers.fyi',
+  'https://www.linkedin.com/company/mergers-fyi',
+];
+
+/** A reference to the site's Organization, for a `publisher` field elsewhere. */
+export const PUBLISHER_REF = {
+  '@type': 'Organization',
+  '@id': ORGANIZATION_ID,
+  name: SITE_TITLE,
+  url: SITE_URL,
+  logo: SITE_LOGO,
+};
+
+// The licence the site's own data is published under (LICENSE-DATA).
+export const DATA_LICENCE_URL = 'https://creativecommons.org/licenses/by/4.0/';
+
 // ANZSIC level → human label for the page subtitle, breadcrumb and description.
 export const LEVEL_LABELS = {
   division: 'Division',
@@ -151,13 +181,10 @@ export function mergerMeta(merger) {
     datePublished: merger.effective_notification_datetime,
     dateModified: modifiedTime,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    // The same card og:image shows, so the two can't disagree.
+    image: [mergerOgImage(merger)],
     author: AUTHOR_REF,
-    publisher: {
-      '@type': 'Organization',
-      name: SITE_TITLE,
-      url: SITE_URL,
-      logo: { '@type': 'ImageObject', url: DEFAULT_OG_IMAGE },
-    },
+    publisher: PUBLISHER_REF,
     about: [
       ...acquirers.map((name) => ({ '@type': 'Organization', name })),
       ...targets.map((name) => ({ '@type': 'Organization', name })),
@@ -656,6 +683,74 @@ const WEBSITE_SCHEMA = {
     'A database of Australian mergers reviewed by the ACCC, updated several times a day. Search merger decisions, track review timelines, analyse industry trends, and explore public consultation documents.',
   inLanguage: 'en-AU',
   author: AUTHOR_REF,
+  publisher: { '@id': ORGANIZATION_ID },
+};
+
+// Organization JSON-LD, on the homepage beside the WebSite (see ORGANIZATION_ID).
+const ORGANIZATION_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': ORGANIZATION_ID,
+  name: SITE_TITLE,
+  alternateName: 'mergers.fyi',
+  url: SITE_URL,
+  logo: SITE_LOGO,
+  image: SITE_LOGO,
+  email: 'help@mergers.fyi',
+  founder: AUTHOR_REF,
+  sameAs: ORGANIZATION_PROFILES,
+};
+
+// Dataset JSON-LD for the register as data, on the homepage (the page that
+// is the register), for Google Dataset Search and Search Console's Datasets
+// report. Its distributions are the two ways to take the whole register away:
+// the API (key required, docs/api.md) and the CLI's SQLite build, published
+// to the cli-dist branch by publish-cli-sqlite.yml. Coverage starts with the
+// voluntary regime (1 July 2025), the register's first matters.
+export const DATASET_ID = `${SITE_URL}/#dataset`;
+const DATASET_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  '@id': DATASET_ID,
+  name: 'Australian merger reviews (ACCC acquisitions register)',
+  alternateName: 'mergers.fyi merger register',
+  description:
+    "Every merger notified to, or waiver sought from, the Australian Competition and Consumer Commission (ACCC) under Australia's merger control regime, as published on the ACCC's acquisitions register and refreshed several times a day. Each matter carries its parties, ANZSIC industries, notification and determination dates, Phase 1 and Phase 2 milestones, outcome, Australian Competition Tribunal and Federal Court reviews, and an estimate of the time spent in pre-notification.",
+  url: SITE_URL,
+  keywords: [
+    'ACCC',
+    'mergers',
+    'acquisitions',
+    'merger control',
+    'competition law',
+    'antitrust',
+    'Australia',
+  ],
+  inLanguage: 'en-AU',
+  license: DATA_LICENCE_URL,
+  isAccessibleForFree: true,
+  creator: AUTHOR_REF,
+  publisher: PUBLISHER_REF,
+  isBasedOn:
+    'https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register',
+  spatialCoverage: { '@type': 'Place', name: 'Australia' },
+  temporalCoverage: '2025-07-01/..',
+  distribution: [
+    {
+      '@type': 'DataDownload',
+      name: 'mergers.fyi API (v1)',
+      description: 'Every merger as JSON. Requires an API key: email nick@mergers.fyi.',
+      encodingFormat: 'application/json',
+      contentUrl: `${SITE_URL}/data/api/v1/mergers`,
+    },
+    {
+      '@type': 'DataDownload',
+      name: 'SQLite database',
+      description: 'The register as a SQLite database, as used by the accc-mergers command-line tool.',
+      encodingFormat: 'application/vnd.sqlite3',
+      contentUrl: 'https://raw.githubusercontent.com/nwbort/accc-mergers/cli-dist/cli.sqlite',
+    },
+  ],
 };
 
 // ProfilePage JSON-LD for the author page. Lives here, not in NickTwort.jsx,
@@ -707,6 +802,59 @@ export function quarterlyPath(quarter) {
   return `/quarterly/${quarter.url_key}`;
 }
 
+// A quarterly.json date field, or undefined if it isn't a plain YYYY-MM-DD.
+function isoDate(value) {
+  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : undefined;
+}
+
+// A quarter's PDF is a bare filename (report_pdf); anything else is ignored
+// rather than written into a URL.
+const REPORT_PDF_RE = /^[A-Za-z0-9-]+\.pdf$/;
+
+/**
+ * Report JSON-LD for one quarter's page. Published when the quarter's v1
+ * appeared (`first_published`) and modified when its current version did
+ * (`version_date`), both from data/processed/quarterly_versions.json; the PDF
+ * is the same report, so it is the Report's `encoding`. Fields the block lacks
+ * are left out rather than guessed.
+ */
+function quarterlyReportSchema(quarter, { title, description, path, image }) {
+  const url = absolute(path);
+  const start = isoDate(quarter.start);
+  const end = isoDate(quarter.end);
+  const pdf = REPORT_PDF_RE.test(quarter.report_pdf ?? '') ? quarter.report_pdf : undefined;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Report',
+    '@id': `${url}#report`,
+    headline: title,
+    name: title,
+    description,
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    inLanguage: 'en-AU',
+    author: AUTHOR_REF,
+    publisher: PUBLISHER_REF,
+    license: DATA_LICENCE_URL,
+    isBasedOn: { '@id': DATASET_ID },
+  };
+  if (image) schema.image = [image];
+  const published = isoDate(quarter.first_published) || isoDate(quarter.version_date);
+  if (published) schema.datePublished = published;
+  if (isoDate(quarter.version_date)) schema.dateModified = quarter.version_date;
+  if (quarter.version) schema.version = String(quarter.version);
+  if (start && end) schema.temporalCoverage = `${start}/${end}`;
+  if (pdf) {
+    schema.encoding = {
+      '@type': 'MediaObject',
+      name: `${title} (PDF)`,
+      encodingFormat: 'application/pdf',
+      contentUrl: `${SITE_URL}/data/reports/${pdf}`,
+    };
+  }
+  return schema;
+}
+
 /**
  * Meta for one quarter's report, from its quarterly.json block. The
  * description leads with the generated findings, so a search result says what
@@ -721,16 +869,18 @@ export function quarterlyMeta(quarter) {
     : undefined;
   const lead = (quarter.findings || []).slice(0, 2).join(' ');
   const path = quarterlyPath(quarter);
+  const description =
+    `Australia's merger regime in ${quarter.label}: notifications, waivers, ACCC decision times, ` +
+    `Phase 2 and Tribunal reviews.${lead ? ` ${lead}` : ''}`;
   return {
     title,
-    description:
-      `Australia's merger regime in ${quarter.label}: notifications, waivers, ACCC decision times, ` +
-      `Phase 2 and Tribunal reviews.${lead ? ` ${lead}` : ''}`,
+    description,
     path,
     type: 'website',
     image,
     imageAlt: image ? `Quarterly merger report: ${quarter.label}` : undefined,
     structuredData: [
+      quarterlyReportSchema(quarter, { title, description, path, image }),
       breadcrumbSchema([{ name: 'Quarterly report', path: '/quarterly' }], quarter.label, path),
     ],
   };
@@ -745,7 +895,7 @@ export const STATIC_PAGE_META = {
     documentTitle: 'Australian Merger Tracker | ACCC Merger Reviews & M&A Data',
     description:
       'Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents.',
-    structuredData: [WEBSITE_SCHEMA],
+    structuredData: [WEBSITE_SCHEMA, ORGANIZATION_SCHEMA, DATASET_SCHEMA],
   },
   '/mergers': {
     title: 'All Mergers',
