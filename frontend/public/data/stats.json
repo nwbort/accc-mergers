@@ -1,6 +1,6 @@
 {
   "total_mergers": 341,
-  "total_waivers": 566,
+  "total_waivers": 567,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 304,
@@ -19,7 +19,7 @@
   },
   "by_waiver_determination": {
     "Approved": 539,
-    "Not approved": 27
+    "Not approved": 28
   },
   "clearance_rate": {
     "cleared": 302,
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.019434628975265,
-    "median_days": 21.0,
-    "average_business_days": 14.446996466431095,
-    "median_business_days": 15.0
+    "average_days": 21.022927689594358,
+    "median_days": 21,
+    "average_business_days": 14.451499118165785,
+    "median_business_days": 15
   },
   "top_industries": [
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 62
+      "count": 63
     },
     {
       "name": "Software Publishing",
@@ -79,16 +79,16 @@
       "count": 51
     },
     {
+      "name": "Supermarket and Grocery Stores",
+      "count": 32
+    },
+    {
       "name": "Accommodation",
       "count": 32
     },
     {
       "name": "Cafes and Restaurants",
       "count": 32
-    },
-    {
-      "name": "Supermarket and Grocery Stores",
-      "count": 31
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30043",
+      "merger_name": "Woolworths \u2013 supermarket site in Shepparton North, VIC",
+      "determination": "Not approved",
+      "determination_date": "2026-11-26T12:00:00Z",
+      "page_modified_datetime": "2026-11-26T18:39:03+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-95049",
       "merger_name": "KfW - KNDS N.V.",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-25T12:00:00Z",
       "page_modified_datetime": "2026-11-25T09:39:34+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-25058",
-      "merger_name": "Healthe Care \u2013 Knox Private, Ringwood Private, Northpark Private, Victorian Rehabilitation Centre and Geelong Clinic",
-      "determination": "Approved",
-      "determination_date": "2026-11-25T12:00:00Z",
-      "page_modified_datetime": "2026-11-25T09:37:48+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

@@ -44,6 +44,48 @@
       },
       "waiver_duration": null
     },
+    "fabcot-pty-ltd": {
+      "id": "fabcot-pty-ltd",
+      "canonical_name": "Fabcot Pty Ltd",
+      "members": [
+        {
+          "name": "Fabcot Pty Ltd",
+          "identifier": "55 002 960 983",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-30043",
+            "merger_name": "Woolworths \u2013 supermarket site in Shepparton North, VIC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-11-03T12:00:00Z",
+            "determination_date": "2026-11-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
     "gn-hearing-a-s": {
       "id": "gn-hearing-a-s",
       "canonical_name": "GN Hearing A/S",
