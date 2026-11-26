@@ -285,6 +285,48 @@
       },
       "waiver_duration": null
     },
+    "samsung-biologics": {
+      "id": "samsung-biologics",
+      "canonical_name": "Samsung Biologics",
+      "members": [
+        {
+          "name": "Samsung Biologics",
+          "identifier": "Corporation Registration Number (South Korea) 1201110566317",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15058",
+            "merger_name": "Samsung Biologics - PolyPeptide Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-30T12:00:00Z",
+            "determination_date": "2026-11-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "smile-partners-vic2-pty-ltd": {
       "id": "smile-partners-vic2-pty-ltd",
       "canonical_name": "Smile Partners (Vic2) Pty Ltd",

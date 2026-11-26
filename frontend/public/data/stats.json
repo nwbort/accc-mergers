@@ -1,6 +1,6 @@
 {
   "total_mergers": 341,
-  "total_waivers": 564,
+  "total_waivers": 565,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 304,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 537,
+    "Approved": 538,
     "Not approved": 27
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.00354609929078,
-    "median_days": 21.0,
-    "average_business_days": 14.432624113475176,
-    "median_business_days": 15.0
+    "average_days": 21.014159292035398,
+    "median_days": 21,
+    "average_business_days": 14.44070796460177,
+    "median_business_days": 15
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 238
+      "count": 239
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15058",
+      "merger_name": "Samsung Biologics - PolyPeptide Group",
+      "determination": "Approved",
+      "determination_date": "2026-11-26T12:00:00Z",
+      "page_modified_datetime": "2026-11-26T18:33:43+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-60060",
       "merger_name": "Hamilton Lane \u2013 Foresight Kinetic CV",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-25T12:00:00Z",
       "page_modified_datetime": "2026-11-25T09:35:28+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-10043",
-      "merger_name": "ACURIO - Nepean, Sydney Southwest, and Campbelltown Private Hospitals",
-      "determination": "Approved",
-      "determination_date": "2026-11-25T12:00:00Z",
-      "page_modified_datetime": "2026-11-25T09:34:28+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

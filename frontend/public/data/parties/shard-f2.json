@@ -470,6 +470,48 @@
       },
       "waiver_duration": null
     },
+    "samsung-peptide-ag": {
+      "id": "samsung-peptide-ag",
+      "canonical_name": "Samsung Peptide AG",
+      "members": [
+        {
+          "name": "Samsung Peptide AG",
+          "identifier": "CHE 365.366.525",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15058",
+            "merger_name": "Samsung Biologics - PolyPeptide Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-30T12:00:00Z",
+            "determination_date": "2026-11-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "southern-cross-operations-pty-ltd": {
       "id": "southern-cross-operations-pty-ltd",
       "canonical_name": "Southern Cross Operations Pty Ltd",
