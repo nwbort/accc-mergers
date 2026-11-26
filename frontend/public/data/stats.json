@@ -3,12 +3,12 @@
   "total_waivers": 563,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 301,
-    "Under assessment": 33,
+    "Assessment completed": 302,
+    "Under assessment": 32,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 294,
+    "Approved": 295,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 299,
+    "cleared": 300,
     "not_cleared": 2,
-    "total": 301,
+    "total": 302,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.153094462540718,
-    "median_days": 26,
-    "average_business_days": 19.921824104234528,
-    "median_business_days": 18,
+    "average_days": 29.17207792207792,
+    "median_days": 26.0,
+    "average_business_days": 19.93831168831169,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 62,
-        "percentage": 20.2
+        "percentage": 20.1
       },
       "day20": {
         "count": 223,
-        "percentage": 72.6
+        "percentage": 72.4
       },
       "day30": {
-        "count": 289,
-        "percentage": 94.1
+        "count": 290,
+        "percentage": 94.2
       }
     }
   },
@@ -230,6 +230,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-35035",
+      "merger_name": "Sun Pharma - Organon",
+      "determination": "Approved",
+      "determination_date": "2026-11-26T12:00:00Z",
+      "page_modified_datetime": "2026-11-26T11:15:22+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-75063",
       "merger_name": "SLB (Schlumberger) - Kelvion",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-24T12:00:00Z",
       "page_modified_datetime": "2026-11-24T17:16:59+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75070",
-      "merger_name": "Lighthouse \u2013 Proven Air Conditioning",
-      "determination": "Approved",
-      "determination_date": "2026-11-24T12:00:00Z",
-      "page_modified_datetime": "2026-11-24T17:15:03+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
