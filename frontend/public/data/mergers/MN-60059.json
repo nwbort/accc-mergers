@@ -220,20 +220,20 @@
     "method_version": 2
   },
   "pre_notification": {
-    "estimated_days": 7,
-    "min_days": 0,
+    "estimated_days": 8,
+    "min_days": 4,
     "max_days": 31,
-    "id_issued_estimated": "2026-10-26",
-    "id_issued_before": "2026-11-02",
+    "id_issued_estimated": "2026-10-25",
+    "id_issued_before": "2026-10-29",
     "id_issued_after": "2026-10-02",
-    "min_days_witness": "WA-60061",
+    "min_days_witness": "WA-60060",
     "max_days_witness": "WA-60055",
     "basis": "bracketed",
     "method_version": 1
   },
   "pre_notification_summary": {
     "kind": "around",
-    "start_date": "2026-10-26",
+    "start_date": "2026-10-25",
     "confidence": "medium"
   },
   "og_card": "cleared-by-the-accc.png"

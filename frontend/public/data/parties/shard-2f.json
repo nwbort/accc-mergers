@@ -212,6 +212,48 @@
         "completed_count": 1
       }
     },
+    "hl-global-private-infra-fund-master-scsp": {
+      "id": "hl-global-private-infra-fund-master-scsp",
+      "canonical_name": "HL Global Private Infra Fund Master SCSp",
+      "members": [
+        {
+          "name": "HL Global Private Infra Fund Master SCSp",
+          "identifier": "TIN: B311873",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60060",
+            "merger_name": "Hamilton Lane \u2013 Foresight Kinetic CV",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Waiver",
+            "notification_date": "2026-10-29T12:00:00Z",
+            "determination_date": "2026-11-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "mosman-prestige-cars-pty-ltd": {
       "id": "mosman-prestige-cars-pty-ltd",
       "canonical_name": "Mosman Prestige Cars Pty Ltd",
