@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/total-ventilation-hygiene-alphacool",
   "merger_name": "Total Ventilation Hygiene - Alphacool",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-70049",
   "effective_notification_datetime": "2026-11-05T12:00:00Z",
   "original_notification_datetime": "2026-11-05T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-12-17T12:00:00Z",
+  "determination_publication_date": "2026-11-26T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-11-13T12:00:00Z",
   "acquirers": [
     {
@@ -45,7 +47,7 @@
       "name": "Fire and Security Alarm Installation Services"
     }
   ],
-  "merger_description": "Total Ventilation Hygiene Pty Ltd (**TVH**) proposes to acquire, through a share purchase agreement, 100% of the shares in Alphacool Cairns Pty Ltd (**Alphacool**) from Saavy B&C Pty Ltd as trustee for the Martyn Wittebol Family Trust (**Saavy**) (50%) and Aqua Riverside Pty Ltd as trustee for the Daisylu Family Trust (**Aqua Riverside**) (50%) (the **Acquisition**).\n\nTVH is majority-owned by funds managed by Alceon Pty Ltd, an entity within the Alceon Private Equity group (**APE**). Apart from TVH, APE does not supply or have any interests in any businesses that supply goods or services that are competitive with Alphacool in Australia.  \n\nBoth TVH and Alphacool provide heating, ventilation, air conditioning and refrigeration (**HVAC-R**) installation, maintenance, and repair services (referred to as **HVAC-R services**) and electrical installation, maintenance and related services (referred to as **electrical services**). TVH supplies HVAC-R and electrical services, predominantly to national customers under national contracts, from locations across Australia. Alphacool supplies HVAC-R and electrical services, predominantly to smaller customers on a local basis, in the built-up coastal corridor between Port Douglas, Cairns, and Cardwell (referred to as **Far North Queensland**).",
+  "merger_description": "Total Ventilation Hygiene Pty Ltd (**TVH**) proposes to acquire, through a share purchase agreement, 100% of the shares in Alphacool Cairns Pty Ltd (**Alphacool**) from Saavy B&C Pty Ltd as trustee for the Martyn Wittebol Family Trust (**Saavy**) (50%) and Aqua Riverside Pty Ltd as trustee for the Daisylu Family Trust (**Aqua Riverside**) (50%) (the **Acquisition**).\n\nTVH is majority-owned by funds managed by Alceon Pty Ltd, an entity within the Alceon Private Equity group (**APE**). Apart from TVH, APE does not supply or have any interests in any businesses that supply goods or services that are competitive with Alphacool in Australia.\n\nBoth TVH and Alphacool provide heating, ventilation, air conditioning and refrigeration (**HVAC-R**) installation, maintenance, and repair services (referred to as **HVAC-R services**) and electrical installation, maintenance and related services (referred to as **electrical services**). TVH supplies HVAC-R and electrical services, predominantly to national customers under national contracts, from locations across Australia. Alphacool supplies HVAC-R and electrical services, predominantly to smaller customers on a local basis, in the built-up coastal corridor between Port Douglas, Cairns, and Cardwell (referred to as **Far North Queensland**).",
   "events": [
     {
       "date": "2026-11-06T12:00:00Z",
@@ -61,13 +63,27 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-11-26T12:00:00Z",
+      "title": "Total Ventilation Hygiene - Alphacool - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Total%20Ventilation%20Hygiene%20-%20Alphacool%20-%20Phase%201%20determination_0.pdf",
+      "determination_table_content": [
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The Parties have limited competitive overlap in Far North Qld,\nwith TVH supplying HVAC-R and electrical services\npredominantly under national contracts and Alphacool operating\nas a regional provider.\n\u2022 The market share aggregation resulting from the Acquisition is\nestimated to be minimal."
+        }
+      ],
+      "url_gh": "/mergers/MN-70049/Total Ventilation Hygiene - Alphacool - Phase 1 determination_0.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-11-26T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "has_questionnaire": true,
@@ -139,5 +155,5 @@
     "start_date": "2026-10-19",
     "confidence": "medium"
   },
-  "og_card": "notified-to-the-accc.png"
+  "og_card": "cleared-by-the-accc.png"
 }
