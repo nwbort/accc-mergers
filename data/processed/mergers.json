@@ -27470,6 +27470,15 @@
         "date": "2026-11-26T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-11-26T12:00:00Z",
+        "title": "Phase 1 consultation",
+        "display_title": "Phase 1 consultation",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Coles%20Salisbury%20South%2C%20SA%20-%20questionnaire.docx",
+        "url_gh": "/mergers/MN-55045/Coles Salisbury South, SA - questionnaire.pdf",
+        "status": "live"
       }
     ],
     "is_waiver": false
@@ -31879,13 +31888,16 @@
   {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/thoma-bravo-varonis",
     "merger_name": "Thoma Bravo - Varonis",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-65042",
     "effective_notification_datetime": "2026-11-04T12:00:00Z",
     "original_notification_datetime": "2026-11-04T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-12-16T12:00:00Z",
-    "page_modified_datetime": "2026-11-05T12:11:45+11:00",
+    "determination_publication_date": "2026-11-26T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-11-26T15:01:42+11:00",
     "consultation_response_due_date": "2026-11-12T12:00:00Z",
     "acquirers": [
       {
@@ -31931,7 +31943,7 @@
         "name": "Computer System Design and Related Services"
       }
     ],
-    "merger_description": "Thoma Bravo, UGP LLC. (**Thoma Bravo**), through its portfolio company Proofpoint, Inc. (**Proofpoint**), proposes to acquire the entire issued share capital of Varonis Systems, Inc. (**Varonis**) (the **Acquisition**).\n\n  \n\nThoma Bravo is a US-based investment firm with a focus on software and technology-enabled services businesses. Thoma Bravo supplies cybersecurity solutions in Australia through its portfolio company Proofpoint. Proofpoint offers an integrated suite of cloud-based solutions to help companies prevent targeted cyber threats and data loss.\n\n  \n\nVaronis is a cybersecurity company providing software for identifying, classifying and protecting sensitive data stored across an organisation's on-premises and cloud systems. Varonis\u2019 core product is its data security platform, a unified software platform delivered primarily as a Software-as-a-Service (SaaS) product for enterprise environments. Varonis\u2019 data security platform\u2019s principal capability is in 'data security posture management', a security approach that discovers, classifies, and monitors where sensitive data lives across cloud and other environments, to enable risk identification and mitigation.",
+    "merger_description": "Thoma Bravo, UGP LLC. (**Thoma Bravo**), through its portfolio company Proofpoint, Inc. (**Proofpoint**), proposes to acquire the entire issued share capital of Varonis Systems, Inc. (**Varonis**) (the **Acquisition**).\n\nThoma Bravo is a US-based investment firm with a focus on software and technology-enabled services businesses. Thoma Bravo supplies cybersecurity solutions in Australia through its portfolio company Proofpoint. Proofpoint offers an integrated suite of cloud-based solutions to help companies prevent targeted cyber threats and data loss.\n\nVaronis is a cybersecurity company providing software for identifying, classifying and protecting sensitive data stored across an organisation's on-premises and cloud systems. Varonis\u2019 core product is its data security platform, a unified software platform delivered primarily as a Software-as-a-Service (SaaS) product for enterprise environments. Varonis\u2019 data security platform\u2019s principal capability is in \u2018data security posture management\u2019, a security approach that discovers, classifies, and monitors where sensitive data lives across cloud and other environments, to enable risk identification and mitigation.",
     "events": [
       {
         "date": "2026-11-05T12:00:00Z",
@@ -31946,6 +31958,43 @@
         "date": "2026-11-04T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-11-26T12:00:00Z",
+        "title": "Thoma Bravo - Varonis - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Thoma%20Bravo%20-%20Varonis%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "Thoma Bravo, UGP LLC. (Thoma Bravo), through its portfolio\ncompany Proofpoint, Inc. (Proofpoint), proposes to acquire the\nentire issued share capital of Varonis Systems, Inc. (Varonis) (the\nAcquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, Thoma Bravo, is a US-based private equity investment\nfirm with a focus on software and technology-enabled services\nbusinesses. Thoma Bravo supplies cybersecurity solutions in\nAustralia through its portfolio company Proofpoint. Proofpoint offers\nan integrated suite of cloud-based solutions to help companies\nprevent targeted cyber threats and data loss. Thoma Bravo\u2019s\nportfolio companies include other businesses supplying\ncybersecurity solutions to Australian customers.\nThe target, Varonis, is a cybersecurity company providing software\nfor identifying, classifying and protecting sensitive data stored\nacross an organisation's on-premises and cloud systems. Varonis\u2019\ncore product is its data security platform, a unified software\nplatform delivered primarily as a Software-as-a-Service (SaaS)\nproduct for enterprise environments. Varonis\u2019 data security\nplatform\u2019s principal capability is in 'data security posture\nmanagement', a security approach that discovers, classifies, and\nmonitors where sensitive data lives across cloud and other\nenvironments, to enable risk identification and mitigation."
+          },
+          {
+            "item": "Overlap between the\nparties",
+            "details": "Proofpoint and Varonis both supply data security posture\nmanagement software, a type of enterprise cybersecurity software.\nProofpoint also supplies data loss prevention software, which is\nanother type of enterprise cybersecurity software which can be\nacquired together with data security posture management software.\nVaronis does not supply data loss prevention software."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, publicly available information regarding the parties\nand information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There would continue to be multiple alternative suppliers of data\nsecurity posture management software and data loss prevention\nsoftware in Australia independent of Thoma Bravo portfolio\ncompanies post-acquisition.\n\u2022 Thoma Bravo portfolio companies would be unlikely to have the\nability and incentive to engage in anti-competitive bundling or\ntying of data security posture management and data loss\nprevention software post-acquisition given the alternative\nsuppliers of data security posture management software and\ndata loss prevention software in Australia."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-65042/Thoma Bravo - Varonis - Phase 1 determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false

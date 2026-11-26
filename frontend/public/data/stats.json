@@ -3,12 +3,12 @@
   "total_waivers": 563,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 302,
-    "Under assessment": 33,
+    "Assessment completed": 303,
+    "Under assessment": 32,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 295,
+    "Approved": 296,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 27
   },
   "clearance_rate": {
-    "cleared": 300,
+    "cleared": 301,
     "not_cleared": 2,
-    "total": 302,
+    "total": 303,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.17207792207792,
-    "median_days": 26.0,
-    "average_business_days": 19.93831168831169,
-    "median_business_days": 18.0,
+    "average_days": 29.148867313915858,
+    "median_days": 26,
+    "average_business_days": 19.92556634304207,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 62,
         "percentage": 20.1
       },
       "day20": {
-        "count": 223,
-        "percentage": 72.4
+        "count": 224,
+        "percentage": 72.5
       },
       "day30": {
-        "count": 290,
+        "count": 291,
         "percentage": 94.2
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-65042",
+      "merger_name": "Thoma Bravo - Varonis",
+      "determination": "Approved",
+      "determination_date": "2026-11-26T12:00:00Z",
+      "page_modified_datetime": "2026-11-26T15:01:42+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-70049",
       "merger_name": "Total Ventilation Hygiene - Alphacool",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-24T12:00:00Z",
       "page_modified_datetime": "2026-11-24T17:40:51+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-30046",
-      "merger_name": "OMERS \u2013 La Trobe Financial",
-      "determination": "Approved",
-      "determination_date": "2026-11-24T12:00:00Z",
-      "page_modified_datetime": "2026-11-24T17:16:59+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/thoma-bravo-varonis",
   "merger_name": "Thoma Bravo - Varonis",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-65042",
   "effective_notification_datetime": "2026-11-04T12:00:00Z",
   "original_notification_datetime": "2026-11-04T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-12-16T12:00:00Z",
+  "determination_publication_date": "2026-11-26T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-11-12T12:00:00Z",
   "acquirers": [
     {
@@ -71,7 +73,7 @@
       "name": "Computer System Design and Related Services"
     }
   ],
-  "merger_description": "Thoma Bravo, UGP LLC. (**Thoma Bravo**), through its portfolio company Proofpoint, Inc. (**Proofpoint**), proposes to acquire the entire issued share capital of Varonis Systems, Inc. (**Varonis**) (the **Acquisition**).\n\n  \n\nThoma Bravo is a US-based investment firm with a focus on software and technology-enabled services businesses. Thoma Bravo supplies cybersecurity solutions in Australia through its portfolio company Proofpoint. Proofpoint offers an integrated suite of cloud-based solutions to help companies prevent targeted cyber threats and data loss.\n\n  \n\nVaronis is a cybersecurity company providing software for identifying, classifying and protecting sensitive data stored across an organisation's on-premises and cloud systems. Varonis\u2019 core product is its data security platform, a unified software platform delivered primarily as a Software-as-a-Service (SaaS) product for enterprise environments. Varonis\u2019 data security platform\u2019s principal capability is in 'data security posture management', a security approach that discovers, classifies, and monitors where sensitive data lives across cloud and other environments, to enable risk identification and mitigation.",
+  "merger_description": "Thoma Bravo, UGP LLC. (**Thoma Bravo**), through its portfolio company Proofpoint, Inc. (**Proofpoint**), proposes to acquire the entire issued share capital of Varonis Systems, Inc. (**Varonis**) (the **Acquisition**).\n\nThoma Bravo is a US-based investment firm with a focus on software and technology-enabled services businesses. Thoma Bravo supplies cybersecurity solutions in Australia through its portfolio company Proofpoint. Proofpoint offers an integrated suite of cloud-based solutions to help companies prevent targeted cyber threats and data loss.\n\nVaronis is a cybersecurity company providing software for identifying, classifying and protecting sensitive data stored across an organisation's on-premises and cloud systems. Varonis\u2019 core product is its data security platform, a unified software platform delivered primarily as a Software-as-a-Service (SaaS) product for enterprise environments. Varonis\u2019 data security platform\u2019s principal capability is in \u2018data security posture management\u2019, a security approach that discovers, classifies, and monitors where sensitive data lives across cloud and other environments, to enable risk identification and mitigation.",
   "events": [
     {
       "date": "2026-11-05T12:00:00Z",
@@ -87,13 +89,27 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-11-26T12:00:00Z",
+      "title": "Thoma Bravo - Varonis - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Thoma%20Bravo%20-%20Varonis%20-%20Phase%201%20determination.pdf",
+      "determination_table_content": [
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, publicly available information regarding the parties\nand information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There would continue to be multiple alternative suppliers of data\nsecurity posture management software and data loss prevention\nsoftware in Australia independent of Thoma Bravo portfolio\ncompanies post-acquisition.\n\u2022 Thoma Bravo portfolio companies would be unlikely to have the\nability and incentive to engage in anti-competitive bundling or\ntying of data security posture management and data loss\nprevention software post-acquisition given the alternative\nsuppliers of data security posture management software and\ndata loss prevention software in Australia."
+        }
+      ],
+      "url_gh": "/mergers/MN-65042/Thoma Bravo - Varonis - Phase 1 determination.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-11-26T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "has_questionnaire": true,
@@ -167,5 +183,5 @@
     "start_date": "2026-10-08",
     "confidence": "low"
   },
-  "og_card": "notified-to-the-accc.png"
+  "og_card": "cleared-by-the-accc.png"
 }
