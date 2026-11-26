@@ -381,6 +381,16 @@
       "effective_notification_datetime": "2026-11-24T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2027-01-25T12:00:00Z",
+      "merger_id": "MN-50043",
+      "merger_name": "General Pharma - Mayne Pharma",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-11-25T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2027-03-30T12:00:00Z",
@@ -393,6 +403,6 @@
       "end_date": "2027-04-15T12:00:00Z"
     }
   ],
-  "count": 39,
+  "count": 40,
   "days_ahead": 60
 }
