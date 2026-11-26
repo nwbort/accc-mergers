@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="12 14 84 84">
+  <!-- The site's mark, as the app's launcher icon draws it (see
+       scripts/generate/site_icons.py, which draws the PNGs from the same
+       geometry): two parties joining into one, on a green disc. -->
+  <circle cx="54" cy="56" r="42" fill="#335145"/>
+  <path d="M37 40 L54 58 L71 40 M54 58 L54 72" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#fff">
+    <circle cx="37" cy="40" r="8"/>
+    <circle cx="71" cy="40" r="8"/>
+    <circle cx="54" cy="72" r="8"/>
+  </g>
+</svg>

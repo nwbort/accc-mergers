@@ -508,6 +508,9 @@ scripts/                  # A Python package — entry points run as `python -m 
 │   ├── og_cards.py       # The generic link-preview cards (frontend/public/og/) and which one
 │                         #   each merger page shows (detail files' og_card). Run by hand
 │                         #   to redraw; a test fails if a card is missing
+│   ├── site_icons.py     # The favicons, app icons and Apple touch icon in frontend/public/, drawn
+│                         #   from the Android app's launcher mark (copied geometry; favicon.svg is
+│                         #   the vector twin). Run by hand to redraw; a test fails if one is stale
 │   ├── cli_bundle.py     # Build the accc-mergers-cli bundle (gitignored) from generate_static_data's
 │                         #   in-memory records, bumping the tracked cli-manifest.json only when the
 │                         #   bundle's bytes change (--cli-bundle update|force|republish). Also the
