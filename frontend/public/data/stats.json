@@ -1,6 +1,6 @@
 {
   "total_mergers": 341,
-  "total_waivers": 567,
+  "total_waivers": 568,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 304,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 539,
+    "Approved": 540,
     "Not approved": 28
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 21.022927689594358,
-    "median_days": 21,
-    "average_business_days": 14.451499118165785,
-    "median_business_days": 15
+    "average_days": 21.028169014084508,
+    "median_days": 21.0,
+    "average_business_days": 14.45774647887324,
+    "median_business_days": 15.0
   },
   "top_industries": [
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 63
+      "count": 64
     },
     {
       "name": "Software Publishing",
@@ -80,7 +80,7 @@
     },
     {
       "name": "Supermarket and Grocery Stores",
-      "count": 32
+      "count": 33
     },
     {
       "name": "Accommodation",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05064",
+      "merger_name": "Woolworths - supermarket site in Lakeview Street, Mariginiup WA",
+      "determination": "Approved",
+      "determination_date": "2026-11-26T12:00:00Z",
+      "page_modified_datetime": "2026-11-26T18:40:56+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-30043",
       "merger_name": "Woolworths \u2013 supermarket site in Shepparton North, VIC",
       "determination": "Not approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-11-25T12:00:00Z",
       "page_modified_datetime": "2026-11-25T12:23:49+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-60052",
-      "merger_name": "Healthe Care - Prince of Wales Private Hospital",
-      "determination": "Approved",
-      "determination_date": "2026-11-25T12:00:00Z",
-      "page_modified_datetime": "2026-11-25T09:39:34+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
