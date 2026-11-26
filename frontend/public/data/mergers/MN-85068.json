@@ -1,0 +1,164 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/galderma-zo-skin-health",
+  "merger_name": "Galderma - ZO Skin Health",
+  "status": "Under assessment",
+  "merger_id": "MN-85068",
+  "effective_notification_datetime": "2026-11-26T12:00:00Z",
+  "original_notification_datetime": "2026-11-26T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2027-01-27T12:00:00Z",
+  "consultation_response_due_date": "2026-12-04T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Galderma Services, Inc",
+      "identifier_type": null,
+      "identifier": "EIN: 751714673",
+      "party_page": {
+        "id": "galderma-services-inc",
+        "name": "Galderma Services, Inc"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "ZO SH Holdings, Inc",
+      "identifier_type": null,
+      "identifier": "204686721",
+      "party_page": {
+        "id": "zo-sh-holdings-inc",
+        "name": "ZO SH Holdings, Inc"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "Galderma Group AG",
+      "identifier_type": null,
+      "identifier": "CHE 404.675.624",
+      "party_page": {
+        "id": "galderma-group-ag",
+        "name": "Galderma Group AG"
+      }
+    },
+    {
+      "name": "Zeus Merger Sub, Inc",
+      "identifier_type": null,
+      "identifier": "10765119",
+      "party_page": {
+        "id": "zeus-merger-sub-inc",
+        "name": "Zeus Merger Sub, Inc"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "1852",
+      "name": "Cosmetic and Toiletry Preparation Manufacturing"
+    },
+    {
+      "code": "3720",
+      "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+    },
+    {
+      "code": "4271",
+      "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
+    },
+    {
+      "code": "6240",
+      "name": "Financial Asset Investing"
+    }
+  ],
+  "merger_description": "Galderma Group AG (**Galderma**), through its wholly owned subsidiary Galderma Services, Inc, proposes to acquire 100% of ZO SH Holdings, Inc (**ZO Skin Health**).\n\nGalderma is a publicly listed company headquartered in Zug, Switzerland. Galderma is active in the research, development, manufacturing, marketing, distribution and sale of skin solutions globally. Galderma operates in three business segments:\n\n* Dermatological Skincare, which includes its clinical-grade skincare brand Alastin\n* Injectable Aesthetics\n* Therapeutic Dermatology.\n\nZO Skin Health is a skincare company headquartered in Irvine, California. ZO Skin Health supplies clinical-grade skincare products through online, speciality skincare / beauty retailers and professional channels such as authorised medical / clinician practices, beauty-spas and aesthetic clinics, including in Australia. ZO Skin Health is majority owned by funds ultimately controlled by Blackstone Inc.",
+  "events": [
+    {
+      "date": "2026-11-26T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Galderma%20-%20ZO%20Skin%20Health%20-%20third-party%20questionnaire.docx",
+      "url_gh": "/mergers/MN-85068/Galderma - ZO Skin Health - third-party questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-11-26T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-40019",
+      "merger_name": "Novartis - Excellergy",
+      "acquirers": [
+        "Elba Merger Sub, Inc."
+      ],
+      "targets": [
+        "Excellergy Inc."
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-55030",
+      "merger_name": "CRH - Arcosa",
+      "acquirers": [
+        "Neon Merger Sub, Inc."
+      ],
+      "targets": [
+        "Arcosa, Inc."
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-90025",
+      "merger_name": "KKR - Crowe",
+      "acquirers": [
+        "Forge Merger Sub LLC"
+      ],
+      "targets": [
+        "Crowe ParentCo LLC"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 216,
+    "as_of": "2026-11-26",
+    "estimated_at": "2026-11-26",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 15,
+    "min_days": 6,
+    "max_days": 31,
+    "id_issued_estimated": "2026-11-11",
+    "id_issued_before": "2026-11-20",
+    "id_issued_after": "2026-10-26",
+    "min_days_witness": "MN-85069",
+    "max_days_witness": "WA-85067",
+    "basis": "bracketed",
+    "method_version": 1
+  },
+  "pre_notification_summary": {
+    "kind": "around",
+    "start_date": "2026-11-11",
+    "confidence": "medium"
+  },
+  "og_card": "notified-to-the-accc.png"
+}

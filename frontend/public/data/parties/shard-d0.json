@@ -624,6 +624,42 @@
         "median_business_days": 19,
         "completed_count": 1
       }
+    },
+    "zo-sh-holdings-inc": {
+      "id": "zo-sh-holdings-inc",
+      "canonical_name": "ZO SH Holdings, Inc",
+      "members": [
+        {
+          "name": "ZO SH Holdings, Inc",
+          "identifier": "204686721",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85068",
+            "merger_name": "Galderma - ZO Skin Health",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-26T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
     }
   }
 }
