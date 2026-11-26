@@ -10,7 +10,7 @@ import SEO from '../components/SEO';
 import ShowMoreDivider from '../components/ShowMoreDivider';
 import { useFetchData } from '../hooks/useFetchData';
 import { mergerPath } from '../utils/slug';
-import { formatDateMedium, calculateDuration } from '../utils/dates';
+import { formatDateMedium, calculateDuration, getCalendarDaysUntil } from '../utils/dates';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { CARD } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
@@ -257,7 +257,10 @@ function RefiledList({ pairs, showOutcome, emptyMessage, limit }) {
 // be re-filed, so the card counts the days since the decline rather than
 // presenting the list as final.
 function NotRefiledCard({ waiver }) {
-  const daysSinceDeclined = calculateDuration(waiver.waiver_declined_date, new Date().toISOString());
+  // Calendar days from the decline to today in Sydney, so a waiver declined
+  // yesterday reads "1 day ago" (not the 0-indexed elapsed-time reading).
+  const untilDeclined = getCalendarDaysUntil(waiver.waiver_declined_date);
+  const daysSinceDeclined = untilDeclined === null ? null : Math.max(0, -untilDeclined);
 
   return (
     <li className="py-3 first:pt-0 last:pb-0 flex items-start justify-between gap-3">
