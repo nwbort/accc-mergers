@@ -3,8 +3,8 @@
     "notifications_total": 339,
     "matters_extended": 28,
     "share_extended_pct": 8.3,
-    "extension_events_total": 45,
-    "total_extension_bd": 500,
+    "extension_events_total": 46,
+    "total_extension_bd": 507,
     "median_matter_extension_bd": 14,
     "longest_single_bd": 33,
     "phase_2_total": 9,
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 32,
-      "business_days": 353
+      "events": 33,
+      "business_days": 360
     },
     {
       "category": "Remedy under consideration",
@@ -70,7 +70,7 @@
     },
     {
       "month": "2026-11",
-      "count": 9
+      "count": 10
     }
   ],
   "matters": [
@@ -446,6 +446,41 @@
       ]
     },
     {
+      "merger_id": "MN-75031",
+      "merger_name": "VetPartners \u2013 VetLove",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-10-09T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 14,
+      "extension_count": 3,
+      "extensions": [
+        {
+          "date": "2026-11-05T12:00:00Z",
+          "business_days": 5,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 5 business days \u2013 following request by parties"
+        },
+        {
+          "date": "2026-11-12T12:00:00Z",
+          "business_days": 2,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 2 business days \u2013 following request by parties"
+        },
+        {
+          "date": "2026-11-25T12:00:00Z",
+          "business_days": 7,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 7 business days \u2013 following request by parties"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
       "stage": "Phase 2 - detailed assessment",
@@ -603,34 +638,6 @@
           "reason_category": "Remedy under consideration",
           "reason_detail": "remedy offered by parties",
           "title": "Timeline extended by 9 business days \u2013 following remedy offered by parties"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-75031",
-      "merger_name": "VetPartners \u2013 VetLove",
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "notification_date": "2026-10-09T12:00:00Z",
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
-      "escalated_to_phase_2": false,
-      "total_extension_bd": 7,
-      "extension_count": 2,
-      "extensions": [
-        {
-          "date": "2026-11-05T12:00:00Z",
-          "business_days": 5,
-          "reason_category": "Requested by the merger parties",
-          "reason_detail": "request by parties",
-          "title": "Timeline extended by 5 business days \u2013 following request by parties"
-        },
-        {
-          "date": "2026-11-12T12:00:00Z",
-          "business_days": 2,
-          "reason_category": "Requested by the merger parties",
-          "reason_detail": "request by parties",
-          "title": "Timeline extended by 2 business days \u2013 following request by parties"
         }
       ]
     },
