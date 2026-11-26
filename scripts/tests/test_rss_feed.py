@@ -28,3 +28,14 @@ def test_same_document_in_two_matters_on_one_day_gets_two_ids():
     # The first keeps the id it would have had alone.
     assert 'https://mergers.fyi/mergers/MN-65005#2026-10-05T12:00:00Z-Tribunal appeal – Notice of Address for Service' in ids
     assert any(i.endswith('-ACT 4 of 2026') for i in ids)
+
+
+def test_links_are_canonical_but_ids_keep_the_bare_form():
+    merger = {
+        'merger_id': 'MN-01016',
+        'merger_name': 'Acme Corp - Widget Co',
+        'events': [{'date': '2026-10-05T12:00:00Z', 'title': 'Merger notified'}],
+    }
+    [entry] = collect_feed_entries([merger])
+    assert entry['link'] == 'https://mergers.fyi/mergers/MN-01016/acme-corp-widget-co'
+    assert entry['id'].startswith('https://mergers.fyi/mergers/MN-01016#')
