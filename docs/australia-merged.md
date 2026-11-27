@@ -6,9 +6,13 @@ them interactive, and a share card at the end.
 
 This document is the **content**: every card, the exact copy, the number behind
 it, where that number comes from, and the quiz answers. Nothing here is
-invented — every figure was computed from the committed data files and is
-reproduced in `scripts/generate/static_data/outputs/merged.py` (to be written)
-so the page can't drift from the register.
+invented — every figure was computed from the committed data files.
+
+**Built.** The page is at `frontend/src/pages/Merged.jsx`, the data at
+`scripts/generate/static_data/outputs/merged.py` → `merged.json`. The figures
+below are the ones this brief was written against; the generator is the source
+of truth and the page shows whatever it produces, so where the two differ,
+the generator is right and this is a record of the editorial intent.
 
 **All figures below are as at 27 November 2026.** See
 [*The year isn't over*](#the-year-isnt-over) for how that's handled.

@@ -90,6 +90,21 @@ code {
   }
 }
 
+/* The /merged deck snaps card to card. The scroll container has to be the
+   document — the page sits inside App's `min-h-screen flex flex-col` with the
+   navbar and footer, so a nested scroller would fight that layout — which
+   means the class goes on <html> while the page is mounted and comes off when
+   it unmounts (see pages/Merged.jsx).
+
+   `proximity`, not `mandatory`: a card with its answer revealed is taller than
+   the viewport, and mandatory snapping would drag the reader off it mid-read.
+   scroll-padding-top clears the fixed navbar. */
+.merged-snap {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 4rem;
+  scroll-behavior: smooth;
+}
+
 /* Better focus styles. The ring is solid primary rather than a tint of the
    accent green: a 50%-alpha accent ring only reaches ~1.6:1 against a white
    page, well under the 3:1 WCAG 1.4.11 asks of a focus indicator. */

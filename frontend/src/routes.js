@@ -26,6 +26,7 @@ import {
   partiesListFetch,
   partyShardFetch,
   phase2Fetch,
+  mergedFetch,
   quarterlyFetch,
   refiledNotificationsFetch,
 } from './utils/pageData';
@@ -73,6 +74,7 @@ const Phase2 = page(() => import('./pages/Phase2'));
 const RefiledNotifications = page(() => import('./pages/RefiledNotifications'));
 const CurrentStatus = page(() => import('./pages/CurrentStatus'));
 const Quarterly = page(() => import('./pages/Quarterly'));
+const Merged = page(() => import('./pages/Merged'));
 const PrivacyPolicy = page(() => import('./pages/PrivacyPolicy'));
 const Copyright = page(() => import('./pages/Copyright'));
 const Feedback = page(() => import('./pages/Feedback'));
@@ -117,6 +119,7 @@ export const ROUTES = [
   { path: '/current-status', page: CurrentStatus, data: () => [analysisFetch()] },
   { path: '/quarterly', page: Quarterly, data: () => [quarterlyFetch()] },
   { path: '/quarterly/:quarter', page: Quarterly, data: () => [quarterlyFetch()] },
+  { path: '/merged', page: Merged, data: () => [mergedFetch()] },
   { path: '/nick-twort', page: NickTwort },
   { path: '/privacy', page: PrivacyPolicy },
   { path: '/copyright', page: Copyright },

@@ -60,6 +60,7 @@ export const API_ENDPOINTS = {
   commentary: '/data/commentary.json',  // Mergers with user commentary
   digest: '/data/digest.json',  // Weekly digest of merger activity
   analysis: '/data/analysis.json',  // Pre-computed analysis data
+  merged: '/data/merged.json',  // Australia Merged: the /merged year-in-review deck
   quarterly: '/data/quarterly.json',  // Quarter-by-quarter report (volume, outcomes, timing, milestones)
   quarterlyReportPdf: (filename) => `/data/reports/${filename}`,  // A quarter's PDF, named by its quarterly.json block's report_pdf
   phase2: '/data/phase2.json',  // Current + completed Phase 2 matters with statutory milestones

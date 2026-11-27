@@ -38,6 +38,9 @@ export const NAV_PAGES = [
   },
   { label: 'Refiled waivers', path: '/refiled-notifications', inNavbar: false, inPalette: true, paletteOrder: 10 },
   { label: 'Quarterly report', path: '/quarterly', shortcut: 'q', inNavbar: false, inPalette: true, paletteOrder: 11 },
+  // Australia Merged, the year in review. Seasonal, so it stays off the
+  // navbar; the dashboard promo banner is what points at it in season.
+  { label: 'Australia Merged', path: '/merged', shortcut: 'y', inNavbar: false, inPalette: true, paletteOrder: 12 },
 ];
 
 /**

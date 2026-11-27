@@ -788,6 +788,11 @@ export const STATIC_PAGE_META = {
     image: `${SITE_URL}/og/current-status.png`,
     imageAlt: 'Current status: how fast is the ACCC deciding right now?',
   },
+  '/merged': {
+    title: 'Australia Merged',
+    description:
+      "Australia's first year of mandatory merger control, as a year in review: how many deals the ACCC saw, how fast it decided them, the few it refused, and five things you probably can't guess.",
+  },
   '/quarterly': {
     title: 'Quarterly report',
     description:

@@ -12,6 +12,44 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Material 3 colour roles, for /merged (the Australia Merged deck) and
+        // nothing else yet. The deck wears the Android app's Material 3
+        // Expressive language, which needs the tonal surface ladder and the
+        // container roles that the site's own palette doesn't have.
+        //
+        // Namespaced `m3-*` on purpose: the full redesign (PR #1138) replaces
+        // the site's colours, greys and shape scale with these roles
+        // unprefixed, and would restyle every page. Until that lands these sit
+        // beside the existing tokens and change nothing. When it does, these
+        // entries fold into it and `m3-` drops off.
+        //
+        // Values are that branch's generated scheme (src/theme/m3-theme.json:
+        // material-color-utilities, TonalSpot, 2025 spec, seeded on the brand
+        // green), with `primary` kept as the brand green itself, as the app's
+        // own scheme does (ui/theme/Theme.kt).
+        m3: {
+          'primary': '#335145',
+          'on-primary': '#ffffff',
+          'primary-container': '#aff0d5',
+          'on-primary-container': '#195c47',
+          'secondary': '#4d645a',
+          'secondary-container': '#cee9db',
+          'on-secondary-container': '#3f574d',
+          'tertiary': '#2e6770',
+          'tertiary-container': '#b9f2fd',
+          'on-tertiary-container': '#225d66',
+          'on-surface': '#2b3530',
+          'on-surface-variant': '#57615c',
+          'outline': '#737d77',
+          'outline-variant': '#aab4ae',
+          'surface': '#f6faf6',
+          'surface-dim': '#d2ddd6',
+          'surface-container-lowest': '#ffffff',
+          'surface-container-low': '#eff5f0',
+          'surface-container': '#e8f0ea',
+          'surface-container-high': '#e2eae4',
+          'surface-container-highest': '#dae5de',
+        },
         primary: '#335145',
         'primary-light': '#4a6d5e',
         'primary-dark': '#223a30',
@@ -98,15 +136,34 @@ export default {
         'xl': '0.75rem',
         '2xl': '1rem',
         '3xl': '1.5rem',
+        // Material 3 Expressive's shape scale (the Android app's AppShapes),
+        // for /merged. Namespaced for the same reason as the m3 colours: the
+        // redesign rounds the site's own scale and this must not do that yet.
+        'm3-xs': '0.5rem',
+        'm3-sm': '0.75rem',
+        'm3-md': '1.25rem',
+        'm3-lg': '1.5rem',
+        'm3-xl': '2rem',
       },
       backdropBlur: {
         'xs': '2px',
+      },
+      // M3 motion: the emphasized curve for things that move or fade, and the
+      // expressive spring (a little overshoot) for things that grow, press or
+      // change shape. Added, not defaulted — the site's existing transitions
+      // keep whatever easing they already have.
+      transitionTimingFunction: {
+        'm3-emphasized': 'cubic-bezier(0.2, 0, 0, 1)',
+        'm3-spring': 'cubic-bezier(0.34, 1.45, 0.64, 1)',
       },
       animation: {
         'gradient': 'gradient 8s ease infinite',
         'fade-in': 'fadeIn 0.15s ease-out',
         'slide-up': 'slideUp 0.15s ease-out',
         'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+        // /merged: a card's contents springing in as it lands.
+        'm3-rise': 'm3Rise 0.42s cubic-bezier(0.34, 1.45, 0.64, 1) both',
+        'm3-pop': 'm3Pop 0.38s cubic-bezier(0.34, 1.45, 0.64, 1) both',
       },
       keyframes: {
         gradient: {
@@ -124,6 +181,14 @@ export default {
         pulseSoft: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.5' },
+        },
+        m3Rise: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'none' },
+        },
+        m3Pop: {
+          '0%': { opacity: '0', transform: 'scale(0.5)' },
+          '100%': { opacity: '1', transform: 'none' },
         },
       },
     },

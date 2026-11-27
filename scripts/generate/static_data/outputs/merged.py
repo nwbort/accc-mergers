@@ -51,8 +51,13 @@ MONTH_LABELS = [
 ]
 
 # Outcome keys the frontend maps to a Material shape and colour
-# (frontend/src/utils/materialShapes.js, constants/outcomeCard.js). They are
+# (frontend/src/utils/materialShapes.js, constants/mergedTones.js). They are
 # the register's own determination strings so the mapping needs no translation.
+#
+# A card carries one only when it is *about* that outcome. In the app a shape
+# is what an outcome looks like — a sunny seal is cleared, a four-sided cookie
+# is refused — so putting one on a card about filing volumes would spend that
+# meaning on decoration, and a glyph on all 22 cards is wallpaper either way.
 GLYPH_CLEARED = merger_status.APPROVED
 GLYPH_REFUSED = merger_status.NOT_APPROVED
 GLYPH_LIVE = merger_status.UNDER_ASSESSMENT
@@ -674,7 +679,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
         "id": "scale",
         "kind": "stat",
         "tone": "primary-container",
-        "glyph": GLYPH_LIVE,
         "eyebrow": "The scale",
         "stat": v["matters"],
         "heading": f"matters came to the ACCC in {year}",
@@ -694,7 +698,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "id": "months",
             "kind": "months",
             "tone": "surface",
-            "glyph": GLYPH_LIVE,
             "eyebrow": "The shape of the year",
             "heading": (
                 f"{v['opening_month']['name']} was a trickle. By "
@@ -726,7 +729,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "id": "busiest-day",
             "kind": "reveal",
             "tone": "tertiary-container",
-            "glyph": GLYPH_LIVE,
             "eyebrow": "Busiest day",
             "heading": (
                 f"One day in {year}, {v['busiest_day_count']} matters landed at once."
@@ -752,7 +754,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "id": "speed",
             "kind": "rail",
             "tone": "secondary-container",
-            "glyph": GLYPH_LIVE,
             "eyebrow": "Speed",
             "heading": (
                 f"The law gives the ACCC {d['statutory_phase_1_bd']} business days. "
@@ -827,7 +828,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "id": "quiz-longest",
             "kind": "quiz",
             "tone": "surface",
-            "glyph": GLYPH_LIVE,
             "eyebrow": "Guess",
             "question": f"Which review concluded in {year} took the longest?",
             "options": [
@@ -878,7 +878,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "id": "quiz-extension",
             "kind": "quiz",
             "tone": "surface",
-            "glyph": GLYPH_PHASE_2,
             "eyebrow": "Guess",
             "question": "Which deal ate the most of that extra time?",
             "options": [
@@ -1026,7 +1025,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "id": "quiz-questions",
             "kind": "quiz",
             "tone": "surface",
-            "glyph": GLYPH_LIVE,
             "eyebrow": "Guess",
             "question": (
                 f"The ACCC published {q['published']} market questionnaires in {year}, "
@@ -1049,7 +1047,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "id": "pre-notification",
             "kind": "stat",
             "tone": "secondary-container",
-            "glyph": GLYPH_LIVE,
             "eyebrow": "Before the clock starts",
             "lede": "The review is only the part you can see.",
             "stat": pre["median_days"],
@@ -1074,7 +1071,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "id": "quiz-parties",
             "kind": "quiz",
             "tone": "surface",
-            "glyph": GLYPH_LIVE,
             "eyebrow": "Guess",
             "question": (
                 f"{parties['total']:,} different companies appeared on the register in "
@@ -1098,7 +1094,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "id": "industries",
             "kind": "rows",
             "tone": "primary-container",
-            "glyph": GLYPH_LIVE,
             "eyebrow": "What Australia actually bought",
             "heading": (
                 f"The most-tagged industry of the year was {inds['top'][0]['name']}."
@@ -1116,7 +1111,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "id": "quiz-refused",
             "kind": "quiz",
             "tone": "surface",
-            "glyph": GLYPH_REFUSED,
             "eyebrow": "Guess",
             "question": "Last one. Which of these did the ACCC refuse?",
             "options": [
@@ -1158,7 +1152,6 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
         "id": "your-year",
         "kind": "personal",
         "tone": "tertiary-container",
-        "glyph": GLYPH_LIVE,
         "eyebrow": "Your year",
         "heading": "You followed {followed} matters this year.",
         "empty_heading": "You followed nothing this year.",

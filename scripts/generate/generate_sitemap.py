@@ -84,6 +84,9 @@ STATIC_PAGES = [
     {"path": "/current-status", "changefreq": "daily", "priority": "0.7"},
     {"path": "/commentary",  "changefreq": "weekly",  "priority": "0.7"},
     {"path": "/digest",      "changefreq": "weekly",  "priority": "0.7"},
+    # The year in review. Regenerated with the data until the year ends, then
+    # fixed, which is what "monthly" is standing in for.
+    {"path": "/merged",      "changefreq": "monthly", "priority": "0.6"},
     {"path": "/nick-twort",  "changefreq": "monthly", "priority": "0.8"},
     {"path": "/privacy",     "changefreq": "monthly", "priority": "0.8"},
     {"path": "/copyright",   "changefreq": "monthly", "priority": "0.5"},
@@ -100,6 +103,7 @@ STATIC_COMMENTS = {
     "/current-status": "Current Status Page",
     "/commentary":  "Commentary Page",
     "/digest":      "Digest Page",
+    "/merged":      "Australia Merged: the year in review",
     "/nick-twort":  "About / Author Page",
     "/privacy":     "Privacy Policy",
     "/copyright":   "Copyright and Licensing",

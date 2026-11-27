@@ -50,5 +50,6 @@ export const commentaryFetch = fixed('commentary-items', API_ENDPOINTS.commentar
 export const analysisFetch = fixed('analysis-data', API_ENDPOINTS.analysis);
 export const phase2Fetch = fixed('phase2', API_ENDPOINTS.phase2);
 export const quarterlyFetch = fixed('quarterly-data', API_ENDPOINTS.quarterly);
+export const mergedFetch = fixed('merged-year-in-review', API_ENDPOINTS.merged);
 export const digestFetch = fixed('digest', API_ENDPOINTS.digest);
 export const refiledNotificationsFetch = fixed('refiled-notifications', API_ENDPOINTS.refiledNotifications);

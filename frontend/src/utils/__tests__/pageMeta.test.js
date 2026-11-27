@@ -384,6 +384,7 @@ describe('STATIC_PAGE_META', () => {
       '/refiled-notifications': 'RefiledNotifications.jsx',
       '/current-status': 'CurrentStatus.jsx',
       '/quarterly': 'Quarterly.jsx',
+      '/merged': 'Merged.jsx',
       '/commentary': 'Commentary.jsx',
       '/digest': 'Digest.jsx',
       '/nick-twort': 'NickTwort.jsx',
