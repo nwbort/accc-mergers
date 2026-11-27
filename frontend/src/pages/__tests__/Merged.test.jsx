@@ -266,6 +266,14 @@ describe('Australia Merged', () => {
     expect(replace).not.toHaveBeenCalled();
   });
 
+  it('marks every card as a snap target', async () => {
+    renderMerged();
+    await screen.findByText('Australia Merged');
+    for (const card of document.querySelectorAll('[data-card]')) {
+      expect(card.className).toContain('snap-start');
+    }
+  });
+
   it('leaves the document unsnapped once the deck unmounts', async () => {
     const { unmount } = renderMerged();
     await screen.findByText('Australia Merged');

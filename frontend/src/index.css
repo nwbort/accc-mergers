@@ -96,13 +96,31 @@ code {
    means the class goes on <html> while the page is mounted and comes off when
    it unmounts (see pages/Merged.jsx).
 
-   `proximity`, not `mandatory`: a card with its answer revealed is taller than
-   the viewport, and mandatory snapping would drag the reader off it mid-read.
    scroll-padding-top clears the fixed navbar. */
 .merged-snap {
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   scroll-padding-top: 4rem;
   scroll-behavior: smooth;
+}
+
+/* One card per swipe: `always` means a scroll cannot pass over a card's snap
+   position, so a flick's momentum is spent at the next card however hard it
+   was. Measured on a 390x844 phone: without it a thumb flick carried four
+   cards past the reader; with it, one.
+  
+   Both halves are load-bearing and the pair is easy to break by halves:
+  
+   - `mandatory`, not `proximity`. Chromium ignores scroll-snap-stop entirely
+     under proximity — the property still computes as `always`, and a flick
+     still crosses four cards — so softening the strictness silently throws
+     the stop away with it.
+   - A card taller than the viewport is still readable to its bottom, which is
+     what `proximity` was originally here to protect. It does not need
+     protecting: the spec gives a snap area larger than the snapport every
+     position that covers the snapport, so a revealed quiz card (1137px in an
+     844px viewport) scrolls through freely and only its neighbours snap. */
+.merged-snap [data-card] {
+  scroll-snap-stop: always;
 }
 
 /* Better focus styles. The ring is solid primary rather than a tint of the
