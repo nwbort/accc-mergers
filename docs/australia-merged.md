@@ -1,18 +1,70 @@
 # Australia Merged — the 2026 year in review
 
 A Spotify-Wrapped-style walkthrough of the first year of Australia's mandatory
-merger control regime, at `/wrapped` (with `/australia-merged` redirecting to
-it). Full-bleed cards the reader taps through, five of them interactive, and a
-share card at the end.
+merger control regime, at **`/merged`**. Cards the reader taps through, five of
+them interactive, and a share card at the end.
 
 This document is the **content**: every card, the exact copy, the number behind
 it, where that number comes from, and the quiz answers. Nothing here is
 invented — every figure was computed from the committed data files and is
-reproduced in `scripts/generate/static_data/outputs/wrapped.py` (to be written)
+reproduced in `scripts/generate/static_data/outputs/merged.py` (to be written)
 so the page can't drift from the register.
 
 **All figures below are as at 27 November 2026.** See
 [*The year isn't over*](#the-year-isnt-over) for how that's handled.
+
+## The look: the Android app, as a card deck
+
+Not Spotify's look — the Android app's. The app is Material 3 Expressive
+(`MergersTheme` is a `MaterialExpressiveTheme` with `MotionScheme.expressive()`
+and the rounder `AppShapes`), and that language suits a year-in-review far
+better than a dark gradient void: it is built out of big tonal containers,
+bold shapes and springy motion, which is exactly what a card deck wants.
+
+The site's own Material 3 work is already on branch `ccr-f98d2624-iybc94` and
+this page should be built on it rather than beside it:
+
+| Piece | Where it already is |
+|---|---|
+| The M3 colour scheme, derived from the brand green by `material-color-utilities` | `frontend/src/theme/m3.js` → `m3-theme.json`, read by `tailwind.config.js` |
+| The Expressive shape set as SVG paths, sharing a point count so one shape can morph into the next | `frontend/src/utils/materialShapes.js` |
+| Each outcome's own shape and tile | `materialShapes.outcomeShape()`, `components/StatusGlyph.jsx`, `constants/outcomeCard.js` |
+| Shape scale (8 / 12 / 16 / 24 / 32) and the two motion curves (`ease-emphasized`, `ease-spring`) | `tailwind.config.js` |
+| Shape morph on press, emphasized type | `index.css` (`.press-morph`, `.type-emphasized`) |
+
+What that gives each card:
+
+- **A tonal sheet, not a slide.** One `rounded-3xl` (32px) container per card on
+  the `surface-container-low` page, taking a scheme role — `primary` for the
+  bookends, `primary-container` / `secondary-container` / `tertiary-container`
+  for the body cards, and an outcome's own 10% tint (`getOutcomeCardTint`) for
+  the cards about that outcome. Surfaces are told apart by tone, not by shadow,
+  which is what stops it reading as a stack of generic dark slides.
+- **Material shapes carrying meaning.** Every card's eyebrow leads with the
+  same `StatusGlyph` the app and the merger list use: the sunny seal for
+  cleared, the four-sided cookie for refused, the twelve-sided cookie while a
+  matter runs, the gem for ceased. A reader who uses the app already knows what
+  the outlines mean, and the quiz answers land on the right shape as the reveal
+  pops.
+- **The morphing mark.** `LOADING_SEQUENCE` in `materialShapes.js` exists so the
+  loading indicator can morph through the shape set. The opening and closing
+  cards reuse it as a slow hero mark, which is the app's single most
+  recognisable flourish.
+- **Springy motion.** `ease-spring` (`cubic-bezier(0.34, 1.45, 0.64, 1)`) for
+  anything that grows, presses or changes shape; `ease-emphasized` for
+  everything else. Quiz options are pill-shaped tonal buttons that square off
+  under the finger (`.press-morph`) and resolve into the outcome's fill.
+- **A floating toolbar.** Previous / score / next in one pill at the bottom, as
+  the app's merger page floats follow, share and open.
+- **Both themes.** The app has a theme setting and a full dark scheme
+  (`ui/theme/Theme.kt`); the deck should carry it, including
+  `statusGlyphColors(dark)`, since the solid status fills can't survive a
+  near-black card.
+
+Type stays the site's Inter with M3's emphasized treatment (weight 750, tighter
+tracking) rather than a display face of its own. The register's voice is dry;
+the expressiveness should come from shape, tone and motion, not from a novelty
+font.
 
 ## Why this works for this register, and not for most data sites
 
@@ -373,7 +425,7 @@ the browser, which is what lets it be this specific.
 > See you in 2027.
 
 Share button produces a static card (see [*Sharing*](#sharing)) and a link to
-`/wrapped`. Also: "Your score: 4/5" if they took the quiz.
+`/merged`. Also: "Your score: 4/5" if they took the quiz.
 
 ## The quiz
 
@@ -412,7 +464,7 @@ preference:
    generator runs anyway. But the quiz answers could change mid-season, the
    share cards would go stale, and a "year in review" that changes isn't one.
 
-Either way `wrapped.json` carries an `as_at` and a `coverage` string that every
+Either way `merged.json` carries an `as_at` and a `coverage` string that every
 card can cite, and the generator asserts that the quiz answers haven't changed
 since the file was last published — a changed answer should fail the build, not
 surprise a reader.
@@ -420,8 +472,8 @@ surprise a reader.
 ## Data
 
 Everything above exists in committed data today. The page needs one new
-generated file, `wrapped.json`, written by
-`scripts/generate/static_data/outputs/wrapped.py`:
+generated file, `merged.json`, written by
+`scripts/generate/static_data/outputs/merged.py`:
 
 | Card | Source, already generated |
 |---|---|
@@ -438,7 +490,7 @@ generated file, `wrapped.json`, written by
 | Appeals, Coles timeline | `tribunal_appeals.json`, `judicial_reviews.json`, `mergers/MN-01068.json` |
 | Your year | localStorage, in the browser |
 
-`wrapped.json` should hold the finished card copy, not just the figures — the
+`merged.json` should hold the finished card copy, not just the figures — the
 same reason `quarterly.json` carries its own `findings`: the page and the share
 cards then can't disagree, and the copy is reviewable in a diff.
 
@@ -449,7 +501,7 @@ The per-merger follow counters in the `mergers-feedback` D1 database
 most-watched merger of 2026** — the one card that reports what readers did
 rather than what the ACCC did, which is the most Wrapped-ish thing available.
 It is an aggregate count per merger with no per-visitor record, so it's publishable
-as-is. It needs a query against D1 and a figure baked into `wrapped.json`;
+as-is. It needs a query against D1 and a figure baked into `merged.json`;
 worth it if the counts are not too thin.
 
 ## Scope note on "2026 only"
@@ -471,8 +523,9 @@ where it's the point.
 A reader who finishes should get an image. Reuse `scripts/generate/og_cards.py`,
 which already draws cards with `card_image.py`:
 
-- One static OG card for `/wrapped` itself, in `og/` alongside the existing
-  `PAGE_CARDS` entries, listed in `STATIC_PAGE_META`.
+- One static OG card for `/merged` itself, in `og/` alongside the existing
+  `PAGE_CARDS` entries, listed in `STATIC_PAGE_META`. Drawn in the same M3
+  language as the deck, so the preview and the page match.
 - A share card per quiz score (0–5, six PNGs), so "I got 4/5 on Australia
   Merged" has a picture. These are drawn at build time, not per reader — six
   files, no runtime image generation.
@@ -480,7 +533,7 @@ which already draws cards with `card_image.py`:
   the browser. Draw it to a canvas client-side and offer a download.
 
 Share text: *"896 mergers. 3 refused. I got 4/5 on Australia Merged →
-mergers.fyi/wrapped"*
+mergers.fyi/merged"*
 
 ## Tone
 
@@ -507,16 +560,18 @@ properly from the start rather than retrofitted (see `docs/accessibility.md`):
   whole thing reads top to bottom with assistive tech and without JavaScript.
   The card deck is a presentation layer over that, not a replacement for it.
 - The monthly bar chart gets the canvas + `sr-only` table treatment the other
-  charts use.
+  charts use. November's bar is hatched, not just short, so an unfinished month
+  doesn't read as a collapse in filings.
+- A Material shape is never the only signal: every glyph keeps the
+  `role="img"` and outcome-in-words that `StatusGlyph` already gives it.
 - Respect `prefers-reduced-motion` on the count-up animations: show the final
   number.
 
 ## Open questions
 
-1. **Route and nav.** `/wrapped` with a dashboard promo banner (`constants/promo.js`
-   already does this) and a command palette entry seems right; probably not a
-   navbar link, since it is a seasonal page. Keep it live all year or 404 it in
-   March?
+1. **Nav.** `/merged`, with a dashboard promo banner (`constants/promo.js`
+   already does this) and a command palette entry; probably not a navbar link,
+   since it is a seasonal page. Keep it live all year or 404 it in March?
 2. **Prerendering.** It should be in `renderStatic.jsx` — the copy is fully known
    at build time, and this is the one page likely to be shared cold to people
    with no JavaScript. The personal card is the only client-only part.
