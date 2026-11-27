@@ -120,6 +120,7 @@ export const ROUTES = [
   { path: '/quarterly', page: Quarterly, data: () => [quarterlyFetch()] },
   { path: '/quarterly/:quarter', page: Quarterly, data: () => [quarterlyFetch()] },
   { path: '/merged', page: Merged, data: () => [mergedFetch()] },
+  { path: '/merged/:card', page: Merged, data: () => [mergedFetch()] },
   { path: '/nick-twort', page: NickTwort },
   { path: '/privacy', page: PrivacyPolicy },
   { path: '/copyright', page: Copyright },

@@ -16,8 +16,24 @@ import { formatDateMedium } from '../utils/dates';
  * only a *new kind* of card needs a branch below.
  */
 
-/** Markdown inline, so `**bold**` in a generated sentence stays one line. */
-const INLINE = { p: ({ children }) => <>{children}</> };
+/**
+ * Markdown inline, so `**bold**` in a generated sentence stays one line, and
+ * a matter named in that sentence is a link to its page rather than a page
+ * load. The generator writes those as plain markdown links to /mergers/{id}.
+ */
+const INLINE = {
+  p: ({ children }) => <>{children}</>,
+  a: ({ href, children }) =>
+    href?.startsWith('/') ? (
+      <Link to={href} className="underline decoration-current/40 underline-offset-2 hover:decoration-current">
+        {children}
+      </Link>
+    ) : (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+        {children}
+      </a>
+    ),
+};
 
 function Prose({ children, className = '' }) {
   return (
@@ -60,18 +76,26 @@ function Stat({ card }) {
 
 function Figures({ figures }) {
   if (!figures?.length) return null;
+  // Two figures are a comparison and read across: the number on the left,
+  // what it measures on the right. Three or more are a row of tiles, where
+  // the same layout would leave each one too narrow to say anything.
+  const across = figures.length <= 2;
   return (
-    <div className="my-4 flex flex-wrap gap-2.5">
+    <div className={`my-4 flex gap-2.5 ${across ? 'flex-col' : 'flex-wrap'}`}>
       {figures.map((figure) => (
         <div
           key={figure.label}
-          className="min-w-0 rounded-m3-md bg-[color-mix(in_srgb,currentColor_9%,transparent)] px-4 py-3"
+          className={`min-w-0 rounded-m3-md bg-[color-mix(in_srgb,currentColor_9%,transparent)] px-4 py-3 ${
+            across ? 'flex items-baseline justify-between gap-4' : ''
+          }`}
         >
-          <span className="block text-2xl font-bold leading-tight tracking-tight tabular-nums sm:text-3xl">
+          <span className="block flex-shrink-0 text-2xl font-bold leading-tight tracking-tight tabular-nums sm:text-3xl">
             {figure.value}
             {figure.suffix}
           </span>
-          <span className="block text-xs font-semibold opacity-80">{figure.label}</span>
+          <span className={`block text-xs font-semibold opacity-80 ${across ? 'text-right' : ''}`}>
+            {figure.label}
+          </span>
         </div>
       ))}
     </div>
@@ -90,7 +114,11 @@ function Body({ card }) {
       {/* `lede` sets a card up and `coda` closes it — "Almost.", "An
           extension is the tell." Same treatment, opposite ends of the body,
           and the generator picks which one a line is. */}
-      {card.coda && <Prose className="mt-4 text-lg font-medium sm:text-xl">{card.coda}</Prose>}
+      {card.coda && (
+        <Prose className="mt-4 text-lg font-medium sm:text-xl">
+          {card.coda_merger_id ? `[${card.coda}](/mergers/${card.coda_merger_id})` : card.coda}
+        </Prose>
+      )}
       {card.note && (
         <p className="mt-4 max-w-prose text-xs leading-relaxed opacity-75">{card.note}</p>
       )}
@@ -116,8 +144,8 @@ function Rows({ rows }) {
   return (
     <ul className="my-3 flex list-none flex-col gap-2.5 p-0">
       {rows.map((row) => (
-        <li key={row.text} className="flex min-w-0 items-start gap-3">
-          <MaterialShape status={row.glyph} size={28} decorative className="mt-0.5" />
+        <li key={row.text} className="flex min-w-0 items-center gap-3">
+          <MaterialShape status={row.glyph} size={28} decorative />
           <span className="min-w-0">
             <ReactMarkdown components={INLINE}>{row.text}</ReactMarkdown>
           </span>

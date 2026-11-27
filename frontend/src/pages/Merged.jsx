@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useParams } from 'react-router';
 import { FaArrowDown, FaArrowUp, FaRedo, FaShareAlt } from 'react-icons/fa';
 import ErrorMessage from '../components/ErrorMessage';
 import LoadingSpinner from '../components/LoadingSpinner';
 import MergedCard from '../components/MergedCard';
 import SEO from '../components/SEO';
+import ShareButton from '../components/ShareButton';
 import { useFetchData } from '../hooks/useFetchData';
 import { useTracking } from '../context/TrackingContext';
 import { mergedFetch } from '../utils/pageData';
@@ -38,14 +40,56 @@ const PAGE_META = STATIC_PAGE_META['/merged'];
  * page is mounted.
  */
 function useCurrentCard(count) {
-  const [current, setCurrent] = useState(0);
+  const { card: param } = useParams();
+  // The card in the URL is 1-based, as a reader counts them.
+  const opened = useMemo(() => {
+    const n = Number.parseInt(param ?? '1', 10);
+    return Number.isFinite(n) && n > 0 ? n - 1 : 0;
+  }, [param]);
+
+  const [current, setCurrent] = useState(opened);
   const deck = useRef(null);
+  // Until the deck has scrolled to the card the URL named, the observer is
+  // reporting the top of the page rather than where the reader asked to be,
+  // and the URL must not be rewritten from it.
+  const landed = useRef(opened === 0);
 
   useEffect(() => {
     const root = document.documentElement;
     root.classList.add('merged-snap');
     return () => root.classList.remove('merged-snap');
   }, []);
+
+  // A link straight to a card lands on it, once the deck has rendered.
+  useEffect(() => {
+    if (landed.current || !count) return undefined;
+    const section = deck.current?.querySelectorAll('[data-card]')[opened];
+    if (!section) return undefined;
+    section.scrollIntoView();
+    // The smooth scroll is still running; believe the observer again once it
+    // has arrived.
+    const timer = setTimeout(() => {
+      landed.current = true;
+    }, 600);
+    return () => clearTimeout(timer);
+  }, [count, opened]);
+
+  // The card in the URL reflects where the reader has scrolled to, so it is
+  // written with history.replaceState rather than a router navigation. Going
+  // through the router would be a pathname change, which ScrollToTop answers
+  // by scrolling to the top — which moves the reader to the card before,
+  // which rewrites the URL again, all the way back to the first card.
+  //
+  // replaceState and not pushState for the ordinary reason: Back should leave
+  // the deck, not walk up through twenty-three of its cards.
+  useEffect(() => {
+    if (!landed.current) return;
+    const here = window.location.pathname;
+    // Gone to a merger's page: not ours to rewrite any more.
+    if (here !== '/merged' && !here.startsWith('/merged/')) return;
+    const path = current === 0 ? '/merged' : `/merged/${current + 1}`;
+    if (here !== path) window.history.replaceState(window.history.state, '', path);
+  }, [current]);
 
   useEffect(() => {
     const root = deck.current;
@@ -70,6 +114,7 @@ function useCurrentCard(count) {
       const root = deck.current;
       if (!root) return;
       const target = Math.max(0, Math.min(count - 1, index));
+      landed.current = true;
       root.querySelectorAll('[data-card]')[target]?.scrollIntoView({ block: 'start' });
       setCurrent(target);
     },
@@ -123,7 +168,7 @@ const PILL_BUTTON =
   'motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 ' +
   'focus-visible:ring-current focus-visible:ring-offset-2';
 
-function ShareButton({ text }) {
+function CopyButton({ text }) {
   const [copied, setCopied] = useState(false);
   return (
     <button
@@ -185,6 +230,9 @@ export default function Merged() {
     .replace('{score}', score)
     .replace('{total}', total)
     .replace('{year}', data.year);
+  // shareTargets() appends the URL itself, so the post text is everything
+  // above it.
+  const sharePost = shareText.split('\n').slice(0, -1).join('\n');
 
   return (
     <>
@@ -244,7 +292,14 @@ export default function Merged() {
                   {answeredAll && (
                     <p className="mb-3 text-lg font-medium">{data.score_lines?.[String(score)]}</p>
                   )}
-                  <ShareButton text={shareText} />
+                  <div className="mt-2 flex flex-wrap items-center gap-3">
+                    <CopyButton text={shareText} />
+                    {/* The site's own share menu: LinkedIn, Bluesky, email,
+                        or the phone's share sheet. It carries the score as the
+                        post text and appends the URL itself. `onDark` because
+                        the closing card is a deep fill. */}
+                    <ShareButton path="/merged" title={sharePost} onDark />
+                  </div>
                 </>
               ) : null
             }

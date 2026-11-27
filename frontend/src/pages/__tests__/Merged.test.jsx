@@ -44,6 +44,8 @@ const fixture = {
       tone: 'surface',
       eyebrow: 'The shape of the year',
       heading: 'January was a trickle.',
+      coda: 'But 1 came back.',
+      coda_merger_id: 'MN-00002',
       months: [
         { month: 1, label: 'Jan', name: 'January', count: 37, partial: false },
         { month: 11, label: 'Nov', name: 'November', count: 45, partial: true },
@@ -80,7 +82,7 @@ const fixture = {
       stat: 99.7,
       stat_suffix: '%',
       heading: 'of decided notifications ended in clearance',
-      body: ['**95.1%** of waiver applications were granted.'],
+      body: ['**95.1%** of waiver applications were granted, [Alpha](/mergers/MN-00001) among them.'],
       coda: 'Almost.',
     },
     {
@@ -220,6 +222,48 @@ describe('Australia Merged', () => {
     expect(text).toContain('Almost.');
     // "Almost." is the turn after the reassurance, so it has to follow it.
     expect(text.indexOf('95.1%')).toBeLessThan(text.indexOf('Almost.'));
+  });
+
+  it('links a matter named in a sentence to its page', async () => {
+    renderMerged();
+    await screen.findByText('Australia Merged');
+    expect(screen.getByRole('link', { name: 'Alpha' })).toHaveAttribute(
+      'href',
+      '/mergers/MN-00001',
+    );
+  });
+
+  it('links a coda that names a matter', async () => {
+    renderMerged();
+    await screen.findByText('Australia Merged');
+    expect(screen.getByRole('link', { name: 'But 1 came back.' })).toHaveAttribute(
+      'href',
+      '/mergers/MN-00002',
+    );
+  });
+
+  it('puts the card in the URL without navigating the router', async () => {
+    // The deck only rewrites a URL that is its own, so the browser has to be
+    // on one. (MemoryRouter leaves jsdom's own location at "/".)
+    window.history.replaceState({}, '', '/merged');
+    renderMerged();
+    await screen.findByText('Australia Merged');
+    // A router navigation would be a pathname change, which ScrollToTop
+    // answers by scrolling to the top — and the deck would walk itself back
+    // to the first card. The URL is written with replaceState instead.
+    const replace = vi.spyOn(window.history, 'replaceState');
+    await userEvent.click(screen.getByRole('button', { name: 'Next card' }));
+    expect(replace).toHaveBeenCalledWith(expect.anything(), '', '/merged/2');
+  });
+
+  it("leaves a URL that is not the deck's alone", async () => {
+    window.history.replaceState({}, '', '/mergers/MN-00001');
+    renderMerged();
+    await screen.findByText('Australia Merged');
+    const replace = vi.spyOn(window.history, 'replaceState');
+    await userEvent.click(screen.getByRole('button', { name: 'Next card' }));
+    // Following a merger link off the deck must not be undone by it.
+    expect(replace).not.toHaveBeenCalled();
   });
 
   it('leaves the document unsnapped once the deck unmounts', async () => {

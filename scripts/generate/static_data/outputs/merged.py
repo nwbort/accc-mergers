@@ -341,21 +341,59 @@ def _phase_2(notifications: list, year: int) -> dict:
     )
     # A ceased matter that was notified again: the register links the two
     # with `suspended_refiled_as`, pointing forward from the abandoned one.
-    ceased_refiled = sum(
-        1 for m in reached
+    came_back = [
+        m for m in reached
         if m.get("status") == merger_status.ASSESSMENT_CEASED
         and (m.get("related_merger") or {}).get("relationship") == "suspended_refiled_as"
-    )
+    ]
+    ceased_refiled = len(came_back)
 
     return {
         "referred": len(reached),
         "completed": len(completed),
         "ceased_refiled": ceased_refiled,
+        # The abandoned matter, not the one it was re-filed as: the card is
+        # about the review that stopped.
+        "ceased_refiled_matter": _ref(came_back[0]) if came_back else None,
         "current": current,
         "outcomes": [{"outcome": k, "count": v} for k, v in counts.most_common()],
         "refused": counts.get(merger_status.NOT_APPROVED, 0),
         "ceased": counts.get(merger_status.ASSESSMENT_CEASED, 0),
         "conditional": conditional,
+    }
+
+
+def _public_benefit(all_matters: list, year: int) -> dict:
+    """The stage after a phase 2 refusal, which 2026 reached exactly once.
+
+    A matter refused at phase 2, or cleared on conditions, has 21 calendar
+    days to apply for a public benefit determination. The register then reads
+    the matter as live again, which is why its refusal has no headline date
+    (see `_outcomes`). The clock is 50 business days from the application.
+    """
+    live, decided = [], []
+    for m in all_matters:
+        applied = m.get("public_benefit_application_date")
+        if not applied:
+            continue
+        entry = {
+            **_ref(m),
+            "short_name": _short(m.get("merger_id"), m.get("merger_name")),
+            "refused_date": m.get("phase_2_determination_date"),
+            "applied_date": applied,
+            "response_date": m.get("public_benefit_response_date"),
+            "deadline": m.get("end_of_determination_period"),
+            "determination": m.get("public_benefits_determination"),
+        }
+        (decided if entry["determination"] else live).append(entry)
+
+    return {
+        "applications": len(live) + len(decided),
+        "live": live,
+        "decided": decided,
+        "business_days": merger_status.PUBLIC_BENEFIT_BUSINESS_DAYS,
+        "assessment_bd": merger_status.PUBLIC_BENEFIT_ASSESSMENT_BD,
+        "response_bd": merger_status.PUBLIC_BENEFIT_RESPONSE_BD,
     }
 
 
@@ -387,6 +425,7 @@ def _extensions(notifications: list) -> dict:
         "longest_single_matter": _ref(longest_single_matter) if longest_single_matter else None,
         "by_parties": reasons.get("Requested by the merger parties", {}).get("events", 0),
         "by_accc": reasons.get("ACCC information request", {}).get("events", 0),
+        "for_remedy": reasons.get("Remedy under consideration", {}).get("events", 0),
         "base_phase_2_rate_pct": summary["base_phase_2_rate_pct"],
         "phase_2_rate_given_extension_pct": summary["escalation_rate_given_extension_pct"],
         "phase_2_preceded_by_extension": summary["extended_escalated_to_phase_2"],
@@ -571,6 +610,10 @@ def _refiles(mergers: list, year: int) -> dict:
                 first.get("notification_determination_date"),
             ),
             "notification_determination": first.get("notification_determination"),
+            # Declined to re-filed: how long it took to come back.
+            "gap_business_days": calculate_business_days(
+                first.get("waiver_declined_date"), first.get("notification_filed_date")
+            ),
         }
     return {
         "refiled": len(completed) + len(current),
@@ -593,6 +636,7 @@ def build_facts(mergers: list, questionnaire_data: dict | None,
         "outcomes": _outcomes(notifications, waivers, mergers, year),
         "phase_2": _phase_2(notifications, year),
         "extensions": _extensions(notifications),
+        "public_benefit": _public_benefit(mergers, year),
         "questionnaires": _questionnaires(notifications, questionnaire_data),
         "pre_notification": _pre_notification(notifications),
         "parties": _parties(filed_this_year),
@@ -714,8 +758,28 @@ def _short(merger_id: str | None, fallback: str | None) -> str:
     return SHORT_NAMES.get(merger_id) or fallback or ""
 
 
+def _link(merger_id: str | None, fallback: str | None = None) -> str:
+    """A matter's name as a markdown link to its page.
+
+    Every matter the deck names in prose links to it, so a reader who wants
+    the detail is one tap away. The exception is a quiz option, where a link
+    would both give the game away and be the wrong thing to tap.
+    """
+    name = _short(merger_id, fallback)
+    return f"[{name}](/mergers/{merger_id})" if merger_id else name
+
+
 def _plural(n: int, one: str, many: str | None = None) -> str:
     return one if n == 1 else (many or one + "s")
+
+
+def _outcome_plural(outcome: str, count: int) -> str:
+    """"3 assessments ceased", not "3 assessment ceased"."""
+    lower = (outcome or "").lower()
+    if count == 1:
+        return lower
+    # Only the noun takes the plural: it is the assessments that ceased.
+    return lower.replace("assessment ", "assessments ", 1)
 
 
 def _join(items: list[str]) -> str:
@@ -731,6 +795,7 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
     v, d, o = f["volume"], f["durations"], f["outcomes"]
     p2, ext, q = f["phase_2"], f["extensions"], f["questionnaires"]
     pre, parties, inds = f["pre_notification"], f["parties"], f["industries"]
+    benefit = f["public_benefit"]
     appeals, refiles = f["appeals"], f["refiles"]
 
     war = appeals["long_war"]
@@ -836,7 +901,8 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
             body.append(
                 f"Waivers ran to a median of **{d['waiver_median_bd']}**. The fastest "
                 f"took only **{fastest_waiver['business_days']}**. "
-                f"{fastest_waiver['merger_name']} filed on {filed.strftime('%A')} "
+                f"{_link(fastest_waiver['merger_id'], fastest_waiver['merger_name'])} "
+                f"filed on {filed.strftime('%A')} "
                 f"{_fmt_date(filed)} and had its answer on the "
                 f"{answered.strftime('%A')}."
             )
@@ -907,7 +973,10 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
                 {
                     "glyph": GLYPH_REFUSED,
                     "merger_id": r["merger_id"],
-                    "text": f"**{r['merger_name']}**, refused {_fmt_date(r['date'])}.",
+                    "text": (
+                        f"**{_link(r['merger_id'], r['merger_name'])}**, "
+                        f"refused {_fmt_date(r['date'])}."
+                    ),
                 }
                 for r in o["refused"]
             ],
@@ -926,13 +995,15 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
             ],
             "answer": slowest["merger_id"],
             "body": [
-                f"**{slowest['merger_name']}: {slowest['business_days']} business days**, "
+                f"**{_link(slowest['merger_id'], slowest['merger_name'])}: "
+                f"{slowest['business_days']} business days**, "
                 f"notification to determination. That is "
                 f"{round(slowest['business_days'] / d['statutory_phase_1_bd'], 1)} times "
                 f"the statutory phase 1 clock.",
                 "Runners-up: "
                 + _join([
-                    f"{r['merger_name']} at {r['business_days']}" for r in longest[1:]
+                    f"{_link(r['merger_id'], r['merger_name'])} at {r['business_days']}"
+                    for r in longest[1:]
                 ])
                 + ".",
             ],
@@ -949,12 +1020,14 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
         "body": [
             f"**{ext['matters_extended']} matters** had their clock extended in {year}, "
             f"{ext['share_extended_pct']}% of notifications. The merger parties asked "
-            f"for {ext['by_parties']} of the {ext['events']}. The ACCC asked for "
-            f"{ext['by_accc']}.",
+            f"for {ext['by_parties']} of the {ext['events']}, the ACCC for "
+            f"{ext['by_accc']}, and {ext['for_remedy']} were to weigh a remedy.",
         ],
         "figures": [
-            {"value": ext["base_phase_2_rate_pct"], "suffix": "%", "label": "base phase 2 rate"},
-            {"value": ext["phase_2_rate_given_extension_pct"], "suffix": "%", "label": "if extended"},
+            {"value": ext["base_phase_2_rate_pct"], "suffix": "%",
+             "label": "phase 2 referral rate"},
+            {"value": ext["phase_2_rate_given_extension_pct"], "suffix": "%",
+             "label": "referred when extended"},
         ],
         "coda": (
             f"{ext['phase_2_preceded_by_extension']} of the {ext['phase_2_total']} "
@@ -975,11 +1048,12 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
             ],
             "answer": winner["merger_id"],
             "body": [
-                f"**{winner['merger_name']}: {winner['business_days']} business days**, "
+                f"**{_link(winner['merger_id'], winner['merger_name'])}: "
+                f"{winner['business_days']} business days**, "
                 f"over {winner['count']} separate "
                 f"{_plural(winner['count'], 'extension')}.",
                 f"The single biggest one-off extension went to "
-                f"{ext['longest_single_matter']['merger_name']}: "
+                f"{_link(ext['longest_single_matter']['merger_id'], ext['longest_single_matter']['merger_name'])}: "
                 f"**{ext['longest_single_bd']} business days**, more extra time than "
                 f"the whole statutory clock allows.",
             ],
@@ -1032,24 +1106,30 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
                         else GLYPH_CEASED if row["outcome"] == merger_status.ASSESSMENT_CEASED
                         else GLYPH_CLEARED
                     ),
-                    "text": f"**{row['count']} {row['outcome'].lower()}**",
+                    "text": f"**{row['count']} {_outcome_plural(row['outcome'], row['count'])}**",
                 }
                 for row in p2["outcomes"]
             ]
             + ([{
                 "glyph": GLYPH_LIVE,
                 "text": "**" + str(len(p2["current"])) + " still running**: "
-                        + _join([c["merger_name"] for c in p2["current"]]),
+                        + _join([
+                            _link(c["merger_id"], c["merger_name"]) for c in p2["current"]
+                        ]),
             }] if p2["current"] else [])
         ),
         "body": [
             f"{p2['ceased']} of the {p2['completed']} completed phase 2 reviews ended "
-            f"with the parties walking away"
-            + (
-                f", but {p2['ceased_refiled']} came back."
-                if p2["ceased_refiled"] else "."
-            )
+            f"with the parties walking away."
         ] if p2["ceased"] else [],
+        "coda": (
+            f"But {p2['ceased_refiled']} came back."
+            if p2["ceased_refiled"] == 1 and p2["ceased_refiled_matter"]
+            else None
+        ),
+        "coda_merger_id": (
+            p2["ceased_refiled_matter"]["merger_id"] if p2["ceased_refiled_matter"] else None
+        ),
     })
 
     if war:
@@ -1061,9 +1141,10 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
             "eyebrow": "The long war",
             "merger_id": war["merger_id"],
             "heading": (
-                f"{war['short_name']} was filed before the regime even started."
+                f"{war['short_name']} was filed before the regime was mandatory, "
+                f"and it continues."
                 if war["filed_before_regime"]
-                else f"{war['short_name']} is still going."
+                else f"{war['short_name']} continues."
             ),
             "timeline": [
                 {"date": war["filed_date"], "label": "**Filed**"
@@ -1079,10 +1160,43 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
                 {"date": war["hearing_date"], "end_date": war.get("hearing_end_date"),
                  "label": "**Tribunal hearing**"},
             ],
-            "body": [
-                f"**{war['events']} events. {war['tribunal_documents']} documents before "
-                f"the Tribunal.** Fighting on two fronts at once, and still going."
+            "body": ["Tribunal decision forthcoming."],
+        })
+
+    if benefit["applications"]:
+        first = (benefit["live"] + benefit["decided"])[0]
+        cards.append({
+            "id": "public-benefit",
+            "kind": "timeline",
+            "tone": "phase-2",
+            "glyph": GLYPH_PHASE_2,
+            "eyebrow": "The stage nobody had reached",
+            "merger_id": first["merger_id"],
+            "heading": (
+                f"A refused merger gets one more argument: that it is good for "
+                f"the public anyway."
+            ),
+            "timeline": [
+                {"date": first["refused_date"], "label": "**Refused at phase 2**"},
+                {"date": first["applied_date"],
+                 "label": f"**{_link(first['merger_id'], first['merger_name'])} applied**"},
+                {"date": first["response_date"],
+                 "label": f"**Responses or a remedy due**, business day {benefit['response_bd']}"},
+                {"date": first["deadline"],
+                 "label": f"**Determination due**, business day {benefit['business_days']}"},
             ],
+            "body": [
+                f"{_plural(benefit['applications'], 'One matter', 'Matters')} reached it "
+                f"in {year}, and the ACCC has {benefit['business_days']} business days "
+                f"to decide."
+                if benefit["applications"] == 1 else
+                f"{benefit['applications']} matters reached it in {year}, each with "
+                f"{benefit['business_days']} business days on the clock."
+            ],
+            "coda": (
+                "A merger refused in September could still be cleared."
+                if benefit["live"] else None
+            ),
         })
 
     if appeals["lodged"]:
@@ -1117,7 +1231,7 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
                         f"**{_join(decision['appellants'])}**"
                         + (" both" if len(decision["appellants"]) == 2 else "")
                         + (" each" if len(decision["appellants"]) > 2 else "")
-                        + f" appealed over {decision['short_name']}"
+                        + f" appealed over {_link(decision['merger_id'], decision['merger_name'])}"
                         + f" ({_join(decision['numbers'])})"
                     ),
                 }
@@ -1144,8 +1258,10 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
             "options": _question_options(q["most"]["count"]),
             "answer": str(q["most"]["count"]),
             "body": [
-                f"**{q['most']['count']}**, for {q['most']['merger_name']}. The shortest, "
-                f"{q['fewest']['merger_name']}, got {q['fewest']['count']}.",
+                f"**{q['most']['count']}**, for "
+                f"{_link(q['most']['merger_id'], q['most']['merger_name'])}. The shortest, "
+                f"{_link(q['fewest']['merger_id'], q['fewest']['merger_name'])}, "
+                f"got {q['fewest']['count']}.",
                 f"{q['at_median']} of the {q['published']} asked exactly {q['median']} "
                 f"questions, drawing on a standard set. When the ACCC asks a fourth "
                 f"question, pay attention.",
@@ -1158,18 +1274,20 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
             "kind": "stat",
             "tone": "secondary-container",
             "eyebrow": "Before the clock starts",
-            "lede": "The review is only the part you can see.",
             "stat": pre["median_days"],
             "heading": "estimated median days in pre-notification, before day one",
             "body": [
-                f"The longest: **{_short(pre['longest'][0]['merger_id'], pre['longest'][0]['merger_name'])}**, "
+                f"The longest: **{_link(pre['longest'][0]['merger_id'], pre['longest'][0]['merger_name'])}**, "
                 f"an estimated **{pre['longest'][0]['days']} days** of conversation with "
                 f"the ACCC before the clock even started. "
                 + _join([
-                    f"{_short(r['merger_id'], r['merger_name'])} took {r['days']}"
-                    for r in pre["longest"][1:]
+                    _link(r["merger_id"], r["merger_name"]) for r in pre["longest"][1:]
                 ])
-                + ".",
+                + (
+                    " took the next two places."
+                    if len(pre["longest"]) > 2
+                    else " took second place."
+                ),
             ],
         })
 
@@ -1243,13 +1361,10 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
             "body": [
                 f"Of the {refiles['completed']} that have finished, "
                 f"**{refiles['cleared']} were cleared.**",
-                f"**{first_refile['name']}** was the first knock-back of the new regime: "
-                f"waiver filed {_fmt_date(first_refile['waiver_filed_date'])}, declined "
-                f"{_fmt_date(first_refile['waiver_declined_date'])}, "
-                f"{first_refile['waiver_business_days']} business days later. It re-filed "
-                f"on {_fmt_date(first_refile['notification_filed_date'])} and was cleared "
-                f"on {_fmt_date(first_refile['notification_determination_date'])} in "
-                f"{first_refile['notification_business_days']} business days.",
+                f"**{_link(first_refile['notification_id'], first_refile['name'])}** was "
+                f"the first knocked back, {first_refile['waiver_business_days']} business "
+                f"days after filing, only to come back stronger "
+                f"{first_refile['gap_business_days']} business days later.",
             ],
         })
 

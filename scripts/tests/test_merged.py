@@ -13,6 +13,7 @@ look fine on the page, which is exactly why it is pinned here.
 """
 
 import datetime as dt
+import re
 
 import pytest
 
@@ -370,6 +371,35 @@ def test_a_closing_line_is_a_coda_not_a_lede(payload):
 def test_a_lede_still_opens_the_cards_that_use_one(payload):
     """The field is still doing its original job elsewhere."""
     assert card(payload, "opening")["lede"].startswith("Year one")
+
+
+def test_a_matter_named_in_prose_links_to_its_page(payload):
+    """Every mention is a way in, except a quiz option, where a link would
+    both give the game away and be the wrong thing to tap."""
+    links = re.compile(r"\]\(/mergers/(MN|WA)-")
+    prose = [
+        text
+        for c in payload["cards"]
+        for text in (c.get("body") or []) + [r["text"] for r in c.get("rows") or []]
+    ]
+    assert any(links.search(text) for text in prose), "no matter is linked anywhere"
+
+    for quiz in (c for c in payload["cards"] if c["kind"] == "quiz"):
+        for option in quiz["options"]:
+            assert "](" not in option["label"], f"{quiz['id']} links an option"
+
+
+def test_an_extension_is_attributed_without_losing_any(payload):
+    """The three reasons have to account for every extension, or the card is
+    quietly telling the reader that 32 and 3 make 42."""
+    ext = payload["facts"]["extensions"]
+    assert ext["by_parties"] + ext["by_accc"] + ext["for_remedy"] == ext["events"]
+
+
+def test_a_ceased_outcome_is_pluralised(payload):
+    assert merged._outcome_plural("Assessment ceased", 1) == "assessment ceased"
+    assert merged._outcome_plural("Assessment ceased", 3) == "assessments ceased"
+    assert merged._outcome_plural("Not approved", 2) == "not approved"
 
 
 def test_the_personal_card_carries_both_states(payload):

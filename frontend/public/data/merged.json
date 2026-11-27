@@ -257,6 +257,10 @@
       "referred": 7,
       "completed": 5,
       "ceased_refiled": 1,
+      "ceased_refiled_matter": {
+        "merger_id": "MN-30002",
+        "merger_name": "Peter Warren - Wakeling Automotive"
+      },
       "current": [
         {
           "merger_id": "MN-01072",
@@ -293,6 +297,7 @@
       },
       "by_parties": 32,
       "by_accc": 3,
+      "for_remedy": 7,
       "base_phase_2_rate_pct": 2.1,
       "phase_2_rate_given_extension_pct": 23.1,
       "phase_2_preceded_by_extension": 6,
@@ -323,6 +328,25 @@
           "count": 1
         }
       ]
+    },
+    "public_benefit": {
+      "applications": 1,
+      "live": [
+        {
+          "merger_id": "MN-65005",
+          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "short_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "refused_date": "2026-09-23T12:00:00Z",
+          "applied_date": "2026-10-13T12:00:00Z",
+          "response_date": "2026-12-01T12:00:00Z",
+          "deadline": "2027-02-01T12:00:00Z",
+          "determination": null
+        }
+      ],
+      "decided": [],
+      "business_days": 50,
+      "assessment_bd": 20,
+      "response_bd": 35
     },
     "questionnaires": {
       "published": 326,
@@ -498,7 +522,8 @@
         "notification_filed_date": "2026-02-19T12:00:00Z",
         "notification_determination_date": "2026-03-17T12:00:00Z",
         "notification_business_days": 17,
-        "notification_determination": "Approved"
+        "notification_determination": "Approved",
+        "gap_business_days": 20
       }
     }
   },
@@ -735,7 +760,7 @@
       },
       "lede": "Half of all phase 1 reviews were done with 12 business days to spare.",
       "body": [
-        "Waivers ran to a median of **15**. The fastest took only **1**. Kiwa - CSA Group filed on Monday 23 November and had its answer on the Tuesday."
+        "Waivers ran to a median of **15**. The fastest took only **1**. [Kiwa - CSA Group](/mergers/WA-10054) filed on Monday 23 November and had its answer on the Tuesday."
       ],
       "index": 5
     },
@@ -765,17 +790,17 @@
         {
           "glyph": "Not approved",
           "merger_id": "MN-01068",
-          "text": "**Coles \u2013 supermarket and liquor site in Kalgoorlie, WA**, refused 1 July."
+          "text": "**[Coles \u2013 Kalgoorlie](/mergers/MN-01068)**, refused 1 July."
         },
         {
           "glyph": "Not approved",
           "merger_id": "MN-30003",
-          "text": "**MicroStar Logistics - Konvoy**, refused 7 August."
+          "text": "**[MicroStar Logistics - Konvoy](/mergers/MN-30003)**, refused 7 August."
         },
         {
           "glyph": "Not approved",
           "merger_id": "MN-65005",
-          "text": "**Insurance Australia Group \u2013 RAC Insurance**, refused 23 September."
+          "text": "**[Insurance Australia Group \u2013 RAC Insurance](/mergers/MN-65005)**, refused 23 September."
         }
       ],
       "index": 7
@@ -806,8 +831,8 @@
       ],
       "answer": "MN-01019",
       "body": [
-        "**Ampol \u2013 EG Australia: 147 business days**, notification to determination. That is 4.9 times the statutory phase 1 clock.",
-        "Runners-up: Coles \u2013 supermarket and liquor site in Kalgoorlie, WA at 133, MicroStar Logistics - Konvoy at 114 and Black Rhino - Club Hotel Motel Roma at 56."
+        "**[Ampol \u2013 EG Australia](/mergers/MN-01019): 147 business days**, notification to determination. That is 4.9 times the statutory phase 1 clock.",
+        "Runners-up: [Coles \u2013 Kalgoorlie](/mergers/MN-01068) at 133, [MicroStar Logistics - Konvoy](/mergers/MN-30003) at 114 and [Black Rhino - Club Hotel Motel Roma](/mergers/MN-90008) at 56."
       ],
       "index": 8
     },
@@ -820,18 +845,18 @@
       "stat": 493,
       "heading": "business days of extra time, across 42 extensions",
       "body": [
-        "**26 matters** had their clock extended in 2026, 7.9% of notifications. The merger parties asked for 32 of the 42. The ACCC asked for 3."
+        "**26 matters** had their clock extended in 2026, 7.9% of notifications. The merger parties asked for 32 of the 42, the ACCC for 3, and 7 were to weigh a remedy."
       ],
       "figures": [
         {
           "value": 2.1,
           "suffix": "%",
-          "label": "base phase 2 rate"
+          "label": "phase 2 referral rate"
         },
         {
           "value": 23.1,
           "suffix": "%",
-          "label": "if extended"
+          "label": "referred when extended"
         }
       ],
       "coda": "6 of the 7 phase 2 referrals had been extended first.",
@@ -863,8 +888,8 @@
       ],
       "answer": "MN-05013",
       "body": [
-        "**Zoetis \u2013 Neogen Genomics Business: 63 business days**, over 5 separate extensions.",
-        "The single biggest one-off extension went to Coles - supermarket site in Angle Vale, SA: **33 business days**, more extra time than the whole statutory clock allows."
+        "**[Zoetis \u2013 Neogen Genomics Business](/mergers/MN-05013): 63 business days**, over 5 separate extensions.",
+        "The single biggest one-off extension went to [Coles - supermarket site in Angle Vale, SA](/mergers/MN-75042): **33 business days**, more extra time than the whole statutory clock allows."
       ],
       "index": 10
     },
@@ -899,7 +924,7 @@
       "rows": [
         {
           "glyph": "Assessment ceased",
-          "text": "**3 assessment ceased**"
+          "text": "**3 assessments ceased**"
         },
         {
           "glyph": "Not approved",
@@ -907,12 +932,14 @@
         },
         {
           "glyph": "Under assessment",
-          "text": "**2 still running**: Saipem S.p.A - Subsea7 S.A. and Zoetis \u2013 Neogen Genomics Business"
+          "text": "**2 still running**: [Saipem S.p.A - Subsea7 S.A.](/mergers/MN-01072) and [Zoetis \u2013 Neogen Genomics Business](/mergers/MN-05013)"
         }
       ],
       "body": [
-        "3 of the 5 completed phase 2 reviews ended with the parties walking away, but 1 came back."
+        "3 of the 5 completed phase 2 reviews ended with the parties walking away."
       ],
+      "coda": "But 1 came back.",
+      "coda_merger_id": "MN-30002",
       "index": 12
     },
     {
@@ -922,7 +949,7 @@
       "glyph": "Not approved",
       "eyebrow": "The long war",
       "merger_id": "MN-01068",
-      "heading": "Coles \u2013 Kalgoorlie was filed before the regime even started.",
+      "heading": "Coles \u2013 Kalgoorlie was filed before the regime was mandatory, and it continues.",
       "timeline": [
         {
           "date": "2025-11-27",
@@ -955,9 +982,41 @@
         }
       ],
       "body": [
-        "**74 events. 53 documents before the Tribunal.** Fighting on two fronts at once, and still going."
+        "Tribunal decision forthcoming."
       ],
       "index": 13
+    },
+    {
+      "id": "public-benefit",
+      "kind": "timeline",
+      "tone": "phase-2",
+      "glyph": "Referred to phase 2",
+      "eyebrow": "The stage nobody had reached",
+      "merger_id": "MN-65005",
+      "heading": "A refused merger gets one more argument: that it is good for the public anyway.",
+      "timeline": [
+        {
+          "date": "2026-09-23T12:00:00Z",
+          "label": "**Refused at phase 2**"
+        },
+        {
+          "date": "2026-10-13T12:00:00Z",
+          "label": "**[Insurance Australia Group \u2013 RAC Insurance](/mergers/MN-65005) applied**"
+        },
+        {
+          "date": "2026-12-01T12:00:00Z",
+          "label": "**Responses or a remedy due**, business day 35"
+        },
+        {
+          "date": "2027-02-01T12:00:00Z",
+          "label": "**Determination due**, business day 50"
+        }
+      ],
+      "body": [
+        "One matter reached it in 2026, and the ACCC has 50 business days to decide."
+      ],
+      "coda": "A merger refused in September could still be cleared.",
+      "index": 14
     },
     {
       "id": "appeals",
@@ -971,18 +1030,18 @@
         {
           "glyph": "Not approved",
           "merger_id": "MN-01068",
-          "text": "**Coles** appealed over Coles \u2013 Kalgoorlie (ACT 1 of 2026)"
+          "text": "**Coles** appealed over [Coles \u2013 Kalgoorlie](/mergers/MN-01068) (ACT 1 of 2026)"
         },
         {
           "glyph": "Not approved",
           "merger_id": "MN-65005",
-          "text": "**IAG and RACWA** both appealed over Insurance Australia Group \u2013 RAC Insurance (ACT 3 of 2026 and ACT 4 of 2026)"
+          "text": "**IAG and RACWA** both appealed over [Insurance Australia Group \u2013 RAC Insurance](/mergers/MN-65005) (ACT 3 of 2026 and ACT 4 of 2026)"
         }
       ],
       "body": [
         "The next hearing starts **30 March 2027**. Year one ends with the hard questions all still open."
       ],
-      "index": 14
+      "index": 15
     },
     {
       "id": "quiz-questions",
@@ -1010,23 +1069,22 @@
       ],
       "answer": "16",
       "body": [
-        "**16**, for Peter Warren - Wakeling Automotive. The shortest, Gilead - Arcellx, got 2.",
+        "**16**, for [Peter Warren - Wakeling Automotive](/mergers/MN-30002). The shortest, [Gilead - Arcellx](/mergers/MN-40009), got 2.",
         "228 of the 326 asked exactly 3 questions, drawing on a standard set. When the ACCC asks a fourth question, pay attention."
       ],
-      "index": 15
+      "index": 16
     },
     {
       "id": "pre-notification",
       "kind": "stat",
       "tone": "secondary-container",
       "eyebrow": "Before the clock starts",
-      "lede": "The review is only the part you can see.",
       "stat": 21,
       "heading": "estimated median days in pre-notification, before day one",
       "body": [
-        "The longest: **Steadfast - Axiom Insurance Brokers**, an estimated **183 days** of conversation with the ACCC before the clock even started. Kimberly-Clark / Kenvue took 166 and Amadeus / Idemia took 132."
+        "The longest: **Steadfast - Axiom Insurance Brokers**, an estimated **183 days** of conversation with the ACCC before the clock even started. [Kimberly-Clark / Kenvue](/mergers/MN-80005) and [Amadeus / Idemia](/mergers/MN-60027) took the next two places."
       ],
-      "index": 16
+      "index": 17
     },
     {
       "id": "quiz-parties",
@@ -1056,7 +1114,7 @@
       "body": [
         "**Coles Group: 21 matters.** Australian Venue Co was second with 20."
       ],
-      "index": 17
+      "index": 18
     },
     {
       "id": "industries",
@@ -1083,7 +1141,7 @@
         }
       ],
       "ranking_unit": "Industry",
-      "index": 18
+      "index": 19
     },
     {
       "id": "quiz-refused",
@@ -1106,12 +1164,12 @@
         },
         {
           "key": "MN-01068",
-          "label": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA"
+          "label": "Coles \u2013 Kalgoorlie"
         }
       ],
       "answer": "MN-01068",
       "body": [],
-      "index": 19
+      "index": 20
     },
     {
       "id": "comeback",
@@ -1124,9 +1182,9 @@
       "heading": "deals were refused a waiver and came back as a full notification",
       "body": [
         "Of the 17 that have finished, **16 were cleared.**",
-        "**Salesforce \u2013 Qualified** was the first knock-back of the new regime: waiver filed 8 January, declined 21 January, 8 business days later. It re-filed on 19 February and was cleared on 17 March in 17 business days."
+        "**[Salesforce \u2013 Qualified](/mergers/MN-85007)** was the first knocked back, 8 business days after filing, only to come back stronger 20 business days later."
       ],
-      "index": 20
+      "index": 21
     },
     {
       "id": "your-year",
@@ -1140,7 +1198,7 @@
       "industries_line": "You followed {industries}: {names}.",
       "empty_heading": "You didn't follow any matters this year.",
       "empty_body": "There's always next year.",
-      "index": 21
+      "index": 22
     },
     {
       "id": "closing",
@@ -1164,7 +1222,7 @@
         }
       ],
       "lede": "See you in 2027.",
-      "index": 22
+      "index": 23
     }
   ]
 }
