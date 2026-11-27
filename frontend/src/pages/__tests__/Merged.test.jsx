@@ -61,11 +61,29 @@ const fixture = {
       prompt: 'Which day?',
       answer: 'Friday 14 August',
       body: ['Fridays took 217 filings.'],
+      weekdays: [
+        { day: 'Monday', short: 'Mon', count: 139, weekend: false },
+        { day: 'Friday', short: 'Fri', count: 217, weekend: false },
+        { day: 'Sunday', short: 'Sun', count: 5, weekend: true },
+      ],
+    },
+    {
+      id: 'verdict',
+      kind: 'stat',
+      index: 4,
+      tone: 'cleared',
+      glyph: 'Approved',
+      eyebrow: 'The verdict',
+      stat: 99.7,
+      stat_suffix: '%',
+      heading: 'of decided notifications ended in clearance',
+      body: ['**95.1%** of waiver applications were granted.'],
+      coda: 'Almost.',
     },
     {
       id: 'quiz-one',
       kind: 'quiz',
-      index: 4,
+      index: 5,
       tone: 'surface',
       eyebrow: 'Guess · 1 of 2',
       question: 'Which review took the longest?',
@@ -80,7 +98,7 @@ const fixture = {
     {
       id: 'quiz-two',
       kind: 'quiz',
-      index: 5,
+      index: 6,
       tone: 'surface',
       eyebrow: 'Guess · 2 of 2',
       question: 'Who turned up most?',
@@ -95,7 +113,7 @@ const fixture = {
     {
       id: 'your-year',
       kind: 'personal',
-      index: 6,
+      index: 7,
       tone: 'tertiary-container',
       eyebrow: 'Your year',
       heading: 'You followed {followed} matters this year.',
@@ -106,7 +124,7 @@ const fixture = {
     {
       id: 'closing',
       kind: 'closing',
-      index: 7,
+      index: 8,
       tone: 'primary',
       eyebrow: 'That was year one',
       heading: '896 matters',
@@ -175,6 +193,29 @@ describe('Australia Merged', () => {
     expect(within(table).getByRole('row', { name: /January 2026 37/ })).toBeInTheDocument();
     expect(within(table).getByRole('row', { name: /November 2026 45 \(month incomplete\)/ }))
       .toBeInTheDocument();
+  });
+
+  it('puts the week behind the busiest day, once it is revealed', async () => {
+    renderMerged();
+    await screen.findByText('Australia Merged');
+    // Held back with the answer: the tallest bar would give it away.
+    expect(screen.queryByRole('table', { name: /day of the week/i })).not.toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Which day?' }));
+    const table = screen.getByRole('table', { name: /day of the week/i });
+    expect(within(table).getByRole('row', { name: /Monday 139/ })).toBeInTheDocument();
+    // A weekend day is a sliver on the chart but an exact number in the table.
+    expect(within(table).getByRole('row', { name: /Sunday 5/ })).toBeInTheDocument();
+  });
+
+  it('closes a card with its coda, after the body rather than before it', async () => {
+    renderMerged();
+    await screen.findByText('Australia Merged');
+    const verdict = document.querySelectorAll('[data-card]')[3];
+    const text = verdict.textContent;
+    expect(text).toContain('Almost.');
+    // "Almost." is the turn after the reassurance, so it has to follow it.
+    expect(text.indexOf('95.1%')).toBeLessThan(text.indexOf('Almost.'));
   });
 
   it('leaves the document unsnapped once the deck unmounts', async () => {

@@ -327,6 +327,34 @@ def test_an_extension_is_attributed_to_whoever_asked_for_it(payload):
     assert extensions["by_accc"] == 0
 
 
+def test_the_busiest_day_card_carries_the_week_around_it(payload):
+    """A record day means nothing without an ordinary one beside it."""
+    weekdays = card(payload, "busiest-day")["weekdays"]
+    assert [day["short"] for day in weekdays] == [
+        "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun",
+    ]
+    assert [day["weekend"] for day in weekdays] == [False] * 5 + [True] * 2
+    # Every filing is in exactly one weekday bucket.
+    assert sum(day["count"] for day in weekdays) == payload["facts"]["volume"]["matters"]
+
+
+def test_a_closing_line_is_a_coda_not_a_lede(payload):
+    """`lede` renders before the body and `coda` after it, so a punchline has
+    to be a coda or it lands before the thing it is punching."""
+    verdict = card(payload, "verdict")
+    assert verdict["coda"] == "Almost."
+    assert "lede" not in verdict
+
+    extensions = card(payload, "extensions")
+    assert "the tell" in extensions["coda"]
+    assert "lede" not in extensions
+
+
+def test_a_lede_still_opens_the_cards_that_use_one(payload):
+    """The field is still doing its original job elsewhere."""
+    assert card(payload, "opening")["lede"].startswith("Year one")
+
+
 def test_the_personal_card_carries_an_empty_state(payload):
     personal = card(payload, "personal" if False else "your-year")
     assert personal["kind"] == "personal"
@@ -338,6 +366,7 @@ def test_no_card_is_left_without_something_to_show(payload):
     for c in payload["cards"]:
         has_content = any(
             c.get(field) for field in
-            ("heading", "lede", "body", "rows", "timeline", "months", "question", "figures")
+            ("heading", "lede", "coda", "body", "rows", "timeline", "months",
+             "weekdays", "question", "figures")
         )
         assert has_content, f"card {c['id']} would render empty"

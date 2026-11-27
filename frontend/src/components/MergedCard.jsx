@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router';
 import MaterialShape from './MaterialShape';
 import { sheetTone } from '../constants/mergedTones';
-import { useCountUp, useEntrance } from '../hooks/useEntrance';
+import { useCountUp, useEntrance, useRailFill } from '../hooks/useEntrance';
 import { formatDateMedium } from '../utils/dates';
 
 /**
@@ -88,6 +88,10 @@ function Body({ card }) {
           {paragraph}
         </Prose>
       ))}
+      {/* `lede` sets a card up and `coda` closes it — "Almost.", "An
+          extension is the tell." Same treatment, opposite ends of the body,
+          and the generator picks which one a line is. */}
+      {card.coda && <Prose className="mt-4 text-lg font-medium sm:text-xl">{card.coda}</Prose>}
       {card.note && (
         <p className="mt-4 max-w-prose text-xs leading-relaxed opacity-75">{card.note}</p>
       )}
@@ -152,50 +156,56 @@ function Timeline({ entries }) {
 }
 
 /**
- * The monthly inflow. A canvas would buy nothing here — it is eleven bars —
- * so it is plain elements with an sr-only table beside them, the same pairing
- * the site's real charts use (docs/accessibility.md).
+ * A row of bars with a data table beside it. A canvas would buy nothing at
+ * this size — eleven months, seven weekdays — so these are plain elements
+ * paired with an `sr-only` table, the same pairing the site's real charts use
+ * (docs/accessibility.md).
+ *
+ * Each bar is `{key, label, value, row, fill}`: `row` is how the table names
+ * it, `fill` the class it wears where it isn't the ordinary one.
  */
-function Months({ months, year }) {
+function Bars({ bars, caption, unit, height = 'h-44' }) {
   const [ref, entered] = useEntrance();
-  if (!months?.length) return null;
-  const peak = Math.max(...months.map((month) => month.count));
+  if (!bars?.length) return null;
+  const peak = Math.max(...bars.map((bar) => bar.value));
   return (
     <>
-      <div ref={ref} className="my-4 flex h-44 items-end gap-1" aria-hidden="true">
-        {months.map((month) => (
-          <div key={month.month} className="flex h-full min-w-0 flex-1 flex-col justify-end gap-1.5">
+      <div ref={ref} className={`my-4 flex items-end gap-1 ${height}`} aria-hidden="true">
+        {bars.map((bar) => (
+          <div key={bar.key} className="flex h-full min-w-0 flex-1 flex-col justify-end gap-1.5">
             <div
-              className={`rounded-t-m3-xs transition-[height] duration-700 ease-m3-spring motion-reduce:transition-none ${
-                month.partial
-                  // Hatched, not just short: the month is still running, and a
-                  // short bar would read as a collapse in filings.
-                  ? 'bg-[repeating-linear-gradient(135deg,#335145_0_5px,color-mix(in_srgb,#335145_35%,transparent)_5px_10px)]'
-                  : 'bg-m3-primary'
-              }`}
-              // Drawn at nothing until the chart is in view, so the CSS
-              // transition above has somewhere to grow from. `entered` is true
-              // from the first render wherever the animation won't run, so the
-              // bars are never left flat.
-              style={{ height: entered ? `${(month.count / peak) * 100}%` : '0%' }}
+              className={`rounded-t-m3-xs transition-[height] duration-700 ease-m3-spring motion-reduce:transition-none ${bar.fill || 'bg-m3-primary'}`}
+              style={{
+                // Drawn at nothing until the chart is in view, so the CSS
+                // transition has somewhere to grow from. `entered` is true from
+                // the first render wherever the animation won't run, so the
+                // bars are never left flat. A real but tiny value keeps a
+                // sliver rather than vanishing — the exact count is in the
+                // table, which is where the precision lives.
+                height: entered
+                  ? bar.value > 0
+                    ? `max(2px, ${(bar.value / peak) * 100}%)`
+                    : '0%'
+                  : '0%',
+              }}
             />
-            <div className="text-center text-[0.6875rem] font-semibold opacity-70">{month.label}</div>
+            <div className="text-center text-[0.6875rem] font-semibold opacity-70">{bar.label}</div>
           </div>
         ))}
       </div>
       <table className="sr-only">
-        <caption>{`Matters filed per month, ${year}`}</caption>
+        <caption>{caption}</caption>
         <thead>
           <tr>
-            <th scope="col">Month</th>
+            <th scope="col">{unit}</th>
             <th scope="col">Matters</th>
           </tr>
         </thead>
         <tbody>
-          {months.map((month) => (
-            <tr key={month.month}>
-              <th scope="row">{`${month.name} ${year}`}</th>
-              <td>{month.partial ? `${month.count} (month incomplete)` : month.count}</td>
+          {bars.map((bar) => (
+            <tr key={bar.key}>
+              <th scope="row">{bar.row}</th>
+              <td>{bar.cell ?? bar.value}</td>
             </tr>
           ))}
         </tbody>
@@ -204,22 +214,78 @@ function Months({ months, year }) {
   );
 }
 
+const PARTIAL_FILL =
+  'bg-[repeating-linear-gradient(135deg,#335145_0_5px,color-mix(in_srgb,#335145_35%,transparent)_5px_10px)]';
+
+/** The year's inflow, month by month. */
+function Months({ months, year }) {
+  return (
+    <Bars
+      caption={`Matters filed per month, ${year}`}
+      unit="Month"
+      bars={(months || []).map((month) => ({
+        key: month.month,
+        label: month.label,
+        value: month.count,
+        row: `${month.name} ${year}`,
+        cell: month.partial ? `${month.count} (month incomplete)` : month.count,
+        // Hatched, not just short: the month is still running, and a short
+        // bar would read as a collapse in filings.
+        fill: month.partial ? PARTIAL_FILL : undefined,
+      }))}
+    />
+  );
+}
+
+/**
+ * The week the busiest day sits in. One record day means little without an
+ * ordinary one beside it — and the weekend bars are slivers on purpose,
+ * because that is the finding.
+ */
+function Weekdays({ weekdays, year }) {
+  return (
+    <Bars
+      height="h-28"
+      caption={`Matters filed by day of the week, ${year}`}
+      unit="Day"
+      bars={(weekdays || []).map((day) => ({
+        key: day.day,
+        label: day.short,
+        value: day.count,
+        row: day.day,
+        fill: day.weekend ? 'bg-m3-outline' : undefined,
+      }))}
+    />
+  );
+}
+
 /**
  * A review's clock, one tick per business day: green to the statutory limit,
  * red past it, with the limit marked.
  */
 function Rail({ rail }) {
+  // Hooks before the early return: a card without a rail still calls them.
+  const [ref, frame] = useRailFill({
+    used: rail?.used ?? 0,
+    total: rail?.total ?? 0,
+    statutory: rail?.statutory ?? 0,
+  });
   if (!rail?.total) return null;
-  const markAt = (rail.mark / rail.total) * 100;
-  const ticks = Array.from({ length: rail.total }, (_, index) => index + 1);
+
+  // The rail is as wide as the clock it is drawing, so while that clock grows
+  // the marker slides left and the ticks squeeze — which is the overrun made
+  // visible rather than just coloured.
+  const span = Math.max(1, frame.total);
+  const markAt = (rail.mark / span) * 100;
+  const ticks = Array.from({ length: Math.round(frame.total) }, (_, index) => index + 1);
   return (
     <div className="relative my-4">
-      <div className="relative flex h-10 gap-0.5" aria-hidden="true">
+      <div ref={ref} className="relative flex h-10 gap-0.5" aria-hidden="true">
         {ticks.map((day) => (
           <i
             key={day}
             className={`min-w-0 flex-1 rounded-sm ${
-              day > rail.used
+              day > frame.filled
                 ? 'bg-[color-mix(in_srgb,currentColor_16%,transparent)]'
                 : day > rail.statutory
                   ? 'bg-red-700'
@@ -240,7 +306,9 @@ function Rail({ rail }) {
         >
           {rail.mark_label}
         </span>
-        <span className="absolute right-0 top-0 whitespace-nowrap">{rail.end_label}</span>
+        <span className="absolute right-0 top-0 whitespace-nowrap">
+          {Math.round(frame.total) === rail.total ? rail.end_label : `Day ${Math.round(frame.total)}`}
+        </span>
       </div>
       <p className="sr-only">
         {`${rail.used} of ${rail.total} business days used, against a statutory ${rail.statutory}.`}
@@ -256,7 +324,7 @@ const PILL =
   'ease-m3-spring active:rounded-m3-sm motion-reduce:transition-none ' +
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-m3-primary focus-visible:ring-offset-2';
 
-function Reveal({ card }) {
+function Reveal({ card, year }) {
   const [shown, setShown] = useState(false);
   return (
     <>
@@ -272,10 +340,13 @@ function Reveal({ card }) {
       {shown && (
         <div className="animate-m3-rise rounded-m3-lg bg-m3-surface-container-lowest p-5 text-m3-on-surface motion-reduce:animate-none">
           <p className="mb-2 flex items-center gap-2.5 text-lg font-bold tracking-tight">
-            <MaterialShape status={card.glyph} size={32} decorative />
+            {/* Only where the card is about an outcome: an unmapped status
+                draws a grey dot, which looks like a symbol and means nothing. */}
+            {card.glyph && <MaterialShape status={card.glyph} size={32} decorative />}
             {card.answer}
           </p>
           <Body card={card} />
+          {card.weekdays && <Weekdays weekdays={card.weekdays} year={year} />}
         </div>
       )}
     </>
@@ -390,7 +461,7 @@ export default function MergedCard({ card, year, answer, onAnswer, slot }) {
               {card.kind === 'rows' && <Rows rows={card.rows} />}
               {card.kind === 'timeline' && <Timeline entries={card.timeline} />}
               <Figures figures={card.figures} />
-              {card.kind === 'reveal' ? <Reveal card={card} /> : <Body card={card} />}
+              {card.kind === 'reveal' ? <Reveal card={card} year={year} /> : <Body card={card} />}
               {slot}
             </>
           )}

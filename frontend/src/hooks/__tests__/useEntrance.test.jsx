@@ -1,6 +1,6 @@
 import { act, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { useCountUp, useEntrance } from '../useEntrance';
+import { useCountUp, useEntrance, useRailFill } from '../useEntrance';
 
 // The point of these hooks is that the *finished* state is the default: a
 // reader with reduced motion, a crawler, the build-time prerender and jsdom
@@ -11,6 +11,15 @@ import { useCountUp, useEntrance } from '../useEntrance';
 function Counter({ value }) {
   const [ref, shown] = useCountUp(value);
   return <span ref={ref} data-testid="figure">{shown.toFixed(1)}</span>;
+}
+
+function Rail({ used, total, statutory }) {
+  const [ref, frame] = useRailFill({ used, total, statutory });
+  return (
+    <span ref={ref} data-testid="rail">
+      {`${Math.round(frame.total)}/${Math.round(frame.filled)}`}
+    </span>
+  );
 }
 
 function Entrance() {
@@ -108,5 +117,68 @@ describe('useEntrance', () => {
 
     act(() => observers.at(-1).enter());
     expect(screen.getByTestId('state')).toHaveTextContent('final');
+  });
+});
+
+describe('useRailFill', () => {
+  it('renders the finished rail where it cannot animate', () => {
+    render(<Rail used={56} total={56} statutory={30} />);
+    expect(screen.getByTestId('rail')).toHaveTextContent('56/56');
+  });
+
+  it('fills a rail that fits its clock in one go', () => {
+    const observers = animatingBrowser();
+    const frames = [];
+    vi.stubGlobal('requestAnimationFrame', (fn) => frames.push(fn));
+    vi.stubGlobal('cancelAnimationFrame', () => {});
+
+    // 18 of a 30-day clock: the rail never grows, so its span is fixed.
+    render(<Rail used={18} total={30} statutory={30} />);
+    expect(screen.getByTestId('rail')).toHaveTextContent('30/0');
+
+    const start = performance.now();
+    act(() => observers.at(-1).enter());
+    act(() => frames.shift()(start + 350));
+    expect(screen.getByTestId('rail')).toHaveTextContent(/^30\/[1-9]/);
+
+    act(() => {
+      while (frames.length) frames.shift()(start + 10_000);
+    });
+    expect(screen.getByTestId('rail')).toHaveTextContent('30/18');
+  });
+
+  it('fills a rail that outran its clock twice, growing it in between', () => {
+    const observers = animatingBrowser();
+    const frames = [];
+    vi.stubGlobal('requestAnimationFrame', (fn) => frames.push(fn));
+    vi.stubGlobal('cancelAnimationFrame', () => {});
+
+    // 56 days against a 30-day clock: fill the clock, then grow past it.
+    render(<Rail used={56} total={56} statutory={30} />);
+    expect(screen.getByTestId('rail')).toHaveTextContent('30/0');
+
+    const start = performance.now();
+    act(() => observers.at(-1).enter());
+
+    // Mid first stage: still only the statutory clock wide.
+    act(() => frames.shift()(start + 300));
+    expect(screen.getByTestId('rail')).toHaveTextContent(/^30\/[1-9]/);
+
+    // End of the first stage: the clock is full and has not grown yet.
+    act(() => frames.shift()(start + 700));
+    expect(screen.getByTestId('rail')).toHaveTextContent('30/30');
+
+    // Into the second: the rail is now wider than its own clock.
+    act(() => frames.shift()(start + 1300));
+    const mid = screen.getByTestId('rail').textContent;
+    const [span, filled] = mid.split('/').map(Number);
+    expect(span).toBeGreaterThan(30);
+    expect(span).toBeLessThan(56);
+    expect(filled).toBeGreaterThan(30);
+
+    act(() => {
+      while (frames.length) frames.shift()(start + 10_000);
+    });
+    expect(screen.getByTestId('rail')).toHaveTextContent('56/56');
   });
 });

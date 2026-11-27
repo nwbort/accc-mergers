@@ -187,7 +187,8 @@ def _volume(filed_this_year: list, notifications: list, waivers: list,
         "busiest_day": busiest_date.isoformat() if busiest_date else None,
         "busiest_day_count": busiest_count,
         "by_weekday": [
-            {"day": day, "count": weekday.get(day, 0)}
+            {"day": day, "short": day[:3], "count": weekday.get(day, 0),
+             "weekend": day in ("Saturday", "Sunday")}
             for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
         ],
         "busiest_weekday": max(
@@ -735,6 +736,9 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             ),
             "prompt": "Which day?",
             "answer": f"{busiest.strftime('%A')} {_fmt_date(busiest)}",
+            # The week behind the answer: a single busiest day means little
+            # without the shape of an ordinary one beside it.
+            "weekdays": v["by_weekday"],
             "body": body,
         })
 
@@ -794,7 +798,7 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "stat_suffix": "%",
             "heading": "of decided notifications ended in clearance",
             "body": body,
-            "lede": "Almost.",
+            "coda": "Almost.",
         })
 
     if o["refused"]:
@@ -866,7 +870,7 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             {"value": ext["base_phase_2_rate_pct"], "suffix": "%", "label": "base phase 2 rate"},
             {"value": ext["phase_2_rate_given_extension_pct"], "suffix": "%", "label": "if extended"},
         ],
-        "lede": (
+        "coda": (
             f"{ext['phase_2_preceded_by_extension']} of the {ext['phase_2_total']} "
             f"phase 2 referrals had been extended first. An extension is the tell."
         ),

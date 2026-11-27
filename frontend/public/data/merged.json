@@ -26,31 +26,45 @@
       "by_weekday": [
         {
           "day": "Monday",
-          "count": 139
+          "short": "Mon",
+          "count": 139,
+          "weekend": false
         },
         {
           "day": "Tuesday",
-          "count": 187
+          "short": "Tue",
+          "count": 187,
+          "weekend": false
         },
         {
           "day": "Wednesday",
-          "count": 155
+          "short": "Wed",
+          "count": 155,
+          "weekend": false
         },
         {
           "day": "Thursday",
-          "count": 179
+          "short": "Thu",
+          "count": 179,
+          "weekend": false
         },
         {
           "day": "Friday",
-          "count": 217
+          "short": "Fri",
+          "count": 217,
+          "weekend": false
         },
         {
           "day": "Saturday",
-          "count": 14
+          "short": "Sat",
+          "count": 14,
+          "weekend": true
         },
         {
           "day": "Sunday",
-          "count": 5
+          "short": "Sun",
+          "count": 5,
+          "weekend": true
         }
       ],
       "busiest_weekday": "Friday",
@@ -594,6 +608,50 @@
       "heading": "One day in 2026, 13 matters landed at once.",
       "prompt": "Which day?",
       "answer": "Friday 14 August",
+      "weekdays": [
+        {
+          "day": "Monday",
+          "short": "Mon",
+          "count": 139,
+          "weekend": false
+        },
+        {
+          "day": "Tuesday",
+          "short": "Tue",
+          "count": 187,
+          "weekend": false
+        },
+        {
+          "day": "Wednesday",
+          "short": "Wed",
+          "count": 155,
+          "weekend": false
+        },
+        {
+          "day": "Thursday",
+          "short": "Thu",
+          "count": 179,
+          "weekend": false
+        },
+        {
+          "day": "Friday",
+          "short": "Fri",
+          "count": 217,
+          "weekend": false
+        },
+        {
+          "day": "Saturday",
+          "short": "Sat",
+          "count": 14,
+          "weekend": true
+        },
+        {
+          "day": "Sunday",
+          "short": "Sun",
+          "count": 5,
+          "weekend": true
+        }
+      ],
       "body": [
         "**Fridays** took 217 filings across the year. Mondays took 139.",
         "19 deals were filed on a **weekend**. Someone, somewhere, filed on Saturday 3 January."
@@ -633,7 +691,7 @@
       "body": [
         "**95.1%** of waiver applications were granted. If you filed a merger in Australia in 2026, you were almost certainly fine."
       ],
-      "lede": "Almost.",
+      "coda": "Almost.",
       "index": 6
     },
     {
@@ -716,7 +774,7 @@
           "label": "if extended"
         }
       ],
-      "lede": "6 of the 7 phase 2 referrals had been extended first. An extension is the tell.",
+      "coda": "6 of the 7 phase 2 referrals had been extended first. An extension is the tell.",
       "index": 9
     },
     {
