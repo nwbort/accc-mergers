@@ -38,6 +38,8 @@ Output files:
   - recent-events.json          - Register events from the last two weeks
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
+  - merged.json                 - Australia Merged, the /merged year in review:
+                                  the deck's cards, their figures and their copy
   - quarterly.json              - Quarter-by-quarter volume, outcomes, timing and milestones
   (reports/mergers-fyi-quarterly-merger-report-*.pdf are drawn from quarterly.json by
    generate/quarterly_pdf.py, in quarterly-report.yml rather than here)
@@ -98,6 +100,7 @@ from scripts.generate.static_data.outputs import (
     individual,
     industries,
     list as list_out,
+    merged as merged_out,
     parties,
     phase2,
     questionnaires,
@@ -266,6 +269,9 @@ def main(argv: list[str] | None = None):
         ("phase2.json", phase2.generate(enriched)),
         ("refiled-notifications.json", refiled.generate(enriched)),
         ("extensions.json", extensions.generate(enriched)),
+        # Australia Merged, the /merged year in review: every card's figures
+        # and its wording, so no number is typed into the page by hand.
+        ("merged.json", merged_out.generate(enriched, questionnaire_data)),
         # P(Phase 2 referral | still undecided at business day N), read by the
         # detail page's press-and-hold odds (frontend Phase2OddsReveal.jsx).
         ("referral-probability-by-day.json", referral_probability_by_day(enriched)),
