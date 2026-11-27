@@ -430,9 +430,43 @@ const PILL =
   'ease-m3-spring active:rounded-m3-sm motion-reduce:transition-none ' +
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-m3-primary focus-visible:ring-offset-2';
 
+// A quiz marks right and wrong in the outcome palette, because most of these
+// questions are *about* an outcome. A card whose answer isn't one opts out
+// with `answer_fill`: a day of the week has no cleared/refused reading, and
+// green there spends a colour that means something specific everywhere else
+// in the deck.
+const ANSWER_FILLS = {
+  default: {
+    pill: 'bg-emerald-700 text-white',
+    onPill: '!bg-white !text-emerald-700',
+    badge: '',
+  },
+  navy: {
+    pill: 'bg-blue-900 text-white',
+    onPill: '!bg-white !text-blue-900',
+    badge: '!bg-blue-900 !text-white',
+  },
+};
+const WRONG_FILL = { pill: 'bg-red-700 text-white', onPill: '!bg-white !text-red-700' };
+
+// Once answered, a long list collapses to the reader's own pick: the five
+// faded pills nobody can press again are noise, and on a phone they push the
+// reveal off the card. The reveal names the answer, so nothing is lost — but
+// a card with no reveal copy keeps the right option on screen as well, or a
+// wrong guess would never learn it. Four options or fewer stay as they are;
+// the whole set is the context there.
+const COLLAPSE_ABOVE = 4;
+
 function Quiz({ card, year, answered, onAnswer }) {
   const picked = answered;
   const done = picked != null;
+  const correct = done && picked === card.answer;
+  const right = ANSWER_FILLS[card.answer_fill] || ANSWER_FILLS.default;
+  const collapsed = done && card.options.length > COLLAPSE_ABOVE;
+  const keepAnswer = !card.body?.length;
+  const options = collapsed
+    ? card.options.filter((o) => o.key === picked || (keepAnswer && o.key === card.answer))
+    : card.options;
   return (
     <>
       <h2
@@ -442,15 +476,15 @@ function Quiz({ card, year, answered, onAnswer }) {
         {card.question}
       </h2>
       <div className="flex flex-col gap-2">
-        {card.options.map((option) => {
+        {options.map((option) => {
           const isAnswer = option.key === card.answer;
           const isPick = option.key === picked;
           const state = !done
             ? 'bg-m3-secondary-container text-m3-on-secondary-container hover:brightness-[0.97]'
             : isAnswer
-              ? 'rounded-m3-lg bg-emerald-700 text-white'
+              ? `rounded-m3-lg ${right.pill}`
               : isPick
-                ? 'rounded-m3-lg bg-red-700 text-white'
+                ? `rounded-m3-lg ${WRONG_FILL.pill}`
                 : 'bg-m3-secondary-container text-m3-on-secondary-container opacity-45';
           return (
             <button
@@ -462,15 +496,15 @@ function Quiz({ card, year, answered, onAnswer }) {
               className={`${PILL} flex items-center gap-3 disabled:cursor-default ${state}`}
             >
               {done && (isAnswer || isPick) && (
-                // On a filled pill the tile inverts: white shape, the
-                // outcome's colour as the glyph, so it reads against the fill
+                // On a filled pill the tile inverts: white shape, the fill's
+                // own colour as the glyph, so it reads against the fill
                 // instead of disappearing into it.
                 <span className="animate-m3-pop motion-reduce:animate-none">
                   <MaterialShape
                     status={isAnswer ? 'Approved' : 'Not approved'}
                     size={26}
                     decorative
-                    className={isAnswer ? '!bg-white !text-emerald-700' : '!bg-white !text-red-700'}
+                    className={isAnswer ? right.onPill : WRONG_FILL.onPill}
                   />
                 </span>
               )}
@@ -487,11 +521,12 @@ function Quiz({ card, year, answered, onAnswer }) {
             }`}
           >
             <MaterialShape
-              status={picked === card.answer ? 'Approved' : 'Not approved'}
+              status={correct ? 'Approved' : 'Not approved'}
               size={32}
               decorative
+              className={correct ? right.badge : ''}
             />
-            {picked === card.answer ? 'Correct' : 'Not quite'}
+            {correct ? 'Correct' : 'Not quite'}
           </p>
           <Body card={card} />
           {card.weekdays && <Weekdays weekdays={card.weekdays} year={year} />}

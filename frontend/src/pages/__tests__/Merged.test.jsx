@@ -61,10 +61,15 @@ const fixture = {
       question: 'One day, 13 matters landed at once. What day of the week was it?',
       options: [
         { key: 'Monday', label: 'Monday' },
+        { key: 'Tuesday', label: 'Tuesday' },
+        { key: 'Wednesday', label: 'Wednesday' },
+        { key: 'Thursday', label: 'Thursday' },
         { key: 'Friday', label: 'Friday' },
+        { key: 'Saturday', label: 'Saturday' },
         { key: 'Sunday', label: 'Sunday' },
       ],
       answer: 'Friday',
+      answer_fill: 'navy',
       body: ['**Friday 14 August.** Fridays took 217 filings.'],
       weekdays: [
         { day: 'Monday', short: 'Mon', count: 139, weekend: false },
@@ -314,6 +319,57 @@ describe('Australia Merged', () => {
     expect(screen.getByText('Not quite')).toBeInTheDocument();
     // The reveal still names the answer, so a wrong guess still teaches it.
     expect(screen.getByText('Ampol: 147 business days.')).toBeInTheDocument();
+    // A short list keeps every option on screen, the right one among them.
+    expect(screen.getByRole('button', { name: 'Ampol' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'MicroStar' })).toBeInTheDocument();
+  });
+
+  it("collapses a long option list to the reader's own pick", async () => {
+    renderMerged();
+    await screen.findByText('Australia Merged');
+    // Seven days are a lot of dead pills to leave above the reveal.
+    expect(screen.getByRole('button', { name: 'Wednesday' })).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Monday' }));
+
+    expect(screen.getByRole('button', { name: 'Monday' })).toBeInTheDocument();
+    for (const day of ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']) {
+      expect(screen.queryByRole('button', { name: day })).not.toBeInTheDocument();
+    }
+    // What the pills stop saying, the reveal still says.
+    expect(screen.getByText('Friday 14 August.')).toBeInTheDocument();
+  });
+
+  it('keeps the right answer on a collapsed card with no reveal copy', async () => {
+    const bare = {
+      ...fixture,
+      cards: fixture.cards.map((card) =>
+        card.id === 'quiz-weekday' ? { ...card, body: [], weekdays: undefined } : card,
+      ),
+    };
+    vi.spyOn(globalThis, 'fetch').mockImplementation(() => Promise.resolve(ok(bare)));
+    renderMerged();
+    await screen.findByText('Australia Merged');
+
+    await userEvent.click(screen.getByRole('button', { name: 'Monday' }));
+
+    // Nothing underneath would name it, so the winning pill stays put.
+    expect(screen.getByRole('button', { name: 'Monday' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Friday' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Wednesday' })).not.toBeInTheDocument();
+  });
+
+  it('marks an answer that is not an outcome in its own colour', async () => {
+    renderMerged();
+    await screen.findByText('Australia Merged');
+
+    await userEvent.click(screen.getByRole('button', { name: 'Friday' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Ampol' }));
+
+    // A day of the week has no cleared/refused reading, so it does not wear
+    // the green that means "cleared" everywhere else in the deck.
+    expect(screen.getByRole('button', { name: 'Friday' }).className).toContain('bg-blue-900');
+    expect(screen.getByRole('button', { name: 'Ampol' }).className).toContain('bg-emerald-700');
   });
 
   it('takes one answer per question and no more', async () => {

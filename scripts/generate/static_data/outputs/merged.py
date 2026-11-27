@@ -887,6 +887,9 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
                 {"key": day["day"], "label": day["day"]} for day in v["by_weekday"]
             ],
             "answer": busiest.strftime("%A"),
+            # A day of the week is not an outcome, so the reveal doesn't mark
+            # it in the cleared green every other quiz uses.
+            "answer_fill": "navy",
             # The week behind the answer: a single busiest day means little
             # without the shape of an ordinary one beside it.
             "weekdays": v["by_weekday"],
