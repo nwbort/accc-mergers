@@ -6,6 +6,10 @@ import { describe, it, expect } from 'vitest';
 import {
   AUTHOR_ID,
   AUTHOR_REF,
+  DATASET_ID,
+  ORGANIZATION_ID,
+  ORGANIZATION_PROFILES,
+  PUBLISHER_REF,
   SITE_URL,
   STATIC_PAGE_META,
   fullTitle,
@@ -20,6 +24,7 @@ import {
   serialiseJsonLd,
 } from '../pageMeta.js';
 import { NAV_PAGES } from '../../constants/navPages.js';
+import { BLUESKY_PROFILE_URL, LINKEDIN_PROFILE_URL } from '../../config.js';
 import { mergerOgImage as fnMergerOgImage } from '../../../../functions/mergers/[matter]/[[path]].js';
 import {
   DETAIL_SUMMARY,
@@ -84,6 +89,15 @@ describe('mergerMeta', () => {
       `${SITE_URL}/mergers`,
       url,
     ]);
+  });
+
+  it("gives the article the page's own card as its image, and the site as publisher", () => {
+    const [article] = mergerMeta({ ...MERGER, og_card: 'phase-2.png' }).structuredData;
+    expect(article.image).toEqual([`${SITE_URL}/og/phase-2.png`]);
+    const [fallback] = mergerMeta(MERGER).structuredData;
+    expect(fallback.image).toEqual([mergerOgImage(MERGER)]);
+    expect(article.publisher).toEqual(PUBLISHER_REF);
+    expect(article.publisher['@id']).toBe(ORGANIZATION_ID);
   });
 });
 
@@ -636,6 +650,51 @@ describe('quarterlyMeta', () => {
     expect(description).toContain('113 notifications filed. Phase 1 took 18 days.');
     expect(description).not.toContain('Third point.');
   });
+
+  it('describes the quarter as a Report with its PDF and version dates', () => {
+    const full = {
+      ...quarter,
+      start: '2026-07-01',
+      end: '2026-09-30',
+      version: '2.1',
+      version_date: '2026-11-02',
+      first_published: '2026-10-23',
+      report_pdf: 'mergers-fyi-quarterly-merger-report-2026Q3.pdf',
+    };
+    const meta = quarterlyMeta(full);
+    const [report, breadcrumb] = meta.structuredData;
+    expect(breadcrumb['@type']).toBe('BreadcrumbList');
+    expect(report).toMatchObject({
+      '@type': 'Report',
+      headline: meta.title,
+      description: meta.description,
+      url: `${SITE_URL}/quarterly/26Q3`,
+      datePublished: '2026-10-23',
+      dateModified: '2026-11-02',
+      version: '2.1',
+      temporalCoverage: '2026-07-01/2026-09-30',
+      image: [meta.image],
+      author: AUTHOR_REF,
+      publisher: PUBLISHER_REF,
+      isBasedOn: { '@id': DATASET_ID },
+    });
+    expect(report.encoding).toMatchObject({
+      encodingFormat: 'application/pdf',
+      contentUrl: `${SITE_URL}/data/reports/mergers-fyi-quarterly-merger-report-2026Q3.pdf`,
+    });
+    expect(JSON.parse(serialiseJsonLd(report))).toEqual(report);
+  });
+
+  it('leaves out what the block does not say, rather than guessing', () => {
+    const [report] = quarterlyMeta({ ...quarter, report_pdf: '../x.pdf', start: 'soon' }).structuredData;
+    expect(report).not.toHaveProperty('datePublished');
+    expect(report).not.toHaveProperty('dateModified');
+    expect(report).not.toHaveProperty('temporalCoverage');
+    expect(report).not.toHaveProperty('encoding');
+    // A block from before first_published was stamped publishes at its version date.
+    const [older] = quarterlyMeta({ ...quarter, version_date: '2026-11-02' }).structuredData;
+    expect(older.datePublished).toBe('2026-11-02');
+  });
 });
 
 describe('hub page bodies', () => {
@@ -810,6 +869,37 @@ describe('the author page', () => {
     // ...and the prerendered homepage says the same, escaped for HTML.
     const page = renderPage(html, { ...home, path: '/' }, '');
     expect(page).toContain(`<title>${attr(home.documentTitle)}</title>`);
+  });
+
+  it('describes the site as an Organization with a square logo and its own profiles', () => {
+    const home = STATIC_PAGE_META['/'].structuredData;
+    const org = home.find((d) => d['@type'] === 'Organization');
+    expect(org['@id']).toBe(ORGANIZATION_ID);
+    expect(org.logo.width).toBe(org.logo.height);
+    expect(org.logo.width).toBeGreaterThanOrEqual(112);
+    const logoFile = new URL(org.logo.url).pathname;
+    expect(readFileSync(resolve(process.cwd(), 'public', logoFile.slice(1))).length).toBeGreaterThan(0);
+    expect(ORGANIZATION_PROFILES).toEqual([BLUESKY_PROFILE_URL, LINKEDIN_PROFILE_URL]);
+    expect(org.sameAs).toEqual(ORGANIZATION_PROFILES);
+    const [site] = home;
+    expect(site.publisher['@id']).toBe(ORGANIZATION_ID);
+  });
+
+  it('publishes the register as a Dataset on the homepage', () => {
+    const dataset = STATIC_PAGE_META['/'].structuredData.find((d) => d['@type'] === 'Dataset');
+    expect(dataset['@id']).toBe(DATASET_ID);
+    // Google requires a name and a 50-5000 character description.
+    expect(dataset.name).toBeTruthy();
+    expect(dataset.description.length).toBeGreaterThanOrEqual(50);
+    expect(dataset.description.length).toBeLessThanOrEqual(5000);
+    expect(dataset.license).toBe('https://creativecommons.org/licenses/by/4.0/');
+    expect(dataset.creator).toEqual(AUTHOR_REF);
+    expect(dataset.distribution.map((d) => d.contentUrl)).toContain(`${SITE_URL}/data/api/v1/mergers`);
+    for (const d of dataset.distribution) {
+      expect(d['@type']).toBe('DataDownload');
+      expect(d.encodingFormat).toBeTruthy();
+    }
+    expect(JSON.parse(serialiseJsonLd(dataset))).toEqual(dataset);
   });
 
   it('keeps the WebSite JSON-LD to the homepage', () => {

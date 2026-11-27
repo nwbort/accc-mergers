@@ -14,6 +14,7 @@ from xml.sax.saxutils import escape
 
 from scripts.merger_filters import filter_active, load_mergers
 from scripts.paths import REPO_ROOT
+from scripts.slug import merger_path
 
 OUTPUT_PATH = REPO_ROOT / "frontend" / "public" / "feed.xml"
 
@@ -21,7 +22,10 @@ SITE_URL = "https://mergers.fyi"
 FEED_TITLE = "Australian Merger Tracker"
 FEED_SUBTITLE = "Recent ACCC merger notifications, determinations, and review events"
 AUTHOR_NAME = "Nick Twort"
-MAX_ITEMS = 50
+# About a fortnight of register activity. The feed is also submitted to
+# Search Console as a sitemap, where it tells Google which pages just changed,
+# so it should reach back further than Google's gaps between fetches.
+MAX_ITEMS = 100
 
 
 def collect_feed_entries(mergers: list) -> list:
@@ -32,7 +36,12 @@ def collect_feed_entries(mergers: list) -> list:
     for m in mergers:
         merger_id = m.get('merger_id', '')
         merger_name = m.get('merger_name', '')
+        # The id keeps the bare /mergers/{id} form it has always had, so no
+        # published entry's id moves (a reader would show it again). The link
+        # is the page's canonical URL, slug included, which is what a sitemap
+        # should list and what the page itself declares.
         merger_url = f"{SITE_URL}/mergers/{merger_id}"
+        canonical_url = f"{SITE_URL}{merger_path(merger_id, merger_name)}"
 
         for event in m.get('events', []):
             date = event.get('date')
@@ -56,7 +65,7 @@ def collect_feed_entries(mergers: list) -> list:
             seen_ids.add(entry_id)
             entries.append({
                 "title": f"{merger_name}: {title}",
-                "link": merger_url,
+                "link": canonical_url,
                 "id": entry_id,
                 "updated": date,
                 "summary": f"Merger: {merger_name} ({merger_id}). Event: {title}.",
