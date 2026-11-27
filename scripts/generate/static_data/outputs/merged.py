@@ -1380,7 +1380,10 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
         "kind": "personal",
         "tone": "tertiary-container",
         "eyebrow": "Your year",
-        "heading": "You followed {followed} matters this year.",
+        # {followed} and {industries} each carry their own noun, because the
+        # count is the reader's and only their browser knows it: the page
+        # writes "1 matter" or "8 matters" (pages/Merged.jsx, YourYear).
+        "heading": "You followed {followed} this year.",
         "body": ["Keep it up."],
         "industries_line": "You followed {industries}: {names}.",
         "empty_heading": "You didn't follow any matters this year.",
@@ -1399,6 +1402,10 @@ def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.d
             {"value": len(appeals["lodged"]), "label": "in the Tribunal"},
         ],
         "lede": f"See you in {year + 1}.",
+        # The one button the card ends on, and the first item in the menu it
+        # opens: a reader who wants the result as text rather than a post.
+        "share_label": "Share your result",
+        "copy_label": "Copy your result",
     })
 
     return cards

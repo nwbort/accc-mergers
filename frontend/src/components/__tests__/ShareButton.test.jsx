@@ -62,7 +62,38 @@ describe('ShareButton', () => {
     await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: 'Share this page' }));
     });
-    expect(share).toHaveBeenCalledWith({ title: 'Acme / Bidco', url: URL_ });
+    // `text` too: most targets build the post from text + url and ignore the
+    // title, so without it the reader shares a bare link.
+    expect(share).toHaveBeenCalledWith({
+      title: 'Acme / Bidco',
+      text: 'Acme / Bidco',
+      url: URL_,
+    });
     expect(screen.queryByRole('dialog')).toBeNull();
+  });
+
+  it('renames the button and what its menu copies', async () => {
+    render(
+      <ShareButton
+        path={PATH}
+        title="Acme / Bidco"
+        label="Share your result"
+        copy={{ text: 'I got 5 out of 5', label: 'Copy your result', done: 'Copied' }}
+      />,
+    );
+    const writeText = vi.fn().mockResolvedValue();
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+
+    // The visible label is the accessible name, so the two cannot drift
+    // (WCAG 2.5.3); only the default "Share" is named "Share this page".
+    const button = screen.getByRole('button', { name: 'Share your result' });
+    await act(async () => {
+      fireEvent.click(button);
+    });
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Copy your result' }));
+    });
+    expect(writeText).toHaveBeenCalledWith('I got 5 out of 5');
+    expect(await screen.findByRole('button', { name: 'Copied' })).toBeInTheDocument();
   });
 });

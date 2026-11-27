@@ -126,7 +126,7 @@ const fixture = {
       index: 7,
       tone: 'tertiary-container',
       eyebrow: 'Your year',
-      heading: 'You followed {followed} matters this year.',
+      heading: 'You followed {followed} this year.',
       body: ['Keep it up.'],
       industries_line: 'You followed {industries}: {names}.',
       empty_heading: "You didn't follow any matters this year.",
@@ -141,6 +141,8 @@ const fixture = {
       heading: '896 matters',
       figures: [{ value: 99.3, suffix: '%', label: 'cleared' }],
       lede: 'See you in 2027.',
+      share_label: 'Share your result',
+      copy_label: 'Copy your result',
     },
   ],
 };
@@ -402,13 +404,27 @@ describe('Australia Merged', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Ampol' }));
     await userEvent.click(screen.getByRole('button', { name: 'Coles Group' }));
 
-    // Nothing is printed on the card; the text only exists on the clipboard.
+    // Nothing is printed on the card; the text only exists on the clipboard,
+    // reached through the one button the card ends on.
     const writeText = vi.fn(() => Promise.resolve());
     Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
-    await userEvent.click(screen.getByRole('button', { name: /Copy to your clipboard/ }));
+    await userEvent.click(screen.getByRole('button', { name: /Share your result/ }));
+    await userEvent.click(screen.getByRole('button', { name: 'Copy your result' }));
     expect(writeText).toHaveBeenCalledWith(
       '896 mergers. 1 refused.\nI got 3 out of 3 on Australia Merged 2026\nhttps://mergers.fyi/merged',
     );
+  });
+
+  it('ends on one button, not a copy button beside a share button', async () => {
+    renderMerged();
+    await screen.findByText('Australia Merged');
+
+    await userEvent.click(screen.getByRole('button', { name: /Share your result/ }));
+    // The menu it opens carries the copy, so the card needs no second pill.
+    const menu = screen.getByRole('dialog', { name: /Share/ });
+    expect(within(menu).getByRole('button', { name: 'Copy your result' })).toBeInTheDocument();
+    expect(within(menu).getByRole('link', { name: /LinkedIn/ })).toBeInTheDocument();
+    expect(within(menu).getByRole('link', { name: /Bluesky/ })).toBeInTheDocument();
   });
 
   it('starts the deck over without its answers', async () => {
@@ -440,6 +456,18 @@ describe('Australia Merged', () => {
     renderMerged();
     expect(await screen.findByText('You followed 3 matters this year.')).toBeInTheDocument();
     expect(screen.getByText(/Veterinary Services/)).toBeInTheDocument();
+  });
+
+  it('counts one follow in the singular', async () => {
+    localStorage.setItem('merger_tracker_tracked', JSON.stringify(['MN-1']));
+    localStorage.setItem(
+      'merger_tracker_tracked_industries',
+      JSON.stringify([{ code: '4520', name: 'Veterinary Services' }]),
+    );
+    renderMerged();
+    expect(await screen.findByText('You followed 1 matter this year.')).toBeInTheDocument();
+    // The industries line already read the singular; the matters line now does.
+    expect(screen.getByText('You followed 1 industry: Veterinary Services.')).toBeInTheDocument();
   });
 
   // --- failure --------------------------------------------------------------

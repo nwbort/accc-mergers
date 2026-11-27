@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router';
-import { FaArrowDown, FaArrowUp, FaRedo, FaShareAlt } from 'react-icons/fa';
+import { FaArrowDown, FaArrowUp, FaRedo } from 'react-icons/fa';
 import ErrorMessage from '../components/ErrorMessage';
 import LoadingSpinner from '../components/LoadingSpinner';
 import MergedCard from '../components/MergedCard';
@@ -135,7 +135,9 @@ function YourYear({ card }) {
   const { trackedMergerIds, trackedIndustries } = useTracking();
   const followed = trackedMergerIds?.length || 0;
   const industries = trackedIndustries?.length || 0;
-  const heading = followed ? card.heading.replace('{followed}', followed) : card.empty_heading;
+  const heading = followed
+    ? card.heading.replace('{followed}', `${followed} ${followed === 1 ? 'matter' : 'matters'}`)
+    : card.empty_heading;
   const lines = followed ? card.body || [] : [card.empty_body];
 
   return (
@@ -167,25 +169,6 @@ const PILL_BUTTON =
   'transition-[border-radius] duration-[350ms] ease-m3-spring active:rounded-full ' +
   'motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 ' +
   'focus-visible:ring-current focus-visible:ring-offset-2';
-
-function CopyButton({ text }) {
-  const [copied, setCopied] = useState(false);
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        navigator.clipboard?.writeText(text).then(
-          () => setCopied(true),
-          () => setCopied(false),
-        );
-      }}
-      className={`${PILL_BUTTON} mt-2 bg-m3-surface-container-lowest text-m3-on-surface`}
-    >
-      <FaShareAlt aria-hidden="true" />
-      {copied ? 'Copied' : 'Copy to your clipboard'}
-    </button>
-  );
-}
 
 export default function Merged() {
   const [cacheKey, url] = mergedFetch();
@@ -292,14 +275,19 @@ export default function Merged() {
                   {answeredAll && (
                     <p className="mb-3 text-lg font-medium">{data.score_lines?.[String(score)]}</p>
                   )}
-                  <div className="mt-2 flex flex-wrap items-center gap-3">
-                    <CopyButton text={shareText} />
-                    {/* The site's own share menu: LinkedIn, Bluesky, email,
-                        or the phone's share sheet. It carries the score as the
-                        post text and appends the URL itself. `onDark` because
-                        the closing card is a deep fill. */}
-                    <ShareButton path="/merged" title={sharePost} onDark />
-                  </div>
+                  {/* One button, not two: copying the result is the first
+                      item in the site's own share menu, beside LinkedIn,
+                      Bluesky and email — or the phone's share sheet, which
+                      offers its own copy. It wears the deck's pill rather
+                      than the header pill every other page shares from. */}
+                  <ShareButton
+                    path="/merged"
+                    title={sharePost}
+                    onDark
+                    label={card.share_label}
+                    className={`${PILL_BUTTON} mt-2 bg-m3-surface-container-lowest text-m3-on-surface`}
+                    copy={{ text: shareText, label: card.copy_label, done: 'Copied' }}
+                  />
                 </>
               ) : null
             }

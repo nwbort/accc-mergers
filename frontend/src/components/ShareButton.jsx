@@ -29,8 +29,19 @@ const ITEM_CLASS =
  *
  * @param {string} path  Site path to share; made absolute against SITE_URL.
  * @param {string} title What the link is — the post text / email subject.
+ * @param {string} [label] The button's own text and accessible name.
+ *   Defaults to "Share", named "Share this page" for a screen reader.
+ * @param {string} [className] Replaces the header-pill classes outright, for
+ *   a page whose buttons aren't header pills (/merged's deck). The caller
+ *   then owns the focus ring and the open state's look.
+ * @param {{text: string, label: string, done: string}} [copy] What the menu's
+ *   copy item puts on the clipboard and what it reads. Defaults to the link.
+ *   Pass this when the link alone isn't the thing being shared — /merged
+ *   copies the reader's score, which ends with the URL anyway. The field
+ *   below the item stays the link: it is the by-hand fallback for when the
+ *   clipboard is unreachable, and a single line can't hold more than one.
  */
-function ShareButton({ path, title, onDark = false }) {
+function ShareButton({ path, title, onDark = false, label, className, copy }) {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [position, setPosition] = useState(null);
@@ -39,6 +50,12 @@ function ShareButton({ path, title, onDark = false }) {
   const menuId = useId();
   const variant = onDark ? HEADER_BUTTON_VARIANTS.dark : HEADER_BUTTON_VARIANTS.light;
   const url = shareUrl(path);
+  const copyItem = copy || { text: url, label: 'Copy link', done: 'Link copied' };
+  // The visible text has to appear in the accessible name (WCAG 2.5.3), so a
+  // caller that renames the button names it outright. Only the bare "Share"
+  // of a page header gets "this page" added — it needs the context, and a
+  // label that is already a sentence does not.
+  const accessibleName = label || 'Share this page';
 
   const close = useCallback((restoreFocus = true) => {
     setOpen(false);
@@ -94,7 +111,12 @@ function ShareButton({ path, title, onDark = false }) {
     }
     if (prefersNativeShare()) {
       try {
-        await navigator.share({ title, url });
+        // `text` as well as `title`, because most targets build the post
+        // from text + url and ignore the title: without it a phone reader
+        // shares a bare link. On /merged that text is their score, which is
+        // the whole point of the card, and the URL is appended separately so
+        // it isn't said twice.
+        await navigator.share({ title, text: title, url });
         return;
       } catch (err) {
         // The reader dismissed the sheet: that is an answer, not a failure.
@@ -109,7 +131,7 @@ function ShareButton({ path, title, onDark = false }) {
 
   const copyLink = async () => {
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(copyItem.text);
       setCopied(true);
     } catch {
       // No clipboard access (insecure context, permission denied): select
@@ -136,14 +158,17 @@ function ShareButton({ path, title, onDark = false }) {
         ref={buttonRef}
         type="button"
         onClick={handleClick}
-        className={`${HEADER_BUTTON_BASE} ${open ? variant.active : variant.inactive} ${variant.focus || ''}`}
+        className={
+          className ||
+          `${HEADER_BUTTON_BASE} ${open ? variant.active : variant.inactive} ${variant.focus || ''}`
+        }
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls={open ? menuId : undefined}
-        aria-label="Share this page"
+        aria-label={accessibleName}
       >
         <FaShareNodes className="w-3.5 h-3.5" aria-hidden="true" />
-        Share
+        {label || 'Share'}
       </button>
       {shown && createPortal(
         <div
@@ -159,7 +184,7 @@ function ShareButton({ path, title, onDark = false }) {
             {copied
               ? <FaCheck className="w-4 h-4 text-emerald-600" aria-hidden="true" />
               : <FaLink className="w-4 h-4 text-gray-500" aria-hidden="true" />}
-            {copied ? 'Link copied' : 'Copy link'}
+            {copied ? copyItem.done : copyItem.label}
           </button>
           <input
             type="text"
@@ -188,7 +213,9 @@ function ShareButton({ path, title, onDark = false }) {
               );
             })}
           </div>
-          <p className="sr-only" aria-live="polite">{copied ? 'Link copied to clipboard' : ''}</p>
+          <p className="sr-only" aria-live="polite">
+            {copied ? `${copyItem.done} to clipboard` : ''}
+          </p>
         </div>,
         document.body,
       )}
