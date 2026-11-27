@@ -1,0 +1,149 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/herron-todd-white-valuation-services-qld",
+  "merger_name": "Herron Todd White - Valuation Services (Qld)",
+  "status": "Under assessment",
+  "merger_id": "MN-40054",
+  "effective_notification_datetime": "2026-11-26T12:00:00Z",
+  "original_notification_datetime": "2026-11-26T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2027-01-27T12:00:00Z",
+  "consultation_response_due_date": "2026-12-04T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "HERRON TODD WHITE (BIDCO) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "74 665 809 665",
+      "party_page": {
+        "id": "herron-todd-white-bidco-pty-ltd",
+        "name": "Herron Todd White (Bidco) Pty Ltd"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "VALUATIONS SERVICES (QLD) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "35 084 750 612",
+      "party_page": {
+        "id": "valuations-services-qld-pty-ltd",
+        "name": "Valuations Services (Qld) Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "HERRON TODD WHITE (HOLDINGS) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "99 665 808 962",
+      "party_page": {
+        "id": "herron-todd-white-holdings-pty-ltd",
+        "name": "Herron Todd White (Holdings) Pty Ltd"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "6712",
+      "name": "Non-Residential Property Operators"
+    },
+    {
+      "code": "6720",
+      "name": "Real Estate Services"
+    }
+  ],
+  "merger_description": "Herron Todd White (Bidco) Pty Ltd (**HTW Bidco**) proposes to acquire 100% of the issued share capital in Valuation Services (Qld) Pty Ltd (**VSQ**) from 4 individual directors / shareholders of VSQ.\n\nHerron Todd White (Holdings) Pty Ltd (**HTW Holdings**) is the ultimate parent company of HTW Bidco. HTW Holdings and its connected entities (collectively, the **HTW Group**) provide property valuation and related property advisory services throughout Australia. HTW Group\u2019s core service offering comprises residential, commercial and agribusiness property valuation services, supplied principally to Australian authorised deposit-taking institutions such as the major banks and other financial institutions, as well as to government agencies, property developers, legal practitioners and private clients. HTW Group is majority-owned by funds managed by QPE No. 7 Management Pty Ltd, an entity within the Quadrant Private Equity group.\n\nVSQ is a privately owned valuation practice that provides commercial, institutional and specialist property valuation services throughout Queensland.\n\nVSQ traded as \u2018Knight Frank Valuation & Advisory Queensland\u2019 and \u2018Knight Frank Health and Aged Care Queensland\u2019 from 2019 to June 2026.\n\nVSQ currently operates under a licence from HTW Group and trades as Herron Todd White Institutional, resides in HTW Group\u2019s Brisbane offices and operates on HTW Group\u2019s network and systems.",
+  "events": [
+    {
+      "date": "2026-11-26T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/HTW%20-%20proposed%20acquisition%20of%20VSQ%20-%20questionnaire.docx",
+      "url_gh": "/mergers/MN-40054/HTW - proposed acquisition of VSQ - questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-11-26T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-75036",
+      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+      "acquirers": [
+        "HERRON TODD WHITE (BIDCO) PTY LTD"
+      ],
+      "targets": [
+        "C. McMahon Enterprises Pty Ltd",
+        "T.J. Shaw Pty Ltd"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-20015",
+      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+      "acquirers": [
+        "HERRON TODD WHITE (BIDCO) PTY LTD"
+      ],
+      "targets": [
+        "CJA Lee Property Pty Ltd",
+        "C McMahon Enterprises Pty Ltd"
+      ],
+      "accc_determination": "Not approved"
+    },
+    {
+      "merger_id": "WA-70038",
+      "merger_name": "Herron Todd White Group - Mitchell Brandtman",
+      "acquirers": [
+        "HERRON TODD WHITE (ONE) PTY LTD"
+      ],
+      "targets": [
+        "MITCHELL BRANDTMAN PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 216,
+    "as_of": "2026-11-26",
+    "estimated_at": "2026-11-27",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 29,
+    "min_days": 27,
+    "max_days": 38,
+    "id_issued_estimated": "2026-10-28",
+    "id_issued_before": "2026-10-30",
+    "id_issued_after": "2026-10-19",
+    "min_days_witness": "WA-40055",
+    "max_days_witness": "WA-40053",
+    "basis": "bracketed",
+    "method_version": 1
+  },
+  "pre_notification_summary": {
+    "kind": "around",
+    "start_date": "2026-10-28",
+    "confidence": "high"
+  },
+  "og_card": "notified-to-the-accc.png"
+}

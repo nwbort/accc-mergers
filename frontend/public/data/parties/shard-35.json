@@ -517,6 +517,42 @@
       },
       "waiver_duration": null
     },
+    "valuations-services-qld-pty-ltd": {
+      "id": "valuations-services-qld-pty-ltd",
+      "canonical_name": "Valuations Services (Qld) Pty Ltd",
+      "members": [
+        {
+          "name": "VALUATIONS SERVICES (QLD) PTY LTD",
+          "identifier": "35 084 750 612",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40054",
+            "merger_name": "Herron Todd White - Valuation Services (Qld)",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "under_appeal": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-11-26T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "yarn-mesh-nz-limited": {
       "id": "yarn-mesh-nz-limited",
       "canonical_name": "Yarn Mesh NZ Limited",
