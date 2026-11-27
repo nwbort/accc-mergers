@@ -132,7 +132,7 @@ describe('Australia Merged', () => {
   beforeEach(() => {
     dataCache.clear?.();
     localStorage.clear();
-    global.fetch = vi.fn(() => Promise.resolve(ok(fixture)));
+    vi.spyOn(globalThis, 'fetch').mockImplementation(() => Promise.resolve(ok(fixture)));
     // jsdom has neither, and the deck uses both to move between cards.
     window.IntersectionObserver = class {
       observe() {}
@@ -273,7 +273,7 @@ describe('Australia Merged', () => {
   // --- failure --------------------------------------------------------------
 
   it('says so rather than rendering an empty deck when the data will not load', async () => {
-    global.fetch = vi.fn(() => Promise.reject(new Error('offline')));
+    vi.spyOn(globalThis, 'fetch').mockImplementation(() => Promise.reject(new Error('offline')));
     renderMerged();
     expect(await screen.findByText(/offline/i)).toBeInTheDocument();
   });

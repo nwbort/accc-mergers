@@ -349,7 +349,13 @@ frontend/src/
 │                         #   whatever data is currently on screen — on regaining tab
 │                         #   visibility, plus a long fallback interval — via
 │                         #   dataCache.revalidate, so an open tab picks up freshly
-│                         #   published data without a full reload)
+│                         #   published data without a full reload),
+│                         #   useEntrance.js (useEntrance/useCountUp — entrance animations
+│                         #   that play as an element scrolls into view, used by /merged's
+│                         #   counting figures and growing bars. The *finished* state is the
+│                         #   default: reduced motion, no IntersectionObserver, the
+│                         #   prerender and jsdom all render the real figure and never a
+│                         #   zero, and the ramp plays once per value)
 ├── utils/                # chartSetup.js (the single Chart.js registration point — import it
 │                         #   from any module that draws a chart; registering per page instead
 │                         #   silently breaks a chart reused on a page that registered less,

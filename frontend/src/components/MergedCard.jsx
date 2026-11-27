@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router';
 import MaterialShape from './MaterialShape';
 import { sheetTone } from '../constants/mergedTones';
+import { useCountUp, useEntrance } from '../hooks/useEntrance';
 import { formatDateMedium } from '../utils/dates';
 
 /**
@@ -38,10 +39,21 @@ function Eyebrow({ card }) {
 }
 
 function Stat({ card }) {
+  // Hooks run before the early return, so the card without a figure still
+  // calls them; `target` is 0 there and nothing is rendered.
+  const target = typeof card.stat === 'number' ? card.stat : 0;
+  // Count to the figure's own precision: 99.7 counts in tenths, 896 in whole
+  // matters. tabular-nums keeps the digits from jittering on the way up.
+  const decimals = String(card.stat ?? '').split('.')[1]?.length ?? 0;
+  const [ref, shown] = useCountUp(target);
+
   if (card.stat === undefined || card.stat === null) return null;
   return (
-    <span className="mb-1 block text-[clamp(3rem,16vw,6rem)] font-extrabold leading-[0.88] tracking-[-0.04em] tabular-nums">
-      {card.stat}
+    <span
+      ref={ref}
+      className="mb-1 block text-[clamp(3rem,16vw,6rem)] font-extrabold leading-[0.88] tracking-[-0.04em] tabular-nums"
+    >
+      {shown.toFixed(decimals)}
       {card.stat_suffix}
     </span>
   );
@@ -145,11 +157,12 @@ function Timeline({ entries }) {
  * the site's real charts use (docs/accessibility.md).
  */
 function Months({ months, year }) {
+  const [ref, entered] = useEntrance();
   if (!months?.length) return null;
   const peak = Math.max(...months.map((month) => month.count));
   return (
     <>
-      <div className="my-4 flex h-44 items-end gap-1" aria-hidden="true">
+      <div ref={ref} className="my-4 flex h-44 items-end gap-1" aria-hidden="true">
         {months.map((month) => (
           <div key={month.month} className="flex h-full min-w-0 flex-1 flex-col justify-end gap-1.5">
             <div
@@ -160,7 +173,11 @@ function Months({ months, year }) {
                   ? 'bg-[repeating-linear-gradient(135deg,#335145_0_5px,color-mix(in_srgb,#335145_35%,transparent)_5px_10px)]'
                   : 'bg-m3-primary'
               }`}
-              style={{ height: `${(month.count / peak) * 100}%` }}
+              // Drawn at nothing until the chart is in view, so the CSS
+              // transition above has somewhere to grow from. `entered` is true
+              // from the first render wherever the animation won't run, so the
+              // bars are never left flat.
+              style={{ height: entered ? `${(month.count / peak) * 100}%` : '0%' }}
             />
             <div className="text-center text-[0.6875rem] font-semibold opacity-70">{month.label}</div>
           </div>
