@@ -89,6 +89,12 @@ def questionnaires():
     }
 
 
+@pytest.fixture(autouse=True)
+def _no_short_names(monkeypatch):
+    """The short-name table names real matters, which this register isn't."""
+    monkeypatch.setattr(merged, "SHORT_NAMES", {})
+
+
 @pytest.fixture
 def payload(register, questionnaires, monkeypatch):
     monkeypatch.setattr(merged, "FAMOUS_CLEARED_IDS", ("MN-00001", "MN-00002", "MN-00003"))
@@ -327,9 +333,20 @@ def test_an_extension_is_attributed_to_whoever_asked_for_it(payload):
     assert extensions["by_accc"] == 0
 
 
+def test_the_busiest_day_is_asked_rather_than_told(payload):
+    """It is a guess, and the days of the week are its options."""
+    weekday = card(payload, "quiz-weekday")
+    assert weekday["kind"] == "quiz"
+    assert [option["label"] for option in weekday["options"]] == [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
+    ]
+    # Whatever the data says the busiest weekday was, that is the answer.
+    assert weekday["answer"] == payload["facts"]["volume"]["busiest_weekday"]
+
+
 def test_the_busiest_day_card_carries_the_week_around_it(payload):
     """A record day means nothing without an ordinary one beside it."""
-    weekdays = card(payload, "busiest-day")["weekdays"]
+    weekdays = card(payload, "quiz-weekday")["weekdays"]
     assert [day["short"] for day in weekdays] == [
         "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun",
     ]
@@ -346,7 +363,7 @@ def test_a_closing_line_is_a_coda_not_a_lede(payload):
     assert "lede" not in verdict
 
     extensions = card(payload, "extensions")
-    assert "the tell" in extensions["coda"]
+    assert "extended first" in extensions["coda"]
     assert "lede" not in extensions
 
 
@@ -355,11 +372,34 @@ def test_a_lede_still_opens_the_cards_that_use_one(payload):
     assert card(payload, "opening")["lede"].startswith("Year one")
 
 
-def test_the_personal_card_carries_an_empty_state(payload):
-    personal = card(payload, "personal" if False else "your-year")
+def test_the_personal_card_carries_both_states(payload):
+    """The page fills the counts in; the generator supplies both wordings."""
+    personal = card(payload, "your-year")
     assert personal["kind"] == "personal"
+    assert "{followed}" in personal["heading"]
     assert personal["empty_heading"]
     assert personal["empty_body"]
+
+
+def test_a_short_name_must_name_a_matter_on_the_register(register, monkeypatch):
+    monkeypatch.setattr(merged, "SHORT_NAMES", {"MN-GONE": "Something"})
+    with pytest.raises(ValueError, match="MN-GONE"):
+        merged.generate(register, {}, year=YEAR, today=AS_AT)
+
+
+def test_the_share_text_is_three_lines_ending_in_the_url():
+    lines = merged.SHARE_TEXT.split("\n")
+    assert len(lines) == 3
+    assert lines[-1].endswith("/merged")
+
+
+def test_every_possible_score_has_a_line(payload):
+    lines = payload["score_lines"]
+    total = payload["quiz_total"]
+    assert sorted(lines, key=int) == [str(n) for n in range(total + 1)]
+    assert str(total) in lines[str(total)]
+    # No template braces survive into the rendered line.
+    assert not any("{" in line for line in lines.values())
 
 
 def test_no_card_is_left_without_something_to_show(payload):
@@ -367,6 +407,6 @@ def test_no_card_is_left_without_something_to_show(payload):
         has_content = any(
             c.get(field) for field in
             ("heading", "lede", "coda", "body", "rows", "timeline", "months",
-             "weekdays", "question", "figures")
+             "weekdays", "ranking", "question", "figures")
         )
         assert has_content, f"card {c['id']} would render empty"

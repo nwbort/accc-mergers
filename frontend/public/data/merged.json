@@ -3,16 +3,17 @@
   "as_at": "2026-11-27",
   "complete": false,
   "coverage": "Figures cover 1 January to 27 November 2026; the year is not over.",
-  "share_text": "{matters} mergers. {refused} refused. I got {score}/{total} on Australia Merged",
+  "share_text": "{matters} mergers. {refused} refused.\nI got {score} out of {total} on Australia Merged {year}\nhttps://mergers.fyi/merged",
   "score_lines": {
-    "5": "You got all five. That is genuinely alarming.",
-    "4": "You got four out of five. Respectable.",
-    "3": "You got three out of five. Respectable.",
-    "2": "You got two out of five. The register is right there.",
-    "1": "You got one out of five. The register is right there.",
-    "0": "You got none of them. Nobody saw this year coming either."
+    "0": "You got none of them. Nobody saw this year coming either.",
+    "1": "You got 1 of 6 right. The register is right there.",
+    "2": "You got 2 of 6 right. The register is right there.",
+    "3": "You got 3 of 6 right. Respectable.",
+    "4": "You got 4 of 6 right. Respectable.",
+    "5": "You got 5 of 6 right. Respectable.",
+    "6": "You got all 6 questions right. You had your finger on the pulse."
   },
-  "quiz_total": 5,
+  "quiz_total": 6,
   "facts": {
     "volume": {
       "matters": 896,
@@ -255,6 +256,7 @@
     "phase_2": {
       "referred": 7,
       "completed": 5,
+      "ceased_refiled": 1,
       "current": [
         {
           "merger_id": "MN-01072",
@@ -434,11 +436,38 @@
           "concluded": false
         }
       ],
+      "decisions": [
+        {
+          "merger_id": "MN-01068",
+          "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+          "short_name": "Coles \u2013 Kalgoorlie",
+          "appellants": [
+            "Coles"
+          ],
+          "numbers": [
+            "ACT 1 of 2026"
+          ]
+        },
+        {
+          "merger_id": "MN-65005",
+          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "short_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "appellants": [
+            "IAG",
+            "RACWA"
+          ],
+          "numbers": [
+            "ACT 3 of 2026",
+            "ACT 4 of 2026"
+          ]
+        }
+      ],
       "undecided": 3,
       "next_hearing": "2027-03-30",
       "long_war": {
         "merger_id": "MN-01068",
         "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+        "short_name": "Coles \u2013 Kalgoorlie",
         "events": 74,
         "filed_date": "2025-11-27",
         "filed_before_regime": true,
@@ -450,7 +479,9 @@
         "hearing_date": "2026-11-09",
         "hearing_end_date": "2026-11-19",
         "court_case_number": "NSD1310/2026",
-        "court_filed_date": "2026-07-17"
+        "court_filed_date": "2026-07-17",
+        "court_outcome": "withdrawn",
+        "court_concluded_date": "2026-08-27"
       }
     },
     "refiles": {
@@ -601,13 +632,42 @@
       "index": 3
     },
     {
-      "id": "busiest-day",
-      "kind": "reveal",
+      "id": "quiz-weekday",
+      "kind": "quiz",
       "tone": "tertiary-container",
-      "eyebrow": "Busiest day",
-      "heading": "One day in 2026, 13 matters landed at once.",
-      "prompt": "Which day?",
-      "answer": "Friday 14 August",
+      "eyebrow": "Guess \u00b7 1 of 6",
+      "question": "One day in 2026, 13 matters landed at once. What day of the week was it?",
+      "options": [
+        {
+          "key": "Monday",
+          "label": "Monday"
+        },
+        {
+          "key": "Tuesday",
+          "label": "Tuesday"
+        },
+        {
+          "key": "Wednesday",
+          "label": "Wednesday"
+        },
+        {
+          "key": "Thursday",
+          "label": "Thursday"
+        },
+        {
+          "key": "Friday",
+          "label": "Friday"
+        },
+        {
+          "key": "Saturday",
+          "label": "Saturday"
+        },
+        {
+          "key": "Sunday",
+          "label": "Sunday"
+        }
+      ],
+      "answer": "Friday",
       "weekdays": [
         {
           "day": "Monday",
@@ -653,8 +713,8 @@
         }
       ],
       "body": [
-        "**Fridays** took 217 filings across the year. Mondays took 139.",
-        "19 deals were filed on a **weekend**. Someone, somewhere, filed on Saturday 3 January."
+        "**Friday 14 August.** Fridays took 217 filings across the year. Mondays took 139.",
+        "19 deals were filed on a **weekend**. 2 lonely souls filed on Saturday 3 January."
       ],
       "index": 4
     },
@@ -675,7 +735,7 @@
       },
       "lede": "Half of all phase 1 reviews were done with 12 business days to spare.",
       "body": [
-        "Waivers ran to a median of **15**. The fastest took **1** \u2014 Kiwa - CSA Group filed on Monday 23 November and had its answer on the Tuesday."
+        "Waivers ran to a median of **15**. The fastest took only **1**. Kiwa - CSA Group filed on Monday 23 November and had its answer on the Tuesday."
       ],
       "index": 5
     },
@@ -705,17 +765,17 @@
         {
           "glyph": "Not approved",
           "merger_id": "MN-01068",
-          "text": "**Coles \u2013 supermarket and liquor site in Kalgoorlie, WA** \u2014 refused 1 July."
+          "text": "**Coles \u2013 supermarket and liquor site in Kalgoorlie, WA**, refused 1 July."
         },
         {
           "glyph": "Not approved",
           "merger_id": "MN-30003",
-          "text": "**MicroStar Logistics - Konvoy** \u2014 refused 7 August."
+          "text": "**MicroStar Logistics - Konvoy**, refused 7 August."
         },
         {
           "glyph": "Not approved",
           "merger_id": "MN-65005",
-          "text": "**Insurance Australia Group \u2013 RAC Insurance** \u2014 refused 23 September."
+          "text": "**Insurance Australia Group \u2013 RAC Insurance**, refused 23 September."
         }
       ],
       "index": 7
@@ -724,7 +784,7 @@
       "id": "quiz-longest",
       "kind": "quiz",
       "tone": "surface",
-      "eyebrow": "Guess \u00b7 1 of 5",
+      "eyebrow": "Guess \u00b7 2 of 6",
       "question": "Which review concluded in 2026 took the longest?",
       "options": [
         {
@@ -746,7 +806,7 @@
       ],
       "answer": "MN-01019",
       "body": [
-        "**Ampol \u2013 EG Australia: 147 business days**, notification to determination \u2014 4.9 times the statutory phase 1 clock.",
+        "**Ampol \u2013 EG Australia: 147 business days**, notification to determination. That is 4.9 times the statutory phase 1 clock.",
         "Runners-up: Coles \u2013 supermarket and liquor site in Kalgoorlie, WA at 133, MicroStar Logistics - Konvoy at 114 and Black Rhino - Club Hotel Motel Roma at 56."
       ],
       "index": 8
@@ -760,7 +820,7 @@
       "stat": 493,
       "heading": "business days of extra time, across 42 extensions",
       "body": [
-        "**26 matters** had their clock extended in 2026 \u2014 7.9% of notifications. The merger parties asked for 32 of the 42. The ACCC asked for 3."
+        "**26 matters** had their clock extended in 2026, 7.9% of notifications. The merger parties asked for 32 of the 42. The ACCC asked for 3."
       ],
       "figures": [
         {
@@ -774,14 +834,14 @@
           "label": "if extended"
         }
       ],
-      "coda": "6 of the 7 phase 2 referrals had been extended first. An extension is the tell.",
+      "coda": "6 of the 7 phase 2 referrals had been extended first.",
       "index": 9
     },
     {
       "id": "quiz-extension",
       "kind": "quiz",
       "tone": "surface",
-      "eyebrow": "Guess \u00b7 2 of 5",
+      "eyebrow": "Guess \u00b7 3 of 6",
       "question": "Which deal ate the most of that extra time?",
       "options": [
         {
@@ -804,7 +864,7 @@
       "answer": "MN-05013",
       "body": [
         "**Zoetis \u2013 Neogen Genomics Business: 63 business days**, over 5 separate extensions.",
-        "The single biggest one-off extension \u2014 **33 business days**, more extra time than the whole statutory clock allows \u2014 went to Coles - supermarket site in Angle Vale, SA."
+        "The single biggest one-off extension went to Coles - supermarket site in Angle Vale, SA: **33 business days**, more extra time than the whole statutory clock allows."
       ],
       "index": 10
     },
@@ -847,11 +907,11 @@
         },
         {
           "glyph": "Under assessment",
-          "text": "**2 still running** \u2014 Saipem S.p.A - Subsea7 S.A. and Zoetis \u2013 Neogen Genomics Business"
+          "text": "**2 still running**: Saipem S.p.A - Subsea7 S.A. and Zoetis \u2013 Neogen Genomics Business"
         }
       ],
       "body": [
-        "3 of the 5 completed phase 2 reviews ended with the parties walking away."
+        "3 of the 5 completed phase 2 reviews ended with the parties walking away, but 1 came back."
       ],
       "index": 12
     },
@@ -862,7 +922,7 @@
       "glyph": "Not approved",
       "eyebrow": "The long war",
       "merger_id": "MN-01068",
-      "heading": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA was filed before the regime even started.",
+      "heading": "Coles \u2013 Kalgoorlie was filed before the regime even started.",
       "timeline": [
         {
           "date": "2025-11-27",
@@ -878,11 +938,15 @@
         },
         {
           "date": "2026-07-15",
-          "label": "**Tribunal review lodged** \u2014 ACT 1 of 2026"
+          "label": "**Tribunal review lodged**, ACT 1 of 2026"
         },
         {
           "date": "2026-07-17",
-          "label": "**Federal Court judicial review filed** \u2014 NSD1310/2026"
+          "label": "**Federal Court judicial review filed**, NSD1310/2026"
+        },
+        {
+          "date": "2026-08-27",
+          "label": "**Federal Court review withdrawn**"
         },
         {
           "date": "2026-11-09",
@@ -902,22 +966,17 @@
       "glyph": "Not approved",
       "eyebrow": "Appeals",
       "stat": 3,
-      "heading": "Tribunal reviews were lodged in 2026. None has been decided.",
+      "heading": "Tribunal reviews were lodged in 2026, over 2 decisions. None has been decided.",
       "rows": [
         {
           "glyph": "Not approved",
           "merger_id": "MN-01068",
-          "text": "**Coles** \u2014 ACT 1 of 2026, over Coles \u2013 supermarket and liquor site in Kalgoorlie, WA"
+          "text": "**Coles** appealed over Coles \u2013 Kalgoorlie (ACT 1 of 2026)"
         },
         {
           "glyph": "Not approved",
           "merger_id": "MN-65005",
-          "text": "**IAG** \u2014 ACT 3 of 2026, over Insurance Australia Group \u2013 RAC Insurance"
-        },
-        {
-          "glyph": "Not approved",
-          "merger_id": "MN-65005",
-          "text": "**RACWA** \u2014 ACT 4 of 2026, over Insurance Australia Group \u2013 RAC Insurance"
+          "text": "**IAG and RACWA** both appealed over Insurance Australia Group \u2013 RAC Insurance (ACT 3 of 2026 and ACT 4 of 2026)"
         }
       ],
       "body": [
@@ -929,7 +988,7 @@
       "id": "quiz-questions",
       "kind": "quiz",
       "tone": "surface",
-      "eyebrow": "Guess \u00b7 3 of 5",
+      "eyebrow": "Guess \u00b7 4 of 6",
       "question": "The ACCC published 326 market questionnaires in 2026, asking 1,366 questions. The median asked 3. How many did the most-questioned deal get?",
       "options": [
         {
@@ -952,7 +1011,7 @@
       "answer": "16",
       "body": [
         "**16**, for Peter Warren - Wakeling Automotive. The shortest, Gilead - Arcellx, got 2.",
-        "228 of the 326 asked exactly 3 \u2014 the standard set, barely touched. When the ACCC writes you a fourth question, pay attention."
+        "228 of the 326 asked exactly 3 questions, drawing on a standard set. When the ACCC asks a fourth question, pay attention."
       ],
       "index": 15
     },
@@ -965,16 +1024,15 @@
       "stat": 21,
       "heading": "estimated median days in pre-notification, before day one",
       "body": [
-        "The longest: **Steadfast - Axiom Insurance Brokers**, an estimated **183 days** of conversation with the ACCC before the clock even started. Kimberly-Clark Corporation - Kenvue Inc. took 166 and Amadeus - Idemia Public Security took 132."
+        "The longest: **Steadfast - Axiom Insurance Brokers**, an estimated **183 days** of conversation with the ACCC before the clock even started. Kimberly-Clark / Kenvue took 166 and Amadeus / Idemia took 132."
       ],
-      "note": "Pre-notification dates aren't published. These are estimates derived from the register's own timestamps, each carrying a confidence rating.",
       "index": 16
     },
     {
       "id": "quiz-parties",
       "kind": "quiz",
       "tone": "surface",
-      "eyebrow": "Guess \u00b7 4 of 5",
+      "eyebrow": "Guess \u00b7 5 of 6",
       "question": "3,164 different companies appeared on the register in 2026. Who turned up most?",
       "options": [
         {
@@ -1002,35 +1060,36 @@
     },
     {
       "id": "industries",
-      "kind": "rows",
+      "kind": "ranking",
       "tone": "primary-container",
       "eyebrow": "What Australia actually bought",
       "heading": "The most-tagged industry of the year was Financial Asset Investing.",
-      "rows": [
+      "ranking": [
         {
-          "glyph": "Under assessment",
-          "text": "**240** Financial Asset Investing"
+          "label": "Financial Asset Investing",
+          "value": 240
         },
         {
-          "glyph": "Under assessment",
-          "text": "**112** Other Auxiliary Finance and Investment Services"
+          "label": "Other Auxiliary Finance and Investment Services",
+          "value": 112
         },
         {
-          "glyph": "Under assessment",
-          "text": "**91** Computer System Design and Related Services"
+          "label": "Computer System Design and Related Services",
+          "value": 91
         },
         {
-          "glyph": "Under assessment",
-          "text": "**62** Non-Residential Property Operators"
+          "label": "Non-Residential Property Operators",
+          "value": 62
         }
       ],
+      "ranking_unit": "Industry",
       "index": 18
     },
     {
       "id": "quiz-refused",
       "kind": "quiz",
       "tone": "surface",
-      "eyebrow": "Guess \u00b7 5 of 5",
+      "eyebrow": "Guess \u00b7 6 of 6",
       "question": "Last one. Which of these did the ACCC refuse?",
       "options": [
         {
@@ -1051,9 +1110,7 @@
         }
       ],
       "answer": "MN-01068",
-      "body": [
-        "**Coles \u2013 supermarket and liquor site in Kalgoorlie, WA.** Google - Wiz, Amazon \u2013 Globalstar and Alcoa \u2013 South32 aluminium assets were all cleared."
-      ],
+      "body": [],
       "index": 19
     },
     {
@@ -1077,9 +1134,12 @@
       "tone": "tertiary-container",
       "eyebrow": "Your year",
       "heading": "You followed {followed} matters this year.",
-      "empty_heading": "You followed nothing this year.",
-      "empty_body": "Which is one way to do it.",
-      "note": "Read from this browser alone. Nothing about what you follow is sent anywhere, which is why this card can be this specific.",
+      "body": [
+        "Keep it up."
+      ],
+      "industries_line": "You followed {industries}: {names}.",
+      "empty_heading": "You didn't follow any matters this year.",
+      "empty_body": "There's always next year.",
       "index": 21
     },
     {

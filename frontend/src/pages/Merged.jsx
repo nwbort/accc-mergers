@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { FaArrowDown, FaArrowUp, FaShareAlt } from 'react-icons/fa';
+import { FaArrowDown, FaArrowUp, FaRedo, FaShareAlt } from 'react-icons/fa';
 import ErrorMessage from '../components/ErrorMessage';
 import LoadingSpinner from '../components/LoadingSpinner';
 import MergedCard from '../components/MergedCard';
@@ -79,57 +79,66 @@ function useCurrentCard(count) {
   return { current, go, deck };
 }
 
-/** The reader's own year, from the follows this browser already holds. */
+/**
+ * The reader's own year, from the follows this browser already holds.
+ *
+ * The only card the generator cannot write, because its figures never leave
+ * the device: merged.json supplies the wording with `{followed}` and
+ * `{industries}` left in it, and this fills them.
+ */
 function YourYear({ card }) {
   const { trackedMergerIds, trackedIndustries } = useTracking();
   const followed = trackedMergerIds?.length || 0;
   const industries = trackedIndustries?.length || 0;
-
-  if (!followed && !industries) {
-    return (
-      <>
-        <h2 className="mb-3 text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-          {card.empty_heading}
-        </h2>
-        <p className="mb-3 text-lg font-medium">{card.empty_body}</p>
-      </>
-    );
-  }
+  const heading = followed ? card.heading.replace('{followed}', followed) : card.empty_heading;
+  const lines = followed ? card.body || [] : [card.empty_body];
 
   return (
     <>
-      <h2 className="mb-3 text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-        {card.heading.replace('{followed}', followed)}
+      <h2 id="merged-your-year" className="mb-3 text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+        {heading}
       </h2>
-      {industries > 0 && (
+      {lines.map((line) => (
+        <p key={line} className="mb-3 text-lg font-medium">
+          {line}
+        </p>
+      ))}
+      {followed > 0 && industries > 0 && card.industries_line && (
         <p className="mb-3">
-          {`You followed ${industries} ${industries === 1 ? 'industry' : 'industries'}: `}
-          {trackedIndustries.map((industry) => industry.name || industry.code).join(', ')}.
+          {card.industries_line
+            .replace('{industries}', `${industries} ${industries === 1 ? 'industry' : 'industries'}`)
+            .replace(
+              '{names}',
+              trackedIndustries.map((industry) => industry.name || industry.code).join(', '),
+            )}
         </p>
       )}
     </>
   );
 }
 
+const PILL_BUTTON =
+  'inline-flex items-center gap-2.5 rounded-m3-lg px-6 py-4 text-base font-bold ' +
+  'transition-[border-radius] duration-[350ms] ease-m3-spring active:rounded-full ' +
+  'motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 ' +
+  'focus-visible:ring-current focus-visible:ring-offset-2';
+
 function ShareButton({ text }) {
   const [copied, setCopied] = useState(false);
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => {
-          navigator.clipboard?.writeText(text).then(
-            () => setCopied(true),
-            () => setCopied(false),
-          );
-        }}
-        className="mt-2 inline-flex items-center gap-2.5 rounded-m3-lg bg-m3-surface-container-lowest px-6 py-4 text-base font-bold text-m3-on-surface transition-[border-radius] duration-[350ms] ease-m3-spring active:rounded-full motion-reduce:transition-none"
-      >
-        <FaShareAlt aria-hidden="true" />
-        {copied ? 'Copied' : 'Copy your score'}
-      </button>
-      <p className="mt-3 max-w-prose text-xs opacity-75">{text}</p>
-    </>
+    <button
+      type="button"
+      onClick={() => {
+        navigator.clipboard?.writeText(text).then(
+          () => setCopied(true),
+          () => setCopied(false),
+        );
+      }}
+      className={`${PILL_BUTTON} mt-2 bg-m3-surface-container-lowest text-m3-on-surface`}
+    >
+      <FaShareAlt aria-hidden="true" />
+      {copied ? 'Copied' : 'Copy to your clipboard'}
+    </button>
   );
 }
 
@@ -170,11 +179,12 @@ export default function Merged() {
 
   const total = data.quiz_total || 0;
   const answeredAll = Object.keys(answers).length >= total && total > 0;
-  const shareText = `${(data.share_text || '')
+  const shareText = (data.share_text || '')
     .replace('{matters}', data.facts?.volume?.matters ?? '')
     .replace('{refused}', data.facts?.outcomes?.refused?.length ?? '')
     .replace('{score}', score)
-    .replace('{total}', total)} → mergers.fyi/merged`;
+    .replace('{total}', total)
+    .replace('{year}', data.year);
 
   return (
     <>
@@ -232,10 +242,25 @@ export default function Merged() {
               ) : card.kind === 'closing' ? (
                 <>
                   {answeredAll && (
-                    <p className="mb-3 text-lg font-medium">{data.score_lines?.[score]}</p>
+                    <p className="mb-3 text-lg font-medium">{data.score_lines?.[String(score)]}</p>
                   )}
                   <ShareButton text={shareText} />
                 </>
+              ) : null
+            }
+            after={
+              card.kind === 'closing' ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAnswers({});
+                    go(0);
+                  }}
+                  className={`${PILL_BUTTON} mt-6 border border-current/25 bg-transparent text-m3-on-surface`}
+                >
+                  <FaRedo aria-hidden="true" />
+                  Start again
+                </button>
               ) : null
             }
           />

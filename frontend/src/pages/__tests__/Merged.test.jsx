@@ -22,9 +22,9 @@ const fixture = {
   as_at: '2026-11-27',
   complete: false,
   coverage: 'Figures cover 1 January to 27 November 2026; the year is not over.',
-  share_text: '{matters} mergers. {refused} refused. I got {score}/{total} on Australia Merged',
-  score_lines: { 0: 'You got none of them.', 1: 'You got one out of two.', 2: 'Both. Alarming.' },
-  quiz_total: 2,
+  share_text: '{matters} mergers. {refused} refused.\nI got {score} out of {total} on Australia Merged {year}\nhttps://mergers.fyi/merged',
+  score_lines: { 0: 'None of them.', 1: 'One of three.', 2: 'Two of three.', 3: 'All three.' },
+  quiz_total: 3,
   facts: { volume: { matters: 896 }, outcomes: { refused: [{ merger_id: 'MN-1' }] } },
   cards: [
     {
@@ -51,16 +51,19 @@ const fixture = {
       body: [],
     },
     {
-      id: 'busiest-day',
-      kind: 'reveal',
+      id: 'quiz-weekday',
+      kind: 'quiz',
       index: 3,
       tone: 'tertiary-container',
-      glyph: 'Approved',
-      eyebrow: 'Busiest day',
-      heading: 'One day, 13 matters landed at once.',
-      prompt: 'Which day?',
-      answer: 'Friday 14 August',
-      body: ['Fridays took 217 filings.'],
+      eyebrow: 'Guess · 1 of 3',
+      question: 'One day, 13 matters landed at once. What day of the week was it?',
+      options: [
+        { key: 'Monday', label: 'Monday' },
+        { key: 'Friday', label: 'Friday' },
+        { key: 'Sunday', label: 'Sunday' },
+      ],
+      answer: 'Friday',
+      body: ['**Friday 14 August.** Fridays took 217 filings.'],
       weekdays: [
         { day: 'Monday', short: 'Mon', count: 139, weekend: false },
         { day: 'Friday', short: 'Fri', count: 217, weekend: false },
@@ -85,7 +88,7 @@ const fixture = {
       kind: 'quiz',
       index: 5,
       tone: 'surface',
-      eyebrow: 'Guess · 1 of 2',
+      eyebrow: 'Guess · 2 of 3',
       question: 'Which review took the longest?',
       options: [
         { key: 'MN-1', label: 'Ampol' },
@@ -100,7 +103,7 @@ const fixture = {
       kind: 'quiz',
       index: 6,
       tone: 'surface',
-      eyebrow: 'Guess · 2 of 2',
+      eyebrow: 'Guess · 3 of 3',
       question: 'Who turned up most?',
       options: [
         { key: 'coles', label: 'Coles Group' },
@@ -117,9 +120,10 @@ const fixture = {
       tone: 'tertiary-container',
       eyebrow: 'Your year',
       heading: 'You followed {followed} matters this year.',
-      empty_heading: 'You followed nothing this year.',
-      empty_body: 'Which is one way to do it.',
-      note: 'Read from this browser alone.',
+      body: ['Keep it up.'],
+      industries_line: 'You followed {industries}: {names}.',
+      empty_heading: "You didn't follow any matters this year.",
+      empty_body: "There's always next year.",
     },
     {
       id: 'closing',
@@ -195,13 +199,13 @@ describe('Australia Merged', () => {
       .toBeInTheDocument();
   });
 
-  it('puts the week behind the busiest day, once it is revealed', async () => {
+  it('puts the week behind the busiest day, once it has been guessed', async () => {
     renderMerged();
     await screen.findByText('Australia Merged');
-    // Held back with the answer: the tallest bar would give it away.
+    // Held back with the answer: the tallest bar is the answer.
     expect(screen.queryByRole('table', { name: /day of the week/i })).not.toBeInTheDocument();
 
-    await userEvent.click(screen.getByRole('button', { name: 'Which day?' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Friday' }));
     const table = screen.getByRole('table', { name: /day of the week/i });
     expect(within(table).getByRole('row', { name: /Monday 139/ })).toBeInTheDocument();
     // A weekend day is a sliver on the chart but an exact number in the table.
@@ -228,12 +232,12 @@ describe('Australia Merged', () => {
 
   // --- the reveal ----------------------------------------------------------
 
-  it('holds a reveal back until it is asked for', async () => {
+  it('holds an answer back until the question is answered', async () => {
     renderMerged();
     await screen.findByText('Australia Merged');
-    expect(screen.queryByText('Friday 14 August')).not.toBeInTheDocument();
-    await userEvent.click(screen.getByRole('button', { name: 'Which day?' }));
-    expect(screen.getByText('Friday 14 August')).toBeInTheDocument();
+    expect(screen.queryByText('Friday 14 August.')).not.toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Friday' }));
+    expect(screen.getByText('Friday 14 August.')).toBeInTheDocument();
   });
 
   // --- the quiz ------------------------------------------------------------
@@ -241,10 +245,10 @@ describe('Australia Merged', () => {
   it('scores a right answer and shows the reveal', async () => {
     renderMerged();
     await screen.findByText('Australia Merged');
-    expect(screen.getByText('0 / 2')).toBeInTheDocument();
+    expect(screen.getByText('0 / 3')).toBeInTheDocument();
 
     await userEvent.click(screen.getByRole('button', { name: 'Ampol' }));
-    expect(screen.getByText('1 / 2')).toBeInTheDocument();
+    expect(screen.getByText('1 / 3')).toBeInTheDocument();
     expect(screen.getByText('Correct')).toBeInTheDocument();
     expect(screen.getByText('Ampol: 147 business days.')).toBeInTheDocument();
   });
@@ -254,7 +258,7 @@ describe('Australia Merged', () => {
     await screen.findByText('Australia Merged');
 
     await userEvent.click(screen.getByRole('button', { name: 'Coles' }));
-    expect(screen.getByText('0 / 2')).toBeInTheDocument();
+    expect(screen.getByText('0 / 3')).toBeInTheDocument();
     expect(screen.getByText('Not quite')).toBeInTheDocument();
     // The reveal still names the answer, so a wrong guess still teaches it.
     expect(screen.getByText('Ampol: 147 business days.')).toBeInTheDocument();
@@ -267,7 +271,7 @@ describe('Australia Merged', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Coles' }));
     await userEvent.click(screen.getByRole('button', { name: 'Ampol' }));
     // The second click lands on a disabled button, so the score stays put.
-    expect(screen.getByText('0 / 2')).toBeInTheDocument();
+    expect(screen.getByText('0 / 3')).toBeInTheDocument();
   });
 
   it('withholds the closing line until every question is answered', async () => {
@@ -275,29 +279,48 @@ describe('Australia Merged', () => {
     await screen.findByText('Australia Merged');
 
     await userEvent.click(screen.getByRole('button', { name: 'Ampol' }));
-    expect(screen.queryByText('You got one out of two.')).not.toBeInTheDocument();
-
     await userEvent.click(screen.getByRole('button', { name: 'Blackstone' }));
-    expect(screen.getByText('You got one out of two.')).toBeInTheDocument();
+    expect(screen.queryByText('One of three.')).not.toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Friday' }));
+    expect(screen.getByText('Two of three.')).toBeInTheDocument();
   });
 
   it('builds the share line from the score and the data, not from a template', async () => {
     renderMerged();
     await screen.findByText('Australia Merged');
 
+    await userEvent.click(screen.getByRole('button', { name: 'Friday' }));
     await userEvent.click(screen.getByRole('button', { name: 'Ampol' }));
     await userEvent.click(screen.getByRole('button', { name: 'Coles Group' }));
-    expect(
-      screen.getByText('896 mergers. 1 refused. I got 2/2 on Australia Merged → mergers.fyi/merged'),
-    ).toBeInTheDocument();
+
+    // Nothing is printed on the card; the text only exists on the clipboard.
+    const writeText = vi.fn(() => Promise.resolve());
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+    await userEvent.click(screen.getByRole('button', { name: /Copy to your clipboard/ }));
+    expect(writeText).toHaveBeenCalledWith(
+      '896 mergers. 1 refused.\nI got 3 out of 3 on Australia Merged 2026\nhttps://mergers.fyi/merged',
+    );
+  });
+
+  it('starts the deck over without its answers', async () => {
+    renderMerged();
+    await screen.findByText('Australia Merged');
+    await userEvent.click(screen.getByRole('button', { name: 'Friday' }));
+    expect(screen.getByText('1 / 3')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: /Start again/ }));
+    expect(screen.getByText('0 / 3')).toBeInTheDocument();
+    // The question is askable again.
+    expect(screen.getByRole('button', { name: 'Friday' })).toBeEnabled();
   });
 
   // --- the reader's own card ------------------------------------------------
 
   it('has something to say to a reader who followed nothing', async () => {
     renderMerged();
-    expect(await screen.findByText('You followed nothing this year.')).toBeInTheDocument();
-    expect(screen.getByText('Which is one way to do it.')).toBeInTheDocument();
+    expect(await screen.findByText("You didn't follow any matters this year.")).toBeInTheDocument();
+    expect(screen.getByText("There's always next year.")).toBeInTheDocument();
   });
 
   it('counts the follows this browser already holds', async () => {

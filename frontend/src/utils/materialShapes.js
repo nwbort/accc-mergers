@@ -16,10 +16,13 @@
  *
  * Paths are in a 100×100 box centred on (50, 50).
  *
- * Copied unchanged from the Material 3 Expressive redesign branch (PR #1138),
- * which is where it belongs once that lands. It is here now because /merged
- * wears the app's shape language and needed it before the redesign was ready.
- * Reconcile the two when #1138 merges rather than keeping two copies.
+ * Copied from the Material 3 Expressive redesign branch (PR #1138), which is
+ * where it belongs once that lands. It is here now because /merged wears the
+ * app's shape language and needed it before the redesign was ready. Reconcile
+ * the two when #1138 merges rather than keeping two copies — and note the two
+ * deliberate departures from that copy, both of them corrections toward the
+ * app's real outlines: `cookie4` is far deeper, and `gem` is no longer
+ * squashed. Each is marked where it is defined.
  */
 
 import { MERGER_STATUS } from '../constants/mergerStatus';
@@ -74,7 +77,11 @@ const RADII = {
   // A soft 8-pointed seal.
   sunny: (t) => 1 + 0.07 * Math.cos(8 * (t + Math.PI / 2)),
   softBurst: (t) => 1 + 0.07 * Math.cos(10 * (t + Math.PI / 2)),
-  cookie4: cookie(4, 0.12, Math.PI / 4),
+  // Compose's Cookie4Sided puts its valleys at 0.40 of its peaks — a clover,
+  // not a squircle. At 0.12 the sides barely dipped and a refused matter read
+  // as a rounded square; 0.45 is as deep as the lobes go while still holding a
+  // glyph at tile size.
+  cookie4: cookie(4, 0.45, Math.PI / 4),
   cookie6: cookie(6, 0.09),
   cookie9: cookie(9, 0.07),
   cookie12: cookie(12, 0.06),
@@ -82,14 +89,17 @@ const RADII = {
   clover4: (t) => 0.62 + 0.38 * Math.abs(Math.cos(2 * (t - Math.PI / 4))) ** 0.6,
   square: polygon(4, 0.45, Math.PI / 4),
   pentagon: polygon(5, 0.35),
-  // A tall hexagonal gem.
+  // A rounded hexagon. Compose's Gem is near enough regular, so this is not
+  // stretched: squashed to 0.8 of its width it read as a tall diamond rather
+  // than the gem it stands for.
   gem: polygon(6, 0.3),
   // A pill on its side, as the loading indicator's last frame.
   oval: (t) => 1 / Math.sqrt((Math.cos(t) / 1) ** 2 + (Math.sin(t) / 0.66) ** 2),
 };
 
-// Per-shape stretch: the gem stands taller than it is wide.
-const STRETCH = { gem: [0.8, 1] };
+// Per-shape stretch, for any shape that is not as wide as it is tall. None
+// is, currently.
+const STRETCH = {};
 
 function points(name) {
   const r = RADII[name];

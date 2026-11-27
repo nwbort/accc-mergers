@@ -339,9 +339,18 @@ def _phase_2(notifications: list, year: int) -> dict:
          if c["outcome"] in merger_status.CLEARED_DETERMINATIONS and c["has_conditions"]),
         None,
     )
+    # A ceased matter that was notified again: the register links the two
+    # with `suspended_refiled_as`, pointing forward from the abandoned one.
+    ceased_refiled = sum(
+        1 for m in reached
+        if m.get("status") == merger_status.ASSESSMENT_CEASED
+        and (m.get("related_merger") or {}).get("relationship") == "suspended_refiled_as"
+    )
+
     return {
         "referred": len(reached),
         "completed": len(completed),
+        "ceased_refiled": ceased_refiled,
         "current": current,
         "outcomes": [{"outcome": k, "count": v} for k, v in counts.most_common()],
         "refused": counts.get(merger_status.NOT_APPROVED, 0),
@@ -479,8 +488,10 @@ def _appeals(mergers: list, year: int, as_at: dt.date) -> dict:
         m = contested[0]
         appeal = (m.get("appeals") or [{}])[0]
         review = (m.get("judicial_reviews") or [{}])[0]
+        review = (m.get("judicial_reviews") or [{}])[0]
         long_war = {
             **_ref(m),
+            "short_name": SHORT_NAMES.get(m.get("merger_id"), m.get("merger_name")),
             "events": len(m.get("events") or []),
             "filed_date": (_date(_filed(m)) or dt.date(year, 1, 1)).isoformat(),
             "filed_before_regime": (_date(_filed(m)) or dt.date(year, 1, 1)).year < year,
@@ -493,7 +504,23 @@ def _appeals(mergers: list, year: int, as_at: dt.date) -> dict:
             "hearing_end_date": appeal.get("hearing_end_date"),
             "court_case_number": review.get("case_number"),
             "court_filed_date": review.get("filed_date"),
+            "court_outcome": review.get("outcome"),
+            "court_concluded_date": review.get("concluded_date"),
         }
+
+    # Two applicants can take the same decision to the Tribunal separately
+    # (MN-65005: IAG as ACT 3, RACWA as ACT 4), so the reviews outnumber the
+    # decisions under review. Listing them apart reads as two disputes.
+    by_matter: dict[str, dict] = {}
+    for appeal in lodged:
+        entry = by_matter.setdefault(
+            appeal["merger_id"],
+            {"merger_id": appeal["merger_id"], "merger_name": appeal["merger_name"],
+             "short_name": SHORT_NAMES.get(appeal["merger_id"], appeal["merger_name"]),
+             "appellants": [], "numbers": []},
+        )
+        entry["appellants"].append(appeal["appellant"])
+        entry["numbers"].append(appeal["number"])
 
     pending = [a for a in lodged if not a["concluded"]]
     next_hearing = min(
@@ -503,6 +530,7 @@ def _appeals(mergers: list, year: int, as_at: dt.date) -> dict:
     )
     return {
         "lodged": lodged,
+        "decisions": list(by_matter.values()),
         "undecided": len(pending),
         "next_hearing": next_hearing,
         "long_war": long_war,
@@ -586,6 +614,18 @@ def build_facts(mergers: list, questionnaire_data: dict | None,
 # merger commentary already are, and render through the same ReactMarkdown.
 # --------------------------------------------------------------------------
 
+# The register names a matter in full ("Coles – supermarket and liquor site in
+# Kalgoorlie, WA"), which is right on its own page and unreadable inside a
+# sentence. These are the short forms the deck says out loud, by merger id;
+# anything not listed keeps its register name. Checked at generation time
+# (`_check_short_names`), so a renamed or deduped matter fails the build
+# rather than quietly leaving the long name in a headline.
+SHORT_NAMES = {
+    "MN-01068": "Coles – Kalgoorlie",
+    "MN-80005": "Kimberly-Clark / Kenvue",
+    "MN-60027": "Amadeus / Idemia",
+}
+
 # Quiz 5 asks which of four well-known deals was refused. "Well known" is not
 # a thing the register records, so the three cleared decoys are named here by
 # hand — and checked at generation time (`_famous_cleared`), which fails the
@@ -597,16 +637,37 @@ FAMOUS_CLEARED_IDS = ("MN-15002", "MN-50025", "MN-25047")
 # least this many real options is dropped rather than shown as a formality.
 MIN_QUIZ_OPTIONS = 3
 
-SHARE_TEXT = "{matters} mergers. {refused} refused. I got {score}/{total} on Australia Merged"
+# Three lines, because that is how it reads when it is pasted somewhere.
+SHARE_TEXT = (
+    "{matters} mergers. {refused} refused.\n"
+    "I got {score} out of {total} on Australia Merged {year}\n"
+    "https://mergers.fyi/merged"
+)
 
+# Keyed by score. The generator fills a line in for every possible score, so
+# the table has to cover 0 to however many questions the deck ends up with.
 SCORE_LINES = {
-    5: "You got all five. That is genuinely alarming.",
-    4: "You got four out of five. Respectable.",
-    3: "You got three out of five. Respectable.",
-    2: "You got two out of five. The register is right there.",
-    1: "You got one out of five. The register is right there.",
-    0: "You got none of them. Nobody saw this year coming either.",
+    "all": "You got all {total} questions right. You had your finger on the pulse.",
+    "most": "You got {score} of {total} right. Respectable.",
+    "some": "You got {score} of {total} right. The register is right there.",
+    "none": "You got none of them. Nobody saw this year coming either.",
 }
+
+
+def _score_lines(total: int) -> dict:
+    """A line per possible score, so the page never has to pick one."""
+    lines = {}
+    for score in range(total + 1):
+        if total and score == total:
+            key = "all"
+        elif score == 0:
+            key = "none"
+        elif score >= total / 2:
+            key = "most"
+        else:
+            key = "some"
+        lines[str(score)] = SCORE_LINES[key].format(score=score, total=total)
+    return lines
 
 
 def _famous_cleared(mergers: list, year: int) -> list[dict]:
@@ -636,6 +697,23 @@ def _famous_cleared(mergers: list, year: int) -> list[dict]:
     return chosen
 
 
+def _check_short_names(mergers: list) -> None:
+    """Every short form must still name a matter on the register."""
+    known = {m.get("merger_id") for m in mergers}
+    missing = sorted(set(SHORT_NAMES) - known)
+    if missing:
+        raise ValueError(
+            f"merged.json: SHORT_NAMES names {', '.join(missing)}, which "
+            f"{'is' if len(missing) == 1 else 'are'} not on the register. "
+            f"Drop the entry or point it at the matter that replaced it."
+        )
+
+
+def _short(merger_id: str | None, fallback: str | None) -> str:
+    """How the deck says a matter's name inside a sentence."""
+    return SHORT_NAMES.get(merger_id) or fallback or ""
+
+
 def _plural(n: int, one: str, many: str | None = None) -> str:
     return one if n == 1 else (many or one + "s")
 
@@ -649,7 +727,7 @@ def _join(items: list[str]) -> str:
     return ", ".join(items[:-1]) + " and " + items[-1]
 
 
-def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
+def _cards(f: dict, mergers: list, filed_this_year: list, year: int, as_at: dt.date) -> list[dict]:
     v, d, o = f["volume"], f["durations"], f["outcomes"]
     p2, ext, q = f["phase_2"], f["extensions"], f["questionnaires"]
     pre, parties, inds = f["pre_notification"], f["parties"], f["industries"]
@@ -715,27 +793,35 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
     if v["busiest_day"]:
         busiest = dt.date.fromisoformat(v["busiest_day"])
         body = [
-            f"**{v['busiest_weekday']}s** took "
+            f"**{busiest.strftime('%A')} {_fmt_date(busiest)}.** "
+            f"{v['busiest_weekday']}s took "
             f"{v['weekday_counts'].get(v['busiest_weekday'], 0)} filings across the "
             f"year. {v['quietest_weekday']}s took "
             f"{v['weekday_counts'].get(v['quietest_weekday'], 0)}."
         ]
         if v["weekend_filings"] and v["first_weekend_filing"]:
-            first = dt.date.fromisoformat(v["first_weekend_filing"]["date"])
+            first_day = dt.date.fromisoformat(v["first_weekend_filing"]["date"])
+            same_day = sum(
+                1 for day in [_date(_filed(m)) for m in filed_this_year] if day == first_day
+            )
             body.append(
-                f"{v['weekend_filings']} deals were filed on a **weekend**. Someone, "
-                f"somewhere, filed on {first.strftime('%A')} {_fmt_date(first)}."
+                f"{v['weekend_filings']} deals were filed on a **weekend**. "
+                f"{same_day} lonely souls filed on {first_day.strftime('%A')} "
+                f"{_fmt_date(first_day)}."
             )
         cards.append({
-            "id": "busiest-day",
-            "kind": "reveal",
+            "id": "quiz-weekday",
+            "kind": "quiz",
             "tone": "tertiary-container",
-            "eyebrow": "Busiest day",
-            "heading": (
-                f"One day in {year}, {v['busiest_day_count']} matters landed at once."
+            "eyebrow": "Guess",
+            "question": (
+                f"One day in {year}, {v['busiest_day_count']} matters landed at once. "
+                f"What day of the week was it?"
             ),
-            "prompt": "Which day?",
-            "answer": f"{busiest.strftime('%A')} {_fmt_date(busiest)}",
+            "options": [
+                {"key": day["day"], "label": day["day"]} for day in v["by_weekday"]
+            ],
+            "answer": busiest.strftime("%A"),
             # The week behind the answer: a single busiest day means little
             # without the shape of an ordinary one beside it.
             "weekdays": v["by_weekday"],
@@ -749,7 +835,7 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             answered = dt.date.fromisoformat(d["fastest_waiver_decided"])
             body.append(
                 f"Waivers ran to a median of **{d['waiver_median_bd']}**. The fastest "
-                f"took **{fastest_waiver['business_days']}** — "
+                f"took only **{fastest_waiver['business_days']}**. "
                 f"{fastest_waiver['merger_name']} filed on {filed.strftime('%A')} "
                 f"{_fmt_date(filed)} and had its answer on the "
                 f"{answered.strftime('%A')}."
@@ -821,7 +907,7 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
                 {
                     "glyph": GLYPH_REFUSED,
                     "merger_id": r["merger_id"],
-                    "text": f"**{r['merger_name']}** — refused {_fmt_date(r['date'])}.",
+                    "text": f"**{r['merger_name']}**, refused {_fmt_date(r['date'])}.",
                 }
                 for r in o["refused"]
             ],
@@ -841,7 +927,7 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "answer": slowest["merger_id"],
             "body": [
                 f"**{slowest['merger_name']}: {slowest['business_days']} business days**, "
-                f"notification to determination — "
+                f"notification to determination. That is "
                 f"{round(slowest['business_days'] / d['statutory_phase_1_bd'], 1)} times "
                 f"the statutory phase 1 clock.",
                 "Runners-up: "
@@ -861,8 +947,8 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
         "stat": ext["total_bd"],
         "heading": f"business days of extra time, across {ext['events']} extensions",
         "body": [
-            f"**{ext['matters_extended']} matters** had their clock extended in {year} "
-            f"— {ext['share_extended_pct']}% of notifications. The merger parties asked "
+            f"**{ext['matters_extended']} matters** had their clock extended in {year}, "
+            f"{ext['share_extended_pct']}% of notifications. The merger parties asked "
             f"for {ext['by_parties']} of the {ext['events']}. The ACCC asked for "
             f"{ext['by_accc']}.",
         ],
@@ -872,7 +958,7 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
         ],
         "coda": (
             f"{ext['phase_2_preceded_by_extension']} of the {ext['phase_2_total']} "
-            f"phase 2 referrals had been extended first. An extension is the tell."
+            f"phase 2 referrals had been extended first."
         ),
     })
 
@@ -892,9 +978,10 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
                 f"**{winner['merger_name']}: {winner['business_days']} business days**, "
                 f"over {winner['count']} separate "
                 f"{_plural(winner['count'], 'extension')}.",
-                f"The single biggest one-off extension — **{ext['longest_single_bd']} "
-                f"business days**, more extra time than the whole statutory clock allows "
-                f"— went to {ext['longest_single_matter']['merger_name']}.",
+                f"The single biggest one-off extension went to "
+                f"{ext['longest_single_matter']['merger_name']}: "
+                f"**{ext['longest_single_bd']} business days**, more extra time than "
+                f"the whole statutory clock allows.",
             ],
         })
 
@@ -951,13 +1038,17 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             ]
             + ([{
                 "glyph": GLYPH_LIVE,
-                "text": "**" + str(len(p2["current"])) + " still running** — "
+                "text": "**" + str(len(p2["current"])) + " still running**: "
                         + _join([c["merger_name"] for c in p2["current"]]),
             }] if p2["current"] else [])
         ),
         "body": [
             f"{p2['ceased']} of the {p2['completed']} completed phase 2 reviews ended "
-            f"with the parties walking away."
+            f"with the parties walking away"
+            + (
+                f", but {p2['ceased_refiled']} came back."
+                if p2["ceased_refiled"] else "."
+            )
         ] if p2["ceased"] else [],
     })
 
@@ -970,9 +1061,9 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "eyebrow": "The long war",
             "merger_id": war["merger_id"],
             "heading": (
-                f"{war['merger_name']} was filed before the regime even started."
+                f"{war['short_name']} was filed before the regime even started."
                 if war["filed_before_regime"]
-                else f"{war['merger_name']} is still going."
+                else f"{war['short_name']} is still going."
             ),
             "timeline": [
                 {"date": war["filed_date"], "label": "**Filed**"
@@ -980,9 +1071,11 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
                 {"date": war["phase_2_referral_date"], "label": "**Referred to phase 2**"},
                 {"date": war["refused_date"], "label": "**Refused**"},
                 {"date": war["tribunal_filed_date"],
-                 "label": f"**Tribunal review lodged** — {war['tribunal_number']}"},
+                 "label": f"**Tribunal review lodged**, {war['tribunal_number']}"},
                 {"date": war["court_filed_date"],
-                 "label": f"**Federal Court judicial review filed** — {war['court_case_number']}"},
+                 "label": f"**Federal Court judicial review filed**, {war['court_case_number']}"},
+                {"date": war.get("court_concluded_date"),
+                 "label": f"**Federal Court review {war.get('court_outcome') or 'concluded'}**"},
                 {"date": war["hearing_date"], "end_date": war.get("hearing_end_date"),
                  "label": "**Tribunal hearing**"},
             ],
@@ -1002,20 +1095,33 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "stat": len(appeals["lodged"]),
             "heading": (
                 f"Tribunal {_plural(len(appeals['lodged']), 'review was', 'reviews were')} "
-                f"lodged in {year}. "
+                f"lodged in {year}, over "
+                + (
+                    f"{len(appeals['decisions'])} decisions. "
+                    if len(appeals["decisions"]) != len(appeals["lodged"])
+                    else f"{_plural(len(appeals['decisions']), 'one decision', 'as many decisions')}. "
+                )
                 + (
                     "None has been decided."
                     if appeals["undecided"] == len(appeals["lodged"])
                     else f"{appeals['undecided']} are still undecided."
                 )
             ),
+            # One row per decision under review, not per review: two applicants
+            # taking the same decision to the Tribunal is one dispute.
             "rows": [
                 {
                     "glyph": GLYPH_REFUSED,
-                    "merger_id": a["merger_id"],
-                    "text": f"**{a['appellant']}** — {a['number']}, over {a['merger_name']}",
+                    "merger_id": decision["merger_id"],
+                    "text": (
+                        f"**{_join(decision['appellants'])}**"
+                        + (" both" if len(decision["appellants"]) == 2 else "")
+                        + (" each" if len(decision["appellants"]) > 2 else "")
+                        + f" appealed over {decision['short_name']}"
+                        + f" ({_join(decision['numbers'])})"
+                    ),
                 }
-                for a in appeals["lodged"]
+                for decision in appeals["decisions"]
             ],
             "body": (
                 [f"The next hearing starts **{_fmt_full(appeals['next_hearing'])}**. "
@@ -1040,8 +1146,8 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "body": [
                 f"**{q['most']['count']}**, for {q['most']['merger_name']}. The shortest, "
                 f"{q['fewest']['merger_name']}, got {q['fewest']['count']}.",
-                f"{q['at_median']} of the {q['published']} asked exactly {q['median']} — "
-                f"the standard set, barely touched. When the ACCC writes you a fourth "
+                f"{q['at_median']} of the {q['published']} asked exactly {q['median']} "
+                f"questions, drawing on a standard set. When the ACCC asks a fourth "
                 f"question, pay attention.",
             ],
         })
@@ -1056,18 +1162,15 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "stat": pre["median_days"],
             "heading": "estimated median days in pre-notification, before day one",
             "body": [
-                f"The longest: **{pre['longest'][0]['merger_name']}**, an estimated "
-                f"**{pre['longest'][0]['days']} days** of conversation with the ACCC "
-                f"before the clock even started. "
+                f"The longest: **{_short(pre['longest'][0]['merger_id'], pre['longest'][0]['merger_name'])}**, "
+                f"an estimated **{pre['longest'][0]['days']} days** of conversation with "
+                f"the ACCC before the clock even started. "
                 + _join([
-                    f"{r['merger_name']} took {r['days']}" for r in pre["longest"][1:]
+                    f"{_short(r['merger_id'], r['merger_name'])} took {r['days']}"
+                    for r in pre["longest"][1:]
                 ])
                 + ".",
             ],
-            "note": (
-                "Pre-notification dates aren't published. These are estimates derived "
-                "from the register's own timestamps, each carrying a confidence rating."
-            ),
         })
 
     if len(parties["top"]) >= MIN_QUIZ_OPTIONS:
@@ -1096,16 +1199,16 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
     if inds["top"]:
         cards.append({
             "id": "industries",
-            "kind": "rows",
+            "kind": "ranking",
             "tone": "primary-container",
             "eyebrow": "What Australia actually bought",
             "heading": (
                 f"The most-tagged industry of the year was {inds['top'][0]['name']}."
             ),
-            "rows": [
-                {"glyph": GLYPH_LIVE, "text": f"**{r['count']}** {r['name']}"}
-                for r in inds["top"]
+            "ranking": [
+                {"label": r["name"], "value": r["count"]} for r in inds["top"]
             ],
+            "ranking_unit": "Industry",
         })
 
     if o["refused"]:
@@ -1118,15 +1221,13 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             "eyebrow": "Guess",
             "question": "Last one. Which of these did the ACCC refuse?",
             "options": [
-                {"key": r["merger_id"], "label": r["merger_name"]}
+                {"key": r["merger_id"], "label": _short(r["merger_id"], r["merger_name"])}
                 for r in decoys + [answer]
             ],
             "answer": answer["merger_id"],
-            "body": [
-                "**" + answer["merger_name"] + ".** "
-                + _join([r["merger_name"] for r in decoys])
-                + " were all cleared.",
-            ],
+            # No reveal: the answer is the whole joke, and explaining it
+            # would be explaining it.
+            "body": [],
         })
 
     if first_refile:
@@ -1152,18 +1253,20 @@ def _cards(f: dict, mergers: list, year: int, as_at: dt.date) -> list[dict]:
             ],
         })
 
+    # The only card the generator cannot write: the figures come from this
+    # browser's own follow list. `{followed}` and `{industries}` are filled in
+    # by the page (pages/Merged.jsx), which is also why the counts are not in
+    # `facts` — they never leave the device.
     cards.append({
         "id": "your-year",
         "kind": "personal",
         "tone": "tertiary-container",
         "eyebrow": "Your year",
         "heading": "You followed {followed} matters this year.",
-        "empty_heading": "You followed nothing this year.",
-        "empty_body": "Which is one way to do it.",
-        "note": (
-            "Read from this browser alone. Nothing about what you follow is sent "
-            "anywhere, which is why this card can be this specific."
-        ),
+        "body": ["Keep it up."],
+        "industries_line": "You followed {industries}: {names}.",
+        "empty_heading": "You didn't follow any matters this year.",
+        "empty_body": "There's always next year.",
     })
 
     cards.append({
@@ -1212,8 +1315,10 @@ def generate(mergers: list, questionnaire_data: dict | None = None,
              *, year: int = YEAR, today: dt.date | None = None) -> dict:
     """Return the merged.json payload."""
     as_at = today or dt.date.today()
+    _check_short_names(mergers)
     facts = build_facts(mergers, questionnaire_data, year, as_at)
-    cards = _cards(facts, mergers, year, as_at)
+    filed_this_year = [m for m in mergers if _in_year(_filed(m), year)]
+    cards = _cards(facts, mergers, filed_this_year, year, as_at)
     quiz = _quiz(cards)
     complete = as_at >= dt.date(year, 12, 31)
 
@@ -1232,7 +1337,7 @@ def generate(mergers: list, questionnaire_data: dict | None = None,
             f"Figures cover 1 January to {_fmt_full(as_at)}; the year is not over."
         ),
         "share_text": SHARE_TEXT,
-        "score_lines": SCORE_LINES,
+        "score_lines": _score_lines(len(quiz)),
         "quiz_total": len(quiz),
         "facts": facts,
         "cards": cards,

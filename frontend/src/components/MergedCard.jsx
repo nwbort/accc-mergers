@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router';
 import MaterialShape from './MaterialShape';
@@ -140,9 +139,12 @@ function Timeline({ entries }) {
   const dated = (entries || []).filter((entry) => entry.date);
   if (!dated.length) return null;
   return (
-    <ol className="my-3 flex list-none flex-col gap-2 p-0">
+    // The grid is the list, not each row: with a grid per row every date
+    // column sized itself, and a nine-day hearing's range pushed its own row
+    // out of line with the rest.
+    <ol className="my-3 grid list-none grid-cols-[max-content_1fr] gap-x-3 gap-y-2 p-0">
       {dated.map((entry) => (
-        <li key={entry.label} className="grid grid-cols-[auto_1fr] items-baseline gap-3">
+        <li key={entry.label} className="col-span-2 grid grid-cols-subgrid items-baseline">
           <span className="whitespace-nowrap text-xs font-semibold tabular-nums opacity-70">
             {entry.end_date ? dateRange(entry.date, entry.end_date) : formatDateMedium(entry.date)}
           </span>
@@ -193,23 +195,25 @@ function Bars({ bars, caption, unit, height = 'h-44' }) {
           </div>
         ))}
       </div>
-      <table className="sr-only">
-        <caption>{caption}</caption>
-        <thead>
-          <tr>
-            <th scope="col">{unit}</th>
-            <th scope="col">Matters</th>
-          </tr>
-        </thead>
-        <tbody>
-          {bars.map((bar) => (
-            <tr key={bar.key}>
-              <th scope="row">{bar.row}</th>
-              <td>{bar.cell ?? bar.value}</td>
+      <div className="sr-only">
+        <table>
+          <caption>{caption}</caption>
+          <thead>
+            <tr>
+              <th scope="col">{unit}</th>
+              <th scope="col">Matters</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {bars.map((bar) => (
+              <tr key={bar.key}>
+                <th scope="row">{bar.row}</th>
+                <td>{bar.cell ?? bar.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }
@@ -260,6 +264,63 @@ function Weekdays({ weekdays, year }) {
 }
 
 /**
+ * A ranking as horizontal bars, each one drawing after the one above it.
+ *
+ * The stagger is the point: four bars arriving together is a chart, four
+ * arriving in order is a countdown, and the order is what the card is about.
+ * Lengths are relative to the longest, so the leader fills the width and the
+ * rest are read against it.
+ */
+function Ranking({ ranking, unit, caption }) {
+  const [ref, entered] = useEntrance();
+  if (!ranking?.length) return null;
+  const peak = Math.max(...ranking.map((row) => row.value));
+  return (
+    <>
+      <ol ref={ref} className="my-4 flex list-none flex-col gap-3 p-0" aria-hidden="true">
+        {ranking.map((row, index) => (
+          <li key={row.label} className="min-w-0">
+            <div className="mb-1 flex items-baseline justify-between gap-3 text-sm font-semibold">
+              <span className="min-w-0 truncate">{row.label}</span>
+              <span className="flex-shrink-0 tabular-nums">{row.value}</span>
+            </div>
+            <div className="h-2.5 overflow-hidden rounded-full bg-[color-mix(in_srgb,currentColor_12%,transparent)]">
+              <div
+                className="h-full rounded-full bg-m3-primary transition-[width] duration-500 ease-m3-emphasized motion-reduce:transition-none"
+                style={{
+                  width: entered ? `${(row.value / peak) * 100}%` : '0%',
+                  // Each bar waits for the one above it to finish.
+                  transitionDelay: entered ? `${index * 420}ms` : '0ms',
+                }}
+              />
+            </div>
+          </li>
+        ))}
+      </ol>
+      <div className="sr-only">
+        <table>
+          <caption>{caption}</caption>
+          <thead>
+            <tr>
+              <th scope="col">{unit}</th>
+              <th scope="col">Matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ranking.map((row) => (
+              <tr key={row.label}>
+                <th scope="row">{row.label}</th>
+                <td>{row.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
+}
+
+/**
  * A review's clock, one tick per business day: green to the statutory limit,
  * red past it, with the limit marked.
  */
@@ -300,15 +361,32 @@ function Rail({ rail }) {
       </div>
       <div className="relative mt-2 h-5 text-xs font-semibold opacity-80">
         <span className="absolute left-0 top-0 whitespace-nowrap">{rail.start_label}</span>
+        {/* Centred on the marker, except near either end, where a centred
+            label would hang off the card. While a growing rail is still only
+            its clock wide the marker sits at 100%, which is exactly that
+            case. */}
         <span
-          className="absolute top-0 -translate-x-1/2 whitespace-nowrap opacity-100"
-          style={{ left: `${markAt}%` }}
+          className="absolute top-0 whitespace-nowrap opacity-100"
+          style={
+            markAt >= 85
+              ? { right: 0 }
+              : markAt <= 15
+                ? { left: 0 }
+                : { left: `${markAt}%`, transform: 'translateX(-50%)' }
+          }
         >
           {rail.mark_label}
         </span>
-        <span className="absolute right-0 top-0 whitespace-nowrap">
-          {Math.round(frame.total) === rail.total ? rail.end_label : `Day ${Math.round(frame.total)}`}
-        </span>
+        {/* Held back until the rail has actually grown: while it is still
+            only the statutory clock wide, the end label sits on top of the
+            marker that is also at its far right. */}
+        {(rail.total <= rail.statutory || Math.round(frame.total) > rail.statutory) && (
+          <span className="absolute right-0 top-0 whitespace-nowrap">
+            {Math.round(frame.total) === rail.total
+              ? rail.end_label
+              : `Day ${Math.round(frame.total)}`}
+          </span>
+        )}
       </div>
       <p className="sr-only">
         {`${rail.used} of ${rail.total} business days used, against a statutory ${rail.statutory}.`}
@@ -324,36 +402,7 @@ const PILL =
   'ease-m3-spring active:rounded-m3-sm motion-reduce:transition-none ' +
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-m3-primary focus-visible:ring-offset-2';
 
-function Reveal({ card, year }) {
-  const [shown, setShown] = useState(false);
-  return (
-    <>
-      {!shown && (
-        <button
-          type="button"
-          onClick={() => setShown(true)}
-          className={`${PILL} max-w-sm bg-m3-secondary-container text-m3-on-secondary-container hover:brightness-[0.97]`}
-        >
-          {card.prompt}
-        </button>
-      )}
-      {shown && (
-        <div className="animate-m3-rise rounded-m3-lg bg-m3-surface-container-lowest p-5 text-m3-on-surface motion-reduce:animate-none">
-          <p className="mb-2 flex items-center gap-2.5 text-lg font-bold tracking-tight">
-            {/* Only where the card is about an outcome: an unmapped status
-                draws a grey dot, which looks like a symbol and means nothing. */}
-            {card.glyph && <MaterialShape status={card.glyph} size={32} decorative />}
-            {card.answer}
-          </p>
-          <Body card={card} />
-          {card.weekdays && <Weekdays weekdays={card.weekdays} year={year} />}
-        </div>
-      )}
-    </>
-  );
-}
-
-function Quiz({ card, answered, onAnswer }) {
+function Quiz({ card, year, answered, onAnswer }) {
   const picked = answered;
   const done = picked != null;
   return (
@@ -404,7 +453,11 @@ function Quiz({ card, answered, onAnswer }) {
       </div>
       {done && (
         <div className="mt-4 animate-m3-rise rounded-m3-lg bg-m3-surface-container-lowest p-5 text-m3-on-surface motion-reduce:animate-none">
-          <p className="mb-2 flex items-center gap-2.5 text-lg font-bold tracking-tight">
+          <p
+            className={`flex items-center gap-2.5 text-lg font-bold tracking-tight ${
+              card.body?.length || card.weekdays ? 'mb-2' : ''
+            }`}
+          >
             <MaterialShape
               status={picked === card.answer ? 'Approved' : 'Not approved'}
               size={32}
@@ -413,13 +466,14 @@ function Quiz({ card, answered, onAnswer }) {
             {picked === card.answer ? 'Correct' : 'Not quite'}
           </p>
           <Body card={card} />
+          {card.weekdays && <Weekdays weekdays={card.weekdays} year={year} />}
         </div>
       )}
     </>
   );
 }
 
-export default function MergedCard({ card, year, answer, onAnswer, slot }) {
+export default function MergedCard({ card, year, answer, onAnswer, slot, after }) {
   return (
     <section
       data-card
@@ -431,7 +485,7 @@ export default function MergedCard({ card, year, answer, onAnswer, slot }) {
       // No scroll-mt here: `.merged-snap` sets scroll-padding-top on the
       // document (index.css), and a margin as well would land every card a
       // second navbar's height down the page.
-      className="flex min-h-[calc(100svh-4rem)] snap-start items-center px-4 pb-24 pt-14 sm:px-6"
+      className="flex min-h-[calc(100svh-4rem)] snap-start flex-col items-center justify-center px-4 pb-24 pt-14 sm:px-6"
     >
       <article
         className={`mx-auto w-full min-w-0 max-w-2xl rounded-m3-xl p-6 sm:p-10 ${sheetTone(card.tone)}`}
@@ -441,10 +495,10 @@ export default function MergedCard({ card, year, answer, onAnswer, slot }) {
           <Stat card={card} />
 
           {card.kind === 'quiz' ? (
-            <Quiz card={card} answered={answer} onAnswer={onAnswer} />
+            <Quiz card={card} year={year} answered={answer} onAnswer={onAnswer} />
           ) : (
             <>
-              {card.heading && (
+              {card.heading && card.kind !== 'personal' && (
                 <h2
                   id={`merged-${card.id}`}
                   className={`mb-3 font-bold leading-tight tracking-tight text-balance ${
@@ -459,14 +513,28 @@ export default function MergedCard({ card, year, answer, onAnswer, slot }) {
               {card.kind === 'months' && <Months months={card.months} year={year} />}
               {card.kind === 'rail' && <Rail rail={card.rail} />}
               {card.kind === 'rows' && <Rows rows={card.rows} />}
+              {card.kind === 'ranking' && (
+                <Ranking
+                  ranking={card.ranking}
+                  unit={card.ranking_unit}
+                  caption={`${card.eyebrow}, ${year}`}
+                />
+              )}
               {card.kind === 'timeline' && <Timeline entries={card.timeline} />}
               <Figures figures={card.figures} />
-              {card.kind === 'reveal' ? <Reveal card={card} year={year} /> : <Body card={card} />}
+              {/* The personal card has no generated body: its heading and
+                  wording are templates the page fills from this browser's own
+                  follows, so rendering `card` here would print the `{followed}`
+                  placeholder above the real line. */}
+              {card.kind === 'personal' ? null : <Body card={card} />}
               {slot}
             </>
           )}
         </div>
       </article>
+      {/* Outside the sheet, under it: a control about the deck rather than
+          about this card. */}
+      {after && <div className="mt-6 w-full text-center">{after}</div>}
     </section>
   );
 }
